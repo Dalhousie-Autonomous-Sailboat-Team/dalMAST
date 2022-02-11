@@ -10,3 +10,13 @@ After installing, import the G4P library under Sketch > Import Library > Add Lib
 To run, open the file of type Proccessing Source Code
 
 ![Legend](GUI_Legend.png "GUI Legend")
+
+
+**Uploading Waypoints:**
+
+1.
+2.
+3.
+4.
+5.
+6.
