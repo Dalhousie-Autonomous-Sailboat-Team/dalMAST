@@ -17,12 +17,13 @@ Mathew Cockburn - Actually on electrical team but really likes to code so we are
 
 ### Credits
 
-Alex Wittenburg - Conversion to FreeRTOS  
+Alex Whidden - Conversion to FreeRTOS  
+Blake Meech  
 Anthony Chalmers  
 Serge Toutsenko  
 Julia Sarty  
-Thoms Gwynne-Timothy  
-Jean Francois Bousquet
+Thomas Gwynne-Timothy  
+Jean Francois Bousquet  
 
 Let Ethan know if there is anyone else.
 
