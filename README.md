@@ -1,5 +1,8 @@
 # Dalhousie SailBot
-The Dalhousie Sailboat is an autonomous robot designed to cross the Atlantic Ocean. 
+The Dalhousie Sailboat is an autonomous robot designed to cross the Atlantic Ocean.
+
+## Website: 
+dalmast.squarespace.com
 
 ## GUI setup instructions 
 In order to run the GUI that communicates with the radio module, **Processing** must be downloaded,
@@ -20,3 +23,12 @@ To run, open the file of type Proccessing Source Code
 4.
 5.
 6.
+
+
+Title
+Brief description of project and link to website. 
+Brief Technical details section
+Installation / Running / Testing instructions
+More in depth details (function map diagrams, flow chart, navigation, radio.c documentation and sending radio messages, etc.) 
+
+
