@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Sexton Path 2.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Sexton Path 2</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				-63.5723077117875,44.64224851364454,0 -63.57226072030547,44.6419639129733,0 -63.57237488384102,44.64154615727136,0 -63.57316422631514,44.64132300905327,0 -63.5737020761901,44.64118884621345,0 -63.57382191568738,44.64146629825029,0 -63.5739599785862,44.64175784749205,0 -63.57405583527211,44.64205960710298,0 -63.57423573042743,44.64236621631588,0 -63.57449065526553,44.64264394032301,0 -63.57484074244777,44.6428397112923,0 -63.5749566725903,44.64319277938175,0 -63.57472209701756,44.64267060279649,0 -63.5741703534093,44.64266525965989,0 -63.57370273969767,44.64276252487402,0 -63.57302026136976,44.64267596419452,0 -63.57203273738727,44.64290699457877,0 -63.57168993954812,44.64237619100874,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

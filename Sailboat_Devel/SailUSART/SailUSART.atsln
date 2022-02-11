@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "SailUSART", "SailUSART\SailUSART.cproj", "{BCF881F1-57F1-4405-BE9F-578BEBF0E4BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCF881F1-57F1-4405-BE9F-578BEBF0E4BB}.Debug|ARM.ActiveCfg = Debug|ARM
+		{BCF881F1-57F1-4405-BE9F-578BEBF0E4BB}.Debug|ARM.Build.0 = Debug|ARM
+		{BCF881F1-57F1-4405-BE9F-578BEBF0E4BB}.Release|ARM.ActiveCfg = Release|ARM
+		{BCF881F1-57F1-4405-BE9F-578BEBF0E4BB}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\geometry{letterpaper, portrait}
+
+\usepackage{enumitem}
+
+\def\threedigits#1{%
+	\ifnum#1<100 0\fi
+	\ifnum#1<10 0\fi
+	\number#1}
+
+\title{Autonomous Sailboat Message Format}
+\author{Thomas Gwynne-Timothy}
+
+\begin{document}
+
+\section*{Overview}
+
+The sailboat supports remote control and data logging via XBee radio. When configured correctly, the XBee radios provides a serial interface for transmitting and receiving. This document describes the message format supported by the sailboat.
+
+\section*{Messages}
+
+The radio interface uses an NMEA-style message format. This format uses a header and a checksum footer. The data fields are comma-delimited. The first data field is a three-digit number that indicates the message type. The following fields hold the data specific to the type. The generic message format is shown below.
+
+\begin{center}
+	\texttt{\$DALSAIL,<type>,<arg1>,...,<argn>*checksum\textbackslash r\textbackslash n}
+\end{center}
+
+\noindent 
+There are currently 11 different message types. They are listed below with their respective type numbers:
+
+\begin{enumerate}[label={\textbf{\protect\threedigits{\theenumi}}}, start=0, leftmargin=0.4\linewidth]
+	\setlength\itemsep{0.1em}
+	\item Message acknowledgment
+	\item Mode change
+	\item State change
+	\item Remote motor control
+	\item Way point entry
+	\item Data log configuration
+	\item GPS data log
+	\item Wind vane data log
+	\item Compass data log
+	\item Navigation status log
+	\item System reset cause
+\end{enumerate}
+
+\noindent
+The arguments for each type of message are described below.
+
+\subsection*{\textbf{000} Message Acknowledgment}
+
+These messages are sent from the sailboat to acknowledge that it has received and handled commands sent to it. There is a single argument that indicates the acknowledgment status. The statuses are listed below.
+
+\begin{enumerate}[label={\textbf{\protect\threedigits{\theenumi}}}, start=0, leftmargin=0.4\linewidth]
+	\setlength\itemsep{0.1em}
+	\item 
+\end{enumerate}
+
+\subsection*{\textbf{001} Mode Change}
+
+\subsection*{\textbf{002} State Change}
+
+\subsection*{\textbf{003} Remote Motor Control}
+
+\subsection*{\textbf{004} Way Point Entry}
+
+\subsection*{\textbf{005} Data Logging Configuration}
+
+\subsection*{\textbf{006} GPS Data Log}
+
+\subsection*{\textbf{007} Wind Vane Data Log}
+
+\subsection*{\textbf{008} Compass Data Log}
+
+\subsection*{\textbf{009} Navigation Status Log}
+
+\subsection*{\textbf{010} System Reset Cause}
+
+\section*{Usage}
+
+\end{document}

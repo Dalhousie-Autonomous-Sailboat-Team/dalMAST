@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>GPS device</name>
+	<snippet>Created 08/23/16 16:02:06</snippet>
+	<LookAt>
+		<gx:TimeSpan>
+			<begin>2015-06-11T18:20:15Z</begin>
+			<end>2015-08-09T16:07:07Z</end>
+		</gx:TimeSpan>
+		<longitude>-33.474709</longitude>
+		<latitude>46.659513</latitude>
+		<altitude>0</altitude>
+		<heading>0</heading>
+		<tilt>0</tilt>
+		<range>5754321.540973</range>
+	</LookAt>
+	<Style id="lineStyle">
+		<LineStyle>
+			<color>99ffac59</color>
+			<width>6</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="route">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#route_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#route_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="route_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="route_n">
+		<IconStyle>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>Routes</name>
+		<Folder>
+			<name>MTnorth2015b</name>
+			<Folder>
+				<name>Points</name>
+				<Placemark>
+					<name>NM001</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -62.998530 </td></tr>
+                <tr><td>Latitude: 44.416667 </td></tr>
+                <tr><td>Time: 2015-08-09T15:31:57Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-62.99853</longitude>
+						<latitude>44.416667</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T15:31:57Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-62.99853,44.416667,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>NM002</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -62.000610 </td></tr>
+                <tr><td>Latitude: 44.319026 </td></tr>
+                <tr><td>Time: 2015-08-09T16:07:07Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-62.00061</longitude>
+						<latitude>44.319026</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T16:07:07Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-62.00061,44.319026,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>NM006</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -60.500000 </td></tr>
+                <tr><td>Latitude: 44.500000 </td></tr>
+                <tr><td>Time: 2015-08-09T12:59:31Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-60.5</longitude>
+						<latitude>44.5</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:59:31Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-60.50000000000001,44.5,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>NM011</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -60.000000 </td></tr>
+                <tr><td>Latitude: 44.500000 </td></tr>
+                <tr><td>Time: 2015-08-09T13:16:42Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-60</longitude>
+						<latitude>44.5</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T13:16:42Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-60,44.5,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>NM010</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -59.000000 </td></tr>
+                <tr><td>Latitude: 44.500000 </td></tr>
+                <tr><td>Time: 2015-08-09T13:15:56Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-59</longitude>
+						<latitude>44.5</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T13:15:56Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-59,44.5,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>006</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -55.000000 </td></tr>
+                <tr><td>Latitude: 44.500000 </td></tr>
+                <tr><td>Time: 2015-08-09T11:59:18Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-55</longitude>
+						<latitude>44.5</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T11:59:18Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-55.00000000000001,44.5,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>NM009</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -48.000000 </td></tr>
+                <tr><td>Latitude: 44.500000 </td></tr>
+                <tr><td>Time: 2015-08-09T13:02:31Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-48</longitude>
+						<latitude>44.5</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T13:02:31Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-48,44.5,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>008</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -44.000000 </td></tr>
+                <tr><td>Latitude: 45.500000 </td></tr>
+                <tr><td>Time: 2015-08-09T11:59:58Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-44</longitude>
+						<latitude>45.5</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T11:59:58Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-44,45.5,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>009</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -30.000000 </td></tr>
+                <tr><td>Latitude: 49.000000 </td></tr>
+                <tr><td>Time: 2015-08-09T12:00:15Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-30</longitude>
+						<latitude>49</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:00:15Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-30,48.99999999999999,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>NM001</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -20.000000 </td></tr>
+                <tr><td>Latitude: 49.000000 </td></tr>
+                <tr><td>Time: 2015-08-09T12:14:00Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-20</longitude>
+						<latitude>49</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:14:00Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-20,48.99999999999999,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>011</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -11.337174 </td></tr>
+                <tr><td>Latitude: 48.524191 </td></tr>
+                <tr><td>Time: 2015-08-09T12:28:51Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-11.337174</longitude>
+						<latitude>48.524191</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:28:51Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-11.337174,48.524191,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>012</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -11.167171 </td></tr>
+                <tr><td>Latitude: 48.510298 </td></tr>
+                <tr><td>Time: 2015-08-09T12:29:45Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-11.167171</longitude>
+						<latitude>48.510298</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:29:45Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-11.167171,48.510298,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>013</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -11.000000 </td></tr>
+                <tr><td>Latitude: 48.500000 </td></tr>
+                <tr><td>Time: 2015-06-11T18:20:15Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-11</longitude>
+						<latitude>48.5</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-06-11T18:20:15Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-11,48.5,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>014</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -10.827165 </td></tr>
+                <tr><td>Latitude: 48.489085 </td></tr>
+                <tr><td>Time: 2015-08-09T12:29:48Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-10.827165</longitude>
+						<latitude>48.489085</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:29:48Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-10.827165,48.489085,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>015</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -10.658266 </td></tr>
+                <tr><td>Latitude: 48.479573 </td></tr>
+                <tr><td>Time: 2015-08-09T12:01:21Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-10.658266</longitude>
+						<latitude>48.479573</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:01:21Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-10.658266,48.479573,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>016</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -4.930118 </td></tr>
+                <tr><td>Latitude: 48.204435 </td></tr>
+                <tr><td>Time: 2015-06-11T20:43:16Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-4.930118</longitude>
+						<latitude>48.204435</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-06-11T20:43:16Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-4.930118,48.204435,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>017</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -4.477205 </td></tr>
+                <tr><td>Latitude: 48.204071 </td></tr>
+                <tr><td>Time: 2015-08-09T12:02:44Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-4.477205</longitude>
+						<latitude>48.204071</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:02:44Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-4.477205,48.204071,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>018</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -4.391925 </td></tr>
+                <tr><td>Latitude: 48.050045 </td></tr>
+                <tr><td>Time: 2015-08-09T12:03:05Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-4.391925</longitude>
+						<latitude>48.050045</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:03:05Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-4.391925,48.05004499999999,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>019</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -4.299320 </td></tr>
+                <tr><td>Latitude: 48.105759 </td></tr>
+                <tr><td>Time: 2015-08-09T12:04:09Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-4.29932</longitude>
+						<latitude>48.105759</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:04:09Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-4.29932,48.105759,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>020</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -4.201799 </td></tr>
+                <tr><td>Latitude: 48.213194 </td></tr>
+                <tr><td>Time: 2015-08-09T12:04:15Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-4.201799</longitude>
+						<latitude>48.213194</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:04:15Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-4.201799,48.213194,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>021</name>
+					<snippet></snippet>
+					<description><![CDATA[<table>
+                <tr><td>Longitude: -3.950889 </td></tr>
+                <tr><td>Latitude: 48.274995 </td></tr>
+                <tr><td>Time: 2015-08-09T12:04:20Z </td></tr>
+              </table>]]></description>
+					<LookAt>
+						<longitude>-3.950889</longitude>
+						<latitude>48.274995</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>66</tilt>
+						<range>0</range>
+					</LookAt>
+					<TimeStamp><when>2015-08-09T12:04:20Z</when>
+</TimeStamp>
+					<styleUrl>#route</styleUrl>
+					<Point>
+						<coordinates>-3.950889,48.274995,0</coordinates>
+					</Point>
+				</Placemark>
+			</Folder>
+			<Placemark>
+				<name>Path</name>
+				<styleUrl>#lineStyle</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-62.99853,44.416667,0 -62.00061,44.319026,0 -60.50000000000001,44.5,0 -60,44.5,0 -59,44.5,0 -55.00000000000001,44.5,0 -48,44.5,0 -44,45.5,0 -30,48.99999999999999,0 -20,48.99999999999999,0 -11.337174,48.524191,0 -11.167171,48.510298,0 -11,48.5,0 -10.827165,48.489085,0 -10.658266,48.479573,0 -4.930118,48.204435,0 -4.477205,48.204071,0 -4.391925,48.05004499999999,0 -4.29932,48.105759,0 -4.201799,48.213194,0 -3.950889,48.274995,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>

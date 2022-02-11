@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "test_gps2", "test_gps2\test_gps2.cproj", "{96F0E699-4072-47DF-9301-0FA293803FA7}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "EEPROM_EMULATOR_QUICK_START1", "EEPROM_EMULATOR_QUICK_START1\EEPROM_EMULATOR_QUICK_START1.cproj", "{EC628F88-8B20-45D0-8CCC-52CB24551EFC}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "EEPROM_EMULATOR_UNIT_TEST1", "EEPROM_EMULATOR_UNIT_TEST1\EEPROM_EMULATOR_UNIT_TEST1.cproj", "{7DA27F83-9169-4EE0-9DAF-F58405F12893}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96F0E699-4072-47DF-9301-0FA293803FA7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{96F0E699-4072-47DF-9301-0FA293803FA7}.Debug|ARM.Build.0 = Debug|ARM
+		{96F0E699-4072-47DF-9301-0FA293803FA7}.Release|ARM.ActiveCfg = Release|ARM
+		{96F0E699-4072-47DF-9301-0FA293803FA7}.Release|ARM.Build.0 = Release|ARM
+		{EC628F88-8B20-45D0-8CCC-52CB24551EFC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{EC628F88-8B20-45D0-8CCC-52CB24551EFC}.Debug|ARM.Build.0 = Debug|ARM
+		{EC628F88-8B20-45D0-8CCC-52CB24551EFC}.Release|ARM.ActiveCfg = Release|ARM
+		{EC628F88-8B20-45D0-8CCC-52CB24551EFC}.Release|ARM.Build.0 = Release|ARM
+		{7DA27F83-9169-4EE0-9DAF-F58405F12893}.Debug|ARM.ActiveCfg = Debug|ARM
+		{7DA27F83-9169-4EE0-9DAF-F58405F12893}.Debug|ARM.Build.0 = Debug|ARM
+		{7DA27F83-9169-4EE0-9DAF-F58405F12893}.Release|ARM.ActiveCfg = Release|ARM
+		{7DA27F83-9169-4EE0-9DAF-F58405F12893}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

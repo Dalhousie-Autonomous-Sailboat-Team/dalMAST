@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Sexton Test Path.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Sexton Test Path</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				-63.57226514437358,44.64217425514539,0 -63.57228013718626,44.64191490618777,0 -63.57236962268125,44.64156377775727,0 -63.57292487549316,44.64137995872611,0 -63.57359156480847,44.64121517459687,0 -63.57415269823196,44.64112137712595,0 -63.57465074052688,44.64101034723191,0 -63.57482634215825,44.64125838937,0 -63.57494420492734,44.64147334363471,0 -63.57461499271358,44.64167514519706,0 -63.57403025481865,44.64182813236788,0 -63.57413109818998,44.64211501037092,0 -63.57425019118707,44.64235855841874,0 -63.57430207198163,44.64262933001768,0 -63.57382253420224,44.64274996972047,0 -63.57344266737275,44.64270958849512,0 -63.57297926597872,44.64269106016474,0 -63.57251543247011,44.64280276594095,0 -63.57203053782812,44.64293925648374,0 -63.57183238887944,44.64263446060549,0 -63.57169540450764,44.64239559285676,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>
