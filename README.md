@@ -1,5 +1,5 @@
 # Dalhousie Microtransat Autonomous SailBoat Team (DalMAST)
-We are a team of Dalhousie students designing and building a sustainable, autonomous sailboat that will sail itself from Cape Breton to Ireland as part of international competition. Aside from our project, we try to promote the Ocean Engineering and Technology Industry by hosting events and competitions for students.
+We are a team of Dalhousie students designing and building a sustainable, autonomous sailboat that will sail itself from Nova Scotia to Ireland as part of international competition. Aside from our project, we try to promote the Ocean Engineering and Technology Industry by hosting events and competitions for students.
 
 From 2015 to the fall of 2018, the sailboat team was managed by Dalhousie faculty, including the previous Dean of Engineering, Dr. Leon. The most recent iteration of the vessel, the Sea Leon, was launched in the summer of 2018, with great success. It travelled for more than 3700km over 76 days before it ceased to transmit its location. In 2018, the responsibilities of the sailboat were transferred over to Dalhousie engineering students.
 
@@ -17,12 +17,12 @@ Mathew Cockburn - Actually on electrical team but really likes to code so we are
 
 ### Credits
 
-Alex Whidden - Conversion to FreeRTOS - REPORT
-Blake Meech  - REPORT
+Alex Whidden - Conversion to FreeRTOS - REPORT  
+Blake Meech  - REPORT  
 Anthony Chalmers  
 Serge Toutsenko  
 Julia Sarty  
-Thomas Gwynne-Timothy  - REPORT
+Thomas Gwynne-Timothy  - REPORT  
 Jean Francois Bousquet  
 
 Let Ethan know if there is anyone else.
@@ -69,3 +69,7 @@ To run, open the file of type Proccessing Source Code
 ![Legend](GUI_Legend.png "GUI Legend")
 
 ## Useful Links and Resources
+
+[OLD Sailboat Overview](https://github.com/ethanajohnston/dalMAST/blob/9b38ab3fbee50cd14ff0aa48a84d9ac6943d6c8e/Sailboat_Docs/presentation/sailboat_overview.pptx)  
+[dalmast.squarespace.com](https://dalmast.squarespace.com)  
+[dalmast.squarespace.com](https://dalmast.squarespace.com)  
