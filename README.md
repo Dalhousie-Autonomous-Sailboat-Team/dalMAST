@@ -4,23 +4,32 @@ We are a team of Dalhousie students designing and building a sustainable, autono
 From 2015 to the fall of 2018, the sailboat team was managed by Dalhousie faculty, including the previous Dean of Engineering, Dr. Leon. The most recent iteration of the vessel, the Sea Leon, was launched in the summer of 2018, with great success. It travelled for more than 3700km over 76 days before it ceased to transmit its location. In 2018, the responsibilities of the sailboat were transferred over to Dalhousie engineering students.
 
 ## Websites: 
-Our website: [dalmast.squarespace.com](https://dalmast.squarespace.com)
-The competition: [microtransat.org](https://www.microtransat.org/)
+Our website: [dalmast.squarespace.com](https://dalmast.squarespace.com), The competition: [microtransat.org](https://www.microtransat.org/)
 
-## The Software Team
+## Current Software Team
 As of Feb 2022:
+
 Ethan Johnston - Team Lead
+
 Yiming Zhang - Team Member
+
 Ope Adelasoye - Team Member
+
 Grant Sutherland - Team Member
+
 Mathew Cockburn - Actually on electrical team but really likes to code so we are borrowing them.
+
 
 ## Credits
 
 Alex Wittenburg - Conversion to FreeRTOS
+
 Anthony Chalmers
+
 Serge Toutsenko
+
 Julia Sarty
+
 Thoms Gwynne-Timothy
 
 ## Technical Details and Background
