@@ -17,6 +17,16 @@ To run, open the file of type Proccessing Source Code
 
 ![Legend](GUI_Legend.png "GUI Legend")
 
+## Using a RTOS (FreeRTOS)
+
+How this works and how to add tasks and how the kernal works.
+
+## Uploading Code
+
+1.
+2.
+3.
+
 
 ## Uploading Waypoints:
 
