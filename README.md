@@ -70,6 +70,6 @@ To run, open the file of type Proccessing Source Code
 
 ## Useful Links and Resources
 
-[OLD Sailboat Overview](Sailboat_Docs/presentation/sailboat_overview.pptx)
+[OLD Sailboat Overview](Sailboat_Docs/presentation/sailboat_overview.pptx)  
 [Thomas Report (Good for Radio Codes)](Sailboat_Docs/report/master.pdf)  
 [dalmast.squarespace.com](https://dalmast.squarespace.com)  
