@@ -43,12 +43,15 @@ How this works and how to add tasks and how the kernal works.
 
 ## Uploading Waypoints:
 
+Creating KML waypoints file from Google Earth:
+1. 
+2.
+3.
+
+Uploading to EEPROM using Processing KML Uploader script
 1.
 2.
 3.
-4.
-5.
-6.
 
 ## Function Map Diagram
 
