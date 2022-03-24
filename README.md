@@ -45,6 +45,7 @@ How this works and how to add tasks and how the kernal works.
 6. 'Open'
 
 *Back to Microchip Studio*
+
 8. Build -> Build Solution
 9. Run
 
