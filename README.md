@@ -39,25 +39,24 @@ How this works and how to add tasks and how the kernal works.
 
 1. Plug in development board  
 2. Open Microchip Studio (Start Page should recognize SAM D20)  
-3. Open project (New_RTOS_Sailboat.atsln)  
-4. Open Putty (Speed: 57600 | Connection type: Serial)  
-5. Open Device Manager to make sure Virtual COM Port is equivalent to 'Serial line'  
-6. 'Open'  
-  
-    *Back to Microchip Studio*  
-  
-8. Build -> Build Solution  
-9. Run  
+4. Open project (New_RTOS_Sailboat.atsln)  
+5. Open Putty (Speed: 57600 | Connection type: Serial)  
+6. Open Device Manager to make sure Virtual COM Port is equivalent to 'Serial line'  
+7. 'Open'
+8. Move *Back to Microchip Studio*   
+9. Build -> Build Solution  
+11. Run  
 
 ## Uploading Waypoints:
 
 Creating KML waypoints file from Google Earth:
-1. 
-2.
-3.
+1. d
+2. ww
+3. 
+
 
 Uploading to EEPROM using Processing KML Uploader script
-1. [Download Processing](https://processing.org/download)  
+1. [Download Processing](https://processing.org/download)
 2. Place .kml in the same directory as the processing script.  
 3. Run [script]() with 
 4.
