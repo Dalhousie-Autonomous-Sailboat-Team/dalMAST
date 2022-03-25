@@ -50,8 +50,8 @@ How this works and how to add tasks and how the kernal works.
 ## Uploading Waypoints:
 
 Creating KML waypoints file from Google Earth:
-1. d
-2. ww
+1. 
+2. 
 3. 
 
 
