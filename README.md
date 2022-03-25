@@ -37,9 +37,17 @@ How this works and how to add tasks and how the kernal works.
 
 ## Uploading Code
 
-1. 
-2. 
-3. 
+1. Plug in development board  
+2. Open Microchip Studio (Start Page should recognize SAM D20)  
+3. Open project (New_RTOS_Sailboat.atsln)  
+4. Open Putty (Speed: 57600 | Connection type: Serial)  
+5. Open Device Manager to make sure Virtual COM Port is equivalent to 'Serial line'  
+6. 'Open'  
+  
+    *Back to Microchip Studio*  
+  
+8. Build -> Build Solution  
+9. Run  
 
 ## Uploading Waypoints:
 
