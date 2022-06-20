@@ -84,8 +84,6 @@ float course, bearing, sail_deg, rudder_deg;
 float avg_heading_deg = 0.0;
 
 
-
-
 enum status_code CTRL_InitSystem(void)
 {
 	// Initialize SAMD20

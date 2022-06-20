@@ -28,12 +28,12 @@
 
 typedef enum eWEATHERSTATION_TRX {
 	eGPGGA,
-	eGPVTG,
 	eWIMWV,
 	eYXXDR,
 	eHCHDT,
 	//the rest of the types are listed below, but not currently used
 	/*
+	eGPVTG,
 	eGPDTM,		
 	eGPGLL,		
 	eGPGSA,   
@@ -65,20 +65,28 @@ typedef struct WEATHERSTATION_TYPES_INFO {
 } WEATHERSTATION_TYPE_MAP;
 
 static WEATHERSTATION_TYPE_MAP WEATHERSTATION_TYPE_TABLE[WEATHERSENSOR_NUM_MSG_TYPES] = {
-	{ eGPGGA, "GPGGA"}, { eWIMWV, "WIMWV"}, 
-	{ eYXXDR, "YXXDR"}, { eHCHDT, "HCHDT"}
+	{ eGPGGA, "GPGGA"}, 
+	{ eWIMWV, "WIMWV"}, 
+	{ eYXXDR, "YXXDR"}, 
+	{ eHCHDT, "HCHDT"}
 	
 	//remaining fields
 	/*
 	{ eGPDTM, "GPDTM"}, 
-	{ eGPGLL, "GPGLL"}, { eGPGSA, "GPGSA"},
-	{ eGPGSV, "GPGSV"}, { eGPRMC, "GPRMC"},
-	{ eGPVTG, "GPVTG"}, { eGPZDA, "GPZDA"},
+	{ eGPGLL, "GPGLL"}, 
+	{ eGPGSA, "GPGSA"},
+	{ eGPGSV, "GPGSV"}, 
+	{ eGPRMC, "GPRMC"},
+	{ eGPVTG, "GPVTG"}, 
+	{ eGPZDA, "GPZDA"},
 	{ eHCHDG, "HCHDG"}, 
-	{ eHCTHS, "HCTHS"}, { eTIROT, "TIROT"},
+	{ eHCTHS, "HCTHS"}, 
+	{ eTIROT, "TIROT"},
 	{ eWIMDA, "WIMDA"}, 
-	{ eWIMWV, "WIMWV"}, { eWIMWR, "WIMWR"},
-	{ eWIMWT, "WIMWT"}, { eYXXDR, "YXXDR"},
+	{ eWIMWV, "WIMWV"}, 
+	{ eWIMWR, "WIMWR"},
+	{ eWIMWT, "WIMWT"}, 
+	{ eYXXDR, "YXXDR"},
 		*/
 };
 
@@ -183,6 +191,8 @@ static enum status_code WEATHERSENSOR_ExtractMsg(WEATHERSENSOR_GenericMsg *msg, 
 bool get_NMEA_type(eWeatherstationTRX_t *type);
 //void ReadWeatherSensor(void);
 enum status_code weatherstation_cmd(const char *format, ...);
+
+extern volatile WEATHERSENSOR_AllMsgs weathersensor_data;
 
 //the structs for the remaining fields are listed below
 

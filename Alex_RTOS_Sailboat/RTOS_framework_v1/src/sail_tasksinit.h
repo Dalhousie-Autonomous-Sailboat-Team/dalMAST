@@ -54,7 +54,6 @@ extern unsigned char watchdog_reset_value;
 
 // TODO: update this file
 enum all_tasks { eReadWeatherSensor, eUpdateCourse, eControlRudder, eRadioHandler, eLogData, eReadCompass};
-extern volatile WEATHERSENSOR_AllMsgs weathersensor_data;
 
 extern enum all_tasks running_task;
 
