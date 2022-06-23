@@ -66,7 +66,7 @@ void ReadWeatherSensor(void) {
 		taskEXIT_CRITICAL();
 
 		WeatherStation_On();
-		DEBUG_Write("Yo mamamammamamammamm\r\n");
+		//DEBUG_Write("Weather Station is READING\r\n");
 		running_task = eReadWeatherSensor;
 		
 		WEATHERSENSOR_GenericMsg msg;

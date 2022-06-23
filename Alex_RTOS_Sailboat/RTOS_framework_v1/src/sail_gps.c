@@ -58,7 +58,10 @@ void ReadGPS(void) {
 			pdFALSE,                                 /* Bits should not be cleared before returning. */
 			pdFALSE,                                 /* Don't wait for both bits, either bit will do. */
 			portMAX_DELAY);                          /* Wait time does not expire */
-
+			
+		taskENTER_CRITICAL();
+		watchdog_counter |= 0x01;
+		taskEXIT_CRITICAL();
 
 		GPS_On();
 
@@ -74,38 +77,26 @@ void ReadGPS(void) {
 			gps_data.msg_array[msg.type] = msg;
 			//add type to msg type sum to keep track of the saved messages
 			gps_data.msg_type_sum += msg.type;
-			//if (weathersensor_data.msg_type_sum > MSG_TYPE_TOTAL) {
-			// when 8 messages are received the thread will go to sleep
-			if (loop_cnt >= 4) {
-				//reset fields
-				loop_cnt = 0;
 
-				taskENTER_CRITICAL();
-				watchdog_counter |= 0x01;
-				taskEXIT_CRITICAL();
+			DEBUG_Write("\nAll fields obtained... Going to sleep...\r\n");
+			gps_data.msg_type_sum = 0;
 
-				DEBUG_Write("\nAll fields obtained... Going to sleep...\r\n");
-				gps_data.msg_type_sum = 0;
+			//store weather station data into appropriate structs
+			assign_gps_readings();
+			//check if waypoint was reached and affect as necessary
+			DEBUG_Write("checking waypoint...\r\n");
+			check_waypoint_state();
 
-				//store weather station data into appropriate structs
-				assign_gps_readings();
-				//check if waypoint was reached and affect as necessary
-				DEBUG_Write("checking waypoint...\r\n");
-				check_waypoint_state();
+			//Necessary??????????????
+			DEBUG_Write("processing wind...\r\n");
+			//calculate wind parameters
+			process_wind_readings();
+			DEBUG_Write("processing heading...\r\n");
+			//calculate heading parameters
+			process_heading_readings();
 
-				//Necessary??????????????
-				DEBUG_Write("processing wind...\r\n");
-				//calculate wind parameters
-				process_wind_readings();
-				DEBUG_Write("processing heading...\r\n");
-				//calculate heading parameters
-				process_heading_readings();
-
-				//put thread to sleep until a specific tick count is reached
-				vTaskDelay(read_weather_sensor_delay);
-			}
-
-
+			//put thread to sleep until a specific tick count is reached
+			vTaskDelay(read_gps_delay);
 		}
 	}
 }
@@ -197,7 +188,7 @@ bool get_NMEA_type(eGPSTRX_t* type) {
 char tmp_ptr[8];
 int tmp_cntr = 0;
 /*request to receive message by weather sensor*/
-enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg* msg)
+enum status_code GPS_RxMsg(GPS_GenericMsg* msg)
 {
 	// Return if a null pointer is provided
 	if (msg == NULL) {
@@ -205,7 +196,7 @@ enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg* msg)
 	}
 
 	// Check the NMEA receiver for new data
-	switch (NMEA_RxString(NMEA_WEATHERSTATION, (uint8_t*)msg_buffer, NMEA_BUFFER_LENGTH)) {
+	switch (NMEA_RxString(NMEA_GPS, (uint8_t*)msg_buffer, NMEA_BUFFER_LENGTH)) {
 		// Data was found, continue and process
 	case STATUS_VALID_DATA:
 		break;
@@ -219,7 +210,7 @@ enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg* msg)
 
 
 	// Extract the raw data from the message
-	WEATHERSENSOR_MsgRawData raw_data;
+	GPS_MsgRawData raw_data;
 	char* msg_ptr;
 
 	//DEBUG_Write("WS: %s\r\n", msg_buffer);
@@ -237,7 +228,7 @@ enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg* msg)
 		//if *msg_ptr is alphabetic, store directly, else convert string to float value
 		raw_data.args[arg_count++] = isalpha(*msg_ptr) ? *msg_ptr : atof(msg_ptr);
 
-		if (arg_count == WEATHERSENSOR_MSG_MAX_ARGS) break;
+		if (arg_count == GPS_MSG_MAX_ARGS) break;
 	}
 
 	/*
@@ -248,7 +239,7 @@ enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg* msg)
 	*/
 
 	// Parse the message
-	if (WEATHERSENSOR_ExtractMsg(msg, &raw_data) != STATUS_OK) {
+	if (GPS_ExtractMsg(msg, &raw_data) != STATUS_OK) {
 		return STATUS_ERR_BAD_DATA;
 	}
 
@@ -260,7 +251,7 @@ int last_type = 1337;
 int vals[4];
 
 //extern int was_here;
-static enum status_code WEATHERSENSOR_ExtractMsg(WEATHERSENSOR_GenericMsg* msg, WEATHERSENSOR_MsgRawData* data) {
+static enum status_code GPS_ExtractMsg(GPS_GenericMsg* msg, GPS_MsgRawData* data) {
 	msg->type = data->type;
 	last_type = data->type;
 

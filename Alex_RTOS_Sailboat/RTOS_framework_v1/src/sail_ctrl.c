@@ -16,7 +16,8 @@
 #include "sail_motor.h"
 #include "sail_comp.h"
 #include "sail_tasksinit.h"
-#include "Sail_WEATHERSTATION.h"
+//#include "Sail_WEATHERSTATION.h"///////////////////////////////////////////////////
+#include "Sail_gps.h"
 #include "delay.h"
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
@@ -312,7 +313,7 @@ void process_heading_readings(void)
 
 
 
-void assign_weatherstation_readings(void) {
+/*void assign_weatherstation_readings(void) {
 	//assign gps weather sensor data to gps struct
 	gps.lat = weathersensor_data.msg_array[eGPGGA].fields.gpgga.lat.lat;
 	gps.lon = weathersensor_data.msg_array[eGPGGA].fields.gpgga.lon.lon;
@@ -330,9 +331,19 @@ void assign_weatherstation_readings(void) {
 	//assign bearing
 	//NAV_GetBearing(wp.pos, gps, &bearing);
 	
+}*////////////////////////////I AM COMMENETED OUT!!!!!//////////////
+
+void assign_gps_readings(void) {
+	//assign gps weather sensor data to gps struct
+	gps.lat = gps_data.msg_array[eGPGGA].fields.gpgga.lat.lat;
+	gps.lon = gps_data.msg_array[eGPGGA].fields.gpgga.lon.lon;
+	
+	//assign distance between boat and waypoint to wp_distance
+	//NAV_GetDistance(wp.pos, gps, &wp_distance);
+	//assign bearing
+	//NAV_GetBearing(wp.pos, gps, &bearing);
+	
 }
-
-
 
 void ControlRudder(void)
 {

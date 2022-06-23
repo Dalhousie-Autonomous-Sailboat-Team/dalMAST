@@ -104,8 +104,12 @@ void check_waypoint_state(void);
 /* assign_weatherstation_readings
  * Assign GPS Wind and compass reading
  */ 
-void assign_weatherstation_readings(void);
+//void assign_weatherstation_readings(void); /////////////////////////
 
+/* assign_gps_readings
+ * Assign GPS reading
+ */ 
+void assign_gps_readings(void);
 
 /* process_wind_readings
  * Wind unit convert

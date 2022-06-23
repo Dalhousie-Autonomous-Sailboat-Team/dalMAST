@@ -55,7 +55,7 @@ typedef enum eGPS_TRX {
 
 typedef struct GPS_MsgRawData {
 	uint8_t type;
-	float args[WEATHERSENSOR_MSG_MAX_ARGS];
+	float args[GPS_MSG_MAX_ARGS];
 } GPS_MsgRawData;
 
 typedef struct GPS_TYPES_INFO {
@@ -182,6 +182,8 @@ static enum status_code GPS_ExtractMsg(GPS_GenericMsg* msg, GPS_MsgRawData* data
 bool get_NMEA_type(eGPSTRX_t* type);
 //void ReadWeatherSensor(void);
 enum status_code GPS_cmd(const char* format, ...);
+
+extern volatile GPS_AllMsgs gps_data;
 
 
 #endif /* SAIL_GPS_H */
