@@ -19,9 +19,6 @@
 #include "sail_tasksinit.h"
 #include "usart_interrupt.h"
 
-
-
-#include "sail_nmea.h"
 #include "sail_debug.h"
 
 #define HEADER_FMT				"DALSAIL,%03"PRIu16
@@ -29,22 +26,17 @@
 
 #define RADIO_BUFFER_LENGTH		NMEA_BUFFER_LENGTH
 
-
-
-
 static bool init_flag = false;
 static char msg_buffer[RADIO_BUFFER_LENGTH];
 
-//stores all the msg types of the weather sensor
-volatile GPS_AllMsgs gps_data;
-
-
+//stores all the msg types of the gps sensor
+volatile GPS_AllMsgs GPS_data;
 
 void ReadGPS(void) {
 	DEBUG_Write("Reading GPS...\r\n");
 	uint16_t loop_cnt = 0;
 	//set msg type sum to 0 since no messages processed yet
-	gps_data.msg_type_sum = 0;
+	GPS_data.msg_type_sum = 0;
 
 	// Event bits for holding the state of the event group
 	EventBits_t event_bits;
@@ -67,19 +59,19 @@ void ReadGPS(void) {
 
 		running_task = eReadWeatherSensor; //Replace this with gps, see tasksinit.c/.h
 
-		GPS_GenericMsg msg;
+		NMEA_GenericMsg msg;
 
 		if (GPS_RxMsg(&msg) == STATUS_OK) {
 			loop_cnt++;
 			//DEBUG_Write("\nStatus OK\n");
 			//DEBUG_Write("loop count %d\r\n", loop_cnt);
 			//store msg into msg array at index corresponding to msg type
-			gps_data.msg_array[msg.type] = msg;
+			GPS_data.msg_array[msg.type] = msg;
 			//add type to msg type sum to keep track of the saved messages
-			gps_data.msg_type_sum += msg.type;
+			GPS_data.msg_type_sum += msg.type;
 
 			DEBUG_Write("\nAll fields obtained... Going to sleep...\r\n");
-			gps_data.msg_type_sum = 0;
+			GPS_data.msg_type_sum = 0;
 
 			//store weather station data into appropriate structs
 			assign_gps_readings();
@@ -171,15 +163,15 @@ enum status_code GPS_Disable(void)
 
 
 /*identifies the prefix from the NMEA message and assigns it to the message type*/
-bool get_NMEA_type(eGPSTRX_t* type) {
+bool get_NMEA_type(eNMEA_TRX_t* type) {
 	//read prefix
 	char* msg_ptr = strtok(msg_buffer, ",");
 	int i;
-	for (i = 0; i < GPS_NUM_MSG_TYPES; i++) {
+	for (i = 0; i < NUM_NMEA_TYPES; i++) {
 		//return true if prefix found in weather station type table
-		if (strcmp(msg_ptr, GPS_TYPE_TABLE[i].GPS_Prefix) == 0) {
+		if (strcmp(msg_ptr, NMEA_TYPE_TABLE[i].NMEA_Prefix) == 0) {
 			//assign type to matched prefix string
-			*type = GPS_TYPE_TABLE[i].GPS_id;
+			*type = NMEA_TYPE_TABLE[i].MSG_id;
 			return true;
 		}
 	}
@@ -188,7 +180,7 @@ bool get_NMEA_type(eGPSTRX_t* type) {
 char tmp_ptr[8];
 int tmp_cntr = 0;
 /*request to receive message by weather sensor*/
-enum status_code GPS_RxMsg(GPS_GenericMsg* msg)
+enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 {
 	// Return if a null pointer is provided
 	if (msg == NULL) {
@@ -251,7 +243,7 @@ int last_type = 1337;
 int vals[4];
 
 //extern int was_here;
-static enum status_code GPS_ExtractMsg(GPS_GenericMsg* msg, GPS_MsgRawData* data) {
+static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData* data) {
 	msg->type = data->type;
 	last_type = data->type;
 

@@ -14,6 +14,7 @@
 #include "usart_interrupt.h"
 #include "sail_nmea.h"
 #include "Sail_WEATHERSTATION.h"
+#include "sail_gps.h"
 #include "sail_types.h"
 #include "sail_nav.h"
 #include "sail_ctrl.h"

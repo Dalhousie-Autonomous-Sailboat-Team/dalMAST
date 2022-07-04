@@ -21,9 +21,6 @@
 #include "sail_tasksinit.h"
 #include "usart_interrupt.h"
 
-
-
-#include "sail_nmea.h"
 #include "sail_debug.h"
 
 #define HEADER_FMT				"DALSAIL,%03"PRIu16
@@ -38,9 +35,7 @@ static bool init_flag = false;
 static char msg_buffer[RADIO_BUFFER_LENGTH];
 
 //stores all the msg types of the weather sensor
-volatile WEATHERSENSOR_AllMsgs weathersensor_data;
-
-
+volatile NMEA_AllMsgs weathersensor_data;
 
 void ReadWeatherSensor(void) {
 	DEBUG_Write("Reading Weather Sensor...\r\n");
@@ -69,7 +64,7 @@ void ReadWeatherSensor(void) {
 		//DEBUG_Write("Weather Station is READING\r\n");
 		running_task = eReadWeatherSensor;
 		
-		WEATHERSENSOR_GenericMsg msg;
+		NMEA_GenericMsg msg;
 
 		if(WEATHERSTATION_RxMsg(&msg) == STATUS_OK) {
 			loop_cnt++;  
@@ -89,7 +84,7 @@ void ReadWeatherSensor(void) {
 				weathersensor_data.msg_type_sum = 0;
 				
 				//store weather station data into appropriate structs
-				assign_weatherstation_readings();
+				//assign_weatherstation_readings();
 				//check if waypoint was reached and affect as necessary
 				DEBUG_Write("checking waypoint...\r\n");
 				check_waypoint_state();
@@ -127,6 +122,7 @@ enum status_code WeatherStation_Init(void)
 	}
 	
 	// Initialize NMEA channel
+	/*
 	switch (NMEA_Init(NMEA_WEATHERSTATION)) {
 		case STATUS_OK:	// Initialization complete, continue	
 			break; 
@@ -135,7 +131,7 @@ enum status_code WeatherStation_Init(void)
 		default:
 			DEBUG_Write_Unprotected("NMEA module could not be initialized!\n");
 			return STATUS_ERR_DENIED;
-	}
+	}*/ //I AM COMMENTED OUT!
 	
 	// Set the initialization flag
 	init_flag = true;
@@ -152,10 +148,10 @@ enum status_code WeatherStation_Enable(void)
 	}
 	
 	// Return if the receiver cannot be started
-	if (NMEA_Enable(NMEA_WEATHERSTATION) != STATUS_OK) {
+	/*if (NMEA_Enable(NMEA_WEATHERSTATION) != STATUS_OK) {
 		//DEBUG_Write("NMEA receiver could not be started!\r\n");
 		return STATUS_ERR_DENIED;
-	}
+	}*/ // I AM COMMENTED OUT!!!
 	
 	return STATUS_OK;
 }
@@ -169,32 +165,15 @@ enum status_code WeatherStation_Disable(void)
 	}
 	
 	// Return if the receiver cannot be disabled
-	if (NMEA_Disable(NMEA_WEATHERSTATION) != STATUS_OK) {
+	/*if (NMEA_Disable(NMEA_WEATHERSTATION) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
-	}
+	}*/ // I AM COMMENTED OUT !!!
 	
 	return STATUS_OK;
 }
 
-
-/*identifies the prefix from the NMEA message and assigns it to the message type*/
-bool get_NMEA_type(eWeatherstationTRX_t *type) {
-		//read prefix
-		char *msg_ptr = strtok(msg_buffer, ",");
-		int i;
-		for(i = 0; i < WEATHERSENSOR_NUM_MSG_TYPES; i++) {
-			//return true if prefix found in weather station type table
-			if(strcmp(msg_ptr, WEATHERSTATION_TYPE_TABLE[i].WS_Prefix) == 0) {
-				//assign type to matched prefix string
-				*type = WEATHERSTATION_TYPE_TABLE[i].WS_id;
-				return true;
-			}
-		}
-		return false;	
-}
-
 /*request to receive message by weather sensor*/
-enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg *msg)
+enum status_code WEATHERSTATION_RxMsg(NMEA_GenericMsg *msg)
 {
 	// Return if a null pointer is provided
 	if (msg == NULL) {
@@ -202,7 +181,7 @@ enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg *msg)
 	}
 	
 	// Check the NMEA receiver for new data
-	switch (NMEA_RxString(NMEA_WEATHERSTATION, (uint8_t *)msg_buffer, NMEA_BUFFER_LENGTH)) {
+	/*switch (NMEA_RxString(NMEA_WEATHERSTATION, (uint8_t *)msg_buffer, NMEA_BUFFER_LENGTH)) {
 		// Data was found, continue and process
 		case STATUS_VALID_DATA:
 			break;
@@ -212,7 +191,7 @@ enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg *msg)
 		// An error occurred
 		default:
 			return STATUS_ERR_DENIED;
-	}
+	}*/ // I AM COMMENTED OUT !!
 	
 	// Extract the raw data from the message
 	WEATHERSENSOR_MsgRawData raw_data;
@@ -221,9 +200,10 @@ enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg *msg)
 	//DEBUG_Write("WS: %s\r\n", msg_buffer);
 	
 	//assign NMEA string prefix to raw_data type
+	/*
 	if(!get_NMEA_type(&raw_data.type)) {
 		return STATUS_DATA_NOT_NEEDED;
-	}
+	}*/ // I AM COMMENTED OUT
 		
 	// Get each argument after the type
 	uint8_t arg_count = 0;
@@ -251,13 +231,13 @@ enum status_code WEATHERSTATION_RxMsg(WEATHERSENSOR_GenericMsg *msg)
 	return STATUS_OK;
 }
 
-int last_type = 1337;
-int vals[4];
+int last_type2 = 1337;
+int vals2[4];
 
 //extern int was_here;
-static enum status_code WEATHERSENSOR_ExtractMsg(WEATHERSENSOR_GenericMsg *msg, WEATHERSENSOR_MsgRawData *data) {
+static enum status_code WEATHERSENSOR_ExtractMsg(NMEA_GenericMsg *msg, WEATHERSENSOR_MsgRawData *data) {
 	msg->type = data->type;
-	last_type = data->type;
+	last_type2 = data->type;
 
 	// args[0] is the first argument after the NMEA type
 	//ex. GPGGA,<arg[0]>,<arg[1]>...
@@ -269,7 +249,7 @@ static enum status_code WEATHERSENSOR_ExtractMsg(WEATHERSENSOR_GenericMsg *msg, 
 			msg->fields.gpgga.lon.lon = data->args[3];
 			msg->fields.gpgga.lon.we = ((char)data->args[4] == 'W') ? west : east;
 			msg->fields.gpgga.alt = data->args[8];
-			vals[0] = 1;		
+			vals2[0] = 1;		
 			break;
 		
 		/* case eGPVTG: 
@@ -286,13 +266,13 @@ static enum status_code WEATHERSENSOR_ExtractMsg(WEATHERSENSOR_GenericMsg *msg, 
 			if(data->args[0] == 'A') {
 				msg->fields.yxxdr.pitch_deg = data->args[1];
 				msg->fields.yxxdr.roll_deg = data->args[5];
-				vals[3] = 1;
+				vals2[3] = 1;
 			}	
 			break;	
 		
 		case eHCHDT:
 			msg->fields.hchdt.bearing = data->args[0];
-			vals[1] = 1;	
+			vals2[1] = 1;	
 			break;
 		/*
 		case eWIMWD:

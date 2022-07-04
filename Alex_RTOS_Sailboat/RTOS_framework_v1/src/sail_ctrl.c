@@ -17,7 +17,7 @@
 #include "sail_comp.h"
 #include "sail_tasksinit.h"
 //#include "Sail_WEATHERSTATION.h"///////////////////////////////////////////////////
-#include "Sail_gps.h"
+#include "sail_gps.h"
 #include "delay.h"
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
@@ -335,8 +335,8 @@ void process_heading_readings(void)
 
 void assign_gps_readings(void) {
 	//assign gps weather sensor data to gps struct
-	gps.lat = gps_data.msg_array[eGPGGA].fields.gpgga.lat.lat;
-	gps.lon = gps_data.msg_array[eGPGGA].fields.gpgga.lon.lon;
+	gps.lat = GPS_data.msg_array[eGPGGA].fields.gpgga.lat.lat;
+	gps.lon = GPS_data.msg_array[eGPGGA].fields.gpgga.lon.lon;
 	
 	//assign distance between boat and waypoint to wp_distance
 	//NAV_GetDistance(wp.pos, gps, &wp_distance);
