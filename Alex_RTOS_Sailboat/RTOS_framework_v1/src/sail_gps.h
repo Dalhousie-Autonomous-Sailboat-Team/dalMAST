@@ -2,7 +2,7 @@
  * sail_gps.h
  *
  * Created: 2022-06-02 8:04 PM
- *  Author: secul
+ * Author: Kamden Thebeau
  */
 
 #ifndef SAIL_GPS_H
@@ -34,7 +34,7 @@ typedef struct GPS_AllMsgs {
 	uint8_t msg_type_sum;
 } GPS_AllMsgs;
 
-extern volatile GPS_AllMsgs GPS_data;
+extern GPS_AllMsgs GPS_data;
 
 void enable_gps_msg(eNMEA_TRX_t msg_type);
 void write_to_gps(const char* format, ...);
@@ -50,8 +50,6 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg);
 
 static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData* data);
 
-bool get_NMEA_type(eNMEA_TRX_t* type);
-//void ReadWeatherSensor(void);
 enum status_code GPS_cmd(const char* format, ...);
 
 #endif /* SAIL_GPS_H */

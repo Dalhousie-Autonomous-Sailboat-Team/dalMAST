@@ -228,6 +228,8 @@ typedef struct eNMEA_GPDTM {
 } eNMEA_GPDTM;
 */
 
+bool get_NMEA_type(eNMEA_TRX_t* type, char msg_buffer[]);
+
 /* NMEA_Init
  * Initialize a specific NMEA channel.
  * Inputs:

@@ -2,7 +2,10 @@
  * sail_gps.c
  *
  * Created: 2022-06-02 8:04 PM
- *  Author: secul
+ * Author: Kamden Thebeau
+ * 
+ * Implementation of the sail_gps.h header file. Responsible for storing NMEA gps data 
+ * received from gps hardware. 
  */
 
 #include "sail_gps.h"
@@ -30,7 +33,7 @@ static bool init_flag = false;
 static char msg_buffer[RADIO_BUFFER_LENGTH];
 
 //stores all the msg types of the gps sensor
-volatile GPS_AllMsgs GPS_data;
+GPS_AllMsgs GPS_data;
 
 void ReadGPS(void) {
 	DEBUG_Write("Reading GPS...\r\n");
@@ -54,7 +57,9 @@ void ReadGPS(void) {
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x01;
 		taskEXIT_CRITICAL();
-
+		
+		DEBUG_Write("********** Performing GPS Reading **********\r\n");
+		
 		GPS_On();
 
 		running_task = eReadWeatherSensor; //Replace this with gps, see tasksinit.c/.h
@@ -113,7 +118,7 @@ enum status_code GPS_Init(void)
 
 	// Initialize NMEA channel
 	switch (NMEA_Init(NMEA_GPS)) {
-	case STATUS_OK:// Initialization complete, continue
+	case STATUS_OK: // Initialization complete, continue
 		break; 
 	case STATUS_ERR_ALREADY_INITIALIZED:	// Already initialized, not a problem
 		break;
@@ -161,24 +166,6 @@ enum status_code GPS_Disable(void)
 	return STATUS_OK;
 }
 
-
-/*identifies the prefix from the NMEA message and assigns it to the message type*/
-bool get_NMEA_type(eNMEA_TRX_t* type) {
-	//read prefix
-	char* msg_ptr = strtok(msg_buffer, ",");
-	int i;
-	for (i = 0; i < NUM_NMEA_TYPES; i++) {
-		//return true if prefix found in weather station type table
-		if (strcmp(msg_ptr, NMEA_TYPE_TABLE[i].NMEA_Prefix) == 0) {
-			//assign type to matched prefix string
-			*type = NMEA_TYPE_TABLE[i].MSG_id;
-			return true;
-		}
-	}
-	return false;
-}
-char tmp_ptr[8];
-int tmp_cntr = 0;
 /*request to receive message by weather sensor*/
 enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 {
@@ -208,7 +195,7 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 	//DEBUG_Write("WS: %s\r\n", msg_buffer);
 
 	//assign NMEA string prefix to raw_data type
-	if (!get_NMEA_type(&raw_data.type)) {
+	if (!get_NMEA_type(&raw_data.type, msg_buffer)) {
 		return STATUS_DATA_NOT_NEEDED;
 	}
 

@@ -100,12 +100,6 @@ void ReadCompass(void);
  */ 
 void check_waypoint_state(void);
 
-
-/* assign_weatherstation_readings
- * Assign GPS Wind and compass reading
- */ 
-//void assign_weatherstation_readings(void); /////////////////////////
-
 /* assign_gps_readings
  * Assign GPS reading
  */ 
