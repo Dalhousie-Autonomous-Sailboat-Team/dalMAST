@@ -27,10 +27,10 @@
 #define HEADER_FMT				"DALSAIL,%03"PRIu16
 #define FIELD_FMT				",%"PRIi32
 
-#define RADIO_BUFFER_LENGTH		NMEA_BUFFER_LENGTH
+#define GPS_BUFFER_LENGTH		NMEA_BUFFER_LENGTH
 
 static bool init_flag = false;
-static char msg_buffer[RADIO_BUFFER_LENGTH];
+static char msg_buffer[GPS_BUFFER_LENGTH];
 
 //stores all the msg types of the gps sensor
 GPS_AllMsgs GPS_data;
@@ -90,19 +90,17 @@ void ReadGPS(void) {
 			process_wind_readings();
 			DEBUG_Write("processing heading...\r\n");
 			//calculate heading parameters
-			process_heading_readings();
-
-			//put thread to sleep until a specific tick count is reached
-			vTaskDelay(read_gps_delay);
+			process_heading_readings();			
 		}
+		vTaskDelay(read_gps_delay);
 	}
 }
 
-void GPS_Sleep_Sec(unsigned time_sec) {
+/*void GPS_Sleep_Sec(unsigned time_sec) {
 	GPS_Disable();
 	//put thread to sleep for number of ticks specified
 	vTaskDelay(time_sec * configTICK_RATE_HZ);
-}
+}*/
 
 void GPS_On(void) {
 	GPS_Init();
@@ -169,44 +167,63 @@ enum status_code GPS_Disable(void)
 /*request to receive message by weather sensor*/
 enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 {
+
 	// Return if a null pointer is provided
 	if (msg == NULL) {
 		return STATUS_ERR_BAD_ADDRESS;
 	}
-
+	
+	enum status_code rc; 
+	rc = NMEA_RxString(NMEA_GPS, (uint8_t*)msg_buffer, NMEA_BUFFER_LENGTH); 
+	
 	// Check the NMEA receiver for new data
-	switch (NMEA_RxString(NMEA_GPS, (uint8_t*)msg_buffer, NMEA_BUFFER_LENGTH)) {
-		// Data was found, continue and process
-	case STATUS_VALID_DATA:
-		break;
-		// Data was not found
-	case STATUS_NO_CHANGE:
-		return STATUS_NO_CHANGE;
-		// An error occurred
-	default:
-		return STATUS_ERR_DENIED;
+	if (rc != STATUS_VALID_DATA){
+		return rc;
 	}
-
 
 	// Extract the raw data from the message
-	GPS_MsgRawData raw_data;
+	GPS_MsgRawData_t raw_data;
 	char* msg_ptr;
-
+	
+	//Show raw data and error code
 	//DEBUG_Write("WS: %s\r\n", msg_buffer);
-
-	//assign NMEA string prefix to raw_data type
-	if (!get_NMEA_type(&raw_data.type, msg_buffer)) {
-		return STATUS_DATA_NOT_NEEDED;
-	}
-
+	//DEBUG_Write("Error code: %d\r\n", rc);
+	
 	// Get each argument after the type
 	uint8_t arg_count = 0;
-
-	while ((msg_ptr = strtok(NULL, ",")) != NULL) {
+	
+	//TODO 
+	// after doing the first token from msg buffer, pass token to get_NMEA_type as string
+	// This means fix the get_NMEA type method used above ^^^, and have the check after setting the first
+	// token. 
+	
+	DEBUG_Write("WS: %s\r\n", msg_buffer);
+	msg_ptr = strtok(msg_buffer, ",");
+	// Check that msg is valid NMEA type within type list
+	if(!get_NMEA_type(&raw_data.type, msg_ptr)){
+		//DEBUG_Write("Msg not in list of types...\r\n");
+		return STATUS_DATA_NOT_NEEDED;
+	}
+	
+	//TODO
+	//Verify that numbers are lat lon, a.k.a. do a checksum 
+	//ALso check length (should be nominal)
+	//TODO
+	//lat and long are saved as ddmm.mmmm (dd degree, mm minutes) need to parse this! (or do you?)
+	
+	while (msg_ptr != NULL) {
 		//store msg_ptr as float value into arg array ..
 		//if *msg_ptr is alphabetic, store directly, else convert string to float value
-		raw_data.args[arg_count++] = isalpha(*msg_ptr) ? *msg_ptr : atof(msg_ptr);
-
+		msg_ptr = strtok(NULL, ",");
+		if(msg_ptr == NULL){
+			DEBUG_Write("NULL/n/r");
+			break;
+		}
+		//raw_data.args[arg_count++] = isalpha(*msg_ptr) ? *msg_ptr : atof(msg_ptr);
+		//memcpy(raw_data.args[arg_count++], msg_ptr, sizeof(msg_ptr));
+		raw_data.args[arg_count++] = msg_ptr;
+		DEBUG_Write("msg ptr %s and count %d\r\n", msg_ptr, arg_count);
+		DEBUG_Write("In the raw data: >%s<\r\n", raw_data.args[arg_count-1]);
 		if (arg_count == GPS_MSG_MAX_ARGS) break;
 	}
 
@@ -221,30 +238,33 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 	if (GPS_ExtractMsg(msg, &raw_data) != STATUS_OK) {
 		return STATUS_ERR_BAD_DATA;
 	}
-
-	return STATUS_OK;
+	
+	return rc;
 }
 
-
-int last_type = 1337;
-int vals[4];
-
 //extern int was_here;
-static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData* data) {
+static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* data) {
 	msg->type = data->type;
-	last_type = data->type;
 
 	// args[0] is the first argument after the NMEA type
 	//ex. GPGGA,<arg[0]>,<arg[1]>...
 	switch (data->type)
 	{
 	case eGPGGA:
-		msg->fields.gpgga.lat.lat = data->args[1];
+		msg->fields.gpgga.lat.lat = atof(data->args[1]);
 		msg->fields.gpgga.lat.ns = ((char)data->args[2] == 'N') ? north : south;
-		msg->fields.gpgga.lon.lon = data->args[3];
+		msg->fields.gpgga.lon.lon = atof(data->args[3]);
 		msg->fields.gpgga.lon.we = ((char)data->args[4] == 'W') ? west : east;
-		msg->fields.gpgga.alt = data->args[8];
-		vals[0] = 1;
+		msg->fields.gpgga.alt = atof(data->args[8]);
+		
+		if (0==atof(data->args[1])){
+			DEBUG_Write("Was 0\r\n");
+		}
+		DEBUG_Write("LAT DATA: >%s<\r\n", data->args[1]);
+		DEBUG_Write("LON DATA: >%s<\r\n", data->args[3]);
+		
+		DEBUG_Write("LAT DATA: >%f<\r\n", msg->fields.gpgga.lat.lat);
+		DEBUG_Write("LON DATA: >%f<\r\n", msg->fields.gpgga.lon.lon);
 		break;
 
 		/* case eGPVTG:
@@ -252,23 +272,21 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData* dat
 			break; */
 
 	case eWIMWV:
-		msg->fields.wimwv.wind_dir_rel = data->args[0];
-		msg->fields.wimwv.wind_speed_ms = data->args[2];
+		msg->fields.wimwv.wind_dir_rel = atof(data->args[0]);
+		msg->fields.wimwv.wind_speed_ms = atof(data->args[2]);
 		break;
 
 		// This the YXXDR-B type NMEA message
 	case eYXXDR:
 		if (data->args[0] == 'A') {
-			msg->fields.yxxdr.pitch_deg = data->args[1];
-			msg->fields.yxxdr.roll_deg = data->args[5];
-			vals[3] = 1;
+			msg->fields.yxxdr.pitch_deg = atof(data->args[1]);
+			msg->fields.yxxdr.roll_deg = atof(data->args[5]);
 		}
 
 		break;
 
 	case eHCHDT:
-		msg->fields.hchdt.bearing = data->args[0];
-		vals[1] = 1;
+		msg->fields.hchdt.bearing = atof(data->args[0]);
 		break;
 		/*
 		case eWIMWD:

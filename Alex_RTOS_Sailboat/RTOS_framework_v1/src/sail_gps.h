@@ -8,24 +8,23 @@
 #ifndef SAIL_GPS_H
 #define SAIL_GPS_H
 
+#include <stdint.h>
+#include <stdbool.h>
+#include "sail_nmea.h"
+
 #define GPS_MSG_MAX_ARGS 9 
 #define PREFIX_LIM 6
 #define NUM_MSGS 4
-
 
 #define MSG_TYPE_TOTAL 6 //sum of all expected msg type ids, eg. 0 + 1 + 2 + 3 = 6.. MAX value = 153 (all types enabled)
 #define GPS_LOOP_LIM 5000 //max number of loops allowed before weather station task is put to sleep
 #define GPS_SLEEP_PERIOD_MS 1000	 //length of time in sec that puts weather sensor to sleep
 #define GPS_BUFFER_LENGTH 30
 
-#include <stdint.h>
-#include <stdbool.h>
-#include "sail_nmea.h"
-
 typedef struct GPS_MsgRawData {
 	uint8_t type;
-	float args[GPS_MSG_MAX_ARGS];
-} GPS_MsgRawData;
+	char* args[GPS_MSG_MAX_ARGS];
+}GPS_MsgRawData_t;
 
 typedef struct GPS_AllMsgs {
 	NMEA_GenericMsg msg_array[NUM_MSGS];
@@ -48,7 +47,7 @@ enum status_code GPS_Enable(void);
 enum status_code GPS_Disable(void);
 enum status_code GPS_RxMsg(NMEA_GenericMsg* msg);
 
-static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData* data);
+static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* data);
 
 enum status_code GPS_cmd(const char* format, ...);
 

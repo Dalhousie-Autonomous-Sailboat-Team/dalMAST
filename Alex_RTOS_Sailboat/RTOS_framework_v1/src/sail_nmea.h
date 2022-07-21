@@ -90,12 +90,12 @@ enum west_east {west, east};
 enum north_south {north, south};	
 	
 typedef struct latitude_info {
-	float lat;
+	double lat;
 	enum north_south ns;
 } latitude;
 
 typedef struct longitude_info {
-	float lon;
+	double lon;
 	enum west_east we;
 } longitude;
 
@@ -142,7 +142,7 @@ typedef struct NMEA_GenericMsg {
 		/* the remaining fields
 		eNMEA_GPDTM		gpdtm;
 		eNMEA_GPGLL		gpgll;
-		eNMEA_GPGSA		gpgsa;
+		eNMEA_GPGSA		gpgsa; //Add this in
 		eNMEA_GPGSV		gpgsv;
 		eNMEA_GPRMC		gprmc;
 		eNMEA_GPVTG		gpvtg;
@@ -228,7 +228,7 @@ typedef struct eNMEA_GPDTM {
 } eNMEA_GPDTM;
 */
 
-bool get_NMEA_type(eNMEA_TRX_t* type, char msg_buffer[]);
+bool get_NMEA_type(eNMEA_TRX_t* type, char* msg_ptr);
 
 /* NMEA_Init
  * Initialize a specific NMEA channel.

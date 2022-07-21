@@ -44,7 +44,7 @@ extern unsigned char watchdog_reset_value;
 #define READ_COMPASS_PRIORITY             tskIDLE_PRIORITY + 3
 #define WATCHDOG_PRIORITY                 tskIDLE_PRIORITY
 
-#define GPS_STACK_SIZE					  configMINIMAL_STACK_SIZE
+#define GPS_STACK_SIZE					  configMINIMAL_STACK_SIZE + 100
 #define WEATHER_SENSOR_STACK_SIZE         configMINIMAL_STACK_SIZE
 #define UPDATE_COURSE_STACK_SIZE          configMINIMAL_STACK_SIZE
 #define CONTROL_RUDDER_STACK_SIZE         configMINIMAL_STACK_SIZE
