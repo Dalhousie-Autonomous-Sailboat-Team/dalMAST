@@ -34,6 +34,18 @@ static bool start_flags[NMEA_NUM_CHANNELS];
 // Buffers for commands
 static uint8_t cmd_buffers[NMEA_NUM_CHANNELS][NMEA_BUFFER_LENGTH];
 
+/*identifies the prefix from the NMEA message and assigns it to the message type*/
+bool get_NMEA_type(eNMEA_TRX_t* type, char* msg_ptr) {
+	int i;
+	for (i = 0; i < NUM_NMEA_TYPES; i++) {
+		//return true if prefix found in weather station type table
+		if (strcmp(msg_ptr, NMEA_TYPE_TABLE[i].NMEA_Prefix) == 0) {
+			*type = NMEA_TYPE_TABLE[i].MSG_id;
+			return true;
+		}
+	}
+	return false;
+}
 
 enum status_code NMEA_Init(NMEA_ChannelID id) {
 	// Check that the id is valid
@@ -325,6 +337,5 @@ enum status_code NMEA_RxString(NMEA_ChannelID id, uint8_t *str, uint16_t length)
 	
 	// Copy the data into the specified memory
 	memcpy(str, &proc_buffers[id][0], proc_length);
-	
 	return STATUS_VALID_DATA;
 }

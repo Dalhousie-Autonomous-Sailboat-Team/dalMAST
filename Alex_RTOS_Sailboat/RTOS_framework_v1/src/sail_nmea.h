@@ -11,18 +11,224 @@
 
 #include <status_codes.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 #include "sail_uart.h"
 
 #define NMEA_BUFFER_LENGTH 128
+#define PREFIX_LIM 6
 
 typedef enum NMEA_ChannelIDs {
 	NMEA_GPS,
-	NMEA_WEATHERSTATION,
+	//NMEA_WEATHERSTATION,
 	NMEA_RADIO,
 	NMEA_NUM_CHANNELS
 } NMEA_ChannelID;
 
+/********** NMEA Message Types **********/
+
+/* List the various NMEA message types */
+typedef enum eNMEA_TRX {
+	eGPGGA,
+	eWIMWV,
+	eYXXDR,
+	eHCHDT,
+	//the rest of the types are listed below, but not currently used
+	/*
+	eGPVTG,
+	eGPDTM,		
+	eGPGLL,		
+	eGPGSA,   
+	eGPGSV,		
+	eGPRMC,		
+	eGPVTG,    
+	eGPZDA,
+	eHCHDT,		
+	eHCHDG,			
+	eHCTHS,		
+	eTIROT,		
+	eWIMDA,		
+	eWIMWV,
+	eWIMWR,
+	eWIMWT,	
+	*/
+	NUM_NMEA_TYPES
+} eNMEA_TRX_t;
+
+typedef struct NMEA_TYPES_INFO {
+	eNMEA_TRX_t MSG_id;
+	char NMEA_Prefix[PREFIX_LIM];
+} NMEA_TYPE_MAP;
+
+static NMEA_TYPE_MAP NMEA_TYPE_TABLE[NUM_NMEA_TYPES] = {
+	{ eGPGGA, "GPGGA"}, 
+	{ eWIMWV, "WIMWV"}, 
+	{ eYXXDR, "YXXDR"}, 
+	{ eHCHDT, "HCHDT"}
+	
+	//remaining fields
+	/*
+	{ eGPDTM, "GPDTM"}, 
+	{ eGPGLL, "GPGLL"}, 
+	{ eGPGSA, "GPGSA"},
+	{ eGPGSV, "GPGSV"}, 
+	{ eGPRMC, "GPRMC"},
+	{ eGPVTG, "GPVTG"}, 
+	{ eGPZDA, "GPZDA"},
+	{ eHCHDG, "HCHDG"}, 
+	{ eHCTHS, "HCTHS"}, 
+	{ eTIROT, "TIROT"},
+	{ eWIMDA, "WIMDA"}, 
+	{ eWIMWV, "WIMWV"}, 
+	{ eWIMWR, "WIMWR"},
+	{ eWIMWT, "WIMWT"}, 
+	{ eYXXDR, "YXXDR"},
+		*/
+};
+
+enum west_east {west, east};
+enum north_south {north, south};	
+	
+typedef struct latitude_info {
+	double lat;
+	enum north_south ns;
+} latitude;
+
+typedef struct longitude_info {
+	double lon;
+	enum west_east we;
+} longitude;
+
+typedef struct eNMEA_GPGGA {
+	latitude lat;
+	longitude lon;
+	float alt;
+} eNMEA_GPGGA;
+
+/*
+typedef struct eNMEA_HCHDT {
+	float bearing;
+} eNMEA_HCHDT;
+*/
+
+typedef struct eNMEA_GPVTG {
+	float course_over_ground;
+} eNMEA_GPVTG;
+
+typedef struct eNMEA_WIMWV {
+	//float wind_dir_true, wind_dir_mag, wind_speed_ms, wind_speed_knot;
+	float wind_dir_rel, wind_speed_ms; //relative wind direction and wind speed
+} eNMEA_WIMWV;
+
+/*YXXDR_B*/
+typedef struct eNMEA_YXXDR {
+	float roll_deg;
+	float pitch_deg;
+} eNMEA_YXXDR;
+
+/*HCHDT*/
+typedef struct eNMEA_HCHDT {
+	float bearing;
+} eNMEA_HCHDT;
+
+typedef struct NMEA_GenericMsg {
+	eNMEA_TRX_t type;
+	union WEATHERSENSOR_GenericDataUnion {
+		eNMEA_GPGGA		gpgga;
+		eNMEA_HCHDT		hchdt;
+		//eNMEA_GPVTG		gpvtg;
+		eNMEA_WIMWV		wimwv;
+		eNMEA_YXXDR		yxxdr;
+		/* the remaining fields
+		eNMEA_GPDTM		gpdtm;
+		eNMEA_GPGLL		gpgll;
+		eNMEA_GPGSA		gpgsa; //Add this in
+		eNMEA_GPGSV		gpgsv;
+		eNMEA_GPRMC		gprmc;
+		eNMEA_GPVTG		gpvtg;
+		eNMEA_GPZDA		gpzda;
+		eNMEA_HCHDG		hchdg;
+		eNMEA_HCTHS		hcths;
+		eNMEA_TIROT		tirot;
+		eNMEA_WIMDA		wimda;
+		eNMEA_WIMWV		wiwmv;
+		eNMEA_WIMWR		wimwr;
+		eNMEA_WIMWT		wimwt;
+		*/
+	} fields;
+} NMEA_GenericMsg;
+
+/* The struct templates for the remaining NMEA fields are listed below
+
+typedef struct eNMEA_GPGLL {
+
+} eNMEA_GPGLL;
+
+typedef struct eNMEA_GPGSA {
+
+} eNMEA_GPGSA;
+
+typedef struct eNMEA_GPGSV {
+
+} eNMEA_GPGSV;
+
+typedef struct eNMEA_GPRMC {
+
+} eNMEA_GPRMC;
+
+typedef struct eNMEA_GPVTG {
+
+} eNMEA_GPVTG;
+
+typedef struct eNMEA_GPZDA {
+
+} eNMEA_GPZDA;
+
+typedef struct eNMEA_HCHDG {
+
+} eNMEA_HCHDG;
+
+typedef struct eNMEA_HCTHS {
+
+} eNMEA_HCTHS;
+
+typedef struct eNMEA_TIROT {
+
+} eNMEA_TIROT;
+
+typedef struct eNMEA_WIMDA {
+
+} eNMEA_WIMDA;
+
+typedef struct eNMEA_WIMWV {
+
+} eNMEA_WIMWV;
+
+typedef struct eNMEA_WIMWR {
+
+} eNMEA_WIMWR;
+
+typedef struct eNMEA_WIMWT {
+
+} eNMEA_WIMWT;
+
+typedef enum eLOCAL_DATUM_CODE {
+	eWGS84,
+	eWGS72,
+	eSGS85,
+	ePE90,
+	eUSER_DEFINED
+} eLocalDatumCode;
+
+typedef struct eNMEA_GPDTM {
+	eLocalDatumCode eDatumCode;
+	uint8_t ucLocalDatumSubcode;
+	double xLatitudeOffset;
+	//SEE ONLINE
+} eNMEA_GPDTM;
+*/
+
+bool get_NMEA_type(eNMEA_TRX_t* type, char* msg_ptr);
 
 /* NMEA_Init
  * Initialize a specific NMEA channel.

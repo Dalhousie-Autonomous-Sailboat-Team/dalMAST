@@ -70,6 +70,7 @@ enum status_code WEATHERSTATION_Init(void)
 	}
 	
 	// Initialize NMEA channel
+	/*
 	switch (NMEA_Init(NMEA_WEATHERSTATION)) {
 		case STATUS_OK:							// Initialization complete
 		case STATUS_ERR_ALREADY_INITIALIZED:	// Already initialized
@@ -77,7 +78,7 @@ enum status_code WEATHERSTATION_Init(void)
 		default:
 			DEBUG_Write_Unprotected("NMEA module could not be initialized!\r\n");
 			return STATUS_ERR_DENIED;   		// Return error code
-	}
+	} */ // I AM COMMENTED OUT!!!
 	
 	// Initialize the on-off control pin
 	WEATHERSTATION_InitPin();
@@ -108,10 +109,11 @@ enum status_code WS_Enable(void)
 	}
 	
 	// Return if the receiver cannot be started
+	/*
 	if (NMEA_Enable(NMEA_WEATHERSTATION) != STATUS_OK) {
 		DEBUG_Write("NMEA receiver could not be started!\r\n");
 		return STATUS_ERR_DENIED;
-	}
+	} */ // I AM COMMENTED OUT!!!
 	
 	// Turn on the device
 	WS_TurnOn();
@@ -138,9 +140,10 @@ enum status_code WS_Disable(void)
 	WS_TurnOff();
 	
 	// Try to stop the NMEA channel
+	/*
 	if (NMEA_Disable(NMEA_WEATHERSTATION) != STATUS_OK) {
 		return STATUS_ERR_DENIED;	// Return error code
-	}
+	}*/ //I AM COMMENTED OUT!!!
 	
 	enable_flag = 0;
 	
@@ -162,8 +165,9 @@ enum status_code WIND_GetReading(WIND_Reading *reading)
 	// Get the most recent reading from the wind vane
 	uint8_t found_reading = 0;
 	uint8_t found_mwv = 0;
-	//dont know why this is in a loop goes into a switch with all cases breaking from the loop
-	//will never repeat
+	
+	// This will repeat, switch breaks will break the switch, not the loop...
+	/*
 	do {
 		switch (NMEA_RxString(NMEA_WEATHERSTATION, wind_buffer, WS_BUFFER_LENGTH)) {
 			// Data was found
@@ -192,6 +196,7 @@ enum status_code WIND_GetReading(WIND_Reading *reading)
 				break;
 		}
 	} while (found_reading);
+	*/ // I AM COMMENTED OUT!!!
 	
 	// Return if the message type is incorrect
 	if (!found_mwv) {

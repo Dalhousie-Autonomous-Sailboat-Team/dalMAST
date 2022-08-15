@@ -59,6 +59,7 @@ enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data);
 // Parses the FIFO buffer for a string (delimited with \r, \n, or \0)
 // and copies it to the provided memory.
 //
+
 enum status_code UART_RxString(UART_ChannelID id, uint8_t *data, uint16_t length);
 
 #endif // SAIL_UART_H
