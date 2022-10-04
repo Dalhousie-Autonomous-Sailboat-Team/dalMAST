@@ -764,6 +764,12 @@
     <Compile Include="src\ASF\common2\services\delay\sam0\cycle_counter.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\sail_actuator.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_actuator.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sail_adc.c">
       <SubType>compile</SubType>
     </Compile>

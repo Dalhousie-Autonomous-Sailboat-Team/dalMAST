@@ -19,6 +19,7 @@
 #include "sail_nav.h"
 #include "sail_ctrl.h"
 #include "sail_radio.h"
+#include "sail_actuator.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -45,31 +46,33 @@ enum status_code init_tasks(void) {
 	
 	// Initialize the watchdog counter
 	watchdog_counter = 0;
-	
+	#ifndef DEBUG
 	// Task for reading incoming data from the GPS
 	xTaskCreate( ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
 
 	// Task for reading incoming data from the weather station
-	//xTaskCreate( ReadWeatherSensor, NULL, WEATHER_SENSOR_STACK_SIZE, NULL, WEATHER_SENSOR_PRIORITY, NULL );
-	
-	// Task for updating the course of the sailboat
-	//xTaskCreate( UpdateCourse, NULL, UPDATE_COURSE_STACK_SIZE, NULL, UPDATE_COURSE_PRIORITY, NULL );
+	xTaskCreate( ReadWeatherSensor, NULL, WEATHER_SENSOR_STACK_SIZE, NULL, WEATHER_SENSOR_PRIORITY, NULL );
 	
 	// Task for changing the position of the rudder
-	//xTaskCreate( ControlRudder, NULL, CONTROL_RUDDER_STACK_SIZE, NULL, CONTROL_RUDDER_PRIORITY, NULL );
+	xTaskCreate( ControlRudder, NULL, CONTROL_RUDDER_STACK_SIZE, NULL, CONTROL_RUDDER_PRIORITY, NULL );
 	
 	// Task for handling incoming messages to the radio
-	//xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
+	xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
 	
 	// Task for transmitting logs using the radio
-	//xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
+	xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
 	
 	// Task for getting the heading from the compass
-	//xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
+	xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
 	
 	// Task for reseting the watchdog so that the microcontroller is not restarted
 	xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	
+	// Task for updating the course of the sailboat
+	xTaskCreate( UpdateCourse, NULL, UPDATE_COURSE_STACK_SIZE, NULL, UPDATE_COURSE_PRIORITY, NULL );
+	#endif
+	
+	xTaskCreate(Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
 	
