@@ -4,6 +4,11 @@
 *.obj
 *.elf
 
+# Microchip Studio Generated Files
+*/Makefile
+*.mk
+*.atsuo
+
 # Precompiled Headers
 *.gch
 *.pch
@@ -35,4 +40,8 @@
 # Visual Studio
 *.VC.opendb
 *.VC.db
- 
+# doxygen (to be removed once ready)
+doxyfile*
+doxySetting*
+*/doxygen
+*doxygen*
