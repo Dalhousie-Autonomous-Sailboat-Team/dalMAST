@@ -19,6 +19,7 @@
 #include "sail_nmea.h"
 #include "sail_uart.h"
 #include "sail_debug.h"
+#include "sail_tasksinit.h"
 
 // TODO Check with Mark to see if these have changed
 //ws = weatherstation
@@ -30,6 +31,7 @@
 #define MWV_HEADER			"IIMWV"
 #define MWV_HEADER_LENGTH	5
 
+#define TEST_WIND_VANE_MS 1000
 // MWV format string
 #define MWV_FMT				"IIMWV,%"SCNu16".%"SCNu32",%c,"\
 							"%"SCNu32".%"SCNu32",%c,"\
@@ -249,3 +251,25 @@ static void WS_TurnOff(void) {
 	port_pin_set_output_level(WS_ON_OFF_PIN, !WS_ON_STATE);		
 }
 
+void Test_Wind_Vane(void){
+	
+	// Delay Setup
+	TickType_t testDelay = pdMS_TO_TICKS(TEST_WIND_VANE_MS);
+	// Task Loop
+	while(1){
+			
+	taskENTER_CRITICAL();
+	watchdog_counter |= 0x20;
+	taskEXIT_CRITICAL();
+			
+	running_task = eUpdateCourse; // don't worry about this for now (for watchdog)
+			
+	DEBUG_Write("\n\r<<<<<<<<<<< Testing Wind Vane >>>>>>>>>>\n\r");
+			
+	// Start Wind Vane Test
+			
+	// End of task loop
+	vTaskDelay(testDelay);
+			
+	}		
+}

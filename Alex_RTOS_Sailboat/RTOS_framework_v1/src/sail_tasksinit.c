@@ -72,7 +72,7 @@ enum status_code init_tasks(void) {
 	xTaskCreate( UpdateCourse, NULL, UPDATE_COURSE_STACK_SIZE, NULL, UPDATE_COURSE_PRIORITY, NULL );
 	#endif
 	
-	xTaskCreate(Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate(Test_Wind_Vane, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
 	

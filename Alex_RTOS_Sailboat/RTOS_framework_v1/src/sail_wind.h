@@ -56,4 +56,6 @@ enum status_code WS_Disable(void);
 //
 enum status_code WIND_GetReading(WIND_Reading *reading);
 
+void Test_Wind_Vane(void);
+
 #endif /* SAIL_WIND_H_ */
