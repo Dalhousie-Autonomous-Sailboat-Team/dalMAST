@@ -48,7 +48,6 @@ enum status_code init_tasks(void) {
 	
 	// Task for reading incoming data from the weather station
 	//xTaskCreate( ReadWeatherSensor, NULL, WEATHER_SENSOR_STACK_SIZE, NULL, WEATHER_SENSOR_PRIORITY, NULL );
-	#if 0
 	// Task for updating the course of the sailboat
 	xTaskCreate( UpdateCourse, NULL, UPDATE_COURSE_STACK_SIZE, NULL, UPDATE_COURSE_PRIORITY, NULL );
 	
@@ -68,7 +67,7 @@ enum status_code init_tasks(void) {
 	xTaskCreate(DataLogTask, NULL,LOG_DATA_STACK_SIZE, NULL,LOG_DATA_PRIORITY, NULL);
 	
 	// Task for reseting the watchdog so that the microcontroller is not restarted
-	xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
+	//xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
@@ -95,9 +94,7 @@ void WatchDogTask(void){
 			DEBUG_Write("#################Kicked the watchdog######################\r\n");
 		}
 		taskEXIT_CRITICAL(); 
-		
-		
-		
+				
 	}
 }
 

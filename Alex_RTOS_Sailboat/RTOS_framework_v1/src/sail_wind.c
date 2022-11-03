@@ -19,6 +19,11 @@
 #include "sail_nmea.h"
 #include "sail_uart.h"
 #include "sail_debug.h"
+#include "sail_tasksinit.h"
+#include "FreeRTOSConfig.h"
+
+#define READ_WIND_VANE_DELAY 10000
+
 
 // TODO Check with Mark to see if these have changed
 //ws = weatherstation
@@ -244,3 +249,24 @@ static void WS_TurnOff(void) {
 	port_pin_set_output_level(WS_ON_OFF_PIN, !WS_ON_STATE);		
 }
 
+void ReadWindVane(void){
+	
+	TickType_t read_wind_vane_delay = pdMS_TO_TICKS(READ_WIND_VANE_DELAY);
+	
+	while (1){
+		
+		taskENTER_CRITICAL();
+		watchdog_counter |= 0x20;
+		taskENTER_CRITICAL();
+		
+		DEBUG_Write("\n\r<<<<<<<<<< Testing Wind Vane >>>>>>>>>>\n\r");
+		
+		running_task = eReadWeatherSensor;
+		
+		/* start your code here */
+		
+		vTaskDelay(read_wind_vane_delay);
+	}
+	
+	
+}

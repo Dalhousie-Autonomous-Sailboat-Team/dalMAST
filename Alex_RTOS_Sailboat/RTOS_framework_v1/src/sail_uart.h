@@ -1,4 +1,6 @@
-/* sail_uart.h
+/** sail_uart.h
+ * @file
+ * @brief
  * Header file for the UART driver module for the autonomous sailboat project.
  * Created on June 13, 2016.
  * Created by Thomas Gwynne-Timothy.
