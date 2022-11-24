@@ -7,6 +7,6 @@
 #ifndef SAIL_ACTUATOR_H_
 #define SAIL_ACTUATOR_H_
 
-// void Test_Actuator(void);
+void Test_Actuator(void);
 
 #endif

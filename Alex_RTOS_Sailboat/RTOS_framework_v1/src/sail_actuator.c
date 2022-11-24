@@ -6,6 +6,7 @@
 
 #include <asf.h>
 
+#include "sail_pwm.h"
 #include "sail_actuator.h"
 #include "sail_debug.h"
 #include "FreeRTOS.h"
