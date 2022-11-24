@@ -30,7 +30,9 @@ void Test_Actuator(void){
 	uint8_t actuator_duty[9] = {0, 25, 50, 75, 100, 75, 50, 25, 0};
 	int idx = 0;
 	
-	while(idx < 9){
+	PWM_Init(void);
+	
+	while(1){
 	
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x20;
@@ -43,8 +45,11 @@ void Test_Actuator(void){
 		// Start Actuator test here
 		
 		// The duty of the PWM signal sets the % extension of actuator.
-		PWM_SetDuty(PWM_ACTUATOR, actuator_duty[idx]); 
+		idx = idx >= 9 ? 0 : idx;
+		DEBUG_Write("\n\r idx: %d && Duty: %d%% \n\r", idx, actuator_duty[idx]);
+		PWM_SetDuty(PWM_SAIL, actuator_duty[idx]); 
 		idx++;
+		
 		
 		// End of task loop
 		vTaskDelay(testDelay);	

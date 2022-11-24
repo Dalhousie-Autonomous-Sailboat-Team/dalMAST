@@ -14,7 +14,7 @@
 typedef enum PWM_ChannelIDs {
 	PWM_SAIL,
 	PWM_RUDDER,
-	PWM_ACTUATOR,
+	//PWM_ACTUATOR,
 	PWM_NUM_CHANNELS
 } PWM_ChannelID;
 
