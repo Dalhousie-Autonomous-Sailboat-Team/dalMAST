@@ -1,10 +1,12 @@
-/*!
-@breif
-This is the library for Nautono's Linear Actuator control
-@author
-*/
+/* sail_actuator.h
+ * Header file for the actuator controller for the autonomous sailboat project.
+ * Created by Manav Sohi.
+ * Created by Oct 28, 2022.
+ */
 
-/*!
-@breif Test task for the linear actuator 
-*/
-void Test_Actuator(void);
+#ifndef SAIL_ACTUATOR_H_
+#define SAIL_ACTUATOR_H_
+
+// void Test_Actuator(void);
+
+#endif

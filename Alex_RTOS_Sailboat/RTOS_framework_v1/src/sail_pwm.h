@@ -14,6 +14,7 @@
 typedef enum PWM_ChannelIDs {
 	PWM_SAIL,
 	PWM_RUDDER,
+	PWM_ACTUATOR,
 	PWM_NUM_CHANNELS
 } PWM_ChannelID;
 
@@ -35,7 +36,7 @@ enum status_code PWM_SetDuty(PWM_ChannelID id, uint8_t duty);
 
 
 /* PWM_Disable
- * Set duty circle to 0%, equivalent to disable
+ * Set duty cycle to 0%, equivalent to disable
  * Status:
  *		STATUS_OK - Successfully disable duty
  */ 

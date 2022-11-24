@@ -7,12 +7,19 @@
 #include "sail_pwm.h"
 #include "sail_debug.h"
 
-//only 2 outputs of this software therefore ony 2 pins
+
+// PIN_PB09F_TC4_WO1
+// MUX_PB09F_TC4_WO1
+
+//only 2 outputs of this software therefore only 2 pins
 #define PWM_MODULE				TC4
 #define PWM_SAIL_OUT_PIN		PIN_PB13E_TC4_WO1
 #define PWM_SAIL_OUT_MUX		MUX_PB13E_TC4_WO1
 #define PWM_RUDDER_OUT_PIN		PIN_PB12E_TC4_WO0
 #define PWM_RUDDER_OUT_MUX		MUX_PB12E_TC4_WO0
+
+#define PWM_ACTUATOR_OUT_PIN	PIN_PB13E_TC4_WO1
+#define PWM_ACTUATOR_OUT_MUX	MUX_PB13E_TC4_WO1
 
 static struct tc_module pwm_timer;
 
@@ -40,6 +47,12 @@ enum status_code PWM_Init(void)
 	config_tc.pwm_channel[PWM_RUDDER].enabled = true;
 	config_tc.pwm_channel[PWM_RUDDER].pin_out = PWM_RUDDER_OUT_PIN;
 	config_tc.pwm_channel[PWM_RUDDER].pin_mux = PWM_RUDDER_OUT_MUX;
+	
+	// Setup actuator channel
+	config_tc.counter_8_bit.compare_capture_channel[PWM_ACTUATOR] = 0;
+	config_tc.pwm_channel[PWM_ACTUATOR].enabled = true;
+	config_tc.pwm_channel[PWM_ACTUATOR].pin_out = PWM_ACTUATOR_OUT_PIN;
+	config_tc.pwm_channel[PWM_ACTUATOR].pin_mux = PWM_ACTUATOR_OUT_MUX;
 
 	tc_init(&pwm_timer, PWM_MODULE, &config_tc);
 
