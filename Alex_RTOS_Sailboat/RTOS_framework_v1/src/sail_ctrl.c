@@ -186,9 +186,9 @@ enum status_code startup(void)
 	
 	//DEBUG_Write_Unprotected("way point: lat - %d lon - %d rad - %d\r\n", (int)(wp.pos.lat * 1000000.0), (int)(wp.pos.lon * 1000000.0), (int)(wp.rad));
 	/*
-	// Start the motor controller
-	MOTOR_Init();
 */
+	// Start the motor controller
+	//if(STATUS_OK != MOTOR_Init()) DEBUG_Write("PWM init failed\r\n");
 	
 	return STATUS_OK;
 }

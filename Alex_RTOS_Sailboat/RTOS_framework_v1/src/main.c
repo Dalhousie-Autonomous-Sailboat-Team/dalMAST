@@ -8,6 +8,7 @@
 #include "sail_ctrl.h"
 #include "sail_debug.h"
 #include "sail_tasksinit.h"
+#include "sail_pwm.h"
 
 int main(void)
 {
@@ -15,6 +16,7 @@ int main(void)
 	#ifndef DEBUG
 	CTRL_InitSensors(); // Initialize the WeatherStation
 	#endif
+	PWM_Init();
 	startup(); //Enable WS - Init Motors - Get the first waypoint
 	init_tasks();
 }

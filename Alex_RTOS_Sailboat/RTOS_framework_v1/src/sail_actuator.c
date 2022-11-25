@@ -30,7 +30,7 @@ void Test_Actuator(void){
 	uint8_t actuator_duty[9] = {0, 25, 50, 75, 100, 75, 50, 25, 0};
 	int idx = 0;
 	
-	PWM_Init(void);
+	//if(STATUS_OK != PWM_Init()) DEBUG_Write("ERROR INIT PWM\n\r");
 	
 	while(1){
 	

@@ -35,6 +35,7 @@
  */
 
 #include "tc.h"
+#include "sail_debug.h"
 
 #if TC_ASYNC == true
 #  include "tc_interrupt.h"
@@ -112,6 +113,8 @@ enum status_code tc_init(
 	Assert(hw);
 	Assert(module_inst);
 	Assert(config);
+	
+	DEBUG_Write_Unprotected("\n\r << Assert passed >>\r\n");
 
 	/* Temporary variable to hold all updates to the CTRLA
 	 * register before they are written to it */

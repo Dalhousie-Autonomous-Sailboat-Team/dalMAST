@@ -36,28 +36,35 @@ enum status_code PWM_Init(void)
 	config_tc.waveform_invert_output = TC_WAVEFORM_INVERT_CC0_MODE | TC_WAVEFORM_INVERT_CC1_MODE;
 	config_tc.counter_8_bit.period = PWM_MAX_DUTY;
 
+	DEBUG_Write_Unprotected("\n\r Counter size set \n\r");
 	// Setup sail channel
 	config_tc.counter_8_bit.compare_capture_channel[PWM_SAIL] = 0;
 	config_tc.pwm_channel[PWM_SAIL].enabled = true;
 	config_tc.pwm_channel[PWM_SAIL].pin_out = PWM_SAIL_OUT_PIN;
 	config_tc.pwm_channel[PWM_SAIL].pin_mux = PWM_SAIL_OUT_MUX;
-
+	
+	DEBUG_Write_Unprotected("\n\r Sail channel set \n\r");
 	// Setup rudder channel
 	config_tc.counter_8_bit.compare_capture_channel[PWM_RUDDER] = 0;
 	config_tc.pwm_channel[PWM_RUDDER].enabled = true;
 	config_tc.pwm_channel[PWM_RUDDER].pin_out = PWM_RUDDER_OUT_PIN;
 	config_tc.pwm_channel[PWM_RUDDER].pin_mux = PWM_RUDDER_OUT_MUX;
 	
-	#ifdef TEST
+	DEBUG_Write_Unprotected("\n\r Rudder channel set \n\r");
+
 	// Setup actuator channel
-	config_tc.counter_8_bit.compare_capture_channel[PWM_ACTUATOR] = 0;
-	config_tc.pwm_channel[PWM_ACTUATOR].enabled = true;
-	config_tc.pwm_channel[PWM_ACTUATOR].pin_out = PWM_ACTUATOR_OUT_PIN;
-	config_tc.pwm_channel[PWM_ACTUATOR].pin_mux = PWM_ACTUATOR_OUT_MUX;
-	#endif
+	//config_tc.counter_8_bit.compare_capture_channel[PWM_ACTUATOR] = 0;
+	//config_tc.pwm_channel[PWM_ACTUATOR].enabled = true;
+	//config_tc.pwm_channel[PWM_ACTUATOR].pin_out = PWM_ACTUATOR_OUT_PIN;
+	//config_tc.pwm_channel[PWM_ACTUATOR].pin_mux = PWM_ACTUATOR_OUT_MUX;
 
-	tc_init(&pwm_timer, PWM_MODULE, &config_tc);
-
+	enum status_code flag;
+	flag = tc_init(&pwm_timer, PWM_MODULE, &config_tc);
+	//flag = tc_init(&pwm_timer, TC4, &config_tc);
+	
+	DEBUG_Write_Unprotected("\n\r Code: %d \n\r", flag);
+	
+	DEBUG_Write_Unprotected("\n\r TC init done \n\r");
 	tc_enable(&pwm_timer);
 
 	return STATUS_OK;
