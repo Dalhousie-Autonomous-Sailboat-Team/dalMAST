@@ -1,0 +1,426 @@
+\hypertarget{drivers_2adc_2adc_8h_source}{}\doxysection{adc.\+h}
+\label{drivers_2adc_2adc_8h_source}\index{src/ASF/sam0/drivers/adc/adc.h@{src/ASF/sam0/drivers/adc/adc.h}}
+\mbox{\hyperlink{drivers_2adc_2adc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef ADC\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define ADC\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{408 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{system_8h}{system.h}}>}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{adc__feature_8h}{adc\_feature.h}}>}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define ADC\_STATUS\_RESULT\_READY  (1UL << 0)}}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define ADC\_STATUS\_WINDOW        (1UL << 1)}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define ADC\_STATUS\_OVERRUN       (1UL << 2)}}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#if ADC\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#   if (ADC\_INST\_NUM > 1)}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#       define \_ADC\_INTERRUPT\_VECT\_NUM(n, unused) \(\backslash\)}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{            SYSTEM\_INTERRUPT\_MODULE\_ADC\#\#n,}}
+\DoxyCodeLine{444 \textcolor{keyword}{static} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} \_adc\_interrupt\_get\_interrupt\_vector(}
+\DoxyCodeLine{445         uint32\_t inst\_num)}
+\DoxyCodeLine{446 \{}
+\DoxyCodeLine{447     \textcolor{keyword}{static} uint8\_t adc\_interrupt\_vectors[\mbox{\hyperlink{samd20e14_8h_ac539e8e2e65134854344ceb66b3bab64}{ADC\_INST\_NUM}}] = \{}
+\DoxyCodeLine{448         \mbox{\hyperlink{group__group__sam0__utils__mrepeat_ga42db715ccb877ca87d7903f5783bd104}{MREPEAT}}(\mbox{\hyperlink{samd20e14_8h_ac539e8e2e65134854344ceb66b3bab64}{ADC\_INST\_NUM}}, \_ADC\_INTERRUPT\_VECT\_NUM, 0)}
+\DoxyCodeLine{449     \};}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451     \textcolor{keywordflow}{return} (\textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}})adc\_interrupt\_vectors[inst\_num];}
+\DoxyCodeLine{452 \}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{457 uint8\_t \_adc\_get\_inst\_index(}
+\DoxyCodeLine{458         \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} hw);}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{465 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga09de1dc91d7b101349d0577a306b762e}{adc\_init}}(}
+\DoxyCodeLine{466         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{467         \mbox{\hyperlink{struct_adc}{Adc}} *hw,}
+\DoxyCodeLine{468         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__config}{adc\_config}} *config);}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5a5650a331819833c7a27309c131c55d}{adc\_get\_config\_defaults}}(}
+\DoxyCodeLine{471         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__config}{adc\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#if (SAMD) || (SAMHA1) || (SAMHA0) || (SAMR21)}}
+\DoxyCodeLine{474 \textcolor{keywordtype}{void} \mbox{\hyperlink{adc_8c_a73108c3a807b8aa42cd2dd6b2386044a}{adc\_regular\_ain\_channel}}(}
+\DoxyCodeLine{475         uint32\_t *pin\_array, uint8\_t size);}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{499 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t adc\_get\_status(}
+\DoxyCodeLine{500         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{501 \{}
+\DoxyCodeLine{502     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{503     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{504     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{506     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508     uint32\_t int\_flags = \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INTFLAG.reg;}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510     uint32\_t status\_flags = 0;}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{512     \textcolor{comment}{/* Check for ADC Result Ready */}}
+\DoxyCodeLine{513     \textcolor{keywordflow}{if} (int\_flags \& ADC\_INTFLAG\_RESRDY) \{}
+\DoxyCodeLine{514         status\_flags |= \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gac25e444bb2e1cb312bedf72d2d6ed8e5}{ADC\_STATUS\_RESULT\_READY}};}
+\DoxyCodeLine{515     \}}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517     \textcolor{comment}{/* Check for ADC Window Match */}}
+\DoxyCodeLine{518     \textcolor{keywordflow}{if} (int\_flags \& ADC\_INTFLAG\_WINMON) \{}
+\DoxyCodeLine{519         status\_flags |= \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gab1e9bae12e573bd6389051adca1a6db9}{ADC\_STATUS\_WINDOW}};}
+\DoxyCodeLine{520     \}}
+\DoxyCodeLine{521 }
+\DoxyCodeLine{522     \textcolor{comment}{/* Check for ADC Overrun */}}
+\DoxyCodeLine{523     \textcolor{keywordflow}{if} (int\_flags \& ADC\_INTFLAG\_OVERRUN) \{}
+\DoxyCodeLine{524         status\_flags |= \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9e05a7398afafa9344c780a0a0e7be9a}{ADC\_STATUS\_OVERRUN}};}
+\DoxyCodeLine{525     \}}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527     \textcolor{keywordflow}{return} status\_flags;}
+\DoxyCodeLine{528 \}}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{538 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_clear\_status(}
+\DoxyCodeLine{539         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{540         \textcolor{keyword}{const} uint32\_t status\_flags)}
+\DoxyCodeLine{541 \{}
+\DoxyCodeLine{542     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{543     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{544     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{545 }
+\DoxyCodeLine{546     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{548     uint32\_t int\_flags = 0;}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550     \textcolor{comment}{/* Check for ADC Result Ready */}}
+\DoxyCodeLine{551     \textcolor{keywordflow}{if} (status\_flags \& \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gac25e444bb2e1cb312bedf72d2d6ed8e5}{ADC\_STATUS\_RESULT\_READY}}) \{}
+\DoxyCodeLine{552         int\_flags |= ADC\_INTFLAG\_RESRDY;}
+\DoxyCodeLine{553     \}}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555     \textcolor{comment}{/* Check for ADC Window Match */}}
+\DoxyCodeLine{556     \textcolor{keywordflow}{if} (status\_flags \& \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gab1e9bae12e573bd6389051adca1a6db9}{ADC\_STATUS\_WINDOW}}) \{}
+\DoxyCodeLine{557         int\_flags |= ADC\_INTFLAG\_WINMON;}
+\DoxyCodeLine{558     \}}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560     \textcolor{comment}{/* Check for ADC Overrun */}}
+\DoxyCodeLine{561     \textcolor{keywordflow}{if} (status\_flags \& \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9e05a7398afafa9344c780a0a0e7be9a}{ADC\_STATUS\_OVERRUN}}) \{}
+\DoxyCodeLine{562         int\_flags |= ADC\_INTFLAG\_OVERRUN;}
+\DoxyCodeLine{563     \}}
+\DoxyCodeLine{564 }
+\DoxyCodeLine{565     \textcolor{comment}{/* Clear interrupt flag */}}
+\DoxyCodeLine{566     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INTFLAG.reg = int\_flags;}
+\DoxyCodeLine{567 \}}
+\DoxyCodeLine{583 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} adc\_enable(}
+\DoxyCodeLine{584         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{585 \{}
+\DoxyCodeLine{586     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{587     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{591     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{592         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{593     \}}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#if ADC\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{596 \textcolor{preprocessor}{\#   if (ADC\_INST\_NUM > 1)}}
+\DoxyCodeLine{597     system\_interrupt\_enable(\_adc\_interrupt\_get\_interrupt\_vector(}
+\DoxyCodeLine{598             \_adc\_get\_inst\_index(\mbox{\hyperlink{structadc__module}{adc\_module}})));}
+\DoxyCodeLine{599 \textcolor{preprocessor}{\#   elif (SAMC20)}}
+\DoxyCodeLine{600         system\_interrupt\_enable(SYSTEM\_INTERRUPT\_MODULE\_ADC0);}
+\DoxyCodeLine{601 \textcolor{preprocessor}{\#   else}}
+\DoxyCodeLine{602         system\_interrupt\_enable(\mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabe508bdf9df07e4f95b69118525cc3c6}{SYSTEM\_INTERRUPT\_MODULE\_ADC}});}
+\DoxyCodeLine{603 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{604 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606     \textcolor{comment}{/* Disbale interrupt */}}
+\DoxyCodeLine{607     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INTENCLR.reg = \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2adc_8h_a86fb35a78836c2ee97ccaa2801bcf8da}{ADC\_INTENCLR\_MASK}};}
+\DoxyCodeLine{608     \textcolor{comment}{/* Clear interrupt flag */}}
+\DoxyCodeLine{609     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INTFLAG.reg = \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2adc_8h_ad6ae9e9e9b6b800afe5a4d69bb9fac91}{ADC\_INTFLAG\_MASK}};}
+\DoxyCodeLine{610 }
+\DoxyCodeLine{611     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>CTRLA.reg |= ADC\_CTRLA\_ENABLE;}
+\DoxyCodeLine{612 }
+\DoxyCodeLine{613     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{614         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{615     \}}
+\DoxyCodeLine{616     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{617 \}}
+\DoxyCodeLine{618 }
+\DoxyCodeLine{626 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} adc\_disable(}
+\DoxyCodeLine{627         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{628 \{}
+\DoxyCodeLine{629     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{630     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{633 }
+\DoxyCodeLine{634 \textcolor{preprocessor}{\#if ADC\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{635 \textcolor{preprocessor}{\#   if (ADC\_INST\_NUM > 1)}}
+\DoxyCodeLine{636     system\_interrupt\_disable(\_adc\_interrupt\_get\_interrupt\_vector(}
+\DoxyCodeLine{637             \_adc\_get\_inst\_index(\mbox{\hyperlink{structadc__module}{adc\_module}})));}
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#   elif (SAMC20)}}
+\DoxyCodeLine{639         system\_interrupt\_disable(SYSTEM\_INTERRUPT\_MODULE\_ADC0);}
+\DoxyCodeLine{640 \textcolor{preprocessor}{\#   else}}
+\DoxyCodeLine{641         system\_interrupt\_disable(\mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabe508bdf9df07e4f95b69118525cc3c6}{SYSTEM\_INTERRUPT\_MODULE\_ADC}});}
+\DoxyCodeLine{642 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{643 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{644 }
+\DoxyCodeLine{645     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{646         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{647     \}}
+\DoxyCodeLine{648 }
+\DoxyCodeLine{649     \textcolor{comment}{/* Disbale interrupt */}}
+\DoxyCodeLine{650     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INTENCLR.reg = \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2adc_8h_a86fb35a78836c2ee97ccaa2801bcf8da}{ADC\_INTENCLR\_MASK}};}
+\DoxyCodeLine{651     \textcolor{comment}{/* Clear interrupt flag */}}
+\DoxyCodeLine{652     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INTFLAG.reg = \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2adc_8h_ad6ae9e9e9b6b800afe5a4d69bb9fac91}{ADC\_INTFLAG\_MASK}};}
+\DoxyCodeLine{653 }
+\DoxyCodeLine{654     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>CTRLA.reg \&= \string~ADC\_CTRLA\_ENABLE;}
+\DoxyCodeLine{655 }
+\DoxyCodeLine{656     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{657         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{658     \}}
+\DoxyCodeLine{659     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{660 \}}
+\DoxyCodeLine{661 }
+\DoxyCodeLine{670 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} adc\_reset(}
+\DoxyCodeLine{671         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{672 \{}
+\DoxyCodeLine{673     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{674     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{675     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{676 }
+\DoxyCodeLine{677     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679     \textcolor{comment}{/* Disable to make sure the pipeline is flushed before reset */}}
+\DoxyCodeLine{680     adc\_disable(module\_inst);}
+\DoxyCodeLine{681 }
+\DoxyCodeLine{682     \textcolor{comment}{/* Software reset the module */}}
+\DoxyCodeLine{683     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>CTRLA.reg |= ADC\_CTRLA\_SWRST;}
+\DoxyCodeLine{684 }
+\DoxyCodeLine{685     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{686         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{687     \}}
+\DoxyCodeLine{688     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{689 \}}
+\DoxyCodeLine{690 }
+\DoxyCodeLine{691 }
+\DoxyCodeLine{703 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_enable\_events(}
+\DoxyCodeLine{704         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{705         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__events}{adc\_events}} *\textcolor{keyword}{const} events)}
+\DoxyCodeLine{706 \{}
+\DoxyCodeLine{707     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{708     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{709     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{710     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(events);}
+\DoxyCodeLine{711 }
+\DoxyCodeLine{712     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{713 }
+\DoxyCodeLine{714     uint32\_t event\_mask = 0;}
+\DoxyCodeLine{715 }
+\DoxyCodeLine{716     \textcolor{comment}{/* Configure Window Monitor event */}}
+\DoxyCodeLine{717     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structadc__events_a60695e351893456f55735b8a773e0471}{generate\_event\_on\_window\_monitor}}) \{}
+\DoxyCodeLine{718         event\_mask |= ADC\_EVCTRL\_WINMONEO;}
+\DoxyCodeLine{719     \}}
+\DoxyCodeLine{720 }
+\DoxyCodeLine{721     \textcolor{comment}{/* Configure Result Ready event */}}
+\DoxyCodeLine{722     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structadc__events_a7d649897bf882114b55934f2a154c3f6}{generate\_event\_on\_conversion\_done}}) \{}
+\DoxyCodeLine{723         event\_mask |= ADC\_EVCTRL\_RESRDYEO;}
+\DoxyCodeLine{724     \}}
+\DoxyCodeLine{725 }
+\DoxyCodeLine{726     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>EVCTRL.reg |= event\_mask;}
+\DoxyCodeLine{727 \}}
+\DoxyCodeLine{728 }
+\DoxyCodeLine{740 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_disable\_events(}
+\DoxyCodeLine{741         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{742         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__events}{adc\_events}} *\textcolor{keyword}{const} events)}
+\DoxyCodeLine{743 \{}
+\DoxyCodeLine{744     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{745     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{746     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{747     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(events);}
+\DoxyCodeLine{748 }
+\DoxyCodeLine{749     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{750 }
+\DoxyCodeLine{751     uint32\_t event\_mask = 0;}
+\DoxyCodeLine{752 }
+\DoxyCodeLine{753     \textcolor{comment}{/* Configure Window Monitor event */}}
+\DoxyCodeLine{754     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structadc__events_a60695e351893456f55735b8a773e0471}{generate\_event\_on\_window\_monitor}}) \{}
+\DoxyCodeLine{755         event\_mask |= ADC\_EVCTRL\_WINMONEO;}
+\DoxyCodeLine{756     \}}
+\DoxyCodeLine{757 }
+\DoxyCodeLine{758     \textcolor{comment}{/* Configure Result Ready event */}}
+\DoxyCodeLine{759     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structadc__events_a7d649897bf882114b55934f2a154c3f6}{generate\_event\_on\_conversion\_done}}) \{}
+\DoxyCodeLine{760         event\_mask |= ADC\_EVCTRL\_RESRDYEO;}
+\DoxyCodeLine{761     \}}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{763     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>EVCTRL.reg \&= \string~event\_mask;}
+\DoxyCodeLine{764 \}}
+\DoxyCodeLine{765 }
+\DoxyCodeLine{773 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_start\_conversion(}
+\DoxyCodeLine{774         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{775 \{}
+\DoxyCodeLine{776     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{777     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{778 }
+\DoxyCodeLine{779     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{781     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{782         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{783     \}}
+\DoxyCodeLine{784 }
+\DoxyCodeLine{785     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>SWTRIG.reg |= ADC\_SWTRIG\_START;}
+\DoxyCodeLine{786 }
+\DoxyCodeLine{787     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{788         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{789     \}}
+\DoxyCodeLine{790 \}}
+\DoxyCodeLine{791 }
+\DoxyCodeLine{806 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} adc\_read(}
+\DoxyCodeLine{807         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{808         uint16\_t *result)}
+\DoxyCodeLine{809 \{}
+\DoxyCodeLine{810     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{811     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{812     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(result);}
+\DoxyCodeLine{813 }
+\DoxyCodeLine{814     \textcolor{keywordflow}{if} (!(adc\_get\_status(module\_inst) \& \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gac25e444bb2e1cb312bedf72d2d6ed8e5}{ADC\_STATUS\_RESULT\_READY}})) \{}
+\DoxyCodeLine{815         \textcolor{comment}{/* Result not ready */}}
+\DoxyCodeLine{816         \textcolor{keywordflow}{return} STATUS\_BUSY;}
+\DoxyCodeLine{817     \}}
+\DoxyCodeLine{818 }
+\DoxyCodeLine{819     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{820 }
+\DoxyCodeLine{821 \textcolor{preprocessor}{\#if (SAMD) || (SAMHA1) || (SAMHA0) || (SAMR21)}}
+\DoxyCodeLine{822     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{823         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{824     \}}
+\DoxyCodeLine{825 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{826 }
+\DoxyCodeLine{827     \textcolor{comment}{/* Get ADC result */}}
+\DoxyCodeLine{828     *result = \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>RESULT.reg;}
+\DoxyCodeLine{829 }
+\DoxyCodeLine{830     \textcolor{comment}{/* Reset ready flag */}}
+\DoxyCodeLine{831     adc\_clear\_status(module\_inst, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gac25e444bb2e1cb312bedf72d2d6ed8e5}{ADC\_STATUS\_RESULT\_READY}});}
+\DoxyCodeLine{832 }
+\DoxyCodeLine{833     \textcolor{keywordflow}{if} (adc\_get\_status(module\_inst) \& \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9e05a7398afafa9344c780a0a0e7be9a}{ADC\_STATUS\_OVERRUN}}) \{}
+\DoxyCodeLine{834         adc\_clear\_status(module\_inst, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9e05a7398afafa9344c780a0a0e7be9a}{ADC\_STATUS\_OVERRUN}});}
+\DoxyCodeLine{835         \textcolor{keywordflow}{return} STATUS\_ERR\_OVERFLOW;}
+\DoxyCodeLine{836     \}}
+\DoxyCodeLine{837 }
+\DoxyCodeLine{838     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{839 \}}
+\DoxyCodeLine{840 }
+\DoxyCodeLine{857 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_flush(}
+\DoxyCodeLine{858         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{859 \{}
+\DoxyCodeLine{860     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{861     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{862 }
+\DoxyCodeLine{863     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{864 }
+\DoxyCodeLine{865     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{866         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{867     \}}
+\DoxyCodeLine{868 }
+\DoxyCodeLine{869     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>SWTRIG.reg |= ADC\_SWTRIG\_FLUSH;}
+\DoxyCodeLine{870 }
+\DoxyCodeLine{871     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{872         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{873     \}}
+\DoxyCodeLine{874 \}}
+\DoxyCodeLine{875 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga84ff86341c2e0d1a267b8dc54cb807ad}{adc\_set\_window\_mode}}(}
+\DoxyCodeLine{876         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{877         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}{adc\_window\_mode}} window\_mode,}
+\DoxyCodeLine{878         \textcolor{keyword}{const} int16\_t window\_lower\_value,}
+\DoxyCodeLine{879         \textcolor{keyword}{const} int16\_t window\_upper\_value);}
+\DoxyCodeLine{880 }
+\DoxyCodeLine{889 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_set\_positive\_input(}
+\DoxyCodeLine{890         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{891         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga7df963d2d3118abe65841e0886764002}{adc\_positive\_input}} positive\_input)}
+\DoxyCodeLine{892 \{}
+\DoxyCodeLine{893     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{894     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{895     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{896 }
+\DoxyCodeLine{897     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{898 }
+\DoxyCodeLine{899     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{900         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{901     \}}
+\DoxyCodeLine{902 }
+\DoxyCodeLine{903     \textcolor{comment}{/* Set positive input pin */}}
+\DoxyCodeLine{904     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INPUTCTRL.reg =}
+\DoxyCodeLine{905             (\mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INPUTCTRL.reg \& \string~ADC\_INPUTCTRL\_MUXPOS\_Msk) |}
+\DoxyCodeLine{906             (positive\_input);}
+\DoxyCodeLine{907 }
+\DoxyCodeLine{908     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{909         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{910     \}}
+\DoxyCodeLine{911 \}}
+\DoxyCodeLine{912 }
+\DoxyCodeLine{913 }
+\DoxyCodeLine{923 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_set\_negative\_input(}
+\DoxyCodeLine{924         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{925         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga843290f150383271ef2ed82792d76e81}{adc\_negative\_input}} negative\_input)}
+\DoxyCodeLine{926 \{}
+\DoxyCodeLine{927     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{928     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{929     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{930 }
+\DoxyCodeLine{931     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{932 }
+\DoxyCodeLine{933     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{934         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{935     \}}
+\DoxyCodeLine{936 }
+\DoxyCodeLine{937     \textcolor{comment}{/* Set negative input pin */}}
+\DoxyCodeLine{938     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INPUTCTRL.reg =}
+\DoxyCodeLine{939             (\mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INPUTCTRL.reg \& \string~ADC\_INPUTCTRL\_MUXNEG\_Msk) |}
+\DoxyCodeLine{940             (negative\_input);}
+\DoxyCodeLine{941 }
+\DoxyCodeLine{942     \textcolor{keywordflow}{while} (adc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{943         \textcolor{comment}{/* Wait for synchronization */}}
+\DoxyCodeLine{944     \}}
+\DoxyCodeLine{945 \}}
+\DoxyCodeLine{946 }
+\DoxyCodeLine{949 \textcolor{preprocessor}{\#if ADC\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{963 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_enable\_interrupt(\textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{964         \textcolor{keyword}{enum} adc\_interrupt\_flag interrupt)}
+\DoxyCodeLine{965 \{}
+\DoxyCodeLine{966     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{967     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{968     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{969 }
+\DoxyCodeLine{970     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{971     \textcolor{comment}{/* Enable interrupt */}}
+\DoxyCodeLine{972     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INTENSET.reg = interrupt;}
+\DoxyCodeLine{973 \}}
+\DoxyCodeLine{974 }
+\DoxyCodeLine{983 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_disable\_interrupt(\textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{984         \textcolor{keyword}{enum} adc\_interrupt\_flag interrupt)}
+\DoxyCodeLine{985 \{}
+\DoxyCodeLine{986     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{987     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{988     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}});}
+\DoxyCodeLine{989 }
+\DoxyCodeLine{990     \mbox{\hyperlink{struct_adc}{Adc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structadc__module}{adc\_module}} = module\_inst-\/>\mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}};}
+\DoxyCodeLine{991     \textcolor{comment}{/* Enable interrupt */}}
+\DoxyCodeLine{992     \mbox{\hyperlink{structadc__module}{adc\_module}}-\/>INTENCLR.reg = interrupt;}
+\DoxyCodeLine{993 \}}
+\DoxyCodeLine{994 }
+\DoxyCodeLine{996 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ADC\_CALLBACK\_MODE == true */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{997 }
+\DoxyCodeLine{998 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{999 \}}
+\DoxyCodeLine{1000 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1001 }
+\DoxyCodeLine{1147 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ADC\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

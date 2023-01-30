@@ -1,0 +1,51 @@
+\hypertarget{structadc__correction__config}{}\doxysection{adc\+\_\+correction\+\_\+config Struct Reference}
+\label{structadc__correction__config}\index{adc\_correction\_config@{adc\_correction\_config}}
+
+
+Gain and offset correction configuration structure.  
+
+
+
+
+{\ttfamily \#include $<$adc\+\_\+feature.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structadc__correction__config_a8d49708b65f4dab1643a4de8bc1a85a8}{correction\+\_\+enable}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structadc__correction__config_aed04179630c7b5b4cb1eb6bc216121b4}{gain\+\_\+correction}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structadc__correction__config_a0a674691f6b3d9f82e243996f280ce46}{offset\+\_\+correction}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gain and offset correction configuration structure. 
+
+Gain and offset correction configuration structure. Part of the \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} struct and will be initialized by \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5a5650a331819833c7a27309c131c55d}{adc\+\_\+get\+\_\+config\+\_\+defaults}}. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structadc__correction__config_a8d49708b65f4dab1643a4de8bc1a85a8}\label{structadc__correction__config_a8d49708b65f4dab1643a4de8bc1a85a8}} 
+\index{adc\_correction\_config@{adc\_correction\_config}!correction\_enable@{correction\_enable}}
+\index{correction\_enable@{correction\_enable}!adc\_correction\_config@{adc\_correction\_config}}
+\doxysubsubsection{\texorpdfstring{correction\_enable}{correction\_enable}}
+{\footnotesize\ttfamily bool adc\+\_\+correction\+\_\+config\+::correction\+\_\+enable}
+
+Enables correction for gain and offset based on values of gain\+\_\+correction and offset\+\_\+correction if set to true \mbox{\Hypertarget{structadc__correction__config_aed04179630c7b5b4cb1eb6bc216121b4}\label{structadc__correction__config_aed04179630c7b5b4cb1eb6bc216121b4}} 
+\index{adc\_correction\_config@{adc\_correction\_config}!gain\_correction@{gain\_correction}}
+\index{gain\_correction@{gain\_correction}!adc\_correction\_config@{adc\_correction\_config}}
+\doxysubsubsection{\texorpdfstring{gain\_correction}{gain\_correction}}
+{\footnotesize\ttfamily uint16\+\_\+t adc\+\_\+correction\+\_\+config\+::gain\+\_\+correction}
+
+This value defines how the ADC conversion result is compensated for gain error before written to the result register. This is a fractional value, 1-\/bit integer plus an 11-\/bit fraction, therefore 1/2 \texorpdfstring{$<$}{<}= gain\+\_\+correction \texorpdfstring{$<$}{<} 2. Valid {\ttfamily gain\+\_\+correction} values ranges from {\ttfamily 0b010000000000} to {\ttfamily 0b111111111111}. \mbox{\Hypertarget{structadc__correction__config_a0a674691f6b3d9f82e243996f280ce46}\label{structadc__correction__config_a0a674691f6b3d9f82e243996f280ce46}} 
+\index{adc\_correction\_config@{adc\_correction\_config}!offset\_correction@{offset\_correction}}
+\index{offset\_correction@{offset\_correction}!adc\_correction\_config@{adc\_correction\_config}}
+\doxysubsubsection{\texorpdfstring{offset\_correction}{offset\_correction}}
+{\footnotesize\ttfamily int16\+\_\+t adc\+\_\+correction\+\_\+config\+::offset\+\_\+correction}
+
+This value defines how the ADC conversion result is compensated for offset error before written to the result register. This is a 12-\/bit value in two\textquotesingle{}s complement format. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/adc/adc\+\_\+sam\+\_\+d\+\_\+r\+\_\+h/\mbox{\hyperlink{adc__feature_8h}{adc\+\_\+feature.\+h}}\end{DoxyCompactItemize}

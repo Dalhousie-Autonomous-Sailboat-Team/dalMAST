@@ -1,0 +1,558 @@
+\hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/component/gclk.h File Reference}
+\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/gclk.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/gclk.h}}
+
+
+Component description for GCLK.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_g_c_l_k___c_t_r_l___type}{GCLK\+\_\+\+CTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_g_c_l_k___s_t_a_t_u_s___type}{GCLK\+\_\+\+STATUS\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_g_c_l_k___c_l_k_c_t_r_l___type}{GCLK\+\_\+\+CLKCTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_g_c_l_k___g_e_n_c_t_r_l___type}{GCLK\+\_\+\+GENCTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_g_c_l_k___g_e_n_d_i_v___type}{GCLK\+\_\+\+GENDIV\+\_\+\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_gclk}{Gclk}}
+\begin{DoxyCompactList}\small\item\em GCLK hardware registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aca1c1ddf305857f452121b055f1dc890}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aca1c1ddf305857f452121b055f1dc890}} 
+\#define {\bfseries GCLK\+\_\+\+U2102}
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad1c1468b7c6ed891f5711fedfef9ec67}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad1c1468b7c6ed891f5711fedfef9ec67}} 
+\#define {\bfseries REV\+\_\+\+GCLK}~0x210
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1e4155316409181e6ee6e88d12cdc90d}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1e4155316409181e6ee6e88d12cdc90d}} 
+\#define {\bfseries GCLK\+\_\+\+CTRL\+\_\+\+OFFSET}~0x0
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CTRL offset) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a83d8721ae78e319dd3b6ab2e350a189b}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a83d8721ae78e319dd3b6ab2e350a189b}} 
+\#define {\bfseries GCLK\+\_\+\+CTRL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CTRL reset\+\_\+value) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4efebabb229142324a17a17d178c8494}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4efebabb229142324a17a17d178c8494}} 
+\#define {\bfseries GCLK\+\_\+\+CTRL\+\_\+\+SWRST\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CTRL) Software Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a279d0e7833263a0907ddf09e3600df70}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a279d0e7833263a0907ddf09e3600df70}} 
+\#define {\bfseries GCLK\+\_\+\+CTRL\+\_\+\+SWRST}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4efebabb229142324a17a17d178c8494}{GCLK\+\_\+\+CTRL\+\_\+\+SWRST\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1149580344c769b492a3965710f14319}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1149580344c769b492a3965710f14319}} 
+\#define {\bfseries GCLK\+\_\+\+CTRL\+\_\+\+MASK}~0x01ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1829e59ccf51b247d4c84f4b53356e59}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1829e59ccf51b247d4c84f4b53356e59}} 
+\#define {\bfseries GCLK\+\_\+\+STATUS\+\_\+\+OFFSET}~0x1
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+STATUS offset) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a178a91eb9f5aa21feeb1b126b05dd8cd}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a178a91eb9f5aa21feeb1b126b05dd8cd}} 
+\#define {\bfseries GCLK\+\_\+\+STATUS\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+STATUS reset\+\_\+value) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8ef544f7407509465d3512c48226cab4}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8ef544f7407509465d3512c48226cab4}} 
+\#define {\bfseries GCLK\+\_\+\+STATUS\+\_\+\+SYNCBUSY\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+STATUS) Synchronization Busy Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a9e593aac5e38d17fcb837662afa6f6f6}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a9e593aac5e38d17fcb837662afa6f6f6}} 
+\#define {\bfseries GCLK\+\_\+\+STATUS\+\_\+\+SYNCBUSY}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8ef544f7407509465d3512c48226cab4}{GCLK\+\_\+\+STATUS\+\_\+\+SYNCBUSY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aeb39d54d6d2ecc2bdaafb2a846930171}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aeb39d54d6d2ecc2bdaafb2a846930171}} 
+\#define {\bfseries GCLK\+\_\+\+STATUS\+\_\+\+MASK}~0x80ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+STATUS) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8a266827d508cecf79c9b27ab8596f0f}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8a266827d508cecf79c9b27ab8596f0f}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+OFFSET}~0x2
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL offset) Generic Clock Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad11334da452920f4d446c1615751b8c8}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad11334da452920f4d446c1615751b8c8}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+RESETVALUE}~0x0000ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL reset\+\_\+value) Generic Clock Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic Clock Selection ID \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acfb6324cf6ce3d532d189e935af7eab1}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acfb6324cf6ce3d532d189e935af7eab1}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Msk}~(0x3\+Ful $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6ca62f336958b605840843748ae83806}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6ca62f336958b605840843748ae83806}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID}(value)~((GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8a08114914f77f4b5bffe9ee9af0d8ca}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8a08114914f77f4b5bffe9ee9af0d8ca}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+DFLL48\+M\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) DFLL48M Reference \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af55824f940b869be173bf84b368d5107}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af55824f940b869be173bf84b368d5107}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+WDT\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) WDT \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa79509ffa7f18da70d4ae344a3d3d70b}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa79509ffa7f18da70d4ae344a3d3d70b}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+RTC\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) RTC \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad482e84c3781695e980c8d1bcb9300f6}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad482e84c3781695e980c8d1bcb9300f6}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EIC\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) EIC \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a65f1a74a9362714a9aec9d93936c2273}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a65f1a74a9362714a9aec9d93936c2273}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+0\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) EVSYS\+\_\+\+CHANNEL\+\_\+0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5d6a0ecec83dc6b9d41a8e11ef0376b6}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5d6a0ecec83dc6b9d41a8e11ef0376b6}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+1\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) EVSYS\+\_\+\+CHANNEL\+\_\+1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1fc382fdf8c8ce92fa84ca650e65d1e3}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1fc382fdf8c8ce92fa84ca650e65d1e3}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+2\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) EVSYS\+\_\+\+CHANNEL\+\_\+2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4c52b580284d5800e4fcd3a2dc4265bd}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4c52b580284d5800e4fcd3a2dc4265bd}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+3\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) EVSYS\+\_\+\+CHANNEL\+\_\+3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1e137d168a4f64243dc23ecad590feba}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1e137d168a4f64243dc23ecad590feba}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+4\+\_\+\+Val}~0x8ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) EVSYS\+\_\+\+CHANNEL\+\_\+4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afff0abd82b45aa6c59536d5ac133667e}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afff0abd82b45aa6c59536d5ac133667e}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+5\+\_\+\+Val}~0x9ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) EVSYS\+\_\+\+CHANNEL\+\_\+5 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a74fb359c1367673b132511e437dbeb5d}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a74fb359c1367673b132511e437dbeb5d}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+6\+\_\+\+Val}~0x\+Aul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) EVSYS\+\_\+\+CHANNEL\+\_\+6 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a495f0b6047993691fac9b0eb917225f7}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a495f0b6047993691fac9b0eb917225f7}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+7\+\_\+\+Val}~0x\+Bul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) EVSYS\+\_\+\+CHANNEL\+\_\+7 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a153a5b6024c662b8f816b368ccd1bdc6}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a153a5b6024c662b8f816b368ccd1bdc6}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOMX\+\_\+\+SLOW\+\_\+\+Val}~0x\+Cul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) SERCOMx\+\_\+\+SLOW \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa73a1f52ac12d73c9b415d0cf7c129d8}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa73a1f52ac12d73c9b415d0cf7c129d8}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM0\+\_\+\+CORE\+\_\+\+Val}~0x\+Dul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) SERCOM0\+\_\+\+CORE \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a687c5b5b6f9d24d699c20826dae07ea1}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a687c5b5b6f9d24d699c20826dae07ea1}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM1\+\_\+\+CORE\+\_\+\+Val}~0x\+Eul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) SERCOM1\+\_\+\+CORE \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6c190884b0ecb6df1e282e9f52fc9625}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6c190884b0ecb6df1e282e9f52fc9625}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM2\+\_\+\+CORE\+\_\+\+Val}~0x\+Ful
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) SERCOM2\+\_\+\+CORE \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afd61fc115b2df35b8362117d56e585f8}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afd61fc115b2df35b8362117d56e585f8}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM3\+\_\+\+CORE\+\_\+\+Val}~0x10ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) SERCOM3\+\_\+\+CORE \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6abe19ed53416097da5b95e3dca3d98d}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6abe19ed53416097da5b95e3dca3d98d}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM4\+\_\+\+CORE\+\_\+\+Val}~0x11ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) SERCOM4\+\_\+\+CORE \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_adf32722a43710ff062d0581131ed71df}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_adf32722a43710ff062d0581131ed71df}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM5\+\_\+\+CORE\+\_\+\+Val}~0x12ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) SERCOM5\+\_\+\+CORE \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aff9a70024d6e7b9f71aa9d6b79e2a4fd}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aff9a70024d6e7b9f71aa9d6b79e2a4fd}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC0\+\_\+\+TC1\+\_\+\+Val}~0x13ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) TC0,TC1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2f611b6d8fa3ae6e7bab28f6bb889594}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2f611b6d8fa3ae6e7bab28f6bb889594}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC2\+\_\+\+TC3\+\_\+\+Val}~0x14ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) TC2,TC3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6e2e800404f3b2e6948ced5f489aa557}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6e2e800404f3b2e6948ced5f489aa557}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC4\+\_\+\+TC5\+\_\+\+Val}~0x15ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) TC4,TC5 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a540d3e213ae8c696000670dbc1ea3721}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a540d3e213ae8c696000670dbc1ea3721}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC6\+\_\+\+TC7\+\_\+\+Val}~0x16ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) TC6,TC7 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afa044a1103ba6b6a8bc6d7f7d44c4cea}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afa044a1103ba6b6a8bc6d7f7d44c4cea}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+ADC\+\_\+\+Val}~0x17ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) ADC \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4f314ff01d05a73788706a3e0cf98363}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4f314ff01d05a73788706a3e0cf98363}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+AC\+\_\+\+DIG\+\_\+\+Val}~0x18ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) AC\+\_\+\+DIG \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5a296324385e4617069890aa675632ff}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5a296324385e4617069890aa675632ff}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+AC\+\_\+\+ANA\+\_\+\+Val}~0x19ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) AC\+\_\+\+ANA \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1dc77a3784a3e8021336bbe6a492ebe0}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1dc77a3784a3e8021336bbe6a492ebe0}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+DAC\+\_\+\+Val}~0x1\+Aul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) DAC \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac44e99202775c88a813b1416a66c7469}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac44e99202775c88a813b1416a66c7469}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+PTC\+\_\+\+Val}~0x1\+Bul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) PTC \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aab6df9511c8846239c479292c9871cde}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aab6df9511c8846239c479292c9871cde}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+DFLL48M}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8a08114914f77f4b5bffe9ee9af0d8ca}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+DFLL48\+M\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad1d23dd963c350b90a57071774226139}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad1d23dd963c350b90a57071774226139}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+WDT}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af55824f940b869be173bf84b368d5107}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+WDT\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a9f6d0b84756809caf3a79dc6365c92b1}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a9f6d0b84756809caf3a79dc6365c92b1}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+RTC}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa79509ffa7f18da70d4ae344a3d3d70b}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+RTC\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad77060cfb0eb7327062765a6d48c7b07}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad77060cfb0eb7327062765a6d48c7b07}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EIC}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad482e84c3781695e980c8d1bcb9300f6}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EIC\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1b4f639f68170d72108f9d6fb8478c6f}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1b4f639f68170d72108f9d6fb8478c6f}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+0}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a65f1a74a9362714a9aec9d93936c2273}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+0\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a632974a3fbbe7476e511a6dbb82f630a}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a632974a3fbbe7476e511a6dbb82f630a}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+1}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5d6a0ecec83dc6b9d41a8e11ef0376b6}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+1\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae5ce872e35581f4d5bc6bd4330cf9d6f}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae5ce872e35581f4d5bc6bd4330cf9d6f}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+2}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1fc382fdf8c8ce92fa84ca650e65d1e3}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+2\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_adbc7e0983b68be87b92f2e8dca1e957b}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_adbc7e0983b68be87b92f2e8dca1e957b}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+3}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4c52b580284d5800e4fcd3a2dc4265bd}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+3\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26bf7c9a3959c25edaaf73684e0322c4}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26bf7c9a3959c25edaaf73684e0322c4}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+4}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1e137d168a4f64243dc23ecad590feba}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+4\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_abb64a028e2987c299225a708afa8247a}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_abb64a028e2987c299225a708afa8247a}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+5}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afff0abd82b45aa6c59536d5ac133667e}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+5\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aeaddd5edbc1422355996d10128b80a33}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aeaddd5edbc1422355996d10128b80a33}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+6}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a74fb359c1367673b132511e437dbeb5d}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+6\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a37ca0d860b21421559196ee9dff24f2b}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a37ca0d860b21421559196ee9dff24f2b}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+7}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a495f0b6047993691fac9b0eb917225f7}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+EVSYS\+\_\+\+CHANNEL\+\_\+7\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7279413efcc5ac32980861d9429c706c}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7279413efcc5ac32980861d9429c706c}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOMX\+\_\+\+SLOW}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a153a5b6024c662b8f816b368ccd1bdc6}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOMX\+\_\+\+SLOW\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a86630fdf442f4facc7163cb9aa75f9d1}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a86630fdf442f4facc7163cb9aa75f9d1}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM0\+\_\+\+CORE}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa73a1f52ac12d73c9b415d0cf7c129d8}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM0\+\_\+\+CORE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afe689938b955391c668778733840ecd3}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afe689938b955391c668778733840ecd3}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM1\+\_\+\+CORE}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a687c5b5b6f9d24d699c20826dae07ea1}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM1\+\_\+\+CORE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac59ac7a1db5f20ac4713e9a0a6ac8213}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac59ac7a1db5f20ac4713e9a0a6ac8213}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM2\+\_\+\+CORE}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6c190884b0ecb6df1e282e9f52fc9625}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM2\+\_\+\+CORE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a69a0eb6cd690c2289c8f89983369f0f5}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a69a0eb6cd690c2289c8f89983369f0f5}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM3\+\_\+\+CORE}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afd61fc115b2df35b8362117d56e585f8}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM3\+\_\+\+CORE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3f65493fe90eff0eb5ae50293a7d00e4}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3f65493fe90eff0eb5ae50293a7d00e4}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM4\+\_\+\+CORE}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6abe19ed53416097da5b95e3dca3d98d}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM4\+\_\+\+CORE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa959102644aa8515990b2dc2907fa87e}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa959102644aa8515990b2dc2907fa87e}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM5\+\_\+\+CORE}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_adf32722a43710ff062d0581131ed71df}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+SERCOM5\+\_\+\+CORE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8bddac43b01603a76cc890c71a43dfae}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8bddac43b01603a76cc890c71a43dfae}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC0\+\_\+\+TC1}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aff9a70024d6e7b9f71aa9d6b79e2a4fd}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC0\+\_\+\+TC1\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a30a92b7cf9a0fae37fafaa04c911f0d4}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a30a92b7cf9a0fae37fafaa04c911f0d4}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC2\+\_\+\+TC3}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2f611b6d8fa3ae6e7bab28f6bb889594}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC2\+\_\+\+TC3\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5316e2928a72fe2b59814f09a6b3f498}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5316e2928a72fe2b59814f09a6b3f498}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC4\+\_\+\+TC5}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6e2e800404f3b2e6948ced5f489aa557}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC4\+\_\+\+TC5\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a34f73ae7c50fbe4bbffc3e3a8836786a}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a34f73ae7c50fbe4bbffc3e3a8836786a}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC6\+\_\+\+TC7}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a540d3e213ae8c696000670dbc1ea3721}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+TC6\+\_\+\+TC7\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad652342e4d51127ddc598eccd3cb0af6}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad652342e4d51127ddc598eccd3cb0af6}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+ADC}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_afa044a1103ba6b6a8bc6d7f7d44c4cea}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+ADC\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3d7ccc160db5a2cb9f19e79869b88539}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3d7ccc160db5a2cb9f19e79869b88539}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+AC\+\_\+\+DIG}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4f314ff01d05a73788706a3e0cf98363}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+AC\+\_\+\+DIG\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad49f926f054ba98edb18f7d010a955f4}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad49f926f054ba98edb18f7d010a955f4}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+AC\+\_\+\+ANA}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5a296324385e4617069890aa675632ff}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+AC\+\_\+\+ANA\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae348ba128f8ec10c82cef8959ed5b11f}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae348ba128f8ec10c82cef8959ed5b11f}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+DAC}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1dc77a3784a3e8021336bbe6a492ebe0}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+DAC\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a98870a8ee31be24b60b67a5253a5fa2a}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a98870a8ee31be24b60b67a5253a5fa2a}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+PTC}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac44e99202775c88a813b1416a66c7469}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+PTC\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a882860b306b819b8bb342bebd55c23aa}{GCLK\+\_\+\+CLKCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic Clock Generator \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5e33bef05f719c937bab8824ec26ed20}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5e33bef05f719c937bab8824ec26ed20}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a78548c9373fc66d3d48155222c508728}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a78548c9373fc66d3d48155222c508728}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN}(value)~((GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ace6212456debec86346f66fdd9e345f0}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ace6212456debec86346f66fdd9e345f0}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK0\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic clock generator 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a272c6846fcd4c313d7cc25dd48c4e46c}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a272c6846fcd4c313d7cc25dd48c4e46c}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK1\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic clock generator 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a01572700eb8f9b256b2823b08d413467}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a01572700eb8f9b256b2823b08d413467}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK2\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic clock generator 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac93b1c3cf93221ec87c773f5b2fa87e4}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac93b1c3cf93221ec87c773f5b2fa87e4}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK3\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic clock generator 3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a9cab1760fd8855cd9e9b6d78279dd090}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a9cab1760fd8855cd9e9b6d78279dd090}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK4\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic clock generator 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a14e18a1b5c8919f1a3e8c679b3b17f9d}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a14e18a1b5c8919f1a3e8c679b3b17f9d}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK5\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic clock generator 5 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_affc6f215a6671305caaeb6f9e38264d6}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_affc6f215a6671305caaeb6f9e38264d6}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK6\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic clock generator 6 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af0ef8769af1146d5f756a515bba69892}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af0ef8769af1146d5f756a515bba69892}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK7\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Generic clock generator 7 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6a4d655d51f1b3cf37364d7cf3f676b4}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6a4d655d51f1b3cf37364d7cf3f676b4}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK0}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ace6212456debec86346f66fdd9e345f0}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK0\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af7743e399861fff0cc001b53cf033b4d}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af7743e399861fff0cc001b53cf033b4d}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK1}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a272c6846fcd4c313d7cc25dd48c4e46c}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK1\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae4b72e89dfafc309aa02915fa1ee463b}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae4b72e89dfafc309aa02915fa1ee463b}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK2}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a01572700eb8f9b256b2823b08d413467}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK2\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7cf498a0e03dcb86cc24dbbc79c6c076}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7cf498a0e03dcb86cc24dbbc79c6c076}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK3}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac93b1c3cf93221ec87c773f5b2fa87e4}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK3\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1b6febf4fe9842823e99663cc13ee0fd}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1b6febf4fe9842823e99663cc13ee0fd}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK4}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a9cab1760fd8855cd9e9b6d78279dd090}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK4\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5d2ab62c417f641f9c0050b64ef35696}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5d2ab62c417f641f9c0050b64ef35696}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK5}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a14e18a1b5c8919f1a3e8c679b3b17f9d}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK5\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6cd3d90c7a49aee40e1b8157b3eb516a}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6cd3d90c7a49aee40e1b8157b3eb516a}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK6}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_affc6f215a6671305caaeb6f9e38264d6}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK6\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae42e43dfe46961959902cb893ce69121}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae42e43dfe46961959902cb893ce69121}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK7}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af0ef8769af1146d5f756a515bba69892}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+GCLK7\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae80d1faef3b42edf73de73feef846841}{GCLK\+\_\+\+CLKCTRL\+\_\+\+GEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a988366053ec34c5f63659a49e0f20d3e}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a988366053ec34c5f63659a49e0f20d3e}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+CLKEN\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af59d41452f57905af7c54ef67d5e5349}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af59d41452f57905af7c54ef67d5e5349}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+CLKEN}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a988366053ec34c5f63659a49e0f20d3e}{GCLK\+\_\+\+CLKCTRL\+\_\+\+CLKEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a380347dc132352716e030880aba8b807}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a380347dc132352716e030880aba8b807}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+WRTLOCK\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) Write Lock \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af103e645170000a9aa8af219a63d54c5}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af103e645170000a9aa8af219a63d54c5}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+WRTLOCK}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a380347dc132352716e030880aba8b807}{GCLK\+\_\+\+CLKCTRL\+\_\+\+WRTLOCK\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7cd3bae1a32142ecb56cff34f18b856f}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7cd3bae1a32142ecb56cff34f18b856f}} 
+\#define {\bfseries GCLK\+\_\+\+CLKCTRL\+\_\+\+MASK}~0x\+CF3\+Ful
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+CLKCTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a93d991084be98b48eb3bd242d2114042}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a93d991084be98b48eb3bd242d2114042}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+OFFSET}~0x4
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL offset) Generic Clock Generator Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6fe333c528ab24313886414224566cfc}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6fe333c528ab24313886414224566cfc}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL reset\+\_\+value) Generic Clock Generator Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic Clock Generator Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7f828f420efccc8f0524f5fccb07a7db}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7f828f420efccc8f0524f5fccb07a7db}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acd482b8619c8d7d70d181e958bea77cb}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acd482b8619c8d7d70d181e958bea77cb}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID}(value)~((GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af1067a2b64bf6ca67b6f70c4e2c0bbf8}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af1067a2b64bf6ca67b6f70c4e2c0bbf8}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK0\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic clock generator 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af8aa50029819495e6dc104dc211165ce}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af8aa50029819495e6dc104dc211165ce}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK1\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic clock generator 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acdc79708a66dae8927edfdb69f8c8288}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acdc79708a66dae8927edfdb69f8c8288}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK2\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic clock generator 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1ce8af93e1ca7a48374cdff949bb2f72}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1ce8af93e1ca7a48374cdff949bb2f72}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK3\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic clock generator 3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac13da8d77f9b64b664a3b2f71b731907}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac13da8d77f9b64b664a3b2f71b731907}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK4\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic clock generator 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a0df35ba83c10ed2932abffc2a8e74780}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a0df35ba83c10ed2932abffc2a8e74780}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK5\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic clock generator 5 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4cf2b921048f8f142e0d380eb363df64}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4cf2b921048f8f142e0d380eb363df64}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK6\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic clock generator 6 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6e7348bbf9371fa011e0b04df5c44fbd}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6e7348bbf9371fa011e0b04df5c44fbd}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK7\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic clock generator 7 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a44b526577c7ae7a6fe9cc84c112b5aa3}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a44b526577c7ae7a6fe9cc84c112b5aa3}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK0}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af1067a2b64bf6ca67b6f70c4e2c0bbf8}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK0\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2e1d62fc3e323190998e87623d59450c}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2e1d62fc3e323190998e87623d59450c}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK1}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af8aa50029819495e6dc104dc211165ce}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK1\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a033e531c921aa021923e502d1f555fc0}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a033e531c921aa021923e502d1f555fc0}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK2}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acdc79708a66dae8927edfdb69f8c8288}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK2\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a9ead8812947009edee72479d4f6d05b6}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a9ead8812947009edee72479d4f6d05b6}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK3}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1ce8af93e1ca7a48374cdff949bb2f72}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK3\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a33d3ef31e8e55b837b6227c8f53a5086}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a33d3ef31e8e55b837b6227c8f53a5086}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK4}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac13da8d77f9b64b664a3b2f71b731907}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK4\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5aa3290f480cb91c05e8e5003b3dff98}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5aa3290f480cb91c05e8e5003b3dff98}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK5}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a0df35ba83c10ed2932abffc2a8e74780}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK5\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6e6cdecc36e8a3ac73a3f153bab2dbcf}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6e6cdecc36e8a3ac73a3f153bab2dbcf}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK6}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4cf2b921048f8f142e0d380eb363df64}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK6\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af04b9f49dff491d54271b15518f350d6}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af04b9f49dff491d54271b15518f350d6}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK7}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6e7348bbf9371fa011e0b04df5c44fbd}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+GCLK7\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4a60c72f4513306209ee3853e022a8ec}{GCLK\+\_\+\+GENCTRL\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Source Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1341d6ea0cb6d9dc6bb42710ac632eed}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a1341d6ea0cb6d9dc6bb42710ac632eed}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Msk}~(0x1\+Ful $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3a6ecbe6a1395577e386ee2046c5e3a5}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3a6ecbe6a1395577e386ee2046c5e3a5}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC}(value)~((GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad48c4f5ba6b5112eef4d978cf2ae73bc}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad48c4f5ba6b5112eef4d978cf2ae73bc}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+XOSC\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) XOSC oscillator output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4c279c59a26c988991b63eb2682e8acc}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4c279c59a26c988991b63eb2682e8acc}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+GCLKIN\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generator input pad \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2774be4de7707cea940a2b7ec37f30e3}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2774be4de7707cea940a2b7ec37f30e3}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+GCLKGEN1\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic clock generator 1 output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a42e2c1ea6d7f04f75657e31791336ec6}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a42e2c1ea6d7f04f75657e31791336ec6}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+OSCULP32\+K\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) OSCULP32K oscillator output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a79a91b96132812e2d8fec7fb79dc6cde}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a79a91b96132812e2d8fec7fb79dc6cde}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+OSC32\+K\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) OSC32K oscillator output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a087326ba1d0ac766f2835e5460c72ef0}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a087326ba1d0ac766f2835e5460c72ef0}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+XOSC32\+K\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) XOSC32K oscillator output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7b00616bd4afa72d171e9ad317b208ac}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7b00616bd4afa72d171e9ad317b208ac}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+OSC8\+M\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) OSC8M oscillator output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a70357963bac751c47a0b097568f1ec34}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a70357963bac751c47a0b097568f1ec34}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+DFLL48\+M\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) DFLL48M output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad224796335cb16ec3d64a68efeb5c9b7}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad224796335cb16ec3d64a68efeb5c9b7}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+XOSC}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad48c4f5ba6b5112eef4d978cf2ae73bc}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+XOSC\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae54fac01315c959abdf2f2396a9ff0bf}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae54fac01315c959abdf2f2396a9ff0bf}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+GCLKIN}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a4c279c59a26c988991b63eb2682e8acc}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+GCLKIN\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad3c6aba8780393019af9aa777041eecc}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad3c6aba8780393019af9aa777041eecc}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+GCLKGEN1}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2774be4de7707cea940a2b7ec37f30e3}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+GCLKGEN1\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aeefd6f0d9789f9f1c1ee07d1a256f93c}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aeefd6f0d9789f9f1c1ee07d1a256f93c}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+OSCULP32K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a42e2c1ea6d7f04f75657e31791336ec6}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+OSCULP32\+K\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_abdada430076745a99ece643763c5b14b}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_abdada430076745a99ece643763c5b14b}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+OSC32K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a79a91b96132812e2d8fec7fb79dc6cde}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+OSC32\+K\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af2db90c4ecefc9b935dd47d82968eb27}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af2db90c4ecefc9b935dd47d82968eb27}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+XOSC32K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a087326ba1d0ac766f2835e5460c72ef0}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+XOSC32\+K\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a53a17a2e7173521f90740b1f632c7863}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a53a17a2e7173521f90740b1f632c7863}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+OSC8M}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a7b00616bd4afa72d171e9ad317b208ac}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+OSC8\+M\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa23918b1d8f76e45db3cbec26eb70973}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa23918b1d8f76e45db3cbec26eb70973}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+DFLL48M}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a70357963bac751c47a0b097568f1ec34}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+DFLL48\+M\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a3ca6fb0d36a0f1194282d2517b22965f}{GCLK\+\_\+\+GENCTRL\+\_\+\+SRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acf206c291132d560c6f857c74d042b09}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acf206c291132d560c6f857c74d042b09}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+GENEN\+\_\+\+Pos}~16
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Generic Clock Generator Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aaff89a081b47174a1ebf7893d638d911}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aaff89a081b47174a1ebf7893d638d911}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+GENEN}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_acf206c291132d560c6f857c74d042b09}{GCLK\+\_\+\+GENCTRL\+\_\+\+GENEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_add1c684492c64ddc0b937c7571028381}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_add1c684492c64ddc0b937c7571028381}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+IDC\+\_\+\+Pos}~17
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Improve Duty Cycle \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a20defe310838ae549c7f9820de38e1bb}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a20defe310838ae549c7f9820de38e1bb}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+IDC}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_add1c684492c64ddc0b937c7571028381}{GCLK\+\_\+\+GENCTRL\+\_\+\+IDC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a511f960dfd2a4afa6dc073dc909389ac}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a511f960dfd2a4afa6dc073dc909389ac}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+OOV\+\_\+\+Pos}~18
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Output Off Value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a80c2684d81c5b9433098ae98bd7cc989}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a80c2684d81c5b9433098ae98bd7cc989}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+OOV}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a511f960dfd2a4afa6dc073dc909389ac}{GCLK\+\_\+\+GENCTRL\+\_\+\+OOV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a463727f09be9f9cf1f26c55e954eaf0e}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a463727f09be9f9cf1f26c55e954eaf0e}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+OE\+\_\+\+Pos}~19
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2d6d57ade8be094e5b3076e347eaabd7}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2d6d57ade8be094e5b3076e347eaabd7}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+OE}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a463727f09be9f9cf1f26c55e954eaf0e}{GCLK\+\_\+\+GENCTRL\+\_\+\+OE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae17e18184623ee038ce57b64c63e4f9a}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae17e18184623ee038ce57b64c63e4f9a}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+DIVSEL\+\_\+\+Pos}~20
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Divide Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5b38723ccce77a0257a48ce83389b204}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5b38723ccce77a0257a48ce83389b204}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+DIVSEL}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae17e18184623ee038ce57b64c63e4f9a}{GCLK\+\_\+\+GENCTRL\+\_\+\+DIVSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a74904f6bd2b8ead6cfffae549a41b869}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a74904f6bd2b8ead6cfffae549a41b869}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+RUNSTDBY\+\_\+\+Pos}~21
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) Run in Standby \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a892b6d79b97157d48d189804f91df4fa}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a892b6d79b97157d48d189804f91df4fa}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+RUNSTDBY}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a74904f6bd2b8ead6cfffae549a41b869}{GCLK\+\_\+\+GENCTRL\+\_\+\+RUNSTDBY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ab6d617a227f5a570e43959099ae10b1d}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ab6d617a227f5a570e43959099ae10b1d}} 
+\#define {\bfseries GCLK\+\_\+\+GENCTRL\+\_\+\+MASK}~0x003\+F1\+F0\+Ful
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENCTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2922a2f237f943cf8a023d3311ca5128}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2922a2f237f943cf8a023d3311ca5128}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+OFFSET}~0x8
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV offset) Generic Clock Generator Division \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a886387ce3e41b7ca629a0b6a2292a6c0}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a886387ce3e41b7ca629a0b6a2292a6c0}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV reset\+\_\+value) Generic Clock Generator Division \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Generic Clock Generator Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5a0c53611d4a82e0c2dbb7b6f4a19d01}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a5a0c53611d4a82e0c2dbb7b6f4a19d01}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a121c30a908238bacb3fefa4e5b301aa5}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a121c30a908238bacb3fefa4e5b301aa5}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID}(value)~((GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac28f55d74e999f7f44ec3aa9e733e99f}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac28f55d74e999f7f44ec3aa9e733e99f}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK0\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Generic clock generator 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2dc3454e6649886ae6a09efa583677a0}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2dc3454e6649886ae6a09efa583677a0}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK1\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Generic clock generator 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad7a8d7dc24a3a3bb735b080e47e39a1b}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad7a8d7dc24a3a3bb735b080e47e39a1b}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK2\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Generic clock generator 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad5f2b016165ee017a90a4f1710839398}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad5f2b016165ee017a90a4f1710839398}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK3\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Generic clock generator 3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac51c2dcff94064ae67baab4e01daace2}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac51c2dcff94064ae67baab4e01daace2}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK4\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Generic clock generator 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad920d68a16392ff4b23c96eacee4bef5}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad920d68a16392ff4b23c96eacee4bef5}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK5\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Generic clock generator 5 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aae2e509fc759c2812826e0b655184506}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aae2e509fc759c2812826e0b655184506}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK6\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Generic clock generator 6 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6db82014c6174b47329b88c3fc439db7}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6db82014c6174b47329b88c3fc439db7}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK7\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Generic clock generator 7 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a07425b9bd0a35302c8a3e27acd11cdfd}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a07425b9bd0a35302c8a3e27acd11cdfd}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK0}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac28f55d74e999f7f44ec3aa9e733e99f}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK0\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_adba204ad1aa9c5c4c581d92218fd5405}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_adba204ad1aa9c5c4c581d92218fd5405}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK1}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a2dc3454e6649886ae6a09efa583677a0}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK1\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aca74bff2b780ece7169b0d8feddc34b9}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aca74bff2b780ece7169b0d8feddc34b9}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK2}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad7a8d7dc24a3a3bb735b080e47e39a1b}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK2\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa819bb753272a5b829ac8ecd0c9a8ad8}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aa819bb753272a5b829ac8ecd0c9a8ad8}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK3}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad5f2b016165ee017a90a4f1710839398}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK3\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a31c1e642cbc4c74ce314918aad7164ff}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a31c1e642cbc4c74ce314918aad7164ff}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK4}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ac51c2dcff94064ae67baab4e01daace2}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK4\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a30855bfe71fb37d4fe71e08968c23594}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a30855bfe71fb37d4fe71e08968c23594}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK5}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ad920d68a16392ff4b23c96eacee4bef5}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK5\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ab13c8e6f5ed2f4dc89dfe14ecdedc0b5}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ab13c8e6f5ed2f4dc89dfe14ecdedc0b5}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK6}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_aae2e509fc759c2812826e0b655184506}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK6\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8eec016a04cbf22f2a4c01e48dfa4b4d}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a8eec016a04cbf22f2a4c01e48dfa4b4d}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK7}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a6db82014c6174b47329b88c3fc439db7}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+GCLK7\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a26ff4637fd9d6b561a910aeee96a4f88}{GCLK\+\_\+\+GENDIV\+\_\+\+ID\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a182a17bda5373cb761e1bee891a03477}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a182a17bda5373cb761e1bee891a03477}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+DIV\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) Division Factor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae95d79b8cfc28a501dce0f4767e20dc7}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_ae95d79b8cfc28a501dce0f4767e20dc7}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+DIV\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a182a17bda5373cb761e1bee891a03477}{GCLK\+\_\+\+GENDIV\+\_\+\+DIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a030bddfec3401b61cabd3fd51b98624d}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a030bddfec3401b61cabd3fd51b98624d}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+DIV}(value)~((GCLK\+\_\+\+GENDIV\+\_\+\+DIV\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h_a182a17bda5373cb761e1bee891a03477}{GCLK\+\_\+\+GENDIV\+\_\+\+DIV\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af693b6342bd310d59956220a059f6e4a}\label{utils_2cmsis_2samd20_2include_2component_2gclk_8h_af693b6342bd310d59956220a059f6e4a}} 
+\#define {\bfseries GCLK\+\_\+\+GENDIV\+\_\+\+MASK}~0x00\+FFFF0\+Ful
+\begin{DoxyCompactList}\small\item\em (GCLK\+\_\+\+GENDIV) MASK Register \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component description for GCLK. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

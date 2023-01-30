@@ -1,0 +1,69 @@
+\hypertarget{pac_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/component/pac.h File Reference}
+\label{pac_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/pac.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/pac.h}}
+
+
+Component description for PAC.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_p_a_c___w_p_c_l_r___type}{PAC\+\_\+\+WPCLR\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_a_c___w_p_s_e_t___type}{PAC\+\_\+\+WPSET\+\_\+\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_pac}{Pac}}
+\begin{DoxyCompactList}\small\item\em PAC hardware registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{pac_8h_a7b4542fab3fb2b084f233d3c19ce583f}\label{pac_8h_a7b4542fab3fb2b084f233d3c19ce583f}} 
+\#define {\bfseries PAC\+\_\+\+U2211}
+\item 
+\mbox{\Hypertarget{pac_8h_ae5cdafc1f439a00abc501cacc09f6013}\label{pac_8h_ae5cdafc1f439a00abc501cacc09f6013}} 
+\#define {\bfseries REV\+\_\+\+PAC}~0x101
+\item 
+\mbox{\Hypertarget{pac_8h_aa8bfe2dbd850c149b544388e5e66c047}\label{pac_8h_aa8bfe2dbd850c149b544388e5e66c047}} 
+\#define {\bfseries PAC\+\_\+\+WPCLR\+\_\+\+OFFSET}~0x0
+\begin{DoxyCompactList}\small\item\em (PAC\+\_\+\+WPCLR offset) Write Protection Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pac_8h_a7e4471c2307dc62051413a92921e9ad3}\label{pac_8h_a7e4471c2307dc62051413a92921e9ad3}} 
+\#define {\bfseries PAC\+\_\+\+WPCLR\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (PAC\+\_\+\+WPCLR reset\+\_\+value) Write Protection Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pac_8h_ac893a3965fb3e10c9adeef5f32aaa077}\label{pac_8h_ac893a3965fb3e10c9adeef5f32aaa077}} 
+\#define {\bfseries PAC\+\_\+\+WPCLR\+\_\+\+WP\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (PAC\+\_\+\+WPCLR) Write Protection Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pac_8h_ac859179771238c92c152314627e75b60}\label{pac_8h_ac859179771238c92c152314627e75b60}} 
+\#define {\bfseries PAC\+\_\+\+WPCLR\+\_\+\+WP\+\_\+\+Msk}~(0x7\+FFFFFFFul $<$$<$ \mbox{\hyperlink{pac_8h_ac893a3965fb3e10c9adeef5f32aaa077}{PAC\+\_\+\+WPCLR\+\_\+\+WP\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{pac_8h_abb1641cc411ee007d063770088b81193}\label{pac_8h_abb1641cc411ee007d063770088b81193}} 
+\#define {\bfseries PAC\+\_\+\+WPCLR\+\_\+\+WP}(value)~((PAC\+\_\+\+WPCLR\+\_\+\+WP\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{pac_8h_ac893a3965fb3e10c9adeef5f32aaa077}{PAC\+\_\+\+WPCLR\+\_\+\+WP\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{pac_8h_ae4e15876b40798f9de30c63a21941fe2}\label{pac_8h_ae4e15876b40798f9de30c63a21941fe2}} 
+\#define {\bfseries PAC\+\_\+\+WPCLR\+\_\+\+MASK}~0x\+FFFFFFFEul
+\begin{DoxyCompactList}\small\item\em (PAC\+\_\+\+WPCLR) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pac_8h_a1f78e51c36aefe33adf2cd3e8aae712d}\label{pac_8h_a1f78e51c36aefe33adf2cd3e8aae712d}} 
+\#define {\bfseries PAC\+\_\+\+WPSET\+\_\+\+OFFSET}~0x4
+\begin{DoxyCompactList}\small\item\em (PAC\+\_\+\+WPSET offset) Write Protection Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pac_8h_a98a9ec65abc9267cd8450753c2242423}\label{pac_8h_a98a9ec65abc9267cd8450753c2242423}} 
+\#define {\bfseries PAC\+\_\+\+WPSET\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (PAC\+\_\+\+WPSET reset\+\_\+value) Write Protection Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pac_8h_ac6aa32046f2c00bae5a1dcc2aec55e12}\label{pac_8h_ac6aa32046f2c00bae5a1dcc2aec55e12}} 
+\#define {\bfseries PAC\+\_\+\+WPSET\+\_\+\+WP\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (PAC\+\_\+\+WPSET) Write Protection Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pac_8h_aad1cd626f26b3904a3564b687c71f449}\label{pac_8h_aad1cd626f26b3904a3564b687c71f449}} 
+\#define {\bfseries PAC\+\_\+\+WPSET\+\_\+\+WP\+\_\+\+Msk}~(0x7\+FFFFFFFul $<$$<$ \mbox{\hyperlink{pac_8h_ac6aa32046f2c00bae5a1dcc2aec55e12}{PAC\+\_\+\+WPSET\+\_\+\+WP\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{pac_8h_a87da15384c0ecc5dd7fa5f217817b99b}\label{pac_8h_a87da15384c0ecc5dd7fa5f217817b99b}} 
+\#define {\bfseries PAC\+\_\+\+WPSET\+\_\+\+WP}(value)~((PAC\+\_\+\+WPSET\+\_\+\+WP\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{pac_8h_ac6aa32046f2c00bae5a1dcc2aec55e12}{PAC\+\_\+\+WPSET\+\_\+\+WP\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{pac_8h_ad8dcbe373d2b7cabb1ae14527fc59027}\label{pac_8h_ad8dcbe373d2b7cabb1ae14527fc59027}} 
+\#define {\bfseries PAC\+\_\+\+WPSET\+\_\+\+MASK}~0x\+FFFFFFFEul
+\begin{DoxyCompactList}\small\item\em (PAC\+\_\+\+WPSET) MASK Register \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component description for PAC. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

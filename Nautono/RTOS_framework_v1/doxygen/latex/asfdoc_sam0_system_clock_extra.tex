@@ -1,0 +1,65 @@
+\hypertarget{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_acronyms}{}\doxysection{Acronyms}\label{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_acronyms}
+Below is a table listing the acronyms used in this module, along with their intended meanings.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+DFLL &Digital Frequency Locked Loop  \\\cline{1-2}
+MUX &Multiplexer  \\\cline{1-2}
+OSC32K &Internal 32KHz Oscillator  \\\cline{1-2}
+OSC8M &Internal 8MHz Oscillator  \\\cline{1-2}
+PLL &Phase Locked Loop  \\\cline{1-2}
+OSC &Oscillator  \\\cline{1-2}
+XOSC &External Oscillator  \\\cline{1-2}
+XOSC32K &External 32KHz Oscillator  \\\cline{1-2}
+AHB &Advanced High-\/performance Bus  \\\cline{1-2}
+APB &Advanced Peripheral Bus  \\\cline{1-2}
+DPLL &Digital Phase Locked Loop  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_dependencies}{}\doxysection{Dependencies}\label{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_dependencies}
+This driver has the following dependencies\+:
+
+
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}\hypertarget{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_errata}{}\doxysection{Errata}\label{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_errata}
+
+\begin{DoxyItemize}
+\item This driver implements experimental workaround for errata 9905
+
+\char`\"{}\+The DFLL clock must be requested before being configured otherwise a    write access to a DFLL register can freeze the device.\char`\"{} This driver will enable and configure the DFLL before the ONDEMAND bit is set.
+\end{DoxyItemize}\hypertarget{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_history}{}\doxysection{Module History}\label{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_history}
+An overview of the module history is presented in the table below, with details on the enhancements and fixes made to the module since its first release. The current version of this corresponds to the newest version in the table.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{1}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Changelog  }\\\cline{1-1}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Changelog  }\\\cline{1-1}
+\endhead
+\begin{DoxyItemize}
+\item Corrected OSC32K startup time definitions \item Support locking of OSC32K and XOSC32K config register (default\+: false) \item Added DPLL support, functions added\+: {\ttfamily system\+\_\+clock\+\_\+source\+\_\+dpll\+\_\+get\+\_\+config\+\_\+defaults()} and {\ttfamily system\+\_\+clock\+\_\+source\+\_\+dpll\+\_\+set\+\_\+config()} \item Moved gclk channel locking feature out of the config struct functions added\+: {\ttfamily \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga59856030d55e3e50091116ffe930a356}{system\+\_\+gclk\+\_\+chan\+\_\+lock()}}}, {\ttfamily \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga343a0b14dce2d7f2724382292ac1d8ef}{system\+\_\+gclk\+\_\+chan\+\_\+is\+\_\+locked()}}} {\ttfamily \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2467f733c23f6ad18e58a4f60deae0bb}{system\+\_\+gclk\+\_\+chan\+\_\+is\+\_\+enabled()}}} and {\ttfamily \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga113af9a430f74e082401383109e4eefd}{system\+\_\+gclk\+\_\+gen\+\_\+is\+\_\+enabled()}}}   \end{DoxyItemize}
+\\\cline{1-1}
+Fixed {\ttfamily \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaa1b945c9deba13fe8640563de4e11a53}{system\+\_\+gclk\+\_\+chan\+\_\+disable()}}} deadlocking if a channel is enabled and configured to a failed/not running clock generator  \\\cline{1-1}
+\begin{DoxyItemize}
+\item Changed default value for CONF\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+ON\+\_\+\+DEMAND from {\ttfamily true} to {\ttfamily false} \item Fixed system\+\_\+flash\+\_\+set\+\_\+waitstates() failing with an assertion if an odd number of wait states provided   \end{DoxyItemize}
+\\\cline{1-1}
+\begin{DoxyItemize}
+\item Updated DFLL configuration function to implement workaround for errata 9905 in the DFLL module \item Updated {\ttfamily \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga128236c1939f726786521434d8488b37}{system\+\_\+clock\+\_\+init()}}} to reset interrupt flags before they are used \item Fixed {\ttfamily \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1894d901b7ed10e4c1e52a784c8962be}{system\+\_\+clock\+\_\+source\+\_\+get\+\_\+hz()}}} to return correcy DFLL frequency number   \end{DoxyItemize}
+\\\cline{1-1}
+\begin{DoxyItemize}
+\item Fixed {\ttfamily system\+\_\+clock\+\_\+source\+\_\+is\+\_\+ready} not returning the correct state for {\ttfamily SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+OSC8M} \item Renamed the various {\ttfamily system\+\_\+clock\+\_\+source\+\_\+$\ast$\+\_\+get\+\_\+default\+\_\+config}() functions to {\ttfamily system\+\_\+clock\+\_\+source\+\_\+$\ast$\+\_\+get\+\_\+config\+\_\+defaults}() to match the remainder of ASF \item Added OSC8M calibration constant loading from the device signature row when the oscillator is initialized \item Updated default configuration of the XOSC32 to disable Automatic Gain Control due to silicon errata   \end{DoxyItemize}
+\\\cline{1-1}
+Initial Release  \\\cline{1-1}
+\end{longtabu}

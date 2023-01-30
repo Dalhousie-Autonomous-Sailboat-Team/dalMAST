@@ -1,0 +1,219 @@
+\hypertarget{i2c__common_8h}{}\doxysection{src/\+ASF/sam0/drivers/sercom/i2c/i2c\+\_\+common.h File Reference}
+\label{i2c__common_8h}\index{src/ASF/sam0/drivers/sercom/i2c/i2c\_common.h@{src/ASF/sam0/drivers/sercom/i2c/i2c\_common.h}}
+
+
+SAM SERCOM I2C Common Driver.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$sercom.\+h$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{Indent}\textbf{ Driver Feature Definition}\par
+{\em This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of the device\textquotesingle{}s SERCOM I\textsuperscript{2}C module, for the transfer of data via an I\textsuperscript{2}C bus. The following driver API modes are covered by this manual\+:
+
+The following peripheral is used by this module\+:
+\begin{DoxyItemize}
+\item SERCOM (Serial Communication Interface)
+\end{DoxyItemize}
+
+The following devices can use this module\+:
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D09/\+D10/\+D11
+\item Atmel $\vert$ SMART SAM L21/\+L22
+\item Atmel $\vert$ SMART SAM DA1
+\item Atmel $\vert$ SMART SAM C20/\+C21
+\item Atmel $\vert$ SMART SAM HA1
+\item Atmel $\vert$ SMART SAM R30
+\item Atmel $\vert$ SMART SAM R34
+\item Atmel $\vert$ SMART SAM R35
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_overview}{Module Overview}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_extra}{Extra Information}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_examples}{Examples}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_prerequisites}{}\doxysubsection{Prerequisites}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_prerequisites}
+There are no prerequisites.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_overview}{}\doxysubsection{Module Overview}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_overview}
+The outline of this section is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_module_features}{Driver Feature Macro Definition}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_functional_desc}{Functional Description}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_topology}{Bus Topology}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_transactions}{Transactions}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_multi_master}{Multi Master}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_states}{Bus States}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_timeout}{Bus Timing}}
+\item \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_sleep_modes}{Operation in Sleep Modes}}
+\end{DoxyItemize}\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_module_features}{}\doxysubsubsection{Driver Feature Macro Definition}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_module_features}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endhead
+FEATURE\+\_\+\+I2\+C\+\_\+\+FAST\+\_\+\+MODE\+\_\+\+PLUS\+\_\+\+AND\+\_\+\+HIGH\+\_\+\+SPEED &SAM D21/\+R21/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+HA1/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+I2\+C\+\_\+10\+\_\+\+BIT\+\_\+\+ADDRESS &SAM D21/\+R21/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+HA1/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+I2\+C\+\_\+\+SCL\+\_\+\+STRETCH\+\_\+\+MODE &SAM D21/\+R21/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+HA1/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+I2\+C\+\_\+\+SCL\+\_\+\+EXTEND\+\_\+\+TIMEOUT &SAM D21/\+R21/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+HA1/\+R34/\+R35  \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+The specific features are only available in the driver when the selected device supports those features. 
+
+When using the I2C high-\/speed mode for off-\/board communication, there are various high frequency interference, which can lead to distortion of the signals and communication failure. When using Xplained Pro boards in order to test I2C high-\/speed communication, the following recommendation should be followed\+:
+\begin{DoxyItemize}
+\item Use the SDA-\/line on PA08 and SCL-\/line on PA09 for both boards. This will provide stronger pull-\/ups on both SDA and SCL.
+\item The SCL should not be higher than 1.\+5\+MHz.
+\end{DoxyItemize}
+\end{DoxyNote}
+\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_functional_desc}{}\doxysubsubsection{Functional Description}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_functional_desc}
+The I\textsuperscript{2}C provides a simple two-\/wire bidirectional bus consisting of a wired-\/\+AND type serial clock line (SCL) and a wired-\/\+AND type serial data line (SDA).
+
+The I\textsuperscript{2}C bus provides a simple, but efficient method of interconnecting multiple master and slave devices. An arbitration mechanism is provided for resolving bus ownership between masters, as only one master device may own the bus at any given time. The arbitration mechanism relies on the wired-\/\+AND connections to avoid bus drivers short-\/circuiting.
+
+A unique address is assigned to all slave devices connected to the bus. A device can contain both master and slave logic, and can emulate multiple slave devices by responding to more than one address.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_topology}{}\doxysubsubsection{Bus Topology}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_topology}
+The I\textsuperscript{2}C bus topology is illustrated in \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_topology_figure}{the figure below}}. The pull-\/up resistors (Rs) will provide a high level on the bus lines when none of the I\textsuperscript{2}C devices are driving the bus. These are optional, and can be replaced with a constant current source.
+
+\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_topology_figure}%
+\Hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_topology_figure}%
+Width\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_transactions}{}\doxysubsubsection{Transactions}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_transactions}
+The I\textsuperscript{2}C standard defines three fundamental transaction formats\+:
+\begin{DoxyItemize}
+\item Master Write
+\begin{DoxyItemize}
+\item The master transmits data packets to the slave after addressing it
+\end{DoxyItemize}
+\item Master Read
+\begin{DoxyItemize}
+\item The slave transmits data packets to the master after being addressed
+\end{DoxyItemize}
+\item Combined Read/\+Write
+\begin{DoxyItemize}
+\item A combined transaction consists of several write and read transactions
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+A data transfer starts with the master issuing a {\bfseries{Start}} condition on the bus, followed by the address of the slave together with a bit to indicate whether the master wants to read from or write to the slave. The addressed slave must respond to this by sending an {\bfseries{ACK}} back to the master.
+
+After this, data packets are sent from the master or slave, according to the read/write bit. Each packet must be acknowledged (ACK) or not acknowledged (NACK) by the receiver.
+
+If a slave responds with a NACK, the master must assume that the slave cannot receive any more data and cancel the write operation.
+
+The master completes a transaction by issuing a {\bfseries{Stop}} condition.
+
+A master can issue multiple {\bfseries{Start}} conditions during a transaction; this is then called a {\bfseries{Repeated}} {\bfseries{Start}} condition.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_address_packets}{}\doxyparagraph{Address Packets}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_address_packets}
+The slave address consists of seven bits. The 8\textsuperscript{th} bit in the transfer determines the data direction (read or write). An address packet always succeeds a {\bfseries{Start}} or {\bfseries{Repeated}} {\bfseries{Start}} condition. The 8\textsuperscript{th} bit is handled in the driver, and the user will only have to provide the 7-\/bit address.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_data_packets}{}\doxyparagraph{Data Packets}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_data_packets}
+Data packets are nine bits long, consisting of one 8-\/bit data byte, and an acknowledgement bit. Data packets follow either an address packet or another data packet on the bus.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_trans_examples}{}\doxyparagraph{Transaction Examples}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_trans_examples}
+The gray bits in the following examples are sent from master to slave, and the white bits are sent from slave to master. Example of a read transaction is shown in \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_trans_examples_i2c_read}{the figure below}}. Here, the master first issues a {\bfseries{Start}} condition and gets ownership of the bus. An address packet with the direction flag set to read is then sent and acknowledged by the slave. Then the slave sends one data packet which is acknowledged by the master. The slave sends another packet, which is not acknowledged by the master and indicates that the master will terminate the transaction. In the end, the transaction is terminated by the master issuing a {\bfseries{Stop}} condition.
+
+\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_trans_examples_i2c_read}%
+\Hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_trans_examples_i2c_read}%
+Width
+
+Example of a write transaction is shown in \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_trans_examples_i2c_write}{the figure below}}. Here, the master first issues a {\bfseries{Start}} condition and gets ownership of the bus. An address packet with the dir flag set to write is then sent and acknowledged by the slave. Then the master sends two data packets, each acknowledged by the slave. In the end, the transaction is terminated by the master issuing a {\bfseries{Stop}} condition.
+
+\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_trans_examples_i2c_write}%
+\Hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_trans_examples_i2c_write}%
+Width\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_packet_timeout}{}\doxyparagraph{Packet Timeout}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_packet_timeout}
+When a master sends an I\textsuperscript{2}C packet, there is no way of being sure that a slave will acknowledge the packet. To avoid stalling the device forever while waiting for an acknowledge, a user selectable timeout is provided in the \mbox{\hyperlink{structi2c__master__config}{i2c\+\_\+master\+\_\+config}} struct which lets the driver exit a read or write operation after the specified time. The function will then return the STATUS\+\_\+\+ERR\+\_\+\+TIMEOUT flag.
+
+This is also the case for the slave when using the functions postfixed {\ttfamily \+\_\+wait}.
+
+The time before the timeout occurs, will be the same as for \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_unknown_bus_timeout}{unknown bus state}} timeout.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_repeated_start}{}\doxyparagraph{Repeated Start}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_repeated_start}
+To issue a {\bfseries{Repeated}} {\bfseries{Start}}, the functions postfixed {\ttfamily \+\_\+no\+\_\+stop} must be used. These functions will not send a {\bfseries{Stop}} condition when the transfer is done, thus the next transfer will start with a {\bfseries{Repeated}} {\bfseries{Start}}. To end the transaction, the functions without the {\ttfamily \+\_\+no\+\_\+stop} postfix must be used for the last read/write.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_multi_master}{}\doxysubsubsection{Multi Master}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_multi_master}
+In a multi master environment, arbitration of the bus is important, as only one master can own the bus at any point.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_arbitration}{}\doxyparagraph{Arbitration}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_arbitration}
+\begin{DoxyParagraph}{Clock stretching}
+The serial clock line is always driven by a master device. However, all devices connected to the bus are allowed stretch the low period of the clock to slow down the overall clock frequency or to insert wait states while processing data. Both master and slave can randomly stretch the clock, which will force the other device into a wait-\/state until the clock line goes high again.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Arbitration on the data line}
+If two masters start transmitting at the same time, they will both transmit until one master detects that the other master is pulling the data line low. When this is detected, the master not pulling the line low, will stop the transmission and wait until the bus is idle. As it is the master trying to contact the slave with the lowest address that will get the bus ownership, this will create an arbitration scheme always prioritizing the slaves with the lowest address in case of a bus collision.
+\end{DoxyParagraph}
+\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_clock_sync}{}\doxyparagraph{Clock Synchronization}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_clock_sync}
+In situations where more than one master is trying to control the bus clock line at the same time, a clock synchronization algorithm based on the same principles used for clock stretching is necessary.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_states}{}\doxysubsubsection{Bus States}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_states}
+As the I\textsuperscript{2}C bus is limited to one transaction at the time, a master that wants to perform a bus transaction must wait until the bus is free. Because of this, it is necessary for all masters in a multi-\/master system to know the current status of the bus to be able to avoid conflicts and to ensure data integrity. \begin{DoxyItemize}
+\item {\bfseries{IDLE}} No activity on the bus (between a {\bfseries{Stop}} and a new {\bfseries{Start}} condition) \item {\bfseries{OWNER}} If the master initiates a transaction successfully \item {\bfseries{BUSY}} If another master is driving the bus \item {\bfseries{UNKNOWN}} If the master has recently been enabled or connected to the bus. Is forced to {\bfseries{IDLE}} after given \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_unknown_bus_timeout}{timeout}} when the master module is enabled\end{DoxyItemize}
+The bus state diagram can be seen in \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_states_figure}{the figure below}}. \begin{DoxyItemize}
+\item S\+: Start condition \item P\+: Stop condition \item Sr\+: Repeated start condition \label{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_states_figure}%
+\Hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_bus_states_figure}%
+Width\end{DoxyItemize}
+\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_timeout}{}\doxysubsubsection{Bus Timing}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_timeout}
+Inactive bus timeout for the master and SDA hold time is configurable in the drivers.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_unknown_bus_timeout}{}\doxyparagraph{Unknown Bus State Timeout}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_unknown_bus_timeout}
+When a master is enabled or connected to the bus, the bus state will be unknown until either a given timeout or a stop command has occurred. The timeout is configurable in the \mbox{\hyperlink{structi2c__master__config}{i2c\+\_\+master\+\_\+config}} struct. The timeout time will depend on toolchain and optimization level used, as the timeout is a loop incrementing a value until it reaches the specified timeout value.\hypertarget{i2c__common_8h_sda_hold}{}\doxyparagraph{SDA Hold Timeout}\label{i2c__common_8h_sda_hold}
+When using the I\textsuperscript{2}C in slave mode, it will be important to set a SDA hold time which assures that the master will be able to pick up the bit sent from the slave. The SDA hold time makes sure that this is the case by holding the data line low for a given period after the negative edge on the clock.
+
+The SDA hold time is also available for the master driver, but is not a necessity.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_sleep_modes}{}\doxysubsubsection{Operation in Sleep Modes}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_sleep_modes}
+The I\textsuperscript{2}C module can operate in all sleep modes by setting the run\+\_\+in\+\_\+standby Boolean in the \mbox{\hyperlink{structi2c__master__config}{i2c\+\_\+master\+\_\+config}} or i2c\+\_\+slave\+\_\+config struct. The operation in slave and master mode is shown in \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_sleep_modes_table}{the table below}}.
+
+\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_sleep_modes_table}%
+\Hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_sleep_modes_table}%
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{I2C Standby Operations}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Run in standby }&\cellcolor{\tableheadbgcolor}\textbf{ Slave }&\cellcolor{\tableheadbgcolor}\textbf{ Master  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Run in standby }&\cellcolor{\tableheadbgcolor}\textbf{ Slave }&\cellcolor{\tableheadbgcolor}\textbf{ Master  }\\\cline{1-3}
+\endhead
+false &Disabled, all reception is dropped &Generic Clock (GCLK) disabled when master is idle  \\\cline{1-3}
+true &Wake on address match when enabled &GCLK enabled while in sleep modes  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_special_considerations}{}\doxysubsection{Special Considerations}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_special_considerations}
+There are no special considerations for this driver for the APIs listed in this document. \hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_extra}{}\doxysubsection{Extra Information}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_extra}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_sercom_i2c_extra_info_page}{Extra Information for SERCOM I2C Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_examples}{}\doxysubsection{Examples}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_sercom_i2c_exqsg}{Examples for SERCOM I2C Driver}}.\hypertarget{i2c__common_8h_asfdoc_sam0_sercom_i2c_api_overview}{}\doxysubsection{API Overview}\label{i2c__common_8h_asfdoc_sam0_sercom_i2c_api_overview}
+Define SERCOM I\textsuperscript{2}C driver features set according to different device family. }\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fc}{i2c\+\_\+transfer\+\_\+direction}} \{ \mbox{\hyperlink{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fcaea641e04129636c150a843d7375b9269}{I2\+C\+\_\+\+TRANSFER\+\_\+\+WRITE}} = 0
+, \mbox{\hyperlink{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fca2b5fe52816ac7ab8ea272beb274cfd0c}{I2\+C\+\_\+\+TRANSFER\+\_\+\+READ}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Transfer direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM SERCOM I2C Common Driver. 
+
+Copyright (c) 2012-\/2020 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fc}\label{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fc}} 
+\index{i2c\_common.h@{i2c\_common.h}!i2c\_transfer\_direction@{i2c\_transfer\_direction}}
+\index{i2c\_transfer\_direction@{i2c\_transfer\_direction}!i2c\_common.h@{i2c\_common.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_transfer\_direction}{i2c\_transfer\_direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fc}{i2c\+\_\+transfer\+\_\+direction}}}
+
+
+
+Transfer direction. 
+
+For master\+: transfer direction or setting direction bit in address. For slave\+: direction of request from master. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2C\_TRANSFER\_WRITE@{I2C\_TRANSFER\_WRITE}!i2c\_common.h@{i2c\_common.h}}\index{i2c\_common.h@{i2c\_common.h}!I2C\_TRANSFER\_WRITE@{I2C\_TRANSFER\_WRITE}}}\mbox{\Hypertarget{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fcaea641e04129636c150a843d7375b9269}\label{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fcaea641e04129636c150a843d7375b9269}} 
+I2\+C\+\_\+\+TRANSFER\+\_\+\+WRITE&Master write operation is in progress \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2C\_TRANSFER\_READ@{I2C\_TRANSFER\_READ}!i2c\_common.h@{i2c\_common.h}}\index{i2c\_common.h@{i2c\_common.h}!I2C\_TRANSFER\_READ@{I2C\_TRANSFER\_READ}}}\mbox{\Hypertarget{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fca2b5fe52816ac7ab8ea272beb274cfd0c}\label{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fca2b5fe52816ac7ab8ea272beb274cfd0c}} 
+I2\+C\+\_\+\+TRANSFER\+\_\+\+READ&Master read operation is in progress \\
+\hline
+
+\end{DoxyEnumFields}

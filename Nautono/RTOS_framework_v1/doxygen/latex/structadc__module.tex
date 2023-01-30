@@ -1,0 +1,48 @@
+\hypertarget{structadc__module}{}\doxysection{adc\+\_\+module Struct Reference}
+\label{structadc__module}\index{adc\_module@{adc\_module}}
+
+
+ADC software device instance structure.  
+
+
+
+
+{\ttfamily \#include $<$adc\+\_\+feature.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_adc}{Adc}} $\ast$ \mbox{\hyperlink{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}{hw}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga91b0f997d73739cf9f7349b7581e1f56}{adc\+\_\+reference}} \mbox{\hyperlink{structadc__module_a9bc4ec70d5291d639d965244cf158224}{reference}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ADC software device instance structure. 
+
+ADC software instance structure, used to retain software state information of an associated hardware module instance.
+
+\begin{DoxyNote}{Note}
+The fields of this structure should not be altered by the user application; they are reserved for module-\/internal use only. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}\label{structadc__module_ae52052a3fdcb78496a6b4eca7edee9eb}} 
+\index{adc\_module@{adc\_module}!hw@{hw}}
+\index{hw@{hw}!adc\_module@{adc\_module}}
+\doxysubsubsection{\texorpdfstring{hw}{hw}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_adc}{Adc}}$\ast$ adc\+\_\+module\+::hw}
+
+Pointer to ADC hardware module \mbox{\Hypertarget{structadc__module_a9bc4ec70d5291d639d965244cf158224}\label{structadc__module_a9bc4ec70d5291d639d965244cf158224}} 
+\index{adc\_module@{adc\_module}!reference@{reference}}
+\index{reference@{reference}!adc\_module@{adc\_module}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga91b0f997d73739cf9f7349b7581e1f56}{adc\+\_\+reference}} adc\+\_\+module\+::reference}
+
+Keep reference configuration so we know when enable is called 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/adc/adc\+\_\+sam\+\_\+d\+\_\+r\+\_\+h/\mbox{\hyperlink{adc__feature_8h}{adc\+\_\+feature.\+h}}\end{DoxyCompactItemize}

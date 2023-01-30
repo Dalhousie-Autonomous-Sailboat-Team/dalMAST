@@ -1,0 +1,39 @@
+\hypertarget{utils_2cmsis_2samd20_2include_2instance_2wdt_8h_source}{}\doxysection{wdt.\+h}
+\label{utils_2cmsis_2samd20_2include_2instance_2wdt_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/wdt.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/wdt.h}}
+\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2instance_2wdt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_WDT\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_WDT\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for WDT peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_WDT\_CTRL               (0x40001000U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_WDT\_CONFIG             (0x40001001U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_WDT\_EWCTRL             (0x40001002U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_WDT\_INTENCLR           (0x40001004U) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_WDT\_INTENSET           (0x40001005U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_WDT\_INTFLAG            (0x40001006U) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_WDT\_STATUS             (0x40001007U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_WDT\_CLEAR              (0x40001008U) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_WDT\_CTRL               (*(RwReg8 *)0x40001000U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_WDT\_CONFIG             (*(RwReg8 *)0x40001001U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_WDT\_EWCTRL             (*(RwReg8 *)0x40001002U) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_WDT\_INTENCLR           (*(RwReg8 *)0x40001004U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_WDT\_INTENSET           (*(RwReg8 *)0x40001005U) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_WDT\_INTFLAG            (*(RwReg8 *)0x40001006U) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_WDT\_STATUS             (*(RoReg8 *)0x40001007U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_WDT\_CLEAR              (*(WoReg8 *)0x40001008U) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{/* ========== Instance parameters for WDT peripheral ========== */}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define WDT\_GCLK\_ID                 1        }\textcolor{comment}{// Index of Generic Clock}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_WDT\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,742 @@
+\hypertarget{parts_8h}{}\doxysection{src/\+ASF/common/utils/parts.h File Reference}
+\label{parts_8h}\index{src/ASF/common/utils/parts.h@{src/ASF/common/utils/parts.h}}
+
+
+Atmel part identification macros.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga848d950beec67bc702bfcfdecc70bb5b}{UC3}}~(\mbox{\hyperlink{group__uc3__part__macros__group_gaf7f16cc2bde7daf34576983fee8824c8}{UC3A}} $\vert$$\vert$ \mbox{\hyperlink{group__uc3__part__macros__group_ga61e51606324c212eb11079e5acf592e0}{UC3B}} $\vert$$\vert$ \mbox{\hyperlink{group__uc3__part__macros__group_gac7a13b9ceb67804d94b6a8967512ee71}{UC3C}} $\vert$$\vert$ \mbox{\hyperlink{group__uc3__part__macros__group_ga351a876f40669641e6ba9620909143d3}{UC3D}} $\vert$$\vert$ \mbox{\hyperlink{group__uc3__part__macros__group_gac8a7d715e500aa74cd05e0f0fc5bb005}{UC3L}})
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga959bff90afbae437308a52eeb67b3368}{XMEGA}}~(\mbox{\hyperlink{group__xmega__part__macros__group_gab903a90d3a0bc99d7248eaecbb325a23}{XMEGA\+\_\+A}} $\vert$$\vert$ \mbox{\hyperlink{group__xmega__part__macros__group_ga55210f3805902072fce76647b50fa177}{XMEGA\+\_\+\+AU}} $\vert$$\vert$ \mbox{\hyperlink{group__xmega__part__macros__group_ga62f2c1c93640237425cb64186ddce219}{XMEGA\+\_\+B}} $\vert$$\vert$ \mbox{\hyperlink{group__xmega__part__macros__group_ga75b06dd59d29b1de54dd73fe67830973}{XMEGA\+\_\+C}} $\vert$$\vert$ \mbox{\hyperlink{group__xmega__part__macros__group_gacc9e4b074c3f87ce7b461483b0beb15c}{XMEGA\+\_\+D}} $\vert$$\vert$ \mbox{\hyperlink{group__xmega__part__macros__group_gaab6d2543c5128fca0b1aeecb5c080723}{XMEGA\+\_\+E}})
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_ga78a6115b485de47c7cc56b224c558ea2}{MEGA}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga0184d5fd98854f0e40eef3a27de91fed}{SAM}}
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Convenience macros for part checking}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries AVR8\+\_\+\+PART\+\_\+\+IS\+\_\+\+DEFINED}(part)~ (defined(\+\_\+\+\_\+ \#\# part \#\# \+\_\+\+\_\+) $\vert$$\vert$ defined(\+\_\+\+\_\+\+AVR\+\_\+ \#\# part \#\# \+\_\+\+\_\+))
+\item 
+\#define {\bfseries AVR32\+\_\+\+PART\+\_\+\+IS\+\_\+\+DEFINED}(part)~ (defined(\+\_\+\+\_\+\+AT32 \#\# part \#\# \+\_\+\+\_\+) $\vert$$\vert$ defined(\+\_\+\+\_\+\+AVR32\+\_\+ \#\# part \#\# \+\_\+\+\_\+))
+\item 
+\#define {\bfseries SAM\+\_\+\+PART\+\_\+\+IS\+\_\+\+DEFINED}(part)~(defined(\+\_\+\+\_\+ \#\# part \#\# \+\_\+\+\_\+))
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR UC3 A series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gaee4dd9ce50cc26707d159660db9fc408}{UC3\+A0}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gacbe47eb7ac7d6e655d45657bffab3af6}{UC3\+A1}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gae08aa32db9bd4a60a8cfa222f7ff74cc}{UC3\+A3}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga633294c4776386c15ab2050644e77b4f}{UC3\+A4}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR UC3 B series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga701194230718f73a89efc39742e061af}{UC3\+B0}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga96602eec1c923afe92a64d807a242cd7}{UC3\+B1}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR UC3 C series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga4519bacce7868e73227b94af6e2a1b7f}{UC3\+C0}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga775cb0ff401f59a6062a4513ce6a65e6}{UC3\+C1}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga74bddd178c8022709acca0ad80ff4db8}{UC3\+C2}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR UC3 D series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga432af70c4d53fc917770e4ce48440613}{UC3\+D3}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gae271cf5f4b9459baea7216c071e02d76}{UC3\+D4}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR UC3 L series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga4a399e061cd2bf1088c01a22f69cf6c1}{UC3\+L0}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga2acf2e6f59e322e343123ad12fe89c2c}{UC3\+L0128}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gaa8ab88d4e48e7936416c4475b42e5b49}{UC3\+L0256}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gade3b8d2d26305ef47bb7b52212807e1d}{UC3\+L3}}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gae119ee2bcbfe63aa6cb0bc92245943f6}{UC3\+L4}}
+\item 
+\#define {\bfseries UC3\+L3\+\_\+\+L4}~(UC3\+L3 $\vert$$\vert$ UC3\+L4)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR UC3 families}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gaf7f16cc2bde7daf34576983fee8824c8}{UC3A}}~(UC3\+A0 $\vert$$\vert$ UC3\+A1 $\vert$$\vert$ UC3\+A3 $\vert$$\vert$ UC3\+A4)
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga61e51606324c212eb11079e5acf592e0}{UC3B}}~(UC3\+B0 $\vert$$\vert$ UC3\+B1)
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gac7a13b9ceb67804d94b6a8967512ee71}{UC3C}}~(UC3\+C0 $\vert$$\vert$ UC3\+C1 $\vert$$\vert$ UC3\+C2)
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_ga351a876f40669641e6ba9620909143d3}{UC3D}}~(UC3\+D3 $\vert$$\vert$ UC3\+D4)
+\item 
+\#define \mbox{\hyperlink{group__uc3__part__macros__group_gac8a7d715e500aa74cd05e0f0fc5bb005}{UC3L}}~(UC3\+L0 $\vert$$\vert$ UC3\+L0128 $\vert$$\vert$ UC3\+L0256 $\vert$$\vert$ UC3\+L3\+\_\+\+L4)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR XMEGA A series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_gaa0df665226b6faf69dcc137f1b78f074}{XMEGA\+\_\+\+A1}}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga831948bd467aa2355eb76ec708d2921a}{XMEGA\+\_\+\+A3}}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga32fef354d7f092b04ec41a0733e2c7ae}{XMEGA\+\_\+\+A3B}}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga7b83a133489c9896dbdc730615c83be8}{XMEGA\+\_\+\+A4}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR XMEGA AU series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga6672329ddee03af905aa378946568b67}{XMEGA\+\_\+\+A1U}}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_gab5232598231cc5c17658e4b7cc5293ec}{XMEGA\+\_\+\+A3U}}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga98083f3307fe61cc2377948db87cd708}{XMEGA\+\_\+\+A3\+BU}}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga7625edcdd219df905c870d73c1689da6}{XMEGA\+\_\+\+A4U}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR XMEGA B series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_gaa2fd55860a1bbc05c6d0d384e7476596}{XMEGA\+\_\+\+B1}}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga7385be70af05a3a61864a4fc470fa39d}{XMEGA\+\_\+\+B3}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR XMEGA C series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga10c26d10c3df7d9874e4527d1327c60b}{XMEGA\+\_\+\+C3}}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga8add217f9d3d28fda40ec91e65a5d970}{XMEGA\+\_\+\+C4}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR XMEGA D series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_gad634208a506f79622c67be500014feb3}{XMEGA\+\_\+\+D3}}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga831e633408c7458a445d333b9b3f142f}{XMEGA\+\_\+\+D4}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR XMEGA E series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga3bbcf2e955c9747a3595f8cdc01436ba}{XMEGA\+\_\+\+E5}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ AVR XMEGA families}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_gab903a90d3a0bc99d7248eaecbb325a23}{XMEGA\+\_\+A}}~(XMEGA\+\_\+\+A1 $\vert$$\vert$ XMEGA\+\_\+\+A3 $\vert$$\vert$ XMEGA\+\_\+\+A3B $\vert$$\vert$ XMEGA\+\_\+\+A4)
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga55210f3805902072fce76647b50fa177}{XMEGA\+\_\+\+AU}}~(XMEGA\+\_\+\+A1U $\vert$$\vert$ XMEGA\+\_\+\+A3U $\vert$$\vert$ XMEGA\+\_\+\+A3\+BU $\vert$$\vert$ XMEGA\+\_\+\+A4U)
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga62f2c1c93640237425cb64186ddce219}{XMEGA\+\_\+B}}~(XMEGA\+\_\+\+B1 $\vert$$\vert$ XMEGA\+\_\+\+B3)
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_ga75b06dd59d29b1de54dd73fe67830973}{XMEGA\+\_\+C}}~(XMEGA\+\_\+\+C3 $\vert$$\vert$ XMEGA\+\_\+\+C4)
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_gacc9e4b074c3f87ce7b461483b0beb15c}{XMEGA\+\_\+D}}~(XMEGA\+\_\+\+D3 $\vert$$\vert$ XMEGA\+\_\+\+D4)
+\item 
+\#define \mbox{\hyperlink{group__xmega__part__macros__group_gaab6d2543c5128fca0b1aeecb5c080723}{XMEGA\+\_\+E}}~(XMEGA\+\_\+\+E5)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ ATmegaxx0/xx1 subgroups}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gad59dc6f3c3dc91c94cd1673448135b83}{MEGA\+\_\+\+XX0}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_ga9ed7e955cff24655d99517f91d9f6392}{MEGA\+\_\+\+XX1}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ mega\+AVR groups}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_ga59ba73abcf65d3d398e7d37d78c271fe}{MEGA\+\_\+\+XX0\+\_\+1}}~(MEGA\+\_\+\+XX0 $\vert$$\vert$ MEGA\+\_\+\+XX1)
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gadcf5297df4d3d2f2bb5ccd7d6e3578b6}{MEGA\+\_\+\+XX4}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gaf7dde20cbd5a8e5d53438e8dfac074a2}{MEGA\+\_\+\+XX4\+\_\+A}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_ga47583caa82990781cd23a8495710ef31}{MEGA\+\_\+\+XX8}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gadb4a50447f658e564b640ca248e85b51}{MEGA\+\_\+\+XX8\+\_\+A}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gabdf992a84b61d19055315a473c2e0f20}{MEGA\+\_\+\+XX}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_ga2b23bf35c1439ec05ddac769a8d8d1f8}{MEGA\+\_\+\+XX\+\_\+A}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gaa301ab9851fc885a2d07f5df47d0a893}{MEGA\+\_\+\+RFA1}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gaa5278eedfdfffaeb7c2c49aff7c2eb97}{MEGA\+\_\+\+RFR2}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_ga1d762b037d9532cdfbc28404113aa480}{MEGA\+\_\+\+RF}}~(\mbox{\hyperlink{group__mega__part__macros__group_gaa301ab9851fc885a2d07f5df47d0a893}{MEGA\+\_\+\+RFA1}} $\vert$$\vert$ \mbox{\hyperlink{group__mega__part__macros__group_gaa5278eedfdfffaeb7c2c49aff7c2eb97}{MEGA\+\_\+\+RFR2}})
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ ATmegaxx\+\_\+un0/un1/un2 subgroups}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gae1703e1537f2cbb10b4a8992c8b7b70b}{MEGA\+\_\+\+XX\+\_\+\+UN0}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gaad35e34280ef078dec0cc18c3ea6d3f6}{MEGA\+\_\+\+XX\+\_\+\+UN1}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_ga5f4566d4ddaa3cee92d4c78162594f2d}{MEGA\+\_\+\+XX\+\_\+\+UN2}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_ga9252d02a9216d5e9bf94000667ad6cb1}{MEGA\+\_\+\+UNCATEGORIZED}}
+\item 
+\#define \mbox{\hyperlink{group__mega__part__macros__group_gaabb3078f36ad4d875915bd54fa46f337}{MEGA\+\_\+\+UNSPECIFIED}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM3S series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gac1f138c6fe48b20faa71fb2d68d68b52}{SAM3\+S1}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga3665c1cc7fa5ad33231fde9e16b562cd}{SAM3\+S2}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gae92413f616568bd2f38622e20f4925e0}{SAM3\+S4}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaea8f1cca303520385d12110ad8e8bafe}{SAM3\+S8}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga9f16069247b2e38ddb0bcaa912750a4f}{SAM3\+SD8}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM3U series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gae39c5d03b1af93b2864e5f72908a0ff3}{SAM3\+U1}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga0feb884f39921517436f269c86914cb0}{SAM3\+U2}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga2af1cda107cbae1f393bce7a6c659a98}{SAM3\+U4}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM3N series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gab650d285e2a8ff0d85b3522c87a4cfc6}{SAM3\+N00}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga6a5ed34ed428558ee2bb94af5ae516d6}{SAM3\+N0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaf58a7d141f31d6db97223dfd62d92905}{SAM3\+N1}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga96514eddac4935925994ef85ca9d12ac}{SAM3\+N2}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga1d47bffd90ddbb0dac3874edbafb3803}{SAM3\+N4}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM3X series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga735357bdbbd05356a7829e517fb4203f}{SAM3\+X4}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga13be8353e38999aaca5c412c895c15da}{SAM3\+X8}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM3A series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga1f4481b0cd1b2c1a4636999b6a433b9f}{SAM3\+A4}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gab1397a5e346af96e5ed34027ed3b4de8}{SAM3\+A8}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM4S series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga797a42a5eb0d374075a5cbf6b6b5318b}{SAM4\+S2}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga9c0feae652dc37c207bd933f6db2d7f4}{SAM4\+S4}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga04e32c037894a537ffb6193413693cb0}{SAM4\+S8}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga1c3c5c80f2c2ca26604ff5d59cb3a0b2}{SAM4\+S16}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga51a0ff030b5d9e555653a4227538a888}{SAM4\+SA16}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga817106c645da5be09dd37af37d7fb805}{SAM4\+SD16}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaddfc17b115c4d5b5ff8b14eb2b8d4a2a}{SAM4\+SD32}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM4L series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gafd288e34365d8a47cadf64f9040b97c6}{SAM4\+LS}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaff053c1dc2a1aaf1e97428da4cb49704}{SAM4\+LC}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMD20 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga5f1a6d04b67f9e1eceb737aea3ece8c8}{SAMD20J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga98be0064016617a8ce1449905046f81a}{SAMD20G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga4540be1fa82a17932c6000a0919806b0}{SAMD20E}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMD21 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga55d9b92dcaef90e466055b1792d06d8a}{SAMD21J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga38b8f6ee1c68255f5fc157f564bb9db9}{SAMD21G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga8166031d150c68969ecd40a7809aa146}{SAMD21\+GXXL}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaea4cafdd5e8defbc23a43eb5bb10578c}{SAMD21E}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga41c43019594750ac3d6f0b210cd149f6}{SAMD21\+EXXL}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMR21 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gad414d7dfda114b1381015378bb6a5665}{SAMR21G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga29500011ca9cccd91d5131b74ba45ece}{SAMR21E}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMR30 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga94739d4be369821d24f77b4c9ba2ce6e}{SAMR30G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga0eee38fa3fab84e5cf0f0f491a401a77}{SAMR30E}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMR34 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga29e2e946182ac3d449fc1dc5072a4571}{SAMR34J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaaf11be596e255a9c3eb6f5c3841f6a7d}{SAMR34\+JXXA}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaa7eb3be53aa9d3143a2f04a88c899172}{SAMR34\+JXXB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gade35d2be2af35f093c725af70d9b509d}{SAMR35J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga125181d80b11fcc82f3d4fd2831d25b5}{SAMR35\+JXXB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga87557409745861cb8a9571efea3d46c6}{WLR089U}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaa7df1af84fd26a9bab36695511874c52}{WLR089\+U0}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMB11 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga9d75ea612675a9caabb228e7e0751ff7}{SAMB11G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaa7c0614df11bc3398897ee31d038dde7}{BTLC1000}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMD09 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gae85ddac6159db51e09555ec6150a6947}{SAMD09C}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga8209c68b3303de59159dcc7ace291b99}{SAMD09D}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMD10 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga1a60c9b9aa605778737b0f61864f274f}{SAMD10C}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaad8cc1805b7c030a384ba343b1fc475f}{SAMD10\+DS}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga99eaa778f98beee6e189a0a649330a47}{SAMD10\+DM}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga697aef1095ce9ad2da295844d802cd1a}{SAMD10\+DU}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMD11 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga04267f2c27b0e5c265d7cf75e41728b5}{SAMD11C}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga5a5c9017efa9764ece7e1e7fee1f5866}{SAMD11\+DS}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaa3d39f43fd1dfb13a8e3769dadd3a3b2}{SAMD11\+DM}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaf49d4f8c4df8247e3b09f8c5369589a5}{SAMD11\+DU}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAML21 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga77d426bf473440074718db9179864325}{SAML21E}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga81494be96e002472b9a552c8cf261db0}{SAML21G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gab33eded948f0cd289b45cf2570ace7e1}{SAML21J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga133675be48c6539ee10945bd9577a99e}{SAML21\+XXXA}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga8f1ce40088d4f4a65fe4e9c9f6785043}{SAML21\+XXXB}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAML22 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gacacfa44cd4e08d409f47b21091d37d7b}{SAML22N}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gab57f0f43cbe78f536576e04c9b237785}{SAML22G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga88e5b2e7925ad798e0e6d099be6ac52d}{SAML22J}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMDA1 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gac5ecd62910ae8097510c6b9be6fdc422}{SAMDA1J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga50dbce5f439ee5e0228cfd1982793627}{SAMDA1G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gab3c006df6e9b5866427a0df88b253351}{SAMDA1E}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMHA1 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaee9e99c30b50672f163da40c4cb8cb30}{SAMHA1G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga48f45d0c71e7c076cdce284fc3c6ef73}{SAMHA1E}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMHA0 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga14ccda7d71a5163427e54a4ed0b249a9}{SAMHA0G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga6b59ef1df52e0f4b53ecb47a41728280}{SAMHA0E}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMC20 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gafa6a3f9330468b268688f59c9baa8120}{SAMC20E}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaae8339de60d66fd1ea8ab4d71500eee3}{SAMC20G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaf87c13f9dc254f1b09d6a4510e1f43bd}{SAMC20J}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMC21 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga3f154a978288c66ee8c267dcc90d34bd}{SAMC21E}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga11adf939524e0b28311c847bc8933d4b}{SAMC21G}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaaecc832b9662714c608e2a02449651d7}{SAMC21J}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM4E series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga698232ea02e61922d22e02b339796a50}{SAM4\+E8}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga7e756ab3c18b6c54de1d7f376e13eaa3}{SAM4\+E16}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM4N series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga820cb6819d43d98db4ea8ee4d40adb8a}{SAM4\+N8}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gad92bacc1b6c870d806f48e8195527911}{SAM4\+N16}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM4C series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga77c44ef9d719d70486f81402ebee7b27}{SAM4\+C4\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga0ca9d376eb3cac4e27fb9bd79ec028a6}{SAM4\+C4\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+C4}~(SAM4\+C4\+\_\+0 $\vert$$\vert$ SAM4\+C4\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga6210432e77e4bc0e170dc71370a3e845}{SAM4\+C8\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga349700d2ac7573d426776e85f7632361}{SAM4\+C8\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+C8}~(SAM4\+C8\+\_\+0 $\vert$$\vert$ SAM4\+C8\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga933b4554835e5159623415812db1400e}{SAM4\+C16\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga9240bd8927b6ae5e76e4f60cbe18be4b}{SAM4\+C16\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+C16}~(SAM4\+C16\+\_\+0 $\vert$$\vert$ SAM4\+C16\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga80a3a5850f6f7ac1b16a781c63e46c67}{SAM4\+C32\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga84c94a3f93f7d2a0c440607a263477b7}{SAM4\+C32\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+C32}~(SAM4\+C32\+\_\+0 $\vert$$\vert$ SAM4\+C32\+\_\+1)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM4\+CM series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gadaadeb2fb79d513f13503d300ab9c95d}{SAM4\+CMP8\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga7f686a5c46c9cfa8ab0d97ec4f257fb7}{SAM4\+CMP8\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+CMP8}~(SAM4\+CMP8\+\_\+0 $\vert$$\vert$ SAM4\+CMP8\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga3c4d12eff2cac193d008a1a33763cdea}{SAM4\+CMP16\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga1339cdbe5a862d94adeeae3b32f2c8c7}{SAM4\+CMP16\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+CMP16}~(SAM4\+CMP16\+\_\+0 $\vert$$\vert$ SAM4\+CMP16\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaf581d4fe9779afce853dfe577bdeb67b}{SAM4\+CMP32\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gadcf0406c9868af4d67e4eeaca0b641ac}{SAM4\+CMP32\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+CMP32}~(SAM4\+CMP32\+\_\+0 $\vert$$\vert$ SAM4\+CMP32\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gac5948c5b98244c8de9c1eeab81f04f35}{SAM4\+CMS4\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga1c89b42ee6abb2dd5a03e9522a0e9652}{SAM4\+CMS4\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+CMS4}~(SAM4\+CMS4\+\_\+0 $\vert$$\vert$ SAM4\+CMS4\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gabda280fc5acf03bfd252e320e6695e38}{SAM4\+CMS8\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gadceba71b218ba66c640a14073c6a5692}{SAM4\+CMS8\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+CMS8}~(SAM4\+CMS8\+\_\+0 $\vert$$\vert$ SAM4\+CMS8\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga7939b0b91125cd9bd2c327d271599014}{SAM4\+CMS16\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaf4031be5e4d4319df37b6d2f536641cd}{SAM4\+CMS16\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+CMS16}~(SAM4\+CMS16\+\_\+0 $\vert$$\vert$ SAM4\+CMS16\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaaaf9613986a1e170c45e4ff09e82cf7a}{SAM4\+CMS32\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga98bb5faae6dcd2b14cfa555d19895fa6}{SAM4\+CMS32\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+CMS32}~(SAM4\+CMS32\+\_\+0 $\vert$$\vert$ SAM4\+CMS32\+\_\+1)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM4\+CP series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaa7359e4b343a4ab48894b656b2f349b9}{SAM4\+CP16\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga6757116bcbffd58eca2b98b620175590}{SAM4\+CP16\+\_\+1}}
+\item 
+\#define {\bfseries SAM4\+CP16}~(SAM4\+CP16\+\_\+0 $\vert$$\vert$ SAM4\+CP16\+\_\+1)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMG series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gacd7261d3389d2f5c745e64ffe1b89d99}{SAMG51}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaee5167c2eae38c830d175d48769391d8}{SAMG53}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga0cd510d1aac0c983cf19398f7dd2b6a1}{SAMG54}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga80c14f26d62169592dd858e259b440de}{SAMG55}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMV71 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaec1e3ef31d457e77f20063cdde7e13b9}{SAMV71J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga4fbb0bc9ffb5be011f7aa7eeb9e8dd4b}{SAMV71\+JB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga8688ea299fbe00f831b4e569cf1c742c}{SAMV71N}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaf052dd0a36916f7370105b557d9c2fa8}{SAMV71\+NB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga1abe2ffaaf3eebef08978f55ed456a5c}{SAMV71Q}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaa2f5f7f21d9a40bcd31df4ef38838059}{SAMV71\+QB}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMV70 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaa6cb4c3856c6856a57ec9f443d239527}{SAMV70J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga5ec7d7853fd7dc3b0d5e686f3f2df869}{SAMV70\+JB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga03d76f8d5034b894e50dabd497e64992}{SAMV70N}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga2bafab3273c42c12eb7180d70de301df}{SAMV70\+NB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga70156b9e7c7f2ac6eaf8e04f73e01801}{SAMV70Q}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga560e2809040715920c242312dbe99b17}{SAMV70\+QB}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAMS70 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaf1a96c282da9b05972a653cf0b03b1a2}{SAMS70J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaec6e38f478ca1b4b598f598d3e1fb3ff}{SAMS70\+JB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga058ef2915b804280b5d38280a5b2bae3}{SAMS70N}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga7a21f0445e52881a10dcf99486ea5332}{SAMS70\+NB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga3cc6724a7388e59987ccd2b9c9b3e0eb}{SAMS70Q}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga7597e22e69b9ad51c748d9fbcc3c0a9e}{SAMS70\+QB}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAME70 series}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gac93b02af1231b0a98fe321369ddc7518}{SAME70J}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaae0e6f6fcaa48e35111517b579509e64}{SAME70\+JB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaaf095995f64c3f7f90b0bc0bba4f02c1}{SAME70N}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga334dbf79ff94d8bf76c1fae1bebb36a0}{SAME70\+NB}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gabff43edc4525eee01f0a484e6e3996e9}{SAME70Q}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga1a873ec232758ffa5fae2ba4f925f8f9}{SAME70\+QB}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SAM families}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaaa8d9ee5981c67997fbdf923247bcb68}{SAM3S}}~(SAM3\+S1 $\vert$$\vert$ SAM3\+S2 $\vert$$\vert$ SAM3\+S4 $\vert$$\vert$ SAM3\+S8 $\vert$$\vert$ SAM3\+SD8)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga987abac1ef39b0b447b8b11419942476}{SAM3U}}~(SAM3\+U1 $\vert$$\vert$ SAM3\+U2 $\vert$$\vert$ SAM3\+U4)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga52239420b96aa3f1a273665cfd3b60a1}{SAM3N}}~(SAM3\+N00 $\vert$$\vert$ SAM3\+N0 $\vert$$\vert$ SAM3\+N1 $\vert$$\vert$ SAM3\+N2 $\vert$$\vert$ SAM3\+N4)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaae4990dfaa4eeed17d8a0351cca02fdd}{SAM3\+XA}}~(SAM3\+X4 $\vert$$\vert$ SAM3\+X8 $\vert$$\vert$ SAM3\+A4 $\vert$$\vert$ SAM3\+A8)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gac3e6ef71bec5113415a64bb14ce8be24}{SAM4S}}~(SAM4\+S2 $\vert$$\vert$ SAM4\+S4 $\vert$$\vert$ SAM4\+S8 $\vert$$\vert$ SAM4\+S16 $\vert$$\vert$ SAM4\+SA16 $\vert$$\vert$ SAM4\+SD16 $\vert$$\vert$ SAM4\+SD32)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gabf4b4fa802cbb57480225dd3c8f7a41b}{SAM4L}}~(SAM4\+LS $\vert$$\vert$ SAM4\+LC)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gad9193543e761f5967353a0464dde1e61}{SAMD20}}~(SAMD20J $\vert$$\vert$ SAMD20G $\vert$$\vert$ SAMD20E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gab9217b15071242235d3014381d61dbf7}{SAMD21}}~(SAMD21J $\vert$$\vert$ SAMD21G $\vert$$\vert$ SAMD21E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gafca3f645579e1a67ce865408ecb5269f}{SAMD09}}~(SAMD09C $\vert$$\vert$ SAMD09D)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gac83f6794433f2c57bfc5c520fe3d67ce}{SAMD10}}~(SAMD10C $\vert$$\vert$ SAMD10\+DS $\vert$$\vert$ SAMD10\+DM $\vert$$\vert$ SAMD10\+DU)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga9e5edb5637174377186d92141e7f60d9}{SAMD11}}~(SAMD11C $\vert$$\vert$ SAMD11\+DS $\vert$$\vert$ SAMD11\+DM $\vert$$\vert$ SAMD11\+DU)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga072dd622eab25246a14ce4a97a3df2df}{SAMDA1}}~(SAMDA1J $\vert$$\vert$ SAMDA1G $\vert$$\vert$ SAMDA1E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga801950238d1ae14ecc1f1b41ebc6e392}{SAMHA1}}~(SAMHA1G $\vert$$\vert$ SAMHA1E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gad64dc6ef04057f4b3aabbf44baf89a83}{SAMHA0}}~(SAMHA0G $\vert$$\vert$ SAMHA0E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga5eed5c828e076621e5274450cdc6c32b}{SAMD}}~(\mbox{\hyperlink{group__sam__part__macros__group_gad9193543e761f5967353a0464dde1e61}{SAMD20}} $\vert$$\vert$ \mbox{\hyperlink{group__sam__part__macros__group_gab9217b15071242235d3014381d61dbf7}{SAMD21}} $\vert$$\vert$ \mbox{\hyperlink{group__sam__part__macros__group_gafca3f645579e1a67ce865408ecb5269f}{SAMD09}} $\vert$$\vert$ \mbox{\hyperlink{group__sam__part__macros__group_gac83f6794433f2c57bfc5c520fe3d67ce}{SAMD10}} $\vert$$\vert$ \mbox{\hyperlink{group__sam__part__macros__group_ga9e5edb5637174377186d92141e7f60d9}{SAMD11}} $\vert$$\vert$ \mbox{\hyperlink{group__sam__part__macros__group_ga072dd622eab25246a14ce4a97a3df2df}{SAMDA1}})
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga63b66a40b044f5f10d6dfa3ff51a0acb}{SAMR21}}~(SAMR21G $\vert$$\vert$ SAMR21E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gae396c6bd5babec94cd8a290c1ae60a9f}{SAMR30}}~(SAMR30G $\vert$$\vert$ SAMR30E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga4b434b15147bd361570c05cc146efdad}{SAMR34}}~(SAMR34J)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga7346e2d821ec01bb995d8f697ce43b23}{SAMR35}}~(SAMR35J)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga54bcab564c6d04512d245a06d4c5b2f6}{WLR089}}~(WLR089U)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga2af5455979bc458995adea5aaa7807a2}{SAMB11}}~(SAMB11G $\vert$$\vert$ BTLC1000)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga38e970d13ac9ee9d74c527ab43bc5c36}{SAML21}}~(SAML21J $\vert$$\vert$ SAML21G $\vert$$\vert$ SAML21E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga5f904618e9b88b4d9981d6a374b09aa5}{SAML22}}~(SAML22J $\vert$$\vert$ SAML22G $\vert$$\vert$ SAML22N)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gaac043547d8783c0cba34b7d3139c53a0}{SAMC20}}~(SAMC20J $\vert$$\vert$ SAMC20G $\vert$$\vert$ SAMC20E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga0ebd751fff25acbc104dcaeef418fcff}{SAMC21}}~(SAMC21J $\vert$$\vert$ SAMC21G $\vert$$\vert$ SAMC21E)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga7266cd2c26bf5ed34a006ed97f34db76}{SAM4E}}~(SAM4\+E8 $\vert$$\vert$ SAM4\+E16)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gadb4c0138a71e1c2dfb0c91ad3ea5861c}{SAM4N}}~(SAM4\+N8 $\vert$$\vert$ SAM4\+N16)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga5033d451b0d964e7a95f7b70a33dec8b}{SAM4\+C\+\_\+0}}~(SAM4\+C4\+\_\+0 $\vert$$\vert$ SAM4\+C8\+\_\+0 $\vert$$\vert$ SAM4\+C16\+\_\+0 $\vert$$\vert$ SAM4\+C32\+\_\+0)
+\item 
+\#define {\bfseries SAM4\+C\+\_\+1}~(SAM4\+C4\+\_\+1 $\vert$$\vert$ SAM4\+C8\+\_\+1 $\vert$$\vert$ SAM4\+C16\+\_\+1 $\vert$$\vert$ SAM4\+C32\+\_\+1)
+\item 
+\#define {\bfseries SAM4C}~(SAM4\+C4 $\vert$$\vert$ SAM4\+C8 $\vert$$\vert$ SAM4\+C16 $\vert$$\vert$ SAM4\+C32)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gadbca33c488233ea066312c7c93b62965}{SAM4\+CM\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga40dfb0460f36223679de0af78510caab}{SAM4\+CM\+\_\+1}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga067569f8932adc3c2b869ead8c68f7de}{SAM4\+CM}}
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga01ca8a083b5d4d9ba3c24c9314f69264}{SAM4\+CP\+\_\+0}}~(SAM4\+CP16\+\_\+0)
+\item 
+\#define {\bfseries SAM4\+CP\+\_\+1}~(SAM4\+CP16\+\_\+1)
+\item 
+\#define {\bfseries SAM4\+CP}~(SAM4\+CP16)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gad4ae7782abc1e1087067d9958af3381c}{SAMG}}~(SAMG51 $\vert$$\vert$ SAMG53 $\vert$$\vert$ SAMG54 $\vert$$\vert$ SAMG55)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gafee38ed5a47634705a32ff589210928a}{SAMB}}~(\mbox{\hyperlink{group__sam__part__macros__group_ga2af5455979bc458995adea5aaa7807a2}{SAMB11}})
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga3244695e750cd101d85bdfbc8802c5e9}{SAMV71}}~(SAMV71J $\vert$$\vert$ SAMV71N $\vert$$\vert$ SAMV71Q $\vert$$\vert$ SAMV71\+JB $\vert$$\vert$ SAMV71\+NB $\vert$$\vert$ SAMV71\+QB)
+\item 
+\#define {\bfseries SAMV71B}~(SAMV71\+JB $\vert$$\vert$ SAMV71\+NB $\vert$$\vert$ SAMV71\+QB)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_gab470f27e045fe99f2b64bb30d5802282}{SAMV70}}~(SAMV70J $\vert$$\vert$ SAMV70N $\vert$$\vert$ SAMV70Q $\vert$$\vert$ SAMV70\+JB $\vert$$\vert$ SAMV70\+NB $\vert$$\vert$ SAMV70\+QB)
+\item 
+\#define {\bfseries SAMV70B}~(SAMV70\+JB $\vert$$\vert$ SAMV70\+NB $\vert$$\vert$ SAMV70\+QB)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga8da58f3ee3f8d5ca1f6657745667f38e}{SAME70}}~(SAME70J $\vert$$\vert$ SAME70N $\vert$$\vert$ SAME70Q $\vert$$\vert$ SAME70\+JB $\vert$$\vert$ SAME70\+NB $\vert$$\vert$ SAME70\+QB)
+\item 
+\#define {\bfseries SAME70B}~(SAME70\+JB $\vert$$\vert$ SAME70\+NB $\vert$$\vert$ SAME70\+QB)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga8d375463839ea94bd1bdbe23a1f87213}{SAMS70}}~(SAMS70J $\vert$$\vert$ SAMS70N $\vert$$\vert$ SAMS70Q $\vert$$\vert$ SAMS70\+JB $\vert$$\vert$ SAMS70\+NB $\vert$$\vert$ SAMS70\+QB)
+\item 
+\#define {\bfseries SAMS70B}~(SAMS70\+JB $\vert$$\vert$ SAMS70\+NB $\vert$$\vert$ SAMS70\+QB)
+\item 
+\#define \mbox{\hyperlink{group__sam__part__macros__group_ga5f347b54588ccfc00042a0272f1c0306}{SAM0}}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Atmel part identification macros. 
+
+Copyright (c) 2012-\/2020 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

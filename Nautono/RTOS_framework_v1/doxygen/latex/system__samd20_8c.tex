@@ -1,0 +1,74 @@
+\hypertarget{system__samd20_8c}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/source/system\+\_\+samd20.c File Reference}
+\label{system__samd20_8c}\index{src/ASF/sam0/utils/cmsis/samd20/source/system\_samd20.c@{src/ASF/sam0/utils/cmsis/samd20/source/system\_samd20.c}}
+
+
+Low-\/level initialization functions called upon chip startup.  
+
+
+{\ttfamily \#include \char`\"{}samd20.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{system__samd20_8c_a16323f44d2b5b11ef3972f71339cbd39}{\+\_\+\+\_\+\+SYSTEM\+\_\+\+CLOCK}}~(1000000)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{system__samd20_8c_a93f514700ccf00d08dbdcff7f1224eb2}{System\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Setup the microcontroller system. Initialize the System and update the System\+Core\+Clock variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{system__samd20_8c_ae0c36a9591fe6e9c45ecb21a794f0f0f}{System\+Core\+Clock\+Update}} (void)
+\begin{DoxyCompactList}\small\item\em Updates the System\+Core\+Clock with current core Clock retrieved from cpu registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{system__samd20_8c_aa3cd3e43291e81e795d642b79b6088e6}{System\+Core\+Clock}} = \mbox{\hyperlink{system__samd20_8c_a16323f44d2b5b11ef3972f71339cbd39}{\+\_\+\+\_\+\+SYSTEM\+\_\+\+CLOCK}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Low-\/level initialization functions called upon chip startup. 
+
+Copyright (c) 2013-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{system__samd20_8c_a16323f44d2b5b11ef3972f71339cbd39}\label{system__samd20_8c_a16323f44d2b5b11ef3972f71339cbd39}} 
+\index{system\_samd20.c@{system\_samd20.c}!\_\_SYSTEM\_CLOCK@{\_\_SYSTEM\_CLOCK}}
+\index{\_\_SYSTEM\_CLOCK@{\_\_SYSTEM\_CLOCK}!system\_samd20.c@{system\_samd20.c}}
+\doxysubsubsection{\texorpdfstring{\_\_SYSTEM\_CLOCK}{\_\_SYSTEM\_CLOCK}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SYSTEM\+\_\+\+CLOCK~(1000000)}
+
+Initial system clock frequency. The System RC Oscillator (RCSYS) provides the source for the main clock at chip startup. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system__samd20_8c_ae0c36a9591fe6e9c45ecb21a794f0f0f}\label{system__samd20_8c_ae0c36a9591fe6e9c45ecb21a794f0f0f}} 
+\index{system\_samd20.c@{system\_samd20.c}!SystemCoreClockUpdate@{SystemCoreClockUpdate}}
+\index{SystemCoreClockUpdate@{SystemCoreClockUpdate}!system\_samd20.c@{system\_samd20.c}}
+\doxysubsubsection{\texorpdfstring{SystemCoreClockUpdate()}{SystemCoreClockUpdate()}}
+{\footnotesize\ttfamily void System\+Core\+Clock\+Update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Updates the System\+Core\+Clock with current core Clock retrieved from cpu registers. 
+
+Update System\+Core\+Clock variable \mbox{\Hypertarget{system__samd20_8c_a93f514700ccf00d08dbdcff7f1224eb2}\label{system__samd20_8c_a93f514700ccf00d08dbdcff7f1224eb2}} 
+\index{system\_samd20.c@{system\_samd20.c}!SystemInit@{SystemInit}}
+\index{SystemInit@{SystemInit}!system\_samd20.c@{system\_samd20.c}}
+\doxysubsubsection{\texorpdfstring{SystemInit()}{SystemInit()}}
+{\footnotesize\ttfamily void System\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Setup the microcontroller system. Initialize the System and update the System\+Core\+Clock variable. 
+
+Initialize the system 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{system__samd20_8c_aa3cd3e43291e81e795d642b79b6088e6}\label{system__samd20_8c_aa3cd3e43291e81e795d642b79b6088e6}} 
+\index{system\_samd20.c@{system\_samd20.c}!SystemCoreClock@{SystemCoreClock}}
+\index{SystemCoreClock@{SystemCoreClock}!system\_samd20.c@{system\_samd20.c}}
+\doxysubsubsection{\texorpdfstring{SystemCoreClock}{SystemCoreClock}}
+{\footnotesize\ttfamily uint32\+\_\+t System\+Core\+Clock = \mbox{\hyperlink{system__samd20_8c_a16323f44d2b5b11ef3972f71339cbd39}{\+\_\+\+\_\+\+SYSTEM\+\_\+\+CLOCK}}}
+
+System Clock Frequency (Core Clock) 

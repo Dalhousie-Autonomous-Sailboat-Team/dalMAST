@@ -1,0 +1,72 @@
+\hypertarget{drivers_2system_2clock_2gclk_8h}{}\doxysection{src/\+ASF/sam0/drivers/system/clock/gclk.h File Reference}
+\label{drivers_2system_2clock_2gclk_8h}\index{src/ASF/sam0/drivers/system/clock/gclk.h@{src/ASF/sam0/drivers/system/clock/gclk.h}}
+
+
+SAM Generic Clock Driver.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsystem__gclk__gen__config}{system\+\_\+gclk\+\_\+gen\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Generic Clock Generator configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__gclk__chan__config}{system\+\_\+gclk\+\_\+chan\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Generic Clock configuration structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\+\_\+\+GENERATOR\+\_\+0}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of available GCLK generators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Generic Clock Management}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2e73072514e6300d60f18039ca47bf09}{system\+\_\+gclk\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the GCLK driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Generic Clock Management (Generators)}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacfd3360ccc8abb013f66b11ff44a5d0d}{system\+\_\+gclk\+\_\+gen\+\_\+set\+\_\+config}} (const uint8\+\_\+t generator, struct \mbox{\hyperlink{structsystem__gclk__gen__config}{system\+\_\+gclk\+\_\+gen\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a Generic Clock Generator configuration to the hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2bad007fcf1f649a3919dcc72dccea8b}{system\+\_\+gclk\+\_\+gen\+\_\+enable}} (const uint8\+\_\+t generator)
+\begin{DoxyCompactList}\small\item\em Enables a Generic Clock Generator that was previously configured. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga98a280a22a780c05e87c676f8c651dc3}{system\+\_\+gclk\+\_\+gen\+\_\+disable}} (const uint8\+\_\+t generator)
+\begin{DoxyCompactList}\small\item\em Disables a Generic Clock Generator that was previously enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga113af9a430f74e082401383109e4eefd}{system\+\_\+gclk\+\_\+gen\+\_\+is\+\_\+enabled}} (const uint8\+\_\+t generator)
+\begin{DoxyCompactList}\small\item\em Determins if the specified Generic Clock Generator is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Generic Clock Management (Channels)}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga0dfbe40e700101f619ddc5b4eb83d78b}{system\+\_\+gclk\+\_\+chan\+\_\+set\+\_\+config}} (const uint8\+\_\+t channel, struct \mbox{\hyperlink{structsystem__gclk__chan__config}{system\+\_\+gclk\+\_\+chan\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a Generic Clock configuration to the hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga53e46ab144632c877a635ab70a7b51e1}{system\+\_\+gclk\+\_\+chan\+\_\+enable}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Enables a Generic Clock that was previously configured. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaa1b945c9deba13fe8640563de4e11a53}{system\+\_\+gclk\+\_\+chan\+\_\+disable}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Disables a Generic Clock that was previously enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2467f733c23f6ad18e58a4f60deae0bb}{system\+\_\+gclk\+\_\+chan\+\_\+is\+\_\+enabled}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Determins if the specified Generic Clock channel is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga59856030d55e3e50091116ffe930a356}{system\+\_\+gclk\+\_\+chan\+\_\+lock}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Locks a Generic Clock channel from further configuration writes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga343a0b14dce2d7f2724382292ac1d8ef}{system\+\_\+gclk\+\_\+chan\+\_\+is\+\_\+locked}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Determins if the specified Generic Clock channel is locked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Generic Clock Frequency Retrieval}\par
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf5cd7b482ee14413084669c32eef84cb}{system\+\_\+gclk\+\_\+gen\+\_\+get\+\_\+hz}} (const uint8\+\_\+t generator)
+\begin{DoxyCompactList}\small\item\em Retrieves the clock frequency of a Generic Clock generator. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6683b93425b58d6c94b850419dd4c860}{system\+\_\+gclk\+\_\+chan\+\_\+get\+\_\+hz}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Retrieves the clock frequency of a Generic Clock channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM Generic Clock Driver. 
+
+Copyright (c) 2012-\/2020 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

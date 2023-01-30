@@ -1,0 +1,1109 @@
+\hypertarget{utils_2cmsis_2samd20_2include_2component_2sercom_8h_source}{}\doxysection{sercom.\+h}
+\label{utils_2cmsis_2samd20_2include_2component_2sercom_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/sercom.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/sercom.h}}
+\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2sercom_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_SERCOM\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_SERCOM\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define SERCOM\_U2201}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_SERCOM                  0x110}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_CTRLA : (SERCOM Offset: 0x00) (R/W 32) I2CM I2CM Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_ad0cadd19b6e9751023af97e9457dbad8}{SWRST}}:1;          }
+\DoxyCodeLine{54     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_ae39b8b5309ccd2831fad1adf0ee578c9}{ENABLE}}:1;         }
+\DoxyCodeLine{55     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_a3fb961c4be03ac61a765f7b564f7acf4}{MODE}}:3;           }
+\DoxyCodeLine{56     uint32\_t :2;               }
+\DoxyCodeLine{57     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_a2c928091aa7d1d14ae3e69e28f7b9411}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{58     uint32\_t :8;               }
+\DoxyCodeLine{59     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_a8ccbd32513b59484f5ef4e5844e5f881}{PINOUT}}:1;         }
+\DoxyCodeLine{60     uint32\_t :3;               }
+\DoxyCodeLine{61     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_afae640a3db0fb791a7e72b8ab5e21a75}{SDAHOLD}}:2;        }
+\DoxyCodeLine{62     uint32\_t :6;               }
+\DoxyCodeLine{63     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_a484e7c1db604eab3cb4d5940772ba4ca}{INACTOUT}}:2;       }
+\DoxyCodeLine{64     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_ad994a6c8d88d7b98426de0c12aff2014}{LOWTOUT}}:1;        }
+\DoxyCodeLine{65     uint32\_t :1;               }
+\DoxyCodeLine{66   \} bit;                       }
+\DoxyCodeLine{67   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_adf469c2df660074d13f5b854ae13f1c0}{reg}};                }
+\DoxyCodeLine{68 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type}{SERCOM\_I2CM\_CTRLA\_Type}};}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_OFFSET    0x00         }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_SWRST\_Pos 0            }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_SWRST     (0x1ul << SERCOM\_I2CM\_CTRLA\_SWRST\_Pos)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_ENABLE\_Pos 1            }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_ENABLE    (0x1ul << SERCOM\_I2CM\_CTRLA\_ENABLE\_Pos)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MODE\_Pos  2            }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MODE\_Msk  (0x7ul << SERCOM\_I2CM\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MODE(value) ((SERCOM\_I2CM\_CTRLA\_MODE\_Msk \& ((value) << SERCOM\_I2CM\_CTRLA\_MODE\_Pos)))}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define   SERCOM\_I2CM\_CTRLA\_MODE\_USART\_EXT\_CLK\_Val 0x0ul  }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define   SERCOM\_I2CM\_CTRLA\_MODE\_USART\_INT\_CLK\_Val 0x1ul  }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define   SERCOM\_I2CM\_CTRLA\_MODE\_SPI\_SLAVE\_Val 0x2ul  }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define   SERCOM\_I2CM\_CTRLA\_MODE\_SPI\_MASTER\_Val 0x3ul  }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define   SERCOM\_I2CM\_CTRLA\_MODE\_I2C\_SLAVE\_Val 0x4ul  }}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define   SERCOM\_I2CM\_CTRLA\_MODE\_I2C\_MASTER\_Val 0x5ul  }}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MODE\_USART\_EXT\_CLK (SERCOM\_I2CM\_CTRLA\_MODE\_USART\_EXT\_CLK\_Val << SERCOM\_I2CM\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MODE\_USART\_INT\_CLK (SERCOM\_I2CM\_CTRLA\_MODE\_USART\_INT\_CLK\_Val << SERCOM\_I2CM\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MODE\_SPI\_SLAVE (SERCOM\_I2CM\_CTRLA\_MODE\_SPI\_SLAVE\_Val << SERCOM\_I2CM\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MODE\_SPI\_MASTER (SERCOM\_I2CM\_CTRLA\_MODE\_SPI\_MASTER\_Val << SERCOM\_I2CM\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MODE\_I2C\_SLAVE (SERCOM\_I2CM\_CTRLA\_MODE\_I2C\_SLAVE\_Val << SERCOM\_I2CM\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MODE\_I2C\_MASTER (SERCOM\_I2CM\_CTRLA\_MODE\_I2C\_MASTER\_Val << SERCOM\_I2CM\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_RUNSTDBY\_Pos 7            }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_RUNSTDBY  (0x1ul << SERCOM\_I2CM\_CTRLA\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_PINOUT\_Pos 16           }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_PINOUT    (0x1ul << SERCOM\_I2CM\_CTRLA\_PINOUT\_Pos)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_SDAHOLD\_Pos 20           }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_SDAHOLD\_Msk (0x3ul << SERCOM\_I2CM\_CTRLA\_SDAHOLD\_Pos)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_SDAHOLD(value) ((SERCOM\_I2CM\_CTRLA\_SDAHOLD\_Msk \& ((value) << SERCOM\_I2CM\_CTRLA\_SDAHOLD\_Pos)))}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_INACTOUT\_Pos 28           }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_INACTOUT\_Msk (0x3ul << SERCOM\_I2CM\_CTRLA\_INACTOUT\_Pos)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_INACTOUT(value) ((SERCOM\_I2CM\_CTRLA\_INACTOUT\_Msk \& ((value) << SERCOM\_I2CM\_CTRLA\_INACTOUT\_Pos)))}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_LOWTOUT\_Pos 30           }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_LOWTOUT   (0x1ul << SERCOM\_I2CM\_CTRLA\_LOWTOUT\_Pos)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLA\_MASK      0x7031009Ful }}
+\DoxyCodeLine{107 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CS\_CTRLA : (SERCOM Offset: 0x00) (R/W 32) I2CS I2CS Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{109 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{110   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{111     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type_aa1136b35da6ad49b149416701761c458}{SWRST}}:1;          }
+\DoxyCodeLine{112     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type_a4cbc28366f8d7f879906a54f3994e278}{ENABLE}}:1;         }
+\DoxyCodeLine{113     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type_a71c8f61b9ffca9114e27c78fc93282c7}{MODE}}:3;           }
+\DoxyCodeLine{114     uint32\_t :2;               }
+\DoxyCodeLine{115     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type_ae4883d25c3053d5bda6bbd8bc5ae2b58}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{116     uint32\_t :8;               }
+\DoxyCodeLine{117     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type_aecab21d346c4c2c609765bbb0ce09f6b}{PINOUT}}:1;         }
+\DoxyCodeLine{118     uint32\_t :3;               }
+\DoxyCodeLine{119     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type_a854d1e74f569538b2bca9332dd308a36}{SDAHOLD}}:2;        }
+\DoxyCodeLine{120     uint32\_t :8;               }
+\DoxyCodeLine{121     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type_adf635ac4c137f215cae09bca3f39bb70}{LOWTOUT}}:1;        }
+\DoxyCodeLine{122     uint32\_t :1;               }
+\DoxyCodeLine{123   \} bit;                       }
+\DoxyCodeLine{124   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type_ad614b053e45108d4ed54f3d26a6b964b}{reg}};                }
+\DoxyCodeLine{125 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type}{SERCOM\_I2CS\_CTRLA\_Type}};}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_OFFSET    0x00         }}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_SWRST\_Pos 0            }}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_SWRST     (0x1ul << SERCOM\_I2CS\_CTRLA\_SWRST\_Pos)}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_ENABLE\_Pos 1            }}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_ENABLE    (0x1ul << SERCOM\_I2CS\_CTRLA\_ENABLE\_Pos)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MODE\_Pos  2            }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MODE\_Msk  (0x7ul << SERCOM\_I2CS\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MODE(value) ((SERCOM\_I2CS\_CTRLA\_MODE\_Msk \& ((value) << SERCOM\_I2CS\_CTRLA\_MODE\_Pos)))}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_MODE\_USART\_EXT\_CLK\_Val 0x0ul  }}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_MODE\_USART\_INT\_CLK\_Val 0x1ul  }}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_MODE\_SPI\_SLAVE\_Val 0x2ul  }}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_MODE\_SPI\_MASTER\_Val 0x3ul  }}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_MODE\_I2C\_SLAVE\_Val 0x4ul  }}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_MODE\_I2C\_MASTER\_Val 0x5ul  }}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MODE\_USART\_EXT\_CLK (SERCOM\_I2CS\_CTRLA\_MODE\_USART\_EXT\_CLK\_Val << SERCOM\_I2CS\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MODE\_USART\_INT\_CLK (SERCOM\_I2CS\_CTRLA\_MODE\_USART\_INT\_CLK\_Val << SERCOM\_I2CS\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MODE\_SPI\_SLAVE (SERCOM\_I2CS\_CTRLA\_MODE\_SPI\_SLAVE\_Val << SERCOM\_I2CS\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MODE\_SPI\_MASTER (SERCOM\_I2CS\_CTRLA\_MODE\_SPI\_MASTER\_Val << SERCOM\_I2CS\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MODE\_I2C\_SLAVE (SERCOM\_I2CS\_CTRLA\_MODE\_I2C\_SLAVE\_Val << SERCOM\_I2CS\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MODE\_I2C\_MASTER (SERCOM\_I2CS\_CTRLA\_MODE\_I2C\_MASTER\_Val << SERCOM\_I2CS\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_RUNSTDBY\_Pos 7            }}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_RUNSTDBY  (0x1ul << SERCOM\_I2CS\_CTRLA\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_PINOUT\_Pos 16           }}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_PINOUT    (0x1ul << SERCOM\_I2CS\_CTRLA\_PINOUT\_Pos)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_SDAHOLD\_Pos 20           }}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_SDAHOLD\_Msk (0x3ul << SERCOM\_I2CS\_CTRLA\_SDAHOLD\_Pos)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_SDAHOLD(value) ((SERCOM\_I2CS\_CTRLA\_SDAHOLD\_Msk \& ((value) << SERCOM\_I2CS\_CTRLA\_SDAHOLD\_Pos)))}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_SDAHOLD\_DIS\_Val 0x0ul  }}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_SDAHOLD\_75\_Val 0x1ul  }}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_SDAHOLD\_450\_Val 0x2ul  }}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define   SERCOM\_I2CS\_CTRLA\_SDAHOLD\_600\_Val 0x3ul  }}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_SDAHOLD\_DIS (SERCOM\_I2CS\_CTRLA\_SDAHOLD\_DIS\_Val << SERCOM\_I2CS\_CTRLA\_SDAHOLD\_Pos)}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_SDAHOLD\_75 (SERCOM\_I2CS\_CTRLA\_SDAHOLD\_75\_Val << SERCOM\_I2CS\_CTRLA\_SDAHOLD\_Pos)}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_SDAHOLD\_450 (SERCOM\_I2CS\_CTRLA\_SDAHOLD\_450\_Val << SERCOM\_I2CS\_CTRLA\_SDAHOLD\_Pos)}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_SDAHOLD\_600 (SERCOM\_I2CS\_CTRLA\_SDAHOLD\_600\_Val << SERCOM\_I2CS\_CTRLA\_SDAHOLD\_Pos)}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_LOWTOUT\_Pos 30           }}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_LOWTOUT   (0x1ul << SERCOM\_I2CS\_CTRLA\_LOWTOUT\_Pos)}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLA\_MASK      0x4031009Ful }}
+\DoxyCodeLine{169 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_CTRLA : (SERCOM Offset: 0x00) (R/W 32) SPI SPI Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{171 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{172   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{173     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_a0ca7ade27b9331f55d129bed3db2b618}{SWRST}}:1;          }
+\DoxyCodeLine{174     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_aff3f16af0027895e6ba9763cc47a3c3e}{ENABLE}}:1;         }
+\DoxyCodeLine{175     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_ae23d24939de9a66920e2f0c4158b2199}{MODE}}:3;           }
+\DoxyCodeLine{176     uint32\_t :2;               }
+\DoxyCodeLine{177     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_acef6e6fe04b541e23e0cd480a36e53fc}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{178     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_a12b7f7e247b546ca3e7092d2535ee378}{IBON}}:1;           }
+\DoxyCodeLine{179     uint32\_t :7;               }
+\DoxyCodeLine{180     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_afe6d579f2e8a36932406ce277b9c8cc0}{DOPO}}:2;           }
+\DoxyCodeLine{181     uint32\_t :2;               }
+\DoxyCodeLine{182     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_a7a2086f5ae4268ad655068c9033ece7b}{DIPO}}:2;           }
+\DoxyCodeLine{183     uint32\_t :2;               }
+\DoxyCodeLine{184     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_aeded1c31d8e9f76a4c7087a437dde5ba}{FORM}}:4;           }
+\DoxyCodeLine{185     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_ab5e07b366fc06c5ea67a0e7756371217}{CPHA}}:1;           }
+\DoxyCodeLine{186     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_ae2dd1f145073fa400dc2346b1b2ae370}{CPOL}}:1;           }
+\DoxyCodeLine{187     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_a29dd5ad26301dcb2164921e020b313a6}{DORD}}:1;           }
+\DoxyCodeLine{188     uint32\_t :1;               }
+\DoxyCodeLine{189   \} bit;                       }
+\DoxyCodeLine{190   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type_adc1260c3a85886f57b5059e4a9a496c8}{reg}};                }
+\DoxyCodeLine{191 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type}{SERCOM\_SPI\_CTRLA\_Type}};}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_OFFSET     0x00         }}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_SWRST\_Pos  0            }}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_SWRST      (0x1ul << SERCOM\_SPI\_CTRLA\_SWRST\_Pos)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_ENABLE\_Pos 1            }}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_ENABLE     (0x1ul << SERCOM\_SPI\_CTRLA\_ENABLE\_Pos)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MODE\_Pos   2            }}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MODE\_Msk   (0x7ul << SERCOM\_SPI\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MODE(value) ((SERCOM\_SPI\_CTRLA\_MODE\_Msk \& ((value) << SERCOM\_SPI\_CTRLA\_MODE\_Pos)))}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLA\_MODE\_USART\_EXT\_CLK\_Val 0x0ul  }}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLA\_MODE\_USART\_INT\_CLK\_Val 0x1ul  }}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLA\_MODE\_SPI\_SLAVE\_Val 0x2ul  }}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLA\_MODE\_SPI\_MASTER\_Val 0x3ul  }}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLA\_MODE\_I2C\_SLAVE\_Val 0x4ul  }}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLA\_MODE\_I2C\_MASTER\_Val 0x5ul  }}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MODE\_USART\_EXT\_CLK (SERCOM\_SPI\_CTRLA\_MODE\_USART\_EXT\_CLK\_Val << SERCOM\_SPI\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MODE\_USART\_INT\_CLK (SERCOM\_SPI\_CTRLA\_MODE\_USART\_INT\_CLK\_Val << SERCOM\_SPI\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MODE\_SPI\_SLAVE (SERCOM\_SPI\_CTRLA\_MODE\_SPI\_SLAVE\_Val << SERCOM\_SPI\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MODE\_SPI\_MASTER (SERCOM\_SPI\_CTRLA\_MODE\_SPI\_MASTER\_Val << SERCOM\_SPI\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MODE\_I2C\_SLAVE (SERCOM\_SPI\_CTRLA\_MODE\_I2C\_SLAVE\_Val << SERCOM\_SPI\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MODE\_I2C\_MASTER (SERCOM\_SPI\_CTRLA\_MODE\_I2C\_MASTER\_Val << SERCOM\_SPI\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_RUNSTDBY\_Pos 7            }}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_RUNSTDBY   (0x1ul << SERCOM\_SPI\_CTRLA\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_IBON\_Pos   8            }}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_IBON       (0x1ul << SERCOM\_SPI\_CTRLA\_IBON\_Pos)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_DOPO\_Pos   16           }}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_DOPO\_Msk   (0x3ul << SERCOM\_SPI\_CTRLA\_DOPO\_Pos)}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_DOPO(value) ((SERCOM\_SPI\_CTRLA\_DOPO\_Msk \& ((value) << SERCOM\_SPI\_CTRLA\_DOPO\_Pos)))}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_DIPO\_Pos   20           }}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_DIPO\_Msk   (0x3ul << SERCOM\_SPI\_CTRLA\_DIPO\_Pos)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_DIPO(value) ((SERCOM\_SPI\_CTRLA\_DIPO\_Msk \& ((value) << SERCOM\_SPI\_CTRLA\_DIPO\_Pos)))}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_FORM\_Pos   24           }}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_FORM\_Msk   (0xFul << SERCOM\_SPI\_CTRLA\_FORM\_Pos)}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_FORM(value) ((SERCOM\_SPI\_CTRLA\_FORM\_Msk \& ((value) << SERCOM\_SPI\_CTRLA\_FORM\_Pos)))}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLA\_FORM\_SPI\_Val   0x0ul  }}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLA\_FORM\_SPI\_ADDR\_Val 0x2ul  }}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_FORM\_SPI   (SERCOM\_SPI\_CTRLA\_FORM\_SPI\_Val << SERCOM\_SPI\_CTRLA\_FORM\_Pos)}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_FORM\_SPI\_ADDR (SERCOM\_SPI\_CTRLA\_FORM\_SPI\_ADDR\_Val << SERCOM\_SPI\_CTRLA\_FORM\_Pos)}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_CPHA\_Pos   28           }}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_CPHA       (0x1ul << SERCOM\_SPI\_CTRLA\_CPHA\_Pos)}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_CPOL\_Pos   29           }}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_CPOL       (0x1ul << SERCOM\_SPI\_CTRLA\_CPOL\_Pos)}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_DORD\_Pos   30           }}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_DORD       (0x1ul << SERCOM\_SPI\_CTRLA\_DORD\_Pos)}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLA\_MASK       0x7F33019Ful }}
+\DoxyCodeLine{241 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_USART\_CTRLA : (SERCOM Offset: 0x00) (R/W 32) USART USART Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{243 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{244   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{245     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a13553d00f69f7c38a82dfe515163d175}{SWRST}}:1;          }
+\DoxyCodeLine{246     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_aac4ae02395d9fb65d4f0204327004093}{ENABLE}}:1;         }
+\DoxyCodeLine{247     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a07f6751ebca8342016885c406fce324d}{MODE}}:3;           }
+\DoxyCodeLine{248     uint32\_t :2;               }
+\DoxyCodeLine{249     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_aa4a515ace1c63cbce765b6e231e92dbc}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{250     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a683a86341becaf2b561042539d396531}{IBON}}:1;           }
+\DoxyCodeLine{251     uint32\_t :7;               }
+\DoxyCodeLine{252     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a4ae22510fb8909670aeeeee1d3940506}{TXPO}}:1;           }
+\DoxyCodeLine{253     uint32\_t :3;               }
+\DoxyCodeLine{254     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a6870e6e6fb00b5baea3a538ec405ed09}{RXPO}}:2;           }
+\DoxyCodeLine{255     uint32\_t :2;               }
+\DoxyCodeLine{256     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a2c9689dd3d4a53b17222f27d9557391c}{FORM}}:4;           }
+\DoxyCodeLine{257     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_aaf56d6cbc5e5f88c033fc61813d9fb0a}{CMODE}}:1;          }
+\DoxyCodeLine{258     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a2944e6fc9ccf24a94275c51776ff386c}{CPOL}}:1;           }
+\DoxyCodeLine{259     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a6a778825fa29095d7baeec31c0dd6836}{DORD}}:1;           }
+\DoxyCodeLine{260     uint32\_t :1;               }
+\DoxyCodeLine{261   \} bit;                       }
+\DoxyCodeLine{262   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a5682f6274d3a895e5936743811c32536}{reg}};                }
+\DoxyCodeLine{263 \} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type}{SERCOM\_USART\_CTRLA\_Type}};}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_OFFSET   0x00         }}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_SWRST\_Pos 0            }}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_SWRST    (0x1ul << SERCOM\_USART\_CTRLA\_SWRST\_Pos)}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_ENABLE\_Pos 1            }}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_ENABLE   (0x1ul << SERCOM\_USART\_CTRLA\_ENABLE\_Pos)}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MODE\_Pos 2            }}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MODE\_Msk (0x7ul << SERCOM\_USART\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MODE(value) ((SERCOM\_USART\_CTRLA\_MODE\_Msk \& ((value) << SERCOM\_USART\_CTRLA\_MODE\_Pos)))}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_MODE\_USART\_EXT\_CLK\_Val 0x0ul  }}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_MODE\_USART\_INT\_CLK\_Val 0x1ul  }}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_MODE\_SPI\_SLAVE\_Val 0x2ul  }}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_MODE\_SPI\_MASTER\_Val 0x3ul  }}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_MODE\_I2C\_SLAVE\_Val 0x4ul  }}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_MODE\_I2C\_MASTER\_Val 0x5ul  }}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MODE\_USART\_EXT\_CLK (SERCOM\_USART\_CTRLA\_MODE\_USART\_EXT\_CLK\_Val << SERCOM\_USART\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MODE\_USART\_INT\_CLK (SERCOM\_USART\_CTRLA\_MODE\_USART\_INT\_CLK\_Val << SERCOM\_USART\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MODE\_SPI\_SLAVE (SERCOM\_USART\_CTRLA\_MODE\_SPI\_SLAVE\_Val << SERCOM\_USART\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MODE\_SPI\_MASTER (SERCOM\_USART\_CTRLA\_MODE\_SPI\_MASTER\_Val << SERCOM\_USART\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MODE\_I2C\_SLAVE (SERCOM\_USART\_CTRLA\_MODE\_I2C\_SLAVE\_Val << SERCOM\_USART\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MODE\_I2C\_MASTER (SERCOM\_USART\_CTRLA\_MODE\_I2C\_MASTER\_Val << SERCOM\_USART\_CTRLA\_MODE\_Pos)}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RUNSTDBY\_Pos 7            }}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RUNSTDBY (0x1ul << SERCOM\_USART\_CTRLA\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_IBON\_Pos 8            }}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_IBON     (0x1ul << SERCOM\_USART\_CTRLA\_IBON\_Pos)}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_TXPO\_Pos 16           }}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_TXPO     (0x1ul << SERCOM\_USART\_CTRLA\_TXPO\_Pos)}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_TXPO\_PAD0\_Val 0x0ul  }}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_TXPO\_PAD2\_Val 0x1ul  }}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_TXPO\_PAD0 (SERCOM\_USART\_CTRLA\_TXPO\_PAD0\_Val << SERCOM\_USART\_CTRLA\_TXPO\_Pos)}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_TXPO\_PAD2 (SERCOM\_USART\_CTRLA\_TXPO\_PAD2\_Val << SERCOM\_USART\_CTRLA\_TXPO\_Pos)}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RXPO\_Pos 20           }}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RXPO\_Msk (0x3ul << SERCOM\_USART\_CTRLA\_RXPO\_Pos)}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RXPO(value) ((SERCOM\_USART\_CTRLA\_RXPO\_Msk \& ((value) << SERCOM\_USART\_CTRLA\_RXPO\_Pos)))}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_RXPO\_PAD0\_Val 0x0ul  }}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_RXPO\_PAD1\_Val 0x1ul  }}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_RXPO\_PAD2\_Val 0x2ul  }}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_RXPO\_PAD3\_Val 0x3ul  }}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RXPO\_PAD0 (SERCOM\_USART\_CTRLA\_RXPO\_PAD0\_Val << SERCOM\_USART\_CTRLA\_RXPO\_Pos)}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RXPO\_PAD1 (SERCOM\_USART\_CTRLA\_RXPO\_PAD1\_Val << SERCOM\_USART\_CTRLA\_RXPO\_Pos)}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RXPO\_PAD2 (SERCOM\_USART\_CTRLA\_RXPO\_PAD2\_Val << SERCOM\_USART\_CTRLA\_RXPO\_Pos)}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_RXPO\_PAD3 (SERCOM\_USART\_CTRLA\_RXPO\_PAD3\_Val << SERCOM\_USART\_CTRLA\_RXPO\_Pos)}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_FORM\_Pos 24           }}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_FORM\_Msk (0xFul << SERCOM\_USART\_CTRLA\_FORM\_Pos)}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_FORM(value) ((SERCOM\_USART\_CTRLA\_FORM\_Msk \& ((value) << SERCOM\_USART\_CTRLA\_FORM\_Pos)))}}
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_FORM\_0\_Val   0x0ul  }}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define   SERCOM\_USART\_CTRLA\_FORM\_1\_Val   0x1ul  }}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_FORM\_0   (SERCOM\_USART\_CTRLA\_FORM\_0\_Val << SERCOM\_USART\_CTRLA\_FORM\_Pos)}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_FORM\_1   (SERCOM\_USART\_CTRLA\_FORM\_1\_Val << SERCOM\_USART\_CTRLA\_FORM\_Pos)}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_CMODE\_Pos 28           }}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_CMODE    (0x1ul << SERCOM\_USART\_CTRLA\_CMODE\_Pos)}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_CPOL\_Pos 29           }}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_CPOL     (0x1ul << SERCOM\_USART\_CTRLA\_CPOL\_Pos)}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_DORD\_Pos 30           }}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_DORD     (0x1ul << SERCOM\_USART\_CTRLA\_DORD\_Pos)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLA\_MASK     0x7F31019Ful }}
+\DoxyCodeLine{324 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_CTRLB : (SERCOM Offset: 0x04) (R/W 32) I2CM I2CM Control B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{326 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{327   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{328     uint32\_t :8;               }
+\DoxyCodeLine{329     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_b___type_a5a09b6d3a66d313bbbb4e3b0819ebf4f}{SMEN}}:1;           }
+\DoxyCodeLine{330     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_b___type_a7c5534c3e47dd222803b1bfec6de57bd}{QCEN}}:1;           }
+\DoxyCodeLine{331     uint32\_t :6;               }
+\DoxyCodeLine{332     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_b___type_ae3d1098dabeddb735ea45453190b78f1}{CMD}}:2;            }
+\DoxyCodeLine{333     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_b___type_af303631f5e6765d0161134a7912729a5}{ACKACT}}:1;         }
+\DoxyCodeLine{334     uint32\_t :13;              }
+\DoxyCodeLine{335   \} bit;                       }
+\DoxyCodeLine{336   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_b___type_ab16545207c8770c0e0ac06720640593e}{reg}};                }
+\DoxyCodeLine{337 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_b___type}{SERCOM\_I2CM\_CTRLB\_Type}};}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_OFFSET    0x04         }}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_SMEN\_Pos  8            }}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_SMEN      (0x1ul << SERCOM\_I2CM\_CTRLB\_SMEN\_Pos)}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_QCEN\_Pos  9            }}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_QCEN      (0x1ul << SERCOM\_I2CM\_CTRLB\_QCEN\_Pos)}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_CMD\_Pos   16           }}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_CMD\_Msk   (0x3ul << SERCOM\_I2CM\_CTRLB\_CMD\_Pos)}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_CMD(value) ((SERCOM\_I2CM\_CTRLB\_CMD\_Msk \& ((value) << SERCOM\_I2CM\_CTRLB\_CMD\_Pos)))}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_ACKACT\_Pos 18           }}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_ACKACT    (0x1ul << SERCOM\_I2CM\_CTRLB\_ACKACT\_Pos)}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_CTRLB\_MASK      0x00070300ul }}
+\DoxyCodeLine{354 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CS\_CTRLB : (SERCOM Offset: 0x04) (R/W 32) I2CS I2CS Control B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{356 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{357   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{358     uint32\_t :8;               }
+\DoxyCodeLine{359     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_b___type_a1affda3f61829538c26796a6c5ab8ee3}{SMEN}}:1;           }
+\DoxyCodeLine{360     uint32\_t :5;               }
+\DoxyCodeLine{361     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_b___type_ab7c1247d97c94aba005f0c2da9ca6e65}{AMODE}}:2;          }
+\DoxyCodeLine{362     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_b___type_abbbc0d184d29f6af937313de28be0c8b}{CMD}}:2;            }
+\DoxyCodeLine{363     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_b___type_a74e7ec48df0fc881a81899cca6a5cdaf}{ACKACT}}:1;         }
+\DoxyCodeLine{364     uint32\_t :13;              }
+\DoxyCodeLine{365   \} bit;                       }
+\DoxyCodeLine{366   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_b___type_aa04f08bd238d803e7c1a4a1cf3c418d0}{reg}};                }
+\DoxyCodeLine{367 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_b___type}{SERCOM\_I2CS\_CTRLB\_Type}};}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_OFFSET    0x04         }}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_SMEN\_Pos  8            }}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_SMEN      (0x1ul << SERCOM\_I2CS\_CTRLB\_SMEN\_Pos)}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_AMODE\_Pos 14           }}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_AMODE\_Msk (0x3ul << SERCOM\_I2CS\_CTRLB\_AMODE\_Pos)}}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_AMODE(value) ((SERCOM\_I2CS\_CTRLB\_AMODE\_Msk \& ((value) << SERCOM\_I2CS\_CTRLB\_AMODE\_Pos)))}}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_CMD\_Pos   16           }}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_CMD\_Msk   (0x3ul << SERCOM\_I2CS\_CTRLB\_CMD\_Pos)}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_CMD(value) ((SERCOM\_I2CS\_CTRLB\_CMD\_Msk \& ((value) << SERCOM\_I2CS\_CTRLB\_CMD\_Pos)))}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_ACKACT\_Pos 18           }}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_ACKACT    (0x1ul << SERCOM\_I2CS\_CTRLB\_ACKACT\_Pos)}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_CTRLB\_MASK      0x0007C100ul }}
+\DoxyCodeLine{385 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_CTRLB : (SERCOM Offset: 0x04) (R/W 32) SPI SPI Control B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{387 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{388   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{389     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_b___type_a0fc196ed3a462de3a8c61a8c6c9691e9}{CHSIZE}}:3;         }
+\DoxyCodeLine{390     uint32\_t :3;               }
+\DoxyCodeLine{391     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_b___type_afa5bc1cf51ab0463a6e8863975fec3b5}{PLOADEN}}:1;        }
+\DoxyCodeLine{392     uint32\_t :7;               }
+\DoxyCodeLine{393     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_b___type_a9054a101f670d3720659cdb0b9be1454}{AMODE}}:2;          }
+\DoxyCodeLine{394     uint32\_t :1;               }
+\DoxyCodeLine{395     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_b___type_a7fcf19193f6353f155a5582cd345f009}{RXEN}}:1;           }
+\DoxyCodeLine{396     uint32\_t :14;              }
+\DoxyCodeLine{397   \} bit;                       }
+\DoxyCodeLine{398   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_b___type_ae173eb3bc1bc42ce88c814d0a3e3b7e8}{reg}};                }
+\DoxyCodeLine{399 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_b___type}{SERCOM\_SPI\_CTRLB\_Type}};}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_OFFSET     0x04         }}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_CHSIZE\_Pos 0            }}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_CHSIZE\_Msk (0x7ul << SERCOM\_SPI\_CTRLB\_CHSIZE\_Pos)}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_CHSIZE(value) ((SERCOM\_SPI\_CTRLB\_CHSIZE\_Msk \& ((value) << SERCOM\_SPI\_CTRLB\_CHSIZE\_Pos)))}}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_PLOADEN\_Pos 6            }}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_PLOADEN    (0x1ul << SERCOM\_SPI\_CTRLB\_PLOADEN\_Pos)}}
+\DoxyCodeLine{410 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_AMODE\_Pos  14           }}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_AMODE\_Msk  (0x3ul << SERCOM\_SPI\_CTRLB\_AMODE\_Pos)}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_AMODE(value) ((SERCOM\_SPI\_CTRLB\_AMODE\_Msk \& ((value) << SERCOM\_SPI\_CTRLB\_AMODE\_Pos)))}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLB\_AMODE\_MASK\_Val 0x0ul  }}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLB\_AMODE\_2ADDR\_Val 0x1ul  }}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define   SERCOM\_SPI\_CTRLB\_AMODE\_RANGE\_Val 0x2ul  }}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_AMODE\_MASK (SERCOM\_SPI\_CTRLB\_AMODE\_MASK\_Val << SERCOM\_SPI\_CTRLB\_AMODE\_Pos)}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_AMODE\_2ADDR (SERCOM\_SPI\_CTRLB\_AMODE\_2ADDR\_Val << SERCOM\_SPI\_CTRLB\_AMODE\_Pos)}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_AMODE\_RANGE (SERCOM\_SPI\_CTRLB\_AMODE\_RANGE\_Val << SERCOM\_SPI\_CTRLB\_AMODE\_Pos)}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_RXEN\_Pos   17           }}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_RXEN       (0x1ul << SERCOM\_SPI\_CTRLB\_RXEN\_Pos)}}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#define SERCOM\_SPI\_CTRLB\_MASK       0x0002C047ul }}
+\DoxyCodeLine{423 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_USART\_CTRLB : (SERCOM Offset: 0x04) (R/W 32) USART USART Control B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{425 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{426   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{427     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a72cf5bc6fdb5817e7ae14b87f85f2968}{CHSIZE}}:3;         }
+\DoxyCodeLine{428     uint32\_t :3;               }
+\DoxyCodeLine{429     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a468da21d501b1ebeb41470be43f629d1}{SBMODE}}:1;         }
+\DoxyCodeLine{430     uint32\_t :2;               }
+\DoxyCodeLine{431     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_ae7c8a72b199edd90571d45b1bc3f46f9}{SFDE}}:1;           }
+\DoxyCodeLine{432     uint32\_t :3;               }
+\DoxyCodeLine{433     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_aaee20bc3892c8881881798e3f23e5254}{PMODE}}:1;          }
+\DoxyCodeLine{434     uint32\_t :2;               }
+\DoxyCodeLine{435     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a8358d42357c2a398625c8a78d438ad81}{TXEN}}:1;           }
+\DoxyCodeLine{436     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a30169679c27901add5c26693340524a6}{RXEN}}:1;           }
+\DoxyCodeLine{437     uint32\_t :14;              }
+\DoxyCodeLine{438   \} bit;                       }
+\DoxyCodeLine{439   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a6aa63b052aef25b4b62bdd3a93107506}{reg}};                }
+\DoxyCodeLine{440 \} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type}{SERCOM\_USART\_CTRLB\_Type}};}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_OFFSET   0x04         }}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_CHSIZE\_Pos 0            }}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_CHSIZE\_Msk (0x7ul << SERCOM\_USART\_CTRLB\_CHSIZE\_Pos)}}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_CHSIZE(value) ((SERCOM\_USART\_CTRLB\_CHSIZE\_Msk \& ((value) << SERCOM\_USART\_CTRLB\_CHSIZE\_Pos)))}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_SBMODE\_Pos 6            }}
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_SBMODE   (0x1ul << SERCOM\_USART\_CTRLB\_SBMODE\_Pos)}}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_SFDE\_Pos 9            }}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_SFDE     (0x1ul << SERCOM\_USART\_CTRLB\_SFDE\_Pos)}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_PMODE\_Pos 13           }}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_PMODE    (0x1ul << SERCOM\_USART\_CTRLB\_PMODE\_Pos)}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_TXEN\_Pos 16           }}
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_TXEN     (0x1ul << SERCOM\_USART\_CTRLB\_TXEN\_Pos)}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_RXEN\_Pos 17           }}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_RXEN     (0x1ul << SERCOM\_USART\_CTRLB\_RXEN\_Pos)}}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#define SERCOM\_USART\_CTRLB\_MASK     0x00032247ul }}
+\DoxyCodeLine{461 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_DBGCTRL : (SERCOM Offset: 0x08) (R/W  8) I2CM I2CM Debug Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{463 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{464   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{465     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___d_b_g_c_t_r_l___type_a213b4627939e17bbfc9be19139126499}{DBGSTOP}}:1;        }
+\DoxyCodeLine{466     uint8\_t  :7;               }
+\DoxyCodeLine{467   \} bit;                       }
+\DoxyCodeLine{468   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___d_b_g_c_t_r_l___type_afef3704f2210c3e7a2d70a85b15eb99f}{reg}};                 }
+\DoxyCodeLine{469 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___d_b_g_c_t_r_l___type}{SERCOM\_I2CM\_DBGCTRL\_Type}};}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DBGCTRL\_OFFSET  0x08         }}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DBGCTRL\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DBGCTRL\_DBGSTOP\_Pos 0            }}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DBGCTRL\_DBGSTOP (0x1ul << SERCOM\_I2CM\_DBGCTRL\_DBGSTOP\_Pos)}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DBGCTRL\_MASK    0x01ul       }}
+\DoxyCodeLine{479 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_DBGCTRL : (SERCOM Offset: 0x08) (R/W  8) SPI SPI Debug Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{481 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{482   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{483     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___d_b_g_c_t_r_l___type_a752da93ebd3289b7d7284f200049e2df}{DBGSTOP}}:1;        }
+\DoxyCodeLine{484     uint8\_t  :7;               }
+\DoxyCodeLine{485   \} bit;                       }
+\DoxyCodeLine{486   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___d_b_g_c_t_r_l___type_a853d27dd6fd23585cd9d21c07908341c}{reg}};                 }
+\DoxyCodeLine{487 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___d_b_g_c_t_r_l___type}{SERCOM\_SPI\_DBGCTRL\_Type}};}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DBGCTRL\_OFFSET   0x08         }}
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DBGCTRL\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{493 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DBGCTRL\_DBGSTOP\_Pos 0            }}
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DBGCTRL\_DBGSTOP  (0x1ul << SERCOM\_SPI\_DBGCTRL\_DBGSTOP\_Pos)}}
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DBGCTRL\_MASK     0x01ul       }}
+\DoxyCodeLine{497 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_USART\_DBGCTRL : (SERCOM Offset: 0x08) (R/W  8) USART USART Debug Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{498 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{499 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{500   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{501     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___d_b_g_c_t_r_l___type_a8990b0041d8816802235343cfb2769a4}{DBGSTOP}}:1;        }
+\DoxyCodeLine{502     uint8\_t  :7;               }
+\DoxyCodeLine{503   \} bit;                       }
+\DoxyCodeLine{504   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___d_b_g_c_t_r_l___type_a174331c7f585637ab65e2f44860c5984}{reg}};                 }
+\DoxyCodeLine{505 \} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___d_b_g_c_t_r_l___type}{SERCOM\_USART\_DBGCTRL\_Type}};}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#define SERCOM\_USART\_DBGCTRL\_OFFSET 0x08         }}
+\DoxyCodeLine{509 \textcolor{preprocessor}{\#define SERCOM\_USART\_DBGCTRL\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#define SERCOM\_USART\_DBGCTRL\_DBGSTOP\_Pos 0            }}
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#define SERCOM\_USART\_DBGCTRL\_DBGSTOP (0x1ul << SERCOM\_USART\_DBGCTRL\_DBGSTOP\_Pos)}}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#define SERCOM\_USART\_DBGCTRL\_MASK   0x01ul       }}
+\DoxyCodeLine{515 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_BAUD : (SERCOM Offset: 0x0A) (R/W 16) I2CM I2CM Baud Rate -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{517 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{518   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{519     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___b_a_u_d___type_ac2e5a71aff04a81a2d44117b6962653f}{BAUD}}:8;           }
+\DoxyCodeLine{520     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___b_a_u_d___type_a46e1ae2e26a03905a2c0848cc71bb2a5}{BAUDLOW}}:8;        }
+\DoxyCodeLine{521   \} bit;                       }
+\DoxyCodeLine{522   uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___b_a_u_d___type_a0440ebf541caab7da0471d64e6d171fd}{reg}};                }
+\DoxyCodeLine{523 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___b_a_u_d___type}{SERCOM\_I2CM\_BAUD\_Type}};}
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{525 }
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_BAUD\_OFFSET     0x0A         }}
+\DoxyCodeLine{527 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_BAUD\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_BAUD\_BAUD\_Pos   0            }}
+\DoxyCodeLine{530 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_BAUD\_BAUD\_Msk   (0xFFul << SERCOM\_I2CM\_BAUD\_BAUD\_Pos)}}
+\DoxyCodeLine{531 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_BAUD\_BAUD(value) ((SERCOM\_I2CM\_BAUD\_BAUD\_Msk \& ((value) << SERCOM\_I2CM\_BAUD\_BAUD\_Pos)))}}
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_BAUD\_BAUDLOW\_Pos 8            }}
+\DoxyCodeLine{533 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_BAUD\_BAUDLOW\_Msk (0xFFul << SERCOM\_I2CM\_BAUD\_BAUDLOW\_Pos)}}
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_BAUD\_BAUDLOW(value) ((SERCOM\_I2CM\_BAUD\_BAUDLOW\_Msk \& ((value) << SERCOM\_I2CM\_BAUD\_BAUDLOW\_Pos)))}}
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_BAUD\_MASK       0xFFFFul     }}
+\DoxyCodeLine{537 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_BAUD : (SERCOM Offset: 0x0A) (R/W  8) SPI SPI Baud Rate -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{538 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{539 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{540   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{541     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___b_a_u_d___type_ab6659cea1504edce48732394acc5b01e}{BAUD}}:8;           }
+\DoxyCodeLine{542   \} bit;                       }
+\DoxyCodeLine{543   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___b_a_u_d___type_a7c401fc7694b56e81673c643abf47ecf}{reg}};                 }
+\DoxyCodeLine{544 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___b_a_u_d___type}{SERCOM\_SPI\_BAUD\_Type}};}
+\DoxyCodeLine{545 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{546 }
+\DoxyCodeLine{547 \textcolor{preprocessor}{\#define SERCOM\_SPI\_BAUD\_OFFSET      0x0A         }}
+\DoxyCodeLine{548 \textcolor{preprocessor}{\#define SERCOM\_SPI\_BAUD\_RESETVALUE  0x00ul       }}
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#define SERCOM\_SPI\_BAUD\_BAUD\_Pos    0            }}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#define SERCOM\_SPI\_BAUD\_BAUD\_Msk    (0xFFul << SERCOM\_SPI\_BAUD\_BAUD\_Pos)}}
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#define SERCOM\_SPI\_BAUD\_BAUD(value) ((SERCOM\_SPI\_BAUD\_BAUD\_Msk \& ((value) << SERCOM\_SPI\_BAUD\_BAUD\_Pos)))}}
+\DoxyCodeLine{553 \textcolor{preprocessor}{\#define SERCOM\_SPI\_BAUD\_MASK        0xFFul       }}
+\DoxyCodeLine{555 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_USART\_BAUD : (SERCOM Offset: 0x0A) (R/W 16) USART USART Baud -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{556 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{557 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{558   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{559     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___b_a_u_d___type_afb411562c4c44462658f744f07880159}{BAUD}}:16;          }
+\DoxyCodeLine{560   \} bit;                       }
+\DoxyCodeLine{561   uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___b_a_u_d___type_aab137f9fb1a66661aa2e9fca06df6d78}{reg}};                }
+\DoxyCodeLine{562 \} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___b_a_u_d___type}{SERCOM\_USART\_BAUD\_Type}};}
+\DoxyCodeLine{563 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{564 }
+\DoxyCodeLine{565 \textcolor{preprocessor}{\#define SERCOM\_USART\_BAUD\_OFFSET    0x0A         }}
+\DoxyCodeLine{566 \textcolor{preprocessor}{\#define SERCOM\_USART\_BAUD\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{568 \textcolor{preprocessor}{\#define SERCOM\_USART\_BAUD\_BAUD\_Pos  0            }}
+\DoxyCodeLine{569 \textcolor{preprocessor}{\#define SERCOM\_USART\_BAUD\_BAUD\_Msk  (0xFFFFul << SERCOM\_USART\_BAUD\_BAUD\_Pos)}}
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#define SERCOM\_USART\_BAUD\_BAUD(value) ((SERCOM\_USART\_BAUD\_BAUD\_Msk \& ((value) << SERCOM\_USART\_BAUD\_BAUD\_Pos)))}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#define SERCOM\_USART\_BAUD\_MASK      0xFFFFul     }}
+\DoxyCodeLine{573 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_INTENCLR : (SERCOM Offset: 0x0C) (R/W  8) I2CM I2CM Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{575 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{576   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{577     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_c_l_r___type_a9ef4edf2cd19427cf7b3059430f6351b}{MB}}:1;             }
+\DoxyCodeLine{578     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_c_l_r___type_a2f2020af5b9a3b0648a144fa8ade60ac}{SB}}:1;             }
+\DoxyCodeLine{579     uint8\_t  :6;               }
+\DoxyCodeLine{580   \} bit;                       }
+\DoxyCodeLine{581   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_c_l_r___type_ac1ac0cef60ae4a33ea327baba6c1e9ae}{reg}};                 }
+\DoxyCodeLine{582 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_c_l_r___type}{SERCOM\_I2CM\_INTENCLR\_Type}};}
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{584 }
+\DoxyCodeLine{585 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENCLR\_OFFSET 0x0C         }}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENCLR\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{588 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENCLR\_MB\_Pos 0            }}
+\DoxyCodeLine{589 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENCLR\_MB     (0x1ul << SERCOM\_I2CM\_INTENCLR\_MB\_Pos)}}
+\DoxyCodeLine{590 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENCLR\_SB\_Pos 1            }}
+\DoxyCodeLine{591 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENCLR\_SB     (0x1ul << SERCOM\_I2CM\_INTENCLR\_SB\_Pos)}}
+\DoxyCodeLine{592 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENCLR\_MASK   0x03ul       }}
+\DoxyCodeLine{594 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CS\_INTENCLR : (SERCOM Offset: 0x0C) (R/W  8) I2CS I2CS Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{596 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{597   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{598     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_c_l_r___type_a25e81ca332ba9c486259164d522c8b3c}{PREC}}:1;           }
+\DoxyCodeLine{599     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_c_l_r___type_a38ef4a070787aa4e08f4f27f84abc893}{AMATCH}}:1;         }
+\DoxyCodeLine{600     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_c_l_r___type_a4ae063bb1cc210f803239ac690ac007b}{DRDY}}:1;           }
+\DoxyCodeLine{601     uint8\_t  :5;               }
+\DoxyCodeLine{602   \} bit;                       }
+\DoxyCodeLine{603   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_c_l_r___type_af85d8254c0c28e7386861d8a158a1528}{reg}};                 }
+\DoxyCodeLine{604 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_c_l_r___type}{SERCOM\_I2CS\_INTENCLR\_Type}};}
+\DoxyCodeLine{605 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{606 }
+\DoxyCodeLine{607 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENCLR\_OFFSET 0x0C         }}
+\DoxyCodeLine{608 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENCLR\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{610 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENCLR\_PREC\_Pos 0            }}
+\DoxyCodeLine{611 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENCLR\_PREC   (0x1ul << SERCOM\_I2CS\_INTENCLR\_PREC\_Pos)}}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENCLR\_AMATCH\_Pos 1            }}
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENCLR\_AMATCH (0x1ul << SERCOM\_I2CS\_INTENCLR\_AMATCH\_Pos)}}
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENCLR\_DRDY\_Pos 2            }}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENCLR\_DRDY   (0x1ul << SERCOM\_I2CS\_INTENCLR\_DRDY\_Pos)}}
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENCLR\_MASK   0x07ul       }}
+\DoxyCodeLine{618 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_INTENCLR : (SERCOM Offset: 0x0C) (R/W  8) SPI SPI Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{619 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{620 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{621   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{622     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_c_l_r___type_a7e1ca8f14d7a4148c83a551228f608f9}{DRE}}:1;            }
+\DoxyCodeLine{623     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_c_l_r___type_a63549f7c5ad159cfc7cdbd4a544bf3f7}{TXC}}:1;            }
+\DoxyCodeLine{624     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_c_l_r___type_a3c1061efe977308c77f0af70e09245dd}{RXC}}:1;            }
+\DoxyCodeLine{625     uint8\_t  :5;               }
+\DoxyCodeLine{626   \} bit;                       }
+\DoxyCodeLine{627   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_c_l_r___type_afb6085fe797776bb28e59237fc9c37eb}{reg}};                 }
+\DoxyCodeLine{628 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_c_l_r___type}{SERCOM\_SPI\_INTENCLR\_Type}};}
+\DoxyCodeLine{629 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{630 }
+\DoxyCodeLine{631 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENCLR\_OFFSET  0x0C         }}
+\DoxyCodeLine{632 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENCLR\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{634 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENCLR\_DRE\_Pos 0            }}
+\DoxyCodeLine{635 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENCLR\_DRE     (0x1ul << SERCOM\_SPI\_INTENCLR\_DRE\_Pos)}}
+\DoxyCodeLine{636 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENCLR\_TXC\_Pos 1            }}
+\DoxyCodeLine{637 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENCLR\_TXC     (0x1ul << SERCOM\_SPI\_INTENCLR\_TXC\_Pos)}}
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENCLR\_RXC\_Pos 2            }}
+\DoxyCodeLine{639 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENCLR\_RXC     (0x1ul << SERCOM\_SPI\_INTENCLR\_RXC\_Pos)}}
+\DoxyCodeLine{640 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENCLR\_MASK    0x07ul       }}
+\DoxyCodeLine{642 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_USART\_INTENCLR : (SERCOM Offset: 0x0C) (R/W  8) USART USART Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{643 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{644 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{645   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{646     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_c_l_r___type_a6d21e3a1cf36f893172174429424eaa7}{DRE}}:1;            }
+\DoxyCodeLine{647     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_c_l_r___type_acfe5377edc855babe92c619f858ee045}{TXC}}:1;            }
+\DoxyCodeLine{648     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_c_l_r___type_abd2e42ba5522504bdf84cb531f4dab2b}{RXC}}:1;            }
+\DoxyCodeLine{649     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_c_l_r___type_a64ba42ddad31afbee5c1daf2ddf9bf5d}{RXS}}:1;            }
+\DoxyCodeLine{650     uint8\_t  :4;               }
+\DoxyCodeLine{651   \} bit;                       }
+\DoxyCodeLine{652   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_c_l_r___type_acc0081ae0fd057d1cb175de6a9bb523b}{reg}};                 }
+\DoxyCodeLine{653 \} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_c_l_r___type}{SERCOM\_USART\_INTENCLR\_Type}};}
+\DoxyCodeLine{654 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{655 }
+\DoxyCodeLine{656 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_OFFSET 0x0C         }}
+\DoxyCodeLine{657 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{659 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_DRE\_Pos 0            }}
+\DoxyCodeLine{660 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_DRE   (0x1ul << SERCOM\_USART\_INTENCLR\_DRE\_Pos)}}
+\DoxyCodeLine{661 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_TXC\_Pos 1            }}
+\DoxyCodeLine{662 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_TXC   (0x1ul << SERCOM\_USART\_INTENCLR\_TXC\_Pos)}}
+\DoxyCodeLine{663 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_RXC\_Pos 2            }}
+\DoxyCodeLine{664 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_RXC   (0x1ul << SERCOM\_USART\_INTENCLR\_RXC\_Pos)}}
+\DoxyCodeLine{665 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_RXS\_Pos 3            }}
+\DoxyCodeLine{666 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_RXS   (0x1ul << SERCOM\_USART\_INTENCLR\_RXS\_Pos)}}
+\DoxyCodeLine{667 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENCLR\_MASK  0x0Ful       }}
+\DoxyCodeLine{669 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_INTENSET : (SERCOM Offset: 0x0D) (R/W  8) I2CM I2CM Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{670 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{671 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{672   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{673     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_s_e_t___type_a653b98b3ceb66d55d57b8474014aada2}{MB}}:1;             }
+\DoxyCodeLine{674     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_s_e_t___type_ad7c78c72024a09f1b4bb9d44e310cb23}{SB}}:1;             }
+\DoxyCodeLine{675     uint8\_t  :6;               }
+\DoxyCodeLine{676   \} bit;                       }
+\DoxyCodeLine{677   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_s_e_t___type_a33e62c4dcfb909cc85ad93821bea1df9}{reg}};                 }
+\DoxyCodeLine{678 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_s_e_t___type}{SERCOM\_I2CM\_INTENSET\_Type}};}
+\DoxyCodeLine{679 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{680 }
+\DoxyCodeLine{681 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENSET\_OFFSET 0x0D         }}
+\DoxyCodeLine{682 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENSET\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{684 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENSET\_MB\_Pos 0            }}
+\DoxyCodeLine{685 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENSET\_MB     (0x1ul << SERCOM\_I2CM\_INTENSET\_MB\_Pos)}}
+\DoxyCodeLine{686 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENSET\_SB\_Pos 1            }}
+\DoxyCodeLine{687 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENSET\_SB     (0x1ul << SERCOM\_I2CM\_INTENSET\_SB\_Pos)}}
+\DoxyCodeLine{688 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTENSET\_MASK   0x03ul       }}
+\DoxyCodeLine{690 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CS\_INTENSET : (SERCOM Offset: 0x0D) (R/W  8) I2CS I2CS Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{691 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{692 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{693   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{694     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_s_e_t___type_af5148e51403e1fef90a294c37777f14e}{PREC}}:1;           }
+\DoxyCodeLine{695     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_s_e_t___type_a219652a7d6ea557f7cbceda617d1ab48}{AMATCH}}:1;         }
+\DoxyCodeLine{696     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_s_e_t___type_aedfd8657a8109e69566ae4f1cf58d896}{DRDY}}:1;           }
+\DoxyCodeLine{697     uint8\_t  :5;               }
+\DoxyCodeLine{698   \} bit;                       }
+\DoxyCodeLine{699   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_s_e_t___type_ae46a96877110d3cac07d2d96f3730191}{reg}};                 }
+\DoxyCodeLine{700 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_s_e_t___type}{SERCOM\_I2CS\_INTENSET\_Type}};}
+\DoxyCodeLine{701 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{702 }
+\DoxyCodeLine{703 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENSET\_OFFSET 0x0D         }}
+\DoxyCodeLine{704 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENSET\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{706 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENSET\_PREC\_Pos 0            }}
+\DoxyCodeLine{707 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENSET\_PREC   (0x1ul << SERCOM\_I2CS\_INTENSET\_PREC\_Pos)}}
+\DoxyCodeLine{708 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENSET\_AMATCH\_Pos 1            }}
+\DoxyCodeLine{709 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENSET\_AMATCH (0x1ul << SERCOM\_I2CS\_INTENSET\_AMATCH\_Pos)}}
+\DoxyCodeLine{710 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENSET\_DRDY\_Pos 2            }}
+\DoxyCodeLine{711 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENSET\_DRDY   (0x1ul << SERCOM\_I2CS\_INTENSET\_DRDY\_Pos)}}
+\DoxyCodeLine{712 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTENSET\_MASK   0x07ul       }}
+\DoxyCodeLine{714 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_INTENSET : (SERCOM Offset: 0x0D) (R/W  8) SPI SPI Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{715 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{716 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{717   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{718     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_s_e_t___type_aa170532516d6088a107fb00d0af265bd}{DRE}}:1;            }
+\DoxyCodeLine{719     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_s_e_t___type_abd0a0061c10de1302b786e7637a96ac9}{TXC}}:1;            }
+\DoxyCodeLine{720     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_s_e_t___type_a7721c255e582e84113d18dbc635203e9}{RXC}}:1;            }
+\DoxyCodeLine{721     uint8\_t  :5;               }
+\DoxyCodeLine{722   \} bit;                       }
+\DoxyCodeLine{723   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_s_e_t___type_a81d813729eb3c5085daf2f7fd523a159}{reg}};                 }
+\DoxyCodeLine{724 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_s_e_t___type}{SERCOM\_SPI\_INTENSET\_Type}};}
+\DoxyCodeLine{725 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{726 }
+\DoxyCodeLine{727 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENSET\_OFFSET  0x0D         }}
+\DoxyCodeLine{728 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENSET\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{730 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENSET\_DRE\_Pos 0            }}
+\DoxyCodeLine{731 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENSET\_DRE     (0x1ul << SERCOM\_SPI\_INTENSET\_DRE\_Pos)}}
+\DoxyCodeLine{732 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENSET\_TXC\_Pos 1            }}
+\DoxyCodeLine{733 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENSET\_TXC     (0x1ul << SERCOM\_SPI\_INTENSET\_TXC\_Pos)}}
+\DoxyCodeLine{734 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENSET\_RXC\_Pos 2            }}
+\DoxyCodeLine{735 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENSET\_RXC     (0x1ul << SERCOM\_SPI\_INTENSET\_RXC\_Pos)}}
+\DoxyCodeLine{736 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTENSET\_MASK    0x07ul       }}
+\DoxyCodeLine{738 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_USART\_INTENSET : (SERCOM Offset: 0x0D) (R/W  8) USART USART Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{739 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{740 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{741   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{742     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_s_e_t___type_a695a061abe1b0aa444158549a01475e7}{DRE}}:1;            }
+\DoxyCodeLine{743     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_s_e_t___type_a34d1404aedb8e519ab650145671cdb84}{TXC}}:1;            }
+\DoxyCodeLine{744     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_s_e_t___type_a1503c2f62a848371c356af3d31bdf4f8}{RXC}}:1;            }
+\DoxyCodeLine{745     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_s_e_t___type_a8afa4a2b6dee55ba81533ec9feebdc2f}{RXS}}:1;            }
+\DoxyCodeLine{746     uint8\_t  :4;               }
+\DoxyCodeLine{747   \} bit;                       }
+\DoxyCodeLine{748   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_s_e_t___type_a44fc0e0f1c3a60b2152197a0003945e0}{reg}};                 }
+\DoxyCodeLine{749 \} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_s_e_t___type}{SERCOM\_USART\_INTENSET\_Type}};}
+\DoxyCodeLine{750 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_OFFSET 0x0D         }}
+\DoxyCodeLine{753 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{755 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_DRE\_Pos 0            }}
+\DoxyCodeLine{756 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_DRE   (0x1ul << SERCOM\_USART\_INTENSET\_DRE\_Pos)}}
+\DoxyCodeLine{757 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_TXC\_Pos 1            }}
+\DoxyCodeLine{758 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_TXC   (0x1ul << SERCOM\_USART\_INTENSET\_TXC\_Pos)}}
+\DoxyCodeLine{759 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_RXC\_Pos 2            }}
+\DoxyCodeLine{760 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_RXC   (0x1ul << SERCOM\_USART\_INTENSET\_RXC\_Pos)}}
+\DoxyCodeLine{761 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_RXS\_Pos 3            }}
+\DoxyCodeLine{762 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_RXS   (0x1ul << SERCOM\_USART\_INTENSET\_RXS\_Pos)}}
+\DoxyCodeLine{763 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTENSET\_MASK  0x0Ful       }}
+\DoxyCodeLine{765 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_INTFLAG : (SERCOM Offset: 0x0E) (R/W  8) I2CM I2CM Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{766 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{767 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{768   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{769     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_f_l_a_g___type_a336760053ed0a03cff15e4b3582dce3c}{MB}}:1;         }
+\DoxyCodeLine{770     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_f_l_a_g___type_a7755fab868a7e9fcc41ed5e1a9d7da0e}{SB}}:1;         }
+\DoxyCodeLine{771     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_f_l_a_g___type_a5ee2dbff7873a0a9581c09dcb1b6c64b}{uint8\_t}}  :6;           }
+\DoxyCodeLine{772   \} bit;                       }
+\DoxyCodeLine{773   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_f_l_a_g___type_a6f7542976ea39b83db973002f2bdf619}{reg}};                 }
+\DoxyCodeLine{774 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_f_l_a_g___type}{SERCOM\_I2CM\_INTFLAG\_Type}};}
+\DoxyCodeLine{775 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{776 }
+\DoxyCodeLine{777 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTFLAG\_OFFSET  0x0E         }}
+\DoxyCodeLine{778 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTFLAG\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{780 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTFLAG\_MB\_Pos  0            }}
+\DoxyCodeLine{781 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTFLAG\_MB      (0x1ul << SERCOM\_I2CM\_INTFLAG\_MB\_Pos)}}
+\DoxyCodeLine{782 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTFLAG\_SB\_Pos  1            }}
+\DoxyCodeLine{783 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTFLAG\_SB      (0x1ul << SERCOM\_I2CM\_INTFLAG\_SB\_Pos)}}
+\DoxyCodeLine{784 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_INTFLAG\_MASK    0x03ul       }}
+\DoxyCodeLine{786 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CS\_INTFLAG : (SERCOM Offset: 0x0E) (R/W  8) I2CS I2CS Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{787 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{788 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{789   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{790     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_f_l_a_g___type_ae8e31c2e2a9af6187ec32cfd252dab2e}{PREC}}:1;       }
+\DoxyCodeLine{791     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_f_l_a_g___type_a41b29636bf37acd606b0b9b6cdb06a0e}{AMATCH}}:1;     }
+\DoxyCodeLine{792     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_f_l_a_g___type_af82a2817cb0117b4e684caf7b7dc5ad9}{DRDY}}:1;       }
+\DoxyCodeLine{793     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_f_l_a_g___type_af4d10997e5ca2430dfb31e4128c4cc4b}{uint8\_t}}  :5;           }
+\DoxyCodeLine{794   \} bit;                       }
+\DoxyCodeLine{795   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_f_l_a_g___type_acd7b027c5740331c36479369360e253e}{reg}};                 }
+\DoxyCodeLine{796 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_f_l_a_g___type}{SERCOM\_I2CS\_INTFLAG\_Type}};}
+\DoxyCodeLine{797 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{798 }
+\DoxyCodeLine{799 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTFLAG\_OFFSET  0x0E         }}
+\DoxyCodeLine{800 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTFLAG\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{802 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTFLAG\_PREC\_Pos 0            }}
+\DoxyCodeLine{803 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTFLAG\_PREC    (0x1ul << SERCOM\_I2CS\_INTFLAG\_PREC\_Pos)}}
+\DoxyCodeLine{804 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTFLAG\_AMATCH\_Pos 1            }}
+\DoxyCodeLine{805 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTFLAG\_AMATCH  (0x1ul << SERCOM\_I2CS\_INTFLAG\_AMATCH\_Pos)}}
+\DoxyCodeLine{806 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTFLAG\_DRDY\_Pos 2            }}
+\DoxyCodeLine{807 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTFLAG\_DRDY    (0x1ul << SERCOM\_I2CS\_INTFLAG\_DRDY\_Pos)}}
+\DoxyCodeLine{808 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_INTFLAG\_MASK    0x07ul       }}
+\DoxyCodeLine{810 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_INTFLAG : (SERCOM Offset: 0x0E) (R/W  8) SPI SPI Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{811 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{812 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{813   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{814     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_f_l_a_g___type_ac8c6026f63374be174be08b69c49f4d1}{DRE}}:1;        }
+\DoxyCodeLine{815     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_f_l_a_g___type_a152badb5f7d7c42e05b5074a74f96f2e}{TXC}}:1;        }
+\DoxyCodeLine{816     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_f_l_a_g___type_ae50861360b75123cc85fb9afd9dd3f17}{RXC}}:1;        }
+\DoxyCodeLine{817     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_f_l_a_g___type_a381112a6f5af0480cf376a2af738734a}{uint8\_t}}  :5;           }
+\DoxyCodeLine{818   \} bit;                       }
+\DoxyCodeLine{819   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_f_l_a_g___type_a201f736247e3b11f7ed08403e1e0633b}{reg}};                 }
+\DoxyCodeLine{820 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_f_l_a_g___type}{SERCOM\_SPI\_INTFLAG\_Type}};}
+\DoxyCodeLine{821 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{822 }
+\DoxyCodeLine{823 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTFLAG\_OFFSET   0x0E         }}
+\DoxyCodeLine{824 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTFLAG\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{826 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTFLAG\_DRE\_Pos  0            }}
+\DoxyCodeLine{827 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTFLAG\_DRE      (0x1ul << SERCOM\_SPI\_INTFLAG\_DRE\_Pos)}}
+\DoxyCodeLine{828 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTFLAG\_TXC\_Pos  1            }}
+\DoxyCodeLine{829 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTFLAG\_TXC      (0x1ul << SERCOM\_SPI\_INTFLAG\_TXC\_Pos)}}
+\DoxyCodeLine{830 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTFLAG\_RXC\_Pos  2            }}
+\DoxyCodeLine{831 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTFLAG\_RXC      (0x1ul << SERCOM\_SPI\_INTFLAG\_RXC\_Pos)}}
+\DoxyCodeLine{832 \textcolor{preprocessor}{\#define SERCOM\_SPI\_INTFLAG\_MASK     0x07ul       }}
+\DoxyCodeLine{834 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_USART\_INTFLAG : (SERCOM Offset: 0x0E) (R/W  8) USART USART Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{835 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{836 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{837   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{838     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_f_l_a_g___type_a81ab6111a6a867c4e79ad5b30d752718}{DRE}}:1;        }
+\DoxyCodeLine{839     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_f_l_a_g___type_a42966c4cc4836d014cd63825c44f41df}{TXC}}:1;        }
+\DoxyCodeLine{840     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_f_l_a_g___type_a399989ab2e3d4588c3e6bb8c517beace}{RXC}}:1;        }
+\DoxyCodeLine{841     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_f_l_a_g___type_a5ab2b78eb8680c32e93847b8924dc36c}{RXS}}:1;        }
+\DoxyCodeLine{842     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_f_l_a_g___type_a2b11f905aef1853fa16447426b2af1c6}{uint8\_t}}  :4;           }
+\DoxyCodeLine{843   \} bit;                       }
+\DoxyCodeLine{844   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_f_l_a_g___type_ab6b621c0fcc8e266aad64540a9833a22}{reg}};                 }
+\DoxyCodeLine{845 \} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_f_l_a_g___type}{SERCOM\_USART\_INTFLAG\_Type}};}
+\DoxyCodeLine{846 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{847 }
+\DoxyCodeLine{848 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_OFFSET 0x0E         }}
+\DoxyCodeLine{849 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{851 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_DRE\_Pos 0            }}
+\DoxyCodeLine{852 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_DRE    (0x1ul << SERCOM\_USART\_INTFLAG\_DRE\_Pos)}}
+\DoxyCodeLine{853 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_TXC\_Pos 1            }}
+\DoxyCodeLine{854 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_TXC    (0x1ul << SERCOM\_USART\_INTFLAG\_TXC\_Pos)}}
+\DoxyCodeLine{855 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_RXC\_Pos 2            }}
+\DoxyCodeLine{856 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_RXC    (0x1ul << SERCOM\_USART\_INTFLAG\_RXC\_Pos)}}
+\DoxyCodeLine{857 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_RXS\_Pos 3            }}
+\DoxyCodeLine{858 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_RXS    (0x1ul << SERCOM\_USART\_INTFLAG\_RXS\_Pos)}}
+\DoxyCodeLine{859 \textcolor{preprocessor}{\#define SERCOM\_USART\_INTFLAG\_MASK   0x0Ful       }}
+\DoxyCodeLine{861 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_STATUS : (SERCOM Offset: 0x10) (R/W 16) I2CM I2CM Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{862 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{863 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{864   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{865     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a9fe74fe9f50da8525dff3daa64a9dadf}{BUSERR}}:1;         }
+\DoxyCodeLine{866     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a69ce12a9921235b158d6ab8ea54b0bed}{ARBLOST}}:1;        }
+\DoxyCodeLine{867     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a9f56ed6a73d4e8ea07f4081eda2fd0a3}{RXNACK}}:1;         }
+\DoxyCodeLine{868     uint16\_t :1;               }
+\DoxyCodeLine{869     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a8621de9c038d03dfefb1068e7ebef065}{BUSSTATE}}:2;       }
+\DoxyCodeLine{870     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a71e26cd79a0a3541d5aa32865054cc30}{LOWTOUT}}:1;        }
+\DoxyCodeLine{871     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_ace3363fd79b9597942c863254f736ba8}{CLKHOLD}}:1;        }
+\DoxyCodeLine{872     uint16\_t :7;               }
+\DoxyCodeLine{873     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a4236452332ebaa5f81b76f5149c30ac4}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{874   \} bit;                       }
+\DoxyCodeLine{875   uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a05c3de0b46943949ab1e03c378c1c57b}{reg}};                }
+\DoxyCodeLine{876 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type}{SERCOM\_I2CM\_STATUS\_Type}};}
+\DoxyCodeLine{877 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{878 }
+\DoxyCodeLine{879 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_OFFSET   0x10         }}
+\DoxyCodeLine{880 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{882 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_BUSERR\_Pos 0            }}
+\DoxyCodeLine{883 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_BUSERR   (0x1ul << SERCOM\_I2CM\_STATUS\_BUSERR\_Pos)}}
+\DoxyCodeLine{884 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_ARBLOST\_Pos 1            }}
+\DoxyCodeLine{885 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_ARBLOST  (0x1ul << SERCOM\_I2CM\_STATUS\_ARBLOST\_Pos)}}
+\DoxyCodeLine{886 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_RXNACK\_Pos 2            }}
+\DoxyCodeLine{887 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_RXNACK   (0x1ul << SERCOM\_I2CM\_STATUS\_RXNACK\_Pos)}}
+\DoxyCodeLine{888 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_BUSSTATE\_Pos 4            }}
+\DoxyCodeLine{889 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_BUSSTATE\_Msk (0x3ul << SERCOM\_I2CM\_STATUS\_BUSSTATE\_Pos)}}
+\DoxyCodeLine{890 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_BUSSTATE(value) ((SERCOM\_I2CM\_STATUS\_BUSSTATE\_Msk \& ((value) << SERCOM\_I2CM\_STATUS\_BUSSTATE\_Pos)))}}
+\DoxyCodeLine{891 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_LOWTOUT\_Pos 6            }}
+\DoxyCodeLine{892 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_LOWTOUT  (0x1ul << SERCOM\_I2CM\_STATUS\_LOWTOUT\_Pos)}}
+\DoxyCodeLine{893 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_CLKHOLD\_Pos 7            }}
+\DoxyCodeLine{894 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_CLKHOLD  (0x1ul << SERCOM\_I2CM\_STATUS\_CLKHOLD\_Pos)}}
+\DoxyCodeLine{895 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_SYNCBUSY\_Pos 15           }}
+\DoxyCodeLine{896 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_SYNCBUSY (0x1ul << SERCOM\_I2CM\_STATUS\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{897 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_STATUS\_MASK     0x80F7ul     }}
+\DoxyCodeLine{899 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CS\_STATUS : (SERCOM Offset: 0x10) (R/W 16) I2CS I2CS Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{900 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{901 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{902   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{903     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type_a27da3d2c5169c0404d6e4cff6645d1cf}{BUSERR}}:1;         }
+\DoxyCodeLine{904     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type_a6c802549f92763855025343f784876cd}{COLL}}:1;           }
+\DoxyCodeLine{905     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type_ad2fbb58df80ad0bfc475a52417083f1f}{RXNACK}}:1;         }
+\DoxyCodeLine{906     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type_a4882ed3ecde0472799fdad2ae9c0dcf7}{DIR}}:1;            }
+\DoxyCodeLine{907     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type_af1b918093abd74e4ec6debfe56f2308a}{SR}}:1;             }
+\DoxyCodeLine{908     uint16\_t :1;               }
+\DoxyCodeLine{909     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type_a2d584073ab7f73b9b518b55d442a071a}{LOWTOUT}}:1;        }
+\DoxyCodeLine{910     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type_a55e6cf32332afe98b5c6a8af0cb83f97}{CLKHOLD}}:1;        }
+\DoxyCodeLine{911     uint16\_t :7;               }
+\DoxyCodeLine{912     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type_a9e9ea764034e05f81ad426ac78488506}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{913   \} bit;                       }
+\DoxyCodeLine{914   uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type_a4a35733a22a660e7fb7b9ab2af7dc42c}{reg}};                }
+\DoxyCodeLine{915 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type}{SERCOM\_I2CS\_STATUS\_Type}};}
+\DoxyCodeLine{916 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{917 }
+\DoxyCodeLine{918 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_OFFSET   0x10         }}
+\DoxyCodeLine{919 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{921 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_BUSERR\_Pos 0            }}
+\DoxyCodeLine{922 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_BUSERR   (0x1ul << SERCOM\_I2CS\_STATUS\_BUSERR\_Pos)}}
+\DoxyCodeLine{923 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_COLL\_Pos 1            }}
+\DoxyCodeLine{924 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_COLL     (0x1ul << SERCOM\_I2CS\_STATUS\_COLL\_Pos)}}
+\DoxyCodeLine{925 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_RXNACK\_Pos 2            }}
+\DoxyCodeLine{926 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_RXNACK   (0x1ul << SERCOM\_I2CS\_STATUS\_RXNACK\_Pos)}}
+\DoxyCodeLine{927 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_DIR\_Pos  3            }}
+\DoxyCodeLine{928 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_DIR      (0x1ul << SERCOM\_I2CS\_STATUS\_DIR\_Pos)}}
+\DoxyCodeLine{929 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_SR\_Pos   4            }}
+\DoxyCodeLine{930 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_SR       (0x1ul << SERCOM\_I2CS\_STATUS\_SR\_Pos)}}
+\DoxyCodeLine{931 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_LOWTOUT\_Pos 6            }}
+\DoxyCodeLine{932 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_LOWTOUT  (0x1ul << SERCOM\_I2CS\_STATUS\_LOWTOUT\_Pos)}}
+\DoxyCodeLine{933 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_CLKHOLD\_Pos 7            }}
+\DoxyCodeLine{934 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_CLKHOLD  (0x1ul << SERCOM\_I2CS\_STATUS\_CLKHOLD\_Pos)}}
+\DoxyCodeLine{935 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_SYNCBUSY\_Pos 15           }}
+\DoxyCodeLine{936 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_SYNCBUSY (0x1ul << SERCOM\_I2CS\_STATUS\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{937 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_STATUS\_MASK     0x80DFul     }}
+\DoxyCodeLine{939 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_STATUS : (SERCOM Offset: 0x10) (R/W 16) SPI SPI Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{940 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{941 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{942   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{943     uint16\_t :2;               }
+\DoxyCodeLine{944     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___s_t_a_t_u_s___type_a5c06331a8475e6011318b50e2c2108a6}{BUFOVF}}:1;         }
+\DoxyCodeLine{945     uint16\_t :12;              }
+\DoxyCodeLine{946     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___s_t_a_t_u_s___type_ac0ef7303d1bfda9707e9765e8a588a9f}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{947   \} bit;                       }
+\DoxyCodeLine{948   uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___s_t_a_t_u_s___type_a90b5c5714afe863452d2e0f7d6de676f}{reg}};                }
+\DoxyCodeLine{949 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___s_t_a_t_u_s___type}{SERCOM\_SPI\_STATUS\_Type}};}
+\DoxyCodeLine{950 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{951 }
+\DoxyCodeLine{952 \textcolor{preprocessor}{\#define SERCOM\_SPI\_STATUS\_OFFSET    0x10         }}
+\DoxyCodeLine{953 \textcolor{preprocessor}{\#define SERCOM\_SPI\_STATUS\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{955 \textcolor{preprocessor}{\#define SERCOM\_SPI\_STATUS\_BUFOVF\_Pos 2            }}
+\DoxyCodeLine{956 \textcolor{preprocessor}{\#define SERCOM\_SPI\_STATUS\_BUFOVF    (0x1ul << SERCOM\_SPI\_STATUS\_BUFOVF\_Pos)}}
+\DoxyCodeLine{957 \textcolor{preprocessor}{\#define SERCOM\_SPI\_STATUS\_SYNCBUSY\_Pos 15           }}
+\DoxyCodeLine{958 \textcolor{preprocessor}{\#define SERCOM\_SPI\_STATUS\_SYNCBUSY  (0x1ul << SERCOM\_SPI\_STATUS\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{959 \textcolor{preprocessor}{\#define SERCOM\_SPI\_STATUS\_MASK      0x8004ul     }}
+\DoxyCodeLine{961 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_USART\_STATUS : (SERCOM Offset: 0x10) (R/W 16) USART USART Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{962 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{963 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{964   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{965     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___s_t_a_t_u_s___type_ae806f9f34377a5dca199e57ed6930ed5}{PERR}}:1;           }
+\DoxyCodeLine{966     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___s_t_a_t_u_s___type_a39f0ae8b64ef410fa70644f515fb41bb}{FERR}}:1;           }
+\DoxyCodeLine{967     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___s_t_a_t_u_s___type_a817599039e6d0a378dc39623af2e8d92}{BUFOVF}}:1;         }
+\DoxyCodeLine{968     uint16\_t :12;              }
+\DoxyCodeLine{969     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___s_t_a_t_u_s___type_a706e469c143cb014732df9c64a066423}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{970   \} bit;                       }
+\DoxyCodeLine{971   uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___s_t_a_t_u_s___type_a7efad022c0dae53b043e957f7f4410e1}{reg}};                }
+\DoxyCodeLine{972 \} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___s_t_a_t_u_s___type}{SERCOM\_USART\_STATUS\_Type}};}
+\DoxyCodeLine{973 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{974 }
+\DoxyCodeLine{975 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_OFFSET  0x10         }}
+\DoxyCodeLine{976 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{978 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_PERR\_Pos 0            }}
+\DoxyCodeLine{979 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_PERR    (0x1ul << SERCOM\_USART\_STATUS\_PERR\_Pos)}}
+\DoxyCodeLine{980 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_FERR\_Pos 1            }}
+\DoxyCodeLine{981 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_FERR    (0x1ul << SERCOM\_USART\_STATUS\_FERR\_Pos)}}
+\DoxyCodeLine{982 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_BUFOVF\_Pos 2            }}
+\DoxyCodeLine{983 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_BUFOVF  (0x1ul << SERCOM\_USART\_STATUS\_BUFOVF\_Pos)}}
+\DoxyCodeLine{984 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_SYNCBUSY\_Pos 15           }}
+\DoxyCodeLine{985 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_SYNCBUSY (0x1ul << SERCOM\_USART\_STATUS\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{986 \textcolor{preprocessor}{\#define SERCOM\_USART\_STATUS\_MASK    0x8007ul     }}
+\DoxyCodeLine{988 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_ADDR : (SERCOM Offset: 0x14) (R/W  8) I2CM I2CM Address -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{989 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{990 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{991   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{992     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___a_d_d_r___type_a33bde32f688599af7269a9847ace0117}{ADDR}}:8;           }
+\DoxyCodeLine{993   \} bit;                       }
+\DoxyCodeLine{994   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___a_d_d_r___type_ab4e0d926d249121a13d22f2ab2bd4afc}{reg}};                 }
+\DoxyCodeLine{995 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___a_d_d_r___type}{SERCOM\_I2CM\_ADDR\_Type}};}
+\DoxyCodeLine{996 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{997 }
+\DoxyCodeLine{998 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_ADDR\_OFFSET     0x14         }}
+\DoxyCodeLine{999 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_ADDR\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{1001 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_ADDR\_ADDR\_Pos   0            }}
+\DoxyCodeLine{1002 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_ADDR\_ADDR\_Msk   (0xFFul << SERCOM\_I2CM\_ADDR\_ADDR\_Pos)}}
+\DoxyCodeLine{1003 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_ADDR\_ADDR(value) ((SERCOM\_I2CM\_ADDR\_ADDR\_Msk \& ((value) << SERCOM\_I2CM\_ADDR\_ADDR\_Pos)))}}
+\DoxyCodeLine{1004 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_ADDR\_MASK       0xFFul       }}
+\DoxyCodeLine{1006 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CS\_ADDR : (SERCOM Offset: 0x14) (R/W 32) I2CS I2CS Address -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1007 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1008 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{1009   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{1010     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___a_d_d_r___type_a02c23c0f49702e04527263422a00c1af}{GENCEN}}:1;         }
+\DoxyCodeLine{1011     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___a_d_d_r___type_a934936ff3209adb6039caa0b39d85e6b}{ADDR}}:7;           }
+\DoxyCodeLine{1012     uint32\_t :9;               }
+\DoxyCodeLine{1013     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___a_d_d_r___type_a8fabdc3b5b85dfd0892005d311c4a9ec}{ADDRMASK}}:7;       }
+\DoxyCodeLine{1014     uint32\_t :8;               }
+\DoxyCodeLine{1015   \} bit;                       }
+\DoxyCodeLine{1016   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___a_d_d_r___type_ae2638ae808864035c1ac621814b90f49}{reg}};                }
+\DoxyCodeLine{1017 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___a_d_d_r___type}{SERCOM\_I2CS\_ADDR\_Type}};}
+\DoxyCodeLine{1018 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1019 }
+\DoxyCodeLine{1020 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_OFFSET     0x14         }}
+\DoxyCodeLine{1021 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{1023 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_GENCEN\_Pos 0            }}
+\DoxyCodeLine{1024 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_GENCEN     (0x1ul << SERCOM\_I2CS\_ADDR\_GENCEN\_Pos)}}
+\DoxyCodeLine{1025 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_ADDR\_Pos   1            }}
+\DoxyCodeLine{1026 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_ADDR\_Msk   (0x7Ful << SERCOM\_I2CS\_ADDR\_ADDR\_Pos)}}
+\DoxyCodeLine{1027 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_ADDR(value) ((SERCOM\_I2CS\_ADDR\_ADDR\_Msk \& ((value) << SERCOM\_I2CS\_ADDR\_ADDR\_Pos)))}}
+\DoxyCodeLine{1028 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_ADDRMASK\_Pos 17           }}
+\DoxyCodeLine{1029 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_ADDRMASK\_Msk (0x7Ful << SERCOM\_I2CS\_ADDR\_ADDRMASK\_Pos)}}
+\DoxyCodeLine{1030 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_ADDRMASK(value) ((SERCOM\_I2CS\_ADDR\_ADDRMASK\_Msk \& ((value) << SERCOM\_I2CS\_ADDR\_ADDRMASK\_Pos)))}}
+\DoxyCodeLine{1031 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_ADDR\_MASK       0x00FE00FFul }}
+\DoxyCodeLine{1033 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_ADDR : (SERCOM Offset: 0x14) (R/W 32) SPI SPI Address -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1034 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1035 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{1036   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{1037     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___a_d_d_r___type_a3452041c081a97239767917db832d905}{ADDR}}:8;           }
+\DoxyCodeLine{1038     uint32\_t :8;               }
+\DoxyCodeLine{1039     uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___a_d_d_r___type_abbfa5f2d6f74d86369f59121c8f5e713}{ADDRMASK}}:8;       }
+\DoxyCodeLine{1040     uint32\_t :8;               }
+\DoxyCodeLine{1041   \} bit;                       }
+\DoxyCodeLine{1042   uint32\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___a_d_d_r___type_a768b703b8bba86936f0f4d661252ae86}{reg}};                }
+\DoxyCodeLine{1043 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___a_d_d_r___type}{SERCOM\_SPI\_ADDR\_Type}};}
+\DoxyCodeLine{1044 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1045 }
+\DoxyCodeLine{1046 \textcolor{preprocessor}{\#define SERCOM\_SPI\_ADDR\_OFFSET      0x14         }}
+\DoxyCodeLine{1047 \textcolor{preprocessor}{\#define SERCOM\_SPI\_ADDR\_RESETVALUE  0x00000000ul }}
+\DoxyCodeLine{1049 \textcolor{preprocessor}{\#define SERCOM\_SPI\_ADDR\_ADDR\_Pos    0            }}
+\DoxyCodeLine{1050 \textcolor{preprocessor}{\#define SERCOM\_SPI\_ADDR\_ADDR\_Msk    (0xFFul << SERCOM\_SPI\_ADDR\_ADDR\_Pos)}}
+\DoxyCodeLine{1051 \textcolor{preprocessor}{\#define SERCOM\_SPI\_ADDR\_ADDR(value) ((SERCOM\_SPI\_ADDR\_ADDR\_Msk \& ((value) << SERCOM\_SPI\_ADDR\_ADDR\_Pos)))}}
+\DoxyCodeLine{1052 \textcolor{preprocessor}{\#define SERCOM\_SPI\_ADDR\_ADDRMASK\_Pos 16           }}
+\DoxyCodeLine{1053 \textcolor{preprocessor}{\#define SERCOM\_SPI\_ADDR\_ADDRMASK\_Msk (0xFFul << SERCOM\_SPI\_ADDR\_ADDRMASK\_Pos)}}
+\DoxyCodeLine{1054 \textcolor{preprocessor}{\#define SERCOM\_SPI\_ADDR\_ADDRMASK(value) ((SERCOM\_SPI\_ADDR\_ADDRMASK\_Msk \& ((value) << SERCOM\_SPI\_ADDR\_ADDRMASK\_Pos)))}}
+\DoxyCodeLine{1055 \textcolor{preprocessor}{\#define SERCOM\_SPI\_ADDR\_MASK        0x00FF00FFul }}
+\DoxyCodeLine{1057 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CM\_DATA : (SERCOM Offset: 0x18) (R/W  8) I2CM I2CM Data -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1058 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1059 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{1060   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{1061     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___d_a_t_a___type_a9701d2fb0fcce6ea34e20bf1bac114b5}{DATA}}:8;           }
+\DoxyCodeLine{1062   \} bit;                       }
+\DoxyCodeLine{1063   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___d_a_t_a___type_a035419e00d333936ade71cb40da0439e}{reg}};                 }
+\DoxyCodeLine{1064 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___d_a_t_a___type}{SERCOM\_I2CM\_DATA\_Type}};}
+\DoxyCodeLine{1065 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1066 }
+\DoxyCodeLine{1067 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DATA\_OFFSET     0x18         }}
+\DoxyCodeLine{1068 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DATA\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{1070 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DATA\_DATA\_Pos   0            }}
+\DoxyCodeLine{1071 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DATA\_DATA\_Msk   (0xFFul << SERCOM\_I2CM\_DATA\_DATA\_Pos)}}
+\DoxyCodeLine{1072 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DATA\_DATA(value) ((SERCOM\_I2CM\_DATA\_DATA\_Msk \& ((value) << SERCOM\_I2CM\_DATA\_DATA\_Pos)))}}
+\DoxyCodeLine{1073 \textcolor{preprocessor}{\#define SERCOM\_I2CM\_DATA\_MASK       0xFFul       }}
+\DoxyCodeLine{1075 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_I2CS\_DATA : (SERCOM Offset: 0x18) (R/W  8) I2CS I2CS Data -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1076 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1077 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{1078   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{1079     uint8\_t  \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___d_a_t_a___type_a00131e24a8df02f3cd18404bfe5ec542}{DATA}}:8;           }
+\DoxyCodeLine{1080   \} bit;                       }
+\DoxyCodeLine{1081   uint8\_t \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___d_a_t_a___type_a935224f07fa71cb7f2e05ce80b1a4b2d}{reg}};                 }
+\DoxyCodeLine{1082 \} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___d_a_t_a___type}{SERCOM\_I2CS\_DATA\_Type}};}
+\DoxyCodeLine{1083 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1084 }
+\DoxyCodeLine{1085 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_DATA\_OFFSET     0x18         }}
+\DoxyCodeLine{1086 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_DATA\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{1088 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_DATA\_DATA\_Pos   0            }}
+\DoxyCodeLine{1089 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_DATA\_DATA\_Msk   (0xFFul << SERCOM\_I2CS\_DATA\_DATA\_Pos)}}
+\DoxyCodeLine{1090 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_DATA\_DATA(value) ((SERCOM\_I2CS\_DATA\_DATA\_Msk \& ((value) << SERCOM\_I2CS\_DATA\_DATA\_Pos)))}}
+\DoxyCodeLine{1091 \textcolor{preprocessor}{\#define SERCOM\_I2CS\_DATA\_MASK       0xFFul       }}
+\DoxyCodeLine{1093 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_SPI\_DATA : (SERCOM Offset: 0x18) (R/W 16) SPI SPI Data -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1094 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1095 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{1096   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{1097     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___d_a_t_a___type_a905dcce4ec3012a659a32c551ff17194}{DATA}}:9;           }
+\DoxyCodeLine{1098     uint16\_t :7;               }
+\DoxyCodeLine{1099   \} bit;                       }
+\DoxyCodeLine{1100   uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___d_a_t_a___type_af7e0c44c510ca3fdd945c4181e4b6270}{reg}};                }
+\DoxyCodeLine{1101 \} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___d_a_t_a___type}{SERCOM\_SPI\_DATA\_Type}};}
+\DoxyCodeLine{1102 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1103 }
+\DoxyCodeLine{1104 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DATA\_OFFSET      0x18         }}
+\DoxyCodeLine{1105 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DATA\_RESETVALUE  0x0000ul     }}
+\DoxyCodeLine{1107 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DATA\_DATA\_Pos    0            }}
+\DoxyCodeLine{1108 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DATA\_DATA\_Msk    (0x1FFul << SERCOM\_SPI\_DATA\_DATA\_Pos)}}
+\DoxyCodeLine{1109 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DATA\_DATA(value) ((SERCOM\_SPI\_DATA\_DATA\_Msk \& ((value) << SERCOM\_SPI\_DATA\_DATA\_Pos)))}}
+\DoxyCodeLine{1110 \textcolor{preprocessor}{\#define SERCOM\_SPI\_DATA\_MASK        0x01FFul     }}
+\DoxyCodeLine{1112 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SERCOM\_USART\_DATA : (SERCOM Offset: 0x18) (R/W 16) USART USART Data -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1113 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1114 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{1115   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{1116     uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___d_a_t_a___type_ae77c0321a6a53dff9294d93aa6e3e5a4}{DATA}}:9;           }
+\DoxyCodeLine{1117     uint16\_t :7;               }
+\DoxyCodeLine{1118   \} bit;                       }
+\DoxyCodeLine{1119   uint16\_t \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___d_a_t_a___type_afd4c204eacedd8b2cc4aa080660a1167}{reg}};                }
+\DoxyCodeLine{1120 \} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___d_a_t_a___type}{SERCOM\_USART\_DATA\_Type}};}
+\DoxyCodeLine{1121 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1122 }
+\DoxyCodeLine{1123 \textcolor{preprocessor}{\#define SERCOM\_USART\_DATA\_OFFSET    0x18         }}
+\DoxyCodeLine{1124 \textcolor{preprocessor}{\#define SERCOM\_USART\_DATA\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{1126 \textcolor{preprocessor}{\#define SERCOM\_USART\_DATA\_DATA\_Pos  0            }}
+\DoxyCodeLine{1127 \textcolor{preprocessor}{\#define SERCOM\_USART\_DATA\_DATA\_Msk  (0x1FFul << SERCOM\_USART\_DATA\_DATA\_Pos)}}
+\DoxyCodeLine{1128 \textcolor{preprocessor}{\#define SERCOM\_USART\_DATA\_DATA(value) ((SERCOM\_USART\_DATA\_DATA\_Msk \& ((value) << SERCOM\_USART\_DATA\_DATA\_Pos)))}}
+\DoxyCodeLine{1129 \textcolor{preprocessor}{\#define SERCOM\_USART\_DATA\_MASK      0x01FFul     }}
+\DoxyCodeLine{1132 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1133 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{comment}{/* I2C Master Mode */}}
+\DoxyCodeLine{1134   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type}{SERCOM\_I2CM\_CTRLA\_Type}}    \mbox{\hyperlink{struct_sercom_i2cm_ada5a8e80a8a309062779659a8520a301}{CTRLA}};       }
+\DoxyCodeLine{1135   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_b___type}{SERCOM\_I2CM\_CTRLB\_Type}}    \mbox{\hyperlink{struct_sercom_i2cm_a16405c9197468e6eefef0672b99e7ef9}{CTRLB}};       }
+\DoxyCodeLine{1136   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___d_b_g_c_t_r_l___type}{SERCOM\_I2CM\_DBGCTRL\_Type}}  \mbox{\hyperlink{struct_sercom_i2cm_ac12abbbde36c7ba5cc2e24548a3c3b69}{DBGCTRL}};     }
+\DoxyCodeLine{1137        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{1138   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___b_a_u_d___type}{SERCOM\_I2CM\_BAUD\_Type}}     \mbox{\hyperlink{struct_sercom_i2cm_a49ba881fb2594e4bd81f24d5a6dbf280}{BAUD}};        }
+\DoxyCodeLine{1139   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_c_l_r___type}{SERCOM\_I2CM\_INTENCLR\_Type}} \mbox{\hyperlink{struct_sercom_i2cm_a115c20fd68cbae0011a3e013c4fc7f87}{INTENCLR}};    }
+\DoxyCodeLine{1140   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_s_e_t___type}{SERCOM\_I2CM\_INTENSET\_Type}} \mbox{\hyperlink{struct_sercom_i2cm_ab9bf32c36650e9e33c4f5457c87e1e67}{INTENSET}};    }
+\DoxyCodeLine{1141   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_f_l_a_g___type}{SERCOM\_I2CM\_INTFLAG\_Type}}  \mbox{\hyperlink{struct_sercom_i2cm_a08beddd4d34c9cd8e3c54fca1e6d9dc1}{INTFLAG}};     }
+\DoxyCodeLine{1142        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x1];}
+\DoxyCodeLine{1143   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type}{SERCOM\_I2CM\_STATUS\_Type}}   \mbox{\hyperlink{struct_sercom_i2cm_a7ccd67936d2c8e555c167db38729e43f}{STATUS}};      }
+\DoxyCodeLine{1144        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x2];}
+\DoxyCodeLine{1145   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___a_d_d_r___type}{SERCOM\_I2CM\_ADDR\_Type}}     \mbox{\hyperlink{struct_sercom_i2cm_af72d46dd28fcccf39d6cb6d582b0bf37}{ADDR}};        }
+\DoxyCodeLine{1146        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved4[0x3];}
+\DoxyCodeLine{1147   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___d_a_t_a___type}{SERCOM\_I2CM\_DATA\_Type}}     \mbox{\hyperlink{struct_sercom_i2cm_afc1d1938d5847da43327d75f7eb5d928}{DATA}};        }
+\DoxyCodeLine{1148 \} \mbox{\hyperlink{struct_sercom_i2cm}{SercomI2cm}};}
+\DoxyCodeLine{1149 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1150 }
+\DoxyCodeLine{1152 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1153 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{comment}{/* I2C Slave Mode */}}
+\DoxyCodeLine{1154   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_a___type}{SERCOM\_I2CS\_CTRLA\_Type}}    \mbox{\hyperlink{struct_sercom_i2cs_aae5bca0754fea380f560a66564f03434}{CTRLA}};       }
+\DoxyCodeLine{1155   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___c_t_r_l_b___type}{SERCOM\_I2CS\_CTRLB\_Type}}    \mbox{\hyperlink{struct_sercom_i2cs_a156682f8e20732eb5357cb5950f40665}{CTRLB}};       }
+\DoxyCodeLine{1156        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x4];}
+\DoxyCodeLine{1157   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_c_l_r___type}{SERCOM\_I2CS\_INTENCLR\_Type}} \mbox{\hyperlink{struct_sercom_i2cs_a572df7f0b2e1e92e16618b3d41e941db}{INTENCLR}};    }
+\DoxyCodeLine{1158   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_e_n_s_e_t___type}{SERCOM\_I2CS\_INTENSET\_Type}} \mbox{\hyperlink{struct_sercom_i2cs_a5c9b249c1bbdb369668af2d8925d6f5a}{INTENSET}};    }
+\DoxyCodeLine{1159   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___i_n_t_f_l_a_g___type}{SERCOM\_I2CS\_INTFLAG\_Type}}  \mbox{\hyperlink{struct_sercom_i2cs_a5238e7f4dc695a50dd9657371f464fe5}{INTFLAG}};     }
+\DoxyCodeLine{1160        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x1];}
+\DoxyCodeLine{1161   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___s_t_a_t_u_s___type}{SERCOM\_I2CS\_STATUS\_Type}}   \mbox{\hyperlink{struct_sercom_i2cs_ad5164001002eef296a1bf11abd840830}{STATUS}};      }
+\DoxyCodeLine{1162        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x2];}
+\DoxyCodeLine{1163   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___a_d_d_r___type}{SERCOM\_I2CS\_ADDR\_Type}}     \mbox{\hyperlink{struct_sercom_i2cs_ac82d16af22457e186a0f1563a7240701}{ADDR}};        }
+\DoxyCodeLine{1164   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_s___d_a_t_a___type}{SERCOM\_I2CS\_DATA\_Type}}     \mbox{\hyperlink{struct_sercom_i2cs_ad7c08b9b0b95f0c3214891814d61cbb8}{DATA}};        }
+\DoxyCodeLine{1165 \} \mbox{\hyperlink{struct_sercom_i2cs}{SercomI2cs}};}
+\DoxyCodeLine{1166 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1167 }
+\DoxyCodeLine{1169 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1170 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{comment}{/* SPI Mode */}}
+\DoxyCodeLine{1171   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_a___type}{SERCOM\_SPI\_CTRLA\_Type}}     \mbox{\hyperlink{struct_sercom_spi_a6b5ceac8734777daa2c939a528bd8d7a}{CTRLA}};       }
+\DoxyCodeLine{1172   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___c_t_r_l_b___type}{SERCOM\_SPI\_CTRLB\_Type}}     \mbox{\hyperlink{struct_sercom_spi_a82682944a4341eac7e7cead927114f27}{CTRLB}};       }
+\DoxyCodeLine{1173   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___d_b_g_c_t_r_l___type}{SERCOM\_SPI\_DBGCTRL\_Type}}   \mbox{\hyperlink{struct_sercom_spi_a01c414f8fb8404c72c2ecc5544469980}{DBGCTRL}};     }
+\DoxyCodeLine{1174        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{1175   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___b_a_u_d___type}{SERCOM\_SPI\_BAUD\_Type}}      \mbox{\hyperlink{struct_sercom_spi_ae3617d06a12a777081ef2bea85b1fd79}{BAUD}};        }
+\DoxyCodeLine{1176        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x1];}
+\DoxyCodeLine{1177   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_c_l_r___type}{SERCOM\_SPI\_INTENCLR\_Type}}  \mbox{\hyperlink{struct_sercom_spi_a447e3f476bf3805f1ac0729f5751e249}{INTENCLR}};    }
+\DoxyCodeLine{1178   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_e_n_s_e_t___type}{SERCOM\_SPI\_INTENSET\_Type}}  \mbox{\hyperlink{struct_sercom_spi_a746460fa2d29ff5cf5859a7e120823e9}{INTENSET}};    }
+\DoxyCodeLine{1179   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___i_n_t_f_l_a_g___type}{SERCOM\_SPI\_INTFLAG\_Type}}   \mbox{\hyperlink{struct_sercom_spi_aa8972f8e6759af48a837664cbc55f3e0}{INTFLAG}};     }
+\DoxyCodeLine{1180        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x1];}
+\DoxyCodeLine{1181   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___s_t_a_t_u_s___type}{SERCOM\_SPI\_STATUS\_Type}}    \mbox{\hyperlink{struct_sercom_spi_a6bb0888f1297cca734fc8f625fa9ca0f}{STATUS}};      }
+\DoxyCodeLine{1182        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved4[0x2];}
+\DoxyCodeLine{1183   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___a_d_d_r___type}{SERCOM\_SPI\_ADDR\_Type}}      \mbox{\hyperlink{struct_sercom_spi_a928810e5e30da98caef3da7c1c16b1bc}{ADDR}};        }
+\DoxyCodeLine{1184   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___s_p_i___d_a_t_a___type}{SERCOM\_SPI\_DATA\_Type}}      \mbox{\hyperlink{struct_sercom_spi_a427dacdb6fab86af3e318a7ff97ef7d3}{DATA}};        }
+\DoxyCodeLine{1185 \} \mbox{\hyperlink{struct_sercom_spi}{SercomSpi}};}
+\DoxyCodeLine{1186 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1187 }
+\DoxyCodeLine{1189 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1190 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{comment}{/* USART Mode */}}
+\DoxyCodeLine{1191   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type}{SERCOM\_USART\_CTRLA\_Type}}   \mbox{\hyperlink{struct_sercom_usart_a0d6e3df70af3c2599e2227162d7e481d}{CTRLA}};       }
+\DoxyCodeLine{1192   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type}{SERCOM\_USART\_CTRLB\_Type}}   \mbox{\hyperlink{struct_sercom_usart_a13f48d6962c20b0fbbc697b339b24637}{CTRLB}};       }
+\DoxyCodeLine{1193   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___d_b_g_c_t_r_l___type}{SERCOM\_USART\_DBGCTRL\_Type}} \mbox{\hyperlink{struct_sercom_usart_ad8b879e69131449d6cc726b444772065}{DBGCTRL}};     }
+\DoxyCodeLine{1194        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{1195   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___b_a_u_d___type}{SERCOM\_USART\_BAUD\_Type}}    \mbox{\hyperlink{struct_sercom_usart_a9a8765c0b1cc714d92655d120b616aea}{BAUD}};        }
+\DoxyCodeLine{1196   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_c_l_r___type}{SERCOM\_USART\_INTENCLR\_Type}} \mbox{\hyperlink{struct_sercom_usart_a41bd9a7bd443197a9177357eb122dfb1}{INTENCLR}};    }
+\DoxyCodeLine{1197   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_e_n_s_e_t___type}{SERCOM\_USART\_INTENSET\_Type}} \mbox{\hyperlink{struct_sercom_usart_a1ac4a7c27bab21a1bfd18aa9aaea176b}{INTENSET}};    }
+\DoxyCodeLine{1198   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___i_n_t_f_l_a_g___type}{SERCOM\_USART\_INTFLAG\_Type}} \mbox{\hyperlink{struct_sercom_usart_aeddd2226c1eec2dc16bb85bb57dcb986}{INTFLAG}};     }
+\DoxyCodeLine{1199        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x1];}
+\DoxyCodeLine{1200   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___s_t_a_t_u_s___type}{SERCOM\_USART\_STATUS\_Type}}  \mbox{\hyperlink{struct_sercom_usart_aec9dc41e7c3727dcb02b794159f115da}{STATUS}};      }
+\DoxyCodeLine{1201        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x6];}
+\DoxyCodeLine{1202   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___d_a_t_a___type}{SERCOM\_USART\_DATA\_Type}}    \mbox{\hyperlink{struct_sercom_usart_a50fd58032f505c3c27f235809bc85e23}{DATA}};        }
+\DoxyCodeLine{1203 \} \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}};}
+\DoxyCodeLine{1204 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1205 }
+\DoxyCodeLine{1206 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1207 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{1208        \mbox{\hyperlink{struct_sercom_i2cm}{SercomI2cm}}                \mbox{\hyperlink{union_sercom_adb28862e03096b4bb9e55030b3ff670b}{I2CM}};        }
+\DoxyCodeLine{1209        \mbox{\hyperlink{struct_sercom_i2cs}{SercomI2cs}}                \mbox{\hyperlink{union_sercom_a7dfcf9bc99ef996e57933ecd92171953}{I2CS}};        }
+\DoxyCodeLine{1210        \mbox{\hyperlink{struct_sercom_spi}{SercomSpi}}                 \mbox{\hyperlink{union_sercom_a7ed0df3fd26886e2f1c718ddf4eba6cd}{SPI}};         }
+\DoxyCodeLine{1211        \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}}               \mbox{\hyperlink{union_sercom_ae82be07be50298f8e692f755dbbdc7ab}{USART}};       }
+\DoxyCodeLine{1212 \} \mbox{\hyperlink{union_sercom}{Sercom}};}
+\DoxyCodeLine{1213 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1214 }
+\DoxyCodeLine{1217 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_SERCOM\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

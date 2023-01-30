@@ -1,0 +1,50 @@
+\hypertarget{sail__pwm_8h_source}{}\doxysection{sail\+\_\+pwm.\+h}
+\label{sail__pwm_8h_source}\index{src/sail\_pwm.h@{src/sail\_pwm.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_pwm.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Header file for the PWM driver module for the autonomous sailboat project.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created on Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Created by August 16, 2016.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef SAIL\_PWM\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define SAIL\_PWM\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{asf_8h}{asf.h}}>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define PWM\_MAX\_DUTY 250}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} PWM\_ChannelIDs \{}
+\DoxyCodeLine{15     PWM\_SAIL,}
+\DoxyCodeLine{16     PWM\_RUDDER,}
+\DoxyCodeLine{17     PWM\_NUM\_CHANNELS}
+\DoxyCodeLine{18 \} PWM\_ChannelID;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{/* PWM\_Init}}
+\DoxyCodeLine{22 \textcolor{comment}{ * Initialize PWM driver module}}
+\DoxyCodeLine{23 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{24 \textcolor{comment}{ *      STATUS\_OK -\/ PWM driver module initialization was successful}}
+\DoxyCodeLine{25 \textcolor{comment}{ */}}
+\DoxyCodeLine{26 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} PWM\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{/* PWM\_SetDuty}}
+\DoxyCodeLine{30 \textcolor{comment}{ * Set the sleep time of the control unit}}
+\DoxyCodeLine{31 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{32 \textcolor{comment}{ *      STATUS\_OK -\/ Successfully set duty}}
+\DoxyCodeLine{33 \textcolor{comment}{ */} }
+\DoxyCodeLine{34 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} PWM\_SetDuty(PWM\_ChannelID \textcolor{keywordtype}{id}, uint8\_t duty);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/* PWM\_Disable}}
+\DoxyCodeLine{38 \textcolor{comment}{ * Set duty circle to 0\%, equivalent to disable}}
+\DoxyCodeLine{39 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{40 \textcolor{comment}{ *      STATUS\_OK -\/ Successfully disable duty}}
+\DoxyCodeLine{41 \textcolor{comment}{ */} }
+\DoxyCodeLine{42 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} PWM\_Disable(PWM\_ChannelID \textcolor{keywordtype}{id});}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SAIL\_PWM\_H}}
+
+\end{DoxyCode}

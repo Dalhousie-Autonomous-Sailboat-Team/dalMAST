@@ -1,0 +1,460 @@
+\hypertarget{component_2nvmctrl_8h_source}{}\doxysection{nvmctrl.\+h}
+\label{component_2nvmctrl_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/nvmctrl.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/nvmctrl.h}}
+\mbox{\hyperlink{component_2nvmctrl_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_NVMCTRL\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_NVMCTRL\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define NVMCTRL\_U2207}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_NVMCTRL                 0x109}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ NVMCTRL\_CTRLA : (NVMCTRL Offset: 0x00) (R/W 16) Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_a___type_a82cedff0028f2730b0f16fe18235dc6b}{CMD}}:7;            }
+\DoxyCodeLine{54     uint16\_t :1;               }
+\DoxyCodeLine{55     uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_a___type_ac7abbf77c132da189b90fb50035f112e}{CMDEX}}:8;          }
+\DoxyCodeLine{56   \} bit;                       }
+\DoxyCodeLine{57   uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_a___type_a675bd7dd11996723b783028b20c0c280}{reg}};                }
+\DoxyCodeLine{58 \} \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_a___type}{NVMCTRL\_CTRLA\_Type}};}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_OFFSET        0x00         }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_RESETVALUE    0x0000ul     }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_Pos       0            }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_Msk       (0x7Ful << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD(value)    ((NVMCTRL\_CTRLA\_CMD\_Msk \& ((value) << NVMCTRL\_CTRLA\_CMD\_Pos)))}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_ER\_Val        0x2ul  }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_WP\_Val        0x4ul  }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_EAR\_Val       0x5ul  }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_WAP\_Val       0x6ul  }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_SF\_Val        0xAul  }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_WL\_Val        0xFul  }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_LR\_Val        0x40ul  }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_UR\_Val        0x41ul  }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_SPRM\_Val      0x42ul  }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_CPRM\_Val      0x43ul  }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_PBC\_Val       0x44ul  }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_SSB\_Val       0x45ul  }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMD\_INVALL\_Val    0x46ul  }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_ER        (NVMCTRL\_CTRLA\_CMD\_ER\_Val      << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_WP        (NVMCTRL\_CTRLA\_CMD\_WP\_Val      << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_EAR       (NVMCTRL\_CTRLA\_CMD\_EAR\_Val     << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_WAP       (NVMCTRL\_CTRLA\_CMD\_WAP\_Val     << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_SF        (NVMCTRL\_CTRLA\_CMD\_SF\_Val      << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_WL        (NVMCTRL\_CTRLA\_CMD\_WL\_Val      << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_LR        (NVMCTRL\_CTRLA\_CMD\_LR\_Val      << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_UR        (NVMCTRL\_CTRLA\_CMD\_UR\_Val      << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_SPRM      (NVMCTRL\_CTRLA\_CMD\_SPRM\_Val    << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_CPRM      (NVMCTRL\_CTRLA\_CMD\_CPRM\_Val    << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_PBC       (NVMCTRL\_CTRLA\_CMD\_PBC\_Val     << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_SSB       (NVMCTRL\_CTRLA\_CMD\_SSB\_Val     << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMD\_INVALL    (NVMCTRL\_CTRLA\_CMD\_INVALL\_Val  << NVMCTRL\_CTRLA\_CMD\_Pos)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMDEX\_Pos     8            }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMDEX\_Msk     (0xFFul << NVMCTRL\_CTRLA\_CMDEX\_Pos)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMDEX(value)  ((NVMCTRL\_CTRLA\_CMDEX\_Msk \& ((value) << NVMCTRL\_CTRLA\_CMDEX\_Pos)))}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLA\_CMDEX\_KEY\_Val     0xA5ul  }}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_CMDEX\_KEY     (NVMCTRL\_CTRLA\_CMDEX\_KEY\_Val   << NVMCTRL\_CTRLA\_CMDEX\_Pos)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLA\_MASK          0xFF7Ful     }}
+\DoxyCodeLine{100 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ NVMCTRL\_CTRLB : (NVMCTRL Offset: 0x04) (R/W 32) Control B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{102 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{103   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{104     uint32\_t :1;               }
+\DoxyCodeLine{105     uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_b___type_a9b351d665cd7d82819ed8f484d7293b1}{RWS}}:4;            }
+\DoxyCodeLine{106     uint32\_t :2;               }
+\DoxyCodeLine{107     uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_b___type_af669bd49d88eaacb7f1564fd89700ad3}{MANW}}:1;           }
+\DoxyCodeLine{108     uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_b___type_a83024f02edb3be98b6591bf79a251ee3}{SLEEPPRM}}:2;       }
+\DoxyCodeLine{109     uint32\_t :6;               }
+\DoxyCodeLine{110     uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_b___type_a673e28ee5698af3db2c4751faad12b7a}{READMODE}}:2;       }
+\DoxyCodeLine{111     uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_b___type_a7c50ff4bfa3e009b2911aab925f5f6e6}{CACHEDIS}}:1;       }
+\DoxyCodeLine{112     uint32\_t :13;              }
+\DoxyCodeLine{113   \} bit;                       }
+\DoxyCodeLine{114   uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_b___type_ac3f0c0bf35097a45720f24d1e23d777d}{reg}};                }
+\DoxyCodeLine{115 \} \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_b___type}{NVMCTRL\_CTRLB\_Type}};}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_OFFSET        0x04         }}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_RESETVALUE    0x00000000ul }}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_RWS\_Pos       1            }}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_RWS\_Msk       (0xFul << NVMCTRL\_CTRLB\_RWS\_Pos)}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_RWS(value)    ((NVMCTRL\_CTRLB\_RWS\_Msk \& ((value) << NVMCTRL\_CTRLB\_RWS\_Pos)))}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLB\_RWS\_SINGLE\_Val    0x0ul  }}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLB\_RWS\_HALF\_Val      0x1ul  }}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLB\_RWS\_DUAL\_Val      0x2ul  }}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_RWS\_SINGLE    (NVMCTRL\_CTRLB\_RWS\_SINGLE\_Val  << NVMCTRL\_CTRLB\_RWS\_Pos)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_RWS\_HALF      (NVMCTRL\_CTRLB\_RWS\_HALF\_Val    << NVMCTRL\_CTRLB\_RWS\_Pos)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_RWS\_DUAL      (NVMCTRL\_CTRLB\_RWS\_DUAL\_Val    << NVMCTRL\_CTRLB\_RWS\_Pos)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_MANW\_Pos      7            }}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_MANW          (0x1ul << NVMCTRL\_CTRLB\_MANW\_Pos)}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_SLEEPPRM\_Pos  8            }}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_SLEEPPRM\_Msk  (0x3ul << NVMCTRL\_CTRLB\_SLEEPPRM\_Pos)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_SLEEPPRM(value) ((NVMCTRL\_CTRLB\_SLEEPPRM\_Msk \& ((value) << NVMCTRL\_CTRLB\_SLEEPPRM\_Pos)))}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLB\_SLEEPPRM\_WAKEONACCESS\_Val 0x0ul  }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLB\_SLEEPPRM\_WAKEUPINSTANT\_Val 0x1ul  }}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLB\_SLEEPPRM\_DISABLED\_Val 0x3ul  }}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_SLEEPPRM\_WAKEONACCESS (NVMCTRL\_CTRLB\_SLEEPPRM\_WAKEONACCESS\_Val << NVMCTRL\_CTRLB\_SLEEPPRM\_Pos)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_SLEEPPRM\_WAKEUPINSTANT (NVMCTRL\_CTRLB\_SLEEPPRM\_WAKEUPINSTANT\_Val << NVMCTRL\_CTRLB\_SLEEPPRM\_Pos)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_SLEEPPRM\_DISABLED (NVMCTRL\_CTRLB\_SLEEPPRM\_DISABLED\_Val << NVMCTRL\_CTRLB\_SLEEPPRM\_Pos)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_READMODE\_Pos  16           }}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_READMODE\_Msk  (0x3ul << NVMCTRL\_CTRLB\_READMODE\_Pos)}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_READMODE(value) ((NVMCTRL\_CTRLB\_READMODE\_Msk \& ((value) << NVMCTRL\_CTRLB\_READMODE\_Pos)))}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLB\_READMODE\_NO\_MISS\_PENALTY\_Val 0x0ul  }}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLB\_READMODE\_LOW\_POWER\_Val 0x1ul  }}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define   NVMCTRL\_CTRLB\_READMODE\_DETERMINISTIC\_Val 0x2ul  }}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_READMODE\_NO\_MISS\_PENALTY (NVMCTRL\_CTRLB\_READMODE\_NO\_MISS\_PENALTY\_Val << NVMCTRL\_CTRLB\_READMODE\_Pos)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_READMODE\_LOW\_POWER (NVMCTRL\_CTRLB\_READMODE\_LOW\_POWER\_Val << NVMCTRL\_CTRLB\_READMODE\_Pos)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_READMODE\_DETERMINISTIC (NVMCTRL\_CTRLB\_READMODE\_DETERMINISTIC\_Val << NVMCTRL\_CTRLB\_READMODE\_Pos)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_CACHEDIS\_Pos  18           }}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_CACHEDIS      (0x1ul << NVMCTRL\_CTRLB\_CACHEDIS\_Pos)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define NVMCTRL\_CTRLB\_MASK          0x0007039Eul }}
+\DoxyCodeLine{154 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ NVMCTRL\_PARAM : (NVMCTRL Offset: 0x08) (R/W 32) NVM Parameter -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{156 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{157   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{158     uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___p_a_r_a_m___type_ab027731ea54fbc5dc42c1f1eb988a498}{NVMP}}:16;          }
+\DoxyCodeLine{159     uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___p_a_r_a_m___type_a1614279db2de41ec8c6b19e2b60c873c}{PSZ}}:3;            }
+\DoxyCodeLine{160     uint32\_t :13;              }
+\DoxyCodeLine{161   \} bit;                       }
+\DoxyCodeLine{162   uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___p_a_r_a_m___type_a06e3104745c4aa4dc7c65a7b876b3cfd}{reg}};                }
+\DoxyCodeLine{163 \} \mbox{\hyperlink{union_n_v_m_c_t_r_l___p_a_r_a_m___type}{NVMCTRL\_PARAM\_Type}};}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_OFFSET        0x08         }}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_RESETVALUE    0x00000000ul }}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_NVMP\_Pos      0            }}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_NVMP\_Msk      (0xFFFFul << NVMCTRL\_PARAM\_NVMP\_Pos)}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_NVMP(value)   ((NVMCTRL\_PARAM\_NVMP\_Msk \& ((value) << NVMCTRL\_PARAM\_NVMP\_Pos)))}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_Pos       16           }}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_Msk       (0x7ul << NVMCTRL\_PARAM\_PSZ\_Pos)}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ(value)    ((NVMCTRL\_PARAM\_PSZ\_Msk \& ((value) << NVMCTRL\_PARAM\_PSZ\_Pos)))}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define   NVMCTRL\_PARAM\_PSZ\_8\_Val         0x0ul  }}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define   NVMCTRL\_PARAM\_PSZ\_16\_Val        0x1ul  }}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define   NVMCTRL\_PARAM\_PSZ\_32\_Val        0x2ul  }}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define   NVMCTRL\_PARAM\_PSZ\_64\_Val        0x3ul  }}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define   NVMCTRL\_PARAM\_PSZ\_128\_Val       0x4ul  }}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define   NVMCTRL\_PARAM\_PSZ\_256\_Val       0x5ul  }}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define   NVMCTRL\_PARAM\_PSZ\_512\_Val       0x6ul  }}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define   NVMCTRL\_PARAM\_PSZ\_1024\_Val      0x7ul  }}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_8         (NVMCTRL\_PARAM\_PSZ\_8\_Val       << NVMCTRL\_PARAM\_PSZ\_Pos)}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_16        (NVMCTRL\_PARAM\_PSZ\_16\_Val      << NVMCTRL\_PARAM\_PSZ\_Pos)}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_32        (NVMCTRL\_PARAM\_PSZ\_32\_Val      << NVMCTRL\_PARAM\_PSZ\_Pos)}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_64        (NVMCTRL\_PARAM\_PSZ\_64\_Val      << NVMCTRL\_PARAM\_PSZ\_Pos)}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_128       (NVMCTRL\_PARAM\_PSZ\_128\_Val     << NVMCTRL\_PARAM\_PSZ\_Pos)}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_256       (NVMCTRL\_PARAM\_PSZ\_256\_Val     << NVMCTRL\_PARAM\_PSZ\_Pos)}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_512       (NVMCTRL\_PARAM\_PSZ\_512\_Val     << NVMCTRL\_PARAM\_PSZ\_Pos)}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_PSZ\_1024      (NVMCTRL\_PARAM\_PSZ\_1024\_Val    << NVMCTRL\_PARAM\_PSZ\_Pos)}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define NVMCTRL\_PARAM\_MASK          0x0007FFFFul }}
+\DoxyCodeLine{193 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ NVMCTRL\_INTENCLR : (NVMCTRL Offset: 0x0C) (R/W  8) Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{195 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{196   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{197     uint8\_t  \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_c_l_r___type_a43ccc6a3972b57dbaa0906f835282e73}{READY}}:1;          }
+\DoxyCodeLine{198     uint8\_t  \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_c_l_r___type_a18fcb644618bdef310bc7f209377f3f0}{ERROR}}:1;          }
+\DoxyCodeLine{199     uint8\_t  :6;               }
+\DoxyCodeLine{200   \} bit;                       }
+\DoxyCodeLine{201   uint8\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_c_l_r___type_a3cc126df7857ed5fdc6242d5b4c41082}{reg}};                 }
+\DoxyCodeLine{202 \} \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_c_l_r___type}{NVMCTRL\_INTENCLR\_Type}};}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define NVMCTRL\_INTENCLR\_OFFSET     0x0C         }}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define NVMCTRL\_INTENCLR\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define NVMCTRL\_INTENCLR\_READY\_Pos  0            }}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define NVMCTRL\_INTENCLR\_READY      (0x1ul << NVMCTRL\_INTENCLR\_READY\_Pos)}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define NVMCTRL\_INTENCLR\_ERROR\_Pos  1            }}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define NVMCTRL\_INTENCLR\_ERROR      (0x1ul << NVMCTRL\_INTENCLR\_ERROR\_Pos)}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define NVMCTRL\_INTENCLR\_MASK       0x03ul       }}
+\DoxyCodeLine{214 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ NVMCTRL\_INTENSET : (NVMCTRL Offset: 0x10) (R/W  8) Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{216 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{217   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{218     uint8\_t  \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_s_e_t___type_abcbe8caa7df6ab2260131dfb38b5e33f}{READY}}:1;          }
+\DoxyCodeLine{219     uint8\_t  \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_s_e_t___type_a2ce0ac51bfad206ffc50045beadf41a4}{ERROR}}:1;          }
+\DoxyCodeLine{220     uint8\_t  :6;               }
+\DoxyCodeLine{221   \} bit;                       }
+\DoxyCodeLine{222   uint8\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_s_e_t___type_ac98b251231daf8e30a2fcc03f6851645}{reg}};                 }
+\DoxyCodeLine{223 \} \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_s_e_t___type}{NVMCTRL\_INTENSET\_Type}};}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define NVMCTRL\_INTENSET\_OFFSET     0x10         }}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define NVMCTRL\_INTENSET\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define NVMCTRL\_INTENSET\_READY\_Pos  0            }}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define NVMCTRL\_INTENSET\_READY      (0x1ul << NVMCTRL\_INTENSET\_READY\_Pos)}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define NVMCTRL\_INTENSET\_ERROR\_Pos  1            }}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define NVMCTRL\_INTENSET\_ERROR      (0x1ul << NVMCTRL\_INTENSET\_ERROR\_Pos)}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#define NVMCTRL\_INTENSET\_MASK       0x03ul       }}
+\DoxyCodeLine{235 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ NVMCTRL\_INTFLAG : (NVMCTRL Offset: 0x14) (R/W  8) Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{237 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{238   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{239     uint8\_t  \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_f_l_a_g___type_a6ff1a1aa338201743b407514a1c59ba0}{READY}}:1;          }
+\DoxyCodeLine{240     uint8\_t  \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_f_l_a_g___type_a52f3d62f1bce2ec3819e43364f9753b3}{ERROR}}:1;          }
+\DoxyCodeLine{241     uint8\_t  :6;               }
+\DoxyCodeLine{242   \} bit;                       }
+\DoxyCodeLine{243   uint8\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_f_l_a_g___type_a0c695606dd4bfb8b9dca4d4ee5978156}{reg}};                 }
+\DoxyCodeLine{244 \} \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_f_l_a_g___type}{NVMCTRL\_INTFLAG\_Type}};}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define NVMCTRL\_INTFLAG\_OFFSET      0x14         }}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define NVMCTRL\_INTFLAG\_RESETVALUE  0x00ul       }}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define NVMCTRL\_INTFLAG\_READY\_Pos   0            }}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define NVMCTRL\_INTFLAG\_READY       (0x1ul << NVMCTRL\_INTFLAG\_READY\_Pos)}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define NVMCTRL\_INTFLAG\_ERROR\_Pos   1            }}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define NVMCTRL\_INTFLAG\_ERROR       (0x1ul << NVMCTRL\_INTFLAG\_ERROR\_Pos)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define NVMCTRL\_INTFLAG\_MASK        0x03ul       }}
+\DoxyCodeLine{256 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ NVMCTRL\_STATUS : (NVMCTRL Offset: 0x18) (R/W 16) Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{258 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{259   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{260     uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type_ad39e4a3b2f9024bf91b70d5eafe0e89e}{PRM}}:1;            }
+\DoxyCodeLine{261     uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type_adafdfedd11c1fb246fa0642d6c125578}{LOAD}}:1;           }
+\DoxyCodeLine{262     uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type_aeea1d09f9165a2d5c44f07fe28e51733}{PROGE}}:1;          }
+\DoxyCodeLine{263     uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type_ad0e33a5331fc75e36588f4a8245d39c7}{LOCKE}}:1;          }
+\DoxyCodeLine{264     uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type_a2edb512dfcd5306ab46a106bc18bd84d}{NVME}}:1;           }
+\DoxyCodeLine{265     uint16\_t :3;               }
+\DoxyCodeLine{266     uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type_a87f34c47d760b820aa14c72de4b75079}{SB}}:1;             }
+\DoxyCodeLine{267     uint16\_t :7;               }
+\DoxyCodeLine{268   \} bit;                       }
+\DoxyCodeLine{269   uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type_a2468e44fa0ad23c3c9f3105774e3c77d}{reg}};                }
+\DoxyCodeLine{270 \} \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type}{NVMCTRL\_STATUS\_Type}};}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_OFFSET       0x18         }}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_RESETVALUE   0x0000ul     }}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_PRM\_Pos      0            }}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_PRM          (0x1ul << NVMCTRL\_STATUS\_PRM\_Pos)}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_LOAD\_Pos     1            }}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_LOAD         (0x1ul << NVMCTRL\_STATUS\_LOAD\_Pos)}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_PROGE\_Pos    2            }}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_PROGE        (0x1ul << NVMCTRL\_STATUS\_PROGE\_Pos)}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_LOCKE\_Pos    3            }}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_LOCKE        (0x1ul << NVMCTRL\_STATUS\_LOCKE\_Pos)}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_NVME\_Pos     4            }}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_NVME         (0x1ul << NVMCTRL\_STATUS\_NVME\_Pos)}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_SB\_Pos       8            }}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_SB           (0x1ul << NVMCTRL\_STATUS\_SB\_Pos)}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define NVMCTRL\_STATUS\_MASK         0x011Ful     }}
+\DoxyCodeLine{290 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ NVMCTRL\_ADDR : (NVMCTRL Offset: 0x1C) (R/W 32) Address -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{292 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{293   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{294     uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___a_d_d_r___type_a3662864e181ff1d20570379bcf0a25da}{ADDR}}:22;          }
+\DoxyCodeLine{295     uint32\_t :10;              }
+\DoxyCodeLine{296   \} bit;                       }
+\DoxyCodeLine{297   uint32\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___a_d_d_r___type_a483be20a4f5e7bc08fd4439dfd5e5b1f}{reg}};                }
+\DoxyCodeLine{298 \} \mbox{\hyperlink{union_n_v_m_c_t_r_l___a_d_d_r___type}{NVMCTRL\_ADDR\_Type}};}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define NVMCTRL\_ADDR\_OFFSET         0x1C         }}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#define NVMCTRL\_ADDR\_RESETVALUE     0x00000000ul }}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#define NVMCTRL\_ADDR\_ADDR\_Pos       0            }}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define NVMCTRL\_ADDR\_ADDR\_Msk       (0x3FFFFFul << NVMCTRL\_ADDR\_ADDR\_Pos)}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#define NVMCTRL\_ADDR\_ADDR(value)    ((NVMCTRL\_ADDR\_ADDR\_Msk \& ((value) << NVMCTRL\_ADDR\_ADDR\_Pos)))}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define NVMCTRL\_ADDR\_MASK           0x003FFFFFul }}
+\DoxyCodeLine{309 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ NVMCTRL\_LOCK : (NVMCTRL Offset: 0x20) (R/W 16) Lock Section -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{311 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{312   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{313     uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___l_o_c_k___type_ad6462ee3e7d7b13c585b9bc4bd6549aa}{LOCK}}:16;          }
+\DoxyCodeLine{314   \} bit;                       }
+\DoxyCodeLine{315   uint16\_t \mbox{\hyperlink{union_n_v_m_c_t_r_l___l_o_c_k___type_a7fc43a15f3ba5d50cf960c32a4b1577e}{reg}};                }
+\DoxyCodeLine{316 \} \mbox{\hyperlink{union_n_v_m_c_t_r_l___l_o_c_k___type}{NVMCTRL\_LOCK\_Type}};}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define NVMCTRL\_LOCK\_OFFSET         0x20         }}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define NVMCTRL\_LOCK\_RESETVALUE     0x0000ul     }}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define NVMCTRL\_LOCK\_LOCK\_Pos       0            }}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#define NVMCTRL\_LOCK\_LOCK\_Msk       (0xFFFFul << NVMCTRL\_LOCK\_LOCK\_Pos)}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define NVMCTRL\_LOCK\_LOCK(value)    ((NVMCTRL\_LOCK\_LOCK\_Msk \& ((value) << NVMCTRL\_LOCK\_LOCK\_Pos)))}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define NVMCTRL\_LOCK\_MASK           0xFFFFul     }}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{329 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{330   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_a___type}{NVMCTRL\_CTRLA\_Type}}        \mbox{\hyperlink{struct_nvmctrl_a7e8613746f6e54c152a3eb2405ab30ef}{CTRLA}};       }
+\DoxyCodeLine{331        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x2];}
+\DoxyCodeLine{332   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_b___type}{NVMCTRL\_CTRLB\_Type}}        \mbox{\hyperlink{struct_nvmctrl_a44b8fc771ac33929c8f1f4918c670770}{CTRLB}};       }
+\DoxyCodeLine{333   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_n_v_m_c_t_r_l___p_a_r_a_m___type}{NVMCTRL\_PARAM\_Type}}        \mbox{\hyperlink{struct_nvmctrl_ae8b9ef6b47510b9a4b83cb5270430bf8}{PARAM}};       }
+\DoxyCodeLine{334   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_c_l_r___type}{NVMCTRL\_INTENCLR\_Type}}     \mbox{\hyperlink{struct_nvmctrl_a7c7db1c3ef2a8a290f214ae45db87a83}{INTENCLR}};    }
+\DoxyCodeLine{335        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x3];}
+\DoxyCodeLine{336   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_s_e_t___type}{NVMCTRL\_INTENSET\_Type}}     \mbox{\hyperlink{struct_nvmctrl_a47dd09a378257903197d6d6e47f8ff2e}{INTENSET}};    }
+\DoxyCodeLine{337        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x3];}
+\DoxyCodeLine{338   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_f_l_a_g___type}{NVMCTRL\_INTFLAG\_Type}}      \mbox{\hyperlink{struct_nvmctrl_aa275ec3e71b3fd5455175d593b317548}{INTFLAG}};     }
+\DoxyCodeLine{339        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved4[0x3];}
+\DoxyCodeLine{340   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type}{NVMCTRL\_STATUS\_Type}}       \mbox{\hyperlink{struct_nvmctrl_a5fc8ec2dbe51c30255cdb8f274827fd5}{STATUS}};      }
+\DoxyCodeLine{341        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved5[0x2];}
+\DoxyCodeLine{342   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_n_v_m_c_t_r_l___a_d_d_r___type}{NVMCTRL\_ADDR\_Type}}         \mbox{\hyperlink{struct_nvmctrl_a839fdde23536d0554617f373c57e702f}{ADDR}};        }
+\DoxyCodeLine{343   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_n_v_m_c_t_r_l___l_o_c_k___type}{NVMCTRL\_LOCK\_Type}}         \mbox{\hyperlink{struct_nvmctrl_a2e713321a8bcdb784dff050f63023fe3}{LOCK}};        }
+\DoxyCodeLine{344 \} \mbox{\hyperlink{struct_nvmctrl}{Nvmctrl}};}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define SECTION\_NVMCTRL\_CAL}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define SECTION\_NVMCTRL\_LOCKBIT}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define SECTION\_NVMCTRL\_OTP1}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define SECTION\_NVMCTRL\_OTP2}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define SECTION\_NVMCTRL\_OTP4}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define SECTION\_NVMCTRL\_TEMP\_LOG}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define SECTION\_NVMCTRL\_USER}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{356 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{358 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define ADC\_FUSES\_BIASCAL\_ADDR      (NVMCTRL\_OTP4 + 4)}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define ADC\_FUSES\_BIASCAL\_Pos       3            }}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define ADC\_FUSES\_BIASCAL\_Msk       (0x7ul << ADC\_FUSES\_BIASCAL\_Pos)}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define ADC\_FUSES\_BIASCAL(value)    ((ADC\_FUSES\_BIASCAL\_Msk \& ((value) << ADC\_FUSES\_BIASCAL\_Pos)))}}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define ADC\_FUSES\_LINEARITY\_0\_ADDR  NVMCTRL\_OTP4}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define ADC\_FUSES\_LINEARITY\_0\_Pos   27           }}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define ADC\_FUSES\_LINEARITY\_0\_Msk   (0x1Ful << ADC\_FUSES\_LINEARITY\_0\_Pos)}}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define ADC\_FUSES\_LINEARITY\_0(value) ((ADC\_FUSES\_LINEARITY\_0\_Msk \& ((value) << ADC\_FUSES\_LINEARITY\_0\_Pos)))}}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define ADC\_FUSES\_LINEARITY\_1\_ADDR  (NVMCTRL\_OTP4 + 4)}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define ADC\_FUSES\_LINEARITY\_1\_Pos   0            }}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define ADC\_FUSES\_LINEARITY\_1\_Msk   (0x7ul << ADC\_FUSES\_LINEARITY\_1\_Pos)}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define ADC\_FUSES\_LINEARITY\_1(value) ((ADC\_FUSES\_LINEARITY\_1\_Msk \& ((value) << ADC\_FUSES\_LINEARITY\_1\_Pos)))}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define FUSES\_BOD33USERLEVEL\_ADDR   NVMCTRL\_USER}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define FUSES\_BOD33USERLEVEL\_Pos    8            }}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define FUSES\_BOD33USERLEVEL\_Msk    (0x3Ful << FUSES\_BOD33USERLEVEL\_Pos)}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define FUSES\_BOD33USERLEVEL(value) ((FUSES\_BOD33USERLEVEL\_Msk \& ((value) << FUSES\_BOD33USERLEVEL\_Pos)))}}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define FUSES\_BOD33\_ACTION\_ADDR     NVMCTRL\_USER}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define FUSES\_BOD33\_ACTION\_Pos      15           }}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define FUSES\_BOD33\_ACTION\_Msk      (0x3ul << FUSES\_BOD33\_ACTION\_Pos)}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define FUSES\_BOD33\_ACTION(value)   ((FUSES\_BOD33\_ACTION\_Msk \& ((value) << FUSES\_BOD33\_ACTION\_Pos)))}}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define FUSES\_BOD33\_EN\_ADDR         NVMCTRL\_USER}}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define FUSES\_BOD33\_EN\_Pos          14           }}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define FUSES\_BOD33\_EN\_Msk          (0x1ul << FUSES\_BOD33\_EN\_Pos)}}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define FUSES\_BOD33\_HYST\_ADDR       (NVMCTRL\_USER + 4)}}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#define FUSES\_BOD33\_HYST\_Pos        8            }}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define FUSES\_BOD33\_HYST\_Msk        (0x1ul << FUSES\_BOD33\_HYST\_Pos)}}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#define FUSES\_DFLL48M\_COARSE\_CAL\_ADDR (NVMCTRL\_OTP4 + 4)}}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define FUSES\_DFLL48M\_COARSE\_CAL\_Pos 26           }}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define FUSES\_DFLL48M\_COARSE\_CAL\_Msk (0x3Ful << FUSES\_DFLL48M\_COARSE\_CAL\_Pos)}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#define FUSES\_DFLL48M\_COARSE\_CAL(value) ((FUSES\_DFLL48M\_COARSE\_CAL\_Msk \& ((value) << FUSES\_DFLL48M\_COARSE\_CAL\_Pos)))}}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define FUSES\_DFLL48M\_FINE\_CAL\_ADDR (NVMCTRL\_OTP4 + 8)}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define FUSES\_DFLL48M\_FINE\_CAL\_Pos  0            }}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#define FUSES\_DFLL48M\_FINE\_CAL\_Msk  (0x3FFul << FUSES\_DFLL48M\_FINE\_CAL\_Pos)}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define FUSES\_DFLL48M\_FINE\_CAL(value) ((FUSES\_DFLL48M\_FINE\_CAL\_Msk \& ((value) << FUSES\_DFLL48M\_FINE\_CAL\_Pos)))}}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#define FUSES\_OSC32KCAL\_ADDR        (NVMCTRL\_OTP4 + 4)}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#define FUSES\_OSC32KCAL\_Pos         6            }}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define FUSES\_OSC32KCAL\_Msk         (0x7Ful << FUSES\_OSC32KCAL\_Pos)}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define FUSES\_OSC32KCAL(value)      ((FUSES\_OSC32KCAL\_Msk \& ((value) << FUSES\_OSC32KCAL\_Pos)))}}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_BOOTPROT\_ADDR NVMCTRL\_USER}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_BOOTPROT\_Pos  0            }}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_BOOTPROT\_Msk  (0x7ul << NVMCTRL\_FUSES\_BOOTPROT\_Pos)}}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_BOOTPROT(value) ((NVMCTRL\_FUSES\_BOOTPROT\_Msk \& ((value) << NVMCTRL\_FUSES\_BOOTPROT\_Pos)))}}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_EEPROM\_SIZE\_ADDR NVMCTRL\_USER}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_EEPROM\_SIZE\_Pos 4            }}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_EEPROM\_SIZE\_Msk (0x7ul << NVMCTRL\_FUSES\_EEPROM\_SIZE\_Pos)}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_EEPROM\_SIZE(value) ((NVMCTRL\_FUSES\_EEPROM\_SIZE\_Msk \& ((value) << NVMCTRL\_FUSES\_EEPROM\_SIZE\_Pos)))}}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_ADC\_VAL\_ADDR (NVMCTRL\_TEMP\_LOG + 4)}}
+\DoxyCodeLine{422 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_ADC\_VAL\_Pos 20           }}
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_ADC\_VAL\_Msk (0xFFFul << NVMCTRL\_FUSES\_HOT\_ADC\_VAL\_Pos)}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_ADC\_VAL(value) ((NVMCTRL\_FUSES\_HOT\_ADC\_VAL\_Msk \& ((value) << NVMCTRL\_FUSES\_HOT\_ADC\_VAL\_Pos)))}}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_INT1V\_VAL\_ADDR (NVMCTRL\_TEMP\_LOG + 4)}}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_INT1V\_VAL\_Pos 0            }}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_INT1V\_VAL\_Msk (0xFFul << NVMCTRL\_FUSES\_HOT\_INT1V\_VAL\_Pos)}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_INT1V\_VAL(value) ((NVMCTRL\_FUSES\_HOT\_INT1V\_VAL\_Msk \& ((value) << NVMCTRL\_FUSES\_HOT\_INT1V\_VAL\_Pos)))}}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_DEC\_ADDR NVMCTRL\_TEMP\_LOG}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_DEC\_Pos 20           }}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_DEC\_Msk (0xFul << NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_DEC\_Pos)}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_DEC(value) ((NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_DEC\_Msk \& ((value) << NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_DEC\_Pos)))}}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_INT\_ADDR NVMCTRL\_TEMP\_LOG}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_INT\_Pos 12           }}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_INT\_Msk (0xFFul << NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_INT\_Pos)}}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_INT(value) ((NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_INT\_Msk \& ((value) << NVMCTRL\_FUSES\_HOT\_TEMP\_VAL\_INT\_Pos)))}}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_NVMP\_ADDR     NVMCTRL\_OTP1}}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_NVMP\_Pos      16           }}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_NVMP\_Msk      (0xFFFFul << NVMCTRL\_FUSES\_NVMP\_Pos)}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_NVMP(value)   ((NVMCTRL\_FUSES\_NVMP\_Msk \& ((value) << NVMCTRL\_FUSES\_NVMP\_Pos)))}}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_NVM\_LOCK\_ADDR NVMCTRL\_OTP1}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_NVM\_LOCK\_Pos  0            }}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_NVM\_LOCK\_Msk  (0xFFul << NVMCTRL\_FUSES\_NVM\_LOCK\_Pos)}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_NVM\_LOCK(value) ((NVMCTRL\_FUSES\_NVM\_LOCK\_Msk \& ((value) << NVMCTRL\_FUSES\_NVM\_LOCK\_Pos)))}}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_PSZ\_ADDR      NVMCTRL\_OTP1}}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_PSZ\_Pos       8            }}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_PSZ\_Msk       (0xFul << NVMCTRL\_FUSES\_PSZ\_Pos)}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_PSZ(value)    ((NVMCTRL\_FUSES\_PSZ\_Msk \& ((value) << NVMCTRL\_FUSES\_PSZ\_Pos)))}}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_REGION\_LOCKS\_ADDR (NVMCTRL\_USER + 4)}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_REGION\_LOCKS\_Pos 16           }}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_REGION\_LOCKS\_Msk (0xFFFFul << NVMCTRL\_FUSES\_REGION\_LOCKS\_Pos)}}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_REGION\_LOCKS(value) ((NVMCTRL\_FUSES\_REGION\_LOCKS\_Msk \& ((value) << NVMCTRL\_FUSES\_REGION\_LOCKS\_Pos)))}}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_ADC\_VAL\_ADDR (NVMCTRL\_TEMP\_LOG + 4)}}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_ADC\_VAL\_Pos 8            }}
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_ADC\_VAL\_Msk (0xFFFul << NVMCTRL\_FUSES\_ROOM\_ADC\_VAL\_Pos)}}
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_ADC\_VAL(value) ((NVMCTRL\_FUSES\_ROOM\_ADC\_VAL\_Msk \& ((value) << NVMCTRL\_FUSES\_ROOM\_ADC\_VAL\_Pos)))}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_INT1V\_VAL\_ADDR NVMCTRL\_TEMP\_LOG}}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_INT1V\_VAL\_Pos 24           }}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_INT1V\_VAL\_Msk (0xFFul << NVMCTRL\_FUSES\_ROOM\_INT1V\_VAL\_Pos)}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_INT1V\_VAL(value) ((NVMCTRL\_FUSES\_ROOM\_INT1V\_VAL\_Msk \& ((value) << NVMCTRL\_FUSES\_ROOM\_INT1V\_VAL\_Pos)))}}
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_DEC\_ADDR NVMCTRL\_TEMP\_LOG}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_DEC\_Pos 8            }}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_DEC\_Msk (0xFul << NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_DEC\_Pos)}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_DEC(value) ((NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_DEC\_Msk \& ((value) << NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_DEC\_Pos)))}}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_INT\_ADDR NVMCTRL\_TEMP\_LOG}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_INT\_Pos 0            }}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_INT\_Msk (0xFFul << NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_INT\_Pos)}}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#define NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_INT(value) ((NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_INT\_Msk \& ((value) << NVMCTRL\_FUSES\_ROOM\_TEMP\_VAL\_INT\_Pos)))}}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define WDT\_FUSES\_ALWAYSON\_ADDR     NVMCTRL\_USER}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#define WDT\_FUSES\_ALWAYSON\_Pos      26           }}
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#define WDT\_FUSES\_ALWAYSON\_Msk      (0x1ul << WDT\_FUSES\_ALWAYSON\_Pos)}}
+\DoxyCodeLine{484 }
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#define WDT\_FUSES\_ENABLE\_ADDR       NVMCTRL\_USER}}
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define WDT\_FUSES\_ENABLE\_Pos        25           }}
+\DoxyCodeLine{487 \textcolor{preprocessor}{\#define WDT\_FUSES\_ENABLE\_Msk        (0x1ul << WDT\_FUSES\_ENABLE\_Pos)}}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#define WDT\_FUSES\_EWOFFSET\_ADDR     (NVMCTRL\_USER + 4)}}
+\DoxyCodeLine{490 \textcolor{preprocessor}{\#define WDT\_FUSES\_EWOFFSET\_Pos      3            }}
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#define WDT\_FUSES\_EWOFFSET\_Msk      (0xFul << WDT\_FUSES\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#define WDT\_FUSES\_EWOFFSET(value)   ((WDT\_FUSES\_EWOFFSET\_Msk \& ((value) << WDT\_FUSES\_EWOFFSET\_Pos)))}}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#define WDT\_FUSES\_PER\_ADDR          NVMCTRL\_USER}}
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#define WDT\_FUSES\_PER\_Pos           27           }}
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#define WDT\_FUSES\_PER\_Msk           (0xFul << WDT\_FUSES\_PER\_Pos)}}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#define WDT\_FUSES\_PER(value)        ((WDT\_FUSES\_PER\_Msk \& ((value) << WDT\_FUSES\_PER\_Pos)))}}
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define WDT\_FUSES\_WEN\_ADDR          (NVMCTRL\_USER + 4)}}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#define WDT\_FUSES\_WEN\_Pos           7            }}
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#define WDT\_FUSES\_WEN\_Msk           (0x1ul << WDT\_FUSES\_WEN\_Pos)}}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#define WDT\_FUSES\_WINDOW\_0\_ADDR     NVMCTRL\_USER}}
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#define WDT\_FUSES\_WINDOW\_0\_Pos      31           }}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#define WDT\_FUSES\_WINDOW\_0\_Msk      (0x1ul << WDT\_FUSES\_WINDOW\_0\_Pos)}}
+\DoxyCodeLine{506 }
+\DoxyCodeLine{507 \textcolor{preprocessor}{\#define WDT\_FUSES\_WINDOW\_1\_ADDR     (NVMCTRL\_USER + 4)}}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#define WDT\_FUSES\_WINDOW\_1\_Pos      0            }}
+\DoxyCodeLine{509 \textcolor{preprocessor}{\#define WDT\_FUSES\_WINDOW\_1\_Msk      (0x7ul << WDT\_FUSES\_WINDOW\_1\_Pos)}}
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#define WDT\_FUSES\_WINDOW\_1(value)   ((WDT\_FUSES\_WINDOW\_1\_Msk \& ((value) << WDT\_FUSES\_WINDOW\_1\_Pos)))}}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{514 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_NVMCTRL\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

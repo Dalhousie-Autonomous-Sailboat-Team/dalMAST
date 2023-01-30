@@ -1,0 +1,249 @@
+\hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_source}{}\doxysection{wdt.\+h}
+\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/wdt.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/wdt.h}}
+\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_WDT\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_WDT\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define WDT\_U2203}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_WDT                     0x200}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ WDT\_CTRL : (WDT Offset: 0x0) (R/W  8) Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint8\_t  :1;               }
+\DoxyCodeLine{54     uint8\_t  \mbox{\hyperlink{union_w_d_t___c_t_r_l___type_a9674816f95d6c92b4700151fc66afa1c}{ENABLE}}:1;         }
+\DoxyCodeLine{55     uint8\_t  \mbox{\hyperlink{union_w_d_t___c_t_r_l___type_a6f486fc39225308fdbef511c8825bd42}{WEN}}:1;            }
+\DoxyCodeLine{56     uint8\_t  :4;               }
+\DoxyCodeLine{57     uint8\_t  \mbox{\hyperlink{union_w_d_t___c_t_r_l___type_a2943d55b629c9084028f1f8ebfe43b89}{ALWAYSON}}:1;       }
+\DoxyCodeLine{58   \} bit;                       }
+\DoxyCodeLine{59   uint8\_t \mbox{\hyperlink{union_w_d_t___c_t_r_l___type_abb62aaa560cd778ea7e76bf3a969023f}{reg}};                 }
+\DoxyCodeLine{60 \} \mbox{\hyperlink{union_w_d_t___c_t_r_l___type}{WDT\_CTRL\_Type}};}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define WDT\_CTRL\_OFFSET             0x0          }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define WDT\_CTRL\_RESETVALUE         0x00ul       }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define WDT\_CTRL\_ENABLE\_Pos         1            }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define WDT\_CTRL\_ENABLE             (0x1ul << WDT\_CTRL\_ENABLE\_Pos)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define WDT\_CTRL\_WEN\_Pos            2            }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define WDT\_CTRL\_WEN                (0x1ul << WDT\_CTRL\_WEN\_Pos)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define WDT\_CTRL\_ALWAYSON\_Pos       7            }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define WDT\_CTRL\_ALWAYSON           (0x1ul << WDT\_CTRL\_ALWAYSON\_Pos)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define WDT\_CTRL\_MASK               0x86ul       }}
+\DoxyCodeLine{74 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ WDT\_CONFIG : (WDT Offset: 0x1) (R/W  8) Configuration -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{76 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{77   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{78     uint8\_t  \mbox{\hyperlink{union_w_d_t___c_o_n_f_i_g___type_acbc2a0e2e0fc624e44f36c584012cb48}{PER}}:4;            }
+\DoxyCodeLine{79     uint8\_t  \mbox{\hyperlink{union_w_d_t___c_o_n_f_i_g___type_a6212b9cf260c88d05859b6cbc0080182}{WINDOW}}:4;         }
+\DoxyCodeLine{80   \} bit;                       }
+\DoxyCodeLine{81   uint8\_t \mbox{\hyperlink{union_w_d_t___c_o_n_f_i_g___type_a24bce7327896cb2758b2d93ecbc0bb1e}{reg}};                 }
+\DoxyCodeLine{82 \} \mbox{\hyperlink{union_w_d_t___c_o_n_f_i_g___type}{WDT\_CONFIG\_Type}};}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define WDT\_CONFIG\_OFFSET           0x1          }}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define WDT\_CONFIG\_RESETVALUE       0xBBul       }}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_Pos          0            }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_Msk          (0xFul << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER(value)       ((WDT\_CONFIG\_PER\_Msk \& ((value) << WDT\_CONFIG\_PER\_Pos)))}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_8\_Val            0x0ul  }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_16\_Val           0x1ul  }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_32\_Val           0x2ul  }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_64\_Val           0x3ul  }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_128\_Val          0x4ul  }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_256\_Val          0x5ul  }}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_512\_Val          0x6ul  }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_1K\_Val           0x7ul  }}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_2K\_Val           0x8ul  }}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_4K\_Val           0x9ul  }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_8K\_Val           0xAul  }}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_PER\_16K\_Val          0xBul  }}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_8            (WDT\_CONFIG\_PER\_8\_Val          << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_16           (WDT\_CONFIG\_PER\_16\_Val         << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_32           (WDT\_CONFIG\_PER\_32\_Val         << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_64           (WDT\_CONFIG\_PER\_64\_Val         << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_128          (WDT\_CONFIG\_PER\_128\_Val        << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_256          (WDT\_CONFIG\_PER\_256\_Val        << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_512          (WDT\_CONFIG\_PER\_512\_Val        << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_1K           (WDT\_CONFIG\_PER\_1K\_Val         << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_2K           (WDT\_CONFIG\_PER\_2K\_Val         << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_4K           (WDT\_CONFIG\_PER\_4K\_Val         << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_8K           (WDT\_CONFIG\_PER\_8K\_Val         << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define WDT\_CONFIG\_PER\_16K          (WDT\_CONFIG\_PER\_16K\_Val        << WDT\_CONFIG\_PER\_Pos)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_Pos       4            }}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_Msk       (0xFul << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW(value)    ((WDT\_CONFIG\_WINDOW\_Msk \& ((value) << WDT\_CONFIG\_WINDOW\_Pos)))}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_8\_Val         0x0ul  }}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_16\_Val        0x1ul  }}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_32\_Val        0x2ul  }}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_64\_Val        0x3ul  }}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_128\_Val       0x4ul  }}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_256\_Val       0x5ul  }}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_512\_Val       0x6ul  }}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_1K\_Val        0x7ul  }}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_2K\_Val        0x8ul  }}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_4K\_Val        0x9ul  }}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_8K\_Val        0xAul  }}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define   WDT\_CONFIG\_WINDOW\_16K\_Val       0xBul  }}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_8         (WDT\_CONFIG\_WINDOW\_8\_Val       << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_16        (WDT\_CONFIG\_WINDOW\_16\_Val      << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_32        (WDT\_CONFIG\_WINDOW\_32\_Val      << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_64        (WDT\_CONFIG\_WINDOW\_64\_Val      << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_128       (WDT\_CONFIG\_WINDOW\_128\_Val     << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_256       (WDT\_CONFIG\_WINDOW\_256\_Val     << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_512       (WDT\_CONFIG\_WINDOW\_512\_Val     << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_1K        (WDT\_CONFIG\_WINDOW\_1K\_Val      << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_2K        (WDT\_CONFIG\_WINDOW\_2K\_Val      << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_4K        (WDT\_CONFIG\_WINDOW\_4K\_Val      << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_8K        (WDT\_CONFIG\_WINDOW\_8K\_Val      << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define WDT\_CONFIG\_WINDOW\_16K       (WDT\_CONFIG\_WINDOW\_16K\_Val     << WDT\_CONFIG\_WINDOW\_Pos)}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define WDT\_CONFIG\_MASK             0xFFul       }}
+\DoxyCodeLine{144 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ WDT\_EWCTRL : (WDT Offset: 0x2) (R/W  8) Early Warning Interrupt Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{146 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{147   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{148     uint8\_t  \mbox{\hyperlink{union_w_d_t___e_w_c_t_r_l___type_ada405613e233b62584992e37d51a365a}{EWOFFSET}}:4;       }
+\DoxyCodeLine{149     uint8\_t  :4;               }
+\DoxyCodeLine{150   \} bit;                       }
+\DoxyCodeLine{151   uint8\_t \mbox{\hyperlink{union_w_d_t___e_w_c_t_r_l___type_a832b2e10733b755212182b5d5443c058}{reg}};                 }
+\DoxyCodeLine{152 \} \mbox{\hyperlink{union_w_d_t___e_w_c_t_r_l___type}{WDT\_EWCTRL\_Type}};}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_OFFSET           0x2          }}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_RESETVALUE       0x0Bul       }}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_Pos     0            }}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_Msk     (0xFul << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET(value)  ((WDT\_EWCTRL\_EWOFFSET\_Msk \& ((value) << WDT\_EWCTRL\_EWOFFSET\_Pos)))}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_8\_Val       0x0ul  }}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_16\_Val      0x1ul  }}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_32\_Val      0x2ul  }}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_64\_Val      0x3ul  }}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_128\_Val     0x4ul  }}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_256\_Val     0x5ul  }}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_512\_Val     0x6ul  }}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_1K\_Val      0x7ul  }}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_2K\_Val      0x8ul  }}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_4K\_Val      0x9ul  }}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_8K\_Val      0xAul  }}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define   WDT\_EWCTRL\_EWOFFSET\_16K\_Val     0xBul  }}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_8       (WDT\_EWCTRL\_EWOFFSET\_8\_Val     << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_16      (WDT\_EWCTRL\_EWOFFSET\_16\_Val    << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_32      (WDT\_EWCTRL\_EWOFFSET\_32\_Val    << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_64      (WDT\_EWCTRL\_EWOFFSET\_64\_Val    << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_128     (WDT\_EWCTRL\_EWOFFSET\_128\_Val   << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_256     (WDT\_EWCTRL\_EWOFFSET\_256\_Val   << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_512     (WDT\_EWCTRL\_EWOFFSET\_512\_Val   << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_1K      (WDT\_EWCTRL\_EWOFFSET\_1K\_Val    << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_2K      (WDT\_EWCTRL\_EWOFFSET\_2K\_Val    << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_4K      (WDT\_EWCTRL\_EWOFFSET\_4K\_Val    << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_8K      (WDT\_EWCTRL\_EWOFFSET\_8K\_Val    << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_EWOFFSET\_16K     (WDT\_EWCTRL\_EWOFFSET\_16K\_Val   << WDT\_EWCTRL\_EWOFFSET\_Pos)}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define WDT\_EWCTRL\_MASK             0x0Ful       }}
+\DoxyCodeLine{187 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ WDT\_INTENCLR : (WDT Offset: 0x4) (R/W  8) Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{189 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{190   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{191     uint8\_t  \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_c_l_r___type_a5cd5e4305fe8f315fed4ff8217daedd4}{EW}}:1;             }
+\DoxyCodeLine{192     uint8\_t  :7;               }
+\DoxyCodeLine{193   \} bit;                       }
+\DoxyCodeLine{194   uint8\_t \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_c_l_r___type_ad0735ce59e53c141b599cd704813b8e8}{reg}};                 }
+\DoxyCodeLine{195 \} \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_c_l_r___type}{WDT\_INTENCLR\_Type}};}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define WDT\_INTENCLR\_OFFSET         0x4          }}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define WDT\_INTENCLR\_RESETVALUE     0x00ul       }}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define WDT\_INTENCLR\_EW\_Pos         0            }}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define WDT\_INTENCLR\_EW             (0x1ul << WDT\_INTENCLR\_EW\_Pos)}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define WDT\_INTENCLR\_MASK           0x01ul       }}
+\DoxyCodeLine{205 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ WDT\_INTENSET : (WDT Offset: 0x5) (R/W  8) Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{207 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{208   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{209     uint8\_t  \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_s_e_t___type_aadfdb48faa0ef10adcc53d378c62f71b}{EW}}:1;             }
+\DoxyCodeLine{210     uint8\_t  :7;               }
+\DoxyCodeLine{211   \} bit;                       }
+\DoxyCodeLine{212   uint8\_t \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_s_e_t___type_a116d05c59efea96d39a5e3d93c8b8b2e}{reg}};                 }
+\DoxyCodeLine{213 \} \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_s_e_t___type}{WDT\_INTENSET\_Type}};}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define WDT\_INTENSET\_OFFSET         0x5          }}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define WDT\_INTENSET\_RESETVALUE     0x00ul       }}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define WDT\_INTENSET\_EW\_Pos         0            }}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define WDT\_INTENSET\_EW             (0x1ul << WDT\_INTENSET\_EW\_Pos)}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define WDT\_INTENSET\_MASK           0x01ul       }}
+\DoxyCodeLine{223 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ WDT\_INTFLAG : (WDT Offset: 0x6) (R/W  8) Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{225 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{226   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{227     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_w_d_t___i_n_t_f_l_a_g___type_a900ed1510c17d12b2444dcac1ce42fa3}{EW}}:1;         }
+\DoxyCodeLine{228     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_w_d_t___i_n_t_f_l_a_g___type_ac65cac12aef84a2e0e82dd1b054b1cb7}{uint8\_t}}  :7;           }
+\DoxyCodeLine{229   \} bit;                       }
+\DoxyCodeLine{230   uint8\_t \mbox{\hyperlink{union_w_d_t___i_n_t_f_l_a_g___type_a8d12a46530ef35b8477b2bab1accdf5d}{reg}};                 }
+\DoxyCodeLine{231 \} \mbox{\hyperlink{union_w_d_t___i_n_t_f_l_a_g___type}{WDT\_INTFLAG\_Type}};}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define WDT\_INTFLAG\_OFFSET          0x6          }}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define WDT\_INTFLAG\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#define WDT\_INTFLAG\_EW\_Pos          0            }}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#define WDT\_INTFLAG\_EW              (0x1ul << WDT\_INTFLAG\_EW\_Pos)}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#define WDT\_INTFLAG\_MASK            0x01ul       }}
+\DoxyCodeLine{241 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ WDT\_STATUS : (WDT Offset: 0x7) (R/   8) Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{243 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{244   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{245     uint8\_t  :7;               }
+\DoxyCodeLine{246     uint8\_t  \mbox{\hyperlink{union_w_d_t___s_t_a_t_u_s___type_aa7b30380358187a2b7ba938da276ffe5}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{247   \} bit;                       }
+\DoxyCodeLine{248   uint8\_t \mbox{\hyperlink{union_w_d_t___s_t_a_t_u_s___type_a7e48d84b9e6f44fb73825b7049f5e4ef}{reg}};                 }
+\DoxyCodeLine{249 \} \mbox{\hyperlink{union_w_d_t___s_t_a_t_u_s___type}{WDT\_STATUS\_Type}};}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define WDT\_STATUS\_OFFSET           0x7          }}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define WDT\_STATUS\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define WDT\_STATUS\_SYNCBUSY\_Pos     7            }}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define WDT\_STATUS\_SYNCBUSY         (0x1ul << WDT\_STATUS\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#define WDT\_STATUS\_MASK             0x80ul       }}
+\DoxyCodeLine{259 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ WDT\_CLEAR : (WDT Offset: 0x8) ( /W  8) Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{261 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{262   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{263     uint8\_t  \mbox{\hyperlink{union_w_d_t___c_l_e_a_r___type_a9845e621d67a8941d6af80b4916e06c9}{CLEAR}}:8;          }
+\DoxyCodeLine{264   \} bit;                       }
+\DoxyCodeLine{265   uint8\_t \mbox{\hyperlink{union_w_d_t___c_l_e_a_r___type_a0c63d48f20644a670345ce6a9937e915}{reg}};                 }
+\DoxyCodeLine{266 \} \mbox{\hyperlink{union_w_d_t___c_l_e_a_r___type}{WDT\_CLEAR\_Type}};}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#define WDT\_CLEAR\_OFFSET            0x8          }}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define WDT\_CLEAR\_RESETVALUE        0x00ul       }}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define WDT\_CLEAR\_CLEAR\_Pos         0            }}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define WDT\_CLEAR\_CLEAR\_Msk         (0xFFul << WDT\_CLEAR\_CLEAR\_Pos)}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define WDT\_CLEAR\_CLEAR(value)      ((WDT\_CLEAR\_CLEAR\_Msk \& ((value) << WDT\_CLEAR\_CLEAR\_Pos)))}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define   WDT\_CLEAR\_CLEAR\_KEY\_Val         0xA5ul  }}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define WDT\_CLEAR\_CLEAR\_KEY         (WDT\_CLEAR\_CLEAR\_KEY\_Val       << WDT\_CLEAR\_CLEAR\_Pos)}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define WDT\_CLEAR\_MASK              0xFFul       }}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{281 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{282   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_w_d_t___c_t_r_l___type}{WDT\_CTRL\_Type}}             \mbox{\hyperlink{struct_wdt_a8e1f17db596e26a89f5f6dac96e87706}{CTRL}};        }
+\DoxyCodeLine{283   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_w_d_t___c_o_n_f_i_g___type}{WDT\_CONFIG\_Type}}           \mbox{\hyperlink{struct_wdt_afa500bbe59058bbea80215803b435516}{CONFIG}};      }
+\DoxyCodeLine{284   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_w_d_t___e_w_c_t_r_l___type}{WDT\_EWCTRL\_Type}}           \mbox{\hyperlink{struct_wdt_a39d4afebb951677d3d7968a4c55164c3}{EWCTRL}};      }
+\DoxyCodeLine{285        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{286   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_c_l_r___type}{WDT\_INTENCLR\_Type}}         \mbox{\hyperlink{struct_wdt_ac9fcaad1c85d069df1f902a66ff9350d}{INTENCLR}};    }
+\DoxyCodeLine{287   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_s_e_t___type}{WDT\_INTENSET\_Type}}         \mbox{\hyperlink{struct_wdt_af97494fd3c9a84daf84a63cea897d882}{INTENSET}};    }
+\DoxyCodeLine{288   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_w_d_t___i_n_t_f_l_a_g___type}{WDT\_INTFLAG\_Type}}          \mbox{\hyperlink{struct_wdt_a9b8833d2f9cddd60549ee979f0ca6cf6}{INTFLAG}};     }
+\DoxyCodeLine{289   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_w_d_t___s_t_a_t_u_s___type}{WDT\_STATUS\_Type}}           \mbox{\hyperlink{struct_wdt_aaf9d7fc7c9074ee46a4a80e8d17d28be}{STATUS}};      }
+\DoxyCodeLine{290   \mbox{\hyperlink{core__cm0plus_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}  \mbox{\hyperlink{union_w_d_t___c_l_e_a_r___type}{WDT\_CLEAR\_Type}}            \mbox{\hyperlink{struct_wdt_af91970e81953ae36321db222834f4f12}{CLEAR}};       }
+\DoxyCodeLine{291 \} \mbox{\hyperlink{struct_wdt}{Wdt}};}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_WDT\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

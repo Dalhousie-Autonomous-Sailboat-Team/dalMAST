@@ -1,0 +1,48 @@
+\hypertarget{group__x_message_buffer_create}{}\doxysection{x\+Message\+Buffer\+Create}
+\label{group__x_message_buffer_create}\index{xMessageBufferCreate@{xMessageBufferCreate}}
+\mbox{\hyperlink{message__buffer_8h_source}{message\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+MessageBufferHandle\_t xMessageBufferCreate( size\_t xBufferSizeBytes );
+\end{DoxyPre}
+
+
+Creates a new message buffer using dynamically allocated memory. See x\+Message\+Buffer\+Create\+Static() for a version that uses statically allocated memory (memory that is allocated at compile time).
+
+config\+SUPPORT\+\_\+\+DYNAMIC\+\_\+\+ALLOCATION must be set to 1 or left undefined in \mbox{\hyperlink{_free_r_t_o_s_config_8h_source}{Free\+RTOSConfig.\+h}} for x\+Message\+Buffer\+Create() to be available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Buffer\+Size\+Bytes} & The total number of bytes (not messages) the message buffer will be able to hold at any one time. When a message is written to the message buffer an additional sizeof( size\+\_\+t ) bytes are also written to store the message\textquotesingle{}s length. sizeof( size\+\_\+t ) is typically 4 bytes on a 32-\/bit architecture, so on most 32-\/bit architectures a 10 byte message will take up 14 bytes of message buffer space.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If NULL is returned, then the message buffer cannot be created because there is insufficient heap memory available for Free\+RTOS to allocate the message buffer data structures and storage area. A non-\/\+NULL value being returned indicates that the message buffer has been created successfully -\/ the returned value should be stored as the handle to the created message buffer.
+\end{DoxyReturn}
+Example use\+: 
+\begin{DoxyPre}
+
+void vAFunction( void )
+\{
+MessageBufferHandle\_t xMessageBuffer;
+const size\_t xMessageBufferSizeBytes = 100;
+
+    // Create a message buffer that can hold 100 bytes.  The memory used to hold
+    // both the message buffer structure and the messages themselves is allocated
+    // dynamically.  Each message added to the buffer consumes an additional 4
+    // bytes which are used to hold the lengh of the message.
+    xMessageBuffer = xMessageBufferCreate( xMessageBufferSizeBytes );
+
+    if( xMessageBuffer == NULL )
+    \{
+        // There was not enough heap memory space available to create the
+        // message buffer.
+    \}
+    else
+    \{
+        // The message buffer was created successfully and can now be used.
+    \}
+
+\end{DoxyPre}
+ 

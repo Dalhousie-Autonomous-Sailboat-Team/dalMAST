@@ -1,0 +1,48 @@
+\hypertarget{drivers_2port_2port_8h}{}\doxysection{src/\+ASF/sam0/drivers/port/port.h File Reference}
+\label{drivers_2port_2port_8h}\index{src/ASF/sam0/drivers/port/port.h@{src/ASF/sam0/drivers/port/port.h}}
+
+
+SAM GPIO \mbox{\hyperlink{struct_port}{Port}} Driver.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$pinmux.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structport__config}{port\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin configuration structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__port__group_gabe12893c067f9b011ece79c1bf1b128a}{port\+\_\+pin\+\_\+dir}} \{ \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aacfdf36142de0378cd9927b9c00e2f7a6}{PORT\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+INPUT}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+INPUT
+, \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aaa2cda8b4095bfaf6f354f113947a3463}{PORT\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT
+, \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aae3d3fdfe355c7727ea36948da3b848ad}{PORT\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT\+\_\+\+WTH\+\_\+\+READBACK}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT\+\_\+\+WITH\+\_\+\+READBACK
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin direction configuration enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__port__group_ga1f47828261f5b7ac5f864b42981a2004}{port\+\_\+pin\+\_\+pull}} \{ \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004ab178b34fb381794e7f550b14ff08a302}{PORT\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+NONE}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+NONE
+, \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a6505b9a836a818d1f2c8a248b9ac8073}{PORT\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+UP}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+UP
+, \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a2665866a5f05266cc8fa78da60ebc19d}{PORT\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+DOWN}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+DOWN
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin input pull configuration enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ State Reading/\+Writing (Physical Group Orientated)}\par
+\end{Indent}
+\begin{Indent}\textbf{ Configuration and Initialization}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__port__group_gad21f235037f2d75ee3e7c08ba8b239c5}{port\+\_\+pin\+\_\+set\+\_\+config}} (const uint8\+\_\+t gpio\+\_\+pin, const struct \mbox{\hyperlink{structport__config}{port\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a \mbox{\hyperlink{struct_port}{Port}} pin configuration to the hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__port__group_ga7b832928bee6911ac7c9f18df8a5cf4a}{port\+\_\+group\+\_\+set\+\_\+config}} (\mbox{\hyperlink{struct_port_group}{Port\+Group}} $\ast$const port, const uint32\+\_\+t mask, const struct \mbox{\hyperlink{structport__config}{port\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a \mbox{\hyperlink{struct_port}{Port}} group configuration group to the hardware module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ State Reading/\+Writing (Logical Pin Orientated)}\par
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM GPIO \mbox{\hyperlink{struct_port}{Port}} Driver. 
+
+Copyright (c) 2012-\/2020 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

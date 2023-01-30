@@ -1,0 +1,136 @@
+\hypertarget{conf__clocks_8h_source}{}\doxysection{conf\+\_\+clocks.\+h}
+\label{conf__clocks_8h_source}\index{src/config/conf\_clocks.h@{src/config/conf\_clocks.h}}
+\mbox{\hyperlink{conf__clocks_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{clock_8h}{clock.h}}>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifndef CONF\_CLOCKS\_H\_INCLUDED}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#  define CONF\_CLOCKS\_H\_INCLUDED}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/* System clock bus configuration */}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_CPU\_CLOCK\_FAILURE\_DETECT     false}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_FLASH\_WAIT\_STATES            0}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_CPU\_DIVIDER                  SYSTEM\_MAIN\_CLOCK\_DIV\_1}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_APBA\_DIVIDER                 SYSTEM\_MAIN\_CLOCK\_DIV\_1}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_APBB\_DIVIDER                 SYSTEM\_MAIN\_CLOCK\_DIV\_1}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_APBC\_DIVIDER                 SYSTEM\_MAIN\_CLOCK\_DIV\_1}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* SYSTEM\_CLOCK\_SOURCE\_OSC8M configuration -\/ Internal 8MHz oscillator */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_OSC8M\_PRESCALER              SYSTEM\_OSC8M\_DIV\_1}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_OSC8M\_ON\_DEMAND              true}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_OSC8M\_RUN\_IN\_STANDBY         false}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{comment}{/* SYSTEM\_CLOCK\_SOURCE\_XOSC configuration -\/ External clock/oscillator */}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC\_ENABLE                  false}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC\_EXTERNAL\_CRYSTAL        SYSTEM\_CLOCK\_EXTERNAL\_CRYSTAL}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC\_EXTERNAL\_FREQUENCY      12000000UL}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC\_STARTUP\_TIME            SYSTEM\_XOSC\_STARTUP\_32768}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC\_AUTO\_GAIN\_CONTROL       true}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC\_ON\_DEMAND               true}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC\_RUN\_IN\_STANDBY          false}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{/* SYSTEM\_CLOCK\_SOURCE\_XOSC32K configuration -\/ External 32KHz crystal/clock oscillator */}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC32K\_ENABLE               false}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC32K\_EXTERNAL\_CRYSTAL     SYSTEM\_CLOCK\_EXTERNAL\_CRYSTAL}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC32K\_STARTUP\_TIME         SYSTEM\_XOSC32K\_STARTUP\_65536}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC32K\_AUTO\_AMPLITUDE\_CONTROL  false}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC32K\_ENABLE\_1KHZ\_OUPUT    false}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC32K\_ENABLE\_32KHZ\_OUTPUT  true}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC32K\_ON\_DEMAND            true}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_XOSC32K\_RUN\_IN\_STANDBY       false}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/* SYSTEM\_CLOCK\_SOURCE\_OSC32K configuration -\/ Internal 32KHz oscillator */}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_OSC32K\_ENABLE                true}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_OSC32K\_STARTUP\_TIME          SYSTEM\_OSC32K\_STARTUP\_130}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_OSC32K\_ENABLE\_1KHZ\_OUTPUT    true}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_OSC32K\_ENABLE\_32KHZ\_OUTPUT   true}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_OSC32K\_ON\_DEMAND             true}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_OSC32K\_RUN\_IN\_STANDBY        false}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{/* SYSTEM\_CLOCK\_SOURCE\_DFLL configuration -\/ Digital Frequency Locked Loop */}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_ENABLE                  false}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_LOOP\_MODE               SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_OPEN}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_ON\_DEMAND               false}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{comment}{/* DFLL open loop mode configuration */}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_FINE\_VALUE              (512)}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{comment}{/* DFLL closed loop mode configuration */}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_SOURCE\_GCLK\_GENERATOR   GCLK\_GENERATOR\_1}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_MULTIPLY\_FACTOR         (48000000 / 32768)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_QUICK\_LOCK              true}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_TRACK\_AFTER\_FINE\_LOCK   true}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_KEEP\_LOCK\_ON\_WAKEUP     true}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_ENABLE\_CHILL\_CYCLE      true}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_MAX\_COARSE\_STEP\_SIZE    (0x1f / 4)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_DFLL\_MAX\_FINE\_STEP\_SIZE      (0xff / 4)}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{/* Set this to true to configure the GCLK when running clocks\_init. If set to}}
+\DoxyCodeLine{101 \textcolor{comment}{ * false, none of the GCLK generators will be configured in clocks\_init(). */}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_CONFIGURE\_GCLK               true}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{comment}{/* Configure GCLK generator 0 (Main Clock) */}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_0\_ENABLE                true}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_0\_RUN\_IN\_STANDBY        false}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_0\_CLOCK\_SOURCE          SYSTEM\_CLOCK\_SOURCE\_OSC8M}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_0\_PRESCALER             1}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_0\_OUTPUT\_ENABLE         false}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{comment}{/* Configure GCLK generator 1 */}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_1\_ENABLE                false}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_1\_RUN\_IN\_STANDBY        false}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_1\_CLOCK\_SOURCE          SYSTEM\_CLOCK\_SOURCE\_XOSC32K}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_1\_PRESCALER             1}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_1\_OUTPUT\_ENABLE         false}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{comment}{/* Configure GCLK generator 2 (RTC) */}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_2\_ENABLE                false}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_2\_RUN\_IN\_STANDBY        false}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_2\_CLOCK\_SOURCE          SYSTEM\_CLOCK\_SOURCE\_OSC32K}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_2\_PRESCALER             32}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_2\_OUTPUT\_ENABLE         false}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{comment}{/* Configure GCLK generator 3 */}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_3\_ENABLE                false}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_3\_RUN\_IN\_STANDBY        false}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_3\_CLOCK\_SOURCE          SYSTEM\_CLOCK\_SOURCE\_OSC8M}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_3\_PRESCALER             1}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_3\_OUTPUT\_ENABLE         false}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{comment}{/* Configure GCLK generator 4 */}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_4\_ENABLE                true}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_4\_RUN\_IN\_STANDBY        false}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_4\_CLOCK\_SOURCE          SYSTEM\_CLOCK\_SOURCE\_OSC32K}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_4\_PRESCALER             256}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_4\_OUTPUT\_ENABLE         false}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{comment}{/* Configure GCLK generator 5 */}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_5\_ENABLE                false}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_5\_RUN\_IN\_STANDBY        false}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_5\_CLOCK\_SOURCE          SYSTEM\_CLOCK\_SOURCE\_OSC8M}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_5\_PRESCALER             1}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_5\_OUTPUT\_ENABLE         false}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{comment}{/* Configure GCLK generator 6 */}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_6\_ENABLE                false}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_6\_RUN\_IN\_STANDBY        false}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_6\_CLOCK\_SOURCE          SYSTEM\_CLOCK\_SOURCE\_OSC8M}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_6\_PRESCALER             1}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_6\_OUTPUT\_ENABLE         false}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{comment}{/* Configure GCLK generator 7 */}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_7\_ENABLE                false}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_7\_RUN\_IN\_STANDBY        false}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_7\_CLOCK\_SOURCE          SYSTEM\_CLOCK\_SOURCE\_OSC8M}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_7\_PRESCALER             1}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#  define CONF\_CLOCK\_GCLK\_7\_OUTPUT\_ENABLE         false}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* CONF\_CLOCKS\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{161 }
+
+\end{DoxyCode}

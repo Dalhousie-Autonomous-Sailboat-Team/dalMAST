@@ -1,0 +1,56 @@
+This is a list of the available Quick Start guides (QSGs) and example applications for \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group}{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}. QSGs are simple examples with step-\/by-\/step instructions to configure and use this driver in a selection of use cases. Note that a QSG can be compiled as a standalone application or be added to the user application.
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_system_pinmux_basic_use_case}{Quick Start Guide for SYSTEM PINMUX -\/ Basic}} 
+\end{DoxyItemize}\hypertarget{asfdoc_sam0_system_pinmux_basic_use_case}{}\doxysection{Quick Start Guide for SYSTEM PINMUX -\/ Basic}\label{asfdoc_sam0_system_pinmux_basic_use_case}
+In this use case, the PINMUX module is configured for\+: \begin{DoxyItemize}
+\item One pin in input mode, with pull-\/up enabled, connected to the GPIO module \item Sampling mode of the pin changed to sample on demand\end{DoxyItemize}
+This use case sets up the PINMUX to configure a physical I/O pin set as an input with pull-\/up and changes the sampling mode of the pin to reduce power by only sampling the physical pin state when the user application attempts to read it.\hypertarget{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_setup}{}\doxysubsection{Setup}\label{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_setup}
+\hypertarget{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_setup_prereq}{}\doxysubsubsection{Prerequisites}\label{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_setup_prereq}
+There are no special setup requirements for this use-\/case.\hypertarget{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_setup_code}{}\doxysubsubsection{Code}\label{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_setup_code}
+Copy-\/paste the following setup code to your application\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+\hypertarget{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_setup_flow}{}\doxysubsubsection{Workflow}\label{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_setup_flow}
+
+\begin{DoxyEnumerate}
+\item Create a PINMUX module pin configuration struct, which can be filled out to adjust the configuration of a single port pin. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Initialize the pin configuration struct with the module\textquotesingle{}s default values. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ \begin{DoxyNote}{Note}
+This should always be performed before using the configuration struct to ensure that all values are initialized to known default settings.
+\end{DoxyNote}
+
+\item Adjust the configuration struct to request an input pin with pull-\/up connected to the GPIO peripheral. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Configure GPIO10 with the initialized pin configuration struct, to enable the input sampler on the pin. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}\hypertarget{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_use_main}{}\doxysubsection{Use Case}\label{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_use_main}
+\hypertarget{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_code}{}\doxysubsubsection{Code}\label{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_code}
+Copy-\/paste the following code to your user application\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+\hypertarget{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_flow}{}\doxysubsubsection{Workflow}\label{asfdoc_sam0_system_pinmux_basic_use_case_asfdoc_sam0_system_pinmux_basic_use_case_flow}
+
+\begin{DoxyEnumerate}
+\item Adjust the configuration of the pin to enable on-\/demand sampling mode. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ 
+\end{DoxyEnumerate}

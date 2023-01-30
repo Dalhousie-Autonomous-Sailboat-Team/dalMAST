@@ -1,0 +1,99 @@
+\hypertarget{system__interrupt_8h_source}{}\doxysection{system\+\_\+interrupt.\+h}
+\label{system__interrupt_8h_source}\index{src/ASF/sam0/drivers/system/interrupt/system\_interrupt.h@{src/ASF/sam0/drivers/system/interrupt/system\_interrupt.h}}
+\mbox{\hyperlink{system__interrupt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef SYSTEM\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define SYSTEM\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{40 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{core__cm0plus_8h}{core\_cm0plus.h}}>}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__interrupt__features_8h}{system\_interrupt\_features.h}}"{}}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{140 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\_interrupt\_priority\_level}} \{}
+\DoxyCodeLine{142     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a0f1cdf1b338d57e8ca09e7007f72086f}{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_0}}  = 0,}
+\DoxyCodeLine{144     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589af0f65bd2a3ef76e3e3dabcfc00a012e4}{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_1}}  = 1,}
+\DoxyCodeLine{146     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a1223c3ab580e129c952773a0726d33ea}{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_2}}  = 2,}
+\DoxyCodeLine{148     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a97e6f898ad4d881e5c693ce14c242761}{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_3}}  = 3,}
+\DoxyCodeLine{149 \};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{164 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_interrupt\_enter\_critical\_section(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{165 \{}
+\DoxyCodeLine{166     cpu\_irq\_enter\_critical();}
+\DoxyCodeLine{167 \}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{177 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_interrupt\_leave\_critical\_section(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{178 \{}
+\DoxyCodeLine{179     cpu\_irq\_leave\_critical();}
+\DoxyCodeLine{180 \}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{200 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} system\_interrupt\_is\_global\_enabled(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{201 \{}
+\DoxyCodeLine{202     \textcolor{keywordflow}{return} \mbox{\hyperlink{group__interrupt__group_gae1545a2473614564550b9c4015c94978}{cpu\_irq\_is\_enabled}}();}
+\DoxyCodeLine{203 \}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{210 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_interrupt\_enable\_global(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{211 \{}
+\DoxyCodeLine{212     \mbox{\hyperlink{group__interrupt__group_gae4922a4bd8ba4150211fbc7f2302403c}{cpu\_irq\_enable}}();}
+\DoxyCodeLine{213 \}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{221 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_interrupt\_disable\_global(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{222 \{}
+\DoxyCodeLine{223     \mbox{\hyperlink{group__interrupt__group_ga7b77391ed86e2e027f9ee1dd99a06980}{cpu\_irq\_disable}}();}
+\DoxyCodeLine{224 \}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{239 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} system\_interrupt\_is\_enabled(}
+\DoxyCodeLine{240         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} vector)}
+\DoxyCodeLine{241 \{}
+\DoxyCodeLine{242     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{bool})((\mbox{\hyperlink{group___c_m_s_i_s__core__base_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>ISER[0] >> (uint32\_t)vector) \& 0x00000001);}
+\DoxyCodeLine{243 \}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{252 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_interrupt\_enable(}
+\DoxyCodeLine{253         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} vector)}
+\DoxyCodeLine{254 \{}
+\DoxyCodeLine{255     \mbox{\hyperlink{group___c_m_s_i_s__core__base_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>ISER[0] = (uint32\_t)(1 << ((uint32\_t)vector \& 0x0000001f));}
+\DoxyCodeLine{256 \}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{265 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_interrupt\_disable(}
+\DoxyCodeLine{266         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} vector)}
+\DoxyCodeLine{267 \{}
+\DoxyCodeLine{268     \mbox{\hyperlink{group___c_m_s_i_s__core__base_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>ICER[0] = (uint32\_t)(1 << ((uint32\_t)vector \& 0x0000001f));}
+\DoxyCodeLine{269 \}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{285 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} system\_interrupt\_get\_active(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{286 \{}
+\DoxyCodeLine{287     uint32\_t IPSR = \mbox{\hyperlink{group___c_m_s_i_s___core___reg_acc_functions_gaf15a71855b9d731d11de92704c82bd18}{\_\_get\_IPSR}}();}
+\DoxyCodeLine{288     \textcolor{comment}{/* The IPSR returns the Exception number, which with an offset 16 to IRQ number. */}}
+\DoxyCodeLine{289     \textcolor{keywordflow}{return} (\textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}})((IPSR \& \_SYSTEM\_INTERRUPT\_IPSR\_MASK) -\/ 16);}
+\DoxyCodeLine{290 \}}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga08ea1ee1c7020c64e18a1673ca8548a4}{system\_interrupt\_is\_pending}}(}
+\DoxyCodeLine{293         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} vector);}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga03184d235f73957b4226205219783ba3}{system\_interrupt\_set\_pending}}(}
+\DoxyCodeLine{296         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} vector);}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga3c4191c58c9dda28890ec8153d8c83af}{system\_interrupt\_clear\_pending}}(}
+\DoxyCodeLine{299         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} vector);}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{308 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga0be1259c9dc64c3dd8f0d45e3f04ee76}{system\_interrupt\_set\_priority}}(}
+\DoxyCodeLine{309         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} vector,}
+\DoxyCodeLine{310         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\_interrupt\_priority\_level}} priority\_level);}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\_interrupt\_priority\_level}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga586466a55934c76a69332b6819f4904a}{system\_interrupt\_get\_priority}}(}
+\DoxyCodeLine{313         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} vector);}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{420 \}}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \#ifndef SYSTEM\_INTERRUPT\_H\_INCLUDED}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\hypertarget{reset_8h_source}{}\doxysection{reset.\+h}
+\label{reset_8h_source}\index{src/ASF/sam0/drivers/system/reset/reset\_sam\_d\_r\_h/reset.h@{src/ASF/sam0/drivers/system/reset/reset\_sam\_d\_r\_h/reset.h}}
+\mbox{\hyperlink{reset_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef RESET\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define RESET\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{42 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{55 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gad1757cdfed2f30f012a3aec2e0f67ad3}{system\_reset\_cause}} \{}
+\DoxyCodeLine{57     \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggad1757cdfed2f30f012a3aec2e0f67ad3a8e5fb81626f25f1809ef477e51b433ce}{SYSTEM\_RESET\_CAUSE\_SOFTWARE}}       = PM\_RCAUSE\_SYST,}
+\DoxyCodeLine{59     \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggad1757cdfed2f30f012a3aec2e0f67ad3a79f22a7e3e5a4637623e953edefe3a10}{SYSTEM\_RESET\_CAUSE\_WDT}}            = PM\_RCAUSE\_WDT,}
+\DoxyCodeLine{61     \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggad1757cdfed2f30f012a3aec2e0f67ad3ac053161d05ba5dc180fb4656e9f793f7}{SYSTEM\_RESET\_CAUSE\_EXTERNAL\_RESET}} = PM\_RCAUSE\_EXT,}
+\DoxyCodeLine{63     \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggad1757cdfed2f30f012a3aec2e0f67ad3a5452f653acf6c46cd2dc4e04f4868814}{SYSTEM\_RESET\_CAUSE\_BOD33}}          = PM\_RCAUSE\_BOD33,}
+\DoxyCodeLine{65     \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggad1757cdfed2f30f012a3aec2e0f67ad3a021769ef80b03d4f3f190366fe8d702f}{SYSTEM\_RESET\_CAUSE\_BOD12}}          = PM\_RCAUSE\_BOD12,}
+\DoxyCodeLine{67     \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggad1757cdfed2f30f012a3aec2e0f67ad3a7dcc8589640fefe72b944ca51396f1bf}{SYSTEM\_RESET\_CAUSE\_POR}}            = PM\_RCAUSE\_POR,}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{83 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_reset(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85     NVIC\_SystemReset();}
+\DoxyCodeLine{86 \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{95 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gad1757cdfed2f30f012a3aec2e0f67ad3}{system\_reset\_cause}} system\_get\_reset\_cause(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{96 \{}
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} (\textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gad1757cdfed2f30f012a3aec2e0f67ad3}{system\_reset\_cause}})\mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>RCAUSE.reg;}
+\DoxyCodeLine{98 \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{106 \}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* RESET\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

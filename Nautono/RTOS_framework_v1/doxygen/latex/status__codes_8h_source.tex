@@ -1,0 +1,89 @@
+\hypertarget{status__codes_8h_source}{}\doxysection{status\+\_\+codes.\+h}
+\label{status__codes_8h_source}\index{src/ASF/sam0/utils/status\_codes.h@{src/ASF/sam0/utils/status\_codes.h}}
+\mbox{\hyperlink{status__codes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{36 \textcolor{comment}{/*}}
+\DoxyCodeLine{37 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{38 \textcolor{comment}{ */}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifndef STATUS\_CODES\_H\_INCLUDED}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define STATUS\_CODES\_H\_INCLUDED}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define STATUS\_CATEGORY\_MASK  0xF0}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define STATUS\_ERROR\_MASK     0x0F}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga477539e8a67b0cab096e8ecda6f5d7d6}{status\_categories}} \{}
+\DoxyCodeLine{61     STATUS\_CATEGORY\_OK                = 0x00,}
+\DoxyCodeLine{62     STATUS\_CATEGORY\_COMMON            = 0x10,}
+\DoxyCodeLine{63     STATUS\_CATEGORY\_ANALOG            = 0x30,}
+\DoxyCodeLine{64     STATUS\_CATEGORY\_COM               = 0x40,}
+\DoxyCodeLine{65     STATUS\_CATEGORY\_IO                = 0x50,}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{77 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \{}
+\DoxyCodeLine{78     STATUS\_OK                         = STATUS\_CATEGORY\_OK     | 0x00,}
+\DoxyCodeLine{79     STATUS\_VALID\_DATA                 = STATUS\_CATEGORY\_OK     | 0x01,}
+\DoxyCodeLine{80     STATUS\_NO\_CHANGE                  = STATUS\_CATEGORY\_OK     | 0x02,}
+\DoxyCodeLine{81     STATUS\_ABORTED                    = STATUS\_CATEGORY\_OK     | 0x04,}
+\DoxyCodeLine{82     STATUS\_BUSY                       = STATUS\_CATEGORY\_OK     | 0x05,}
+\DoxyCodeLine{83     STATUS\_SUSPEND                    = STATUS\_CATEGORY\_OK     | 0x06,}
+\DoxyCodeLine{84     STATUS\_DATA\_NOT\_NEEDED            = STATUS\_CATEGORY\_OK     | 0x07,}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     STATUS\_ERR\_IO                     = STATUS\_CATEGORY\_COMMON | 0x00,}
+\DoxyCodeLine{87     STATUS\_ERR\_REQ\_FLUSHED            = STATUS\_CATEGORY\_COMMON | 0x01,}
+\DoxyCodeLine{88     STATUS\_ERR\_TIMEOUT                = STATUS\_CATEGORY\_COMMON | 0x02,}
+\DoxyCodeLine{89     STATUS\_ERR\_BAD\_DATA               = STATUS\_CATEGORY\_COMMON | 0x03,}
+\DoxyCodeLine{90     STATUS\_ERR\_NOT\_FOUND              = STATUS\_CATEGORY\_COMMON | 0x04,}
+\DoxyCodeLine{91     STATUS\_ERR\_UNSUPPORTED\_DEV        = STATUS\_CATEGORY\_COMMON | 0x05,}
+\DoxyCodeLine{92     STATUS\_ERR\_NO\_MEMORY              = STATUS\_CATEGORY\_COMMON | 0x06,}
+\DoxyCodeLine{93     STATUS\_ERR\_INVALID\_ARG            = STATUS\_CATEGORY\_COMMON | 0x07,}
+\DoxyCodeLine{94     STATUS\_ERR\_BAD\_ADDRESS            = STATUS\_CATEGORY\_COMMON | 0x08,}
+\DoxyCodeLine{95     STATUS\_ERR\_BAD\_FORMAT             = STATUS\_CATEGORY\_COMMON | 0x0A,}
+\DoxyCodeLine{96     STATUS\_ERR\_BAD\_FRQ                = STATUS\_CATEGORY\_COMMON | 0x0B,}
+\DoxyCodeLine{97     STATUS\_ERR\_DENIED                 = STATUS\_CATEGORY\_COMMON | 0x0c,}
+\DoxyCodeLine{98     STATUS\_ERR\_ALREADY\_INITIALIZED    = STATUS\_CATEGORY\_COMMON | 0x0d,}
+\DoxyCodeLine{99     STATUS\_ERR\_OVERFLOW               = STATUS\_CATEGORY\_COMMON | 0x0e,}
+\DoxyCodeLine{100     STATUS\_ERR\_NOT\_INITIALIZED        = STATUS\_CATEGORY\_COMMON | 0x0f,  }
+\DoxyCodeLine{101     STATUS\_ERR\_INSUFFICIENT\_RTOS\_HEAP = STATUS\_CATEGORY\_COMMON | 0x10,}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     STATUS\_ERR\_SAMPLERATE\_UNAVAILABLE = STATUS\_CATEGORY\_ANALOG | 0x00,}
+\DoxyCodeLine{105     STATUS\_ERR\_RESOLUTION\_UNAVAILABLE = STATUS\_CATEGORY\_ANALOG | 0x01,}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     STATUS\_ERR\_BAUDRATE\_UNAVAILABLE   = STATUS\_CATEGORY\_COM    | 0x00,}
+\DoxyCodeLine{108     STATUS\_ERR\_PACKET\_COLLISION       = STATUS\_CATEGORY\_COM    | 0x01,}
+\DoxyCodeLine{109     STATUS\_ERR\_PROTOCOL               = STATUS\_CATEGORY\_COM    | 0x02,}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     STATUS\_ERR\_PIN\_MUX\_INVALID        = STATUS\_CATEGORY\_IO     | 0x00,}
+\DoxyCodeLine{112 \};}
+\DoxyCodeLine{113 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} status\_code\_genare\_t;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{118 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga29235ed38b6f02861f29daae665ac3a2}{status\_code\_wireless}} \{}
+\DoxyCodeLine{119     \textcolor{comment}{//STATUS\_OK               =  0, //!< Success}}
+\DoxyCodeLine{120     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a0162f46cd42e6d3332b79c7284bcfcde}{ERR\_IO\_ERROR}}            =  -\/1, }
+\DoxyCodeLine{121     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a9d415cac501d1e51b419985ef8644e7f}{ERR\_FLUSHED}}             =  -\/2, }
+\DoxyCodeLine{122     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ac568baeb6407ef5e2630084ccbc34be8}{ERR\_TIMEOUT}}             =  -\/3, }
+\DoxyCodeLine{123     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a7aee3b5c2b62ef9de286635fc4d0ed44}{ERR\_BAD\_DATA}}            =  -\/4, }
+\DoxyCodeLine{124     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ace90946755daec754646e5f528ce1dcf}{ERR\_PROTOCOL}}            =  -\/5, }
+\DoxyCodeLine{125     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ab83b44cb6a1972de125f0f2efd45260e}{ERR\_UNSUPPORTED\_DEV}}     =  -\/6, }
+\DoxyCodeLine{126     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a308199736159a4f167ad4f58db8a3830}{ERR\_NO\_MEMORY}}           =  -\/7, }
+\DoxyCodeLine{127     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a70aa759d292a0e4be7123d01959357da}{ERR\_INVALID\_ARG}}         =  -\/8, }
+\DoxyCodeLine{128     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ab7f7c844a2381a5b981a5e3d4a13ee17}{ERR\_BAD\_ADDRESS}}         =  -\/9, }
+\DoxyCodeLine{129     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a8d4f409eda53a10f049dc6d5a833ccba}{ERR\_BUSY}}                =  -\/10, }
+\DoxyCodeLine{130     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2aacb8e19f1a844f9dcef8448afaddc01f}{ERR\_BAD\_FORMAT}}          =  -\/11, }
+\DoxyCodeLine{131     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a6d0a40d6d1356ffebe4fc22ec41b267f}{ERR\_NO\_TIMER}}            =  -\/12, }
+\DoxyCodeLine{132     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2affb72bf05bbe079b38c284796cf3e746}{ERR\_TIMER\_ALREADY\_RUNNING}}   =  -\/13, }
+\DoxyCodeLine{133     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a2119391dfc2668780bfd41a25426c32d}{ERR\_TIMER\_NOT\_RUNNING}}   =  -\/14, }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{144     \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a9b25aed7ac4ef4fc3c7250543bb113c0}{OPERATION\_IN\_PROGRESS}}  = -\/128,}
+\DoxyCodeLine{145 \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga29235ed38b6f02861f29daae665ac3a2}{status\_code\_wireless}} status\_code\_t;}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* STATUS\_CODES\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

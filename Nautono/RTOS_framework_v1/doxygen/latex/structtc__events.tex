@@ -1,0 +1,67 @@
+\hypertarget{structtc__events}{}\doxysection{tc\+\_\+events Struct Reference}
+\label{structtc__events}\index{tc\_events@{tc\_events}}
+
+
+TC event enable/disable structure.  
+
+
+
+
+{\ttfamily \#include $<$tc.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structtc__events_a56f64a482c0397251bf62b1412350d8b}{generate\+\_\+event\+\_\+on\+\_\+compare\+\_\+channel}} \mbox{[}\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\+\_\+\+OF\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNELS}}\mbox{]}
+\item 
+bool \mbox{\hyperlink{structtc__events_a087840a59d2e97f63cdef95b312dd675}{generate\+\_\+event\+\_\+on\+\_\+overflow}}
+\item 
+bool \mbox{\hyperlink{structtc__events_a81fccd68b31fe786c6e146b2014b67aa}{on\+\_\+event\+\_\+perform\+\_\+action}}
+\item 
+bool \mbox{\hyperlink{structtc__events_a2a08fb562ab19a0ba5ca7059ce020523}{invert\+\_\+event\+\_\+input}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4dcbf6cdb74bc3b7609ce8d16549462f}{tc\+\_\+event\+\_\+action}} \mbox{\hyperlink{structtc__events_a6974f2d6da575c5b15463fa4ed8cd3b8}{event\+\_\+action}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TC event enable/disable structure. 
+
+Event flags for the tc\+\_\+enable\+\_\+events() and tc\+\_\+disable\+\_\+events(). 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtc__events_a6974f2d6da575c5b15463fa4ed8cd3b8}\label{structtc__events_a6974f2d6da575c5b15463fa4ed8cd3b8}} 
+\index{tc\_events@{tc\_events}!event\_action@{event\_action}}
+\index{event\_action@{event\_action}!tc\_events@{tc\_events}}
+\doxysubsubsection{\texorpdfstring{event\_action}{event\_action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4dcbf6cdb74bc3b7609ce8d16549462f}{tc\+\_\+event\+\_\+action}} tc\+\_\+events\+::event\+\_\+action}
+
+Specifies which event to trigger if an event is triggered \mbox{\Hypertarget{structtc__events_a56f64a482c0397251bf62b1412350d8b}\label{structtc__events_a56f64a482c0397251bf62b1412350d8b}} 
+\index{tc\_events@{tc\_events}!generate\_event\_on\_compare\_channel@{generate\_event\_on\_compare\_channel}}
+\index{generate\_event\_on\_compare\_channel@{generate\_event\_on\_compare\_channel}!tc\_events@{tc\_events}}
+\doxysubsubsection{\texorpdfstring{generate\_event\_on\_compare\_channel}{generate\_event\_on\_compare\_channel}}
+{\footnotesize\ttfamily bool tc\+\_\+events\+::generate\+\_\+event\+\_\+on\+\_\+compare\+\_\+channel\mbox{[}\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\+\_\+\+OF\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNELS}}\mbox{]}}
+
+Generate an output event on a compare channel match \mbox{\Hypertarget{structtc__events_a087840a59d2e97f63cdef95b312dd675}\label{structtc__events_a087840a59d2e97f63cdef95b312dd675}} 
+\index{tc\_events@{tc\_events}!generate\_event\_on\_overflow@{generate\_event\_on\_overflow}}
+\index{generate\_event\_on\_overflow@{generate\_event\_on\_overflow}!tc\_events@{tc\_events}}
+\doxysubsubsection{\texorpdfstring{generate\_event\_on\_overflow}{generate\_event\_on\_overflow}}
+{\footnotesize\ttfamily bool tc\+\_\+events\+::generate\+\_\+event\+\_\+on\+\_\+overflow}
+
+Generate an output event on counter overflow \mbox{\Hypertarget{structtc__events_a2a08fb562ab19a0ba5ca7059ce020523}\label{structtc__events_a2a08fb562ab19a0ba5ca7059ce020523}} 
+\index{tc\_events@{tc\_events}!invert\_event\_input@{invert\_event\_input}}
+\index{invert\_event\_input@{invert\_event\_input}!tc\_events@{tc\_events}}
+\doxysubsubsection{\texorpdfstring{invert\_event\_input}{invert\_event\_input}}
+{\footnotesize\ttfamily bool tc\+\_\+events\+::invert\+\_\+event\+\_\+input}
+
+Specifies if the input event source is inverted, when used in PWP or PPW event action modes \mbox{\Hypertarget{structtc__events_a81fccd68b31fe786c6e146b2014b67aa}\label{structtc__events_a81fccd68b31fe786c6e146b2014b67aa}} 
+\index{tc\_events@{tc\_events}!on\_event\_perform\_action@{on\_event\_perform\_action}}
+\index{on\_event\_perform\_action@{on\_event\_perform\_action}!tc\_events@{tc\_events}}
+\doxysubsubsection{\texorpdfstring{on\_event\_perform\_action}{on\_event\_perform\_action}}
+{\footnotesize\ttfamily bool tc\+\_\+events\+::on\+\_\+event\+\_\+perform\+\_\+action}
+
+Perform the configured event action when an incoming event is signalled 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/tc/\mbox{\hyperlink{drivers_2tc_2tc_8h}{tc.\+h}}\end{DoxyCompactItemize}

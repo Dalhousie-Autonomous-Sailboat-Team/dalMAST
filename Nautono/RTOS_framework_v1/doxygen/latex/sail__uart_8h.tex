@@ -1,0 +1,56 @@
+\hypertarget{sail__uart_8h}{}\doxysection{src/sail\+\_\+uart.h File Reference}
+\label{sail__uart_8h}\index{src/sail\_uart.h@{src/sail\_uart.h}}
+
+
+\mbox{\hyperlink{sail__uart_8h}{sail\+\_\+uart.\+h}}  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$status\+\_\+codes.\+h$>$}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sail__uart_8h_a2bb00d4fe1562f87867e65251c9844e6}\label{sail__uart_8h_a2bb00d4fe1562f87867e65251c9844e6}} 
+typedef enum UART\+\_\+\+Channel\+IDs {\bfseries UART\+\_\+\+Channel\+ID}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sail__uart_8h_a199196deeb1b12e97f8b795effa3a4c0}\label{sail__uart_8h_a199196deeb1b12e97f8b795effa3a4c0}} 
+enum {\bfseries UART\+\_\+\+Channel\+IDs} \{ \newline
+{\bfseries UART\+\_\+\+GPS}
+, {\bfseries UART\+\_\+\+WEATHERSTATION}
+, {\bfseries UART\+\_\+\+RADIO}
+, {\bfseries UART\+\_\+\+XEOS}
+, \newline
+{\bfseries UART\+\_\+\+BEACON}
+, {\bfseries UART\+\_\+\+NUM\+\_\+\+CHANNELS}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sail__uart_8h_af061e06c91a0bd6851f48ab3e2be5c9c}\label{sail__uart_8h_af061e06c91a0bd6851f48ab3e2be5c9c}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries UART\+\_\+\+Init} (UART\+\_\+\+Channel\+ID id)
+\item 
+\mbox{\Hypertarget{sail__uart_8h_a280d3220dbe37a504fda42bd75041493}\label{sail__uart_8h_a280d3220dbe37a504fda42bd75041493}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries UART\+\_\+\+Enable} (UART\+\_\+\+Channel\+ID id)
+\item 
+\mbox{\Hypertarget{sail__uart_8h_adccd37094f7870189faaa619c3e4f150}\label{sail__uart_8h_adccd37094f7870189faaa619c3e4f150}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries UART\+\_\+\+Disable} (UART\+\_\+\+Channel\+ID id)
+\item 
+\mbox{\Hypertarget{sail__uart_8h_a1f2c510a8eb73d1a39f176b66e82e7e9}\label{sail__uart_8h_a1f2c510a8eb73d1a39f176b66e82e7e9}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries UART\+\_\+\+Tx\+String} (UART\+\_\+\+Channel\+ID id, uint8\+\_\+t $\ast$data)
+\item 
+\mbox{\Hypertarget{sail__uart_8h_aa8da64ad855e9e3e7faf207bc7edc590}\label{sail__uart_8h_aa8da64ad855e9e3e7faf207bc7edc590}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries UART\+\_\+\+Tx\+String\+\_\+\+Unprotected} (UART\+\_\+\+Channel\+ID id, uint8\+\_\+t $\ast$data)
+\item 
+\mbox{\Hypertarget{sail__uart_8h_a15e40796a7dce2e0c77e6ddf6c3d777f}\label{sail__uart_8h_a15e40796a7dce2e0c77e6ddf6c3d777f}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries UART\+\_\+\+Rx\+String} (UART\+\_\+\+Channel\+ID id, uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{sail__uart_8h}{sail\+\_\+uart.\+h}} 
+
+Header file for the UART driver module for the autonomous sailboat project. Created on June 13, 2016. Created by Thomas Gwynne-\/\+Timothy. 

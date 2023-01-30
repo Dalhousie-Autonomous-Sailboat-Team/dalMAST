@@ -1,0 +1,497 @@
+\hypertarget{component_2ac_8h_source}{}\doxysection{ac.\+h}
+\label{component_2ac_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/ac.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/ac.h}}
+\mbox{\hyperlink{component_2ac_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_AC\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_AC\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define AC\_U2205}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_AC                      0x111}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_CTRLA : (AC Offset: 0x00) (R/W  8) Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint8\_t  \mbox{\hyperlink{union_a_c___c_t_r_l_a___type_a58c730b4e10c52e2cb6ad4a7acafb275}{SWRST}}:1;          }
+\DoxyCodeLine{54     uint8\_t  \mbox{\hyperlink{union_a_c___c_t_r_l_a___type_a7d4dbc05e6d8ee0ca55797be6b20ce23}{ENABLE}}:1;         }
+\DoxyCodeLine{55     uint8\_t  \mbox{\hyperlink{union_a_c___c_t_r_l_a___type_a713666650f7e833e729c6dd43a862873}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{56     uint8\_t  :4;               }
+\DoxyCodeLine{57     uint8\_t  \mbox{\hyperlink{union_a_c___c_t_r_l_a___type_a51385c6d43c93025b92c50203e51bb75}{LPMUX}}:1;          }
+\DoxyCodeLine{58   \} bit;                       }
+\DoxyCodeLine{59   uint8\_t \mbox{\hyperlink{union_a_c___c_t_r_l_a___type_a4e34b7052621296ebf635fa09bb60c01}{reg}};                 }
+\DoxyCodeLine{60 \} \mbox{\hyperlink{union_a_c___c_t_r_l_a___type}{AC\_CTRLA\_Type}};}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define AC\_CTRLA\_OFFSET             0x00         }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define AC\_CTRLA\_RESETVALUE         0x00ul       }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define AC\_CTRLA\_SWRST\_Pos          0            }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define AC\_CTRLA\_SWRST              (0x1ul << AC\_CTRLA\_SWRST\_Pos)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define AC\_CTRLA\_ENABLE\_Pos         1            }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define AC\_CTRLA\_ENABLE             (0x1ul << AC\_CTRLA\_ENABLE\_Pos)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define AC\_CTRLA\_RUNSTDBY\_Pos       2            }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define AC\_CTRLA\_RUNSTDBY\_Msk       (0x1ul << AC\_CTRLA\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define AC\_CTRLA\_RUNSTDBY(value)    ((AC\_CTRLA\_RUNSTDBY\_Msk \& ((value) << AC\_CTRLA\_RUNSTDBY\_Pos)))}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define AC\_CTRLA\_LPMUX\_Pos          7            }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define AC\_CTRLA\_LPMUX              (0x1ul << AC\_CTRLA\_LPMUX\_Pos)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define AC\_CTRLA\_MASK               0x87ul       }}
+\DoxyCodeLine{77 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_CTRLB : (AC Offset: 0x01) ( /W  8) Control B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{80   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{81     uint8\_t  \mbox{\hyperlink{union_a_c___c_t_r_l_b___type_a760d1ae61b939e39b8d3beb201554ce1}{START0}}:1;         }
+\DoxyCodeLine{82     uint8\_t  \mbox{\hyperlink{union_a_c___c_t_r_l_b___type_a17398190707110456c97dd422752d8db}{START1}}:1;         }
+\DoxyCodeLine{83     uint8\_t  :6;               }
+\DoxyCodeLine{84   \} bit;                       }
+\DoxyCodeLine{85   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{86     uint8\_t  \mbox{\hyperlink{union_a_c___c_t_r_l_b___type_ac9815f20dd05fa3dca5cd44a7db9069d}{START}}:2;          }
+\DoxyCodeLine{87     uint8\_t  :6;               }
+\DoxyCodeLine{88   \} vec;                       }
+\DoxyCodeLine{89   uint8\_t \mbox{\hyperlink{union_a_c___c_t_r_l_b___type_ad032eca8740fe2f0e8471bc9080db59e}{reg}};                 }
+\DoxyCodeLine{90 \} \mbox{\hyperlink{union_a_c___c_t_r_l_b___type}{AC\_CTRLB\_Type}};}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define AC\_CTRLB\_OFFSET             0x01         }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define AC\_CTRLB\_RESETVALUE         0x00ul       }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define AC\_CTRLB\_START0\_Pos         0            }}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define AC\_CTRLB\_START0             (1 << AC\_CTRLB\_START0\_Pos)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define AC\_CTRLB\_START1\_Pos         1            }}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define AC\_CTRLB\_START1             (1 << AC\_CTRLB\_START1\_Pos)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define AC\_CTRLB\_START\_Pos          0            }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define AC\_CTRLB\_START\_Msk          (0x3ul << AC\_CTRLB\_START\_Pos)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define AC\_CTRLB\_START(value)       ((AC\_CTRLB\_START\_Msk \& ((value) << AC\_CTRLB\_START\_Pos)))}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define AC\_CTRLB\_MASK               0x03ul       }}
+\DoxyCodeLine{105 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_EVCTRL : (AC Offset: 0x02) (R/W 16) Event Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{107 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{108   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{109     uint16\_t \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type_a7ea623ba38e6a03b4cc4e3d493d87014}{COMPEO0}}:1;        }
+\DoxyCodeLine{110     uint16\_t \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type_ab4ef9d19685a1f172bd8445083216512}{COMPEO1}}:1;        }
+\DoxyCodeLine{111     uint16\_t :2;               }
+\DoxyCodeLine{112     uint16\_t \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type_a3436fe70198f6e81e92a2404bd178574}{WINEO0}}:1;         }
+\DoxyCodeLine{113     uint16\_t :3;               }
+\DoxyCodeLine{114     uint16\_t \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type_a00045659dd1fbd923931bbf9b81e7c6b}{COMPEI0}}:1;        }
+\DoxyCodeLine{115     uint16\_t \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type_a7ad83dec94ecd1af02f74c0114696673}{COMPEI1}}:1;        }
+\DoxyCodeLine{116     uint16\_t :6;               }
+\DoxyCodeLine{117   \} bit;                       }
+\DoxyCodeLine{118   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{119     uint16\_t \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type_a74bfb16a5a12d5476bbcbd4fc51cd8ee}{COMPEO}}:2;         }
+\DoxyCodeLine{120     uint16\_t :2;               }
+\DoxyCodeLine{121     uint16\_t \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type_ac26ab4051408af4f6ef5f28f54e9b7e2}{WINEO}}:1;          }
+\DoxyCodeLine{122     uint16\_t :3;               }
+\DoxyCodeLine{123     uint16\_t \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type_a9e65bdb6d81e1f9d93abdb815b1e1a09}{COMPEI}}:2;         }
+\DoxyCodeLine{124     uint16\_t :6;               }
+\DoxyCodeLine{125   \} vec;                       }
+\DoxyCodeLine{126   uint16\_t \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type_ae1ec2935d7ee9422bb7789a149620341}{reg}};                }
+\DoxyCodeLine{127 \} \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type}{AC\_EVCTRL\_Type}};}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define AC\_EVCTRL\_OFFSET            0x02         }}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define AC\_EVCTRL\_RESETVALUE        0x0000ul     }}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEO0\_Pos       0            }}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEO0           (1 << AC\_EVCTRL\_COMPEO0\_Pos)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEO1\_Pos       1            }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEO1           (1 << AC\_EVCTRL\_COMPEO1\_Pos)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEO\_Pos        0            }}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEO\_Msk        (0x3ul << AC\_EVCTRL\_COMPEO\_Pos)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEO(value)     ((AC\_EVCTRL\_COMPEO\_Msk \& ((value) << AC\_EVCTRL\_COMPEO\_Pos)))}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define AC\_EVCTRL\_WINEO0\_Pos        4            }}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define AC\_EVCTRL\_WINEO0            (1 << AC\_EVCTRL\_WINEO0\_Pos)}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define AC\_EVCTRL\_WINEO\_Pos         4            }}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define AC\_EVCTRL\_WINEO\_Msk         (0x1ul << AC\_EVCTRL\_WINEO\_Pos)}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define AC\_EVCTRL\_WINEO(value)      ((AC\_EVCTRL\_WINEO\_Msk \& ((value) << AC\_EVCTRL\_WINEO\_Pos)))}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEI0\_Pos       8            }}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEI0           (1 << AC\_EVCTRL\_COMPEI0\_Pos)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEI1\_Pos       9            }}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEI1           (1 << AC\_EVCTRL\_COMPEI1\_Pos)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEI\_Pos        8            }}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEI\_Msk        (0x3ul << AC\_EVCTRL\_COMPEI\_Pos)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define AC\_EVCTRL\_COMPEI(value)     ((AC\_EVCTRL\_COMPEI\_Msk \& ((value) << AC\_EVCTRL\_COMPEI\_Pos)))}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define AC\_EVCTRL\_MASK              0x0313ul     }}
+\DoxyCodeLine{154 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_INTENCLR : (AC Offset: 0x04) (R/W  8) Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{156 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{157   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{158     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_c_l_r___type_a19bd605e4a259f63839a819c484ae925}{COMP0}}:1;          }
+\DoxyCodeLine{159     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_c_l_r___type_a77caac22c3b30a179a8f395907220e94}{COMP1}}:1;          }
+\DoxyCodeLine{160     uint8\_t  :2;               }
+\DoxyCodeLine{161     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_c_l_r___type_aa0138a6b5c6c745c76b4e59b9b2b4f47}{WIN0}}:1;           }
+\DoxyCodeLine{162     uint8\_t  :3;               }
+\DoxyCodeLine{163   \} bit;                       }
+\DoxyCodeLine{164   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{165     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_c_l_r___type_a9576a4c3d508394435e1986d4b08415f}{COMP}}:2;           }
+\DoxyCodeLine{166     uint8\_t  :2;               }
+\DoxyCodeLine{167     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_c_l_r___type_a6552dbc0a8e405aaa50d1da95a81baa7}{WIN}}:1;            }
+\DoxyCodeLine{168     uint8\_t  :3;               }
+\DoxyCodeLine{169   \} vec;                       }
+\DoxyCodeLine{170   uint8\_t \mbox{\hyperlink{union_a_c___i_n_t_e_n_c_l_r___type_a63e79491ef9af2be69a99ba6a19b2444}{reg}};                 }
+\DoxyCodeLine{171 \} \mbox{\hyperlink{union_a_c___i_n_t_e_n_c_l_r___type}{AC\_INTENCLR\_Type}};}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define AC\_INTENCLR\_OFFSET          0x04         }}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define AC\_INTENCLR\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define AC\_INTENCLR\_COMP0\_Pos       0            }}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define AC\_INTENCLR\_COMP0           (1 << AC\_INTENCLR\_COMP0\_Pos)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define AC\_INTENCLR\_COMP1\_Pos       1            }}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define AC\_INTENCLR\_COMP1           (1 << AC\_INTENCLR\_COMP1\_Pos)}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define AC\_INTENCLR\_COMP\_Pos        0            }}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define AC\_INTENCLR\_COMP\_Msk        (0x3ul << AC\_INTENCLR\_COMP\_Pos)}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define AC\_INTENCLR\_COMP(value)     ((AC\_INTENCLR\_COMP\_Msk \& ((value) << AC\_INTENCLR\_COMP\_Pos)))}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define AC\_INTENCLR\_WIN0\_Pos        4            }}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define AC\_INTENCLR\_WIN0            (1 << AC\_INTENCLR\_WIN0\_Pos)}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define AC\_INTENCLR\_WIN\_Pos         4            }}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define AC\_INTENCLR\_WIN\_Msk         (0x1ul << AC\_INTENCLR\_WIN\_Pos)}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define AC\_INTENCLR\_WIN(value)      ((AC\_INTENCLR\_WIN\_Msk \& ((value) << AC\_INTENCLR\_WIN\_Pos)))}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define AC\_INTENCLR\_MASK            0x13ul       }}
+\DoxyCodeLine{191 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_INTENSET : (AC Offset: 0x05) (R/W  8) Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{193 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{194   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{195     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_s_e_t___type_a8142ae02fea535b70e28e5f5846b276b}{COMP0}}:1;          }
+\DoxyCodeLine{196     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_s_e_t___type_ae40a778d0f2e270a2c9cc98daa12fdea}{COMP1}}:1;          }
+\DoxyCodeLine{197     uint8\_t  :2;               }
+\DoxyCodeLine{198     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_s_e_t___type_a39873288bd0e9d091d0ae83d396d24da}{WIN0}}:1;           }
+\DoxyCodeLine{199     uint8\_t  :3;               }
+\DoxyCodeLine{200   \} bit;                       }
+\DoxyCodeLine{201   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{202     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_s_e_t___type_a42e5f855d701ade3ba8bd54b11f80a80}{COMP}}:2;           }
+\DoxyCodeLine{203     uint8\_t  :2;               }
+\DoxyCodeLine{204     uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_e_n_s_e_t___type_a15d52e6fc36216e401abb8029b2fdf54}{WIN}}:1;            }
+\DoxyCodeLine{205     uint8\_t  :3;               }
+\DoxyCodeLine{206   \} vec;                       }
+\DoxyCodeLine{207   uint8\_t \mbox{\hyperlink{union_a_c___i_n_t_e_n_s_e_t___type_a4da1edfb85054d040062f34a65d86fd1}{reg}};                 }
+\DoxyCodeLine{208 \} \mbox{\hyperlink{union_a_c___i_n_t_e_n_s_e_t___type}{AC\_INTENSET\_Type}};}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define AC\_INTENSET\_OFFSET          0x05         }}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define AC\_INTENSET\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define AC\_INTENSET\_COMP0\_Pos       0            }}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define AC\_INTENSET\_COMP0           (1 << AC\_INTENSET\_COMP0\_Pos)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define AC\_INTENSET\_COMP1\_Pos       1            }}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define AC\_INTENSET\_COMP1           (1 << AC\_INTENSET\_COMP1\_Pos)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define AC\_INTENSET\_COMP\_Pos        0            }}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define AC\_INTENSET\_COMP\_Msk        (0x3ul << AC\_INTENSET\_COMP\_Pos)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define AC\_INTENSET\_COMP(value)     ((AC\_INTENSET\_COMP\_Msk \& ((value) << AC\_INTENSET\_COMP\_Pos)))}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define AC\_INTENSET\_WIN0\_Pos        4            }}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define AC\_INTENSET\_WIN0            (1 << AC\_INTENSET\_WIN0\_Pos)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define AC\_INTENSET\_WIN\_Pos         4            }}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define AC\_INTENSET\_WIN\_Msk         (0x1ul << AC\_INTENSET\_WIN\_Pos)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define AC\_INTENSET\_WIN(value)      ((AC\_INTENSET\_WIN\_Msk \& ((value) << AC\_INTENSET\_WIN\_Pos)))}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define AC\_INTENSET\_MASK            0x13ul       }}
+\DoxyCodeLine{228 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_INTFLAG : (AC Offset: 0x06) (R/W  8) Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{230 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{231   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{232     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_f_l_a_g___type_a353bd26947fa5d90c75d8d848823b499}{COMP0}}:1;      }
+\DoxyCodeLine{233     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_f_l_a_g___type_a476c42bc7087402bcd8126347e5fc4c5}{COMP1}}:1;      }
+\DoxyCodeLine{234     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_a_c___i_n_t_f_l_a_g___type_ad58500b89fa5a233363adf0c7d116ee4}{uint8\_t}}  :2;           }
+\DoxyCodeLine{235     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_f_l_a_g___type_a83708cf4e9af92a15d890824bc1ea3a5}{WIN0}}:1;       }
+\DoxyCodeLine{236     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  :3;           }
+\DoxyCodeLine{237   \} bit;                       }
+\DoxyCodeLine{238   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{239     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_f_l_a_g___type_a898036bc7f728751a0414e4391d41cf4}{COMP}}:2;       }
+\DoxyCodeLine{240     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  :2;           }
+\DoxyCodeLine{241     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_a_c___i_n_t_f_l_a_g___type_a389125c1799b8dc8f0c9cf0d2761cb0c}{WIN}}:1;        }
+\DoxyCodeLine{242     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  :3;           }
+\DoxyCodeLine{243   \} vec;                       }
+\DoxyCodeLine{244   uint8\_t \mbox{\hyperlink{union_a_c___i_n_t_f_l_a_g___type_a5f63bf1df4ff997b6c0e30711301ae35}{reg}};                 }
+\DoxyCodeLine{245 \} \mbox{\hyperlink{union_a_c___i_n_t_f_l_a_g___type}{AC\_INTFLAG\_Type}};}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define AC\_INTFLAG\_OFFSET           0x06         }}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define AC\_INTFLAG\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define AC\_INTFLAG\_COMP0\_Pos        0            }}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define AC\_INTFLAG\_COMP0            (1 << AC\_INTFLAG\_COMP0\_Pos)}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define AC\_INTFLAG\_COMP1\_Pos        1            }}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define AC\_INTFLAG\_COMP1            (1 << AC\_INTFLAG\_COMP1\_Pos)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define AC\_INTFLAG\_COMP\_Pos         0            }}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define AC\_INTFLAG\_COMP\_Msk         (0x3ul << AC\_INTFLAG\_COMP\_Pos)}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#define AC\_INTFLAG\_COMP(value)      ((AC\_INTFLAG\_COMP\_Msk \& ((value) << AC\_INTFLAG\_COMP\_Pos)))}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#define AC\_INTFLAG\_WIN0\_Pos         4            }}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define AC\_INTFLAG\_WIN0             (1 << AC\_INTFLAG\_WIN0\_Pos)}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define AC\_INTFLAG\_WIN\_Pos          4            }}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define AC\_INTFLAG\_WIN\_Msk          (0x1ul << AC\_INTFLAG\_WIN\_Pos)}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define AC\_INTFLAG\_WIN(value)       ((AC\_INTFLAG\_WIN\_Msk \& ((value) << AC\_INTFLAG\_WIN\_Pos)))}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define AC\_INTFLAG\_MASK             0x13ul       }}
+\DoxyCodeLine{265 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_STATUSA : (AC Offset: 0x08) (R/   8) Status A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{267 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{268   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{269     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_a___type_aca8e6670ce7505c53de0519c88122fda}{STATE0}}:1;         }
+\DoxyCodeLine{270     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_a___type_a2a3ce21d0bd3155ed36bb422a079518b}{STATE1}}:1;         }
+\DoxyCodeLine{271     uint8\_t  :2;               }
+\DoxyCodeLine{272     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_a___type_ac8b9a13007924855fee58c699c5762c5}{WSTATE0}}:2;        }
+\DoxyCodeLine{273     uint8\_t  :2;               }
+\DoxyCodeLine{274   \} bit;                       }
+\DoxyCodeLine{275   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{276     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_a___type_a6e72d715598dca97b6d250da54fde40c}{STATE}}:2;          }
+\DoxyCodeLine{277     uint8\_t  :6;               }
+\DoxyCodeLine{278   \} vec;                       }
+\DoxyCodeLine{279   uint8\_t \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_a___type_aafc204d5f99edf223fe6182171df9e78}{reg}};                 }
+\DoxyCodeLine{280 \} \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_a___type}{AC\_STATUSA\_Type}};}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define AC\_STATUSA\_OFFSET           0x08         }}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#define AC\_STATUSA\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define AC\_STATUSA\_STATE0\_Pos       0            }}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define AC\_STATUSA\_STATE0           (1 << AC\_STATUSA\_STATE0\_Pos)}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define AC\_STATUSA\_STATE1\_Pos       1            }}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define AC\_STATUSA\_STATE1           (1 << AC\_STATUSA\_STATE1\_Pos)}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define AC\_STATUSA\_STATE\_Pos        0            }}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define AC\_STATUSA\_STATE\_Msk        (0x3ul << AC\_STATUSA\_STATE\_Pos)}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#define AC\_STATUSA\_STATE(value)     ((AC\_STATUSA\_STATE\_Msk \& ((value) << AC\_STATUSA\_STATE\_Pos)))}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define AC\_STATUSA\_WSTATE0\_Pos      4            }}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define AC\_STATUSA\_WSTATE0\_Msk      (0x3ul << AC\_STATUSA\_WSTATE0\_Pos)}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#define AC\_STATUSA\_WSTATE0(value)   ((AC\_STATUSA\_WSTATE0\_Msk \& ((value) << AC\_STATUSA\_WSTATE0\_Pos)))}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define   AC\_STATUSA\_WSTATE0\_ABOVE\_Val    0x0ul  }}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define   AC\_STATUSA\_WSTATE0\_INSIDE\_Val   0x1ul  }}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#define   AC\_STATUSA\_WSTATE0\_BELOW\_Val    0x2ul  }}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#define AC\_STATUSA\_WSTATE0\_ABOVE    (AC\_STATUSA\_WSTATE0\_ABOVE\_Val  << AC\_STATUSA\_WSTATE0\_Pos)}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define AC\_STATUSA\_WSTATE0\_INSIDE   (AC\_STATUSA\_WSTATE0\_INSIDE\_Val << AC\_STATUSA\_WSTATE0\_Pos)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define AC\_STATUSA\_WSTATE0\_BELOW    (AC\_STATUSA\_WSTATE0\_BELOW\_Val  << AC\_STATUSA\_WSTATE0\_Pos)}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#define AC\_STATUSA\_MASK             0x33ul       }}
+\DoxyCodeLine{304 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_STATUSB : (AC Offset: 0x09) (R/   8) Status B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{306 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{307   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{308     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_b___type_a8824f2b68d7416b63ba3801b9c7058e9}{READY0}}:1;         }
+\DoxyCodeLine{309     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_b___type_af62af0387d980f78fb5f370bfd4724fb}{READY1}}:1;         }
+\DoxyCodeLine{310     uint8\_t  :5;               }
+\DoxyCodeLine{311     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_b___type_a57f080729510059abc35df7afa3e8bc5}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{312   \} bit;                       }
+\DoxyCodeLine{313   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{314     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_b___type_a25df121d8933b26079d8697c479cfdc4}{READY}}:2;          }
+\DoxyCodeLine{315     uint8\_t  :6;               }
+\DoxyCodeLine{316   \} vec;                       }
+\DoxyCodeLine{317   uint8\_t \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_b___type_a0896ac0096e3e0a7c3ffb99e15f78677}{reg}};                 }
+\DoxyCodeLine{318 \} \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_b___type}{AC\_STATUSB\_Type}};}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define AC\_STATUSB\_OFFSET           0x09         }}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define AC\_STATUSB\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define AC\_STATUSB\_READY0\_Pos       0            }}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define AC\_STATUSB\_READY0           (1 << AC\_STATUSB\_READY0\_Pos)}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define AC\_STATUSB\_READY1\_Pos       1            }}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#define AC\_STATUSB\_READY1           (1 << AC\_STATUSB\_READY1\_Pos)}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define AC\_STATUSB\_READY\_Pos        0            }}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define AC\_STATUSB\_READY\_Msk        (0x3ul << AC\_STATUSB\_READY\_Pos)}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#define AC\_STATUSB\_READY(value)     ((AC\_STATUSB\_READY\_Msk \& ((value) << AC\_STATUSB\_READY\_Pos)))}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define AC\_STATUSB\_SYNCBUSY\_Pos     7            }}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#define AC\_STATUSB\_SYNCBUSY         (0x1ul << AC\_STATUSB\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define AC\_STATUSB\_MASK             0x83ul       }}
+\DoxyCodeLine{335 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_STATUSC : (AC Offset: 0x0A) (R/   8) Status C -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{337 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{338   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{339     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_c___type_a728868c7c50ae3446e5e6f4df9f3c456}{STATE0}}:1;         }
+\DoxyCodeLine{340     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_c___type_a8fe3d66e17f34b1f5b7f4112e957c01f}{STATE1}}:1;         }
+\DoxyCodeLine{341     uint8\_t  :2;               }
+\DoxyCodeLine{342     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_c___type_abd6765b62e9bf4be63bedd1899bf9c2b}{WSTATE0}}:2;        }
+\DoxyCodeLine{343     uint8\_t  :2;               }
+\DoxyCodeLine{344   \} bit;                       }
+\DoxyCodeLine{345   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{346     uint8\_t  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_c___type_aa9c80c9c9bcd9e52a0c6bf3cec9f5617}{STATE}}:2;          }
+\DoxyCodeLine{347     uint8\_t  :6;               }
+\DoxyCodeLine{348   \} vec;                       }
+\DoxyCodeLine{349   uint8\_t \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_c___type_a64b25a5ac7d92bc31c7d145d13717935}{reg}};                 }
+\DoxyCodeLine{350 \} \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_c___type}{AC\_STATUSC\_Type}};}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define AC\_STATUSC\_OFFSET           0x0A         }}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define AC\_STATUSC\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define AC\_STATUSC\_STATE0\_Pos       0            }}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define AC\_STATUSC\_STATE0           (1 << AC\_STATUSC\_STATE0\_Pos)}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define AC\_STATUSC\_STATE1\_Pos       1            }}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define AC\_STATUSC\_STATE1           (1 << AC\_STATUSC\_STATE1\_Pos)}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define AC\_STATUSC\_STATE\_Pos        0            }}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define AC\_STATUSC\_STATE\_Msk        (0x3ul << AC\_STATUSC\_STATE\_Pos)}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define AC\_STATUSC\_STATE(value)     ((AC\_STATUSC\_STATE\_Msk \& ((value) << AC\_STATUSC\_STATE\_Pos)))}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define AC\_STATUSC\_WSTATE0\_Pos      4            }}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define AC\_STATUSC\_WSTATE0\_Msk      (0x3ul << AC\_STATUSC\_WSTATE0\_Pos)}}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define AC\_STATUSC\_WSTATE0(value)   ((AC\_STATUSC\_WSTATE0\_Msk \& ((value) << AC\_STATUSC\_WSTATE0\_Pos)))}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define   AC\_STATUSC\_WSTATE0\_ABOVE\_Val    0x0ul  }}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define   AC\_STATUSC\_WSTATE0\_INSIDE\_Val   0x1ul  }}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define   AC\_STATUSC\_WSTATE0\_BELOW\_Val    0x2ul  }}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define AC\_STATUSC\_WSTATE0\_ABOVE    (AC\_STATUSC\_WSTATE0\_ABOVE\_Val  << AC\_STATUSC\_WSTATE0\_Pos)}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define AC\_STATUSC\_WSTATE0\_INSIDE   (AC\_STATUSC\_WSTATE0\_INSIDE\_Val << AC\_STATUSC\_WSTATE0\_Pos)}}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define AC\_STATUSC\_WSTATE0\_BELOW    (AC\_STATUSC\_WSTATE0\_BELOW\_Val  << AC\_STATUSC\_WSTATE0\_Pos)}}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#define AC\_STATUSC\_MASK             0x33ul       }}
+\DoxyCodeLine{374 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_WINCTRL : (AC Offset: 0x0C) (R/W  8) Window Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{376 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{377   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{378     uint8\_t  \mbox{\hyperlink{union_a_c___w_i_n_c_t_r_l___type_a72a4c9afb389393cb713615978a7813f}{WEN0}}:1;           }
+\DoxyCodeLine{379     uint8\_t  \mbox{\hyperlink{union_a_c___w_i_n_c_t_r_l___type_a4c5609462535a1c98e79acb0526f0eae}{WINTSEL0}}:2;       }
+\DoxyCodeLine{380     uint8\_t  :5;               }
+\DoxyCodeLine{381   \} bit;                       }
+\DoxyCodeLine{382   uint8\_t \mbox{\hyperlink{union_a_c___w_i_n_c_t_r_l___type_a490f80fdbd4ca4de30969c9e862efe0c}{reg}};                 }
+\DoxyCodeLine{383 \} \mbox{\hyperlink{union_a_c___w_i_n_c_t_r_l___type}{AC\_WINCTRL\_Type}};}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define AC\_WINCTRL\_OFFSET           0x0C         }}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define AC\_WINCTRL\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define AC\_WINCTRL\_WEN0\_Pos         0            }}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define AC\_WINCTRL\_WEN0             (0x1ul << AC\_WINCTRL\_WEN0\_Pos)}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define AC\_WINCTRL\_WINTSEL0\_Pos     1            }}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define AC\_WINCTRL\_WINTSEL0\_Msk     (0x3ul << AC\_WINCTRL\_WINTSEL0\_Pos)}}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#define AC\_WINCTRL\_WINTSEL0(value)  ((AC\_WINCTRL\_WINTSEL0\_Msk \& ((value) << AC\_WINCTRL\_WINTSEL0\_Pos)))}}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define   AC\_WINCTRL\_WINTSEL0\_ABOVE\_Val   0x0ul  }}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#define   AC\_WINCTRL\_WINTSEL0\_INSIDE\_Val  0x1ul  }}
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#define   AC\_WINCTRL\_WINTSEL0\_BELOW\_Val   0x2ul  }}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define   AC\_WINCTRL\_WINTSEL0\_OUTSIDE\_Val 0x3ul  }}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define AC\_WINCTRL\_WINTSEL0\_ABOVE   (AC\_WINCTRL\_WINTSEL0\_ABOVE\_Val << AC\_WINCTRL\_WINTSEL0\_Pos)}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#define AC\_WINCTRL\_WINTSEL0\_INSIDE  (AC\_WINCTRL\_WINTSEL0\_INSIDE\_Val << AC\_WINCTRL\_WINTSEL0\_Pos)}}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define AC\_WINCTRL\_WINTSEL0\_BELOW   (AC\_WINCTRL\_WINTSEL0\_BELOW\_Val << AC\_WINCTRL\_WINTSEL0\_Pos)}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define AC\_WINCTRL\_WINTSEL0\_OUTSIDE (AC\_WINCTRL\_WINTSEL0\_OUTSIDE\_Val << AC\_WINCTRL\_WINTSEL0\_Pos)}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define AC\_WINCTRL\_MASK             0x07ul       }}
+\DoxyCodeLine{404 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_COMPCTRL : (AC Offset: 0x10) (R/W 32) Comparator Control n -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{406 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{407   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{408     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_a15f8af3162ea9033a60d3e3d356c6a56}{ENABLE}}:1;         }
+\DoxyCodeLine{409     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_acb031b1494dbf34f49d344ad918f9357}{SINGLE}}:1;         }
+\DoxyCodeLine{410     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_a1f7c96647c51593fd749cb5611f4b320}{SPEED}}:2;          }
+\DoxyCodeLine{411     uint32\_t :1;               }
+\DoxyCodeLine{412     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_a95f33ef2691b5cda0fea29595af971a4}{INTSEL}}:2;         }
+\DoxyCodeLine{413     uint32\_t :1;               }
+\DoxyCodeLine{414     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_a46f2e7662c18b2108a2c8de43c00b39f}{MUXNEG}}:3;         }
+\DoxyCodeLine{415     uint32\_t :1;               }
+\DoxyCodeLine{416     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_aa4274235084b7d672bf0f4c08f214050}{MUXPOS}}:2;         }
+\DoxyCodeLine{417     uint32\_t :1;               }
+\DoxyCodeLine{418     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_afae8be6944e4719e72b122c4b58025b5}{SWAP}}:1;           }
+\DoxyCodeLine{419     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_a1b15c83fc337723c7dfada178ded5717}{OUT}}:2;            }
+\DoxyCodeLine{420     uint32\_t :1;               }
+\DoxyCodeLine{421     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_ab6a2ee44b0ba4da3ce7fc4bc1ba7f78a}{HYST}}:1;           }
+\DoxyCodeLine{422     uint32\_t :4;               }
+\DoxyCodeLine{423     uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_ad0a2a07795535199a9823b0b8acf9e6b}{FLEN}}:3;           }
+\DoxyCodeLine{424     uint32\_t :5;               }
+\DoxyCodeLine{425   \} bit;                       }
+\DoxyCodeLine{426   uint32\_t \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type_a76749cc9c2d3bc908b2ea9c1ece23ec3}{reg}};                }
+\DoxyCodeLine{427 \} \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type}{AC\_COMPCTRL\_Type}};}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_OFFSET          0x10         }}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_RESETVALUE      0x00000000ul }}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_ENABLE\_Pos      0            }}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_ENABLE          (0x1ul << AC\_COMPCTRL\_ENABLE\_Pos)}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_SINGLE\_Pos      1            }}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_SINGLE          (0x1ul << AC\_COMPCTRL\_SINGLE\_Pos)}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_SPEED\_Pos       2            }}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_SPEED\_Msk       (0x3ul << AC\_COMPCTRL\_SPEED\_Pos)}}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_SPEED(value)    ((AC\_COMPCTRL\_SPEED\_Msk \& ((value) << AC\_COMPCTRL\_SPEED\_Pos)))}}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_SPEED\_LOW\_Val       0x0ul  }}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_SPEED\_HIGH\_Val      0x1ul  }}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_SPEED\_LOW       (AC\_COMPCTRL\_SPEED\_LOW\_Val     << AC\_COMPCTRL\_SPEED\_Pos)}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_SPEED\_HIGH      (AC\_COMPCTRL\_SPEED\_HIGH\_Val    << AC\_COMPCTRL\_SPEED\_Pos)}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_INTSEL\_Pos      5            }}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_INTSEL\_Msk      (0x3ul << AC\_COMPCTRL\_INTSEL\_Pos)}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_INTSEL(value)   ((AC\_COMPCTRL\_INTSEL\_Msk \& ((value) << AC\_COMPCTRL\_INTSEL\_Pos)))}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_INTSEL\_TOGGLE\_Val   0x0ul  }}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_INTSEL\_RISING\_Val   0x1ul  }}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_INTSEL\_FALLING\_Val  0x2ul  }}
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_INTSEL\_EOC\_Val      0x3ul  }}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_INTSEL\_TOGGLE   (AC\_COMPCTRL\_INTSEL\_TOGGLE\_Val << AC\_COMPCTRL\_INTSEL\_Pos)}}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_INTSEL\_RISING   (AC\_COMPCTRL\_INTSEL\_RISING\_Val << AC\_COMPCTRL\_INTSEL\_Pos)}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_INTSEL\_FALLING  (AC\_COMPCTRL\_INTSEL\_FALLING\_Val << AC\_COMPCTRL\_INTSEL\_Pos)}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_INTSEL\_EOC      (AC\_COMPCTRL\_INTSEL\_EOC\_Val    << AC\_COMPCTRL\_INTSEL\_Pos)}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_Pos      8            }}
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_Msk      (0x7ul << AC\_COMPCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG(value)   ((AC\_COMPCTRL\_MUXNEG\_Msk \& ((value) << AC\_COMPCTRL\_MUXNEG\_Pos)))}}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXNEG\_PIN0\_Val     0x0ul  }}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXNEG\_PIN1\_Val     0x1ul  }}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXNEG\_PIN2\_Val     0x2ul  }}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXNEG\_PIN3\_Val     0x3ul  }}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXNEG\_GND\_Val      0x4ul  }}
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXNEG\_VSCALE\_Val   0x5ul  }}
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXNEG\_BANDGAP\_Val  0x6ul  }}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXNEG\_DAC\_Val      0x7ul  }}
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_PIN0     (AC\_COMPCTRL\_MUXNEG\_PIN0\_Val   << AC\_COMPCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_PIN1     (AC\_COMPCTRL\_MUXNEG\_PIN1\_Val   << AC\_COMPCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_PIN2     (AC\_COMPCTRL\_MUXNEG\_PIN2\_Val   << AC\_COMPCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_PIN3     (AC\_COMPCTRL\_MUXNEG\_PIN3\_Val   << AC\_COMPCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_GND      (AC\_COMPCTRL\_MUXNEG\_GND\_Val    << AC\_COMPCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_VSCALE   (AC\_COMPCTRL\_MUXNEG\_VSCALE\_Val << AC\_COMPCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_BANDGAP  (AC\_COMPCTRL\_MUXNEG\_BANDGAP\_Val << AC\_COMPCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXNEG\_DAC      (AC\_COMPCTRL\_MUXNEG\_DAC\_Val    << AC\_COMPCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXPOS\_Pos      12           }}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXPOS\_Msk      (0x3ul << AC\_COMPCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXPOS(value)   ((AC\_COMPCTRL\_MUXPOS\_Msk \& ((value) << AC\_COMPCTRL\_MUXPOS\_Pos)))}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXPOS\_PIN0\_Val     0x0ul  }}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXPOS\_PIN1\_Val     0x1ul  }}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXPOS\_PIN2\_Val     0x2ul  }}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_MUXPOS\_PIN3\_Val     0x3ul  }}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXPOS\_PIN0     (AC\_COMPCTRL\_MUXPOS\_PIN0\_Val   << AC\_COMPCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXPOS\_PIN1     (AC\_COMPCTRL\_MUXPOS\_PIN1\_Val   << AC\_COMPCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXPOS\_PIN2     (AC\_COMPCTRL\_MUXPOS\_PIN2\_Val   << AC\_COMPCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MUXPOS\_PIN3     (AC\_COMPCTRL\_MUXPOS\_PIN3\_Val   << AC\_COMPCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_SWAP\_Pos        15           }}
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_SWAP            (0x1ul << AC\_COMPCTRL\_SWAP\_Pos)}}
+\DoxyCodeLine{487 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_OUT\_Pos         16           }}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_OUT\_Msk         (0x3ul << AC\_COMPCTRL\_OUT\_Pos)}}
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_OUT(value)      ((AC\_COMPCTRL\_OUT\_Msk \& ((value) << AC\_COMPCTRL\_OUT\_Pos)))}}
+\DoxyCodeLine{490 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_OUT\_OFF\_Val         0x0ul  }}
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_OUT\_ASYNC\_Val       0x1ul  }}
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_OUT\_SYNC\_Val        0x2ul  }}
+\DoxyCodeLine{493 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_OUT\_OFF         (AC\_COMPCTRL\_OUT\_OFF\_Val       << AC\_COMPCTRL\_OUT\_Pos)}}
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_OUT\_ASYNC       (AC\_COMPCTRL\_OUT\_ASYNC\_Val     << AC\_COMPCTRL\_OUT\_Pos)}}
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_OUT\_SYNC        (AC\_COMPCTRL\_OUT\_SYNC\_Val      << AC\_COMPCTRL\_OUT\_Pos)}}
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_HYST\_Pos        19           }}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_HYST            (0x1ul << AC\_COMPCTRL\_HYST\_Pos)}}
+\DoxyCodeLine{498 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_FLEN\_Pos        24           }}
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_FLEN\_Msk        (0x7ul << AC\_COMPCTRL\_FLEN\_Pos)}}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_FLEN(value)     ((AC\_COMPCTRL\_FLEN\_Msk \& ((value) << AC\_COMPCTRL\_FLEN\_Pos)))}}
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_FLEN\_OFF\_Val        0x0ul  }}
+\DoxyCodeLine{502 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_FLEN\_MAJ3\_Val       0x1ul  }}
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#define   AC\_COMPCTRL\_FLEN\_MAJ5\_Val       0x2ul  }}
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_FLEN\_OFF        (AC\_COMPCTRL\_FLEN\_OFF\_Val      << AC\_COMPCTRL\_FLEN\_Pos)}}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_FLEN\_MAJ3       (AC\_COMPCTRL\_FLEN\_MAJ3\_Val     << AC\_COMPCTRL\_FLEN\_Pos)}}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_FLEN\_MAJ5       (AC\_COMPCTRL\_FLEN\_MAJ5\_Val     << AC\_COMPCTRL\_FLEN\_Pos)}}
+\DoxyCodeLine{507 \textcolor{preprocessor}{\#define AC\_COMPCTRL\_MASK            0x070BB76Ful }}
+\DoxyCodeLine{509 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ AC\_SCALER : (AC Offset: 0x20) (R/W  8) Scaler n -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{511 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{512   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{513     uint8\_t  \mbox{\hyperlink{union_a_c___s_c_a_l_e_r___type_a88f5e429a40283199bcb682c425e8511}{VALUE}}:6;          }
+\DoxyCodeLine{514     uint8\_t  :2;               }
+\DoxyCodeLine{515   \} bit;                       }
+\DoxyCodeLine{516   uint8\_t \mbox{\hyperlink{union_a_c___s_c_a_l_e_r___type_a3b844736f1cb54de918fcc21b3e23de9}{reg}};                 }
+\DoxyCodeLine{517 \} \mbox{\hyperlink{union_a_c___s_c_a_l_e_r___type}{AC\_SCALER\_Type}};}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#define AC\_SCALER\_OFFSET            0x20         }}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#define AC\_SCALER\_RESETVALUE        0x00ul       }}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#define AC\_SCALER\_VALUE\_Pos         0            }}
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#define AC\_SCALER\_VALUE\_Msk         (0x3Ful << AC\_SCALER\_VALUE\_Pos)}}
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#define AC\_SCALER\_VALUE(value)      ((AC\_SCALER\_VALUE\_Msk \& ((value) << AC\_SCALER\_VALUE\_Pos)))}}
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#define AC\_SCALER\_MASK              0x3Ful       }}
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{530 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{531   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_c___c_t_r_l_a___type}{AC\_CTRLA\_Type}}             \mbox{\hyperlink{struct_ac_a630e7dd91672e1c2b74ee673f39de93b}{CTRLA}};       }
+\DoxyCodeLine{532   \mbox{\hyperlink{core__cm0plus_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}  \mbox{\hyperlink{union_a_c___c_t_r_l_b___type}{AC\_CTRLB\_Type}}             \mbox{\hyperlink{struct_ac_a640781efaa613b49c38ed2480eaae796}{CTRLB}};       }
+\DoxyCodeLine{533   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_c___e_v_c_t_r_l___type}{AC\_EVCTRL\_Type}}            \mbox{\hyperlink{struct_ac_a5c833d847f90ca3c0efc0329166d5253}{EVCTRL}};      }
+\DoxyCodeLine{534   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_c___i_n_t_e_n_c_l_r___type}{AC\_INTENCLR\_Type}}          \mbox{\hyperlink{struct_ac_a6dc958f6971494d41ef59d7785a8d1bb}{INTENCLR}};    }
+\DoxyCodeLine{535   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_c___i_n_t_e_n_s_e_t___type}{AC\_INTENSET\_Type}}          \mbox{\hyperlink{struct_ac_a3c53909f19187625e2423f7dbb57ddc7}{INTENSET}};    }
+\DoxyCodeLine{536   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_c___i_n_t_f_l_a_g___type}{AC\_INTFLAG\_Type}}           \mbox{\hyperlink{struct_ac_ab41fe4ec783d82e9b137148ab6be1e79}{INTFLAG}};     }
+\DoxyCodeLine{537        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{538   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_a___type}{AC\_STATUSA\_Type}}           \mbox{\hyperlink{struct_ac_ae1cfeeabd4b015c858003981ec70b2cb}{STATUSA}};     }
+\DoxyCodeLine{539   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_b___type}{AC\_STATUSB\_Type}}           \mbox{\hyperlink{struct_ac_a4a386445b8b453b61021c2c4ec254b08}{STATUSB}};     }
+\DoxyCodeLine{540   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_a_c___s_t_a_t_u_s_c___type}{AC\_STATUSC\_Type}}           \mbox{\hyperlink{struct_ac_a3d533047b3bbe8dacfb70d97f8d0d5a9}{STATUSC}};     }
+\DoxyCodeLine{541        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x1];}
+\DoxyCodeLine{542   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_c___w_i_n_c_t_r_l___type}{AC\_WINCTRL\_Type}}           \mbox{\hyperlink{struct_ac_aae674ade4d82dfa07869611331e97a65}{WINCTRL}};     }
+\DoxyCodeLine{543        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x3];}
+\DoxyCodeLine{544   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_c___c_o_m_p_c_t_r_l___type}{AC\_COMPCTRL\_Type}}          COMPCTRL[2]; }
+\DoxyCodeLine{545        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved4[0x8];}
+\DoxyCodeLine{546   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_c___s_c_a_l_e_r___type}{AC\_SCALER\_Type}}            SCALER[2];   }
+\DoxyCodeLine{547 \} \mbox{\hyperlink{struct_ac}{Ac}};}
+\DoxyCodeLine{548 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_AC\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

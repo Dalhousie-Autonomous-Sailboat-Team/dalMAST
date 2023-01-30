@@ -1,0 +1,685 @@
+\hypertarget{component_2evsys_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/component/evsys.h File Reference}
+\label{component_2evsys_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/evsys.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/evsys.h}}
+
+
+Component description for EVSYS.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_e_v_s_y_s___c_t_r_l___type}{EVSYS\+\_\+\+CTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_v_s_y_s___c_h_a_n_n_e_l___type}{EVSYS\+\_\+\+CHANNEL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_v_s_y_s___u_s_e_r___type}{EVSYS\+\_\+\+USER\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type}{EVSYS\+\_\+\+INTENCLR\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type}{EVSYS\+\_\+\+INTENSET\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type}{EVSYS\+\_\+\+INTFLAG\+\_\+\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_evsys}{Evsys}}
+\begin{DoxyCompactList}\small\item\em EVSYS hardware registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a302b18faf55a928952583067fb99f216}\label{component_2evsys_8h_a302b18faf55a928952583067fb99f216}} 
+\#define {\bfseries EVSYS\+\_\+\+U2208}
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a973936e91b4175039038db84c581d977}\label{component_2evsys_8h_a973936e91b4175039038db84c581d977}} 
+\#define {\bfseries REV\+\_\+\+EVSYS}~0x101
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_af12e51333353e278643527fe9c70e572}\label{component_2evsys_8h_af12e51333353e278643527fe9c70e572}} 
+\#define {\bfseries EVSYS\+\_\+\+CTRL\+\_\+\+OFFSET}~0x00
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CTRL offset) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a28dc9aa8a2b2bb58177c09902b9a476a}\label{component_2evsys_8h_a28dc9aa8a2b2bb58177c09902b9a476a}} 
+\#define {\bfseries EVSYS\+\_\+\+CTRL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CTRL reset\+\_\+value) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ac38a8366d704219f852fdf910470ceb9}\label{component_2evsys_8h_ac38a8366d704219f852fdf910470ceb9}} 
+\#define {\bfseries EVSYS\+\_\+\+CTRL\+\_\+\+SWRST\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CTRL) Software Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a0f30a9be04a3581f03205e17f37c8143}\label{component_2evsys_8h_a0f30a9be04a3581f03205e17f37c8143}} 
+\#define {\bfseries EVSYS\+\_\+\+CTRL\+\_\+\+SWRST}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_ac38a8366d704219f852fdf910470ceb9}{EVSYS\+\_\+\+CTRL\+\_\+\+SWRST\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a199431edb74a5ba4d24f4d34abc242be}\label{component_2evsys_8h_a199431edb74a5ba4d24f4d34abc242be}} 
+\#define {\bfseries EVSYS\+\_\+\+CTRL\+\_\+\+GCLKREQ\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CTRL) Generic Clock Requests \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a4eed8178c9fe79a7bf2c0754b2f25b21}\label{component_2evsys_8h_a4eed8178c9fe79a7bf2c0754b2f25b21}} 
+\#define {\bfseries EVSYS\+\_\+\+CTRL\+\_\+\+GCLKREQ}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a199431edb74a5ba4d24f4d34abc242be}{EVSYS\+\_\+\+CTRL\+\_\+\+GCLKREQ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a815a5962da66a081c6146e008c34a4eb}\label{component_2evsys_8h_a815a5962da66a081c6146e008c34a4eb}} 
+\#define {\bfseries EVSYS\+\_\+\+CTRL\+\_\+\+MASK}~0x11ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a1c32a9bc329d630176a5c3ee341041d9}\label{component_2evsys_8h_a1c32a9bc329d630176a5c3ee341041d9}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+OFFSET}~0x04
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL offset) Channel \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_aae954ef91a3c4d06efe030fec2c37dda}\label{component_2evsys_8h_aae954ef91a3c4d06efe030fec2c37dda}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL reset\+\_\+value) Channel \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a504ab2479b3ddb9b0c4233ecbcae4fbc}\label{component_2evsys_8h_a504ab2479b3ddb9b0c4233ecbcae4fbc}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+CHANNEL\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Channel Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a3cefd434a41fc24d5c6db7736227e031}\label{component_2evsys_8h_a3cefd434a41fc24d5c6db7736227e031}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+CHANNEL\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a504ab2479b3ddb9b0c4233ecbcae4fbc}{EVSYS\+\_\+\+CHANNEL\+\_\+\+CHANNEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_adef1343193ae2cdf763f30d2876970d6}\label{component_2evsys_8h_adef1343193ae2cdf763f30d2876970d6}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+CHANNEL}(value)~((EVSYS\+\_\+\+CHANNEL\+\_\+\+CHANNEL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a504ab2479b3ddb9b0c4233ecbcae4fbc}{EVSYS\+\_\+\+CHANNEL\+\_\+\+CHANNEL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a9b5694abb0b825de297fc65a55e81008}\label{component_2evsys_8h_a9b5694abb0b825de297fc65a55e81008}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+SWEVT\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Software Event \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a9f835e0f80c4efa2ab37c1a66f367708}\label{component_2evsys_8h_a9f835e0f80c4efa2ab37c1a66f367708}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+SWEVT}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a9b5694abb0b825de297fc65a55e81008}{EVSYS\+\_\+\+CHANNEL\+\_\+\+SWEVT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a49da646ddac2acf9b067c8299b5f6335}\label{component_2evsys_8h_a49da646ddac2acf9b067c8299b5f6335}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EVGEN\+\_\+\+Pos}~16
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Event Generator Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_afb9b70ff5a602f5a8ac9a5e2ee5ffe19}\label{component_2evsys_8h_afb9b70ff5a602f5a8ac9a5e2ee5ffe19}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EVGEN\+\_\+\+Msk}~(0x3\+Ful $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a49da646ddac2acf9b067c8299b5f6335}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EVGEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_afb88af9747846db450470c6bbab09664}\label{component_2evsys_8h_afb88af9747846db450470c6bbab09664}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EVGEN}(value)~((EVSYS\+\_\+\+CHANNEL\+\_\+\+EVGEN\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a49da646ddac2acf9b067c8299b5f6335}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EVGEN\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a1c99b6755155dc2b405c63587973570b}\label{component_2evsys_8h_a1c99b6755155dc2b405c63587973570b}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+Pos}~24
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Path Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a8b3ef7a0b4006e53d02e028a7357290d}\label{component_2evsys_8h_a8b3ef7a0b4006e53d02e028a7357290d}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+Msk}~(0x3ul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a1c99b6755155dc2b405c63587973570b}{EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa4ef9ef1fcd09eb4482879454e79421a}\label{component_2evsys_8h_aa4ef9ef1fcd09eb4482879454e79421a}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH}(value)~((EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a1c99b6755155dc2b405c63587973570b}{EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_af113bdb42f1664532afb160e78b39fdb}\label{component_2evsys_8h_af113bdb42f1664532afb160e78b39fdb}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+SYNCHRONOUS\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Synchronous path \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_aeb385f0d13f51660c582fb7e8d5a753a}\label{component_2evsys_8h_aeb385f0d13f51660c582fb7e8d5a753a}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+RESYNCHRONIZED\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Resynchronized path \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ae66529525c793ce0b4621730bd6d5944}\label{component_2evsys_8h_ae66529525c793ce0b4621730bd6d5944}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+ASYNCHRONOUS\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Asynchronous path \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a78540f1cb8959a2498387637223852d5}\label{component_2evsys_8h_a78540f1cb8959a2498387637223852d5}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+SYNCHRONOUS}~(\mbox{\hyperlink{component_2evsys_8h_af113bdb42f1664532afb160e78b39fdb}{EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+SYNCHRONOUS\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a1c99b6755155dc2b405c63587973570b}{EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a1c73b14174899488574ae0456c40ce10}\label{component_2evsys_8h_a1c73b14174899488574ae0456c40ce10}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+RESYNCHRONIZED}~(\mbox{\hyperlink{component_2evsys_8h_aeb385f0d13f51660c582fb7e8d5a753a}{EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+RESYNCHRONIZED\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a1c99b6755155dc2b405c63587973570b}{EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a6bc286e48c7fe4e5281967d955a29968}\label{component_2evsys_8h_a6bc286e48c7fe4e5281967d955a29968}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+ASYNCHRONOUS}~(\mbox{\hyperlink{component_2evsys_8h_ae66529525c793ce0b4621730bd6d5944}{EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+ASYNCHRONOUS\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a1c99b6755155dc2b405c63587973570b}{EVSYS\+\_\+\+CHANNEL\+\_\+\+PATH\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a940ccedfddf915a4532da9b752cab3a0}\label{component_2evsys_8h_a940ccedfddf915a4532da9b752cab3a0}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+Pos}~26
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Edge Detection Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_af603adba0ca49498f9d62deee0243386}\label{component_2evsys_8h_af603adba0ca49498f9d62deee0243386}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+Msk}~(0x3ul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a940ccedfddf915a4532da9b752cab3a0}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a72823da9c6e8d38007ac9b0eec58d10f}\label{component_2evsys_8h_a72823da9c6e8d38007ac9b0eec58d10f}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL}(value)~((EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a940ccedfddf915a4532da9b752cab3a0}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a80b0403aa00907e545ba1ce27a55b03a}\label{component_2evsys_8h_a80b0403aa00907e545ba1ce27a55b03a}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+NO\+\_\+\+EVT\+\_\+\+OUTPUT\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) No event output when using the resynchronized or synchronous path \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a74f200244816d34ebcda294dfa39d163}\label{component_2evsys_8h_a74f200244816d34ebcda294dfa39d163}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+RISING\+\_\+\+EDGE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Event detection only on the rising edge of the signal from the event generator when using the resynchronized or synchronous path \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_aea62b90832a5f319570b4fd0cdb884d5}\label{component_2evsys_8h_aea62b90832a5f319570b4fd0cdb884d5}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+FALLING\+\_\+\+EDGE\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Event detection only on the falling edge of the signal from the event generator when using the resynchronized or synchronous path \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a30ceae6c03e9e5fb6302f5f4d234599d}\label{component_2evsys_8h_a30ceae6c03e9e5fb6302f5f4d234599d}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+BOTH\+\_\+\+EDGES\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) Event detection on rising and falling edges of the signal from the event generator when using the resynchronized or synchronous path \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a700eb99d5080fdf2d9c8a3302bd33ffc}\label{component_2evsys_8h_a700eb99d5080fdf2d9c8a3302bd33ffc}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+NO\+\_\+\+EVT\+\_\+\+OUTPUT}~(\mbox{\hyperlink{component_2evsys_8h_a80b0403aa00907e545ba1ce27a55b03a}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+NO\+\_\+\+EVT\+\_\+\+OUTPUT\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a940ccedfddf915a4532da9b752cab3a0}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_ae43987b4938ce70f9a0179873da5a558}\label{component_2evsys_8h_ae43987b4938ce70f9a0179873da5a558}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+RISING\+\_\+\+EDGE}~(\mbox{\hyperlink{component_2evsys_8h_a74f200244816d34ebcda294dfa39d163}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+RISING\+\_\+\+EDGE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a940ccedfddf915a4532da9b752cab3a0}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa1e192cf9b7b4fda29c8e37f1825e68d}\label{component_2evsys_8h_aa1e192cf9b7b4fda29c8e37f1825e68d}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+FALLING\+\_\+\+EDGE}~(\mbox{\hyperlink{component_2evsys_8h_aea62b90832a5f319570b4fd0cdb884d5}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+FALLING\+\_\+\+EDGE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a940ccedfddf915a4532da9b752cab3a0}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_af75e2b4ce7f76df0e12b9c83a36c1d0b}\label{component_2evsys_8h_af75e2b4ce7f76df0e12b9c83a36c1d0b}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+BOTH\+\_\+\+EDGES}~(\mbox{\hyperlink{component_2evsys_8h_a30ceae6c03e9e5fb6302f5f4d234599d}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+BOTH\+\_\+\+EDGES\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a940ccedfddf915a4532da9b752cab3a0}{EVSYS\+\_\+\+CHANNEL\+\_\+\+EDGSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_ab9faaae565f0d68b4a213473176588bf}\label{component_2evsys_8h_ab9faaae565f0d68b4a213473176588bf}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNEL\+\_\+\+MASK}~0x0\+F3\+F0107ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHANNEL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a43110f222057e1543486fc474450131c}\label{component_2evsys_8h_a43110f222057e1543486fc474450131c}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+OFFSET}~0x08
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+USER offset) User Multiplexer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_af4ba09be942a94f1cb7a9ed23ac108ab}\label{component_2evsys_8h_af4ba09be942a94f1cb7a9ed23ac108ab}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+RESETVALUE}~0x0000ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+USER reset\+\_\+value) User Multiplexer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a94aba6013d20165be7576c3eaef0e8ad}\label{component_2evsys_8h_a94aba6013d20165be7576c3eaef0e8ad}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+USER\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+USER) User Multiplexer Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a72b3b04430d8d89ff04d08174ead52b3}\label{component_2evsys_8h_a72b3b04430d8d89ff04d08174ead52b3}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+USER\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a94aba6013d20165be7576c3eaef0e8ad}{EVSYS\+\_\+\+USER\+\_\+\+USER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a2b089f81630cf140cca5c184c8a114e2}\label{component_2evsys_8h_a2b089f81630cf140cca5c184c8a114e2}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+USER}(value)~((EVSYS\+\_\+\+USER\+\_\+\+USER\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a94aba6013d20165be7576c3eaef0e8ad}{EVSYS\+\_\+\+USER\+\_\+\+USER\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a4ce28148cd49044148eed72085814831}\label{component_2evsys_8h_a4ce28148cd49044148eed72085814831}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+CHANNEL\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+USER) Channel Event Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a255273a4399694d342bbccdda41108b8}\label{component_2evsys_8h_a255273a4399694d342bbccdda41108b8}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+CHANNEL\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a4ce28148cd49044148eed72085814831}{EVSYS\+\_\+\+USER\+\_\+\+CHANNEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a940b872aa3d233451a79a53fdf82001b}\label{component_2evsys_8h_a940b872aa3d233451a79a53fdf82001b}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+CHANNEL}(value)~((EVSYS\+\_\+\+USER\+\_\+\+CHANNEL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a4ce28148cd49044148eed72085814831}{EVSYS\+\_\+\+USER\+\_\+\+CHANNEL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a30a3f03f14abc1097e0a8ef96c3fe706}\label{component_2evsys_8h_a30a3f03f14abc1097e0a8ef96c3fe706}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+CHANNEL\+\_\+0\+\_\+\+Val}~\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x0)
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+USER) No Channel Output Selected \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ac2728c6680cac80b7a8a51f7e367990d}\label{component_2evsys_8h_ac2728c6680cac80b7a8a51f7e367990d}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+CHANNEL\+\_\+0}~(\mbox{\hyperlink{component_2evsys_8h_a30a3f03f14abc1097e0a8ef96c3fe706}{EVSYS\+\_\+\+USER\+\_\+\+CHANNEL\+\_\+0\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a4ce28148cd49044148eed72085814831}{EVSYS\+\_\+\+USER\+\_\+\+CHANNEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_ae051bcee71e9b6fca121b9c03ff961d8}\label{component_2evsys_8h_ae051bcee71e9b6fca121b9c03ff961d8}} 
+\#define {\bfseries EVSYS\+\_\+\+USER\+\_\+\+MASK}~\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x0\+F0F)
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+USER) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a1feb1c1fba23446f2caa0e152ce7eb6c}\label{component_2evsys_8h_a1feb1c1fba23446f2caa0e152ce7eb6c}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+OFFSET}~0x0C
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS offset) Channel Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a3d2d7543ed2981a7d35fbee301599189}\label{component_2evsys_8h_a3d2d7543ed2981a7d35fbee301599189}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS reset\+\_\+value) Channel Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a2700cbcec1a0657a0bc6192acc82f555}\label{component_2evsys_8h_a2700cbcec1a0657a0bc6192acc82f555}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+RESETVALUE\+\_\+\+VAR\+\_\+B}~\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x000\+F00\+FF)
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS reset\+\_\+value) Channel Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a6ea71e693d005416c8deaf7964702e54}\label{component_2evsys_8h_a6ea71e693d005416c8deaf7964702e54}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 0 User Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ad102b5f720bf2ddfb32edea095c50649}\label{component_2evsys_8h_ad102b5f720bf2ddfb32edea095c50649}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY0}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a6ea71e693d005416c8deaf7964702e54}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa2f0f962a05eee1cba8f91c5daf31918}\label{component_2evsys_8h_aa2f0f962a05eee1cba8f91c5daf31918}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 1 User Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a160be8db199aa8d01be81aec0b945388}\label{component_2evsys_8h_a160be8db199aa8d01be81aec0b945388}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY1}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aa2f0f962a05eee1cba8f91c5daf31918}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_abbc0d5260a39f05dce0b925cb0de5341}\label{component_2evsys_8h_abbc0d5260a39f05dce0b925cb0de5341}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 2 User Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_adf01ad55dda5a1051f6b727ddf8febb3}\label{component_2evsys_8h_adf01ad55dda5a1051f6b727ddf8febb3}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY2}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_abbc0d5260a39f05dce0b925cb0de5341}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aadc4166c437dd04d3bbebda33e9c1b0e}\label{component_2evsys_8h_aadc4166c437dd04d3bbebda33e9c1b0e}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY3\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 3 User Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a768229bbe19fa55f5b415de981e8d38b}\label{component_2evsys_8h_a768229bbe19fa55f5b415de981e8d38b}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY3}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aadc4166c437dd04d3bbebda33e9c1b0e}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aceb6034b235b555a339b73d43f8cb131}\label{component_2evsys_8h_aceb6034b235b555a339b73d43f8cb131}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY4\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 4 User Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ab02e201ca0df582b917de4899f071e1e}\label{component_2evsys_8h_ab02e201ca0df582b917de4899f071e1e}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY4}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aceb6034b235b555a339b73d43f8cb131}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aaf955de97c5f6b558e914263bc2bf125}\label{component_2evsys_8h_aaf955de97c5f6b558e914263bc2bf125}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY5\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 5 User Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ab6f50a61d9c8ff0c18cf2d588e4b2258}\label{component_2evsys_8h_ab6f50a61d9c8ff0c18cf2d588e4b2258}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY5}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aaf955de97c5f6b558e914263bc2bf125}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_afaf5a0a89bdfed909362fda66cf0a3b0}\label{component_2evsys_8h_afaf5a0a89bdfed909362fda66cf0a3b0}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY6\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 6 User Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ad1c96f670d441653281e229a16bb5576}\label{component_2evsys_8h_ad1c96f670d441653281e229a16bb5576}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY6}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_afaf5a0a89bdfed909362fda66cf0a3b0}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a412f83381c36ad847c1a8d10ccd0f363}\label{component_2evsys_8h_a412f83381c36ad847c1a8d10ccd0f363}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY7\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 7 User Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a70feaef283d4de5dbfdfaed36c47892c}\label{component_2evsys_8h_a70feaef283d4de5dbfdfaed36c47892c}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY7}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a412f83381c36ad847c1a8d10ccd0f363}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a94f145b3b3e74ba31c684f04202e6777}\label{component_2evsys_8h_a94f145b3b3e74ba31c684f04202e6777}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel x User Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a16a09e90156c8447d3ed7f59699eb3c3}\label{component_2evsys_8h_a16a09e90156c8447d3ed7f59699eb3c3}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a94f145b3b3e74ba31c684f04202e6777}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a295c34f5c69a2b004da0dd64c3e47168}\label{component_2evsys_8h_a295c34f5c69a2b004da0dd64c3e47168}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY}(value)~((EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a94f145b3b3e74ba31c684f04202e6777}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+USRRDY\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a9a10f270ab54c11a0b74eddf263dd36b}\label{component_2evsys_8h_a9a10f270ab54c11a0b74eddf263dd36b}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY0\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 0 Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ac40089b08c0ecca849d9125b1461b6e3}\label{component_2evsys_8h_ac40089b08c0ecca849d9125b1461b6e3}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY0}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a9a10f270ab54c11a0b74eddf263dd36b}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a525f1cce8f409918f0229ecccfde8d8b}\label{component_2evsys_8h_a525f1cce8f409918f0229ecccfde8d8b}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY1\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 1 Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a75146bbc4e756d478c73b82f301b1065}\label{component_2evsys_8h_a75146bbc4e756d478c73b82f301b1065}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY1}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a525f1cce8f409918f0229ecccfde8d8b}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_af6e013b29b4cdd509eeac812ddaac8db}\label{component_2evsys_8h_af6e013b29b4cdd509eeac812ddaac8db}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY2\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 2 Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a769229e78c6ed587ba0b6a7ddf3c922d}\label{component_2evsys_8h_a769229e78c6ed587ba0b6a7ddf3c922d}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY2}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_af6e013b29b4cdd509eeac812ddaac8db}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a935d35297be2faecffa88d2576652a6a}\label{component_2evsys_8h_a935d35297be2faecffa88d2576652a6a}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY3\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 3 Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a7a293341b35e6f0cb93bcdc65b3bea66}\label{component_2evsys_8h_a7a293341b35e6f0cb93bcdc65b3bea66}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY3}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a935d35297be2faecffa88d2576652a6a}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_ac2c4d066bdf632191169cd4bf2e3b8b5}\label{component_2evsys_8h_ac2c4d066bdf632191169cd4bf2e3b8b5}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY4\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 4 Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa87367f1fc5e4868fefc5c6dc1020aeb}\label{component_2evsys_8h_aa87367f1fc5e4868fefc5c6dc1020aeb}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY4}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_ac2c4d066bdf632191169cd4bf2e3b8b5}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a4260435f6ac69aade5d5cd4d1ff0498a}\label{component_2evsys_8h_a4260435f6ac69aade5d5cd4d1ff0498a}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY5\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 5 Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_afee02c35d98647c534f7e1fd8934c5c0}\label{component_2evsys_8h_afee02c35d98647c534f7e1fd8934c5c0}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY5}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a4260435f6ac69aade5d5cd4d1ff0498a}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a46fea3af5eecb681dd02b5eac958e087}\label{component_2evsys_8h_a46fea3af5eecb681dd02b5eac958e087}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY6\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 6 Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a3d4679cc977aea78243efb0a1eac49e6}\label{component_2evsys_8h_a3d4679cc977aea78243efb0a1eac49e6}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY6}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a46fea3af5eecb681dd02b5eac958e087}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_add160959cc215f9816343ce458e9c828}\label{component_2evsys_8h_add160959cc215f9816343ce458e9c828}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY7\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel 7 Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_aec9c768e83d872b7df72557d7491f015}\label{component_2evsys_8h_aec9c768e83d872b7df72557d7491f015}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY7}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_add160959cc215f9816343ce458e9c828}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_af934c39253522ee2b09adf3b8a61ab8b}\label{component_2evsys_8h_af934c39253522ee2b09adf3b8a61ab8b}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) Channel x Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a7bce985535fe381445bb8a5cf1f2399b}\label{component_2evsys_8h_a7bce985535fe381445bb8a5cf1f2399b}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_af934c39253522ee2b09adf3b8a61ab8b}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a1ec9f87254248d2d1b4e567644d57c7f}\label{component_2evsys_8h_a1ec9f87254248d2d1b4e567644d57c7f}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY}(value)~((EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_af934c39253522ee2b09adf3b8a61ab8b}{EVSYS\+\_\+\+CHSTATUS\+\_\+\+CHBUSY\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a969f2d9810912d2f07fe47602660dd7f}\label{component_2evsys_8h_a969f2d9810912d2f07fe47602660dd7f}} 
+\#define {\bfseries EVSYS\+\_\+\+CHSTATUS\+\_\+\+MASK}~0x0000\+FFFFul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+CHSTATUS) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ad616904587ebe8e1c3fb07142e8db5fa}\label{component_2evsys_8h_ad616904587ebe8e1c3fb07142e8db5fa}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OFFSET}~0x10
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR offset) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_afb4ee0d51bdb48835ff631cb56a93534}\label{component_2evsys_8h_afb4ee0d51bdb48835ff631cb56a93534}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR reset\+\_\+value) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a7be1d8ec8ebd796f7a965b29b44256b3}\label{component_2evsys_8h_a7be1d8ec8ebd796f7a965b29b44256b3}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 0 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a63b54e0793df11848d1ec5595e934b92}\label{component_2evsys_8h_a63b54e0793df11848d1ec5595e934b92}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR0}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a7be1d8ec8ebd796f7a965b29b44256b3}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a0acf1039dffbb284b974ac3701124842}\label{component_2evsys_8h_a0acf1039dffbb284b974ac3701124842}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 1 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_afa933453bc8ec1c657467141d1d9ebe1}\label{component_2evsys_8h_afa933453bc8ec1c657467141d1d9ebe1}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR1}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a0acf1039dffbb284b974ac3701124842}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a44ebcf12fed04a93c6caf4d3c6261210}\label{component_2evsys_8h_a44ebcf12fed04a93c6caf4d3c6261210}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 2 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a884111ff37e53f0be9eef9467f2053b7}\label{component_2evsys_8h_a884111ff37e53f0be9eef9467f2053b7}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR2}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a44ebcf12fed04a93c6caf4d3c6261210}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa36c399686fdfdb7118d77edfa7e4343}\label{component_2evsys_8h_aa36c399686fdfdb7118d77edfa7e4343}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR3\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 3 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a3b8e7cdfd01c6f9c90a598049ea69200}\label{component_2evsys_8h_a3b8e7cdfd01c6f9c90a598049ea69200}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR3}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aa36c399686fdfdb7118d77edfa7e4343}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_ab04504d70fc1975108adf154d27f95b6}\label{component_2evsys_8h_ab04504d70fc1975108adf154d27f95b6}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR4\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 4 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_acac5bff7b8dee95f3f5e7f28abbcce9d}\label{component_2evsys_8h_acac5bff7b8dee95f3f5e7f28abbcce9d}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR4}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_ab04504d70fc1975108adf154d27f95b6}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a254adb8cc084fad93da103b2bbc1db5a}\label{component_2evsys_8h_a254adb8cc084fad93da103b2bbc1db5a}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR5\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 5 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a7859517868e8728bdb7a39e395e3d946}\label{component_2evsys_8h_a7859517868e8728bdb7a39e395e3d946}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR5}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a254adb8cc084fad93da103b2bbc1db5a}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a5c84ff7f07eec354cc4f519670112669}\label{component_2evsys_8h_a5c84ff7f07eec354cc4f519670112669}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR6\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 6 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a4ad42b4779754f5562ded76022296840}\label{component_2evsys_8h_a4ad42b4779754f5562ded76022296840}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR6}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a5c84ff7f07eec354cc4f519670112669}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_ac509056e9b76f2bf5cdc1968b2a079eb}\label{component_2evsys_8h_ac509056e9b76f2bf5cdc1968b2a079eb}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR7\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 7 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ab5b1bf3c8fc7666fb16065540607ac3e}\label{component_2evsys_8h_ab5b1bf3c8fc7666fb16065540607ac3e}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR7}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_ac509056e9b76f2bf5cdc1968b2a079eb}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_afee2a545114cf715716165d6590ac9cc}\label{component_2evsys_8h_afee2a545114cf715716165d6590ac9cc}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel x Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a8b07d636b3cc0fed1db4c969ca9eec79}\label{component_2evsys_8h_a8b07d636b3cc0fed1db4c969ca9eec79}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_afee2a545114cf715716165d6590ac9cc}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aac35c26da6b2d918540a611f6f3a2f65}\label{component_2evsys_8h_aac35c26da6b2d918540a611f6f3a2f65}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR}(value)~((EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_afee2a545114cf715716165d6590ac9cc}{EVSYS\+\_\+\+INTENCLR\+\_\+\+OVR\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a3ba80aa7fc515424670c352a69f6ffa7}\label{component_2evsys_8h_a3ba80aa7fc515424670c352a69f6ffa7}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD0\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 0 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_abafb6938bb647b456d9ab61686113d50}\label{component_2evsys_8h_abafb6938bb647b456d9ab61686113d50}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD0}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a3ba80aa7fc515424670c352a69f6ffa7}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_abd12d170f66f38972e54314834495117}\label{component_2evsys_8h_abd12d170f66f38972e54314834495117}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD1\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 1 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a459758c1f1e6bd8a40bab3d9caa23ec8}\label{component_2evsys_8h_a459758c1f1e6bd8a40bab3d9caa23ec8}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD1}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_abd12d170f66f38972e54314834495117}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a532eeca3a85b502003b28b968ac30625}\label{component_2evsys_8h_a532eeca3a85b502003b28b968ac30625}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD2\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 2 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_aca8fe60ce667ef8c386033913db0cdb6}\label{component_2evsys_8h_aca8fe60ce667ef8c386033913db0cdb6}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD2}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a532eeca3a85b502003b28b968ac30625}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a9b3a9f98637dea0c9a77145a85c39149}\label{component_2evsys_8h_a9b3a9f98637dea0c9a77145a85c39149}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD3\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 3 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a39b454990e99af899238a7d8c5ecf0dc}\label{component_2evsys_8h_a39b454990e99af899238a7d8c5ecf0dc}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD3}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a9b3a9f98637dea0c9a77145a85c39149}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa9392806c2095c093fdbbb794f7323fb}\label{component_2evsys_8h_aa9392806c2095c093fdbbb794f7323fb}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD4\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 4 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a6ee602e0f261dcd538b720d8538eb00d}\label{component_2evsys_8h_a6ee602e0f261dcd538b720d8538eb00d}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD4}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aa9392806c2095c093fdbbb794f7323fb}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a84b35cc35d452081d58c4b0e79dece64}\label{component_2evsys_8h_a84b35cc35d452081d58c4b0e79dece64}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD5\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 5 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a333cf0f44635a865d5bfc765aafde3ce}\label{component_2evsys_8h_a333cf0f44635a865d5bfc765aafde3ce}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD5}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a84b35cc35d452081d58c4b0e79dece64}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a1e548947abb6863da33c41d8128be55f}\label{component_2evsys_8h_a1e548947abb6863da33c41d8128be55f}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD6\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 6 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a18d08aa89acc3a148d96464cef76ac96}\label{component_2evsys_8h_a18d08aa89acc3a148d96464cef76ac96}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD6}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a1e548947abb6863da33c41d8128be55f}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a7a71b872d9ee655bc2bd65aa5c6bd3bf}\label{component_2evsys_8h_a7a71b872d9ee655bc2bd65aa5c6bd3bf}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD7\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel 7 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a27e577049bff237e112ae437e5785eed}\label{component_2evsys_8h_a27e577049bff237e112ae437e5785eed}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD7}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a7a71b872d9ee655bc2bd65aa5c6bd3bf}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a8a3e372d57cf13788515873930cf5657}\label{component_2evsys_8h_a8a3e372d57cf13788515873930cf5657}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) Channel x Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a8f32e9de4a9c91b99b05dfede7021443}\label{component_2evsys_8h_a8f32e9de4a9c91b99b05dfede7021443}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a8a3e372d57cf13788515873930cf5657}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a9f947ba090e6770f6dca2ab683801fe6}\label{component_2evsys_8h_a9f947ba090e6770f6dca2ab683801fe6}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD}(value)~((EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a8a3e372d57cf13788515873930cf5657}{EVSYS\+\_\+\+INTENCLR\+\_\+\+EVD\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a0f90179d426443f298e90124d610acb0}\label{component_2evsys_8h_a0f90179d426443f298e90124d610acb0}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENCLR\+\_\+\+MASK}~0x0000\+FFFFul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENCLR) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ae51b4653af060c3f6aa9f514bb919cf2}\label{component_2evsys_8h_ae51b4653af060c3f6aa9f514bb919cf2}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OFFSET}~0x14
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET offset) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a108d8e09cd1437cc360dd49572ed1ebb}\label{component_2evsys_8h_a108d8e09cd1437cc360dd49572ed1ebb}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET reset\+\_\+value) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a6671aab59c4ab79caeb81158f5a1f3e7}\label{component_2evsys_8h_a6671aab59c4ab79caeb81158f5a1f3e7}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 0 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a324eafbfabbeb3a0efe1d2c7ced044fa}\label{component_2evsys_8h_a324eafbfabbeb3a0efe1d2c7ced044fa}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR0}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a6671aab59c4ab79caeb81158f5a1f3e7}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a42f1c86051bd4a74bdfc3e72c3e41ea8}\label{component_2evsys_8h_a42f1c86051bd4a74bdfc3e72c3e41ea8}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 1 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a962e676b307c2f3d448eb597e9449fe3}\label{component_2evsys_8h_a962e676b307c2f3d448eb597e9449fe3}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR1}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a42f1c86051bd4a74bdfc3e72c3e41ea8}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a1c0eaf6dbfdeb7bc0f929d93425e5564}\label{component_2evsys_8h_a1c0eaf6dbfdeb7bc0f929d93425e5564}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 2 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a90de73ec250781f6cd4e2dffd618d15e}\label{component_2evsys_8h_a90de73ec250781f6cd4e2dffd618d15e}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR2}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a1c0eaf6dbfdeb7bc0f929d93425e5564}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a476cf4fce873b97960504c8cdfa80ae6}\label{component_2evsys_8h_a476cf4fce873b97960504c8cdfa80ae6}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR3\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 3 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a0dc207f3ff8cf67804325f6142ec57ee}\label{component_2evsys_8h_a0dc207f3ff8cf67804325f6142ec57ee}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR3}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a476cf4fce873b97960504c8cdfa80ae6}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a7f7bf8a4770595a7d248a6126f468786}\label{component_2evsys_8h_a7f7bf8a4770595a7d248a6126f468786}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR4\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 4 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_aac1a30ed9aee37a09be4aef395a3a5d7}\label{component_2evsys_8h_aac1a30ed9aee37a09be4aef395a3a5d7}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR4}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a7f7bf8a4770595a7d248a6126f468786}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a2a031d969e330e22997d1d3f047712a1}\label{component_2evsys_8h_a2a031d969e330e22997d1d3f047712a1}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR5\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 5 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a9607a4eed7d8af129689fb05ce9c4145}\label{component_2evsys_8h_a9607a4eed7d8af129689fb05ce9c4145}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR5}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a2a031d969e330e22997d1d3f047712a1}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a66e3a907b86b2064be2500c8c4aa930c}\label{component_2evsys_8h_a66e3a907b86b2064be2500c8c4aa930c}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR6\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 6 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a35fb3da4f43283d71d300af74915f743}\label{component_2evsys_8h_a35fb3da4f43283d71d300af74915f743}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR6}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a66e3a907b86b2064be2500c8c4aa930c}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a38cd3956f4c2d97e253fc2c9a642af0c}\label{component_2evsys_8h_a38cd3956f4c2d97e253fc2c9a642af0c}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR7\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 7 Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a673a878b469b02ad1e42b1319da85847}\label{component_2evsys_8h_a673a878b469b02ad1e42b1319da85847}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR7}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a38cd3956f4c2d97e253fc2c9a642af0c}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a87a2da8753cbf8b7545463efe086c151}\label{component_2evsys_8h_a87a2da8753cbf8b7545463efe086c151}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel x Overrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_afd9341f5c3e530d9af9966a0cf3b45cc}\label{component_2evsys_8h_afd9341f5c3e530d9af9966a0cf3b45cc}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a87a2da8753cbf8b7545463efe086c151}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa6612d679314c8fcf41fb3a7f793031d}\label{component_2evsys_8h_aa6612d679314c8fcf41fb3a7f793031d}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+OVR}(value)~((EVSYS\+\_\+\+INTENSET\+\_\+\+OVR\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a87a2da8753cbf8b7545463efe086c151}{EVSYS\+\_\+\+INTENSET\+\_\+\+OVR\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_ad61d449e1f09d89bd4db5373fca2cb30}\label{component_2evsys_8h_ad61d449e1f09d89bd4db5373fca2cb30}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD0\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 0 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a5a54e6d332361e7e133a7364567aa7a4}\label{component_2evsys_8h_a5a54e6d332361e7e133a7364567aa7a4}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD0}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_ad61d449e1f09d89bd4db5373fca2cb30}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_abaca0b14a0b1949b6acb32247e38f17a}\label{component_2evsys_8h_abaca0b14a0b1949b6acb32247e38f17a}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD1\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 1 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_abd0bc82c58d14462b12c420c5b4a16de}\label{component_2evsys_8h_abd0bc82c58d14462b12c420c5b4a16de}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD1}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_abaca0b14a0b1949b6acb32247e38f17a}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a542144111fbc105d0a6e2d704883c063}\label{component_2evsys_8h_a542144111fbc105d0a6e2d704883c063}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD2\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 2 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a953e215ddeef90d2629f5f5e413d1690}\label{component_2evsys_8h_a953e215ddeef90d2629f5f5e413d1690}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD2}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a542144111fbc105d0a6e2d704883c063}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aac9b840fb3abe73c95259560b1034777}\label{component_2evsys_8h_aac9b840fb3abe73c95259560b1034777}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD3\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 3 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ac9af2c154daf657c25d036857a71fa71}\label{component_2evsys_8h_ac9af2c154daf657c25d036857a71fa71}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD3}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aac9b840fb3abe73c95259560b1034777}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa3e3da85d4913721625700090e5755aa}\label{component_2evsys_8h_aa3e3da85d4913721625700090e5755aa}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD4\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 4 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a780d95e235193442f64eb7a607097d1c}\label{component_2evsys_8h_a780d95e235193442f64eb7a607097d1c}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD4}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aa3e3da85d4913721625700090e5755aa}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a42062ac94bf286d862f9d7f979032380}\label{component_2evsys_8h_a42062ac94bf286d862f9d7f979032380}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD5\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 5 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ab3b2300602dd862366cef7a2bcfce2f7}\label{component_2evsys_8h_ab3b2300602dd862366cef7a2bcfce2f7}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD5}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a42062ac94bf286d862f9d7f979032380}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a74bcfeecac2b6a63942c70384bbf93c9}\label{component_2evsys_8h_a74bcfeecac2b6a63942c70384bbf93c9}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD6\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 6 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a5ba66c728a065f72b41a00d46072543c}\label{component_2evsys_8h_a5ba66c728a065f72b41a00d46072543c}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD6}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a74bcfeecac2b6a63942c70384bbf93c9}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a6e76acb48a65a547fd7cdd6190b4dd37}\label{component_2evsys_8h_a6e76acb48a65a547fd7cdd6190b4dd37}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD7\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel 7 Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_afda5b44a342446c9f4d74f59cdb44818}\label{component_2evsys_8h_afda5b44a342446c9f4d74f59cdb44818}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD7}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a6e76acb48a65a547fd7cdd6190b4dd37}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a0b9e0e6564aadc19f81955941877a3a7}\label{component_2evsys_8h_a0b9e0e6564aadc19f81955941877a3a7}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) Channel x Event Detection Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ae62892a13725d99783475ce3b4bfb043}\label{component_2evsys_8h_ae62892a13725d99783475ce3b4bfb043}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a0b9e0e6564aadc19f81955941877a3a7}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a0830117798f7624f0e050988614b0bf9}\label{component_2evsys_8h_a0830117798f7624f0e050988614b0bf9}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+EVD}(value)~((EVSYS\+\_\+\+INTENSET\+\_\+\+EVD\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a0b9e0e6564aadc19f81955941877a3a7}{EVSYS\+\_\+\+INTENSET\+\_\+\+EVD\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a3703385b0ca9ffba38ace09ea09cca2c}\label{component_2evsys_8h_a3703385b0ca9ffba38ace09ea09cca2c}} 
+\#define {\bfseries EVSYS\+\_\+\+INTENSET\+\_\+\+MASK}~0x0000\+FFFFul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTENSET) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ab538bb1832d35f863db2f03f217e7446}\label{component_2evsys_8h_ab538bb1832d35f863db2f03f217e7446}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OFFSET}~0x18
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG offset) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a998535a4c267df3a8bf7abbc2749fc8b}\label{component_2evsys_8h_a998535a4c267df3a8bf7abbc2749fc8b}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG reset\+\_\+value) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_ab75b21387d046ad691547df25609c238}\label{component_2evsys_8h_ab75b21387d046ad691547df25609c238}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 0 Overrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a8acf6fc18b2c25d9486ff64bdec294ba}\label{component_2evsys_8h_a8acf6fc18b2c25d9486ff64bdec294ba}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR0}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_ab75b21387d046ad691547df25609c238}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a49ebe295e782e28a7ac0e5eed1a7da33}\label{component_2evsys_8h_a49ebe295e782e28a7ac0e5eed1a7da33}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 1 Overrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a9f3fba1ba61484c1fe264514ba7bf901}\label{component_2evsys_8h_a9f3fba1ba61484c1fe264514ba7bf901}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR1}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a49ebe295e782e28a7ac0e5eed1a7da33}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a2f068982e90e4b6e331591b488da07a0}\label{component_2evsys_8h_a2f068982e90e4b6e331591b488da07a0}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 2 Overrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa366c617f3bba83319dcda712edcca2f}\label{component_2evsys_8h_aa366c617f3bba83319dcda712edcca2f}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR2}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a2f068982e90e4b6e331591b488da07a0}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aed357abedf732af9a5a4d1085f061f68}\label{component_2evsys_8h_aed357abedf732af9a5a4d1085f061f68}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR3\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 3 Overrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_aeb1dd5f9f37881ebbd1232ed722d35e1}\label{component_2evsys_8h_aeb1dd5f9f37881ebbd1232ed722d35e1}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR3}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aed357abedf732af9a5a4d1085f061f68}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a2162e5fe2433855fd02adf4ba780b521}\label{component_2evsys_8h_a2162e5fe2433855fd02adf4ba780b521}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR4\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 4 Overrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a2b520837a0247599997bef38dfc1b2aa}\label{component_2evsys_8h_a2b520837a0247599997bef38dfc1b2aa}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR4}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a2162e5fe2433855fd02adf4ba780b521}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a5ed80049fc3d2faccd7419f1658475a9}\label{component_2evsys_8h_a5ed80049fc3d2faccd7419f1658475a9}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR5\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 5 Overrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_acb74a5e1e9f8302f4d303c85508c5948}\label{component_2evsys_8h_acb74a5e1e9f8302f4d303c85508c5948}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR5}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a5ed80049fc3d2faccd7419f1658475a9}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a53cf2fd2b08340e39f38eb02a7288668}\label{component_2evsys_8h_a53cf2fd2b08340e39f38eb02a7288668}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR6\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 6 Overrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a0faaf1c88dcb9199d1bb3411ab35416d}\label{component_2evsys_8h_a0faaf1c88dcb9199d1bb3411ab35416d}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR6}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a53cf2fd2b08340e39f38eb02a7288668}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a2cbfa2ba1dda7056d9ee7ec9692f1089}\label{component_2evsys_8h_a2cbfa2ba1dda7056d9ee7ec9692f1089}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR7\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 7 Overrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a07249e5cf762ecae5aa8825109cf4f5b}\label{component_2evsys_8h_a07249e5cf762ecae5aa8825109cf4f5b}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR7}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a2cbfa2ba1dda7056d9ee7ec9692f1089}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a330504a44a29458d9dd09c5ee73ba6d5}\label{component_2evsys_8h_a330504a44a29458d9dd09c5ee73ba6d5}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel x Overrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a43cc56ec4337aadbae27fb0b27af7c28}\label{component_2evsys_8h_a43cc56ec4337aadbae27fb0b27af7c28}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a330504a44a29458d9dd09c5ee73ba6d5}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a6b5673b5cc82c6c4acf5e000330e8860}\label{component_2evsys_8h_a6b5673b5cc82c6c4acf5e000330e8860}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR}(value)~((EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a330504a44a29458d9dd09c5ee73ba6d5}{EVSYS\+\_\+\+INTFLAG\+\_\+\+OVR\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a5ba2bc5e488e7679e076988520eeaf7f}\label{component_2evsys_8h_a5ba2bc5e488e7679e076988520eeaf7f}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD0\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 0 Event Detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_acde3836bcd52db578be66afd8084afbe}\label{component_2evsys_8h_acde3836bcd52db578be66afd8084afbe}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD0}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a5ba2bc5e488e7679e076988520eeaf7f}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a6ccad0fbd29790dec58a8fceb626e960}\label{component_2evsys_8h_a6ccad0fbd29790dec58a8fceb626e960}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD1\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 1 Event Detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a1345a0e8aced561748c68d33b2abb3f1}\label{component_2evsys_8h_a1345a0e8aced561748c68d33b2abb3f1}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD1}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a6ccad0fbd29790dec58a8fceb626e960}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a164a8897789d4a1fd4794b5fadf3dddc}\label{component_2evsys_8h_a164a8897789d4a1fd4794b5fadf3dddc}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD2\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 2 Event Detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a6df9284235ddf3644fb9b03a80f04c31}\label{component_2evsys_8h_a6df9284235ddf3644fb9b03a80f04c31}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD2}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a164a8897789d4a1fd4794b5fadf3dddc}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_acd935ce4e2aa96ac822118c7f1f1575d}\label{component_2evsys_8h_acd935ce4e2aa96ac822118c7f1f1575d}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD3\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 3 Event Detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_abfe3d79294684eb3f85d5807f016791f}\label{component_2evsys_8h_abfe3d79294684eb3f85d5807f016791f}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD3}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_acd935ce4e2aa96ac822118c7f1f1575d}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a9b521a6adbb5c67bd0dc64d43785fd92}\label{component_2evsys_8h_a9b521a6adbb5c67bd0dc64d43785fd92}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD4\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 4 Event Detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a12635ab3aa48e2937829ebfb573d789f}\label{component_2evsys_8h_a12635ab3aa48e2937829ebfb573d789f}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD4}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a9b521a6adbb5c67bd0dc64d43785fd92}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a87a15b7d456cac19fdf4851d04d12d56}\label{component_2evsys_8h_a87a15b7d456cac19fdf4851d04d12d56}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD5\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 5 Event Detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a49b14643a55774ef1e4d5688b9fd1088}\label{component_2evsys_8h_a49b14643a55774ef1e4d5688b9fd1088}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD5}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a87a15b7d456cac19fdf4851d04d12d56}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_aa3f1e6ade11523e9a2ae08c935ea568c}\label{component_2evsys_8h_aa3f1e6ade11523e9a2ae08c935ea568c}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD6\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 6 Event Detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a753d3e9cc7f522109943abac89d6790d}\label{component_2evsys_8h_a753d3e9cc7f522109943abac89d6790d}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD6}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_aa3f1e6ade11523e9a2ae08c935ea568c}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a4392f9923f60ac3c409014f5fe3c92f3}\label{component_2evsys_8h_a4392f9923f60ac3c409014f5fe3c92f3}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD7\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel 7 Event Detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a632f31048fbcd79e68888fd97ba3a387}\label{component_2evsys_8h_a632f31048fbcd79e68888fd97ba3a387}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD7}~(1 $<$$<$ \mbox{\hyperlink{component_2evsys_8h_a4392f9923f60ac3c409014f5fe3c92f3}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_ae8a2e87ffe71f1959939d93c6a876295}\label{component_2evsys_8h_ae8a2e87ffe71f1959939d93c6a876295}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) Channel x Event Detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2evsys_8h_a0ad36606c2ebef2555d4c1a637e66d19}\label{component_2evsys_8h_a0ad36606c2ebef2555d4c1a637e66d19}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2evsys_8h_ae8a2e87ffe71f1959939d93c6a876295}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a10f6afa1e4c633ed9308589e272d24e0}\label{component_2evsys_8h_a10f6afa1e4c633ed9308589e272d24e0}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD}(value)~((EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2evsys_8h_ae8a2e87ffe71f1959939d93c6a876295}{EVSYS\+\_\+\+INTFLAG\+\_\+\+EVD\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2evsys_8h_a817c0835938b74b56a77b1d8fd230007}\label{component_2evsys_8h_a817c0835938b74b56a77b1d8fd230007}} 
+\#define {\bfseries EVSYS\+\_\+\+INTFLAG\+\_\+\+MASK}~0x0000\+FFFFul
+\begin{DoxyCompactList}\small\item\em (EVSYS\+\_\+\+INTFLAG) MASK Register \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component description for EVSYS. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

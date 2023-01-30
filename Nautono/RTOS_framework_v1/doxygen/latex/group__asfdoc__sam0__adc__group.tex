@@ -1,0 +1,1109 @@
+\hypertarget{group__asfdoc__sam0__adc__group}{}\doxysection{SAM Analog-\/to-\/\+Digital Converter (ADC) Driver}
+\label{group__asfdoc__sam0__adc__group}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structadc__window__config}{adc\+\_\+window\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Window monitor configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__events}{adc\+\_\+events}}
+\begin{DoxyCompactList}\small\item\em ADC event enable/disable structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__correction__config}{adc\+\_\+correction\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Gain and offset correction configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__pin__scan__config}{adc\+\_\+pin\+\_\+scan\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Pin scan configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em ADC configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}}
+\begin{DoxyCompactList}\small\item\em ADC software device instance structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga91b0f997d73739cf9f7349b7581e1f56}{adc\+\_\+reference}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56acf1c624e7e18cb56f5bcb3e1e0b6642c}{ADC\+\_\+\+REFERENCE\+\_\+\+INT1V}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+INT1V
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56afb4c0d6bd2b6e02be571b51186b45683}{ADC\+\_\+\+REFERENCE\+\_\+\+INTVCC0}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+INTVCC0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56ad03999dc2effdd29bbfed7251f067b36}{ADC\+\_\+\+REFERENCE\+\_\+\+INTVCC1}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+INTVCC1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56ae021ea92c76141620c6b4ce85cb778e8}{ADC\+\_\+\+REFERENCE\+\_\+\+AREFA}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+AREFA
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56a66806ebbfdfd8e09998bc614c517c3f1}{ADC\+\_\+\+REFERENCE\+\_\+\+AREFB}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+AREFB
+ \}
+\begin{DoxyCompactList}\small\item\em ADC reference voltage enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5aea9abd2ca3e570987d4ee7b8d2ece5}{adc\+\_\+clock\+\_\+prescaler}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a6e875ef2cd6f5c6f9fd78bcd6627949e}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV4}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5aa7e0a326cc7d097b591d5d56157c1c13}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV8}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV8
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a550ecabab995374de5b826ebcc954e5c}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV16}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV16
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5af3cb664768de192aebe534bfb3b94fb1}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV32}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV32
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a014e287d3f1de1b3bdb495780e7633f0}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV64}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV64
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a1dd0cb330bd44342705a596ac11390ab}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV128}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV128
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5ac2dde6d469371d78c2ef907666aeccad}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV256}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV256
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5aa85903a04f1a1f6d746e9b38126a275b}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV512}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV512
+ \}
+\begin{DoxyCompactList}\small\item\em ADC clock prescaler enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga14f1a9a4dda5ef84b87ca7a76b0c91b6}{adc\+\_\+resolution}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ac002266035b9c3a14762154237da8e87}{ADC\+\_\+\+RESOLUTION\+\_\+12\+BIT}} = ADC\+\_\+\+CTRLB\+\_\+\+RESSEL\+\_\+12\+BIT
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a5c3c11dff8c5b740d209faac34047aeb}{ADC\+\_\+\+RESOLUTION\+\_\+16\+BIT}} = ADC\+\_\+\+CTRLB\+\_\+\+RESSEL\+\_\+16\+BIT
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ab625f9c689590bb0776d235da84a482f}{ADC\+\_\+\+RESOLUTION\+\_\+10\+BIT}} = ADC\+\_\+\+CTRLB\+\_\+\+RESSEL\+\_\+10\+BIT
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a86ea19f1e19e119fff18a7fcfee4197e}{ADC\+\_\+\+RESOLUTION\+\_\+8\+BIT}} = ADC\+\_\+\+CTRLB\+\_\+\+RESSEL\+\_\+8\+BIT
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a48a9c78f8d7f1a20298a9e5e3619548a}{ADC\+\_\+\+RESOLUTION\+\_\+13\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ac111802c80856797d5defaf470219f8e}{ADC\+\_\+\+RESOLUTION\+\_\+14\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a686d7d04459f73bd50326aaaa54dd8f8}{ADC\+\_\+\+RESOLUTION\+\_\+15\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a7f9551aaba02ea51450bbc2bfdf61ab1}{ADC\+\_\+\+RESOLUTION\+\_\+\+CUSTOM}}
+ \}
+\begin{DoxyCompactList}\small\item\em ADC resolution enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}{adc\+\_\+window\+\_\+mode}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743af3e39b4c9be38f1f0a6ecf75c1ea8cbe}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+DISABLE}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+DISABLE
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a1cc02d311670c608fb3f94d66d69d6e5}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+ABOVE\+\_\+\+LOWER}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+MODE1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a9f48dc13719c9e63b8bc02274338760e}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+BELOW\+\_\+\+UPPER}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+MODE2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a37bd3416d9e48464a35fef1acf7d223a}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+BETWEEN}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+MODE3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a33864e0b72c9d2e984bfaf0dd51a684c}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+BETWEEN\+\_\+\+INVERTED}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+MODE4
+ \}
+\begin{DoxyCompactList}\small\item\em ADC window monitor mode enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gad0058beaf7a14f02aa55ef8db9b966c3}{adc\+\_\+gain\+\_\+factor}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3af569c2a1b7125d592b89bcc7b4b8962f}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+1X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+1X
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3ae50ac8d79cd35f3cfdf60c9530d3d167}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+2X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+2X
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3a3a1dc496142f4d763210e3d9835cad4d}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+4X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+4X
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3ab2ffc2d2c43434789e2bf644e62bbb75}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+8X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+8X
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3a3c36ae74026c9ecb565bc9e945c034f1}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+16X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+16X
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3acdbe91c385a50189186f891dd2b77330}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+\+DIV2}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+\+DIV2
+ \}
+\begin{DoxyCompactList}\small\item\em ADC gain factor selection enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gae861d175edda2f67644f6dd042cb7c57}{adc\+\_\+event\+\_\+action}} \{ \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a85909538fe55b349d66682bddf65679f}{ADC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+DISABLED}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a6bf50dcd3ae57b8088a303ee20c2c7d2}{ADC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+FLUSH\+\_\+\+START\+\_\+\+CONV}} = ADC\+\_\+\+EVCTRL\+\_\+\+SYNCEI
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a372cec0abf928ab983ff75af0e7b8b73}{ADC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+START\+\_\+\+CONV}} = ADC\+\_\+\+EVCTRL\+\_\+\+STARTEI
+ \}
+\begin{DoxyCompactList}\small\item\em ADC event action enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga7df963d2d3118abe65841e0886764002}{adc\+\_\+positive\+\_\+input}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a48ca725380527e4fae4a8655337d9834}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN0}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002ac32e1773e96d0eef0834cc6c9df28268}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN1}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002abd22e1691be1f7e4213f79ff4a0e972b}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN2}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a575a332342f949396458fb2e3728b93d}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN3}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a9232638ffa14ea886e0725ef2d8a9362}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN4}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a69f21ecc292a9507885b0d2a160cb882}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN5}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN5
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002aca6cb50cbb52d64119547836f3fd844a}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN6}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN6
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002af1c35b22dba6c695f09821a937bb1580}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN7}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN7
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a50315b885f4d5dc5b853feb2d7ed09b7}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN8}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN8
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a7e451831b5865fbeeda2b438ca5c7023}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN9}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN9
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a750b7a61c6013814eb47bdb19f9df796}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN10}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN10
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002add576b1cb9a899a3cb021fa1bdeb6342}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN11}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN11
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a05e3f55cc7fc6e99c075a9b9465a67c9}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN12}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN12
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a3f4290e5e16d67dee8dd3483b752c248}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN13}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN13
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a2997bb9560e17eda218d6dcf625b60c8}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN14}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN14
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a34d8a94ec9e08d7af32c5ef2891f84b0}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN15}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN15
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002afa2f0f5bee2b6590a3305d0ce24bfa92}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN16}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN16
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002acfc0ef01ed95677c6479c6df7b9c0a52}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN17}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN17
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a877deeff49a2b4161452e3742729b965}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN18}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN18
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002adbe62b64b5b98925b5928e297d745198}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN19}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN19
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002adabcff6e8428f83e81ea2135e7ae53b9}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+TEMP}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+TEMP
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a3adf00b1f4ec3ca1c1d66665330093c4}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+BANDGAP}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+BANDGAP
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a2070a5cb0deeeefdede1c288149923de}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+SCALEDCOREVCC}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+SCALEDCOREVCC
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002af0c348dffc31707de467f01292217db9}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+SCALEDIOVCC}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+SCALEDIOVCC
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a567a2aaf94710eebb553aed8ec7a21ad}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+DAC}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+DAC
+ \}
+\begin{DoxyCompactList}\small\item\em ADC positive MUX input selection enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga843290f150383271ef2ed82792d76e81}{adc\+\_\+negative\+\_\+input}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81aee4369641b2ea0ca47374c644e34f07a}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN0}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a764ee2f799492bc808044e9cb35ed2cc}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN1}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81aec5d2c08d5fe6b417f029dcae1d64908}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN2}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a69374c04bc5d4207eff2e39abbdea2bc}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN3}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a7bbe03a4f4fdf46a1604134749b7734f}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN4}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81af761f928cc2cfd5218b25b26f7efe506}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN5}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN5
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a2aff0e5765101dbaee7bb5cdb871195f}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN6}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN6
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81ab7fd0b3e2c427146c9beed5495710503}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN7}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN7
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a00c49e7f6fd08611c5cb18eefd1603f9}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+GND}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+GND
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a6d9dc39cbf8f78b74be8c6b32bdd2ed5}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+IOGND}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+IOGND
+ \}
+\begin{DoxyCompactList}\small\item\em ADC negative Multiplexer(\+MUX) input selection enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga56aaaff7d846dd74b6818bdb16959ac0}{adc\+\_\+accumulate\+\_\+samples}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0ada13ab8ecb96ae0543db2fb3e4679403}{ADC\+\_\+\+ACCUMULATE\+\_\+\+DISABLE}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a0c1618c11e39fbd427bae4ec3e0886e4}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+2}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a944070f42200b70ff2fadf858c7414e5}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+4}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a676140b814df640bc8a4b2a17a455f7c}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+8}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+8
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a705bad5f9182d37190f428b00ae31b00}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+16}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+16
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a9b669122d8ffb253360e37261f0e411e}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+32}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+32
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0af0f2d7843ec92a9df10ef5f2fb195336}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+64}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+64
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a6285100fc4e3593de6bc737b9f873cbb}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+128}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+128
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a31eed8d56d7310069c21382c64db0127}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+256}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+256
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0aae5806c1db5f61c355244c0b89d6fdcc}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+512}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+512
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a2f8ab1615b05347b1dc606faddac757e}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+1024}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+1024
+ \}
+\begin{DoxyCompactList}\small\item\em ADC number of accumulated samples enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga00f645151edbf08c7d90d8beb9b8b217}{adc\+\_\+divide\+\_\+result}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217af61a5897c77571bad72f678fb0ccfec5}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+\+DISABLE}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a71406f1247479b52ac0cd4784dcbcb42}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+2}} = 1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a72abaf9d060435661e96c05a6efc19d5}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+4}} = 2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aac2528e93c2da89e5ae830c8c3241636}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+8}} = 3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aeb8d09107d36ee2442f7509cd8a8a256}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+16}} = 4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a6b79da965ae9b1820d64ba57c38b34a8}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+32}} = 5
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aa0e348b5dbff085674b10d61f910302e}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+64}} = 6
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aca99c11e38fc96d9538bfdd03515f6b3}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+128}} = 7
+ \}
+\begin{DoxyCompactList}\small\item\em ADC possible dividers for the result register. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga3f29e25af83669caf0d3d9d515c9b03b}{adc\+\_\+oversampling\+\_\+and\+\_\+decimation}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba2332ce4791a500f1f15bdfd5e7184e5b}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+\+DISABLE}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba571bfd1207d0eb0486fe555aedf2e8a5}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+1\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03baa6a03f5858c3267fdc01f28450995ab2}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+2\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba0325abc8f8d717878d86a20cf70ebee6}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+3\+BIT}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03baec92375375637c40812d4e0a54a9ab16}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+4\+BIT}}
+ \}
+\begin{DoxyCompactList}\small\item\em ADC oversampling and decimation enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\+\_\+job\+\_\+type}} \{ \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga9cdf4e56baa3aae29eee83b34a1ba4a1a8d590b10162af148e094a1a8d0c893d6}{ADC\+\_\+\+JOB\+\_\+\+READ\+\_\+\+BUFFER}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gaf42cbc993d00932d35f45bb10b0f3bc4}\label{group__asfdoc__sam0__adc__group_gaf42cbc993d00932d35f45bb10b0f3bc4}} 
+uint8\+\_\+t {\bfseries \+\_\+adc\+\_\+get\+\_\+inst\+\_\+index} (\mbox{\hyperlink{struct_adc}{Adc}} $\ast$const hw)
+\end{DoxyCompactItemize}
+\doxysubsection*{Driver Initialization and Configuration}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga09de1dc91d7b101349d0577a306b762e}{adc\+\_\+init}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module\+\_\+inst, \mbox{\hyperlink{struct_adc}{Adc}} $\ast$hw, struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Initializes the ADC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5a5650a331819833c7a27309c131c55d}{adc\+\_\+get\+\_\+config\+\_\+defaults}} (struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes an ADC configuration structure to defaults. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Runtime Changes of ADC Module}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga84ff86341c2e0d1a267b8dc54cb807ad}{adc\+\_\+set\+\_\+window\+\_\+mode}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module\+\_\+inst, const enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}{adc\+\_\+window\+\_\+mode}} window\+\_\+mode, const int16\+\_\+t window\+\_\+lower\+\_\+value, const int16\+\_\+t window\+\_\+upper\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Sets the ADC window mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Callback Management}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gaab93edab589a1c691b29a78b56677f21}{adc\+\_\+register\+\_\+callback}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module, adc\+\_\+callback\+\_\+t callback\+\_\+func, enum adc\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Registers a callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga031decc62aad224eb1a7d7f00546b81e}{adc\+\_\+unregister\+\_\+callback}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$module, enum adc\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Unregisters a callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Job Management}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga2d4ba18d202501347f1a3faf6f9af4ec}{adc\+\_\+read\+\_\+buffer\+\_\+job}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module\+\_\+inst, uint16\+\_\+t $\ast$buffer, uint16\+\_\+t samples)
+\begin{DoxyCompactList}\small\item\em Read multiple samples from ADC. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga716c29c07b7c100001fc277ab0180045}{adc\+\_\+get\+\_\+job\+\_\+status}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$module\+\_\+inst, enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\+\_\+job\+\_\+type}} type)
+\begin{DoxyCompactList}\small\item\em Gets the status of a job. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga21a885bc264d8dc9d35e2fb2ae5bb9ac}{adc\+\_\+abort\+\_\+job}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$module\+\_\+inst, enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\+\_\+job\+\_\+type}} type)
+\begin{DoxyCompactList}\small\item\em Aborts an ongoing job. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Module Status Flags}
+ADC status flags, returned by adc\+\_\+get\+\_\+status() and cleared by adc\+\_\+clear\+\_\+status(). \begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gac25e444bb2e1cb312bedf72d2d6ed8e5}{ADC\+\_\+\+STATUS\+\_\+\+RESULT\+\_\+\+READY}}~(1UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gab1e9bae12e573bd6389051adca1a6db9}{ADC\+\_\+\+STATUS\+\_\+\+WINDOW}}~(1UL $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9e05a7398afafa9344c780a0a0e7be9a}{ADC\+\_\+\+STATUS\+\_\+\+OVERRUN}}~(1UL $<$$<$ 2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of the device\textquotesingle{}s Analog-\/to-\/\+Digital Converter functionality, for the conversion of analog voltages into a corresponding digital form. The following driver Application Programming Interface (API) modes are covered by this manual\+:
+\begin{DoxyItemize}
+\item Polled APIs 
+\end{DoxyItemize}
+
+The following peripheral is used by this module\+:
+\begin{DoxyItemize}
+\item ADC (Analog-\/to-\/\+Digital Converter)
+\end{DoxyItemize}
+
+The following devices can use this module\+: 
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D09/\+D10/\+D11
+\item Atmel $\vert$ SMART SAM DA1
+\item Atmel $\vert$ SMART SAM HA1 
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_extra_info}{Extra Information}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_prerequisites}
+There are no prerequisites for this module.\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview}
+This driver provides an interface for the Analog-\/to-\/\+Digital conversion functions on the device, to convert analog voltages to a corresponding digital value. The ADC has up to 12-\/bit resolution, and is capable of  converting up to 500K samples per second (KSPS). 
+
+The ADC has a compare function for accurate monitoring of user defined thresholds with minimum software intervention required. The ADC may be configured for 8-\/, 10-\/, or 12-\/bit result, reducing the conversion time. ADC conversion results are provided left or right adjusted which eases calculation when the result is represented as a signed integer.
+
+The input selection is flexible, and both single-\/ended and differential measurements can be made. For differential measurements, an optional gain stage is available to increase the dynamic range. In addition, several internal signal inputs are available. The ADC can provide both signed and unsigned results.
+
+The ADC measurements can either be started by application software or an incoming event from another peripheral in the device, and both internal and external reference voltages can be selected.
+
+\begin{DoxyNote}{Note}
+Internal references will be enabled by the driver, but not disabled. Any reference not used by the application should be disabled by the application.
+\end{DoxyNote}
+A simplified block diagram of the ADC can be seen in \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_block_diagram}{the figure below}}.
+
+\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_block_diagram}%
+\Hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_block_diagram}%
+\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_prescaler}{}\doxysubsubsection{Sample Clock Prescaler}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_prescaler}
+The ADC features a prescaler, which enables conversion at lower clock rates than the input Generic Clock to the ADC module. This feature can be used to lower the synchronization time of the digital interface to the ADC module via a high speed Generic Clock frequency, while still allowing the ADC sampling rate to be reduced.\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_resolution}{}\doxysubsubsection{ADC Resolution}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_resolution}
+The ADC supports full 8-\/, 10-\/, or 12-\/bit resolution. Hardware oversampling and decimation can be used to increase the effective resolution at the expense of throughput. Using oversampling and decimation mode the ADC resolution is increased from 12-\/bit to an effective 13-\/, 14-\/, 15-\/, or 16-\/bit. In these modes the conversion rate is reduced, as a greater number of samples is used to achieve the increased resolution. The available resolutions and effective conversion rate is listed in \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_conversion_rate}{the table below}}.
+
+\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_conversion_rate}%
+\Hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_conversion_rate}%
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Effective ADC Conversion Speed Using Oversampling}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Resolution }&\cellcolor{\tableheadbgcolor}\textbf{ Effective conversion rate  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Resolution }&\cellcolor{\tableheadbgcolor}\textbf{ Effective conversion rate  }\\\cline{1-2}
+\endhead
+13-\/bit &Conversion rate divided by 4  \\\cline{1-2}
+14-\/bit &Conversion rate divided by 16  \\\cline{1-2}
+15-\/bit &Conversion rate divided by 64  \\\cline{1-2}
+16-\/bit &Conversion rate divided by 256  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_conversion}{}\doxysubsubsection{Conversion Modes}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_conversion}
+ADC conversions can be software triggered on demand by the user application, if continuous sampling is not required. It is also possible to configure the ADC in free running mode, where new conversions are started as soon as the previous conversion is completed, or configure the ADC to scan across a number of input pins (see \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_pin_scan}{Pin Scan}}).\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_diff_mode}{}\doxysubsubsection{Differential and Single-\/ended Conversion}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_diff_mode}
+The ADC has two conversion modes; differential and single-\/ended. When measuring signals where the positive input pin is always at a higher voltage than the negative input pin, the single-\/ended conversion mode should be used in order to achieve a full 12-\/bit output resolution.
+
+If however the positive input pin voltage may drop below the negative input pin the signed differential mode should be used.\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_sample_time}{}\doxysubsubsection{Sample Time}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_sample_time}
+The sample time for each ADC conversion is configurable as a number of half prescaled ADC clock cycles (depending on the prescaler value), allowing the user application to achieve faster or slower sampling depending on the source impedance of the ADC input channels. For applications with high impedance inputs the sample time can be increased to give the ADC an adequate time to sample and convert the input channel.
+
+The resulting sampling time is given by the following equation\+:  \[
+t_{SAMPLE} = (sample\_length+1) \times \frac{ADC_{CLK}} {2}
+\]\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_averaging}{}\doxysubsubsection{Averaging}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_averaging}
+The ADC can be configured to trade conversion speed for accuracy by averaging multiple samples in hardware. This feature is suitable when operating in noisy conditions.
+
+You can specify any number of samples to accumulate (up to 1024) and the divide ratio to use (up to divide by 128). To modify these settings the ADC\+\_\+\+RESOLUTION\+\_\+\+CUSTOM needs to be set as the resolution. When this is set the number of samples to accumulate and the division ratio can be set by the configuration struct members \mbox{\hyperlink{structadc__config_ad109a8272e0ecd2193ca1bda4ccdf1ff}{adc\+\_\+config\+::accumulate\+\_\+samples}} and \mbox{\hyperlink{structadc__config_a3ef13588571a39c1426e12daf197d899}{adc\+\_\+config\+::divide\+\_\+result}}. When using this mode the ADC result register will be set to be 16-\/bit wide to accommodate the larger result sizes produced by the accumulator.
+
+The effective ADC conversion rate will be reduced by a factor of the number of accumulated samples; however, the effective resolution will be increased according to \mbox{\hyperlink{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_hw_av_resolution}{the table below}}.
+
+\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_hw_av_resolution}%
+\Hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_hw_av_resolution}%
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Effective ADC Resolution From Various Hardware Averaging Modes}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Number of samples }&\cellcolor{\tableheadbgcolor}\textbf{ Final result  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Number of samples }&\cellcolor{\tableheadbgcolor}\textbf{ Final result  }\\\cline{1-2}
+\endhead
+1 &12-\/bit  \\\cline{1-2}
+2 &13-\/bit  \\\cline{1-2}
+4 &14-\/bit  \\\cline{1-2}
+8 &15-\/bit  \\\cline{1-2}
+16 &16-\/bit  \\\cline{1-2}
+32 &16-\/bit  \\\cline{1-2}
+64 &16-\/bit  \\\cline{1-2}
+128 &16-\/bit  \\\cline{1-2}
+256 &16-\/bit  \\\cline{1-2}
+512 &16-\/bit  \\\cline{1-2}
+1024 &16-\/bit  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_offset_corr}{}\doxysubsubsection{Offset and Gain Correction}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_offset_corr}
+Inherent gain and offset errors affect the absolute accuracy of the ADC.
+
+The offset error is defined as the deviation of the ADC\textquotesingle{}s actual transfer function from ideal straight line at zero input voltage.
+
+The gain error is defined as the deviation of the last output step\textquotesingle{}s midpoint from the ideal straight line, after compensating for offset error.
+
+The offset correction value is subtracted from the converted data before the result is ready. The gain correction value is multiplied with the offset corrected value.
+
+The equation for both offset and gain error compensation is shown below\+:  \[
+ADC_{RESULT} = (VALUE_{CONV} + CORR_{OFFSET}) \times CORR_{GAIN}
+\]
+
+When enabled, a given set of offset and gain correction values can be applied to the sampled data in hardware, giving a corrected stream of sample data to the user application at the cost of an increased sample latency.
+
+In single conversion, a latency of 13 ADC Generic Clock cycles is added for the final sample result availability. As the correction time is always less than the propagation delay, in free running mode this latency appears only during the first conversion. After the first conversion is complete, future conversion results are available at the defined sampling rate.\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_pin_scan}{}\doxysubsubsection{Pin Scan}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_pin_scan}
+In pin scan mode, the first ADC conversion will begin from the configured positive channel, plus the requested starting offset. When the first conversion is completed, the next conversion will start at the next positive input channel and so on, until all requested pins to scan have been sampled and converted. SAM L21/\+L22 has automatic sequences feature instead of pin scan mode. In automatic sequence mode, all of 32 positives inputs can be included in a sequence. The sequence starts from the lowest input, and go to the next enabled input automatically.
+
+Pin scanning gives a simple mechanism to sample a large number of physical input channel samples, using a single physical ADC channel.\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_window_monitor}{}\doxysubsubsection{Window Monitor}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_window_monitor}
+The ADC module window monitor function can be used to automatically compare the conversion result against a preconfigured pair of upper and lower threshold values.
+
+The threshold values are evaluated differently, depending on whether differential or single-\/ended mode is selected. In differential mode, the upper and lower thresholds are evaluated as signed values for the comparison, while in single-\/ended mode the comparisons are made as a set of unsigned values.
+
+The significant bits of the lower window monitor threshold and upper window monitor threshold values are user-\/configurable, and follow the overall ADC sampling bit precision set when the ADC is configured by the user application. For example, only the eight lower bits of the window threshold values will be compared to the sampled data whilst the ADC is configured in 8-\/bit mode. In addition, if using differential mode, the 8\textsuperscript{th} bit will be considered as the sign bit even if bit 9 is zero.\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_events}{}\doxysubsubsection{Events}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_module_overview_events}
+Event generation and event actions are configurable in the ADC.
+
+The ADC has two actions that can be triggered upon event reception\+: \begin{DoxyItemize}
+\item Start conversion \item Flush pipeline and start conversion\end{DoxyItemize}
+The ADC can generate two events\+: \begin{DoxyItemize}
+\item Window monitor \item Result ready\end{DoxyItemize}
+If the event actions are enabled in the configuration, any incoming event will trigger the action.
+
+If the window monitor event is enabled, an event will be generated when the configured window condition is detected.
+
+If the result ready event is enabled, an event will be generated when a conversion is completed.
+
+\begin{DoxyNote}{Note}
+The connection of events between modules requires the use of the SAM Event System Driver (EVENTS) to route output event of one module to the input event of another. For more information on event routing, refer to the event driver documentation.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_special_considerations}{}\doxysubsection{Special Considerations}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_special_considerations}
+An integrated analog temperature sensor is available for use with the ADC. The bandgap voltage, as well as the scaled I/O and core voltages can also be measured by the ADC. For internal ADC inputs, the internal source(s) may need to be manually enabled by the user application before they can be measured.\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_extra_info}{}\doxysubsection{Extra Information}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_extra_info}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_adc_extra}{Extra Information for ADC Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_adc_extra_asfdoc_sam0_adc_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_adc_extra_asfdoc_sam0_adc_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_adc_extra_asfdoc_sam0_adc_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_adc_extra_asfdoc_sam0_adc_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_examples}{}\doxysubsection{Examples}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_adc_exqsg}{Examples for ADC Driver}}.\hypertarget{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__sam0__adc__group_asfdoc_sam0_adc_api_overview}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga9e05a7398afafa9344c780a0a0e7be9a}\label{group__asfdoc__sam0__adc__group_ga9e05a7398afafa9344c780a0a0e7be9a}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_STATUS\_OVERRUN@{ADC\_STATUS\_OVERRUN}}
+\index{ADC\_STATUS\_OVERRUN@{ADC\_STATUS\_OVERRUN}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{ADC\_STATUS\_OVERRUN}{ADC\_STATUS\_OVERRUN}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+STATUS\+\_\+\+OVERRUN~(1UL $<$$<$ 2)}
+
+ADC result overwritten before read. \mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gac25e444bb2e1cb312bedf72d2d6ed8e5}\label{group__asfdoc__sam0__adc__group_gac25e444bb2e1cb312bedf72d2d6ed8e5}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_STATUS\_RESULT\_READY@{ADC\_STATUS\_RESULT\_READY}}
+\index{ADC\_STATUS\_RESULT\_READY@{ADC\_STATUS\_RESULT\_READY}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{ADC\_STATUS\_RESULT\_READY}{ADC\_STATUS\_RESULT\_READY}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+STATUS\+\_\+\+RESULT\+\_\+\+READY~(1UL $<$$<$ 0)}
+
+ADC result ready. \mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gab1e9bae12e573bd6389051adca1a6db9}\label{group__asfdoc__sam0__adc__group_gab1e9bae12e573bd6389051adca1a6db9}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_STATUS\_WINDOW@{ADC\_STATUS\_WINDOW}}
+\index{ADC\_STATUS\_WINDOW@{ADC\_STATUS\_WINDOW}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{ADC\_STATUS\_WINDOW}{ADC\_STATUS\_WINDOW}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+STATUS\+\_\+\+WINDOW~(1UL $<$$<$ 1)}
+
+Window monitor match. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga56aaaff7d846dd74b6818bdb16959ac0}\label{group__asfdoc__sam0__adc__group_ga56aaaff7d846dd74b6818bdb16959ac0}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_accumulate\_samples@{adc\_accumulate\_samples}}
+\index{adc\_accumulate\_samples@{adc\_accumulate\_samples}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_accumulate\_samples}{adc\_accumulate\_samples}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga56aaaff7d846dd74b6818bdb16959ac0}{adc\+\_\+accumulate\+\_\+samples}}}
+
+
+
+ADC number of accumulated samples enum. 
+
+Enum for the possible numbers of ADC samples to accumulate. This setting is only used when the \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a7f9551aaba02ea51450bbc2bfdf61ab1}{ADC\+\_\+\+RESOLUTION\+\_\+\+CUSTOM}} resolution setting is used. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_DISABLE@{ADC\_ACCUMULATE\_DISABLE}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_DISABLE@{ADC\_ACCUMULATE\_DISABLE}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0ada13ab8ecb96ae0543db2fb3e4679403}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0ada13ab8ecb96ae0543db2fb3e4679403}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+DISABLE&No averaging \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_2@{ADC\_ACCUMULATE\_SAMPLES\_2}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_2@{ADC\_ACCUMULATE\_SAMPLES\_2}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a0c1618c11e39fbd427bae4ec3e0886e4}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a0c1618c11e39fbd427bae4ec3e0886e4}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+2&Average 2 samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_4@{ADC\_ACCUMULATE\_SAMPLES\_4}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_4@{ADC\_ACCUMULATE\_SAMPLES\_4}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a944070f42200b70ff2fadf858c7414e5}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a944070f42200b70ff2fadf858c7414e5}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+4&Average 4 samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_8@{ADC\_ACCUMULATE\_SAMPLES\_8}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_8@{ADC\_ACCUMULATE\_SAMPLES\_8}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a676140b814df640bc8a4b2a17a455f7c}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a676140b814df640bc8a4b2a17a455f7c}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+8&Average 8 samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_16@{ADC\_ACCUMULATE\_SAMPLES\_16}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_16@{ADC\_ACCUMULATE\_SAMPLES\_16}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a705bad5f9182d37190f428b00ae31b00}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a705bad5f9182d37190f428b00ae31b00}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+16&Average 16 samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_32@{ADC\_ACCUMULATE\_SAMPLES\_32}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_32@{ADC\_ACCUMULATE\_SAMPLES\_32}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a9b669122d8ffb253360e37261f0e411e}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a9b669122d8ffb253360e37261f0e411e}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+32&Average 32 samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_64@{ADC\_ACCUMULATE\_SAMPLES\_64}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_64@{ADC\_ACCUMULATE\_SAMPLES\_64}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0af0f2d7843ec92a9df10ef5f2fb195336}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0af0f2d7843ec92a9df10ef5f2fb195336}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+64&Average 64 samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_128@{ADC\_ACCUMULATE\_SAMPLES\_128}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_128@{ADC\_ACCUMULATE\_SAMPLES\_128}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a6285100fc4e3593de6bc737b9f873cbb}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a6285100fc4e3593de6bc737b9f873cbb}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+128&Average 128 samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_256@{ADC\_ACCUMULATE\_SAMPLES\_256}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_256@{ADC\_ACCUMULATE\_SAMPLES\_256}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a31eed8d56d7310069c21382c64db0127}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a31eed8d56d7310069c21382c64db0127}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+256&Average 256 samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_512@{ADC\_ACCUMULATE\_SAMPLES\_512}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_512@{ADC\_ACCUMULATE\_SAMPLES\_512}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0aae5806c1db5f61c355244c0b89d6fdcc}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0aae5806c1db5f61c355244c0b89d6fdcc}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+512&Average 512 samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_ACCUMULATE\_SAMPLES\_1024@{ADC\_ACCUMULATE\_SAMPLES\_1024}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_ACCUMULATE\_SAMPLES\_1024@{ADC\_ACCUMULATE\_SAMPLES\_1024}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a2f8ab1615b05347b1dc606faddac757e}\label{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a2f8ab1615b05347b1dc606faddac757e}} 
+ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+1024&Average 1024 samples \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga5aea9abd2ca3e570987d4ee7b8d2ece5}\label{group__asfdoc__sam0__adc__group_ga5aea9abd2ca3e570987d4ee7b8d2ece5}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_clock\_prescaler@{adc\_clock\_prescaler}}
+\index{adc\_clock\_prescaler@{adc\_clock\_prescaler}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_clock\_prescaler}{adc\_clock\_prescaler}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5aea9abd2ca3e570987d4ee7b8d2ece5}{adc\+\_\+clock\+\_\+prescaler}}}
+
+
+
+ADC clock prescaler enum. 
+
+Enum for the possible clock prescaler values for the ADC. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_CLOCK\_PRESCALER\_DIV4@{ADC\_CLOCK\_PRESCALER\_DIV4}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_CLOCK\_PRESCALER\_DIV4@{ADC\_CLOCK\_PRESCALER\_DIV4}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a6e875ef2cd6f5c6f9fd78bcd6627949e}\label{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a6e875ef2cd6f5c6f9fd78bcd6627949e}} 
+ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV4&ADC clock division factor 4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_CLOCK\_PRESCALER\_DIV8@{ADC\_CLOCK\_PRESCALER\_DIV8}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_CLOCK\_PRESCALER\_DIV8@{ADC\_CLOCK\_PRESCALER\_DIV8}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5aa7e0a326cc7d097b591d5d56157c1c13}\label{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5aa7e0a326cc7d097b591d5d56157c1c13}} 
+ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV8&ADC clock division factor 8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_CLOCK\_PRESCALER\_DIV16@{ADC\_CLOCK\_PRESCALER\_DIV16}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_CLOCK\_PRESCALER\_DIV16@{ADC\_CLOCK\_PRESCALER\_DIV16}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a550ecabab995374de5b826ebcc954e5c}\label{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a550ecabab995374de5b826ebcc954e5c}} 
+ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV16&ADC clock division factor 16 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_CLOCK\_PRESCALER\_DIV32@{ADC\_CLOCK\_PRESCALER\_DIV32}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_CLOCK\_PRESCALER\_DIV32@{ADC\_CLOCK\_PRESCALER\_DIV32}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5af3cb664768de192aebe534bfb3b94fb1}\label{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5af3cb664768de192aebe534bfb3b94fb1}} 
+ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV32&ADC clock division factor 32 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_CLOCK\_PRESCALER\_DIV64@{ADC\_CLOCK\_PRESCALER\_DIV64}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_CLOCK\_PRESCALER\_DIV64@{ADC\_CLOCK\_PRESCALER\_DIV64}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a014e287d3f1de1b3bdb495780e7633f0}\label{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a014e287d3f1de1b3bdb495780e7633f0}} 
+ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV64&ADC clock division factor 64 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_CLOCK\_PRESCALER\_DIV128@{ADC\_CLOCK\_PRESCALER\_DIV128}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_CLOCK\_PRESCALER\_DIV128@{ADC\_CLOCK\_PRESCALER\_DIV128}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a1dd0cb330bd44342705a596ac11390ab}\label{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a1dd0cb330bd44342705a596ac11390ab}} 
+ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV128&ADC clock division factor 128 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_CLOCK\_PRESCALER\_DIV256@{ADC\_CLOCK\_PRESCALER\_DIV256}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_CLOCK\_PRESCALER\_DIV256@{ADC\_CLOCK\_PRESCALER\_DIV256}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5ac2dde6d469371d78c2ef907666aeccad}\label{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5ac2dde6d469371d78c2ef907666aeccad}} 
+ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV256&ADC clock division factor 256 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_CLOCK\_PRESCALER\_DIV512@{ADC\_CLOCK\_PRESCALER\_DIV512}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_CLOCK\_PRESCALER\_DIV512@{ADC\_CLOCK\_PRESCALER\_DIV512}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5aa85903a04f1a1f6d746e9b38126a275b}\label{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5aa85903a04f1a1f6d746e9b38126a275b}} 
+ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV512&ADC clock division factor 512 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga00f645151edbf08c7d90d8beb9b8b217}\label{group__asfdoc__sam0__adc__group_ga00f645151edbf08c7d90d8beb9b8b217}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_divide\_result@{adc\_divide\_result}}
+\index{adc\_divide\_result@{adc\_divide\_result}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_divide\_result}{adc\_divide\_result}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga00f645151edbf08c7d90d8beb9b8b217}{adc\+\_\+divide\+\_\+result}}}
+
+
+
+ADC possible dividers for the result register. 
+
+Enum for the possible division factors to use when accumulating multiple samples. To keep the same resolution for the averaged result and the actual input value, the division factor must be equal to the number of samples accumulated. This setting is only used when the \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a7f9551aaba02ea51450bbc2bfdf61ab1}{ADC\+\_\+\+RESOLUTION\+\_\+\+CUSTOM}} resolution setting is used. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_DIVIDE\_RESULT\_DISABLE@{ADC\_DIVIDE\_RESULT\_DISABLE}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_DIVIDE\_RESULT\_DISABLE@{ADC\_DIVIDE\_RESULT\_DISABLE}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217af61a5897c77571bad72f678fb0ccfec5}\label{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217af61a5897c77571bad72f678fb0ccfec5}} 
+ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+\+DISABLE&Don\textquotesingle{}t divide result register after accumulation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_DIVIDE\_RESULT\_2@{ADC\_DIVIDE\_RESULT\_2}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_DIVIDE\_RESULT\_2@{ADC\_DIVIDE\_RESULT\_2}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a71406f1247479b52ac0cd4784dcbcb42}\label{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a71406f1247479b52ac0cd4784dcbcb42}} 
+ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+2&Divide result register by 2 after accumulation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_DIVIDE\_RESULT\_4@{ADC\_DIVIDE\_RESULT\_4}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_DIVIDE\_RESULT\_4@{ADC\_DIVIDE\_RESULT\_4}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a72abaf9d060435661e96c05a6efc19d5}\label{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a72abaf9d060435661e96c05a6efc19d5}} 
+ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+4&Divide result register by 4 after accumulation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_DIVIDE\_RESULT\_8@{ADC\_DIVIDE\_RESULT\_8}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_DIVIDE\_RESULT\_8@{ADC\_DIVIDE\_RESULT\_8}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aac2528e93c2da89e5ae830c8c3241636}\label{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aac2528e93c2da89e5ae830c8c3241636}} 
+ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+8&Divide result register by 8 after accumulation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_DIVIDE\_RESULT\_16@{ADC\_DIVIDE\_RESULT\_16}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_DIVIDE\_RESULT\_16@{ADC\_DIVIDE\_RESULT\_16}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aeb8d09107d36ee2442f7509cd8a8a256}\label{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aeb8d09107d36ee2442f7509cd8a8a256}} 
+ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+16&Divide result register by 16 after accumulation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_DIVIDE\_RESULT\_32@{ADC\_DIVIDE\_RESULT\_32}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_DIVIDE\_RESULT\_32@{ADC\_DIVIDE\_RESULT\_32}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a6b79da965ae9b1820d64ba57c38b34a8}\label{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a6b79da965ae9b1820d64ba57c38b34a8}} 
+ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+32&Divide result register by 32 after accumulation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_DIVIDE\_RESULT\_64@{ADC\_DIVIDE\_RESULT\_64}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_DIVIDE\_RESULT\_64@{ADC\_DIVIDE\_RESULT\_64}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aa0e348b5dbff085674b10d61f910302e}\label{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aa0e348b5dbff085674b10d61f910302e}} 
+ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+64&Divide result register by 64 after accumulation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_DIVIDE\_RESULT\_128@{ADC\_DIVIDE\_RESULT\_128}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_DIVIDE\_RESULT\_128@{ADC\_DIVIDE\_RESULT\_128}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aca99c11e38fc96d9538bfdd03515f6b3}\label{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aca99c11e38fc96d9538bfdd03515f6b3}} 
+ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+128&Divide result register by 128 after accumulation \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gae861d175edda2f67644f6dd042cb7c57}\label{group__asfdoc__sam0__adc__group_gae861d175edda2f67644f6dd042cb7c57}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_event\_action@{adc\_event\_action}}
+\index{adc\_event\_action@{adc\_event\_action}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_event\_action}{adc\_event\_action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gae861d175edda2f67644f6dd042cb7c57}{adc\+\_\+event\+\_\+action}}}
+
+
+
+ADC event action enum. 
+
+Enum for the possible actions to take on an incoming event. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_EVENT\_ACTION\_DISABLED@{ADC\_EVENT\_ACTION\_DISABLED}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_EVENT\_ACTION\_DISABLED@{ADC\_EVENT\_ACTION\_DISABLED}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a85909538fe55b349d66682bddf65679f}\label{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a85909538fe55b349d66682bddf65679f}} 
+ADC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+DISABLED&Event action disabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_EVENT\_ACTION\_FLUSH\_START\_CONV@{ADC\_EVENT\_ACTION\_FLUSH\_START\_CONV}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_EVENT\_ACTION\_FLUSH\_START\_CONV@{ADC\_EVENT\_ACTION\_FLUSH\_START\_CONV}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a6bf50dcd3ae57b8088a303ee20c2c7d2}\label{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a6bf50dcd3ae57b8088a303ee20c2c7d2}} 
+ADC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+FLUSH\+\_\+\+START\+\_\+\+CONV&Flush ADC and start conversion \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_EVENT\_ACTION\_START\_CONV@{ADC\_EVENT\_ACTION\_START\_CONV}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_EVENT\_ACTION\_START\_CONV@{ADC\_EVENT\_ACTION\_START\_CONV}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a372cec0abf928ab983ff75af0e7b8b73}\label{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a372cec0abf928ab983ff75af0e7b8b73}} 
+ADC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+START\+\_\+\+CONV&Start conversion \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gad0058beaf7a14f02aa55ef8db9b966c3}\label{group__asfdoc__sam0__adc__group_gad0058beaf7a14f02aa55ef8db9b966c3}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_gain\_factor@{adc\_gain\_factor}}
+\index{adc\_gain\_factor@{adc\_gain\_factor}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_gain\_factor}{adc\_gain\_factor}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gad0058beaf7a14f02aa55ef8db9b966c3}{adc\+\_\+gain\+\_\+factor}}}
+
+
+
+ADC gain factor selection enum. 
+
+Enum for the possible gain factor values for the ADC. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_GAIN\_FACTOR\_1X@{ADC\_GAIN\_FACTOR\_1X}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_GAIN\_FACTOR\_1X@{ADC\_GAIN\_FACTOR\_1X}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3af569c2a1b7125d592b89bcc7b4b8962f}\label{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3af569c2a1b7125d592b89bcc7b4b8962f}} 
+ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+1X&1x gain \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_GAIN\_FACTOR\_2X@{ADC\_GAIN\_FACTOR\_2X}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_GAIN\_FACTOR\_2X@{ADC\_GAIN\_FACTOR\_2X}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3ae50ac8d79cd35f3cfdf60c9530d3d167}\label{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3ae50ac8d79cd35f3cfdf60c9530d3d167}} 
+ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+2X&2x gain \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_GAIN\_FACTOR\_4X@{ADC\_GAIN\_FACTOR\_4X}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_GAIN\_FACTOR\_4X@{ADC\_GAIN\_FACTOR\_4X}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3a3a1dc496142f4d763210e3d9835cad4d}\label{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3a3a1dc496142f4d763210e3d9835cad4d}} 
+ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+4X&4x gain \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_GAIN\_FACTOR\_8X@{ADC\_GAIN\_FACTOR\_8X}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_GAIN\_FACTOR\_8X@{ADC\_GAIN\_FACTOR\_8X}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3ab2ffc2d2c43434789e2bf644e62bbb75}\label{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3ab2ffc2d2c43434789e2bf644e62bbb75}} 
+ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+8X&8x gain \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_GAIN\_FACTOR\_16X@{ADC\_GAIN\_FACTOR\_16X}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_GAIN\_FACTOR\_16X@{ADC\_GAIN\_FACTOR\_16X}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3a3c36ae74026c9ecb565bc9e945c034f1}\label{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3a3c36ae74026c9ecb565bc9e945c034f1}} 
+ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+16X&16x gain \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_GAIN\_FACTOR\_DIV2@{ADC\_GAIN\_FACTOR\_DIV2}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_GAIN\_FACTOR\_DIV2@{ADC\_GAIN\_FACTOR\_DIV2}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3acdbe91c385a50189186f891dd2b77330}\label{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3acdbe91c385a50189186f891dd2b77330}} 
+ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+\+DIV2&1/2x gain \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}\label{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_job\_type@{adc\_job\_type}}
+\index{adc\_job\_type@{adc\_job\_type}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_job\_type}{adc\_job\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\+\_\+job\+\_\+type}}}
+
+Enum for the possible types of ADC asynchronous jobs that may be issued to the driver. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_JOB\_READ\_BUFFER@{ADC\_JOB\_READ\_BUFFER}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_JOB\_READ\_BUFFER@{ADC\_JOB\_READ\_BUFFER}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga9cdf4e56baa3aae29eee83b34a1ba4a1a8d590b10162af148e094a1a8d0c893d6}\label{group__asfdoc__sam0__adc__group_gga9cdf4e56baa3aae29eee83b34a1ba4a1a8d590b10162af148e094a1a8d0c893d6}} 
+ADC\+\_\+\+JOB\+\_\+\+READ\+\_\+\+BUFFER&Asynchronous ADC read into a user provided buffer \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga843290f150383271ef2ed82792d76e81}\label{group__asfdoc__sam0__adc__group_ga843290f150383271ef2ed82792d76e81}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_negative\_input@{adc\_negative\_input}}
+\index{adc\_negative\_input@{adc\_negative\_input}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_negative\_input}{adc\_negative\_input}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga843290f150383271ef2ed82792d76e81}{adc\+\_\+negative\+\_\+input}}}
+
+
+
+ADC negative Multiplexer(\+MUX) input selection enum. 
+
+Enum for the possible negative Multiplexer(\+MUX) input selections for the ADC. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_PIN0@{ADC\_NEGATIVE\_INPUT\_PIN0}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_PIN0@{ADC\_NEGATIVE\_INPUT\_PIN0}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81aee4369641b2ea0ca47374c644e34f07a}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81aee4369641b2ea0ca47374c644e34f07a}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN0&ADC0 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_PIN1@{ADC\_NEGATIVE\_INPUT\_PIN1}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_PIN1@{ADC\_NEGATIVE\_INPUT\_PIN1}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a764ee2f799492bc808044e9cb35ed2cc}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a764ee2f799492bc808044e9cb35ed2cc}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN1&ADC1 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_PIN2@{ADC\_NEGATIVE\_INPUT\_PIN2}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_PIN2@{ADC\_NEGATIVE\_INPUT\_PIN2}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81aec5d2c08d5fe6b417f029dcae1d64908}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81aec5d2c08d5fe6b417f029dcae1d64908}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN2&ADC2 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_PIN3@{ADC\_NEGATIVE\_INPUT\_PIN3}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_PIN3@{ADC\_NEGATIVE\_INPUT\_PIN3}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a69374c04bc5d4207eff2e39abbdea2bc}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a69374c04bc5d4207eff2e39abbdea2bc}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN3&ADC3 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_PIN4@{ADC\_NEGATIVE\_INPUT\_PIN4}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_PIN4@{ADC\_NEGATIVE\_INPUT\_PIN4}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a7bbe03a4f4fdf46a1604134749b7734f}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a7bbe03a4f4fdf46a1604134749b7734f}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN4&ADC4 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_PIN5@{ADC\_NEGATIVE\_INPUT\_PIN5}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_PIN5@{ADC\_NEGATIVE\_INPUT\_PIN5}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81af761f928cc2cfd5218b25b26f7efe506}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81af761f928cc2cfd5218b25b26f7efe506}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN5&ADC5 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_PIN6@{ADC\_NEGATIVE\_INPUT\_PIN6}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_PIN6@{ADC\_NEGATIVE\_INPUT\_PIN6}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a2aff0e5765101dbaee7bb5cdb871195f}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a2aff0e5765101dbaee7bb5cdb871195f}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN6&ADC6 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_PIN7@{ADC\_NEGATIVE\_INPUT\_PIN7}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_PIN7@{ADC\_NEGATIVE\_INPUT\_PIN7}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81ab7fd0b3e2c427146c9beed5495710503}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81ab7fd0b3e2c427146c9beed5495710503}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN7&ADC7 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_GND@{ADC\_NEGATIVE\_INPUT\_GND}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_GND@{ADC\_NEGATIVE\_INPUT\_GND}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a00c49e7f6fd08611c5cb18eefd1603f9}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a00c49e7f6fd08611c5cb18eefd1603f9}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+GND&Internal ground \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_NEGATIVE\_INPUT\_IOGND@{ADC\_NEGATIVE\_INPUT\_IOGND}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_NEGATIVE\_INPUT\_IOGND@{ADC\_NEGATIVE\_INPUT\_IOGND}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a6d9dc39cbf8f78b74be8c6b32bdd2ed5}\label{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a6d9dc39cbf8f78b74be8c6b32bdd2ed5}} 
+ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+IOGND&I/O ground \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga3f29e25af83669caf0d3d9d515c9b03b}\label{group__asfdoc__sam0__adc__group_ga3f29e25af83669caf0d3d9d515c9b03b}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_oversampling\_and\_decimation@{adc\_oversampling\_and\_decimation}}
+\index{adc\_oversampling\_and\_decimation@{adc\_oversampling\_and\_decimation}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_oversampling\_and\_decimation}{adc\_oversampling\_and\_decimation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga3f29e25af83669caf0d3d9d515c9b03b}{adc\+\_\+oversampling\+\_\+and\+\_\+decimation}}}
+
+
+
+ADC oversampling and decimation enum. 
+
+Enum for the possible numbers of bits resolution can be increased by when using oversampling and decimation. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_OVERSAMPLING\_AND\_DECIMATION\_DISABLE@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_DISABLE}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_OVERSAMPLING\_AND\_DECIMATION\_DISABLE@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_DISABLE}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba2332ce4791a500f1f15bdfd5e7184e5b}\label{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba2332ce4791a500f1f15bdfd5e7184e5b}} 
+ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+\+DISABLE&Don\textquotesingle{}t use oversampling and decimation mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_OVERSAMPLING\_AND\_DECIMATION\_1BIT@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_1BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_OVERSAMPLING\_AND\_DECIMATION\_1BIT@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_1BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba571bfd1207d0eb0486fe555aedf2e8a5}\label{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba571bfd1207d0eb0486fe555aedf2e8a5}} 
+ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+1\+BIT&1-\/bit resolution increase \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_OVERSAMPLING\_AND\_DECIMATION\_2BIT@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_2BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_OVERSAMPLING\_AND\_DECIMATION\_2BIT@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_2BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03baa6a03f5858c3267fdc01f28450995ab2}\label{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03baa6a03f5858c3267fdc01f28450995ab2}} 
+ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+2\+BIT&2-\/bit resolution increase \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_OVERSAMPLING\_AND\_DECIMATION\_3BIT@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_3BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_OVERSAMPLING\_AND\_DECIMATION\_3BIT@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_3BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba0325abc8f8d717878d86a20cf70ebee6}\label{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba0325abc8f8d717878d86a20cf70ebee6}} 
+ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+3\+BIT&3-\/bit resolution increase \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_OVERSAMPLING\_AND\_DECIMATION\_4BIT@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_4BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_OVERSAMPLING\_AND\_DECIMATION\_4BIT@{ADC\_OVERSAMPLING\_AND\_DECIMATION\_4BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03baec92375375637c40812d4e0a54a9ab16}\label{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03baec92375375637c40812d4e0a54a9ab16}} 
+ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+4\+BIT&4-\/bit resolution increase \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga7df963d2d3118abe65841e0886764002}\label{group__asfdoc__sam0__adc__group_ga7df963d2d3118abe65841e0886764002}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_positive\_input@{adc\_positive\_input}}
+\index{adc\_positive\_input@{adc\_positive\_input}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_positive\_input}{adc\_positive\_input}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga7df963d2d3118abe65841e0886764002}{adc\+\_\+positive\+\_\+input}}}
+
+
+
+ADC positive MUX input selection enum. 
+
+Enum for the possible positive MUX input selections for the ADC. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN0@{ADC\_POSITIVE\_INPUT\_PIN0}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN0@{ADC\_POSITIVE\_INPUT\_PIN0}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a48ca725380527e4fae4a8655337d9834}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a48ca725380527e4fae4a8655337d9834}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN0&ADC0 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN1@{ADC\_POSITIVE\_INPUT\_PIN1}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN1@{ADC\_POSITIVE\_INPUT\_PIN1}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002ac32e1773e96d0eef0834cc6c9df28268}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002ac32e1773e96d0eef0834cc6c9df28268}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN1&ADC1 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN2@{ADC\_POSITIVE\_INPUT\_PIN2}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN2@{ADC\_POSITIVE\_INPUT\_PIN2}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002abd22e1691be1f7e4213f79ff4a0e972b}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002abd22e1691be1f7e4213f79ff4a0e972b}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN2&ADC2 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN3@{ADC\_POSITIVE\_INPUT\_PIN3}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN3@{ADC\_POSITIVE\_INPUT\_PIN3}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a575a332342f949396458fb2e3728b93d}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a575a332342f949396458fb2e3728b93d}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN3&ADC3 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN4@{ADC\_POSITIVE\_INPUT\_PIN4}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN4@{ADC\_POSITIVE\_INPUT\_PIN4}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a9232638ffa14ea886e0725ef2d8a9362}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a9232638ffa14ea886e0725ef2d8a9362}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN4&ADC4 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN5@{ADC\_POSITIVE\_INPUT\_PIN5}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN5@{ADC\_POSITIVE\_INPUT\_PIN5}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a69f21ecc292a9507885b0d2a160cb882}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a69f21ecc292a9507885b0d2a160cb882}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN5&ADC5 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN6@{ADC\_POSITIVE\_INPUT\_PIN6}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN6@{ADC\_POSITIVE\_INPUT\_PIN6}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002aca6cb50cbb52d64119547836f3fd844a}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002aca6cb50cbb52d64119547836f3fd844a}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN6&ADC6 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN7@{ADC\_POSITIVE\_INPUT\_PIN7}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN7@{ADC\_POSITIVE\_INPUT\_PIN7}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002af1c35b22dba6c695f09821a937bb1580}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002af1c35b22dba6c695f09821a937bb1580}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN7&ADC7 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN8@{ADC\_POSITIVE\_INPUT\_PIN8}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN8@{ADC\_POSITIVE\_INPUT\_PIN8}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a50315b885f4d5dc5b853feb2d7ed09b7}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a50315b885f4d5dc5b853feb2d7ed09b7}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN8&ADC8 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN9@{ADC\_POSITIVE\_INPUT\_PIN9}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN9@{ADC\_POSITIVE\_INPUT\_PIN9}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a7e451831b5865fbeeda2b438ca5c7023}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a7e451831b5865fbeeda2b438ca5c7023}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN9&ADC9 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN10@{ADC\_POSITIVE\_INPUT\_PIN10}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN10@{ADC\_POSITIVE\_INPUT\_PIN10}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a750b7a61c6013814eb47bdb19f9df796}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a750b7a61c6013814eb47bdb19f9df796}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN10&ADC10 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN11@{ADC\_POSITIVE\_INPUT\_PIN11}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN11@{ADC\_POSITIVE\_INPUT\_PIN11}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002add576b1cb9a899a3cb021fa1bdeb6342}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002add576b1cb9a899a3cb021fa1bdeb6342}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN11&ADC11 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN12@{ADC\_POSITIVE\_INPUT\_PIN12}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN12@{ADC\_POSITIVE\_INPUT\_PIN12}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a05e3f55cc7fc6e99c075a9b9465a67c9}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a05e3f55cc7fc6e99c075a9b9465a67c9}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN12&ADC12 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN13@{ADC\_POSITIVE\_INPUT\_PIN13}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN13@{ADC\_POSITIVE\_INPUT\_PIN13}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a3f4290e5e16d67dee8dd3483b752c248}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a3f4290e5e16d67dee8dd3483b752c248}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN13&ADC13 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN14@{ADC\_POSITIVE\_INPUT\_PIN14}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN14@{ADC\_POSITIVE\_INPUT\_PIN14}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a2997bb9560e17eda218d6dcf625b60c8}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a2997bb9560e17eda218d6dcf625b60c8}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN14&ADC14 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN15@{ADC\_POSITIVE\_INPUT\_PIN15}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN15@{ADC\_POSITIVE\_INPUT\_PIN15}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a34d8a94ec9e08d7af32c5ef2891f84b0}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a34d8a94ec9e08d7af32c5ef2891f84b0}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN15&ADC15 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN16@{ADC\_POSITIVE\_INPUT\_PIN16}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN16@{ADC\_POSITIVE\_INPUT\_PIN16}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002afa2f0f5bee2b6590a3305d0ce24bfa92}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002afa2f0f5bee2b6590a3305d0ce24bfa92}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN16&ADC16 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN17@{ADC\_POSITIVE\_INPUT\_PIN17}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN17@{ADC\_POSITIVE\_INPUT\_PIN17}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002acfc0ef01ed95677c6479c6df7b9c0a52}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002acfc0ef01ed95677c6479c6df7b9c0a52}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN17&ADC17 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN18@{ADC\_POSITIVE\_INPUT\_PIN18}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN18@{ADC\_POSITIVE\_INPUT\_PIN18}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a877deeff49a2b4161452e3742729b965}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a877deeff49a2b4161452e3742729b965}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN18&ADC18 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_PIN19@{ADC\_POSITIVE\_INPUT\_PIN19}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_PIN19@{ADC\_POSITIVE\_INPUT\_PIN19}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002adbe62b64b5b98925b5928e297d745198}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002adbe62b64b5b98925b5928e297d745198}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN19&ADC19 pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_TEMP@{ADC\_POSITIVE\_INPUT\_TEMP}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_TEMP@{ADC\_POSITIVE\_INPUT\_TEMP}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002adabcff6e8428f83e81ea2135e7ae53b9}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002adabcff6e8428f83e81ea2135e7ae53b9}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+TEMP&Temperature reference \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_BANDGAP@{ADC\_POSITIVE\_INPUT\_BANDGAP}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_BANDGAP@{ADC\_POSITIVE\_INPUT\_BANDGAP}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a3adf00b1f4ec3ca1c1d66665330093c4}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a3adf00b1f4ec3ca1c1d66665330093c4}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+BANDGAP&Bandgap voltage \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_SCALEDCOREVCC@{ADC\_POSITIVE\_INPUT\_SCALEDCOREVCC}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_SCALEDCOREVCC@{ADC\_POSITIVE\_INPUT\_SCALEDCOREVCC}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a2070a5cb0deeeefdede1c288149923de}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a2070a5cb0deeeefdede1c288149923de}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+SCALEDCOREVCC&1/4 scaled core supply \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_SCALEDIOVCC@{ADC\_POSITIVE\_INPUT\_SCALEDIOVCC}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_SCALEDIOVCC@{ADC\_POSITIVE\_INPUT\_SCALEDIOVCC}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002af0c348dffc31707de467f01292217db9}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002af0c348dffc31707de467f01292217db9}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+SCALEDIOVCC&1/4 scaled I/O supply \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_POSITIVE\_INPUT\_DAC@{ADC\_POSITIVE\_INPUT\_DAC}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_POSITIVE\_INPUT\_DAC@{ADC\_POSITIVE\_INPUT\_DAC}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a567a2aaf94710eebb553aed8ec7a21ad}\label{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a567a2aaf94710eebb553aed8ec7a21ad}} 
+ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+DAC&DAC input \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga91b0f997d73739cf9f7349b7581e1f56}\label{group__asfdoc__sam0__adc__group_ga91b0f997d73739cf9f7349b7581e1f56}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_reference@{adc\_reference}}
+\index{adc\_reference@{adc\_reference}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_reference}{adc\_reference}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga91b0f997d73739cf9f7349b7581e1f56}{adc\+\_\+reference}}}
+
+
+
+ADC reference voltage enum. 
+
+Enum for the possible reference voltages for the ADC. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_REFERENCE\_INT1V@{ADC\_REFERENCE\_INT1V}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_REFERENCE\_INT1V@{ADC\_REFERENCE\_INT1V}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56acf1c624e7e18cb56f5bcb3e1e0b6642c}\label{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56acf1c624e7e18cb56f5bcb3e1e0b6642c}} 
+ADC\+\_\+\+REFERENCE\+\_\+\+INT1V&1.\+0V voltage reference \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_REFERENCE\_INTVCC0@{ADC\_REFERENCE\_INTVCC0}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_REFERENCE\_INTVCC0@{ADC\_REFERENCE\_INTVCC0}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56afb4c0d6bd2b6e02be571b51186b45683}\label{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56afb4c0d6bd2b6e02be571b51186b45683}} 
+ADC\+\_\+\+REFERENCE\+\_\+\+INTVCC0&1/1.\+48V\textsubscript{CC} reference \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_REFERENCE\_INTVCC1@{ADC\_REFERENCE\_INTVCC1}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_REFERENCE\_INTVCC1@{ADC\_REFERENCE\_INTVCC1}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56ad03999dc2effdd29bbfed7251f067b36}\label{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56ad03999dc2effdd29bbfed7251f067b36}} 
+ADC\+\_\+\+REFERENCE\+\_\+\+INTVCC1&1/2V\textsubscript{CC} (only for internal V\textsubscript{CC} \texorpdfstring{$>$}{>} 2.\+1V) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_REFERENCE\_AREFA@{ADC\_REFERENCE\_AREFA}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_REFERENCE\_AREFA@{ADC\_REFERENCE\_AREFA}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56ae021ea92c76141620c6b4ce85cb778e8}\label{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56ae021ea92c76141620c6b4ce85cb778e8}} 
+ADC\+\_\+\+REFERENCE\+\_\+\+AREFA&External reference A \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_REFERENCE\_AREFB@{ADC\_REFERENCE\_AREFB}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_REFERENCE\_AREFB@{ADC\_REFERENCE\_AREFB}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56a66806ebbfdfd8e09998bc614c517c3f1}\label{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56a66806ebbfdfd8e09998bc614c517c3f1}} 
+ADC\+\_\+\+REFERENCE\+\_\+\+AREFB&External reference B \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga14f1a9a4dda5ef84b87ca7a76b0c91b6}\label{group__asfdoc__sam0__adc__group_ga14f1a9a4dda5ef84b87ca7a76b0c91b6}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_resolution@{adc\_resolution}}
+\index{adc\_resolution@{adc\_resolution}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_resolution}{adc\_resolution}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga14f1a9a4dda5ef84b87ca7a76b0c91b6}{adc\+\_\+resolution}}}
+
+
+
+ADC resolution enum. 
+
+Enum for the possible resolution values for the ADC. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_RESOLUTION\_12BIT@{ADC\_RESOLUTION\_12BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_RESOLUTION\_12BIT@{ADC\_RESOLUTION\_12BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ac002266035b9c3a14762154237da8e87}\label{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ac002266035b9c3a14762154237da8e87}} 
+ADC\+\_\+\+RESOLUTION\+\_\+12\+BIT&ADC 12-\/bit resolution \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_RESOLUTION\_16BIT@{ADC\_RESOLUTION\_16BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_RESOLUTION\_16BIT@{ADC\_RESOLUTION\_16BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a5c3c11dff8c5b740d209faac34047aeb}\label{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a5c3c11dff8c5b740d209faac34047aeb}} 
+ADC\+\_\+\+RESOLUTION\+\_\+16\+BIT&ADC 16-\/bit resolution using oversampling and decimation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_RESOLUTION\_10BIT@{ADC\_RESOLUTION\_10BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_RESOLUTION\_10BIT@{ADC\_RESOLUTION\_10BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ab625f9c689590bb0776d235da84a482f}\label{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ab625f9c689590bb0776d235da84a482f}} 
+ADC\+\_\+\+RESOLUTION\+\_\+10\+BIT&ADC 10-\/bit resolution \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_RESOLUTION\_8BIT@{ADC\_RESOLUTION\_8BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_RESOLUTION\_8BIT@{ADC\_RESOLUTION\_8BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a86ea19f1e19e119fff18a7fcfee4197e}\label{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a86ea19f1e19e119fff18a7fcfee4197e}} 
+ADC\+\_\+\+RESOLUTION\+\_\+8\+BIT&ADC 8-\/bit resolution \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_RESOLUTION\_13BIT@{ADC\_RESOLUTION\_13BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_RESOLUTION\_13BIT@{ADC\_RESOLUTION\_13BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a48a9c78f8d7f1a20298a9e5e3619548a}\label{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a48a9c78f8d7f1a20298a9e5e3619548a}} 
+ADC\+\_\+\+RESOLUTION\+\_\+13\+BIT&ADC 13-\/bit resolution using oversampling and decimation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_RESOLUTION\_14BIT@{ADC\_RESOLUTION\_14BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_RESOLUTION\_14BIT@{ADC\_RESOLUTION\_14BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ac111802c80856797d5defaf470219f8e}\label{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ac111802c80856797d5defaf470219f8e}} 
+ADC\+\_\+\+RESOLUTION\+\_\+14\+BIT&ADC 14-\/bit resolution using oversampling and decimation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_RESOLUTION\_15BIT@{ADC\_RESOLUTION\_15BIT}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_RESOLUTION\_15BIT@{ADC\_RESOLUTION\_15BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a686d7d04459f73bd50326aaaa54dd8f8}\label{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a686d7d04459f73bd50326aaaa54dd8f8}} 
+ADC\+\_\+\+RESOLUTION\+\_\+15\+BIT&ADC 15-\/bit resolution using oversampling and decimation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_RESOLUTION\_CUSTOM@{ADC\_RESOLUTION\_CUSTOM}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_RESOLUTION\_CUSTOM@{ADC\_RESOLUTION\_CUSTOM}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a7f9551aaba02ea51450bbc2bfdf61ab1}\label{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a7f9551aaba02ea51450bbc2bfdf61ab1}} 
+ADC\+\_\+\+RESOLUTION\+\_\+\+CUSTOM&ADC 16-\/bit result register for use with averaging. When using this mode the ADC result register will be set to 16-\/bit wide, and the number of samples to accumulate and the division factor is configured by the \mbox{\hyperlink{structadc__config_ad109a8272e0ecd2193ca1bda4ccdf1ff}{adc\+\_\+config\+::accumulate\+\_\+samples}} and \mbox{\hyperlink{structadc__config_a3ef13588571a39c1426e12daf197d899}{adc\+\_\+config\+::divide\+\_\+result}} members in the configuration struct. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}\label{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_window\_mode@{adc\_window\_mode}}
+\index{adc\_window\_mode@{adc\_window\_mode}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_window\_mode}{adc\_window\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}{adc\+\_\+window\+\_\+mode}}}
+
+
+
+ADC window monitor mode enum. 
+
+Enum for the possible window monitor modes for the ADC. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_WINDOW\_MODE\_DISABLE@{ADC\_WINDOW\_MODE\_DISABLE}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_WINDOW\_MODE\_DISABLE@{ADC\_WINDOW\_MODE\_DISABLE}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743af3e39b4c9be38f1f0a6ecf75c1ea8cbe}\label{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743af3e39b4c9be38f1f0a6ecf75c1ea8cbe}} 
+ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+DISABLE&No window mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_WINDOW\_MODE\_ABOVE\_LOWER@{ADC\_WINDOW\_MODE\_ABOVE\_LOWER}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_WINDOW\_MODE\_ABOVE\_LOWER@{ADC\_WINDOW\_MODE\_ABOVE\_LOWER}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a1cc02d311670c608fb3f94d66d69d6e5}\label{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a1cc02d311670c608fb3f94d66d69d6e5}} 
+ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+ABOVE\+\_\+\+LOWER&RESULT \texorpdfstring{$>$}{>} WINLT \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_WINDOW\_MODE\_BELOW\_UPPER@{ADC\_WINDOW\_MODE\_BELOW\_UPPER}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_WINDOW\_MODE\_BELOW\_UPPER@{ADC\_WINDOW\_MODE\_BELOW\_UPPER}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a9f48dc13719c9e63b8bc02274338760e}\label{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a9f48dc13719c9e63b8bc02274338760e}} 
+ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+BELOW\+\_\+\+UPPER&RESULT \texorpdfstring{$<$}{<} WINUT \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_WINDOW\_MODE\_BETWEEN@{ADC\_WINDOW\_MODE\_BETWEEN}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_WINDOW\_MODE\_BETWEEN@{ADC\_WINDOW\_MODE\_BETWEEN}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a37bd3416d9e48464a35fef1acf7d223a}\label{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a37bd3416d9e48464a35fef1acf7d223a}} 
+ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+BETWEEN&WINLT \texorpdfstring{$<$}{<} RESULT \texorpdfstring{$<$}{<} WINUT \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_WINDOW\_MODE\_BETWEEN\_INVERTED@{ADC\_WINDOW\_MODE\_BETWEEN\_INVERTED}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!ADC\_WINDOW\_MODE\_BETWEEN\_INVERTED@{ADC\_WINDOW\_MODE\_BETWEEN\_INVERTED}}}\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a33864e0b72c9d2e984bfaf0dd51a684c}\label{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a33864e0b72c9d2e984bfaf0dd51a684c}} 
+ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+BETWEEN\+\_\+\+INVERTED&!(WINLT \texorpdfstring{$<$}{<} RESULT \texorpdfstring{$<$}{<} WINUT) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga21a885bc264d8dc9d35e2fb2ae5bb9ac}\label{group__asfdoc__sam0__adc__group_ga21a885bc264d8dc9d35e2fb2ae5bb9ac}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_abort\_job@{adc\_abort\_job}}
+\index{adc\_abort\_job@{adc\_abort\_job}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_abort\_job()}{adc\_abort\_job()}}
+{\footnotesize\ttfamily void adc\+\_\+abort\+\_\+job (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$}]{module\+\_\+inst,  }\item[{enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\+\_\+job\+\_\+type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Aborts an ongoing job. 
+
+Aborts an ongoing job.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the ADC software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & Type of job to abort \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga5a5650a331819833c7a27309c131c55d}\label{group__asfdoc__sam0__adc__group_ga5a5650a331819833c7a27309c131c55d}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_get\_config\_defaults@{adc\_get\_config\_defaults}}
+\index{adc\_get\_config\_defaults@{adc\_get\_config\_defaults}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_get\_config\_defaults()}{adc\_get\_config\_defaults()}}
+{\footnotesize\ttfamily void adc\+\_\+get\+\_\+config\+\_\+defaults (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Initializes an ADC configuration structure to defaults. 
+
+Initializes a given ADC configuration struct to a set of known default values. This function should be called on any new instance of the configuration struct before being modified by the user application.
+
+The default configuration is as follows\+: \begin{DoxyItemize}
+\item GCLK generator 0 (GCLK main) clock source \item 1V from internal bandgap reference \item Div 4 clock prescaler \item 12-\/bit resolution \item Window monitor disabled \item No gain \item Positive input on ADC PIN 0 \item Negative input on ADC PIN 1 \item Averaging disabled \item Oversampling disabled \item Right adjust data \item Single-\/ended mode \item Free running disabled \item All events (input and generation) disabled \item Sleep operation disabled \item No reference compensation \item No gain/offset correction \item No added sampling time \item Pin scan mode disabled\end{DoxyItemize}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em config} & Pointer to configuration struct to initialize to default values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga716c29c07b7c100001fc277ab0180045}\label{group__asfdoc__sam0__adc__group_ga716c29c07b7c100001fc277ab0180045}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_get\_job\_status@{adc\_get\_job\_status}}
+\index{adc\_get\_job\_status@{adc\_get\_job\_status}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_get\_job\_status()}{adc\_get\_job\_status()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} adc\+\_\+get\+\_\+job\+\_\+status (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$}]{module\+\_\+inst,  }\item[{enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\+\_\+job\+\_\+type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Gets the status of a job. 
+
+Gets the status of an ongoing or the last job.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the ADC software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & Type of job to get status\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the job. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga09de1dc91d7b101349d0577a306b762e}\label{group__asfdoc__sam0__adc__group_ga09de1dc91d7b101349d0577a306b762e}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_init@{adc\_init}}
+\index{adc\_init@{adc\_init}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_init()}{adc\_init()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} adc\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const}]{module\+\_\+inst,  }\item[{\mbox{\hyperlink{struct_adc}{Adc}} $\ast$}]{hw,  }\item[{struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} $\ast$}]{config }\end{DoxyParamCaption})}
+
+
+
+Initializes the ADC. 
+
+Initializes the ADC device struct and the hardware module based on the given configuration struct values.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em module\+\_\+inst} & Pointer to the ADC software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em hw} & Pointer to the ADC module instance \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Pointer to the configuration struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the initialization procedure. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The initialization was successful \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & Invalid argument(s) were provided \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & The module is busy with a reset operation \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & The module is enabled \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga2d4ba18d202501347f1a3faf6f9af4ec}\label{group__asfdoc__sam0__adc__group_ga2d4ba18d202501347f1a3faf6f9af4ec}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_read\_buffer\_job@{adc\_read\_buffer\_job}}
+\index{adc\_read\_buffer\_job@{adc\_read\_buffer\_job}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_read\_buffer\_job()}{adc\_read\_buffer\_job()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} adc\+\_\+read\+\_\+buffer\+\_\+job (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const}]{module\+\_\+inst,  }\item[{uint16\+\_\+t $\ast$}]{buffer,  }\item[{uint16\+\_\+t}]{samples }\end{DoxyParamCaption})}
+
+
+
+Read multiple samples from ADC. 
+
+Read {\ttfamily samples} samples from the ADC into the buffer {\ttfamily buffer}. If there is no hardware trigger defined (event action) the driver will retrigger the ADC conversion whenever a conversion is complete until {\ttfamily samples} samples has been acquired. To avoid jitter in the sampling frequency using an event trigger is advised.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the ADC software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em samples} & Number of samples to acquire \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffer} & Buffer to store the ADC samples\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the job start. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The conversion job was started successfully and is in progress \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & The ADC is already busy with another job \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_gaab93edab589a1c691b29a78b56677f21}\label{group__asfdoc__sam0__adc__group_gaab93edab589a1c691b29a78b56677f21}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_register\_callback@{adc\_register\_callback}}
+\index{adc\_register\_callback@{adc\_register\_callback}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_register\_callback()}{adc\_register\_callback()}}
+{\footnotesize\ttfamily void adc\+\_\+register\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const}]{module,  }\item[{adc\+\_\+callback\+\_\+t}]{callback\+\_\+func,  }\item[{enum adc\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Registers a callback. 
+
+Registers a callback function which is implemented by the user.
+
+\begin{DoxyNote}{Note}
+The callback must be enabled by for the interrupt handler to call it when the condition for the callback is met.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to ADC software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+func} & Pointer to callback function \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Callback type given by an enum \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga84ff86341c2e0d1a267b8dc54cb807ad}\label{group__asfdoc__sam0__adc__group_ga84ff86341c2e0d1a267b8dc54cb807ad}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_set\_window\_mode@{adc\_set\_window\_mode}}
+\index{adc\_set\_window\_mode@{adc\_set\_window\_mode}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_set\_window\_mode()}{adc\_set\_window\_mode()}}
+{\footnotesize\ttfamily void adc\+\_\+set\+\_\+window\+\_\+mode (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const}]{module\+\_\+inst,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}{adc\+\_\+window\+\_\+mode}}}]{window\+\_\+mode,  }\item[{const int16\+\_\+t}]{window\+\_\+lower\+\_\+value,  }\item[{const int16\+\_\+t}]{window\+\_\+upper\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+Sets the ADC window mode. 
+
+Sets the ADC window mode to a given mode and value range.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the ADC software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em window\+\_\+mode} & Window monitor mode to set \\
+\hline
+\mbox{\texttt{ in}}  & {\em window\+\_\+lower\+\_\+value} & Lower window monitor threshold value \\
+\hline
+\mbox{\texttt{ in}}  & {\em window\+\_\+upper\+\_\+value} & Upper window monitor threshold value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__adc__group_ga031decc62aad224eb1a7d7f00546b81e}\label{group__asfdoc__sam0__adc__group_ga031decc62aad224eb1a7d7f00546b81e}} 
+\index{SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}!adc\_unregister\_callback@{adc\_unregister\_callback}}
+\index{adc\_unregister\_callback@{adc\_unregister\_callback}!SAM Analog-\/to-\/Digital Converter (ADC) Driver@{SAM Analog-\/to-\/Digital Converter (ADC) Driver}}
+\doxysubsubsection{\texorpdfstring{adc\_unregister\_callback()}{adc\_unregister\_callback()}}
+{\footnotesize\ttfamily void adc\+\_\+unregister\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const}]{module,  }\item[{enum adc\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Unregisters a callback. 
+
+Unregisters a callback function which is implemented by the user.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to ADC software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Callback type given by an enum \\
+\hline
+\end{DoxyParams}

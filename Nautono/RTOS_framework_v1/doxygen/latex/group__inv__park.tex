@@ -1,0 +1,76 @@
+\hypertarget{group__inv__park}{}\doxysection{Vector Inverse Park transform}
+\label{group__inv__park}\index{Vector Inverse Park transform@{Vector Inverse Park transform}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+CMSIS\+\_\+\+INLINE \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group__inv__park_ga7ca3a87a0954ed8c9ed5a2e6f1c64f30}{arm\+\_\+inv\+\_\+park\+\_\+f32}} (float32\+\_\+t Id, float32\+\_\+t Iq, float32\+\_\+t $\ast$p\+Ialpha, float32\+\_\+t $\ast$p\+Ibeta, float32\+\_\+t sin\+Val, float32\+\_\+t cos\+Val)
+\begin{DoxyCompactList}\small\item\em Floating-\/point Inverse Park transform. \end{DoxyCompactList}\item 
+CMSIS\+\_\+\+INLINE \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group__inv__park_ga6e00d7320aa4a85686716af8b763e08a}{arm\+\_\+inv\+\_\+park\+\_\+q31}} (q31\+\_\+t Id, q31\+\_\+t Iq, q31\+\_\+t $\ast$p\+Ialpha, q31\+\_\+t $\ast$p\+Ibeta, q31\+\_\+t sin\+Val, q31\+\_\+t cos\+Val)
+\begin{DoxyCompactList}\small\item\em Inverse Park transform for Q31 version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Inverse Park transform converts the input flux and torque components to two-\/coordinate vector.
+
+The function operates on a single sample of data and each call to the function returns the processed output. The library provides separate functions for Q31 and floating-\/point data types. \begin{DoxyParagraph}{Algorithm}
+ where {\ttfamily p\+Ialpha} and {\ttfamily p\+Ibeta} are the stator vector components, {\ttfamily Id} and {\ttfamily Iq} are rotor vector components and {\ttfamily cos\+Val} and {\ttfamily sin\+Val} are the cosine and sine values of theta (rotor flux position). 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Fixed-\/\+Point Behavior}
+Care must be taken when using the Q31 version of the Park transform. In particular, the overflow and saturation behavior of the accumulator used must be considered. Refer to the function specific documentation below for usage guidelines. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__inv__park_ga7ca3a87a0954ed8c9ed5a2e6f1c64f30}\label{group__inv__park_ga7ca3a87a0954ed8c9ed5a2e6f1c64f30}} 
+\index{Vector Inverse Park transform@{Vector Inverse Park transform}!arm\_inv\_park\_f32@{arm\_inv\_park\_f32}}
+\index{arm\_inv\_park\_f32@{arm\_inv\_park\_f32}!Vector Inverse Park transform@{Vector Inverse Park transform}}
+\doxysubsubsection{\texorpdfstring{arm\_inv\_park\_f32()}{arm\_inv\_park\_f32()}}
+{\footnotesize\ttfamily CMSIS\+\_\+\+INLINE \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void arm\+\_\+inv\+\_\+park\+\_\+f32 (\begin{DoxyParamCaption}\item[{float32\+\_\+t}]{Id,  }\item[{float32\+\_\+t}]{Iq,  }\item[{float32\+\_\+t $\ast$}]{p\+Ialpha,  }\item[{float32\+\_\+t $\ast$}]{p\+Ibeta,  }\item[{float32\+\_\+t}]{sin\+Val,  }\item[{float32\+\_\+t}]{cos\+Val }\end{DoxyParamCaption})}
+
+
+
+Floating-\/point Inverse Park transform. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Id} & input coordinate of rotor reference frame d \\
+\hline
+\mbox{\texttt{ in}}  & {\em Iq} & input coordinate of rotor reference frame q \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+Ialpha} & points to output two-\/phase orthogonal vector axis alpha \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+Ibeta} & points to output two-\/phase orthogonal vector axis beta \\
+\hline
+\mbox{\texttt{ in}}  & {\em sin\+Val} & sine value of rotation angle theta \\
+\hline
+\mbox{\texttt{ in}}  & {\em cos\+Val} & cosine value of rotation angle theta \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__inv__park_ga6e00d7320aa4a85686716af8b763e08a}\label{group__inv__park_ga6e00d7320aa4a85686716af8b763e08a}} 
+\index{Vector Inverse Park transform@{Vector Inverse Park transform}!arm\_inv\_park\_q31@{arm\_inv\_park\_q31}}
+\index{arm\_inv\_park\_q31@{arm\_inv\_park\_q31}!Vector Inverse Park transform@{Vector Inverse Park transform}}
+\doxysubsubsection{\texorpdfstring{arm\_inv\_park\_q31()}{arm\_inv\_park\_q31()}}
+{\footnotesize\ttfamily CMSIS\+\_\+\+INLINE \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void arm\+\_\+inv\+\_\+park\+\_\+q31 (\begin{DoxyParamCaption}\item[{q31\+\_\+t}]{Id,  }\item[{q31\+\_\+t}]{Iq,  }\item[{q31\+\_\+t $\ast$}]{p\+Ialpha,  }\item[{q31\+\_\+t $\ast$}]{p\+Ibeta,  }\item[{q31\+\_\+t}]{sin\+Val,  }\item[{q31\+\_\+t}]{cos\+Val }\end{DoxyParamCaption})}
+
+
+
+Inverse Park transform for Q31 version. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Id} & input coordinate of rotor reference frame d \\
+\hline
+\mbox{\texttt{ in}}  & {\em Iq} & input coordinate of rotor reference frame q \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+Ialpha} & points to output two-\/phase orthogonal vector axis alpha \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+Ibeta} & points to output two-\/phase orthogonal vector axis beta \\
+\hline
+\mbox{\texttt{ in}}  & {\em sin\+Val} & sine value of rotation angle theta \\
+\hline
+\mbox{\texttt{ in}}  & {\em cos\+Val} & cosine value of rotation angle theta\\
+\hline
+\end{DoxyParams}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function is implemented using an internal 32-\/bit accumulator. The accumulator maintains 1.\+31 format by truncating lower 31 bits of the intermediate multiplication in 2.\+62 format. There is saturation on the addition, hence there is no risk of overflow. 
+\end{DoxyParagraph}

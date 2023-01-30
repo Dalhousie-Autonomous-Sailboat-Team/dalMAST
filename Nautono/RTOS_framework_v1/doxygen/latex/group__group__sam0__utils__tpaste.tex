@@ -1,0 +1,73 @@
+\hypertarget{group__group__sam0__utils__tpaste}{}\doxysection{Preprocessor -\/ Token Paste}
+\label{group__group__sam0__utils__tpaste}\index{Preprocessor -\/ Token Paste@{Preprocessor -\/ Token Paste}}
+\doxysubsection*{Token Paste}
+Paste N preprocessing tokens together, these tokens being allowed to be \#defined.
+
+May be used only within macros with the tokens passed as arguments if the tokens are \#defined.
+
+For example, writing TPASTE2(\+U, WIDTH) within a macro \#defined by UTYPE(\+WIDTH) and invoked as UTYPE(\+UL\+\_\+\+WIDTH) with UL\+\_\+\+WIDTH \#defined as 32 is equivalent to writing U32. \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga55fb148844f5ba993a992b609728e82e}\label{group__group__sam0__utils__tpaste_ga55fb148844f5ba993a992b609728e82e}} 
+\#define {\bfseries TPASTE2}(a,  b)~a\#\#b
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga3774e5e321825e6ab4a27fef2a0deb14}\label{group__group__sam0__utils__tpaste_ga3774e5e321825e6ab4a27fef2a0deb14}} 
+\#define {\bfseries TPASTE3}(a,  b,  c)~a\#\#b\#\#c
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga7df52ac8ee04480944ef404ef9418b38}\label{group__group__sam0__utils__tpaste_ga7df52ac8ee04480944ef404ef9418b38}} 
+\#define {\bfseries TPASTE4}(a,  b,  c,  d)~a\#\#b\#\#c\#\#d
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_gac9624b958617cbb3281de7ec41f53230}\label{group__group__sam0__utils__tpaste_gac9624b958617cbb3281de7ec41f53230}} 
+\#define {\bfseries TPASTE5}(a,  b,  c,  d,  e)~a\#\#b\#\#c\#\#d\#\#e
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga2c4dbcf9049d7553366bbf9b9bc4e801}\label{group__group__sam0__utils__tpaste_ga2c4dbcf9049d7553366bbf9b9bc4e801}} 
+\#define {\bfseries TPASTE6}(a,  b,  c,  d,  e,  f)~a\#\#b\#\#c\#\#d\#\#e\#\#f
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_gad36c0d6224338a4f8738aa25659afc14}\label{group__group__sam0__utils__tpaste_gad36c0d6224338a4f8738aa25659afc14}} 
+\#define {\bfseries TPASTE7}(a,  b,  c,  d,  e,  f,  g)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#g
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_gaf7aff743d5c0d66a81a13268b1a7e222}\label{group__group__sam0__utils__tpaste_gaf7aff743d5c0d66a81a13268b1a7e222}} 
+\#define {\bfseries TPASTE8}(a,  b,  c,  d,  e,  f,  g,  h)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#g\#\#h
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga5440e5a665d859bec7c3527312d0889d}\label{group__group__sam0__utils__tpaste_ga5440e5a665d859bec7c3527312d0889d}} 
+\#define {\bfseries TPASTE9}(a,  b,  c,  d,  e,  f,  g,  h,  i)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#g\#\#h\#\#i
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga0235b2e4ccf7a5b1d022a729a17a78a2}\label{group__group__sam0__utils__tpaste_ga0235b2e4ccf7a5b1d022a729a17a78a2}} 
+\#define {\bfseries TPASTE10}(a,  b,  c,  d,  e,  f,  g,  h,  i,  j)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#g\#\#h\#\#i\#\#j
+\end{DoxyCompactItemize}
+\doxysubsection*{Absolute Token Paste}
+Paste N preprocessing tokens together, these tokens being allowed to be \#defined.
+
+No restriction of use if the tokens are \#defined.
+
+For example, writing ATPASTE2(\+U, UL\+\_\+\+WIDTH) anywhere with UL\+\_\+\+WIDTH \#defined as 32 is equivalent to writing U32. \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_gafd3b4e313492a0862292dc3072d8e347}\label{group__group__sam0__utils__tpaste_gafd3b4e313492a0862292dc3072d8e347}} 
+\#define {\bfseries ATPASTE2}(a,  b)~TPASTE2( a, b)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga80b7594516326045fbcaec54d7759c20}\label{group__group__sam0__utils__tpaste_ga80b7594516326045fbcaec54d7759c20}} 
+\#define {\bfseries ATPASTE3}(a,  b,  c)~TPASTE3( a, b, c)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_gad9dcc51074148a4ff01810033a41e282}\label{group__group__sam0__utils__tpaste_gad9dcc51074148a4ff01810033a41e282}} 
+\#define {\bfseries ATPASTE4}(a,  b,  c,  d)~TPASTE4( a, b, c, d)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga4e4994267872724c11e31f1274c1a84c}\label{group__group__sam0__utils__tpaste_ga4e4994267872724c11e31f1274c1a84c}} 
+\#define {\bfseries ATPASTE5}(a,  b,  c,  d,  e)~TPASTE5( a, b, c, d, e)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga5bbd1842581ea1fa81616d3222bda308}\label{group__group__sam0__utils__tpaste_ga5bbd1842581ea1fa81616d3222bda308}} 
+\#define {\bfseries ATPASTE6}(a,  b,  c,  d,  e,  f)~TPASTE6( a, b, c, d, e, f)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_gabecc8ad964051f6f877f14dd13919b18}\label{group__group__sam0__utils__tpaste_gabecc8ad964051f6f877f14dd13919b18}} 
+\#define {\bfseries ATPASTE7}(a,  b,  c,  d,  e,  f,  g)~TPASTE7( a, b, c, d, e, f, g)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga303651436fcc8283bd17c13578476c8e}\label{group__group__sam0__utils__tpaste_ga303651436fcc8283bd17c13578476c8e}} 
+\#define {\bfseries ATPASTE8}(a,  b,  c,  d,  e,  f,  g,  h)~TPASTE8( a, b, c, d, e, f, g, h)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga5305e79258b2256febfac6ebec8838c2}\label{group__group__sam0__utils__tpaste_ga5305e79258b2256febfac6ebec8838c2}} 
+\#define {\bfseries ATPASTE9}(a,  b,  c,  d,  e,  f,  g,  h,  i)~TPASTE9( a, b, c, d, e, f, g, h, i)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__tpaste_ga3b9c4ca2ffbcec13ec3083ab95664ac9}\label{group__group__sam0__utils__tpaste_ga3b9c4ca2ffbcec13ec3083ab95664ac9}} 
+\#define {\bfseries ATPASTE10}(a,  b,  c,  d,  e,  f,  g,  h,  i,  j)~TPASTE10(a, b, c, d, e, f, g, h, i, j)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}

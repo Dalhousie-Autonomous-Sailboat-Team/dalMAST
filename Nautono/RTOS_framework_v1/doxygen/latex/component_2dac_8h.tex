@@ -1,0 +1,287 @@
+\hypertarget{component_2dac_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/component/dac.h File Reference}
+\label{component_2dac_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/dac.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/dac.h}}
+
+
+Component description for DAC.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_d_a_c___c_t_r_l_a___type}{DAC\+\_\+\+CTRLA\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_a_c___c_t_r_l_b___type}{DAC\+\_\+\+CTRLB\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_a_c___e_v_c_t_r_l___type}{DAC\+\_\+\+EVCTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_c_l_r___type}{DAC\+\_\+\+INTENCLR\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_s_e_t___type}{DAC\+\_\+\+INTENSET\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_a_c___i_n_t_f_l_a_g___type}{DAC\+\_\+\+INTFLAG\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_a_c___s_t_a_t_u_s___type}{DAC\+\_\+\+STATUS\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_a_c___d_a_t_a___type}{DAC\+\_\+\+DATA\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_a_c___d_a_t_a_b_u_f___type}{DAC\+\_\+\+DATABUF\+\_\+\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_dac}{Dac}}
+\begin{DoxyCompactList}\small\item\em DAC hardware registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{component_2dac_8h_ab76e3488c106c6d2688d864117555e6d}\label{component_2dac_8h_ab76e3488c106c6d2688d864117555e6d}} 
+\#define {\bfseries DAC\+\_\+\+U2214}
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a49409e81a9642d61cb82d3f664c44844}\label{component_2dac_8h_a49409e81a9642d61cb82d3f664c44844}} 
+\#define {\bfseries REV\+\_\+\+DAC}~0x101
+\item 
+\mbox{\Hypertarget{component_2dac_8h_aebd4a25fcf855e7d3824acf7f9d3ac83}\label{component_2dac_8h_aebd4a25fcf855e7d3824acf7f9d3ac83}} 
+\#define {\bfseries DAC\+\_\+\+CTRLA\+\_\+\+OFFSET}~0x0
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLA offset) Control A \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a5b2a0ad82560fded073e6276046facfc}\label{component_2dac_8h_a5b2a0ad82560fded073e6276046facfc}} 
+\#define {\bfseries DAC\+\_\+\+CTRLA\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLA reset\+\_\+value) Control A \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_afa3f0f563ba0dcc229026ca6d3effdcc}\label{component_2dac_8h_afa3f0f563ba0dcc229026ca6d3effdcc}} 
+\#define {\bfseries DAC\+\_\+\+CTRLA\+\_\+\+SWRST\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLA) Software Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_ab50aae3a8aa2d5bcfb9892d87f425fd8}\label{component_2dac_8h_ab50aae3a8aa2d5bcfb9892d87f425fd8}} 
+\#define {\bfseries DAC\+\_\+\+CTRLA\+\_\+\+SWRST}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_afa3f0f563ba0dcc229026ca6d3effdcc}{DAC\+\_\+\+CTRLA\+\_\+\+SWRST\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_afa6e69ab386a0acc15ec18b0584091f9}\label{component_2dac_8h_afa6e69ab386a0acc15ec18b0584091f9}} 
+\#define {\bfseries DAC\+\_\+\+CTRLA\+\_\+\+ENABLE\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLA) Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_abdbf590aa240a8a85a49f13e27872353}\label{component_2dac_8h_abdbf590aa240a8a85a49f13e27872353}} 
+\#define {\bfseries DAC\+\_\+\+CTRLA\+\_\+\+ENABLE}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_afa6e69ab386a0acc15ec18b0584091f9}{DAC\+\_\+\+CTRLA\+\_\+\+ENABLE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_abdf461e8ca3765359a3e350ff50cfd05}\label{component_2dac_8h_abdf461e8ca3765359a3e350ff50cfd05}} 
+\#define {\bfseries DAC\+\_\+\+CTRLA\+\_\+\+RUNSTDBY\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLA) Run in Standby \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a601cdcfdd1fb4fae7de0c3ac96b6a9a2}\label{component_2dac_8h_a601cdcfdd1fb4fae7de0c3ac96b6a9a2}} 
+\#define {\bfseries DAC\+\_\+\+CTRLA\+\_\+\+RUNSTDBY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_abdf461e8ca3765359a3e350ff50cfd05}{DAC\+\_\+\+CTRLA\+\_\+\+RUNSTDBY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a3194764eec2b07936137bbd3afbde5d2}\label{component_2dac_8h_a3194764eec2b07936137bbd3afbde5d2}} 
+\#define {\bfseries DAC\+\_\+\+CTRLA\+\_\+\+MASK}~0x07ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLA) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a77355709810c770d457b0206b73e12c2}\label{component_2dac_8h_a77355709810c770d457b0206b73e12c2}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+OFFSET}~0x1
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB offset) Control B \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_ac2138055bf74ac2fccda007458cdca1d}\label{component_2dac_8h_ac2138055bf74ac2fccda007458cdca1d}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB reset\+\_\+value) Control B \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_ac43fc445d046c2264721fe11789800c9}\label{component_2dac_8h_ac43fc445d046c2264721fe11789800c9}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+EOEN\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB) External Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a8499370d0bd9518c965fe89af94add46}\label{component_2dac_8h_a8499370d0bd9518c965fe89af94add46}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+EOEN}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_ac43fc445d046c2264721fe11789800c9}{DAC\+\_\+\+CTRLB\+\_\+\+EOEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a2bf8d42afa911f1ae377e42d31053bc0}\label{component_2dac_8h_a2bf8d42afa911f1ae377e42d31053bc0}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+IOEN\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB) Internal Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a27d2a20502a137bc36bf719afde9eb86}\label{component_2dac_8h_a27d2a20502a137bc36bf719afde9eb86}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+IOEN}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a2bf8d42afa911f1ae377e42d31053bc0}{DAC\+\_\+\+CTRLB\+\_\+\+IOEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a0f4867bbd5c372515cd93fcff2c770ab}\label{component_2dac_8h_a0f4867bbd5c372515cd93fcff2c770ab}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+LEFTADJ\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB) Left Adjusted Data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_add6e4258e9fd589eade5c4748b30a4d2}\label{component_2dac_8h_add6e4258e9fd589eade5c4748b30a4d2}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+LEFTADJ}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a0f4867bbd5c372515cd93fcff2c770ab}{DAC\+\_\+\+CTRLB\+\_\+\+LEFTADJ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a2eea424d3ea75be2b3f24995955f0d1d}\label{component_2dac_8h_a2eea424d3ea75be2b3f24995955f0d1d}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+VPD\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB) Voltage Pump Disable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_af0a6f1e95822b9b170bb5697b17ddda4}\label{component_2dac_8h_af0a6f1e95822b9b170bb5697b17ddda4}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+VPD}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a2eea424d3ea75be2b3f24995955f0d1d}{DAC\+\_\+\+CTRLB\+\_\+\+VPD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_ace1da3ee1cda6efe12a220080a718b99}\label{component_2dac_8h_ace1da3ee1cda6efe12a220080a718b99}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB) Reference Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a257979650aa6e806ad98f4095f58dd52}\label{component_2dac_8h_a257979650aa6e806ad98f4095f58dd52}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+Msk}~(0x3ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_ace1da3ee1cda6efe12a220080a718b99}{DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_ab75aa87cd7f0a1813d5e73f2dba5057e}\label{component_2dac_8h_ab75aa87cd7f0a1813d5e73f2dba5057e}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+REFSEL}(value)~((DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dac_8h_ace1da3ee1cda6efe12a220080a718b99}{DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dac_8h_afc2e72a0d035fcbf05dad162c768467c}\label{component_2dac_8h_afc2e72a0d035fcbf05dad162c768467c}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+INT1\+V\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB) Internal 1.\+0V reference \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a0ec9e0f724ebc16f883f720380d25771}\label{component_2dac_8h_a0ec9e0f724ebc16f883f720380d25771}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+AVCC\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB) AVCC \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a63711351571cbeb5c161639aee8d6252}\label{component_2dac_8h_a63711351571cbeb5c161639aee8d6252}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+VREFP\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB) External reference \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a9a53c260c228abfd923a15064f1a1525}\label{component_2dac_8h_a9a53c260c228abfd923a15064f1a1525}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+INT1V}~(\mbox{\hyperlink{component_2dac_8h_afc2e72a0d035fcbf05dad162c768467c}{DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+INT1\+V\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2dac_8h_ace1da3ee1cda6efe12a220080a718b99}{DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a70dc3629848778c513b61220e3a47107}\label{component_2dac_8h_a70dc3629848778c513b61220e3a47107}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+AVCC}~(\mbox{\hyperlink{component_2dac_8h_a0ec9e0f724ebc16f883f720380d25771}{DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+AVCC\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2dac_8h_ace1da3ee1cda6efe12a220080a718b99}{DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_aa2619d9edfd1b7945c69719f63456f5b}\label{component_2dac_8h_aa2619d9edfd1b7945c69719f63456f5b}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+VREFP}~(\mbox{\hyperlink{component_2dac_8h_a63711351571cbeb5c161639aee8d6252}{DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+VREFP\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2dac_8h_ace1da3ee1cda6efe12a220080a718b99}{DAC\+\_\+\+CTRLB\+\_\+\+REFSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_aa12ea04e34d8557ae1e628862714e207}\label{component_2dac_8h_aa12ea04e34d8557ae1e628862714e207}} 
+\#define {\bfseries DAC\+\_\+\+CTRLB\+\_\+\+MASK}~0x\+CFul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+CTRLB) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a554a475582005e674b535a88927abc9f}\label{component_2dac_8h_a554a475582005e674b535a88927abc9f}} 
+\#define {\bfseries DAC\+\_\+\+EVCTRL\+\_\+\+OFFSET}~0x2
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+EVCTRL offset) Event Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_ae95bd54234ae16d3e9ee3291b4c883c5}\label{component_2dac_8h_ae95bd54234ae16d3e9ee3291b4c883c5}} 
+\#define {\bfseries DAC\+\_\+\+EVCTRL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+EVCTRL reset\+\_\+value) Event Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a31ff6c0f7fef665224fcf1068cd3f3fd}\label{component_2dac_8h_a31ff6c0f7fef665224fcf1068cd3f3fd}} 
+\#define {\bfseries DAC\+\_\+\+EVCTRL\+\_\+\+STARTEI\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+EVCTRL) Start Conversion Event Input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a5fbf72269702debf464c4a596eb035d6}\label{component_2dac_8h_a5fbf72269702debf464c4a596eb035d6}} 
+\#define {\bfseries DAC\+\_\+\+EVCTRL\+\_\+\+STARTEI}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a31ff6c0f7fef665224fcf1068cd3f3fd}{DAC\+\_\+\+EVCTRL\+\_\+\+STARTEI\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a97e13ff75733b38e502c88e75cba9f3d}\label{component_2dac_8h_a97e13ff75733b38e502c88e75cba9f3d}} 
+\#define {\bfseries DAC\+\_\+\+EVCTRL\+\_\+\+EMPTYEO\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+EVCTRL) Data Buffer Empty Event Output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_acef4800bd29ad596e3e1dacbc83d8ed7}\label{component_2dac_8h_acef4800bd29ad596e3e1dacbc83d8ed7}} 
+\#define {\bfseries DAC\+\_\+\+EVCTRL\+\_\+\+EMPTYEO}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a97e13ff75733b38e502c88e75cba9f3d}{DAC\+\_\+\+EVCTRL\+\_\+\+EMPTYEO\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a8290fa8981af7c9f3374d64bfd643575}\label{component_2dac_8h_a8290fa8981af7c9f3374d64bfd643575}} 
+\#define {\bfseries DAC\+\_\+\+EVCTRL\+\_\+\+MASK}~0x03ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+EVCTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a4b29525af7de15de08715677c874b359}\label{component_2dac_8h_a4b29525af7de15de08715677c874b359}} 
+\#define {\bfseries DAC\+\_\+\+INTENCLR\+\_\+\+OFFSET}~0x4
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENCLR offset) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a0052bdf4a77d5d851ff2dc3981b47f84}\label{component_2dac_8h_a0052bdf4a77d5d851ff2dc3981b47f84}} 
+\#define {\bfseries DAC\+\_\+\+INTENCLR\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENCLR reset\+\_\+value) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a1a17f5ec1b6b1d51eb7caa0e41fd01f8}\label{component_2dac_8h_a1a17f5ec1b6b1d51eb7caa0e41fd01f8}} 
+\#define {\bfseries DAC\+\_\+\+INTENCLR\+\_\+\+UNDERRUN\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENCLR) Underrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a0a21d000b608c6a6acbbad5dcb1a4dc9}\label{component_2dac_8h_a0a21d000b608c6a6acbbad5dcb1a4dc9}} 
+\#define {\bfseries DAC\+\_\+\+INTENCLR\+\_\+\+UNDERRUN}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a1a17f5ec1b6b1d51eb7caa0e41fd01f8}{DAC\+\_\+\+INTENCLR\+\_\+\+UNDERRUN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_ae91b3684292cdb9164d07f4b2de13b80}\label{component_2dac_8h_ae91b3684292cdb9164d07f4b2de13b80}} 
+\#define {\bfseries DAC\+\_\+\+INTENCLR\+\_\+\+EMPTY\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENCLR) Data Buffer Empty Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a6a9d9f313d6fe75431478411e2588d01}\label{component_2dac_8h_a6a9d9f313d6fe75431478411e2588d01}} 
+\#define {\bfseries DAC\+\_\+\+INTENCLR\+\_\+\+EMPTY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_ae91b3684292cdb9164d07f4b2de13b80}{DAC\+\_\+\+INTENCLR\+\_\+\+EMPTY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a097d9ec635456477c9fa82e148d2d8bb}\label{component_2dac_8h_a097d9ec635456477c9fa82e148d2d8bb}} 
+\#define {\bfseries DAC\+\_\+\+INTENCLR\+\_\+\+SYNCRDY\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENCLR) Synchronization Ready Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a07844b4a1d88dbe79b2af326a9409ceb}\label{component_2dac_8h_a07844b4a1d88dbe79b2af326a9409ceb}} 
+\#define {\bfseries DAC\+\_\+\+INTENCLR\+\_\+\+SYNCRDY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a097d9ec635456477c9fa82e148d2d8bb}{DAC\+\_\+\+INTENCLR\+\_\+\+SYNCRDY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a85bb6a4ca23cf5a609ff966cfe6ac6eb}\label{component_2dac_8h_a85bb6a4ca23cf5a609ff966cfe6ac6eb}} 
+\#define {\bfseries DAC\+\_\+\+INTENCLR\+\_\+\+MASK}~0x07ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENCLR) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a0ccf063ca605c99a4d7675883da90a35}\label{component_2dac_8h_a0ccf063ca605c99a4d7675883da90a35}} 
+\#define {\bfseries DAC\+\_\+\+INTENSET\+\_\+\+OFFSET}~0x5
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENSET offset) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_ac03fead9c4f7f214a3e9c0718a629b84}\label{component_2dac_8h_ac03fead9c4f7f214a3e9c0718a629b84}} 
+\#define {\bfseries DAC\+\_\+\+INTENSET\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENSET reset\+\_\+value) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a38aa2d8302976875d983b1e2c6b0ced2}\label{component_2dac_8h_a38aa2d8302976875d983b1e2c6b0ced2}} 
+\#define {\bfseries DAC\+\_\+\+INTENSET\+\_\+\+UNDERRUN\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENSET) Underrun Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a1f6ced1ae61e442654cc75b4990a3db1}\label{component_2dac_8h_a1f6ced1ae61e442654cc75b4990a3db1}} 
+\#define {\bfseries DAC\+\_\+\+INTENSET\+\_\+\+UNDERRUN}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a38aa2d8302976875d983b1e2c6b0ced2}{DAC\+\_\+\+INTENSET\+\_\+\+UNDERRUN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a12375d6d098ab02a3889530b60730fc4}\label{component_2dac_8h_a12375d6d098ab02a3889530b60730fc4}} 
+\#define {\bfseries DAC\+\_\+\+INTENSET\+\_\+\+EMPTY\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENSET) Data Buffer Empty Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_ae0ba55a3795921a328b29e2b2b4c4455}\label{component_2dac_8h_ae0ba55a3795921a328b29e2b2b4c4455}} 
+\#define {\bfseries DAC\+\_\+\+INTENSET\+\_\+\+EMPTY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a12375d6d098ab02a3889530b60730fc4}{DAC\+\_\+\+INTENSET\+\_\+\+EMPTY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a3036a73dc494322c684c9236bd70454f}\label{component_2dac_8h_a3036a73dc494322c684c9236bd70454f}} 
+\#define {\bfseries DAC\+\_\+\+INTENSET\+\_\+\+SYNCRDY\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENSET) Synchronization Ready Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a160f399b31890e2fb6af4a43bd547952}\label{component_2dac_8h_a160f399b31890e2fb6af4a43bd547952}} 
+\#define {\bfseries DAC\+\_\+\+INTENSET\+\_\+\+SYNCRDY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a3036a73dc494322c684c9236bd70454f}{DAC\+\_\+\+INTENSET\+\_\+\+SYNCRDY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a16937f1a74d06e17331ee7d86534570a}\label{component_2dac_8h_a16937f1a74d06e17331ee7d86534570a}} 
+\#define {\bfseries DAC\+\_\+\+INTENSET\+\_\+\+MASK}~0x07ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTENSET) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_adb76074cbcb6b6dbbe088030f72d5a4b}\label{component_2dac_8h_adb76074cbcb6b6dbbe088030f72d5a4b}} 
+\#define {\bfseries DAC\+\_\+\+INTFLAG\+\_\+\+OFFSET}~0x6
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTFLAG offset) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a9f73e182aae9decbe33d83db01b2830b}\label{component_2dac_8h_a9f73e182aae9decbe33d83db01b2830b}} 
+\#define {\bfseries DAC\+\_\+\+INTFLAG\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTFLAG reset\+\_\+value) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a6c43469c26efeb772af1a2ceba6e472b}\label{component_2dac_8h_a6c43469c26efeb772af1a2ceba6e472b}} 
+\#define {\bfseries DAC\+\_\+\+INTFLAG\+\_\+\+UNDERRUN\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTFLAG) Underrun \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a425d2358996c173b122575d98cb04434}\label{component_2dac_8h_a425d2358996c173b122575d98cb04434}} 
+\#define {\bfseries DAC\+\_\+\+INTFLAG\+\_\+\+UNDERRUN}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a6c43469c26efeb772af1a2ceba6e472b}{DAC\+\_\+\+INTFLAG\+\_\+\+UNDERRUN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a0dac29b106d18582f439752a01102763}\label{component_2dac_8h_a0dac29b106d18582f439752a01102763}} 
+\#define {\bfseries DAC\+\_\+\+INTFLAG\+\_\+\+EMPTY\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTFLAG) Data Buffer Empty \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_aa3cec4c9338963c8d6556c57824b5cbb}\label{component_2dac_8h_aa3cec4c9338963c8d6556c57824b5cbb}} 
+\#define {\bfseries DAC\+\_\+\+INTFLAG\+\_\+\+EMPTY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a0dac29b106d18582f439752a01102763}{DAC\+\_\+\+INTFLAG\+\_\+\+EMPTY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a850fe6f2c2fefc2f5f6cd72d1757c780}\label{component_2dac_8h_a850fe6f2c2fefc2f5f6cd72d1757c780}} 
+\#define {\bfseries DAC\+\_\+\+INTFLAG\+\_\+\+SYNCRDY\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTFLAG) Synchronization Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a7437e469e21f5f1f9c0ba36a3c6b7934}\label{component_2dac_8h_a7437e469e21f5f1f9c0ba36a3c6b7934}} 
+\#define {\bfseries DAC\+\_\+\+INTFLAG\+\_\+\+SYNCRDY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a850fe6f2c2fefc2f5f6cd72d1757c780}{DAC\+\_\+\+INTFLAG\+\_\+\+SYNCRDY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a7610b49b2915578cf29db233149cf421}\label{component_2dac_8h_a7610b49b2915578cf29db233149cf421}} 
+\#define {\bfseries DAC\+\_\+\+INTFLAG\+\_\+\+MASK}~0x07ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+INTFLAG) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a515f997330d2406b1230c8b83e7c5a6b}\label{component_2dac_8h_a515f997330d2406b1230c8b83e7c5a6b}} 
+\#define {\bfseries DAC\+\_\+\+STATUS\+\_\+\+OFFSET}~0x7
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+STATUS offset) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a114959003f1b29d6a60514c7e42781e3}\label{component_2dac_8h_a114959003f1b29d6a60514c7e42781e3}} 
+\#define {\bfseries DAC\+\_\+\+STATUS\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+STATUS reset\+\_\+value) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a78482bceb5799efa5c20ff1781500806}\label{component_2dac_8h_a78482bceb5799efa5c20ff1781500806}} 
+\#define {\bfseries DAC\+\_\+\+STATUS\+\_\+\+SYNCBUSY\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+STATUS) Synchronization Busy Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_ae923484ada5a9546eeb9dc1ccf30b0b8}\label{component_2dac_8h_ae923484ada5a9546eeb9dc1ccf30b0b8}} 
+\#define {\bfseries DAC\+\_\+\+STATUS\+\_\+\+SYNCBUSY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a78482bceb5799efa5c20ff1781500806}{DAC\+\_\+\+STATUS\+\_\+\+SYNCBUSY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a989b67a3f83996021dc0214e918aaddf}\label{component_2dac_8h_a989b67a3f83996021dc0214e918aaddf}} 
+\#define {\bfseries DAC\+\_\+\+STATUS\+\_\+\+MASK}~0x80ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+STATUS) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a927b65fb825b37f7f7b23d90604430be}\label{component_2dac_8h_a927b65fb825b37f7f7b23d90604430be}} 
+\#define {\bfseries DAC\+\_\+\+DATA\+\_\+\+OFFSET}~0x8
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+DATA offset) Data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a18ce37ed9fbd7ceef65e3837f2ed73ec}\label{component_2dac_8h_a18ce37ed9fbd7ceef65e3837f2ed73ec}} 
+\#define {\bfseries DAC\+\_\+\+DATA\+\_\+\+RESETVALUE}~0x0000ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+DATA reset\+\_\+value) Data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_abb4ad33edb03cfa83cacba4fbfcae055}\label{component_2dac_8h_abb4ad33edb03cfa83cacba4fbfcae055}} 
+\#define {\bfseries DAC\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+DATA) Data to be converted \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a171d99dfcf0786683343dee659c78c1f}\label{component_2dac_8h_a171d99dfcf0786683343dee659c78c1f}} 
+\#define {\bfseries DAC\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2dac_8h_abb4ad33edb03cfa83cacba4fbfcae055}{DAC\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a74d499bb7e6618526f4e7928cc871593}\label{component_2dac_8h_a74d499bb7e6618526f4e7928cc871593}} 
+\#define {\bfseries DAC\+\_\+\+DATA\+\_\+\+DATA}(value)~((DAC\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dac_8h_abb4ad33edb03cfa83cacba4fbfcae055}{DAC\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a1bb2391625c1bf82261cfb3a23c32181}\label{component_2dac_8h_a1bb2391625c1bf82261cfb3a23c32181}} 
+\#define {\bfseries DAC\+\_\+\+DATA\+\_\+\+MASK}~0x\+FFFFul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+DATA) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a925e76e2151662945396d1937062bdf7}\label{component_2dac_8h_a925e76e2151662945396d1937062bdf7}} 
+\#define {\bfseries DAC\+\_\+\+DATABUF\+\_\+\+OFFSET}~0xC
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+DATABUF offset) Data Buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a3649ae1cf9dbb0179c3a00c0e210bc23}\label{component_2dac_8h_a3649ae1cf9dbb0179c3a00c0e210bc23}} 
+\#define {\bfseries DAC\+\_\+\+DATABUF\+\_\+\+RESETVALUE}~0x0000ul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+DATABUF reset\+\_\+value) Data Buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_a3fe3d9c9181741d88429ff03b62828e5}\label{component_2dac_8h_a3fe3d9c9181741d88429ff03b62828e5}} 
+\#define {\bfseries DAC\+\_\+\+DATABUF\+\_\+\+DATABUF\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+DATABUF) Data Buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dac_8h_ab9b1749e7a45e018441aa8987cc29c16}\label{component_2dac_8h_ab9b1749e7a45e018441aa8987cc29c16}} 
+\#define {\bfseries DAC\+\_\+\+DATABUF\+\_\+\+DATABUF\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2dac_8h_a3fe3d9c9181741d88429ff03b62828e5}{DAC\+\_\+\+DATABUF\+\_\+\+DATABUF\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a4e60504cd02e632151e452ec90fa33ac}\label{component_2dac_8h_a4e60504cd02e632151e452ec90fa33ac}} 
+\#define {\bfseries DAC\+\_\+\+DATABUF\+\_\+\+DATABUF}(value)~((DAC\+\_\+\+DATABUF\+\_\+\+DATABUF\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dac_8h_a3fe3d9c9181741d88429ff03b62828e5}{DAC\+\_\+\+DATABUF\+\_\+\+DATABUF\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dac_8h_a09bc5edc17c5afd32066807527a78ba1}\label{component_2dac_8h_a09bc5edc17c5afd32066807527a78ba1}} 
+\#define {\bfseries DAC\+\_\+\+DATABUF\+\_\+\+MASK}~0x\+FFFFul
+\begin{DoxyCompactList}\small\item\em (DAC\+\_\+\+DATABUF) MASK Register \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component description for DAC. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

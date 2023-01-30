@@ -1,0 +1,675 @@
+\hypertarget{compiler_8h_source}{}\doxysection{compiler.\+h}
+\label{compiler_8h_source}\index{src/ASF/sam0/utils/compiler.h@{src/ASF/sam0/utils/compiler.h}}
+\mbox{\hyperlink{compiler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef UTILS\_COMPILER\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define UTILS\_COMPILER\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#if (defined \_\_ICCARM\_\_)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#  include <intrinsics.h>}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <stddef.h>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{parts_8h}{parts.h}}>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{preprocessor_8h}{preprocessor.h}}>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{io_8h}{io.h}}>}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#ifndef \_\_ASSEMBLY\_\_}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define UNUSED(v)          (void)(v)}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#  define barrier()        asm volatile("{}"{}} ::: "{}memory"{})}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#  define barrier()        asm ("{}"{}})}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define COMPILER\_PRAGMA(arg)          \_Pragma(\#arg)}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define COMPILER\_PACK\_SET(alignment)  COMPILER\_PRAGMA(pack(alignment))}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define COMPILER\_PACK\_RESET()         COMPILER\_PRAGMA(pack())}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#if (defined \_\_GNUC\_\_) || (defined \_\_CC\_ARM)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#   define COMPILER\_ALIGNED(a)        \_\_attribute\_\_((\_\_aligned\_\_(a)))}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#elif (defined \_\_ICCARM\_\_)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#   define COMPILER\_ALIGNED(a)        COMPILER\_PRAGMA(data\_alignment = a)}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#if (defined \_\_GNUC\_\_) || defined(\_\_CC\_ARM)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define COMPILER\_WORD\_ALIGNED         \_\_attribute\_\_((\_\_aligned\_\_(4)))}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#elif (defined \_\_ICCARM\_\_)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define COMPILER\_WORD\_ALIGNED         COMPILER\_PRAGMA(data\_alignment = 4)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#if defined(\_\_CC\_ARM)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#  define \_\_always\_inline             \_\_forceinline}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#elif (defined \_\_GNUC\_\_)}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#  define \_\_always\_inline             \_\_attribute\_\_((\_\_always\_inline\_\_))}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#elif (defined \_\_ICCARM\_\_)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#  define \_\_always\_inline             \_Pragma("{}inline=forced"{}})}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#if defined(\_\_CC\_ARM)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#  define \_\_no\_inline                 \_\_attribute\_\_((noinline))}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#elif (defined \_\_GNUC\_\_)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#  define \_\_no\_inline                 \_\_attribute\_\_((noinline))}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#elif (defined \_\_ICCARM\_\_)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#  define \_\_no\_inline                 \_Pragma("{}inline=never"{}})}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 }
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#if defined(\_ASSERT\_ENABLE\_)}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#  if defined(TEST\_SUITE\_DEFINE\_ASSERT\_MACRO)}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#    include "{}unit\_test/suite.h"{}}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#    undef TEST\_SUITE\_DEFINE\_ASSERT\_MACRO}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#    define Assert(expr) \(\backslash\)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{        \{\(\backslash\)}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{           if (!(expr)) asm("{}BKPT \#0"{}});\(\backslash\)}
+\DoxyCodeLine{171         \}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#  define Assert(expr) ((void) 0)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{comment}{/* Define WEAK attribute */}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#if defined   ( \_\_CC\_ARM   )}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#   define WEAK \_\_attribute\_\_ ((weak))}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#elif defined ( \_\_ICCARM\_\_ )}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#   define WEAK \_\_weak}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#elif defined (  \_\_GNUC\_\_  )}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#   define WEAK \_\_attribute\_\_ ((weak))}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{comment}{/* Define NO\_INIT attribute */}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#if defined   ( \_\_CC\_ARM   )}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#   define NO\_INIT \_\_attribute\_\_((zero\_init))}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#elif defined ( \_\_ICCARM\_\_ )}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#   define NO\_INIT \_\_no\_init}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#elif defined (  \_\_GNUC\_\_  )}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#   define NO\_INIT \_\_attribute\_\_((section("{}.no\_init"{}})))}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{interrupt_8h}{interrupt.h}}"{}}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#ifndef \_\_cplusplus}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#  if !defined(\_\_bool\_true\_false\_are\_defined)}}
+\DoxyCodeLine{201 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}           bool;}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{204 \textcolor{keyword}{typedef} uint16\_t                le16\_t;}
+\DoxyCodeLine{205 \textcolor{keyword}{typedef} uint16\_t                be16\_t;}
+\DoxyCodeLine{206 \textcolor{keyword}{typedef} uint32\_t                le32\_t;}
+\DoxyCodeLine{207 \textcolor{keyword}{typedef} uint32\_t                be32\_t;}
+\DoxyCodeLine{208 \textcolor{keyword}{typedef} uint32\_t                iram\_size\_t;}
+\DoxyCodeLine{215 \textcolor{keyword}{typedef} \textcolor{keyword}{union}}
+\DoxyCodeLine{216 \{}
+\DoxyCodeLine{217   int16\_t  s16;}
+\DoxyCodeLine{218   uint16\_t u16;}
+\DoxyCodeLine{219   int8\_t   s8[2];}
+\DoxyCodeLine{220   uint8\_t  u8[2];}
+\DoxyCodeLine{221 \} \mbox{\hyperlink{union_union16}{Union16}};}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{224 \textcolor{keyword}{typedef} \textcolor{keyword}{union}}
+\DoxyCodeLine{225 \{}
+\DoxyCodeLine{226   int32\_t  s32;}
+\DoxyCodeLine{227   uint32\_t u32;}
+\DoxyCodeLine{228   int16\_t  s16[2];}
+\DoxyCodeLine{229   uint16\_t u16[2];}
+\DoxyCodeLine{230   int8\_t   s8[4];}
+\DoxyCodeLine{231   uint8\_t  u8[4];}
+\DoxyCodeLine{232 \} \mbox{\hyperlink{union_union32}{Union32}};}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{235 \textcolor{keyword}{typedef} \textcolor{keyword}{union}}
+\DoxyCodeLine{236 \{}
+\DoxyCodeLine{237   int64\_t  s64;}
+\DoxyCodeLine{238   uint64\_t u64;}
+\DoxyCodeLine{239   int32\_t  s32[2];}
+\DoxyCodeLine{240   uint32\_t u32[2];}
+\DoxyCodeLine{241   int16\_t  s16[4];}
+\DoxyCodeLine{242   uint16\_t u16[4];}
+\DoxyCodeLine{243   int8\_t   s8[8];}
+\DoxyCodeLine{244   uint8\_t  u8[8];}
+\DoxyCodeLine{245 \} \mbox{\hyperlink{union_union64}{Union64}};}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{248 \textcolor{keyword}{typedef} \textcolor{keyword}{union}}
+\DoxyCodeLine{249 \{}
+\DoxyCodeLine{250   int64\_t  *s64ptr;}
+\DoxyCodeLine{251   uint64\_t *u64ptr;}
+\DoxyCodeLine{252   int32\_t  *s32ptr;}
+\DoxyCodeLine{253   uint32\_t *u32ptr;}
+\DoxyCodeLine{254   int16\_t  *s16ptr;}
+\DoxyCodeLine{255   uint16\_t *u16ptr;}
+\DoxyCodeLine{256   int8\_t   *s8ptr;}
+\DoxyCodeLine{257   uint8\_t  *u8ptr;}
+\DoxyCodeLine{258 \} \mbox{\hyperlink{union_union_ptr}{UnionPtr}};}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{261 \textcolor{keyword}{typedef} \textcolor{keyword}{union}}
+\DoxyCodeLine{262 \{}
+\DoxyCodeLine{263   \textcolor{keyword}{volatile} int64\_t  *s64ptr;}
+\DoxyCodeLine{264   \textcolor{keyword}{volatile} uint64\_t *u64ptr;}
+\DoxyCodeLine{265   \textcolor{keyword}{volatile} int32\_t  *s32ptr;}
+\DoxyCodeLine{266   \textcolor{keyword}{volatile} uint32\_t *u32ptr;}
+\DoxyCodeLine{267   \textcolor{keyword}{volatile} int16\_t  *s16ptr;}
+\DoxyCodeLine{268   \textcolor{keyword}{volatile} uint16\_t *u16ptr;}
+\DoxyCodeLine{269   \textcolor{keyword}{volatile} int8\_t   *s8ptr;}
+\DoxyCodeLine{270   \textcolor{keyword}{volatile} uint8\_t  *u8ptr;}
+\DoxyCodeLine{271 \} \mbox{\hyperlink{union_union_v_ptr}{UnionVPtr}};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{274 \textcolor{keyword}{typedef} \textcolor{keyword}{union}}
+\DoxyCodeLine{275 \{}
+\DoxyCodeLine{276   \textcolor{keyword}{const} int64\_t  *s64ptr;}
+\DoxyCodeLine{277   \textcolor{keyword}{const} uint64\_t *u64ptr;}
+\DoxyCodeLine{278   \textcolor{keyword}{const} int32\_t  *s32ptr;}
+\DoxyCodeLine{279   \textcolor{keyword}{const} uint32\_t *u32ptr;}
+\DoxyCodeLine{280   \textcolor{keyword}{const} int16\_t  *s16ptr;}
+\DoxyCodeLine{281   \textcolor{keyword}{const} uint16\_t *u16ptr;}
+\DoxyCodeLine{282   \textcolor{keyword}{const} int8\_t   *s8ptr;}
+\DoxyCodeLine{283   \textcolor{keyword}{const} uint8\_t  *u8ptr;}
+\DoxyCodeLine{284 \} \mbox{\hyperlink{union_union_c_ptr}{UnionCPtr}};}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{287 \textcolor{keyword}{typedef} \textcolor{keyword}{union}}
+\DoxyCodeLine{288 \{}
+\DoxyCodeLine{289   \textcolor{keyword}{const} \textcolor{keyword}{volatile} int64\_t  *s64ptr;}
+\DoxyCodeLine{290   \textcolor{keyword}{const} \textcolor{keyword}{volatile} uint64\_t *u64ptr;}
+\DoxyCodeLine{291   \textcolor{keyword}{const} \textcolor{keyword}{volatile} int32\_t  *s32ptr;}
+\DoxyCodeLine{292   \textcolor{keyword}{const} \textcolor{keyword}{volatile} uint32\_t *u32ptr;}
+\DoxyCodeLine{293   \textcolor{keyword}{const} \textcolor{keyword}{volatile} int16\_t  *s16ptr;}
+\DoxyCodeLine{294   \textcolor{keyword}{const} \textcolor{keyword}{volatile} uint16\_t *u16ptr;}
+\DoxyCodeLine{295   \textcolor{keyword}{const} \textcolor{keyword}{volatile} int8\_t   *s8ptr;}
+\DoxyCodeLine{296   \textcolor{keyword}{const} \textcolor{keyword}{volatile} uint8\_t  *u8ptr;}
+\DoxyCodeLine{297 \} \mbox{\hyperlink{union_union_c_v_ptr}{UnionCVPtr}};}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{300 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{301 \{}
+\DoxyCodeLine{302   int64\_t  *s64ptr;}
+\DoxyCodeLine{303   uint64\_t *u64ptr;}
+\DoxyCodeLine{304   int32\_t  *s32ptr;}
+\DoxyCodeLine{305   uint32\_t *u32ptr;}
+\DoxyCodeLine{306   int16\_t  *s16ptr;}
+\DoxyCodeLine{307   uint16\_t *u16ptr;}
+\DoxyCodeLine{308   int8\_t   *s8ptr;}
+\DoxyCodeLine{309   uint8\_t  *u8ptr;}
+\DoxyCodeLine{310 \} \mbox{\hyperlink{struct_struct_ptr}{StructPtr}};}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{313 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{314 \{}
+\DoxyCodeLine{315   \textcolor{keyword}{volatile} int64\_t  *s64ptr;}
+\DoxyCodeLine{316   \textcolor{keyword}{volatile} uint64\_t *u64ptr;}
+\DoxyCodeLine{317   \textcolor{keyword}{volatile} int32\_t  *s32ptr;}
+\DoxyCodeLine{318   \textcolor{keyword}{volatile} uint32\_t *u32ptr;}
+\DoxyCodeLine{319   \textcolor{keyword}{volatile} int16\_t  *s16ptr;}
+\DoxyCodeLine{320   \textcolor{keyword}{volatile} uint16\_t *u16ptr;}
+\DoxyCodeLine{321   \textcolor{keyword}{volatile} int8\_t   *s8ptr;}
+\DoxyCodeLine{322   \textcolor{keyword}{volatile} uint8\_t  *u8ptr;}
+\DoxyCodeLine{323 \} \mbox{\hyperlink{struct_struct_v_ptr}{StructVPtr}};}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{326 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{327 \{}
+\DoxyCodeLine{328   \textcolor{keyword}{const} int64\_t  *s64ptr;}
+\DoxyCodeLine{329   \textcolor{keyword}{const} uint64\_t *u64ptr;}
+\DoxyCodeLine{330   \textcolor{keyword}{const} int32\_t  *s32ptr;}
+\DoxyCodeLine{331   \textcolor{keyword}{const} uint32\_t *u32ptr;}
+\DoxyCodeLine{332   \textcolor{keyword}{const} int16\_t  *s16ptr;}
+\DoxyCodeLine{333   \textcolor{keyword}{const} uint16\_t *u16ptr;}
+\DoxyCodeLine{334   \textcolor{keyword}{const} int8\_t   *s8ptr;}
+\DoxyCodeLine{335   \textcolor{keyword}{const} uint8\_t  *u8ptr;}
+\DoxyCodeLine{336 \} \mbox{\hyperlink{struct_struct_c_ptr}{StructCPtr}};}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{339 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{340 \{}
+\DoxyCodeLine{341   \textcolor{keyword}{const} \textcolor{keyword}{volatile} int64\_t  *s64ptr;}
+\DoxyCodeLine{342   \textcolor{keyword}{const} \textcolor{keyword}{volatile} uint64\_t *u64ptr;}
+\DoxyCodeLine{343   \textcolor{keyword}{const} \textcolor{keyword}{volatile} int32\_t  *s32ptr;}
+\DoxyCodeLine{344   \textcolor{keyword}{const} \textcolor{keyword}{volatile} uint32\_t *u32ptr;}
+\DoxyCodeLine{345   \textcolor{keyword}{const} \textcolor{keyword}{volatile} int16\_t  *s16ptr;}
+\DoxyCodeLine{346   \textcolor{keyword}{const} \textcolor{keyword}{volatile} uint16\_t *u16ptr;}
+\DoxyCodeLine{347   \textcolor{keyword}{const} \textcolor{keyword}{volatile} int8\_t   *s8ptr;}
+\DoxyCodeLine{348   \textcolor{keyword}{const} \textcolor{keyword}{volatile} uint8\_t  *u8ptr;}
+\DoxyCodeLine{349 \} \mbox{\hyperlink{struct_struct_c_v_ptr}{StructCVPtr}};}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \#ifndef \_\_ASSEMBLY\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define DISABLE   0}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define ENABLE    1}}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#ifndef \_\_cplusplus}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#  if !defined(\_\_bool\_true\_false\_are\_defined)}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#    define false     0}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#    define true      1}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#ifndef \_\_ASSEMBLY\_\_}}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#if !defined(likely) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#   define likely(exp)    (exp)}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#if !defined(unlikely) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#   define unlikely(exp)  (exp)}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#if (defined \_\_GNUC\_\_) || (defined \_\_CC\_ARM)}}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#   define is\_constant(exp)       \_\_builtin\_constant\_p(exp)}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#   define is\_constant(exp)       (0)}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define Rd\_bits( value, mask)        ((value) \& (mask))}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define Wr\_bits(lvalue, mask, bits)  ((lvalue) = ((lvalue) \& \string~(mask)) |\(\backslash\)}}
+\DoxyCodeLine{426 \textcolor{preprocessor}{                                                 ((bits  ) \&  (mask)))}}
+\DoxyCodeLine{427 }
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define Tst\_bits( value, mask)  (Rd\_bits(value, mask) != 0)}}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define Clr\_bits(lvalue, mask)  ((lvalue) \&= \string~(mask))}}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define Set\_bits(lvalue, mask)  ((lvalue) |=  (mask))}}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define Tgl\_bits(lvalue, mask)  ((lvalue) \string^=  (mask))}}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define Rd\_bitfield( value, mask)           (Rd\_bits( value, mask) >> ctz(mask))}}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define Wr\_bitfield(lvalue, mask, bitfield) (Wr\_bits(lvalue, mask, (uint32\_t)(bitfield) << ctz(mask)))}}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#if (defined \_\_GNUC\_\_) || (defined \_\_CC\_ARM)}}
+\DoxyCodeLine{507 \textcolor{preprocessor}{\#   define clz(u)              ((u) ? \_\_builtin\_clz(u) : 32)}}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{509 \textcolor{preprocessor}{\#   define clz(u)              (((u) == 0)          ? 32 : \(\backslash\)}}
+\DoxyCodeLine{510 \textcolor{preprocessor}{                                ((u) \& (1ul << 31)) ?  0 : \(\backslash\)}}
+\DoxyCodeLine{511 \textcolor{preprocessor}{                                ((u) \& (1ul << 30)) ?  1 : \(\backslash\)}}
+\DoxyCodeLine{512 \textcolor{preprocessor}{                                ((u) \& (1ul << 29)) ?  2 : \(\backslash\)}}
+\DoxyCodeLine{513 \textcolor{preprocessor}{                                ((u) \& (1ul << 28)) ?  3 : \(\backslash\)}}
+\DoxyCodeLine{514 \textcolor{preprocessor}{                                ((u) \& (1ul << 27)) ?  4 : \(\backslash\)}}
+\DoxyCodeLine{515 \textcolor{preprocessor}{                                ((u) \& (1ul << 26)) ?  5 : \(\backslash\)}}
+\DoxyCodeLine{516 \textcolor{preprocessor}{                                ((u) \& (1ul << 25)) ?  6 : \(\backslash\)}}
+\DoxyCodeLine{517 \textcolor{preprocessor}{                                ((u) \& (1ul << 24)) ?  7 : \(\backslash\)}}
+\DoxyCodeLine{518 \textcolor{preprocessor}{                                ((u) \& (1ul << 23)) ?  8 : \(\backslash\)}}
+\DoxyCodeLine{519 \textcolor{preprocessor}{                                ((u) \& (1ul << 22)) ?  9 : \(\backslash\)}}
+\DoxyCodeLine{520 \textcolor{preprocessor}{                                ((u) \& (1ul << 21)) ? 10 : \(\backslash\)}}
+\DoxyCodeLine{521 \textcolor{preprocessor}{                                ((u) \& (1ul << 20)) ? 11 : \(\backslash\)}}
+\DoxyCodeLine{522 \textcolor{preprocessor}{                                ((u) \& (1ul << 19)) ? 12 : \(\backslash\)}}
+\DoxyCodeLine{523 \textcolor{preprocessor}{                                ((u) \& (1ul << 18)) ? 13 : \(\backslash\)}}
+\DoxyCodeLine{524 \textcolor{preprocessor}{                                ((u) \& (1ul << 17)) ? 14 : \(\backslash\)}}
+\DoxyCodeLine{525 \textcolor{preprocessor}{                                ((u) \& (1ul << 16)) ? 15 : \(\backslash\)}}
+\DoxyCodeLine{526 \textcolor{preprocessor}{                                ((u) \& (1ul << 15)) ? 16 : \(\backslash\)}}
+\DoxyCodeLine{527 \textcolor{preprocessor}{                                ((u) \& (1ul << 14)) ? 17 : \(\backslash\)}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{                                ((u) \& (1ul << 13)) ? 18 : \(\backslash\)}}
+\DoxyCodeLine{529 \textcolor{preprocessor}{                                ((u) \& (1ul << 12)) ? 19 : \(\backslash\)}}
+\DoxyCodeLine{530 \textcolor{preprocessor}{                                ((u) \& (1ul << 11)) ? 20 : \(\backslash\)}}
+\DoxyCodeLine{531 \textcolor{preprocessor}{                                ((u) \& (1ul << 10)) ? 21 : \(\backslash\)}}
+\DoxyCodeLine{532 \textcolor{preprocessor}{                                ((u) \& (1ul <<  9)) ? 22 : \(\backslash\)}}
+\DoxyCodeLine{533 \textcolor{preprocessor}{                                ((u) \& (1ul <<  8)) ? 23 : \(\backslash\)}}
+\DoxyCodeLine{534 \textcolor{preprocessor}{                                ((u) \& (1ul <<  7)) ? 24 : \(\backslash\)}}
+\DoxyCodeLine{535 \textcolor{preprocessor}{                                ((u) \& (1ul <<  6)) ? 25 : \(\backslash\)}}
+\DoxyCodeLine{536 \textcolor{preprocessor}{                                ((u) \& (1ul <<  5)) ? 26 : \(\backslash\)}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{                                ((u) \& (1ul <<  4)) ? 27 : \(\backslash\)}}
+\DoxyCodeLine{538 \textcolor{preprocessor}{                                ((u) \& (1ul <<  3)) ? 28 : \(\backslash\)}}
+\DoxyCodeLine{539 \textcolor{preprocessor}{                                ((u) \& (1ul <<  2)) ? 29 : \(\backslash\)}}
+\DoxyCodeLine{540 \textcolor{preprocessor}{                                ((u) \& (1ul <<  1)) ? 30 : \(\backslash\)}}
+\DoxyCodeLine{541 \textcolor{preprocessor}{                                31)}}
+\DoxyCodeLine{542 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{543 }
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#if (defined \_\_GNUC\_\_) || (defined \_\_CC\_ARM)}}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#   define ctz(u)              ((u) ? \_\_builtin\_ctz(u) : 32)}}
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{553 \textcolor{preprocessor}{\#   define ctz(u)              ((u) \& (1ul <<  0) ?  0 : \(\backslash\)}}
+\DoxyCodeLine{554 \textcolor{preprocessor}{                                (u) \& (1ul <<  1) ?  1 : \(\backslash\)}}
+\DoxyCodeLine{555 \textcolor{preprocessor}{                                (u) \& (1ul <<  2) ?  2 : \(\backslash\)}}
+\DoxyCodeLine{556 \textcolor{preprocessor}{                                (u) \& (1ul <<  3) ?  3 : \(\backslash\)}}
+\DoxyCodeLine{557 \textcolor{preprocessor}{                                (u) \& (1ul <<  4) ?  4 : \(\backslash\)}}
+\DoxyCodeLine{558 \textcolor{preprocessor}{                                (u) \& (1ul <<  5) ?  5 : \(\backslash\)}}
+\DoxyCodeLine{559 \textcolor{preprocessor}{                                (u) \& (1ul <<  6) ?  6 : \(\backslash\)}}
+\DoxyCodeLine{560 \textcolor{preprocessor}{                                (u) \& (1ul <<  7) ?  7 : \(\backslash\)}}
+\DoxyCodeLine{561 \textcolor{preprocessor}{                                (u) \& (1ul <<  8) ?  8 : \(\backslash\)}}
+\DoxyCodeLine{562 \textcolor{preprocessor}{                                (u) \& (1ul <<  9) ?  9 : \(\backslash\)}}
+\DoxyCodeLine{563 \textcolor{preprocessor}{                                (u) \& (1ul << 10) ? 10 : \(\backslash\)}}
+\DoxyCodeLine{564 \textcolor{preprocessor}{                                (u) \& (1ul << 11) ? 11 : \(\backslash\)}}
+\DoxyCodeLine{565 \textcolor{preprocessor}{                                (u) \& (1ul << 12) ? 12 : \(\backslash\)}}
+\DoxyCodeLine{566 \textcolor{preprocessor}{                                (u) \& (1ul << 13) ? 13 : \(\backslash\)}}
+\DoxyCodeLine{567 \textcolor{preprocessor}{                                (u) \& (1ul << 14) ? 14 : \(\backslash\)}}
+\DoxyCodeLine{568 \textcolor{preprocessor}{                                (u) \& (1ul << 15) ? 15 : \(\backslash\)}}
+\DoxyCodeLine{569 \textcolor{preprocessor}{                                (u) \& (1ul << 16) ? 16 : \(\backslash\)}}
+\DoxyCodeLine{570 \textcolor{preprocessor}{                                (u) \& (1ul << 17) ? 17 : \(\backslash\)}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{                                (u) \& (1ul << 18) ? 18 : \(\backslash\)}}
+\DoxyCodeLine{572 \textcolor{preprocessor}{                                (u) \& (1ul << 19) ? 19 : \(\backslash\)}}
+\DoxyCodeLine{573 \textcolor{preprocessor}{                                (u) \& (1ul << 20) ? 20 : \(\backslash\)}}
+\DoxyCodeLine{574 \textcolor{preprocessor}{                                (u) \& (1ul << 21) ? 21 : \(\backslash\)}}
+\DoxyCodeLine{575 \textcolor{preprocessor}{                                (u) \& (1ul << 22) ? 22 : \(\backslash\)}}
+\DoxyCodeLine{576 \textcolor{preprocessor}{                                (u) \& (1ul << 23) ? 23 : \(\backslash\)}}
+\DoxyCodeLine{577 \textcolor{preprocessor}{                                (u) \& (1ul << 24) ? 24 : \(\backslash\)}}
+\DoxyCodeLine{578 \textcolor{preprocessor}{                                (u) \& (1ul << 25) ? 25 : \(\backslash\)}}
+\DoxyCodeLine{579 \textcolor{preprocessor}{                                (u) \& (1ul << 26) ? 26 : \(\backslash\)}}
+\DoxyCodeLine{580 \textcolor{preprocessor}{                                (u) \& (1ul << 27) ? 27 : \(\backslash\)}}
+\DoxyCodeLine{581 \textcolor{preprocessor}{                                (u) \& (1ul << 28) ? 28 : \(\backslash\)}}
+\DoxyCodeLine{582 \textcolor{preprocessor}{                                (u) \& (1ul << 29) ? 29 : \(\backslash\)}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{                                (u) \& (1ul << 30) ? 30 : \(\backslash\)}}
+\DoxyCodeLine{584 \textcolor{preprocessor}{                                (u) \& (1ul << 31) ? 31 : \(\backslash\)}}
+\DoxyCodeLine{585 \textcolor{preprocessor}{                                32)}}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{587 }
+\DoxyCodeLine{600 \textcolor{preprocessor}{\#define bit\_reverse8(u8)    ((U8)(bit\_reverse32((U8)(u8)) >> 24))}}
+\DoxyCodeLine{601 }
+\DoxyCodeLine{608 \textcolor{preprocessor}{\#define bit\_reverse16(u16)  ((uint16\_t)(bit\_reverse32((uint16\_t)(u16)) >> 16))}}
+\DoxyCodeLine{609 }
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#define bit\_reverse32(u32)   \_\_RBIT(u32)}}
+\DoxyCodeLine{617 }
+\DoxyCodeLine{624 \textcolor{preprocessor}{\#define bit\_reverse64(u64)  ((uint64\_t)(((uint64\_t)bit\_reverse32((uint64\_t)(u64) >> 32)) |\(\backslash\)}}
+\DoxyCodeLine{625 \textcolor{preprocessor}{                                   ((uint64\_t)bit\_reverse32((uint64\_t)(u64)) << 32)))}}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{640 \textcolor{preprocessor}{\#define Test\_align(val, n) (!Tst\_bits( val, (n) -\/ 1     )   )}}
+\DoxyCodeLine{641 }
+\DoxyCodeLine{649 \textcolor{preprocessor}{\#define Get\_align(val, n) (  Rd\_bits( val, (n) -\/ 1     )   )}}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{659 \textcolor{preprocessor}{\#define Set\_align(lval, n, alg) (  Wr\_bits(lval, (n) -\/ 1, alg)   )}}
+\DoxyCodeLine{660 }
+\DoxyCodeLine{668 \textcolor{preprocessor}{\#define Align\_up(  val, n) (((val) + ((n) -\/ 1)) \& \string~((n) -\/ 1))}}
+\DoxyCodeLine{669 }
+\DoxyCodeLine{677 \textcolor{preprocessor}{\#define Align\_down(val, n) ( (val)              \& \string~((n) -\/ 1))}}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{703 \textcolor{preprocessor}{\#define Abs(a)              (((a) <  0 ) ? -\/(a) : (a))}}
+\DoxyCodeLine{704 }
+\DoxyCodeLine{705 \textcolor{preprocessor}{\#ifndef \_\_cplusplus}}
+\DoxyCodeLine{715 \textcolor{preprocessor}{\#define Min(a, b)           (((a) < (b)) ?  (a) : (b))}}
+\DoxyCodeLine{716 }
+\DoxyCodeLine{726 \textcolor{preprocessor}{\#define Max(a, b)           (((a) > (b)) ?  (a) : (b))}}
+\DoxyCodeLine{727 }
+\DoxyCodeLine{737 \textcolor{preprocessor}{\#define min(a, b)   Min(a, b)}}
+\DoxyCodeLine{738 }
+\DoxyCodeLine{748 \textcolor{preprocessor}{\#define max(a, b)   Max(a, b)}}
+\DoxyCodeLine{749 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{750 }
+\DoxyCodeLine{765 \textcolor{preprocessor}{\#define Long\_call(addr)                   ((*(void (*)(void))(addr))())}}
+\DoxyCodeLine{766 }
+\DoxyCodeLine{767 }
+\DoxyCodeLine{772 \textcolor{preprocessor}{\#define  BE16(x)        swap16(x)}}
+\DoxyCodeLine{773 \textcolor{preprocessor}{\#define  LE16(x)        (x)}}
+\DoxyCodeLine{774 }
+\DoxyCodeLine{775 \textcolor{preprocessor}{\#define  le16\_to\_cpu(x) (x)}}
+\DoxyCodeLine{776 \textcolor{preprocessor}{\#define  cpu\_to\_le16(x) (x)}}
+\DoxyCodeLine{777 \textcolor{preprocessor}{\#define  LE16\_TO\_CPU(x) (x)}}
+\DoxyCodeLine{778 \textcolor{preprocessor}{\#define  CPU\_TO\_LE16(x) (x)}}
+\DoxyCodeLine{779 }
+\DoxyCodeLine{780 \textcolor{preprocessor}{\#define  be16\_to\_cpu(x) swap16(x)}}
+\DoxyCodeLine{781 \textcolor{preprocessor}{\#define  cpu\_to\_be16(x) swap16(x)}}
+\DoxyCodeLine{782 \textcolor{preprocessor}{\#define  BE16\_TO\_CPU(x) swap16(x)}}
+\DoxyCodeLine{783 \textcolor{preprocessor}{\#define  CPU\_TO\_BE16(x) swap16(x)}}
+\DoxyCodeLine{784 }
+\DoxyCodeLine{785 \textcolor{preprocessor}{\#define  le32\_to\_cpu(x) (x)}}
+\DoxyCodeLine{786 \textcolor{preprocessor}{\#define  cpu\_to\_le32(x) (x)}}
+\DoxyCodeLine{787 \textcolor{preprocessor}{\#define  LE32\_TO\_CPU(x) (x)}}
+\DoxyCodeLine{788 \textcolor{preprocessor}{\#define  CPU\_TO\_LE32(x) (x)}}
+\DoxyCodeLine{789 }
+\DoxyCodeLine{790 \textcolor{preprocessor}{\#define  be32\_to\_cpu(x) swap32(x)}}
+\DoxyCodeLine{791 \textcolor{preprocessor}{\#define  cpu\_to\_be32(x) swap32(x)}}
+\DoxyCodeLine{792 \textcolor{preprocessor}{\#define  BE32\_TO\_CPU(x) swap32(x)}}
+\DoxyCodeLine{793 \textcolor{preprocessor}{\#define  CPU\_TO\_BE32(x) swap32(x)}}
+\DoxyCodeLine{817 \textcolor{preprocessor}{\#define Swap16(u16) ((uint16\_t)(((uint16\_t)(u16) >> 8) |\(\backslash\)}}
+\DoxyCodeLine{818 \textcolor{preprocessor}{                           ((uint16\_t)(u16) << 8)))}}
+\DoxyCodeLine{819 }
+\DoxyCodeLine{828 \textcolor{preprocessor}{\#define Swap32(u32) ((uint32\_t)(((uint32\_t)Swap16((uint32\_t)(u32) >> 16)) |\(\backslash\)}}
+\DoxyCodeLine{829 \textcolor{preprocessor}{                           ((uint32\_t)Swap16((uint32\_t)(u32)) << 16)))}}
+\DoxyCodeLine{830 }
+\DoxyCodeLine{839 \textcolor{preprocessor}{\#define Swap64(u64) ((uint64\_t)(((uint64\_t)Swap32((uint64\_t)(u64) >> 32)) |\(\backslash\)}}
+\DoxyCodeLine{840 \textcolor{preprocessor}{                           ((uint64\_t)Swap32((uint64\_t)(u64)) << 32)))}}
+\DoxyCodeLine{841 }
+\DoxyCodeLine{850 \textcolor{preprocessor}{\#define swap16(u16) Swap16(u16)}}
+\DoxyCodeLine{851 }
+\DoxyCodeLine{860 \textcolor{preprocessor}{\#if (defined \_\_GNUC\_\_)}}
+\DoxyCodeLine{861 \textcolor{preprocessor}{\#  define swap32(u32) ((uint32\_t)\_\_builtin\_bswap32((uint32\_t)(u32)))}}
+\DoxyCodeLine{862 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{863 \textcolor{preprocessor}{\#  define swap32(u32) Swap32(u32)}}
+\DoxyCodeLine{864 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{865 }
+\DoxyCodeLine{874 \textcolor{preprocessor}{\#if (defined \_\_GNUC\_\_)}}
+\DoxyCodeLine{875 \textcolor{preprocessor}{\#  define swap64(u64) ((uint64\_t)\_\_builtin\_bswap64((uint64\_t)(u64)))}}
+\DoxyCodeLine{876 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{877 \textcolor{preprocessor}{\#  define swap64(u64) ((uint64\_t)(((uint64\_t)swap32((uint64\_t)(u64) >> 32)) |\(\backslash\)}}
+\DoxyCodeLine{878 \textcolor{preprocessor}{                         ((uint64\_t)swap32((uint64\_t)(u64)) << 32)))}}
+\DoxyCodeLine{879 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{880 }
+\DoxyCodeLine{888 \textcolor{preprocessor}{\#define \_GLOBEXT\_           extern      }}
+\DoxyCodeLine{889 \textcolor{preprocessor}{\#define \_CONST\_TYPE\_        const       }}
+\DoxyCodeLine{890 \textcolor{preprocessor}{\#define \_MEM\_TYPE\_SLOW\_                 }}
+\DoxyCodeLine{891 \textcolor{preprocessor}{\#define \_MEM\_TYPE\_MEDFAST\_              }}
+\DoxyCodeLine{892 \textcolor{preprocessor}{\#define \_MEM\_TYPE\_FAST\_                 }}
+\DoxyCodeLine{894 \textcolor{preprocessor}{\#define memcmp\_ram2ram      memcmp      }}
+\DoxyCodeLine{895 \textcolor{preprocessor}{\#define memcmp\_code2ram     memcmp      }}
+\DoxyCodeLine{896 \textcolor{preprocessor}{\#define memcpy\_ram2ram      memcpy      }}
+\DoxyCodeLine{897 \textcolor{preprocessor}{\#define memcpy\_code2ram     memcpy      }}
+\DoxyCodeLine{910 \textcolor{preprocessor}{\#define div\_ceil(a, b)      (((a) + (b) -\/ 1) / (b))}}
+\DoxyCodeLine{911 }
+\DoxyCodeLine{912 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \#ifndef \_\_ASSEMBLY\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{913 \textcolor{preprocessor}{\#ifdef \_\_ICCARM\_\_}}
+\DoxyCodeLine{920 \textcolor{preprocessor}{\#define \_\_asm\_\_             asm}}
+\DoxyCodeLine{921 \textcolor{preprocessor}{\#define \_\_inline\_\_          inline}}
+\DoxyCodeLine{922 \textcolor{preprocessor}{\#define \_\_volatile\_\_}}
+\DoxyCodeLine{923 }
+\DoxyCodeLine{926 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{927 }
+\DoxyCodeLine{928 \textcolor{preprocessor}{\#define FUNC\_PTR                            void *}}
+\DoxyCodeLine{933 \textcolor{preprocessor}{\#define unused(v)          do \{ (void)(v); \} while(0)}}
+\DoxyCodeLine{934 }
+\DoxyCodeLine{935 \textcolor{comment}{/* Define RAMFUNC attribute */}}
+\DoxyCodeLine{936 \textcolor{preprocessor}{\#if defined   ( \_\_CC\_ARM   ) }\textcolor{comment}{/* Keil uVision 4 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{937 \textcolor{preprocessor}{\#   define RAMFUNC \_\_attribute\_\_ ((section("{}.ramfunc"{}})))}
+\DoxyCodeLine{938 \textcolor{preprocessor}{\#elif defined ( \_\_ICCARM\_\_ ) }\textcolor{comment}{/* IAR Ewarm 5.41+ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{939 \textcolor{preprocessor}{\#   define RAMFUNC \_\_ramfunc}}
+\DoxyCodeLine{940 \textcolor{preprocessor}{\#elif defined (  \_\_GNUC\_\_  ) }\textcolor{comment}{/* GCC CS3 2009q3-\/68 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{941 \textcolor{preprocessor}{\#   define RAMFUNC \_\_attribute\_\_ ((section("{}.ramfunc"{}})))}
+\DoxyCodeLine{942 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{943 }
+\DoxyCodeLine{944 \textcolor{comment}{/* Define OPTIMIZE\_HIGH attribute */}}
+\DoxyCodeLine{945 \textcolor{preprocessor}{\#if defined   ( \_\_CC\_ARM   ) }\textcolor{comment}{/* Keil uVision 4 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{946 \textcolor{preprocessor}{\#   define OPTIMIZE\_HIGH \_Pragma("{}O3"{}})}
+\DoxyCodeLine{947 \textcolor{preprocessor}{\#elif defined ( \_\_ICCARM\_\_ ) }\textcolor{comment}{/* IAR Ewarm 5.41+ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{948 \textcolor{preprocessor}{\#   define OPTIMIZE\_HIGH \_Pragma("{}optimize=high"{}})}
+\DoxyCodeLine{949 \textcolor{preprocessor}{\#elif defined (  \_\_GNUC\_\_  ) }\textcolor{comment}{/* GCC CS3 2009q3-\/68 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{950 \textcolor{preprocessor}{\#   define OPTIMIZE\_HIGH \_\_attribute\_\_((optimize("{}s"{}})))}
+\DoxyCodeLine{951 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{952 \textcolor{preprocessor}{\#define PASS      0}}
+\DoxyCodeLine{953 \textcolor{preprocessor}{\#define FAIL      1}}
+\DoxyCodeLine{954 \textcolor{preprocessor}{\#define LOW       0}}
+\DoxyCodeLine{955 \textcolor{preprocessor}{\#define HIGH      1}}
+\DoxyCodeLine{956 }
+\DoxyCodeLine{957 \textcolor{keyword}{typedef} int8\_t                  \mbox{\hyperlink{group__group__sam0__utils_gaf1475a0bb1962ef08dd1f78bd5dba87a}{S8}} ;  }
+\DoxyCodeLine{958 \textcolor{keyword}{typedef} uint8\_t                 \mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}} ;  }
+\DoxyCodeLine{959 \textcolor{keyword}{typedef} int16\_t                 \mbox{\hyperlink{group__group__sam0__utils_ga6d241ad21a823c90d4835380787db5d4}{S16}};  }
+\DoxyCodeLine{960 \textcolor{keyword}{typedef} uint16\_t                \mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}};  }
+\DoxyCodeLine{961 \textcolor{keyword}{typedef} int32\_t                 \mbox{\hyperlink{group__group__sam0__utils_ga39c786017723555afb9e8b85accec0de}{S32}};  }
+\DoxyCodeLine{962 \textcolor{keyword}{typedef} uint32\_t                \mbox{\hyperlink{group__group__sam0__utils_ga696390429f2f3b644bde8d0322a24124}{U32}};  }
+\DoxyCodeLine{963 \textcolor{keyword}{typedef} int64\_t                 \mbox{\hyperlink{group__group__sam0__utils_ga1d293e5c494dd6826239b02f5fe98e7f}{S64}};  }
+\DoxyCodeLine{964 \textcolor{keyword}{typedef} uint64\_t                \mbox{\hyperlink{group__group__sam0__utils_ga25809e0734a149248fcf5831efa4e33d}{U64}};  }
+\DoxyCodeLine{965 \textcolor{keyword}{typedef} \textcolor{keywordtype}{float}                   \mbox{\hyperlink{group__group__sam0__utils_ga841d3674577a1e86afdc2f4845f46c4b}{F32}};  }
+\DoxyCodeLine{966 \textcolor{keyword}{typedef} \textcolor{keywordtype}{double}                  \mbox{\hyperlink{group__group__sam0__utils_gadc9896ee12db3bb116fc63b3464c72c7}{F64}};  }
+\DoxyCodeLine{967 }
+\DoxyCodeLine{968 \textcolor{preprocessor}{\#define  MSB(u16)       (((U8  *)\&(u16))[1]) }}
+\DoxyCodeLine{969 \textcolor{preprocessor}{\#define  LSB(u16)       (((U8  *)\&(u16))[0]) }}
+\DoxyCodeLine{970 }
+\DoxyCodeLine{971 \textcolor{preprocessor}{\#define  MSH(u32)       (((U16 *)\&(u32))[1]) }}
+\DoxyCodeLine{972 \textcolor{preprocessor}{\#define  LSH(u32)       (((U16 *)\&(u32))[0]) }}
+\DoxyCodeLine{973 \textcolor{preprocessor}{\#define  MSB0W(u32)     (((U8  *)\&(u32))[3]) }}
+\DoxyCodeLine{974 \textcolor{preprocessor}{\#define  MSB1W(u32)     (((U8  *)\&(u32))[2]) }}
+\DoxyCodeLine{975 \textcolor{preprocessor}{\#define  MSB2W(u32)     (((U8  *)\&(u32))[1]) }}
+\DoxyCodeLine{976 \textcolor{preprocessor}{\#define  MSB3W(u32)     (((U8  *)\&(u32))[0]) }}
+\DoxyCodeLine{977 \textcolor{preprocessor}{\#define  LSB3W(u32)     MSB0W(u32)           }}
+\DoxyCodeLine{978 \textcolor{preprocessor}{\#define  LSB2W(u32)     MSB1W(u32)           }}
+\DoxyCodeLine{979 \textcolor{preprocessor}{\#define  LSB1W(u32)     MSB2W(u32)           }}
+\DoxyCodeLine{980 \textcolor{preprocessor}{\#define  LSB0W(u32)     MSB3W(u32)           }}
+\DoxyCodeLine{981 }
+\DoxyCodeLine{982 \textcolor{preprocessor}{\#define  MSW(u64)       (((U32 *)\&(u64))[1]) }}
+\DoxyCodeLine{983 \textcolor{preprocessor}{\#define  LSW(u64)       (((U32 *)\&(u64))[0]) }}
+\DoxyCodeLine{984 \textcolor{preprocessor}{\#define  MSH0(u64)      (((U16 *)\&(u64))[3]) }}
+\DoxyCodeLine{985 \textcolor{preprocessor}{\#define  MSH1(u64)      (((U16 *)\&(u64))[2]) }}
+\DoxyCodeLine{986 \textcolor{preprocessor}{\#define  MSH2(u64)      (((U16 *)\&(u64))[1]) }}
+\DoxyCodeLine{987 \textcolor{preprocessor}{\#define  MSH3(u64)      (((U16 *)\&(u64))[0]) }}
+\DoxyCodeLine{988 \textcolor{preprocessor}{\#define  LSH3(u64)      MSH0(u64)            }}
+\DoxyCodeLine{989 \textcolor{preprocessor}{\#define  LSH2(u64)      MSH1(u64)            }}
+\DoxyCodeLine{990 \textcolor{preprocessor}{\#define  LSH1(u64)      MSH2(u64)            }}
+\DoxyCodeLine{991 \textcolor{preprocessor}{\#define  LSH0(u64)      MSH3(u64)            }}
+\DoxyCodeLine{992 \textcolor{preprocessor}{\#define  MSB0D(u64)     (((U8  *)\&(u64))[7]) }}
+\DoxyCodeLine{993 \textcolor{preprocessor}{\#define  MSB1D(u64)     (((U8  *)\&(u64))[6]) }}
+\DoxyCodeLine{994 \textcolor{preprocessor}{\#define  MSB2D(u64)     (((U8  *)\&(u64))[5]) }}
+\DoxyCodeLine{995 \textcolor{preprocessor}{\#define  MSB3D(u64)     (((U8  *)\&(u64))[4]) }}
+\DoxyCodeLine{996 \textcolor{preprocessor}{\#define  MSB4D(u64)     (((U8  *)\&(u64))[3]) }}
+\DoxyCodeLine{997 \textcolor{preprocessor}{\#define  MSB5D(u64)     (((U8  *)\&(u64))[2]) }}
+\DoxyCodeLine{998 \textcolor{preprocessor}{\#define  MSB6D(u64)     (((U8  *)\&(u64))[1]) }}
+\DoxyCodeLine{999 \textcolor{preprocessor}{\#define  MSB7D(u64)     (((U8  *)\&(u64))[0]) }}
+\DoxyCodeLine{1000 \textcolor{preprocessor}{\#define  LSB7D(u64)     MSB0D(u64)           }}
+\DoxyCodeLine{1001 \textcolor{preprocessor}{\#define  LSB6D(u64)     MSB1D(u64)           }}
+\DoxyCodeLine{1002 \textcolor{preprocessor}{\#define  LSB5D(u64)     MSB2D(u64)           }}
+\DoxyCodeLine{1003 \textcolor{preprocessor}{\#define  LSB4D(u64)     MSB3D(u64)           }}
+\DoxyCodeLine{1004 \textcolor{preprocessor}{\#define  LSB3D(u64)     MSB4D(u64)           }}
+\DoxyCodeLine{1005 \textcolor{preprocessor}{\#define  LSB2D(u64)     MSB5D(u64)           }}
+\DoxyCodeLine{1006 \textcolor{preprocessor}{\#define  LSB1D(u64)     MSB6D(u64)           }}
+\DoxyCodeLine{1007 \textcolor{preprocessor}{\#define  LSB0D(u64)     MSB7D(u64)           }}
+\DoxyCodeLine{1008 }
+\DoxyCodeLine{1009 \textcolor{preprocessor}{\#define LSB0(u32)           LSB0W(u32)  }}
+\DoxyCodeLine{1010 \textcolor{preprocessor}{\#define LSB1(u32)           LSB1W(u32)  }}
+\DoxyCodeLine{1011 \textcolor{preprocessor}{\#define LSB2(u32)           LSB2W(u32)  }}
+\DoxyCodeLine{1012 \textcolor{preprocessor}{\#define LSB3(u32)           LSB3W(u32)  }}
+\DoxyCodeLine{1013 \textcolor{preprocessor}{\#define MSB3(u32)           MSB3W(u32)  }}
+\DoxyCodeLine{1014 \textcolor{preprocessor}{\#define MSB2(u32)           MSB2W(u32)  }}
+\DoxyCodeLine{1015 \textcolor{preprocessor}{\#define MSB1(u32)           MSB1W(u32)  }}
+\DoxyCodeLine{1016 \textcolor{preprocessor}{\#define MSB0(u32)           MSB0W(u32)  }}
+\DoxyCodeLine{1017 }
+\DoxyCodeLine{1018 \textcolor{preprocessor}{\#if defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{1019 \textcolor{preprocessor}{\#define SHORTENUM           \_\_packed}}
+\DoxyCodeLine{1020 \textcolor{preprocessor}{\#elif defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{1021 \textcolor{preprocessor}{\#define SHORTENUM           \_\_attribute\_\_((packed))}}
+\DoxyCodeLine{1022 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1023 }
+\DoxyCodeLine{1024 \textcolor{comment}{/* No operation */}}
+\DoxyCodeLine{1025 \textcolor{preprocessor}{\#if defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{1026 \textcolor{preprocessor}{\#define nop()               \_\_no\_operation()}}
+\DoxyCodeLine{1027 \textcolor{preprocessor}{\#elif defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{1028 \textcolor{preprocessor}{\#define nop()               \_\_NOP()}}
+\DoxyCodeLine{1029 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1030 }
+\DoxyCodeLine{1031 \textcolor{preprocessor}{\#define FLASH\_DECLARE(x)  const x}}
+\DoxyCodeLine{1032 \textcolor{preprocessor}{\#define FLASH\_EXTERN(x) extern const x}}
+\DoxyCodeLine{1033 \textcolor{preprocessor}{\#define PGM\_READ\_BYTE(x) *(x)}}
+\DoxyCodeLine{1034 \textcolor{preprocessor}{\#define PGM\_READ\_WORD(x) *(x)}}
+\DoxyCodeLine{1035 \textcolor{preprocessor}{\#define MEMCPY\_ENDIAN memcpy}}
+\DoxyCodeLine{1036 \textcolor{preprocessor}{\#define PGM\_READ\_BLOCK(dst, src, len) memcpy((dst), (src), (len))}}
+\DoxyCodeLine{1037 }
+\DoxyCodeLine{1038 \textcolor{comment}{/*Defines the Flash Storage for the request and response of MAC*/}}
+\DoxyCodeLine{1039 \textcolor{preprocessor}{\#define CMD\_ID\_OCTET    (0)}}
+\DoxyCodeLine{1040 }
+\DoxyCodeLine{1041 \textcolor{comment}{/* Converting of values from CPU endian to little endian. */}}
+\DoxyCodeLine{1042 \textcolor{preprocessor}{\#define CPU\_ENDIAN\_TO\_LE16(x)   (x)}}
+\DoxyCodeLine{1043 \textcolor{preprocessor}{\#define CPU\_ENDIAN\_TO\_LE32(x)   (x)}}
+\DoxyCodeLine{1044 \textcolor{preprocessor}{\#define CPU\_ENDIAN\_TO\_LE64(x)   (x)}}
+\DoxyCodeLine{1045 }
+\DoxyCodeLine{1046 \textcolor{comment}{/* Converting of values from little endian to CPU endian. */}}
+\DoxyCodeLine{1047 \textcolor{preprocessor}{\#define LE16\_TO\_CPU\_ENDIAN(x)   (x)}}
+\DoxyCodeLine{1048 \textcolor{preprocessor}{\#define LE32\_TO\_CPU\_ENDIAN(x)   (x)}}
+\DoxyCodeLine{1049 \textcolor{preprocessor}{\#define LE64\_TO\_CPU\_ENDIAN(x)   (x)}}
+\DoxyCodeLine{1050 }
+\DoxyCodeLine{1051 \textcolor{comment}{/* Converting of constants from little endian to CPU endian. */}}
+\DoxyCodeLine{1052 \textcolor{preprocessor}{\#define CLE16\_TO\_CPU\_ENDIAN(x)  (x)}}
+\DoxyCodeLine{1053 \textcolor{preprocessor}{\#define CLE32\_TO\_CPU\_ENDIAN(x)  (x)}}
+\DoxyCodeLine{1054 \textcolor{preprocessor}{\#define CLE64\_TO\_CPU\_ENDIAN(x)  (x)}}
+\DoxyCodeLine{1055 }
+\DoxyCodeLine{1056 \textcolor{comment}{/* Converting of constants from CPU endian to little endian. */}}
+\DoxyCodeLine{1057 \textcolor{preprocessor}{\#define CCPU\_ENDIAN\_TO\_LE16(x)  (x)}}
+\DoxyCodeLine{1058 \textcolor{preprocessor}{\#define CCPU\_ENDIAN\_TO\_LE32(x)  (x)}}
+\DoxyCodeLine{1059 \textcolor{preprocessor}{\#define CCPU\_ENDIAN\_TO\_LE64(x)  (x)}}
+\DoxyCodeLine{1060 }
+\DoxyCodeLine{1061 \textcolor{preprocessor}{\#define ADDR\_COPY\_DST\_SRC\_16(dst, src)  ((dst) = (src))}}
+\DoxyCodeLine{1062 \textcolor{preprocessor}{\#define ADDR\_COPY\_DST\_SRC\_64(dst, src)  ((dst) = (src))}}
+\DoxyCodeLine{1063 }
+\DoxyCodeLine{1071 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} convert\_64\_bit\_to\_byte\_array(uint64\_t value, uint8\_t *data)}
+\DoxyCodeLine{1072 \{}
+\DoxyCodeLine{1073     uint8\_t index = 0;}
+\DoxyCodeLine{1074 }
+\DoxyCodeLine{1075     \textcolor{keywordflow}{while} (index < 8)}
+\DoxyCodeLine{1076     \{}
+\DoxyCodeLine{1077         data[index++] = value \& 0xFF;}
+\DoxyCodeLine{1078         value = value >> 8;}
+\DoxyCodeLine{1079     \}}
+\DoxyCodeLine{1080 \}}
+\DoxyCodeLine{1081 }
+\DoxyCodeLine{1089 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} convert\_16\_bit\_to\_byte\_array(uint16\_t value, uint8\_t *data)}
+\DoxyCodeLine{1090 \{}
+\DoxyCodeLine{1091     data[0] = value \& 0xFF;}
+\DoxyCodeLine{1092     data[1] = (value >> 8) \& 0xFF;}
+\DoxyCodeLine{1093 \}}
+\DoxyCodeLine{1094 }
+\DoxyCodeLine{1095 \textcolor{comment}{/* Converts a 16-\/Bit value into a 2 Byte array */}}
+\DoxyCodeLine{1096 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} convert\_spec\_16\_bit\_to\_byte\_array(uint16\_t value, uint8\_t *data)}
+\DoxyCodeLine{1097 \{}
+\DoxyCodeLine{1098     data[0] = value \& 0xFF;}
+\DoxyCodeLine{1099     data[1] = (value >> 8) \& 0xFF;}
+\DoxyCodeLine{1100 \}}
+\DoxyCodeLine{1101 }
+\DoxyCodeLine{1102 \textcolor{comment}{/* Converts a 16-\/Bit value into a 2 Byte array */}}
+\DoxyCodeLine{1103 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} convert\_16\_bit\_to\_byte\_address(uint16\_t value, uint8\_t *data)}
+\DoxyCodeLine{1104 \{}
+\DoxyCodeLine{1105     data[0] = value \& 0xFF;}
+\DoxyCodeLine{1106     data[1] = (value >> 8) \& 0xFF;}
+\DoxyCodeLine{1107 \}}
+\DoxyCodeLine{1108 }
+\DoxyCodeLine{1109 \textcolor{comment}{/*}}
+\DoxyCodeLine{1110 \textcolor{comment}{ * @brief Converts a 2 Byte array into a 16-\/Bit value}}
+\DoxyCodeLine{1111 \textcolor{comment}{ *}}
+\DoxyCodeLine{1112 \textcolor{comment}{ * @param data Specifies the pointer to the 2 Byte array}}
+\DoxyCodeLine{1113 \textcolor{comment}{ *}}
+\DoxyCodeLine{1114 \textcolor{comment}{ * @return 16-\/Bit value}}
+\DoxyCodeLine{1115 \textcolor{comment}{ * @ingroup apiPalApi}}
+\DoxyCodeLine{1116 \textcolor{comment}{ */}}
+\DoxyCodeLine{1117 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint16\_t convert\_byte\_array\_to\_16\_bit(uint8\_t *data)}
+\DoxyCodeLine{1118 \{}
+\DoxyCodeLine{1119     \textcolor{keywordflow}{return} (data[0] | ((uint16\_t)data[1] << 8));}
+\DoxyCodeLine{1120 \}}
+\DoxyCodeLine{1121 }
+\DoxyCodeLine{1122 \textcolor{comment}{/* Converts a 4 Byte array into a 32-\/Bit value */}}
+\DoxyCodeLine{1123 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t convert\_byte\_array\_to\_32\_bit(uint8\_t *data)}
+\DoxyCodeLine{1124 \{}
+\DoxyCodeLine{1125     \textcolor{keyword}{union}}
+\DoxyCodeLine{1126     \{}
+\DoxyCodeLine{1127         uint32\_t u32;}
+\DoxyCodeLine{1128         uint8\_t u8[4];}
+\DoxyCodeLine{1129     \}long\_addr;}
+\DoxyCodeLine{1130     uint8\_t index;}
+\DoxyCodeLine{1131     \textcolor{keywordflow}{for} (index = 0; index < 4; index++)}
+\DoxyCodeLine{1132     \{}
+\DoxyCodeLine{1133         long\_addr.u8[index] = *data++;}
+\DoxyCodeLine{1134     \}}
+\DoxyCodeLine{1135     \textcolor{keywordflow}{return} long\_addr.u32;}
+\DoxyCodeLine{1136 \}}
+\DoxyCodeLine{1137 }
+\DoxyCodeLine{1146 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint64\_t convert\_byte\_array\_to\_64\_bit(uint8\_t *data)}
+\DoxyCodeLine{1147 \{}
+\DoxyCodeLine{1148     \textcolor{keyword}{union}}
+\DoxyCodeLine{1149     \{}
+\DoxyCodeLine{1150         uint64\_t u64;}
+\DoxyCodeLine{1151         uint8\_t u8[8];}
+\DoxyCodeLine{1152     \} long\_addr;}
+\DoxyCodeLine{1153 }
+\DoxyCodeLine{1154     uint8\_t index;}
+\DoxyCodeLine{1155 }
+\DoxyCodeLine{1156     \textcolor{keywordflow}{for} (index = 0; index < 8; index++)}
+\DoxyCodeLine{1157     \{}
+\DoxyCodeLine{1158         long\_addr.u8[index] = *data++;}
+\DoxyCodeLine{1159     \}}
+\DoxyCodeLine{1160 }
+\DoxyCodeLine{1161     \textcolor{keywordflow}{return} long\_addr.u64;}
+\DoxyCodeLine{1162 \}}
+\DoxyCodeLine{1163 }
+\DoxyCodeLine{1166 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* UTILS\_COMPILER\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

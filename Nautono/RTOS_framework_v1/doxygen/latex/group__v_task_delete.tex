@@ -1,0 +1,33 @@
+\hypertarget{group__v_task_delete}{}\doxysection{v\+Task\+Delete}
+\label{group__v_task_delete}\index{vTaskDelete@{vTaskDelete}}
+task. h 
+\begin{DoxyPre}void vTaskDelete( TaskHandle\_t xTask );\end{DoxyPre}
+
+
+INCLUDE\+\_\+v\+Task\+Delete must be defined as 1 for this function to be available. See the configuration section for more information.
+
+Remove a task from the RTOS real time kernel\textquotesingle{}s management. The task being deleted will be removed from all ready, blocked, suspended and event lists.
+
+NOTE\+: The idle task is responsible for freeing the kernel allocated memory from tasks that have been deleted. It is therefore important that the idle task is not starved of microcontroller processing time if your application makes any calls to v\+Task\+Delete (). Memory allocated by the task code is not automatically freed, and should be freed before the task is deleted.
+
+See the demo application file death.\+c for sample code that utilises v\+Task\+Delete ().
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Task} & The handle of the task to be deleted. Passing NULL will cause the calling task to be deleted.\\
+\hline
+\end{DoxyParams}
+Example usage\+: 
+\begin{DoxyPre}
+void vOtherFunction( void )
+\{
+TaskHandle\_t xHandle;
+
+    // Create the task, storing the handle.
+    xTaskCreate( vTaskCode, "{}NAME"{}, STACK\_SIZE, NULL, tskIDLE\_PRIORITY, \&xHandle );
+
+    // Use the handle to delete the task.
+    vTaskDelete( xHandle );
+\}
+  \end{DoxyPre}
+ 

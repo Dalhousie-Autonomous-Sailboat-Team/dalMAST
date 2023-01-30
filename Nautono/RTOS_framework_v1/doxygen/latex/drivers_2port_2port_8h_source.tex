@@ -1,0 +1,297 @@
+\hypertarget{drivers_2port_2port_8h_source}{}\doxysection{port.\+h}
+\label{drivers_2port_2port_8h_source}\index{src/ASF/sam0/drivers/port/port.h@{src/ASF/sam0/drivers/port/port.h}}
+\mbox{\hyperlink{drivers_2port_2port_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef PORT\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define PORT\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pinmux_8h}{pinmux.h}}>}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{159 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#if (SAML21) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#  define FEATURE\_PORT\_INPUT\_EVENT}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#if (PORT\_GROUPS > 0) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#  define PORTA             PORT-\/>Group[0]}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#if (PORT\_GROUPS > 1) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#  define PORTB             PORT-\/>Group[1]}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#if (PORT\_GROUPS > 2) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#  define PORTC             PORT-\/>Group[2]}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#if (PORT\_GROUPS > 3) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#  define PORTD             PORT-\/>Group[3]}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{209 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__port__group_gabe12893c067f9b011ece79c1bf1b128a}{port\_pin\_dir}} \{}
+\DoxyCodeLine{212     \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aacfdf36142de0378cd9927b9c00e2f7a6}{PORT\_PIN\_DIR\_INPUT}}               = \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae9eec757570dd8e703060cd249076f29}{SYSTEM\_PINMUX\_PIN\_DIR\_INPUT}},}
+\DoxyCodeLine{215     \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aaa2cda8b4095bfaf6f354f113947a3463}{PORT\_PIN\_DIR\_OUTPUT}}              = \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ab20cb484d8d81cea0eccd85608636f8a}{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT}},}
+\DoxyCodeLine{218     \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aae3d3fdfe355c7727ea36948da3b848ad}{PORT\_PIN\_DIR\_OUTPUT\_WTH\_READBACK}} = \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae7f0fe12708b38583366e7f09c37f413}{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT\_WITH\_READBACK}},}
+\DoxyCodeLine{219 \};}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{227 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__port__group_ga1f47828261f5b7ac5f864b42981a2004}{port\_pin\_pull}} \{}
+\DoxyCodeLine{229     \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004ab178b34fb381794e7f550b14ff08a302}{PORT\_PIN\_PULL\_NONE}} = \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a6de6c84525642ff68da72bc3dd5fad4b}{SYSTEM\_PINMUX\_PIN\_PULL\_NONE}},}
+\DoxyCodeLine{231     \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a6505b9a836a818d1f2c8a248b9ac8073}{PORT\_PIN\_PULL\_UP}}   = \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6ac9fa59589685abc00e18426750100e35}{SYSTEM\_PINMUX\_PIN\_PULL\_UP}},}
+\DoxyCodeLine{233     \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a2665866a5f05266cc8fa78da60ebc19d}{PORT\_PIN\_PULL\_DOWN}} = \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a0dec6136103bdccb64576c9bf431ae41}{SYSTEM\_PINMUX\_PIN\_PULL\_DOWN}},}
+\DoxyCodeLine{234 \};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#ifdef FEATURE\_PORT\_INPUT\_EVENT}}
+\DoxyCodeLine{242 \textcolor{keyword}{enum} port\_input\_event\_action \{}
+\DoxyCodeLine{244     PORT\_INPUT\_EVENT\_ACTION\_OUT = 0,}
+\DoxyCodeLine{246     PORT\_INPUT\_EVENT\_ACTION\_SET,}
+\DoxyCodeLine{248     PORT\_INPUT\_EVENT\_ACTION\_CLR,}
+\DoxyCodeLine{250     PORT\_INPUT\_EVENT\_ACTION\_TGL,}
+\DoxyCodeLine{251 \};}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{258 \textcolor{keyword}{enum} port\_input\_event\{}
+\DoxyCodeLine{260     PORT\_INPUT\_EVENT\_0 = 0,}
+\DoxyCodeLine{262     PORT\_INPUT\_EVENT\_1 = 1,}
+\DoxyCodeLine{264     PORT\_INPUT\_EVENT\_2 = 2,}
+\DoxyCodeLine{266     PORT\_INPUT\_EVENT\_3 = 3,}
+\DoxyCodeLine{267 \};}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{274 \textcolor{keyword}{struct }port\_input\_event\_config\{}
+\DoxyCodeLine{276     \textcolor{keyword}{enum} port\_input\_event\_action  action;}
+\DoxyCodeLine{278     uint8\_t gpio\_pin;}
+\DoxyCodeLine{279 \};}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{289 \textcolor{keyword}{struct }\mbox{\hyperlink{structport__config}{port\_config}} \{}
+\DoxyCodeLine{291     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__port__group_gabe12893c067f9b011ece79c1bf1b128a}{port\_pin\_dir}}  \mbox{\hyperlink{structport__config_a359efa8177622e0f9470f67b5c0e2308}{direction}};}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{294     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__port__group_ga1f47828261f5b7ac5f864b42981a2004}{port\_pin\_pull}} \mbox{\hyperlink{structport__config_a2d18897db92dd88ea05e4fe5f800fd0f}{input\_pull}};}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{300     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structport__config_a9479f0709c8ca55df9a37b30dcf916c1}{powersave}};}
+\DoxyCodeLine{301 \};}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{317 \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{struct_port_group}{PortGroup}}* port\_get\_group\_from\_gpio\_pin(}
+\DoxyCodeLine{318         \textcolor{keyword}{const} uint8\_t gpio\_pin)}
+\DoxyCodeLine{319 \{}
+\DoxyCodeLine{320     \textcolor{keywordflow}{return} system\_pinmux\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{321 \}}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{334 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t port\_group\_get\_input\_level(}
+\DoxyCodeLine{335         \textcolor{keyword}{const} \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{336         \textcolor{keyword}{const} uint32\_t mask)}
+\DoxyCodeLine{337 \{}
+\DoxyCodeLine{338     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{339     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(port);}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341     \textcolor{keywordflow}{return} (port-\/>IN.reg \& mask);}
+\DoxyCodeLine{342 \}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{355 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t port\_group\_get\_output\_level(}
+\DoxyCodeLine{356         \textcolor{keyword}{const} \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{357         \textcolor{keyword}{const} uint32\_t mask)}
+\DoxyCodeLine{358 \{}
+\DoxyCodeLine{359     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{360     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(port);}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362     \textcolor{keywordflow}{return} (port-\/>OUT.reg \& mask);}
+\DoxyCodeLine{363 \}}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{375 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} port\_group\_set\_output\_level(}
+\DoxyCodeLine{376         \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{377         \textcolor{keyword}{const} uint32\_t mask,}
+\DoxyCodeLine{378         \textcolor{keyword}{const} uint32\_t level\_mask)}
+\DoxyCodeLine{379 \{}
+\DoxyCodeLine{380     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{381     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(port);}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383     port-\/>OUTSET.reg = (mask \&  level\_mask);}
+\DoxyCodeLine{384     port-\/>OUTCLR.reg = (mask \& \string~level\_mask);}
+\DoxyCodeLine{385 \}}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{395 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} port\_group\_toggle\_output\_level(}
+\DoxyCodeLine{396         \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{397         \textcolor{keyword}{const} uint32\_t mask)}
+\DoxyCodeLine{398 \{}
+\DoxyCodeLine{399     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{400     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(port);}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402     port-\/>OUTTGL.reg = mask;}
+\DoxyCodeLine{403 \}}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{424 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} port\_get\_config\_defaults(}
+\DoxyCodeLine{425         \textcolor{keyword}{struct} \mbox{\hyperlink{structport__config}{port\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{426 \{}
+\DoxyCodeLine{427     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{428     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430     \textcolor{comment}{/* Default configuration values */}}
+\DoxyCodeLine{431     config-\/>\mbox{\hyperlink{structport__config_a359efa8177622e0f9470f67b5c0e2308}{direction}}  = \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aacfdf36142de0378cd9927b9c00e2f7a6}{PORT\_PIN\_DIR\_INPUT}};}
+\DoxyCodeLine{432     config-\/>\mbox{\hyperlink{structport__config_a2d18897db92dd88ea05e4fe5f800fd0f}{input\_pull}} = \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a6505b9a836a818d1f2c8a248b9ac8073}{PORT\_PIN\_PULL\_UP}};}
+\DoxyCodeLine{433     config-\/>\mbox{\hyperlink{structport__config_a9479f0709c8ca55df9a37b30dcf916c1}{powersave}}  = \textcolor{keyword}{false};}
+\DoxyCodeLine{434 \}}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__port__group_gad21f235037f2d75ee3e7c08ba8b239c5}{port\_pin\_set\_config}}(}
+\DoxyCodeLine{437         \textcolor{keyword}{const} uint8\_t gpio\_pin,}
+\DoxyCodeLine{438         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structport__config}{port\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__port__group_ga7b832928bee6911ac7c9f18df8a5cf4a}{port\_group\_set\_config}}(}
+\DoxyCodeLine{441         \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{442         \textcolor{keyword}{const} uint32\_t mask,}
+\DoxyCodeLine{443         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structport__config}{port\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{444 }
+\DoxyCodeLine{461 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} port\_pin\_get\_input\_level(}
+\DoxyCodeLine{462         \textcolor{keyword}{const} uint8\_t gpio\_pin)}
+\DoxyCodeLine{463 \{}
+\DoxyCodeLine{464     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port\_base = port\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{465     uint32\_t pin\_mask  = (1UL << (gpio\_pin \% 32));}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467     \textcolor{keywordflow}{return} (port\_base-\/>\mbox{\hyperlink{struct_port_group_a98613cc1bfe5fdc666400f0cb4dd9f2e}{IN}}.\mbox{\hyperlink{union_p_o_r_t___i_n___type_a564c3c16335d1e27b97f191cd6a35c93}{reg}} \& pin\_mask);}
+\DoxyCodeLine{468 \}}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{480 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} port\_pin\_get\_output\_level(}
+\DoxyCodeLine{481         \textcolor{keyword}{const} uint8\_t gpio\_pin)}
+\DoxyCodeLine{482 \{}
+\DoxyCodeLine{483     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port\_base = port\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{484     uint32\_t pin\_mask  = (1UL << (gpio\_pin \% 32));}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486     \textcolor{keywordflow}{return} (port\_base-\/>\mbox{\hyperlink{struct_port_group_a865fdbe2a7cb1339868e58d9a244031c}{OUT}}.\mbox{\hyperlink{union_p_o_r_t___o_u_t___type_a7d650c5e9cf813ef1d2ab766ea658a1c}{reg}} \& pin\_mask);}
+\DoxyCodeLine{487 \}}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{497 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} port\_pin\_set\_output\_level(}
+\DoxyCodeLine{498         \textcolor{keyword}{const} uint8\_t gpio\_pin,}
+\DoxyCodeLine{499         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} level)}
+\DoxyCodeLine{500 \{}
+\DoxyCodeLine{501     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port\_base = port\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{502     uint32\_t pin\_mask  = (1UL << (gpio\_pin \% 32));}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504     \textcolor{comment}{/* Set the pin to high or low atomically based on the requested level */}}
+\DoxyCodeLine{505     \textcolor{keywordflow}{if} (level) \{}
+\DoxyCodeLine{506         port\_base-\/>\mbox{\hyperlink{struct_port_group_a97265e4a39bd1fc6b0f28db7cb9fa4ae}{OUTSET}}.\mbox{\hyperlink{union_p_o_r_t___o_u_t_s_e_t___type_ae93907b8ec7ad762e8abb7ba9764fe81}{reg}} = pin\_mask;}
+\DoxyCodeLine{507     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{508         port\_base-\/>\mbox{\hyperlink{struct_port_group_a817b54b38d64825d862ae2a5fc6386aa}{OUTCLR}}.\mbox{\hyperlink{union_p_o_r_t___o_u_t_c_l_r___type_a1ed1eeae9c749b110a66e0adb8235519}{reg}} = pin\_mask;}
+\DoxyCodeLine{509     \}}
+\DoxyCodeLine{510 \}}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{519 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} port\_pin\_toggle\_output\_level(}
+\DoxyCodeLine{520         \textcolor{keyword}{const} uint8\_t gpio\_pin)}
+\DoxyCodeLine{521 \{}
+\DoxyCodeLine{522     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port\_base = port\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{523     uint32\_t pin\_mask  = (1UL << (gpio\_pin \% 32));}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525     \textcolor{comment}{/* Toggle pin output level */}}
+\DoxyCodeLine{526     port\_base-\/>\mbox{\hyperlink{struct_port_group_a5367798690cf523de14f6a7b16dd6765}{OUTTGL}}.\mbox{\hyperlink{union_p_o_r_t___o_u_t_t_g_l___type_ad643ad27dece66db03fafdcac0b0190f}{reg}} = pin\_mask;}
+\DoxyCodeLine{527 \}}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{531 \textcolor{preprocessor}{\#ifdef FEATURE\_PORT\_INPUT\_EVENT}}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{548 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} port\_enable\_input\_event(}
+\DoxyCodeLine{549         \textcolor{keyword}{const} uint8\_t gpio\_pin,}
+\DoxyCodeLine{550         \textcolor{keyword}{const} \textcolor{keyword}{enum} port\_input\_event n)}
+\DoxyCodeLine{551 \{}
+\DoxyCodeLine{552     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port\_base = port\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{553     \textcolor{keywordflow}{switch} (n) \{}
+\DoxyCodeLine{554         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_0:}
+\DoxyCodeLine{555             port\_base-\/>EVCTRL.reg |= PORT\_EVCTRL\_PORTEI0;}
+\DoxyCodeLine{556             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{557         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_1:}
+\DoxyCodeLine{558             port\_base-\/>EVCTRL.reg |= PORT\_EVCTRL\_PORTEI1;}
+\DoxyCodeLine{559             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{560         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_2:}
+\DoxyCodeLine{561             port\_base-\/>EVCTRL.reg |= PORT\_EVCTRL\_PORTEI2;}
+\DoxyCodeLine{562             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{563         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_3:}
+\DoxyCodeLine{564             port\_base-\/>EVCTRL.reg |= PORT\_EVCTRL\_PORTEI3;}
+\DoxyCodeLine{565             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{566         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{567             \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{568             \textcolor{keywordflow}{return} STATUS\_ERR\_INVALID\_ARG;}
+\DoxyCodeLine{569     \}}
+\DoxyCodeLine{570     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{571 \}}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{584 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} port\_disable\_input\_event(}
+\DoxyCodeLine{585         \textcolor{keyword}{const} uint8\_t gpio\_pin,}
+\DoxyCodeLine{586         \textcolor{keyword}{const} \textcolor{keyword}{enum} port\_input\_event n)}
+\DoxyCodeLine{587 \{}
+\DoxyCodeLine{588     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port\_base = port\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{589     \textcolor{keywordflow}{switch} (n) \{}
+\DoxyCodeLine{590         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_0:}
+\DoxyCodeLine{591             port\_base-\/>EVCTRL.reg \&= \string~PORT\_EVCTRL\_PORTEI0;}
+\DoxyCodeLine{592             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{593         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_1:}
+\DoxyCodeLine{594             port\_base-\/>EVCTRL.reg \&= \string~PORT\_EVCTRL\_PORTEI1;}
+\DoxyCodeLine{595             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{596         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_2:}
+\DoxyCodeLine{597             port\_base-\/>EVCTRL.reg \&= \string~PORT\_EVCTRL\_PORTEI2;}
+\DoxyCodeLine{598             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{599         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_3:}
+\DoxyCodeLine{600             port\_base-\/>EVCTRL.reg \&= \string~PORT\_EVCTRL\_PORTEI3;}
+\DoxyCodeLine{601             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{602         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{603             \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{604             \textcolor{keywordflow}{return} STATUS\_ERR\_INVALID\_ARG;}
+\DoxyCodeLine{605     \}}
+\DoxyCodeLine{606     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{607 \}}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{618 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} port\_input\_event\_get\_config\_defaults(}
+\DoxyCodeLine{619         \textcolor{keyword}{struct} port\_input\_event\_config *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{620 \{}
+\DoxyCodeLine{621     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{622     config-\/>action   = PORT\_INPUT\_EVENT\_ACTION\_OUT;}
+\DoxyCodeLine{623     config-\/>gpio\_pin = 0;}
+\DoxyCodeLine{624 \}}
+\DoxyCodeLine{625 }
+\DoxyCodeLine{637 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} port\_input\_event\_set\_config(}
+\DoxyCodeLine{638         \textcolor{keyword}{const} \textcolor{keyword}{enum} port\_input\_event n,}
+\DoxyCodeLine{639         \textcolor{keyword}{struct} port\_input\_event\_config *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{640 \{}
+\DoxyCodeLine{641     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{642     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port\_base = port\_get\_group\_from\_gpio\_pin(config-\/>gpio\_pin);}
+\DoxyCodeLine{643     uint8\_t pin\_index = config-\/>gpio\_pin \% 32;}
+\DoxyCodeLine{644     \textcolor{keyword}{struct }\mbox{\hyperlink{structport__config}{port\_config}} pin\_conf;}
+\DoxyCodeLine{645 }
+\DoxyCodeLine{646     port\_get\_config\_defaults(\&pin\_conf);}
+\DoxyCodeLine{647     \textcolor{comment}{/* Configure the GPIO pin as outputs*/}}
+\DoxyCodeLine{648     pin\_conf.direction  = \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aaa2cda8b4095bfaf6f354f113947a3463}{PORT\_PIN\_DIR\_OUTPUT}};}
+\DoxyCodeLine{649     \mbox{\hyperlink{group__asfdoc__sam0__port__group_gad21f235037f2d75ee3e7c08ba8b239c5}{port\_pin\_set\_config}}(config-\/>gpio\_pin, \&pin\_conf);}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651     \textcolor{keywordflow}{switch} (n) \{}
+\DoxyCodeLine{652         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_0:}
+\DoxyCodeLine{653             port\_base-\/>EVCTRL.reg |= PORT\_EVCTRL\_EVACT0(config-\/>action)}
+\DoxyCodeLine{654                                     | PORT\_EVCTRL\_PID0(pin\_index);}
+\DoxyCodeLine{655             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{656         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_1:}
+\DoxyCodeLine{657             port\_base-\/>EVCTRL.reg |= PORT\_EVCTRL\_EVACT1(config-\/>action)}
+\DoxyCodeLine{658                                    | PORT\_EVCTRL\_PID1(pin\_index);}
+\DoxyCodeLine{659             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{660         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_2:}
+\DoxyCodeLine{661             port\_base-\/>EVCTRL.reg |= PORT\_EVCTRL\_EVACT2(config-\/>action)}
+\DoxyCodeLine{662                                    | PORT\_EVCTRL\_PID2(pin\_index);}
+\DoxyCodeLine{663             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{664         \textcolor{keywordflow}{case} PORT\_INPUT\_EVENT\_3:}
+\DoxyCodeLine{665             port\_base-\/>EVCTRL.reg |= PORT\_EVCTRL\_EVACT3(config-\/>action)}
+\DoxyCodeLine{666                                    | PORT\_EVCTRL\_PID3(pin\_index);}
+\DoxyCodeLine{667             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{668         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{669             \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{670             \textcolor{keywordflow}{return} STATUS\_ERR\_INVALID\_ARG;}
+\DoxyCodeLine{671     \}}
+\DoxyCodeLine{672     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{673 \}}
+\DoxyCodeLine{674 }
+\DoxyCodeLine{677 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{680 \}}
+\DoxyCodeLine{681 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{785 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

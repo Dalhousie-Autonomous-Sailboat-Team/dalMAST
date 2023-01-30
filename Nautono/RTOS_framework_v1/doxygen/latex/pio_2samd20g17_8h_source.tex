@@ -1,0 +1,745 @@
+\hypertarget{pio_2samd20g17_8h_source}{}\doxysection{samd20g17.\+h}
+\label{pio_2samd20g17_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/pio/samd20g17.h@{src/ASF/sam0/utils/cmsis/samd20/include/pio/samd20g17.h}}
+\mbox{\hyperlink{pio_2samd20g17_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#ifndef \_SAMD20G17\_PIO\_}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define \_SAMD20G17\_PIO\_}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define PIN\_PA00                           0  }}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define PORT\_PA00                 (1ul <<  0) }}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define PIN\_PA01                           1  }}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define PORT\_PA01                 (1ul <<  1) }}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define PIN\_PA02                           2  }}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define PORT\_PA02                 (1ul <<  2) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define PIN\_PA03                           3  }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define PORT\_PA03                 (1ul <<  3) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define PIN\_PA04                           4  }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define PORT\_PA04                 (1ul <<  4) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define PIN\_PA05                           5  }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define PORT\_PA05                 (1ul <<  5) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define PIN\_PA06                           6  }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define PORT\_PA06                 (1ul <<  6) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define PIN\_PA07                           7  }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define PORT\_PA07                 (1ul <<  7) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define PIN\_PA08                           8  }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define PORT\_PA08                 (1ul <<  8) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define PIN\_PA09                           9  }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define PORT\_PA09                 (1ul <<  9) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define PIN\_PA10                          10  }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define PORT\_PA10                 (1ul << 10) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define PIN\_PA11                          11  }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define PORT\_PA11                 (1ul << 11) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define PIN\_PA12                          12  }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define PORT\_PA12                 (1ul << 12) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define PIN\_PA13                          13  }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define PORT\_PA13                 (1ul << 13) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define PIN\_PA14                          14  }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define PORT\_PA14                 (1ul << 14) }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define PIN\_PA15                          15  }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define PORT\_PA15                 (1ul << 15) }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define PIN\_PA16                          16  }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define PORT\_PA16                 (1ul << 16) }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define PIN\_PA17                          17  }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define PORT\_PA17                 (1ul << 17) }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define PIN\_PA18                          18  }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define PORT\_PA18                 (1ul << 18) }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define PIN\_PA19                          19  }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define PORT\_PA19                 (1ul << 19) }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define PIN\_PA20                          20  }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define PORT\_PA20                 (1ul << 20) }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define PIN\_PA21                          21  }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define PORT\_PA21                 (1ul << 21) }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define PIN\_PA22                          22  }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define PORT\_PA22                 (1ul << 22) }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define PIN\_PA23                          23  }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define PORT\_PA23                 (1ul << 23) }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define PIN\_PA24                          24  }}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define PORT\_PA24                 (1ul << 24) }}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define PIN\_PA25                          25  }}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define PORT\_PA25                 (1ul << 25) }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define PIN\_PA27                          27  }}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define PORT\_PA27                 (1ul << 27) }}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define PIN\_PA28                          28  }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define PORT\_PA28                 (1ul << 28) }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define PIN\_PA30                          30  }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define PORT\_PA30                 (1ul << 30) }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define PIN\_PA31                          31  }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define PORT\_PA31                 (1ul << 31) }}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define PIN\_PB02                          34  }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define PORT\_PB02                 (1ul <<  2) }}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define PIN\_PB03                          35  }}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define PORT\_PB03                 (1ul <<  3) }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define PIN\_PB08                          40  }}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define PORT\_PB08                 (1ul <<  8) }}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define PIN\_PB09                          41  }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define PORT\_PB09                 (1ul <<  9) }}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define PIN\_PB10                          42  }}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define PORT\_PB10                 (1ul << 10) }}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define PIN\_PB11                          43  }}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define PORT\_PB11                 (1ul << 11) }}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define PIN\_PB22                          54  }}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define PORT\_PB22                 (1ul << 22) }}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define PIN\_PB23                          55  }}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define PORT\_PB23                 (1ul << 23) }}
+\DoxyCodeLine{113 \textcolor{comment}{/* ========== PORT definition for GCLK peripheral ========== */}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define PIN\_PB22H\_GCLK\_IO0                54L  }}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define MUX\_PB22H\_GCLK\_IO0                 7L}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define PINMUX\_PB22H\_GCLK\_IO0      ((PIN\_PB22H\_GCLK\_IO0 << 16) | MUX\_PB22H\_GCLK\_IO0)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define PORT\_PB22H\_GCLK\_IO0        (1ul << 22)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define PIN\_PA14H\_GCLK\_IO0                14L  }}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define MUX\_PA14H\_GCLK\_IO0                 7L}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define PINMUX\_PA14H\_GCLK\_IO0      ((PIN\_PA14H\_GCLK\_IO0 << 16) | MUX\_PA14H\_GCLK\_IO0)}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define PORT\_PA14H\_GCLK\_IO0        (1ul << 14)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define PIN\_PA27H\_GCLK\_IO0                27L  }}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define MUX\_PA27H\_GCLK\_IO0                 7L}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define PINMUX\_PA27H\_GCLK\_IO0      ((PIN\_PA27H\_GCLK\_IO0 << 16) | MUX\_PA27H\_GCLK\_IO0)}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define PORT\_PA27H\_GCLK\_IO0        (1ul << 27)}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define PIN\_PA28H\_GCLK\_IO0                28L  }}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define MUX\_PA28H\_GCLK\_IO0                 7L}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define PINMUX\_PA28H\_GCLK\_IO0      ((PIN\_PA28H\_GCLK\_IO0 << 16) | MUX\_PA28H\_GCLK\_IO0)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define PORT\_PA28H\_GCLK\_IO0        (1ul << 28)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define PIN\_PA30H\_GCLK\_IO0                30L  }}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define MUX\_PA30H\_GCLK\_IO0                 7L}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define PINMUX\_PA30H\_GCLK\_IO0      ((PIN\_PA30H\_GCLK\_IO0 << 16) | MUX\_PA30H\_GCLK\_IO0)}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define PORT\_PA30H\_GCLK\_IO0        (1ul << 30)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define PIN\_PB23H\_GCLK\_IO1                55L  }}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define MUX\_PB23H\_GCLK\_IO1                 7L}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define PINMUX\_PB23H\_GCLK\_IO1      ((PIN\_PB23H\_GCLK\_IO1 << 16) | MUX\_PB23H\_GCLK\_IO1)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define PORT\_PB23H\_GCLK\_IO1        (1ul << 23)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define PIN\_PA15H\_GCLK\_IO1                15L  }}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define MUX\_PA15H\_GCLK\_IO1                 7L}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define PINMUX\_PA15H\_GCLK\_IO1      ((PIN\_PA15H\_GCLK\_IO1 << 16) | MUX\_PA15H\_GCLK\_IO1)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define PORT\_PA15H\_GCLK\_IO1        (1ul << 15)}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define PIN\_PA16H\_GCLK\_IO2                16L  }}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define MUX\_PA16H\_GCLK\_IO2                 7L}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define PINMUX\_PA16H\_GCLK\_IO2      ((PIN\_PA16H\_GCLK\_IO2 << 16) | MUX\_PA16H\_GCLK\_IO2)}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define PORT\_PA16H\_GCLK\_IO2        (1ul << 16)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define PIN\_PA17H\_GCLK\_IO3                17L  }}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define MUX\_PA17H\_GCLK\_IO3                 7L}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define PINMUX\_PA17H\_GCLK\_IO3      ((PIN\_PA17H\_GCLK\_IO3 << 16) | MUX\_PA17H\_GCLK\_IO3)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define PORT\_PA17H\_GCLK\_IO3        (1ul << 17)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define PIN\_PA10H\_GCLK\_IO4                10L  }}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define MUX\_PA10H\_GCLK\_IO4                 7L}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define PINMUX\_PA10H\_GCLK\_IO4      ((PIN\_PA10H\_GCLK\_IO4 << 16) | MUX\_PA10H\_GCLK\_IO4)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define PORT\_PA10H\_GCLK\_IO4        (1ul << 10)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define PIN\_PA20H\_GCLK\_IO4                20L  }}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define MUX\_PA20H\_GCLK\_IO4                 7L}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define PINMUX\_PA20H\_GCLK\_IO4      ((PIN\_PA20H\_GCLK\_IO4 << 16) | MUX\_PA20H\_GCLK\_IO4)}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define PORT\_PA20H\_GCLK\_IO4        (1ul << 20)}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define PIN\_PB10H\_GCLK\_IO4                42L  }}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define MUX\_PB10H\_GCLK\_IO4                 7L}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define PINMUX\_PB10H\_GCLK\_IO4      ((PIN\_PB10H\_GCLK\_IO4 << 16) | MUX\_PB10H\_GCLK\_IO4)}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define PORT\_PB10H\_GCLK\_IO4        (1ul << 10)}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define PIN\_PA11H\_GCLK\_IO5                11L  }}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define MUX\_PA11H\_GCLK\_IO5                 7L}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define PINMUX\_PA11H\_GCLK\_IO5      ((PIN\_PA11H\_GCLK\_IO5 << 16) | MUX\_PA11H\_GCLK\_IO5)}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define PORT\_PA11H\_GCLK\_IO5        (1ul << 11)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define PIN\_PA21H\_GCLK\_IO5                21L  }}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define MUX\_PA21H\_GCLK\_IO5                 7L}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define PINMUX\_PA21H\_GCLK\_IO5      ((PIN\_PA21H\_GCLK\_IO5 << 16) | MUX\_PA21H\_GCLK\_IO5)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define PORT\_PA21H\_GCLK\_IO5        (1ul << 21)}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define PIN\_PB11H\_GCLK\_IO5                43L  }}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define MUX\_PB11H\_GCLK\_IO5                 7L}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define PINMUX\_PB11H\_GCLK\_IO5      ((PIN\_PB11H\_GCLK\_IO5 << 16) | MUX\_PB11H\_GCLK\_IO5)}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define PORT\_PB11H\_GCLK\_IO5        (1ul << 11)}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define PIN\_PA22H\_GCLK\_IO6                22L  }}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define MUX\_PA22H\_GCLK\_IO6                 7L}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define PINMUX\_PA22H\_GCLK\_IO6      ((PIN\_PA22H\_GCLK\_IO6 << 16) | MUX\_PA22H\_GCLK\_IO6)}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define PORT\_PA22H\_GCLK\_IO6        (1ul << 22)}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define PIN\_PA23H\_GCLK\_IO7                23L  }}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define MUX\_PA23H\_GCLK\_IO7                 7L}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define PINMUX\_PA23H\_GCLK\_IO7      ((PIN\_PA23H\_GCLK\_IO7 << 16) | MUX\_PA23H\_GCLK\_IO7)}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define PORT\_PA23H\_GCLK\_IO7        (1ul << 23)}}
+\DoxyCodeLine{182 \textcolor{comment}{/* ========== PORT definition for EIC peripheral ========== */}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define PIN\_PA16A\_EIC\_EXTINT0             16L  }}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define MUX\_PA16A\_EIC\_EXTINT0              0L}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define PINMUX\_PA16A\_EIC\_EXTINT0   ((PIN\_PA16A\_EIC\_EXTINT0 << 16) | MUX\_PA16A\_EIC\_EXTINT0)}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define PORT\_PA16A\_EIC\_EXTINT0     (1ul << 16)}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define PIN\_PA00A\_EIC\_EXTINT0              0L  }}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define MUX\_PA00A\_EIC\_EXTINT0              0L}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define PINMUX\_PA00A\_EIC\_EXTINT0   ((PIN\_PA00A\_EIC\_EXTINT0 << 16) | MUX\_PA00A\_EIC\_EXTINT0)}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define PORT\_PA00A\_EIC\_EXTINT0     (1ul <<  0)}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define PIN\_PA17A\_EIC\_EXTINT1             17L  }}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define MUX\_PA17A\_EIC\_EXTINT1              0L}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define PINMUX\_PA17A\_EIC\_EXTINT1   ((PIN\_PA17A\_EIC\_EXTINT1 << 16) | MUX\_PA17A\_EIC\_EXTINT1)}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define PORT\_PA17A\_EIC\_EXTINT1     (1ul << 17)}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define PIN\_PA01A\_EIC\_EXTINT1              1L  }}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define MUX\_PA01A\_EIC\_EXTINT1              0L}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define PINMUX\_PA01A\_EIC\_EXTINT1   ((PIN\_PA01A\_EIC\_EXTINT1 << 16) | MUX\_PA01A\_EIC\_EXTINT1)}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define PORT\_PA01A\_EIC\_EXTINT1     (1ul <<  1)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define PIN\_PA02A\_EIC\_EXTINT2              2L  }}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define MUX\_PA02A\_EIC\_EXTINT2              0L}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define PINMUX\_PA02A\_EIC\_EXTINT2   ((PIN\_PA02A\_EIC\_EXTINT2 << 16) | MUX\_PA02A\_EIC\_EXTINT2)}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define PORT\_PA02A\_EIC\_EXTINT2     (1ul <<  2)}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define PIN\_PA18A\_EIC\_EXTINT2             18L  }}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define MUX\_PA18A\_EIC\_EXTINT2              0L}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define PINMUX\_PA18A\_EIC\_EXTINT2   ((PIN\_PA18A\_EIC\_EXTINT2 << 16) | MUX\_PA18A\_EIC\_EXTINT2)}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define PORT\_PA18A\_EIC\_EXTINT2     (1ul << 18)}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define PIN\_PB02A\_EIC\_EXTINT2             34L  }}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define MUX\_PB02A\_EIC\_EXTINT2              0L}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define PINMUX\_PB02A\_EIC\_EXTINT2   ((PIN\_PB02A\_EIC\_EXTINT2 << 16) | MUX\_PB02A\_EIC\_EXTINT2)}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define PORT\_PB02A\_EIC\_EXTINT2     (1ul <<  2)}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define PIN\_PA03A\_EIC\_EXTINT3              3L  }}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define MUX\_PA03A\_EIC\_EXTINT3              0L}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define PINMUX\_PA03A\_EIC\_EXTINT3   ((PIN\_PA03A\_EIC\_EXTINT3 << 16) | MUX\_PA03A\_EIC\_EXTINT3)}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define PORT\_PA03A\_EIC\_EXTINT3     (1ul <<  3)}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define PIN\_PA19A\_EIC\_EXTINT3             19L  }}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define MUX\_PA19A\_EIC\_EXTINT3              0L}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define PINMUX\_PA19A\_EIC\_EXTINT3   ((PIN\_PA19A\_EIC\_EXTINT3 << 16) | MUX\_PA19A\_EIC\_EXTINT3)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define PORT\_PA19A\_EIC\_EXTINT3     (1ul << 19)}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define PIN\_PB03A\_EIC\_EXTINT3             35L  }}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define MUX\_PB03A\_EIC\_EXTINT3              0L}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define PINMUX\_PB03A\_EIC\_EXTINT3   ((PIN\_PB03A\_EIC\_EXTINT3 << 16) | MUX\_PB03A\_EIC\_EXTINT3)}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define PORT\_PB03A\_EIC\_EXTINT3     (1ul <<  3)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define PIN\_PA04A\_EIC\_EXTINT4              4L  }}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define MUX\_PA04A\_EIC\_EXTINT4              0L}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define PINMUX\_PA04A\_EIC\_EXTINT4   ((PIN\_PA04A\_EIC\_EXTINT4 << 16) | MUX\_PA04A\_EIC\_EXTINT4)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define PORT\_PA04A\_EIC\_EXTINT4     (1ul <<  4)}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define PIN\_PA20A\_EIC\_EXTINT4             20L  }}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define MUX\_PA20A\_EIC\_EXTINT4              0L}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define PINMUX\_PA20A\_EIC\_EXTINT4   ((PIN\_PA20A\_EIC\_EXTINT4 << 16) | MUX\_PA20A\_EIC\_EXTINT4)}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define PORT\_PA20A\_EIC\_EXTINT4     (1ul << 20)}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define PIN\_PA05A\_EIC\_EXTINT5              5L  }}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define MUX\_PA05A\_EIC\_EXTINT5              0L}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#define PINMUX\_PA05A\_EIC\_EXTINT5   ((PIN\_PA05A\_EIC\_EXTINT5 << 16) | MUX\_PA05A\_EIC\_EXTINT5)}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define PORT\_PA05A\_EIC\_EXTINT5     (1ul <<  5)}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define PIN\_PA21A\_EIC\_EXTINT5             21L  }}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#define MUX\_PA21A\_EIC\_EXTINT5              0L}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#define PINMUX\_PA21A\_EIC\_EXTINT5   ((PIN\_PA21A\_EIC\_EXTINT5 << 16) | MUX\_PA21A\_EIC\_EXTINT5)}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#define PORT\_PA21A\_EIC\_EXTINT5     (1ul << 21)}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#define PIN\_PA06A\_EIC\_EXTINT6              6L  }}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#define MUX\_PA06A\_EIC\_EXTINT6              0L}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#define PINMUX\_PA06A\_EIC\_EXTINT6   ((PIN\_PA06A\_EIC\_EXTINT6 << 16) | MUX\_PA06A\_EIC\_EXTINT6)}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#define PORT\_PA06A\_EIC\_EXTINT6     (1ul <<  6)}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#define PIN\_PA22A\_EIC\_EXTINT6             22L  }}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define MUX\_PA22A\_EIC\_EXTINT6              0L}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define PINMUX\_PA22A\_EIC\_EXTINT6   ((PIN\_PA22A\_EIC\_EXTINT6 << 16) | MUX\_PA22A\_EIC\_EXTINT6)}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define PORT\_PA22A\_EIC\_EXTINT6     (1ul << 22)}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define PIN\_PB22A\_EIC\_EXTINT6             54L  }}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define MUX\_PB22A\_EIC\_EXTINT6              0L}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define PINMUX\_PB22A\_EIC\_EXTINT6   ((PIN\_PB22A\_EIC\_EXTINT6 << 16) | MUX\_PB22A\_EIC\_EXTINT6)}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define PORT\_PB22A\_EIC\_EXTINT6     (1ul << 22)}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define PIN\_PA07A\_EIC\_EXTINT7              7L  }}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define MUX\_PA07A\_EIC\_EXTINT7              0L}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define PINMUX\_PA07A\_EIC\_EXTINT7   ((PIN\_PA07A\_EIC\_EXTINT7 << 16) | MUX\_PA07A\_EIC\_EXTINT7)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define PORT\_PA07A\_EIC\_EXTINT7     (1ul <<  7)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define PIN\_PA23A\_EIC\_EXTINT7             23L  }}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define MUX\_PA23A\_EIC\_EXTINT7              0L}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#define PINMUX\_PA23A\_EIC\_EXTINT7   ((PIN\_PA23A\_EIC\_EXTINT7 << 16) | MUX\_PA23A\_EIC\_EXTINT7)}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#define PORT\_PA23A\_EIC\_EXTINT7     (1ul << 23)}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define PIN\_PB23A\_EIC\_EXTINT7             55L  }}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define MUX\_PB23A\_EIC\_EXTINT7              0L}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define PINMUX\_PB23A\_EIC\_EXTINT7   ((PIN\_PB23A\_EIC\_EXTINT7 << 16) | MUX\_PB23A\_EIC\_EXTINT7)}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define PORT\_PB23A\_EIC\_EXTINT7     (1ul << 23)}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define PIN\_PA28A\_EIC\_EXTINT8             28L  }}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#define MUX\_PA28A\_EIC\_EXTINT8              0L}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#define PINMUX\_PA28A\_EIC\_EXTINT8   ((PIN\_PA28A\_EIC\_EXTINT8 << 16) | MUX\_PA28A\_EIC\_EXTINT8)}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#define PORT\_PA28A\_EIC\_EXTINT8     (1ul << 28)}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#define PIN\_PB08A\_EIC\_EXTINT8             40L  }}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#define MUX\_PB08A\_EIC\_EXTINT8              0L}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#define PINMUX\_PB08A\_EIC\_EXTINT8   ((PIN\_PB08A\_EIC\_EXTINT8 << 16) | MUX\_PB08A\_EIC\_EXTINT8)}}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define PORT\_PB08A\_EIC\_EXTINT8     (1ul <<  8)}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define PIN\_PA09A\_EIC\_EXTINT9              9L  }}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define MUX\_PA09A\_EIC\_EXTINT9              0L}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define PINMUX\_PA09A\_EIC\_EXTINT9   ((PIN\_PA09A\_EIC\_EXTINT9 << 16) | MUX\_PA09A\_EIC\_EXTINT9)}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define PORT\_PA09A\_EIC\_EXTINT9     (1ul <<  9)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define PIN\_PB09A\_EIC\_EXTINT9             41L  }}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define MUX\_PB09A\_EIC\_EXTINT9              0L}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define PINMUX\_PB09A\_EIC\_EXTINT9   ((PIN\_PB09A\_EIC\_EXTINT9 << 16) | MUX\_PB09A\_EIC\_EXTINT9)}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define PORT\_PB09A\_EIC\_EXTINT9     (1ul <<  9)}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#define PIN\_PA10A\_EIC\_EXTINT10            10L  }}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define MUX\_PA10A\_EIC\_EXTINT10             0L}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#define PINMUX\_PA10A\_EIC\_EXTINT10  ((PIN\_PA10A\_EIC\_EXTINT10 << 16) | MUX\_PA10A\_EIC\_EXTINT10)}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define PORT\_PA10A\_EIC\_EXTINT10    (1ul << 10)}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define PIN\_PA30A\_EIC\_EXTINT10            30L  }}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#define MUX\_PA30A\_EIC\_EXTINT10             0L}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#define PINMUX\_PA30A\_EIC\_EXTINT10  ((PIN\_PA30A\_EIC\_EXTINT10 << 16) | MUX\_PA30A\_EIC\_EXTINT10)}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define PORT\_PA30A\_EIC\_EXTINT10    (1ul << 30)}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define PIN\_PB10A\_EIC\_EXTINT10            42L  }}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define MUX\_PB10A\_EIC\_EXTINT10             0L}}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define PINMUX\_PB10A\_EIC\_EXTINT10  ((PIN\_PB10A\_EIC\_EXTINT10 << 16) | MUX\_PB10A\_EIC\_EXTINT10)}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define PORT\_PB10A\_EIC\_EXTINT10    (1ul << 10)}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define PIN\_PA11A\_EIC\_EXTINT11            11L  }}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#define MUX\_PA11A\_EIC\_EXTINT11             0L}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define PINMUX\_PA11A\_EIC\_EXTINT11  ((PIN\_PA11A\_EIC\_EXTINT11 << 16) | MUX\_PA11A\_EIC\_EXTINT11)}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define PORT\_PA11A\_EIC\_EXTINT11    (1ul << 11)}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#define PIN\_PA31A\_EIC\_EXTINT11            31L  }}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define MUX\_PA31A\_EIC\_EXTINT11             0L}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define PINMUX\_PA31A\_EIC\_EXTINT11  ((PIN\_PA31A\_EIC\_EXTINT11 << 16) | MUX\_PA31A\_EIC\_EXTINT11)}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#define PORT\_PA31A\_EIC\_EXTINT11    (1ul << 31)}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#define PIN\_PB11A\_EIC\_EXTINT11            43L  }}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define MUX\_PB11A\_EIC\_EXTINT11             0L}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define PINMUX\_PB11A\_EIC\_EXTINT11  ((PIN\_PB11A\_EIC\_EXTINT11 << 16) | MUX\_PB11A\_EIC\_EXTINT11)}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#define PORT\_PB11A\_EIC\_EXTINT11    (1ul << 11)}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define PIN\_PA12A\_EIC\_EXTINT12            12L  }}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#define MUX\_PA12A\_EIC\_EXTINT12             0L}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define PINMUX\_PA12A\_EIC\_EXTINT12  ((PIN\_PA12A\_EIC\_EXTINT12 << 16) | MUX\_PA12A\_EIC\_EXTINT12)}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#define PORT\_PA12A\_EIC\_EXTINT12    (1ul << 12)}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define PIN\_PA24A\_EIC\_EXTINT12            24L  }}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#define MUX\_PA24A\_EIC\_EXTINT12             0L}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define PINMUX\_PA24A\_EIC\_EXTINT12  ((PIN\_PA24A\_EIC\_EXTINT12 << 16) | MUX\_PA24A\_EIC\_EXTINT12)}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define PORT\_PA24A\_EIC\_EXTINT12    (1ul << 24)}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#define PIN\_PA13A\_EIC\_EXTINT13            13L  }}
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#define MUX\_PA13A\_EIC\_EXTINT13             0L}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define PINMUX\_PA13A\_EIC\_EXTINT13  ((PIN\_PA13A\_EIC\_EXTINT13 << 16) | MUX\_PA13A\_EIC\_EXTINT13)}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define PORT\_PA13A\_EIC\_EXTINT13    (1ul << 13)}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define PIN\_PA25A\_EIC\_EXTINT13            25L  }}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define MUX\_PA25A\_EIC\_EXTINT13             0L}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define PINMUX\_PA25A\_EIC\_EXTINT13  ((PIN\_PA25A\_EIC\_EXTINT13 << 16) | MUX\_PA25A\_EIC\_EXTINT13)}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define PORT\_PA25A\_EIC\_EXTINT13    (1ul << 25)}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define PIN\_PA14A\_EIC\_EXTINT14            14L  }}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define MUX\_PA14A\_EIC\_EXTINT14             0L}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define PINMUX\_PA14A\_EIC\_EXTINT14  ((PIN\_PA14A\_EIC\_EXTINT14 << 16) | MUX\_PA14A\_EIC\_EXTINT14)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define PORT\_PA14A\_EIC\_EXTINT14    (1ul << 14)}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#define PIN\_PA27A\_EIC\_EXTINT15            27L  }}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define MUX\_PA27A\_EIC\_EXTINT15             0L}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define PINMUX\_PA27A\_EIC\_EXTINT15  ((PIN\_PA27A\_EIC\_EXTINT15 << 16) | MUX\_PA27A\_EIC\_EXTINT15)}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define PORT\_PA27A\_EIC\_EXTINT15    (1ul << 27)}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#define PIN\_PA15A\_EIC\_EXTINT15            15L  }}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define MUX\_PA15A\_EIC\_EXTINT15             0L}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define PINMUX\_PA15A\_EIC\_EXTINT15  ((PIN\_PA15A\_EIC\_EXTINT15 << 16) | MUX\_PA15A\_EIC\_EXTINT15)}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#define PORT\_PA15A\_EIC\_EXTINT15    (1ul << 15)}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define PIN\_PA08A\_EIC\_NMI                  8L  }}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#define MUX\_PA08A\_EIC\_NMI                  0L}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define PINMUX\_PA08A\_EIC\_NMI       ((PIN\_PA08A\_EIC\_NMI << 16) | MUX\_PA08A\_EIC\_NMI)}}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#define PORT\_PA08A\_EIC\_NMI         (1ul <<  8)}}
+\DoxyCodeLine{335 \textcolor{comment}{/* ========== PORT definition for SERCOM0 peripheral ========== */}}
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#define PIN\_PA04D\_SERCOM0\_PAD0             4L  }}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define MUX\_PA04D\_SERCOM0\_PAD0             3L}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#define PINMUX\_PA04D\_SERCOM0\_PAD0  ((PIN\_PA04D\_SERCOM0\_PAD0 << 16) | MUX\_PA04D\_SERCOM0\_PAD0)}}
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#define PORT\_PA04D\_SERCOM0\_PAD0    (1ul <<  4)}}
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define PIN\_PA08C\_SERCOM0\_PAD0             8L  }}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#define MUX\_PA08C\_SERCOM0\_PAD0             2L}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define PINMUX\_PA08C\_SERCOM0\_PAD0  ((PIN\_PA08C\_SERCOM0\_PAD0 << 16) | MUX\_PA08C\_SERCOM0\_PAD0)}}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define PORT\_PA08C\_SERCOM0\_PAD0    (1ul <<  8)}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define PIN\_PA05D\_SERCOM0\_PAD1             5L  }}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define MUX\_PA05D\_SERCOM0\_PAD1             3L}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define PINMUX\_PA05D\_SERCOM0\_PAD1  ((PIN\_PA05D\_SERCOM0\_PAD1 << 16) | MUX\_PA05D\_SERCOM0\_PAD1)}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define PORT\_PA05D\_SERCOM0\_PAD1    (1ul <<  5)}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define PIN\_PA09C\_SERCOM0\_PAD1             9L  }}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define MUX\_PA09C\_SERCOM0\_PAD1             2L}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define PINMUX\_PA09C\_SERCOM0\_PAD1  ((PIN\_PA09C\_SERCOM0\_PAD1 << 16) | MUX\_PA09C\_SERCOM0\_PAD1)}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define PORT\_PA09C\_SERCOM0\_PAD1    (1ul <<  9)}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define PIN\_PA06D\_SERCOM0\_PAD2             6L  }}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define MUX\_PA06D\_SERCOM0\_PAD2             3L}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define PINMUX\_PA06D\_SERCOM0\_PAD2  ((PIN\_PA06D\_SERCOM0\_PAD2 << 16) | MUX\_PA06D\_SERCOM0\_PAD2)}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define PORT\_PA06D\_SERCOM0\_PAD2    (1ul <<  6)}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define PIN\_PA10C\_SERCOM0\_PAD2            10L  }}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define MUX\_PA10C\_SERCOM0\_PAD2             2L}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define PINMUX\_PA10C\_SERCOM0\_PAD2  ((PIN\_PA10C\_SERCOM0\_PAD2 << 16) | MUX\_PA10C\_SERCOM0\_PAD2)}}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define PORT\_PA10C\_SERCOM0\_PAD2    (1ul << 10)}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define PIN\_PA07D\_SERCOM0\_PAD3             7L  }}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define MUX\_PA07D\_SERCOM0\_PAD3             3L}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define PINMUX\_PA07D\_SERCOM0\_PAD3  ((PIN\_PA07D\_SERCOM0\_PAD3 << 16) | MUX\_PA07D\_SERCOM0\_PAD3)}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define PORT\_PA07D\_SERCOM0\_PAD3    (1ul <<  7)}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define PIN\_PA11C\_SERCOM0\_PAD3            11L  }}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define MUX\_PA11C\_SERCOM0\_PAD3             2L}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define PINMUX\_PA11C\_SERCOM0\_PAD3  ((PIN\_PA11C\_SERCOM0\_PAD3 << 16) | MUX\_PA11C\_SERCOM0\_PAD3)}}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define PORT\_PA11C\_SERCOM0\_PAD3    (1ul << 11)}}
+\DoxyCodeLine{368 \textcolor{comment}{/* ========== PORT definition for SERCOM1 peripheral ========== */}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define PIN\_PA16C\_SERCOM1\_PAD0            16L  }}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define MUX\_PA16C\_SERCOM1\_PAD0             2L}}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define PINMUX\_PA16C\_SERCOM1\_PAD0  ((PIN\_PA16C\_SERCOM1\_PAD0 << 16) | MUX\_PA16C\_SERCOM1\_PAD0)}}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#define PORT\_PA16C\_SERCOM1\_PAD0    (1ul << 16)}}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define PIN\_PA00D\_SERCOM1\_PAD0             0L  }}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define MUX\_PA00D\_SERCOM1\_PAD0             3L}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define PINMUX\_PA00D\_SERCOM1\_PAD0  ((PIN\_PA00D\_SERCOM1\_PAD0 << 16) | MUX\_PA00D\_SERCOM1\_PAD0)}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define PORT\_PA00D\_SERCOM1\_PAD0    (1ul <<  0)}}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#define PIN\_PA17C\_SERCOM1\_PAD1            17L  }}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define MUX\_PA17C\_SERCOM1\_PAD1             2L}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define PINMUX\_PA17C\_SERCOM1\_PAD1  ((PIN\_PA17C\_SERCOM1\_PAD1 << 16) | MUX\_PA17C\_SERCOM1\_PAD1)}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define PORT\_PA17C\_SERCOM1\_PAD1    (1ul << 17)}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define PIN\_PA01D\_SERCOM1\_PAD1             1L  }}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#define MUX\_PA01D\_SERCOM1\_PAD1             3L}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define PINMUX\_PA01D\_SERCOM1\_PAD1  ((PIN\_PA01D\_SERCOM1\_PAD1 << 16) | MUX\_PA01D\_SERCOM1\_PAD1)}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define PORT\_PA01D\_SERCOM1\_PAD1    (1ul <<  1)}}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define PIN\_PA30D\_SERCOM1\_PAD2            30L  }}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define MUX\_PA30D\_SERCOM1\_PAD2             3L}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define PINMUX\_PA30D\_SERCOM1\_PAD2  ((PIN\_PA30D\_SERCOM1\_PAD2 << 16) | MUX\_PA30D\_SERCOM1\_PAD2)}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define PORT\_PA30D\_SERCOM1\_PAD2    (1ul << 30)}}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define PIN\_PA18C\_SERCOM1\_PAD2            18L  }}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define MUX\_PA18C\_SERCOM1\_PAD2             2L}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define PINMUX\_PA18C\_SERCOM1\_PAD2  ((PIN\_PA18C\_SERCOM1\_PAD2 << 16) | MUX\_PA18C\_SERCOM1\_PAD2)}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define PORT\_PA18C\_SERCOM1\_PAD2    (1ul << 18)}}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#define PIN\_PA31D\_SERCOM1\_PAD3            31L  }}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define MUX\_PA31D\_SERCOM1\_PAD3             3L}}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#define PINMUX\_PA31D\_SERCOM1\_PAD3  ((PIN\_PA31D\_SERCOM1\_PAD3 << 16) | MUX\_PA31D\_SERCOM1\_PAD3)}}
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#define PORT\_PA31D\_SERCOM1\_PAD3    (1ul << 31)}}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define PIN\_PA19C\_SERCOM1\_PAD3            19L  }}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define MUX\_PA19C\_SERCOM1\_PAD3             2L}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#define PINMUX\_PA19C\_SERCOM1\_PAD3  ((PIN\_PA19C\_SERCOM1\_PAD3 << 16) | MUX\_PA19C\_SERCOM1\_PAD3)}}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define PORT\_PA19C\_SERCOM1\_PAD3    (1ul << 19)}}
+\DoxyCodeLine{401 \textcolor{comment}{/* ========== PORT definition for SERCOM2 peripheral ========== */}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define PIN\_PA08D\_SERCOM2\_PAD0             8L  }}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#define MUX\_PA08D\_SERCOM2\_PAD0             3L}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define PINMUX\_PA08D\_SERCOM2\_PAD0  ((PIN\_PA08D\_SERCOM2\_PAD0 << 16) | MUX\_PA08D\_SERCOM2\_PAD0)}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define PORT\_PA08D\_SERCOM2\_PAD0    (1ul <<  8)}}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#define PIN\_PA12C\_SERCOM2\_PAD0            12L  }}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#define MUX\_PA12C\_SERCOM2\_PAD0             2L}}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define PINMUX\_PA12C\_SERCOM2\_PAD0  ((PIN\_PA12C\_SERCOM2\_PAD0 << 16) | MUX\_PA12C\_SERCOM2\_PAD0)}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define PORT\_PA12C\_SERCOM2\_PAD0    (1ul << 12)}}
+\DoxyCodeLine{410 \textcolor{preprocessor}{\#define PIN\_PA09D\_SERCOM2\_PAD1             9L  }}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define MUX\_PA09D\_SERCOM2\_PAD1             3L}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define PINMUX\_PA09D\_SERCOM2\_PAD1  ((PIN\_PA09D\_SERCOM2\_PAD1 << 16) | MUX\_PA09D\_SERCOM2\_PAD1)}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define PORT\_PA09D\_SERCOM2\_PAD1    (1ul <<  9)}}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#define PIN\_PA13C\_SERCOM2\_PAD1            13L  }}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define MUX\_PA13C\_SERCOM2\_PAD1             2L}}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define PINMUX\_PA13C\_SERCOM2\_PAD1  ((PIN\_PA13C\_SERCOM2\_PAD1 << 16) | MUX\_PA13C\_SERCOM2\_PAD1)}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define PORT\_PA13C\_SERCOM2\_PAD1    (1ul << 13)}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#define PIN\_PA10D\_SERCOM2\_PAD2            10L  }}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define MUX\_PA10D\_SERCOM2\_PAD2             3L}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#define PINMUX\_PA10D\_SERCOM2\_PAD2  ((PIN\_PA10D\_SERCOM2\_PAD2 << 16) | MUX\_PA10D\_SERCOM2\_PAD2)}}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#define PORT\_PA10D\_SERCOM2\_PAD2    (1ul << 10)}}
+\DoxyCodeLine{422 \textcolor{preprocessor}{\#define PIN\_PA14C\_SERCOM2\_PAD2            14L  }}
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define MUX\_PA14C\_SERCOM2\_PAD2             2L}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define PINMUX\_PA14C\_SERCOM2\_PAD2  ((PIN\_PA14C\_SERCOM2\_PAD2 << 16) | MUX\_PA14C\_SERCOM2\_PAD2)}}
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define PORT\_PA14C\_SERCOM2\_PAD2    (1ul << 14)}}
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define PIN\_PA11D\_SERCOM2\_PAD3            11L  }}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define MUX\_PA11D\_SERCOM2\_PAD3             3L}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define PINMUX\_PA11D\_SERCOM2\_PAD3  ((PIN\_PA11D\_SERCOM2\_PAD3 << 16) | MUX\_PA11D\_SERCOM2\_PAD3)}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define PORT\_PA11D\_SERCOM2\_PAD3    (1ul << 11)}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define PIN\_PA15C\_SERCOM2\_PAD3            15L  }}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#define MUX\_PA15C\_SERCOM2\_PAD3             2L}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define PINMUX\_PA15C\_SERCOM2\_PAD3  ((PIN\_PA15C\_SERCOM2\_PAD3 << 16) | MUX\_PA15C\_SERCOM2\_PAD3)}}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#define PORT\_PA15C\_SERCOM2\_PAD3    (1ul << 15)}}
+\DoxyCodeLine{434 \textcolor{comment}{/* ========== PORT definition for SERCOM3 peripheral ========== */}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define PIN\_PA16D\_SERCOM3\_PAD0            16L  }}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define MUX\_PA16D\_SERCOM3\_PAD0             3L}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define PINMUX\_PA16D\_SERCOM3\_PAD0  ((PIN\_PA16D\_SERCOM3\_PAD0 << 16) | MUX\_PA16D\_SERCOM3\_PAD0)}}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#define PORT\_PA16D\_SERCOM3\_PAD0    (1ul << 16)}}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#define PIN\_PA22C\_SERCOM3\_PAD0            22L  }}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#define MUX\_PA22C\_SERCOM3\_PAD0             2L}}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define PINMUX\_PA22C\_SERCOM3\_PAD0  ((PIN\_PA22C\_SERCOM3\_PAD0 << 16) | MUX\_PA22C\_SERCOM3\_PAD0)}}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#define PORT\_PA22C\_SERCOM3\_PAD0    (1ul << 22)}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define PIN\_PA17D\_SERCOM3\_PAD1            17L  }}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define MUX\_PA17D\_SERCOM3\_PAD1             3L}}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define PINMUX\_PA17D\_SERCOM3\_PAD1  ((PIN\_PA17D\_SERCOM3\_PAD1 << 16) | MUX\_PA17D\_SERCOM3\_PAD1)}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define PORT\_PA17D\_SERCOM3\_PAD1    (1ul << 17)}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define PIN\_PA23C\_SERCOM3\_PAD1            23L  }}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define MUX\_PA23C\_SERCOM3\_PAD1             2L}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define PINMUX\_PA23C\_SERCOM3\_PAD1  ((PIN\_PA23C\_SERCOM3\_PAD1 << 16) | MUX\_PA23C\_SERCOM3\_PAD1)}}
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#define PORT\_PA23C\_SERCOM3\_PAD1    (1ul << 23)}}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define PIN\_PA18D\_SERCOM3\_PAD2            18L  }}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#define MUX\_PA18D\_SERCOM3\_PAD2             3L}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define PINMUX\_PA18D\_SERCOM3\_PAD2  ((PIN\_PA18D\_SERCOM3\_PAD2 << 16) | MUX\_PA18D\_SERCOM3\_PAD2)}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define PORT\_PA18D\_SERCOM3\_PAD2    (1ul << 18)}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#define PIN\_PA20D\_SERCOM3\_PAD2            20L  }}
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#define MUX\_PA20D\_SERCOM3\_PAD2             3L}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#define PINMUX\_PA20D\_SERCOM3\_PAD2  ((PIN\_PA20D\_SERCOM3\_PAD2 << 16) | MUX\_PA20D\_SERCOM3\_PAD2)}}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#define PORT\_PA20D\_SERCOM3\_PAD2    (1ul << 20)}}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#define PIN\_PA24C\_SERCOM3\_PAD2            24L  }}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#define MUX\_PA24C\_SERCOM3\_PAD2             2L}}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#define PINMUX\_PA24C\_SERCOM3\_PAD2  ((PIN\_PA24C\_SERCOM3\_PAD2 << 16) | MUX\_PA24C\_SERCOM3\_PAD2)}}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define PORT\_PA24C\_SERCOM3\_PAD2    (1ul << 24)}}
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#define PIN\_PA19D\_SERCOM3\_PAD3            19L  }}
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define MUX\_PA19D\_SERCOM3\_PAD3             3L}}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define PINMUX\_PA19D\_SERCOM3\_PAD3  ((PIN\_PA19D\_SERCOM3\_PAD3 << 16) | MUX\_PA19D\_SERCOM3\_PAD3)}}
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#define PORT\_PA19D\_SERCOM3\_PAD3    (1ul << 19)}}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#define PIN\_PA21D\_SERCOM3\_PAD3            21L  }}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define MUX\_PA21D\_SERCOM3\_PAD3             3L}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#define PINMUX\_PA21D\_SERCOM3\_PAD3  ((PIN\_PA21D\_SERCOM3\_PAD3 << 16) | MUX\_PA21D\_SERCOM3\_PAD3)}}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#define PORT\_PA21D\_SERCOM3\_PAD3    (1ul << 21)}}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define PIN\_PA25C\_SERCOM3\_PAD3            25L  }}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#define MUX\_PA25C\_SERCOM3\_PAD3             2L}}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define PINMUX\_PA25C\_SERCOM3\_PAD3  ((PIN\_PA25C\_SERCOM3\_PAD3 << 16) | MUX\_PA25C\_SERCOM3\_PAD3)}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define PORT\_PA25C\_SERCOM3\_PAD3    (1ul << 25)}}
+\DoxyCodeLine{475 \textcolor{comment}{/* ========== PORT definition for SERCOM4 peripheral ========== */}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define PIN\_PA12D\_SERCOM4\_PAD0            12L  }}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define MUX\_PA12D\_SERCOM4\_PAD0             3L}}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define PINMUX\_PA12D\_SERCOM4\_PAD0  ((PIN\_PA12D\_SERCOM4\_PAD0 << 16) | MUX\_PA12D\_SERCOM4\_PAD0)}}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#define PORT\_PA12D\_SERCOM4\_PAD0    (1ul << 12)}}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define PIN\_PB08D\_SERCOM4\_PAD0            40L  }}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define MUX\_PB08D\_SERCOM4\_PAD0             3L}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#define PINMUX\_PB08D\_SERCOM4\_PAD0  ((PIN\_PB08D\_SERCOM4\_PAD0 << 16) | MUX\_PB08D\_SERCOM4\_PAD0)}}
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#define PORT\_PB08D\_SERCOM4\_PAD0    (1ul <<  8)}}
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#define PIN\_PA13D\_SERCOM4\_PAD1            13L  }}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#define MUX\_PA13D\_SERCOM4\_PAD1             3L}}
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define PINMUX\_PA13D\_SERCOM4\_PAD1  ((PIN\_PA13D\_SERCOM4\_PAD1 << 16) | MUX\_PA13D\_SERCOM4\_PAD1)}}
+\DoxyCodeLine{487 \textcolor{preprocessor}{\#define PORT\_PA13D\_SERCOM4\_PAD1    (1ul << 13)}}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#define PIN\_PB09D\_SERCOM4\_PAD1            41L  }}
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#define MUX\_PB09D\_SERCOM4\_PAD1             3L}}
+\DoxyCodeLine{490 \textcolor{preprocessor}{\#define PINMUX\_PB09D\_SERCOM4\_PAD1  ((PIN\_PB09D\_SERCOM4\_PAD1 << 16) | MUX\_PB09D\_SERCOM4\_PAD1)}}
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#define PORT\_PB09D\_SERCOM4\_PAD1    (1ul <<  9)}}
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#define PIN\_PA14D\_SERCOM4\_PAD2            14L  }}
+\DoxyCodeLine{493 \textcolor{preprocessor}{\#define MUX\_PA14D\_SERCOM4\_PAD2             3L}}
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#define PINMUX\_PA14D\_SERCOM4\_PAD2  ((PIN\_PA14D\_SERCOM4\_PAD2 << 16) | MUX\_PA14D\_SERCOM4\_PAD2)}}
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#define PORT\_PA14D\_SERCOM4\_PAD2    (1ul << 14)}}
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#define PIN\_PB10D\_SERCOM4\_PAD2            42L  }}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#define MUX\_PB10D\_SERCOM4\_PAD2             3L}}
+\DoxyCodeLine{498 \textcolor{preprocessor}{\#define PINMUX\_PB10D\_SERCOM4\_PAD2  ((PIN\_PB10D\_SERCOM4\_PAD2 << 16) | MUX\_PB10D\_SERCOM4\_PAD2)}}
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define PORT\_PB10D\_SERCOM4\_PAD2    (1ul << 10)}}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#define PIN\_PA15D\_SERCOM4\_PAD3            15L  }}
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#define MUX\_PA15D\_SERCOM4\_PAD3             3L}}
+\DoxyCodeLine{502 \textcolor{preprocessor}{\#define PINMUX\_PA15D\_SERCOM4\_PAD3  ((PIN\_PA15D\_SERCOM4\_PAD3 << 16) | MUX\_PA15D\_SERCOM4\_PAD3)}}
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#define PORT\_PA15D\_SERCOM4\_PAD3    (1ul << 15)}}
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#define PIN\_PB11D\_SERCOM4\_PAD3            43L  }}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#define MUX\_PB11D\_SERCOM4\_PAD3             3L}}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#define PINMUX\_PB11D\_SERCOM4\_PAD3  ((PIN\_PB11D\_SERCOM4\_PAD3 << 16) | MUX\_PB11D\_SERCOM4\_PAD3)}}
+\DoxyCodeLine{507 \textcolor{preprocessor}{\#define PORT\_PB11D\_SERCOM4\_PAD3    (1ul << 11)}}
+\DoxyCodeLine{508 \textcolor{comment}{/* ========== PORT definition for SERCOM5 peripheral ========== */}}
+\DoxyCodeLine{509 \textcolor{preprocessor}{\#define PIN\_PA22D\_SERCOM5\_PAD0            22L  }}
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#define MUX\_PA22D\_SERCOM5\_PAD0             3L}}
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#define PINMUX\_PA22D\_SERCOM5\_PAD0  ((PIN\_PA22D\_SERCOM5\_PAD0 << 16) | MUX\_PA22D\_SERCOM5\_PAD0)}}
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#define PORT\_PA22D\_SERCOM5\_PAD0    (1ul << 22)}}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#define PIN\_PB02D\_SERCOM5\_PAD0            34L  }}
+\DoxyCodeLine{514 \textcolor{preprocessor}{\#define MUX\_PB02D\_SERCOM5\_PAD0             3L}}
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#define PINMUX\_PB02D\_SERCOM5\_PAD0  ((PIN\_PB02D\_SERCOM5\_PAD0 << 16) | MUX\_PB02D\_SERCOM5\_PAD0)}}
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#define PORT\_PB02D\_SERCOM5\_PAD0    (1ul <<  2)}}
+\DoxyCodeLine{517 \textcolor{preprocessor}{\#define PIN\_PA23D\_SERCOM5\_PAD1            23L  }}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#define MUX\_PA23D\_SERCOM5\_PAD1             3L}}
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#define PINMUX\_PA23D\_SERCOM5\_PAD1  ((PIN\_PA23D\_SERCOM5\_PAD1 << 16) | MUX\_PA23D\_SERCOM5\_PAD1)}}
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#define PORT\_PA23D\_SERCOM5\_PAD1    (1ul << 23)}}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#define PIN\_PB03D\_SERCOM5\_PAD1            35L  }}
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#define MUX\_PB03D\_SERCOM5\_PAD1             3L}}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#define PINMUX\_PB03D\_SERCOM5\_PAD1  ((PIN\_PB03D\_SERCOM5\_PAD1 << 16) | MUX\_PB03D\_SERCOM5\_PAD1)}}
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#define PORT\_PB03D\_SERCOM5\_PAD1    (1ul <<  3)}}
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#define PIN\_PA24D\_SERCOM5\_PAD2            24L  }}
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#define MUX\_PA24D\_SERCOM5\_PAD2             3L}}
+\DoxyCodeLine{527 \textcolor{preprocessor}{\#define PINMUX\_PA24D\_SERCOM5\_PAD2  ((PIN\_PA24D\_SERCOM5\_PAD2 << 16) | MUX\_PA24D\_SERCOM5\_PAD2)}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#define PORT\_PA24D\_SERCOM5\_PAD2    (1ul << 24)}}
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#define PIN\_PB22D\_SERCOM5\_PAD2            54L  }}
+\DoxyCodeLine{530 \textcolor{preprocessor}{\#define MUX\_PB22D\_SERCOM5\_PAD2             3L}}
+\DoxyCodeLine{531 \textcolor{preprocessor}{\#define PINMUX\_PB22D\_SERCOM5\_PAD2  ((PIN\_PB22D\_SERCOM5\_PAD2 << 16) | MUX\_PB22D\_SERCOM5\_PAD2)}}
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#define PORT\_PB22D\_SERCOM5\_PAD2    (1ul << 22)}}
+\DoxyCodeLine{533 \textcolor{preprocessor}{\#define PIN\_PA20C\_SERCOM5\_PAD2            20L  }}
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#define MUX\_PA20C\_SERCOM5\_PAD2             2L}}
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#define PINMUX\_PA20C\_SERCOM5\_PAD2  ((PIN\_PA20C\_SERCOM5\_PAD2 << 16) | MUX\_PA20C\_SERCOM5\_PAD2)}}
+\DoxyCodeLine{536 \textcolor{preprocessor}{\#define PORT\_PA20C\_SERCOM5\_PAD2    (1ul << 20)}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{\#define PIN\_PA25D\_SERCOM5\_PAD3            25L  }}
+\DoxyCodeLine{538 \textcolor{preprocessor}{\#define MUX\_PA25D\_SERCOM5\_PAD3             3L}}
+\DoxyCodeLine{539 \textcolor{preprocessor}{\#define PINMUX\_PA25D\_SERCOM5\_PAD3  ((PIN\_PA25D\_SERCOM5\_PAD3 << 16) | MUX\_PA25D\_SERCOM5\_PAD3)}}
+\DoxyCodeLine{540 \textcolor{preprocessor}{\#define PORT\_PA25D\_SERCOM5\_PAD3    (1ul << 25)}}
+\DoxyCodeLine{541 \textcolor{preprocessor}{\#define PIN\_PB23D\_SERCOM5\_PAD3            55L  }}
+\DoxyCodeLine{542 \textcolor{preprocessor}{\#define MUX\_PB23D\_SERCOM5\_PAD3             3L}}
+\DoxyCodeLine{543 \textcolor{preprocessor}{\#define PINMUX\_PB23D\_SERCOM5\_PAD3  ((PIN\_PB23D\_SERCOM5\_PAD3 << 16) | MUX\_PB23D\_SERCOM5\_PAD3)}}
+\DoxyCodeLine{544 \textcolor{preprocessor}{\#define PORT\_PB23D\_SERCOM5\_PAD3    (1ul << 23)}}
+\DoxyCodeLine{545 \textcolor{preprocessor}{\#define PIN\_PA21C\_SERCOM5\_PAD3            21L  }}
+\DoxyCodeLine{546 \textcolor{preprocessor}{\#define MUX\_PA21C\_SERCOM5\_PAD3             2L}}
+\DoxyCodeLine{547 \textcolor{preprocessor}{\#define PINMUX\_PA21C\_SERCOM5\_PAD3  ((PIN\_PA21C\_SERCOM5\_PAD3 << 16) | MUX\_PA21C\_SERCOM5\_PAD3)}}
+\DoxyCodeLine{548 \textcolor{preprocessor}{\#define PORT\_PA21C\_SERCOM5\_PAD3    (1ul << 21)}}
+\DoxyCodeLine{549 \textcolor{comment}{/* ========== PORT definition for TC0 peripheral ========== */}}
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#define PIN\_PA04F\_TC0\_WO0                  4L  }}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#define MUX\_PA04F\_TC0\_WO0                  5L}}
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#define PINMUX\_PA04F\_TC0\_WO0       ((PIN\_PA04F\_TC0\_WO0 << 16) | MUX\_PA04F\_TC0\_WO0)}}
+\DoxyCodeLine{553 \textcolor{preprocessor}{\#define PORT\_PA04F\_TC0\_WO0         (1ul <<  4)}}
+\DoxyCodeLine{554 \textcolor{preprocessor}{\#define PIN\_PA08E\_TC0\_WO0                  8L  }}
+\DoxyCodeLine{555 \textcolor{preprocessor}{\#define MUX\_PA08E\_TC0\_WO0                  4L}}
+\DoxyCodeLine{556 \textcolor{preprocessor}{\#define PINMUX\_PA08E\_TC0\_WO0       ((PIN\_PA08E\_TC0\_WO0 << 16) | MUX\_PA08E\_TC0\_WO0)}}
+\DoxyCodeLine{557 \textcolor{preprocessor}{\#define PORT\_PA08E\_TC0\_WO0         (1ul <<  8)}}
+\DoxyCodeLine{558 \textcolor{preprocessor}{\#define PIN\_PA05F\_TC0\_WO1                  5L  }}
+\DoxyCodeLine{559 \textcolor{preprocessor}{\#define MUX\_PA05F\_TC0\_WO1                  5L}}
+\DoxyCodeLine{560 \textcolor{preprocessor}{\#define PINMUX\_PA05F\_TC0\_WO1       ((PIN\_PA05F\_TC0\_WO1 << 16) | MUX\_PA05F\_TC0\_WO1)}}
+\DoxyCodeLine{561 \textcolor{preprocessor}{\#define PORT\_PA05F\_TC0\_WO1         (1ul <<  5)}}
+\DoxyCodeLine{562 \textcolor{preprocessor}{\#define PIN\_PA09E\_TC0\_WO1                  9L  }}
+\DoxyCodeLine{563 \textcolor{preprocessor}{\#define MUX\_PA09E\_TC0\_WO1                  4L}}
+\DoxyCodeLine{564 \textcolor{preprocessor}{\#define PINMUX\_PA09E\_TC0\_WO1       ((PIN\_PA09E\_TC0\_WO1 << 16) | MUX\_PA09E\_TC0\_WO1)}}
+\DoxyCodeLine{565 \textcolor{preprocessor}{\#define PORT\_PA09E\_TC0\_WO1         (1ul <<  9)}}
+\DoxyCodeLine{566 \textcolor{comment}{/* ========== PORT definition for TC1 peripheral ========== */}}
+\DoxyCodeLine{567 \textcolor{preprocessor}{\#define PIN\_PA06F\_TC1\_WO0                  6L  }}
+\DoxyCodeLine{568 \textcolor{preprocessor}{\#define MUX\_PA06F\_TC1\_WO0                  5L}}
+\DoxyCodeLine{569 \textcolor{preprocessor}{\#define PINMUX\_PA06F\_TC1\_WO0       ((PIN\_PA06F\_TC1\_WO0 << 16) | MUX\_PA06F\_TC1\_WO0)}}
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#define PORT\_PA06F\_TC1\_WO0         (1ul <<  6)}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#define PIN\_PA30F\_TC1\_WO0                 30L  }}
+\DoxyCodeLine{572 \textcolor{preprocessor}{\#define MUX\_PA30F\_TC1\_WO0                  5L}}
+\DoxyCodeLine{573 \textcolor{preprocessor}{\#define PINMUX\_PA30F\_TC1\_WO0       ((PIN\_PA30F\_TC1\_WO0 << 16) | MUX\_PA30F\_TC1\_WO0)}}
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#define PORT\_PA30F\_TC1\_WO0         (1ul << 30)}}
+\DoxyCodeLine{575 \textcolor{preprocessor}{\#define PIN\_PA10E\_TC1\_WO0                 10L  }}
+\DoxyCodeLine{576 \textcolor{preprocessor}{\#define MUX\_PA10E\_TC1\_WO0                  4L}}
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#define PINMUX\_PA10E\_TC1\_WO0       ((PIN\_PA10E\_TC1\_WO0 << 16) | MUX\_PA10E\_TC1\_WO0)}}
+\DoxyCodeLine{578 \textcolor{preprocessor}{\#define PORT\_PA10E\_TC1\_WO0         (1ul << 10)}}
+\DoxyCodeLine{579 \textcolor{preprocessor}{\#define PIN\_PA07F\_TC1\_WO1                  7L  }}
+\DoxyCodeLine{580 \textcolor{preprocessor}{\#define MUX\_PA07F\_TC1\_WO1                  5L}}
+\DoxyCodeLine{581 \textcolor{preprocessor}{\#define PINMUX\_PA07F\_TC1\_WO1       ((PIN\_PA07F\_TC1\_WO1 << 16) | MUX\_PA07F\_TC1\_WO1)}}
+\DoxyCodeLine{582 \textcolor{preprocessor}{\#define PORT\_PA07F\_TC1\_WO1         (1ul <<  7)}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#define PIN\_PA31F\_TC1\_WO1                 31L  }}
+\DoxyCodeLine{584 \textcolor{preprocessor}{\#define MUX\_PA31F\_TC1\_WO1                  5L}}
+\DoxyCodeLine{585 \textcolor{preprocessor}{\#define PINMUX\_PA31F\_TC1\_WO1       ((PIN\_PA31F\_TC1\_WO1 << 16) | MUX\_PA31F\_TC1\_WO1)}}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#define PORT\_PA31F\_TC1\_WO1         (1ul << 31)}}
+\DoxyCodeLine{587 \textcolor{preprocessor}{\#define PIN\_PA11E\_TC1\_WO1                 11L  }}
+\DoxyCodeLine{588 \textcolor{preprocessor}{\#define MUX\_PA11E\_TC1\_WO1                  4L}}
+\DoxyCodeLine{589 \textcolor{preprocessor}{\#define PINMUX\_PA11E\_TC1\_WO1       ((PIN\_PA11E\_TC1\_WO1 << 16) | MUX\_PA11E\_TC1\_WO1)}}
+\DoxyCodeLine{590 \textcolor{preprocessor}{\#define PORT\_PA11E\_TC1\_WO1         (1ul << 11)}}
+\DoxyCodeLine{591 \textcolor{comment}{/* ========== PORT definition for TC2 peripheral ========== */}}
+\DoxyCodeLine{592 \textcolor{preprocessor}{\#define PIN\_PA16F\_TC2\_WO0                 16L  }}
+\DoxyCodeLine{593 \textcolor{preprocessor}{\#define MUX\_PA16F\_TC2\_WO0                  5L}}
+\DoxyCodeLine{594 \textcolor{preprocessor}{\#define PINMUX\_PA16F\_TC2\_WO0       ((PIN\_PA16F\_TC2\_WO0 << 16) | MUX\_PA16F\_TC2\_WO0)}}
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#define PORT\_PA16F\_TC2\_WO0         (1ul << 16)}}
+\DoxyCodeLine{596 \textcolor{preprocessor}{\#define PIN\_PA12E\_TC2\_WO0                 12L  }}
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#define MUX\_PA12E\_TC2\_WO0                  4L}}
+\DoxyCodeLine{598 \textcolor{preprocessor}{\#define PINMUX\_PA12E\_TC2\_WO0       ((PIN\_PA12E\_TC2\_WO0 << 16) | MUX\_PA12E\_TC2\_WO0)}}
+\DoxyCodeLine{599 \textcolor{preprocessor}{\#define PORT\_PA12E\_TC2\_WO0         (1ul << 12)}}
+\DoxyCodeLine{600 \textcolor{preprocessor}{\#define PIN\_PA00F\_TC2\_WO0                  0L  }}
+\DoxyCodeLine{601 \textcolor{preprocessor}{\#define MUX\_PA00F\_TC2\_WO0                  5L}}
+\DoxyCodeLine{602 \textcolor{preprocessor}{\#define PINMUX\_PA00F\_TC2\_WO0       ((PIN\_PA00F\_TC2\_WO0 << 16) | MUX\_PA00F\_TC2\_WO0)}}
+\DoxyCodeLine{603 \textcolor{preprocessor}{\#define PORT\_PA00F\_TC2\_WO0         (1ul <<  0)}}
+\DoxyCodeLine{604 \textcolor{preprocessor}{\#define PIN\_PA17F\_TC2\_WO1                 17L  }}
+\DoxyCodeLine{605 \textcolor{preprocessor}{\#define MUX\_PA17F\_TC2\_WO1                  5L}}
+\DoxyCodeLine{606 \textcolor{preprocessor}{\#define PINMUX\_PA17F\_TC2\_WO1       ((PIN\_PA17F\_TC2\_WO1 << 16) | MUX\_PA17F\_TC2\_WO1)}}
+\DoxyCodeLine{607 \textcolor{preprocessor}{\#define PORT\_PA17F\_TC2\_WO1         (1ul << 17)}}
+\DoxyCodeLine{608 \textcolor{preprocessor}{\#define PIN\_PA13E\_TC2\_WO1                 13L  }}
+\DoxyCodeLine{609 \textcolor{preprocessor}{\#define MUX\_PA13E\_TC2\_WO1                  4L}}
+\DoxyCodeLine{610 \textcolor{preprocessor}{\#define PINMUX\_PA13E\_TC2\_WO1       ((PIN\_PA13E\_TC2\_WO1 << 16) | MUX\_PA13E\_TC2\_WO1)}}
+\DoxyCodeLine{611 \textcolor{preprocessor}{\#define PORT\_PA13E\_TC2\_WO1         (1ul << 13)}}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#define PIN\_PA01F\_TC2\_WO1                  1L  }}
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#define MUX\_PA01F\_TC2\_WO1                  5L}}
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#define PINMUX\_PA01F\_TC2\_WO1       ((PIN\_PA01F\_TC2\_WO1 << 16) | MUX\_PA01F\_TC2\_WO1)}}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#define PORT\_PA01F\_TC2\_WO1         (1ul <<  1)}}
+\DoxyCodeLine{616 \textcolor{comment}{/* ========== PORT definition for TC3 peripheral ========== */}}
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#define PIN\_PA18F\_TC3\_WO0                 18L  }}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#define MUX\_PA18F\_TC3\_WO0                  5L}}
+\DoxyCodeLine{619 \textcolor{preprocessor}{\#define PINMUX\_PA18F\_TC3\_WO0       ((PIN\_PA18F\_TC3\_WO0 << 16) | MUX\_PA18F\_TC3\_WO0)}}
+\DoxyCodeLine{620 \textcolor{preprocessor}{\#define PORT\_PA18F\_TC3\_WO0         (1ul << 18)}}
+\DoxyCodeLine{621 \textcolor{preprocessor}{\#define PIN\_PA14E\_TC3\_WO0                 14L  }}
+\DoxyCodeLine{622 \textcolor{preprocessor}{\#define MUX\_PA14E\_TC3\_WO0                  4L}}
+\DoxyCodeLine{623 \textcolor{preprocessor}{\#define PINMUX\_PA14E\_TC3\_WO0       ((PIN\_PA14E\_TC3\_WO0 << 16) | MUX\_PA14E\_TC3\_WO0)}}
+\DoxyCodeLine{624 \textcolor{preprocessor}{\#define PORT\_PA14E\_TC3\_WO0         (1ul << 14)}}
+\DoxyCodeLine{625 \textcolor{preprocessor}{\#define PIN\_PA19F\_TC3\_WO1                 19L  }}
+\DoxyCodeLine{626 \textcolor{preprocessor}{\#define MUX\_PA19F\_TC3\_WO1                  5L}}
+\DoxyCodeLine{627 \textcolor{preprocessor}{\#define PINMUX\_PA19F\_TC3\_WO1       ((PIN\_PA19F\_TC3\_WO1 << 16) | MUX\_PA19F\_TC3\_WO1)}}
+\DoxyCodeLine{628 \textcolor{preprocessor}{\#define PORT\_PA19F\_TC3\_WO1         (1ul << 19)}}
+\DoxyCodeLine{629 \textcolor{preprocessor}{\#define PIN\_PA15E\_TC3\_WO1                 15L  }}
+\DoxyCodeLine{630 \textcolor{preprocessor}{\#define MUX\_PA15E\_TC3\_WO1                  4L}}
+\DoxyCodeLine{631 \textcolor{preprocessor}{\#define PINMUX\_PA15E\_TC3\_WO1       ((PIN\_PA15E\_TC3\_WO1 << 16) | MUX\_PA15E\_TC3\_WO1)}}
+\DoxyCodeLine{632 \textcolor{preprocessor}{\#define PORT\_PA15E\_TC3\_WO1         (1ul << 15)}}
+\DoxyCodeLine{633 \textcolor{comment}{/* ========== PORT definition for TC4 peripheral ========== */}}
+\DoxyCodeLine{634 \textcolor{preprocessor}{\#define PIN\_PA22F\_TC4\_WO0                 22L  }}
+\DoxyCodeLine{635 \textcolor{preprocessor}{\#define MUX\_PA22F\_TC4\_WO0                  5L}}
+\DoxyCodeLine{636 \textcolor{preprocessor}{\#define PINMUX\_PA22F\_TC4\_WO0       ((PIN\_PA22F\_TC4\_WO0 << 16) | MUX\_PA22F\_TC4\_WO0)}}
+\DoxyCodeLine{637 \textcolor{preprocessor}{\#define PORT\_PA22F\_TC4\_WO0         (1ul << 22)}}
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#define PIN\_PB08F\_TC4\_WO0                 40L  }}
+\DoxyCodeLine{639 \textcolor{preprocessor}{\#define MUX\_PB08F\_TC4\_WO0                  5L}}
+\DoxyCodeLine{640 \textcolor{preprocessor}{\#define PINMUX\_PB08F\_TC4\_WO0       ((PIN\_PB08F\_TC4\_WO0 << 16) | MUX\_PB08F\_TC4\_WO0)}}
+\DoxyCodeLine{641 \textcolor{preprocessor}{\#define PORT\_PB08F\_TC4\_WO0         (1ul <<  8)}}
+\DoxyCodeLine{642 \textcolor{preprocessor}{\#define PIN\_PA23F\_TC4\_WO1                 23L  }}
+\DoxyCodeLine{643 \textcolor{preprocessor}{\#define MUX\_PA23F\_TC4\_WO1                  5L}}
+\DoxyCodeLine{644 \textcolor{preprocessor}{\#define PINMUX\_PA23F\_TC4\_WO1       ((PIN\_PA23F\_TC4\_WO1 << 16) | MUX\_PA23F\_TC4\_WO1)}}
+\DoxyCodeLine{645 \textcolor{preprocessor}{\#define PORT\_PA23F\_TC4\_WO1         (1ul << 23)}}
+\DoxyCodeLine{646 \textcolor{preprocessor}{\#define PIN\_PB09F\_TC4\_WO1                 41L  }}
+\DoxyCodeLine{647 \textcolor{preprocessor}{\#define MUX\_PB09F\_TC4\_WO1                  5L}}
+\DoxyCodeLine{648 \textcolor{preprocessor}{\#define PINMUX\_PB09F\_TC4\_WO1       ((PIN\_PB09F\_TC4\_WO1 << 16) | MUX\_PB09F\_TC4\_WO1)}}
+\DoxyCodeLine{649 \textcolor{preprocessor}{\#define PORT\_PB09F\_TC4\_WO1         (1ul <<  9)}}
+\DoxyCodeLine{650 \textcolor{comment}{/* ========== PORT definition for TC5 peripheral ========== */}}
+\DoxyCodeLine{651 \textcolor{preprocessor}{\#define PIN\_PA24F\_TC5\_WO0                 24L  }}
+\DoxyCodeLine{652 \textcolor{preprocessor}{\#define MUX\_PA24F\_TC5\_WO0                  5L}}
+\DoxyCodeLine{653 \textcolor{preprocessor}{\#define PINMUX\_PA24F\_TC5\_WO0       ((PIN\_PA24F\_TC5\_WO0 << 16) | MUX\_PA24F\_TC5\_WO0)}}
+\DoxyCodeLine{654 \textcolor{preprocessor}{\#define PORT\_PA24F\_TC5\_WO0         (1ul << 24)}}
+\DoxyCodeLine{655 \textcolor{preprocessor}{\#define PIN\_PB10F\_TC5\_WO0                 42L  }}
+\DoxyCodeLine{656 \textcolor{preprocessor}{\#define MUX\_PB10F\_TC5\_WO0                  5L}}
+\DoxyCodeLine{657 \textcolor{preprocessor}{\#define PINMUX\_PB10F\_TC5\_WO0       ((PIN\_PB10F\_TC5\_WO0 << 16) | MUX\_PB10F\_TC5\_WO0)}}
+\DoxyCodeLine{658 \textcolor{preprocessor}{\#define PORT\_PB10F\_TC5\_WO0         (1ul << 10)}}
+\DoxyCodeLine{659 \textcolor{preprocessor}{\#define PIN\_PA25F\_TC5\_WO1                 25L  }}
+\DoxyCodeLine{660 \textcolor{preprocessor}{\#define MUX\_PA25F\_TC5\_WO1                  5L}}
+\DoxyCodeLine{661 \textcolor{preprocessor}{\#define PINMUX\_PA25F\_TC5\_WO1       ((PIN\_PA25F\_TC5\_WO1 << 16) | MUX\_PA25F\_TC5\_WO1)}}
+\DoxyCodeLine{662 \textcolor{preprocessor}{\#define PORT\_PA25F\_TC5\_WO1         (1ul << 25)}}
+\DoxyCodeLine{663 \textcolor{preprocessor}{\#define PIN\_PB11F\_TC5\_WO1                 43L  }}
+\DoxyCodeLine{664 \textcolor{preprocessor}{\#define MUX\_PB11F\_TC5\_WO1                  5L}}
+\DoxyCodeLine{665 \textcolor{preprocessor}{\#define PINMUX\_PB11F\_TC5\_WO1       ((PIN\_PB11F\_TC5\_WO1 << 16) | MUX\_PB11F\_TC5\_WO1)}}
+\DoxyCodeLine{666 \textcolor{preprocessor}{\#define PORT\_PB11F\_TC5\_WO1         (1ul << 11)}}
+\DoxyCodeLine{667 \textcolor{comment}{/* ========== PORT definition for ADC peripheral ========== */}}
+\DoxyCodeLine{668 \textcolor{preprocessor}{\#define PIN\_PA02B\_ADC\_AIN0                 2L  }}
+\DoxyCodeLine{669 \textcolor{preprocessor}{\#define MUX\_PA02B\_ADC\_AIN0                 1L}}
+\DoxyCodeLine{670 \textcolor{preprocessor}{\#define PINMUX\_PA02B\_ADC\_AIN0      ((PIN\_PA02B\_ADC\_AIN0 << 16) | MUX\_PA02B\_ADC\_AIN0)}}
+\DoxyCodeLine{671 \textcolor{preprocessor}{\#define PORT\_PA02B\_ADC\_AIN0        (1ul <<  2)}}
+\DoxyCodeLine{672 \textcolor{preprocessor}{\#define PIN\_PA03B\_ADC\_AIN1                 3L  }}
+\DoxyCodeLine{673 \textcolor{preprocessor}{\#define MUX\_PA03B\_ADC\_AIN1                 1L}}
+\DoxyCodeLine{674 \textcolor{preprocessor}{\#define PINMUX\_PA03B\_ADC\_AIN1      ((PIN\_PA03B\_ADC\_AIN1 << 16) | MUX\_PA03B\_ADC\_AIN1)}}
+\DoxyCodeLine{675 \textcolor{preprocessor}{\#define PORT\_PA03B\_ADC\_AIN1        (1ul <<  3)}}
+\DoxyCodeLine{676 \textcolor{preprocessor}{\#define PIN\_PB08B\_ADC\_AIN2                40L  }}
+\DoxyCodeLine{677 \textcolor{preprocessor}{\#define MUX\_PB08B\_ADC\_AIN2                 1L}}
+\DoxyCodeLine{678 \textcolor{preprocessor}{\#define PINMUX\_PB08B\_ADC\_AIN2      ((PIN\_PB08B\_ADC\_AIN2 << 16) | MUX\_PB08B\_ADC\_AIN2)}}
+\DoxyCodeLine{679 \textcolor{preprocessor}{\#define PORT\_PB08B\_ADC\_AIN2        (1ul <<  8)}}
+\DoxyCodeLine{680 \textcolor{preprocessor}{\#define PIN\_PB09B\_ADC\_AIN3                41L  }}
+\DoxyCodeLine{681 \textcolor{preprocessor}{\#define MUX\_PB09B\_ADC\_AIN3                 1L}}
+\DoxyCodeLine{682 \textcolor{preprocessor}{\#define PINMUX\_PB09B\_ADC\_AIN3      ((PIN\_PB09B\_ADC\_AIN3 << 16) | MUX\_PB09B\_ADC\_AIN3)}}
+\DoxyCodeLine{683 \textcolor{preprocessor}{\#define PORT\_PB09B\_ADC\_AIN3        (1ul <<  9)}}
+\DoxyCodeLine{684 \textcolor{preprocessor}{\#define PIN\_PA04B\_ADC\_AIN4                 4L  }}
+\DoxyCodeLine{685 \textcolor{preprocessor}{\#define MUX\_PA04B\_ADC\_AIN4                 1L}}
+\DoxyCodeLine{686 \textcolor{preprocessor}{\#define PINMUX\_PA04B\_ADC\_AIN4      ((PIN\_PA04B\_ADC\_AIN4 << 16) | MUX\_PA04B\_ADC\_AIN4)}}
+\DoxyCodeLine{687 \textcolor{preprocessor}{\#define PORT\_PA04B\_ADC\_AIN4        (1ul <<  4)}}
+\DoxyCodeLine{688 \textcolor{preprocessor}{\#define PIN\_PA05B\_ADC\_AIN5                 5L  }}
+\DoxyCodeLine{689 \textcolor{preprocessor}{\#define MUX\_PA05B\_ADC\_AIN5                 1L}}
+\DoxyCodeLine{690 \textcolor{preprocessor}{\#define PINMUX\_PA05B\_ADC\_AIN5      ((PIN\_PA05B\_ADC\_AIN5 << 16) | MUX\_PA05B\_ADC\_AIN5)}}
+\DoxyCodeLine{691 \textcolor{preprocessor}{\#define PORT\_PA05B\_ADC\_AIN5        (1ul <<  5)}}
+\DoxyCodeLine{692 \textcolor{preprocessor}{\#define PIN\_PA06B\_ADC\_AIN6                 6L  }}
+\DoxyCodeLine{693 \textcolor{preprocessor}{\#define MUX\_PA06B\_ADC\_AIN6                 1L}}
+\DoxyCodeLine{694 \textcolor{preprocessor}{\#define PINMUX\_PA06B\_ADC\_AIN6      ((PIN\_PA06B\_ADC\_AIN6 << 16) | MUX\_PA06B\_ADC\_AIN6)}}
+\DoxyCodeLine{695 \textcolor{preprocessor}{\#define PORT\_PA06B\_ADC\_AIN6        (1ul <<  6)}}
+\DoxyCodeLine{696 \textcolor{preprocessor}{\#define PIN\_PA07B\_ADC\_AIN7                 7L  }}
+\DoxyCodeLine{697 \textcolor{preprocessor}{\#define MUX\_PA07B\_ADC\_AIN7                 1L}}
+\DoxyCodeLine{698 \textcolor{preprocessor}{\#define PINMUX\_PA07B\_ADC\_AIN7      ((PIN\_PA07B\_ADC\_AIN7 << 16) | MUX\_PA07B\_ADC\_AIN7)}}
+\DoxyCodeLine{699 \textcolor{preprocessor}{\#define PORT\_PA07B\_ADC\_AIN7        (1ul <<  7)}}
+\DoxyCodeLine{700 \textcolor{preprocessor}{\#define PIN\_PB02B\_ADC\_AIN10               34L  }}
+\DoxyCodeLine{701 \textcolor{preprocessor}{\#define MUX\_PB02B\_ADC\_AIN10                1L}}
+\DoxyCodeLine{702 \textcolor{preprocessor}{\#define PINMUX\_PB02B\_ADC\_AIN10     ((PIN\_PB02B\_ADC\_AIN10 << 16) | MUX\_PB02B\_ADC\_AIN10)}}
+\DoxyCodeLine{703 \textcolor{preprocessor}{\#define PORT\_PB02B\_ADC\_AIN10       (1ul <<  2)}}
+\DoxyCodeLine{704 \textcolor{preprocessor}{\#define PIN\_PB03B\_ADC\_AIN11               35L  }}
+\DoxyCodeLine{705 \textcolor{preprocessor}{\#define MUX\_PB03B\_ADC\_AIN11                1L}}
+\DoxyCodeLine{706 \textcolor{preprocessor}{\#define PINMUX\_PB03B\_ADC\_AIN11     ((PIN\_PB03B\_ADC\_AIN11 << 16) | MUX\_PB03B\_ADC\_AIN11)}}
+\DoxyCodeLine{707 \textcolor{preprocessor}{\#define PORT\_PB03B\_ADC\_AIN11       (1ul <<  3)}}
+\DoxyCodeLine{708 \textcolor{preprocessor}{\#define PIN\_PA08B\_ADC\_AIN16                8L  }}
+\DoxyCodeLine{709 \textcolor{preprocessor}{\#define MUX\_PA08B\_ADC\_AIN16                1L}}
+\DoxyCodeLine{710 \textcolor{preprocessor}{\#define PINMUX\_PA08B\_ADC\_AIN16     ((PIN\_PA08B\_ADC\_AIN16 << 16) | MUX\_PA08B\_ADC\_AIN16)}}
+\DoxyCodeLine{711 \textcolor{preprocessor}{\#define PORT\_PA08B\_ADC\_AIN16       (1ul <<  8)}}
+\DoxyCodeLine{712 \textcolor{preprocessor}{\#define PIN\_PA09B\_ADC\_AIN17                9L  }}
+\DoxyCodeLine{713 \textcolor{preprocessor}{\#define MUX\_PA09B\_ADC\_AIN17                1L}}
+\DoxyCodeLine{714 \textcolor{preprocessor}{\#define PINMUX\_PA09B\_ADC\_AIN17     ((PIN\_PA09B\_ADC\_AIN17 << 16) | MUX\_PA09B\_ADC\_AIN17)}}
+\DoxyCodeLine{715 \textcolor{preprocessor}{\#define PORT\_PA09B\_ADC\_AIN17       (1ul <<  9)}}
+\DoxyCodeLine{716 \textcolor{preprocessor}{\#define PIN\_PA10B\_ADC\_AIN18               10L  }}
+\DoxyCodeLine{717 \textcolor{preprocessor}{\#define MUX\_PA10B\_ADC\_AIN18                1L}}
+\DoxyCodeLine{718 \textcolor{preprocessor}{\#define PINMUX\_PA10B\_ADC\_AIN18     ((PIN\_PA10B\_ADC\_AIN18 << 16) | MUX\_PA10B\_ADC\_AIN18)}}
+\DoxyCodeLine{719 \textcolor{preprocessor}{\#define PORT\_PA10B\_ADC\_AIN18       (1ul << 10)}}
+\DoxyCodeLine{720 \textcolor{preprocessor}{\#define PIN\_PA11B\_ADC\_AIN19               11L  }}
+\DoxyCodeLine{721 \textcolor{preprocessor}{\#define MUX\_PA11B\_ADC\_AIN19                1L}}
+\DoxyCodeLine{722 \textcolor{preprocessor}{\#define PINMUX\_PA11B\_ADC\_AIN19     ((PIN\_PA11B\_ADC\_AIN19 << 16) | MUX\_PA11B\_ADC\_AIN19)}}
+\DoxyCodeLine{723 \textcolor{preprocessor}{\#define PORT\_PA11B\_ADC\_AIN19       (1ul << 11)}}
+\DoxyCodeLine{724 \textcolor{preprocessor}{\#define PIN\_PA04B\_ADC\_VREFP                4L  }}
+\DoxyCodeLine{725 \textcolor{preprocessor}{\#define MUX\_PA04B\_ADC\_VREFP                1L}}
+\DoxyCodeLine{726 \textcolor{preprocessor}{\#define PINMUX\_PA04B\_ADC\_VREFP     ((PIN\_PA04B\_ADC\_VREFP << 16) | MUX\_PA04B\_ADC\_VREFP)}}
+\DoxyCodeLine{727 \textcolor{preprocessor}{\#define PORT\_PA04B\_ADC\_VREFP       (1ul <<  4)}}
+\DoxyCodeLine{728 \textcolor{comment}{/* ========== PORT definition for AC peripheral ========== */}}
+\DoxyCodeLine{729 \textcolor{preprocessor}{\#define PIN\_PA04B\_AC\_AIN0                  4L  }}
+\DoxyCodeLine{730 \textcolor{preprocessor}{\#define MUX\_PA04B\_AC\_AIN0                  1L}}
+\DoxyCodeLine{731 \textcolor{preprocessor}{\#define PINMUX\_PA04B\_AC\_AIN0       ((PIN\_PA04B\_AC\_AIN0 << 16) | MUX\_PA04B\_AC\_AIN0)}}
+\DoxyCodeLine{732 \textcolor{preprocessor}{\#define PORT\_PA04B\_AC\_AIN0         (1ul <<  4)}}
+\DoxyCodeLine{733 \textcolor{preprocessor}{\#define PIN\_PA05B\_AC\_AIN1                  5L  }}
+\DoxyCodeLine{734 \textcolor{preprocessor}{\#define MUX\_PA05B\_AC\_AIN1                  1L}}
+\DoxyCodeLine{735 \textcolor{preprocessor}{\#define PINMUX\_PA05B\_AC\_AIN1       ((PIN\_PA05B\_AC\_AIN1 << 16) | MUX\_PA05B\_AC\_AIN1)}}
+\DoxyCodeLine{736 \textcolor{preprocessor}{\#define PORT\_PA05B\_AC\_AIN1         (1ul <<  5)}}
+\DoxyCodeLine{737 \textcolor{preprocessor}{\#define PIN\_PA06B\_AC\_AIN2                  6L  }}
+\DoxyCodeLine{738 \textcolor{preprocessor}{\#define MUX\_PA06B\_AC\_AIN2                  1L}}
+\DoxyCodeLine{739 \textcolor{preprocessor}{\#define PINMUX\_PA06B\_AC\_AIN2       ((PIN\_PA06B\_AC\_AIN2 << 16) | MUX\_PA06B\_AC\_AIN2)}}
+\DoxyCodeLine{740 \textcolor{preprocessor}{\#define PORT\_PA06B\_AC\_AIN2         (1ul <<  6)}}
+\DoxyCodeLine{741 \textcolor{preprocessor}{\#define PIN\_PA07B\_AC\_AIN3                  7L  }}
+\DoxyCodeLine{742 \textcolor{preprocessor}{\#define MUX\_PA07B\_AC\_AIN3                  1L}}
+\DoxyCodeLine{743 \textcolor{preprocessor}{\#define PINMUX\_PA07B\_AC\_AIN3       ((PIN\_PA07B\_AC\_AIN3 << 16) | MUX\_PA07B\_AC\_AIN3)}}
+\DoxyCodeLine{744 \textcolor{preprocessor}{\#define PORT\_PA07B\_AC\_AIN3         (1ul <<  7)}}
+\DoxyCodeLine{745 \textcolor{preprocessor}{\#define PIN\_PA12H\_AC\_CMP0                 12L  }}
+\DoxyCodeLine{746 \textcolor{preprocessor}{\#define MUX\_PA12H\_AC\_CMP0                  7L}}
+\DoxyCodeLine{747 \textcolor{preprocessor}{\#define PINMUX\_PA12H\_AC\_CMP0       ((PIN\_PA12H\_AC\_CMP0 << 16) | MUX\_PA12H\_AC\_CMP0)}}
+\DoxyCodeLine{748 \textcolor{preprocessor}{\#define PORT\_PA12H\_AC\_CMP0         (1ul << 12)}}
+\DoxyCodeLine{749 \textcolor{preprocessor}{\#define PIN\_PA18H\_AC\_CMP0                 18L  }}
+\DoxyCodeLine{750 \textcolor{preprocessor}{\#define MUX\_PA18H\_AC\_CMP0                  7L}}
+\DoxyCodeLine{751 \textcolor{preprocessor}{\#define PINMUX\_PA18H\_AC\_CMP0       ((PIN\_PA18H\_AC\_CMP0 << 16) | MUX\_PA18H\_AC\_CMP0)}}
+\DoxyCodeLine{752 \textcolor{preprocessor}{\#define PORT\_PA18H\_AC\_CMP0         (1ul << 18)}}
+\DoxyCodeLine{753 \textcolor{preprocessor}{\#define PIN\_PA13H\_AC\_CMP1                 13L  }}
+\DoxyCodeLine{754 \textcolor{preprocessor}{\#define MUX\_PA13H\_AC\_CMP1                  7L}}
+\DoxyCodeLine{755 \textcolor{preprocessor}{\#define PINMUX\_PA13H\_AC\_CMP1       ((PIN\_PA13H\_AC\_CMP1 << 16) | MUX\_PA13H\_AC\_CMP1)}}
+\DoxyCodeLine{756 \textcolor{preprocessor}{\#define PORT\_PA13H\_AC\_CMP1         (1ul << 13)}}
+\DoxyCodeLine{757 \textcolor{preprocessor}{\#define PIN\_PA19H\_AC\_CMP1                 19L  }}
+\DoxyCodeLine{758 \textcolor{preprocessor}{\#define MUX\_PA19H\_AC\_CMP1                  7L}}
+\DoxyCodeLine{759 \textcolor{preprocessor}{\#define PINMUX\_PA19H\_AC\_CMP1       ((PIN\_PA19H\_AC\_CMP1 << 16) | MUX\_PA19H\_AC\_CMP1)}}
+\DoxyCodeLine{760 \textcolor{preprocessor}{\#define PORT\_PA19H\_AC\_CMP1         (1ul << 19)}}
+\DoxyCodeLine{761 \textcolor{comment}{/* ========== PORT definition for DAC peripheral ========== */}}
+\DoxyCodeLine{762 \textcolor{preprocessor}{\#define PIN\_PA02B\_DAC\_VOUT                 2L  }}
+\DoxyCodeLine{763 \textcolor{preprocessor}{\#define MUX\_PA02B\_DAC\_VOUT                 1L}}
+\DoxyCodeLine{764 \textcolor{preprocessor}{\#define PINMUX\_PA02B\_DAC\_VOUT      ((PIN\_PA02B\_DAC\_VOUT << 16) | MUX\_PA02B\_DAC\_VOUT)}}
+\DoxyCodeLine{765 \textcolor{preprocessor}{\#define PORT\_PA02B\_DAC\_VOUT        (1ul <<  2)}}
+\DoxyCodeLine{766 \textcolor{preprocessor}{\#define PIN\_PA03B\_DAC\_VREFP                3L  }}
+\DoxyCodeLine{767 \textcolor{preprocessor}{\#define MUX\_PA03B\_DAC\_VREFP                1L}}
+\DoxyCodeLine{768 \textcolor{preprocessor}{\#define PINMUX\_PA03B\_DAC\_VREFP     ((PIN\_PA03B\_DAC\_VREFP << 16) | MUX\_PA03B\_DAC\_VREFP)}}
+\DoxyCodeLine{769 \textcolor{preprocessor}{\#define PORT\_PA03B\_DAC\_VREFP       (1ul <<  3)}}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{771 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20G17\_PIO\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,71 @@
+\hypertarget{group__x_task_create_restricted_static}{}\doxysection{x\+Task\+Create\+Restricted\+Static}
+\label{group__x_task_create_restricted_static}\index{xTaskCreateRestrictedStatic@{xTaskCreateRestrictedStatic}}
+task. h 
+\begin{DoxyPre}
+ BaseType\_t xTaskCreateRestrictedStatic( TaskParameters\_t *pxTaskDefinition, TaskHandle\_t *pxCreatedTask );\end{DoxyPre}
+
+
+Only available when config\+SUPPORT\+\_\+\+STATIC\+\_\+\+ALLOCATION is set to 1.
+
+x\+Task\+Create\+Restricted\+Static() should only be used in systems that include an MPU implementation.
+
+Internally, within the Free\+RTOS implementation, tasks use two blocks of memory. The first block is used to hold the task\textquotesingle{}s data structures. The second block is used by the task as its stack. If a task is created using x\+Task\+Create\+Restricted() then the stack is provided by the application writer, and the memory used to hold the task\textquotesingle{}s data structure is automatically dynamically allocated inside the x\+Task\+Create\+Restricted() function. If a task is created using x\+Task\+Create\+Restricted\+Static() then the application writer must provide the memory used to hold the task\textquotesingle{}s data structures too. x\+Task\+Create\+Restricted\+Static() therefore allows a memory protected task to be created without using any dynamic memory allocation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em px\+Task\+Definition} & Pointer to a structure that contains a member for each of the normal x\+Task\+Create() parameters (see the x\+Task\+Create() API documentation) plus an optional stack buffer and the memory region definitions. If config\+SUPPORT\+\_\+\+STATIC\+\_\+\+ALLOCATION is set to 1 the structure contains an additional member, which is used to point to a variable of type Static\+Task\+\_\+t -\/ which is then used to hold the task\textquotesingle{}s data structure.\\
+\hline
+{\em px\+Created\+Task} & Used to pass back a handle by which the created task can be referenced.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pd\+PASS if the task was successfully created and added to a ready list, otherwise an error code defined in the file \mbox{\hyperlink{projdefs_8h_source}{projdefs.\+h}}
+\end{DoxyReturn}
+Example usage\+: 
+\begin{DoxyPre}
+// Create an TaskParameters\_t structure that defines the task to be created.
+// The StaticTask\_t variable is only included in the structure when
+// configSUPPORT\_STATIC\_ALLOCATION is set to 1.  The PRIVILEGED\_DATA macro can
+// be used to force the variable into the RTOS kernel's privileged data area.
+static PRIVILEGED\_DATA StaticTask\_t xTaskBuffer;
+static const TaskParameters\_t xCheckTaskParameters =
+\{
+    vATask,     // pvTaskCode -\/ the function that implements the task.
+    "{}ATask"{},    // pcName -\/ just a text name for the task to assist debugging.
+    100,        // usStackDepth -\/ the stack size DEFINED IN WORDS.
+    NULL,       // pvParameters -\/ passed into the task function as the function parameters.
+    ( 1UL | portPRIVILEGE\_BIT ),// uxPriority -\/ task priority, set the portPRIVILEGE\_BIT if the task should run in a privileged state.
+    cStackBuffer,// puxStackBuffer -\/ the buffer to be used as the task stack.
+
+    // xRegions -\/ Allocate up to three separate memory regions for access by
+    // the task, with appropriate access permissions.  Different processors have
+    // different memory alignment requirements -\/ refer to the FreeRTOS documentation
+    // for full information.
+    \{
+        // Base address                 Length  Parameters
+        \{ cReadWriteArray,              32,     portMPU\_REGION\_READ\_WRITE \},
+        \{ cReadOnlyArray,               32,     portMPU\_REGION\_READ\_ONLY \},
+        \{ cPrivilegedOnlyAccessArray,   128,    portMPU\_REGION\_PRIVILEGED\_READ\_WRITE \}
+    \}
+
+    \&xTaskBuffer; // Holds the task's data structure.
+\};
+
+int main( void )
+\{
+TaskHandle\_t xHandle;
+
+    // Create a task from the const structure defined above.  The task handle
+    // is requested (the second parameter is not NULL) but in this case just for
+    // demonstration purposes as its not actually used.
+    xTaskCreateRestricted( \&xRegTest1Parameters, \&xHandle );
+
+    // Start the scheduler.
+    vTaskStartScheduler();
+
+    // Will only get here if there was insufficient memory to create the idle
+    // and/or timer task.
+    for( ;; );
+\}
+   \end{DoxyPre}
+ 

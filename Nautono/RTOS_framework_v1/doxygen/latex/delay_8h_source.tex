@@ -1,0 +1,37 @@
+\hypertarget{delay_8h_source}{}\doxysection{delay.\+h}
+\label{delay_8h_source}\index{src/ASF/common2/services/delay/delay.h@{src/ASF/common2/services/delay/delay.h}}
+\mbox{\hyperlink{delay_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef DELAY\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define DELAY\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{40 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#ifdef SYSTICK\_MODE}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include "{}sam0/systick\_counter.h"{}}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifdef CYCLE\_MODE}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cycle__counter_8h}{sam0/cycle\_counter.h}}"{}}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__group__common__services__delay_gaf3c040fe31e69be32855715a75e0cda4}{delay\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define delay\_s(delay)          ((delay) ? cpu\_delay\_s(delay) : cpu\_delay\_us(1))}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define delay\_ms(delay)         ((delay) ? cpu\_delay\_ms(delay) : cpu\_delay\_us(1))}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define delay\_us(delay)         ((delay) ? cpu\_delay\_us(delay) : cpu\_delay\_us(1))}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{84 \}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DELAY\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

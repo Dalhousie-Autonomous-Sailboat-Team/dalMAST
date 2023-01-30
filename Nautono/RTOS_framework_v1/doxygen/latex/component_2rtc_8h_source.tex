@@ -1,0 +1,973 @@
+\hypertarget{component_2rtc_8h_source}{}\doxysection{rtc.\+h}
+\label{component_2rtc_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/rtc.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/rtc.h}}
+\mbox{\hyperlink{component_2rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_RTC\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_RTC\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define RTC\_U2202}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_RTC                     0x101}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE0\_CTRL : (RTC Offset: 0x00) (R/W 16) MODE0 MODE0 Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_t_r_l___type_a44d5f25fb83b26af499e746e0ef6f880}{SWRST}}:1;          }
+\DoxyCodeLine{54     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_t_r_l___type_a41edc319de69838023e65ab26dc6b167}{ENABLE}}:1;         }
+\DoxyCodeLine{55     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_t_r_l___type_ace6a2e9a0e0f1433153fe3eaace96dc8}{MODE}}:2;           }
+\DoxyCodeLine{56     uint16\_t :3;               }
+\DoxyCodeLine{57     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_t_r_l___type_ac85a2a95f32f74f1b45d7d9ff080cd61}{MATCHCLR}}:1;       }
+\DoxyCodeLine{58     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_t_r_l___type_abd4236d9fe39e225888c96b1ab8e8241}{PRESCALER}}:4;      }
+\DoxyCodeLine{59     uint16\_t :4;               }
+\DoxyCodeLine{60   \} bit;                       }
+\DoxyCodeLine{61   uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_t_r_l___type_a9b507b68ea4d91e80c381f5f43594542}{reg}};                }
+\DoxyCodeLine{62 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_t_r_l___type}{RTC\_MODE0\_CTRL\_Type}};}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_OFFSET       0x00         }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_RESETVALUE   0x0000ul     }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_SWRST\_Pos    0            }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_SWRST        (0x1ul << RTC\_MODE0\_CTRL\_SWRST\_Pos)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_ENABLE\_Pos   1            }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_ENABLE       (0x1ul << RTC\_MODE0\_CTRL\_ENABLE\_Pos)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_MODE\_Pos     2            }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_MODE\_Msk     (0x3ul << RTC\_MODE0\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_MODE(value)  ((RTC\_MODE0\_CTRL\_MODE\_Msk \& ((value) << RTC\_MODE0\_CTRL\_MODE\_Pos)))}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_MODE\_COUNT32\_Val 0x0ul  }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_MODE\_COUNT16\_Val 0x1ul  }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_MODE\_CLOCK\_Val   0x2ul  }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_MODE\_COUNT32 (RTC\_MODE0\_CTRL\_MODE\_COUNT32\_Val << RTC\_MODE0\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_MODE\_COUNT16 (RTC\_MODE0\_CTRL\_MODE\_COUNT16\_Val << RTC\_MODE0\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_MODE\_CLOCK   (RTC\_MODE0\_CTRL\_MODE\_CLOCK\_Val << RTC\_MODE0\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_MATCHCLR\_Pos 7            }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_MATCHCLR     (0x1ul << RTC\_MODE0\_CTRL\_MATCHCLR\_Pos)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_Pos 8            }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_Msk (0xFul << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER(value) ((RTC\_MODE0\_CTRL\_PRESCALER\_Msk \& ((value) << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)))}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV1\_Val 0x0ul  }}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV2\_Val 0x1ul  }}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV4\_Val 0x2ul  }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV8\_Val 0x3ul  }}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV16\_Val 0x4ul  }}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV32\_Val 0x5ul  }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV64\_Val 0x6ul  }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV128\_Val 0x7ul  }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV256\_Val 0x8ul  }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV512\_Val 0x9ul  }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define   RTC\_MODE0\_CTRL\_PRESCALER\_DIV1024\_Val 0xAul  }}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV1 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV1\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV2 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV2\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV4 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV4\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV8 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV8\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV16 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV16\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV32 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV32\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV64 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV64\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV128 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV128\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV256 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV256\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV512 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV512\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_PRESCALER\_DIV1024 (RTC\_MODE0\_CTRL\_PRESCALER\_DIV1024\_Val << RTC\_MODE0\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define RTC\_MODE0\_CTRL\_MASK         0x0F8Ful     }}
+\DoxyCodeLine{110 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE1\_CTRL : (RTC Offset: 0x00) (R/W 16) MODE1 MODE1 Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{112 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{113   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{114     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_t_r_l___type_ae2d589d7ca93ba04b82471e0e42b3890}{SWRST}}:1;          }
+\DoxyCodeLine{115     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_t_r_l___type_aba04e10d3f59a692c84936bf9772e027}{ENABLE}}:1;         }
+\DoxyCodeLine{116     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_t_r_l___type_aea1d33f7a51320fbced6a7f1f4d09e59}{MODE}}:2;           }
+\DoxyCodeLine{117     uint16\_t :4;               }
+\DoxyCodeLine{118     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_t_r_l___type_aaa43ff869bb54d0e5367224996ae95dc}{PRESCALER}}:4;      }
+\DoxyCodeLine{119     uint16\_t :4;               }
+\DoxyCodeLine{120   \} bit;                       }
+\DoxyCodeLine{121   uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_t_r_l___type_a90f32c6cbf4a039f26eb4027a754ff6a}{reg}};                }
+\DoxyCodeLine{122 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_t_r_l___type}{RTC\_MODE1\_CTRL\_Type}};}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_OFFSET       0x00         }}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_RESETVALUE   0x0000ul     }}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_SWRST\_Pos    0            }}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_SWRST        (0x1ul << RTC\_MODE1\_CTRL\_SWRST\_Pos)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_ENABLE\_Pos   1            }}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_ENABLE       (0x1ul << RTC\_MODE1\_CTRL\_ENABLE\_Pos)}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_MODE\_Pos     2            }}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_MODE\_Msk     (0x3ul << RTC\_MODE1\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_MODE(value)  ((RTC\_MODE1\_CTRL\_MODE\_Msk \& ((value) << RTC\_MODE1\_CTRL\_MODE\_Pos)))}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_MODE\_COUNT32\_Val 0x0ul  }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_MODE\_COUNT16\_Val 0x1ul  }}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_MODE\_CLOCK\_Val   0x2ul  }}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_MODE\_COUNT32 (RTC\_MODE1\_CTRL\_MODE\_COUNT32\_Val << RTC\_MODE1\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_MODE\_COUNT16 (RTC\_MODE1\_CTRL\_MODE\_COUNT16\_Val << RTC\_MODE1\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_MODE\_CLOCK   (RTC\_MODE1\_CTRL\_MODE\_CLOCK\_Val << RTC\_MODE1\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_Pos 8            }}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_Msk (0xFul << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER(value) ((RTC\_MODE1\_CTRL\_PRESCALER\_Msk \& ((value) << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)))}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV1\_Val 0x0ul  }}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV2\_Val 0x1ul  }}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV4\_Val 0x2ul  }}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV8\_Val 0x3ul  }}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV16\_Val 0x4ul  }}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV32\_Val 0x5ul  }}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV64\_Val 0x6ul  }}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV128\_Val 0x7ul  }}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV256\_Val 0x8ul  }}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV512\_Val 0x9ul  }}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define   RTC\_MODE1\_CTRL\_PRESCALER\_DIV1024\_Val 0xAul  }}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV1 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV1\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV2 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV2\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV4 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV4\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV8 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV8\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV16 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV16\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV32 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV32\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV64 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV64\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV128 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV128\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV256 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV256\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV512 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV512\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_PRESCALER\_DIV1024 (RTC\_MODE1\_CTRL\_PRESCALER\_DIV1024\_Val << RTC\_MODE1\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define RTC\_MODE1\_CTRL\_MASK         0x0F0Ful     }}
+\DoxyCodeLine{168 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE2\_CTRL : (RTC Offset: 0x00) (R/W 16) MODE2 MODE2 Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{170 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{171   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{172     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_t_r_l___type_a22e9e139b6434a3f10a7cb768d2c230d}{SWRST}}:1;          }
+\DoxyCodeLine{173     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_t_r_l___type_a277b02ae130cc59d497bd5c1db72d785}{ENABLE}}:1;         }
+\DoxyCodeLine{174     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_t_r_l___type_adceccb4e8475d55bc3f4b30b431bbffb}{MODE}}:2;           }
+\DoxyCodeLine{175     uint16\_t :2;               }
+\DoxyCodeLine{176     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_t_r_l___type_a64b7ad9981c617c955d0ecf6df43ea69}{CLKREP}}:1;         }
+\DoxyCodeLine{177     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_t_r_l___type_ab791e0b82100d0f5fd3d892d12012609}{MATCHCLR}}:1;       }
+\DoxyCodeLine{178     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_t_r_l___type_a0c0e3f5841a7f8ffe37c1d2affc90cdf}{PRESCALER}}:4;      }
+\DoxyCodeLine{179     uint16\_t :4;               }
+\DoxyCodeLine{180   \} bit;                       }
+\DoxyCodeLine{181   uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_t_r_l___type_a4fef981005d3add85da2f8344fd1678a}{reg}};                }
+\DoxyCodeLine{182 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_t_r_l___type}{RTC\_MODE2\_CTRL\_Type}};}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_OFFSET       0x00         }}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_RESETVALUE   0x0000ul     }}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_SWRST\_Pos    0            }}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_SWRST        (0x1ul << RTC\_MODE2\_CTRL\_SWRST\_Pos)}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_ENABLE\_Pos   1            }}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_ENABLE       (0x1ul << RTC\_MODE2\_CTRL\_ENABLE\_Pos)}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_MODE\_Pos     2            }}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_MODE\_Msk     (0x3ul << RTC\_MODE2\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_MODE(value)  ((RTC\_MODE2\_CTRL\_MODE\_Msk \& ((value) << RTC\_MODE2\_CTRL\_MODE\_Pos)))}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_MODE\_COUNT32\_Val 0x0ul  }}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_MODE\_COUNT16\_Val 0x1ul  }}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_MODE\_CLOCK\_Val   0x2ul  }}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_MODE\_COUNT32 (RTC\_MODE2\_CTRL\_MODE\_COUNT32\_Val << RTC\_MODE2\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_MODE\_COUNT16 (RTC\_MODE2\_CTRL\_MODE\_COUNT16\_Val << RTC\_MODE2\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_MODE\_CLOCK   (RTC\_MODE2\_CTRL\_MODE\_CLOCK\_Val << RTC\_MODE2\_CTRL\_MODE\_Pos)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_CLKREP\_Pos   6            }}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_CLKREP       (0x1ul << RTC\_MODE2\_CTRL\_CLKREP\_Pos)}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_MATCHCLR\_Pos 7            }}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_MATCHCLR     (0x1ul << RTC\_MODE2\_CTRL\_MATCHCLR\_Pos)}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_Pos 8            }}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_Msk (0xFul << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER(value) ((RTC\_MODE2\_CTRL\_PRESCALER\_Msk \& ((value) << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)))}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV1\_Val 0x0ul  }}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV2\_Val 0x1ul  }}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV4\_Val 0x2ul  }}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV8\_Val 0x3ul  }}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV16\_Val 0x4ul  }}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV32\_Val 0x5ul  }}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV64\_Val 0x6ul  }}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV128\_Val 0x7ul  }}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV256\_Val 0x8ul  }}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV512\_Val 0x9ul  }}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CTRL\_PRESCALER\_DIV1024\_Val 0xAul  }}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV1 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV1\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV2 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV2\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV4 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV4\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV8 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV8\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV16 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV16\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV32 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV32\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV64 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV64\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV128 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV128\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV256 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV256\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV512 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV512\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_PRESCALER\_DIV1024 (RTC\_MODE2\_CTRL\_PRESCALER\_DIV1024\_Val << RTC\_MODE2\_CTRL\_PRESCALER\_Pos)}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define RTC\_MODE2\_CTRL\_MASK         0x0FCFul     }}
+\DoxyCodeLine{232 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_READREQ : (RTC Offset: 0x02) (R/W 16) Read Request -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{234 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{235   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{236     uint16\_t \mbox{\hyperlink{union_r_t_c___r_e_a_d_r_e_q___type_a96b931e041a2e63b87a68fdd962a75fc}{ADDR}}:6;           }
+\DoxyCodeLine{237     uint16\_t :8;               }
+\DoxyCodeLine{238     uint16\_t \mbox{\hyperlink{union_r_t_c___r_e_a_d_r_e_q___type_afe59a55054dc14faa6250ebefb838c47}{RCONT}}:1;          }
+\DoxyCodeLine{239     uint16\_t \mbox{\hyperlink{union_r_t_c___r_e_a_d_r_e_q___type_a2557803b193d031c9e9c602e1f706d27}{RREQ}}:1;           }
+\DoxyCodeLine{240   \} bit;                       }
+\DoxyCodeLine{241   uint16\_t \mbox{\hyperlink{union_r_t_c___r_e_a_d_r_e_q___type_a75f4d5e045f886bd69d138815c8226e9}{reg}};                }
+\DoxyCodeLine{242 \} \mbox{\hyperlink{union_r_t_c___r_e_a_d_r_e_q___type}{RTC\_READREQ\_Type}};}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define RTC\_READREQ\_OFFSET          0x02         }}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define RTC\_READREQ\_RESETVALUE      0x0010ul     }}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define RTC\_READREQ\_ADDR\_Pos        0            }}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define RTC\_READREQ\_ADDR\_Msk        (0x3Ful << RTC\_READREQ\_ADDR\_Pos)}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define RTC\_READREQ\_ADDR(value)     ((RTC\_READREQ\_ADDR\_Msk \& ((value) << RTC\_READREQ\_ADDR\_Pos)))}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define RTC\_READREQ\_RCONT\_Pos       14           }}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define RTC\_READREQ\_RCONT           (0x1ul << RTC\_READREQ\_RCONT\_Pos)}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define RTC\_READREQ\_RREQ\_Pos        15           }}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define RTC\_READREQ\_RREQ            (0x1ul << RTC\_READREQ\_RREQ\_Pos)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define RTC\_READREQ\_MASK            0xC03Ful     }}
+\DoxyCodeLine{257 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE0\_EVCTRL : (RTC Offset: 0x04) (R/W 16) MODE0 MODE0 Event Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{259 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{260   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{261     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_ab95b8c501e2370dd2818c1df28bd070f}{PEREO0}}:1;         }
+\DoxyCodeLine{262     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_ac6309695ed626da3b0a8361be1780740}{PEREO1}}:1;         }
+\DoxyCodeLine{263     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_afb530745ce005df70e2d156ada0b9aba}{PEREO2}}:1;         }
+\DoxyCodeLine{264     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_accb6f9f4465fdd4f19e6b62de155f941}{PEREO3}}:1;         }
+\DoxyCodeLine{265     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_a6630bd8778878f73eda2586b3438634a}{PEREO4}}:1;         }
+\DoxyCodeLine{266     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_ad224afa1163819b60a0dabf4e59b5f0f}{PEREO5}}:1;         }
+\DoxyCodeLine{267     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_a9d2808ee272ca1bd5a8972016a163be2}{PEREO6}}:1;         }
+\DoxyCodeLine{268     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_a08d54bd031b905214b098b001a881fa2}{PEREO7}}:1;         }
+\DoxyCodeLine{269     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_a25a2cb709c63a69ca329395213690ba3}{CMPEO0}}:1;         }
+\DoxyCodeLine{270     uint16\_t :6;               }
+\DoxyCodeLine{271     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_aef48aaae6839ee81530faf0759f9a483}{OVFEO}}:1;          }
+\DoxyCodeLine{272   \} bit;                       }
+\DoxyCodeLine{273   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{274     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_a4179f1c1afed8405299fe9fcbc7b1f8d}{PEREO}}:8;          }
+\DoxyCodeLine{275     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_ae2818a24f3f338a575273c078408f353}{CMPEO}}:1;          }
+\DoxyCodeLine{276     uint16\_t :7;               }
+\DoxyCodeLine{277   \} vec;                       }
+\DoxyCodeLine{278   uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type_a2e8e63cc827a2660b807354402bfb2d3}{reg}};                }
+\DoxyCodeLine{279 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type}{RTC\_MODE0\_EVCTRL\_Type}};}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_OFFSET     0x04         }}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO0\_Pos 0            }}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO0     (1 << RTC\_MODE0\_EVCTRL\_PEREO0\_Pos)}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO1\_Pos 1            }}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO1     (1 << RTC\_MODE0\_EVCTRL\_PEREO1\_Pos)}}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO2\_Pos 2            }}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO2     (1 << RTC\_MODE0\_EVCTRL\_PEREO2\_Pos)}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO3\_Pos 3            }}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO3     (1 << RTC\_MODE0\_EVCTRL\_PEREO3\_Pos)}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO4\_Pos 4            }}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO4     (1 << RTC\_MODE0\_EVCTRL\_PEREO4\_Pos)}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO5\_Pos 5            }}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO5     (1 << RTC\_MODE0\_EVCTRL\_PEREO5\_Pos)}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO6\_Pos 6            }}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO6     (1 << RTC\_MODE0\_EVCTRL\_PEREO6\_Pos)}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO7\_Pos 7            }}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO7     (1 << RTC\_MODE0\_EVCTRL\_PEREO7\_Pos)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO\_Pos  0            }}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO\_Msk  (0xFFul << RTC\_MODE0\_EVCTRL\_PEREO\_Pos)}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_PEREO(value) ((RTC\_MODE0\_EVCTRL\_PEREO\_Msk \& ((value) << RTC\_MODE0\_EVCTRL\_PEREO\_Pos)))}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_CMPEO0\_Pos 8            }}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_CMPEO0     (1 << RTC\_MODE0\_EVCTRL\_CMPEO0\_Pos)}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_CMPEO\_Pos  8            }}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_CMPEO\_Msk  (0x1ul << RTC\_MODE0\_EVCTRL\_CMPEO\_Pos)}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_CMPEO(value) ((RTC\_MODE0\_EVCTRL\_CMPEO\_Msk \& ((value) << RTC\_MODE0\_EVCTRL\_CMPEO\_Pos)))}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_OVFEO\_Pos  15           }}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_OVFEO      (0x1ul << RTC\_MODE0\_EVCTRL\_OVFEO\_Pos)}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#define RTC\_MODE0\_EVCTRL\_MASK       0x81FFul     }}
+\DoxyCodeLine{313 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE1\_EVCTRL : (RTC Offset: 0x04) (R/W 16) MODE1 MODE1 Event Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{315 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{316   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{317     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a2efd75e042f138391f4298a3f5f27d37}{PEREO0}}:1;         }
+\DoxyCodeLine{318     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a1495d1799afbfdc1be1536cd8a1f5855}{PEREO1}}:1;         }
+\DoxyCodeLine{319     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_af963a139a6e696a12b26832f1c4d99d6}{PEREO2}}:1;         }
+\DoxyCodeLine{320     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a0be95c8e43686d69c5689f41e08a24bf}{PEREO3}}:1;         }
+\DoxyCodeLine{321     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a44ec4d8134653ce12cefedaf30800e88}{PEREO4}}:1;         }
+\DoxyCodeLine{322     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a0e625040f9763e3c4bc6b8bab255d779}{PEREO5}}:1;         }
+\DoxyCodeLine{323     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a44ffa57dd7fd8b6bc8843df6a58cbeb1}{PEREO6}}:1;         }
+\DoxyCodeLine{324     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a645d13b628f384fa4f93365dbe4060d9}{PEREO7}}:1;         }
+\DoxyCodeLine{325     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_aafd8f19a337686286e6fd951dccc64f1}{CMPEO0}}:1;         }
+\DoxyCodeLine{326     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a2024965d678740ffee036cb89e306e5e}{CMPEO1}}:1;         }
+\DoxyCodeLine{327     uint16\_t :5;               }
+\DoxyCodeLine{328     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a28b0f4b26fc692f72903341d9457d151}{OVFEO}}:1;          }
+\DoxyCodeLine{329   \} bit;                       }
+\DoxyCodeLine{330   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{331     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a6b6c722ee203b364f33ed5f2ab37443f}{PEREO}}:8;          }
+\DoxyCodeLine{332     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_a358e0377a6eeff6e8d75613baba42831}{CMPEO}}:2;          }
+\DoxyCodeLine{333     uint16\_t :6;               }
+\DoxyCodeLine{334   \} vec;                       }
+\DoxyCodeLine{335   uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type_afa26b248c14ac2326534b2f1dbf398c9}{reg}};                }
+\DoxyCodeLine{336 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type}{RTC\_MODE1\_EVCTRL\_Type}};}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_OFFSET     0x04         }}
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO0\_Pos 0            }}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO0     (1 << RTC\_MODE1\_EVCTRL\_PEREO0\_Pos)}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO1\_Pos 1            }}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO1     (1 << RTC\_MODE1\_EVCTRL\_PEREO1\_Pos)}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO2\_Pos 2            }}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO2     (1 << RTC\_MODE1\_EVCTRL\_PEREO2\_Pos)}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO3\_Pos 3            }}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO3     (1 << RTC\_MODE1\_EVCTRL\_PEREO3\_Pos)}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO4\_Pos 4            }}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO4     (1 << RTC\_MODE1\_EVCTRL\_PEREO4\_Pos)}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO5\_Pos 5            }}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO5     (1 << RTC\_MODE1\_EVCTRL\_PEREO5\_Pos)}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO6\_Pos 6            }}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO6     (1 << RTC\_MODE1\_EVCTRL\_PEREO6\_Pos)}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO7\_Pos 7            }}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO7     (1 << RTC\_MODE1\_EVCTRL\_PEREO7\_Pos)}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO\_Pos  0            }}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO\_Msk  (0xFFul << RTC\_MODE1\_EVCTRL\_PEREO\_Pos)}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_PEREO(value) ((RTC\_MODE1\_EVCTRL\_PEREO\_Msk \& ((value) << RTC\_MODE1\_EVCTRL\_PEREO\_Pos)))}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_CMPEO0\_Pos 8            }}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_CMPEO0     (1 << RTC\_MODE1\_EVCTRL\_CMPEO0\_Pos)}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_CMPEO1\_Pos 9            }}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_CMPEO1     (1 << RTC\_MODE1\_EVCTRL\_CMPEO1\_Pos)}}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_CMPEO\_Pos  8            }}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_CMPEO\_Msk  (0x3ul << RTC\_MODE1\_EVCTRL\_CMPEO\_Pos)}}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_CMPEO(value) ((RTC\_MODE1\_EVCTRL\_CMPEO\_Msk \& ((value) << RTC\_MODE1\_EVCTRL\_CMPEO\_Pos)))}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_OVFEO\_Pos  15           }}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_OVFEO      (0x1ul << RTC\_MODE1\_EVCTRL\_OVFEO\_Pos)}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define RTC\_MODE1\_EVCTRL\_MASK       0x83FFul     }}
+\DoxyCodeLine{372 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE2\_EVCTRL : (RTC Offset: 0x04) (R/W 16) MODE2 MODE2 Event Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{374 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{375   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{376     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_a83dbc858de9e4ef46b465b07aae43007}{PEREO0}}:1;         }
+\DoxyCodeLine{377     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_a8d2220dc98cb77c96080ff3e88b4d267}{PEREO1}}:1;         }
+\DoxyCodeLine{378     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_a96f70aa9d03b2082977f3dc5d6c56ee2}{PEREO2}}:1;         }
+\DoxyCodeLine{379     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_aa04433b19892681398ed06c974a89198}{PEREO3}}:1;         }
+\DoxyCodeLine{380     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_a0a257182e99f3409aec4aac1a68d193e}{PEREO4}}:1;         }
+\DoxyCodeLine{381     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_afaf0d157c203f975003fe47a6471e88e}{PEREO5}}:1;         }
+\DoxyCodeLine{382     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_accc2c75e968a88ed37fb8ef8d89dd31a}{PEREO6}}:1;         }
+\DoxyCodeLine{383     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_ad89f33d1db53f993a8c145dca833b39a}{PEREO7}}:1;         }
+\DoxyCodeLine{384     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_a1982c81c31d1f2537696b685cd47a7b5}{ALARMEO0}}:1;       }
+\DoxyCodeLine{385     uint16\_t :6;               }
+\DoxyCodeLine{386     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_a7ecf5b7fd931325edd4c474538d09d50}{OVFEO}}:1;          }
+\DoxyCodeLine{387   \} bit;                       }
+\DoxyCodeLine{388   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{389     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_a242d2b1abff8fff0cb7ac2ffb1063ded}{PEREO}}:8;          }
+\DoxyCodeLine{390     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_ae156644e2c589d9610d05a41c80825ea}{ALARMEO}}:1;        }
+\DoxyCodeLine{391     uint16\_t :7;               }
+\DoxyCodeLine{392   \} vec;                       }
+\DoxyCodeLine{393   uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type_a96e2c106edf569f28cfd20afe6823052}{reg}};                }
+\DoxyCodeLine{394 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type}{RTC\_MODE2\_EVCTRL\_Type}};}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_OFFSET     0x04         }}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_RESETVALUE 0x0000ul     }}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO0\_Pos 0            }}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO0     (1 << RTC\_MODE2\_EVCTRL\_PEREO0\_Pos)}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO1\_Pos 1            }}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO1     (1 << RTC\_MODE2\_EVCTRL\_PEREO1\_Pos)}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO2\_Pos 2            }}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO2     (1 << RTC\_MODE2\_EVCTRL\_PEREO2\_Pos)}}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO3\_Pos 3            }}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO3     (1 << RTC\_MODE2\_EVCTRL\_PEREO3\_Pos)}}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO4\_Pos 4            }}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO4     (1 << RTC\_MODE2\_EVCTRL\_PEREO4\_Pos)}}
+\DoxyCodeLine{410 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO5\_Pos 5            }}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO5     (1 << RTC\_MODE2\_EVCTRL\_PEREO5\_Pos)}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO6\_Pos 6            }}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO6     (1 << RTC\_MODE2\_EVCTRL\_PEREO6\_Pos)}}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO7\_Pos 7            }}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO7     (1 << RTC\_MODE2\_EVCTRL\_PEREO7\_Pos)}}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO\_Pos  0            }}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO\_Msk  (0xFFul << RTC\_MODE2\_EVCTRL\_PEREO\_Pos)}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_PEREO(value) ((RTC\_MODE2\_EVCTRL\_PEREO\_Msk \& ((value) << RTC\_MODE2\_EVCTRL\_PEREO\_Pos)))}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_ALARMEO0\_Pos 8            }}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_ALARMEO0   (1 << RTC\_MODE2\_EVCTRL\_ALARMEO0\_Pos)}}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_ALARMEO\_Pos 8            }}
+\DoxyCodeLine{422 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_ALARMEO\_Msk (0x1ul << RTC\_MODE2\_EVCTRL\_ALARMEO\_Pos)}}
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_ALARMEO(value) ((RTC\_MODE2\_EVCTRL\_ALARMEO\_Msk \& ((value) << RTC\_MODE2\_EVCTRL\_ALARMEO\_Pos)))}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_OVFEO\_Pos  15           }}
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_OVFEO      (0x1ul << RTC\_MODE2\_EVCTRL\_OVFEO\_Pos)}}
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define RTC\_MODE2\_EVCTRL\_MASK       0x81FFul     }}
+\DoxyCodeLine{428 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE0\_INTENCLR : (RTC Offset: 0x06) (R/W  8) MODE0 MODE0 Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{430 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{431   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{432     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_c_l_r___type_a4b6509d36ecfc0a5d8566b1d3cc5083d}{CMP0}}:1;           }
+\DoxyCodeLine{433     uint8\_t  :5;               }
+\DoxyCodeLine{434     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_c_l_r___type_a2e665d88c817b0c37e2e93c85b4bda63}{SYNCRDY}}:1;        }
+\DoxyCodeLine{435     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_c_l_r___type_a273d70270eb34cc5c4bf9c4d10da1569}{OVF}}:1;            }
+\DoxyCodeLine{436   \} bit;                       }
+\DoxyCodeLine{437   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{438     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_c_l_r___type_adb3b7f28c0176e977e155a0848a8b7a5}{CMP}}:1;            }
+\DoxyCodeLine{439     uint8\_t  :7;               }
+\DoxyCodeLine{440   \} vec;                       }
+\DoxyCodeLine{441   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_c_l_r___type_a24aa00e4bbe49bbe9537f0305c864ee0}{reg}};                 }
+\DoxyCodeLine{442 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_c_l_r___type}{RTC\_MODE0\_INTENCLR\_Type}};}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{444 }
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_OFFSET   0x06         }}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_CMP0\_Pos 0            }}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_CMP0     (1 << RTC\_MODE0\_INTENCLR\_CMP0\_Pos)}}
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_CMP\_Pos  0            }}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_CMP\_Msk  (0x1ul << RTC\_MODE0\_INTENCLR\_CMP\_Pos)}}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_CMP(value) ((RTC\_MODE0\_INTENCLR\_CMP\_Msk \& ((value) << RTC\_MODE0\_INTENCLR\_CMP\_Pos)))}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_SYNCRDY\_Pos 6            }}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_SYNCRDY  (0x1ul << RTC\_MODE0\_INTENCLR\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_OVF\_Pos  7            }}
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_OVF      (0x1ul << RTC\_MODE0\_INTENCLR\_OVF\_Pos)}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENCLR\_MASK     0xC1ul       }}
+\DoxyCodeLine{459 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE1\_INTENCLR : (RTC Offset: 0x06) (R/W  8) MODE1 MODE1 Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{461 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{462   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{463     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_c_l_r___type_a70830c14476ebac845ce8f2f45f330b7}{CMP0}}:1;           }
+\DoxyCodeLine{464     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_c_l_r___type_a14eca7549eff9a7e5f307a13e7f2aa43}{CMP1}}:1;           }
+\DoxyCodeLine{465     uint8\_t  :4;               }
+\DoxyCodeLine{466     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_c_l_r___type_a7a066753389c7f3b307b2a87ce44ca1c}{SYNCRDY}}:1;        }
+\DoxyCodeLine{467     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_c_l_r___type_ae1c341f3b407e05ddbd2f69a05ed5834}{OVF}}:1;            }
+\DoxyCodeLine{468   \} bit;                       }
+\DoxyCodeLine{469   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{470     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_c_l_r___type_a3efabc9a239fe73ce4abf9fc9cc83ffe}{CMP}}:2;            }
+\DoxyCodeLine{471     uint8\_t  :6;               }
+\DoxyCodeLine{472   \} vec;                       }
+\DoxyCodeLine{473   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_c_l_r___type_a8856e584ac0183221b5970c3c30470e8}{reg}};                 }
+\DoxyCodeLine{474 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_c_l_r___type}{RTC\_MODE1\_INTENCLR\_Type}};}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_OFFSET   0x06         }}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_CMP0\_Pos 0            }}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_CMP0     (1 << RTC\_MODE1\_INTENCLR\_CMP0\_Pos)}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_CMP1\_Pos 1            }}
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_CMP1     (1 << RTC\_MODE1\_INTENCLR\_CMP1\_Pos)}}
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_CMP\_Pos  0            }}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_CMP\_Msk  (0x3ul << RTC\_MODE1\_INTENCLR\_CMP\_Pos)}}
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_CMP(value) ((RTC\_MODE1\_INTENCLR\_CMP\_Msk \& ((value) << RTC\_MODE1\_INTENCLR\_CMP\_Pos)))}}
+\DoxyCodeLine{487 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_SYNCRDY\_Pos 6            }}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_SYNCRDY  (0x1ul << RTC\_MODE1\_INTENCLR\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_OVF\_Pos  7            }}
+\DoxyCodeLine{490 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_OVF      (0x1ul << RTC\_MODE1\_INTENCLR\_OVF\_Pos)}}
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENCLR\_MASK     0xC3ul       }}
+\DoxyCodeLine{493 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE2\_INTENCLR : (RTC Offset: 0x06) (R/W  8) MODE2 MODE2 Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{495 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{496   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{497     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_c_l_r___type_a0586d70a364157cf583cbea1a85fd459}{ALARM0}}:1;         }
+\DoxyCodeLine{498     uint8\_t  :5;               }
+\DoxyCodeLine{499     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_c_l_r___type_ad6ffe44c3826e62c838702ce65fe99b3}{SYNCRDY}}:1;        }
+\DoxyCodeLine{500     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_c_l_r___type_a56b35d49fa33fb14f0b35a27f0f901f9}{OVF}}:1;            }
+\DoxyCodeLine{501   \} bit;                       }
+\DoxyCodeLine{502   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{503     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_c_l_r___type_af2e6ce18ac7b2366581eebe41db64aeb}{ALARM}}:1;          }
+\DoxyCodeLine{504     uint8\_t  :7;               }
+\DoxyCodeLine{505   \} vec;                       }
+\DoxyCodeLine{506   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_c_l_r___type_a1ad1379d2156e8469683ed6249c49fab}{reg}};                 }
+\DoxyCodeLine{507 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_c_l_r___type}{RTC\_MODE2\_INTENCLR\_Type}};}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_OFFSET   0x06         }}
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_ALARM0\_Pos 0            }}
+\DoxyCodeLine{514 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_ALARM0   (1 << RTC\_MODE2\_INTENCLR\_ALARM0\_Pos)}}
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_ALARM\_Pos 0            }}
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_ALARM\_Msk (0x1ul << RTC\_MODE2\_INTENCLR\_ALARM\_Pos)}}
+\DoxyCodeLine{517 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_ALARM(value) ((RTC\_MODE2\_INTENCLR\_ALARM\_Msk \& ((value) << RTC\_MODE2\_INTENCLR\_ALARM\_Pos)))}}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_SYNCRDY\_Pos 6            }}
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_SYNCRDY  (0x1ul << RTC\_MODE2\_INTENCLR\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_OVF\_Pos  7            }}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_OVF      (0x1ul << RTC\_MODE2\_INTENCLR\_OVF\_Pos)}}
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENCLR\_MASK     0xC1ul       }}
+\DoxyCodeLine{524 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE0\_INTENSET : (RTC Offset: 0x07) (R/W  8) MODE0 MODE0 Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{526 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{527   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{528     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_s_e_t___type_afd97b049dd3af421b8dc74ce3d5706e5}{CMP0}}:1;           }
+\DoxyCodeLine{529     uint8\_t  :5;               }
+\DoxyCodeLine{530     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_s_e_t___type_ad9f6010aea10df384478381a6ebaaf9b}{SYNCRDY}}:1;        }
+\DoxyCodeLine{531     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_s_e_t___type_a3b851777326734b9b9a1c0decc7b15bf}{OVF}}:1;            }
+\DoxyCodeLine{532   \} bit;                       }
+\DoxyCodeLine{533   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{534     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_s_e_t___type_a84ba390848311017abd07fae4daacd30}{CMP}}:1;            }
+\DoxyCodeLine{535     uint8\_t  :7;               }
+\DoxyCodeLine{536   \} vec;                       }
+\DoxyCodeLine{537   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_s_e_t___type_a4f75fd9a850dc90969e465236bc1527d}{reg}};                 }
+\DoxyCodeLine{538 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_s_e_t___type}{RTC\_MODE0\_INTENSET\_Type}};}
+\DoxyCodeLine{539 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{540 }
+\DoxyCodeLine{541 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_OFFSET   0x07         }}
+\DoxyCodeLine{542 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{544 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_CMP0\_Pos 0            }}
+\DoxyCodeLine{545 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_CMP0     (1 << RTC\_MODE0\_INTENSET\_CMP0\_Pos)}}
+\DoxyCodeLine{546 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_CMP\_Pos  0            }}
+\DoxyCodeLine{547 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_CMP\_Msk  (0x1ul << RTC\_MODE0\_INTENSET\_CMP\_Pos)}}
+\DoxyCodeLine{548 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_CMP(value) ((RTC\_MODE0\_INTENSET\_CMP\_Msk \& ((value) << RTC\_MODE0\_INTENSET\_CMP\_Pos)))}}
+\DoxyCodeLine{549 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_SYNCRDY\_Pos 6            }}
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_SYNCRDY  (0x1ul << RTC\_MODE0\_INTENSET\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_OVF\_Pos  7            }}
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_OVF      (0x1ul << RTC\_MODE0\_INTENSET\_OVF\_Pos)}}
+\DoxyCodeLine{553 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTENSET\_MASK     0xC1ul       }}
+\DoxyCodeLine{555 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE1\_INTENSET : (RTC Offset: 0x07) (R/W  8) MODE1 MODE1 Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{556 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{557 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{558   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{559     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_s_e_t___type_a1d58c7cb415331e3c13d81ce3ad268da}{CMP0}}:1;           }
+\DoxyCodeLine{560     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_s_e_t___type_a7628404c5e7bf9f265c2731af226ac70}{CMP1}}:1;           }
+\DoxyCodeLine{561     uint8\_t  :4;               }
+\DoxyCodeLine{562     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_s_e_t___type_a0b0b979e0e53f757bead418a9794f0ff}{SYNCRDY}}:1;        }
+\DoxyCodeLine{563     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_s_e_t___type_a23f00d9ee03c2786bdfaa67e0d9c5083}{OVF}}:1;            }
+\DoxyCodeLine{564   \} bit;                       }
+\DoxyCodeLine{565   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{566     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_s_e_t___type_ab75c3f15a5aca37eb2e24868b09b25f3}{CMP}}:2;            }
+\DoxyCodeLine{567     uint8\_t  :6;               }
+\DoxyCodeLine{568   \} vec;                       }
+\DoxyCodeLine{569   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_s_e_t___type_ac113ec19c37cd6d3c84b40885d07e249}{reg}};                 }
+\DoxyCodeLine{570 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_s_e_t___type}{RTC\_MODE1\_INTENSET\_Type}};}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_OFFSET   0x07         }}
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{576 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_CMP0\_Pos 0            }}
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_CMP0     (1 << RTC\_MODE1\_INTENSET\_CMP0\_Pos)}}
+\DoxyCodeLine{578 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_CMP1\_Pos 1            }}
+\DoxyCodeLine{579 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_CMP1     (1 << RTC\_MODE1\_INTENSET\_CMP1\_Pos)}}
+\DoxyCodeLine{580 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_CMP\_Pos  0            }}
+\DoxyCodeLine{581 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_CMP\_Msk  (0x3ul << RTC\_MODE1\_INTENSET\_CMP\_Pos)}}
+\DoxyCodeLine{582 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_CMP(value) ((RTC\_MODE1\_INTENSET\_CMP\_Msk \& ((value) << RTC\_MODE1\_INTENSET\_CMP\_Pos)))}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_SYNCRDY\_Pos 6            }}
+\DoxyCodeLine{584 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_SYNCRDY  (0x1ul << RTC\_MODE1\_INTENSET\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{585 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_OVF\_Pos  7            }}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_OVF      (0x1ul << RTC\_MODE1\_INTENSET\_OVF\_Pos)}}
+\DoxyCodeLine{587 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTENSET\_MASK     0xC3ul       }}
+\DoxyCodeLine{589 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE2\_INTENSET : (RTC Offset: 0x07) (R/W  8) MODE2 MODE2 Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{590 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{591 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{592   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{593     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_s_e_t___type_ada4a61295aab18762bcfcf322f91f344}{ALARM0}}:1;         }
+\DoxyCodeLine{594     uint8\_t  :5;               }
+\DoxyCodeLine{595     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_s_e_t___type_ad045a0131a2fe11a60c3f0f34e0acb49}{SYNCRDY}}:1;        }
+\DoxyCodeLine{596     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_s_e_t___type_a7a44bbcdcc84f2204a225fc2a6a98537}{OVF}}:1;            }
+\DoxyCodeLine{597   \} bit;                       }
+\DoxyCodeLine{598   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{599     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_s_e_t___type_a1529fb7675fad908ac4295edc962b8cb}{ALARM}}:1;          }
+\DoxyCodeLine{600     uint8\_t  :7;               }
+\DoxyCodeLine{601   \} vec;                       }
+\DoxyCodeLine{602   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_s_e_t___type_aecd5f66b740ece454c10ef3a2b5b62f2}{reg}};                 }
+\DoxyCodeLine{603 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_s_e_t___type}{RTC\_MODE2\_INTENSET\_Type}};}
+\DoxyCodeLine{604 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_OFFSET   0x07         }}
+\DoxyCodeLine{607 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{609 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_ALARM0\_Pos 0            }}
+\DoxyCodeLine{610 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_ALARM0   (1 << RTC\_MODE2\_INTENSET\_ALARM0\_Pos)}}
+\DoxyCodeLine{611 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_ALARM\_Pos 0            }}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_ALARM\_Msk (0x1ul << RTC\_MODE2\_INTENSET\_ALARM\_Pos)}}
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_ALARM(value) ((RTC\_MODE2\_INTENSET\_ALARM\_Msk \& ((value) << RTC\_MODE2\_INTENSET\_ALARM\_Pos)))}}
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_SYNCRDY\_Pos 6            }}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_SYNCRDY  (0x1ul << RTC\_MODE2\_INTENSET\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_OVF\_Pos  7            }}
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_OVF      (0x1ul << RTC\_MODE2\_INTENSET\_OVF\_Pos)}}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTENSET\_MASK     0xC1ul       }}
+\DoxyCodeLine{620 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE0\_INTFLAG : (RTC Offset: 0x08) (R/W  8) MODE0 MODE0 Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{621 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{622 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{623   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{624     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_f_l_a_g___type_a7684095c6a8796e3eb645354e0ce9ec2}{CMP0}}:1;       }
+\DoxyCodeLine{625     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_f_l_a_g___type_a5ee365ddfd7db3494b10d91eb5f166cb}{uint8\_t}}  :5;           }
+\DoxyCodeLine{626     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_f_l_a_g___type_a8daa1f147377ab6d65c4523cb1eb16de}{SYNCRDY}}:1;    }
+\DoxyCodeLine{627     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_f_l_a_g___type_a7dafb3b53dce30fe270d641df60096fc}{OVF}}:1;        }
+\DoxyCodeLine{628   \} bit;                       }
+\DoxyCodeLine{629   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{630     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_f_l_a_g___type_af1ae38afefdfb8678fa164f2eb788668}{CMP}}:1;        }
+\DoxyCodeLine{631     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  :7;           }
+\DoxyCodeLine{632   \} vec;                       }
+\DoxyCodeLine{633   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_f_l_a_g___type_adf8aa7aa2fa61b6465e3ea60753aa9c4}{reg}};                 }
+\DoxyCodeLine{634 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_f_l_a_g___type}{RTC\_MODE0\_INTFLAG\_Type}};}
+\DoxyCodeLine{635 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{636 }
+\DoxyCodeLine{637 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_OFFSET    0x08         }}
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{640 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_CMP0\_Pos  0            }}
+\DoxyCodeLine{641 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_CMP0      (1 << RTC\_MODE0\_INTFLAG\_CMP0\_Pos)}}
+\DoxyCodeLine{642 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_CMP\_Pos   0            }}
+\DoxyCodeLine{643 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_CMP\_Msk   (0x1ul << RTC\_MODE0\_INTFLAG\_CMP\_Pos)}}
+\DoxyCodeLine{644 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_CMP(value) ((RTC\_MODE0\_INTFLAG\_CMP\_Msk \& ((value) << RTC\_MODE0\_INTFLAG\_CMP\_Pos)))}}
+\DoxyCodeLine{645 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_SYNCRDY\_Pos 6            }}
+\DoxyCodeLine{646 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_SYNCRDY   (0x1ul << RTC\_MODE0\_INTFLAG\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{647 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_OVF\_Pos   7            }}
+\DoxyCodeLine{648 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_OVF       (0x1ul << RTC\_MODE0\_INTFLAG\_OVF\_Pos)}}
+\DoxyCodeLine{649 \textcolor{preprocessor}{\#define RTC\_MODE0\_INTFLAG\_MASK      0xC1ul       }}
+\DoxyCodeLine{651 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE1\_INTFLAG : (RTC Offset: 0x08) (R/W  8) MODE1 MODE1 Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{652 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{653 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{654   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{655     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_f_l_a_g___type_abdf926c27e64e62b87b72effa8d08244}{CMP0}}:1;       }
+\DoxyCodeLine{656     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_f_l_a_g___type_a344f353252c8b4d32b4093fb61ab56e9}{CMP1}}:1;       }
+\DoxyCodeLine{657     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_f_l_a_g___type_a1c580e865d3aefb6d6a32befec859e74}{uint8\_t}}  :4;           }
+\DoxyCodeLine{658     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_f_l_a_g___type_aec35ba1dc4f3ecde2085f3f6a4778238}{SYNCRDY}}:1;    }
+\DoxyCodeLine{659     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_f_l_a_g___type_ab1fdcb13b13d4ddde75e5585c277a98e}{OVF}}:1;        }
+\DoxyCodeLine{660   \} bit;                       }
+\DoxyCodeLine{661   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{662     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_f_l_a_g___type_a7be4b463e1d6c8cb88fa406449746f67}{CMP}}:2;        }
+\DoxyCodeLine{663     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  :6;           }
+\DoxyCodeLine{664   \} vec;                       }
+\DoxyCodeLine{665   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_f_l_a_g___type_aa0295e1dda7cda2e31712610f8166b1a}{reg}};                 }
+\DoxyCodeLine{666 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_f_l_a_g___type}{RTC\_MODE1\_INTFLAG\_Type}};}
+\DoxyCodeLine{667 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_OFFSET    0x08         }}
+\DoxyCodeLine{670 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{672 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_CMP0\_Pos  0            }}
+\DoxyCodeLine{673 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_CMP0      (1 << RTC\_MODE1\_INTFLAG\_CMP0\_Pos)}}
+\DoxyCodeLine{674 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_CMP1\_Pos  1            }}
+\DoxyCodeLine{675 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_CMP1      (1 << RTC\_MODE1\_INTFLAG\_CMP1\_Pos)}}
+\DoxyCodeLine{676 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_CMP\_Pos   0            }}
+\DoxyCodeLine{677 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_CMP\_Msk   (0x3ul << RTC\_MODE1\_INTFLAG\_CMP\_Pos)}}
+\DoxyCodeLine{678 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_CMP(value) ((RTC\_MODE1\_INTFLAG\_CMP\_Msk \& ((value) << RTC\_MODE1\_INTFLAG\_CMP\_Pos)))}}
+\DoxyCodeLine{679 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_SYNCRDY\_Pos 6            }}
+\DoxyCodeLine{680 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_SYNCRDY   (0x1ul << RTC\_MODE1\_INTFLAG\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{681 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_OVF\_Pos   7            }}
+\DoxyCodeLine{682 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_OVF       (0x1ul << RTC\_MODE1\_INTFLAG\_OVF\_Pos)}}
+\DoxyCodeLine{683 \textcolor{preprocessor}{\#define RTC\_MODE1\_INTFLAG\_MASK      0xC3ul       }}
+\DoxyCodeLine{685 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE2\_INTFLAG : (RTC Offset: 0x08) (R/W  8) MODE2 MODE2 Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{686 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{687 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{688   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{689     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_f_l_a_g___type_ac9e38a7493cf13361f1d7d01a4ba1399}{ALARM0}}:1;     }
+\DoxyCodeLine{690     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_f_l_a_g___type_af0c928708292fc4baa4e7861286d1ee8}{uint8\_t}}  :5;           }
+\DoxyCodeLine{691     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_f_l_a_g___type_a7f37632c932d4f357320cf667db4787d}{SYNCRDY}}:1;    }
+\DoxyCodeLine{692     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_f_l_a_g___type_ad596b380337a8be8ef315740453c4fcc}{OVF}}:1;        }
+\DoxyCodeLine{693   \} bit;                       }
+\DoxyCodeLine{694   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{695     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_f_l_a_g___type_a76e46b5dcf3b2833243d8b39835d01a3}{ALARM}}:1;      }
+\DoxyCodeLine{696     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  :7;           }
+\DoxyCodeLine{697   \} vec;                       }
+\DoxyCodeLine{698   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_f_l_a_g___type_a90cd70212226c8636915ca9af9a3e5cf}{reg}};                 }
+\DoxyCodeLine{699 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_f_l_a_g___type}{RTC\_MODE2\_INTFLAG\_Type}};}
+\DoxyCodeLine{700 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{701 }
+\DoxyCodeLine{702 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_OFFSET    0x08         }}
+\DoxyCodeLine{703 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{705 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_ALARM0\_Pos 0            }}
+\DoxyCodeLine{706 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_ALARM0    (1 << RTC\_MODE2\_INTFLAG\_ALARM0\_Pos)}}
+\DoxyCodeLine{707 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_ALARM\_Pos 0            }}
+\DoxyCodeLine{708 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_ALARM\_Msk (0x1ul << RTC\_MODE2\_INTFLAG\_ALARM\_Pos)}}
+\DoxyCodeLine{709 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_ALARM(value) ((RTC\_MODE2\_INTFLAG\_ALARM\_Msk \& ((value) << RTC\_MODE2\_INTFLAG\_ALARM\_Pos)))}}
+\DoxyCodeLine{710 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_SYNCRDY\_Pos 6            }}
+\DoxyCodeLine{711 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_SYNCRDY   (0x1ul << RTC\_MODE2\_INTFLAG\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{712 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_OVF\_Pos   7            }}
+\DoxyCodeLine{713 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_OVF       (0x1ul << RTC\_MODE2\_INTFLAG\_OVF\_Pos)}}
+\DoxyCodeLine{714 \textcolor{preprocessor}{\#define RTC\_MODE2\_INTFLAG\_MASK      0xC1ul       }}
+\DoxyCodeLine{716 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_STATUS : (RTC Offset: 0x0A) (R/W  8) Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{717 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{718 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{719   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{720     uint8\_t  :7;               }
+\DoxyCodeLine{721     uint8\_t  \mbox{\hyperlink{union_r_t_c___s_t_a_t_u_s___type_a5a8fb6bd74a4dd74be1db0e6c4c7d196}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{722   \} bit;                       }
+\DoxyCodeLine{723   uint8\_t \mbox{\hyperlink{union_r_t_c___s_t_a_t_u_s___type_a1bc4c85487d38e46d6299ea00d62361c}{reg}};                 }
+\DoxyCodeLine{724 \} \mbox{\hyperlink{union_r_t_c___s_t_a_t_u_s___type}{RTC\_STATUS\_Type}};}
+\DoxyCodeLine{725 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{726 }
+\DoxyCodeLine{727 \textcolor{preprocessor}{\#define RTC\_STATUS\_OFFSET           0x0A         }}
+\DoxyCodeLine{728 \textcolor{preprocessor}{\#define RTC\_STATUS\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{730 \textcolor{preprocessor}{\#define RTC\_STATUS\_SYNCBUSY\_Pos     7            }}
+\DoxyCodeLine{731 \textcolor{preprocessor}{\#define RTC\_STATUS\_SYNCBUSY         (0x1ul << RTC\_STATUS\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{732 \textcolor{preprocessor}{\#define RTC\_STATUS\_MASK             0x80ul       }}
+\DoxyCodeLine{734 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_DBGCTRL : (RTC Offset: 0x0B) (R/W  8) Debug Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{735 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{736 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{737   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{738     uint8\_t  \mbox{\hyperlink{union_r_t_c___d_b_g_c_t_r_l___type_a5272422bae2e61157a37f33d781b8775}{DBGRUN}}:1;         }
+\DoxyCodeLine{739     uint8\_t  :7;               }
+\DoxyCodeLine{740   \} bit;                       }
+\DoxyCodeLine{741   uint8\_t \mbox{\hyperlink{union_r_t_c___d_b_g_c_t_r_l___type_a431a6326257667ba23a3300ecaa78975}{reg}};                 }
+\DoxyCodeLine{742 \} \mbox{\hyperlink{union_r_t_c___d_b_g_c_t_r_l___type}{RTC\_DBGCTRL\_Type}};}
+\DoxyCodeLine{743 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{744 }
+\DoxyCodeLine{745 \textcolor{preprocessor}{\#define RTC\_DBGCTRL\_OFFSET          0x0B         }}
+\DoxyCodeLine{746 \textcolor{preprocessor}{\#define RTC\_DBGCTRL\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{748 \textcolor{preprocessor}{\#define RTC\_DBGCTRL\_DBGRUN\_Pos      0            }}
+\DoxyCodeLine{749 \textcolor{preprocessor}{\#define RTC\_DBGCTRL\_DBGRUN          (0x1ul << RTC\_DBGCTRL\_DBGRUN\_Pos)}}
+\DoxyCodeLine{750 \textcolor{preprocessor}{\#define RTC\_DBGCTRL\_MASK            0x01ul       }}
+\DoxyCodeLine{752 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_FREQCORR : (RTC Offset: 0x0C) (R/W  8) Frequency Correction -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{753 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{754 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{755   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{756     uint8\_t  \mbox{\hyperlink{union_r_t_c___f_r_e_q_c_o_r_r___type_a4fc97c33e8e76bf5295ebea994ae2692}{VALUE}}:7;          }
+\DoxyCodeLine{757     uint8\_t  \mbox{\hyperlink{union_r_t_c___f_r_e_q_c_o_r_r___type_a81c0e83c2b66dbad6e93688a609bc017}{SIGN}}:1;           }
+\DoxyCodeLine{758   \} bit;                       }
+\DoxyCodeLine{759   uint8\_t \mbox{\hyperlink{union_r_t_c___f_r_e_q_c_o_r_r___type_a877676f7dddfd894997ce240864753d5}{reg}};                 }
+\DoxyCodeLine{760 \} \mbox{\hyperlink{union_r_t_c___f_r_e_q_c_o_r_r___type}{RTC\_FREQCORR\_Type}};}
+\DoxyCodeLine{761 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{763 \textcolor{preprocessor}{\#define RTC\_FREQCORR\_OFFSET         0x0C         }}
+\DoxyCodeLine{764 \textcolor{preprocessor}{\#define RTC\_FREQCORR\_RESETVALUE     0x00ul       }}
+\DoxyCodeLine{766 \textcolor{preprocessor}{\#define RTC\_FREQCORR\_VALUE\_Pos      0            }}
+\DoxyCodeLine{767 \textcolor{preprocessor}{\#define RTC\_FREQCORR\_VALUE\_Msk      (0x7Ful << RTC\_FREQCORR\_VALUE\_Pos)}}
+\DoxyCodeLine{768 \textcolor{preprocessor}{\#define RTC\_FREQCORR\_VALUE(value)   ((RTC\_FREQCORR\_VALUE\_Msk \& ((value) << RTC\_FREQCORR\_VALUE\_Pos)))}}
+\DoxyCodeLine{769 \textcolor{preprocessor}{\#define RTC\_FREQCORR\_SIGN\_Pos       7            }}
+\DoxyCodeLine{770 \textcolor{preprocessor}{\#define RTC\_FREQCORR\_SIGN           (0x1ul << RTC\_FREQCORR\_SIGN\_Pos)}}
+\DoxyCodeLine{771 \textcolor{preprocessor}{\#define RTC\_FREQCORR\_MASK           0xFFul       }}
+\DoxyCodeLine{773 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE0\_COUNT : (RTC Offset: 0x10) (R/W 32) MODE0 MODE0 Counter Value -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{774 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{775 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{776   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{777     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_o_u_n_t___type_a6e864c384400f6ef6bf0ba47dd50f496}{COUNT}}:32;         }
+\DoxyCodeLine{778   \} bit;                       }
+\DoxyCodeLine{779   uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_o_u_n_t___type_a7813ad06eb1330fa8a58087283428522}{reg}};                }
+\DoxyCodeLine{780 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_o_u_n_t___type}{RTC\_MODE0\_COUNT\_Type}};}
+\DoxyCodeLine{781 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783 \textcolor{preprocessor}{\#define RTC\_MODE0\_COUNT\_OFFSET      0x10         }}
+\DoxyCodeLine{784 \textcolor{preprocessor}{\#define RTC\_MODE0\_COUNT\_RESETVALUE  0x00000000ul }}
+\DoxyCodeLine{786 \textcolor{preprocessor}{\#define RTC\_MODE0\_COUNT\_COUNT\_Pos   0            }}
+\DoxyCodeLine{787 \textcolor{preprocessor}{\#define RTC\_MODE0\_COUNT\_COUNT\_Msk   (0xFFFFFFFFul << RTC\_MODE0\_COUNT\_COUNT\_Pos)}}
+\DoxyCodeLine{788 \textcolor{preprocessor}{\#define RTC\_MODE0\_COUNT\_COUNT(value) ((RTC\_MODE0\_COUNT\_COUNT\_Msk \& ((value) << RTC\_MODE0\_COUNT\_COUNT\_Pos)))}}
+\DoxyCodeLine{789 \textcolor{preprocessor}{\#define RTC\_MODE0\_COUNT\_MASK        0xFFFFFFFFul }}
+\DoxyCodeLine{791 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE1\_COUNT : (RTC Offset: 0x10) (R/W 16) MODE1 MODE1 Counter Value -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{792 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{793 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{794   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{795     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_o_u_n_t___type_a7d721f68501a6c0226a8ca2051dd79ca}{COUNT}}:16;         }
+\DoxyCodeLine{796   \} bit;                       }
+\DoxyCodeLine{797   uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_o_u_n_t___type_aa626ffe89bed5b5ab96e59b2b49eb941}{reg}};                }
+\DoxyCodeLine{798 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_o_u_n_t___type}{RTC\_MODE1\_COUNT\_Type}};}
+\DoxyCodeLine{799 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{800 }
+\DoxyCodeLine{801 \textcolor{preprocessor}{\#define RTC\_MODE1\_COUNT\_OFFSET      0x10         }}
+\DoxyCodeLine{802 \textcolor{preprocessor}{\#define RTC\_MODE1\_COUNT\_RESETVALUE  0x0000ul     }}
+\DoxyCodeLine{804 \textcolor{preprocessor}{\#define RTC\_MODE1\_COUNT\_COUNT\_Pos   0            }}
+\DoxyCodeLine{805 \textcolor{preprocessor}{\#define RTC\_MODE1\_COUNT\_COUNT\_Msk   (0xFFFFul << RTC\_MODE1\_COUNT\_COUNT\_Pos)}}
+\DoxyCodeLine{806 \textcolor{preprocessor}{\#define RTC\_MODE1\_COUNT\_COUNT(value) ((RTC\_MODE1\_COUNT\_COUNT\_Msk \& ((value) << RTC\_MODE1\_COUNT\_COUNT\_Pos)))}}
+\DoxyCodeLine{807 \textcolor{preprocessor}{\#define RTC\_MODE1\_COUNT\_MASK        0xFFFFul     }}
+\DoxyCodeLine{809 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE2\_CLOCK : (RTC Offset: 0x10) (R/W 32) MODE2 MODE2 Clock Value -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{810 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{811 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{812   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{813     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_l_o_c_k___type_ac4c5284ba56afa35d054e54a45ad836a}{SECOND}}:6;         }
+\DoxyCodeLine{814     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_l_o_c_k___type_a32a992d0d81027c5443ba2a7a0c4f974}{MINUTE}}:6;         }
+\DoxyCodeLine{815     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_l_o_c_k___type_ad9556bec775c56890e1bf72ce4c0cc44}{HOUR}}:5;           }
+\DoxyCodeLine{816     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_l_o_c_k___type_ab0b4136bfb3050c8057c6c7cfff47cd8}{DAY}}:5;            }
+\DoxyCodeLine{817     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_l_o_c_k___type_a967c10b3863fa21508bd35cfcc8508f8}{MONTH}}:4;          }
+\DoxyCodeLine{818     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_l_o_c_k___type_ad3e47c911232e74d224c24bf3cf1f4f3}{YEAR}}:6;           }
+\DoxyCodeLine{819   \} bit;                       }
+\DoxyCodeLine{820   uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_l_o_c_k___type_a599d643a0ccc004cad5c9112244f7a27}{reg}};                }
+\DoxyCodeLine{821 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_l_o_c_k___type}{RTC\_MODE2\_CLOCK\_Type}};}
+\DoxyCodeLine{822 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{823 }
+\DoxyCodeLine{824 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_OFFSET      0x10         }}
+\DoxyCodeLine{825 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_RESETVALUE  0x00000000ul }}
+\DoxyCodeLine{827 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_SECOND\_Pos  0            }}
+\DoxyCodeLine{828 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_SECOND\_Msk  (0x3Ful << RTC\_MODE2\_CLOCK\_SECOND\_Pos)}}
+\DoxyCodeLine{829 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_SECOND(value) ((RTC\_MODE2\_CLOCK\_SECOND\_Msk \& ((value) << RTC\_MODE2\_CLOCK\_SECOND\_Pos)))}}
+\DoxyCodeLine{830 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_MINUTE\_Pos  6            }}
+\DoxyCodeLine{831 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_MINUTE\_Msk  (0x3Ful << RTC\_MODE2\_CLOCK\_MINUTE\_Pos)}}
+\DoxyCodeLine{832 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_MINUTE(value) ((RTC\_MODE2\_CLOCK\_MINUTE\_Msk \& ((value) << RTC\_MODE2\_CLOCK\_MINUTE\_Pos)))}}
+\DoxyCodeLine{833 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_HOUR\_Pos    12           }}
+\DoxyCodeLine{834 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_HOUR\_Msk    (0x1Ful << RTC\_MODE2\_CLOCK\_HOUR\_Pos)}}
+\DoxyCodeLine{835 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_HOUR(value) ((RTC\_MODE2\_CLOCK\_HOUR\_Msk \& ((value) << RTC\_MODE2\_CLOCK\_HOUR\_Pos)))}}
+\DoxyCodeLine{836 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CLOCK\_HOUR\_AM\_Val     \_U\_(0x0)   }}
+\DoxyCodeLine{837 \textcolor{preprocessor}{\#define   RTC\_MODE2\_CLOCK\_HOUR\_PM\_Val     0x10ul  }}
+\DoxyCodeLine{838 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_HOUR\_AM     (RTC\_MODE2\_CLOCK\_HOUR\_AM\_Val   << RTC\_MODE2\_CLOCK\_HOUR\_Pos)}}
+\DoxyCodeLine{839 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_HOUR\_PM     (RTC\_MODE2\_CLOCK\_HOUR\_PM\_Val   << RTC\_MODE2\_CLOCK\_HOUR\_Pos)}}
+\DoxyCodeLine{840 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_DAY\_Pos     17           }}
+\DoxyCodeLine{841 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_DAY\_Msk     (0x1Ful << RTC\_MODE2\_CLOCK\_DAY\_Pos)}}
+\DoxyCodeLine{842 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_DAY(value)  ((RTC\_MODE2\_CLOCK\_DAY\_Msk \& ((value) << RTC\_MODE2\_CLOCK\_DAY\_Pos)))}}
+\DoxyCodeLine{843 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_MONTH\_Pos   22           }}
+\DoxyCodeLine{844 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_MONTH\_Msk   (0xFul << RTC\_MODE2\_CLOCK\_MONTH\_Pos)}}
+\DoxyCodeLine{845 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_MONTH(value) ((RTC\_MODE2\_CLOCK\_MONTH\_Msk \& ((value) << RTC\_MODE2\_CLOCK\_MONTH\_Pos)))}}
+\DoxyCodeLine{846 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_YEAR\_Pos    26           }}
+\DoxyCodeLine{847 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_YEAR\_Msk    (0x3Ful << RTC\_MODE2\_CLOCK\_YEAR\_Pos)}}
+\DoxyCodeLine{848 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_YEAR(value) ((RTC\_MODE2\_CLOCK\_YEAR\_Msk \& ((value) << RTC\_MODE2\_CLOCK\_YEAR\_Pos)))}}
+\DoxyCodeLine{849 \textcolor{preprocessor}{\#define RTC\_MODE2\_CLOCK\_MASK        0xFFFFFFFFul }}
+\DoxyCodeLine{851 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE1\_PER : (RTC Offset: 0x14) (R/W 16) MODE1 MODE1 Counter Period -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{852 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{853 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{854   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{855     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___p_e_r___type_a1ca4efb3624326e6f056b7d04b94b0a7}{PER}}:16;           }
+\DoxyCodeLine{856   \} bit;                       }
+\DoxyCodeLine{857   uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___p_e_r___type_a90b98b915c8d27e9ea92c7477dc2c214}{reg}};                }
+\DoxyCodeLine{858 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___p_e_r___type}{RTC\_MODE1\_PER\_Type}};}
+\DoxyCodeLine{859 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{860 }
+\DoxyCodeLine{861 \textcolor{preprocessor}{\#define RTC\_MODE1\_PER\_OFFSET        0x14         }}
+\DoxyCodeLine{862 \textcolor{preprocessor}{\#define RTC\_MODE1\_PER\_RESETVALUE    0x0000ul     }}
+\DoxyCodeLine{864 \textcolor{preprocessor}{\#define RTC\_MODE1\_PER\_PER\_Pos       0            }}
+\DoxyCodeLine{865 \textcolor{preprocessor}{\#define RTC\_MODE1\_PER\_PER\_Msk       (0xFFFFul << RTC\_MODE1\_PER\_PER\_Pos)}}
+\DoxyCodeLine{866 \textcolor{preprocessor}{\#define RTC\_MODE1\_PER\_PER(value)    ((RTC\_MODE1\_PER\_PER\_Msk \& ((value) << RTC\_MODE1\_PER\_PER\_Pos)))}}
+\DoxyCodeLine{867 \textcolor{preprocessor}{\#define RTC\_MODE1\_PER\_MASK          0xFFFFul     }}
+\DoxyCodeLine{869 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE0\_COMP : (RTC Offset: 0x18) (R/W 32) MODE0 MODE0 Compare n Value -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{870 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{871 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{872   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{873     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_o_m_p___type_aabf97ee0e53c42e7b7fa11e138f7f4d0}{COMP}}:32;          }
+\DoxyCodeLine{874   \} bit;                       }
+\DoxyCodeLine{875   uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_o_m_p___type_a93ee4a5d9eb2adf5bb0138c8689536d0}{reg}};                }
+\DoxyCodeLine{876 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_o_m_p___type}{RTC\_MODE0\_COMP\_Type}};}
+\DoxyCodeLine{877 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{878 }
+\DoxyCodeLine{879 \textcolor{preprocessor}{\#define RTC\_MODE0\_COMP\_OFFSET       0x18         }}
+\DoxyCodeLine{880 \textcolor{preprocessor}{\#define RTC\_MODE0\_COMP\_RESETVALUE   0x00000000ul }}
+\DoxyCodeLine{882 \textcolor{preprocessor}{\#define RTC\_MODE0\_COMP\_COMP\_Pos     0            }}
+\DoxyCodeLine{883 \textcolor{preprocessor}{\#define RTC\_MODE0\_COMP\_COMP\_Msk     (0xFFFFFFFFul << RTC\_MODE0\_COMP\_COMP\_Pos)}}
+\DoxyCodeLine{884 \textcolor{preprocessor}{\#define RTC\_MODE0\_COMP\_COMP(value)  ((RTC\_MODE0\_COMP\_COMP\_Msk \& ((value) << RTC\_MODE0\_COMP\_COMP\_Pos)))}}
+\DoxyCodeLine{885 \textcolor{preprocessor}{\#define RTC\_MODE0\_COMP\_MASK         0xFFFFFFFFul }}
+\DoxyCodeLine{887 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE1\_COMP : (RTC Offset: 0x18) (R/W 16) MODE1 MODE1 Compare n Value -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{888 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{889 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{890   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{891     uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_o_m_p___type_a14a4552d03a3035d81c885d05849a4b4}{COMP}}:16;          }
+\DoxyCodeLine{892   \} bit;                       }
+\DoxyCodeLine{893   uint16\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_o_m_p___type_a0e2d6f4db484f22bfb82d15d30edcadc}{reg}};                }
+\DoxyCodeLine{894 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_o_m_p___type}{RTC\_MODE1\_COMP\_Type}};}
+\DoxyCodeLine{895 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{896 }
+\DoxyCodeLine{897 \textcolor{preprocessor}{\#define RTC\_MODE1\_COMP\_OFFSET       0x18         }}
+\DoxyCodeLine{898 \textcolor{preprocessor}{\#define RTC\_MODE1\_COMP\_RESETVALUE   0x0000ul     }}
+\DoxyCodeLine{900 \textcolor{preprocessor}{\#define RTC\_MODE1\_COMP\_COMP\_Pos     0            }}
+\DoxyCodeLine{901 \textcolor{preprocessor}{\#define RTC\_MODE1\_COMP\_COMP\_Msk     (0xFFFFul << RTC\_MODE1\_COMP\_COMP\_Pos)}}
+\DoxyCodeLine{902 \textcolor{preprocessor}{\#define RTC\_MODE1\_COMP\_COMP(value)  ((RTC\_MODE1\_COMP\_COMP\_Msk \& ((value) << RTC\_MODE1\_COMP\_COMP\_Pos)))}}
+\DoxyCodeLine{903 \textcolor{preprocessor}{\#define RTC\_MODE1\_COMP\_MASK         0xFFFFul     }}
+\DoxyCodeLine{905 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE2\_ALARM : (RTC Offset: 0x18) (R/W 32) MODE2 MODE2\_ALARM Alarm n Value -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{906 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{907 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{908   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{909     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___a_l_a_r_m___type_a6df436ee7a24c11b58ea20bb862d31cf}{SECOND}}:6;         }
+\DoxyCodeLine{910     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___a_l_a_r_m___type_af4c6c678c2a15428745bbe7dbb5b56dd}{MINUTE}}:6;         }
+\DoxyCodeLine{911     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___a_l_a_r_m___type_a49acbe444655effedb68b89443c04ac6}{HOUR}}:5;           }
+\DoxyCodeLine{912     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___a_l_a_r_m___type_a1c11ae8807c089313a3a3de505bb4f00}{DAY}}:5;            }
+\DoxyCodeLine{913     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___a_l_a_r_m___type_ac07b07bfe235d77ec2e00ce470321cc6}{MONTH}}:4;          }
+\DoxyCodeLine{914     uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___a_l_a_r_m___type_a61dda2d86f606efc043fcb2a9156889d}{YEAR}}:6;           }
+\DoxyCodeLine{915   \} bit;                       }
+\DoxyCodeLine{916   uint32\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___a_l_a_r_m___type_a5d236e9ec6d02c412667552b6514f59c}{reg}};                }
+\DoxyCodeLine{917 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___a_l_a_r_m___type}{RTC\_MODE2\_ALARM\_Type}};}
+\DoxyCodeLine{918 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{919 }
+\DoxyCodeLine{920 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_OFFSET      0x18         }}
+\DoxyCodeLine{921 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_RESETVALUE  0x00000000ul }}
+\DoxyCodeLine{923 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_SECOND\_Pos  0            }}
+\DoxyCodeLine{924 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_SECOND\_Msk  (0x3Ful << RTC\_MODE2\_ALARM\_SECOND\_Pos)}}
+\DoxyCodeLine{925 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_SECOND(value) ((RTC\_MODE2\_ALARM\_SECOND\_Msk \& ((value) << RTC\_MODE2\_ALARM\_SECOND\_Pos)))}}
+\DoxyCodeLine{926 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_MINUTE\_Pos  6            }}
+\DoxyCodeLine{927 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_MINUTE\_Msk  (0x3Ful << RTC\_MODE2\_ALARM\_MINUTE\_Pos)}}
+\DoxyCodeLine{928 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_MINUTE(value) ((RTC\_MODE2\_ALARM\_MINUTE\_Msk \& ((value) << RTC\_MODE2\_ALARM\_MINUTE\_Pos)))}}
+\DoxyCodeLine{929 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_HOUR\_Pos    12           }}
+\DoxyCodeLine{930 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_HOUR\_Msk    (0x1Ful << RTC\_MODE2\_ALARM\_HOUR\_Pos)}}
+\DoxyCodeLine{931 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_HOUR(value) ((RTC\_MODE2\_ALARM\_HOUR\_Msk \& ((value) << RTC\_MODE2\_ALARM\_HOUR\_Pos)))}}
+\DoxyCodeLine{932 \textcolor{preprocessor}{\#define   RTC\_MODE2\_ALARM\_HOUR\_AM\_Val     \_U\_(0x0)   }}
+\DoxyCodeLine{933 \textcolor{preprocessor}{\#define   RTC\_MODE2\_ALARM\_HOUR\_PM\_Val     \_U\_(0x10)   }}
+\DoxyCodeLine{934 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_HOUR\_AM     (RTC\_MODE2\_ALARM\_HOUR\_AM\_Val   << RTC\_MODE2\_ALARM\_HOUR\_Pos)}}
+\DoxyCodeLine{935 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_HOUR\_PM     (RTC\_MODE2\_ALARM\_HOUR\_PM\_Val   << RTC\_MODE2\_ALARM\_HOUR\_Pos)}}
+\DoxyCodeLine{936 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_DAY\_Pos     17           }}
+\DoxyCodeLine{937 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_DAY\_Msk     (0x1Ful << RTC\_MODE2\_ALARM\_DAY\_Pos)}}
+\DoxyCodeLine{938 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_DAY(value)  ((RTC\_MODE2\_ALARM\_DAY\_Msk \& ((value) << RTC\_MODE2\_ALARM\_DAY\_Pos)))}}
+\DoxyCodeLine{939 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_MONTH\_Pos   22           }}
+\DoxyCodeLine{940 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_MONTH\_Msk   (0xFul << RTC\_MODE2\_ALARM\_MONTH\_Pos)}}
+\DoxyCodeLine{941 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_MONTH(value) ((RTC\_MODE2\_ALARM\_MONTH\_Msk \& ((value) << RTC\_MODE2\_ALARM\_MONTH\_Pos)))}}
+\DoxyCodeLine{942 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_YEAR\_Pos    26           }}
+\DoxyCodeLine{943 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_YEAR\_Msk    (0x3Ful << RTC\_MODE2\_ALARM\_YEAR\_Pos)}}
+\DoxyCodeLine{944 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_YEAR(value) ((RTC\_MODE2\_ALARM\_YEAR\_Msk \& ((value) << RTC\_MODE2\_ALARM\_YEAR\_Pos)))}}
+\DoxyCodeLine{945 \textcolor{preprocessor}{\#define RTC\_MODE2\_ALARM\_MASK        0xFFFFFFFFul }}
+\DoxyCodeLine{947 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ RTC\_MODE2\_MASK : (RTC Offset: 0x1C) (R/W  8) MODE2 MODE2\_ALARM Alarm n Mask -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{948 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{949 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{950   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{951     uint8\_t  \mbox{\hyperlink{union_r_t_c___m_o_d_e2___m_a_s_k___type_a6a4f89f4c566b3fecd4dda7348353cbd}{SEL}}:3;            }
+\DoxyCodeLine{952     uint8\_t  :5;               }
+\DoxyCodeLine{953   \} bit;                       }
+\DoxyCodeLine{954   uint8\_t \mbox{\hyperlink{union_r_t_c___m_o_d_e2___m_a_s_k___type_ad9e863bde4019dcfe60930a2fb07ab39}{reg}};                 }
+\DoxyCodeLine{955 \} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___m_a_s_k___type}{RTC\_MODE2\_MASK\_Type}};}
+\DoxyCodeLine{956 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{957 }
+\DoxyCodeLine{958 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_OFFSET       0x1C         }}
+\DoxyCodeLine{959 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_RESETVALUE   0x00ul       }}
+\DoxyCodeLine{961 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL\_Pos      0            }}
+\DoxyCodeLine{962 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL\_Msk      (0x7ul << RTC\_MODE2\_MASK\_SEL\_Pos)}}
+\DoxyCodeLine{963 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL(value)   ((RTC\_MODE2\_MASK\_SEL\_Msk \& ((value) << RTC\_MODE2\_MASK\_SEL\_Pos)))}}
+\DoxyCodeLine{964 \textcolor{preprocessor}{\#define   RTC\_MODE2\_MASK\_SEL\_OFF\_Val      0x0ul  }}
+\DoxyCodeLine{965 \textcolor{preprocessor}{\#define   RTC\_MODE2\_MASK\_SEL\_SS\_Val       0x1ul  }}
+\DoxyCodeLine{966 \textcolor{preprocessor}{\#define   RTC\_MODE2\_MASK\_SEL\_MMSS\_Val     0x2ul  }}
+\DoxyCodeLine{967 \textcolor{preprocessor}{\#define   RTC\_MODE2\_MASK\_SEL\_HHMMSS\_Val   0x3ul  }}
+\DoxyCodeLine{968 \textcolor{preprocessor}{\#define   RTC\_MODE2\_MASK\_SEL\_DDHHMMSS\_Val 0x4ul  }}
+\DoxyCodeLine{969 \textcolor{preprocessor}{\#define   RTC\_MODE2\_MASK\_SEL\_MMDDHHMMSS\_Val 0x5ul  }}
+\DoxyCodeLine{970 \textcolor{preprocessor}{\#define   RTC\_MODE2\_MASK\_SEL\_YYMMDDHHMMSS\_Val 0x6ul  }}
+\DoxyCodeLine{971 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL\_OFF      (RTC\_MODE2\_MASK\_SEL\_OFF\_Val    << RTC\_MODE2\_MASK\_SEL\_Pos)}}
+\DoxyCodeLine{972 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL\_SS       (RTC\_MODE2\_MASK\_SEL\_SS\_Val     << RTC\_MODE2\_MASK\_SEL\_Pos)}}
+\DoxyCodeLine{973 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL\_MMSS     (RTC\_MODE2\_MASK\_SEL\_MMSS\_Val   << RTC\_MODE2\_MASK\_SEL\_Pos)}}
+\DoxyCodeLine{974 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL\_HHMMSS   (RTC\_MODE2\_MASK\_SEL\_HHMMSS\_Val << RTC\_MODE2\_MASK\_SEL\_Pos)}}
+\DoxyCodeLine{975 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL\_DDHHMMSS (RTC\_MODE2\_MASK\_SEL\_DDHHMMSS\_Val << RTC\_MODE2\_MASK\_SEL\_Pos)}}
+\DoxyCodeLine{976 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL\_MMDDHHMMSS (RTC\_MODE2\_MASK\_SEL\_MMDDHHMMSS\_Val << RTC\_MODE2\_MASK\_SEL\_Pos)}}
+\DoxyCodeLine{977 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_SEL\_YYMMDDHHMMSS (RTC\_MODE2\_MASK\_SEL\_YYMMDDHHMMSS\_Val << RTC\_MODE2\_MASK\_SEL\_Pos)}}
+\DoxyCodeLine{978 \textcolor{preprocessor}{\#define RTC\_MODE2\_MASK\_MASK         0x07ul       }}
+\DoxyCodeLine{981 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{982 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{983   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___a_l_a_r_m___type}{RTC\_MODE2\_ALARM\_Type}}      \mbox{\hyperlink{struct_rtc_mode2_alarm_a641194c02d7cbea2bcc4d0d3d130ac2a}{ALARM}};       }
+\DoxyCodeLine{984   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___m_a_s_k___type}{RTC\_MODE2\_MASK\_Type}}       \mbox{\hyperlink{struct_rtc_mode2_alarm_a3e9f8006b7ca5afd9fc6c381e78de32b}{MASK}};        }
+\DoxyCodeLine{985        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x3];}
+\DoxyCodeLine{986 \} \mbox{\hyperlink{struct_rtc_mode2_alarm}{RtcMode2Alarm}};}
+\DoxyCodeLine{987 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{988 }
+\DoxyCodeLine{990 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{991 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{comment}{/* 32-\/bit Counter with Single 32-\/bit Compare */}}
+\DoxyCodeLine{992   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_t_r_l___type}{RTC\_MODE0\_CTRL\_Type}}       \mbox{\hyperlink{struct_rtc_mode0_abf2e826bd443e3ce777f2d464de1582b}{CTRL}};        }
+\DoxyCodeLine{993   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___r_e_a_d_r_e_q___type}{RTC\_READREQ\_Type}}          \mbox{\hyperlink{struct_rtc_mode0_af1d9614fc3a6c76da4e3c0882f339cf1}{READREQ}};     }
+\DoxyCodeLine{994   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___e_v_c_t_r_l___type}{RTC\_MODE0\_EVCTRL\_Type}}     \mbox{\hyperlink{struct_rtc_mode0_ad08fa0cc747abff0a65325169d3a4d81}{EVCTRL}};      }
+\DoxyCodeLine{995   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_c_l_r___type}{RTC\_MODE0\_INTENCLR\_Type}}   \mbox{\hyperlink{struct_rtc_mode0_af0a2243d03b6daa3bd210fef30a8499a}{INTENCLR}};    }
+\DoxyCodeLine{996   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_e_n_s_e_t___type}{RTC\_MODE0\_INTENSET\_Type}}   \mbox{\hyperlink{struct_rtc_mode0_ab858e1172e090c17a4b15cafc3ad2c6a}{INTENSET}};    }
+\DoxyCodeLine{997   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___i_n_t_f_l_a_g___type}{RTC\_MODE0\_INTFLAG\_Type}}    \mbox{\hyperlink{struct_rtc_mode0_a0e10a211f31df9bfb568e05be191f1d5}{INTFLAG}};     }
+\DoxyCodeLine{998        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{999   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___s_t_a_t_u_s___type}{RTC\_STATUS\_Type}}           \mbox{\hyperlink{struct_rtc_mode0_ab1a7fe7b04a9a29c5162c1e1e3364a98}{STATUS}};      }
+\DoxyCodeLine{1000   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___d_b_g_c_t_r_l___type}{RTC\_DBGCTRL\_Type}}          \mbox{\hyperlink{struct_rtc_mode0_adddd396d5a0fdbc319e11aea1695545d}{DBGCTRL}};     }
+\DoxyCodeLine{1001   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___f_r_e_q_c_o_r_r___type}{RTC\_FREQCORR\_Type}}         \mbox{\hyperlink{struct_rtc_mode0_a27061dd9313f1cc792464185c137975b}{FREQCORR}};    }
+\DoxyCodeLine{1002        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x3];}
+\DoxyCodeLine{1003   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_o_u_n_t___type}{RTC\_MODE0\_COUNT\_Type}}      \mbox{\hyperlink{struct_rtc_mode0_a1925fbea34cbf2e2c580607b15cb88c0}{COUNT}};       }
+\DoxyCodeLine{1004        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x4];}
+\DoxyCodeLine{1005   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e0___c_o_m_p___type}{RTC\_MODE0\_COMP\_Type}}       COMP[1];     }
+\DoxyCodeLine{1006 \} \mbox{\hyperlink{struct_rtc_mode0}{RtcMode0}};}
+\DoxyCodeLine{1007 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1008 }
+\DoxyCodeLine{1010 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1011 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{comment}{/* 16-\/bit Counter with Two 16-\/bit Compares */}}
+\DoxyCodeLine{1012   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_t_r_l___type}{RTC\_MODE1\_CTRL\_Type}}       \mbox{\hyperlink{struct_rtc_mode1_a84af2e0f3ce2b41e08b6c184cac9b7a8}{CTRL}};        }
+\DoxyCodeLine{1013   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___r_e_a_d_r_e_q___type}{RTC\_READREQ\_Type}}          \mbox{\hyperlink{struct_rtc_mode1_a8544d41b526ab207f07a948d2b8572bd}{READREQ}};     }
+\DoxyCodeLine{1014   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___e_v_c_t_r_l___type}{RTC\_MODE1\_EVCTRL\_Type}}     \mbox{\hyperlink{struct_rtc_mode1_a81d42a339807c71b3837b62f22f64e55}{EVCTRL}};      }
+\DoxyCodeLine{1015   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_c_l_r___type}{RTC\_MODE1\_INTENCLR\_Type}}   \mbox{\hyperlink{struct_rtc_mode1_a8fcd58e7d27242c27b86306fc76bf6bc}{INTENCLR}};    }
+\DoxyCodeLine{1016   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_e_n_s_e_t___type}{RTC\_MODE1\_INTENSET\_Type}}   \mbox{\hyperlink{struct_rtc_mode1_abd305c6ce9f7a55d81f03ed781de0daa}{INTENSET}};    }
+\DoxyCodeLine{1017   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___i_n_t_f_l_a_g___type}{RTC\_MODE1\_INTFLAG\_Type}}    \mbox{\hyperlink{struct_rtc_mode1_a5ca2042a13bab45b75c3ba9349f8f2d7}{INTFLAG}};     }
+\DoxyCodeLine{1018        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{1019   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___s_t_a_t_u_s___type}{RTC\_STATUS\_Type}}           \mbox{\hyperlink{struct_rtc_mode1_aa68e09b0e4707ed8a3b1c3d7bab3d791}{STATUS}};      }
+\DoxyCodeLine{1020   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___d_b_g_c_t_r_l___type}{RTC\_DBGCTRL\_Type}}          \mbox{\hyperlink{struct_rtc_mode1_a497d37fd221647df07a48d7b47abc195}{DBGCTRL}};     }
+\DoxyCodeLine{1021   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___f_r_e_q_c_o_r_r___type}{RTC\_FREQCORR\_Type}}         \mbox{\hyperlink{struct_rtc_mode1_a8e51e15f0ef511e6ab5410e1a58cf3ce}{FREQCORR}};    }
+\DoxyCodeLine{1022        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x3];}
+\DoxyCodeLine{1023   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_o_u_n_t___type}{RTC\_MODE1\_COUNT\_Type}}      \mbox{\hyperlink{struct_rtc_mode1_a53d7f6e32fe5ec2a00d23a27d553d8c4}{COUNT}};       }
+\DoxyCodeLine{1024        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x2];}
+\DoxyCodeLine{1025   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___p_e_r___type}{RTC\_MODE1\_PER\_Type}}        \mbox{\hyperlink{struct_rtc_mode1_a138be5abe7433f0e5e4478015b20ccb5}{PER}};         }
+\DoxyCodeLine{1026        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved4[0x2];}
+\DoxyCodeLine{1027   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e1___c_o_m_p___type}{RTC\_MODE1\_COMP\_Type}}       COMP[2];     }
+\DoxyCodeLine{1028 \} \mbox{\hyperlink{struct_rtc_mode1}{RtcMode1}};}
+\DoxyCodeLine{1029 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1030 }
+\DoxyCodeLine{1032 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1033 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{comment}{/* Clock/Calendar with Alarm */}}
+\DoxyCodeLine{1034   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_t_r_l___type}{RTC\_MODE2\_CTRL\_Type}}       \mbox{\hyperlink{struct_rtc_mode2_a2b94752282b4d91c91651292fd02c7db}{CTRL}};        }
+\DoxyCodeLine{1035   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___r_e_a_d_r_e_q___type}{RTC\_READREQ\_Type}}          \mbox{\hyperlink{struct_rtc_mode2_afaaa13d20dbe6ad927f8bb760ce5a3f2}{READREQ}};     }
+\DoxyCodeLine{1036   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___e_v_c_t_r_l___type}{RTC\_MODE2\_EVCTRL\_Type}}     \mbox{\hyperlink{struct_rtc_mode2_ac744528883acc1673690301d852ca945}{EVCTRL}};      }
+\DoxyCodeLine{1037   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_c_l_r___type}{RTC\_MODE2\_INTENCLR\_Type}}   \mbox{\hyperlink{struct_rtc_mode2_abacd8562d898378de7149a11383da56c}{INTENCLR}};    }
+\DoxyCodeLine{1038   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_e_n_s_e_t___type}{RTC\_MODE2\_INTENSET\_Type}}   \mbox{\hyperlink{struct_rtc_mode2_a6d75eb6b1d65cfa2798098df490d1943}{INTENSET}};    }
+\DoxyCodeLine{1039   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___i_n_t_f_l_a_g___type}{RTC\_MODE2\_INTFLAG\_Type}}    \mbox{\hyperlink{struct_rtc_mode2_a754872904b63e0a40f73498fa501d02a}{INTFLAG}};     }
+\DoxyCodeLine{1040        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{1041   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___s_t_a_t_u_s___type}{RTC\_STATUS\_Type}}           \mbox{\hyperlink{struct_rtc_mode2_ab288b2b4775cf46748ace84ab8632254}{STATUS}};      }
+\DoxyCodeLine{1042   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___d_b_g_c_t_r_l___type}{RTC\_DBGCTRL\_Type}}          \mbox{\hyperlink{struct_rtc_mode2_a4cfe6a983a5b27b48c819a8f395f7552}{DBGCTRL}};     }
+\DoxyCodeLine{1043   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___f_r_e_q_c_o_r_r___type}{RTC\_FREQCORR\_Type}}         \mbox{\hyperlink{struct_rtc_mode2_a8fa2fd1600ed1ee29e2d929a6f354089}{FREQCORR}};    }
+\DoxyCodeLine{1044        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x3];}
+\DoxyCodeLine{1045   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_r_t_c___m_o_d_e2___c_l_o_c_k___type}{RTC\_MODE2\_CLOCK\_Type}}      \mbox{\hyperlink{struct_rtc_mode2_aab5921b3d775160d284bc6e2881d6083}{CLOCK}};       }
+\DoxyCodeLine{1046        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x4];}
+\DoxyCodeLine{1047        \mbox{\hyperlink{struct_rtc_mode2_alarm}{RtcMode2Alarm}}             Mode2Alarm[1]; }
+\DoxyCodeLine{1048 \} \mbox{\hyperlink{struct_rtc_mode2}{RtcMode2}};}
+\DoxyCodeLine{1049 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1050 }
+\DoxyCodeLine{1051 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{1052 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{1053        \mbox{\hyperlink{struct_rtc_mode0}{RtcMode0}}                  \mbox{\hyperlink{union_rtc_a02141b27492423d9289f41b7d95ffad9}{MODE0}};       }
+\DoxyCodeLine{1054        \mbox{\hyperlink{struct_rtc_mode1}{RtcMode1}}                  \mbox{\hyperlink{union_rtc_a6d79941381ca27f822f5413a6c313e1a}{MODE1}};       }
+\DoxyCodeLine{1055        \mbox{\hyperlink{struct_rtc_mode2}{RtcMode2}}                  \mbox{\hyperlink{union_rtc_adf0f631b6be9719d97505ccbccdf3def}{MODE2}};       }
+\DoxyCodeLine{1056 \} \mbox{\hyperlink{union_rtc}{Rtc}};}
+\DoxyCodeLine{1057 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1058 }
+\DoxyCodeLine{1061 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_RTC\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

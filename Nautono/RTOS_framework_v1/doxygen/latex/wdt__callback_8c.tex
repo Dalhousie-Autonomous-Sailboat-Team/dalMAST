@@ -1,0 +1,46 @@
+\hypertarget{wdt__callback_8c}{}\doxysection{src/\+ASF/sam0/drivers/wdt/wdt\+\_\+callback.c File Reference}
+\label{wdt__callback_8c}\index{src/ASF/sam0/drivers/wdt/wdt\_callback.c@{src/ASF/sam0/drivers/wdt/wdt\_callback.c}}
+
+
+SAM Watchdog Driver.  
+
+
+{\ttfamily \#include \char`\"{}wdt.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$system.\+h$>$}\newline
+{\ttfamily \#include $<$system\+\_\+interrupt.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga6df7b4d42923db8f66e61dd4e6193232}{wdt\+\_\+register\+\_\+callback}} (const \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaebca6fc9b2002a0135e9fc0694ef0b06}{wdt\+\_\+callback\+\_\+t}} callback, const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}} type)
+\begin{DoxyCompactList}\small\item\em Registers an asynchronous callback function with the driver. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga3fe25e27f0c98ad3c83d627043efd8eb}{wdt\+\_\+unregister\+\_\+callback}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}} type)
+\begin{DoxyCompactList}\small\item\em Unregisters an asynchronous callback function with the driver. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga9fc519773a11565bcf0df81064d82ff4}{wdt\+\_\+enable\+\_\+callback}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}} type)
+\begin{DoxyCompactList}\small\item\em Enables asynchronous callback generation for a given type. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga2a22e0f5accbb4d6c52751643364a9d8}{wdt\+\_\+disable\+\_\+callback}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}} type)
+\begin{DoxyCompactList}\small\item\em Disables asynchronous callback generation for a given type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wdt__callback_8c_a3a2e83b64bfd57689085381db4ac7dee}{WDT\+\_\+\+Handler}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{wdt__callback_8c_a9de3a56b594cce2fc34f94322bd58617}\label{wdt__callback_8c_a9de3a56b594cce2fc34f94322bd58617}} 
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaebca6fc9b2002a0135e9fc0694ef0b06}{wdt\+\_\+callback\+\_\+t}} {\bfseries wdt\+\_\+early\+\_\+warning\+\_\+callback}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM Watchdog Driver. 
+
+Copyright (c) 2013-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{wdt__callback_8c_a3a2e83b64bfd57689085381db4ac7dee}\label{wdt__callback_8c_a3a2e83b64bfd57689085381db4ac7dee}} 
+\index{wdt\_callback.c@{wdt\_callback.c}!WDT\_Handler@{WDT\_Handler}}
+\index{WDT\_Handler@{WDT\_Handler}!wdt\_callback.c@{wdt\_callback.c}}
+\doxysubsubsection{\texorpdfstring{WDT\_Handler()}{WDT\_Handler()}}
+{\footnotesize\ttfamily void WDT\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Handler for the WDT hardware module interrupt. 

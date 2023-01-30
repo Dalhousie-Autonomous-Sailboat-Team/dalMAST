@@ -1,0 +1,371 @@
+\hypertarget{group__asfdoc__sam0__wdt__group}{}\doxysection{SAM Watchdog (WDT) Driver}
+\label{group__asfdoc__sam0__wdt__group}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structwdt__conf}{wdt\+\_\+conf}}
+\begin{DoxyCompactList}\small\item\em Watchdog Timer configuration structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\+\_\+period}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acac81ba52b1f5764278889cb86b37f9967}{WDT\+\_\+\+PERIOD\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaae6546f95e5a45b62b14634bc4caa5aa}{WDT\+\_\+\+PERIOD\+\_\+8\+CLK}} = 1
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaf0fea5f0fcc3e4ac16c7a6d6935758e5}{WDT\+\_\+\+PERIOD\+\_\+16\+CLK}} = 2
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca99299b19ce68e9f9e91a53a26d88a3dc}{WDT\+\_\+\+PERIOD\+\_\+32\+CLK}} = 3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca85dae485276a3f098835aa03c87c07ae}{WDT\+\_\+\+PERIOD\+\_\+64\+CLK}} = 4
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acae42c036f6bf98b94c08b7b7652ffc22b}{WDT\+\_\+\+PERIOD\+\_\+128\+CLK}} = 5
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8e7c0cee4badc7f8ad850e08087f2220}{WDT\+\_\+\+PERIOD\+\_\+256\+CLK}} = 6
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8ffed36019876eb8acd6341d0d5bde0d}{WDT\+\_\+\+PERIOD\+\_\+512\+CLK}} = 7
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca5e17d21bc0b0eec87841ddf4e28b5307}{WDT\+\_\+\+PERIOD\+\_\+1024\+CLK}} = 8
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabfa7c1a5f7c5cefeb23662b2f970ea45}{WDT\+\_\+\+PERIOD\+\_\+2048\+CLK}} = 9
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca60835375c026680884ced851cb340c69}{WDT\+\_\+\+PERIOD\+\_\+4096\+CLK}} = 10
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca6d95ace42b2eda19dbdb4f7342068d17}{WDT\+\_\+\+PERIOD\+\_\+8192\+CLK}} = 11
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabe11993c0838eebfc06889b8f1812d90}{WDT\+\_\+\+PERIOD\+\_\+16384\+CLK}} = 12
+ \}
+\begin{DoxyCompactList}\small\item\em Watchdog Timer period configuration enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Callback Configuration and Initialization}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}} \{ \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggaa5d433db497f25c7a5e5c52828a8d0deab7e46a317021cc0ecaa39ef737a327c5}{WDT\+\_\+\+CALLBACK\+\_\+\+EARLY\+\_\+\+WARNING}}
+ \}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaebca6fc9b2002a0135e9fc0694ef0b06}{wdt\+\_\+callback\+\_\+t}}) (void)
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga6df7b4d42923db8f66e61dd4e6193232}{wdt\+\_\+register\+\_\+callback}} (const \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaebca6fc9b2002a0135e9fc0694ef0b06}{wdt\+\_\+callback\+\_\+t}} callback, const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}} type)
+\begin{DoxyCompactList}\small\item\em Registers an asynchronous callback function with the driver. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga3fe25e27f0c98ad3c83d627043efd8eb}{wdt\+\_\+unregister\+\_\+callback}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}} type)
+\begin{DoxyCompactList}\small\item\em Unregisters an asynchronous callback function with the driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Configuration and Initialization}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaaed4dd784e073167a8588592fce7af69}{wdt\+\_\+set\+\_\+config}} (const struct \mbox{\hyperlink{structwdt__conf}{wdt\+\_\+conf}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Sets up the WDT hardware module based on the configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Timeout and Early Warning Management}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga04e293d7ecf7703a3f6624f652f3a90a}{wdt\+\_\+reset\+\_\+count}} (void)
+\begin{DoxyCompactList}\small\item\em Resets the count of the running Watchdog Timer that was previously enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Callback Enabling and Disabling}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga9fc519773a11565bcf0df81064d82ff4}{wdt\+\_\+enable\+\_\+callback}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}} type)
+\begin{DoxyCompactList}\small\item\em Enables asynchronous callback generation for a given type. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga2a22e0f5accbb4d6c52751643364a9d8}{wdt\+\_\+disable\+\_\+callback}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}} type)
+\begin{DoxyCompactList}\small\item\em Disables asynchronous callback generation for a given type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of the device\textquotesingle{}s Watchdog Timer module, including the enabling, disabling, and kicking within the device. The following driver API modes are covered by this manual\+:
+
+
+\begin{DoxyItemize}
+\item Polled APIs 
+\end{DoxyItemize}
+
+The following peripherals are used by this module\+:
+\begin{DoxyItemize}
+\item WDT (Watchdog Timer)
+\end{DoxyItemize}
+
+The following devices can use this module\+:
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D09/\+D10/\+D11
+\item Atmel $\vert$ SMART SAM L21/\+L22
+\item Atmel $\vert$ SMART SAM DA1
+\item Atmel $\vert$ SMART SAM C20/\+C21
+\item Atmel $\vert$ SMART SAM HA1
+\item Atmel $\vert$ SMART SAM R30
+\item Atmel $\vert$ SMART SAM R34
+\item Atmel $\vert$ SMART SAM R35
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_extra_info}{Extra Information}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_prerequisites}
+There are no prerequisites for this module.\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_overview}
+The Watchdog module (WDT) is designed to give an added level of safety in critical systems, to ensure a system reset is triggered in the case of a deadlock or other software malfunction that prevents normal device operation.
+
+At a basic level, the Watchdog is a system timer with a fixed period; once enabled, it will continue to count ticks of its asynchronous clock until it is periodically reset, or the timeout period is reached. In the event of a Watchdog timeout, the module will trigger a system reset identical to a pulse of the device\textquotesingle{}s reset pin, resetting all peripherals to their power-\/on default states and restarting the application software from the reset vector.
+
+In many systems, there is an obvious upper bound to the amount of time each iteration of the main application loop can be expected to run, before a malfunction can be assumed (either due to a deadlock waiting on hardware or software, or due to other means). When the Watchdog is configured with a timeout period equal to this upper bound, a malfunction in the system will force a full system reset to allow for a graceful recovery.\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_locked_mode}{}\doxysubsubsection{Locked Mode}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_locked_mode}
+The Watchdog configuration can be set in the device fuses and locked in hardware, so that no software changes can be made to the Watchdog configuration. Additionally, the Watchdog can be locked on in software if it is not already locked, so that the module configuration cannot be modified until a power on reset of the device.
+
+The locked configuration can be used to ensure that faulty software does not cause the Watchdog configuration to be changed, preserving the level of safety given by the module.\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_window_mode}{}\doxysubsubsection{Window Mode}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_window_mode}
+Just as there is a reasonable upper bound to the time the main program loop should take for each iteration, there is also in many applications a lower bound, i.\+e. a {\itshape minimum} time for which each loop iteration should run for under normal circumstances. To guard against a system failure resetting the Watchdog in a tight loop (or a failure in the system application causing the main loop to run faster than expected) a \char`\"{}\+Window\char`\"{} mode can be enabled to disallow resetting of the Watchdog counter before a certain period of time. If the Watchdog is not reset {\itshape after} the window opens but not {\itshape before} the Watchdog expires, the system will reset.\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_early_warning}{}\doxysubsubsection{Early Warning}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_early_warning}
+In some cases it is desirable to receive an early warning that the Watchdog is about to expire, so that some system action (such as saving any system configuration data for failure analysis purposes) can be performed before the system reset occurs. The Early Warning feature of the Watchdog module allows such a notification to be requested; after the configured early warning time (but before the expiry of the Watchdog counter) the Early Warning flag will become set, so that the user application can take an appropriate action.
+
+\begin{DoxyNote}{Note}
+It is important to note that the purpose of the Early Warning feature is {\itshape not} to allow the user application to reset the Watchdog; doing so will defeat the safety the module gives to the user application. Instead, this feature should be used purely to perform any tasks that need to be undertaken before the system reset occurs.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_overview_physical}{}\doxysubsubsection{Physical Connection}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_overview_physical}
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_int_connections}{The figure below}} shows how this module is interconnected within the device.
+
+\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_int_connections}%
+\Hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_module_int_connections}%
+
+
+\begin{DoxyNote}{Note}
+Watchdog Counter of SAM L21/\+L22/\+R30/\+R34/\+R35 is {\itshape not} provided by GCLK, but it uses an internal 1KHz OSCULP32K output clock.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_special_considerations}{}\doxysubsection{Special Considerations}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_special_considerations}
+On some devices the Watchdog configuration can be fused to be always on in a particular configuration; if this mode is enabled the Watchdog is not software configurable and can have its count reset and early warning state checked/cleared only.\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_extra_info}{}\doxysubsection{Extra Information}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_extra_info}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_wdt_extra}{Extra Information for WDT Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_wdt_extra_asfdoc_sam0_wdt_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_wdt_extra_asfdoc_sam0_wdt_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_wdt_extra_asfdoc_sam0_wdt_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_wdt_extra_asfdoc_sam0_wdt_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_examples}{}\doxysubsection{Examples}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_wdt_exqsg}{Examples for WDT Driver}}.\hypertarget{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__sam0__wdt__group_asfdoc_sam0_wdt_api_overview}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_gaebca6fc9b2002a0135e9fc0694ef0b06}\label{group__asfdoc__sam0__wdt__group_gaebca6fc9b2002a0135e9fc0694ef0b06}} 
+\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!wdt\_callback\_t@{wdt\_callback\_t}}
+\index{wdt\_callback\_t@{wdt\_callback\_t}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsubsection{\texorpdfstring{wdt\_callback\_t}{wdt\_callback\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ wdt\+\_\+callback\+\_\+t) (void)}
+
+Type definition for a WDT module callback function. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}\label{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}} 
+\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!wdt\_callback@{wdt\_callback}}
+\index{wdt\_callback@{wdt\_callback}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsubsection{\texorpdfstring{wdt\_callback}{wdt\_callback}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}}}
+
+Enum for the possible callback types for the WDT module. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_CALLBACK\_EARLY\_WARNING@{WDT\_CALLBACK\_EARLY\_WARNING}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_CALLBACK\_EARLY\_WARNING@{WDT\_CALLBACK\_EARLY\_WARNING}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggaa5d433db497f25c7a5e5c52828a8d0deab7e46a317021cc0ecaa39ef737a327c5}\label{group__asfdoc__sam0__wdt__group_ggaa5d433db497f25c7a5e5c52828a8d0deab7e46a317021cc0ecaa39ef737a327c5}} 
+WDT\+\_\+\+CALLBACK\+\_\+\+EARLY\+\_\+\+WARNING&Callback type for when an early warning callback from the WDT module is issued \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}\label{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}} 
+\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!wdt\_period@{wdt\_period}}
+\index{wdt\_period@{wdt\_period}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsubsection{\texorpdfstring{wdt\_period}{wdt\_period}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\+\_\+period}}}
+
+
+
+Watchdog Timer period configuration enum. 
+
+Enum for the possible period settings of the Watchdog timer module, for values requiring a period as a number of Watchdog timer clock ticks. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_NONE@{WDT\_PERIOD\_NONE}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_NONE@{WDT\_PERIOD\_NONE}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acac81ba52b1f5764278889cb86b37f9967}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acac81ba52b1f5764278889cb86b37f9967}} 
+WDT\+\_\+\+PERIOD\+\_\+\+NONE&No Watchdog period. This value can only be used when setting the Window and Early Warning periods; its use as the Watchdog Reset Period is invalid. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_8CLK@{WDT\_PERIOD\_8CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_8CLK@{WDT\_PERIOD\_8CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaae6546f95e5a45b62b14634bc4caa5aa}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaae6546f95e5a45b62b14634bc4caa5aa}} 
+WDT\+\_\+\+PERIOD\+\_\+8\+CLK&Watchdog period of 8 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_16CLK@{WDT\_PERIOD\_16CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_16CLK@{WDT\_PERIOD\_16CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaf0fea5f0fcc3e4ac16c7a6d6935758e5}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaf0fea5f0fcc3e4ac16c7a6d6935758e5}} 
+WDT\+\_\+\+PERIOD\+\_\+16\+CLK&Watchdog period of 16 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_32CLK@{WDT\_PERIOD\_32CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_32CLK@{WDT\_PERIOD\_32CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca99299b19ce68e9f9e91a53a26d88a3dc}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca99299b19ce68e9f9e91a53a26d88a3dc}} 
+WDT\+\_\+\+PERIOD\+\_\+32\+CLK&Watchdog period of 32 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_64CLK@{WDT\_PERIOD\_64CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_64CLK@{WDT\_PERIOD\_64CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca85dae485276a3f098835aa03c87c07ae}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca85dae485276a3f098835aa03c87c07ae}} 
+WDT\+\_\+\+PERIOD\+\_\+64\+CLK&Watchdog period of 64 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_128CLK@{WDT\_PERIOD\_128CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_128CLK@{WDT\_PERIOD\_128CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acae42c036f6bf98b94c08b7b7652ffc22b}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acae42c036f6bf98b94c08b7b7652ffc22b}} 
+WDT\+\_\+\+PERIOD\+\_\+128\+CLK&Watchdog period of 128 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_256CLK@{WDT\_PERIOD\_256CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_256CLK@{WDT\_PERIOD\_256CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8e7c0cee4badc7f8ad850e08087f2220}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8e7c0cee4badc7f8ad850e08087f2220}} 
+WDT\+\_\+\+PERIOD\+\_\+256\+CLK&Watchdog period of 256 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_512CLK@{WDT\_PERIOD\_512CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_512CLK@{WDT\_PERIOD\_512CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8ffed36019876eb8acd6341d0d5bde0d}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8ffed36019876eb8acd6341d0d5bde0d}} 
+WDT\+\_\+\+PERIOD\+\_\+512\+CLK&Watchdog period of 512 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_1024CLK@{WDT\_PERIOD\_1024CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_1024CLK@{WDT\_PERIOD\_1024CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca5e17d21bc0b0eec87841ddf4e28b5307}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca5e17d21bc0b0eec87841ddf4e28b5307}} 
+WDT\+\_\+\+PERIOD\+\_\+1024\+CLK&Watchdog period of 1024 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_2048CLK@{WDT\_PERIOD\_2048CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_2048CLK@{WDT\_PERIOD\_2048CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabfa7c1a5f7c5cefeb23662b2f970ea45}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabfa7c1a5f7c5cefeb23662b2f970ea45}} 
+WDT\+\_\+\+PERIOD\+\_\+2048\+CLK&Watchdog period of 2048 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_4096CLK@{WDT\_PERIOD\_4096CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_4096CLK@{WDT\_PERIOD\_4096CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca60835375c026680884ced851cb340c69}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca60835375c026680884ced851cb340c69}} 
+WDT\+\_\+\+PERIOD\+\_\+4096\+CLK&Watchdog period of 4096 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_8192CLK@{WDT\_PERIOD\_8192CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_8192CLK@{WDT\_PERIOD\_8192CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca6d95ace42b2eda19dbdb4f7342068d17}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca6d95ace42b2eda19dbdb4f7342068d17}} 
+WDT\+\_\+\+PERIOD\+\_\+8192\+CLK&Watchdog period of 8192 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WDT\_PERIOD\_16384CLK@{WDT\_PERIOD\_16384CLK}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!WDT\_PERIOD\_16384CLK@{WDT\_PERIOD\_16384CLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabe11993c0838eebfc06889b8f1812d90}\label{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabe11993c0838eebfc06889b8f1812d90}} 
+WDT\+\_\+\+PERIOD\+\_\+16384\+CLK&Watchdog period of 16384 clocks of the Watchdog Timer Generic Clock \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ga2a22e0f5accbb4d6c52751643364a9d8}\label{group__asfdoc__sam0__wdt__group_ga2a22e0f5accbb4d6c52751643364a9d8}} 
+\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!wdt\_disable\_callback@{wdt\_disable\_callback}}
+\index{wdt\_disable\_callback@{wdt\_disable\_callback}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsubsection{\texorpdfstring{wdt\_disable\_callback()}{wdt\_disable\_callback()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} wdt\+\_\+disable\+\_\+callback (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Disables asynchronous callback generation for a given type. 
+
+Disables asynchronous callbacks for a given callback type.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & Type of callback function to disable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the callback disable operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The callback was disabled successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If an invalid callback type was supplied \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ga9fc519773a11565bcf0df81064d82ff4}\label{group__asfdoc__sam0__wdt__group_ga9fc519773a11565bcf0df81064d82ff4}} 
+\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!wdt\_enable\_callback@{wdt\_enable\_callback}}
+\index{wdt\_enable\_callback@{wdt\_enable\_callback}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsubsection{\texorpdfstring{wdt\_enable\_callback()}{wdt\_enable\_callback()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} wdt\+\_\+enable\+\_\+callback (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Enables asynchronous callback generation for a given type. 
+
+Enables asynchronous callbacks for a given callback type. This must be called before an external interrupt channel will generate callback events.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & Type of callback function to enable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the callback enable operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The callback was enabled successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If an invalid callback type was supplied \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ga6df7b4d42923db8f66e61dd4e6193232}\label{group__asfdoc__sam0__wdt__group_ga6df7b4d42923db8f66e61dd4e6193232}} 
+\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!wdt\_register\_callback@{wdt\_register\_callback}}
+\index{wdt\_register\_callback@{wdt\_register\_callback}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsubsection{\texorpdfstring{wdt\_register\_callback()}{wdt\_register\_callback()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} wdt\+\_\+register\+\_\+callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaebca6fc9b2002a0135e9fc0694ef0b06}{wdt\+\_\+callback\+\_\+t}}}]{callback,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Registers an asynchronous callback function with the driver. 
+
+Registers an asynchronous callback with the WDT driver, fired when a given criteria (such as an Early Warning) is met. Callbacks are fired once for each event.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em callback} & Pointer to the callback function to register \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & Type of callback function to register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the registration operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The callback was registered successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If an invalid callback type was supplied \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ga04e293d7ecf7703a3f6624f652f3a90a}\label{group__asfdoc__sam0__wdt__group_ga04e293d7ecf7703a3f6624f652f3a90a}} 
+\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!wdt\_reset\_count@{wdt\_reset\_count}}
+\index{wdt\_reset\_count@{wdt\_reset\_count}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsubsection{\texorpdfstring{wdt\_reset\_count()}{wdt\_reset\_count()}}
+{\footnotesize\ttfamily void wdt\+\_\+reset\+\_\+count (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Resets the count of the running Watchdog Timer that was previously enabled. 
+
+Resets the current count of the Watchdog Timer, restarting the timeout period count elapsed. This function should be called after the window period (if one was set in the module configuration) but before the timeout period to prevent a reset of the system. \mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_gaaed4dd784e073167a8588592fce7af69}\label{group__asfdoc__sam0__wdt__group_gaaed4dd784e073167a8588592fce7af69}} 
+\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!wdt\_set\_config@{wdt\_set\_config}}
+\index{wdt\_set\_config@{wdt\_set\_config}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsubsection{\texorpdfstring{wdt\_set\_config()}{wdt\_set\_config()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} wdt\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structwdt__conf}{wdt\+\_\+conf}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Sets up the WDT hardware module based on the configuration. 
+
+Writes a given configuration of a WDT configuration to the hardware module, and initializes the internal device struct.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em config} & Pointer to the configuration struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the configuration procedure.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If the module was configured correctly \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If invalid argument(s) were supplied \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+IO} & If the Watchdog module is locked to be always on \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__wdt__group_ga3fe25e27f0c98ad3c83d627043efd8eb}\label{group__asfdoc__sam0__wdt__group_ga3fe25e27f0c98ad3c83d627043efd8eb}} 
+\index{SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}!wdt\_unregister\_callback@{wdt\_unregister\_callback}}
+\index{wdt\_unregister\_callback@{wdt\_unregister\_callback}!SAM Watchdog (WDT) Driver@{SAM Watchdog (WDT) Driver}}
+\doxysubsubsection{\texorpdfstring{wdt\_unregister\_callback()}{wdt\_unregister\_callback()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} wdt\+\_\+unregister\+\_\+callback (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\+\_\+callback}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Unregisters an asynchronous callback function with the driver. 
+
+Unregisters an asynchronous callback with the WDT driver, removing it from the internal callback registration table.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & Type of callback function to unregister\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the de-\/registration operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The callback was Unregistered successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If an invalid callback type was supplied \\
+\hline
+\end{DoxyRetVals}

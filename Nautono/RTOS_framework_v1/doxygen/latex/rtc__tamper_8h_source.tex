@@ -1,0 +1,181 @@
+\hypertarget{rtc__tamper_8h_source}{}\doxysection{rtc\+\_\+tamper.\+h}
+\label{rtc__tamper_8h_source}\index{src/ASF/sam0/drivers/rtc/rtc\_tamper.h@{src/ASF/sam0/drivers/rtc/rtc\_tamper.h}}
+\mbox{\hyperlink{rtc__tamper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef RTC\_TAMPER\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define RTC\_TAMPER\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#if defined(FEATURE\_RTC\_TAMPER\_DETECTION) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define RTC\_TAMPER\_DETECT\_ID0    (1UL << 0)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define RTC\_TAMPER\_DETECT\_ID1    (1UL << 1)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define RTC\_TAMPER\_DETECT\_ID2    (1UL << 2)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define RTC\_TAMPER\_DETECT\_ID3    (1UL << 3)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define RTC\_TAMPER\_DETECT\_ID4    (1UL << 4)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define RTC\_TAMPER\_DETECT\_EVT    (1UL << 5)}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{93 \textcolor{keyword}{enum} rtc\_tamper\_active\_layer\_freq\_divider \{}
+\DoxyCodeLine{95     RTC\_TAMPER\_ACTIVE\_LAYER\_FREQ\_DIV\_2    = RTC\_MODE0\_CTRLB\_ACTF\_DIV2,}
+\DoxyCodeLine{97     RTC\_TAMPER\_ACTIVE\_LAYER\_FREQ\_DIV\_4    = RTC\_MODE0\_CTRLB\_ACTF\_DIV4,}
+\DoxyCodeLine{99     RTC\_TAMPER\_ACTIVE\_LAYER\_FREQ\_DIV\_8    = RTC\_MODE0\_CTRLB\_ACTF\_DIV8,}
+\DoxyCodeLine{101     RTC\_TAMPER\_ACTIVE\_LAYER\_FREQ\_DIV\_16   = RTC\_MODE0\_CTRLB\_ACTF\_DIV16,}
+\DoxyCodeLine{103     RTC\_TAMPER\_ACTIVE\_LAYER\_FREQ\_DIV\_32   = RTC\_MODE0\_CTRLB\_ACTF\_DIV32,}
+\DoxyCodeLine{105     RTC\_TAMPER\_ACTIVE\_LAYER\_FREQ\_DIV\_64   = RTC\_MODE0\_CTRLB\_ACTF\_DIV64,}
+\DoxyCodeLine{107     RTC\_TAMPER\_ACTIVE\_LAYER\_FREQ\_DIV\_128  = RTC\_MODE0\_CTRLB\_ACTF\_DIV128,}
+\DoxyCodeLine{109     RTC\_TAMPER\_ACTIVE\_LAYER\_FREQ\_DIV\_256  = RTC\_MODE0\_CTRLB\_ACTF\_DIV256,}
+\DoxyCodeLine{110 \};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{117 \textcolor{keyword}{enum} rtc\_tamper\_debounce\_freq\_divider \{}
+\DoxyCodeLine{119     RTC\_TAMPER\_DEBOUNCE\_FREQ\_DIV\_2    = RTC\_MODE0\_CTRLB\_DEBF\_DIV2,}
+\DoxyCodeLine{121     RTC\_TAMPER\_DEBOUNCE\_FREQ\_DIV\_4    = RTC\_MODE0\_CTRLB\_DEBF\_DIV4,}
+\DoxyCodeLine{123     RTC\_TAMPER\_DEBOUNCE\_FREQ\_DIV\_8    = RTC\_MODE0\_CTRLB\_DEBF\_DIV8,}
+\DoxyCodeLine{125     RTC\_TAMPER\_DEBOUNCE\_FREQ\_DIV\_16   = RTC\_MODE0\_CTRLB\_DEBF\_DIV16,}
+\DoxyCodeLine{127     RTC\_TAMPER\_DEBOUNCE\_FREQ\_DIV\_32   = RTC\_MODE0\_CTRLB\_DEBF\_DIV32,}
+\DoxyCodeLine{129     RTC\_TAMPER\_DEBOUNCE\_FREQ\_DIV\_64   = RTC\_MODE0\_CTRLB\_DEBF\_DIV64,}
+\DoxyCodeLine{131     RTC\_TAMPER\_DEBOUNCE\_FREQ\_DIV\_128  = RTC\_MODE0\_CTRLB\_DEBF\_DIV128,}
+\DoxyCodeLine{133     RTC\_TAMPER\_DEBOUNCE\_FREQ\_DIV\_256  = RTC\_MODE0\_CTRLB\_DEBF\_DIV256,}
+\DoxyCodeLine{134 \};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{141 \textcolor{keyword}{enum} rtc\_tamper\_input\_action \{}
+\DoxyCodeLine{143     RTC\_TAMPER\_INPUT\_ACTION\_OFF     = RTC\_TAMPCTRL\_IN0ACT\_OFF,}
+\DoxyCodeLine{145     RTC\_TAMPER\_INPUT\_ACTION\_WAKE    = RTC\_TAMPCTRL\_IN0ACT\_WAKE,}
+\DoxyCodeLine{147     RTC\_TAMPER\_INPUT\_ACTION\_CAPTURE = RTC\_TAMPCTRL\_IN0ACT\_CAPTURE,}
+\DoxyCodeLine{150     RTC\_TAMPER\_INPUT\_ACTION\_ACTL    = RTC\_TAMPCTRL\_IN0ACT\_ACTL,}
+\DoxyCodeLine{151 \};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{158 \textcolor{keyword}{enum} rtc\_tamper\_level\_sel \{}
+\DoxyCodeLine{160     RTC\_TAMPER\_LEVEL\_FALLING = (0),}
+\DoxyCodeLine{162     RTC\_TAMPER\_LEVEL\_RISING  = (1),}
+\DoxyCodeLine{163 \};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{170 \textcolor{keyword}{enum} rtc\_tamper\_debounce\_seq \{}
+\DoxyCodeLine{172     RTC\_TAMPER\_DEBOUNCE\_SYNC,}
+\DoxyCodeLine{174     RTC\_TAMPER\_DEBOUNCE\_ASYNC,}
+\DoxyCodeLine{176     RTC\_TAMPER\_DEBOUNCE\_MAJORITY,}
+\DoxyCodeLine{177 \};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{184 \textcolor{keyword}{struct }rtc\_tamper\_input\_config \{}
+\DoxyCodeLine{186     \textcolor{keywordtype}{bool} debounce\_enable;}
+\DoxyCodeLine{188     \textcolor{keyword}{enum} rtc\_tamper\_level\_sel level;}
+\DoxyCodeLine{190     \textcolor{keyword}{enum} rtc\_tamper\_input\_action action;}
+\DoxyCodeLine{191 \};}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{200 \textcolor{keyword}{struct }rtc\_tamper\_config \{}
+\DoxyCodeLine{202     \textcolor{keywordtype}{bool} bkup\_reset\_on\_tamper;}
+\DoxyCodeLine{204     \textcolor{keywordtype}{bool} gp\_reset\_on\_tamper;}
+\DoxyCodeLine{206     \textcolor{keyword}{enum} rtc\_tamper\_active\_layer\_freq\_divider actl\_freq\_div;}
+\DoxyCodeLine{208     \textcolor{keyword}{enum} rtc\_tamper\_debounce\_freq\_divider deb\_freq\_div;}
+\DoxyCodeLine{210     \textcolor{keyword}{enum} rtc\_tamper\_debounce\_seq deb\_seq;}
+\DoxyCodeLine{212     \textcolor{keywordtype}{bool} dma\_tamper\_enable;}
+\DoxyCodeLine{214     \textcolor{keywordtype}{bool} gp0\_enable;}
+\DoxyCodeLine{216     \textcolor{keyword}{struct }rtc\_tamper\_input\_config in\_cfg[RTC\_TAMPER\_NUM];}
+\DoxyCodeLine{217 \};}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{241 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} rtc\_tamper\_get\_config\_defaults(}
+\DoxyCodeLine{242         \textcolor{keyword}{struct} rtc\_tamper\_config *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{243 \{}
+\DoxyCodeLine{244     \textcolor{comment}{/* Sanity check argument */}}
+\DoxyCodeLine{245     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     config-\/>bkup\_reset\_on\_tamper= \textcolor{keyword}{false};}
+\DoxyCodeLine{248     config-\/>gp\_reset\_on\_tamper  = \textcolor{keyword}{false};}
+\DoxyCodeLine{249     config-\/>actl\_freq\_div       = RTC\_TAMPER\_ACTIVE\_LAYER\_FREQ\_DIV\_8;}
+\DoxyCodeLine{250     config-\/>deb\_freq\_div        = RTC\_TAMPER\_DEBOUNCE\_FREQ\_DIV\_8;}
+\DoxyCodeLine{251     config-\/>deb\_seq             = RTC\_TAMPER\_DEBOUNCE\_SYNC;}
+\DoxyCodeLine{252     config-\/>dma\_tamper\_enable   = \textcolor{keyword}{false};}
+\DoxyCodeLine{253     config-\/>gp0\_enable          = \textcolor{keyword}{true};}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255     \textcolor{keywordflow}{for} (uint8\_t \textcolor{keywordtype}{id} = 0; \textcolor{keywordtype}{id} < RTC\_TAMPER\_NUM; \textcolor{keywordtype}{id}++) \{}
+\DoxyCodeLine{256         config-\/>in\_cfg[id].debounce\_enable = \textcolor{keyword}{false};}
+\DoxyCodeLine{257         config-\/>in\_cfg[id].level = RTC\_TAMPER\_LEVEL\_FALLING;}
+\DoxyCodeLine{258         config-\/>in\_cfg[id].action = RTC\_TAMPER\_INPUT\_ACTION\_OFF;}
+\DoxyCodeLine{259     \}}
+\DoxyCodeLine{260 \}}
+\DoxyCodeLine{261 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} rtc\_tamper\_set\_config (\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{262         \textcolor{keyword}{struct} rtc\_tamper\_config *\textcolor{keyword}{const} tamper\_cfg);}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{280 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t rtc\_tamper\_get\_detect\_flag (\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{281 \{}
+\DoxyCodeLine{282     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{283     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{284     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286     uint32\_t tamper\_id = module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}}-\/>\mbox{\hyperlink{union_rtc_a02141b27492423d9289f41b7d95ffad9}{MODE0}}.TAMPID.reg;}
+\DoxyCodeLine{287     uint32\_t detect\_flags = 0;}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289     \textcolor{keywordflow}{if} (tamper\_id \& RTC\_TAMPID\_TAMPID0) \{}
+\DoxyCodeLine{290         detect\_flags |= RTC\_TAMPER\_DETECT\_ID0;}
+\DoxyCodeLine{291     \}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     \textcolor{keywordflow}{if} (tamper\_id \& RTC\_TAMPID\_TAMPID1) \{}
+\DoxyCodeLine{294         detect\_flags |= RTC\_TAMPER\_DETECT\_ID1;}
+\DoxyCodeLine{295     \}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297     \textcolor{keywordflow}{if} (tamper\_id \& RTC\_TAMPID\_TAMPID2) \{}
+\DoxyCodeLine{298         detect\_flags |= RTC\_TAMPER\_DETECT\_ID2;}
+\DoxyCodeLine{299     \}}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301     \textcolor{keywordflow}{if} (tamper\_id \& RTC\_TAMPID\_TAMPID3) \{}
+\DoxyCodeLine{302         detect\_flags |= RTC\_TAMPER\_DETECT\_ID3;}
+\DoxyCodeLine{303     \}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     \textcolor{keywordflow}{if} (tamper\_id \& RTC\_TAMPID\_TAMPID4) \{}
+\DoxyCodeLine{306         detect\_flags |= RTC\_TAMPER\_DETECT\_ID4;}
+\DoxyCodeLine{307     \}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309     \textcolor{keywordflow}{if} (tamper\_id \& RTC\_TAMPID\_TAMPEVT) \{}
+\DoxyCodeLine{310         detect\_flags |= RTC\_TAMPER\_DETECT\_EVT;}
+\DoxyCodeLine{311     \}}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313     \textcolor{keywordflow}{return} detect\_flags;}
+\DoxyCodeLine{314 \}}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{324 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} rtc\_tamper\_clear\_detect\_flag(}
+\DoxyCodeLine{325         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{326         \textcolor{keyword}{const} uint32\_t detect\_flags)}
+\DoxyCodeLine{327 \{}
+\DoxyCodeLine{328     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{329     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{330     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332     uint32\_t tamper\_id = 0;}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334     \textcolor{keywordflow}{if} (detect\_flags \& RTC\_TAMPER\_DETECT\_ID0) \{}
+\DoxyCodeLine{335         tamper\_id |= RTC\_TAMPID\_TAMPID0;}
+\DoxyCodeLine{336     \}}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338     \textcolor{keywordflow}{if} (detect\_flags \& RTC\_TAMPER\_DETECT\_ID1) \{}
+\DoxyCodeLine{339         tamper\_id |= RTC\_TAMPID\_TAMPID1;}
+\DoxyCodeLine{340     \}}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{342     \textcolor{keywordflow}{if} (detect\_flags \& RTC\_TAMPER\_DETECT\_ID2) \{}
+\DoxyCodeLine{343         tamper\_id |= RTC\_TAMPID\_TAMPID2;}
+\DoxyCodeLine{344     \}}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346     \textcolor{keywordflow}{if} (detect\_flags \& RTC\_TAMPER\_DETECT\_ID3) \{}
+\DoxyCodeLine{347         tamper\_id |= RTC\_TAMPID\_TAMPID3;}
+\DoxyCodeLine{348     \}}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350     \textcolor{keywordflow}{if} (detect\_flags \& RTC\_TAMPER\_DETECT\_ID4) \{}
+\DoxyCodeLine{351         tamper\_id |= RTC\_TAMPID\_TAMPID4;}
+\DoxyCodeLine{352     \}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354     \textcolor{keywordflow}{if} (detect\_flags \& RTC\_TAMPER\_DETECT\_EVT) \{}
+\DoxyCodeLine{355         tamper\_id |= RTC\_TAMPID\_TAMPEVT;}
+\DoxyCodeLine{356     \}}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358     module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}}-\/>\mbox{\hyperlink{union_rtc_a02141b27492423d9289f41b7d95ffad9}{MODE0}}.TAMPID.reg = tamper\_id;}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 \}}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* RTC\_TAMPER\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,417 @@
+\hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/component/wdt.h File Reference}
+\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/wdt.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/wdt.h}}
+
+
+Component description for WDT.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_w_d_t___c_t_r_l___type}{WDT\+\_\+\+CTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_w_d_t___c_o_n_f_i_g___type}{WDT\+\_\+\+CONFIG\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_w_d_t___e_w_c_t_r_l___type}{WDT\+\_\+\+EWCTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_c_l_r___type}{WDT\+\_\+\+INTENCLR\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_w_d_t___i_n_t_e_n_s_e_t___type}{WDT\+\_\+\+INTENSET\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_w_d_t___i_n_t_f_l_a_g___type}{WDT\+\_\+\+INTFLAG\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_w_d_t___s_t_a_t_u_s___type}{WDT\+\_\+\+STATUS\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_w_d_t___c_l_e_a_r___type}{WDT\+\_\+\+CLEAR\+\_\+\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_wdt}{Wdt}}
+\begin{DoxyCompactList}\small\item\em WDT hardware registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3ebf7f7e24bbd8ba6882f20c8be6fb5e}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3ebf7f7e24bbd8ba6882f20c8be6fb5e}} 
+\#define {\bfseries WDT\+\_\+\+U2203}
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a2a81abc78d42c7d555d128b152388248}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a2a81abc78d42c7d555d128b152388248}} 
+\#define {\bfseries REV\+\_\+\+WDT}~0x200
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a39ce1d747040701b9eea15b5d13b143a}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a39ce1d747040701b9eea15b5d13b143a}} 
+\#define {\bfseries WDT\+\_\+\+CTRL\+\_\+\+OFFSET}~0x0
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CTRL offset) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af6861aac3ab874656280252bddd092c6}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af6861aac3ab874656280252bddd092c6}} 
+\#define {\bfseries WDT\+\_\+\+CTRL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CTRL reset\+\_\+value) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a867342c84f6255deee61f27b89cdfe4e}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a867342c84f6255deee61f27b89cdfe4e}} 
+\#define {\bfseries WDT\+\_\+\+CTRL\+\_\+\+ENABLE\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CTRL) Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a53c219e63346c837e0887d2f1c861e60}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a53c219e63346c837e0887d2f1c861e60}} 
+\#define {\bfseries WDT\+\_\+\+CTRL\+\_\+\+ENABLE}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a867342c84f6255deee61f27b89cdfe4e}{WDT\+\_\+\+CTRL\+\_\+\+ENABLE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a542d8e878e499ddbcaa56146cacce7c2}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a542d8e878e499ddbcaa56146cacce7c2}} 
+\#define {\bfseries WDT\+\_\+\+CTRL\+\_\+\+WEN\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CTRL) Watchdog Timer Window Mode Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a969cdb53a5fcc6c7a10369839fd397ec}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a969cdb53a5fcc6c7a10369839fd397ec}} 
+\#define {\bfseries WDT\+\_\+\+CTRL\+\_\+\+WEN}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a542d8e878e499ddbcaa56146cacce7c2}{WDT\+\_\+\+CTRL\+\_\+\+WEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3a5e399d5fdcfd15ef16e4301352c99a}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3a5e399d5fdcfd15ef16e4301352c99a}} 
+\#define {\bfseries WDT\+\_\+\+CTRL\+\_\+\+ALWAYSON\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CTRL) Always-\/\+On \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0d7cb59dc5a756596dd5da71f95c497c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0d7cb59dc5a756596dd5da71f95c497c}} 
+\#define {\bfseries WDT\+\_\+\+CTRL\+\_\+\+ALWAYSON}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3a5e399d5fdcfd15ef16e4301352c99a}{WDT\+\_\+\+CTRL\+\_\+\+ALWAYSON\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac24b0b3ec8534ad7f0bc34a49ed46a0d}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac24b0b3ec8534ad7f0bc34a49ed46a0d}} 
+\#define {\bfseries WDT\+\_\+\+CTRL\+\_\+\+MASK}~0x86ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0d3293445b10bdfdf733067d75f7b98c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0d3293445b10bdfdf733067d75f7b98c}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+OFFSET}~0x1
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG offset) Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a963315e6b2e0dfb513fb236eae8386b0}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a963315e6b2e0dfb513fb236eae8386b0}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+RESETVALUE}~0x\+BBul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG reset\+\_\+value) Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) Time-\/\+Out Period \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a7b17345103d170e4fc578db43ad0987e}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a7b17345103d170e4fc578db43ad0987e}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac92933c61d3b2a10b9b14e2c68dcc5c8}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac92933c61d3b2a10b9b14e2c68dcc5c8}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER}(value)~((WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a67ff519f465a8ba261805c93764095e1}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a67ff519f465a8ba261805c93764095e1}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+8\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 8 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a52fe245666225114b46c8e12492eaf75}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a52fe245666225114b46c8e12492eaf75}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+16\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 16 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a476aa4a908bb10ae56345f6d05462e17}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a476aa4a908bb10ae56345f6d05462e17}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+32\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 32 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a8052f964d85b078482756ee563b3ca89}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a8052f964d85b078482756ee563b3ca89}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+64\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 64 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a98986d614bb272ac1dab43e9d98f0beb}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a98986d614bb272ac1dab43e9d98f0beb}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+128\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 128 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a12745e1d2f6572ab505a5691db652c33}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a12745e1d2f6572ab505a5691db652c33}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+256\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 256 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab4e89108a94b765fbe516b4b29b61abe}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab4e89108a94b765fbe516b4b29b61abe}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+512\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 512 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6ddb8a8dbe2645d82c1647049855dc8c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6ddb8a8dbe2645d82c1647049855dc8c}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+1\+K\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 1024 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0badcc8b50d4a51234b750d60fe1347e}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0badcc8b50d4a51234b750d60fe1347e}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+2\+K\+\_\+\+Val}~0x8ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 2048 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_adf4430dc3c2be282d4fc2819030057bc}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_adf4430dc3c2be282d4fc2819030057bc}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+4\+K\+\_\+\+Val}~0x9ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 4096 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a47d1ddf231377d6466cd3448916aea4b}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a47d1ddf231377d6466cd3448916aea4b}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+8\+K\+\_\+\+Val}~0x\+Aul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 8192 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3a4ddeafbe076f5d3219286366c73cae}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3a4ddeafbe076f5d3219286366c73cae}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+16\+K\+\_\+\+Val}~0x\+Bul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 16384 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aeed7d9cfb4c7440d8bd862c866c690b0}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aeed7d9cfb4c7440d8bd862c866c690b0}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+8}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a67ff519f465a8ba261805c93764095e1}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+8\+\_\+\+Val}}          $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_afeb5d2ce72e58711c8214d03594f9407}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_afeb5d2ce72e58711c8214d03594f9407}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+16}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a52fe245666225114b46c8e12492eaf75}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+16\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac3100dd74802a47fd4c823632f0a7b8e}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac3100dd74802a47fd4c823632f0a7b8e}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+32}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a476aa4a908bb10ae56345f6d05462e17}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+32\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9ce13986250d8d9bd9664c746784f3f6}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9ce13986250d8d9bd9664c746784f3f6}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+64}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a8052f964d85b078482756ee563b3ca89}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+64\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aaa2d0d86013eff7628257b4ac65e69e0}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aaa2d0d86013eff7628257b4ac65e69e0}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+128}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a98986d614bb272ac1dab43e9d98f0beb}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+128\+\_\+\+Val}}        $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a71861c6c504e3310f67da37cdfb17425}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a71861c6c504e3310f67da37cdfb17425}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+256}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a12745e1d2f6572ab505a5691db652c33}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+256\+\_\+\+Val}}        $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aef03f8f27885c24f55a8fd9be99e65c9}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aef03f8f27885c24f55a8fd9be99e65c9}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+512}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab4e89108a94b765fbe516b4b29b61abe}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+512\+\_\+\+Val}}        $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abacf2e3fc56acee60139ab1d166cf61c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abacf2e3fc56acee60139ab1d166cf61c}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+1K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6ddb8a8dbe2645d82c1647049855dc8c}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+1\+K\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6cf0be01053f9184079cad59e1f79b5f}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6cf0be01053f9184079cad59e1f79b5f}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+2K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0badcc8b50d4a51234b750d60fe1347e}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+2\+K\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a53b7282727f8048f9f99000aec748509}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a53b7282727f8048f9f99000aec748509}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+4K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_adf4430dc3c2be282d4fc2819030057bc}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+4\+K\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a191271b5cd71b2b7fdec34d1781b1f37}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a191271b5cd71b2b7fdec34d1781b1f37}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+8K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a47d1ddf231377d6466cd3448916aea4b}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+8\+K\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a067b7d43db99d2cc49fa28f767b250ee}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a067b7d43db99d2cc49fa28f767b250ee}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+16K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3a4ddeafbe076f5d3219286366c73cae}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+16\+K\+\_\+\+Val}}        $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a55662a2fa7e16fd6cc7a5e0800034360}{WDT\+\_\+\+CONFIG\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) Window Mode Time-\/\+Out Period \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_adbf0e2faa64af4cac57e1279414aa8ad}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_adbf0e2faa64af4cac57e1279414aa8ad}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_acfafc7c7ce1a04a46d9b972c667a4706}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_acfafc7c7ce1a04a46d9b972c667a4706}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW}(value)~((WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6da4155b3fd5c2b0ca611e77e6d201b2}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6da4155b3fd5c2b0ca611e77e6d201b2}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+8\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 8 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a94c78bd81746a104a1b22a87fce13031}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a94c78bd81746a104a1b22a87fce13031}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+16\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 16 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac048feb48b07a47ef67a3c255220091e}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac048feb48b07a47ef67a3c255220091e}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+32\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 32 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6e693c9a030d6fdc5016b0112844562b}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6e693c9a030d6fdc5016b0112844562b}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+64\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 64 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a51289e860f6a83d19b9d7215dc0a1a00}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a51289e860f6a83d19b9d7215dc0a1a00}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+128\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 128 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a12f7753ea83612942c50361489a0b57d}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a12f7753ea83612942c50361489a0b57d}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+256\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 256 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a2354a08357de39937f2bf400ce524eab}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a2354a08357de39937f2bf400ce524eab}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+512\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 512 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af08a60bd2ff13f7304deb395c6fe437c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af08a60bd2ff13f7304deb395c6fe437c}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+1\+K\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 1024 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a4ebc9af4aeb8b0095afa2b837ec3dbc7}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a4ebc9af4aeb8b0095afa2b837ec3dbc7}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+2\+K\+\_\+\+Val}~0x8ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 2048 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a86b3919f592e4ea3dd1f74e0ef2ce2fa}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a86b3919f592e4ea3dd1f74e0ef2ce2fa}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+4\+K\+\_\+\+Val}~0x9ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 4096 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab9665c8a40f0898e8971b44efe68c5b2}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab9665c8a40f0898e8971b44efe68c5b2}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+8\+K\+\_\+\+Val}~0x\+Aul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 8192 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a5a8497f7d23067463f32265143a47eeb}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a5a8497f7d23067463f32265143a47eeb}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+16\+K\+\_\+\+Val}~0x\+Bul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) 16384 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aff1bddd833eb35105aed18be6fdf573d}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aff1bddd833eb35105aed18be6fdf573d}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+8}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6da4155b3fd5c2b0ca611e77e6d201b2}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+8\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab816738669bb8c8883e3f0c8c73bd795}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab816738669bb8c8883e3f0c8c73bd795}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+16}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a94c78bd81746a104a1b22a87fce13031}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+16\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9c967c3e74d9105a00a9f00dc3514207}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9c967c3e74d9105a00a9f00dc3514207}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+32}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac048feb48b07a47ef67a3c255220091e}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+32\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aa12da21d829f44382b35aacb4674527b}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aa12da21d829f44382b35aacb4674527b}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+64}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6e693c9a030d6fdc5016b0112844562b}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+64\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a80709ed551e6c4af0b1c6fe080635023}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a80709ed551e6c4af0b1c6fe080635023}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+128}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a51289e860f6a83d19b9d7215dc0a1a00}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+128\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af80377030ae294b2ab6dacb620f7c56c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af80377030ae294b2ab6dacb620f7c56c}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+256}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a12f7753ea83612942c50361489a0b57d}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+256\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a42f43fe44b96604cc5b49af3cafb2fa3}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a42f43fe44b96604cc5b49af3cafb2fa3}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+512}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a2354a08357de39937f2bf400ce524eab}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+512\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6597f7deeadccbe3a8dc7f157f361f6f}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6597f7deeadccbe3a8dc7f157f361f6f}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+1K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af08a60bd2ff13f7304deb395c6fe437c}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+1\+K\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0bb67ea0af8bcd3e226dd9453914eacc}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0bb67ea0af8bcd3e226dd9453914eacc}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+2K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a4ebc9af4aeb8b0095afa2b837ec3dbc7}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+2\+K\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a06bf05e982ad42dba9a1ea3fc37dfd6c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a06bf05e982ad42dba9a1ea3fc37dfd6c}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+4K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a86b3919f592e4ea3dd1f74e0ef2ce2fa}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+4\+K\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ae4a3358615c78f14f7f1b4af97d016ea}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ae4a3358615c78f14f7f1b4af97d016ea}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+8K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab9665c8a40f0898e8971b44efe68c5b2}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+8\+K\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a29e680cdbd758500b129cefc8eed6861}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a29e680cdbd758500b129cefc8eed6861}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+16K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a5a8497f7d23067463f32265143a47eeb}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+16\+K\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab2d3263bd9ad06e3257234d9da623ef8}{WDT\+\_\+\+CONFIG\+\_\+\+WINDOW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af9e2843301ae8da8b2d8a3d2c93a3f88}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af9e2843301ae8da8b2d8a3d2c93a3f88}} 
+\#define {\bfseries WDT\+\_\+\+CONFIG\+\_\+\+MASK}~0x\+FFul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CONFIG) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6d95eafd522ac7c24f3c5bfd19e10af5}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6d95eafd522ac7c24f3c5bfd19e10af5}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+OFFSET}~0x2
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL offset) Early Warning Interrupt Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9379b9c03732aac0dc5eacfe28fd35f8}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9379b9c03732aac0dc5eacfe28fd35f8}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+RESETVALUE}~0x0\+Bul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL reset\+\_\+value) Early Warning Interrupt Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) Early Warning Interrupt Time Offset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9552ab7a09bdc45d499a65e49e3a446e}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9552ab7a09bdc45d499a65e49e3a446e}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aa88d94af62577cb3a8ee526252da2818}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aa88d94af62577cb3a8ee526252da2818}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET}(value)~((WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab3a2db643b2227e8c7cf581e83758584}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab3a2db643b2227e8c7cf581e83758584}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+8\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 8 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6c0f713353049fd7965f6981bb50553f}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6c0f713353049fd7965f6981bb50553f}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+16\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 16 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a2ee2c98b9dd137a03eeeabedd849b007}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a2ee2c98b9dd137a03eeeabedd849b007}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+32\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 32 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abe2e31c9f9ac714aa4bfc480ead4bdcc}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abe2e31c9f9ac714aa4bfc480ead4bdcc}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+64\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 64 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0f805aaf53a790a2e0973dfa9df6d91e}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0f805aaf53a790a2e0973dfa9df6d91e}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+128\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 128 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a695d61fe243838dec7d761c2d4e0450b}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a695d61fe243838dec7d761c2d4e0450b}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+256\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 256 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a5bd63d64662a1a38e87476045ec989c0}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a5bd63d64662a1a38e87476045ec989c0}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+512\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 512 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ae03a5647efdd09f0a25b51e47cc876ce}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ae03a5647efdd09f0a25b51e47cc876ce}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+1\+K\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 1024 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ae97601bb67a5cc471b8fe5ab4eecc3ca}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ae97601bb67a5cc471b8fe5ab4eecc3ca}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+2\+K\+\_\+\+Val}~0x8ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 2048 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a42ef5dba73e2a26456fa3f603c71d5a9}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a42ef5dba73e2a26456fa3f603c71d5a9}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+4\+K\+\_\+\+Val}~0x9ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 4096 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a127f0778aefb650b00d491b2bc6c5ceb}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a127f0778aefb650b00d491b2bc6c5ceb}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+8\+K\+\_\+\+Val}~0x\+Aul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 8192 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a82eddc97b0dfab85467d139347ed60d1}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a82eddc97b0dfab85467d139347ed60d1}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+16\+K\+\_\+\+Val}~0x\+Bul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) 16384 clock cycles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a50c556f125fd305d92e3508e05b90122}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a50c556f125fd305d92e3508e05b90122}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+8}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab3a2db643b2227e8c7cf581e83758584}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+8\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a864d56748032c478ff03a5a3bdda9ae1}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a864d56748032c478ff03a5a3bdda9ae1}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+16}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6c0f713353049fd7965f6981bb50553f}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+16\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_adae2f77e5ba40f9485485436c1cea51a}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_adae2f77e5ba40f9485485436c1cea51a}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+32}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a2ee2c98b9dd137a03eeeabedd849b007}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+32\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a79688b30622e3540fa174584e82507d0}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a79688b30622e3540fa174584e82507d0}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+64}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abe2e31c9f9ac714aa4bfc480ead4bdcc}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+64\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_acd40d7e1715b88baa3efd71a871c380c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_acd40d7e1715b88baa3efd71a871c380c}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+128}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0f805aaf53a790a2e0973dfa9df6d91e}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+128\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aa9ab3bc4d0c9f5111fe8d50318c0b5c9}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aa9ab3bc4d0c9f5111fe8d50318c0b5c9}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+256}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a695d61fe243838dec7d761c2d4e0450b}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+256\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a72b2b646fc5211bf965d1ce3958bf103}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a72b2b646fc5211bf965d1ce3958bf103}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+512}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a5bd63d64662a1a38e87476045ec989c0}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+512\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab56b36b15366824f7d700fc16c5eafa9}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab56b36b15366824f7d700fc16c5eafa9}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+1K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ae03a5647efdd09f0a25b51e47cc876ce}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+1\+K\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6003ecd07cd72174e45ee4ee72a3a352}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6003ecd07cd72174e45ee4ee72a3a352}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+2K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ae97601bb67a5cc471b8fe5ab4eecc3ca}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+2\+K\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abc04f56b5e35872db574433a43787761}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abc04f56b5e35872db574433a43787761}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+4K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a42ef5dba73e2a26456fa3f603c71d5a9}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+4\+K\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a75e228a9fd59082dd0831987b98f9c4c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a75e228a9fd59082dd0831987b98f9c4c}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+8K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a127f0778aefb650b00d491b2bc6c5ceb}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+8\+K\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ade10519121a6cba0a45adb6730a44a11}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ade10519121a6cba0a45adb6730a44a11}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+16K}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a82eddc97b0dfab85467d139347ed60d1}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+16\+K\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_abb7809711cdf296121c2108b55d3ad33}{WDT\+\_\+\+EWCTRL\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ad11e24dd62ea0905ed507f49f62c55c2}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ad11e24dd62ea0905ed507f49f62c55c2}} 
+\#define {\bfseries WDT\+\_\+\+EWCTRL\+\_\+\+MASK}~0x0\+Ful
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+EWCTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a98f37addcc6abfc015425013c3a39336}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a98f37addcc6abfc015425013c3a39336}} 
+\#define {\bfseries WDT\+\_\+\+INTENCLR\+\_\+\+OFFSET}~0x4
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTENCLR offset) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9e7f5a23ae81064086ecf4e877116ee0}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9e7f5a23ae81064086ecf4e877116ee0}} 
+\#define {\bfseries WDT\+\_\+\+INTENCLR\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTENCLR reset\+\_\+value) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_acbfecace29fe0f43e6f3fb8799813157}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_acbfecace29fe0f43e6f3fb8799813157}} 
+\#define {\bfseries WDT\+\_\+\+INTENCLR\+\_\+\+EW\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTENCLR) Early Warning Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3eafb419ed0c9165cf7123817e5fcf63}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3eafb419ed0c9165cf7123817e5fcf63}} 
+\#define {\bfseries WDT\+\_\+\+INTENCLR\+\_\+\+EW}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_acbfecace29fe0f43e6f3fb8799813157}{WDT\+\_\+\+INTENCLR\+\_\+\+EW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a261d65af584086a561448aeedeabbd76}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a261d65af584086a561448aeedeabbd76}} 
+\#define {\bfseries WDT\+\_\+\+INTENCLR\+\_\+\+MASK}~0x01ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTENCLR) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6497c59af95b3fd1aad2b074a75e4173}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a6497c59af95b3fd1aad2b074a75e4173}} 
+\#define {\bfseries WDT\+\_\+\+INTENSET\+\_\+\+OFFSET}~0x5
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTENSET offset) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9ac75e52d30478302b59583789dca453}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9ac75e52d30478302b59583789dca453}} 
+\#define {\bfseries WDT\+\_\+\+INTENSET\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTENSET reset\+\_\+value) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab3754e1861849b0fbb6d056b8b6ac398}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab3754e1861849b0fbb6d056b8b6ac398}} 
+\#define {\bfseries WDT\+\_\+\+INTENSET\+\_\+\+EW\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTENSET) Early Warning Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a41315bef38a49717163e34abd09091bb}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a41315bef38a49717163e34abd09091bb}} 
+\#define {\bfseries WDT\+\_\+\+INTENSET\+\_\+\+EW}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab3754e1861849b0fbb6d056b8b6ac398}{WDT\+\_\+\+INTENSET\+\_\+\+EW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3b4c09a36c0f08d32b983e12e06c706f}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3b4c09a36c0f08d32b983e12e06c706f}} 
+\#define {\bfseries WDT\+\_\+\+INTENSET\+\_\+\+MASK}~0x01ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTENSET) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a8ccc2de815933812cd609179de30fc5b}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a8ccc2de815933812cd609179de30fc5b}} 
+\#define {\bfseries WDT\+\_\+\+INTFLAG\+\_\+\+OFFSET}~0x6
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTFLAG offset) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac9159591ef9fa9ebb4958fa38ad9b56c}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac9159591ef9fa9ebb4958fa38ad9b56c}} 
+\#define {\bfseries WDT\+\_\+\+INTFLAG\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTFLAG reset\+\_\+value) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ad92b31e2c0815fceba1ace8b061ffe25}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ad92b31e2c0815fceba1ace8b061ffe25}} 
+\#define {\bfseries WDT\+\_\+\+INTFLAG\+\_\+\+EW\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTFLAG) Early Warning \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af010973ade015b854f7b5f12c440538d}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af010973ade015b854f7b5f12c440538d}} 
+\#define {\bfseries WDT\+\_\+\+INTFLAG\+\_\+\+EW}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ad92b31e2c0815fceba1ace8b061ffe25}{WDT\+\_\+\+INTFLAG\+\_\+\+EW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0f9add7d544318a00033f236441e048e}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a0f9add7d544318a00033f236441e048e}} 
+\#define {\bfseries WDT\+\_\+\+INTFLAG\+\_\+\+MASK}~0x01ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+INTFLAG) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aeee83c68c1aeb33f91a0eb8b1cd59c62}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_aeee83c68c1aeb33f91a0eb8b1cd59c62}} 
+\#define {\bfseries WDT\+\_\+\+STATUS\+\_\+\+OFFSET}~0x7
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+STATUS offset) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a7a68bc75c4153366852382d40bf13c01}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a7a68bc75c4153366852382d40bf13c01}} 
+\#define {\bfseries WDT\+\_\+\+STATUS\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+STATUS reset\+\_\+value) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af075cb0b6a541d650863f51dedf17630}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af075cb0b6a541d650863f51dedf17630}} 
+\#define {\bfseries WDT\+\_\+\+STATUS\+\_\+\+SYNCBUSY\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+STATUS) Synchronization Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac27ae5cfb6b11ab496f06fc473905ceb}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac27ae5cfb6b11ab496f06fc473905ceb}} 
+\#define {\bfseries WDT\+\_\+\+STATUS\+\_\+\+SYNCBUSY}~(0x1ul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af075cb0b6a541d650863f51dedf17630}{WDT\+\_\+\+STATUS\+\_\+\+SYNCBUSY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a363d7548ef5d950b2292c611cc4ace0b}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a363d7548ef5d950b2292c611cc4ace0b}} 
+\#define {\bfseries WDT\+\_\+\+STATUS\+\_\+\+MASK}~0x80ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+STATUS) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af1f57bd7a1a8ce2ae94864a7cea2e6e4}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_af1f57bd7a1a8ce2ae94864a7cea2e6e4}} 
+\#define {\bfseries WDT\+\_\+\+CLEAR\+\_\+\+OFFSET}~0x8
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CLEAR offset) Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9192db22a2c21f7afda2b8117a96d6ef}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a9192db22a2c21f7afda2b8117a96d6ef}} 
+\#define {\bfseries WDT\+\_\+\+CLEAR\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CLEAR reset\+\_\+value) Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3059b0505f94ff8b2ff25fb53dd56999}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3059b0505f94ff8b2ff25fb53dd56999}} 
+\#define {\bfseries WDT\+\_\+\+CLEAR\+\_\+\+CLEAR\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CLEAR) Watchdog Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac9c6223ece162be430a8f86942210ba9}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac9c6223ece162be430a8f86942210ba9}} 
+\#define {\bfseries WDT\+\_\+\+CLEAR\+\_\+\+CLEAR\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3059b0505f94ff8b2ff25fb53dd56999}{WDT\+\_\+\+CLEAR\+\_\+\+CLEAR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a5dceacac040596ca3a0941aad227e014}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a5dceacac040596ca3a0941aad227e014}} 
+\#define {\bfseries WDT\+\_\+\+CLEAR\+\_\+\+CLEAR}(value)~((WDT\+\_\+\+CLEAR\+\_\+\+CLEAR\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3059b0505f94ff8b2ff25fb53dd56999}{WDT\+\_\+\+CLEAR\+\_\+\+CLEAR\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab9d83e2ecab22a9b789e5db90483a784}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab9d83e2ecab22a9b789e5db90483a784}} 
+\#define {\bfseries WDT\+\_\+\+CLEAR\+\_\+\+CLEAR\+\_\+\+KEY\+\_\+\+Val}~0x\+A5ul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CLEAR) Clear Key \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ad9b9dfd240e353ca00f7417e8cbbb637}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ad9b9dfd240e353ca00f7417e8cbbb637}} 
+\#define {\bfseries WDT\+\_\+\+CLEAR\+\_\+\+CLEAR\+\_\+\+KEY}~(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ab9d83e2ecab22a9b789e5db90483a784}{WDT\+\_\+\+CLEAR\+\_\+\+CLEAR\+\_\+\+KEY\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h_a3059b0505f94ff8b2ff25fb53dd56999}{WDT\+\_\+\+CLEAR\+\_\+\+CLEAR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac1d3629de6e3c37cd93d94aad9cec4e6}\label{utils_2cmsis_2samd20_2include_2component_2wdt_8h_ac1d3629de6e3c37cd93d94aad9cec4e6}} 
+\#define {\bfseries WDT\+\_\+\+CLEAR\+\_\+\+MASK}~0x\+FFul
+\begin{DoxyCompactList}\small\item\em (WDT\+\_\+\+CLEAR) MASK Register \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component description for WDT. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

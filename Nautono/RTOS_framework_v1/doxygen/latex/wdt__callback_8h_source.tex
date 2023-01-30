@@ -1,0 +1,45 @@
+\hypertarget{wdt__callback_8h_source}{}\doxysection{wdt\+\_\+callback.\+h}
+\label{wdt__callback_8h_source}\index{src/ASF/sam0/drivers/wdt/wdt\_callback.h@{src/ASF/sam0/drivers/wdt/wdt\_callback.h}}
+\mbox{\hyperlink{wdt__callback_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef WDT\_CALLBACK\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define WDT\_CALLBACK\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2instance_2wdt_8h}{wdt.h}}"{}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{43 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} void (*\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaebca6fc9b2002a0135e9fc0694ef0b06}{wdt\_callback\_t}})(void);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\_callback}}}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{65     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggaa5d433db497f25c7a5e5c52828a8d0deab7e46a317021cc0ecaa39ef737a327c5}{WDT\_CALLBACK\_EARLY\_WARNING}},}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga6df7b4d42923db8f66e61dd4e6193232}{wdt\_register\_callback}}(}
+\DoxyCodeLine{69         \textcolor{keyword}{const} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaebca6fc9b2002a0135e9fc0694ef0b06}{wdt\_callback\_t}} callback,}
+\DoxyCodeLine{70         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\_callback}} type);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga3fe25e27f0c98ad3c83d627043efd8eb}{wdt\_unregister\_callback}}(}
+\DoxyCodeLine{73         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\_callback}} type);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{81 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga9fc519773a11565bcf0df81064d82ff4}{wdt\_enable\_callback}}(}
+\DoxyCodeLine{82         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\_callback}} type);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga2a22e0f5accbb4d6c52751643364a9d8}{wdt\_disable\_callback}}(}
+\DoxyCodeLine{85         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaa5d433db497f25c7a5e5c52828a8d0de}{wdt\_callback}} type);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{92 \}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

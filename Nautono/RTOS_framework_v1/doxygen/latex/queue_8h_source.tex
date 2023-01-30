@@ -1,0 +1,380 @@
+\hypertarget{queue_8h_source}{}\doxysection{queue.\+h}
+\label{queue_8h_source}\index{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/queue.h@{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/queue.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * FreeRTOS Kernel V10.0.0}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining a copy of}}
+\DoxyCodeLine{6 \textcolor{comment}{ * this software and associated documentation files (the "{}Software"{}), to deal in}}
+\DoxyCodeLine{7 \textcolor{comment}{ * the Software without restriction, including without limitation the rights to}}
+\DoxyCodeLine{8 \textcolor{comment}{ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of}}
+\DoxyCodeLine{9 \textcolor{comment}{ * the Software, and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * The above copyright notice and this permission notice shall be included in all}}
+\DoxyCodeLine{13 \textcolor{comment}{ * copies or substantial portions of the Software. If you wish to use our Amazon}}
+\DoxyCodeLine{14 \textcolor{comment}{ * FreeRTOS name, please do so in a fair use way that does not cause confusion.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{17 \textcolor{comment}{ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS}}
+\DoxyCodeLine{18 \textcolor{comment}{ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR}}
+\DoxyCodeLine{19 \textcolor{comment}{ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER}}
+\DoxyCodeLine{20 \textcolor{comment}{ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN}}
+\DoxyCodeLine{21 \textcolor{comment}{ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * http://www.FreeRTOS.org}}
+\DoxyCodeLine{24 \textcolor{comment}{ * http://aws.amazon.com/freertos}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ * 1 tab == 4 spaces!}}
+\DoxyCodeLine{27 \textcolor{comment}{ */}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifndef QUEUE\_H}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define QUEUE\_H}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifndef INC\_FREERTOS\_H}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{    \#error "{}include FreeRTOS.h"{}} must appear in source files before "{}include queue.h"{}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{38 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} * QueueHandle\_t;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{54 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} * QueueSetHandle\_t;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} * QueueSetMemberHandle\_t;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{/* For internal use only. */}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define queueSEND\_TO\_BACK       ( ( BaseType\_t ) 0 )}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define queueSEND\_TO\_FRONT      ( ( BaseType\_t ) 1 )}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define queueOVERWRITE          ( ( BaseType\_t ) 2 )}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{/* For internal use only.  These definitions *must* match those in queue.c. */}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define queueQUEUE\_TYPE\_BASE                ( ( uint8\_t ) 0U )}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define queueQUEUE\_TYPE\_SET                 ( ( uint8\_t ) 0U )}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define queueQUEUE\_TYPE\_MUTEX               ( ( uint8\_t ) 1U )}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define queueQUEUE\_TYPE\_COUNTING\_SEMAPHORE  ( ( uint8\_t ) 2U )}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define queueQUEUE\_TYPE\_BINARY\_SEMAPHORE    ( ( uint8\_t ) 3U )}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define queueQUEUE\_TYPE\_RECURSIVE\_MUTEX     ( ( uint8\_t ) 4U )}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#if( configSUPPORT\_DYNAMIC\_ALLOCATION == 1 )}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{    \#define xQueueCreate( uxQueueLength, uxItemSize ) xQueueGenericCreate( ( uxQueueLength ), ( uxItemSize ), ( queueQUEUE\_TYPE\_BASE ) )}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#if( configSUPPORT\_STATIC\_ALLOCATION == 1 )}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{    \#define xQueueCreateStatic( uxQueueLength, uxItemSize, pucQueueStorage, pxQueueBuffer ) xQueueGenericCreateStatic( ( uxQueueLength ), ( uxItemSize ), ( pucQueueStorage ), ( pxQueueBuffer ), ( queueQUEUE\_TYPE\_BASE ) )}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* configSUPPORT\_STATIC\_ALLOCATION */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#define xQueueSendToFront( xQueue, pvItemToQueue, xTicksToWait ) xQueueGenericSend( ( xQueue ), ( pvItemToQueue ), ( xTicksToWait ), queueSEND\_TO\_FRONT )}}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define xQueueSendToBack( xQueue, pvItemToQueue, xTicksToWait ) xQueueGenericSend( ( xQueue ), ( pvItemToQueue ), ( xTicksToWait ), queueSEND\_TO\_BACK )}}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define xQueueSend( xQueue, pvItemToQueue, xTicksToWait ) xQueueGenericSend( ( xQueue ), ( pvItemToQueue ), ( xTicksToWait ), queueSEND\_TO\_BACK )}}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{561 \textcolor{preprocessor}{\#define xQueueOverwrite( xQueue, pvItemToQueue ) xQueueGenericSend( ( xQueue ), ( pvItemToQueue ), 0, queueOVERWRITE )}}
+\DoxyCodeLine{562 }
+\DoxyCodeLine{563 }
+\DoxyCodeLine{649 BaseType\_t xQueueGenericSend( QueueHandle\_t xQueue, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \textcolor{keyword}{const} pvItemToQueue, TickType\_t xTicksToWait, \textcolor{keyword}{const} BaseType\_t xCopyPosition ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{743 BaseType\_t xQueuePeek( QueueHandle\_t xQueue, \textcolor{keywordtype}{void} * \textcolor{keyword}{const} pvBuffer, TickType\_t xTicksToWait ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{744 }
+\DoxyCodeLine{776 BaseType\_t xQueuePeekFromISR( QueueHandle\_t xQueue, \textcolor{keywordtype}{void} * \textcolor{keyword}{const} pvBuffer ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{777 }
+\DoxyCodeLine{867 BaseType\_t xQueueReceive( QueueHandle\_t xQueue, \textcolor{keywordtype}{void} * \textcolor{keyword}{const} pvBuffer, TickType\_t xTicksToWait ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{868 }
+\DoxyCodeLine{882 UBaseType\_t uxQueueMessagesWaiting( \textcolor{keyword}{const} QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{883 }
+\DoxyCodeLine{899 UBaseType\_t uxQueueSpacesAvailable( \textcolor{keyword}{const} QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{900 }
+\DoxyCodeLine{913 \textcolor{keywordtype}{void} vQueueDelete( QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{914 }
+\DoxyCodeLine{983 \textcolor{preprocessor}{\#define xQueueSendToFrontFromISR( xQueue, pvItemToQueue, pxHigherPriorityTaskWoken ) xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueSEND\_TO\_FRONT )}}
+\DoxyCodeLine{984 }
+\DoxyCodeLine{985 }
+\DoxyCodeLine{1054 \textcolor{preprocessor}{\#define xQueueSendToBackFromISR( xQueue, pvItemToQueue, pxHigherPriorityTaskWoken ) xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueSEND\_TO\_BACK )}}
+\DoxyCodeLine{1055 }
+\DoxyCodeLine{1141 \textcolor{preprocessor}{\#define xQueueOverwriteFromISR( xQueue, pvItemToQueue, pxHigherPriorityTaskWoken ) xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )}}
+\DoxyCodeLine{1142 }
+\DoxyCodeLine{1215 \textcolor{preprocessor}{\#define xQueueSendFromISR( xQueue, pvItemToQueue, pxHigherPriorityTaskWoken ) xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueSEND\_TO\_BACK )}}
+\DoxyCodeLine{1216 }
+\DoxyCodeLine{1294 BaseType\_t xQueueGenericSendFromISR( QueueHandle\_t xQueue, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \textcolor{keyword}{const} pvItemToQueue, BaseType\_t * \textcolor{keyword}{const} pxHigherPriorityTaskWoken, \textcolor{keyword}{const} BaseType\_t xCopyPosition ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1295 BaseType\_t xQueueGiveFromISR( QueueHandle\_t xQueue, BaseType\_t * \textcolor{keyword}{const} pxHigherPriorityTaskWoken ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1296 }
+\DoxyCodeLine{1384 BaseType\_t xQueueReceiveFromISR( QueueHandle\_t xQueue, \textcolor{keywordtype}{void} * \textcolor{keyword}{const} pvBuffer, BaseType\_t * \textcolor{keyword}{const} pxHigherPriorityTaskWoken ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1385 }
+\DoxyCodeLine{1386 \textcolor{comment}{/*}}
+\DoxyCodeLine{1387 \textcolor{comment}{ * Utilities to query queues that are safe to use from an ISR.  These utilities}}
+\DoxyCodeLine{1388 \textcolor{comment}{ * should be used only from witin an ISR, or within a critical section.}}
+\DoxyCodeLine{1389 \textcolor{comment}{ */}}
+\DoxyCodeLine{1390 BaseType\_t xQueueIsQueueEmptyFromISR( \textcolor{keyword}{const} QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1391 BaseType\_t xQueueIsQueueFullFromISR( \textcolor{keyword}{const} QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1392 UBaseType\_t uxQueueMessagesWaitingFromISR( \textcolor{keyword}{const} QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1393 }
+\DoxyCodeLine{1394 \textcolor{comment}{/*}}
+\DoxyCodeLine{1395 \textcolor{comment}{ * The functions defined above are for passing data to and from tasks.  The}}
+\DoxyCodeLine{1396 \textcolor{comment}{ * functions below are the equivalents for passing data to and from}}
+\DoxyCodeLine{1397 \textcolor{comment}{ * co-\/routines.}}
+\DoxyCodeLine{1398 \textcolor{comment}{ *}}
+\DoxyCodeLine{1399 \textcolor{comment}{ * These functions are called from the co-\/routine macro implementation and}}
+\DoxyCodeLine{1400 \textcolor{comment}{ * should not be called directly from application code.  Instead use the macro}}
+\DoxyCodeLine{1401 \textcolor{comment}{ * wrappers defined within croutine.h.}}
+\DoxyCodeLine{1402 \textcolor{comment}{ */}}
+\DoxyCodeLine{1403 BaseType\_t xQueueCRSendFromISR( QueueHandle\_t xQueue, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *pvItemToQueue, BaseType\_t xCoRoutinePreviouslyWoken );}
+\DoxyCodeLine{1404 BaseType\_t xQueueCRReceiveFromISR( QueueHandle\_t xQueue, \textcolor{keywordtype}{void} *pvBuffer, BaseType\_t *pxTaskWoken );}
+\DoxyCodeLine{1405 BaseType\_t xQueueCRSend( QueueHandle\_t xQueue, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *pvItemToQueue, TickType\_t xTicksToWait );}
+\DoxyCodeLine{1406 BaseType\_t xQueueCRReceive( QueueHandle\_t xQueue, \textcolor{keywordtype}{void} *pvBuffer, TickType\_t xTicksToWait );}
+\DoxyCodeLine{1407 }
+\DoxyCodeLine{1408 \textcolor{comment}{/*}}
+\DoxyCodeLine{1409 \textcolor{comment}{ * For internal use only.  Use xSemaphoreCreateMutex(),}}
+\DoxyCodeLine{1410 \textcolor{comment}{ * xSemaphoreCreateCounting() or xSemaphoreGetMutexHolder() instead of calling}}
+\DoxyCodeLine{1411 \textcolor{comment}{ * these functions directly.}}
+\DoxyCodeLine{1412 \textcolor{comment}{ */}}
+\DoxyCodeLine{1413 QueueHandle\_t xQueueCreateMutex( \textcolor{keyword}{const} uint8\_t ucQueueType ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1414 QueueHandle\_t xQueueCreateMutexStatic( \textcolor{keyword}{const} uint8\_t ucQueueType, \mbox{\hyperlink{structx_s_t_a_t_i_c___q_u_e_u_e}{StaticQueue\_t}} *pxStaticQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1415 QueueHandle\_t xQueueCreateCountingSemaphore( \textcolor{keyword}{const} UBaseType\_t uxMaxCount, \textcolor{keyword}{const} UBaseType\_t uxInitialCount ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1416 QueueHandle\_t xQueueCreateCountingSemaphoreStatic( \textcolor{keyword}{const} UBaseType\_t uxMaxCount, \textcolor{keyword}{const} UBaseType\_t uxInitialCount, \mbox{\hyperlink{structx_s_t_a_t_i_c___q_u_e_u_e}{StaticQueue\_t}} *pxStaticQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1417 BaseType\_t xQueueSemaphoreTake( QueueHandle\_t xQueue, TickType\_t xTicksToWait ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1418 \textcolor{keywordtype}{void}* xQueueGetMutexHolder( QueueHandle\_t xSemaphore ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1419 \textcolor{keywordtype}{void}* xQueueGetMutexHolderFromISR( QueueHandle\_t xSemaphore ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1420 }
+\DoxyCodeLine{1421 \textcolor{comment}{/*}}
+\DoxyCodeLine{1422 \textcolor{comment}{ * For internal use only.  Use xSemaphoreTakeMutexRecursive() or}}
+\DoxyCodeLine{1423 \textcolor{comment}{ * xSemaphoreGiveMutexRecursive() instead of calling these functions directly.}}
+\DoxyCodeLine{1424 \textcolor{comment}{ */}}
+\DoxyCodeLine{1425 BaseType\_t xQueueTakeMutexRecursive( QueueHandle\_t xMutex, TickType\_t xTicksToWait ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1426 BaseType\_t xQueueGiveMutexRecursive( QueueHandle\_t pxMutex ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1427 }
+\DoxyCodeLine{1428 \textcolor{comment}{/*}}
+\DoxyCodeLine{1429 \textcolor{comment}{ * Reset a queue back to its original empty state.  The return value is now}}
+\DoxyCodeLine{1430 \textcolor{comment}{ * obsolete and is always set to pdPASS.}}
+\DoxyCodeLine{1431 \textcolor{comment}{ */}}
+\DoxyCodeLine{1432 \textcolor{preprocessor}{\#define xQueueReset( xQueue ) xQueueGenericReset( xQueue, pdFALSE )}}
+\DoxyCodeLine{1433 }
+\DoxyCodeLine{1434 \textcolor{comment}{/*}}
+\DoxyCodeLine{1435 \textcolor{comment}{ * The registry is provided as a means for kernel aware debuggers to}}
+\DoxyCodeLine{1436 \textcolor{comment}{ * locate queues, semaphores and mutexes.  Call vQueueAddToRegistry() add}}
+\DoxyCodeLine{1437 \textcolor{comment}{ * a queue, semaphore or mutex handle to the registry if you want the handle}}
+\DoxyCodeLine{1438 \textcolor{comment}{ * to be available to a kernel aware debugger.  If you are not using a kernel}}
+\DoxyCodeLine{1439 \textcolor{comment}{ * aware debugger then this function can be ignored.}}
+\DoxyCodeLine{1440 \textcolor{comment}{ *}}
+\DoxyCodeLine{1441 \textcolor{comment}{ * configQUEUE\_REGISTRY\_SIZE defines the maximum number of handles the}}
+\DoxyCodeLine{1442 \textcolor{comment}{ * registry can hold.  configQUEUE\_REGISTRY\_SIZE must be greater than 0}}
+\DoxyCodeLine{1443 \textcolor{comment}{ * within FreeRTOSConfig.h for the registry to be available.  Its value}}
+\DoxyCodeLine{1444 \textcolor{comment}{ * does not effect the number of queues, semaphores and mutexes that can be}}
+\DoxyCodeLine{1445 \textcolor{comment}{ * created -\/ just the number that the registry can hold.}}
+\DoxyCodeLine{1446 \textcolor{comment}{ *}}
+\DoxyCodeLine{1447 \textcolor{comment}{ * @param xQueue The handle of the queue being added to the registry.  This}}
+\DoxyCodeLine{1448 \textcolor{comment}{ * is the handle returned by a call to xQueueCreate().  Semaphore and mutex}}
+\DoxyCodeLine{1449 \textcolor{comment}{ * handles can also be passed in here.}}
+\DoxyCodeLine{1450 \textcolor{comment}{ *}}
+\DoxyCodeLine{1451 \textcolor{comment}{ * @param pcName The name to be associated with the handle.  This is the}}
+\DoxyCodeLine{1452 \textcolor{comment}{ * name that the kernel aware debugger will display.  The queue registry only}}
+\DoxyCodeLine{1453 \textcolor{comment}{ * stores a pointer to the string -\/ so the string must be persistent (global or}}
+\DoxyCodeLine{1454 \textcolor{comment}{ * preferably in ROM/Flash), not on the stack.}}
+\DoxyCodeLine{1455 \textcolor{comment}{ */}}
+\DoxyCodeLine{1456 \textcolor{preprocessor}{\#if( configQUEUE\_REGISTRY\_SIZE > 0 )}}
+\DoxyCodeLine{1457     \textcolor{keywordtype}{void} vQueueAddToRegistry( QueueHandle\_t xQueue, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pcName ) PRIVILEGED\_FUNCTION; \textcolor{comment}{/*lint !e971 Unqualified char types are allowed for strings and single characters only. */}}
+\DoxyCodeLine{1458 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1459 }
+\DoxyCodeLine{1460 \textcolor{comment}{/*}}
+\DoxyCodeLine{1461 \textcolor{comment}{ * The registry is provided as a means for kernel aware debuggers to}}
+\DoxyCodeLine{1462 \textcolor{comment}{ * locate queues, semaphores and mutexes.  Call vQueueAddToRegistry() add}}
+\DoxyCodeLine{1463 \textcolor{comment}{ * a queue, semaphore or mutex handle to the registry if you want the handle}}
+\DoxyCodeLine{1464 \textcolor{comment}{ * to be available to a kernel aware debugger, and vQueueUnregisterQueue() to}}
+\DoxyCodeLine{1465 \textcolor{comment}{ * remove the queue, semaphore or mutex from the register.  If you are not using}}
+\DoxyCodeLine{1466 \textcolor{comment}{ * a kernel aware debugger then this function can be ignored.}}
+\DoxyCodeLine{1467 \textcolor{comment}{ *}}
+\DoxyCodeLine{1468 \textcolor{comment}{ * @param xQueue The handle of the queue being removed from the registry.}}
+\DoxyCodeLine{1469 \textcolor{comment}{ */}}
+\DoxyCodeLine{1470 \textcolor{preprocessor}{\#if( configQUEUE\_REGISTRY\_SIZE > 0 )}}
+\DoxyCodeLine{1471     \textcolor{keywordtype}{void} vQueueUnregisterQueue( QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1472 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1473 }
+\DoxyCodeLine{1474 \textcolor{comment}{/*}}
+\DoxyCodeLine{1475 \textcolor{comment}{ * The queue registry is provided as a means for kernel aware debuggers to}}
+\DoxyCodeLine{1476 \textcolor{comment}{ * locate queues, semaphores and mutexes.  Call pcQueueGetName() to look}}
+\DoxyCodeLine{1477 \textcolor{comment}{ * up and return the name of a queue in the queue registry from the queue's}}
+\DoxyCodeLine{1478 \textcolor{comment}{ * handle.}}
+\DoxyCodeLine{1479 \textcolor{comment}{ *}}
+\DoxyCodeLine{1480 \textcolor{comment}{ * @param xQueue The handle of the queue the name of which will be returned.}}
+\DoxyCodeLine{1481 \textcolor{comment}{ * @return If the queue is in the registry then a pointer to the name of the}}
+\DoxyCodeLine{1482 \textcolor{comment}{ * queue is returned.  If the queue is not in the registry then NULL is}}
+\DoxyCodeLine{1483 \textcolor{comment}{ * returned.}}
+\DoxyCodeLine{1484 \textcolor{comment}{ */}}
+\DoxyCodeLine{1485 \textcolor{preprocessor}{\#if( configQUEUE\_REGISTRY\_SIZE > 0 )}}
+\DoxyCodeLine{1486     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pcQueueGetName( QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION; \textcolor{comment}{/*lint !e971 Unqualified char types are allowed for strings and single characters only. */}}
+\DoxyCodeLine{1487 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1488 }
+\DoxyCodeLine{1489 \textcolor{comment}{/*}}
+\DoxyCodeLine{1490 \textcolor{comment}{ * Generic version of the function used to creaet a queue using dynamic memory}}
+\DoxyCodeLine{1491 \textcolor{comment}{ * allocation.  This is called by other functions and macros that create other}}
+\DoxyCodeLine{1492 \textcolor{comment}{ * RTOS objects that use the queue structure as their base.}}
+\DoxyCodeLine{1493 \textcolor{comment}{ */}}
+\DoxyCodeLine{1494 \textcolor{preprocessor}{\#if( configSUPPORT\_DYNAMIC\_ALLOCATION == 1 )}}
+\DoxyCodeLine{1495     QueueHandle\_t xQueueGenericCreate( \textcolor{keyword}{const} UBaseType\_t uxQueueLength, \textcolor{keyword}{const} UBaseType\_t uxItemSize, \textcolor{keyword}{const} uint8\_t ucQueueType ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1496 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1497 }
+\DoxyCodeLine{1498 \textcolor{comment}{/*}}
+\DoxyCodeLine{1499 \textcolor{comment}{ * Generic version of the function used to creaet a queue using dynamic memory}}
+\DoxyCodeLine{1500 \textcolor{comment}{ * allocation.  This is called by other functions and macros that create other}}
+\DoxyCodeLine{1501 \textcolor{comment}{ * RTOS objects that use the queue structure as their base.}}
+\DoxyCodeLine{1502 \textcolor{comment}{ */}}
+\DoxyCodeLine{1503 \textcolor{preprocessor}{\#if( configSUPPORT\_STATIC\_ALLOCATION == 1 )}}
+\DoxyCodeLine{1504     QueueHandle\_t xQueueGenericCreateStatic( \textcolor{keyword}{const} UBaseType\_t uxQueueLength, \textcolor{keyword}{const} UBaseType\_t uxItemSize, uint8\_t *pucQueueStorage, \mbox{\hyperlink{structx_s_t_a_t_i_c___q_u_e_u_e}{StaticQueue\_t}} *pxStaticQueue, \textcolor{keyword}{const} uint8\_t ucQueueType ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1505 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1506 }
+\DoxyCodeLine{1507 \textcolor{comment}{/*}}
+\DoxyCodeLine{1508 \textcolor{comment}{ * Queue sets provide a mechanism to allow a task to block (pend) on a read}}
+\DoxyCodeLine{1509 \textcolor{comment}{ * operation from multiple queues or semaphores simultaneously.}}
+\DoxyCodeLine{1510 \textcolor{comment}{ *}}
+\DoxyCodeLine{1511 \textcolor{comment}{ * See FreeRTOS/Source/Demo/Common/Minimal/QueueSet.c for an example using this}}
+\DoxyCodeLine{1512 \textcolor{comment}{ * function.}}
+\DoxyCodeLine{1513 \textcolor{comment}{ *}}
+\DoxyCodeLine{1514 \textcolor{comment}{ * A queue set must be explicitly created using a call to xQueueCreateSet()}}
+\DoxyCodeLine{1515 \textcolor{comment}{ * before it can be used.  Once created, standard FreeRTOS queues and semaphores}}
+\DoxyCodeLine{1516 \textcolor{comment}{ * can be added to the set using calls to xQueueAddToSet().}}
+\DoxyCodeLine{1517 \textcolor{comment}{ * xQueueSelectFromSet() is then used to determine which, if any, of the queues}}
+\DoxyCodeLine{1518 \textcolor{comment}{ * or semaphores contained in the set is in a state where a queue read or}}
+\DoxyCodeLine{1519 \textcolor{comment}{ * semaphore take operation would be successful.}}
+\DoxyCodeLine{1520 \textcolor{comment}{ *}}
+\DoxyCodeLine{1521 \textcolor{comment}{ * Note 1:  See the documentation on http://wwwFreeRTOS.org/RTOS-\/queue-\/sets.html}}
+\DoxyCodeLine{1522 \textcolor{comment}{ * for reasons why queue sets are very rarely needed in practice as there are}}
+\DoxyCodeLine{1523 \textcolor{comment}{ * simpler methods of blocking on multiple objects.}}
+\DoxyCodeLine{1524 \textcolor{comment}{ *}}
+\DoxyCodeLine{1525 \textcolor{comment}{ * Note 2:  Blocking on a queue set that contains a mutex will not cause the}}
+\DoxyCodeLine{1526 \textcolor{comment}{ * mutex holder to inherit the priority of the blocked task.}}
+\DoxyCodeLine{1527 \textcolor{comment}{ *}}
+\DoxyCodeLine{1528 \textcolor{comment}{ * Note 3:  An additional 4 bytes of RAM is required for each space in a every}}
+\DoxyCodeLine{1529 \textcolor{comment}{ * queue added to a queue set.  Therefore counting semaphores that have a high}}
+\DoxyCodeLine{1530 \textcolor{comment}{ * maximum count value should not be added to a queue set.}}
+\DoxyCodeLine{1531 \textcolor{comment}{ *}}
+\DoxyCodeLine{1532 \textcolor{comment}{ * Note 4:  A receive (in the case of a queue) or take (in the case of a}}
+\DoxyCodeLine{1533 \textcolor{comment}{ * semaphore) operation must not be performed on a member of a queue set unless}}
+\DoxyCodeLine{1534 \textcolor{comment}{ * a call to xQueueSelectFromSet() has first returned a handle to that set member.}}
+\DoxyCodeLine{1535 \textcolor{comment}{ *}}
+\DoxyCodeLine{1536 \textcolor{comment}{ * @param uxEventQueueLength Queue sets store events that occur on}}
+\DoxyCodeLine{1537 \textcolor{comment}{ * the queues and semaphores contained in the set.  uxEventQueueLength specifies}}
+\DoxyCodeLine{1538 \textcolor{comment}{ * the maximum number of events that can be queued at once.  To be absolutely}}
+\DoxyCodeLine{1539 \textcolor{comment}{ * certain that events are not lost uxEventQueueLength should be set to the}}
+\DoxyCodeLine{1540 \textcolor{comment}{ * total sum of the length of the queues added to the set, where binary}}
+\DoxyCodeLine{1541 \textcolor{comment}{ * semaphores and mutexes have a length of 1, and counting semaphores have a}}
+\DoxyCodeLine{1542 \textcolor{comment}{ * length set by their maximum count value.  Examples:}}
+\DoxyCodeLine{1543 \textcolor{comment}{ *  + If a queue set is to hold a queue of length 5, another queue of length 12,}}
+\DoxyCodeLine{1544 \textcolor{comment}{ *    and a binary semaphore, then uxEventQueueLength should be set to}}
+\DoxyCodeLine{1545 \textcolor{comment}{ *    (5 + 12 + 1), or 18.}}
+\DoxyCodeLine{1546 \textcolor{comment}{ *  + If a queue set is to hold three binary semaphores then uxEventQueueLength}}
+\DoxyCodeLine{1547 \textcolor{comment}{ *    should be set to (1 + 1 + 1 ), or 3.}}
+\DoxyCodeLine{1548 \textcolor{comment}{ *  + If a queue set is to hold a counting semaphore that has a maximum count of}}
+\DoxyCodeLine{1549 \textcolor{comment}{ *    5, and a counting semaphore that has a maximum count of 3, then}}
+\DoxyCodeLine{1550 \textcolor{comment}{ *    uxEventQueueLength should be set to (5 + 3), or 8.}}
+\DoxyCodeLine{1551 \textcolor{comment}{ *}}
+\DoxyCodeLine{1552 \textcolor{comment}{ * @return If the queue set is created successfully then a handle to the created}}
+\DoxyCodeLine{1553 \textcolor{comment}{ * queue set is returned.  Otherwise NULL is returned.}}
+\DoxyCodeLine{1554 \textcolor{comment}{ */}}
+\DoxyCodeLine{1555 QueueSetHandle\_t xQueueCreateSet( \textcolor{keyword}{const} UBaseType\_t uxEventQueueLength ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1556 }
+\DoxyCodeLine{1557 \textcolor{comment}{/*}}
+\DoxyCodeLine{1558 \textcolor{comment}{ * Adds a queue or semaphore to a queue set that was previously created by a}}
+\DoxyCodeLine{1559 \textcolor{comment}{ * call to xQueueCreateSet().}}
+\DoxyCodeLine{1560 \textcolor{comment}{ *}}
+\DoxyCodeLine{1561 \textcolor{comment}{ * See FreeRTOS/Source/Demo/Common/Minimal/QueueSet.c for an example using this}}
+\DoxyCodeLine{1562 \textcolor{comment}{ * function.}}
+\DoxyCodeLine{1563 \textcolor{comment}{ *}}
+\DoxyCodeLine{1564 \textcolor{comment}{ * Note 1:  A receive (in the case of a queue) or take (in the case of a}}
+\DoxyCodeLine{1565 \textcolor{comment}{ * semaphore) operation must not be performed on a member of a queue set unless}}
+\DoxyCodeLine{1566 \textcolor{comment}{ * a call to xQueueSelectFromSet() has first returned a handle to that set member.}}
+\DoxyCodeLine{1567 \textcolor{comment}{ *}}
+\DoxyCodeLine{1568 \textcolor{comment}{ * @param xQueueOrSemaphore The handle of the queue or semaphore being added to}}
+\DoxyCodeLine{1569 \textcolor{comment}{ * the queue set (cast to an QueueSetMemberHandle\_t type).}}
+\DoxyCodeLine{1570 \textcolor{comment}{ *}}
+\DoxyCodeLine{1571 \textcolor{comment}{ * @param xQueueSet The handle of the queue set to which the queue or semaphore}}
+\DoxyCodeLine{1572 \textcolor{comment}{ * is being added.}}
+\DoxyCodeLine{1573 \textcolor{comment}{ *}}
+\DoxyCodeLine{1574 \textcolor{comment}{ * @return If the queue or semaphore was successfully added to the queue set}}
+\DoxyCodeLine{1575 \textcolor{comment}{ * then pdPASS is returned.  If the queue could not be successfully added to the}}
+\DoxyCodeLine{1576 \textcolor{comment}{ * queue set because it is already a member of a different queue set then pdFAIL}}
+\DoxyCodeLine{1577 \textcolor{comment}{ * is returned.}}
+\DoxyCodeLine{1578 \textcolor{comment}{ */}}
+\DoxyCodeLine{1579 BaseType\_t xQueueAddToSet( QueueSetMemberHandle\_t xQueueOrSemaphore, QueueSetHandle\_t xQueueSet ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1580 }
+\DoxyCodeLine{1581 \textcolor{comment}{/*}}
+\DoxyCodeLine{1582 \textcolor{comment}{ * Removes a queue or semaphore from a queue set.  A queue or semaphore can only}}
+\DoxyCodeLine{1583 \textcolor{comment}{ * be removed from a set if the queue or semaphore is empty.}}
+\DoxyCodeLine{1584 \textcolor{comment}{ *}}
+\DoxyCodeLine{1585 \textcolor{comment}{ * See FreeRTOS/Source/Demo/Common/Minimal/QueueSet.c for an example using this}}
+\DoxyCodeLine{1586 \textcolor{comment}{ * function.}}
+\DoxyCodeLine{1587 \textcolor{comment}{ *}}
+\DoxyCodeLine{1588 \textcolor{comment}{ * @param xQueueOrSemaphore The handle of the queue or semaphore being removed}}
+\DoxyCodeLine{1589 \textcolor{comment}{ * from the queue set (cast to an QueueSetMemberHandle\_t type).}}
+\DoxyCodeLine{1590 \textcolor{comment}{ *}}
+\DoxyCodeLine{1591 \textcolor{comment}{ * @param xQueueSet The handle of the queue set in which the queue or semaphore}}
+\DoxyCodeLine{1592 \textcolor{comment}{ * is included.}}
+\DoxyCodeLine{1593 \textcolor{comment}{ *}}
+\DoxyCodeLine{1594 \textcolor{comment}{ * @return If the queue or semaphore was successfully removed from the queue set}}
+\DoxyCodeLine{1595 \textcolor{comment}{ * then pdPASS is returned.  If the queue was not in the queue set, or the}}
+\DoxyCodeLine{1596 \textcolor{comment}{ * queue (or semaphore) was not empty, then pdFAIL is returned.}}
+\DoxyCodeLine{1597 \textcolor{comment}{ */}}
+\DoxyCodeLine{1598 BaseType\_t xQueueRemoveFromSet( QueueSetMemberHandle\_t xQueueOrSemaphore, QueueSetHandle\_t xQueueSet ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1599 }
+\DoxyCodeLine{1600 \textcolor{comment}{/*}}
+\DoxyCodeLine{1601 \textcolor{comment}{ * xQueueSelectFromSet() selects from the members of a queue set a queue or}}
+\DoxyCodeLine{1602 \textcolor{comment}{ * semaphore that either contains data (in the case of a queue) or is available}}
+\DoxyCodeLine{1603 \textcolor{comment}{ * to take (in the case of a semaphore).  xQueueSelectFromSet() effectively}}
+\DoxyCodeLine{1604 \textcolor{comment}{ * allows a task to block (pend) on a read operation on all the queues and}}
+\DoxyCodeLine{1605 \textcolor{comment}{ * semaphores in a queue set simultaneously.}}
+\DoxyCodeLine{1606 \textcolor{comment}{ *}}
+\DoxyCodeLine{1607 \textcolor{comment}{ * See FreeRTOS/Source/Demo/Common/Minimal/QueueSet.c for an example using this}}
+\DoxyCodeLine{1608 \textcolor{comment}{ * function.}}
+\DoxyCodeLine{1609 \textcolor{comment}{ *}}
+\DoxyCodeLine{1610 \textcolor{comment}{ * Note 1:  See the documentation on http://wwwFreeRTOS.org/RTOS-\/queue-\/sets.html}}
+\DoxyCodeLine{1611 \textcolor{comment}{ * for reasons why queue sets are very rarely needed in practice as there are}}
+\DoxyCodeLine{1612 \textcolor{comment}{ * simpler methods of blocking on multiple objects.}}
+\DoxyCodeLine{1613 \textcolor{comment}{ *}}
+\DoxyCodeLine{1614 \textcolor{comment}{ * Note 2:  Blocking on a queue set that contains a mutex will not cause the}}
+\DoxyCodeLine{1615 \textcolor{comment}{ * mutex holder to inherit the priority of the blocked task.}}
+\DoxyCodeLine{1616 \textcolor{comment}{ *}}
+\DoxyCodeLine{1617 \textcolor{comment}{ * Note 3:  A receive (in the case of a queue) or take (in the case of a}}
+\DoxyCodeLine{1618 \textcolor{comment}{ * semaphore) operation must not be performed on a member of a queue set unless}}
+\DoxyCodeLine{1619 \textcolor{comment}{ * a call to xQueueSelectFromSet() has first returned a handle to that set member.}}
+\DoxyCodeLine{1620 \textcolor{comment}{ *}}
+\DoxyCodeLine{1621 \textcolor{comment}{ * @param xQueueSet The queue set on which the task will (potentially) block.}}
+\DoxyCodeLine{1622 \textcolor{comment}{ *}}
+\DoxyCodeLine{1623 \textcolor{comment}{ * @param xTicksToWait The maximum time, in ticks, that the calling task will}}
+\DoxyCodeLine{1624 \textcolor{comment}{ * remain in the Blocked state (with other tasks executing) to wait for a member}}
+\DoxyCodeLine{1625 \textcolor{comment}{ * of the queue set to be ready for a successful queue read or semaphore take}}
+\DoxyCodeLine{1626 \textcolor{comment}{ * operation.}}
+\DoxyCodeLine{1627 \textcolor{comment}{ *}}
+\DoxyCodeLine{1628 \textcolor{comment}{ * @return xQueueSelectFromSet() will return the handle of a queue (cast to}}
+\DoxyCodeLine{1629 \textcolor{comment}{ * a QueueSetMemberHandle\_t type) contained in the queue set that contains data,}}
+\DoxyCodeLine{1630 \textcolor{comment}{ * or the handle of a semaphore (cast to a QueueSetMemberHandle\_t type) contained}}
+\DoxyCodeLine{1631 \textcolor{comment}{ * in the queue set that is available, or NULL if no such queue or semaphore}}
+\DoxyCodeLine{1632 \textcolor{comment}{ * exists before before the specified block time expires.}}
+\DoxyCodeLine{1633 \textcolor{comment}{ */}}
+\DoxyCodeLine{1634 QueueSetMemberHandle\_t xQueueSelectFromSet( QueueSetHandle\_t xQueueSet, \textcolor{keyword}{const} TickType\_t xTicksToWait ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1635 }
+\DoxyCodeLine{1636 \textcolor{comment}{/*}}
+\DoxyCodeLine{1637 \textcolor{comment}{ * A version of xQueueSelectFromSet() that can be used from an ISR.}}
+\DoxyCodeLine{1638 \textcolor{comment}{ */}}
+\DoxyCodeLine{1639 QueueSetMemberHandle\_t xQueueSelectFromSetFromISR( QueueSetHandle\_t xQueueSet ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1640 }
+\DoxyCodeLine{1641 \textcolor{comment}{/* Not public API functions. */}}
+\DoxyCodeLine{1642 \textcolor{keywordtype}{void} vQueueWaitForMessageRestricted( QueueHandle\_t xQueue, TickType\_t xTicksToWait, \textcolor{keyword}{const} BaseType\_t xWaitIndefinitely ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1643 BaseType\_t xQueueGenericReset( QueueHandle\_t xQueue, BaseType\_t xNewQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1644 \textcolor{keywordtype}{void} vQueueSetQueueNumber( QueueHandle\_t xQueue, UBaseType\_t uxQueueNumber ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1645 UBaseType\_t uxQueueGetQueueNumber( QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1646 uint8\_t ucQueueGetQueueType( QueueHandle\_t xQueue ) PRIVILEGED\_FUNCTION;}
+\DoxyCodeLine{1647 }
+\DoxyCodeLine{1648 }
+\DoxyCodeLine{1649 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1650 \}}
+\DoxyCodeLine{1651 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1652 }
+\DoxyCodeLine{1653 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* QUEUE\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1654 }
+
+\end{DoxyCode}
