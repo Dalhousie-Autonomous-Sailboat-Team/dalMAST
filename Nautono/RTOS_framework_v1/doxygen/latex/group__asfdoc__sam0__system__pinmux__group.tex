@@ -1,0 +1,264 @@
+\hypertarget{group__asfdoc__sam0__system__pinmux__group}{}\doxysection{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}
+\label{group__asfdoc__sam0__system__pinmux__group}\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsystem__pinmux__config}{system\+\_\+pinmux\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin configuration structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaf212e7bc2a29cb57ab7b1130e4404a6b}{SYSTEM\+\_\+\+PINMUX\+\_\+\+GPIO}}~(1 $<$$<$ 7)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaef5ed797ec6ce6e7f2ca4bafd3f77df2}{system\+\_\+pinmux\+\_\+pin\+\_\+dir}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae9eec757570dd8e703060cd249076f29}{SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+INPUT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ab20cb484d8d81cea0eccd85608636f8a}{SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae7f0fe12708b38583366e7f09c37f413}{SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT\+\_\+\+WITH\+\_\+\+READBACK}}
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin direction configuration enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga936e823e4b08dc981d39c273182eb1c6}{system\+\_\+pinmux\+\_\+pin\+\_\+pull}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a6de6c84525642ff68da72bc3dd5fad4b}{SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+NONE}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6ac9fa59589685abc00e18426750100e35}{SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+UP}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a0dec6136103bdccb64576c9bf431ae41}{SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+DOWN}}
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin input pull configuration enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}{system\+\_\+pinmux\+\_\+pin\+\_\+sample}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggac0c5f124b2d0deed3751156f20135994ac6a9b047d924787a9bd6df78eb92bf36}{SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+SAMPLE\+\_\+\+CONTINUOUS}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggac0c5f124b2d0deed3751156f20135994ad695b5c51ca3cb2a7c35bb32209325a2}{SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+SAMPLE\+\_\+\+ONDEMAND}}
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin digital input sampling mode enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Configuration and Initialization}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga4aff9a23bc1233d74847bcdee4494439}{system\+\_\+pinmux\+\_\+pin\+\_\+set\+\_\+config}} (const uint8\+\_\+t gpio\+\_\+pin, const struct \mbox{\hyperlink{structsystem__pinmux__config}{system\+\_\+pinmux\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a \mbox{\hyperlink{struct_port}{Port}} pin configuration to the hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga7f19e634e8c05c0a84cebaf36054d78e}{system\+\_\+pinmux\+\_\+group\+\_\+set\+\_\+config}} (\mbox{\hyperlink{struct_port_group}{Port\+Group}} $\ast$const port, const uint32\+\_\+t mask, const struct \mbox{\hyperlink{structsystem__pinmux__config}{system\+\_\+pinmux\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a \mbox{\hyperlink{struct_port}{Port}} pin group configuration to the hardware module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Special Mode Configuration (Physical Group Orientated)}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaf01f6297e4699bf54b3df70d29f72593}{system\+\_\+pinmux\+\_\+group\+\_\+set\+\_\+input\+\_\+sample\+\_\+mode}} (\mbox{\hyperlink{struct_port_group}{Port\+Group}} $\ast$const port, const uint32\+\_\+t mask, const enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}{system\+\_\+pinmux\+\_\+pin\+\_\+sample}} mode)
+\begin{DoxyCompactList}\small\item\em Configures the input sampling mode for a group of pins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of the device\textquotesingle{}s physical I/O Pins, to alter the direction and input/drive characteristics as well as to configure the pin peripheral multiplexer selection.
+
+The following peripheral is used by this module\+:
+\begin{DoxyItemize}
+\item PORT (\mbox{\hyperlink{struct_port}{Port}} I/O Management)
+\end{DoxyItemize}
+
+The following devices can use this module\+:
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D09/\+D10/\+D11
+\item Atmel $\vert$ SMART SAM L21/\+L22
+\item Atmel $\vert$ SMART SAM DA1
+\item Atmel $\vert$ SMART SAM C20/\+C21
+\item Atmel $\vert$ SMART SAM HA1
+\item Atmel $\vert$ SMART SAM R30
+\item Atmel $\vert$ SMART SAM R34
+\item Atmel $\vert$ SMART SAM R35
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_module_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_extra_info}{Extra Information}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_prerequisites}
+There are no prerequisites for this module.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_module_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_module_overview}
+The SAM devices contain a number of General Purpose I/O pins, used to interface the user application logic and internal hardware peripherals to an external system. The Pin Multiplexer (PINMUX) driver provides a method of configuring the individual pin peripheral multiplexers to select alternate pin functions.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_features}{}\doxysubsubsection{Driver Feature Macro Definition}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_features}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endhead
+FEATURE\+\_\+\+SYSTEM\+\_\+\+PINMUX\+\_\+\+DRIVE\+\_\+\+STRENGTH &SAM L21, SAM C20/\+C21, SAM R34/\+R35  \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+The specific features are only available in the driver when the selected device supports those features.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_physical_logical_pins}{}\doxysubsubsection{Physical and Logical GPIO Pins}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_physical_logical_pins}
+SAM devices use two naming conventions for the I/O pins in the device; one physical and one logical. Each physical pin on a device package is assigned both a physical port and pin identifier (e.\+g. \char`\"{}\+PORTA.\+0\char`\"{}) as well as a monotonically incrementing logical GPIO number (e.\+g. \char`\"{}\+GPIO0\char`\"{}). While the former is used to map physical pins to their physical internal device module counterparts, for simplicity the design of this driver uses the logical GPIO numbers instead.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_peripheral_muxing}{}\doxysubsubsection{Peripheral Multiplexing}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_peripheral_muxing}
+SAM devices contain a peripheral MUX, which is individually controllable for each I/O pin of the device. The peripheral MUX allows you to select the function of a physical package pin -\/ whether it will be controlled as a user controllable GPIO pin, or whether it will be connected internally to one of several peripheral modules (such as an I\textsuperscript{2}C module). When a pin is configured in GPIO mode, other peripherals connected to the same pin will be disabled.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_pad_characteristics}{}\doxysubsubsection{Special Pad Characteristics}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_pad_characteristics}
+There are several special modes that can be selected on one or more I/O pins of the device, which alter the input and output characteristics of the pad.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_drive_strength}{}\doxyparagraph{Drive Strength}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_drive_strength}
+The Drive Strength configures the strength of the output driver on the pad. Normally, there is a fixed current limit that each I/O pin can safely drive, however some I/O pads offer a higher drive mode which increases this limit for that I/O pin at the expense of an increased power consumption.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_slew_rate}{}\doxyparagraph{Slew Rate}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_slew_rate}
+The Slew Rate configures the slew rate of the output driver, limiting the rate at which the pad output voltage can change with time.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_input_sample_mode}{}\doxyparagraph{Input Sample Mode}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_input_sample_mode}
+The Input Sample Mode configures the input sampler buffer of the pad. By default, the input buffer is only sampled \char`\"{}on-\/demand\char`\"{}, i.\+e. when the user application attempts to read from the input buffer. This mode is the most power efficient, but increases the latency of the input sample by two clock cycles of the port clock. To reduce latency, the input sampler can instead be configured to always sample the input buffer on each port clock cycle, at the expense of an increased power consumption.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_module_overview_physical}{}\doxysubsubsection{Physical Connection}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_module_overview_physical}
+\mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_intconnections}{The diagram below}} shows how this module is interconnected within the device\+:
+
+\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_intconnections}%
+\Hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_intconnections}%
+\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_special_considerations}{}\doxysubsection{Special Considerations}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_special_considerations}
+The SAM port pin input sampling mode is set in groups of four physical pins; setting the sampling mode of any pin in a sub-\/group of eight I/O pins will configure the sampling mode of the entire sub-\/group.
+
+High Drive Strength output driver mode is not available on all device pins -\/ refer to your device specific datasheet.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_extra_info}{}\doxysubsection{Extra Information}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_extra_info}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_system_pinmux_extra}{Extra Information for SYSTEM PINMUX Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_system_pinmux_extra_asfdoc_sam0_system_pinmux_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_system_pinmux_extra_asfdoc_sam0_system_pinmux_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_system_pinmux_extra_asfdoc_sam0_system_pinmux_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_system_pinmux_extra_asfdoc_sam0_system_pinmux_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_examples}{}\doxysubsection{Examples}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_system_pinmux_exqsg}{Examples for SYSTEM PINMUX Driver}}.\hypertarget{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__sam0__system__pinmux__group_asfdoc_sam0_system_pinmux_api_overview}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_gaf212e7bc2a29cb57ab7b1130e4404a6b}\label{group__asfdoc__sam0__system__pinmux__group_gaf212e7bc2a29cb57ab7b1130e4404a6b}} 
+\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!SYSTEM\_PINMUX\_GPIO@{SYSTEM\_PINMUX\_GPIO}}
+\index{SYSTEM\_PINMUX\_GPIO@{SYSTEM\_PINMUX\_GPIO}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_PINMUX\_GPIO}{SYSTEM\_PINMUX\_GPIO}}
+{\footnotesize\ttfamily \#define SYSTEM\+\_\+\+PINMUX\+\_\+\+GPIO~(1 $<$$<$ 7)}
+
+Peripheral multiplexer index to select GPIO mode for a pin 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_gaef5ed797ec6ce6e7f2ca4bafd3f77df2}\label{group__asfdoc__sam0__system__pinmux__group_gaef5ed797ec6ce6e7f2ca4bafd3f77df2}} 
+\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!system\_pinmux\_pin\_dir@{system\_pinmux\_pin\_dir}}
+\index{system\_pinmux\_pin\_dir@{system\_pinmux\_pin\_dir}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_pinmux\_pin\_dir}{system\_pinmux\_pin\_dir}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaef5ed797ec6ce6e7f2ca4bafd3f77df2}{system\+\_\+pinmux\+\_\+pin\+\_\+dir}}}
+
+
+
+\mbox{\hyperlink{struct_port}{Port}} pin direction configuration enum. 
+
+Enum for the possible pin direction settings of the port pin configuration structure, to indicate the direction the pin should use. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_PINMUX\_PIN\_DIR\_INPUT@{SYSTEM\_PINMUX\_PIN\_DIR\_INPUT}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!SYSTEM\_PINMUX\_PIN\_DIR\_INPUT@{SYSTEM\_PINMUX\_PIN\_DIR\_INPUT}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae9eec757570dd8e703060cd249076f29}\label{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae9eec757570dd8e703060cd249076f29}} 
+SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+INPUT&The pin\textquotesingle{}s input buffer should be enabled, so that the pin state can be read \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT@{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT@{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ab20cb484d8d81cea0eccd85608636f8a}\label{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ab20cb484d8d81cea0eccd85608636f8a}} 
+SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT&The pin\textquotesingle{}s output buffer should be enabled, so that the pin state can be set (but not read back) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT\_WITH\_READBACK@{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT\_WITH\_READBACK}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT\_WITH\_READBACK@{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT\_WITH\_READBACK}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae7f0fe12708b38583366e7f09c37f413}\label{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae7f0fe12708b38583366e7f09c37f413}} 
+SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT\+\_\+\+WITH\+\_\+\+READBACK&The pin\textquotesingle{}s output and input buffers should both be enabled, so that the pin state can be set and read back \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_ga936e823e4b08dc981d39c273182eb1c6}\label{group__asfdoc__sam0__system__pinmux__group_ga936e823e4b08dc981d39c273182eb1c6}} 
+\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!system\_pinmux\_pin\_pull@{system\_pinmux\_pin\_pull}}
+\index{system\_pinmux\_pin\_pull@{system\_pinmux\_pin\_pull}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_pinmux\_pin\_pull}{system\_pinmux\_pin\_pull}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga936e823e4b08dc981d39c273182eb1c6}{system\+\_\+pinmux\+\_\+pin\+\_\+pull}}}
+
+
+
+\mbox{\hyperlink{struct_port}{Port}} pin input pull configuration enum. 
+
+Enum for the possible pin pull settings of the port pin configuration structure, to indicate the type of logic level pull the pin should use. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_PINMUX\_PIN\_PULL\_NONE@{SYSTEM\_PINMUX\_PIN\_PULL\_NONE}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!SYSTEM\_PINMUX\_PIN\_PULL\_NONE@{SYSTEM\_PINMUX\_PIN\_PULL\_NONE}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a6de6c84525642ff68da72bc3dd5fad4b}\label{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a6de6c84525642ff68da72bc3dd5fad4b}} 
+SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+NONE&No logical pull should be applied to the pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_PINMUX\_PIN\_PULL\_UP@{SYSTEM\_PINMUX\_PIN\_PULL\_UP}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!SYSTEM\_PINMUX\_PIN\_PULL\_UP@{SYSTEM\_PINMUX\_PIN\_PULL\_UP}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6ac9fa59589685abc00e18426750100e35}\label{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6ac9fa59589685abc00e18426750100e35}} 
+SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+UP&Pin should be pulled up when idle \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_PINMUX\_PIN\_PULL\_DOWN@{SYSTEM\_PINMUX\_PIN\_PULL\_DOWN}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!SYSTEM\_PINMUX\_PIN\_PULL\_DOWN@{SYSTEM\_PINMUX\_PIN\_PULL\_DOWN}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a0dec6136103bdccb64576c9bf431ae41}\label{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a0dec6136103bdccb64576c9bf431ae41}} 
+SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+DOWN&Pin should be pulled down when idle \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}\label{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}} 
+\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!system\_pinmux\_pin\_sample@{system\_pinmux\_pin\_sample}}
+\index{system\_pinmux\_pin\_sample@{system\_pinmux\_pin\_sample}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_pinmux\_pin\_sample}{system\_pinmux\_pin\_sample}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}{system\+\_\+pinmux\+\_\+pin\+\_\+sample}}}
+
+
+
+\mbox{\hyperlink{struct_port}{Port}} pin digital input sampling mode enum. 
+
+Enum for the possible input sampling modes for the port pin configuration structure, to indicate the type of sampling a port pin should use. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_PINMUX\_PIN\_SAMPLE\_CONTINUOUS@{SYSTEM\_PINMUX\_PIN\_SAMPLE\_CONTINUOUS}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!SYSTEM\_PINMUX\_PIN\_SAMPLE\_CONTINUOUS@{SYSTEM\_PINMUX\_PIN\_SAMPLE\_CONTINUOUS}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_ggac0c5f124b2d0deed3751156f20135994ac6a9b047d924787a9bd6df78eb92bf36}\label{group__asfdoc__sam0__system__pinmux__group_ggac0c5f124b2d0deed3751156f20135994ac6a9b047d924787a9bd6df78eb92bf36}} 
+SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+SAMPLE\+\_\+\+CONTINUOUS&Pin input buffer should continuously sample the pin state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_PINMUX\_PIN\_SAMPLE\_ONDEMAND@{SYSTEM\_PINMUX\_PIN\_SAMPLE\_ONDEMAND}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!SYSTEM\_PINMUX\_PIN\_SAMPLE\_ONDEMAND@{SYSTEM\_PINMUX\_PIN\_SAMPLE\_ONDEMAND}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_ggac0c5f124b2d0deed3751156f20135994ad695b5c51ca3cb2a7c35bb32209325a2}\label{group__asfdoc__sam0__system__pinmux__group_ggac0c5f124b2d0deed3751156f20135994ad695b5c51ca3cb2a7c35bb32209325a2}} 
+SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+SAMPLE\+\_\+\+ONDEMAND&Pin input buffer should be enabled when the IN register is read \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_ga7f19e634e8c05c0a84cebaf36054d78e}\label{group__asfdoc__sam0__system__pinmux__group_ga7f19e634e8c05c0a84cebaf36054d78e}} 
+\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!system\_pinmux\_group\_set\_config@{system\_pinmux\_group\_set\_config}}
+\index{system\_pinmux\_group\_set\_config@{system\_pinmux\_group\_set\_config}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_pinmux\_group\_set\_config()}{system\_pinmux\_group\_set\_config()}}
+{\footnotesize\ttfamily void system\+\_\+pinmux\+\_\+group\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_port_group}{Port\+Group}} $\ast$const}]{port,  }\item[{const uint32\+\_\+t}]{mask,  }\item[{const struct \mbox{\hyperlink{structsystem__pinmux__config}{system\+\_\+pinmux\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Writes a \mbox{\hyperlink{struct_port}{Port}} pin group configuration to the hardware module. 
+
+Writes out a given configuration of a \mbox{\hyperlink{struct_port}{Port}} pin group configuration to the hardware module.
+
+\begin{DoxyNote}{Note}
+If the pin direction is set as an output, the pull-\/up/pull-\/down input configuration setting is ignored.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em port} & Base of the PORT module to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Mask of the port pin(s) to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Configuration settings for the pin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_gaf01f6297e4699bf54b3df70d29f72593}\label{group__asfdoc__sam0__system__pinmux__group_gaf01f6297e4699bf54b3df70d29f72593}} 
+\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!system\_pinmux\_group\_set\_input\_sample\_mode@{system\_pinmux\_group\_set\_input\_sample\_mode}}
+\index{system\_pinmux\_group\_set\_input\_sample\_mode@{system\_pinmux\_group\_set\_input\_sample\_mode}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_pinmux\_group\_set\_input\_sample\_mode()}{system\_pinmux\_group\_set\_input\_sample\_mode()}}
+{\footnotesize\ttfamily void system\+\_\+pinmux\+\_\+group\+\_\+set\+\_\+input\+\_\+sample\+\_\+mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_port_group}{Port\+Group}} $\ast$const}]{port,  }\item[{const uint32\+\_\+t}]{mask,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}{system\+\_\+pinmux\+\_\+pin\+\_\+sample}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Configures the input sampling mode for a group of pins. 
+
+Configures the input sampling mode for a group of pins, to control when the physical I/O pin value is sampled and stored inside the microcontroller.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em port} & Base of the PORT module to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Mask of the port pin(s) to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em mode} & New pin sampling mode to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__pinmux__group_ga4aff9a23bc1233d74847bcdee4494439}\label{group__asfdoc__sam0__system__pinmux__group_ga4aff9a23bc1233d74847bcdee4494439}} 
+\index{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}!system\_pinmux\_pin\_set\_config@{system\_pinmux\_pin\_set\_config}}
+\index{system\_pinmux\_pin\_set\_config@{system\_pinmux\_pin\_set\_config}!SAM System Pin Multiplexer (SYSTEM PINMUX) Driver@{SAM System Pin Multiplexer (SYSTEM PINMUX) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_pinmux\_pin\_set\_config()}{system\_pinmux\_pin\_set\_config()}}
+{\footnotesize\ttfamily void system\+\_\+pinmux\+\_\+pin\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{gpio\+\_\+pin,  }\item[{const struct \mbox{\hyperlink{structsystem__pinmux__config}{system\+\_\+pinmux\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Writes a \mbox{\hyperlink{struct_port}{Port}} pin configuration to the hardware module. 
+
+Writes out a given configuration of a \mbox{\hyperlink{struct_port}{Port}} pin configuration to the hardware module.
+
+\begin{DoxyNote}{Note}
+If the pin direction is set as an output, the pull-\/up/pull-\/down input configuration setting is ignored.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio\+\_\+pin} & Index of the GPIO pin to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Configuration settings for the pin \\
+\hline
+\end{DoxyParams}

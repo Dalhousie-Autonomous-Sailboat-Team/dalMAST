@@ -1,0 +1,258 @@
+\hypertarget{board_8h}{}\doxysection{src/\+ASF/common/boards/board.h File Reference}
+\label{board_8h}\index{src/ASF/common/boards/board.h@{src/ASF/common/boards/board.h}}
+
+
+Standard board header file.  
+
+
+{\ttfamily \#include \char`\"{}compiler.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{Indent}\textbf{ Base Boards}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EVK1100}~1
+\begin{DoxyCompactList}\small\item\em AT32\+UC3A EVK1100 board. \end{DoxyCompactList}\item 
+\#define {\bfseries EVK1101}~2
+\begin{DoxyCompactList}\small\item\em AT32\+UC3B EVK1101 board. \end{DoxyCompactList}\item 
+\#define {\bfseries UC3\+C\+\_\+\+EK}~3
+\begin{DoxyCompactList}\small\item\em AT32\+UC3C UC3\+C-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries EVK1104}~4
+\begin{DoxyCompactList}\small\item\em AT32\+UC3\+A3 EVK1104 board. \end{DoxyCompactList}\item 
+\#define {\bfseries EVK1105}~5
+\begin{DoxyCompactList}\small\item\em AT32\+UC3A EVK1105 board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RCUC3\+L0}~6
+\begin{DoxyCompactList}\small\item\em STK600 RCUC3\+L0 board. \end{DoxyCompactList}\item 
+\#define {\bfseries UC3\+L\+\_\+\+EK}~7
+\begin{DoxyCompactList}\small\item\em AT32\+UC3\+L-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries XPLAIN}~8
+\begin{DoxyCompactList}\small\item\em ATxmega128\+A1 Xplain board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RC064X}~10
+\begin{DoxyCompactList}\small\item\em ATxmega256\+A3 STK600 board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RC100X}~11
+\begin{DoxyCompactList}\small\item\em ATxmega128\+A1 STK600 board. \end{DoxyCompactList}\item 
+\#define {\bfseries UC3\+\_\+\+A3\+\_\+\+XPLAINED}~13
+\begin{DoxyCompactList}\small\item\em ATUC3\+A3 UC3-\/\+A3 Xplained board. \end{DoxyCompactList}\item 
+\#define {\bfseries UC3\+\_\+\+L0\+\_\+\+XPLAINED}~15
+\begin{DoxyCompactList}\small\item\em ATUC3\+L0 UC3-\/\+L0 Xplained board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RCUC3D}~16
+\begin{DoxyCompactList}\small\item\em STK600 RCUC3D board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RCUC3\+C0}~17
+\begin{DoxyCompactList}\small\item\em STK600 RCUC3C board. \end{DoxyCompactList}\item 
+\#define {\bfseries XMEGA\+\_\+\+B1\+\_\+\+XPLAINED}~18
+\begin{DoxyCompactList}\small\item\em ATxmega128\+B1 Xplained board. \end{DoxyCompactList}\item 
+\#define {\bfseries XMEGA\+\_\+\+A1\+\_\+\+XPLAINED}~19
+\begin{DoxyCompactList}\small\item\em ATxmega128\+A1 Xplain-\/\+A1 board. \end{DoxyCompactList}\item 
+\#define {\bfseries XMEGA\+\_\+\+A1\+U\+\_\+\+XPLAINED\+\_\+\+PRO}~20
+\begin{DoxyCompactList}\small\item\em ATxmega128\+A1U XMEGA-\/\+A1U Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RCUC3\+L4}~21
+\begin{DoxyCompactList}\small\item\em ATUCL4 STK600 board. \end{DoxyCompactList}\item 
+\#define {\bfseries UC3\+\_\+\+L0\+\_\+\+XPLAINED\+\_\+\+BC}~22
+\begin{DoxyCompactList}\small\item\em ATUC3\+L0 UC3-\/\+L0 Xplained board controller board. \end{DoxyCompactList}\item 
+\#define {\bfseries MEGA1284\+P\+\_\+\+XPLAINED\+\_\+\+BC}~23
+\begin{DoxyCompactList}\small\item\em ATmega1284\+P-\/\+Xplained board controller board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RC044X}~24
+\begin{DoxyCompactList}\small\item\em STK600 with RC044X routing card board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RCUC3\+B0}~25
+\begin{DoxyCompactList}\small\item\em STK600 RCUC3\+B0 board. \end{DoxyCompactList}\item 
+\#define {\bfseries UC3\+\_\+\+L0\+\_\+\+QT600}~26
+\begin{DoxyCompactList}\small\item\em QT600 UC3\+L0 MCU board. \end{DoxyCompactList}\item 
+\#define {\bfseries XMEGA\+\_\+\+A3\+BU\+\_\+\+XPLAINED}~27
+\begin{DoxyCompactList}\small\item\em ATxmega256\+A3\+BU Xplained board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RC064\+X\+\_\+\+LCDX}~28
+\begin{DoxyCompactList}\small\item\em XMEGAB3 STK600 RC064X LCDX board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RC100\+X\+\_\+\+LCDX}~29
+\begin{DoxyCompactList}\small\item\em XMEGAB1 STK600 RC100X LCDX board. \end{DoxyCompactList}\item 
+\#define {\bfseries UC3\+B\+\_\+\+BOARD\+\_\+\+CONTROLLER}~30
+\begin{DoxyCompactList}\small\item\em AT32\+UC3\+B1 board controller for Atmel boards. \end{DoxyCompactList}\item 
+\#define {\bfseries RZ600}~31
+\begin{DoxyCompactList}\small\item\em AT32\+UC3A RZ600 MCU board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM3\+S\+\_\+\+EK}~32
+\begin{DoxyCompactList}\small\item\em SAM3\+S-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM3\+U\+\_\+\+EK}~33
+\begin{DoxyCompactList}\small\item\em SAM3\+U-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM3\+X\+\_\+\+EK}~34
+\begin{DoxyCompactList}\small\item\em SAM3\+X-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM3\+N\+\_\+\+EK}~35
+\begin{DoxyCompactList}\small\item\em SAM3\+N-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM3\+S\+\_\+\+EK2}~36
+\begin{DoxyCompactList}\small\item\em SAM3\+S-\/\+EK2 board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+S\+\_\+\+EK}~37
+\begin{DoxyCompactList}\small\item\em SAM4\+S-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RCUC3\+A0}~38
+\begin{DoxyCompactList}\small\item\em STK600 RCUC3\+A0 board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+MEGA}~39
+\begin{DoxyCompactList}\small\item\em STK600 MEGA board. \end{DoxyCompactList}\item 
+\#define {\bfseries MEGA\+\_\+1284\+P\+\_\+\+XPLAINED}~40
+\begin{DoxyCompactList}\small\item\em ATmega1284P Xplained board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+S\+\_\+\+XPLAINED}~41
+\begin{DoxyCompactList}\small\item\em SAM4S Xplained board. \end{DoxyCompactList}\item 
+\#define {\bfseries ATXMEGA128\+A1\+\_\+\+QT600}~42
+\begin{DoxyCompactList}\small\item\em QT600 ATXMEGA128\+A1 MCU board. \end{DoxyCompactList}\item 
+\#define {\bfseries ARDUINO\+\_\+\+DUE\+\_\+X}~43
+\begin{DoxyCompactList}\small\item\em Arduino Due/X board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RCUC3\+L3}~44
+\begin{DoxyCompactList}\small\item\em ATUCL3 STK600 board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+L\+\_\+\+EK}~45
+\begin{DoxyCompactList}\small\item\em SAM4\+L-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+MEGA\+\_\+\+RF}~46
+\begin{DoxyCompactList}\small\item\em STK600 MEGA RF EVK board. \end{DoxyCompactList}\item 
+\#define {\bfseries XMEGA\+\_\+\+C3\+\_\+\+XPLAINED}~47
+\begin{DoxyCompactList}\small\item\em ATxmega384\+C3 Xplained board. \end{DoxyCompactList}\item 
+\#define {\bfseries STK600\+\_\+\+RC032X}~48
+\begin{DoxyCompactList}\small\item\em STK600 with RC032X routing card board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+S\+\_\+\+EK2}~49
+\begin{DoxyCompactList}\small\item\em SAM4\+S-\/\+EK2 board. \end{DoxyCompactList}\item 
+\#define {\bfseries XMEGA\+\_\+\+E5\+\_\+\+XPLAINED}~50
+\begin{DoxyCompactList}\small\item\em ATxmega32\+E5 Xplained board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+E\+\_\+\+EK}~51
+\begin{DoxyCompactList}\small\item\em SAM4\+E-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries ATMEGA256\+RFR2\+\_\+\+XPLAINED\+\_\+\+PRO}~52
+\begin{DoxyCompactList}\small\item\em ATmega256\+RFR2 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+S\+\_\+\+XPLAINED\+\_\+\+PRO}~53
+\begin{DoxyCompactList}\small\item\em SAM4S Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+L\+\_\+\+XPLAINED\+\_\+\+PRO}~54
+\begin{DoxyCompactList}\small\item\em SAM4L Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries ATMEGA256\+RFR2\+\_\+\+ZIGBIT}~55
+\begin{DoxyCompactList}\small\item\em ATmega256\+RFR2 zigbit. \end{DoxyCompactList}\item 
+\#define {\bfseries XMEGA\+\_\+\+RF233\+\_\+\+ZIGBIT}~56
+\begin{DoxyCompactList}\small\item\em ATxmega256\+A3U with AT86\+RF233 Zigbit. \end{DoxyCompactList}\item 
+\#define {\bfseries XMEGA\+\_\+\+RF212\+B\+\_\+\+ZIGBIT}~57
+\begin{DoxyCompactList}\small\item\em ATxmega256\+A3U with AT86\+RF212B Zigbit. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+S\+\_\+\+WPIR\+\_\+\+RD}~58
+\begin{DoxyCompactList}\small\item\em SAM4\+S-\/\+WPIR-\/\+RD board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMD20\+\_\+\+XPLAINED\+\_\+\+PRO}~59
+\begin{DoxyCompactList}\small\item\em SAM D20 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+L8\+\_\+\+XPLAINED\+\_\+\+PRO}~60
+\begin{DoxyCompactList}\small\item\em SAM4\+L8 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+N\+\_\+\+XPLAINED\+\_\+\+PRO}~61
+\begin{DoxyCompactList}\small\item\em SAM4N Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries XMEGA\+\_\+\+A3\+\_\+\+REB\+\_\+\+CBB}~62
+\begin{DoxyCompactList}\small\item\em XMEGA REB Controller Base board. \end{DoxyCompactList}\item 
+\#define {\bfseries ATMEGARFX\+\_\+\+RCB}~63
+\begin{DoxyCompactList}\small\item\em RFR2 \& RFA1 RCB. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+C\+\_\+\+EK}~64
+\begin{DoxyCompactList}\small\item\em SAM4\+C-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries RCB256\+RFR2\+\_\+\+XPRO}~65
+\begin{DoxyCompactList}\small\item\em RFR2 RCB Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMG53\+\_\+\+XPLAINED\+\_\+\+PRO}~66
+\begin{DoxyCompactList}\small\item\em SAMG53 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+CP16\+BMB}~67
+\begin{DoxyCompactList}\small\item\em SAM4\+CP16\+BMB board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+E\+\_\+\+XPLAINED\+\_\+\+PRO}~68
+\begin{DoxyCompactList}\small\item\em SAM4E Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMD21\+\_\+\+XPLAINED\+\_\+\+PRO}~69
+\begin{DoxyCompactList}\small\item\em SAM D21 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMR21\+\_\+\+XPLAINED\+\_\+\+PRO}~70
+\begin{DoxyCompactList}\small\item\em SAM R21 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+CMP\+\_\+\+DB}~71
+\begin{DoxyCompactList}\small\item\em SAM4\+CMP demo board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAM4\+CMS\+\_\+\+DB}~72
+\begin{DoxyCompactList}\small\item\em SAM4\+CMS demo board. \end{DoxyCompactList}\item 
+\#define {\bfseries ATPL230\+AMB}~73
+\begin{DoxyCompactList}\small\item\em ATPL230\+AMB board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMD11\+\_\+\+XPLAINED\+\_\+\+PRO}~74
+\begin{DoxyCompactList}\small\item\em SAM D11 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMG55\+\_\+\+XPLAINED\+\_\+\+PRO}~75
+\begin{DoxyCompactList}\small\item\em SAMG55 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAML21\+\_\+\+XPLAINED\+\_\+\+PRO}~76
+\begin{DoxyCompactList}\small\item\em SAM L21 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMD10\+\_\+\+XPLAINED\+\_\+\+MINI}~77
+\begin{DoxyCompactList}\small\item\em SAM D10 Xplained Mini board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMDA1\+\_\+\+XPLAINED\+\_\+\+PRO}~78
+\begin{DoxyCompactList}\small\item\em SAM DA1 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMW25\+\_\+\+XPLAINED\+\_\+\+PRO}~79
+\begin{DoxyCompactList}\small\item\em SAMW25 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMC21\+\_\+\+XPLAINED\+\_\+\+PRO}~80
+\begin{DoxyCompactList}\small\item\em SAM C21 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMV71\+\_\+\+XPLAINED\+\_\+\+ULTRA}~81
+\begin{DoxyCompactList}\small\item\em SAMV71 Xplained Ultra board. \end{DoxyCompactList}\item 
+\#define {\bfseries ATMEGA328\+P\+\_\+\+XPLAINED\+\_\+\+MINI}~82
+\begin{DoxyCompactList}\small\item\em ATMEGA328P Xplained MINI board. \end{DoxyCompactList}\item 
+\#define {\bfseries ATMEGA328\+PB\+\_\+\+XPLAINED\+\_\+\+MINI}~83
+\begin{DoxyCompactList}\small\item\em ATMEGA328\+PB Xplained MINI board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMB11\+\_\+\+XPLAINED\+\_\+\+PRO}~84
+\begin{DoxyCompactList}\small\item\em SAM B11 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAME70\+\_\+\+XPLAINED}~85
+\begin{DoxyCompactList}\small\item\em SAME70 Xplained board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAML22\+\_\+\+XPLAINED\+\_\+\+PRO}~86
+\begin{DoxyCompactList}\small\item\em SAM L22 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAML22\+\_\+\+XPLAINED\+\_\+\+PRO\+\_\+B}~87
+\begin{DoxyCompactList}\small\item\em SAM L22 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMR21\+ZLL\+\_\+\+EK}~88
+\begin{DoxyCompactList}\small\item\em SAMR21\+ZLL-\/\+EK board. \end{DoxyCompactList}\item 
+\#define {\bfseries ATMEGA168\+PB\+\_\+\+XPLAINED\+\_\+\+MINI}~89
+\begin{DoxyCompactList}\small\item\em ATMEGA168\+PB Xplained MINI board. \end{DoxyCompactList}\item 
+\#define {\bfseries ATMEGA324\+PB\+\_\+\+XPLAINED\+\_\+\+PRO}~90
+\begin{DoxyCompactList}\small\item\em ATMEGA324\+PB Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMB11\+ZR\+\_\+\+XPLAINED\+\_\+\+PRO}~92
+\begin{DoxyCompactList}\small\item\em SAM B11 ZR Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMR30\+\_\+\+XPLAINED\+\_\+\+PRO}~93
+\begin{DoxyCompactList}\small\item\em SAM R30 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMHA1\+G16\+A\+\_\+\+XPLAINED\+\_\+\+PRO}~94
+\begin{DoxyCompactList}\small\item\em SAM HA1\+G16A Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMR34\+\_\+\+XPLAINED\+\_\+\+PRO}~95
+\begin{DoxyCompactList}\small\item\em SAM R34 Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SIMULATOR\+\_\+\+XMEGA\+\_\+\+A1}~97
+\begin{DoxyCompactList}\small\item\em Simulator for XMEGA A1 devices. \end{DoxyCompactList}\item 
+\#define {\bfseries AVR\+\_\+\+SIMULATOR\+\_\+\+UC3}~98
+\begin{DoxyCompactList}\small\item\em Simulator for the AVR UC3 device family. \end{DoxyCompactList}\item 
+\#define {\bfseries USER\+\_\+\+BOARD}~99
+\begin{DoxyCompactList}\small\item\em User-\/reserved board (if any). \end{DoxyCompactList}\item 
+\#define {\bfseries DUMMY\+\_\+\+BOARD}~100
+\begin{DoxyCompactList}\small\item\em Dummy board to support board-\/independent applications (e.\+g. bootloader). \end{DoxyCompactList}\item 
+\#define {\bfseries SAMB11\+ZR\+\_\+\+SENSOR\+\_\+\+TAG}~101
+\begin{DoxyCompactList}\small\item\em SAMB11\+ZR sensor tag board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMR30\+\_\+\+MODULE\+\_\+\+XPLAINED\+\_\+\+PRO}~102
+\begin{DoxyCompactList}\small\item\em SAM R30 Module Xplained Pro board. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMR21\+G18\+\_\+\+MODULE}~103
+\begin{DoxyCompactList}\small\item\em SAMR21\+G18-\/\+MR210\+UA Module. \end{DoxyCompactList}\item 
+\#define {\bfseries SAMR21\+B18\+\_\+\+MODULE}~104
+\begin{DoxyCompactList}\small\item\em SAMR21\+B18-\/\+MZ210\+PA Module. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__common__boards_ga397319c776d731164bb4bce63a7f6982}{WLR089\+\_\+\+XPLAINED\+\_\+\+PRO}}~105
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension Boards}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT1102}~1
+\begin{DoxyCompactList}\small\item\em AT32\+UC3B EXT1102 board. \end{DoxyCompactList}\item 
+\#define {\bfseries MC300}~2
+\begin{DoxyCompactList}\small\item\em AT32\+UC3 MC300 board. \end{DoxyCompactList}\item 
+\#define {\bfseries SENSORS\+\_\+\+XPLAINED\+\_\+\+INERTIAL\+\_\+1}~3
+\begin{DoxyCompactList}\small\item\em Xplained inertial sensor board 1. \end{DoxyCompactList}\item 
+\#define {\bfseries SENSORS\+\_\+\+XPLAINED\+\_\+\+INERTIAL\+\_\+2}~4
+\begin{DoxyCompactList}\small\item\em Xplained inertial sensor board 2. \end{DoxyCompactList}\item 
+\#define {\bfseries SENSORS\+\_\+\+XPLAINED\+\_\+\+PRESSURE\+\_\+1}~5
+\begin{DoxyCompactList}\small\item\em Xplained pressure sensor board. \end{DoxyCompactList}\item 
+\#define {\bfseries SENSORS\+\_\+\+XPLAINED\+\_\+\+LIGHTPROX\+\_\+1}~6
+\begin{DoxyCompactList}\small\item\em Xplained light \& proximity sensor board. \end{DoxyCompactList}\item 
+\#define {\bfseries SENSORS\+\_\+\+XPLAINED\+\_\+\+INERTIAL\+\_\+\+A1}~7
+\begin{DoxyCompactList}\small\item\em Xplained inertial sensor board \char`\"{}\+A\char`\"{}. \end{DoxyCompactList}\item 
+\#define {\bfseries RZ600\+\_\+\+AT86\+RF231}~8
+\begin{DoxyCompactList}\small\item\em AT86\+RF231 RF board in RZ600. \end{DoxyCompactList}\item 
+\#define {\bfseries RZ600\+\_\+\+AT86\+RF230B}~9
+\begin{DoxyCompactList}\small\item\em AT86\+RF230B RF board in RZ600. \end{DoxyCompactList}\item 
+\#define {\bfseries RZ600\+\_\+\+AT86\+RF212}~10
+\begin{DoxyCompactList}\small\item\em AT86\+RF212 RF board in RZ600. \end{DoxyCompactList}\item 
+\#define {\bfseries SENSORS\+\_\+\+XPLAINED\+\_\+\+BREADBOARD}~11
+\begin{DoxyCompactList}\small\item\em Xplained sensor development breadboard. \end{DoxyCompactList}\item 
+\#define {\bfseries SECURITY\+\_\+\+XPLAINED}~12
+\begin{DoxyCompactList}\small\item\em Xplained ATSHA204 board. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__common__boards_gaf75bc91f67cb2a761894691a9175a639}{USER\+\_\+\+EXT\+\_\+\+BOARD}}~99
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__group__common__boards_ga916f2adc2080b4fe88034086d107a8dc}{board\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em This function initializes the board target resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Standard board header file. 
+
+This file includes the appropriate board header file according to the defined board (parameter BOARD).
+
+Copyright (c) 2009-\/2020 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

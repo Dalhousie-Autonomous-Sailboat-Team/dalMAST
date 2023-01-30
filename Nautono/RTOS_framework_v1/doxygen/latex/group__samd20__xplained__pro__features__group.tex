@@ -1,0 +1,939 @@
+\hypertarget{group__samd20__xplained__pro__features__group}{}\doxysection{Features}
+\label{group__samd20__xplained__pro__features__group}\index{Features@{Features}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__samd20__xplained__pro__features__group_ga02581754b212d533d96cde56c8145c9b}{BOARD\+\_\+\+NAME}}~\char`\"{}SAMD20\+\_\+\+XPLAINED\+\_\+\+PRO\char`\"{}
+\item 
+\#define \mbox{\hyperlink{group__samd20__xplained__pro__features__group_gad698e2cb680601529f08c3e5f2b0cebb}{LED\+\_\+\+COUNT}}~1
+\item 
+\#define \mbox{\hyperlink{group__samd20__xplained__pro__features__group_ga687f94d4d3be4db86a833082ecdf980a}{BUTTON\+\_\+\+COUNT}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Resonator definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga29729f712d94e421615d41fbf2748311}\label{group__samd20__xplained__pro__features__group_ga29729f712d94e421615d41fbf2748311}} 
+\#define {\bfseries BOARD\+\_\+\+FREQ\+\_\+\+SLCK\+\_\+\+XTAL}~(32768U)
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gadf99a31614b830d438308afe88d4bc35}\label{group__samd20__xplained__pro__features__group_gadf99a31614b830d438308afe88d4bc35}} 
+\#define {\bfseries BOARD\+\_\+\+FREQ\+\_\+\+SLCK\+\_\+\+BYPASS}~(32768U)
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf114fed8746a25b7afa90614bd2150bb}\label{group__samd20__xplained__pro__features__group_gaf114fed8746a25b7afa90614bd2150bb}} 
+\#define {\bfseries BOARD\+\_\+\+FREQ\+\_\+\+MAINCK\+\_\+\+XTAL}~0 /$\ast$ Not Mounted $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4242232aa80f183e350266e7b422b12d}\label{group__samd20__xplained__pro__features__group_ga4242232aa80f183e350266e7b422b12d}} 
+\#define {\bfseries BOARD\+\_\+\+FREQ\+\_\+\+MAINCK\+\_\+\+BYPASS}~0 /$\ast$ Not Mounted $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gae9cca1603768bb2e6c82bd0ccedf2b5c}\label{group__samd20__xplained__pro__features__group_gae9cca1603768bb2e6c82bd0ccedf2b5c}} 
+\#define {\bfseries BOARD\+\_\+\+MCK}~CHIP\+\_\+\+FREQ\+\_\+\+CPU\+\_\+\+MAX
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga72c1c5d05c0eee527f680ead3d7c3f09}\label{group__samd20__xplained__pro__features__group_ga72c1c5d05c0eee527f680ead3d7c3f09}} 
+\#define {\bfseries BOARD\+\_\+\+OSC\+\_\+\+STARTUP\+\_\+\+US}~15625
+\end{DoxyCompactItemize}
+\doxysubsection*{LED0 definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga3fc522fda449d6edde717d6a857429cf}\label{group__samd20__xplained__pro__features__group_ga3fc522fda449d6edde717d6a857429cf}} 
+\#define {\bfseries LED0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_ad71083de279943a97f0a159c824c290b}{PIN\+\_\+\+PA14}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga59e133b8ded0d632eeaeb2cbfec48886}\label{group__samd20__xplained__pro__features__group_ga59e133b8ded0d632eeaeb2cbfec48886}} 
+\#define {\bfseries LED0\+\_\+\+ACTIVE}~false
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaed3274cfe7ed308899e8416219bb08d2}\label{group__samd20__xplained__pro__features__group_gaed3274cfe7ed308899e8416219bb08d2}} 
+\#define {\bfseries LED0\+\_\+\+INACTIVE}~!LED0\+\_\+\+ACTIVE
+\end{DoxyCompactItemize}
+\doxysubsection*{SW0 definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga1db7ea1df7a18b3749ee2eaaa2f2d0af}\label{group__samd20__xplained__pro__features__group_ga1db7ea1df7a18b3749ee2eaaa2f2d0af}} 
+\#define {\bfseries SW0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_abaad308f0408bf5d3f1fe558f3d26e5e}{PIN\+\_\+\+PA15}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac534d0b05a26a80e6e8e83a049b80655}\label{group__samd20__xplained__pro__features__group_gac534d0b05a26a80e6e8e83a049b80655}} 
+\#define {\bfseries SW0\+\_\+\+ACTIVE}~false
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga74eeefc6abe579addaec6ac2bff4d080}\label{group__samd20__xplained__pro__features__group_ga74eeefc6abe579addaec6ac2bff4d080}} 
+\#define {\bfseries SW0\+\_\+\+INACTIVE}~!SW0\+\_\+\+ACTIVE
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac9d5ae203ecf805717134dfcee12372b}\label{group__samd20__xplained__pro__features__group_gac9d5ae203ecf805717134dfcee12372b}} 
+\#define {\bfseries SW0\+\_\+\+EIC\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a6cf6ad0634cbb035d1c78c40cfc0ed7e}{PIN\+\_\+\+PA15\+A\+\_\+\+EIC\+\_\+\+EXTINT15}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga18b3e713457ceaf39e36dbccd8f200fa}\label{group__samd20__xplained__pro__features__group_ga18b3e713457ceaf39e36dbccd8f200fa}} 
+\#define {\bfseries SW0\+\_\+\+EIC\+\_\+\+MUX}~MUX\+\_\+\+PA15\+A\+\_\+\+EIC\+\_\+\+EXTINT15
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga27bc87cdd4caabcd3160ae3a03f297c7}\label{group__samd20__xplained__pro__features__group_ga27bc87cdd4caabcd3160ae3a03f297c7}} 
+\#define {\bfseries SW0\+\_\+\+EIC\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA15\+A\+\_\+\+EIC\+\_\+\+EXTINT15
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga202edaf3ad972f409e83a1fab0f19579}\label{group__samd20__xplained__pro__features__group_ga202edaf3ad972f409e83a1fab0f19579}} 
+\#define {\bfseries SW0\+\_\+\+EIC\+\_\+\+LINE}~15
+\end{DoxyCompactItemize}
+\doxysubsection*{LED \#0 definitions}
+Wrapper macros for LED0, to ensure common naming across all Xplained Pro boards. \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga2687b6cee21a30f8cf66f81c1c2431e4}\label{group__samd20__xplained__pro__features__group_ga2687b6cee21a30f8cf66f81c1c2431e4}} 
+\#define {\bfseries LED\+\_\+0\+\_\+\+NAME}~\char`\"{}LED0 (yellow)\char`\"{}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gad39bcbd30efbf4b9696783368266b2bb}\label{group__samd20__xplained__pro__features__group_gad39bcbd30efbf4b9696783368266b2bb}} 
+\#define {\bfseries LED\+\_\+0\+\_\+\+PIN}~LED0\+\_\+\+PIN
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga88e5571eae6020697efb61d64d41fe3a}\label{group__samd20__xplained__pro__features__group_ga88e5571eae6020697efb61d64d41fe3a}} 
+\#define {\bfseries LED\+\_\+0\+\_\+\+ACTIVE}~LED0\+\_\+\+ACTIVE
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5e8d4c71949d6451097cb08d095e703a}\label{group__samd20__xplained__pro__features__group_ga5e8d4c71949d6451097cb08d095e703a}} 
+\#define {\bfseries LED\+\_\+0\+\_\+\+INACTIVE}~LED0\+\_\+\+INACTIVE
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab6dc1ebd13b429afb03cfc49728cc896}\label{group__samd20__xplained__pro__features__group_gab6dc1ebd13b429afb03cfc49728cc896}} 
+\#define {\bfseries LED0\+\_\+\+GPIO}~LED0\+\_\+\+PIN
+\end{DoxyCompactItemize}
+\doxysubsection*{Button \#0 definitions}
+Wrapper macros for SW0, to ensure common naming across all Xplained Pro boards. \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga20c6ec898ac72b49ab8e52d034ad1e2b}\label{group__samd20__xplained__pro__features__group_ga20c6ec898ac72b49ab8e52d034ad1e2b}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+NAME}~\char`\"{}SW0\char`\"{}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga6cb077072b69f695f7bcc057da12919f}\label{group__samd20__xplained__pro__features__group_ga6cb077072b69f695f7bcc057da12919f}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+PIN}~SW0\+\_\+\+PIN
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab2f863849e05ec54d451ac536f4b5031}\label{group__samd20__xplained__pro__features__group_gab2f863849e05ec54d451ac536f4b5031}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+ACTIVE}~SW0\+\_\+\+ACTIVE
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga54119bf75db09e383bfd9c3571fc4efe}\label{group__samd20__xplained__pro__features__group_ga54119bf75db09e383bfd9c3571fc4efe}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+INACTIVE}~SW0\+\_\+\+INACTIVE
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa8d94c804e6a74a033e09e8267069fc5}\label{group__samd20__xplained__pro__features__group_gaa8d94c804e6a74a033e09e8267069fc5}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+EIC\+\_\+\+PIN}~SW0\+\_\+\+EIC\+\_\+\+PIN
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga2b85ab2cdabcc349b8b6f9e8fa9ac119}\label{group__samd20__xplained__pro__features__group_ga2b85ab2cdabcc349b8b6f9e8fa9ac119}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+EIC\+\_\+\+MUX}~SW0\+\_\+\+EIC\+\_\+\+MUX
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaca27ba0c8056196203f06d40cdeb7854}\label{group__samd20__xplained__pro__features__group_gaca27ba0c8056196203f06d40cdeb7854}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+EIC\+\_\+\+PINMUX}~SW0\+\_\+\+EIC\+\_\+\+PINMUX
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga99e3515a27c1a4c1e44e04206c4a1a2c}\label{group__samd20__xplained__pro__features__group_ga99e3515a27c1a4c1e44e04206c4a1a2c}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+EIC\+\_\+\+LINE}~SW0\+\_\+\+EIC\+\_\+\+LINE
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#1 pin definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga6ccee32105c9fafbb01770695b7f2b44}\label{group__samd20__xplained__pro__features__group_ga6ccee32105c9fafbb01770695b7f2b44}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+3}~\mbox{\hyperlink{pio_2samd20j14_8h_aaee350eaf010d48a2c6efae0a1632f7c}{PIN\+\_\+\+PB00}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5243ef88b70ab0ee20507c80ef8d7a0d}\label{group__samd20__xplained__pro__features__group_ga5243ef88b70ab0ee20507c80ef8d7a0d}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+4}~\mbox{\hyperlink{pio_2samd20j14_8h_aa599b1c1a8440ecffbf5fba215984c75}{PIN\+\_\+\+PB01}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5ca695ea694bce97dfb20e52de5b4a15}\label{group__samd20__xplained__pro__features__group_ga5ca695ea694bce97dfb20e52de5b4a15}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+5}~\mbox{\hyperlink{pio_2samd20j14_8h_a342eea40b1bafb1afe71ff68854d9747}{PIN\+\_\+\+PB06}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga6c808d0df1d56c22b669269ba2a8ccce}\label{group__samd20__xplained__pro__features__group_ga6c808d0df1d56c22b669269ba2a8ccce}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+6}~\mbox{\hyperlink{pio_2samd20j14_8h_a381a8ad61ecb02a4d455cd92a5a5fb1e}{PIN\+\_\+\+PB07}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf90fe93609fea05220738c06abaabf71}\label{group__samd20__xplained__pro__features__group_gaf90fe93609fea05220738c06abaabf71}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+7}~\mbox{\hyperlink{pio_2samd20g14_8h_a19ef30fcec1b8ad27ff954975a005850}{PIN\+\_\+\+PB02}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4768b3de92f5776c206a4e3262f05c47}\label{group__samd20__xplained__pro__features__group_ga4768b3de92f5776c206a4e3262f05c47}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+8}~\mbox{\hyperlink{pio_2samd20g14_8h_ab8f19878aac1648cb688cfcf0eec3fb5}{PIN\+\_\+\+PB03}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8c0f8b12c67dfecaac7bb4c45990fb57}\label{group__samd20__xplained__pro__features__group_ga8c0f8b12c67dfecaac7bb4c45990fb57}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+9}~\mbox{\hyperlink{pio_2samd20g17u_8h_ab4f72feca4eed2b50fb246dc2d59241d}{PIN\+\_\+\+PB04}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gad2c2d06f0f2761bcc4c4448a233061f9}\label{group__samd20__xplained__pro__features__group_gad2c2d06f0f2761bcc4c4448a233061f9}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+10}~\mbox{\hyperlink{pio_2samd20j14_8h_ae62ed501d1f5f6cdc6bf605742aeb778}{PIN\+\_\+\+PB05}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab0c46ea18840c81fc2257547f8af3c57}\label{group__samd20__xplained__pro__features__group_gab0c46ea18840c81fc2257547f8af3c57}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+11}~\mbox{\hyperlink{pio_2samd20e14_8h_a7dc08bf81d9967156de18aae2cb5fe46}{PIN\+\_\+\+PA08}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga7e54c69b2687572b6477c1618f0a9269}\label{group__samd20__xplained__pro__features__group_ga7e54c69b2687572b6477c1618f0a9269}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+12}~\mbox{\hyperlink{pio_2samd20e14_8h_ac14663d14647a4a629d8dc37616bf7e4}{PIN\+\_\+\+PA09}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab677408d1edca749a085efbd9c1cb6e8}\label{group__samd20__xplained__pro__features__group_gab677408d1edca749a085efbd9c1cb6e8}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+13}~\mbox{\hyperlink{pio_2samd20g14_8h_a123a2189653c39f91fc0231945166826}{PIN\+\_\+\+PB09}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf4a4a070a9ec84eea1c6855e93737a7d}\label{group__samd20__xplained__pro__features__group_gaf4a4a070a9ec84eea1c6855e93737a7d}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+14}~\mbox{\hyperlink{pio_2samd20g14_8h_a8b8f5e8b769787a4ce5a9b53388acc0e}{PIN\+\_\+\+PB08}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8cfe9248015c92ac426486d0d9a4db4c}\label{group__samd20__xplained__pro__features__group_ga8cfe9248015c92ac426486d0d9a4db4c}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+15}~\mbox{\hyperlink{pio_2samd20e14_8h_a9527e3de1cb13d3530c6519ef35866be}{PIN\+\_\+\+PA05}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga0b80b69996d0b582265a265f7a232df6}\label{group__samd20__xplained__pro__features__group_ga0b80b69996d0b582265a265f7a232df6}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+16}~\mbox{\hyperlink{pio_2samd20e14_8h_aaebb84fd9405e339ed98b122aabcd65f}{PIN\+\_\+\+PA06}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga197fec359c0525478beb868f1dee881c}\label{group__samd20__xplained__pro__features__group_ga197fec359c0525478beb868f1dee881c}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+17}~\mbox{\hyperlink{pio_2samd20e14_8h_aad65b053a42add45bba004f34776e0d6}{PIN\+\_\+\+PA04}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga87e6c1040a86c8f03b5f21f58cf8c0b5}\label{group__samd20__xplained__pro__features__group_ga87e6c1040a86c8f03b5f21f58cf8c0b5}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+18}~\mbox{\hyperlink{pio_2samd20e14_8h_a0c4f2e2dc54ee3ccb3ed39933cf29386}{PIN\+\_\+\+PA07}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#1 pin definitions by function}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5cb1dd78b8ab2337a600ac1fb5952f98}\label{group__samd20__xplained__pro__features__group_ga5cb1dd78b8ab2337a600ac1fb5952f98}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+ADC\+\_\+0}~EXT1\+\_\+\+PIN\+\_\+3
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab5927d53d39f07615e31de423b5cd2f8}\label{group__samd20__xplained__pro__features__group_gab5927d53d39f07615e31de423b5cd2f8}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+ADC\+\_\+1}~EXT1\+\_\+\+PIN\+\_\+4
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gafbdd5cd8e6664c704b7e1d62a50bb9fc}\label{group__samd20__xplained__pro__features__group_gafbdd5cd8e6664c704b7e1d62a50bb9fc}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+GPIO\+\_\+0}~EXT1\+\_\+\+PIN\+\_\+5
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga694376ccdf6ec8fb0101121fe0dd2bd6}\label{group__samd20__xplained__pro__features__group_ga694376ccdf6ec8fb0101121fe0dd2bd6}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+GPIO\+\_\+1}~EXT1\+\_\+\+PIN\+\_\+6
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5c60de0dd8e1c11f58a368792e8ab86e}\label{group__samd20__xplained__pro__features__group_ga5c60de0dd8e1c11f58a368792e8ab86e}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+PWM\+\_\+0}~EXT1\+\_\+\+PIN\+\_\+7
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac96b2c63e08f74698ce613d73a54bc3b}\label{group__samd20__xplained__pro__features__group_gac96b2c63e08f74698ce613d73a54bc3b}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+PWM\+\_\+1}~EXT1\+\_\+\+PIN\+\_\+8
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga3ebd8ed9b501a9b88623b0a084ec098b}\label{group__samd20__xplained__pro__features__group_ga3ebd8ed9b501a9b88623b0a084ec098b}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+IRQ}~EXT1\+\_\+\+PIN\+\_\+9
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gad156fbb2d37c755c94cf9980c82689ba}\label{group__samd20__xplained__pro__features__group_gad156fbb2d37c755c94cf9980c82689ba}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SDA}~EXT1\+\_\+\+PIN\+\_\+11
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gafb74ad5b3722338a90e035f2b0826cb5}\label{group__samd20__xplained__pro__features__group_gafb74ad5b3722338a90e035f2b0826cb5}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SCL}~EXT1\+\_\+\+PIN\+\_\+12
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga932da4c9a52edce74193c908c7ebecea}\label{group__samd20__xplained__pro__features__group_ga932da4c9a52edce74193c908c7ebecea}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+UART\+\_\+\+RX}~EXT1\+\_\+\+PIN\+\_\+13
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8d84dd3b196f495e0e1574c7933b5c36}\label{group__samd20__xplained__pro__features__group_ga8d84dd3b196f495e0e1574c7933b5c36}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+UART\+\_\+\+TX}~EXT1\+\_\+\+PIN\+\_\+14
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga718006a4d00acb1e273d83d1604173ed}\label{group__samd20__xplained__pro__features__group_ga718006a4d00acb1e273d83d1604173ed}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+1}~EXT1\+\_\+\+PIN\+\_\+10
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga20b2da5a3388a3bb00b41636000bd633}\label{group__samd20__xplained__pro__features__group_ga20b2da5a3388a3bb00b41636000bd633}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+0}~EXT1\+\_\+\+PIN\+\_\+15
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa1146522a2d847c6f5b5af5bb53e1f20}\label{group__samd20__xplained__pro__features__group_gaa1146522a2d847c6f5b5af5bb53e1f20}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MOSI}~EXT1\+\_\+\+PIN\+\_\+16
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga42c2670222e6139cb2440d5eac145a24}\label{group__samd20__xplained__pro__features__group_ga42c2670222e6139cb2440d5eac145a24}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MISO}~EXT1\+\_\+\+PIN\+\_\+17
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa9c530476b2cb1e78323b367139e45f2}\label{group__samd20__xplained__pro__features__group_gaa9c530476b2cb1e78323b367139e45f2}} 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SCK}~EXT1\+\_\+\+PIN\+\_\+18
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#1 ADC definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab83ec879d6e7b5c444f1040cc66f6dee}\label{group__samd20__xplained__pro__features__group_gab83ec879d6e7b5c444f1040cc66f6dee}} 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a54d148b91f3d356713f7e367a2243bea}{ADC}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga7284b60a75f2e7da244ab23febb69ddc}\label{group__samd20__xplained__pro__features__group_ga7284b60a75f2e7da244ab23febb69ddc}} 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+0\+\_\+\+CHANNEL}~8
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga646da6c87a60fb8f8961f877ce858f43}\label{group__samd20__xplained__pro__features__group_ga646da6c87a60fb8f8961f877ce858f43}} 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a908a9cac08dea9a27ed599cc49b6a93e}{PIN\+\_\+\+PB00\+B\+\_\+\+ADC\+\_\+\+AIN8}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gabdc6ba9937a1050b8a40f8928d95fbc4}\label{group__samd20__xplained__pro__features__group_gabdc6ba9937a1050b8a40f8928d95fbc4}} 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PB00\+B\+\_\+\+ADC\+\_\+\+AIN8
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga1724086d943789b79674a86857cb0fae}\label{group__samd20__xplained__pro__features__group_ga1724086d943789b79674a86857cb0fae}} 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB00\+B\+\_\+\+ADC\+\_\+\+AIN8
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab417a7e533603c8f6cef45a8f669895b}\label{group__samd20__xplained__pro__features__group_gab417a7e533603c8f6cef45a8f669895b}} 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+1\+\_\+\+CHANNEL}~9
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5e8abff0e74e67c2a3ca1ac50fb8143c}\label{group__samd20__xplained__pro__features__group_ga5e8abff0e74e67c2a3ca1ac50fb8143c}} 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a37f7297314e6c7f2be1baa9467d731ce}{PIN\+\_\+\+PB01\+B\+\_\+\+ADC\+\_\+\+AIN9}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga0648d769904c7a9867b8abe8190f24c2}\label{group__samd20__xplained__pro__features__group_ga0648d769904c7a9867b8abe8190f24c2}} 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PB01\+B\+\_\+\+ADC\+\_\+\+AIN9
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga978881ce8407376203dd96a97788651d}\label{group__samd20__xplained__pro__features__group_ga978881ce8407376203dd96a97788651d}} 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB01\+B\+\_\+\+ADC\+\_\+\+AIN9
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#1 PWM definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga17be406af2b3ea3f95811b573de0b4a8}\label{group__samd20__xplained__pro__features__group_ga17be406af2b3ea3f95811b573de0b4a8}} 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+\+MODULE}~\mbox{\hyperlink{samd20j14_8h_ae5a1efa96ea067fb3907f342aa6fb0a4}{TC6}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga60838473cc32e6d0ba4751e3a2f1b5c0}\label{group__samd20__xplained__pro__features__group_ga60838473cc32e6d0ba4751e3a2f1b5c0}} 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+0\+\_\+\+CHANNEL}~0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga9aa2d5165f8d3906e4910d119ef59980}\label{group__samd20__xplained__pro__features__group_ga9aa2d5165f8d3906e4910d119ef59980}} 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a4d08d1101e50d516c2fb4f102d9f5d9b}{PIN\+\_\+\+PB02\+F\+\_\+\+TC6\+\_\+\+WO0}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac923210c50489df59fac85fcfc6d945f}\label{group__samd20__xplained__pro__features__group_gac923210c50489df59fac85fcfc6d945f}} 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PB02\+F\+\_\+\+TC6\+\_\+\+WO0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga01ad2224572edd5f5b0dafe90483d462}\label{group__samd20__xplained__pro__features__group_ga01ad2224572edd5f5b0dafe90483d462}} 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB02\+F\+\_\+\+TC6\+\_\+\+WO0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga9b01ee479eda0b3b277d642a20ed6aea}\label{group__samd20__xplained__pro__features__group_ga9b01ee479eda0b3b277d642a20ed6aea}} 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+1\+\_\+\+CHANNEL}~1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac6e4f49ec7746526fe33fb5dd1ea81d4}\label{group__samd20__xplained__pro__features__group_gac6e4f49ec7746526fe33fb5dd1ea81d4}} 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a4541120c9f123dcaefae4192543ceb84}{PIN\+\_\+\+PB03\+F\+\_\+\+TC6\+\_\+\+WO1}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga435963249a60452bf2a3c8d80864c168}\label{group__samd20__xplained__pro__features__group_ga435963249a60452bf2a3c8d80864c168}} 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PB03\+F\+\_\+\+TC6\+\_\+\+WO1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gafcac80f976e726c2f8f6aa3977a6a931}\label{group__samd20__xplained__pro__features__group_gafcac80f976e726c2f8f6aa3977a6a931}} 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB03\+F\+\_\+\+TC6\+\_\+\+WO1
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#1 IRQ/\+External interrupt definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4b464579ccb12a975a0d23df1c52fed8}\label{group__samd20__xplained__pro__features__group_ga4b464579ccb12a975a0d23df1c52fed8}} 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a27183a94584b5fca7e1207ce7a79782a}{EIC}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gae7ca49f8ea06da930916046cbcde0529}\label{group__samd20__xplained__pro__features__group_gae7ca49f8ea06da930916046cbcde0529}} 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+INPUT}~4
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gadfb4a45b28f4fe0ccb122a7b123a3d9f}\label{group__samd20__xplained__pro__features__group_gadfb4a45b28f4fe0ccb122a7b123a3d9f}} 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g17u_8h_a2fc2cfd9a8382477493f71f73bfb7455}{PIN\+\_\+\+PB04\+A\+\_\+\+EIC\+\_\+\+EXTINT4}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gae71aefb06dd7834030456139f3e19d9a}\label{group__samd20__xplained__pro__features__group_gae71aefb06dd7834030456139f3e19d9a}} 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+MUX}~MUX\+\_\+\+PB04\+A\+\_\+\+EIC\+\_\+\+EXTINT4
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga556d8241bd3ae14ae5397437a8e9c9d3}\label{group__samd20__xplained__pro__features__group_ga556d8241bd3ae14ae5397437a8e9c9d3}} 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB04\+A\+\_\+\+EIC\+\_\+\+EXTINT4
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#1 I2C definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga9a770caae803fb3f8ae9e01beee386b6}\label{group__samd20__xplained__pro__features__group_ga9a770caae803fb3f8ae9e01beee386b6}} 
+\#define {\bfseries EXT1\+\_\+\+I2\+C\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a918e4c85993961a115bb23b4bb73a87f}{SERCOM2}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga3cdd9e4076911af8036c6a0d01159136}\label{group__samd20__xplained__pro__features__group_ga3cdd9e4076911af8036c6a0d01159136}} 
+\#define {\bfseries EXT1\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA08\+D\+\_\+\+SERCOM2\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga3b37203ab3cba84dcef2e7bc8a41530e}\label{group__samd20__xplained__pro__features__group_ga3b37203ab3cba84dcef2e7bc8a41530e}} 
+\#define {\bfseries EXT1\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA09\+D\+\_\+\+SERCOM2\+\_\+\+PAD1
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#1 UART definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga0926bf9254087738e85b09e734c4e7ca}\label{group__samd20__xplained__pro__features__group_ga0926bf9254087738e85b09e734c4e7ca}} 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_ad48343faa88820b8f552aa1eaf66f00a}{SERCOM4}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga1a806a0ca2b2d26a4e884ad7c2d68b4d}\label{group__samd20__xplained__pro__features__group_ga1a806a0ca2b2d26a4e884ad7c2d68b4d}} 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}{USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga55b432da33f107edf738cce079341010}\label{group__samd20__xplained__pro__features__group_ga55b432da33f107edf738cce079341010}} 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PB08\+D\+\_\+\+SERCOM4\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gade2f210effcd07813848e0b7d8830258}\label{group__samd20__xplained__pro__features__group_gade2f210effcd07813848e0b7d8830258}} 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PB09\+D\+\_\+\+SERCOM4\+\_\+\+PAD1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga3a24abc55a0d5948eec737e92c04d15d}\label{group__samd20__xplained__pro__features__group_ga3a24abc55a0d5948eec737e92c04d15d}} 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab17cebde86abeb0d1389a41f0435ddb9}\label{group__samd20__xplained__pro__features__group_gab17cebde86abeb0d1389a41f0435ddb9}} 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#1 SPI definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa2643abcb5f9bf242d4854055a250370}\label{group__samd20__xplained__pro__features__group_gaa2643abcb5f9bf242d4854055a250370}} 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_ae5473788457bad0e69ad9d7f22ed404f}{SERCOM0}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8063a4c2e063318656a5441c80f53c0c}\label{group__samd20__xplained__pro__features__group_ga8063a4c2e063318656a5441c80f53c0c}} 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~SPI\+\_\+\+SIGNAL\+\_\+\+MUX\+\_\+\+SETTING\+\_\+E
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf15f22ea20148abf9d81973b73a76db6}\label{group__samd20__xplained__pro__features__group_gaf15f22ea20148abf9d81973b73a76db6}} 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA04\+D\+\_\+\+SERCOM0\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gabc7df5d710abfad71024f9aedc538990}\label{group__samd20__xplained__pro__features__group_gabc7df5d710abfad71024f9aedc538990}} 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA05\+D\+\_\+\+SERCOM0\+\_\+\+PAD1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga6e40d3a1db63f7144c61706f13fd0164}\label{group__samd20__xplained__pro__features__group_ga6e40d3a1db63f7144c61706f13fd0164}} 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PA06\+D\+\_\+\+SERCOM0\+\_\+\+PAD2
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga6a6ce015c66176cb4e9497d5d11bc0f7}\label{group__samd20__xplained__pro__features__group_ga6a6ce015c66176cb4e9497d5d11bc0f7}} 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PA07\+D\+\_\+\+SERCOM0\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#2 pin definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga2aeb3f2ed8db08dc322578ab038f9956}\label{group__samd20__xplained__pro__features__group_ga2aeb3f2ed8db08dc322578ab038f9956}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+3}~\mbox{\hyperlink{pio_2samd20e14_8h_a8bdc2380ba42c8288b661ced1f678933}{PIN\+\_\+\+PA10}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga22572d5f0c2876377fe62f0a7c28195f}\label{group__samd20__xplained__pro__features__group_ga22572d5f0c2876377fe62f0a7c28195f}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+4}~\mbox{\hyperlink{pio_2samd20e14_8h_a01f1322d5a1df159a79f1a9cdf4201d2}{PIN\+\_\+\+PA11}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa52e8320e78bf06a8f93ea43b4f1b150}\label{group__samd20__xplained__pro__features__group_gaa52e8320e78bf06a8f93ea43b4f1b150}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+5}~\mbox{\hyperlink{pio_2samd20g14_8h_a00c77a5c19a99cee2402fc83b04c02d5}{PIN\+\_\+\+PA20}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac3b50faec712d1e3f555eb501d4626f8}\label{group__samd20__xplained__pro__features__group_gac3b50faec712d1e3f555eb501d4626f8}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+6}~\mbox{\hyperlink{pio_2samd20g14_8h_af985624239bfbec119533432376256b8}{PIN\+\_\+\+PA21}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga992fafe0d99a8dcebb6f6c93b9f8dd8d}\label{group__samd20__xplained__pro__features__group_ga992fafe0d99a8dcebb6f6c93b9f8dd8d}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+7}~\mbox{\hyperlink{pio_2samd20e14_8h_ac9cc1f345184e86b5481800a38f67b73}{PIN\+\_\+\+PA22}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab7ec1f0caf30f1b99e5555fdc391733d}\label{group__samd20__xplained__pro__features__group_gab7ec1f0caf30f1b99e5555fdc391733d}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+8}~\mbox{\hyperlink{pio_2samd20e14_8h_a6ca014c55f45ce023918c585433c67af}{PIN\+\_\+\+PA23}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4654d52b9352ac9e1cade0d2014e3a6b}\label{group__samd20__xplained__pro__features__group_ga4654d52b9352ac9e1cade0d2014e3a6b}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+9}~\mbox{\hyperlink{pio_2samd20j14_8h_a886b07fd0b01a62c7236bfac719c0d85}{PIN\+\_\+\+PB14}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gafdaa744e4c7e5c93e846a4f0ea9d0fbb}\label{group__samd20__xplained__pro__features__group_gafdaa744e4c7e5c93e846a4f0ea9d0fbb}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+10}~\mbox{\hyperlink{pio_2samd20j14_8h_a2dfe52fc70c0fa20c50efcb5260b7f6e}{PIN\+\_\+\+PB15}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga7508977dcf3c430814604914ceb0e6f7}\label{group__samd20__xplained__pro__features__group_ga7508977dcf3c430814604914ceb0e6f7}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+11}~\mbox{\hyperlink{pio_2samd20e14_8h_a7dc08bf81d9967156de18aae2cb5fe46}{PIN\+\_\+\+PA08}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa500ee1f5679975d1ed2a04657483df5}\label{group__samd20__xplained__pro__features__group_gaa500ee1f5679975d1ed2a04657483df5}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+12}~\mbox{\hyperlink{pio_2samd20e14_8h_ac14663d14647a4a629d8dc37616bf7e4}{PIN\+\_\+\+PA09}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab083e4b0121612f44e7a13154a868417}\label{group__samd20__xplained__pro__features__group_gab083e4b0121612f44e7a13154a868417}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+13}~\mbox{\hyperlink{pio_2samd20j14_8h_aac822122271e05b08d918692cd81ebe9}{PIN\+\_\+\+PB13}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga65f9faa75182203cf889d99c87fa26a7}\label{group__samd20__xplained__pro__features__group_ga65f9faa75182203cf889d99c87fa26a7}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+14}~\mbox{\hyperlink{pio_2samd20j14_8h_a4c73054a65245b26b8d56438c269a5f8}{PIN\+\_\+\+PB12}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac466339304f890fcafb6734155b93322}\label{group__samd20__xplained__pro__features__group_gac466339304f890fcafb6734155b93322}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+15}~\mbox{\hyperlink{pio_2samd20e14_8h_a66f8d032baf3fb0bc60f2dc70ef0e587}{PIN\+\_\+\+PA17}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga95ae69ffdffda9a1c162ed0a46c40826}\label{group__samd20__xplained__pro__features__group_ga95ae69ffdffda9a1c162ed0a46c40826}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+16}~\mbox{\hyperlink{pio_2samd20e14_8h_a9695bdcd8129ad83a871ad6b259dfcd5}{PIN\+\_\+\+PA18}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaefc6cec2b646fd48133677d5b51d1aad}\label{group__samd20__xplained__pro__features__group_gaefc6cec2b646fd48133677d5b51d1aad}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+17}~\mbox{\hyperlink{pio_2samd20e14_8h_af95063d900dacae04c7700184f817d88}{PIN\+\_\+\+PA16}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gad554291e1012a2d7926c5adc8a7582cd}\label{group__samd20__xplained__pro__features__group_gad554291e1012a2d7926c5adc8a7582cd}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+18}~\mbox{\hyperlink{pio_2samd20e14_8h_a58254064b915fd09ca35601ceebcf27f}{PIN\+\_\+\+PA19}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#2 pin definitions by function}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga7ef96b70de24c438e1d8599aed047afa}\label{group__samd20__xplained__pro__features__group_ga7ef96b70de24c438e1d8599aed047afa}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+ADC\+\_\+0}~EXT2\+\_\+\+PIN\+\_\+3
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab3b8dfec060b4a077603a27e8c603a94}\label{group__samd20__xplained__pro__features__group_gab3b8dfec060b4a077603a27e8c603a94}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+ADC\+\_\+1}~EXT2\+\_\+\+PIN\+\_\+4
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5f54bd174047d0d8edaf586b61f65c63}\label{group__samd20__xplained__pro__features__group_ga5f54bd174047d0d8edaf586b61f65c63}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+GPIO\+\_\+0}~EXT2\+\_\+\+PIN\+\_\+5
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf648c02c3ac7022386a3d594031c91c8}\label{group__samd20__xplained__pro__features__group_gaf648c02c3ac7022386a3d594031c91c8}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+GPIO\+\_\+1}~EXT2\+\_\+\+PIN\+\_\+6
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga15df54ae8400cddf7a8c6b87710af422}\label{group__samd20__xplained__pro__features__group_ga15df54ae8400cddf7a8c6b87710af422}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+PWM\+\_\+0}~EXT2\+\_\+\+PIN\+\_\+7
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga1ee67a82e37423527e9a7438e2a2d5f4}\label{group__samd20__xplained__pro__features__group_ga1ee67a82e37423527e9a7438e2a2d5f4}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+PWM\+\_\+1}~EXT2\+\_\+\+PIN\+\_\+8
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf6221991474f801dbf1976dba2dca985}\label{group__samd20__xplained__pro__features__group_gaf6221991474f801dbf1976dba2dca985}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+IRQ}~EXT2\+\_\+\+PIN\+\_\+9
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga2874591df29e0f0644227e0d7cf8fd33}\label{group__samd20__xplained__pro__features__group_ga2874591df29e0f0644227e0d7cf8fd33}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SDA}~EXT2\+\_\+\+PIN\+\_\+11
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga390a6363888bd30726641f8843a5224f}\label{group__samd20__xplained__pro__features__group_ga390a6363888bd30726641f8843a5224f}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SCL}~EXT2\+\_\+\+PIN\+\_\+12
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga69f73b74c984e870f85e7c91121a9d6e}\label{group__samd20__xplained__pro__features__group_ga69f73b74c984e870f85e7c91121a9d6e}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+UART\+\_\+\+RX}~EXT2\+\_\+\+PIN\+\_\+13
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga935c3e9969debdc7409aa8e3dfbdc412}\label{group__samd20__xplained__pro__features__group_ga935c3e9969debdc7409aa8e3dfbdc412}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+UART\+\_\+\+TX}~EXT2\+\_\+\+PIN\+\_\+14
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga0a88ea3ed55bfc1cb494bc85f68f58fa}\label{group__samd20__xplained__pro__features__group_ga0a88ea3ed55bfc1cb494bc85f68f58fa}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+1}~EXT2\+\_\+\+PIN\+\_\+10
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gacde86a97f1fc9642a419b4a244fa9d01}\label{group__samd20__xplained__pro__features__group_gacde86a97f1fc9642a419b4a244fa9d01}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+0}~EXT2\+\_\+\+PIN\+\_\+15
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga6faf599a23a5bd972d8a2a2aab95396e}\label{group__samd20__xplained__pro__features__group_ga6faf599a23a5bd972d8a2a2aab95396e}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MOSI}~EXT2\+\_\+\+PIN\+\_\+16
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gacfb253539d6c34105afe11890f8638bc}\label{group__samd20__xplained__pro__features__group_gacfb253539d6c34105afe11890f8638bc}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MISO}~EXT2\+\_\+\+PIN\+\_\+17
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa2dbe5185b6019956b965574258ebe3d}\label{group__samd20__xplained__pro__features__group_gaa2dbe5185b6019956b965574258ebe3d}} 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SCK}~EXT2\+\_\+\+PIN\+\_\+18
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#2 ADC definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga9010f529277220ee12166f86eb2cbd77}\label{group__samd20__xplained__pro__features__group_ga9010f529277220ee12166f86eb2cbd77}} 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a54d148b91f3d356713f7e367a2243bea}{ADC}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac46d44c1224546dda77724af026f4a27}\label{group__samd20__xplained__pro__features__group_gac46d44c1224546dda77724af026f4a27}} 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+0\+\_\+\+CHANNEL}~18
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga91f8a002fe07f9858fa21ef5c05e905f}\label{group__samd20__xplained__pro__features__group_ga91f8a002fe07f9858fa21ef5c05e905f}} 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_af594515430ee7cd9c6c02e6b5dfa5822}{PIN\+\_\+\+PA10\+B\+\_\+\+ADC\+\_\+\+AIN18}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga7c279841395aceddf661ac7dc3daadc9}\label{group__samd20__xplained__pro__features__group_ga7c279841395aceddf661ac7dc3daadc9}} 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PA10\+B\+\_\+\+ADC\+\_\+\+AIN18
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaef2648c27f78e4c998c2739506d4e478}\label{group__samd20__xplained__pro__features__group_gaef2648c27f78e4c998c2739506d4e478}} 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA10\+B\+\_\+\+ADC\+\_\+\+AIN18
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga934979148a3c74d392b0f3970721880c}\label{group__samd20__xplained__pro__features__group_ga934979148a3c74d392b0f3970721880c}} 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+1\+\_\+\+CHANNEL}~19
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf4cd3ff8f43d22ce11edfe40b02d0498}\label{group__samd20__xplained__pro__features__group_gaf4cd3ff8f43d22ce11edfe40b02d0498}} 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a5f56dda410dca398fa92679ce6b01c46}{PIN\+\_\+\+PA11\+B\+\_\+\+ADC\+\_\+\+AIN19}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga7de3785c01df710fbe80244bca6eb130}\label{group__samd20__xplained__pro__features__group_ga7de3785c01df710fbe80244bca6eb130}} 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PA11\+B\+\_\+\+ADC\+\_\+\+AIN19
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga32513ceb498b89de9facdcba65c559ca}\label{group__samd20__xplained__pro__features__group_ga32513ceb498b89de9facdcba65c559ca}} 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA11\+B\+\_\+\+ADC\+\_\+\+AIN19
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#2 PWM definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4065afb7edcb95b1119a9e48d6891326}\label{group__samd20__xplained__pro__features__group_ga4065afb7edcb95b1119a9e48d6891326}} 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a877f51fe7311fbc9c49c966ba738be05}{TC4}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga6d520cd848a0df7fe5b1cfa44c3a77ac}\label{group__samd20__xplained__pro__features__group_ga6d520cd848a0df7fe5b1cfa44c3a77ac}} 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+0\+\_\+\+CHANNEL}~0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab1bc229e3900ec14f5e718a435567549}\label{group__samd20__xplained__pro__features__group_gab1bc229e3900ec14f5e718a435567549}} 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a32f672cd37bbd6d62b6dc31010d563b1}{PIN\+\_\+\+PA22\+F\+\_\+\+TC4\+\_\+\+WO0}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf3d83c1098af352df8b4411102d0defa}\label{group__samd20__xplained__pro__features__group_gaf3d83c1098af352df8b4411102d0defa}} 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PA22\+F\+\_\+\+TC4\+\_\+\+WO0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab651a3d9a5cc47de89da5390125b60ef}\label{group__samd20__xplained__pro__features__group_gab651a3d9a5cc47de89da5390125b60ef}} 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA22\+F\+\_\+\+TC4\+\_\+\+WO0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8230fa68feeedc7a491be3d10c7d6bce}\label{group__samd20__xplained__pro__features__group_ga8230fa68feeedc7a491be3d10c7d6bce}} 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+1\+\_\+\+CHANNEL}~1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga641bd7ece0fdf2a8cfd49c75ed8f93bc}\label{group__samd20__xplained__pro__features__group_ga641bd7ece0fdf2a8cfd49c75ed8f93bc}} 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_ae5d946796ae9f1a65f9f396dbf536073}{PIN\+\_\+\+PA23\+F\+\_\+\+TC4\+\_\+\+WO1}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga159afe58057253f3b8fddd70f6101dc8}\label{group__samd20__xplained__pro__features__group_ga159afe58057253f3b8fddd70f6101dc8}} 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PA23\+F\+\_\+\+TC4\+\_\+\+WO1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaac9afe6017edd312bcfa50f6f61cc9dc}\label{group__samd20__xplained__pro__features__group_gaac9afe6017edd312bcfa50f6f61cc9dc}} 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA23\+F\+\_\+\+TC4\+\_\+\+WO1
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#2 IRQ/\+External interrupt definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga9c7d09aeb7bba32ec8bca4f14d66a70c}\label{group__samd20__xplained__pro__features__group_ga9c7d09aeb7bba32ec8bca4f14d66a70c}} 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a27183a94584b5fca7e1207ce7a79782a}{EIC}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gabab814617e9251dc70998b42ed7cdb4f}\label{group__samd20__xplained__pro__features__group_gabab814617e9251dc70998b42ed7cdb4f}} 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+INPUT}~14
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga463f0f401aa67ecec8d09529eca77a68}\label{group__samd20__xplained__pro__features__group_ga463f0f401aa67ecec8d09529eca77a68}} 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a97b02a75f517744286a792170b1b7007}{PIN\+\_\+\+PB14\+A\+\_\+\+EIC\+\_\+\+EXTINT14}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4bb40e6d553d9016fbd69f3ccc79ebc0}\label{group__samd20__xplained__pro__features__group_ga4bb40e6d553d9016fbd69f3ccc79ebc0}} 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+MUX}~MUX\+\_\+\+PB14\+A\+\_\+\+EIC\+\_\+\+EXTINT14
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga30035ae80991aa23f39da81428529ac4}\label{group__samd20__xplained__pro__features__group_ga30035ae80991aa23f39da81428529ac4}} 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB14\+A\+\_\+\+EIC\+\_\+\+EXTINT14
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#2 I2C definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga087e46c31d1da0eaec55cdb9c5075354}\label{group__samd20__xplained__pro__features__group_ga087e46c31d1da0eaec55cdb9c5075354}} 
+\#define {\bfseries EXT2\+\_\+\+I2\+C\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a918e4c85993961a115bb23b4bb73a87f}{SERCOM2}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gae8ffb217b630336bb47b3c5c9d01aa2e}\label{group__samd20__xplained__pro__features__group_gae8ffb217b630336bb47b3c5c9d01aa2e}} 
+\#define {\bfseries EXT2\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA08\+D\+\_\+\+SERCOM2\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga2b0d1721964c28bd886ab93b0d774ad2}\label{group__samd20__xplained__pro__features__group_ga2b0d1721964c28bd886ab93b0d774ad2}} 
+\#define {\bfseries EXT2\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA09\+D\+\_\+\+SERCOM2\+\_\+\+PAD1
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#2 UART definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gadb664e595fbdde6e3c1a11a238dc3841}\label{group__samd20__xplained__pro__features__group_gadb664e595fbdde6e3c1a11a238dc3841}} 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_ad48343faa88820b8f552aa1eaf66f00a}{SERCOM4}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gabc611f94ac99344209927a3e6572b29c}\label{group__samd20__xplained__pro__features__group_gabc611f94ac99344209927a3e6572b29c}} 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}{USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaaa9974098a22d4acd21b63a5b19bf06e}\label{group__samd20__xplained__pro__features__group_gaaa9974098a22d4acd21b63a5b19bf06e}} 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PB12\+C\+\_\+\+SERCOM4\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8ed7752fb315ddf974e874e1815ccb9a}\label{group__samd20__xplained__pro__features__group_ga8ed7752fb315ddf974e874e1815ccb9a}} 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PB13\+C\+\_\+\+SERCOM4\+\_\+\+PAD1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga78d4c7cb399b582d447aa8b7521ccd9a}\label{group__samd20__xplained__pro__features__group_ga78d4c7cb399b582d447aa8b7521ccd9a}} 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga1618f9d133e1edfc216fb556101a37e6}\label{group__samd20__xplained__pro__features__group_ga1618f9d133e1edfc216fb556101a37e6}} 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#2 SPI definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga61fcf212ea571b4b7570423bb3ad23ba}\label{group__samd20__xplained__pro__features__group_ga61fcf212ea571b4b7570423bb3ad23ba}} 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a130d7d7bc9ef1da1ba1bd094b42449d7}{SERCOM1}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaba3b1b2adf5294f49f0729e557139b48}\label{group__samd20__xplained__pro__features__group_gaba3b1b2adf5294f49f0729e557139b48}} 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~SPI\+\_\+\+SIGNAL\+\_\+\+MUX\+\_\+\+SETTING\+\_\+E
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga6e34e325818f6d4e8227c8ee7220a5fa}\label{group__samd20__xplained__pro__features__group_ga6e34e325818f6d4e8227c8ee7220a5fa}} 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA16\+C\+\_\+\+SERCOM1\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4adc397a5b4274c6d63a37dd82073b86}\label{group__samd20__xplained__pro__features__group_ga4adc397a5b4274c6d63a37dd82073b86}} 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA17\+C\+\_\+\+SERCOM1\+\_\+\+PAD1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga80742baa0460438ed9dfc52ed4cc875c}\label{group__samd20__xplained__pro__features__group_ga80742baa0460438ed9dfc52ed4cc875c}} 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PA18\+C\+\_\+\+SERCOM1\+\_\+\+PAD2
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga64c0756fb7fe251282040ab588f85a22}\label{group__samd20__xplained__pro__features__group_ga64c0756fb7fe251282040ab588f85a22}} 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PA19\+C\+\_\+\+SERCOM1\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#3 pin definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8e823d76e968e9463aa7ed9d681ab4c5}\label{group__samd20__xplained__pro__features__group_ga8e823d76e968e9463aa7ed9d681ab4c5}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+3}~\mbox{\hyperlink{pio_2samd20e14_8h_ada4a90557e056a63a5c13b11343471ab}{PIN\+\_\+\+PA02}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga2659ebbdbb6a69bacfb06d0c5e076686}\label{group__samd20__xplained__pro__features__group_ga2659ebbdbb6a69bacfb06d0c5e076686}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+4}~\mbox{\hyperlink{pio_2samd20e14_8h_a32b9f520e39b943f78a864645721a9d6}{PIN\+\_\+\+PA03}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gae0e882567ba8d8b65d6f02ce1c8e197b}\label{group__samd20__xplained__pro__features__group_gae0e882567ba8d8b65d6f02ce1c8e197b}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+5}~\mbox{\hyperlink{pio_2samd20j14_8h_a5ff751a11f710f459e0ccb12b6db3e29}{PIN\+\_\+\+PB30}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gae585af12e54a482a9c0b560088f49961}\label{group__samd20__xplained__pro__features__group_gae585af12e54a482a9c0b560088f49961}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+6}~\mbox{\hyperlink{pio_2samd20e14_8h_abaad308f0408bf5d3f1fe558f3d26e5e}{PIN\+\_\+\+PA15}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga9da5b6d042c1319ae248f3edc093cd82}\label{group__samd20__xplained__pro__features__group_ga9da5b6d042c1319ae248f3edc093cd82}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+7}~\mbox{\hyperlink{pio_2samd20g14_8h_a2ffb0dfd383bdc2f6e8f41a9ef0d4955}{PIN\+\_\+\+PA12}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac33c7a96afb4b0a7be81fd0a4a3eb353}\label{group__samd20__xplained__pro__features__group_gac33c7a96afb4b0a7be81fd0a4a3eb353}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+8}~\mbox{\hyperlink{pio_2samd20g14_8h_a4180bdc6fd7252cff2ffe28176866028}{PIN\+\_\+\+PA13}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4d3e99570736508ef7b8160dd9147959}\label{group__samd20__xplained__pro__features__group_ga4d3e99570736508ef7b8160dd9147959}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+9}~\mbox{\hyperlink{pio_2samd20e14_8h_af75c65abdba3e908699ed3c1c21f1148}{PIN\+\_\+\+PA28}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4724c7144bc67a5615924e8c118d1831}\label{group__samd20__xplained__pro__features__group_ga4724c7144bc67a5615924e8c118d1831}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+10}~\mbox{\hyperlink{pio_2samd20e14_8h_a3794cc9242203d349103ba1249e5d587}{PIN\+\_\+\+PA27}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga3ff8ac1a1d17200f4cc8ca790dfb3f06}\label{group__samd20__xplained__pro__features__group_ga3ff8ac1a1d17200f4cc8ca790dfb3f06}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+11}~\mbox{\hyperlink{pio_2samd20e14_8h_a7dc08bf81d9967156de18aae2cb5fe46}{PIN\+\_\+\+PA08}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga7797b0ce37f1f164fbd83a7c28e85e2a}\label{group__samd20__xplained__pro__features__group_ga7797b0ce37f1f164fbd83a7c28e85e2a}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+12}~\mbox{\hyperlink{pio_2samd20e14_8h_ac14663d14647a4a629d8dc37616bf7e4}{PIN\+\_\+\+PA09}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga0cc43bab12f9241769447fbc00116980}\label{group__samd20__xplained__pro__features__group_ga0cc43bab12f9241769447fbc00116980}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+13}~\mbox{\hyperlink{pio_2samd20g14_8h_aa67c3fe74fde6a524858a0dd54809391}{PIN\+\_\+\+PB11}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga95e6c7f8abfe571854332cb712457bd8}\label{group__samd20__xplained__pro__features__group_ga95e6c7f8abfe571854332cb712457bd8}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+14}~\mbox{\hyperlink{pio_2samd20g14_8h_ace5077df47f85d8716961068d23999f9}{PIN\+\_\+\+PB10}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga02135878edc582d48eec8a2898f14eaa}\label{group__samd20__xplained__pro__features__group_ga02135878edc582d48eec8a2898f14eaa}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+15}~\mbox{\hyperlink{pio_2samd20j14_8h_a7589e10e4bc65e51d370b6fb985d8f2c}{PIN\+\_\+\+PB17}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga129b453fa4cdccb3238c96192675c48d}\label{group__samd20__xplained__pro__features__group_ga129b453fa4cdccb3238c96192675c48d}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+16}~\mbox{\hyperlink{pio_2samd20g14_8h_a5f8249fb7d7568f6ac27dd4e38171724}{PIN\+\_\+\+PB22}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga0ebe9b8af5b0961d98f2ac78875f7cc9}\label{group__samd20__xplained__pro__features__group_ga0ebe9b8af5b0961d98f2ac78875f7cc9}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+17}~\mbox{\hyperlink{pio_2samd20j14_8h_a2638b944d2f382c990e0a4c6810aea1e}{PIN\+\_\+\+PB16}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab13aa81d23765b5ba889f25b46db936e}\label{group__samd20__xplained__pro__features__group_gab13aa81d23765b5ba889f25b46db936e}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+18}~\mbox{\hyperlink{pio_2samd20g14_8h_a78443bb5df689db4f8d87386e31775db}{PIN\+\_\+\+PB23}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#3 pin definitions by function}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab613ff1e93459a7159a42fa50a352281}\label{group__samd20__xplained__pro__features__group_gab613ff1e93459a7159a42fa50a352281}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+ADC\+\_\+0}~EXT3\+\_\+\+PIN\+\_\+3
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga37d0af5deaabdad4c7e2be4a2fad81a4}\label{group__samd20__xplained__pro__features__group_ga37d0af5deaabdad4c7e2be4a2fad81a4}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+ADC\+\_\+1}~EXT3\+\_\+\+PIN\+\_\+4
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga0fcf49640ad0c8cdb543b616f5202c11}\label{group__samd20__xplained__pro__features__group_ga0fcf49640ad0c8cdb543b616f5202c11}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+GPIO\+\_\+0}~EXT3\+\_\+\+PIN\+\_\+5
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf1491d9740447373c693ce7fe36fb8c1}\label{group__samd20__xplained__pro__features__group_gaf1491d9740447373c693ce7fe36fb8c1}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+GPIO\+\_\+1}~EXT3\+\_\+\+PIN\+\_\+6
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga38bee8d1c9027e2005cce205817e230d}\label{group__samd20__xplained__pro__features__group_ga38bee8d1c9027e2005cce205817e230d}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+PWM\+\_\+0}~EXT3\+\_\+\+PIN\+\_\+7
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga33687da9c2c7a58f75d902ca9333ab17}\label{group__samd20__xplained__pro__features__group_ga33687da9c2c7a58f75d902ca9333ab17}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+PWM\+\_\+1}~EXT3\+\_\+\+PIN\+\_\+8
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gae5a41442bb3e9715c25f4cdc2d74f75a}\label{group__samd20__xplained__pro__features__group_gae5a41442bb3e9715c25f4cdc2d74f75a}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+IRQ}~EXT3\+\_\+\+PIN\+\_\+9
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaabe527bdf7b57f8bb6f62a8a539db093}\label{group__samd20__xplained__pro__features__group_gaabe527bdf7b57f8bb6f62a8a539db093}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SDA}~EXT3\+\_\+\+PIN\+\_\+11
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaeb539fa71e7f66b780fbdee9ad4e0831}\label{group__samd20__xplained__pro__features__group_gaeb539fa71e7f66b780fbdee9ad4e0831}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SCL}~EXT3\+\_\+\+PIN\+\_\+12
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8bbe4f98b25359138963876a9095ed2e}\label{group__samd20__xplained__pro__features__group_ga8bbe4f98b25359138963876a9095ed2e}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+UART\+\_\+\+RX}~EXT3\+\_\+\+PIN\+\_\+13
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5e269ee4dc61b3cdf35e95ae25140375}\label{group__samd20__xplained__pro__features__group_ga5e269ee4dc61b3cdf35e95ae25140375}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+UART\+\_\+\+TX}~EXT3\+\_\+\+PIN\+\_\+14
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga1d3c7cdbc7476ce3a4c614d478ef2684}\label{group__samd20__xplained__pro__features__group_ga1d3c7cdbc7476ce3a4c614d478ef2684}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+1}~EXT3\+\_\+\+PIN\+\_\+10
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga82dbbc309a4eda1598ed614f6767976a}\label{group__samd20__xplained__pro__features__group_ga82dbbc309a4eda1598ed614f6767976a}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+0}~EXT3\+\_\+\+PIN\+\_\+15
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga47222afd21e45970647fec2204a44346}\label{group__samd20__xplained__pro__features__group_ga47222afd21e45970647fec2204a44346}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MOSI}~EXT3\+\_\+\+PIN\+\_\+16
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa713a5309de3721cb9324bdbe92b4be4}\label{group__samd20__xplained__pro__features__group_gaa713a5309de3721cb9324bdbe92b4be4}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MISO}~EXT3\+\_\+\+PIN\+\_\+17
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaef6c5a494b75787ab10a3c23c82488c9}\label{group__samd20__xplained__pro__features__group_gaef6c5a494b75787ab10a3c23c82488c9}} 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SCK}~EXT3\+\_\+\+PIN\+\_\+18
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#3 ADC definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga1c580a78f53f567f9d686e2a84a22071}\label{group__samd20__xplained__pro__features__group_ga1c580a78f53f567f9d686e2a84a22071}} 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a54d148b91f3d356713f7e367a2243bea}{ADC}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gadd6748e8f065715e279c5f0397523d8c}\label{group__samd20__xplained__pro__features__group_gadd6748e8f065715e279c5f0397523d8c}} 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+0\+\_\+\+CHANNEL}~0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5eb6b74f07202306adcc8ac71477d0e0}\label{group__samd20__xplained__pro__features__group_ga5eb6b74f07202306adcc8ac71477d0e0}} 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a28e2b578252cab66df91b7f96be1a6e9}{PIN\+\_\+\+PA02\+B\+\_\+\+ADC\+\_\+\+AIN0}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gafae155279974f051965f5878c396fcbd}\label{group__samd20__xplained__pro__features__group_gafae155279974f051965f5878c396fcbd}} 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PA02\+B\+\_\+\+ADC\+\_\+\+AIN0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga7e7cfb3c414e187d3d2770e45bb3b8ef}\label{group__samd20__xplained__pro__features__group_ga7e7cfb3c414e187d3d2770e45bb3b8ef}} 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA02\+B\+\_\+\+ADC\+\_\+\+AIN0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf5d8ab29e2335e2a3495181f59f5e4ab}\label{group__samd20__xplained__pro__features__group_gaf5d8ab29e2335e2a3495181f59f5e4ab}} 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+1\+\_\+\+CHANNEL}~1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaac2e37593f0f7f467adf2f75e77a2cc3}\label{group__samd20__xplained__pro__features__group_gaac2e37593f0f7f467adf2f75e77a2cc3}} 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a2e57923c9cb67bd9c9614bcc1df27e64}{PIN\+\_\+\+PA03\+B\+\_\+\+ADC\+\_\+\+AIN1}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab517825e26b66dd5e8a496254d1ff476}\label{group__samd20__xplained__pro__features__group_gab517825e26b66dd5e8a496254d1ff476}} 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PA03\+B\+\_\+\+ADC\+\_\+\+AIN1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga452a453e54d6ebe5f16fa57830febbe1}\label{group__samd20__xplained__pro__features__group_ga452a453e54d6ebe5f16fa57830febbe1}} 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA03\+B\+\_\+\+ADC\+\_\+\+AIN1
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#3 PWM definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga47aef6790dcd4c693ba822910ed0611c}\label{group__samd20__xplained__pro__features__group_ga47aef6790dcd4c693ba822910ed0611c}} 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a1a7cd5e0e5b3b37a78ffd38fdcf468ab}{TC2}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga7635edc2012aff858a6cbf38f5ee1076}\label{group__samd20__xplained__pro__features__group_ga7635edc2012aff858a6cbf38f5ee1076}} 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+0\+\_\+\+CHANNEL}~0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga0b4ae00022cfb380801de89ee305be51}\label{group__samd20__xplained__pro__features__group_ga0b4ae00022cfb380801de89ee305be51}} 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g14_8h_aa761970c4cdbf930364f75bef19e7ef5}{PIN\+\_\+\+PA12\+E\+\_\+\+TC2\+\_\+\+WO0}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5f465fe3b147714d4fe4d20750820cf1}\label{group__samd20__xplained__pro__features__group_ga5f465fe3b147714d4fe4d20750820cf1}} 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PA12\+E\+\_\+\+TC2\+\_\+\+WO0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga79e31166204e40128fcd388d0dd27363}\label{group__samd20__xplained__pro__features__group_ga79e31166204e40128fcd388d0dd27363}} 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA12\+E\+\_\+\+TC2\+\_\+\+WO0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga2d33e28424eb7882d769a6fd808606c3}\label{group__samd20__xplained__pro__features__group_ga2d33e28424eb7882d769a6fd808606c3}} 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+1\+\_\+\+CHANNEL}~1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga12c09c4b2ed60cd962a464b9dbfc4eb4}\label{group__samd20__xplained__pro__features__group_ga12c09c4b2ed60cd962a464b9dbfc4eb4}} 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g14_8h_a4ad884ff60803c898735bfbc4b9b6a01}{PIN\+\_\+\+PA13\+E\+\_\+\+TC2\+\_\+\+WO1}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8ae275352942e395111f47e4fc6699ad}\label{group__samd20__xplained__pro__features__group_ga8ae275352942e395111f47e4fc6699ad}} 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PA13\+E\+\_\+\+TC2\+\_\+\+WO1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab9aad678fce4b7b18063b9976656455b}\label{group__samd20__xplained__pro__features__group_gab9aad678fce4b7b18063b9976656455b}} 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA13\+E\+\_\+\+TC2\+\_\+\+WO1
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#3 IRQ/\+External interrupt definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5ec11c6d995d6000b5b9d55a7870ef90}\label{group__samd20__xplained__pro__features__group_ga5ec11c6d995d6000b5b9d55a7870ef90}} 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a27183a94584b5fca7e1207ce7a79782a}{EIC}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8f4548daa660ae56479c9dd4a6dc8a35}\label{group__samd20__xplained__pro__features__group_ga8f4548daa660ae56479c9dd4a6dc8a35}} 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+INPUT}~8
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab3408928c37ce5e12da13e42f9860ab9}\label{group__samd20__xplained__pro__features__group_gab3408928c37ce5e12da13e42f9860ab9}} 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_abef0a2ee4a8a00b8e5065563562cf65f}{PIN\+\_\+\+PA28\+A\+\_\+\+EIC\+\_\+\+EXTINT8}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga153e6ec05a5cc8d79bf49f482df9bcb4}\label{group__samd20__xplained__pro__features__group_ga153e6ec05a5cc8d79bf49f482df9bcb4}} 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+MUX}~MUX\+\_\+\+PA28\+A\+\_\+\+EIC\+\_\+\+EXTINT8
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8706ccc826eb7e13e73095dc982777d8}\label{group__samd20__xplained__pro__features__group_ga8706ccc826eb7e13e73095dc982777d8}} 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA28\+A\+\_\+\+EIC\+\_\+\+EXTINT8
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#3 I2C definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga2f282089eefa035e3a0c1adf3b7fed43}\label{group__samd20__xplained__pro__features__group_ga2f282089eefa035e3a0c1adf3b7fed43}} 
+\#define {\bfseries EXT3\+\_\+\+I2\+C\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a918e4c85993961a115bb23b4bb73a87f}{SERCOM2}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga197dff44b37ec441073abbccc50149c4}\label{group__samd20__xplained__pro__features__group_ga197dff44b37ec441073abbccc50149c4}} 
+\#define {\bfseries EXT3\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA08\+D\+\_\+\+SERCOM2\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga38d55a0120c9521f025a60b2fa34b2ad}\label{group__samd20__xplained__pro__features__group_ga38d55a0120c9521f025a60b2fa34b2ad}} 
+\#define {\bfseries EXT3\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA09\+D\+\_\+\+SERCOM2\+\_\+\+PAD1
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#3 UART definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga4ba0c912918abec0687a93e135e0c1ba}\label{group__samd20__xplained__pro__features__group_ga4ba0c912918abec0687a93e135e0c1ba}} 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_ad48343faa88820b8f552aa1eaf66f00a}{SERCOM4}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab85f72ec57420f2ca281dc8ec8200888}\label{group__samd20__xplained__pro__features__group_gab85f72ec57420f2ca281dc8ec8200888}} 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}{USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gada3e8c4dfcbb8ea29ae7582dacb413bd}\label{group__samd20__xplained__pro__features__group_gada3e8c4dfcbb8ea29ae7582dacb413bd}} 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga35fab6527496eabe2c5f7b6a4a80556a}\label{group__samd20__xplained__pro__features__group_ga35fab6527496eabe2c5f7b6a4a80556a}} 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga3b425f4905c877a78674ca26aa08833b}\label{group__samd20__xplained__pro__features__group_ga3b425f4905c877a78674ca26aa08833b}} 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PB10\+D\+\_\+\+SERCOM4\+\_\+\+PAD2
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gac8ad1efc6a16fd80d227082ebc261a03}\label{group__samd20__xplained__pro__features__group_gac8ad1efc6a16fd80d227082ebc261a03}} 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PB11\+D\+\_\+\+SERCOM4\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\doxysubsection*{Extension header \#3 SPI definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gabc0417beba6a839dc92dc896b683bdc9}\label{group__samd20__xplained__pro__features__group_gabc0417beba6a839dc92dc896b683bdc9}} 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_a8785a316e608cb0a218f2a59655d6037}{SERCOM5}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8d4d30895d2d69a41519f7bd6186fa42}\label{group__samd20__xplained__pro__features__group_ga8d4d30895d2d69a41519f7bd6186fa42}} 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~SPI\+\_\+\+SIGNAL\+\_\+\+MUX\+\_\+\+SETTING\+\_\+E
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gad84ea44cf2afd41b5ba4fb60de91eb09}\label{group__samd20__xplained__pro__features__group_gad84ea44cf2afd41b5ba4fb60de91eb09}} 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PB16\+C\+\_\+\+SERCOM5\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gae4cdf177fe002739bf0c0eb28ee02f7b}\label{group__samd20__xplained__pro__features__group_gae4cdf177fe002739bf0c0eb28ee02f7b}} 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PB17\+C\+\_\+\+SERCOM5\+\_\+\+PAD1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga725cf7f9cbc5231e0bdbda235551d782}\label{group__samd20__xplained__pro__features__group_ga725cf7f9cbc5231e0bdbda235551d782}} 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PB22\+D\+\_\+\+SERCOM5\+\_\+\+PAD2
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga84f1a1f8499cfa151898410c2dcf388c}\label{group__samd20__xplained__pro__features__group_ga84f1a1f8499cfa151898410c2dcf388c}} 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PB23\+D\+\_\+\+SERCOM5\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\doxysubsection*{Embedded debugger GPIO interface definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab52250c9a7d51e3c63694293bf95eb6e}\label{group__samd20__xplained__pro__features__group_gab52250c9a7d51e3c63694293bf95eb6e}} 
+\#define {\bfseries EDBG\+\_\+\+GPIO0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a3794cc9242203d349103ba1249e5d587}{PIN\+\_\+\+PA27}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga3c61dc36b629d98962cdc489d7631607}\label{group__samd20__xplained__pro__features__group_ga3c61dc36b629d98962cdc489d7631607}} 
+\#define {\bfseries EDBG\+\_\+\+GPIO1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_af75c65abdba3e908699ed3c1c21f1148}{PIN\+\_\+\+PA28}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gafbf7f6c9548bd68ba68ab103a7bdb2dd}\label{group__samd20__xplained__pro__features__group_gafbf7f6c9548bd68ba68ab103a7bdb2dd}} 
+\#define {\bfseries EDBG\+\_\+\+GPIO2\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g14_8h_a00c77a5c19a99cee2402fc83b04c02d5}{PIN\+\_\+\+PA20}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga8fe4ed875b8b06710da5cc565ae524ba}\label{group__samd20__xplained__pro__features__group_ga8fe4ed875b8b06710da5cc565ae524ba}} 
+\#define {\bfseries EDBG\+\_\+\+GPIO3\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g14_8h_af985624239bfbec119533432376256b8}{PIN\+\_\+\+PA21}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Embedded debugger USART interface definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga263caaf51dde2163dbdb1b5cdee1be4d}\label{group__samd20__xplained__pro__features__group_ga263caaf51dde2163dbdb1b5cdee1be4d}} 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+MODULE}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga12b6b3e177ffda8eda2169880637c0ef}\label{group__samd20__xplained__pro__features__group_ga12b6b3e177ffda8eda2169880637c0ef}} 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+RX\+\_\+\+PIN}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5300e4deeffffeb36482893abfa91782}\label{group__samd20__xplained__pro__features__group_ga5300e4deeffffeb36482893abfa91782}} 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+RX\+\_\+\+MUX}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga648907e5e1d95d0ca37a48bf487e31ee}\label{group__samd20__xplained__pro__features__group_ga648907e5e1d95d0ca37a48bf487e31ee}} 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+RX\+\_\+\+PINMUX}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa79ab0c50211456414e397e05003ac17}\label{group__samd20__xplained__pro__features__group_gaa79ab0c50211456414e397e05003ac17}} 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+RX\+\_\+\+SERCOM\+\_\+\+PAD}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga870808eab672d6a51e18430979d8fb4f}\label{group__samd20__xplained__pro__features__group_ga870808eab672d6a51e18430979d8fb4f}} 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+TX\+\_\+\+PIN}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga36d751daa7473464d2b796ca99bddd46}\label{group__samd20__xplained__pro__features__group_ga36d751daa7473464d2b796ca99bddd46}} 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+TX\+\_\+\+MUX}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab0ec9f595b2de9a477d80cb619d35936}\label{group__samd20__xplained__pro__features__group_gab0ec9f595b2de9a477d80cb619d35936}} 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+TX\+\_\+\+PINMUX}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga5bb38a579c61a63d56c941de2ec21640}\label{group__samd20__xplained__pro__features__group_ga5bb38a579c61a63d56c941de2ec21640}} 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+TX\+\_\+\+SERCOM\+\_\+\+PAD}~-\/1 /$\ast$ Not available on this board $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Embedded debugger I2C interface definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga86cb632d58e70b8725d9c8a744cc59d7}\label{group__samd20__xplained__pro__features__group_ga86cb632d58e70b8725d9c8a744cc59d7}} 
+\#define {\bfseries EDBG\+\_\+\+I2\+C\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a918e4c85993961a115bb23b4bb73a87f}{SERCOM2}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gab571585897276d3ae0595dde62399f02}\label{group__samd20__xplained__pro__features__group_gab571585897276d3ae0595dde62399f02}} 
+\#define {\bfseries EDBG\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA08\+D\+\_\+\+SERCOM2\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga9a63088aae8523035dfaf614581c4047}\label{group__samd20__xplained__pro__features__group_ga9a63088aae8523035dfaf614581c4047}} 
+\#define {\bfseries EDBG\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA09\+D\+\_\+\+SERCOM2\+\_\+\+PAD1
+\end{DoxyCompactItemize}
+\doxysubsection*{Embedded debugger SPI interface definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga10c97c791efe2dd1b4bd8a577f5e0c44}\label{group__samd20__xplained__pro__features__group_ga10c97c791efe2dd1b4bd8a577f5e0c44}} 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_a8785a316e608cb0a218f2a59655d6037}{SERCOM5}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga038b971af0847e18d7abd8135d0fbab4}\label{group__samd20__xplained__pro__features__group_ga038b971af0847e18d7abd8135d0fbab4}} 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~SPI\+\_\+\+SIGNAL\+\_\+\+MUX\+\_\+\+SETTING\+\_\+E
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaef3069b7c754477829469c1628d7d1d4}\label{group__samd20__xplained__pro__features__group_gaef3069b7c754477829469c1628d7d1d4}} 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PB16\+C\+\_\+\+SERCOM5\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gad5152d1a5c7472c8a49e91446df28219}\label{group__samd20__xplained__pro__features__group_gad5152d1a5c7472c8a49e91446df28219}} 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PB31\+D\+\_\+\+SERCOM5\+\_\+\+PAD1
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga47b3ed0d9a5ec64d1c1b2290bf0c338d}\label{group__samd20__xplained__pro__features__group_ga47b3ed0d9a5ec64d1c1b2290bf0c338d}} 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PB22\+D\+\_\+\+SERCOM5\+\_\+\+PAD2
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga816d37a841e7021dd0e79343e1b933ff}\label{group__samd20__xplained__pro__features__group_ga816d37a841e7021dd0e79343e1b933ff}} 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PB23\+D\+\_\+\+SERCOM5\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\doxysubsection*{Embedded debugger CDC Gateway USART interface definitions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf0fcea2c93da3103a5034f7acf880199}\label{group__samd20__xplained__pro__features__group_gaf0fcea2c93da3103a5034f7acf880199}} 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_ac9f8240be5a40b46cb09617323ebc7e3}{SERCOM3}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf280711d231595500e625f8bd55b2f86}\label{group__samd20__xplained__pro__features__group_gaf280711d231595500e625f8bd55b2f86}} 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}{USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaf52beac6e5e72322ef2a4efc0f0061fd}\label{group__samd20__xplained__pro__features__group_gaf52beac6e5e72322ef2a4efc0f0061fd}} 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gaa26f39433a2bdb405244a93fc4a9a09f}\label{group__samd20__xplained__pro__features__group_gaa26f39433a2bdb405244a93fc4a9a09f}} 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga1ad050d87b5fbd7ff982782cdd690259}\label{group__samd20__xplained__pro__features__group_ga1ad050d87b5fbd7ff982782cdd690259}} 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PA24\+C\+\_\+\+SERCOM3\+\_\+\+PAD2
+\item 
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gadafc03032e3b6cbd5ad8f2030a86d9be}\label{group__samd20__xplained__pro__features__group_gadafc03032e3b6cbd5ad8f2030a86d9be}} 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PA25\+C\+\_\+\+SERCOM3\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Symbols that describe features and capabilities of the board. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga02581754b212d533d96cde56c8145c9b}\label{group__samd20__xplained__pro__features__group_ga02581754b212d533d96cde56c8145c9b}} 
+\index{Features@{Features}!BOARD\_NAME@{BOARD\_NAME}}
+\index{BOARD\_NAME@{BOARD\_NAME}!Features@{Features}}
+\doxysubsubsection{\texorpdfstring{BOARD\_NAME}{BOARD\_NAME}}
+{\footnotesize\ttfamily \#define BOARD\+\_\+\+NAME~\char`\"{}SAMD20\+\_\+\+XPLAINED\+\_\+\+PRO\char`\"{}}
+
+Name string macro \mbox{\Hypertarget{group__samd20__xplained__pro__features__group_ga687f94d4d3be4db86a833082ecdf980a}\label{group__samd20__xplained__pro__features__group_ga687f94d4d3be4db86a833082ecdf980a}} 
+\index{Features@{Features}!BUTTON\_COUNT@{BUTTON\_COUNT}}
+\index{BUTTON\_COUNT@{BUTTON\_COUNT}!Features@{Features}}
+\doxysubsubsection{\texorpdfstring{BUTTON\_COUNT}{BUTTON\_COUNT}}
+{\footnotesize\ttfamily \#define BUTTON\+\_\+\+COUNT~1}
+
+Number of on-\/board buttons \mbox{\Hypertarget{group__samd20__xplained__pro__features__group_gad698e2cb680601529f08c3e5f2b0cebb}\label{group__samd20__xplained__pro__features__group_gad698e2cb680601529f08c3e5f2b0cebb}} 
+\index{Features@{Features}!LED\_COUNT@{LED\_COUNT}}
+\index{LED\_COUNT@{LED\_COUNT}!Features@{Features}}
+\doxysubsubsection{\texorpdfstring{LED\_COUNT}{LED\_COUNT}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+COUNT~1}
+
+Number of on-\/board LEDs 

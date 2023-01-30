@@ -1,0 +1,115 @@
+\hypertarget{message__buffer_8h_source}{}\doxysection{message\+\_\+buffer.\+h}
+\label{message__buffer_8h_source}\index{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/message\_buffer.h@{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/message\_buffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * FreeRTOS Kernel V10.0.0}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining a copy of}}
+\DoxyCodeLine{6 \textcolor{comment}{ * this software and associated documentation files (the "{}Software"{}), to deal in}}
+\DoxyCodeLine{7 \textcolor{comment}{ * the Software without restriction, including without limitation the rights to}}
+\DoxyCodeLine{8 \textcolor{comment}{ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of}}
+\DoxyCodeLine{9 \textcolor{comment}{ * the Software, and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * The above copyright notice and this permission notice shall be included in all}}
+\DoxyCodeLine{13 \textcolor{comment}{ * copies or substantial portions of the Software. If you wish to use our Amazon}}
+\DoxyCodeLine{14 \textcolor{comment}{ * FreeRTOS name, please do so in a fair use way that does not cause confusion.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{17 \textcolor{comment}{ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS}}
+\DoxyCodeLine{18 \textcolor{comment}{ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR}}
+\DoxyCodeLine{19 \textcolor{comment}{ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER}}
+\DoxyCodeLine{20 \textcolor{comment}{ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN}}
+\DoxyCodeLine{21 \textcolor{comment}{ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * http://www.FreeRTOS.org}}
+\DoxyCodeLine{24 \textcolor{comment}{ * http://aws.amazon.com/freertos}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ * 1 tab == 4 spaces!}}
+\DoxyCodeLine{27 \textcolor{comment}{ */}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ * Message buffers build functionality on top of FreeRTOS stream buffers.}}
+\DoxyCodeLine{32 \textcolor{comment}{ * Whereas stream buffers are used to send a continuous stream of data from one}}
+\DoxyCodeLine{33 \textcolor{comment}{ * task or interrupt to another, message buffers are used to send variable}}
+\DoxyCodeLine{34 \textcolor{comment}{ * length discrete messages from one task or interrupt to another.  Their}}
+\DoxyCodeLine{35 \textcolor{comment}{ * implementation is light weight, making them particularly suited for interrupt}}
+\DoxyCodeLine{36 \textcolor{comment}{ * to task and core to core communication scenarios.}}
+\DoxyCodeLine{37 \textcolor{comment}{ *}}
+\DoxyCodeLine{38 \textcolor{comment}{ * ***NOTE***:  Uniquely among FreeRTOS objects, the stream buffer}}
+\DoxyCodeLine{39 \textcolor{comment}{ * implementation (so also the message buffer implementation, as message buffers}}
+\DoxyCodeLine{40 \textcolor{comment}{ * are built on top of stream buffers) assumes there is only one task or}}
+\DoxyCodeLine{41 \textcolor{comment}{ * interrupt that will write to the buffer (the writer), and only one task or}}
+\DoxyCodeLine{42 \textcolor{comment}{ * interrupt that will read from the buffer (the reader).  It is safe for the}}
+\DoxyCodeLine{43 \textcolor{comment}{ * writer and reader to be different tasks or interrupts, but, unlike other}}
+\DoxyCodeLine{44 \textcolor{comment}{ * FreeRTOS objects, it is not safe to have multiple different writers or}}
+\DoxyCodeLine{45 \textcolor{comment}{ * multiple different readers.  If there are to be multiple different writers}}
+\DoxyCodeLine{46 \textcolor{comment}{ * then the application writer must place each call to a writing API function}}
+\DoxyCodeLine{47 \textcolor{comment}{ * (such as xMessageBufferSend()) inside a critical section and set the send}}
+\DoxyCodeLine{48 \textcolor{comment}{ * block time to 0.  Likewise, if there are to be multiple different readers}}
+\DoxyCodeLine{49 \textcolor{comment}{ * then the application writer must place each call to a reading API function}}
+\DoxyCodeLine{50 \textcolor{comment}{ * (such as xMessageBufferRead()) inside a critical section and set the receive}}
+\DoxyCodeLine{51 \textcolor{comment}{ * timeout to 0.}}
+\DoxyCodeLine{52 \textcolor{comment}{ *}}
+\DoxyCodeLine{53 \textcolor{comment}{ * Message buffers hold variable length messages.  To enable that, when a}}
+\DoxyCodeLine{54 \textcolor{comment}{ * message is written to the message buffer an additional sizeof( size\_t ) bytes}}
+\DoxyCodeLine{55 \textcolor{comment}{ * are also written to store the message's length (that happens internally, with}}
+\DoxyCodeLine{56 \textcolor{comment}{ * the API function).  sizeof( size\_t ) is typically 4 bytes on a 32-\/bit}}
+\DoxyCodeLine{57 \textcolor{comment}{ * architecture, so writing a 10 byte message to a message buffer on a 32-\/bit}}
+\DoxyCodeLine{58 \textcolor{comment}{ * architecture will actually reduce the available space in the message buffer}}
+\DoxyCodeLine{59 \textcolor{comment}{ * by 14 bytes (10 byte are used by the message, and 4 bytes to hold the length}}
+\DoxyCodeLine{60 \textcolor{comment}{ * of the message).}}
+\DoxyCodeLine{61 \textcolor{comment}{ */}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#ifndef FREERTOS\_MESSAGE\_BUFFER\_H}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define FREERTOS\_MESSAGE\_BUFFER\_H}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{/* Message buffers are built onto of stream buffers. */}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#include "{}stream\_buffer.h"{}}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#if defined( \_\_cplusplus )}}
+\DoxyCodeLine{70 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} * MessageBufferHandle\_t;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define xMessageBufferCreate( xBufferSizeBytes ) ( MessageBufferHandle\_t ) xStreamBufferGenericCreate( xBufferSizeBytes, ( size\_t ) 0, pdTRUE )}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define xMessageBufferCreateStatic( xBufferSizeBytes, pucMessageBufferStorageArea, pxStaticMessageBuffer ) ( MessageBufferHandle\_t ) xStreamBufferGenericCreateStatic( xBufferSizeBytes, 0, pdTRUE, pucMessageBufferStorageArea, pxStaticMessageBuffer )}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#define xMessageBufferSend( xMessageBuffer, pvTxData, xDataLengthBytes, xTicksToWait ) xStreamBufferSend( ( StreamBufferHandle\_t ) xMessageBuffer, pvTxData, xDataLengthBytes, xTicksToWait )}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define xMessageBufferSendFromISR( xMessageBuffer, pvTxData, xDataLengthBytes, pxHigherPriorityTaskWoken ) xStreamBufferSendFromISR( ( StreamBufferHandle\_t ) xMessageBuffer, pvTxData, xDataLengthBytes, pxHigherPriorityTaskWoken )}}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#define xMessageBufferReceive( xMessageBuffer, pvRxData, xBufferLengthBytes, xTicksToWait ) xStreamBufferReceive( ( StreamBufferHandle\_t ) xMessageBuffer, pvRxData, xBufferLengthBytes, xTicksToWait )}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498 }
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#define xMessageBufferReceiveFromISR( xMessageBuffer, pvRxData, xBufferLengthBytes, pxHigherPriorityTaskWoken ) xStreamBufferReceiveFromISR( ( StreamBufferHandle\_t ) xMessageBuffer, pvRxData, xBufferLengthBytes, pxHigherPriorityTaskWoken )}}
+\DoxyCodeLine{598 }
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#define vMessageBufferDelete( xMessageBuffer ) vStreamBufferDelete( ( StreamBufferHandle\_t ) xMessageBuffer )}}
+\DoxyCodeLine{618 }
+\DoxyCodeLine{634 \textcolor{preprocessor}{\#define xMessageBufferIsFull( xMessageBuffer ) xStreamBufferIsFull( ( StreamBufferHandle\_t ) xMessageBuffer )}}
+\DoxyCodeLine{635 }
+\DoxyCodeLine{650 \textcolor{preprocessor}{\#define xMessageBufferIsEmpty( xMessageBuffer ) xStreamBufferIsEmpty( ( StreamBufferHandle\_t ) xMessageBuffer )}}
+\DoxyCodeLine{651 }
+\DoxyCodeLine{673 \textcolor{preprocessor}{\#define xMessageBufferReset( xMessageBuffer ) xStreamBufferReset( ( StreamBufferHandle\_t ) xMessageBuffer )}}
+\DoxyCodeLine{674 }
+\DoxyCodeLine{675 }
+\DoxyCodeLine{695 \textcolor{preprocessor}{\#define xMessageBufferSpaceAvailable( xMessageBuffer ) xStreamBufferSpacesAvailable( ( StreamBufferHandle\_t ) xMessageBuffer )}}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{734 \textcolor{preprocessor}{\#define xMessageBufferSendCompletedFromISR( xMessageBuffer, pxHigherPriorityTaskWoken ) xStreamBufferSendCompletedFromISR( ( StreamBufferHandle\_t ) xMessageBuffer, pxHigherPriorityTaskWoken )}}
+\DoxyCodeLine{735 }
+\DoxyCodeLine{774 \textcolor{preprocessor}{\#define xMessageBufferReceiveCompletedFromISR( xMessageBuffer, pxHigherPriorityTaskWoken ) xStreamBufferReceiveCompletedFromISR( ( StreamBufferHandle\_t ) xMessageBuffer, pxHigherPriorityTaskWoken )}}
+\DoxyCodeLine{775 }
+\DoxyCodeLine{776 \textcolor{preprocessor}{\#if defined( \_\_cplusplus )}}
+\DoxyCodeLine{777 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{778 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{779 }
+\DoxyCodeLine{780 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* !defined( FREERTOS\_MESSAGE\_BUFFER\_H ) */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

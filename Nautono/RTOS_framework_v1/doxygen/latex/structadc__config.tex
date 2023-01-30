@@ -1,0 +1,179 @@
+\hypertarget{structadc__config}{}\doxysection{adc\+\_\+config Struct Reference}
+\label{structadc__config}\index{adc\_config@{adc\_config}}
+
+
+ADC configuration structure.  
+
+
+
+
+{\ttfamily \#include $<$adc\+\_\+feature.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} \mbox{\hyperlink{structadc__config_a76399dda86be873c42b0be2285451178}{clock\+\_\+source}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga91b0f997d73739cf9f7349b7581e1f56}{adc\+\_\+reference}} \mbox{\hyperlink{structadc__config_aa63b48851f0f3874960517c80be281ef}{reference}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5aea9abd2ca3e570987d4ee7b8d2ece5}{adc\+\_\+clock\+\_\+prescaler}} \mbox{\hyperlink{structadc__config_a25a05ec8a8aab95f538edd5d703d9be7}{clock\+\_\+prescaler}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga14f1a9a4dda5ef84b87ca7a76b0c91b6}{adc\+\_\+resolution}} \mbox{\hyperlink{structadc__config_a6281719e658b8ced80105f2c2dc15240}{resolution}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gad0058beaf7a14f02aa55ef8db9b966c3}{adc\+\_\+gain\+\_\+factor}} \mbox{\hyperlink{structadc__config_a86e81bf17549a89b11c1bdfacd19ded9}{gain\+\_\+factor}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga7df963d2d3118abe65841e0886764002}{adc\+\_\+positive\+\_\+input}} \mbox{\hyperlink{structadc__config_a905fa2d01efdf1c14d3dd8b5ac0b5d9b}{positive\+\_\+input}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga843290f150383271ef2ed82792d76e81}{adc\+\_\+negative\+\_\+input}} \mbox{\hyperlink{structadc__config_ad609a820271ad96a04eee6737d7b8147}{negative\+\_\+input}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga56aaaff7d846dd74b6818bdb16959ac0}{adc\+\_\+accumulate\+\_\+samples}} \mbox{\hyperlink{structadc__config_ad109a8272e0ecd2193ca1bda4ccdf1ff}{accumulate\+\_\+samples}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga00f645151edbf08c7d90d8beb9b8b217}{adc\+\_\+divide\+\_\+result}} \mbox{\hyperlink{structadc__config_a3ef13588571a39c1426e12daf197d899}{divide\+\_\+result}}
+\item 
+bool \mbox{\hyperlink{structadc__config_aa83b462ee8bb87d948359683a08037c2}{left\+\_\+adjust}}
+\item 
+bool \mbox{\hyperlink{structadc__config_a6cebb2ebeb57c9e0696c81a1cb10cad6}{differential\+\_\+mode}}
+\item 
+bool \mbox{\hyperlink{structadc__config_a9e4b672f49dd9903818ffb03349a55e1}{freerunning}}
+\item 
+bool \mbox{\hyperlink{structadc__config_a0cce56fe8ead597b58e5433f6b7eae5f}{run\+\_\+in\+\_\+standby}}
+\item 
+bool \mbox{\hyperlink{structadc__config_a74ee5224aac4aa1e55512691711bb648}{reference\+\_\+compensation\+\_\+enable}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structadc__config_a9e9679a2da55026812bf32c706ee59ee}{sample\+\_\+length}}
+\item 
+struct \mbox{\hyperlink{structadc__window__config}{adc\+\_\+window\+\_\+config}} \mbox{\hyperlink{structadc__config_ad95a970a48ab7cf704342bc0039c8857}{window}}
+\item 
+struct \mbox{\hyperlink{structadc__correction__config}{adc\+\_\+correction\+\_\+config}} \mbox{\hyperlink{structadc__config_a0bc79514ed71743b1746af2adf45b455}{correction}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gae861d175edda2f67644f6dd042cb7c57}{adc\+\_\+event\+\_\+action}} \mbox{\hyperlink{structadc__config_a2d0c17845500d39f31c865310bc4ad0a}{event\+\_\+action}}
+\item 
+struct \mbox{\hyperlink{structadc__pin__scan__config}{adc\+\_\+pin\+\_\+scan\+\_\+config}} \mbox{\hyperlink{structadc__config_a6c58366ded0ef5f091f95f2d8c88c2c5}{pin\+\_\+scan}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ADC configuration structure. 
+
+Configuration structure for an ADC instance. This structure should be initialized by the \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5a5650a331819833c7a27309c131c55d}{adc\+\_\+get\+\_\+config\+\_\+defaults()}} function before being modified by the user application. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structadc__config_ad109a8272e0ecd2193ca1bda4ccdf1ff}\label{structadc__config_ad109a8272e0ecd2193ca1bda4ccdf1ff}} 
+\index{adc\_config@{adc\_config}!accumulate\_samples@{accumulate\_samples}}
+\index{accumulate\_samples@{accumulate\_samples}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{accumulate\_samples}{accumulate\_samples}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga56aaaff7d846dd74b6818bdb16959ac0}{adc\+\_\+accumulate\+\_\+samples}} adc\+\_\+config\+::accumulate\+\_\+samples}
+
+Number of ADC samples to accumulate when using the {\ttfamily ADC\+\_\+\+RESOLUTION\+\_\+\+CUSTOM} mode. Note\+: if the result width increases, result resolution will be changed accordingly. \mbox{\Hypertarget{structadc__config_a25a05ec8a8aab95f538edd5d703d9be7}\label{structadc__config_a25a05ec8a8aab95f538edd5d703d9be7}} 
+\index{adc\_config@{adc\_config}!clock\_prescaler@{clock\_prescaler}}
+\index{clock\_prescaler@{clock\_prescaler}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{clock\_prescaler}{clock\_prescaler}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5aea9abd2ca3e570987d4ee7b8d2ece5}{adc\+\_\+clock\+\_\+prescaler}} adc\+\_\+config\+::clock\+\_\+prescaler}
+
+Clock prescaler \mbox{\Hypertarget{structadc__config_a76399dda86be873c42b0be2285451178}\label{structadc__config_a76399dda86be873c42b0be2285451178}} 
+\index{adc\_config@{adc\_config}!clock\_source@{clock\_source}}
+\index{clock\_source@{clock\_source}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{clock\_source}{clock\_source}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} adc\+\_\+config\+::clock\+\_\+source}
+
+GCLK generator used to clock the peripheral \mbox{\Hypertarget{structadc__config_a0bc79514ed71743b1746af2adf45b455}\label{structadc__config_a0bc79514ed71743b1746af2adf45b455}} 
+\index{adc\_config@{adc\_config}!correction@{correction}}
+\index{correction@{correction}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{correction}{correction}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structadc__correction__config}{adc\+\_\+correction\+\_\+config}} adc\+\_\+config\+::correction}
+
+Gain and offset correction configuration structure \mbox{\Hypertarget{structadc__config_a6cebb2ebeb57c9e0696c81a1cb10cad6}\label{structadc__config_a6cebb2ebeb57c9e0696c81a1cb10cad6}} 
+\index{adc\_config@{adc\_config}!differential\_mode@{differential\_mode}}
+\index{differential\_mode@{differential\_mode}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{differential\_mode}{differential\_mode}}
+{\footnotesize\ttfamily bool adc\+\_\+config\+::differential\+\_\+mode}
+
+Enables differential mode if true. if false, ADC will run in singled-\/ended mode. \mbox{\Hypertarget{structadc__config_a3ef13588571a39c1426e12daf197d899}\label{structadc__config_a3ef13588571a39c1426e12daf197d899}} 
+\index{adc\_config@{adc\_config}!divide\_result@{divide\_result}}
+\index{divide\_result@{divide\_result}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{divide\_result}{divide\_result}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga00f645151edbf08c7d90d8beb9b8b217}{adc\+\_\+divide\+\_\+result}} adc\+\_\+config\+::divide\+\_\+result}
+
+Division ration when using the ADC\+\_\+\+RESOLUTION\+\_\+\+CUSTOM mode \mbox{\Hypertarget{structadc__config_a2d0c17845500d39f31c865310bc4ad0a}\label{structadc__config_a2d0c17845500d39f31c865310bc4ad0a}} 
+\index{adc\_config@{adc\_config}!event\_action@{event\_action}}
+\index{event\_action@{event\_action}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{event\_action}{event\_action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gae861d175edda2f67644f6dd042cb7c57}{adc\+\_\+event\+\_\+action}} adc\+\_\+config\+::event\+\_\+action}
+
+Event action to take on incoming event \mbox{\Hypertarget{structadc__config_a9e4b672f49dd9903818ffb03349a55e1}\label{structadc__config_a9e4b672f49dd9903818ffb03349a55e1}} 
+\index{adc\_config@{adc\_config}!freerunning@{freerunning}}
+\index{freerunning@{freerunning}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{freerunning}{freerunning}}
+{\footnotesize\ttfamily bool adc\+\_\+config\+::freerunning}
+
+Enables free running mode if true \mbox{\Hypertarget{structadc__config_a86e81bf17549a89b11c1bdfacd19ded9}\label{structadc__config_a86e81bf17549a89b11c1bdfacd19ded9}} 
+\index{adc\_config@{adc\_config}!gain\_factor@{gain\_factor}}
+\index{gain\_factor@{gain\_factor}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{gain\_factor}{gain\_factor}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gad0058beaf7a14f02aa55ef8db9b966c3}{adc\+\_\+gain\+\_\+factor}} adc\+\_\+config\+::gain\+\_\+factor}
+
+Gain factor \mbox{\Hypertarget{structadc__config_aa83b462ee8bb87d948359683a08037c2}\label{structadc__config_aa83b462ee8bb87d948359683a08037c2}} 
+\index{adc\_config@{adc\_config}!left\_adjust@{left\_adjust}}
+\index{left\_adjust@{left\_adjust}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{left\_adjust}{left\_adjust}}
+{\footnotesize\ttfamily bool adc\+\_\+config\+::left\+\_\+adjust}
+
+Left adjusted result \mbox{\Hypertarget{structadc__config_ad609a820271ad96a04eee6737d7b8147}\label{structadc__config_ad609a820271ad96a04eee6737d7b8147}} 
+\index{adc\_config@{adc\_config}!negative\_input@{negative\_input}}
+\index{negative\_input@{negative\_input}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{negative\_input}{negative\_input}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga843290f150383271ef2ed82792d76e81}{adc\+\_\+negative\+\_\+input}} adc\+\_\+config\+::negative\+\_\+input}
+
+Negative MUX input. For singled-\/ended conversion mode, the negative input must be connected to ground. This ground could be the internal GND, IOGND or an external ground connected to a pin. \mbox{\Hypertarget{structadc__config_a6c58366ded0ef5f091f95f2d8c88c2c5}\label{structadc__config_a6c58366ded0ef5f091f95f2d8c88c2c5}} 
+\index{adc\_config@{adc\_config}!pin\_scan@{pin\_scan}}
+\index{pin\_scan@{pin\_scan}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{pin\_scan}{pin\_scan}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structadc__pin__scan__config}{adc\+\_\+pin\+\_\+scan\+\_\+config}} adc\+\_\+config\+::pin\+\_\+scan}
+
+Pin scan configuration structure \mbox{\Hypertarget{structadc__config_a905fa2d01efdf1c14d3dd8b5ac0b5d9b}\label{structadc__config_a905fa2d01efdf1c14d3dd8b5ac0b5d9b}} 
+\index{adc\_config@{adc\_config}!positive\_input@{positive\_input}}
+\index{positive\_input@{positive\_input}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{positive\_input}{positive\_input}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga7df963d2d3118abe65841e0886764002}{adc\+\_\+positive\+\_\+input}} adc\+\_\+config\+::positive\+\_\+input}
+
+Positive Multiplexer (MUX) input \mbox{\Hypertarget{structadc__config_aa63b48851f0f3874960517c80be281ef}\label{structadc__config_aa63b48851f0f3874960517c80be281ef}} 
+\index{adc\_config@{adc\_config}!reference@{reference}}
+\index{reference@{reference}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga91b0f997d73739cf9f7349b7581e1f56}{adc\+\_\+reference}} adc\+\_\+config\+::reference}
+
+Voltage reference \mbox{\Hypertarget{structadc__config_a74ee5224aac4aa1e55512691711bb648}\label{structadc__config_a74ee5224aac4aa1e55512691711bb648}} 
+\index{adc\_config@{adc\_config}!reference\_compensation\_enable@{reference\_compensation\_enable}}
+\index{reference\_compensation\_enable@{reference\_compensation\_enable}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{reference\_compensation\_enable}{reference\_compensation\_enable}}
+{\footnotesize\ttfamily bool adc\+\_\+config\+::reference\+\_\+compensation\+\_\+enable}
+
+Enables reference buffer offset compensation if true. This will increase the accuracy of the gain stage, but decreases the input impedance; therefore the startup time of the reference must be increased. \mbox{\Hypertarget{structadc__config_a6281719e658b8ced80105f2c2dc15240}\label{structadc__config_a6281719e658b8ced80105f2c2dc15240}} 
+\index{adc\_config@{adc\_config}!resolution@{resolution}}
+\index{resolution@{resolution}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{resolution}{resolution}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga14f1a9a4dda5ef84b87ca7a76b0c91b6}{adc\+\_\+resolution}} adc\+\_\+config\+::resolution}
+
+Result resolution \mbox{\Hypertarget{structadc__config_a0cce56fe8ead597b58e5433f6b7eae5f}\label{structadc__config_a0cce56fe8ead597b58e5433f6b7eae5f}} 
+\index{adc\_config@{adc\_config}!run\_in\_standby@{run\_in\_standby}}
+\index{run\_in\_standby@{run\_in\_standby}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{run\_in\_standby}{run\_in\_standby}}
+{\footnotesize\ttfamily bool adc\+\_\+config\+::run\+\_\+in\+\_\+standby}
+
+Enables ADC in standby sleep mode if true \mbox{\Hypertarget{structadc__config_a9e9679a2da55026812bf32c706ee59ee}\label{structadc__config_a9e9679a2da55026812bf32c706ee59ee}} 
+\index{adc\_config@{adc\_config}!sample\_length@{sample\_length}}
+\index{sample\_length@{sample\_length}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{sample\_length}{sample\_length}}
+{\footnotesize\ttfamily uint8\+\_\+t adc\+\_\+config\+::sample\+\_\+length}
+
+This value (0-\/63) control the ADC sampling time in number of half ADC prescaled clock cycles (depends of {\ttfamily ADC\+\_\+\+PRESCALER} value), thus controlling the ADC input impedance. Sampling time is set according to the formula\+: Sample time = (sample\+\_\+length+1) $\ast$ (ADCclk / 2). \mbox{\Hypertarget{structadc__config_ad95a970a48ab7cf704342bc0039c8857}\label{structadc__config_ad95a970a48ab7cf704342bc0039c8857}} 
+\index{adc\_config@{adc\_config}!window@{window}}
+\index{window@{window}!adc\_config@{adc\_config}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structadc__window__config}{adc\+\_\+window\+\_\+config}} adc\+\_\+config\+::window}
+
+Window monitor configuration structure 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/adc/adc\+\_\+sam\+\_\+d\+\_\+r\+\_\+h/\mbox{\hyperlink{adc__feature_8h}{adc\+\_\+feature.\+h}}\end{DoxyCompactItemize}

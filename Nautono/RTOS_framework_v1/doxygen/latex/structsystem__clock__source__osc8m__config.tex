@@ -1,0 +1,51 @@
+\hypertarget{structsystem__clock__source__osc8m__config}{}\doxysection{system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+config Struct Reference}
+\label{structsystem__clock__source__osc8m__config}\index{system\_clock\_source\_osc8m\_config@{system\_clock\_source\_osc8m\_config}}
+
+
+Configuration structure for OSC8M.  
+
+
+
+
+{\ttfamily \#include $<$clock\+\_\+feature.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ee1b0be167bd253038400d9c6d0cbef}{system\+\_\+osc8m\+\_\+div}} \mbox{\hyperlink{structsystem__clock__source__osc8m__config_af68977fd0b3e8cb447f0ee78fe11794a}{prescaler}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__osc8m__config_a5700fe7dc31fcd05bba95e690808cda5}{run\+\_\+in\+\_\+standby}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__osc8m__config_ab793c78431ec9a92fab32ec1a085e34a}{on\+\_\+demand}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration structure for OSC8M. 
+
+Internal 8MHz (nominal) oscillator configuration structure. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structsystem__clock__source__osc8m__config_ab793c78431ec9a92fab32ec1a085e34a}\label{structsystem__clock__source__osc8m__config_ab793c78431ec9a92fab32ec1a085e34a}} 
+\index{system\_clock\_source\_osc8m\_config@{system\_clock\_source\_osc8m\_config}!on\_demand@{on\_demand}}
+\index{on\_demand@{on\_demand}!system\_clock\_source\_osc8m\_config@{system\_clock\_source\_osc8m\_config}}
+\doxysubsubsection{\texorpdfstring{on\_demand}{on\_demand}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+config\+::on\+\_\+demand}
+
+Run On Demand. If this is set the OSC8M won\textquotesingle{}t run until requested by a peripheral. \mbox{\Hypertarget{structsystem__clock__source__osc8m__config_af68977fd0b3e8cb447f0ee78fe11794a}\label{structsystem__clock__source__osc8m__config_af68977fd0b3e8cb447f0ee78fe11794a}} 
+\index{system\_clock\_source\_osc8m\_config@{system\_clock\_source\_osc8m\_config}!prescaler@{prescaler}}
+\index{prescaler@{prescaler}!system\_clock\_source\_osc8m\_config@{system\_clock\_source\_osc8m\_config}}
+\doxysubsubsection{\texorpdfstring{prescaler}{prescaler}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ee1b0be167bd253038400d9c6d0cbef}{system\+\_\+osc8m\+\_\+div}} system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+config\+::prescaler}
+
+Internal 8MHz RC oscillator prescaler. \mbox{\Hypertarget{structsystem__clock__source__osc8m__config_a5700fe7dc31fcd05bba95e690808cda5}\label{structsystem__clock__source__osc8m__config_a5700fe7dc31fcd05bba95e690808cda5}} 
+\index{system\_clock\_source\_osc8m\_config@{system\_clock\_source\_osc8m\_config}!run\_in\_standby@{run\_in\_standby}}
+\index{run\_in\_standby@{run\_in\_standby}!system\_clock\_source\_osc8m\_config@{system\_clock\_source\_osc8m\_config}}
+\doxysubsubsection{\texorpdfstring{run\_in\_standby}{run\_in\_standby}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+config\+::run\+\_\+in\+\_\+standby}
+
+Keep the OSC8M enabled in standby sleep mode. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/system/clock/clock\+\_\+samd20/\mbox{\hyperlink{clock__feature_8h}{clock\+\_\+feature.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\hypertarget{instance_2sysctrl_8h_source}{}\doxysection{sysctrl.\+h}
+\label{instance_2sysctrl_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/sysctrl.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/sysctrl.h}}
+\mbox{\hyperlink{instance_2sysctrl_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_SYSCTRL\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_SYSCTRL\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for SYSCTRL peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_INTENCLR       (0x40000800U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_INTENSET       (0x40000804U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_INTFLAG        (0x40000808U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_PCLKSR         (0x4000080CU) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_XOSC           (0x40000810U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_XOSC32K        (0x40000814U) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_OSC32K         (0x40000818U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_OSCULP32K      (0x4000081CU) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_OSC8M          (0x40000820U) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_DFLLCTRL       (0x40000824U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_DFLLVAL        (0x40000828U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_DFLLMUL        (0x4000082CU) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_DFLLSYNC       (0x40000830U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_BOD33          (0x40000834U) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_VREG           (0x4000083CU) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_VREF           (0x40000840U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_INTENCLR       (*(RwReg  *)0x40000800U) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_INTENSET       (*(RwReg  *)0x40000804U) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_INTFLAG        (*(RwReg  *)0x40000808U) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_PCLKSR         (*(RoReg  *)0x4000080CU) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_XOSC           (*(RwReg16*)0x40000810U) }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_XOSC32K        (*(RwReg16*)0x40000814U) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_OSC32K         (*(RwReg  *)0x40000818U) }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_OSCULP32K      (*(RwReg8 *)0x4000081CU) }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_OSC8M          (*(RwReg  *)0x40000820U) }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_DFLLCTRL       (*(RwReg16*)0x40000824U) }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_DFLLVAL        (*(RwReg  *)0x40000828U) }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_DFLLMUL        (*(RwReg  *)0x4000082CU) }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_DFLLSYNC       (*(RwReg8 *)0x40000830U) }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_BOD33          (*(RwReg  *)0x40000834U) }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_VREG           (*(RwReg16*)0x4000083CU) }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define REG\_SYSCTRL\_VREF           (*(RwReg  *)0x40000840U) }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{/* ========== Instance parameters for SYSCTRL peripheral ========== */}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define SYSCTRL\_BGAP\_CALIB\_MSB      11}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_CALIB\_MSB     5}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define SYSCTRL\_DFLL48M\_COARSE\_MSB  4}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define SYSCTRL\_DFLL48M\_FINE\_MSB    7}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define SYSCTRL\_GCLK\_ID\_DFLL48      0}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_COARSE\_CALIB\_MSB 6}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define SYSCTRL\_POR33\_ENTEST\_MSB    1}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define SYSCTRL\_ULPVREF\_DIVLEV\_MSB  3}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define SYSCTRL\_ULPVREG\_FORCEGAIN\_MSB 1}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define SYSCTRL\_ULPVREG\_RAMREFSEL\_MSB 2}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_CONTROL\_MSB    48}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_STATUS\_MSB     7}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define SYSCTRL\_VREG\_LEVEL\_MSB      2}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define SYSCTRL\_BOD12\_VERSION       0x112}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_VERSION       0x112}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define SYSCTRL\_DFLL48M\_VERSION     0x211   }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define SYSCTRL\_GCLK\_VERSION        0x210}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define SYSCTRL\_OSCULP32K\_VERSION   0x111}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_VERSION       0x120}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_VERSION      0x1101  }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_VERSION        0x200}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define SYSCTRL\_VREG\_VERSION        0x201}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_VERSION        0x1101  }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_VERSION     0x1101  }}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_SYSCTRL\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

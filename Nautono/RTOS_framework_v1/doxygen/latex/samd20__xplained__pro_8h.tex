@@ -1,0 +1,850 @@
+\hypertarget{samd20__xplained__pro_8h}{}\doxysection{src/\+ASF/sam0/boards/samd20\+\_\+xplained\+\_\+pro/samd20\+\_\+xplained\+\_\+pro.h File Reference}
+\label{samd20__xplained__pro_8h}\index{src/ASF/sam0/boards/samd20\_xplained\_pro/samd20\_xplained\_pro.h@{src/ASF/sam0/boards/samd20\_xplained\_pro/samd20\_xplained\_pro.h}}
+
+
+SAM D20 Xplained Pro board definition.  
+
+
+{\ttfamily \#include $<$conf\+\_\+board.\+h$>$}\newline
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__samd20__xplained__pro__features__group_ga02581754b212d533d96cde56c8145c9b}{BOARD\+\_\+\+NAME}}~\char`\"{}SAMD20\+\_\+\+XPLAINED\+\_\+\+PRO\char`\"{}
+\item 
+\#define \mbox{\hyperlink{group__samd20__xplained__pro__features__group_gad698e2cb680601529f08c3e5f2b0cebb}{LED\+\_\+\+COUNT}}~1
+\item 
+\#define \mbox{\hyperlink{group__samd20__xplained__pro__features__group_ga687f94d4d3be4db86a833082ecdf980a}{BUTTON\+\_\+\+COUNT}}~1
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_ab3f9457f15a1d6c69e127b35f23b0ec8}\label{samd20__xplained__pro_8h_ab3f9457f15a1d6c69e127b35f23b0ec8}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI}~EXT1\+\_\+\+SPI\+\_\+\+MODULE
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a278eab8315ffbdd5aa700e17609a3320}\label{samd20__xplained__pro_8h_a278eab8315ffbdd5aa700e17609a3320}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+RST\+\_\+\+PIN}~EXT1\+\_\+\+PIN\+\_\+7
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a37c6c7515ae904b1b6e7f37c84fe03b9}\label{samd20__xplained__pro_8h_a37c6c7515ae904b1b6e7f37c84fe03b9}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+MISC\+\_\+\+PIN}~EXT1\+\_\+\+PIN\+\_\+12
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a19b49c52c6f415a14360f0c811849629}\label{samd20__xplained__pro_8h_a19b49c52c6f415a14360f0c811849629}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+IRQ\+\_\+\+PIN}~EXT1\+\_\+\+PIN\+\_\+9
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a7173e3674298030d0dbc04edd71c52f5}\label{samd20__xplained__pro_8h_a7173e3674298030d0dbc04edd71c52f5}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SLP\+\_\+\+PIN}~EXT1\+\_\+\+PIN\+\_\+10
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a52d465934b1bffbcad261c6a093bc4c6}\label{samd20__xplained__pro_8h_a52d465934b1bffbcad261c6a093bc4c6}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI\+\_\+\+CS}~EXT1\+\_\+\+PIN\+\_\+15
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a8ab7848041b493dd995ab352d6152731}\label{samd20__xplained__pro_8h_a8ab7848041b493dd995ab352d6152731}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI\+\_\+\+MOSI}~EXT1\+\_\+\+PIN\+\_\+16
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_ae94f4ee76dbc7c98914924139a00ce7c}\label{samd20__xplained__pro_8h_ae94f4ee76dbc7c98914924139a00ce7c}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI\+\_\+\+MISO}~EXT1\+\_\+\+PIN\+\_\+17
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a41fdd48f6f888b5ca6a7feb2f05d3854}\label{samd20__xplained__pro_8h_a41fdd48f6f888b5ca6a7feb2f05d3854}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI\+\_\+\+SCK}~EXT1\+\_\+\+PIN\+\_\+18
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a430273647e1d67daca425814199d8263}\label{samd20__xplained__pro_8h_a430273647e1d67daca425814199d8263}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+CSD}~EXT1\+\_\+\+PIN\+\_\+5
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_aba085369f8aff843cee2f8057b1c58f4}\label{samd20__xplained__pro_8h_aba085369f8aff843cee2f8057b1c58f4}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+CPS}~EXT1\+\_\+\+PIN\+\_\+8
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_ae8d5b4e7e2d9d21caaa4744d385d7cc7}\label{samd20__xplained__pro_8h_ae8d5b4e7e2d9d21caaa4744d385d7cc7}} 
+\#define {\bfseries LED0}~LED0\+\_\+\+PIN
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a4663eb0da79c88b144a813e9761de3c4}\label{samd20__xplained__pro_8h_a4663eb0da79c88b144a813e9761de3c4}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_ab6e5a51ab581ce47972810f020c0cc04}\label{samd20__xplained__pro_8h_ab6e5a51ab581ce47972810f020c0cc04}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_ae42390243121076aed22eb5510cc56cc}\label{samd20__xplained__pro_8h_ae42390243121076aed22eb5510cc56cc}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_aeed3fcc3f0aebb0c50de4b519e2ccf6e}\label{samd20__xplained__pro_8h_aeed3fcc3f0aebb0c50de4b519e2ccf6e}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a0b78192d3c3fc085a26035ccfa5571dc}\label{samd20__xplained__pro_8h_a0b78192d3c3fc085a26035ccfa5571dc}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a59510bd28b7214b82000a06004731a8d}\label{samd20__xplained__pro_8h_a59510bd28b7214b82000a06004731a8d}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+IRQ\+\_\+\+CHAN}~EXT1\+\_\+\+IRQ\+\_\+\+INPUT
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a64f579efeb48640056d9e2ddc9702a3b}\label{samd20__xplained__pro_8h_a64f579efeb48640056d9e2ddc9702a3b}} 
+\#define {\bfseries AT86\+RFX\+\_\+\+IRQ\+\_\+\+PINMUX}~EXT1\+\_\+\+IRQ\+\_\+\+PINMUX
+\item 
+\#define \mbox{\hyperlink{samd20__xplained__pro_8h_a8552a5a8c813e41b26a578bfde4652d1}{ENABLE\+\_\+\+TRX\+\_\+\+IRQ}}()~  extint\+\_\+chan\+\_\+enable\+\_\+callback(AT86\+RFX\+\_\+\+IRQ\+\_\+\+CHAN, EXTINT\+\_\+\+CALLBACK\+\_\+\+TYPE\+\_\+\+DETECT)
+\item 
+\#define \mbox{\hyperlink{samd20__xplained__pro_8h_ab49d5c31d1feeaf423b2b303f3bef6cf}{DISABLE\+\_\+\+TRX\+\_\+\+IRQ}}()~  extint\+\_\+chan\+\_\+disable\+\_\+callback(AT86\+RFX\+\_\+\+IRQ\+\_\+\+CHAN, EXTINT\+\_\+\+CALLBACK\+\_\+\+TYPE\+\_\+\+DETECT)
+\item 
+\#define \mbox{\hyperlink{samd20__xplained__pro_8h_abb7258badbff68701ce350d608efe151}{CLEAR\+\_\+\+TRX\+\_\+\+IRQ}}()~  extint\+\_\+chan\+\_\+clear\+\_\+detected(AT86\+RFX\+\_\+\+IRQ\+\_\+\+CHAN);
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a03364b3677b884617c15b752d8339e18}\label{samd20__xplained__pro_8h_a03364b3677b884617c15b752d8339e18}} 
+\#define {\bfseries ENTER\+\_\+\+TRX\+\_\+\+REGION}()~  \{ extint\+\_\+chan\+\_\+disable\+\_\+callback(AT86\+RFX\+\_\+\+IRQ\+\_\+\+CHAN, EXTINT\+\_\+\+CALLBACK\+\_\+\+TYPE\+\_\+\+DETECT)
+\item 
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a4d42dd2c017ace613e800d6f7e8694bc}\label{samd20__xplained__pro_8h_a4d42dd2c017ace613e800d6f7e8694bc}} 
+\#define {\bfseries LEAVE\+\_\+\+TRX\+\_\+\+REGION}()~  extint\+\_\+chan\+\_\+enable\+\_\+callback(AT86\+RFX\+\_\+\+IRQ\+\_\+\+CHAN, EXTINT\+\_\+\+CALLBACK\+\_\+\+TYPE\+\_\+\+DETECT); \}
+\item 
+\#define \mbox{\hyperlink{samd20__xplained__pro_8h_a4b0995a1d0a6a7bcbaf9f4096cc633c7}{LED\+\_\+\+Off}}(led\+\_\+gpio)~port\+\_\+pin\+\_\+set\+\_\+output\+\_\+level(led\+\_\+gpio,true)
+\begin{DoxyCompactList}\small\item\em Turns off the specified LEDs. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{samd20__xplained__pro_8h_a589335327be57d2761bfa96c55d62f29}{LED\+\_\+\+On}}(led\+\_\+gpio)~port\+\_\+pin\+\_\+set\+\_\+output\+\_\+level(led\+\_\+gpio,false)
+\begin{DoxyCompactList}\small\item\em Turns on the specified LEDs. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{samd20__xplained__pro_8h_ac66f7ba408e0f06c78db8b3048126c8e}{LED\+\_\+\+Toggle}}(led\+\_\+gpio)~port\+\_\+pin\+\_\+toggle\+\_\+output\+\_\+level(led\+\_\+gpio)
+\begin{DoxyCompactList}\small\item\em Toggles the specified LEDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Resonator definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BOARD\+\_\+\+FREQ\+\_\+\+SLCK\+\_\+\+XTAL}~(32768U)
+\item 
+\#define {\bfseries BOARD\+\_\+\+FREQ\+\_\+\+SLCK\+\_\+\+BYPASS}~(32768U)
+\item 
+\#define {\bfseries BOARD\+\_\+\+FREQ\+\_\+\+MAINCK\+\_\+\+XTAL}~0 /$\ast$ Not Mounted $\ast$/
+\item 
+\#define {\bfseries BOARD\+\_\+\+FREQ\+\_\+\+MAINCK\+\_\+\+BYPASS}~0 /$\ast$ Not Mounted $\ast$/
+\item 
+\#define {\bfseries BOARD\+\_\+\+MCK}~CHIP\+\_\+\+FREQ\+\_\+\+CPU\+\_\+\+MAX
+\item 
+\#define {\bfseries BOARD\+\_\+\+OSC\+\_\+\+STARTUP\+\_\+\+US}~15625
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ LED0 definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries LED0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_ad71083de279943a97f0a159c824c290b}{PIN\+\_\+\+PA14}}
+\item 
+\#define {\bfseries LED0\+\_\+\+ACTIVE}~false
+\item 
+\#define {\bfseries LED0\+\_\+\+INACTIVE}~!LED0\+\_\+\+ACTIVE
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ SW0 definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries SW0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_abaad308f0408bf5d3f1fe558f3d26e5e}{PIN\+\_\+\+PA15}}
+\item 
+\#define {\bfseries SW0\+\_\+\+ACTIVE}~false
+\item 
+\#define {\bfseries SW0\+\_\+\+INACTIVE}~!SW0\+\_\+\+ACTIVE
+\item 
+\#define {\bfseries SW0\+\_\+\+EIC\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a6cf6ad0634cbb035d1c78c40cfc0ed7e}{PIN\+\_\+\+PA15\+A\+\_\+\+EIC\+\_\+\+EXTINT15}}
+\item 
+\#define {\bfseries SW0\+\_\+\+EIC\+\_\+\+MUX}~MUX\+\_\+\+PA15\+A\+\_\+\+EIC\+\_\+\+EXTINT15
+\item 
+\#define {\bfseries SW0\+\_\+\+EIC\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA15\+A\+\_\+\+EIC\+\_\+\+EXTINT15
+\item 
+\#define {\bfseries SW0\+\_\+\+EIC\+\_\+\+LINE}~15
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ LED \#0 definitions}\par
+{\em Wrapper macros for LED0, to ensure common naming across all Xplained Pro boards. }\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries LED\+\_\+0\+\_\+\+NAME}~\char`\"{}LED0 (yellow)\char`\"{}
+\item 
+\#define {\bfseries LED\+\_\+0\+\_\+\+PIN}~LED0\+\_\+\+PIN
+\item 
+\#define {\bfseries LED\+\_\+0\+\_\+\+ACTIVE}~LED0\+\_\+\+ACTIVE
+\item 
+\#define {\bfseries LED\+\_\+0\+\_\+\+INACTIVE}~LED0\+\_\+\+INACTIVE
+\item 
+\#define {\bfseries LED0\+\_\+\+GPIO}~LED0\+\_\+\+PIN
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Button \#0 definitions}\par
+{\em Wrapper macros for SW0, to ensure common naming across all Xplained Pro boards. }\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+NAME}~\char`\"{}SW0\char`\"{}
+\item 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+PIN}~SW0\+\_\+\+PIN
+\item 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+ACTIVE}~SW0\+\_\+\+ACTIVE
+\item 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+INACTIVE}~SW0\+\_\+\+INACTIVE
+\item 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+EIC\+\_\+\+PIN}~SW0\+\_\+\+EIC\+\_\+\+PIN
+\item 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+EIC\+\_\+\+MUX}~SW0\+\_\+\+EIC\+\_\+\+MUX
+\item 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+EIC\+\_\+\+PINMUX}~SW0\+\_\+\+EIC\+\_\+\+PINMUX
+\item 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+EIC\+\_\+\+LINE}~SW0\+\_\+\+EIC\+\_\+\+LINE
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#1 pin definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+3}~\mbox{\hyperlink{pio_2samd20j14_8h_aaee350eaf010d48a2c6efae0a1632f7c}{PIN\+\_\+\+PB00}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+4}~\mbox{\hyperlink{pio_2samd20j14_8h_aa599b1c1a8440ecffbf5fba215984c75}{PIN\+\_\+\+PB01}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+5}~\mbox{\hyperlink{pio_2samd20j14_8h_a342eea40b1bafb1afe71ff68854d9747}{PIN\+\_\+\+PB06}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+6}~\mbox{\hyperlink{pio_2samd20j14_8h_a381a8ad61ecb02a4d455cd92a5a5fb1e}{PIN\+\_\+\+PB07}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+7}~\mbox{\hyperlink{pio_2samd20g14_8h_a19ef30fcec1b8ad27ff954975a005850}{PIN\+\_\+\+PB02}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+8}~\mbox{\hyperlink{pio_2samd20g14_8h_ab8f19878aac1648cb688cfcf0eec3fb5}{PIN\+\_\+\+PB03}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+9}~\mbox{\hyperlink{pio_2samd20g17u_8h_ab4f72feca4eed2b50fb246dc2d59241d}{PIN\+\_\+\+PB04}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+10}~\mbox{\hyperlink{pio_2samd20j14_8h_ae62ed501d1f5f6cdc6bf605742aeb778}{PIN\+\_\+\+PB05}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+11}~\mbox{\hyperlink{pio_2samd20e14_8h_a7dc08bf81d9967156de18aae2cb5fe46}{PIN\+\_\+\+PA08}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+12}~\mbox{\hyperlink{pio_2samd20e14_8h_ac14663d14647a4a629d8dc37616bf7e4}{PIN\+\_\+\+PA09}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+13}~\mbox{\hyperlink{pio_2samd20g14_8h_a123a2189653c39f91fc0231945166826}{PIN\+\_\+\+PB09}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+14}~\mbox{\hyperlink{pio_2samd20g14_8h_a8b8f5e8b769787a4ce5a9b53388acc0e}{PIN\+\_\+\+PB08}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+15}~\mbox{\hyperlink{pio_2samd20e14_8h_a9527e3de1cb13d3530c6519ef35866be}{PIN\+\_\+\+PA05}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+16}~\mbox{\hyperlink{pio_2samd20e14_8h_aaebb84fd9405e339ed98b122aabcd65f}{PIN\+\_\+\+PA06}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+17}~\mbox{\hyperlink{pio_2samd20e14_8h_aad65b053a42add45bba004f34776e0d6}{PIN\+\_\+\+PA04}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+18}~\mbox{\hyperlink{pio_2samd20e14_8h_a0c4f2e2dc54ee3ccb3ed39933cf29386}{PIN\+\_\+\+PA07}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#1 pin definitions by function}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+ADC\+\_\+0}~EXT1\+\_\+\+PIN\+\_\+3
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+ADC\+\_\+1}~EXT1\+\_\+\+PIN\+\_\+4
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+GPIO\+\_\+0}~EXT1\+\_\+\+PIN\+\_\+5
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+GPIO\+\_\+1}~EXT1\+\_\+\+PIN\+\_\+6
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+PWM\+\_\+0}~EXT1\+\_\+\+PIN\+\_\+7
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+PWM\+\_\+1}~EXT1\+\_\+\+PIN\+\_\+8
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+IRQ}~EXT1\+\_\+\+PIN\+\_\+9
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SDA}~EXT1\+\_\+\+PIN\+\_\+11
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SCL}~EXT1\+\_\+\+PIN\+\_\+12
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+UART\+\_\+\+RX}~EXT1\+\_\+\+PIN\+\_\+13
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+UART\+\_\+\+TX}~EXT1\+\_\+\+PIN\+\_\+14
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+1}~EXT1\+\_\+\+PIN\+\_\+10
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+0}~EXT1\+\_\+\+PIN\+\_\+15
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MOSI}~EXT1\+\_\+\+PIN\+\_\+16
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MISO}~EXT1\+\_\+\+PIN\+\_\+17
+\item 
+\#define {\bfseries EXT1\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SCK}~EXT1\+\_\+\+PIN\+\_\+18
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#1 ADC definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a54d148b91f3d356713f7e367a2243bea}{ADC}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+0\+\_\+\+CHANNEL}~8
+\item 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a908a9cac08dea9a27ed599cc49b6a93e}{PIN\+\_\+\+PB00\+B\+\_\+\+ADC\+\_\+\+AIN8}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PB00\+B\+\_\+\+ADC\+\_\+\+AIN8
+\item 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB00\+B\+\_\+\+ADC\+\_\+\+AIN8
+\item 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+1\+\_\+\+CHANNEL}~9
+\item 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a37f7297314e6c7f2be1baa9467d731ce}{PIN\+\_\+\+PB01\+B\+\_\+\+ADC\+\_\+\+AIN9}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PB01\+B\+\_\+\+ADC\+\_\+\+AIN9
+\item 
+\#define {\bfseries EXT1\+\_\+\+ADC\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB01\+B\+\_\+\+ADC\+\_\+\+AIN9
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#1 PWM definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+\+MODULE}~\mbox{\hyperlink{samd20j14_8h_ae5a1efa96ea067fb3907f342aa6fb0a4}{TC6}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+0\+\_\+\+CHANNEL}~0
+\item 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a4d08d1101e50d516c2fb4f102d9f5d9b}{PIN\+\_\+\+PB02\+F\+\_\+\+TC6\+\_\+\+WO0}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PB02\+F\+\_\+\+TC6\+\_\+\+WO0
+\item 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB02\+F\+\_\+\+TC6\+\_\+\+WO0
+\item 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+1\+\_\+\+CHANNEL}~1
+\item 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a4541120c9f123dcaefae4192543ceb84}{PIN\+\_\+\+PB03\+F\+\_\+\+TC6\+\_\+\+WO1}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PB03\+F\+\_\+\+TC6\+\_\+\+WO1
+\item 
+\#define {\bfseries EXT1\+\_\+\+PWM\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB03\+F\+\_\+\+TC6\+\_\+\+WO1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#1 IRQ/\+External interrupt definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a27183a94584b5fca7e1207ce7a79782a}{EIC}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+INPUT}~4
+\item 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g17u_8h_a2fc2cfd9a8382477493f71f73bfb7455}{PIN\+\_\+\+PB04\+A\+\_\+\+EIC\+\_\+\+EXTINT4}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+MUX}~MUX\+\_\+\+PB04\+A\+\_\+\+EIC\+\_\+\+EXTINT4
+\item 
+\#define {\bfseries EXT1\+\_\+\+IRQ\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB04\+A\+\_\+\+EIC\+\_\+\+EXTINT4
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#1 I2C definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT1\+\_\+\+I2\+C\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a918e4c85993961a115bb23b4bb73a87f}{SERCOM2}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA08\+D\+\_\+\+SERCOM2\+\_\+\+PAD0
+\item 
+\#define {\bfseries EXT1\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA09\+D\+\_\+\+SERCOM2\+\_\+\+PAD1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#1 UART definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_ad48343faa88820b8f552aa1eaf66f00a}{SERCOM4}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}{USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PB08\+D\+\_\+\+SERCOM4\+\_\+\+PAD0
+\item 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PB09\+D\+\_\+\+SERCOM4\+\_\+\+PAD1
+\item 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#1 SPI definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_ae5473788457bad0e69ad9d7f22ed404f}{SERCOM0}}
+\item 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~SPI\+\_\+\+SIGNAL\+\_\+\+MUX\+\_\+\+SETTING\+\_\+E
+\item 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA04\+D\+\_\+\+SERCOM0\+\_\+\+PAD0
+\item 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA05\+D\+\_\+\+SERCOM0\+\_\+\+PAD1
+\item 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PA06\+D\+\_\+\+SERCOM0\+\_\+\+PAD2
+\item 
+\#define {\bfseries EXT1\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PA07\+D\+\_\+\+SERCOM0\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#2 pin definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+3}~\mbox{\hyperlink{pio_2samd20e14_8h_a8bdc2380ba42c8288b661ced1f678933}{PIN\+\_\+\+PA10}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+4}~\mbox{\hyperlink{pio_2samd20e14_8h_a01f1322d5a1df159a79f1a9cdf4201d2}{PIN\+\_\+\+PA11}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+5}~\mbox{\hyperlink{pio_2samd20g14_8h_a00c77a5c19a99cee2402fc83b04c02d5}{PIN\+\_\+\+PA20}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+6}~\mbox{\hyperlink{pio_2samd20g14_8h_af985624239bfbec119533432376256b8}{PIN\+\_\+\+PA21}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+7}~\mbox{\hyperlink{pio_2samd20e14_8h_ac9cc1f345184e86b5481800a38f67b73}{PIN\+\_\+\+PA22}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+8}~\mbox{\hyperlink{pio_2samd20e14_8h_a6ca014c55f45ce023918c585433c67af}{PIN\+\_\+\+PA23}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+9}~\mbox{\hyperlink{pio_2samd20j14_8h_a886b07fd0b01a62c7236bfac719c0d85}{PIN\+\_\+\+PB14}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+10}~\mbox{\hyperlink{pio_2samd20j14_8h_a2dfe52fc70c0fa20c50efcb5260b7f6e}{PIN\+\_\+\+PB15}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+11}~\mbox{\hyperlink{pio_2samd20e14_8h_a7dc08bf81d9967156de18aae2cb5fe46}{PIN\+\_\+\+PA08}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+12}~\mbox{\hyperlink{pio_2samd20e14_8h_ac14663d14647a4a629d8dc37616bf7e4}{PIN\+\_\+\+PA09}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+13}~\mbox{\hyperlink{pio_2samd20j14_8h_aac822122271e05b08d918692cd81ebe9}{PIN\+\_\+\+PB13}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+14}~\mbox{\hyperlink{pio_2samd20j14_8h_a4c73054a65245b26b8d56438c269a5f8}{PIN\+\_\+\+PB12}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+15}~\mbox{\hyperlink{pio_2samd20e14_8h_a66f8d032baf3fb0bc60f2dc70ef0e587}{PIN\+\_\+\+PA17}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+16}~\mbox{\hyperlink{pio_2samd20e14_8h_a9695bdcd8129ad83a871ad6b259dfcd5}{PIN\+\_\+\+PA18}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+17}~\mbox{\hyperlink{pio_2samd20e14_8h_af95063d900dacae04c7700184f817d88}{PIN\+\_\+\+PA16}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+18}~\mbox{\hyperlink{pio_2samd20e14_8h_a58254064b915fd09ca35601ceebcf27f}{PIN\+\_\+\+PA19}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#2 pin definitions by function}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+ADC\+\_\+0}~EXT2\+\_\+\+PIN\+\_\+3
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+ADC\+\_\+1}~EXT2\+\_\+\+PIN\+\_\+4
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+GPIO\+\_\+0}~EXT2\+\_\+\+PIN\+\_\+5
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+GPIO\+\_\+1}~EXT2\+\_\+\+PIN\+\_\+6
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+PWM\+\_\+0}~EXT2\+\_\+\+PIN\+\_\+7
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+PWM\+\_\+1}~EXT2\+\_\+\+PIN\+\_\+8
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+IRQ}~EXT2\+\_\+\+PIN\+\_\+9
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SDA}~EXT2\+\_\+\+PIN\+\_\+11
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SCL}~EXT2\+\_\+\+PIN\+\_\+12
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+UART\+\_\+\+RX}~EXT2\+\_\+\+PIN\+\_\+13
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+UART\+\_\+\+TX}~EXT2\+\_\+\+PIN\+\_\+14
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+1}~EXT2\+\_\+\+PIN\+\_\+10
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+0}~EXT2\+\_\+\+PIN\+\_\+15
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MOSI}~EXT2\+\_\+\+PIN\+\_\+16
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MISO}~EXT2\+\_\+\+PIN\+\_\+17
+\item 
+\#define {\bfseries EXT2\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SCK}~EXT2\+\_\+\+PIN\+\_\+18
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#2 ADC definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a54d148b91f3d356713f7e367a2243bea}{ADC}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+0\+\_\+\+CHANNEL}~18
+\item 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_af594515430ee7cd9c6c02e6b5dfa5822}{PIN\+\_\+\+PA10\+B\+\_\+\+ADC\+\_\+\+AIN18}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PA10\+B\+\_\+\+ADC\+\_\+\+AIN18
+\item 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA10\+B\+\_\+\+ADC\+\_\+\+AIN18
+\item 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+1\+\_\+\+CHANNEL}~19
+\item 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a5f56dda410dca398fa92679ce6b01c46}{PIN\+\_\+\+PA11\+B\+\_\+\+ADC\+\_\+\+AIN19}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PA11\+B\+\_\+\+ADC\+\_\+\+AIN19
+\item 
+\#define {\bfseries EXT2\+\_\+\+ADC\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA11\+B\+\_\+\+ADC\+\_\+\+AIN19
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#2 PWM definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a877f51fe7311fbc9c49c966ba738be05}{TC4}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+0\+\_\+\+CHANNEL}~0
+\item 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a32f672cd37bbd6d62b6dc31010d563b1}{PIN\+\_\+\+PA22\+F\+\_\+\+TC4\+\_\+\+WO0}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PA22\+F\+\_\+\+TC4\+\_\+\+WO0
+\item 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA22\+F\+\_\+\+TC4\+\_\+\+WO0
+\item 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+1\+\_\+\+CHANNEL}~1
+\item 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_ae5d946796ae9f1a65f9f396dbf536073}{PIN\+\_\+\+PA23\+F\+\_\+\+TC4\+\_\+\+WO1}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PA23\+F\+\_\+\+TC4\+\_\+\+WO1
+\item 
+\#define {\bfseries EXT2\+\_\+\+PWM\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA23\+F\+\_\+\+TC4\+\_\+\+WO1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#2 IRQ/\+External interrupt definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a27183a94584b5fca7e1207ce7a79782a}{EIC}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+INPUT}~14
+\item 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20j14_8h_a97b02a75f517744286a792170b1b7007}{PIN\+\_\+\+PB14\+A\+\_\+\+EIC\+\_\+\+EXTINT14}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+MUX}~MUX\+\_\+\+PB14\+A\+\_\+\+EIC\+\_\+\+EXTINT14
+\item 
+\#define {\bfseries EXT2\+\_\+\+IRQ\+\_\+\+PINMUX}~PINMUX\+\_\+\+PB14\+A\+\_\+\+EIC\+\_\+\+EXTINT14
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#2 I2C definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT2\+\_\+\+I2\+C\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a918e4c85993961a115bb23b4bb73a87f}{SERCOM2}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA08\+D\+\_\+\+SERCOM2\+\_\+\+PAD0
+\item 
+\#define {\bfseries EXT2\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA09\+D\+\_\+\+SERCOM2\+\_\+\+PAD1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#2 UART definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_ad48343faa88820b8f552aa1eaf66f00a}{SERCOM4}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}{USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PB12\+C\+\_\+\+SERCOM4\+\_\+\+PAD0
+\item 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PB13\+C\+\_\+\+SERCOM4\+\_\+\+PAD1
+\item 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#2 SPI definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a130d7d7bc9ef1da1ba1bd094b42449d7}{SERCOM1}}
+\item 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~SPI\+\_\+\+SIGNAL\+\_\+\+MUX\+\_\+\+SETTING\+\_\+E
+\item 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA16\+C\+\_\+\+SERCOM1\+\_\+\+PAD0
+\item 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA17\+C\+\_\+\+SERCOM1\+\_\+\+PAD1
+\item 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PA18\+C\+\_\+\+SERCOM1\+\_\+\+PAD2
+\item 
+\#define {\bfseries EXT2\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PA19\+C\+\_\+\+SERCOM1\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#3 pin definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+3}~\mbox{\hyperlink{pio_2samd20e14_8h_ada4a90557e056a63a5c13b11343471ab}{PIN\+\_\+\+PA02}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+4}~\mbox{\hyperlink{pio_2samd20e14_8h_a32b9f520e39b943f78a864645721a9d6}{PIN\+\_\+\+PA03}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+5}~\mbox{\hyperlink{pio_2samd20j14_8h_a5ff751a11f710f459e0ccb12b6db3e29}{PIN\+\_\+\+PB30}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+6}~\mbox{\hyperlink{pio_2samd20e14_8h_abaad308f0408bf5d3f1fe558f3d26e5e}{PIN\+\_\+\+PA15}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+7}~\mbox{\hyperlink{pio_2samd20g14_8h_a2ffb0dfd383bdc2f6e8f41a9ef0d4955}{PIN\+\_\+\+PA12}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+8}~\mbox{\hyperlink{pio_2samd20g14_8h_a4180bdc6fd7252cff2ffe28176866028}{PIN\+\_\+\+PA13}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+9}~\mbox{\hyperlink{pio_2samd20e14_8h_af75c65abdba3e908699ed3c1c21f1148}{PIN\+\_\+\+PA28}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+10}~\mbox{\hyperlink{pio_2samd20e14_8h_a3794cc9242203d349103ba1249e5d587}{PIN\+\_\+\+PA27}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+11}~\mbox{\hyperlink{pio_2samd20e14_8h_a7dc08bf81d9967156de18aae2cb5fe46}{PIN\+\_\+\+PA08}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+12}~\mbox{\hyperlink{pio_2samd20e14_8h_ac14663d14647a4a629d8dc37616bf7e4}{PIN\+\_\+\+PA09}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+13}~\mbox{\hyperlink{pio_2samd20g14_8h_aa67c3fe74fde6a524858a0dd54809391}{PIN\+\_\+\+PB11}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+14}~\mbox{\hyperlink{pio_2samd20g14_8h_ace5077df47f85d8716961068d23999f9}{PIN\+\_\+\+PB10}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+15}~\mbox{\hyperlink{pio_2samd20j14_8h_a7589e10e4bc65e51d370b6fb985d8f2c}{PIN\+\_\+\+PB17}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+16}~\mbox{\hyperlink{pio_2samd20g14_8h_a5f8249fb7d7568f6ac27dd4e38171724}{PIN\+\_\+\+PB22}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+17}~\mbox{\hyperlink{pio_2samd20j14_8h_a2638b944d2f382c990e0a4c6810aea1e}{PIN\+\_\+\+PB16}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+18}~\mbox{\hyperlink{pio_2samd20g14_8h_a78443bb5df689db4f8d87386e31775db}{PIN\+\_\+\+PB23}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#3 pin definitions by function}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+ADC\+\_\+0}~EXT3\+\_\+\+PIN\+\_\+3
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+ADC\+\_\+1}~EXT3\+\_\+\+PIN\+\_\+4
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+GPIO\+\_\+0}~EXT3\+\_\+\+PIN\+\_\+5
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+GPIO\+\_\+1}~EXT3\+\_\+\+PIN\+\_\+6
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+PWM\+\_\+0}~EXT3\+\_\+\+PIN\+\_\+7
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+PWM\+\_\+1}~EXT3\+\_\+\+PIN\+\_\+8
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+IRQ}~EXT3\+\_\+\+PIN\+\_\+9
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SDA}~EXT3\+\_\+\+PIN\+\_\+11
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SCL}~EXT3\+\_\+\+PIN\+\_\+12
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+UART\+\_\+\+RX}~EXT3\+\_\+\+PIN\+\_\+13
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+UART\+\_\+\+TX}~EXT3\+\_\+\+PIN\+\_\+14
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+1}~EXT3\+\_\+\+PIN\+\_\+10
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SS\+\_\+0}~EXT3\+\_\+\+PIN\+\_\+15
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MOSI}~EXT3\+\_\+\+PIN\+\_\+16
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+MISO}~EXT3\+\_\+\+PIN\+\_\+17
+\item 
+\#define {\bfseries EXT3\+\_\+\+PIN\+\_\+\+SPI\+\_\+\+SCK}~EXT3\+\_\+\+PIN\+\_\+18
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#3 ADC definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a54d148b91f3d356713f7e367a2243bea}{ADC}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+0\+\_\+\+CHANNEL}~0
+\item 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a28e2b578252cab66df91b7f96be1a6e9}{PIN\+\_\+\+PA02\+B\+\_\+\+ADC\+\_\+\+AIN0}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PA02\+B\+\_\+\+ADC\+\_\+\+AIN0
+\item 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA02\+B\+\_\+\+ADC\+\_\+\+AIN0
+\item 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+1\+\_\+\+CHANNEL}~1
+\item 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a2e57923c9cb67bd9c9614bcc1df27e64}{PIN\+\_\+\+PA03\+B\+\_\+\+ADC\+\_\+\+AIN1}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PA03\+B\+\_\+\+ADC\+\_\+\+AIN1
+\item 
+\#define {\bfseries EXT3\+\_\+\+ADC\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA03\+B\+\_\+\+ADC\+\_\+\+AIN1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#3 PWM definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a1a7cd5e0e5b3b37a78ffd38fdcf468ab}{TC2}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+0\+\_\+\+CHANNEL}~0
+\item 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g14_8h_aa761970c4cdbf930364f75bef19e7ef5}{PIN\+\_\+\+PA12\+E\+\_\+\+TC2\+\_\+\+WO0}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+0\+\_\+\+MUX}~MUX\+\_\+\+PA12\+E\+\_\+\+TC2\+\_\+\+WO0
+\item 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+0\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA12\+E\+\_\+\+TC2\+\_\+\+WO0
+\item 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+1\+\_\+\+CHANNEL}~1
+\item 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g14_8h_a4ad884ff60803c898735bfbc4b9b6a01}{PIN\+\_\+\+PA13\+E\+\_\+\+TC2\+\_\+\+WO1}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+1\+\_\+\+MUX}~MUX\+\_\+\+PA13\+E\+\_\+\+TC2\+\_\+\+WO1
+\item 
+\#define {\bfseries EXT3\+\_\+\+PWM\+\_\+1\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA13\+E\+\_\+\+TC2\+\_\+\+WO1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#3 IRQ/\+External interrupt definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a27183a94584b5fca7e1207ce7a79782a}{EIC}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+INPUT}~8
+\item 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_abef0a2ee4a8a00b8e5065563562cf65f}{PIN\+\_\+\+PA28\+A\+\_\+\+EIC\+\_\+\+EXTINT8}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+MUX}~MUX\+\_\+\+PA28\+A\+\_\+\+EIC\+\_\+\+EXTINT8
+\item 
+\#define {\bfseries EXT3\+\_\+\+IRQ\+\_\+\+PINMUX}~PINMUX\+\_\+\+PA28\+A\+\_\+\+EIC\+\_\+\+EXTINT8
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#3 I2C definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT3\+\_\+\+I2\+C\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a918e4c85993961a115bb23b4bb73a87f}{SERCOM2}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA08\+D\+\_\+\+SERCOM2\+\_\+\+PAD0
+\item 
+\#define {\bfseries EXT3\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA09\+D\+\_\+\+SERCOM2\+\_\+\+PAD1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#3 UART definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_ad48343faa88820b8f552aa1eaf66f00a}{SERCOM4}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}{USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PB10\+D\+\_\+\+SERCOM4\+\_\+\+PAD2
+\item 
+\#define {\bfseries EXT3\+\_\+\+UART\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PB11\+D\+\_\+\+SERCOM4\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Extension header \#3 SPI definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_a8785a316e608cb0a218f2a59655d6037}{SERCOM5}}
+\item 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~SPI\+\_\+\+SIGNAL\+\_\+\+MUX\+\_\+\+SETTING\+\_\+E
+\item 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PB16\+C\+\_\+\+SERCOM5\+\_\+\+PAD0
+\item 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PB17\+C\+\_\+\+SERCOM5\+\_\+\+PAD1
+\item 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PB22\+D\+\_\+\+SERCOM5\+\_\+\+PAD2
+\item 
+\#define {\bfseries EXT3\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PB23\+D\+\_\+\+SERCOM5\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Embedded debugger GPIO interface definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EDBG\+\_\+\+GPIO0\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_a3794cc9242203d349103ba1249e5d587}{PIN\+\_\+\+PA27}}
+\item 
+\#define {\bfseries EDBG\+\_\+\+GPIO1\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20e14_8h_af75c65abdba3e908699ed3c1c21f1148}{PIN\+\_\+\+PA28}}
+\item 
+\#define {\bfseries EDBG\+\_\+\+GPIO2\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g14_8h_a00c77a5c19a99cee2402fc83b04c02d5}{PIN\+\_\+\+PA20}}
+\item 
+\#define {\bfseries EDBG\+\_\+\+GPIO3\+\_\+\+PIN}~\mbox{\hyperlink{pio_2samd20g14_8h_af985624239bfbec119533432376256b8}{PIN\+\_\+\+PA21}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Embedded debugger USART interface definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+MODULE}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+RX\+\_\+\+PIN}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+RX\+\_\+\+MUX}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+RX\+\_\+\+PINMUX}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+RX\+\_\+\+SERCOM\+\_\+\+PAD}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+TX\+\_\+\+PIN}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+TX\+\_\+\+MUX}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+TX\+\_\+\+PINMUX}~-\/1 /$\ast$ Not available on this board $\ast$/
+\item 
+\#define {\bfseries EDBG\+\_\+\+UART\+\_\+\+TX\+\_\+\+SERCOM\+\_\+\+PAD}~-\/1 /$\ast$ Not available on this board $\ast$/
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Embedded debugger I2C interface definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EDBG\+\_\+\+I2\+C\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_a918e4c85993961a115bb23b4bb73a87f}{SERCOM2}}
+\item 
+\#define {\bfseries EDBG\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PA08\+D\+\_\+\+SERCOM2\+\_\+\+PAD0
+\item 
+\#define {\bfseries EDBG\+\_\+\+I2\+C\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PA09\+D\+\_\+\+SERCOM2\+\_\+\+PAD1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Embedded debugger SPI interface definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+MODULE}~\mbox{\hyperlink{samd20g14_8h_a8785a316e608cb0a218f2a59655d6037}{SERCOM5}}
+\item 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~SPI\+\_\+\+SIGNAL\+\_\+\+MUX\+\_\+\+SETTING\+\_\+E
+\item 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~PINMUX\+\_\+\+PB16\+C\+\_\+\+SERCOM5\+\_\+\+PAD0
+\item 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~PINMUX\+\_\+\+PB31\+D\+\_\+\+SERCOM5\+\_\+\+PAD1
+\item 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PB22\+D\+\_\+\+SERCOM5\+\_\+\+PAD2
+\item 
+\#define {\bfseries EDBG\+\_\+\+SPI\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PB23\+D\+\_\+\+SERCOM5\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Embedded debugger CDC Gateway USART interface definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+MODULE}~\mbox{\hyperlink{samd20e14_8h_ac9f8240be5a40b46cb09617323ebc7e3}{SERCOM3}}
+\item 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}{USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}}
+\item 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1}~\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}
+\item 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2}~PINMUX\+\_\+\+PA24\+C\+\_\+\+SERCOM3\+\_\+\+PAD2
+\item 
+\#define {\bfseries EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3}~PINMUX\+\_\+\+PA25\+C\+\_\+\+SERCOM3\+\_\+\+PAD3
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries system\+\_\+board\+\_\+init} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM D20 Xplained Pro board definition. 
+
+Copyright (c) 2013-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{samd20__xplained__pro_8h_abb7258badbff68701ce350d608efe151}\label{samd20__xplained__pro_8h_abb7258badbff68701ce350d608efe151}} 
+\index{samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}!CLEAR\_TRX\_IRQ@{CLEAR\_TRX\_IRQ}}
+\index{CLEAR\_TRX\_IRQ@{CLEAR\_TRX\_IRQ}!samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}}
+\doxysubsubsection{\texorpdfstring{CLEAR\_TRX\_IRQ}{CLEAR\_TRX\_IRQ}}
+{\footnotesize\ttfamily \#define CLEAR\+\_\+\+TRX\+\_\+\+IRQ(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~  extint\+\_\+chan\+\_\+clear\+\_\+detected(AT86\+RFX\+\_\+\+IRQ\+\_\+\+CHAN);}
+
+Clears the transceiver main interrupt. \mbox{\Hypertarget{samd20__xplained__pro_8h_ab49d5c31d1feeaf423b2b303f3bef6cf}\label{samd20__xplained__pro_8h_ab49d5c31d1feeaf423b2b303f3bef6cf}} 
+\index{samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}!DISABLE\_TRX\_IRQ@{DISABLE\_TRX\_IRQ}}
+\index{DISABLE\_TRX\_IRQ@{DISABLE\_TRX\_IRQ}!samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}}
+\doxysubsubsection{\texorpdfstring{DISABLE\_TRX\_IRQ}{DISABLE\_TRX\_IRQ}}
+{\footnotesize\ttfamily \#define DISABLE\+\_\+\+TRX\+\_\+\+IRQ(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~  extint\+\_\+chan\+\_\+disable\+\_\+callback(AT86\+RFX\+\_\+\+IRQ\+\_\+\+CHAN, EXTINT\+\_\+\+CALLBACK\+\_\+\+TYPE\+\_\+\+DETECT)}
+
+Disables the transceiver main interrupt. \mbox{\Hypertarget{samd20__xplained__pro_8h_a8552a5a8c813e41b26a578bfde4652d1}\label{samd20__xplained__pro_8h_a8552a5a8c813e41b26a578bfde4652d1}} 
+\index{samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}!ENABLE\_TRX\_IRQ@{ENABLE\_TRX\_IRQ}}
+\index{ENABLE\_TRX\_IRQ@{ENABLE\_TRX\_IRQ}!samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}}
+\doxysubsubsection{\texorpdfstring{ENABLE\_TRX\_IRQ}{ENABLE\_TRX\_IRQ}}
+{\footnotesize\ttfamily \#define ENABLE\+\_\+\+TRX\+\_\+\+IRQ(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~  extint\+\_\+chan\+\_\+enable\+\_\+callback(AT86\+RFX\+\_\+\+IRQ\+\_\+\+CHAN, EXTINT\+\_\+\+CALLBACK\+\_\+\+TYPE\+\_\+\+DETECT)}
+
+Enables the transceiver main interrupt. \mbox{\Hypertarget{samd20__xplained__pro_8h_a4b0995a1d0a6a7bcbaf9f4096cc633c7}\label{samd20__xplained__pro_8h_a4b0995a1d0a6a7bcbaf9f4096cc633c7}} 
+\index{samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}!LED\_Off@{LED\_Off}}
+\index{LED\_Off@{LED\_Off}!samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}}
+\doxysubsubsection{\texorpdfstring{LED\_Off}{LED\_Off}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+Off(\begin{DoxyParamCaption}\item[{}]{led\+\_\+gpio }\end{DoxyParamCaption})~port\+\_\+pin\+\_\+set\+\_\+output\+\_\+level(led\+\_\+gpio,true)}
+
+
+
+Turns off the specified LEDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+gpio} & LED to turn off (LEDx\+\_\+\+GPIO).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The pins of the specified LEDs are set to GPIO output mode. 
+\end{DoxyNote}
+\mbox{\Hypertarget{samd20__xplained__pro_8h_a589335327be57d2761bfa96c55d62f29}\label{samd20__xplained__pro_8h_a589335327be57d2761bfa96c55d62f29}} 
+\index{samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}!LED\_On@{LED\_On}}
+\index{LED\_On@{LED\_On}!samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}}
+\doxysubsubsection{\texorpdfstring{LED\_On}{LED\_On}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+On(\begin{DoxyParamCaption}\item[{}]{led\+\_\+gpio }\end{DoxyParamCaption})~port\+\_\+pin\+\_\+set\+\_\+output\+\_\+level(led\+\_\+gpio,false)}
+
+
+
+Turns on the specified LEDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+gpio} & LED to turn on (LEDx\+\_\+\+GPIO).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The pins of the specified LEDs are set to GPIO output mode. 
+\end{DoxyNote}
+\mbox{\Hypertarget{samd20__xplained__pro_8h_ac66f7ba408e0f06c78db8b3048126c8e}\label{samd20__xplained__pro_8h_ac66f7ba408e0f06c78db8b3048126c8e}} 
+\index{samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}!LED\_Toggle@{LED\_Toggle}}
+\index{LED\_Toggle@{LED\_Toggle}!samd20\_xplained\_pro.h@{samd20\_xplained\_pro.h}}
+\doxysubsubsection{\texorpdfstring{LED\_Toggle}{LED\_Toggle}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+Toggle(\begin{DoxyParamCaption}\item[{}]{led\+\_\+gpio }\end{DoxyParamCaption})~port\+\_\+pin\+\_\+toggle\+\_\+output\+\_\+level(led\+\_\+gpio)}
+
+
+
+Toggles the specified LEDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+gpio} & LED to toggle (LEDx\+\_\+\+GPIO).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The pins of the specified LEDs are set to GPIO output mode. 
+\end{DoxyNote}

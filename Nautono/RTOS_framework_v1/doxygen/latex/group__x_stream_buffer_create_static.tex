@@ -1,0 +1,56 @@
+\hypertarget{group__x_stream_buffer_create_static}{}\doxysection{x\+Stream\+Buffer\+Create\+Static}
+\label{group__x_stream_buffer_create_static}\index{xStreamBufferCreateStatic@{xStreamBufferCreateStatic}}
+\mbox{\hyperlink{stream__buffer_8h_source}{stream\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+StreamBufferHandle\_t xStreamBufferCreateStatic( size\_t xBufferSizeBytes,                                                 size\_t xTriggerLevelBytes,                                                 uint8\_t *pucStreamBufferStorageArea,                                                 StaticStreamBuffer\_t *pxStaticStreamBuffer );
+\end{DoxyPre}
+ Creates a new stream buffer using statically allocated memory. See x\+Stream\+Buffer\+Create() for a version that uses dynamically allocated memory.
+
+config\+SUPPORT\+\_\+\+STATIC\+\_\+\+ALLOCATION must be set to 1 in \mbox{\hyperlink{_free_r_t_o_s_config_8h_source}{Free\+RTOSConfig.\+h}} for x\+Stream\+Buffer\+Create\+Static() to be available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Buffer\+Size\+Bytes} & The size, in bytes, of the buffer pointed to by the puc\+Stream\+Buffer\+Storage\+Area parameter.\\
+\hline
+{\em x\+Trigger\+Level\+Bytes} & The number of bytes that must be in the stream buffer before a task that is blocked on the stream buffer to wait for data is moved out of the blocked state. For example, if a task is blocked on a read of an empty stream buffer that has a trigger level of 1 then the task will be unblocked when a single byte is written to the buffer or the task\textquotesingle{}s block time expires. As another example, if a task is blocked on a read of an empty stream buffer that has a trigger level of 10 then the task will not be unblocked until the stream buffer contains at least 10 bytes or the task\textquotesingle{}s block time expires. If a reading task\textquotesingle{}s block time expires before the trigger level is reached then the task will still receive however many bytes are actually available. Setting a trigger level of 0 will result in a trigger level of 1 being used. It is not valid to specify a trigger level that is greater than the buffer size.\\
+\hline
+{\em puc\+Stream\+Buffer\+Storage\+Area} & Must point to a uint8\+\_\+t array that is at least x\+Buffer\+Size\+Bytes + 1 big. This is the array to which streams are copied when they are written to the stream buffer.\\
+\hline
+{\em px\+Static\+Stream\+Buffer} & Must point to a variable of type Static\+Stream\+Buffer\+\_\+t, which will be used to hold the stream buffer\textquotesingle{}s data structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the stream buffer is created successfully then a handle to the created stream buffer is returned. If either puc\+Stream\+Buffer\+Storage\+Area or px\+Staticstream\+Buffer are NULL then NULL is returned.
+\end{DoxyReturn}
+Example use\+: 
+\begin{DoxyPre}
+
+// Used to dimension the array used to hold the streams.  The available space
+// will actually be one less than this, so 999.
+\#define STORAGE\_SIZE\_BYTES 1000
+
+// Defines the memory that will actually hold the streams within the stream
+// buffer.
+static uint8\_t ucStorageBuffer[ STORAGE\_SIZE\_BYTES ];
+
+// The variable used to hold the stream buffer structure.
+StaticStreamBuffer\_t xStreamBufferStruct;
+
+void MyFunction( void )
+\{
+StreamBufferHandle\_t xStreamBuffer;
+const size\_t xTriggerLevel = 1;
+
+    xStreamBuffer = xStreamBufferCreateStatic( sizeof( ucBufferStorage ),                                                xTriggerLevel,                                                ucBufferStorage,                                                \&xStreamBufferStruct );
+
+    // As neither the pucStreamBufferStorageArea or pxStaticStreamBuffer
+    // parameters were NULL, xStreamBuffer will not be NULL, and can be used to
+    // reference the created stream buffer in other stream buffer API calls.
+
+    // Other code that uses the stream buffer can go here.
+\}
+
+\end{DoxyPre}
+ 

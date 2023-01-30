@@ -1,0 +1,24 @@
+\hypertarget{group__x_stream_buffer_set_trigger_level}{}\doxysection{x\+Stream\+Buffer\+Set\+Trigger\+Level}
+\label{group__x_stream_buffer_set_trigger_level}\index{xStreamBufferSetTriggerLevel@{xStreamBufferSetTriggerLevel}}
+\mbox{\hyperlink{stream__buffer_8h_source}{stream\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+BaseType\_t xStreamBufferSetTriggerLevel( StreamBufferHandle\_t xStreamBuffer, size\_t xTriggerLevel );
+\end{DoxyPre}
+
+
+A stream buffer\textquotesingle{}s trigger level is the number of bytes that must be in the stream buffer before a task that is blocked on the stream buffer to wait for data is moved out of the blocked state. For example, if a task is blocked on a read of an empty stream buffer that has a trigger level of 1 then the task will be unblocked when a single byte is written to the buffer or the task\textquotesingle{}s block time expires. As another example, if a task is blocked on a read of an empty stream buffer that has a trigger level of 10 then the task will not be unblocked until the stream buffer contains at least 10 bytes or the task\textquotesingle{}s block time expires. If a reading task\textquotesingle{}s block time expires before the trigger level is reached then the task will still receive however many bytes are actually available. Setting a trigger level of 0 will result in a trigger level of 1 being used. It is not valid to specify a trigger level that is greater than the buffer size.
+
+A trigger level is set when the stream buffer is created, and can be modified using x\+Stream\+Buffer\+Set\+Trigger\+Level().
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Stream\+Buffer} & The handle of the stream buffer being updated.\\
+\hline
+{\em x\+Trigger\+Level} & The new trigger level for the stream buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If x\+Trigger\+Level was less than or equal to the stream buffer\textquotesingle{}s length then the trigger level will be updated and pd\+TRUE is returned. Otherwise pd\+FALSE is returned. 
+\end{DoxyReturn}

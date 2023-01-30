@@ -1,0 +1,90 @@
+\hypertarget{adc__callback_8h_source}{}\doxysection{adc\+\_\+callback.\+h}
+\label{adc__callback_8h_source}\index{src/ASF/sam0/drivers/adc/adc\_callback.h@{src/ASF/sam0/drivers/adc/adc\_callback.h}}
+\mbox{\hyperlink{adc__callback_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef ADC\_CALLBACK\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define ADC\_CALLBACK\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{41 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2instance_2adc_8h}{adc.h}}>}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{56 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\_job\_type}} \{}
+\DoxyCodeLine{58     \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga9cdf4e56baa3aae29eee83b34a1ba4a1a8d590b10162af148e094a1a8d0c893d6}{ADC\_JOB\_READ\_BUFFER}},}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{65 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gaab93edab589a1c691b29a78b56677f21}{adc\_register\_callback}}(}
+\DoxyCodeLine{66         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{67         adc\_callback\_t callback\_func,}
+\DoxyCodeLine{68         \textcolor{keyword}{enum} adc\_callback callback\_type);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga031decc62aad224eb1a7d7f00546b81e}{adc\_unregister\_callback}}(}
+\DoxyCodeLine{71         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *module,}
+\DoxyCodeLine{72         \textcolor{keyword}{enum} adc\_callback callback\_type);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{90 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_enable\_callback(}
+\DoxyCodeLine{91         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{92         \textcolor{keyword}{enum} adc\_callback callback\_type)}
+\DoxyCodeLine{93 \{}
+\DoxyCodeLine{94     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{95     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{/* Enable callback */}}
+\DoxyCodeLine{98     module-\/>enabled\_callback\_mask |= (1 << callback\_type);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{/* Enable window interrupt if this is a window callback */}}
+\DoxyCodeLine{101     \textcolor{keywordflow}{if} (callback\_type == ADC\_CALLBACK\_WINDOW) \{}
+\DoxyCodeLine{102         adc\_enable\_interrupt(module, ADC\_INTERRUPT\_WINDOW);}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104     \textcolor{comment}{/* Enable overrun interrupt if error callback is registered */}}
+\DoxyCodeLine{105     \textcolor{keywordflow}{if} (callback\_type == ADC\_CALLBACK\_ERROR) \{}
+\DoxyCodeLine{106         adc\_enable\_interrupt(module, ADC\_INTERRUPT\_OVERRUN);}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108 \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{125 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} adc\_disable\_callback(}
+\DoxyCodeLine{126         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{127         \textcolor{keyword}{enum} adc\_callback callback\_type)}
+\DoxyCodeLine{128 \{}
+\DoxyCodeLine{129     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{130     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{comment}{/* Disable callback */}}
+\DoxyCodeLine{133     module-\/>enabled\_callback\_mask \&= \string~(1 << callback\_type);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{comment}{/* Disable window interrupt if this is a window callback */}}
+\DoxyCodeLine{136     \textcolor{keywordflow}{if} (callback\_type == ADC\_CALLBACK\_WINDOW) \{}
+\DoxyCodeLine{137         adc\_disable\_interrupt(module, ADC\_INTERRUPT\_WINDOW);}
+\DoxyCodeLine{138     \}}
+\DoxyCodeLine{139     \textcolor{comment}{/* Disable overrun interrupt if this is the error callback */}}
+\DoxyCodeLine{140     \textcolor{keywordflow}{if} (callback\_type == ADC\_CALLBACK\_ERROR) \{}
+\DoxyCodeLine{141         adc\_disable\_interrupt(module, ADC\_INTERRUPT\_OVERRUN);}
+\DoxyCodeLine{142     \}}
+\DoxyCodeLine{143 \}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{152 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga2d4ba18d202501347f1a3faf6f9af4ec}{adc\_read\_buffer\_job}}(}
+\DoxyCodeLine{153         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{154         uint16\_t *buffer,}
+\DoxyCodeLine{155         uint16\_t samples);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga716c29c07b7c100001fc277ab0180045}{adc\_get\_job\_status}}(}
+\DoxyCodeLine{158         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *module\_inst,}
+\DoxyCodeLine{159         \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\_job\_type}} type);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga21a885bc264d8dc9d35e2fb2ae5bb9ac}{adc\_abort\_job}}(}
+\DoxyCodeLine{162         \textcolor{keyword}{struct} \mbox{\hyperlink{structadc__module}{adc\_module}} *module\_inst,}
+\DoxyCodeLine{163         \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\_job\_type}} type);}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{169 \}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ADC\_CALLBACK\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

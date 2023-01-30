@@ -1,0 +1,51 @@
+\hypertarget{group__x_message_buffer_create_static}{}\doxysection{x\+Message\+Buffer\+Create\+Static}
+\label{group__x_message_buffer_create_static}\index{xMessageBufferCreateStatic@{xMessageBufferCreateStatic}}
+\mbox{\hyperlink{message__buffer_8h_source}{message\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+MessageBufferHandle\_t xMessageBufferCreateStatic( size\_t xBufferSizeBytes,                                                   uint8\_t *pucMessageBufferStorageArea,                                                   StaticMessageBuffer\_t *pxStaticMessageBuffer );
+\end{DoxyPre}
+ Creates a new message buffer using statically allocated memory. See x\+Message\+Buffer\+Create() for a version that uses dynamically allocated memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Buffer\+Size\+Bytes} & The size, in bytes, of the buffer pointed to by the puc\+Message\+Buffer\+Storage\+Area parameter. When a message is written to the message buffer an additional sizeof( size\+\_\+t ) bytes are also written to store the message\textquotesingle{}s length. sizeof( size\+\_\+t ) is typically 4 bytes on a 32-\/bit architecture, so on most 32-\/bit architecture a 10 byte message will take up 14 bytes of message buffer space. The maximum number of bytes that can be stored in the message buffer is actually (x\+Buffer\+Size\+Bytes -\/ 1).\\
+\hline
+{\em puc\+Message\+Buffer\+Storage\+Area} & Must point to a uint8\+\_\+t array that is at least x\+Buffer\+Size\+Bytes + 1 big. This is the array to which messages are copied when they are written to the message buffer.\\
+\hline
+{\em px\+Static\+Message\+Buffer} & Must point to a variable of type Static\+Message\+Buffer\+\_\+t, which will be used to hold the message buffer\textquotesingle{}s data structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the message buffer is created successfully then a handle to the created message buffer is returned. If either puc\+Message\+Buffer\+Storage\+Area or px\+Staticmessage\+Buffer are NULL then NULL is returned.
+\end{DoxyReturn}
+Example use\+: 
+\begin{DoxyPre}
+
+// Used to dimension the array used to hold the messages.  The available space
+// will actually be one less than this, so 999.
+\#define STORAGE\_SIZE\_BYTES 1000
+
+// Defines the memory that will actually hold the messages within the message
+// buffer.
+static uint8\_t ucStorageBuffer[ STORAGE\_SIZE\_BYTES ];
+
+// The variable used to hold the message buffer structure.
+StaticMessageBuffer\_t xMessageBufferStruct;
+
+void MyFunction( void )
+\{
+MessageBufferHandle\_t xMessageBuffer;
+
+    xMessageBuffer = xMessageBufferCreateStatic( sizeof( ucBufferStorage ),                                                  ucBufferStorage,                                                  \&xMessageBufferStruct );
+
+    // As neither the pucMessageBufferStorageArea or pxStaticMessageBuffer
+    // parameters were NULL, xMessageBuffer will not be NULL, and can be used to
+    // reference the created message buffer in other message buffer API calls.
+
+    // Other code that uses the message buffer can go here.
+\}
+
+\end{DoxyPre}
+ 

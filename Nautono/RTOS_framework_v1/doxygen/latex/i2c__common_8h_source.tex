@@ -1,0 +1,38 @@
+\hypertarget{i2c__common_8h_source}{}\doxysection{i2c\+\_\+common.\+h}
+\label{i2c__common_8h_source}\index{src/ASF/sam0/drivers/sercom/i2c/i2c\_common.h@{src/ASF/sam0/drivers/sercom/i2c/i2c\_common.h}}
+\mbox{\hyperlink{i2c__common_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef I2C\_COMMON\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define I2C\_COMMON\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <sercom.h>}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{43 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#if (SAMD21) || (SAMR21) || (SAMD10) || (SAMD11) || (SAML21) || (SAMDA1) || \(\backslash\)}}
+\DoxyCodeLine{403 \textcolor{preprocessor}{    (SAMHA1) || (SAMHA0) || (SAML22) || (SAMC20) || (SAMC21) || (SAMD09) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#  define FEATURE\_I2C\_FAST\_MODE\_PLUS\_AND\_HIGH\_SPEED}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#  define FEATURE\_I2C\_10\_BIT\_ADDRESS}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#  define FEATURE\_I2C\_SCL\_STRETCH\_MODE}}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#  define FEATURE\_I2C\_SCL\_EXTEND\_TIMEOUT}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#  define FEATURE\_I2C\_DMA\_SUPPORT}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{421 \textcolor{keyword}{enum} \mbox{\hyperlink{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fc}{i2c\_transfer\_direction}} \{}
+\DoxyCodeLine{423     \mbox{\hyperlink{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fcaea641e04129636c150a843d7375b9269}{I2C\_TRANSFER\_WRITE}} = 0,}
+\DoxyCodeLine{425     \mbox{\hyperlink{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fca2b5fe52816ac7ab8ea272beb274cfd0c}{I2C\_TRANSFER\_READ}}  = 1,}
+\DoxyCodeLine{426 \};}
+\DoxyCodeLine{427 }
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{431 \}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{607 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* I2C\_COMMON\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

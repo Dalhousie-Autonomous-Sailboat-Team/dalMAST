@@ -1,0 +1,26 @@
+The following lists the possible internal SERCOM module pad function assignments, for the four SERCOM pads when in USART mode. Note that this is in addition to the physical GPIO pin MUX of the device, and can be used in conjunction to optimize the serial data pin-\/out.
+
+When TX and RX are connected to the same pin, the USART will operate in half-\/duplex mode if both one transmitter and several receivers are enabled.
+
+\begin{DoxyNote}{Note}
+When RX and XCK are connected to the same pin, the receiver must not be enabled if the USART is configured to use an external clock.
+\end{DoxyNote}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ MUX/\+Pad }&\cellcolor{\tableheadbgcolor}\textbf{ PAD 0 }&\cellcolor{\tableheadbgcolor}\textbf{ PAD 1 }&\cellcolor{\tableheadbgcolor}\textbf{ PAD 2 }&\cellcolor{\tableheadbgcolor}\textbf{ PAD 3  }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ MUX/\+Pad }&\cellcolor{\tableheadbgcolor}\textbf{ PAD 0 }&\cellcolor{\tableheadbgcolor}\textbf{ PAD 1 }&\cellcolor{\tableheadbgcolor}\textbf{ PAD 2 }&\cellcolor{\tableheadbgcolor}\textbf{ PAD 3  }\\\cline{1-5}
+\endhead
+RX\+\_\+0\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1 &TX / RX &XCK &-\/ &-\/  \\\cline{1-5}
+RX\+\_\+0\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3 &RX &-\/ &TX &XCK  \\\cline{1-5}
+RX\+\_\+1\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1 &TX &RX / XCK &-\/ &-\/  \\\cline{1-5}
+RX\+\_\+1\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3 &-\/ &RX &TX &XCK  \\\cline{1-5}
+RX\+\_\+2\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1 &TX &XCK &RX &-\/  \\\cline{1-5}
+RX\+\_\+2\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3 &-\/ &-\/ &TX / RX &XCK  \\\cline{1-5}
+RX\+\_\+3\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1 &TX &XCK &-\/ &RX  \\\cline{1-5}
+RX\+\_\+3\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3 &-\/ &-\/ &TX &RX / XCK  \\\cline{1-5}
+\end{longtabu}

@@ -1,0 +1,105 @@
+\hypertarget{tc__interrupt_8h_source}{}\doxysection{tc\+\_\+interrupt.\+h}
+\label{tc__interrupt_8h_source}\index{src/ASF/sam0/drivers/tc/tc\_interrupt.h@{src/ASF/sam0/drivers/tc/tc\_interrupt.h}}
+\mbox{\hyperlink{tc__interrupt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{34 \textcolor{comment}{/*}}
+\DoxyCodeLine{35 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{36 \textcolor{comment}{ */}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifndef TC\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define TC\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2tc_8h}{tc.h}}"{}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{system__interrupt_8h}{system\_interrupt.h}}>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{45 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{49 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} *\_tc\_instances[\mbox{\hyperlink{samd20e14_8h_a7895260bd2341a4b228dd6402c507c75}{TC\_INST\_NUM}}];}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#  define \_TC\_INTERRUPT\_VECT\_NUM(n, unused) \(\backslash\)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{          SYSTEM\_INTERRUPT\_MODULE\_TC\#\#n,}}
+\DoxyCodeLine{60 \textcolor{keyword}{static} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} \_tc\_interrupt\_get\_interrupt\_vector(}
+\DoxyCodeLine{61         uint32\_t inst\_num)}
+\DoxyCodeLine{62 \{}
+\DoxyCodeLine{63     \textcolor{keyword}{static} uint8\_t tc\_interrupt\_vectors[\mbox{\hyperlink{samd20e14_8h_a7895260bd2341a4b228dd6402c507c75}{TC\_INST\_NUM}}] =}
+\DoxyCodeLine{64         \{}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#if (SAML21E) || (SAML21G) || (SAMR30E) || (SAMR30G)}}
+\DoxyCodeLine{66             SYSTEM\_INTERRUPT\_MODULE\_TC0,}
+\DoxyCodeLine{67             SYSTEM\_INTERRUPT\_MODULE\_TC1,}
+\DoxyCodeLine{68             SYSTEM\_INTERRUPT\_MODULE\_TC4}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{70             \mbox{\hyperlink{group__group__sam0__utils__mrecursion_ga8856265949fb54fdffc8b9ea53a647e8}{MRECURSION}}(\mbox{\hyperlink{samd20e14_8h_a7895260bd2341a4b228dd6402c507c75}{TC\_INST\_NUM}}, \_TC\_INTERRUPT\_VECT\_NUM, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga94cdbe531468f0975311bc2ce36f5e1c}{TC\_INST\_MAX\_ID}})}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{72         \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} (\textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}})tc\_interrupt\_vectors[inst\_num];}
+\DoxyCodeLine{75 \}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !defined(\_\_DOXYGEN\_\_) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{83 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{tc__interrupt_8h_aa187c2a0cd50f55bb5f2c05397b9b225}{tc\_register\_callback}}(}
+\DoxyCodeLine{84         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{85         tc\_callback\_t callback\_func,}
+\DoxyCodeLine{86         \textcolor{keyword}{const} \textcolor{keyword}{enum} tc\_callback callback\_type);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{tc__interrupt_8h_ad23042511cec11c51d607b24e1df4830}{tc\_unregister\_callback}}(}
+\DoxyCodeLine{89         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{90         \textcolor{keyword}{const} \textcolor{keyword}{enum} tc\_callback callback\_type);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{103 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_enable\_callback(}
+\DoxyCodeLine{104         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{105         \textcolor{keyword}{const} \textcolor{keyword}{enum} tc\_callback callback\_type)}
+\DoxyCodeLine{106 \{}
+\DoxyCodeLine{107     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{108     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{comment}{/* Enable interrupts for this TC module */}}
+\DoxyCodeLine{112     system\_interrupt\_enable(\_tc\_interrupt\_get\_interrupt\_vector(\_tc\_get\_inst\_index(module-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}})));}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{comment}{/* Enable callback */}}
+\DoxyCodeLine{115     \textcolor{keywordflow}{if} (callback\_type == TC\_CALLBACK\_CC\_CHANNEL0) \{}
+\DoxyCodeLine{116         module-\/>enable\_callback\_mask |= TC\_INTFLAG\_MC(1);}
+\DoxyCodeLine{117         module-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}}.\mbox{\hyperlink{struct_tc_count8_acfb9d660f23d4eb039b9f9fe4cf05ae6}{INTENSET}}.\mbox{\hyperlink{union_t_c___i_n_t_e_n_s_e_t___type_ac95eb830ca94729566ab7b5432e79618}{reg}} = TC\_INTFLAG\_MC(1);}
+\DoxyCodeLine{118     \}}
+\DoxyCodeLine{119     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (callback\_type == TC\_CALLBACK\_CC\_CHANNEL1) \{}
+\DoxyCodeLine{120         module-\/>enable\_callback\_mask |= TC\_INTFLAG\_MC(2);}
+\DoxyCodeLine{121         module-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}}.\mbox{\hyperlink{struct_tc_count8_acfb9d660f23d4eb039b9f9fe4cf05ae6}{INTENSET}}.\mbox{\hyperlink{union_t_c___i_n_t_e_n_s_e_t___type_ac95eb830ca94729566ab7b5432e79618}{reg}} = TC\_INTFLAG\_MC(2);}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{124         module-\/>enable\_callback\_mask |= (1 << callback\_type);}
+\DoxyCodeLine{125         module-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}}.\mbox{\hyperlink{struct_tc_count8_acfb9d660f23d4eb039b9f9fe4cf05ae6}{INTENSET}}.\mbox{\hyperlink{union_t_c___i_n_t_e_n_s_e_t___type_ac95eb830ca94729566ab7b5432e79618}{reg}} = (1 << callback\_type);}
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127 \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{140 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_disable\_callback(}
+\DoxyCodeLine{141         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{142         \textcolor{keyword}{const} \textcolor{keyword}{enum} tc\_callback callback\_type)\{}
+\DoxyCodeLine{143     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{144     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{comment}{/* Disable callback */}}
+\DoxyCodeLine{147     \textcolor{keywordflow}{if} (callback\_type == TC\_CALLBACK\_CC\_CHANNEL0) \{}
+\DoxyCodeLine{148         module-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}}.\mbox{\hyperlink{struct_tc_count8_a06374e1d0aeda26de80ba031b6f199e3}{INTENCLR}}.\mbox{\hyperlink{union_t_c___i_n_t_e_n_c_l_r___type_ac529ca8183247263a2855e1565b52c4a}{reg}} = TC\_INTFLAG\_MC(1);}
+\DoxyCodeLine{149         module-\/>enable\_callback\_mask \&= \string~TC\_INTFLAG\_MC(1);}
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (callback\_type == TC\_CALLBACK\_CC\_CHANNEL1) \{}
+\DoxyCodeLine{152         module-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}}.\mbox{\hyperlink{struct_tc_count8_a06374e1d0aeda26de80ba031b6f199e3}{INTENCLR}}.\mbox{\hyperlink{union_t_c___i_n_t_e_n_c_l_r___type_ac529ca8183247263a2855e1565b52c4a}{reg}} = TC\_INTFLAG\_MC(2);}
+\DoxyCodeLine{153         module-\/>enable\_callback\_mask \&= \string~TC\_INTFLAG\_MC(2);}
+\DoxyCodeLine{154     \}}
+\DoxyCodeLine{155     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{156         module-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}}.\mbox{\hyperlink{struct_tc_count8_a06374e1d0aeda26de80ba031b6f199e3}{INTENCLR}}.\mbox{\hyperlink{union_t_c___i_n_t_e_n_c_l_r___type_ac529ca8183247263a2855e1565b52c4a}{reg}} = (1 << callback\_type);}
+\DoxyCodeLine{157         module-\/>enable\_callback\_mask \&= \string~(1 << callback\_type);}
+\DoxyCodeLine{158     \}}
+\DoxyCodeLine{159 \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{166 \}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* TC\_INTERRUPT\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\hypertarget{sail__buffer_8h_source}{}\doxysection{sail\+\_\+buffer.\+h}
+\label{sail__buffer_8h_source}\index{src/sail\_buffer.h@{src/sail\_buffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_buffer.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Header file for the buffer module used to manage the producer-\/consumer problem for the}}
+\DoxyCodeLine{3 \textcolor{comment}{ * interrupt driven UART driver.}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Created on July 11, 2016.}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Created by Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef SAIL\_BUFFER\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define SAIL\_BUFFER\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{/* BUFF\_Module}}
+\DoxyCodeLine{18 \textcolor{comment}{ * Structure to manage the configuration and state of a buffer.}}
+\DoxyCodeLine{19 \textcolor{comment}{ * buffer       -\/ pointer to the start of the buffer}}
+\DoxyCodeLine{20 \textcolor{comment}{ * read\_ptr     -\/ pointer last unread byte}}
+\DoxyCodeLine{21 \textcolor{comment}{ * write\_ptr    -\/ pointer to the first empty byte}}
+\DoxyCodeLine{22 \textcolor{comment}{ * capacity     -\/ maximum capacity of the buffer}}
+\DoxyCodeLine{23 \textcolor{comment}{ * length       -\/ current number of elements in the buffer}}
+\DoxyCodeLine{24 \textcolor{comment}{ */}}
+\DoxyCodeLine{25 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}} \{}
+\DoxyCodeLine{26     \textcolor{keyword}{volatile} uint8\_t *buffer;}
+\DoxyCodeLine{27     \textcolor{keyword}{volatile} uint16\_t read\_idx;}
+\DoxyCodeLine{28     \textcolor{keyword}{volatile} uint16\_t write\_idx;}
+\DoxyCodeLine{29     uint16\_t capacity;}
+\DoxyCodeLine{30     \textcolor{keyword}{volatile} uint16\_t length;}
+\DoxyCodeLine{31 \} \mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} BUFF\_Init(\mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}} *mod, \textcolor{keyword}{volatile} uint8\_t *buffer, uint16\_t size);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} BUFF\_ReadByte(\mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}} *mod, uint8\_t *data);}
+\DoxyCodeLine{36 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} BUFF\_WriteByte(\mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}} *mod, uint8\_t data);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} BUFF\_ReadString(\mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}} *mod, uint8\_t *data, uint16\_t length);}
+\DoxyCodeLine{39 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} BUFF\_ReadBuffer(\mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}} *mod, uint8\_t *data, uint16\_t length);}
+\DoxyCodeLine{40 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} BUFF\_WriteBuffer(\mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}} *mod, uint8\_t *data, uint16\_t length);}
+\DoxyCodeLine{41 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} BUFF\_WriteBufferUnprotected(\mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}} *mod, uint8\_t *data, uint16\_t length);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} BUFF\_GetLength(\mbox{\hyperlink{struct_b_u_f_f___module}{BUFF\_Module}} *mod, uint16\_t *length);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_BUFFER\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

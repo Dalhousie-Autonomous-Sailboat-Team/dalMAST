@@ -1,0 +1,53 @@
+\hypertarget{dbg__print_8h_source}{}\doxysection{dbg\+\_\+print.\+h}
+\label{dbg__print_8h_source}\index{src/ASF/common/services/freertos/dbg\_print/dbg\_print.h@{src/ASF/common/services/freertos/dbg\_print/dbg\_print.h}}
+\mbox{\hyperlink{dbg__print_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef DBG\_PRINT\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define DBG\_PRINT\_H}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{conf__dbg__print_8h}{conf\_dbg\_print.h}}>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{45 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 }
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#ifdef \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{243 \textcolor{preprocessor}{\# if !defined(CONF\_DBG\_PRINT\_BAUD\_RATE)}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#  define CONF\_DBG\_PRINT\_BAUD\_RATE}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{260 \textcolor{preprocessor}{\# if !defined(CONF\_DBG\_PRINT\_BAUD\_VALUE)}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#  define CONF\_DBG\_PRINT\_BAUD\_VALUE}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{292 }
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga9bd1ce061869e93a4bb5438aa599d048}{dbg\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gacce1fd7454589e2db13972866900aa86}{dbg\_sprint\_hexint}}(\textcolor{keywordtype}{char} *outstr, uint32\_t outint);}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga5f5b851136b087016e7060ff32a4ea13}{dbg\_print\_hexint}}(uint32\_t outint);}
+\DoxyCodeLine{306 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga3cb124fc035aa9d5388f6fad8ca7eb23}{dbg\_print\_str}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *outstr);}
+\DoxyCodeLine{307 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gafadf1fd80c628de3233fb460c5430eb4}{dbg\_print\_char}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} outchar);}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{313 \}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DBG\_PRINT\_H}}
+
+\end{DoxyCode}

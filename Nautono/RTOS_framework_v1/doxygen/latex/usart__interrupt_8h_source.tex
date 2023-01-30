@@ -1,0 +1,97 @@
+\hypertarget{usart__interrupt_8h_source}{}\doxysection{usart\+\_\+interrupt.\+h}
+\label{usart__interrupt_8h_source}\index{src/ASF/sam0/drivers/sercom/usart/usart\_interrupt.h@{src/ASF/sam0/drivers/sercom/usart/usart\_interrupt.h}}
+\mbox{\hyperlink{usart__interrupt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef USART\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define USART\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{usart_8h}{usart.h}}"{}}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{42 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{46 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \_usart\_write\_buffer(}
+\DoxyCodeLine{47         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{48         uint8\_t *tx\_data,}
+\DoxyCodeLine{49         uint16\_t length);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \_usart\_read\_buffer(}
+\DoxyCodeLine{52         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{53         uint8\_t *rx\_data,}
+\DoxyCodeLine{54         uint16\_t length);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keywordtype}{void} \_usart\_interrupt\_handler(}
+\DoxyCodeLine{57         uint8\_t instance);}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga39e38593fb41abe34cec95d53c7b1e37}{usart\_register\_callback}}(}
+\DoxyCodeLine{71         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{72         usart\_callback\_t callback\_func,}
+\DoxyCodeLine{73         \textcolor{keyword}{enum} usart\_callback callback\_type);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga5be8cd239bf4acd63e341be97a5cd602}{usart\_unregister\_callback}}(}
+\DoxyCodeLine{76         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *module,}
+\DoxyCodeLine{77         \textcolor{keyword}{enum} usart\_callback callback\_type);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{89 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} usart\_enable\_callback(}
+\DoxyCodeLine{90         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{91         \textcolor{keyword}{enum} usart\_callback callback\_type)}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{94     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{/* Enable callback */}}
+\DoxyCodeLine{97     module-\/>callback\_enable\_mask |= (1 << callback\_type);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{110 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} usart\_disable\_callback(}
+\DoxyCodeLine{111         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{112         \textcolor{keyword}{enum} usart\_callback callback\_type)}
+\DoxyCodeLine{113 \{}
+\DoxyCodeLine{114     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{115     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{/* Disable callback */}}
+\DoxyCodeLine{118     module-\/>callback\_enable\_mask \&= \string~(1 << callback\_type);}
+\DoxyCodeLine{119 \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{129 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga3e68847c609aa708be3e1f282f760e8d}{usart\_write\_job}}(}
+\DoxyCodeLine{130         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{131         \textcolor{keyword}{const} uint16\_t *tx\_data);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga095085e94cc009c31243df62395896fd}{usart\_read\_job}}(}
+\DoxyCodeLine{134         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{135         uint16\_t *\textcolor{keyword}{const} rx\_data);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga2811c1f5cd7fdcf653eac02812f2265c}{usart\_write\_buffer\_job}}(}
+\DoxyCodeLine{138         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{139         uint8\_t *tx\_data,}
+\DoxyCodeLine{140         uint16\_t length);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga95b1e55af02e69454ecff04c3d712527}{usart\_read\_buffer\_job}}(}
+\DoxyCodeLine{143         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{144         uint8\_t *rx\_data,}
+\DoxyCodeLine{145         uint16\_t length);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga08e77aeb7ff01d060c5c936a63581a99}{usart\_abort\_job}}(}
+\DoxyCodeLine{148         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{149         \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\_transceiver\_type}} transceiver\_type);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga80364bc53d6d6405a2a7f3b1aa507503}{usart\_get\_job\_status}}(}
+\DoxyCodeLine{152         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{153         \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\_transceiver\_type}} transceiver\_type);}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{163 \}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* USART\_INTERRUPT\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{167 }
+
+\end{DoxyCode}

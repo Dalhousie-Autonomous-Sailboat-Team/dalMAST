@@ -1,0 +1,54 @@
+\hypertarget{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_acronyms}{}\doxysection{Acronyms}\label{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_acronyms}
+Below is a table listing the acronyms used in this module, along with their intended meanings.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+SERCOM &Serial Communication Interface  \\\cline{1-2}
+USART &Universal Synchronous and Asynchronous Serial Receiver and Transmitter  \\\cline{1-2}
+LSB &Least Significant Bit  \\\cline{1-2}
+MSB &Most Significant Bit  \\\cline{1-2}
+DMA &Direct Memory Access  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_dependencies}{}\doxysection{Dependencies}\label{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_dependencies}
+This driver has the following dependencies\+:
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group}{System Pin Multiplexer Driver}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group}{System clock configuration}}
+\end{DoxyItemize}\hypertarget{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_errata}{}\doxysection{Errata}\label{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_errata}
+There are no errata related to this driver.\hypertarget{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_history}{}\doxysection{Module History}\label{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_history}
+An overview of the module history is presented in the table below, with details on the enhancements and fixes made to the module since its first release. The current version of this corresponds to the newest version in the table.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{1}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Changelog  }\\\cline{1-1}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Changelog  }\\\cline{1-1}
+\endhead
+Added new feature as below\+: \begin{DoxyItemize}
+\item ISO7816  \end{DoxyItemize}
+\\\cline{1-1}
+Added new features as below\+: \begin{DoxyItemize}
+\item LIN master \item RS485  \end{DoxyItemize}
+\\\cline{1-1}
+Added new features as below\+: \begin{DoxyItemize}
+\item Oversample \item Buffer overflow notification \item Irda \item Lin slave \item Start frame detection \item Hardware flow control \item Collision detection \item DMA support   \end{DoxyItemize}
+\\\cline{1-1}
+\begin{DoxyItemize}
+\item Added new {\ttfamily transmitter\+\_\+enable} and {\ttfamily receiver\+\_\+enable} Boolean values to {\ttfamily struct} \mbox{\hyperlink{structusart__config}{usart\+\_\+config}} \item Altered {\ttfamily usart\+\_\+write\+\_\+$\ast$} and usart\+\_\+read\+\_\+$\ast$ functions to abort with an error code if the relevant transceiver is not enabled \item Fixed {\ttfamily \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gacffd0845249348d37d14c65a41132e41}{usart\+\_\+write\+\_\+buffer\+\_\+wait()}}} and {\ttfamily \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4f788b3478e9c1fa8f0dd8d09939d3a6}{usart\+\_\+read\+\_\+buffer\+\_\+wait()}}} not aborting correctly when a timeout condition occurs  \end{DoxyItemize}
+\\\cline{1-1}
+Initial Release  \\\cline{1-1}
+\end{longtabu}

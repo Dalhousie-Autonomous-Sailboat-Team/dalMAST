@@ -1,0 +1,20 @@
+\hypertarget{group__x_message_buffer_reset}{}\doxysection{x\+Message\+Buffer\+Reset}
+\label{group__x_message_buffer_reset}\index{xMessageBufferReset@{xMessageBufferReset}}
+\mbox{\hyperlink{message__buffer_8h_source}{message\+\_\+buffer.\+h}} 
+\begin{DoxyPre}
+BaseType\_t xMessageBufferReset( MessageBufferHandle\_t xMessageBuffer );
+\end{DoxyPre}
+
+
+Resets a message buffer to its initial empty state, discarding any message it contained.
+
+A message buffer can only be reset if there are no tasks blocked on it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Message\+Buffer} & The handle of the message buffer being reset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the message buffer was reset then pd\+PASS is returned. If the message buffer could not be reset because either there was a task blocked on the message queue to wait for space to become available, or to wait for a a message to be available, then pd\+FAIL is returned. 
+\end{DoxyReturn}

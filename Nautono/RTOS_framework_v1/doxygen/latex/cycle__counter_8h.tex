@@ -1,0 +1,153 @@
+\hypertarget{cycle__counter_8h}{}\doxysection{src/\+ASF/common2/services/delay/sam0/cycle\+\_\+counter.h File Reference}
+\label{cycle__counter_8h}\index{src/ASF/common2/services/delay/sam0/cycle\_counter.h@{src/ASF/common2/services/delay/sam0/cycle\_counter.h}}
+
+
+ARM functions for busy-\/wait delay loops.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$clock.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{cycle__counter_8h_a43bafb28b29491ec7f871319b5a3b2f8}\label{cycle__counter_8h_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf5cd7b482ee14413084669c32eef84cb}{system\+\_\+gclk\+\_\+gen\+\_\+get\+\_\+hz}}(0)
+\begin{DoxyCompactList}\small\item\em MCU Clock Frequency (Hertz) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Convenience functions for busy-\/wait delay loops}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{cycle__counter_8h_a677458b76b894b9a1b9f323156c3a0ac}{cpu\+\_\+ms\+\_\+2\+\_\+cy}}(ms,  f\+\_\+cpu)~ (((uint64\+\_\+t)(ms) $\ast$ (f\+\_\+cpu) + (uint64\+\_\+t)(7e3-\/1ul)) / (uint64\+\_\+t)7e3)
+\begin{DoxyCompactList}\small\item\em Convert milli-\/seconds into CPU cycles. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{cycle__counter_8h_a5732b379c3ffd4b0446c495cbc719431}{cpu\+\_\+us\+\_\+2\+\_\+cy}}(us,  f\+\_\+cpu)~ (((uint64\+\_\+t)(us) $\ast$ (f\+\_\+cpu) + (uint64\+\_\+t)(7e6-\/1ul)) / (uint64\+\_\+t)7e6)
+\begin{DoxyCompactList}\small\item\em Convert micro-\/seconds into CPU cycles. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{cycle__counter_8h_a84ecb39fb8b32180b27236ae02392d39}{delay\+\_\+cycles}}~\mbox{\hyperlink{cycle__counter_8c_a2d1f3b8b6ebc40099efc69c0f5c0b818}{portable\+\_\+delay\+\_\+cycles}}
+\begin{DoxyCompactList}\small\item\em Delay program execution for a specified number of CPU cycles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{cycle__counter_8h_ac16436855dffc7dc7939324a0408adb0}\label{cycle__counter_8h_ac16436855dffc7dc7939324a0408adb0}} 
+\#define {\bfseries cpu\+\_\+delay\+\_\+s}(delay)~\mbox{\hyperlink{cycle__counter_8h_a84ecb39fb8b32180b27236ae02392d39}{delay\+\_\+cycles}}(\mbox{\hyperlink{cycle__counter_8h_a677458b76b894b9a1b9f323156c3a0ac}{cpu\+\_\+ms\+\_\+2\+\_\+cy}}(1000 $\ast$ delay, \mbox{\hyperlink{cycle__counter_8h_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}))
+\item 
+\#define \mbox{\hyperlink{cycle__counter_8h_acdbe5e2991f2b665ef2babea7b978667}{cpu\+\_\+delay\+\_\+ms}}(delay)~\mbox{\hyperlink{cycle__counter_8h_a84ecb39fb8b32180b27236ae02392d39}{delay\+\_\+cycles}}(\mbox{\hyperlink{cycle__counter_8h_a677458b76b894b9a1b9f323156c3a0ac}{cpu\+\_\+ms\+\_\+2\+\_\+cy}}(delay, \mbox{\hyperlink{cycle__counter_8h_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}))
+\begin{DoxyCompactList}\small\item\em Delay program execution for a specified number of milliseconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}{cpu\+\_\+delay\+\_\+us}}(delay)~\mbox{\hyperlink{cycle__counter_8h_a84ecb39fb8b32180b27236ae02392d39}{delay\+\_\+cycles}}(\mbox{\hyperlink{cycle__counter_8h_a5732b379c3ffd4b0446c495cbc719431}{cpu\+\_\+us\+\_\+2\+\_\+cy}}(delay, \mbox{\hyperlink{cycle__counter_8h_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}))
+\begin{DoxyCompactList}\small\item\em Delay program execution for a specified number of microseconds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cycle__counter_8h_a740950299bad7cf428167849f201ebb4}{portable\+\_\+delay\+\_\+cycles}} (unsigned long n)
+\begin{DoxyCompactList}\small\item\em Delay loop to delay n number of cycles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ARM functions for busy-\/wait delay loops. 
+
+Copyright (c) 2013-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{cycle__counter_8h_acdbe5e2991f2b665ef2babea7b978667}\label{cycle__counter_8h_acdbe5e2991f2b665ef2babea7b978667}} 
+\index{cycle\_counter.h@{cycle\_counter.h}!cpu\_delay\_ms@{cpu\_delay\_ms}}
+\index{cpu\_delay\_ms@{cpu\_delay\_ms}!cycle\_counter.h@{cycle\_counter.h}}
+\doxysubsubsection{\texorpdfstring{cpu\_delay\_ms}{cpu\_delay\_ms}}
+{\footnotesize\ttfamily \#define cpu\+\_\+delay\+\_\+ms(\begin{DoxyParamCaption}\item[{}]{delay }\end{DoxyParamCaption})~\mbox{\hyperlink{cycle__counter_8h_a84ecb39fb8b32180b27236ae02392d39}{delay\+\_\+cycles}}(\mbox{\hyperlink{cycle__counter_8h_a677458b76b894b9a1b9f323156c3a0ac}{cpu\+\_\+ms\+\_\+2\+\_\+cy}}(delay, \mbox{\hyperlink{cycle__counter_8h_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}))}
+
+
+
+Delay program execution for a specified number of milliseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & number of milliseconds to wait \\
+\hline
+{\em f\+\_\+cpu} & CPU frequency in Hertz \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}\label{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}} 
+\index{cycle\_counter.h@{cycle\_counter.h}!cpu\_delay\_us@{cpu\_delay\_us}}
+\index{cpu\_delay\_us@{cpu\_delay\_us}!cycle\_counter.h@{cycle\_counter.h}}
+\doxysubsubsection{\texorpdfstring{cpu\_delay\_us}{cpu\_delay\_us}}
+{\footnotesize\ttfamily \#define cpu\+\_\+delay\+\_\+us(\begin{DoxyParamCaption}\item[{}]{delay }\end{DoxyParamCaption})~\mbox{\hyperlink{cycle__counter_8h_a84ecb39fb8b32180b27236ae02392d39}{delay\+\_\+cycles}}(\mbox{\hyperlink{cycle__counter_8h_a5732b379c3ffd4b0446c495cbc719431}{cpu\+\_\+us\+\_\+2\+\_\+cy}}(delay, \mbox{\hyperlink{cycle__counter_8h_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}))}
+
+
+
+Delay program execution for a specified number of microseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & number of microseconds to wait \\
+\hline
+{\em f\+\_\+cpu} & CPU frequency in Hertz \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cycle__counter_8h_a677458b76b894b9a1b9f323156c3a0ac}\label{cycle__counter_8h_a677458b76b894b9a1b9f323156c3a0ac}} 
+\index{cycle\_counter.h@{cycle\_counter.h}!cpu\_ms\_2\_cy@{cpu\_ms\_2\_cy}}
+\index{cpu\_ms\_2\_cy@{cpu\_ms\_2\_cy}!cycle\_counter.h@{cycle\_counter.h}}
+\doxysubsubsection{\texorpdfstring{cpu\_ms\_2\_cy}{cpu\_ms\_2\_cy}}
+{\footnotesize\ttfamily \#define cpu\+\_\+ms\+\_\+2\+\_\+cy(\begin{DoxyParamCaption}\item[{}]{ms,  }\item[{}]{f\+\_\+cpu }\end{DoxyParamCaption})~ (((uint64\+\_\+t)(ms) $\ast$ (f\+\_\+cpu) + (uint64\+\_\+t)(7e3-\/1ul)) / (uint64\+\_\+t)7e3)}
+
+
+
+Convert milli-\/seconds into CPU cycles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & number of milliseconds \\
+\hline
+{\em f\+\_\+cpu} & CPU frequency in Hertz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the converted number of CPU cycles 
+\end{DoxyReturn}
+\mbox{\Hypertarget{cycle__counter_8h_a5732b379c3ffd4b0446c495cbc719431}\label{cycle__counter_8h_a5732b379c3ffd4b0446c495cbc719431}} 
+\index{cycle\_counter.h@{cycle\_counter.h}!cpu\_us\_2\_cy@{cpu\_us\_2\_cy}}
+\index{cpu\_us\_2\_cy@{cpu\_us\_2\_cy}!cycle\_counter.h@{cycle\_counter.h}}
+\doxysubsubsection{\texorpdfstring{cpu\_us\_2\_cy}{cpu\_us\_2\_cy}}
+{\footnotesize\ttfamily \#define cpu\+\_\+us\+\_\+2\+\_\+cy(\begin{DoxyParamCaption}\item[{}]{us,  }\item[{}]{f\+\_\+cpu }\end{DoxyParamCaption})~ (((uint64\+\_\+t)(us) $\ast$ (f\+\_\+cpu) + (uint64\+\_\+t)(7e6-\/1ul)) / (uint64\+\_\+t)7e6)}
+
+
+
+Convert micro-\/seconds into CPU cycles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & number of microseconds \\
+\hline
+{\em f\+\_\+cpu} & CPU frequency in Hertz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the converted number of CPU cycles 
+\end{DoxyReturn}
+\mbox{\Hypertarget{cycle__counter_8h_a84ecb39fb8b32180b27236ae02392d39}\label{cycle__counter_8h_a84ecb39fb8b32180b27236ae02392d39}} 
+\index{cycle\_counter.h@{cycle\_counter.h}!delay\_cycles@{delay\_cycles}}
+\index{delay\_cycles@{delay\_cycles}!cycle\_counter.h@{cycle\_counter.h}}
+\doxysubsubsection{\texorpdfstring{delay\_cycles}{delay\_cycles}}
+{\footnotesize\ttfamily \#define delay\+\_\+cycles~\mbox{\hyperlink{cycle__counter_8c_a2d1f3b8b6ebc40099efc69c0f5c0b818}{portable\+\_\+delay\+\_\+cycles}}}
+
+
+
+Delay program execution for a specified number of CPU cycles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & number of CPU cycles to wait \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cycle__counter_8h_a740950299bad7cf428167849f201ebb4}\label{cycle__counter_8h_a740950299bad7cf428167849f201ebb4}} 
+\index{cycle\_counter.h@{cycle\_counter.h}!portable\_delay\_cycles@{portable\_delay\_cycles}}
+\index{portable\_delay\_cycles@{portable\_delay\_cycles}!cycle\_counter.h@{cycle\_counter.h}}
+\doxysubsubsection{\texorpdfstring{portable\_delay\_cycles()}{portable\_delay\_cycles()}}
+{\footnotesize\ttfamily void portable\+\_\+delay\+\_\+cycles (\begin{DoxyParamCaption}\item[{unsigned long}]{n }\end{DoxyParamCaption})}
+
+
+
+Delay loop to delay n number of cycles. 
+
+\begin{DoxyNote}{Note}
+The function runs in internal RAM so that flash wait states will not affect the delay time.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number of cycles \\
+\hline
+\end{DoxyParams}

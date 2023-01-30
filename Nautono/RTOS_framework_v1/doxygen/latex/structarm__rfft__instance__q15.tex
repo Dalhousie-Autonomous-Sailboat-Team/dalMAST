@@ -1,0 +1,81 @@
+\hypertarget{structarm__rfft__instance__q15}{}\doxysection{arm\+\_\+rfft\+\_\+instance\+\_\+q15 Struct Reference}
+\label{structarm__rfft__instance__q15}\index{arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}}
+
+
+Instance structure for the Q15 RFFT/\+RIFFT function.  
+
+
+
+
+{\ttfamily \#include $<$arm\+\_\+math.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structarm__rfft__instance__q15_aac5cf9e825917cbb14f439e56bb86ab3}{fft\+Len\+Real}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structarm__rfft__instance__q15_a8051ffe268c147e431e1bea7bb4c4258}{ifft\+FlagR}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structarm__rfft__instance__q15_a4c65cd40e0098ec2f5c0dc31488b9bc6}{bit\+Reverse\+FlagR}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structarm__rfft__instance__q15_afd444d05858c5f419980e94e8240d5c3}{twid\+Coef\+RModifier}}
+\item 
+q15\+\_\+t $\ast$ \mbox{\hyperlink{structarm__rfft__instance__q15_affbf2de522ac029432d98e8373c0ec53}{p\+Twiddle\+AReal}}
+\item 
+q15\+\_\+t $\ast$ \mbox{\hyperlink{structarm__rfft__instance__q15_a937d815022adc557b435ba8c6cd58b0d}{p\+Twiddle\+BReal}}
+\item 
+const \mbox{\hyperlink{structarm__cfft__instance__q15}{arm\+\_\+cfft\+\_\+instance\+\_\+q15}} $\ast$ \mbox{\hyperlink{structarm__rfft__instance__q15_a4329c15b056444746d37ff082a24d31a}{p\+Cfft}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Instance structure for the Q15 RFFT/\+RIFFT function. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structarm__rfft__instance__q15_a4c65cd40e0098ec2f5c0dc31488b9bc6}\label{structarm__rfft__instance__q15_a4c65cd40e0098ec2f5c0dc31488b9bc6}} 
+\index{arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}!bitReverseFlagR@{bitReverseFlagR}}
+\index{bitReverseFlagR@{bitReverseFlagR}!arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}}
+\doxysubsubsection{\texorpdfstring{bitReverseFlagR}{bitReverseFlagR}}
+{\footnotesize\ttfamily uint8\+\_\+t arm\+\_\+rfft\+\_\+instance\+\_\+q15\+::bit\+Reverse\+FlagR}
+
+flag that enables (bit\+Reverse\+FlagR=1) or disables (bit\+Reverse\+FlagR=0) bit reversal of output. \mbox{\Hypertarget{structarm__rfft__instance__q15_aac5cf9e825917cbb14f439e56bb86ab3}\label{structarm__rfft__instance__q15_aac5cf9e825917cbb14f439e56bb86ab3}} 
+\index{arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}!fftLenReal@{fftLenReal}}
+\index{fftLenReal@{fftLenReal}!arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}}
+\doxysubsubsection{\texorpdfstring{fftLenReal}{fftLenReal}}
+{\footnotesize\ttfamily uint32\+\_\+t arm\+\_\+rfft\+\_\+instance\+\_\+q15\+::fft\+Len\+Real}
+
+length of the real FFT. \mbox{\Hypertarget{structarm__rfft__instance__q15_a8051ffe268c147e431e1bea7bb4c4258}\label{structarm__rfft__instance__q15_a8051ffe268c147e431e1bea7bb4c4258}} 
+\index{arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}!ifftFlagR@{ifftFlagR}}
+\index{ifftFlagR@{ifftFlagR}!arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}}
+\doxysubsubsection{\texorpdfstring{ifftFlagR}{ifftFlagR}}
+{\footnotesize\ttfamily uint8\+\_\+t arm\+\_\+rfft\+\_\+instance\+\_\+q15\+::ifft\+FlagR}
+
+flag that selects forward (ifft\+FlagR=0) or inverse (ifft\+FlagR=1) transform. \mbox{\Hypertarget{structarm__rfft__instance__q15_a4329c15b056444746d37ff082a24d31a}\label{structarm__rfft__instance__q15_a4329c15b056444746d37ff082a24d31a}} 
+\index{arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}!pCfft@{pCfft}}
+\index{pCfft@{pCfft}!arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}}
+\doxysubsubsection{\texorpdfstring{pCfft}{pCfft}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structarm__cfft__instance__q15}{arm\+\_\+cfft\+\_\+instance\+\_\+q15}}$\ast$ arm\+\_\+rfft\+\_\+instance\+\_\+q15\+::p\+Cfft}
+
+points to the complex FFT instance. \mbox{\Hypertarget{structarm__rfft__instance__q15_affbf2de522ac029432d98e8373c0ec53}\label{structarm__rfft__instance__q15_affbf2de522ac029432d98e8373c0ec53}} 
+\index{arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}!pTwiddleAReal@{pTwiddleAReal}}
+\index{pTwiddleAReal@{pTwiddleAReal}!arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}}
+\doxysubsubsection{\texorpdfstring{pTwiddleAReal}{pTwiddleAReal}}
+{\footnotesize\ttfamily q15\+\_\+t$\ast$ arm\+\_\+rfft\+\_\+instance\+\_\+q15\+::p\+Twiddle\+AReal}
+
+points to the real twiddle factor table. \mbox{\Hypertarget{structarm__rfft__instance__q15_a937d815022adc557b435ba8c6cd58b0d}\label{structarm__rfft__instance__q15_a937d815022adc557b435ba8c6cd58b0d}} 
+\index{arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}!pTwiddleBReal@{pTwiddleBReal}}
+\index{pTwiddleBReal@{pTwiddleBReal}!arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}}
+\doxysubsubsection{\texorpdfstring{pTwiddleBReal}{pTwiddleBReal}}
+{\footnotesize\ttfamily q15\+\_\+t$\ast$ arm\+\_\+rfft\+\_\+instance\+\_\+q15\+::p\+Twiddle\+BReal}
+
+points to the imag twiddle factor table. \mbox{\Hypertarget{structarm__rfft__instance__q15_afd444d05858c5f419980e94e8240d5c3}\label{structarm__rfft__instance__q15_afd444d05858c5f419980e94e8240d5c3}} 
+\index{arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}!twidCoefRModifier@{twidCoefRModifier}}
+\index{twidCoefRModifier@{twidCoefRModifier}!arm\_rfft\_instance\_q15@{arm\_rfft\_instance\_q15}}
+\doxysubsubsection{\texorpdfstring{twidCoefRModifier}{twidCoefRModifier}}
+{\footnotesize\ttfamily uint32\+\_\+t arm\+\_\+rfft\+\_\+instance\+\_\+q15\+::twid\+Coef\+RModifier}
+
+twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/thirdparty/\+CMSIS/\+Include/arm\+\_\+math.\+h\end{DoxyCompactItemize}

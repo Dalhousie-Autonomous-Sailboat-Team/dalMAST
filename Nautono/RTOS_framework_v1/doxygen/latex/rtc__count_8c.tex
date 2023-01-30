@@ -1,0 +1,52 @@
+\hypertarget{rtc__count_8c}{}\doxysection{src/\+ASF/sam0/drivers/rtc/rtc\+\_\+sam\+\_\+d\+\_\+r\+\_\+h/rtc\+\_\+count.c File Reference}
+\label{rtc__count_8c}\index{src/ASF/sam0/drivers/rtc/rtc\_sam\_d\_r\_h/rtc\_count.c@{src/ASF/sam0/drivers/rtc/rtc\_sam\_d\_r\_h/rtc\_count.c}}
+
+
+SAM RTC Driver (Count Mode)  
+
+
+{\ttfamily \#include \char`\"{}rtc\+\_\+count.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$gclk.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gad49e022ac982b14f592b4741fe076add}{rtc\+\_\+count\+\_\+enable}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Enables the RTC module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga40f97a58f45fe3fdeec606c155d4d8f3}{rtc\+\_\+count\+\_\+disable}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Disables the RTC module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga161d6cf1f6f717e8c6c650dc587cdf7a}{rtc\+\_\+count\+\_\+reset}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Resets the RTC module. Resets the RTC to hardware defaults. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gaff43df79be7aeea0d559eafbe5fdbdc3}{rtc\+\_\+count\+\_\+init}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, \mbox{\hyperlink{union_rtc}{Rtc}} $\ast$const hw, const struct \mbox{\hyperlink{structrtc__count__config}{rtc\+\_\+count\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes the RTC module with given configurations. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga3770c2c6f82daca6ca28670cd87be46f}{rtc\+\_\+count\+\_\+set\+\_\+count}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const uint32\+\_\+t count\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the current count value to desired value. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga3ad10283f223feb3c958ccabe9d0662a}{rtc\+\_\+count\+\_\+get\+\_\+count}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Get the current count value. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga56c76be0e0fdfb5b1f9a883f396756f4}{rtc\+\_\+count\+\_\+set\+\_\+compare}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const uint32\+\_\+t comp\+\_\+value, const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}} comp\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Set the compare value for the specified compare. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga40e535c1375a99492e114722af93b675}{rtc\+\_\+count\+\_\+get\+\_\+compare}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, uint32\+\_\+t $\ast$const comp\+\_\+value, const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}} comp\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Get the current compare value of specified compare. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga747385c5686f746a64f118705c22c894}{rtc\+\_\+count\+\_\+get\+\_\+period}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, uint16\+\_\+t $\ast$const period\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Retrieves the value of period. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gac0b0d3a10ee5368b5484f99e6b6fecb8}{rtc\+\_\+count\+\_\+set\+\_\+period}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const uint16\+\_\+t period\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the given value to the period. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga354d81abc8c33bc39a238418611b3239}{rtc\+\_\+count\+\_\+is\+\_\+compare\+\_\+match}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}} comp\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Check if RTC compare match has occurred. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga51cd67b23c2a4716d09b08bf2422a222}{rtc\+\_\+count\+\_\+clear\+\_\+compare\+\_\+match}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}} comp\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Clears RTC compare match flag. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadccb737db7dd01d7190a7f9e18b23a1b}{rtc\+\_\+count\+\_\+frequency\+\_\+correction}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const int8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Calibrate for too-\/slow or too-\/fast oscillator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{rtc__count_8c_a3de550b078cd7fdc4690c5062e54db97}\label{rtc__count_8c_a3de550b078cd7fdc4690c5062e54db97}} 
+struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$ {\bfseries \+\_\+rtc\+\_\+instance} \mbox{[}\mbox{\hyperlink{samd20e14_8h_aa60e91b52e1886f06e68901250d0f7ff}{RTC\+\_\+\+INST\+\_\+\+NUM}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM RTC Driver (Count Mode) 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

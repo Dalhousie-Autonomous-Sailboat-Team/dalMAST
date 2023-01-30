@@ -1,0 +1,221 @@
+\hypertarget{sail__nmea_8h}{}\doxysection{src/sail\+\_\+nmea.h File Reference}
+\label{sail__nmea_8h}\index{src/sail\_nmea.h@{src/sail\_nmea.h}}
+
+
+Header file for the NMEA module that takes raw data buffers from the UART module and verifies them before passing them along to the application layer.  
+
+
+{\ttfamily \#include $<$status\+\_\+codes.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sail\+\_\+uart.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sail__nmea_8h_a3cc0031f699927462a57e5baf4d47305}\label{sail__nmea_8h_a3cc0031f699927462a57e5baf4d47305}} 
+\#define {\bfseries NMEA\+\_\+\+BUFFER\+\_\+\+LENGTH}~128
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sail__nmea_8h_af48191931659bec28f775c08a5e866ec}\label{sail__nmea_8h_af48191931659bec28f775c08a5e866ec}} 
+typedef enum NMEA\+\_\+\+Channel\+IDs {\bfseries NMEA\+\_\+\+Channel\+ID}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sail__nmea_8h_afde34627d154398778c4b92279835605}\label{sail__nmea_8h_afde34627d154398778c4b92279835605}} 
+enum {\bfseries NMEA\+\_\+\+Channel\+IDs} \{ {\bfseries NMEA\+\_\+\+GPS}
+, {\bfseries NMEA\+\_\+\+WEATHERSTATION}
+, {\bfseries NMEA\+\_\+\+RADIO}
+, {\bfseries NMEA\+\_\+\+NUM\+\_\+\+CHANNELS}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{sail__nmea_8h_a00cb48cd49f13616d1c64761cbf7f03c}{NMEA\+\_\+\+Init}} (NMEA\+\_\+\+Channel\+ID id)
+\begin{DoxyCompactList}\small\item\em Initialize a specific NMEA channel. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{sail__nmea_8h_a72f0667fd970d20474fee823360d6faa}{NMEA\+\_\+\+Enable}} (NMEA\+\_\+\+Channel\+ID id)
+\begin{DoxyCompactList}\small\item\em Trigger the NMEA channel to begin acquiring data. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{sail__nmea_8h_a55e3102f5a98e2c6c89ebe5707b09254}{NMEA\+\_\+\+Disable}} (NMEA\+\_\+\+Channel\+ID id)
+\begin{DoxyCompactList}\small\item\em Trigger the NMEA channel to stop acquiring data. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{sail__nmea_8h_ae16f33ebaf0b65e97fc581b8790bcb87}{NMEA\+\_\+\+Tx\+String}} (NMEA\+\_\+\+Channel\+ID id, uint8\+\_\+t $\ast$str)
+\begin{DoxyCompactList}\small\item\em Transmit a string to the NMEA device. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{sail__nmea_8h_ad2f4fffe98d7dc32aed61a8466460800}{NMEA\+\_\+\+Tx\+String\+\_\+\+Unprotected}} (NMEA\+\_\+\+Channel\+ID id, uint8\+\_\+t $\ast$str)
+\begin{DoxyCompactList}\small\item\em Transmit a string to the NMEA device. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{sail__nmea_8h_aad88e5ea56b346810c25dbb9fa7b2275}{NMEA\+\_\+\+Rx\+String}} (NMEA\+\_\+\+Channel\+ID id, uint8\+\_\+t $\ast$str, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Trigger the NMEA channel to check its buffer and process the data if there is anything available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the NMEA module that takes raw data buffers from the UART module and verifies them before passing them along to the application layer. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Gwynne-\/\+Timothy. Created on June 22, 2016. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sail__nmea_8h_a55e3102f5a98e2c6c89ebe5707b09254}\label{sail__nmea_8h_a55e3102f5a98e2c6c89ebe5707b09254}} 
+\index{sail\_nmea.h@{sail\_nmea.h}!NMEA\_Disable@{NMEA\_Disable}}
+\index{NMEA\_Disable@{NMEA\_Disable}!sail\_nmea.h@{sail\_nmea.h}}
+\doxysubsubsection{\texorpdfstring{NMEA\_Disable()}{NMEA\_Disable()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} NMEA\+\_\+\+Disable (\begin{DoxyParamCaption}\item[{NMEA\+\_\+\+Channel\+ID}]{id }\end{DoxyParamCaption})}
+
+
+
+Trigger the NMEA channel to stop acquiring data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ ID of the desired NMEA channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+STATUS\+\_\+\+OK -\/ data acquisition was stopped successfully 
+
+STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG -\/ an invalid channel ID was provided ~\newline
+ 
+
+STATUS\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+INITIALIZED -\/ the channel hasn\textquotesingle{}t been initialized and/or started 
+
+STATUS\+\_\+\+ERR\+\_\+\+DENIED -\/ a driver error has occurred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sail__nmea_8h_a72f0667fd970d20474fee823360d6faa}\label{sail__nmea_8h_a72f0667fd970d20474fee823360d6faa}} 
+\index{sail\_nmea.h@{sail\_nmea.h}!NMEA\_Enable@{NMEA\_Enable}}
+\index{NMEA\_Enable@{NMEA\_Enable}!sail\_nmea.h@{sail\_nmea.h}}
+\doxysubsubsection{\texorpdfstring{NMEA\_Enable()}{NMEA\_Enable()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} NMEA\+\_\+\+Enable (\begin{DoxyParamCaption}\item[{NMEA\+\_\+\+Channel\+ID}]{id }\end{DoxyParamCaption})}
+
+
+
+Trigger the NMEA channel to begin acquiring data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ ID of the desired NMEA channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+STATUS\+\_\+\+OK -\/ data acquisition was started successfully 
+
+STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG -\/ an invalid channel ID was provided ~\newline
+ 
+
+STATUS\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+INITIALIZED -\/ the channel hasn\textquotesingle{}t been initialized yet 
+
+STATUS\+\_\+\+ERR\+\_\+\+DENIED -\/ a driver error has occurred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sail__nmea_8h_a00cb48cd49f13616d1c64761cbf7f03c}\label{sail__nmea_8h_a00cb48cd49f13616d1c64761cbf7f03c}} 
+\index{sail\_nmea.h@{sail\_nmea.h}!NMEA\_Init@{NMEA\_Init}}
+\index{NMEA\_Init@{NMEA\_Init}!sail\_nmea.h@{sail\_nmea.h}}
+\doxysubsubsection{\texorpdfstring{NMEA\_Init()}{NMEA\_Init()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} NMEA\+\_\+\+Init (\begin{DoxyParamCaption}\item[{NMEA\+\_\+\+Channel\+ID}]{id }\end{DoxyParamCaption})}
+
+
+
+Initialize a specific NMEA channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ ID of the desired NMEA channel to initialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+STATUS\+\_\+\+OK -\/ initialization was successful 
+
+STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG -\/ an invalid channel ID was provided 
+
+STATUS\+\_\+\+ERR\+\_\+\+DENIED -\/ a driver error has occurred 
+
+STATUS\+\_\+\+ERR\+\_\+\+ALREADY\+\_\+\+INITIALIZED -\/ the module should only be initialized once 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sail__nmea_8h_aad88e5ea56b346810c25dbb9fa7b2275}\label{sail__nmea_8h_aad88e5ea56b346810c25dbb9fa7b2275}} 
+\index{sail\_nmea.h@{sail\_nmea.h}!NMEA\_RxString@{NMEA\_RxString}}
+\index{NMEA\_RxString@{NMEA\_RxString}!sail\_nmea.h@{sail\_nmea.h}}
+\doxysubsubsection{\texorpdfstring{NMEA\_RxString()}{NMEA\_RxString()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} NMEA\+\_\+\+Rx\+String (\begin{DoxyParamCaption}\item[{NMEA\+\_\+\+Channel\+ID}]{id,  }\item[{uint8\+\_\+t $\ast$}]{str,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Trigger the NMEA channel to check its buffer and process the data if there is anything available. 
+
+If there is new, valid data available, the processed data will be copied into the output buffer and the output flag will be set. 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ ID of the desired NMEA channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+STATUS\+\_\+\+VALID\+\_\+\+DATA -\/ valid data has been placed into the output buffer 
+
+STATUS\+\_\+\+NO\+\_\+\+CHANGE -\/ no new data is available 
+
+STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+DATA -\/ data was available, but the checksum was incorrect 
+
+STATUS\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+INITIALIZED -\/ the channel hasn\textquotesingle{}t been initialized yet 
+
+STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG -\/ an invalid channel ID was provided ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sail__nmea_8h_ae16f33ebaf0b65e97fc581b8790bcb87}\label{sail__nmea_8h_ae16f33ebaf0b65e97fc581b8790bcb87}} 
+\index{sail\_nmea.h@{sail\_nmea.h}!NMEA\_TxString@{NMEA\_TxString}}
+\index{NMEA\_TxString@{NMEA\_TxString}!sail\_nmea.h@{sail\_nmea.h}}
+\doxysubsubsection{\texorpdfstring{NMEA\_TxString()}{NMEA\_TxString()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} NMEA\+\_\+\+Tx\+String (\begin{DoxyParamCaption}\item[{NMEA\+\_\+\+Channel\+ID}]{id,  }\item[{uint8\+\_\+t $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Transmit a string to the NMEA device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ ID of the desired NMEA channel \\
+\hline
+{\em $<$br$>$} & str -\/ pointer to the command (without \$ or $\ast$checksum) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+STATUS\+\_\+\+OK -\/ command was valid and sent successfully and data was received successfully 
+
+STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG -\/ an invalid channel ID was provided ~\newline
+ 
+
+STATUS\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+INITIALIZED -\/ the channel hasn\textquotesingle{}t been initialized yet 
+
+STATUS\+\_\+\+ERR\+\_\+\+DENIED -\/ a driver error has occurred 
+
+STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+ADDRESS -\/ an invalid address was provided 
+
+STATUS\+\_\+\+ERR\+\_\+\+TIMEOUT -\/ no response was received before the timeout counter expired 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sail__nmea_8h_ad2f4fffe98d7dc32aed61a8466460800}\label{sail__nmea_8h_ad2f4fffe98d7dc32aed61a8466460800}} 
+\index{sail\_nmea.h@{sail\_nmea.h}!NMEA\_TxString\_Unprotected@{NMEA\_TxString\_Unprotected}}
+\index{NMEA\_TxString\_Unprotected@{NMEA\_TxString\_Unprotected}!sail\_nmea.h@{sail\_nmea.h}}
+\doxysubsubsection{\texorpdfstring{NMEA\_TxString\_Unprotected()}{NMEA\_TxString\_Unprotected()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} NMEA\+\_\+\+Tx\+String\+\_\+\+Unprotected (\begin{DoxyParamCaption}\item[{NMEA\+\_\+\+Channel\+ID}]{id,  }\item[{uint8\+\_\+t $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Transmit a string to the NMEA device. 
+
+The same as NMEA\+\_\+\+Tx\+String except the mutex on the write buffer is not used so the function can be called before the Free\+RTOS scheduler is started 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ ID of the desired NMEA channel \\
+\hline
+{\em str} & -\/ pointer to the command (without \$ or $\ast$checksum) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+STATUS\+\_\+\+OK -\/ command was valid and sent successfully and data was received successfully 
+
+STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG -\/ an invalid channel ID was provided ~\newline
+ 
+
+STATUS\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+INITIALIZED -\/ the channel hasn\textquotesingle{}t been initialized yet 
+
+STATUS\+\_\+\+ERR\+\_\+\+DENIED -\/ a driver error has occurred 
+
+STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+ADDRESS -\/ an invalid address was provided 
+
+STATUS\+\_\+\+ERR\+\_\+\+TIMEOUT -\/ no response was received before the timeout counter expired 
+\end{DoxyReturn}

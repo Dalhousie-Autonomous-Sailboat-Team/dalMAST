@@ -1,0 +1,49 @@
+\hypertarget{group__x_stream_buffer_create}{}\doxysection{x\+Stream\+Buffer\+Create}
+\label{group__x_stream_buffer_create}\index{xStreamBufferCreate@{xStreamBufferCreate}}
+\mbox{\hyperlink{message__buffer_8h_source}{message\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+StreamBufferHandle\_t xStreamBufferCreate( size\_t xBufferSizeBytes, size\_t xTriggerLevelBytes );
+\end{DoxyPre}
+
+
+Creates a new stream buffer using dynamically allocated memory. See x\+Stream\+Buffer\+Create\+Static() for a version that uses statically allocated memory (memory that is allocated at compile time).
+
+config\+SUPPORT\+\_\+\+DYNAMIC\+\_\+\+ALLOCATION must be set to 1 or left undefined in \mbox{\hyperlink{_free_r_t_o_s_config_8h_source}{Free\+RTOSConfig.\+h}} for x\+Stream\+Buffer\+Create() to be available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Buffer\+Size\+Bytes} & The total number of bytes the stream buffer will be able to hold at any one time.\\
+\hline
+{\em x\+Trigger\+Level\+Bytes} & The number of bytes that must be in the stream buffer before a task that is blocked on the stream buffer to wait for data is moved out of the blocked state. For example, if a task is blocked on a read of an empty stream buffer that has a trigger level of 1 then the task will be unblocked when a single byte is written to the buffer or the task\textquotesingle{}s block time expires. As another example, if a task is blocked on a read of an empty stream buffer that has a trigger level of 10 then the task will not be unblocked until the stream buffer contains at least 10 bytes or the task\textquotesingle{}s block time expires. If a reading task\textquotesingle{}s block time expires before the trigger level is reached then the task will still receive however many bytes are actually available. Setting a trigger level of 0 will result in a trigger level of 1 being used. It is not valid to specify a trigger level that is greater than the buffer size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If NULL is returned, then the stream buffer cannot be created because there is insufficient heap memory available for Free\+RTOS to allocate the stream buffer data structures and storage area. A non-\/\+NULL value being returned indicates that the stream buffer has been created successfully -\/ the returned value should be stored as the handle to the created stream buffer.
+\end{DoxyReturn}
+Example use\+: 
+\begin{DoxyPre}
+
+void vAFunction( void )
+\{
+StreamBufferHandle\_t xStreamBuffer;
+const size\_t xStreamBufferSizeBytes = 100, xTriggerLevel = 10;
+
+    // Create a stream buffer that can hold 100 bytes.  The memory used to hold
+    // both the stream buffer structure and the data in the stream buffer is
+    // allocated dynamically.
+    xStreamBuffer = xStreamBufferCreate( xStreamBufferSizeBytes, xTriggerLevel );
+
+    if( xStreamBuffer == NULL )
+    \{
+        // There was not enough heap memory space available to create the
+        // stream buffer.
+    \}
+    else
+    \{
+        // The stream buffer was created successfully and can now be used.
+    \}
+\}
+\end{DoxyPre}
+ 

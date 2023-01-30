@@ -1,0 +1,195 @@
+\hypertarget{group__asfdoc__sam0__port__group}{}\doxysection{SAM Port (PORT) Driver}
+\label{group__asfdoc__sam0__port__group}\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structport__config}{port\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin configuration structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__port__group_gabe12893c067f9b011ece79c1bf1b128a}{port\+\_\+pin\+\_\+dir}} \{ \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aacfdf36142de0378cd9927b9c00e2f7a6}{PORT\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+INPUT}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+INPUT
+, \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aaa2cda8b4095bfaf6f354f113947a3463}{PORT\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT
+, \mbox{\hyperlink{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aae3d3fdfe355c7727ea36948da3b848ad}{PORT\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT\+\_\+\+WTH\+\_\+\+READBACK}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT\+\_\+\+WITH\+\_\+\+READBACK
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin direction configuration enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__port__group_ga1f47828261f5b7ac5f864b42981a2004}{port\+\_\+pin\+\_\+pull}} \{ \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004ab178b34fb381794e7f550b14ff08a302}{PORT\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+NONE}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+NONE
+, \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a6505b9a836a818d1f2c8a248b9ac8073}{PORT\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+UP}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+UP
+, \mbox{\hyperlink{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a2665866a5f05266cc8fa78da60ebc19d}{PORT\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+DOWN}} = SYSTEM\+\_\+\+PINMUX\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+DOWN
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_port}{Port}} pin input pull configuration enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Configuration and Initialization}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__port__group_gad21f235037f2d75ee3e7c08ba8b239c5}{port\+\_\+pin\+\_\+set\+\_\+config}} (const uint8\+\_\+t gpio\+\_\+pin, const struct \mbox{\hyperlink{structport__config}{port\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a \mbox{\hyperlink{struct_port}{Port}} pin configuration to the hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__port__group_ga7b832928bee6911ac7c9f18df8a5cf4a}{port\+\_\+group\+\_\+set\+\_\+config}} (\mbox{\hyperlink{struct_port_group}{Port\+Group}} $\ast$const port, const uint32\+\_\+t mask, const struct \mbox{\hyperlink{structport__config}{port\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a \mbox{\hyperlink{struct_port}{Port}} group configuration group to the hardware module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of the device\textquotesingle{}s General Purpose Input/\+Output (GPIO) pin functionality, for manual pin state reading and writing.
+
+The following peripheral is used by this module\+:
+\begin{DoxyItemize}
+\item PORT (GPIO Management)
+\end{DoxyItemize}
+
+The following devices can use this module\+:
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D09/\+D10/\+D11
+\item Atmel $\vert$ SMART SAM L21/\+L22
+\item Atmel $\vert$ SMART SAM DA1
+\item Atmel $\vert$ SMART SAM C20/\+C21
+\item Atmel $\vert$ SMART SAM HA1
+\item Atmel $\vert$ SMART SAM R30
+\item Atmel $\vert$ SMART SAM R34
+\item Atmel $\vert$ SMART SAM R35
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__port__group_asfdoc_sam0_port_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__port__group_asfdoc_sam0_port_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__port__group_asfdoc_sam0_port_extra_info}{Extra Information}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__port__group_asfdoc_sam0_port_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__port__group_asfdoc_sam0_port_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_prerequisites}
+There are no prerequisites for this module.\hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_overview}
+The device GPIO (PORT) module provides an interface between the user application logic and external hardware peripherals, when general pin state manipulation is required. This driver provides an easy-\/to-\/use interface to the physical pin input samplers and output drivers, so that pins can be read from or written to for general purpose external hardware control.\hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_features}{}\doxysubsubsection{Driver Feature Macro Definition}\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_features}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endhead
+FEATURE\+\_\+\+PORT\+\_\+\+INPUT\+\_\+\+EVENT &SAM L21/\+L22/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+The specific features are only available in the driver when the selected device supports those features.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_overview_pin_numbering}{}\doxysubsubsection{Physical and Logical GPIO Pins}\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_overview_pin_numbering}
+SAM devices use two naming conventions for the I/O pins in the device; one physical and one logical. Each physical pin on a device package is assigned both a physical port and pin identifier (e.\+g. \char`\"{}\+PORTA.\+0\char`\"{}) as well as a monotonically incrementing logical GPIO number (e.\+g. \char`\"{}\+GPIO0\char`\"{}). While the former is used to map physical pins to their physical internal device module counterparts, for simplicity the design of this driver uses the logical GPIO numbers instead.\hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_overview_physical}{}\doxysubsubsection{Physical Connection}\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_overview_physical}
+\mbox{\hyperlink{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_int_connections}{The diagram below}} shows how this module is interconnected within the device.
+
+\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_int_connections}%
+\Hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_module_int_connections}%
+\hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_special_considerations}{}\doxysubsection{Special Considerations}\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_special_considerations}
+The SAM port pin input sampler can be disabled when the pin is configured in pure output mode to save power; reading the pin state of a pin configured in output-\/only mode will read the logical output state that was last set.\hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_extra_info}{}\doxysubsection{Extra Information}\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_extra_info}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_port_extra}{Extra Information for PORT Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_port_extra_asfdoc_sam0_port_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_port_extra_asfdoc_sam0_port_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_port_extra_asfdoc_sam0_port_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_port_extra_asfdoc_sam0_port_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_examples}{}\doxysubsection{Examples}\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_port_exqsg}{Examples for PORT Driver}}.\hypertarget{group__asfdoc__sam0__port__group_asfdoc_sam0_port_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__sam0__port__group_asfdoc_sam0_port_api_overview}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__port__group_gabe12893c067f9b011ece79c1bf1b128a}\label{group__asfdoc__sam0__port__group_gabe12893c067f9b011ece79c1bf1b128a}} 
+\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!port\_pin\_dir@{port\_pin\_dir}}
+\index{port\_pin\_dir@{port\_pin\_dir}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}
+\doxysubsubsection{\texorpdfstring{port\_pin\_dir}{port\_pin\_dir}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__port__group_gabe12893c067f9b011ece79c1bf1b128a}{port\+\_\+pin\+\_\+dir}}}
+
+
+
+\mbox{\hyperlink{struct_port}{Port}} pin direction configuration enum. 
+
+Convenience definition for GPIO module group A on the device (if available). 
+
+Enum for the possible pin direction settings of the port pin configuration structure, to indicate the direction the pin should use. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PORT\_PIN\_DIR\_INPUT@{PORT\_PIN\_DIR\_INPUT}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!PORT\_PIN\_DIR\_INPUT@{PORT\_PIN\_DIR\_INPUT}}}\mbox{\Hypertarget{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aacfdf36142de0378cd9927b9c00e2f7a6}\label{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aacfdf36142de0378cd9927b9c00e2f7a6}} 
+PORT\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+INPUT&The pin\textquotesingle{}s input buffer should be enabled, so that the pin state can be read \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PORT\_PIN\_DIR\_OUTPUT@{PORT\_PIN\_DIR\_OUTPUT}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!PORT\_PIN\_DIR\_OUTPUT@{PORT\_PIN\_DIR\_OUTPUT}}}\mbox{\Hypertarget{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aaa2cda8b4095bfaf6f354f113947a3463}\label{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aaa2cda8b4095bfaf6f354f113947a3463}} 
+PORT\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT&The pin\textquotesingle{}s output buffer should be enabled, so that the pin state can be set \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PORT\_PIN\_DIR\_OUTPUT\_WTH\_READBACK@{PORT\_PIN\_DIR\_OUTPUT\_WTH\_READBACK}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!PORT\_PIN\_DIR\_OUTPUT\_WTH\_READBACK@{PORT\_PIN\_DIR\_OUTPUT\_WTH\_READBACK}}}\mbox{\Hypertarget{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aae3d3fdfe355c7727ea36948da3b848ad}\label{group__asfdoc__sam0__port__group_ggabe12893c067f9b011ece79c1bf1b128aae3d3fdfe355c7727ea36948da3b848ad}} 
+PORT\+\_\+\+PIN\+\_\+\+DIR\+\_\+\+OUTPUT\+\_\+\+WTH\+\_\+\+READBACK&The pin\textquotesingle{}s output and input buffers should be enabled, so that the pin state can be set and read back \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__port__group_ga1f47828261f5b7ac5f864b42981a2004}\label{group__asfdoc__sam0__port__group_ga1f47828261f5b7ac5f864b42981a2004}} 
+\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!port\_pin\_pull@{port\_pin\_pull}}
+\index{port\_pin\_pull@{port\_pin\_pull}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}
+\doxysubsubsection{\texorpdfstring{port\_pin\_pull}{port\_pin\_pull}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__port__group_ga1f47828261f5b7ac5f864b42981a2004}{port\+\_\+pin\+\_\+pull}}}
+
+
+
+\mbox{\hyperlink{struct_port}{Port}} pin input pull configuration enum. 
+
+Enum for the possible pin pull settings of the port pin configuration structure, to indicate the type of logic level pull the pin should use. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PORT\_PIN\_PULL\_NONE@{PORT\_PIN\_PULL\_NONE}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!PORT\_PIN\_PULL\_NONE@{PORT\_PIN\_PULL\_NONE}}}\mbox{\Hypertarget{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004ab178b34fb381794e7f550b14ff08a302}\label{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004ab178b34fb381794e7f550b14ff08a302}} 
+PORT\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+NONE&No logical pull should be applied to the pin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PORT\_PIN\_PULL\_UP@{PORT\_PIN\_PULL\_UP}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!PORT\_PIN\_PULL\_UP@{PORT\_PIN\_PULL\_UP}}}\mbox{\Hypertarget{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a6505b9a836a818d1f2c8a248b9ac8073}\label{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a6505b9a836a818d1f2c8a248b9ac8073}} 
+PORT\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+UP&Pin should be pulled up when idle \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PORT\_PIN\_PULL\_DOWN@{PORT\_PIN\_PULL\_DOWN}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!PORT\_PIN\_PULL\_DOWN@{PORT\_PIN\_PULL\_DOWN}}}\mbox{\Hypertarget{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a2665866a5f05266cc8fa78da60ebc19d}\label{group__asfdoc__sam0__port__group_gga1f47828261f5b7ac5f864b42981a2004a2665866a5f05266cc8fa78da60ebc19d}} 
+PORT\+\_\+\+PIN\+\_\+\+PULL\+\_\+\+DOWN&Pin should be pulled down when idle \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__port__group_ga7b832928bee6911ac7c9f18df8a5cf4a}\label{group__asfdoc__sam0__port__group_ga7b832928bee6911ac7c9f18df8a5cf4a}} 
+\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!port\_group\_set\_config@{port\_group\_set\_config}}
+\index{port\_group\_set\_config@{port\_group\_set\_config}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}
+\doxysubsubsection{\texorpdfstring{port\_group\_set\_config()}{port\_group\_set\_config()}}
+{\footnotesize\ttfamily void port\+\_\+group\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_port_group}{Port\+Group}} $\ast$const}]{port,  }\item[{const uint32\+\_\+t}]{mask,  }\item[{const struct \mbox{\hyperlink{structport__config}{port\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Writes a \mbox{\hyperlink{struct_port}{Port}} group configuration group to the hardware module. 
+
+Writes out a given configuration of a \mbox{\hyperlink{struct_port}{Port}} group configuration to the hardware module.
+
+\begin{DoxyNote}{Note}
+If the pin direction is set as an output, the pull-\/up/pull-\/down input configuration setting is ignored.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em port} & Base of the PORT module to write to \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Mask of the port pin(s) to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Configuration settings for the pin group \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__port__group_gad21f235037f2d75ee3e7c08ba8b239c5}\label{group__asfdoc__sam0__port__group_gad21f235037f2d75ee3e7c08ba8b239c5}} 
+\index{SAM Port (PORT) Driver@{SAM Port (PORT) Driver}!port\_pin\_set\_config@{port\_pin\_set\_config}}
+\index{port\_pin\_set\_config@{port\_pin\_set\_config}!SAM Port (PORT) Driver@{SAM Port (PORT) Driver}}
+\doxysubsubsection{\texorpdfstring{port\_pin\_set\_config()}{port\_pin\_set\_config()}}
+{\footnotesize\ttfamily void port\+\_\+pin\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{gpio\+\_\+pin,  }\item[{const struct \mbox{\hyperlink{structport__config}{port\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Writes a \mbox{\hyperlink{struct_port}{Port}} pin configuration to the hardware module. 
+
+Writes out a given configuration of a \mbox{\hyperlink{struct_port}{Port}} pin configuration to the hardware module.
+
+\begin{DoxyNote}{Note}
+If the pin direction is set as an output, the pull-\/up/pull-\/down input configuration setting is ignored.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio\+\_\+pin} & Index of the GPIO pin to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Configuration settings for the pin \\
+\hline
+\end{DoxyParams}

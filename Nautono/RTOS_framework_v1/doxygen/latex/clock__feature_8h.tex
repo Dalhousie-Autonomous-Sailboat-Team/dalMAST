@@ -1,0 +1,203 @@
+\hypertarget{clock__feature_8h}{}\doxysection{src/\+ASF/sam0/drivers/system/clock/clock\+\_\+samd20/clock\+\_\+feature.h File Reference}
+\label{clock__feature_8h}\index{src/ASF/sam0/drivers/system/clock/clock\_samd20/clock\_feature.h@{src/ASF/sam0/drivers/system/clock/clock\_samd20/clock\_feature.h}}
+
+
+SAM Clock Driver.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$gclk.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsystem__clock__source__xosc__config}{system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for XOSC. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__clock__source__xosc32k__config}{system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for XOSC32K. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__clock__source__osc8m__config}{system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for OSC8M. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__clock__source__osc32k__config}{system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for OSC32K. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__clock__source__dfll__config}{system\+\_\+clock\+\_\+source\+\_\+dfll\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for DFLL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{Indent}\textbf{ Driver Feature Definition}\par
+{\em Define system clock features set according to different device family. }\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6a5226fe65f283da094a3d1bd6c5692f}{system\+\_\+xosc32k\+\_\+startup}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692faa91d598f764710a4266770238e413717}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+0}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa762b4a74172784915df68700e51d4e0f}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+32}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fafa1cf29c3c5c3f74d1a2ffdd7c3199e3}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+2048}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa6c5f69164630ba16faa100873bd73dc0}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+4096}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fae9d3c139f5442c2ba949a8d04ee7d38e}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+16384}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa78dab161af7b89436e8efde14b12b087}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+32768}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa7205636a0c4b4d7bc1b1aad12aaf9a49}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+65536}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fab44c3b77e6d8a8e49a1ed5b474eca9c2}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+131072}}
+ \}
+\begin{DoxyCompactList}\small\item\em Available start-\/up times for the XOSC32K. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga93797ad2901b27dd84fa8b7edc9bb5c5}{system\+\_\+xosc\+\_\+startup}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a227f4495c112940e43509578037632ee}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+1}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5adf5e2fc400d091e4cbee763fbde41555}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+2}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a71f9f687b6dec03eb27dc81a3aa4ffff}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+4}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a654a284191eaaea5bcef63b7208edff0}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+8}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5aed33da000f564d1d359c71837cee5432}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+16}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3f7b3d4801503461d11a422e8cc6f7a0}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+32}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a6cc582d7547628f75e628a1051a9ffd2}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+64}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ae82c389b69fa1ca5e394b5d56c63bea9}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+128}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a4d289f922705cd65e0a3868a183a9b46}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+256}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a051d6e2bc0f94985cdf93c695f3db631}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+512}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a23f21ffa4d8f2b857e4d127ea4d8663e}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+1024}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3d1162a14cc1864dc5ccd14217e25e3a}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+2048}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a20a913fb63eacee74498d44d062ee88f}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+4096}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a096b8260e41cfc4937dfaf418eb512c4}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+8192}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ad3cf17457e11c5fecd12172c75d67229}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+16384}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a1eff23f1ee9c792ec44683af90206d50}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+32768}}
+ \}
+\begin{DoxyCompactList}\small\item\em Available start-\/up times for the XOSC. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf2f527fc5dd85dcf1c7091d6059d05cb}{system\+\_\+osc32k\+\_\+startup}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba5d0159245ad2909eec4256416f6fdb39}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+3}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba8fe93dbb45d1663d550847b93097f7ec}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+4}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba0608b4ca71442d2e2c52338849793ac9}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+6}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbaba3eac44eee0816a8e79776d0e9f4e07}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+10}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba2a852a8d4f9f7b93396d256372233d7a}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+18}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba780a6ed8f1bd9d66190eb9296c47c5f6}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+34}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba1d9a2791a3e0f3a49bd969e192be0d2c}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+66}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbab47cb8c22788fa124a7fa91d469972fa}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+130}}
+ \}
+\begin{DoxyCompactList}\small\item\em Available start-\/up times for the OSC32K. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ee1b0be167bd253038400d9c6d0cbef}{system\+\_\+osc8m\+\_\+div}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa564fc679b9f90127b6666b6bced33463}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+1}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa5484854b8a0bb16902b603dd8024d76d}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+2}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa6f70022cf44a05a464d1a5af02ceed1b}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+4}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa23f917a883d385d557b7e9ee9b80e14c}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+8}}
+ \}
+\begin{DoxyCompactList}\small\item\em Division prescalers for the internal 8MHz system clock. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac2e75dd14e805255aa11f5d7fc41b12e}{system\+\_\+osc8m\+\_\+frequency\+\_\+range}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12eac5944f501f38e9a7977adc284718d914}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+4\+\_\+\+TO\+\_\+6}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea3dce70db9bd774fda44dddc7ee696672}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+6\+\_\+\+TO\+\_\+8}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6577a603b473039bc40689e9cafb415e}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+8\+\_\+\+TO\+\_\+11}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6cf9e419674c782b14267ee452889195}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+11\+\_\+\+TO\+\_\+15}}
+ \}
+\begin{DoxyCompactList}\small\item\em Frequency range for the internal 8MHz RC oscillator. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga30e9b73868506309f3dc4935fbe9ce4b}{system\+\_\+main\+\_\+clock\+\_\+div}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa4e9b93b809ddfbdffb13f72da94c1d7}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+1}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6b64d2dd96c00b24b5abe48c605959c4}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+2}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6e6564b4069b1d0a3244697b525c516b}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+4}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa88dc289422295f74b1be13341bae02d}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+8}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6742ac478e6df1a9999bc1852ac90ea9}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+16}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba739314ab4a798f75c254214f9c64f23b}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+32}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4bae988c4e7ef255b846e552da9c9b4e11b}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+64}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baec6efb1ec57e2967ff513074e145d110}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+128}}
+ \}
+\begin{DoxyCompactList}\small\item\em Main CPU and APB/\+AHB bus clock source prescaler values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\+\_\+clock\+\_\+external}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1f1e123ed025f2e02f063d0d75b3ff56}{SYSTEM\+\_\+\+CLOCK\+\_\+\+EXTERNAL\+\_\+\+CRYSTAL}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1521ad5b8607dd8bf7a6b5df1adee2f3}{SYSTEM\+\_\+\+CLOCK\+\_\+\+EXTERNAL\+\_\+\+CLOCK}}
+ \}
+\begin{DoxyCompactList}\small\item\em External clock source types. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf264d9ce05843104cb8a393b1d9ddfa2}{system\+\_\+clock\+\_\+dfll\+\_\+loop\+\_\+mode}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a3d9e15bfd0803e41da1f59f8b699184a}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+LOOP\+\_\+\+MODE\+\_\+\+OPEN}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a1a18e1d9233792ba5e4663c978d7a46b}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+LOOP\+\_\+\+MODE\+\_\+\+CLOSED}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+MODE
+ \}
+\begin{DoxyCompactList}\small\item\em Operating modes of the DFLL clock source. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6ce68deec62f12bb85ddb2f8c103ada5}{system\+\_\+clock\+\_\+dfll\+\_\+wakeup\+\_\+lock}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5abbfd6c5e90f1ee8e9865723f6c1da64e}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+WAKEUP\+\_\+\+LOCK\+\_\+\+KEEP}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5a291a819f86924e0d60fc5a2a14b5456c}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+WAKEUP\+\_\+\+LOCK\+\_\+\+LOSE}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+LLAW
+ \}
+\begin{DoxyCompactList}\small\item\em Locking behavior for the DFLL during device wake-\/up. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf9b0eb010541f1d7c8af3eeb0573043d}{system\+\_\+clock\+\_\+dfll\+\_\+stable\+\_\+tracking}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da4a92b58e1ea9c95123b83aa6ee4e3f21}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+STABLE\+\_\+\+TRACKING\+\_\+\+TRACK\+\_\+\+AFTER\+\_\+\+LOCK}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da40176c0aa1d57b6ec9f7de182b937c5a}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+STABLE\+\_\+\+TRACKING\+\_\+\+FIX\+\_\+\+AFTER\+\_\+\+LOCK}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+STABLE
+ \}
+\begin{DoxyCompactList}\small\item\em Fine tracking behavior for the DFLL once a lock has been acquired. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga04ee95a872995397e3db9cf1494721e3}{system\+\_\+clock\+\_\+dfll\+\_\+chill\+\_\+cycle}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3ad75095e64d38dbba6451c496645b7e01}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+CHILL\+\_\+\+CYCLE\+\_\+\+ENABLE}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3a1f84a60dcc044d7bc33cf71cddb985a3}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+CHILL\+\_\+\+CYCLE\+\_\+\+DISABLE}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+CCDIS
+ \}
+\begin{DoxyCompactList}\small\item\em Chill-\/cycle behavior of the DFLL module. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga56ab87696abcd4e0103d6259386017ae}{system\+\_\+clock\+\_\+dfll\+\_\+quick\+\_\+lock}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea0599c04b640c394c9fba065ae8e8b616}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+QUICK\+\_\+\+LOCK\+\_\+\+ENABLE}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea1d2b1b500737f7722a86e3242cf2250c}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+QUICK\+\_\+\+LOCK\+\_\+\+DISABLE}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+QLDIS
+ \}
+\begin{DoxyCompactList}\small\item\em Quick\+Lock settings for the DFLL module. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a7a76d4184666899a7b6c4e7f49395f3d}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+OSC8M}} = GCLK\+\_\+\+SOURCE\+\_\+\+OSC8M
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a558e3f5af5f17dad6386eaad5bfc5ea7}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+OSC32K}} = GCLK\+\_\+\+SOURCE\+\_\+\+OSC32K
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a3838555d84536119b61101649678ef4a}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+XOSC}} = GCLK\+\_\+\+SOURCE\+\_\+\+XOSC
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a122233d164de1b1847acc526e1d83360}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+XOSC32K}} = GCLK\+\_\+\+SOURCE\+\_\+\+XOSC32K
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a6115cfc6953d6fceaaa84fbfcfd51212}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+DFLL}} = GCLK\+\_\+\+SOURCE\+\_\+\+DFLL48M
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58af5975ab246b9e6750998d0fcb313c288}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+ULP32K}} = GCLK\+\_\+\+SOURCE\+\_\+\+OSCULP32K
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58aba00702aad6c05fe8c0a864dedf6dbea}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+GCLKIN}} = GCLK\+\_\+\+SOURCE\+\_\+\+GCLKIN
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58ab873ebe5b9dd823cb794be31ef0fc1ef}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+GCLKGEN1}} = GCLK\+\_\+\+SOURCE\+\_\+\+GCLKGEN1
+ \}
+\begin{DoxyCompactList}\small\item\em Available clock sources in the system. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}{system\+\_\+clock\+\_\+apb\+\_\+bus}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a25197a2c1efe6a444a5cdcef7d82a1de}{SYSTEM\+\_\+\+CLOCK\+\_\+\+APB\+\_\+\+APBA}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5aa94daeca3198d35ba50839f69fa97fb2}{SYSTEM\+\_\+\+CLOCK\+\_\+\+APB\+\_\+\+APBB}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a53168b7d478e1634594203d1ec2a654a}{SYSTEM\+\_\+\+CLOCK\+\_\+\+APB\+\_\+\+APBC}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of APB peripheral buses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ External Oscillator Management}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacd16e7e13de08d55c028620d845a5cb5}{system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__xosc__config}{system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the external oscillator clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ External 32KHz Oscillator Management}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga076bff009d78de95a0b2c9672f62b224}{system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__xosc32k__config}{system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the XOSC32K external 32KHz oscillator clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Internal 32KHz Oscillator Management}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga9c110273354846e5a6cf877d6180296f}{system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__osc32k__config}{system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the internal OSC32K oscillator clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Internal 8MHz Oscillator Management}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab96253dd348ce56a591acfcd4ecda01f}{system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__osc8m__config}{system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the internal OSC8M oscillator clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Internal DFLL Management}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaa15073d0d4bd347bf8855ac20fd1b93c}{system\+\_\+clock\+\_\+source\+\_\+dfll\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__dfll__config}{system\+\_\+clock\+\_\+source\+\_\+dfll\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the DFLL clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Clock Source Management}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries system\+\_\+clock\+\_\+source\+\_\+write\+\_\+calibration} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}}, const uint16\+\_\+t calibration\+\_\+value, const uint8\+\_\+t freq\+\_\+range)
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries system\+\_\+clock\+\_\+source\+\_\+enable} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}})
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacea9ce7a68fc3b0b2a46f3a8c3d6d89b}{system\+\_\+clock\+\_\+source\+\_\+disable}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} clk\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Disables a clock source. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2f18617c9770bf1c3ab8fdac5081e65e}{system\+\_\+clock\+\_\+source\+\_\+is\+\_\+ready}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} clk\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Checks if a clock source is ready. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1894d901b7ed10e4c1e52a784c8962be}{system\+\_\+clock\+\_\+source\+\_\+get\+\_\+hz}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} clk\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Retrieve the frequency of a clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Main Clock Management}\par
+\end{Indent}
+\begin{Indent}\textbf{ Bus Clock Masking}\par
+\end{Indent}
+\begin{Indent}\textbf{ System Clock Initialization}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga128236c1939f726786521434d8488b37}{system\+\_\+clock\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize clock system based on the configuration in \mbox{\hyperlink{conf__clocks_8h}{conf\+\_\+clocks.\+h}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ System Flash Wait States}\par
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM Clock Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

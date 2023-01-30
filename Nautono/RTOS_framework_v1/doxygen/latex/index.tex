@@ -1,0 +1,131 @@
+\hypertarget{index_autotoc_md0}{}\doxysubsection{Introduction}\label{index_autotoc_md0}
+This user manual describes the CMSIS DSP software library, a suite of common signal processing functions for use on Cortex-\/M processor based devices.
+
+The library is divided into a number of functions each covering a specific category\+:
+\begin{DoxyItemize}
+\item Basic math functions
+\item Fast math functions
+\item Complex math functions
+\item Filters
+\item Matrix functions
+\item Transforms
+\item Motor control functions
+\item Statistical functions
+\item Support functions
+\item Interpolation functions
+\end{DoxyItemize}
+
+The library has separate functions for operating on 8-\/bit integers, 16-\/bit integers, 32-\/bit integer and 32-\/bit floating-\/point values.\hypertarget{index_autotoc_md1}{}\doxysubsection{Using the Library}\label{index_autotoc_md1}
+The library installer contains prebuilt versions of the libraries in the {\ttfamily Lib} folder.
+\begin{DoxyItemize}
+\item arm\+\_\+cortex\+M7lfdp\+\_\+math.\+lib (Cortex-\/\+M7, Little endian, Double Precision Floating Point Unit)
+\item arm\+\_\+cortex\+M7bfdp\+\_\+math.\+lib (Cortex-\/\+M7, Big endian, Double Precision Floating Point Unit)
+\item arm\+\_\+cortex\+M7lfsp\+\_\+math.\+lib (Cortex-\/\+M7, Little endian, Single Precision Floating Point Unit)
+\item arm\+\_\+cortex\+M7bfsp\+\_\+math.\+lib (Cortex-\/\+M7, Big endian and Single Precision Floating Point Unit on)
+\item arm\+\_\+cortex\+M7l\+\_\+math.\+lib (Cortex-\/\+M7, Little endian)
+\item arm\+\_\+cortex\+M7b\+\_\+math.\+lib (Cortex-\/\+M7, Big endian)
+\item arm\+\_\+cortex\+M4lf\+\_\+math.\+lib (Cortex-\/\+M4, Little endian, Floating Point Unit)
+\item arm\+\_\+cortex\+M4bf\+\_\+math.\+lib (Cortex-\/\+M4, Big endian, Floating Point Unit)
+\item arm\+\_\+cortex\+M4l\+\_\+math.\+lib (Cortex-\/\+M4, Little endian)
+\item arm\+\_\+cortex\+M4b\+\_\+math.\+lib (Cortex-\/\+M4, Big endian)
+\item arm\+\_\+cortex\+M3l\+\_\+math.\+lib (Cortex-\/\+M3, Little endian)
+\item arm\+\_\+cortex\+M3b\+\_\+math.\+lib (Cortex-\/\+M3, Big endian)
+\item arm\+\_\+cortex\+M0l\+\_\+math.\+lib (Cortex-\/\+M0 / Cortex-\/\+M0+, Little endian)
+\item arm\+\_\+cortex\+M0b\+\_\+math.\+lib (Cortex-\/\+M0 / Cortex-\/\+M0+, Big endian)
+\item arm\+\_\+\+ARMv8\+MBLl\+\_\+math.\+lib (Armv8-\/M Baseline, Little endian)
+\item arm\+\_\+\+ARMv8\+MMLl\+\_\+math.\+lib (Armv8-\/M Mainline, Little endian)
+\item arm\+\_\+\+ARMv8\+MMLlfsp\+\_\+math.\+lib (Armv8-\/M Mainline, Little endian, Single Precision Floating Point Unit)
+\item arm\+\_\+\+ARMv8\+MMLld\+\_\+math.\+lib (Armv8-\/M Mainline, Little endian, DSP instructions)
+\item arm\+\_\+\+ARMv8\+MMLldfsp\+\_\+math.\+lib (Armv8-\/M Mainline, Little endian, DSP instructions, Single Precision Floating Point Unit)
+\end{DoxyItemize}
+
+The library functions are declared in the public file {\ttfamily \mbox{\hyperlink{arm__math_8h_source}{arm\+\_\+math.\+h}}} which is placed in the {\ttfamily Include} folder. Simply include this file and link the appropriate library in the application and begin calling the library functions. The Library supports single public header file {\ttfamily  \mbox{\hyperlink{arm__math_8h_source}{arm\+\_\+math.\+h}}} for Cortex-\/M cores with little endian and big endian. Same header file will be used for floating point unit(\+FPU) variants. Define the appropriate preprocessor macro ARM\+\_\+\+MATH\+\_\+\+CM7 or ARM\+\_\+\+MATH\+\_\+\+CM4 or ARM\+\_\+\+MATH\+\_\+\+CM3 or ARM\+\_\+\+MATH\+\_\+\+CM0 or ARM\+\_\+\+MATH\+\_\+\+CM0\+PLUS depending on the target processor in the application. For Armv8-\/M cores define preprocessor macro ARM\+\_\+\+MATH\+\_\+\+ARMV8\+MBL or ARM\+\_\+\+MATH\+\_\+\+ARMV8\+MML. Set preprocessor macro \+\_\+\+\_\+\+DSP\+\_\+\+PRESENT if Armv8-\/M Mainline core supports DSP instructions.\hypertarget{index_autotoc_md2}{}\doxysubsection{Examples}\label{index_autotoc_md2}
+The library ships with a number of examples which demonstrate how to use the library functions.\hypertarget{index_autotoc_md3}{}\doxysubsection{Toolchain Support}\label{index_autotoc_md3}
+The library has been developed and tested with MDK version 5.\+14.\+0.\+0 The library is being tested in GCC and IAR toolchains and updates on this activity will be made available shortly.\hypertarget{index_autotoc_md4}{}\doxysubsection{Building the Library}\label{index_autotoc_md4}
+The library installer contains a project file to rebuild libraries on MDK toolchain in the {\ttfamily CMSIS\textbackslash{}DSP\+\_\+\+Lib\textbackslash{}Source\textbackslash{}ARM} folder.
+\begin{DoxyItemize}
+\item arm\+\_\+cortex\+M\+\_\+math.\+uvprojx
+\end{DoxyItemize}
+
+The libraries can be built by opening the arm\+\_\+cortex\+M\+\_\+math.\+uvprojx project in MDK-\/\+ARM, selecting a specific target, and defining the optional preprocessor macros detailed above.\hypertarget{index_autotoc_md5}{}\doxysubsection{Preprocessor Macros}\label{index_autotoc_md5}
+Each library project have different preprocessor macros.
+
+
+\begin{DoxyItemize}
+\item UNALIGNED\+\_\+\+SUPPORT\+\_\+\+DISABLE\+:
+\end{DoxyItemize}
+
+Define macro UNALIGNED\+\_\+\+SUPPORT\+\_\+\+DISABLE, If the silicon does not support unaligned memory access
+
+
+\begin{DoxyItemize}
+\item ARM\+\_\+\+MATH\+\_\+\+BIG\+\_\+\+ENDIAN\+:
+\end{DoxyItemize}
+
+Define macro ARM\+\_\+\+MATH\+\_\+\+BIG\+\_\+\+ENDIAN to build the library for big endian targets. By default library builds for little endian targets.
+
+
+\begin{DoxyItemize}
+\item ARM\+\_\+\+MATH\+\_\+\+MATRIX\+\_\+\+CHECK\+:
+\end{DoxyItemize}
+
+Define macro ARM\+\_\+\+MATH\+\_\+\+MATRIX\+\_\+\+CHECK for checking on the input and output sizes of matrices
+
+
+\begin{DoxyItemize}
+\item ARM\+\_\+\+MATH\+\_\+\+ROUNDING\+:
+\end{DoxyItemize}
+
+Define macro ARM\+\_\+\+MATH\+\_\+\+ROUNDING for rounding on support functions
+
+
+\begin{DoxyItemize}
+\item ARM\+\_\+\+MATH\+\_\+\+CMx\+:
+\end{DoxyItemize}
+
+Define macro ARM\+\_\+\+MATH\+\_\+\+CM4 for building the library on Cortex-\/\+M4 target, ARM\+\_\+\+MATH\+\_\+\+CM3 for building library on Cortex-\/\+M3 target and ARM\+\_\+\+MATH\+\_\+\+CM0 for building library on Cortex-\/\+M0 target, ARM\+\_\+\+MATH\+\_\+\+CM0\+PLUS for building library on Cortex-\/\+M0+ target, and ARM\+\_\+\+MATH\+\_\+\+CM7 for building the library on cortex-\/\+M7.
+
+
+\begin{DoxyItemize}
+\item ARM\+\_\+\+MATH\+\_\+\+ARMV8\+MxL\+:
+\end{DoxyItemize}
+
+Define macro ARM\+\_\+\+MATH\+\_\+\+ARMV8\+MBL for building the library on Armv8-\/M Baseline target, ARM\+\_\+\+MATH\+\_\+\+ARMV8\+MML for building library on Armv8-\/M Mainline target.
+
+
+\begin{DoxyItemize}
+\item \+\_\+\+\_\+\+FPU\+\_\+\+PRESENT\+:
+\end{DoxyItemize}
+
+Initialize macro \+\_\+\+\_\+\+FPU\+\_\+\+PRESENT = 1 when building on FPU supported Targets. Enable this macro for floating point libraries.
+
+
+\begin{DoxyItemize}
+\item \+\_\+\+\_\+\+DSP\+\_\+\+PRESENT\+:
+\end{DoxyItemize}
+
+Initialize macro \+\_\+\+\_\+\+DSP\+\_\+\+PRESENT = 1 when Armv8-\/M Mainline core supports DSP instructions.
+
+\DoxyHorRuler{0}
+ \hypertarget{index_autotoc_md6}{}\doxysubsection{CMSIS-\/\+DSP in ARM\+::\+CMSIS Pack}\label{index_autotoc_md6}
+The following files relevant to CMSIS-\/\+DSP are present in the {\bfseries{ARM\+::\+CMSIS}} Pack directories\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ File/\+Folder   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Content    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ File/\+Folder   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Content    }\\\cline{1-2}
+\endhead
+{\bfseries{CMSIS\textbackslash{}Documentation\textbackslash{}DSP}}   &This documentation    \\\cline{1-2}
+{\bfseries{CMSIS\textbackslash{}DSP\+\_\+\+Lib}}   &Software license agreement (license.\+txt)    \\\cline{1-2}
+{\bfseries{CMSIS\textbackslash{}DSP\+\_\+\+Lib\textbackslash{}Examples}}   &Example projects demonstrating the usage of the library functions    \\\cline{1-2}
+{\bfseries{CMSIS\textbackslash{}DSP\+\_\+\+Lib\textbackslash{}Source}}   &Source files for rebuilding the library   \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+ \hypertarget{index_autotoc_md7}{}\doxysubsection{Revision History of CMSIS-\/\+DSP}\label{index_autotoc_md7}
+Please refer to Change\+Log\+\_\+pg.\hypertarget{index_autotoc_md8}{}\doxysubsection{Copyright Notice}\label{index_autotoc_md8}
+Copyright (C) 2010-\/2015 Arm Limited. All rights reserved. 

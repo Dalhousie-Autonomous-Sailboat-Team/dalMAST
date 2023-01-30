@@ -1,0 +1,1213 @@
+\hypertarget{group__asfdoc__sam0__system__clock__group}{}\doxysection{SAM System Clock Management Driver (SYSTEM CLOCK)}
+\label{group__asfdoc__sam0__system__clock__group}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsystem__clock__source__xosc__config}{system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for XOSC. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__clock__source__xosc32k__config}{system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for XOSC32K. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__clock__source__osc8m__config}{system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for OSC8M. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__clock__source__osc32k__config}{system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for OSC32K. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__clock__source__dfll__config}{system\+\_\+clock\+\_\+source\+\_\+dfll\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for DFLL. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__gclk__gen__config}{system\+\_\+gclk\+\_\+gen\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Generic Clock Generator configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsystem__gclk__chan__config}{system\+\_\+gclk\+\_\+chan\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Generic Clock configuration structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\+\_\+\+GENERATOR\+\_\+0}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of available GCLK generators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Driver Feature Definition}
+Define system clock features set according to different device family. \begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6a5226fe65f283da094a3d1bd6c5692f}{system\+\_\+xosc32k\+\_\+startup}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692faa91d598f764710a4266770238e413717}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+0}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa762b4a74172784915df68700e51d4e0f}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+32}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fafa1cf29c3c5c3f74d1a2ffdd7c3199e3}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+2048}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa6c5f69164630ba16faa100873bd73dc0}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+4096}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fae9d3c139f5442c2ba949a8d04ee7d38e}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+16384}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa78dab161af7b89436e8efde14b12b087}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+32768}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa7205636a0c4b4d7bc1b1aad12aaf9a49}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+65536}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fab44c3b77e6d8a8e49a1ed5b474eca9c2}{SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+131072}}
+ \}
+\begin{DoxyCompactList}\small\item\em Available start-\/up times for the XOSC32K. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga93797ad2901b27dd84fa8b7edc9bb5c5}{system\+\_\+xosc\+\_\+startup}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a227f4495c112940e43509578037632ee}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+1}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5adf5e2fc400d091e4cbee763fbde41555}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+2}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a71f9f687b6dec03eb27dc81a3aa4ffff}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+4}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a654a284191eaaea5bcef63b7208edff0}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+8}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5aed33da000f564d1d359c71837cee5432}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+16}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3f7b3d4801503461d11a422e8cc6f7a0}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+32}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a6cc582d7547628f75e628a1051a9ffd2}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+64}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ae82c389b69fa1ca5e394b5d56c63bea9}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+128}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a4d289f922705cd65e0a3868a183a9b46}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+256}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a051d6e2bc0f94985cdf93c695f3db631}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+512}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a23f21ffa4d8f2b857e4d127ea4d8663e}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+1024}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3d1162a14cc1864dc5ccd14217e25e3a}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+2048}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a20a913fb63eacee74498d44d062ee88f}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+4096}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a096b8260e41cfc4937dfaf418eb512c4}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+8192}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ad3cf17457e11c5fecd12172c75d67229}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+16384}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a1eff23f1ee9c792ec44683af90206d50}{SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+32768}}
+ \}
+\begin{DoxyCompactList}\small\item\em Available start-\/up times for the XOSC. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf2f527fc5dd85dcf1c7091d6059d05cb}{system\+\_\+osc32k\+\_\+startup}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba5d0159245ad2909eec4256416f6fdb39}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+3}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba8fe93dbb45d1663d550847b93097f7ec}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+4}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba0608b4ca71442d2e2c52338849793ac9}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+6}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbaba3eac44eee0816a8e79776d0e9f4e07}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+10}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba2a852a8d4f9f7b93396d256372233d7a}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+18}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba780a6ed8f1bd9d66190eb9296c47c5f6}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+34}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba1d9a2791a3e0f3a49bd969e192be0d2c}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+66}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbab47cb8c22788fa124a7fa91d469972fa}{SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+130}}
+ \}
+\begin{DoxyCompactList}\small\item\em Available start-\/up times for the OSC32K. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ee1b0be167bd253038400d9c6d0cbef}{system\+\_\+osc8m\+\_\+div}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa564fc679b9f90127b6666b6bced33463}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+1}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa5484854b8a0bb16902b603dd8024d76d}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+2}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa6f70022cf44a05a464d1a5af02ceed1b}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+4}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa23f917a883d385d557b7e9ee9b80e14c}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+8}}
+ \}
+\begin{DoxyCompactList}\small\item\em Division prescalers for the internal 8MHz system clock. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac2e75dd14e805255aa11f5d7fc41b12e}{system\+\_\+osc8m\+\_\+frequency\+\_\+range}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12eac5944f501f38e9a7977adc284718d914}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+4\+\_\+\+TO\+\_\+6}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea3dce70db9bd774fda44dddc7ee696672}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+6\+\_\+\+TO\+\_\+8}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6577a603b473039bc40689e9cafb415e}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+8\+\_\+\+TO\+\_\+11}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6cf9e419674c782b14267ee452889195}{SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+11\+\_\+\+TO\+\_\+15}}
+ \}
+\begin{DoxyCompactList}\small\item\em Frequency range for the internal 8MHz RC oscillator. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga30e9b73868506309f3dc4935fbe9ce4b}{system\+\_\+main\+\_\+clock\+\_\+div}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa4e9b93b809ddfbdffb13f72da94c1d7}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+1}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6b64d2dd96c00b24b5abe48c605959c4}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+2}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6e6564b4069b1d0a3244697b525c516b}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+4}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa88dc289422295f74b1be13341bae02d}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+8}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6742ac478e6df1a9999bc1852ac90ea9}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+16}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba739314ab4a798f75c254214f9c64f23b}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+32}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4bae988c4e7ef255b846e552da9c9b4e11b}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+64}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baec6efb1ec57e2967ff513074e145d110}{SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+128}}
+ \}
+\begin{DoxyCompactList}\small\item\em Main CPU and APB/\+AHB bus clock source prescaler values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\+\_\+clock\+\_\+external}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1f1e123ed025f2e02f063d0d75b3ff56}{SYSTEM\+\_\+\+CLOCK\+\_\+\+EXTERNAL\+\_\+\+CRYSTAL}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1521ad5b8607dd8bf7a6b5df1adee2f3}{SYSTEM\+\_\+\+CLOCK\+\_\+\+EXTERNAL\+\_\+\+CLOCK}}
+ \}
+\begin{DoxyCompactList}\small\item\em External clock source types. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf264d9ce05843104cb8a393b1d9ddfa2}{system\+\_\+clock\+\_\+dfll\+\_\+loop\+\_\+mode}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a3d9e15bfd0803e41da1f59f8b699184a}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+LOOP\+\_\+\+MODE\+\_\+\+OPEN}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a1a18e1d9233792ba5e4663c978d7a46b}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+LOOP\+\_\+\+MODE\+\_\+\+CLOSED}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+MODE
+ \}
+\begin{DoxyCompactList}\small\item\em Operating modes of the DFLL clock source. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6ce68deec62f12bb85ddb2f8c103ada5}{system\+\_\+clock\+\_\+dfll\+\_\+wakeup\+\_\+lock}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5abbfd6c5e90f1ee8e9865723f6c1da64e}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+WAKEUP\+\_\+\+LOCK\+\_\+\+KEEP}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5a291a819f86924e0d60fc5a2a14b5456c}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+WAKEUP\+\_\+\+LOCK\+\_\+\+LOSE}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+LLAW
+ \}
+\begin{DoxyCompactList}\small\item\em Locking behavior for the DFLL during device wake-\/up. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf9b0eb010541f1d7c8af3eeb0573043d}{system\+\_\+clock\+\_\+dfll\+\_\+stable\+\_\+tracking}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da4a92b58e1ea9c95123b83aa6ee4e3f21}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+STABLE\+\_\+\+TRACKING\+\_\+\+TRACK\+\_\+\+AFTER\+\_\+\+LOCK}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da40176c0aa1d57b6ec9f7de182b937c5a}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+STABLE\+\_\+\+TRACKING\+\_\+\+FIX\+\_\+\+AFTER\+\_\+\+LOCK}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+STABLE
+ \}
+\begin{DoxyCompactList}\small\item\em Fine tracking behavior for the DFLL once a lock has been acquired. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga04ee95a872995397e3db9cf1494721e3}{system\+\_\+clock\+\_\+dfll\+\_\+chill\+\_\+cycle}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3ad75095e64d38dbba6451c496645b7e01}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+CHILL\+\_\+\+CYCLE\+\_\+\+ENABLE}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3a1f84a60dcc044d7bc33cf71cddb985a3}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+CHILL\+\_\+\+CYCLE\+\_\+\+DISABLE}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+CCDIS
+ \}
+\begin{DoxyCompactList}\small\item\em Chill-\/cycle behavior of the DFLL module. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga56ab87696abcd4e0103d6259386017ae}{system\+\_\+clock\+\_\+dfll\+\_\+quick\+\_\+lock}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea0599c04b640c394c9fba065ae8e8b616}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+QUICK\+\_\+\+LOCK\+\_\+\+ENABLE}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea1d2b1b500737f7722a86e3242cf2250c}{SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+QUICK\+\_\+\+LOCK\+\_\+\+DISABLE}} = SYSCTRL\+\_\+\+DFLLCTRL\+\_\+\+QLDIS
+ \}
+\begin{DoxyCompactList}\small\item\em Quick\+Lock settings for the DFLL module. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a7a76d4184666899a7b6c4e7f49395f3d}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+OSC8M}} = GCLK\+\_\+\+SOURCE\+\_\+\+OSC8M
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a558e3f5af5f17dad6386eaad5bfc5ea7}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+OSC32K}} = GCLK\+\_\+\+SOURCE\+\_\+\+OSC32K
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a3838555d84536119b61101649678ef4a}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+XOSC}} = GCLK\+\_\+\+SOURCE\+\_\+\+XOSC
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a122233d164de1b1847acc526e1d83360}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+XOSC32K}} = GCLK\+\_\+\+SOURCE\+\_\+\+XOSC32K
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a6115cfc6953d6fceaaa84fbfcfd51212}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+DFLL}} = GCLK\+\_\+\+SOURCE\+\_\+\+DFLL48M
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58af5975ab246b9e6750998d0fcb313c288}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+ULP32K}} = GCLK\+\_\+\+SOURCE\+\_\+\+OSCULP32K
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58aba00702aad6c05fe8c0a864dedf6dbea}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+GCLKIN}} = GCLK\+\_\+\+SOURCE\+\_\+\+GCLKIN
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58ab873ebe5b9dd823cb794be31ef0fc1ef}{SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+GCLKGEN1}} = GCLK\+\_\+\+SOURCE\+\_\+\+GCLKGEN1
+ \}
+\begin{DoxyCompactList}\small\item\em Available clock sources in the system. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}{system\+\_\+clock\+\_\+apb\+\_\+bus}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a25197a2c1efe6a444a5cdcef7d82a1de}{SYSTEM\+\_\+\+CLOCK\+\_\+\+APB\+\_\+\+APBA}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5aa94daeca3198d35ba50839f69fa97fb2}{SYSTEM\+\_\+\+CLOCK\+\_\+\+APB\+\_\+\+APBB}}
+, \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a53168b7d478e1634594203d1ec2a654a}{SYSTEM\+\_\+\+CLOCK\+\_\+\+APB\+\_\+\+APBC}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of APB peripheral buses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{External Oscillator Management}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacd16e7e13de08d55c028620d845a5cb5}{system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__xosc__config}{system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the external oscillator clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{External 32KHz Oscillator Management}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga076bff009d78de95a0b2c9672f62b224}{system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__xosc32k__config}{system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the XOSC32K external 32KHz oscillator clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Internal 32KHz Oscillator Management}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga9c110273354846e5a6cf877d6180296f}{system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__osc32k__config}{system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the internal OSC32K oscillator clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Internal 8MHz Oscillator Management}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab96253dd348ce56a591acfcd4ecda01f}{system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__osc8m__config}{system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the internal OSC8M oscillator clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Internal DFLL Management}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaa15073d0d4bd347bf8855ac20fd1b93c}{system\+\_\+clock\+\_\+source\+\_\+dfll\+\_\+set\+\_\+config}} (struct \mbox{\hyperlink{structsystem__clock__source__dfll__config}{system\+\_\+clock\+\_\+source\+\_\+dfll\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Configure the DFLL clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Clock Source Management}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga9b801cecbdb70ee5eec6e556dc659997}\label{group__asfdoc__sam0__system__clock__group_ga9b801cecbdb70ee5eec6e556dc659997}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries system\+\_\+clock\+\_\+source\+\_\+write\+\_\+calibration} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}}, const uint16\+\_\+t calibration\+\_\+value, const uint8\+\_\+t freq\+\_\+range)
+\item 
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gad1e70dd9d08ec72e6a1cbef848ff8189}\label{group__asfdoc__sam0__system__clock__group_gad1e70dd9d08ec72e6a1cbef848ff8189}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries system\+\_\+clock\+\_\+source\+\_\+enable} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}})
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacea9ce7a68fc3b0b2a46f3a8c3d6d89b}{system\+\_\+clock\+\_\+source\+\_\+disable}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} clk\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Disables a clock source. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2f18617c9770bf1c3ab8fdac5081e65e}{system\+\_\+clock\+\_\+source\+\_\+is\+\_\+ready}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} clk\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Checks if a clock source is ready. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1894d901b7ed10e4c1e52a784c8962be}{system\+\_\+clock\+\_\+source\+\_\+get\+\_\+hz}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} clk\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Retrieve the frequency of a clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{System Clock Initialization}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga128236c1939f726786521434d8488b37}{system\+\_\+clock\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize clock system based on the configuration in \mbox{\hyperlink{conf__clocks_8h}{conf\+\_\+clocks.\+h}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Generic Clock Management}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2e73072514e6300d60f18039ca47bf09}{system\+\_\+gclk\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the GCLK driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Generic Clock Management (Generators)}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacfd3360ccc8abb013f66b11ff44a5d0d}{system\+\_\+gclk\+\_\+gen\+\_\+set\+\_\+config}} (const uint8\+\_\+t generator, struct \mbox{\hyperlink{structsystem__gclk__gen__config}{system\+\_\+gclk\+\_\+gen\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a Generic Clock Generator configuration to the hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2bad007fcf1f649a3919dcc72dccea8b}{system\+\_\+gclk\+\_\+gen\+\_\+enable}} (const uint8\+\_\+t generator)
+\begin{DoxyCompactList}\small\item\em Enables a Generic Clock Generator that was previously configured. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga98a280a22a780c05e87c676f8c651dc3}{system\+\_\+gclk\+\_\+gen\+\_\+disable}} (const uint8\+\_\+t generator)
+\begin{DoxyCompactList}\small\item\em Disables a Generic Clock Generator that was previously enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga113af9a430f74e082401383109e4eefd}{system\+\_\+gclk\+\_\+gen\+\_\+is\+\_\+enabled}} (const uint8\+\_\+t generator)
+\begin{DoxyCompactList}\small\item\em Determins if the specified Generic Clock Generator is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Generic Clock Management (Channels)}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga0dfbe40e700101f619ddc5b4eb83d78b}{system\+\_\+gclk\+\_\+chan\+\_\+set\+\_\+config}} (const uint8\+\_\+t channel, struct \mbox{\hyperlink{structsystem__gclk__chan__config}{system\+\_\+gclk\+\_\+chan\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a Generic Clock configuration to the hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga53e46ab144632c877a635ab70a7b51e1}{system\+\_\+gclk\+\_\+chan\+\_\+enable}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Enables a Generic Clock that was previously configured. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaa1b945c9deba13fe8640563de4e11a53}{system\+\_\+gclk\+\_\+chan\+\_\+disable}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Disables a Generic Clock that was previously enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2467f733c23f6ad18e58a4f60deae0bb}{system\+\_\+gclk\+\_\+chan\+\_\+is\+\_\+enabled}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Determins if the specified Generic Clock channel is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga59856030d55e3e50091116ffe930a356}{system\+\_\+gclk\+\_\+chan\+\_\+lock}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Locks a Generic Clock channel from further configuration writes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga343a0b14dce2d7f2724382292ac1d8ef}{system\+\_\+gclk\+\_\+chan\+\_\+is\+\_\+locked}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Determins if the specified Generic Clock channel is locked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Generic Clock Frequency Retrieval}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf5cd7b482ee14413084669c32eef84cb}{system\+\_\+gclk\+\_\+gen\+\_\+get\+\_\+hz}} (const uint8\+\_\+t generator)
+\begin{DoxyCompactList}\small\item\em Retrieves the clock frequency of a Generic Clock generator. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6683b93425b58d6c94b850419dd4c860}{system\+\_\+gclk\+\_\+chan\+\_\+get\+\_\+hz}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Retrieves the clock frequency of a Generic Clock channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of the device\textquotesingle{}s clocking related functions. This includes the various clock sources, bus clocks, and generic clocks within the device, with functions to manage the enabling, disabling, source selection, and prescaling of clocks to various internal peripherals.
+
+The following peripherals are used by this module\+:
+
+
+\begin{DoxyItemize}
+\item GCLK (Generic Clock Management)
+\item PM (Power Management)
+\item SYSCTRL (Clock Source Control)
+\end{DoxyItemize}
+
+The following devices can use this module\+:
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D10/\+D11
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_extra_info}{Extra Information}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_prerequisites}
+There are no prerequisites for this module.\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview}
+The SAM devices contain a sophisticated clocking system, which is designed to give the maximum flexibility to the user application. This system allows a system designer to tune the performance and power consumption of the device in a dynamic manner, to achieve the best trade-\/off between the two for a particular application.
+
+This driver provides a set of functions for the configuration and management of the various clock related functionality within the device.\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_features}{}\doxysubsubsection{Driver Feature Macro Definition}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_features}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endhead
+FEATURE\+\_\+\+SYSTEM\+\_\+\+CLOCK\+\_\+\+DPLL &SAM D21, SAM R21, SAM D10, SAM D11  \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+The specific features are only available in the driver when the selected device supports those features.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_clock_sources}{}\doxysubsubsection{Clock Sources}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_clock_sources}
+The SAM devices have a number of master clock source modules, each of which being capable of producing a stabilized output frequency, which can then be fed into the various peripherals and modules within the device.
+
+Possible clock source modules include internal R/C oscillators, internal DFLL modules, as well as external crystal oscillators and/or clock inputs.\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_cpu_clock}{}\doxysubsubsection{CPU / Bus Clocks}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_cpu_clock}
+The CPU and AHB/\+APBx buses are clocked by the same physical clock source (referred in this module as the Main Clock), however the APBx buses may have additional prescaler division ratios set to give each peripheral bus a different clock speed.
+
+The general main clock tree for the CPU and associated buses is shown in \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_clock_tree}{the figure below}}.
+
+\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_clock_tree}%
+\Hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_clock_tree}%
+\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_clock_masking}{}\doxysubsubsection{Clock Masking}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_clock_masking}
+To save power, the input clock to one or more peripherals on the AHB and APBx buses can be masked away -\/ when masked, no clock is passed into the module. Disabling of clocks of unused modules will prevent all access to the masked module, but will reduce the overall device power consumption.\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_gclk}{}\doxysubsubsection{Generic Clocks}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_gclk}
+Within the SAM devices there are a number of Generic Clocks; these are used to provide clocks to the various peripheral clock domains in the device in a standardized manner. One or more master source clocks can be selected as the input clock to a Generic Clock Generator, which can prescale down the input frequency to a slower rate for use in a peripheral.
+
+Additionally, a number of individually selectable Generic Clock Channels are provided, which multiplex and gate the various generator outputs for one or more peripherals within the device. This setup allows for a single common generator to feed one or more channels, which can then be enabled or disabled individually as required.
+
+\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_chain_overview}%
+\Hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_chain_overview}%
+\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_chain_example}{}\doxyparagraph{Clock Chain Example}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_chain_example}
+An example setup of a complete clock chain within the device is shown in \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_chain_example_fig}{the figure below}}.
+
+\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_chain_example_fig}%
+\Hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_chain_example_fig}%
+\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_gclk_generators}{}\doxyparagraph{Generic Clock Generators}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_gclk_generators}
+Each Generic Clock generator within the device can source its input clock from one of the provided Source Clocks, and prescale the output for one or more Generic Clock Channels in a one-\/to-\/many relationship. The generators thus allow for several clocks to be generated of different frequencies, power usages, and accuracies, which can be turned on and off individually to disable the clocks to multiple peripherals as a group.\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_gclk_channels}{}\doxyparagraph{Generic Clock Channels}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_module_overview_gclk_channels}
+To connect a Generic Clock Generator to a peripheral within the device, a Generic Clock Channel is used. Each peripheral or peripheral group has an associated Generic Clock Channel, which serves as the clock input for the peripheral(s). To supply a clock to the peripheral module(s), the associated channel must be connected to a running Generic Clock Generator and the channel enabled.\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_special_considerations}{}\doxysubsection{Special Considerations}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_special_considerations}
+There are no special considerations for this module.\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_extra_info}{}\doxysubsection{Extra Information}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_extra_info}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_system_clock_extra}{Extra Information for SYSTEM CLOCK Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_system_clock_extra_asfdoc_sam0_system_clock_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_examples}{}\doxysubsection{Examples}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_system_clock_exqsg}{Examples for System Clock Driver}}.\hypertarget{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__sam0__system__clock__group_asfdoc_sam0_system_clock_api_overview}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}\label{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!gclk\_generator@{gclk\_generator}}
+\index{gclk\_generator@{gclk\_generator}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{gclk\_generator}{gclk\_generator}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}}}
+
+
+
+List of available GCLK generators. 
+
+List of Available GCLK generators. This enum is used in the peripheral device drivers to select the GCLK generator to be used for its operation.
+
+The number of GCLK generators available is device dependent. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GCLK\_GENERATOR\_0@{GCLK\_GENERATOR\_0}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!GCLK\_GENERATOR\_0@{GCLK\_GENERATOR\_0}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}\label{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}} 
+GCLK\+\_\+\+GENERATOR\+\_\+0&GCLK generator channel 0 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}\label{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_apb\_bus@{system\_clock\_apb\_bus}}
+\index{system\_clock\_apb\_bus@{system\_clock\_apb\_bus}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_apb\_bus}{system\_clock\_apb\_bus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}{system\+\_\+clock\+\_\+apb\+\_\+bus}}}
+
+
+
+List of APB peripheral buses. 
+
+Available bus clock domains on the APB bus. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_APB\_APBA@{SYSTEM\_CLOCK\_APB\_APBA}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_APB\_APBA@{SYSTEM\_CLOCK\_APB\_APBA}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a25197a2c1efe6a444a5cdcef7d82a1de}\label{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a25197a2c1efe6a444a5cdcef7d82a1de}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+APB\+\_\+\+APBA&Peripheral bus A on the APB bus. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_APB\_APBB@{SYSTEM\_CLOCK\_APB\_APBB}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_APB\_APBB@{SYSTEM\_CLOCK\_APB\_APBB}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5aa94daeca3198d35ba50839f69fa97fb2}\label{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5aa94daeca3198d35ba50839f69fa97fb2}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+APB\+\_\+\+APBB&Peripheral bus B on the APB bus. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_APB\_APBC@{SYSTEM\_CLOCK\_APB\_APBC}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_APB\_APBC@{SYSTEM\_CLOCK\_APB\_APBC}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a53168b7d478e1634594203d1ec2a654a}\label{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a53168b7d478e1634594203d1ec2a654a}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+APB\+\_\+\+APBC&Peripheral bus C on the APB bus. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga04ee95a872995397e3db9cf1494721e3}\label{group__asfdoc__sam0__system__clock__group_ga04ee95a872995397e3db9cf1494721e3}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_dfll\_chill\_cycle@{system\_clock\_dfll\_chill\_cycle}}
+\index{system\_clock\_dfll\_chill\_cycle@{system\_clock\_dfll\_chill\_cycle}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_dfll\_chill\_cycle}{system\_clock\_dfll\_chill\_cycle}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga04ee95a872995397e3db9cf1494721e3}{system\+\_\+clock\+\_\+dfll\+\_\+chill\+\_\+cycle}}}
+
+
+
+Chill-\/cycle behavior of the DFLL module. 
+
+DFLL chill-\/cycle behavior modes of the DFLL module. A chill cycle is a period of time when the DFLL output frequency is not measured by the unit, to allow the output to stabilize after a change in the input clock source. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_ENABLE@{SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_ENABLE}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_ENABLE@{SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_ENABLE}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3ad75095e64d38dbba6451c496645b7e01}\label{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3ad75095e64d38dbba6451c496645b7e01}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+CHILL\+\_\+\+CYCLE\+\_\+\+ENABLE&Enable a chill cycle, where the DFLL output frequency is not measured. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_DISABLE@{SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_DISABLE}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_DISABLE@{SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_DISABLE}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3a1f84a60dcc044d7bc33cf71cddb985a3}\label{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3a1f84a60dcc044d7bc33cf71cddb985a3}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+CHILL\+\_\+\+CYCLE\+\_\+\+DISABLE&Disable a chill cycle, where the DFLL output frequency is not measured. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gaf264d9ce05843104cb8a393b1d9ddfa2}\label{group__asfdoc__sam0__system__clock__group_gaf264d9ce05843104cb8a393b1d9ddfa2}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_dfll\_loop\_mode@{system\_clock\_dfll\_loop\_mode}}
+\index{system\_clock\_dfll\_loop\_mode@{system\_clock\_dfll\_loop\_mode}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_dfll\_loop\_mode}{system\_clock\_dfll\_loop\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf264d9ce05843104cb8a393b1d9ddfa2}{system\+\_\+clock\+\_\+dfll\+\_\+loop\+\_\+mode}}}
+
+
+
+Operating modes of the DFLL clock source. 
+
+Available operating modes of the DFLL clock source module. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_OPEN@{SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_OPEN}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_OPEN@{SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_OPEN}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a3d9e15bfd0803e41da1f59f8b699184a}\label{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a3d9e15bfd0803e41da1f59f8b699184a}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+LOOP\+\_\+\+MODE\+\_\+\+OPEN&The DFLL is operating in open loop mode with no feedback. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_CLOSED@{SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_CLOSED}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_CLOSED@{SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_CLOSED}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a1a18e1d9233792ba5e4663c978d7a46b}\label{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a1a18e1d9233792ba5e4663c978d7a46b}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+LOOP\+\_\+\+MODE\+\_\+\+CLOSED&The DFLL is operating in closed loop mode with frequency feedback from a low frequency reference clock. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga56ab87696abcd4e0103d6259386017ae}\label{group__asfdoc__sam0__system__clock__group_ga56ab87696abcd4e0103d6259386017ae}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_dfll\_quick\_lock@{system\_clock\_dfll\_quick\_lock}}
+\index{system\_clock\_dfll\_quick\_lock@{system\_clock\_dfll\_quick\_lock}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_dfll\_quick\_lock}{system\_clock\_dfll\_quick\_lock}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga56ab87696abcd4e0103d6259386017ae}{system\+\_\+clock\+\_\+dfll\+\_\+quick\+\_\+lock}}}
+
+
+
+Quick\+Lock settings for the DFLL module. 
+
+DFLL Quick\+Lock settings for the DFLL module, to allow for a faster lock of the DFLL output frequency at the expense of accuracy. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_ENABLE@{SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_ENABLE}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_ENABLE@{SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_ENABLE}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea0599c04b640c394c9fba065ae8e8b616}\label{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea0599c04b640c394c9fba065ae8e8b616}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+QUICK\+\_\+\+LOCK\+\_\+\+ENABLE&Enable the Quick\+Lock feature for looser lock requirements on the DFLL. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_DISABLE@{SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_DISABLE}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_DISABLE@{SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_DISABLE}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea1d2b1b500737f7722a86e3242cf2250c}\label{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea1d2b1b500737f7722a86e3242cf2250c}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+QUICK\+\_\+\+LOCK\+\_\+\+DISABLE&Disable the Quick\+Lock feature for strict lock requirements on the DFLL. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gaf9b0eb010541f1d7c8af3eeb0573043d}\label{group__asfdoc__sam0__system__clock__group_gaf9b0eb010541f1d7c8af3eeb0573043d}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_dfll\_stable\_tracking@{system\_clock\_dfll\_stable\_tracking}}
+\index{system\_clock\_dfll\_stable\_tracking@{system\_clock\_dfll\_stable\_tracking}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_dfll\_stable\_tracking}{system\_clock\_dfll\_stable\_tracking}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf9b0eb010541f1d7c8af3eeb0573043d}{system\+\_\+clock\+\_\+dfll\+\_\+stable\+\_\+tracking}}}
+
+
+
+Fine tracking behavior for the DFLL once a lock has been acquired. 
+
+DFLL fine tracking behavior modes after a lock has been acquired. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_TRACK\_AFTER\_LOCK@{SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_TRACK\_AFTER\_LOCK}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_TRACK\_AFTER\_LOCK@{SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_TRACK\_AFTER\_LOCK}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da4a92b58e1ea9c95123b83aa6ee4e3f21}\label{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da4a92b58e1ea9c95123b83aa6ee4e3f21}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+STABLE\+\_\+\+TRACKING\+\_\+\+TRACK\+\_\+\+AFTER\+\_\+\+LOCK&Keep tracking after the DFLL has gotten a fine lock. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_FIX\_AFTER\_LOCK@{SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_FIX\_AFTER\_LOCK}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_FIX\_AFTER\_LOCK@{SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_FIX\_AFTER\_LOCK}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da40176c0aa1d57b6ec9f7de182b937c5a}\label{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da40176c0aa1d57b6ec9f7de182b937c5a}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+STABLE\+\_\+\+TRACKING\+\_\+\+FIX\+\_\+\+AFTER\+\_\+\+LOCK&Stop tracking after the DFLL has gotten a fine lock. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga6ce68deec62f12bb85ddb2f8c103ada5}\label{group__asfdoc__sam0__system__clock__group_ga6ce68deec62f12bb85ddb2f8c103ada5}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_dfll\_wakeup\_lock@{system\_clock\_dfll\_wakeup\_lock}}
+\index{system\_clock\_dfll\_wakeup\_lock@{system\_clock\_dfll\_wakeup\_lock}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_dfll\_wakeup\_lock}{system\_clock\_dfll\_wakeup\_lock}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6ce68deec62f12bb85ddb2f8c103ada5}{system\+\_\+clock\+\_\+dfll\+\_\+wakeup\+\_\+lock}}}
+
+
+
+Locking behavior for the DFLL during device wake-\/up. 
+
+DFLL lock behavior modes on device wake-\/up from sleep. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_KEEP@{SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_KEEP}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_KEEP@{SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_KEEP}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5abbfd6c5e90f1ee8e9865723f6c1da64e}\label{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5abbfd6c5e90f1ee8e9865723f6c1da64e}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+WAKEUP\+\_\+\+LOCK\+\_\+\+KEEP&Keep DFLL lock when the device wakes from sleep. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_LOSE@{SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_LOSE}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_LOSE@{SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_LOSE}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5a291a819f86924e0d60fc5a2a14b5456c}\label{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5a291a819f86924e0d60fc5a2a14b5456c}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+DFLL\+\_\+\+WAKEUP\+\_\+\+LOCK\+\_\+\+LOSE&Lose DFLL lock when the devices wakes from sleep. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}\label{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_external@{system\_clock\_external}}
+\index{system\_clock\_external@{system\_clock\_external}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_external}{system\_clock\_external}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\+\_\+clock\+\_\+external}}}
+
+
+
+External clock source types. 
+
+Available external clock source types. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_EXTERNAL\_CRYSTAL@{SYSTEM\_CLOCK\_EXTERNAL\_CRYSTAL}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_EXTERNAL\_CRYSTAL@{SYSTEM\_CLOCK\_EXTERNAL\_CRYSTAL}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1f1e123ed025f2e02f063d0d75b3ff56}\label{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1f1e123ed025f2e02f063d0d75b3ff56}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+EXTERNAL\+\_\+\+CRYSTAL&The external clock source is a crystal oscillator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_EXTERNAL\_CLOCK@{SYSTEM\_CLOCK\_EXTERNAL\_CLOCK}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_EXTERNAL\_CLOCK@{SYSTEM\_CLOCK\_EXTERNAL\_CLOCK}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1521ad5b8607dd8bf7a6b5df1adee2f3}\label{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1521ad5b8607dd8bf7a6b5df1adee2f3}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+EXTERNAL\+\_\+\+CLOCK&The connected clock source is an external logic level clock signal. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}\label{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_source@{system\_clock\_source}}
+\index{system\_clock\_source@{system\_clock\_source}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_source}{system\_clock\_source}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}}}
+
+
+
+Available clock sources in the system. 
+
+Clock sources available to the GCLK generators. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_SOURCE\_OSC8M@{SYSTEM\_CLOCK\_SOURCE\_OSC8M}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_SOURCE\_OSC8M@{SYSTEM\_CLOCK\_SOURCE\_OSC8M}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a7a76d4184666899a7b6c4e7f49395f3d}\label{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a7a76d4184666899a7b6c4e7f49395f3d}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+OSC8M&Internal 8MHz RC oscillator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_SOURCE\_OSC32K@{SYSTEM\_CLOCK\_SOURCE\_OSC32K}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_SOURCE\_OSC32K@{SYSTEM\_CLOCK\_SOURCE\_OSC32K}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a558e3f5af5f17dad6386eaad5bfc5ea7}\label{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a558e3f5af5f17dad6386eaad5bfc5ea7}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+OSC32K&Internal 32KHz RC oscillator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_SOURCE\_XOSC@{SYSTEM\_CLOCK\_SOURCE\_XOSC}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_SOURCE\_XOSC@{SYSTEM\_CLOCK\_SOURCE\_XOSC}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a3838555d84536119b61101649678ef4a}\label{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a3838555d84536119b61101649678ef4a}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+XOSC&External oscillator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_SOURCE\_XOSC32K@{SYSTEM\_CLOCK\_SOURCE\_XOSC32K}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_SOURCE\_XOSC32K@{SYSTEM\_CLOCK\_SOURCE\_XOSC32K}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a122233d164de1b1847acc526e1d83360}\label{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a122233d164de1b1847acc526e1d83360}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+XOSC32K&External 32KHz oscillator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_SOURCE\_DFLL@{SYSTEM\_CLOCK\_SOURCE\_DFLL}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_SOURCE\_DFLL@{SYSTEM\_CLOCK\_SOURCE\_DFLL}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a6115cfc6953d6fceaaa84fbfcfd51212}\label{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a6115cfc6953d6fceaaa84fbfcfd51212}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+DFLL&Digital Frequency Locked Loop (DFLL). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_SOURCE\_ULP32K@{SYSTEM\_CLOCK\_SOURCE\_ULP32K}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_SOURCE\_ULP32K@{SYSTEM\_CLOCK\_SOURCE\_ULP32K}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58af5975ab246b9e6750998d0fcb313c288}\label{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58af5975ab246b9e6750998d0fcb313c288}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+ULP32K&Internal Ultra Low Power 32KHz oscillator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_SOURCE\_GCLKIN@{SYSTEM\_CLOCK\_SOURCE\_GCLKIN}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_SOURCE\_GCLKIN@{SYSTEM\_CLOCK\_SOURCE\_GCLKIN}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58aba00702aad6c05fe8c0a864dedf6dbea}\label{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58aba00702aad6c05fe8c0a864dedf6dbea}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+GCLKIN&Generator input pad. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_CLOCK\_SOURCE\_GCLKGEN1@{SYSTEM\_CLOCK\_SOURCE\_GCLKGEN1}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_CLOCK\_SOURCE\_GCLKGEN1@{SYSTEM\_CLOCK\_SOURCE\_GCLKGEN1}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58ab873ebe5b9dd823cb794be31ef0fc1ef}\label{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58ab873ebe5b9dd823cb794be31ef0fc1ef}} 
+SYSTEM\+\_\+\+CLOCK\+\_\+\+SOURCE\+\_\+\+GCLKGEN1&Generic clock generator one output. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga30e9b73868506309f3dc4935fbe9ce4b}\label{group__asfdoc__sam0__system__clock__group_ga30e9b73868506309f3dc4935fbe9ce4b}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_main\_clock\_div@{system\_main\_clock\_div}}
+\index{system\_main\_clock\_div@{system\_main\_clock\_div}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_main\_clock\_div}{system\_main\_clock\_div}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga30e9b73868506309f3dc4935fbe9ce4b}{system\+\_\+main\+\_\+clock\+\_\+div}}}
+
+
+
+Main CPU and APB/\+AHB bus clock source prescaler values. 
+
+Available division ratios for the CPU and APB/\+AHB bus clocks. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_MAIN\_CLOCK\_DIV\_1@{SYSTEM\_MAIN\_CLOCK\_DIV\_1}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_MAIN\_CLOCK\_DIV\_1@{SYSTEM\_MAIN\_CLOCK\_DIV\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa4e9b93b809ddfbdffb13f72da94c1d7}\label{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa4e9b93b809ddfbdffb13f72da94c1d7}} 
+SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+1&Divide Main clock by one. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_MAIN\_CLOCK\_DIV\_2@{SYSTEM\_MAIN\_CLOCK\_DIV\_2}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_MAIN\_CLOCK\_DIV\_2@{SYSTEM\_MAIN\_CLOCK\_DIV\_2}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6b64d2dd96c00b24b5abe48c605959c4}\label{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6b64d2dd96c00b24b5abe48c605959c4}} 
+SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+2&Divide Main clock by two. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_MAIN\_CLOCK\_DIV\_4@{SYSTEM\_MAIN\_CLOCK\_DIV\_4}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_MAIN\_CLOCK\_DIV\_4@{SYSTEM\_MAIN\_CLOCK\_DIV\_4}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6e6564b4069b1d0a3244697b525c516b}\label{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6e6564b4069b1d0a3244697b525c516b}} 
+SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+4&Divide Main clock by four. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_MAIN\_CLOCK\_DIV\_8@{SYSTEM\_MAIN\_CLOCK\_DIV\_8}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_MAIN\_CLOCK\_DIV\_8@{SYSTEM\_MAIN\_CLOCK\_DIV\_8}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa88dc289422295f74b1be13341bae02d}\label{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa88dc289422295f74b1be13341bae02d}} 
+SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+8&Divide Main clock by eight. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_MAIN\_CLOCK\_DIV\_16@{SYSTEM\_MAIN\_CLOCK\_DIV\_16}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_MAIN\_CLOCK\_DIV\_16@{SYSTEM\_MAIN\_CLOCK\_DIV\_16}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6742ac478e6df1a9999bc1852ac90ea9}\label{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6742ac478e6df1a9999bc1852ac90ea9}} 
+SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+16&Divide Main clock by 16. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_MAIN\_CLOCK\_DIV\_32@{SYSTEM\_MAIN\_CLOCK\_DIV\_32}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_MAIN\_CLOCK\_DIV\_32@{SYSTEM\_MAIN\_CLOCK\_DIV\_32}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba739314ab4a798f75c254214f9c64f23b}\label{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba739314ab4a798f75c254214f9c64f23b}} 
+SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+32&Divide Main clock by 32. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_MAIN\_CLOCK\_DIV\_64@{SYSTEM\_MAIN\_CLOCK\_DIV\_64}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_MAIN\_CLOCK\_DIV\_64@{SYSTEM\_MAIN\_CLOCK\_DIV\_64}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4bae988c4e7ef255b846e552da9c9b4e11b}\label{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4bae988c4e7ef255b846e552da9c9b4e11b}} 
+SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+64&Divide Main clock by 64. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_MAIN\_CLOCK\_DIV\_128@{SYSTEM\_MAIN\_CLOCK\_DIV\_128}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_MAIN\_CLOCK\_DIV\_128@{SYSTEM\_MAIN\_CLOCK\_DIV\_128}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baec6efb1ec57e2967ff513074e145d110}\label{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baec6efb1ec57e2967ff513074e145d110}} 
+SYSTEM\+\_\+\+MAIN\+\_\+\+CLOCK\+\_\+\+DIV\+\_\+128&Divide Main clock by 128. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gaf2f527fc5dd85dcf1c7091d6059d05cb}\label{group__asfdoc__sam0__system__clock__group_gaf2f527fc5dd85dcf1c7091d6059d05cb}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_osc32k\_startup@{system\_osc32k\_startup}}
+\index{system\_osc32k\_startup@{system\_osc32k\_startup}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_osc32k\_startup}{system\_osc32k\_startup}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf2f527fc5dd85dcf1c7091d6059d05cb}{system\+\_\+osc32k\+\_\+startup}}}
+
+
+
+Available start-\/up times for the OSC32K. 
+
+Available internal 32KHz oscillator start-\/up times, as a number of internal OSC32K clock cycles. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC32K\_STARTUP\_3@{SYSTEM\_OSC32K\_STARTUP\_3}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC32K\_STARTUP\_3@{SYSTEM\_OSC32K\_STARTUP\_3}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba5d0159245ad2909eec4256416f6fdb39}\label{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba5d0159245ad2909eec4256416f6fdb39}} 
+SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+3&Wait three clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC32K\_STARTUP\_4@{SYSTEM\_OSC32K\_STARTUP\_4}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC32K\_STARTUP\_4@{SYSTEM\_OSC32K\_STARTUP\_4}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba8fe93dbb45d1663d550847b93097f7ec}\label{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba8fe93dbb45d1663d550847b93097f7ec}} 
+SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+4&Wait four clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC32K\_STARTUP\_6@{SYSTEM\_OSC32K\_STARTUP\_6}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC32K\_STARTUP\_6@{SYSTEM\_OSC32K\_STARTUP\_6}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba0608b4ca71442d2e2c52338849793ac9}\label{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba0608b4ca71442d2e2c52338849793ac9}} 
+SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+6&Wait six clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC32K\_STARTUP\_10@{SYSTEM\_OSC32K\_STARTUP\_10}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC32K\_STARTUP\_10@{SYSTEM\_OSC32K\_STARTUP\_10}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbaba3eac44eee0816a8e79776d0e9f4e07}\label{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbaba3eac44eee0816a8e79776d0e9f4e07}} 
+SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+10&Wait ten clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC32K\_STARTUP\_18@{SYSTEM\_OSC32K\_STARTUP\_18}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC32K\_STARTUP\_18@{SYSTEM\_OSC32K\_STARTUP\_18}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba2a852a8d4f9f7b93396d256372233d7a}\label{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba2a852a8d4f9f7b93396d256372233d7a}} 
+SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+18&Wait 18 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC32K\_STARTUP\_34@{SYSTEM\_OSC32K\_STARTUP\_34}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC32K\_STARTUP\_34@{SYSTEM\_OSC32K\_STARTUP\_34}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba780a6ed8f1bd9d66190eb9296c47c5f6}\label{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba780a6ed8f1bd9d66190eb9296c47c5f6}} 
+SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+34&Wait 34 clock cycles until the clock source is considered stable \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC32K\_STARTUP\_66@{SYSTEM\_OSC32K\_STARTUP\_66}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC32K\_STARTUP\_66@{SYSTEM\_OSC32K\_STARTUP\_66}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba1d9a2791a3e0f3a49bd969e192be0d2c}\label{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba1d9a2791a3e0f3a49bd969e192be0d2c}} 
+SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+66&Wait 66 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC32K\_STARTUP\_130@{SYSTEM\_OSC32K\_STARTUP\_130}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC32K\_STARTUP\_130@{SYSTEM\_OSC32K\_STARTUP\_130}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbab47cb8c22788fa124a7fa91d469972fa}\label{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbab47cb8c22788fa124a7fa91d469972fa}} 
+SYSTEM\+\_\+\+OSC32\+K\+\_\+\+STARTUP\+\_\+130&Wait 130 clock cycles until the clock source is considered stable. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga1ee1b0be167bd253038400d9c6d0cbef}\label{group__asfdoc__sam0__system__clock__group_ga1ee1b0be167bd253038400d9c6d0cbef}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_osc8m\_div@{system\_osc8m\_div}}
+\index{system\_osc8m\_div@{system\_osc8m\_div}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_osc8m\_div}{system\_osc8m\_div}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ee1b0be167bd253038400d9c6d0cbef}{system\+\_\+osc8m\+\_\+div}}}
+
+
+
+Division prescalers for the internal 8MHz system clock. 
+
+Available prescalers for the internal 8MHz (nominal) system clock. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC8M\_DIV\_1@{SYSTEM\_OSC8M\_DIV\_1}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC8M\_DIV\_1@{SYSTEM\_OSC8M\_DIV\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa564fc679b9f90127b6666b6bced33463}\label{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa564fc679b9f90127b6666b6bced33463}} 
+SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+1&Do not divide the 8MHz RC oscillator output. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC8M\_DIV\_2@{SYSTEM\_OSC8M\_DIV\_2}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC8M\_DIV\_2@{SYSTEM\_OSC8M\_DIV\_2}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa5484854b8a0bb16902b603dd8024d76d}\label{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa5484854b8a0bb16902b603dd8024d76d}} 
+SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+2&Divide the 8MHz RC oscillator output by two. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC8M\_DIV\_4@{SYSTEM\_OSC8M\_DIV\_4}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC8M\_DIV\_4@{SYSTEM\_OSC8M\_DIV\_4}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa6f70022cf44a05a464d1a5af02ceed1b}\label{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa6f70022cf44a05a464d1a5af02ceed1b}} 
+SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+4&Divide the 8MHz RC oscillator output by four. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC8M\_DIV\_8@{SYSTEM\_OSC8M\_DIV\_8}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC8M\_DIV\_8@{SYSTEM\_OSC8M\_DIV\_8}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa23f917a883d385d557b7e9ee9b80e14c}\label{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa23f917a883d385d557b7e9ee9b80e14c}} 
+SYSTEM\+\_\+\+OSC8\+M\+\_\+\+DIV\+\_\+8&Divide the 8MHz RC oscillator output by eight. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gac2e75dd14e805255aa11f5d7fc41b12e}\label{group__asfdoc__sam0__system__clock__group_gac2e75dd14e805255aa11f5d7fc41b12e}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_osc8m\_frequency\_range@{system\_osc8m\_frequency\_range}}
+\index{system\_osc8m\_frequency\_range@{system\_osc8m\_frequency\_range}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_osc8m\_frequency\_range}{system\_osc8m\_frequency\_range}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac2e75dd14e805255aa11f5d7fc41b12e}{system\+\_\+osc8m\+\_\+frequency\+\_\+range}}}
+
+
+
+Frequency range for the internal 8MHz RC oscillator. 
+
+Internal 8MHz RC oscillator frequency range setting. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_4\_TO\_6@{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_4\_TO\_6}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_4\_TO\_6@{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_4\_TO\_6}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12eac5944f501f38e9a7977adc284718d914}\label{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12eac5944f501f38e9a7977adc284718d914}} 
+SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+4\+\_\+\+TO\+\_\+6&Frequency range 4MHz to 6MHz. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_6\_TO\_8@{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_6\_TO\_8}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_6\_TO\_8@{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_6\_TO\_8}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea3dce70db9bd774fda44dddc7ee696672}\label{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea3dce70db9bd774fda44dddc7ee696672}} 
+SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+6\+\_\+\+TO\+\_\+8&Frequency range 6MHz to 8MHz. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_8\_TO\_11@{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_8\_TO\_11}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_8\_TO\_11@{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_8\_TO\_11}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6577a603b473039bc40689e9cafb415e}\label{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6577a603b473039bc40689e9cafb415e}} 
+SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+8\+\_\+\+TO\+\_\+11&Frequency range 8MHz to 11MHz. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_11\_TO\_15@{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_11\_TO\_15}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_11\_TO\_15@{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_11\_TO\_15}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6cf9e419674c782b14267ee452889195}\label{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6cf9e419674c782b14267ee452889195}} 
+SYSTEM\+\_\+\+OSC8\+M\+\_\+\+FREQUENCY\+\_\+\+RANGE\+\_\+11\+\_\+\+TO\+\_\+15&Frequency range 11MHz to 15MHz. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga6a5226fe65f283da094a3d1bd6c5692f}\label{group__asfdoc__sam0__system__clock__group_ga6a5226fe65f283da094a3d1bd6c5692f}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_xosc32k\_startup@{system\_xosc32k\_startup}}
+\index{system\_xosc32k\_startup@{system\_xosc32k\_startup}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_xosc32k\_startup}{system\_xosc32k\_startup}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6a5226fe65f283da094a3d1bd6c5692f}{system\+\_\+xosc32k\+\_\+startup}}}
+
+
+
+Available start-\/up times for the XOSC32K. 
+
+Available external 32KHz oscillator start-\/up times, as a number of external clock cycles. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC32K\_STARTUP\_0@{SYSTEM\_XOSC32K\_STARTUP\_0}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC32K\_STARTUP\_0@{SYSTEM\_XOSC32K\_STARTUP\_0}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692faa91d598f764710a4266770238e413717}\label{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692faa91d598f764710a4266770238e413717}} 
+SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+0&Wait zero clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC32K\_STARTUP\_32@{SYSTEM\_XOSC32K\_STARTUP\_32}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC32K\_STARTUP\_32@{SYSTEM\_XOSC32K\_STARTUP\_32}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa762b4a74172784915df68700e51d4e0f}\label{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa762b4a74172784915df68700e51d4e0f}} 
+SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+32&Wait 32 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC32K\_STARTUP\_2048@{SYSTEM\_XOSC32K\_STARTUP\_2048}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC32K\_STARTUP\_2048@{SYSTEM\_XOSC32K\_STARTUP\_2048}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fafa1cf29c3c5c3f74d1a2ffdd7c3199e3}\label{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fafa1cf29c3c5c3f74d1a2ffdd7c3199e3}} 
+SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+2048&Wait 2048 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC32K\_STARTUP\_4096@{SYSTEM\_XOSC32K\_STARTUP\_4096}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC32K\_STARTUP\_4096@{SYSTEM\_XOSC32K\_STARTUP\_4096}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa6c5f69164630ba16faa100873bd73dc0}\label{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa6c5f69164630ba16faa100873bd73dc0}} 
+SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+4096&Wait 4096 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC32K\_STARTUP\_16384@{SYSTEM\_XOSC32K\_STARTUP\_16384}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC32K\_STARTUP\_16384@{SYSTEM\_XOSC32K\_STARTUP\_16384}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fae9d3c139f5442c2ba949a8d04ee7d38e}\label{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fae9d3c139f5442c2ba949a8d04ee7d38e}} 
+SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+16384&Wait 16384 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC32K\_STARTUP\_32768@{SYSTEM\_XOSC32K\_STARTUP\_32768}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC32K\_STARTUP\_32768@{SYSTEM\_XOSC32K\_STARTUP\_32768}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa78dab161af7b89436e8efde14b12b087}\label{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa78dab161af7b89436e8efde14b12b087}} 
+SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+32768&Wait 32768 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC32K\_STARTUP\_65536@{SYSTEM\_XOSC32K\_STARTUP\_65536}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC32K\_STARTUP\_65536@{SYSTEM\_XOSC32K\_STARTUP\_65536}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa7205636a0c4b4d7bc1b1aad12aaf9a49}\label{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa7205636a0c4b4d7bc1b1aad12aaf9a49}} 
+SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+65536&Wait 65536 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC32K\_STARTUP\_131072@{SYSTEM\_XOSC32K\_STARTUP\_131072}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC32K\_STARTUP\_131072@{SYSTEM\_XOSC32K\_STARTUP\_131072}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fab44c3b77e6d8a8e49a1ed5b474eca9c2}\label{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fab44c3b77e6d8a8e49a1ed5b474eca9c2}} 
+SYSTEM\+\_\+\+XOSC32\+K\+\_\+\+STARTUP\+\_\+131072&Wait 131072 clock cycles until the clock source is considered stable. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga93797ad2901b27dd84fa8b7edc9bb5c5}\label{group__asfdoc__sam0__system__clock__group_ga93797ad2901b27dd84fa8b7edc9bb5c5}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_xosc\_startup@{system\_xosc\_startup}}
+\index{system\_xosc\_startup@{system\_xosc\_startup}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_xosc\_startup}{system\_xosc\_startup}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga93797ad2901b27dd84fa8b7edc9bb5c5}{system\+\_\+xosc\+\_\+startup}}}
+
+
+
+Available start-\/up times for the XOSC. 
+
+Available external oscillator start-\/up times, as a number of external clock cycles. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_1@{SYSTEM\_XOSC\_STARTUP\_1}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_1@{SYSTEM\_XOSC\_STARTUP\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a227f4495c112940e43509578037632ee}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a227f4495c112940e43509578037632ee}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+1&Wait one clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_2@{SYSTEM\_XOSC\_STARTUP\_2}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_2@{SYSTEM\_XOSC\_STARTUP\_2}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5adf5e2fc400d091e4cbee763fbde41555}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5adf5e2fc400d091e4cbee763fbde41555}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+2&Wait two clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_4@{SYSTEM\_XOSC\_STARTUP\_4}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_4@{SYSTEM\_XOSC\_STARTUP\_4}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a71f9f687b6dec03eb27dc81a3aa4ffff}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a71f9f687b6dec03eb27dc81a3aa4ffff}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+4&Wait four clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_8@{SYSTEM\_XOSC\_STARTUP\_8}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_8@{SYSTEM\_XOSC\_STARTUP\_8}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a654a284191eaaea5bcef63b7208edff0}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a654a284191eaaea5bcef63b7208edff0}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+8&Wait eight clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_16@{SYSTEM\_XOSC\_STARTUP\_16}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_16@{SYSTEM\_XOSC\_STARTUP\_16}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5aed33da000f564d1d359c71837cee5432}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5aed33da000f564d1d359c71837cee5432}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+16&Wait 16 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_32@{SYSTEM\_XOSC\_STARTUP\_32}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_32@{SYSTEM\_XOSC\_STARTUP\_32}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3f7b3d4801503461d11a422e8cc6f7a0}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3f7b3d4801503461d11a422e8cc6f7a0}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+32&Wait 32 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_64@{SYSTEM\_XOSC\_STARTUP\_64}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_64@{SYSTEM\_XOSC\_STARTUP\_64}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a6cc582d7547628f75e628a1051a9ffd2}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a6cc582d7547628f75e628a1051a9ffd2}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+64&Wait 64 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_128@{SYSTEM\_XOSC\_STARTUP\_128}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_128@{SYSTEM\_XOSC\_STARTUP\_128}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ae82c389b69fa1ca5e394b5d56c63bea9}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ae82c389b69fa1ca5e394b5d56c63bea9}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+128&Wait 128 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_256@{SYSTEM\_XOSC\_STARTUP\_256}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_256@{SYSTEM\_XOSC\_STARTUP\_256}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a4d289f922705cd65e0a3868a183a9b46}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a4d289f922705cd65e0a3868a183a9b46}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+256&Wait 256 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_512@{SYSTEM\_XOSC\_STARTUP\_512}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_512@{SYSTEM\_XOSC\_STARTUP\_512}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a051d6e2bc0f94985cdf93c695f3db631}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a051d6e2bc0f94985cdf93c695f3db631}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+512&Wait 512 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_1024@{SYSTEM\_XOSC\_STARTUP\_1024}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_1024@{SYSTEM\_XOSC\_STARTUP\_1024}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a23f21ffa4d8f2b857e4d127ea4d8663e}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a23f21ffa4d8f2b857e4d127ea4d8663e}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+1024&Wait 1024 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_2048@{SYSTEM\_XOSC\_STARTUP\_2048}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_2048@{SYSTEM\_XOSC\_STARTUP\_2048}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3d1162a14cc1864dc5ccd14217e25e3a}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3d1162a14cc1864dc5ccd14217e25e3a}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+2048&Wait 2048 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_4096@{SYSTEM\_XOSC\_STARTUP\_4096}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_4096@{SYSTEM\_XOSC\_STARTUP\_4096}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a20a913fb63eacee74498d44d062ee88f}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a20a913fb63eacee74498d44d062ee88f}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+4096&Wait 4096 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_8192@{SYSTEM\_XOSC\_STARTUP\_8192}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_8192@{SYSTEM\_XOSC\_STARTUP\_8192}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a096b8260e41cfc4937dfaf418eb512c4}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a096b8260e41cfc4937dfaf418eb512c4}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+8192&Wait 8192 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_16384@{SYSTEM\_XOSC\_STARTUP\_16384}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_16384@{SYSTEM\_XOSC\_STARTUP\_16384}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ad3cf17457e11c5fecd12172c75d67229}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ad3cf17457e11c5fecd12172c75d67229}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+16384&Wait 16384 clock cycles until the clock source is considered stable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_XOSC\_STARTUP\_32768@{SYSTEM\_XOSC\_STARTUP\_32768}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!SYSTEM\_XOSC\_STARTUP\_32768@{SYSTEM\_XOSC\_STARTUP\_32768}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a1eff23f1ee9c792ec44683af90206d50}\label{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a1eff23f1ee9c792ec44683af90206d50}} 
+SYSTEM\+\_\+\+XOSC\+\_\+\+STARTUP\+\_\+32768&Wait 32768 clock cycles until the clock source is considered stable. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga128236c1939f726786521434d8488b37}\label{group__asfdoc__sam0__system__clock__group_ga128236c1939f726786521434d8488b37}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_init@{system\_clock\_init}}
+\index{system\_clock\_init@{system\_clock\_init}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_init()}{system\_clock\_init()}}
+{\footnotesize\ttfamily void system\+\_\+clock\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize clock system based on the configuration in \mbox{\hyperlink{conf__clocks_8h}{conf\+\_\+clocks.\+h}}. 
+
+This function will apply the settings in \mbox{\hyperlink{conf__clocks_8h}{conf\+\_\+clocks.\+h}} when run from the user application. All clock sources and GCLK generators are running when this function returns.
+
+\begin{DoxyNote}{Note}
+OSC8M is always enabled and if user selects other clocks for GCLK generators, the OSC8M default enable can be disabled after system\+\_\+clock\+\_\+init. Make sure the clock switch successfully before disabling OSC8M. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gaa15073d0d4bd347bf8855ac20fd1b93c}\label{group__asfdoc__sam0__system__clock__group_gaa15073d0d4bd347bf8855ac20fd1b93c}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_source\_dfll\_set\_config@{system\_clock\_source\_dfll\_set\_config}}
+\index{system\_clock\_source\_dfll\_set\_config@{system\_clock\_source\_dfll\_set\_config}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_source\_dfll\_set\_config()}{system\_clock\_source\_dfll\_set\_config()}}
+{\footnotesize\ttfamily void system\+\_\+clock\+\_\+source\+\_\+dfll\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structsystem__clock__source__dfll__config}{system\+\_\+clock\+\_\+source\+\_\+dfll\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Configure the DFLL clock source. 
+
+Configures the Digital Frequency Locked Loop clock source with the given configuration settings.
+
+\begin{DoxyNote}{Note}
+The DFLL will be running when this function returns, as the DFLL module needs to be enabled in order to perform the module configuration.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em config} & DFLL configuration structure containing the new config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gacea9ce7a68fc3b0b2a46f3a8c3d6d89b}\label{group__asfdoc__sam0__system__clock__group_gacea9ce7a68fc3b0b2a46f3a8c3d6d89b}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_source\_disable@{system\_clock\_source\_disable}}
+\index{system\_clock\_source\_disable@{system\_clock\_source\_disable}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_source\_disable()}{system\_clock\_source\_disable()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} system\+\_\+clock\+\_\+source\+\_\+disable (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}}}]{clock\+\_\+source }\end{DoxyParamCaption})}
+
+
+
+Disables a clock source. 
+
+Disables a clock source that was previously enabled.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em clock\+\_\+source} & Clock source to disable\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & Clock source was disabled successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & An invalid or unavailable clock source was given \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga1894d901b7ed10e4c1e52a784c8962be}\label{group__asfdoc__sam0__system__clock__group_ga1894d901b7ed10e4c1e52a784c8962be}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_source\_get\_hz@{system\_clock\_source\_get\_hz}}
+\index{system\_clock\_source\_get\_hz@{system\_clock\_source\_get\_hz}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_source\_get\_hz()}{system\_clock\_source\_get\_hz()}}
+{\footnotesize\ttfamily uint32\+\_\+t system\+\_\+clock\+\_\+source\+\_\+get\+\_\+hz (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}}}]{clock\+\_\+source }\end{DoxyParamCaption})}
+
+
+
+Retrieve the frequency of a clock source. 
+
+Determines the current operating frequency of a given clock source.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em clock\+\_\+source} & Clock source to get the frequency\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Frequency of the given clock source, in Hz. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga2f18617c9770bf1c3ab8fdac5081e65e}\label{group__asfdoc__sam0__system__clock__group_ga2f18617c9770bf1c3ab8fdac5081e65e}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_source\_is\_ready@{system\_clock\_source\_is\_ready}}
+\index{system\_clock\_source\_is\_ready@{system\_clock\_source\_is\_ready}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_source\_is\_ready()}{system\_clock\_source\_is\_ready()}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+is\+\_\+ready (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}}}]{clock\+\_\+source }\end{DoxyParamCaption})}
+
+
+
+Checks if a clock source is ready. 
+
+Checks if a given clock source is ready to be used.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em clock\+\_\+source} & Clock source to check if ready\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ready state of the given clock source.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & Clock source is enabled and ready \\
+\hline
+{\em false} & Clock source is disabled or not yet ready \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga9c110273354846e5a6cf877d6180296f}\label{group__asfdoc__sam0__system__clock__group_ga9c110273354846e5a6cf877d6180296f}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_source\_osc32k\_set\_config@{system\_clock\_source\_osc32k\_set\_config}}
+\index{system\_clock\_source\_osc32k\_set\_config@{system\_clock\_source\_osc32k\_set\_config}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_source\_osc32k\_set\_config()}{system\_clock\_source\_osc32k\_set\_config()}}
+{\footnotesize\ttfamily void system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structsystem__clock__source__osc32k__config}{system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Configure the internal OSC32K oscillator clock source. 
+
+Configures the 32KHz (nominal) internal RC oscillator with the given configuration settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em config} & OSC32K configuration structure containing the new config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gab96253dd348ce56a591acfcd4ecda01f}\label{group__asfdoc__sam0__system__clock__group_gab96253dd348ce56a591acfcd4ecda01f}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_source\_osc8m\_set\_config@{system\_clock\_source\_osc8m\_set\_config}}
+\index{system\_clock\_source\_osc8m\_set\_config@{system\_clock\_source\_osc8m\_set\_config}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_source\_osc8m\_set\_config()}{system\_clock\_source\_osc8m\_set\_config()}}
+{\footnotesize\ttfamily void system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structsystem__clock__source__osc8m__config}{system\+\_\+clock\+\_\+source\+\_\+osc8m\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Configure the internal OSC8M oscillator clock source. 
+
+Configures the 8MHz (nominal) internal RC oscillator with the given configuration settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em config} & OSC8M configuration structure containing the new config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga076bff009d78de95a0b2c9672f62b224}\label{group__asfdoc__sam0__system__clock__group_ga076bff009d78de95a0b2c9672f62b224}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_source\_xosc32k\_set\_config@{system\_clock\_source\_xosc32k\_set\_config}}
+\index{system\_clock\_source\_xosc32k\_set\_config@{system\_clock\_source\_xosc32k\_set\_config}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_source\_xosc32k\_set\_config()}{system\_clock\_source\_xosc32k\_set\_config()}}
+{\footnotesize\ttfamily void system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structsystem__clock__source__xosc32k__config}{system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Configure the XOSC32K external 32KHz oscillator clock source. 
+
+Configures the external 32KHz oscillator clock source with the given configuration settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em config} & XOSC32K configuration structure containing the new config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gacd16e7e13de08d55c028620d845a5cb5}\label{group__asfdoc__sam0__system__clock__group_gacd16e7e13de08d55c028620d845a5cb5}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_clock\_source\_xosc\_set\_config@{system\_clock\_source\_xosc\_set\_config}}
+\index{system\_clock\_source\_xosc\_set\_config@{system\_clock\_source\_xosc\_set\_config}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_clock\_source\_xosc\_set\_config()}{system\_clock\_source\_xosc\_set\_config()}}
+{\footnotesize\ttfamily void system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structsystem__clock__source__xosc__config}{system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Configure the external oscillator clock source. 
+
+Configures the external oscillator clock source with the given configuration settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em config} & External oscillator configuration structure containing the new config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gaa1b945c9deba13fe8640563de4e11a53}\label{group__asfdoc__sam0__system__clock__group_gaa1b945c9deba13fe8640563de4e11a53}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_chan\_disable@{system\_gclk\_chan\_disable}}
+\index{system\_gclk\_chan\_disable@{system\_gclk\_chan\_disable}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_chan\_disable()}{system\_gclk\_chan\_disable()}}
+{\footnotesize\ttfamily void system\+\_\+gclk\+\_\+chan\+\_\+disable (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Disables a Generic Clock that was previously enabled. 
+
+Stops the clock generation of a Generic Clock that was previously started via a call to \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga53e46ab144632c877a635ab70a7b51e1}{system\+\_\+gclk\+\_\+chan\+\_\+enable()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em channel} & Generic Clock channel to disable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga53e46ab144632c877a635ab70a7b51e1}\label{group__asfdoc__sam0__system__clock__group_ga53e46ab144632c877a635ab70a7b51e1}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_chan\_enable@{system\_gclk\_chan\_enable}}
+\index{system\_gclk\_chan\_enable@{system\_gclk\_chan\_enable}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_chan\_enable()}{system\_gclk\_chan\_enable()}}
+{\footnotesize\ttfamily void system\+\_\+gclk\+\_\+chan\+\_\+enable (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Enables a Generic Clock that was previously configured. 
+
+Starts the clock generation of a Generic Clock that was previously configured via a call to \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga0dfbe40e700101f619ddc5b4eb83d78b}{system\+\_\+gclk\+\_\+chan\+\_\+set\+\_\+config()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em channel} & Generic Clock channel to enable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga6683b93425b58d6c94b850419dd4c860}\label{group__asfdoc__sam0__system__clock__group_ga6683b93425b58d6c94b850419dd4c860}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_chan\_get\_hz@{system\_gclk\_chan\_get\_hz}}
+\index{system\_gclk\_chan\_get\_hz@{system\_gclk\_chan\_get\_hz}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_chan\_get\_hz()}{system\_gclk\_chan\_get\_hz()}}
+{\footnotesize\ttfamily uint32\+\_\+t system\+\_\+gclk\+\_\+chan\+\_\+get\+\_\+hz (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Retrieves the clock frequency of a Generic Clock channel. 
+
+Determines the clock frequency (in Hz) of a specified Generic Clock channel, used as a source to a device peripheral module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em channel} & Generic Clock Channel index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The frequency of the generic clock channel, in Hz. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga2467f733c23f6ad18e58a4f60deae0bb}\label{group__asfdoc__sam0__system__clock__group_ga2467f733c23f6ad18e58a4f60deae0bb}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_chan\_is\_enabled@{system\_gclk\_chan\_is\_enabled}}
+\index{system\_gclk\_chan\_is\_enabled@{system\_gclk\_chan\_is\_enabled}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_chan\_is\_enabled()}{system\_gclk\_chan\_is\_enabled()}}
+{\footnotesize\ttfamily bool system\+\_\+gclk\+\_\+chan\+\_\+is\+\_\+enabled (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Determins if the specified Generic Clock channel is enabled. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em channel} & Generic Clock Channel index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The enabled status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The Generic Clock channel is enabled \\
+\hline
+{\em false} & The Generic Clock channel is disabled \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga343a0b14dce2d7f2724382292ac1d8ef}\label{group__asfdoc__sam0__system__clock__group_ga343a0b14dce2d7f2724382292ac1d8ef}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_chan\_is\_locked@{system\_gclk\_chan\_is\_locked}}
+\index{system\_gclk\_chan\_is\_locked@{system\_gclk\_chan\_is\_locked}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_chan\_is\_locked()}{system\_gclk\_chan\_is\_locked()}}
+{\footnotesize\ttfamily bool system\+\_\+gclk\+\_\+chan\+\_\+is\+\_\+locked (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Determins if the specified Generic Clock channel is locked. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em channel} & Generic Clock Channel index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The lock status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The Generic Clock channel is locked \\
+\hline
+{\em false} & The Generic Clock channel is not locked \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga59856030d55e3e50091116ffe930a356}\label{group__asfdoc__sam0__system__clock__group_ga59856030d55e3e50091116ffe930a356}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_chan\_lock@{system\_gclk\_chan\_lock}}
+\index{system\_gclk\_chan\_lock@{system\_gclk\_chan\_lock}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_chan\_lock()}{system\_gclk\_chan\_lock()}}
+{\footnotesize\ttfamily void system\+\_\+gclk\+\_\+chan\+\_\+lock (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Locks a Generic Clock channel from further configuration writes. 
+
+Locks a generic clock channel from further configuration writes. It is only possible to unlock the channel configuration through a power on reset.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em channel} & Generic Clock channel to enable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga0dfbe40e700101f619ddc5b4eb83d78b}\label{group__asfdoc__sam0__system__clock__group_ga0dfbe40e700101f619ddc5b4eb83d78b}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_chan\_set\_config@{system\_gclk\_chan\_set\_config}}
+\index{system\_gclk\_chan\_set\_config@{system\_gclk\_chan\_set\_config}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_chan\_set\_config()}{system\_gclk\_chan\_set\_config()}}
+{\footnotesize\ttfamily void system\+\_\+gclk\+\_\+chan\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{channel,  }\item[{struct \mbox{\hyperlink{structsystem__gclk__chan__config}{system\+\_\+gclk\+\_\+chan\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Writes a Generic Clock configuration to the hardware module. 
+
+Writes out a given configuration of a Generic Clock configuration to the hardware module. If the clock is currently running, it will be stopped.
+
+\begin{DoxyNote}{Note}
+Once called the clock will not be running; to start the clock, call \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga53e46ab144632c877a635ab70a7b51e1}{system\+\_\+gclk\+\_\+chan\+\_\+enable()}} after configuring a clock channel.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em channel} & Generic Clock channel to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Configuration settings for the clock \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga98a280a22a780c05e87c676f8c651dc3}\label{group__asfdoc__sam0__system__clock__group_ga98a280a22a780c05e87c676f8c651dc3}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_gen\_disable@{system\_gclk\_gen\_disable}}
+\index{system\_gclk\_gen\_disable@{system\_gclk\_gen\_disable}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_gen\_disable()}{system\_gclk\_gen\_disable()}}
+{\footnotesize\ttfamily void system\+\_\+gclk\+\_\+gen\+\_\+disable (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{generator }\end{DoxyParamCaption})}
+
+
+
+Disables a Generic Clock Generator that was previously enabled. 
+
+Stops the clock generation of a Generic Clock Generator that was previously started via a call to \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2bad007fcf1f649a3919dcc72dccea8b}{system\+\_\+gclk\+\_\+gen\+\_\+enable()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em generator} & Generic Clock Generator index to disable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga2bad007fcf1f649a3919dcc72dccea8b}\label{group__asfdoc__sam0__system__clock__group_ga2bad007fcf1f649a3919dcc72dccea8b}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_gen\_enable@{system\_gclk\_gen\_enable}}
+\index{system\_gclk\_gen\_enable@{system\_gclk\_gen\_enable}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_gen\_enable()}{system\_gclk\_gen\_enable()}}
+{\footnotesize\ttfamily void system\+\_\+gclk\+\_\+gen\+\_\+enable (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{generator }\end{DoxyParamCaption})}
+
+
+
+Enables a Generic Clock Generator that was previously configured. 
+
+Starts the clock generation of a Generic Clock Generator that was previously configured via a call to \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacfd3360ccc8abb013f66b11ff44a5d0d}{system\+\_\+gclk\+\_\+gen\+\_\+set\+\_\+config()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em generator} & Generic Clock Generator index to enable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gaf5cd7b482ee14413084669c32eef84cb}\label{group__asfdoc__sam0__system__clock__group_gaf5cd7b482ee14413084669c32eef84cb}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_gen\_get\_hz@{system\_gclk\_gen\_get\_hz}}
+\index{system\_gclk\_gen\_get\_hz@{system\_gclk\_gen\_get\_hz}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_gen\_get\_hz()}{system\_gclk\_gen\_get\_hz()}}
+{\footnotesize\ttfamily uint32\+\_\+t system\+\_\+gclk\+\_\+gen\+\_\+get\+\_\+hz (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{generator }\end{DoxyParamCaption})}
+
+
+
+Retrieves the clock frequency of a Generic Clock generator. 
+
+Determines the clock frequency (in Hz) of a specified Generic Clock generator, used as a source to a Generic Clock Channel module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em generator} & Generic Clock Generator index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The frequency of the generic clock generator, in Hz. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga113af9a430f74e082401383109e4eefd}\label{group__asfdoc__sam0__system__clock__group_ga113af9a430f74e082401383109e4eefd}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_gen\_is\_enabled@{system\_gclk\_gen\_is\_enabled}}
+\index{system\_gclk\_gen\_is\_enabled@{system\_gclk\_gen\_is\_enabled}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_gen\_is\_enabled()}{system\_gclk\_gen\_is\_enabled()}}
+{\footnotesize\ttfamily bool system\+\_\+gclk\+\_\+gen\+\_\+is\+\_\+enabled (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{generator }\end{DoxyParamCaption})}
+
+
+
+Determins if the specified Generic Clock Generator is enabled. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em generator} & Generic Clock Generator index to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The enabled status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The Generic Clock Generator is enabled \\
+\hline
+{\em false} & The Generic Clock Generator is disabled \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_gacfd3360ccc8abb013f66b11ff44a5d0d}\label{group__asfdoc__sam0__system__clock__group_gacfd3360ccc8abb013f66b11ff44a5d0d}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_gen\_set\_config@{system\_gclk\_gen\_set\_config}}
+\index{system\_gclk\_gen\_set\_config@{system\_gclk\_gen\_set\_config}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_gen\_set\_config()}{system\_gclk\_gen\_set\_config()}}
+{\footnotesize\ttfamily void system\+\_\+gclk\+\_\+gen\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{generator,  }\item[{struct \mbox{\hyperlink{structsystem__gclk__gen__config}{system\+\_\+gclk\+\_\+gen\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Writes a Generic Clock Generator configuration to the hardware module. 
+
+Writes out a given configuration of a Generic Clock Generator configuration to the hardware module.
+
+\begin{DoxyNote}{Note}
+Changing the clock source on the fly (on a running generator) can take additional time if the clock source is configured to only run on-\/demand (ONDEMAND bit is set) and it is not currently running (no peripheral is requesting the clock source). In this case the GCLK will request the new clock while still keeping a request to the old clock source until the new clock source is ready.
+
+This function will not start a generator that is not already running; to start the generator, call \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2bad007fcf1f649a3919dcc72dccea8b}{system\+\_\+gclk\+\_\+gen\+\_\+enable()}} after configuring a generator.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em generator} & Generic Clock Generator index to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Configuration settings for the generator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__clock__group_ga2e73072514e6300d60f18039ca47bf09}\label{group__asfdoc__sam0__system__clock__group_ga2e73072514e6300d60f18039ca47bf09}} 
+\index{SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}!system\_gclk\_init@{system\_gclk\_init}}
+\index{system\_gclk\_init@{system\_gclk\_init}!SAM System Clock Management Driver (SYSTEM CLOCK)@{SAM System Clock Management Driver (SYSTEM CLOCK)}}
+\doxysubsubsection{\texorpdfstring{system\_gclk\_init()}{system\_gclk\_init()}}
+{\footnotesize\ttfamily void system\+\_\+gclk\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the GCLK driver. 
+
+Initializes the Generic Clock module, disabling and resetting all active Generic Clock Generators and Channels to their power-\/on default values. 

@@ -1,0 +1,146 @@
+In this use case, the I\textsuperscript{2}C will used and set up as follows\+:
+\begin{DoxyItemize}
+\item Master mode
+\item 100KHz operation speed
+\item Not operational in standby
+\item 65535 unknown bus state timeout value
+\end{DoxyItemize}\hypertarget{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_prereq}{}\doxysection{Prerequisites}\label{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_prereq}
+The device must be connected to an I\textsuperscript{2}C slave.\hypertarget{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_setup}{}\doxysection{Setup}\label{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_setup}
+\hypertarget{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_setup_code}{}\doxysubsection{Code}\label{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_setup_code}
+The following must be added to the user application\+:
+
+A sample buffer to write from, a reversed buffer to write from and length of buffers. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+Address of slave\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+Globally accessible module structure\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+Globally accessible packet\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+Function for setting up module\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+Callback function for write complete\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+Function for setting up the callback functionality of the driver\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+Add to user application {\ttfamily main()}\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+\hypertarget{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_setup_workflow}{}\doxysubsection{Workflow}\label{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_setup_workflow}
+
+\begin{DoxyEnumerate}
+\item Configure and enable module. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\begin{DoxyEnumerate}
+\item Create and initialize configuration structure. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Change settings in the configuration. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Initialize the module with the set configurations. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Enable the module. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}
+\item Configure callback functionality. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\begin{DoxyEnumerate}
+\item Register write complete callback. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Enable write complete callback. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}
+\item Create a packet to send to slave. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}\hypertarget{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_implementation}{}\doxysection{Implementation}\label{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_implementation}
+\hypertarget{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_code}{}\doxysubsection{Code}\label{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_code}
+Add to user application {\ttfamily main()}\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ \hypertarget{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_implementation_workflow}{}\doxysubsection{Workflow}\label{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_implementation_workflow}
+
+\begin{DoxyEnumerate}
+\item Write packet to slave. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Infinite while loop, while waiting for interaction with slave. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}\hypertarget{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_callback}{}\doxysection{Callback}\label{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_callback}
+Each time a packet is sent, the callback function will be called.\hypertarget{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_callback_workflow}{}\doxysubsection{Workflow}\label{asfdoc_sam0_sercom_i2c_master_callback_use_case_asfdoc_sam0_sercom_i2c_master_callback_use_case_callback_workflow}
+
+\begin{DoxyItemize}
+\item Write complete callback\+:
+\begin{DoxyEnumerate}
+\item Send every other packet in reversed order. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Write new packet to slave. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ 
+\end{DoxyEnumerate}
+\end{DoxyItemize}

@@ -1,0 +1,351 @@
+\hypertarget{samd20__xplained__pro_8h_source}{}\doxysection{samd20\+\_\+xplained\+\_\+pro.\+h}
+\label{samd20__xplained__pro_8h_source}\index{src/ASF/sam0/boards/samd20\_xplained\_pro/samd20\_xplained\_pro.h@{src/ASF/sam0/boards/samd20\_xplained\_pro/samd20\_xplained\_pro.h}}
+\mbox{\hyperlink{samd20__xplained__pro_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef SAMD20\_XPLAINED\_PRO\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define SAMD20\_XPLAINED\_PRO\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{conf__board_8h}{conf\_board.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{44 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{54 \textcolor{keywordtype}{void} system\_board\_init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define BOARD\_NAME                "{}SAMD20\_XPLAINED\_PRO"{}}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define BOARD\_FREQ\_SLCK\_XTAL      (32768U)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define BOARD\_FREQ\_SLCK\_BYPASS    (32768U)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define BOARD\_FREQ\_MAINCK\_XTAL    0 }\textcolor{comment}{/* Not Mounted */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define BOARD\_FREQ\_MAINCK\_BYPASS  0 }\textcolor{comment}{/* Not Mounted */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define BOARD\_MCK                 CHIP\_FREQ\_CPU\_MAX}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define BOARD\_OSC\_STARTUP\_US      15625}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define LED0\_PIN                  PIN\_PA14}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define LED0\_ACTIVE               false}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define LED0\_INACTIVE             !LED0\_ACTIVE}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define SW0\_PIN                   PIN\_PA15}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define SW0\_ACTIVE                false}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define SW0\_INACTIVE              !SW0\_ACTIVE}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define SW0\_EIC\_PIN               PIN\_PA15A\_EIC\_EXTINT15}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define SW0\_EIC\_MUX               MUX\_PA15A\_EIC\_EXTINT15}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define SW0\_EIC\_PINMUX            PINMUX\_PA15A\_EIC\_EXTINT15}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define SW0\_EIC\_LINE              15}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define LED\_0\_NAME                "{}LED0 (yellow)"{}}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define LED\_0\_PIN                 LED0\_PIN}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define LED\_0\_ACTIVE              LED0\_ACTIVE}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define LED\_0\_INACTIVE            LED0\_INACTIVE}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define LED0\_GPIO                 LED0\_PIN}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define LED\_COUNT                 1}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define BUTTON\_0\_NAME             "{}SW0"{}}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define BUTTON\_0\_PIN              SW0\_PIN}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define BUTTON\_0\_ACTIVE           SW0\_ACTIVE}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define BUTTON\_0\_INACTIVE         SW0\_INACTIVE}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define BUTTON\_0\_EIC\_PIN          SW0\_EIC\_PIN}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define BUTTON\_0\_EIC\_MUX          SW0\_EIC\_MUX}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define BUTTON\_0\_EIC\_PINMUX       SW0\_EIC\_PINMUX}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define BUTTON\_0\_EIC\_LINE         SW0\_EIC\_LINE}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define BUTTON\_COUNT 1}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define EXT1\_PIN\_3                PIN\_PB00}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define EXT1\_PIN\_4                PIN\_PB01}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define EXT1\_PIN\_5                PIN\_PB06}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define EXT1\_PIN\_6                PIN\_PB07}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define EXT1\_PIN\_7                PIN\_PB02}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define EXT1\_PIN\_8                PIN\_PB03}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define EXT1\_PIN\_9                PIN\_PB04}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define EXT1\_PIN\_10               PIN\_PB05}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define EXT1\_PIN\_11               PIN\_PA08}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define EXT1\_PIN\_12               PIN\_PA09}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define EXT1\_PIN\_13               PIN\_PB09}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define EXT1\_PIN\_14               PIN\_PB08}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define EXT1\_PIN\_15               PIN\_PA05}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define EXT1\_PIN\_16               PIN\_PA06}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define EXT1\_PIN\_17               PIN\_PA04}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define EXT1\_PIN\_18               PIN\_PA07}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define EXT1\_PIN\_ADC\_0            EXT1\_PIN\_3}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define EXT1\_PIN\_ADC\_1            EXT1\_PIN\_4}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define EXT1\_PIN\_GPIO\_0           EXT1\_PIN\_5}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define EXT1\_PIN\_GPIO\_1           EXT1\_PIN\_6}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define EXT1\_PIN\_PWM\_0            EXT1\_PIN\_7}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define EXT1\_PIN\_PWM\_1            EXT1\_PIN\_8}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define EXT1\_PIN\_IRQ              EXT1\_PIN\_9}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define EXT1\_PIN\_I2C\_SDA          EXT1\_PIN\_11}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define EXT1\_PIN\_I2C\_SCL          EXT1\_PIN\_12}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define EXT1\_PIN\_UART\_RX          EXT1\_PIN\_13}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define EXT1\_PIN\_UART\_TX          EXT1\_PIN\_14}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define EXT1\_PIN\_SPI\_SS\_1         EXT1\_PIN\_10}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define EXT1\_PIN\_SPI\_SS\_0         EXT1\_PIN\_15}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define EXT1\_PIN\_SPI\_MOSI         EXT1\_PIN\_16}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define EXT1\_PIN\_SPI\_MISO         EXT1\_PIN\_17}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define EXT1\_PIN\_SPI\_SCK          EXT1\_PIN\_18}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define EXT1\_ADC\_MODULE           ADC}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define EXT1\_ADC\_0\_CHANNEL        8}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define EXT1\_ADC\_0\_PIN            PIN\_PB00B\_ADC\_AIN8}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define EXT1\_ADC\_0\_MUX            MUX\_PB00B\_ADC\_AIN8}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define EXT1\_ADC\_0\_PINMUX         PINMUX\_PB00B\_ADC\_AIN8}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define EXT1\_ADC\_1\_CHANNEL        9}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define EXT1\_ADC\_1\_PIN            PIN\_PB01B\_ADC\_AIN9}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define EXT1\_ADC\_1\_MUX            MUX\_PB01B\_ADC\_AIN9}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define EXT1\_ADC\_1\_PINMUX         PINMUX\_PB01B\_ADC\_AIN9}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define EXT1\_PWM\_MODULE           TC6}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define EXT1\_PWM\_0\_CHANNEL        0}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define EXT1\_PWM\_0\_PIN            PIN\_PB02F\_TC6\_WO0}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define EXT1\_PWM\_0\_MUX            MUX\_PB02F\_TC6\_WO0}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define EXT1\_PWM\_0\_PINMUX         PINMUX\_PB02F\_TC6\_WO0}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define EXT1\_PWM\_1\_CHANNEL        1}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define EXT1\_PWM\_1\_PIN            PIN\_PB03F\_TC6\_WO1}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define EXT1\_PWM\_1\_MUX            MUX\_PB03F\_TC6\_WO1}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define EXT1\_PWM\_1\_PINMUX         PINMUX\_PB03F\_TC6\_WO1}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define EXT1\_IRQ\_MODULE           EIC}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define EXT1\_IRQ\_INPUT            4}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define EXT1\_IRQ\_PIN              PIN\_PB04A\_EIC\_EXTINT4}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define EXT1\_IRQ\_MUX              MUX\_PB04A\_EIC\_EXTINT4}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define EXT1\_IRQ\_PINMUX           PINMUX\_PB04A\_EIC\_EXTINT4}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define EXT1\_I2C\_MODULE              SERCOM2}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define EXT1\_I2C\_SERCOM\_PINMUX\_PAD0  PINMUX\_PA08D\_SERCOM2\_PAD0}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define EXT1\_I2C\_SERCOM\_PINMUX\_PAD1  PINMUX\_PA09D\_SERCOM2\_PAD1}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define EXT1\_UART\_MODULE              SERCOM4}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define EXT1\_UART\_SERCOM\_MUX\_SETTING  USART\_RX\_1\_TX\_0\_XCK\_1}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define EXT1\_UART\_SERCOM\_PINMUX\_PAD0  PINMUX\_PB08D\_SERCOM4\_PAD0}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define EXT1\_UART\_SERCOM\_PINMUX\_PAD1  PINMUX\_PB09D\_SERCOM4\_PAD1}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define EXT1\_UART\_SERCOM\_PINMUX\_PAD2  PINMUX\_UNUSED}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define EXT1\_UART\_SERCOM\_PINMUX\_PAD3  PINMUX\_UNUSED}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define EXT1\_SPI\_MODULE              SERCOM0}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define EXT1\_SPI\_SERCOM\_MUX\_SETTING  SPI\_SIGNAL\_MUX\_SETTING\_E}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#define EXT1\_SPI\_SERCOM\_PINMUX\_PAD0  PINMUX\_PA04D\_SERCOM0\_PAD0}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#define EXT1\_SPI\_SERCOM\_PINMUX\_PAD1  PINMUX\_PA05D\_SERCOM0\_PAD1}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#define EXT1\_SPI\_SERCOM\_PINMUX\_PAD2  PINMUX\_PA06D\_SERCOM0\_PAD2}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#define EXT1\_SPI\_SERCOM\_PINMUX\_PAD3  PINMUX\_PA07D\_SERCOM0\_PAD3}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define EXT2\_PIN\_3                PIN\_PA10}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define EXT2\_PIN\_4                PIN\_PA11}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define EXT2\_PIN\_5                PIN\_PA20}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define EXT2\_PIN\_6                PIN\_PA21}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define EXT2\_PIN\_7                PIN\_PA22}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define EXT2\_PIN\_8                PIN\_PA23}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define EXT2\_PIN\_9                PIN\_PB14}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define EXT2\_PIN\_10               PIN\_PB15}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define EXT2\_PIN\_11               PIN\_PA08}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define EXT2\_PIN\_12               PIN\_PA09}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define EXT2\_PIN\_13               PIN\_PB13}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define EXT2\_PIN\_14               PIN\_PB12}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#define EXT2\_PIN\_15               PIN\_PA17}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#define EXT2\_PIN\_16               PIN\_PA18}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define EXT2\_PIN\_17               PIN\_PA16}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define EXT2\_PIN\_18               PIN\_PA19}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#define EXT2\_PIN\_ADC\_0            EXT2\_PIN\_3}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#define EXT2\_PIN\_ADC\_1            EXT2\_PIN\_4}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#define EXT2\_PIN\_GPIO\_0           EXT2\_PIN\_5}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#define EXT2\_PIN\_GPIO\_1           EXT2\_PIN\_6}}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define EXT2\_PIN\_PWM\_0            EXT2\_PIN\_7}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define EXT2\_PIN\_PWM\_1            EXT2\_PIN\_8}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define EXT2\_PIN\_IRQ              EXT2\_PIN\_9}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define EXT2\_PIN\_I2C\_SDA          EXT2\_PIN\_11}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define EXT2\_PIN\_I2C\_SCL          EXT2\_PIN\_12}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define EXT2\_PIN\_UART\_RX          EXT2\_PIN\_13}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define EXT2\_PIN\_UART\_TX          EXT2\_PIN\_14}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define EXT2\_PIN\_SPI\_SS\_1         EXT2\_PIN\_10}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define EXT2\_PIN\_SPI\_SS\_0         EXT2\_PIN\_15}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#define EXT2\_PIN\_SPI\_MOSI         EXT2\_PIN\_16}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define EXT2\_PIN\_SPI\_MISO         EXT2\_PIN\_17}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#define EXT2\_PIN\_SPI\_SCK          EXT2\_PIN\_18}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define EXT2\_ADC\_MODULE           ADC}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define EXT2\_ADC\_0\_CHANNEL        18}}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define EXT2\_ADC\_0\_PIN            PIN\_PA10B\_ADC\_AIN18}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define EXT2\_ADC\_0\_MUX            MUX\_PA10B\_ADC\_AIN18}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define EXT2\_ADC\_0\_PINMUX         PINMUX\_PA10B\_ADC\_AIN18}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#define EXT2\_ADC\_1\_CHANNEL        19}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define EXT2\_ADC\_1\_PIN            PIN\_PA11B\_ADC\_AIN19}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define EXT2\_ADC\_1\_MUX            MUX\_PA11B\_ADC\_AIN19}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#define EXT2\_ADC\_1\_PINMUX         PINMUX\_PA11B\_ADC\_AIN19}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define EXT2\_PWM\_MODULE           TC4}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#define EXT2\_PWM\_0\_CHANNEL        0}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define EXT2\_PWM\_0\_PIN            PIN\_PA22F\_TC4\_WO0}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#define EXT2\_PWM\_0\_MUX            MUX\_PA22F\_TC4\_WO0}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define EXT2\_PWM\_0\_PINMUX         PINMUX\_PA22F\_TC4\_WO0}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#define EXT2\_PWM\_1\_CHANNEL        1}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define EXT2\_PWM\_1\_PIN            PIN\_PA23F\_TC4\_WO1}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#define EXT2\_PWM\_1\_MUX            MUX\_PA23F\_TC4\_WO1}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define EXT2\_PWM\_1\_PINMUX         PINMUX\_PA23F\_TC4\_WO1}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define EXT2\_IRQ\_MODULE           EIC}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define EXT2\_IRQ\_INPUT            14}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define EXT2\_IRQ\_PIN              PIN\_PB14A\_EIC\_EXTINT14}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define EXT2\_IRQ\_MUX              MUX\_PB14A\_EIC\_EXTINT14}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define EXT2\_IRQ\_PINMUX           PINMUX\_PB14A\_EIC\_EXTINT14}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define EXT2\_I2C\_MODULE              SERCOM2}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define EXT2\_I2C\_SERCOM\_PINMUX\_PAD0  PINMUX\_PA08D\_SERCOM2\_PAD0}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#define EXT2\_I2C\_SERCOM\_PINMUX\_PAD1  PINMUX\_PA09D\_SERCOM2\_PAD1}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define EXT2\_UART\_MODULE              SERCOM4}}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#define EXT2\_UART\_SERCOM\_MUX\_SETTING  USART\_RX\_1\_TX\_0\_XCK\_1}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#define EXT2\_UART\_SERCOM\_PINMUX\_PAD0  PINMUX\_PB12C\_SERCOM4\_PAD0}}
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#define EXT2\_UART\_SERCOM\_PINMUX\_PAD1  PINMUX\_PB13C\_SERCOM4\_PAD1}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define EXT2\_UART\_SERCOM\_PINMUX\_PAD2  PINMUX\_UNUSED}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#define EXT2\_UART\_SERCOM\_PINMUX\_PAD3  PINMUX\_UNUSED}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define EXT2\_SPI\_MODULE              SERCOM1}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define EXT2\_SPI\_SERCOM\_MUX\_SETTING  SPI\_SIGNAL\_MUX\_SETTING\_E}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define EXT2\_SPI\_SERCOM\_PINMUX\_PAD0  PINMUX\_PA16C\_SERCOM1\_PAD0}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define EXT2\_SPI\_SERCOM\_PINMUX\_PAD1  PINMUX\_PA17C\_SERCOM1\_PAD1}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define EXT2\_SPI\_SERCOM\_PINMUX\_PAD2  PINMUX\_PA18C\_SERCOM1\_PAD2}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define EXT2\_SPI\_SERCOM\_PINMUX\_PAD3  PINMUX\_PA19C\_SERCOM1\_PAD3}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define EXT3\_PIN\_3                PIN\_PA02}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define EXT3\_PIN\_4                PIN\_PA03}}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define EXT3\_PIN\_5                PIN\_PB30}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define EXT3\_PIN\_6                PIN\_PA15}}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define EXT3\_PIN\_7                PIN\_PA12}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define EXT3\_PIN\_8                PIN\_PA13}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define EXT3\_PIN\_9                PIN\_PA28}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define EXT3\_PIN\_10               PIN\_PA27}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define EXT3\_PIN\_11               PIN\_PA08}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define EXT3\_PIN\_12               PIN\_PA09}}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define EXT3\_PIN\_13               PIN\_PB11}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define EXT3\_PIN\_14               PIN\_PB10}}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define EXT3\_PIN\_15               PIN\_PB17}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define EXT3\_PIN\_16               PIN\_PB22}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define EXT3\_PIN\_17               PIN\_PB16}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define EXT3\_PIN\_18               PIN\_PB23}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define EXT3\_PIN\_ADC\_0            EXT3\_PIN\_3}}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#define EXT3\_PIN\_ADC\_1            EXT3\_PIN\_4}}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define EXT3\_PIN\_GPIO\_0           EXT3\_PIN\_5}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define EXT3\_PIN\_GPIO\_1           EXT3\_PIN\_6}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define EXT3\_PIN\_PWM\_0            EXT3\_PIN\_7}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define EXT3\_PIN\_PWM\_1            EXT3\_PIN\_8}}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#define EXT3\_PIN\_IRQ              EXT3\_PIN\_9}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define EXT3\_PIN\_I2C\_SDA          EXT3\_PIN\_11}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define EXT3\_PIN\_I2C\_SCL          EXT3\_PIN\_12}}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define EXT3\_PIN\_UART\_RX          EXT3\_PIN\_13}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define EXT3\_PIN\_UART\_TX          EXT3\_PIN\_14}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define EXT3\_PIN\_SPI\_SS\_1         EXT3\_PIN\_10}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define EXT3\_PIN\_SPI\_SS\_0         EXT3\_PIN\_15}}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define EXT3\_PIN\_SPI\_MOSI         EXT3\_PIN\_16}}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define EXT3\_PIN\_SPI\_MISO         EXT3\_PIN\_17}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define EXT3\_PIN\_SPI\_SCK          EXT3\_PIN\_18}}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define EXT3\_ADC\_MODULE           ADC}}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define EXT3\_ADC\_0\_CHANNEL        0}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#define EXT3\_ADC\_0\_PIN            PIN\_PA02B\_ADC\_AIN0}}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define EXT3\_ADC\_0\_MUX            MUX\_PA02B\_ADC\_AIN0}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define EXT3\_ADC\_0\_PINMUX         PINMUX\_PA02B\_ADC\_AIN0}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define EXT3\_ADC\_1\_CHANNEL        1}}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#define EXT3\_ADC\_1\_PIN            PIN\_PA03B\_ADC\_AIN1}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define EXT3\_ADC\_1\_MUX            MUX\_PA03B\_ADC\_AIN1}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define EXT3\_ADC\_1\_PINMUX         PINMUX\_PA03B\_ADC\_AIN1}}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define EXT3\_PWM\_MODULE           TC2}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define EXT3\_PWM\_0\_CHANNEL        0}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define EXT3\_PWM\_0\_PIN            PIN\_PA12E\_TC2\_WO0}}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#define EXT3\_PWM\_0\_MUX            MUX\_PA12E\_TC2\_WO0}}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define EXT3\_PWM\_0\_PINMUX         PINMUX\_PA12E\_TC2\_WO0}}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define EXT3\_PWM\_1\_CHANNEL        1}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define EXT3\_PWM\_1\_PIN            PIN\_PA13E\_TC2\_WO1}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#define EXT3\_PWM\_1\_MUX            MUX\_PA13E\_TC2\_WO1}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define EXT3\_PWM\_1\_PINMUX         PINMUX\_PA13E\_TC2\_WO1}}
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define EXT3\_IRQ\_MODULE           EIC}}
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define EXT3\_IRQ\_INPUT            8}}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define EXT3\_IRQ\_PIN              PIN\_PA28A\_EIC\_EXTINT8}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define EXT3\_IRQ\_MUX              MUX\_PA28A\_EIC\_EXTINT8}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define EXT3\_IRQ\_PINMUX           PINMUX\_PA28A\_EIC\_EXTINT8}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define EXT3\_I2C\_MODULE              SERCOM2}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define EXT3\_I2C\_SERCOM\_PINMUX\_PAD0  PINMUX\_PA08D\_SERCOM2\_PAD0}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define EXT3\_I2C\_SERCOM\_PINMUX\_PAD1  PINMUX\_PA09D\_SERCOM2\_PAD1}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define EXT3\_UART\_MODULE              SERCOM4}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define EXT3\_UART\_SERCOM\_MUX\_SETTING  USART\_RX\_3\_TX\_2\_XCK\_3}}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define EXT3\_UART\_SERCOM\_PINMUX\_PAD0  PINMUX\_UNUSED}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define EXT3\_UART\_SERCOM\_PINMUX\_PAD1  PINMUX\_UNUSED}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define EXT3\_UART\_SERCOM\_PINMUX\_PAD2  PINMUX\_PB10D\_SERCOM4\_PAD2}}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define EXT3\_UART\_SERCOM\_PINMUX\_PAD3  PINMUX\_PB11D\_SERCOM4\_PAD3}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define EXT3\_SPI\_MODULE              SERCOM5}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#define EXT3\_SPI\_SERCOM\_MUX\_SETTING  SPI\_SIGNAL\_MUX\_SETTING\_E}}
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#define EXT3\_SPI\_SERCOM\_PINMUX\_PAD0  PINMUX\_PB16C\_SERCOM5\_PAD0}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#define EXT3\_SPI\_SERCOM\_PINMUX\_PAD1  PINMUX\_PB17C\_SERCOM5\_PAD1}}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#define EXT3\_SPI\_SERCOM\_PINMUX\_PAD2  PINMUX\_PB22D\_SERCOM5\_PAD2}}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#define EXT3\_SPI\_SERCOM\_PINMUX\_PAD3  PINMUX\_PB23D\_SERCOM5\_PAD3}}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define EDBG\_GPIO0\_PIN            PIN\_PA27}}
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#define EDBG\_GPIO1\_PIN            PIN\_PA28}}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#define EDBG\_GPIO2\_PIN            PIN\_PA20}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define EDBG\_GPIO3\_PIN            PIN\_PA21}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define EDBG\_UART\_MODULE          -\/1 }\textcolor{comment}{/* Not available on this board */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define EDBG\_UART\_RX\_PIN          -\/1 }\textcolor{comment}{/* Not available on this board */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define EDBG\_UART\_RX\_MUX          -\/1 }\textcolor{comment}{/* Not available on this board */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define EDBG\_UART\_RX\_PINMUX       -\/1 }\textcolor{comment}{/* Not available on this board */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define EDBG\_UART\_RX\_SERCOM\_PAD   -\/1 }\textcolor{comment}{/* Not available on this board */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#define EDBG\_UART\_TX\_PIN          -\/1 }\textcolor{comment}{/* Not available on this board */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define EDBG\_UART\_TX\_MUX          -\/1 }\textcolor{comment}{/* Not available on this board */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define EDBG\_UART\_TX\_PINMUX       -\/1 }\textcolor{comment}{/* Not available on this board */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#define EDBG\_UART\_TX\_SERCOM\_PAD   -\/1 }\textcolor{comment}{/* Not available on this board */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#define EDBG\_I2C\_MODULE              SERCOM2}}
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#define EDBG\_I2C\_SERCOM\_PINMUX\_PAD0  PINMUX\_PA08D\_SERCOM2\_PAD0}}
+\DoxyCodeLine{490 \textcolor{preprocessor}{\#define EDBG\_I2C\_SERCOM\_PINMUX\_PAD1  PINMUX\_PA09D\_SERCOM2\_PAD1}}
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#define EDBG\_SPI\_MODULE              SERCOM5}}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#define EDBG\_SPI\_SERCOM\_MUX\_SETTING  SPI\_SIGNAL\_MUX\_SETTING\_E}}
+\DoxyCodeLine{498 \textcolor{preprocessor}{\#define EDBG\_SPI\_SERCOM\_PINMUX\_PAD0  PINMUX\_PB16C\_SERCOM5\_PAD0}}
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define EDBG\_SPI\_SERCOM\_PINMUX\_PAD1  PINMUX\_PB31D\_SERCOM5\_PAD1}}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#define EDBG\_SPI\_SERCOM\_PINMUX\_PAD2  PINMUX\_PB22D\_SERCOM5\_PAD2}}
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#define EDBG\_SPI\_SERCOM\_PINMUX\_PAD3  PINMUX\_PB23D\_SERCOM5\_PAD3}}
+\DoxyCodeLine{507 \textcolor{preprocessor}{\#define EDBG\_CDC\_MODULE              SERCOM3}}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#define EDBG\_CDC\_SERCOM\_MUX\_SETTING  USART\_RX\_3\_TX\_2\_XCK\_3}}
+\DoxyCodeLine{509 \textcolor{preprocessor}{\#define EDBG\_CDC\_SERCOM\_PINMUX\_PAD0  PINMUX\_UNUSED}}
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#define EDBG\_CDC\_SERCOM\_PINMUX\_PAD1  PINMUX\_UNUSED}}
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#define EDBG\_CDC\_SERCOM\_PINMUX\_PAD2  PINMUX\_PA24C\_SERCOM3\_PAD2}}
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#define EDBG\_CDC\_SERCOM\_PINMUX\_PAD3  PINMUX\_PA25C\_SERCOM3\_PAD3}}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#define AT86RFX\_SPI                  EXT1\_SPI\_MODULE}}
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#define AT86RFX\_RST\_PIN              EXT1\_PIN\_7}}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#define AT86RFX\_MISC\_PIN             EXT1\_PIN\_12}}
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#define AT86RFX\_IRQ\_PIN              EXT1\_PIN\_9}}
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#define AT86RFX\_SLP\_PIN              EXT1\_PIN\_10}}
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#define AT86RFX\_SPI\_CS               EXT1\_PIN\_15}}
+\DoxyCodeLine{527 \textcolor{preprocessor}{\#define AT86RFX\_SPI\_MOSI             EXT1\_PIN\_16}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#define AT86RFX\_SPI\_MISO             EXT1\_PIN\_17}}
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#define AT86RFX\_SPI\_SCK              EXT1\_PIN\_18}}
+\DoxyCodeLine{530 \textcolor{preprocessor}{\#define AT86RFX\_CSD                  EXT1\_PIN\_5}}
+\DoxyCodeLine{531 \textcolor{preprocessor}{\#define AT86RFX\_CPS                  EXT1\_PIN\_8}}
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#define LED0 LED0\_PIN}}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#define AT86RFX\_SPI\_SERCOM\_MUX\_SETTING   EXT1\_SPI\_SERCOM\_MUX\_SETTING}}
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#define AT86RFX\_SPI\_SERCOM\_PINMUX\_PAD0   EXT1\_SPI\_SERCOM\_PINMUX\_PAD0}}
+\DoxyCodeLine{536 \textcolor{preprocessor}{\#define AT86RFX\_SPI\_SERCOM\_PINMUX\_PAD1   PINMUX\_UNUSED}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{\#define AT86RFX\_SPI\_SERCOM\_PINMUX\_PAD2   EXT1\_SPI\_SERCOM\_PINMUX\_PAD2}}
+\DoxyCodeLine{538 \textcolor{preprocessor}{\#define AT86RFX\_SPI\_SERCOM\_PINMUX\_PAD3   EXT1\_SPI\_SERCOM\_PINMUX\_PAD3}}
+\DoxyCodeLine{539 }
+\DoxyCodeLine{540 \textcolor{preprocessor}{\#define AT86RFX\_IRQ\_CHAN       EXT1\_IRQ\_INPUT}}
+\DoxyCodeLine{541 \textcolor{preprocessor}{\#define AT86RFX\_IRQ\_PINMUX     EXT1\_IRQ\_PINMUX}}
+\DoxyCodeLine{542 }
+\DoxyCodeLine{543 }
+\DoxyCodeLine{545 \textcolor{preprocessor}{\#define ENABLE\_TRX\_IRQ()      \(\backslash\)}}
+\DoxyCodeLine{546 \textcolor{preprocessor}{        extint\_chan\_enable\_callback(AT86RFX\_IRQ\_CHAN, EXTINT\_CALLBACK\_TYPE\_DETECT)}}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{549 \textcolor{preprocessor}{\#define DISABLE\_TRX\_IRQ()     \(\backslash\)}}
+\DoxyCodeLine{550 \textcolor{preprocessor}{        extint\_chan\_disable\_callback(AT86RFX\_IRQ\_CHAN, EXTINT\_CALLBACK\_TYPE\_DETECT)}}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{553 \textcolor{preprocessor}{\#define CLEAR\_TRX\_IRQ()       \(\backslash\)}}
+\DoxyCodeLine{554 \textcolor{preprocessor}{        extint\_chan\_clear\_detected(AT86RFX\_IRQ\_CHAN);}}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556 \textcolor{comment}{/*}}
+\DoxyCodeLine{557 \textcolor{comment}{ * This macro saves the trx interrupt status and disables the trx interrupt.}}
+\DoxyCodeLine{558 \textcolor{comment}{ */}}
+\DoxyCodeLine{559 \textcolor{preprocessor}{\#define ENTER\_TRX\_REGION()   \(\backslash\)}}
+\DoxyCodeLine{560 \textcolor{preprocessor}{        \{ extint\_chan\_disable\_callback(AT86RFX\_IRQ\_CHAN, EXTINT\_CALLBACK\_TYPE\_DETECT)}}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562 \textcolor{comment}{/*}}
+\DoxyCodeLine{563 \textcolor{comment}{ *  This macro restores the transceiver interrupt status}}
+\DoxyCodeLine{564 \textcolor{comment}{ */}}
+\DoxyCodeLine{565 \textcolor{preprocessor}{\#define LEAVE\_TRX\_REGION()   \(\backslash\)}}
+\DoxyCodeLine{566 \textcolor{preprocessor}{        extint\_chan\_enable\_callback(AT86RFX\_IRQ\_CHAN, EXTINT\_CALLBACK\_TYPE\_DETECT); \}}}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{575 \textcolor{preprocessor}{\#define LED\_Off(led\_gpio)     port\_pin\_set\_output\_level(led\_gpio,true)}}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{584 \textcolor{preprocessor}{\#define LED\_On(led\_gpio)      port\_pin\_set\_output\_level(led\_gpio,false)}}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{593 \textcolor{preprocessor}{\#define LED\_Toggle(led\_gpio)  port\_pin\_toggle\_output\_level(led\_gpio)}}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{596 \}}
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{598 }
+\DoxyCodeLine{599 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* SAMD20\_XPLAINED\_PRO\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

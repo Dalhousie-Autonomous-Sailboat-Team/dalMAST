@@ -1,0 +1,82 @@
+In this use case, the Watchdog module is configured for\+: \begin{DoxyItemize}
+\item System reset after 4096 clocks of the Watchdog generic clock \item Always on mode disabled \item Early warning period of 2048 clocks of the Watchdog generic clock\end{DoxyItemize}
+This use case sets up the Watchdog to force a system reset after every 4096 clocks of the Watchdog\textquotesingle{}s Generic Clock channel, with an Early Warning callback being generated every 2048 clocks. Each time the Early Warning interrupt fires the board LED is turned on, and each time the device resets the board LED is turned off, giving a periodic flashing pattern.\hypertarget{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_setup}{}\doxysection{Setup}\label{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_setup}
+\hypertarget{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_setup_prereq}{}\doxysubsection{Prerequisites}\label{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_setup_prereq}
+There are no special setup requirements for this use-\/case.\hypertarget{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_setup_code}{}\doxysubsection{Code}\label{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_setup_code}
+Copy-\/paste the following setup code to your user application\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+Add to user application initialization (typically the start of {\ttfamily main()})\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+\hypertarget{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_setup_flow}{}\doxysubsection{Workflow}\label{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_setup_flow}
+
+\begin{DoxyEnumerate}
+\item Configure and enable the Watchdog driver.
+\begin{DoxyEnumerate}
+\item Create a Watchdog module configuration struct, which can be filled out to adjust the configuration of the Watchdog. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Initialize the Watchdog configuration struct with the module\textquotesingle{}s default values. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ \begin{DoxyNote}{Note}
+This should always be performed before using the configuration struct to ensure that all values are initialized to known default settings.
+\end{DoxyNote}
+
+\item Adjust the configuration struct to set the timeout and early warning periods of the Watchdog. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Sets up the WDT hardware module with the requested settings. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}
+\item Register and enable the Early Warning callback handler.
+\begin{DoxyEnumerate}
+\item Register the user-\/provided Early Warning callback function with the driver, so that it will be run when an Early Warning condition occurs. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Enable the Early Warning callback so that it will generate callbacks. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case}{}\doxysection{Use Case}\label{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case}
+\hypertarget{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_code}{}\doxysubsection{Code}\label{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_code}
+Copy-\/paste the following code to your user application\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+\hypertarget{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_main}{}\doxysubsection{Workflow}\label{asfdoc_sam0_wdt_callback_use_case_asfdoc_sam0_wdt_callback_use_case_main}
+
+\begin{DoxyEnumerate}
+\item Turn off the board LED when the application starts. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Enable global interrupts so that callbacks can be generated. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Enter an infinite loop to hold the main program logic. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ 
+\end{DoxyEnumerate}

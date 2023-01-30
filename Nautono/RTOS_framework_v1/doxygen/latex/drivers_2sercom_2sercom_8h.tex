@@ -1,0 +1,114 @@
+\hypertarget{drivers_2sercom_2sercom_8h}{}\doxysection{src/\+ASF/sam0/drivers/sercom/sercom.h File Reference}
+\label{drivers_2sercom_2sercom_8h}\index{src/ASF/sam0/drivers/sercom/sercom.h@{src/ASF/sam0/drivers/sercom/sercom.h}}
+
+
+SAM Serial Peripheral Interface Driver.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$system.\+h$>$}\newline
+{\ttfamily \#include $<$clock.\+h$>$}\newline
+{\ttfamily \#include $<$system\+\_\+interrupt.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sercom\+\_\+pinout.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{drivers_2sercom_2sercom_8h_a9eeed6dd9c0678cef4fb6124dc460a6c}\label{drivers_2sercom_2sercom_8h_a9eeed6dd9c0678cef4fb6124dc460a6c}} 
+\#define {\bfseries SERCOM\+\_\+\+GCLK\+\_\+\+ID}~SERCOM0\+\_\+\+GCLK\+\_\+\+ID\+\_\+\+SLOW
+\item 
+\mbox{\Hypertarget{drivers_2sercom_2sercom_8h_aba6c235d990ad389059524e6ea37c65f}\label{drivers_2sercom_2sercom_8h_aba6c235d990ad389059524e6ea37c65f}} 
+\#define {\bfseries FEATURE\+\_\+\+SERCOM\+\_\+\+SYNCBUSY\+\_\+\+SCHEME\+\_\+\+VERSION\+\_\+1}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a05f9e8b65fff0120fce38ee4ddd40386}{sercom\+\_\+asynchronous\+\_\+operation\+\_\+mode}} \{ {\bfseries SERCOM\+\_\+\+ASYNC\+\_\+\+OPERATION\+\_\+\+MODE\+\_\+\+ARITHMETIC} = 0
+, {\bfseries SERCOM\+\_\+\+ASYNC\+\_\+\+OPERATION\+\_\+\+MODE\+\_\+\+FRACTIONAL}
+ \}
+\begin{DoxyCompactList}\small\item\em sercom asynchronous operation mode \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a6936fb2a7711cb55dc717256bbcacb12}{sercom\+\_\+asynchronous\+\_\+sample\+\_\+num}} \{ {\bfseries SERCOM\+\_\+\+ASYNC\+\_\+\+SAMPLE\+\_\+\+NUM\+\_\+3} = 3
+, {\bfseries SERCOM\+\_\+\+ASYNC\+\_\+\+SAMPLE\+\_\+\+NUM\+\_\+8} = 8
+, {\bfseries SERCOM\+\_\+\+ASYNC\+\_\+\+SAMPLE\+\_\+\+NUM\+\_\+16} = 16
+ \}
+\begin{DoxyCompactList}\small\item\em sercom asynchronous samples per bit \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a11de7a16f2be1223a140bfe1cd7bddca}{sercom\+\_\+set\+\_\+gclk\+\_\+generator}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} generator\+\_\+source, const bool force\+\_\+change)
+\begin{DoxyCompactList}\small\item\em Set GCLK channel to generator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{drivers_2sercom_2sercom_8h_a85b318b3d7f70a86ff498954d9ef5f38}\label{drivers_2sercom_2sercom_8h_a85b318b3d7f70a86ff498954d9ef5f38}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries \+\_\+sercom\+\_\+get\+\_\+sync\+\_\+baud\+\_\+val} (const uint32\+\_\+t baudrate, const uint32\+\_\+t external\+\_\+clock, uint16\+\_\+t $\ast$const baudval)
+\item 
+\mbox{\Hypertarget{drivers_2sercom_2sercom_8h_a7cdb50f562d8dd6f57b479d411d749f8}\label{drivers_2sercom_2sercom_8h_a7cdb50f562d8dd6f57b479d411d749f8}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries \+\_\+sercom\+\_\+get\+\_\+async\+\_\+baud\+\_\+val} (const uint32\+\_\+t baudrate, const uint32\+\_\+t peripheral\+\_\+clock, uint16\+\_\+t $\ast$const baudval, enum \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a05f9e8b65fff0120fce38ee4ddd40386}{sercom\+\_\+asynchronous\+\_\+operation\+\_\+mode}} mode, enum \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a6936fb2a7711cb55dc717256bbcacb12}{sercom\+\_\+asynchronous\+\_\+sample\+\_\+num}} sample\+\_\+num)
+\item 
+\mbox{\Hypertarget{drivers_2sercom_2sercom_8h_aed7ed6bae9edba2fec050eaaf6ab1b7c}\label{drivers_2sercom_2sercom_8h_aed7ed6bae9edba2fec050eaaf6ab1b7c}} 
+uint32\+\_\+t {\bfseries \+\_\+sercom\+\_\+get\+\_\+default\+\_\+pad} (\mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const sercom\+\_\+module, const uint8\+\_\+t pad)
+\item 
+\mbox{\Hypertarget{drivers_2sercom_2sercom_8h_af3213138e698446dc57b4844114ce93e}\label{drivers_2sercom_2sercom_8h_af3213138e698446dc57b4844114ce93e}} 
+uint8\+\_\+t {\bfseries \+\_\+sercom\+\_\+get\+\_\+sercom\+\_\+inst\+\_\+index} (\mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const sercom\+\_\+instance)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM Serial Peripheral Interface Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{drivers_2sercom_2sercom_8h_a05f9e8b65fff0120fce38ee4ddd40386}\label{drivers_2sercom_2sercom_8h_a05f9e8b65fff0120fce38ee4ddd40386}} 
+\index{sercom.h@{sercom.h}!sercom\_asynchronous\_operation\_mode@{sercom\_asynchronous\_operation\_mode}}
+\index{sercom\_asynchronous\_operation\_mode@{sercom\_asynchronous\_operation\_mode}!sercom.h@{sercom.h}}
+\doxysubsubsection{\texorpdfstring{sercom\_asynchronous\_operation\_mode}{sercom\_asynchronous\_operation\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a05f9e8b65fff0120fce38ee4ddd40386}{sercom\+\_\+asynchronous\+\_\+operation\+\_\+mode}}}
+
+
+
+sercom asynchronous operation mode 
+
+Select sercom asynchronous operation mode \mbox{\Hypertarget{drivers_2sercom_2sercom_8h_a6936fb2a7711cb55dc717256bbcacb12}\label{drivers_2sercom_2sercom_8h_a6936fb2a7711cb55dc717256bbcacb12}} 
+\index{sercom.h@{sercom.h}!sercom\_asynchronous\_sample\_num@{sercom\_asynchronous\_sample\_num}}
+\index{sercom\_asynchronous\_sample\_num@{sercom\_asynchronous\_sample\_num}!sercom.h@{sercom.h}}
+\doxysubsubsection{\texorpdfstring{sercom\_asynchronous\_sample\_num}{sercom\_asynchronous\_sample\_num}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a6936fb2a7711cb55dc717256bbcacb12}{sercom\+\_\+asynchronous\+\_\+sample\+\_\+num}}}
+
+
+
+sercom asynchronous samples per bit 
+
+Select number of samples per bit 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{drivers_2sercom_2sercom_8h_a11de7a16f2be1223a140bfe1cd7bddca}\label{drivers_2sercom_2sercom_8h_a11de7a16f2be1223a140bfe1cd7bddca}} 
+\index{sercom.h@{sercom.h}!sercom\_set\_gclk\_generator@{sercom\_set\_gclk\_generator}}
+\index{sercom\_set\_gclk\_generator@{sercom\_set\_gclk\_generator}!sercom.h@{sercom.h}}
+\doxysubsubsection{\texorpdfstring{sercom\_set\_gclk\_generator()}{sercom\_set\_gclk\_generator()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} sercom\+\_\+set\+\_\+gclk\+\_\+generator (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}}}]{generator\+\_\+source,  }\item[{const bool}]{force\+\_\+change }\end{DoxyParamCaption})}
+
+
+
+Set GCLK channel to generator. 
+
+This will set the appropriate GCLK channel to the requested GCLK generator. This will set the generator for all SERCOM instances, and the user will thus only be able to set the same generator that has previously been set, if any.
+
+After the generator has been set the first time, the generator can be changed using the {\ttfamily force\+\_\+change} flag.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em generator\+\_\+source} & The generator to use for SERCOM. \\
+\hline
+\mbox{\texttt{ in}}  & {\em force\+\_\+change} & Force change the generator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code indicating the GCLK generator change operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If the generator update request was successful. \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+ALREADY\+\_\+\+INITIALIZED} & If a generator was already configured and the new configuration was not forced. \\
+\hline
+\end{DoxyRetVals}

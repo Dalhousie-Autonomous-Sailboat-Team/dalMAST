@@ -1,0 +1,62 @@
+\hypertarget{pac_8h_source}{}\doxysection{pac.\+h}
+\label{pac_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/pac.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/pac.h}}
+\mbox{\hyperlink{pac_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_PAC\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_PAC\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define PAC\_U2211}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_PAC                     0x101}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PAC\_WPCLR : (PAC Offset: 0x0) (R/W 32) Write Protection Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint32\_t :1;               }
+\DoxyCodeLine{54     uint32\_t \mbox{\hyperlink{union_p_a_c___w_p_c_l_r___type_a42acefc6d2e1ef7543c8ae0a576d5c38}{WP}}:31;            }
+\DoxyCodeLine{55   \} bit;                       }
+\DoxyCodeLine{56   uint32\_t \mbox{\hyperlink{union_p_a_c___w_p_c_l_r___type_abf6a3de8a11a07e019ed6425869104eb}{reg}};                }
+\DoxyCodeLine{57 \} \mbox{\hyperlink{union_p_a_c___w_p_c_l_r___type}{PAC\_WPCLR\_Type}};}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define PAC\_WPCLR\_OFFSET            0x0          }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define PAC\_WPCLR\_RESETVALUE        0x00000000ul }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define PAC\_WPCLR\_WP\_Pos            1            }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define PAC\_WPCLR\_WP\_Msk            (0x7FFFFFFFul << PAC\_WPCLR\_WP\_Pos)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define PAC\_WPCLR\_WP(value)         ((PAC\_WPCLR\_WP\_Msk \& ((value) << PAC\_WPCLR\_WP\_Pos)))}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define PAC\_WPCLR\_MASK              0xFFFFFFFEul }}
+\DoxyCodeLine{68 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PAC\_WPSET : (PAC Offset: 0x4) (R/W 32) Write Protection Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{71   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{72     uint32\_t :1;               }
+\DoxyCodeLine{73     uint32\_t \mbox{\hyperlink{union_p_a_c___w_p_s_e_t___type_a955695b7efeeb12957b3d548de0d4de1}{WP}}:31;            }
+\DoxyCodeLine{74   \} bit;                       }
+\DoxyCodeLine{75   uint32\_t \mbox{\hyperlink{union_p_a_c___w_p_s_e_t___type_a00e65caab13cca7d3c7021da2c9187ce}{reg}};                }
+\DoxyCodeLine{76 \} \mbox{\hyperlink{union_p_a_c___w_p_s_e_t___type}{PAC\_WPSET\_Type}};}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define PAC\_WPSET\_OFFSET            0x4          }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define PAC\_WPSET\_RESETVALUE        0x00000000ul }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define PAC\_WPSET\_WP\_Pos            1            }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define PAC\_WPSET\_WP\_Msk            (0x7FFFFFFFul << PAC\_WPSET\_WP\_Pos)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define PAC\_WPSET\_WP(value)         ((PAC\_WPSET\_WP\_Msk \& ((value) << PAC\_WPSET\_WP\_Pos)))}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define PAC\_WPSET\_MASK              0xFFFFFFFEul }}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{89 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{90   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_a_c___w_p_c_l_r___type}{PAC\_WPCLR\_Type}}            \mbox{\hyperlink{struct_pac_a2776aa09c5a636b9f10b31f7eac99d71}{WPCLR}};       }
+\DoxyCodeLine{91   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_a_c___w_p_s_e_t___type}{PAC\_WPSET\_Type}}            \mbox{\hyperlink{struct_pac_a11a15f45d98fd7ea1cd0b1ef065a5fb5}{WPSET}};       }
+\DoxyCodeLine{92 \} \mbox{\hyperlink{struct_pac}{Pac}};}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_PAC\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

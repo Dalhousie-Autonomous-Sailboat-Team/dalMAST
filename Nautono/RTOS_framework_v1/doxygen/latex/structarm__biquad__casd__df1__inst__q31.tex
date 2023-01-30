@@ -1,0 +1,57 @@
+\hypertarget{structarm__biquad__casd__df1__inst__q31}{}\doxysection{arm\+\_\+biquad\+\_\+casd\+\_\+df1\+\_\+inst\+\_\+q31 Struct Reference}
+\label{structarm__biquad__casd__df1__inst__q31}\index{arm\_biquad\_casd\_df1\_inst\_q31@{arm\_biquad\_casd\_df1\_inst\_q31}}
+
+
+Instance structure for the Q31 Biquad cascade filter.  
+
+
+
+
+{\ttfamily \#include $<$arm\+\_\+math.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structarm__biquad__casd__df1__inst__q31_a2c2b579f1df1d8273a5d9d945c27e1b2}{num\+Stages}}
+\item 
+q31\+\_\+t $\ast$ \mbox{\hyperlink{structarm__biquad__casd__df1__inst__q31_a5dcf4727f58eb4e8e8b392508d8657bb}{p\+State}}
+\item 
+q31\+\_\+t $\ast$ \mbox{\hyperlink{structarm__biquad__casd__df1__inst__q31_aa62366c632f3b5305086f841f079dbd2}{p\+Coeffs}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structarm__biquad__casd__df1__inst__q31_a636c7fbe09ec4bef0bc0a4b4e2151cbe}{post\+Shift}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Instance structure for the Q31 Biquad cascade filter. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structarm__biquad__casd__df1__inst__q31_a2c2b579f1df1d8273a5d9d945c27e1b2}\label{structarm__biquad__casd__df1__inst__q31_a2c2b579f1df1d8273a5d9d945c27e1b2}} 
+\index{arm\_biquad\_casd\_df1\_inst\_q31@{arm\_biquad\_casd\_df1\_inst\_q31}!numStages@{numStages}}
+\index{numStages@{numStages}!arm\_biquad\_casd\_df1\_inst\_q31@{arm\_biquad\_casd\_df1\_inst\_q31}}
+\doxysubsubsection{\texorpdfstring{numStages}{numStages}}
+{\footnotesize\ttfamily uint32\+\_\+t arm\+\_\+biquad\+\_\+casd\+\_\+df1\+\_\+inst\+\_\+q31\+::num\+Stages}
+
+number of 2nd order stages in the filter. Overall order is 2$\ast$num\+Stages. \mbox{\Hypertarget{structarm__biquad__casd__df1__inst__q31_aa62366c632f3b5305086f841f079dbd2}\label{structarm__biquad__casd__df1__inst__q31_aa62366c632f3b5305086f841f079dbd2}} 
+\index{arm\_biquad\_casd\_df1\_inst\_q31@{arm\_biquad\_casd\_df1\_inst\_q31}!pCoeffs@{pCoeffs}}
+\index{pCoeffs@{pCoeffs}!arm\_biquad\_casd\_df1\_inst\_q31@{arm\_biquad\_casd\_df1\_inst\_q31}}
+\doxysubsubsection{\texorpdfstring{pCoeffs}{pCoeffs}}
+{\footnotesize\ttfamily q31\+\_\+t$\ast$ arm\+\_\+biquad\+\_\+casd\+\_\+df1\+\_\+inst\+\_\+q31\+::p\+Coeffs}
+
+Points to the array of coefficients. The array is of length 5$\ast$num\+Stages. \mbox{\Hypertarget{structarm__biquad__casd__df1__inst__q31_a636c7fbe09ec4bef0bc0a4b4e2151cbe}\label{structarm__biquad__casd__df1__inst__q31_a636c7fbe09ec4bef0bc0a4b4e2151cbe}} 
+\index{arm\_biquad\_casd\_df1\_inst\_q31@{arm\_biquad\_casd\_df1\_inst\_q31}!postShift@{postShift}}
+\index{postShift@{postShift}!arm\_biquad\_casd\_df1\_inst\_q31@{arm\_biquad\_casd\_df1\_inst\_q31}}
+\doxysubsubsection{\texorpdfstring{postShift}{postShift}}
+{\footnotesize\ttfamily uint8\+\_\+t arm\+\_\+biquad\+\_\+casd\+\_\+df1\+\_\+inst\+\_\+q31\+::post\+Shift}
+
+Additional shift, in bits, applied to each output sample. \mbox{\Hypertarget{structarm__biquad__casd__df1__inst__q31_a5dcf4727f58eb4e8e8b392508d8657bb}\label{structarm__biquad__casd__df1__inst__q31_a5dcf4727f58eb4e8e8b392508d8657bb}} 
+\index{arm\_biquad\_casd\_df1\_inst\_q31@{arm\_biquad\_casd\_df1\_inst\_q31}!pState@{pState}}
+\index{pState@{pState}!arm\_biquad\_casd\_df1\_inst\_q31@{arm\_biquad\_casd\_df1\_inst\_q31}}
+\doxysubsubsection{\texorpdfstring{pState}{pState}}
+{\footnotesize\ttfamily q31\+\_\+t$\ast$ arm\+\_\+biquad\+\_\+casd\+\_\+df1\+\_\+inst\+\_\+q31\+::p\+State}
+
+Points to the array of state coefficients. The array is of length 4$\ast$num\+Stages. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/thirdparty/\+CMSIS/\+Include/arm\+\_\+math.\+h\end{DoxyCompactItemize}

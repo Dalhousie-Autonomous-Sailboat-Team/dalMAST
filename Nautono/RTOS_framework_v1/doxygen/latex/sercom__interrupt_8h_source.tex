@@ -1,0 +1,37 @@
+\hypertarget{sercom__interrupt_8h_source}{}\doxysection{sercom\+\_\+interrupt.\+h}
+\label{sercom__interrupt_8h_source}\index{src/ASF/sam0/drivers/sercom/sercom\_interrupt.h@{src/ASF/sam0/drivers/sercom/sercom\_interrupt.h}}
+\mbox{\hyperlink{sercom__interrupt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef SERCOM\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define SERCOM\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2sercom_8h}{sercom.h}}"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{system__interrupt_8h}{system\_interrupt.h}}>}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{43 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{/* Look-\/up table for device instances */}}
+\DoxyCodeLine{47 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} *\_sercom\_instances[\mbox{\hyperlink{samd20e14_8h_a75f7d8cff25db3f1353efb6f7990fce5}{SERCOM\_INST\_NUM}}];}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} void (*sercom\_handler\_t)(uint8\_t instance);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} \_sercom\_get\_interrupt\_vector(}
+\DoxyCodeLine{52         \mbox{\hyperlink{union_sercom}{Sercom}} *\textcolor{keyword}{const} sercom\_instance);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keywordtype}{void} \_sercom\_set\_handler(}
+\DoxyCodeLine{55         \textcolor{keyword}{const} uint8\_t instance,}
+\DoxyCodeLine{56         \textcolor{keyword}{const} sercom\_handler\_t interrupt\_handler);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{59 \}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SERCOM\_INTERRUPT\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

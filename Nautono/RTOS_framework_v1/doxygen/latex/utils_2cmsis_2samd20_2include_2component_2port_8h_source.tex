@@ -1,0 +1,330 @@
+\hypertarget{utils_2cmsis_2samd20_2include_2component_2port_8h_source}{}\doxysection{port.\+h}
+\label{utils_2cmsis_2samd20_2include_2component_2port_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/port.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/port.h}}
+\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2port_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_PORT\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_PORT\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define PORT\_U2210}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_PORT                    0x100}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_DIR : (PORT Offset: 0x00) (R/W 32) GROUP Data Direction -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint32\_t \mbox{\hyperlink{union_p_o_r_t___d_i_r___type_a5eaadb88c6829debf82f189394c47729}{DIR}}:32;           }
+\DoxyCodeLine{54   \} bit;                       }
+\DoxyCodeLine{55   uint32\_t \mbox{\hyperlink{union_p_o_r_t___d_i_r___type_aad586d31eab4bba783d39a809eb6e1e8}{reg}};                }
+\DoxyCodeLine{56 \} \mbox{\hyperlink{union_p_o_r_t___d_i_r___type}{PORT\_DIR\_Type}};}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define PORT\_DIR\_OFFSET             0x00         }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define PORT\_DIR\_RESETVALUE         0x00000000ul }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define PORT\_DIR\_DIR\_Pos            0            }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define PORT\_DIR\_DIR\_Msk            (0xFFFFFFFFul << PORT\_DIR\_DIR\_Pos)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define PORT\_DIR\_DIR(value)         ((PORT\_DIR\_DIR\_Msk \& ((value) << PORT\_DIR\_DIR\_Pos)))}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define PORT\_DIR\_MASK               0xFFFFFFFFul }}
+\DoxyCodeLine{67 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_DIRCLR : (PORT Offset: 0x04) (R/W 32) GROUP Data Direction Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{69 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{70   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{71     uint32\_t \mbox{\hyperlink{union_p_o_r_t___d_i_r_c_l_r___type_a42ce90fc856636677368d5e214d9dcdd}{DIRCLR}}:32;        }
+\DoxyCodeLine{72   \} bit;                       }
+\DoxyCodeLine{73   uint32\_t \mbox{\hyperlink{union_p_o_r_t___d_i_r_c_l_r___type_abaab4a7953c1876d842df2131c64b857}{reg}};                }
+\DoxyCodeLine{74 \} \mbox{\hyperlink{union_p_o_r_t___d_i_r_c_l_r___type}{PORT\_DIRCLR\_Type}};}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define PORT\_DIRCLR\_OFFSET          0x04         }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define PORT\_DIRCLR\_RESETVALUE      0x00000000ul }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define PORT\_DIRCLR\_DIRCLR\_Pos      0            }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define PORT\_DIRCLR\_DIRCLR\_Msk      (0xFFFFFFFFul << PORT\_DIRCLR\_DIRCLR\_Pos)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define PORT\_DIRCLR\_DIRCLR(value)   ((PORT\_DIRCLR\_DIRCLR\_Msk \& ((value) << PORT\_DIRCLR\_DIRCLR\_Pos)))}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define PORT\_DIRCLR\_MASK            0xFFFFFFFFul }}
+\DoxyCodeLine{85 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_DIRSET : (PORT Offset: 0x08) (R/W 32) GROUP Data Direction Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{88   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{89     uint32\_t \mbox{\hyperlink{union_p_o_r_t___d_i_r_s_e_t___type_a1e7d0b9e74b309e4d862605fddf67290}{DIRSET}}:32;        }
+\DoxyCodeLine{90   \} bit;                       }
+\DoxyCodeLine{91   uint32\_t \mbox{\hyperlink{union_p_o_r_t___d_i_r_s_e_t___type_a53c38c4c9c795b053c964d4ca9db6966}{reg}};                }
+\DoxyCodeLine{92 \} \mbox{\hyperlink{union_p_o_r_t___d_i_r_s_e_t___type}{PORT\_DIRSET\_Type}};}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define PORT\_DIRSET\_OFFSET          0x08         }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define PORT\_DIRSET\_RESETVALUE      0x00000000ul }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define PORT\_DIRSET\_DIRSET\_Pos      0            }}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define PORT\_DIRSET\_DIRSET\_Msk      (0xFFFFFFFFul << PORT\_DIRSET\_DIRSET\_Pos)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define PORT\_DIRSET\_DIRSET(value)   ((PORT\_DIRSET\_DIRSET\_Msk \& ((value) << PORT\_DIRSET\_DIRSET\_Pos)))}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define PORT\_DIRSET\_MASK            0xFFFFFFFFul }}
+\DoxyCodeLine{103 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_DIRTGL : (PORT Offset: 0x0C) (R/W 32) GROUP Data Direction Toggle -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{105 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{106   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{107     uint32\_t \mbox{\hyperlink{union_p_o_r_t___d_i_r_t_g_l___type_a3773e172d2ac4569b4fb40a32c0ddd22}{DIRTGL}}:32;        }
+\DoxyCodeLine{108   \} bit;                       }
+\DoxyCodeLine{109   uint32\_t \mbox{\hyperlink{union_p_o_r_t___d_i_r_t_g_l___type_a9c38b847712cf5ca3a3270e669e526e4}{reg}};                }
+\DoxyCodeLine{110 \} \mbox{\hyperlink{union_p_o_r_t___d_i_r_t_g_l___type}{PORT\_DIRTGL\_Type}};}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define PORT\_DIRTGL\_OFFSET          0x0C         }}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define PORT\_DIRTGL\_RESETVALUE      0x00000000ul }}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define PORT\_DIRTGL\_DIRTGL\_Pos      0            }}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define PORT\_DIRTGL\_DIRTGL\_Msk      (0xFFFFFFFFul << PORT\_DIRTGL\_DIRTGL\_Pos)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define PORT\_DIRTGL\_DIRTGL(value)   ((PORT\_DIRTGL\_DIRTGL\_Msk \& ((value) << PORT\_DIRTGL\_DIRTGL\_Pos)))}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define PORT\_DIRTGL\_MASK            0xFFFFFFFFul }}
+\DoxyCodeLine{121 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_OUT : (PORT Offset: 0x10) (R/W 32) GROUP Data Output Value -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{123 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{124   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{125     uint32\_t \mbox{\hyperlink{union_p_o_r_t___o_u_t___type_a1ba82b9420e6a462d0ac2b24083ebeed}{OUT}}:32;           }
+\DoxyCodeLine{126   \} bit;                       }
+\DoxyCodeLine{127   uint32\_t \mbox{\hyperlink{union_p_o_r_t___o_u_t___type_a7d650c5e9cf813ef1d2ab766ea658a1c}{reg}};                }
+\DoxyCodeLine{128 \} \mbox{\hyperlink{union_p_o_r_t___o_u_t___type}{PORT\_OUT\_Type}};}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define PORT\_OUT\_OFFSET             0x10         }}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define PORT\_OUT\_RESETVALUE         0x00000000ul }}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define PORT\_OUT\_OUT\_Pos            0            }}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define PORT\_OUT\_OUT\_Msk            (0xFFFFFFFFul << PORT\_OUT\_OUT\_Pos)}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define PORT\_OUT\_OUT(value)         ((PORT\_OUT\_OUT\_Msk \& ((value) << PORT\_OUT\_OUT\_Pos)))}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define PORT\_OUT\_MASK               0xFFFFFFFFul }}
+\DoxyCodeLine{139 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_OUTCLR : (PORT Offset: 0x14) (R/W 32) GROUP Data Output Value Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{141 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{142   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{143     uint32\_t \mbox{\hyperlink{union_p_o_r_t___o_u_t_c_l_r___type_a6222f60d17303b0aa4dcf7b62c0e8549}{OUTCLR}}:32;        }
+\DoxyCodeLine{144   \} bit;                       }
+\DoxyCodeLine{145   uint32\_t \mbox{\hyperlink{union_p_o_r_t___o_u_t_c_l_r___type_a1ed1eeae9c749b110a66e0adb8235519}{reg}};                }
+\DoxyCodeLine{146 \} \mbox{\hyperlink{union_p_o_r_t___o_u_t_c_l_r___type}{PORT\_OUTCLR\_Type}};}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define PORT\_OUTCLR\_OFFSET          0x14         }}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define PORT\_OUTCLR\_RESETVALUE      0x00000000ul }}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define PORT\_OUTCLR\_OUTCLR\_Pos      0            }}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define PORT\_OUTCLR\_OUTCLR\_Msk      (0xFFFFFFFFul << PORT\_OUTCLR\_OUTCLR\_Pos)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define PORT\_OUTCLR\_OUTCLR(value)   ((PORT\_OUTCLR\_OUTCLR\_Msk \& ((value) << PORT\_OUTCLR\_OUTCLR\_Pos)))}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define PORT\_OUTCLR\_MASK            0xFFFFFFFFul }}
+\DoxyCodeLine{157 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_OUTSET : (PORT Offset: 0x18) (R/W 32) GROUP Data Output Value Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{159 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{160   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{161     uint32\_t \mbox{\hyperlink{union_p_o_r_t___o_u_t_s_e_t___type_a219c6a695b96347191962a062fc7d7e1}{OUTSET}}:32;        }
+\DoxyCodeLine{162   \} bit;                       }
+\DoxyCodeLine{163   uint32\_t \mbox{\hyperlink{union_p_o_r_t___o_u_t_s_e_t___type_ae93907b8ec7ad762e8abb7ba9764fe81}{reg}};                }
+\DoxyCodeLine{164 \} \mbox{\hyperlink{union_p_o_r_t___o_u_t_s_e_t___type}{PORT\_OUTSET\_Type}};}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define PORT\_OUTSET\_OFFSET          0x18         }}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define PORT\_OUTSET\_RESETVALUE      0x00000000ul }}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define PORT\_OUTSET\_OUTSET\_Pos      0            }}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define PORT\_OUTSET\_OUTSET\_Msk      (0xFFFFFFFFul << PORT\_OUTSET\_OUTSET\_Pos)}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define PORT\_OUTSET\_OUTSET(value)   ((PORT\_OUTSET\_OUTSET\_Msk \& ((value) << PORT\_OUTSET\_OUTSET\_Pos)))}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define PORT\_OUTSET\_MASK            0xFFFFFFFFul }}
+\DoxyCodeLine{175 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_OUTTGL : (PORT Offset: 0x1C) (R/W 32) GROUP Data Output Value Toggle -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{177 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{178   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{179     uint32\_t \mbox{\hyperlink{union_p_o_r_t___o_u_t_t_g_l___type_a2d20d8ebdfedd6b7f79defeec9bcc51f}{OUTTGL}}:32;        }
+\DoxyCodeLine{180   \} bit;                       }
+\DoxyCodeLine{181   uint32\_t \mbox{\hyperlink{union_p_o_r_t___o_u_t_t_g_l___type_ad643ad27dece66db03fafdcac0b0190f}{reg}};                }
+\DoxyCodeLine{182 \} \mbox{\hyperlink{union_p_o_r_t___o_u_t_t_g_l___type}{PORT\_OUTTGL\_Type}};}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define PORT\_OUTTGL\_OFFSET          0x1C         }}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define PORT\_OUTTGL\_RESETVALUE      0x00000000ul }}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define PORT\_OUTTGL\_OUTTGL\_Pos      0            }}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define PORT\_OUTTGL\_OUTTGL\_Msk      (0xFFFFFFFFul << PORT\_OUTTGL\_OUTTGL\_Pos)}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define PORT\_OUTTGL\_OUTTGL(value)   ((PORT\_OUTTGL\_OUTTGL\_Msk \& ((value) << PORT\_OUTTGL\_OUTTGL\_Pos)))}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define PORT\_OUTTGL\_MASK            0xFFFFFFFFul }}
+\DoxyCodeLine{193 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_IN : (PORT Offset: 0x20) (R/  32) GROUP Data Input Value -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{195 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{196   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{197     uint32\_t \mbox{\hyperlink{union_p_o_r_t___i_n___type_a465fff4e98525d8a9e25856a82272565}{IN}}:32;            }
+\DoxyCodeLine{198   \} bit;                       }
+\DoxyCodeLine{199   uint32\_t \mbox{\hyperlink{union_p_o_r_t___i_n___type_a564c3c16335d1e27b97f191cd6a35c93}{reg}};                }
+\DoxyCodeLine{200 \} \mbox{\hyperlink{union_p_o_r_t___i_n___type}{PORT\_IN\_Type}};}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define PORT\_IN\_OFFSET              0x20         }}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define PORT\_IN\_RESETVALUE          0x00000000ul }}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define PORT\_IN\_IN\_Pos              0            }}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define PORT\_IN\_IN\_Msk              (0xFFFFFFFFul << PORT\_IN\_IN\_Pos)}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define PORT\_IN\_IN(value)           ((PORT\_IN\_IN\_Msk \& ((value) << PORT\_IN\_IN\_Pos)))}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define PORT\_IN\_MASK                0xFFFFFFFFul }}
+\DoxyCodeLine{211 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_CTRL : (PORT Offset: 0x24) (R/W 32) GROUP Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{213 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{214   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{215     uint32\_t \mbox{\hyperlink{union_p_o_r_t___c_t_r_l___type_a1d018701707e4a73edfca99cf8f58d0f}{SAMPLING}}:32;      }
+\DoxyCodeLine{216   \} bit;                       }
+\DoxyCodeLine{217   uint32\_t \mbox{\hyperlink{union_p_o_r_t___c_t_r_l___type_aefe323a8f7ffa181d390537e921714f8}{reg}};                }
+\DoxyCodeLine{218 \} \mbox{\hyperlink{union_p_o_r_t___c_t_r_l___type}{PORT\_CTRL\_Type}};}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define PORT\_CTRL\_OFFSET            0x24         }}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define PORT\_CTRL\_RESETVALUE        0x00000000ul }}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define PORT\_CTRL\_SAMPLING\_Pos      0            }}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define PORT\_CTRL\_SAMPLING\_Msk      (0xFFFFFFFFul << PORT\_CTRL\_SAMPLING\_Pos)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define PORT\_CTRL\_SAMPLING(value)   ((PORT\_CTRL\_SAMPLING\_Msk \& ((value) << PORT\_CTRL\_SAMPLING\_Pos)))}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define PORT\_CTRL\_MASK              0xFFFFFFFFul }}
+\DoxyCodeLine{229 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_WRCONFIG : (PORT Offset: 0x28) ( /W 32) GROUP Write Configuration -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{231 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{232   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{233     uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_a4835496b61a9a8df952d0223c5c86412}{PINMASK}}:16;       }
+\DoxyCodeLine{234     uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_a87f8df34e0bc8985e7e0e732365793c4}{PMUXEN}}:1;         }
+\DoxyCodeLine{235     uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_a8f73ef7ea857bc325bb1def2b1c1eb7f}{INEN}}:1;           }
+\DoxyCodeLine{236     uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_ade543dc1f3384521d8a170ce354ba99e}{PULLEN}}:1;         }
+\DoxyCodeLine{237     uint32\_t :3;               }
+\DoxyCodeLine{238     uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_a38282849247d65f9a28351883b11cb4b}{DRVSTR}}:1;         }
+\DoxyCodeLine{239     uint32\_t :1;               }
+\DoxyCodeLine{240     uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_a0e2cc7c125a7f6778cd83f792c5465b3}{PMUX}}:4;           }
+\DoxyCodeLine{241     uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_a3fcee4fef27eba12a3e623065e245fde}{WRPMUX}}:1;         }
+\DoxyCodeLine{242     uint32\_t :1;               }
+\DoxyCodeLine{243     uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_a96a58eebd76c15378400be16831a3455}{WRPINCFG}}:1;       }
+\DoxyCodeLine{244     uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_a80691fb2eb17ed13201d9ca4ec6eac5f}{HWSEL}}:1;          }
+\DoxyCodeLine{245   \} bit;                       }
+\DoxyCodeLine{246   uint32\_t \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type_a45e2976294e67a10997915c6d5cf4c1a}{reg}};                }
+\DoxyCodeLine{247 \} \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type}{PORT\_WRCONFIG\_Type}};}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_OFFSET        0x28         }}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_RESETVALUE    0x00000000ul }}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PINMASK\_Pos   0            }}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PINMASK\_Msk   (0xFFFFul << PORT\_WRCONFIG\_PINMASK\_Pos)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PINMASK(value) ((PORT\_WRCONFIG\_PINMASK\_Msk \& ((value) << PORT\_WRCONFIG\_PINMASK\_Pos)))}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PMUXEN\_Pos    16           }}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PMUXEN        (0x1ul << PORT\_WRCONFIG\_PMUXEN\_Pos)}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_INEN\_Pos      17           }}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_INEN          (0x1ul << PORT\_WRCONFIG\_INEN\_Pos)}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PULLEN\_Pos    18           }}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PULLEN        (0x1ul << PORT\_WRCONFIG\_PULLEN\_Pos)}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_DRVSTR\_Pos    22           }}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_DRVSTR        (0x1ul << PORT\_WRCONFIG\_DRVSTR\_Pos)}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PMUX\_Pos      24           }}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PMUX\_Msk      (0xFul << PORT\_WRCONFIG\_PMUX\_Pos)}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_PMUX(value)   ((PORT\_WRCONFIG\_PMUX\_Msk \& ((value) << PORT\_WRCONFIG\_PMUX\_Pos)))}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_WRPMUX\_Pos    28           }}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_WRPMUX        (0x1ul << PORT\_WRCONFIG\_WRPMUX\_Pos)}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_WRPINCFG\_Pos  30           }}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_WRPINCFG      (0x1ul << PORT\_WRCONFIG\_WRPINCFG\_Pos)}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_HWSEL\_Pos     31           }}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_HWSEL         (0x1ul << PORT\_WRCONFIG\_HWSEL\_Pos)}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define PORT\_WRCONFIG\_MASK          0xDF47FFFFul }}
+\DoxyCodeLine{275 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_PMUX : (PORT Offset: 0x30) (R/W  8) GROUP Peripheral Multiplexing n -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{277 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{278   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{279     uint8\_t  \mbox{\hyperlink{union_p_o_r_t___p_m_u_x___type_a80afe6cb7178f9209beaf3bae56e82f9}{PMUXE}}:4;          }
+\DoxyCodeLine{280     uint8\_t  \mbox{\hyperlink{union_p_o_r_t___p_m_u_x___type_af3074df170bd30d899b681365803c887}{PMUXO}}:4;          }
+\DoxyCodeLine{281   \} bit;                       }
+\DoxyCodeLine{282   uint8\_t \mbox{\hyperlink{union_p_o_r_t___p_m_u_x___type_ab784b3c13d035e69fbd4f1a35d134c12}{reg}};                 }
+\DoxyCodeLine{283 \} \mbox{\hyperlink{union_p_o_r_t___p_m_u_x___type}{PORT\_PMUX\_Type}};}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define PORT\_PMUX\_OFFSET            0x30         }}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define PORT\_PMUX\_RESETVALUE        0x00ul       }}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_Pos         0            }}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_Msk         (0xFul << PORT\_PMUX\_PMUXE\_Pos)}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE(value)      ((PORT\_PMUX\_PMUXE\_Msk \& ((value) << PORT\_PMUX\_PMUXE\_Pos)))}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXE\_A\_Val           0x0ul  }}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXE\_B\_Val           0x1ul  }}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXE\_C\_Val           0x2ul  }}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXE\_D\_Val           0x3ul  }}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXE\_E\_Val           0x4ul  }}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXE\_F\_Val           0x5ul  }}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXE\_G\_Val           0x6ul  }}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXE\_H\_Val           0x7ul  }}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_A           (PORT\_PMUX\_PMUXE\_A\_Val         << PORT\_PMUX\_PMUXE\_Pos)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_B           (PORT\_PMUX\_PMUXE\_B\_Val         << PORT\_PMUX\_PMUXE\_Pos)}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_C           (PORT\_PMUX\_PMUXE\_C\_Val         << PORT\_PMUX\_PMUXE\_Pos)}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_D           (PORT\_PMUX\_PMUXE\_D\_Val         << PORT\_PMUX\_PMUXE\_Pos)}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_E           (PORT\_PMUX\_PMUXE\_E\_Val         << PORT\_PMUX\_PMUXE\_Pos)}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_F           (PORT\_PMUX\_PMUXE\_F\_Val         << PORT\_PMUX\_PMUXE\_Pos)}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_G           (PORT\_PMUX\_PMUXE\_G\_Val         << PORT\_PMUX\_PMUXE\_Pos)}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXE\_H           (PORT\_PMUX\_PMUXE\_H\_Val         << PORT\_PMUX\_PMUXE\_Pos)}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_Pos         4            }}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_Msk         (0xFul << PORT\_PMUX\_PMUXO\_Pos)}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO(value)      ((PORT\_PMUX\_PMUXO\_Msk \& ((value) << PORT\_PMUX\_PMUXO\_Pos)))}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXO\_A\_Val           0x0ul  }}
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXO\_B\_Val           0x1ul  }}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXO\_C\_Val           0x2ul  }}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXO\_D\_Val           0x3ul  }}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXO\_E\_Val           0x4ul  }}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXO\_F\_Val           0x5ul  }}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXO\_G\_Val           0x6ul  }}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define   PORT\_PMUX\_PMUXO\_H\_Val           0x7ul  }}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_A           (PORT\_PMUX\_PMUXO\_A\_Val         << PORT\_PMUX\_PMUXO\_Pos)}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_B           (PORT\_PMUX\_PMUXO\_B\_Val         << PORT\_PMUX\_PMUXO\_Pos)}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_C           (PORT\_PMUX\_PMUXO\_C\_Val         << PORT\_PMUX\_PMUXO\_Pos)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_D           (PORT\_PMUX\_PMUXO\_D\_Val         << PORT\_PMUX\_PMUXO\_Pos)}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_E           (PORT\_PMUX\_PMUXO\_E\_Val         << PORT\_PMUX\_PMUXO\_Pos)}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_F           (PORT\_PMUX\_PMUXO\_F\_Val         << PORT\_PMUX\_PMUXO\_Pos)}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_G           (PORT\_PMUX\_PMUXO\_G\_Val         << PORT\_PMUX\_PMUXO\_Pos)}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define PORT\_PMUX\_PMUXO\_H           (PORT\_PMUX\_PMUXO\_H\_Val         << PORT\_PMUX\_PMUXO\_Pos)}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#define PORT\_PMUX\_MASK              0xFFul       }}
+\DoxyCodeLine{329 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PORT\_PINCFG : (PORT Offset: 0x40) (R/W  8) GROUP Pin Configuration n -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{331 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{332   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{333     uint8\_t  \mbox{\hyperlink{union_p_o_r_t___p_i_n_c_f_g___type_a78d0843668295f889491375a48a20b02}{PMUXEN}}:1;         }
+\DoxyCodeLine{334     uint8\_t  \mbox{\hyperlink{union_p_o_r_t___p_i_n_c_f_g___type_ac7c4c6adc52ec6202256541a8bc6cd14}{INEN}}:1;           }
+\DoxyCodeLine{335     uint8\_t  \mbox{\hyperlink{union_p_o_r_t___p_i_n_c_f_g___type_a1b7f25c80f854d89aa27949be6fa21ef}{PULLEN}}:1;         }
+\DoxyCodeLine{336     uint8\_t  :3;               }
+\DoxyCodeLine{337     uint8\_t  \mbox{\hyperlink{union_p_o_r_t___p_i_n_c_f_g___type_aefbca9c3d99930cd39c1f1675123e229}{DRVSTR}}:1;         }
+\DoxyCodeLine{338     uint8\_t  :1;               }
+\DoxyCodeLine{339   \} bit;                       }
+\DoxyCodeLine{340   uint8\_t \mbox{\hyperlink{union_p_o_r_t___p_i_n_c_f_g___type_ab2d12324ff8e606b076d3f7fca4c554d}{reg}};                 }
+\DoxyCodeLine{341 \} \mbox{\hyperlink{union_p_o_r_t___p_i_n_c_f_g___type}{PORT\_PINCFG\_Type}};}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define PORT\_PINCFG\_OFFSET          0x40         }}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define PORT\_PINCFG\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define PORT\_PINCFG\_PMUXEN\_Pos      0            }}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define PORT\_PINCFG\_PMUXEN          (0x1ul << PORT\_PINCFG\_PMUXEN\_Pos)}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define PORT\_PINCFG\_INEN\_Pos        1            }}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define PORT\_PINCFG\_INEN            (0x1ul << PORT\_PINCFG\_INEN\_Pos)}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define PORT\_PINCFG\_PULLEN\_Pos      2            }}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define PORT\_PINCFG\_PULLEN          (0x1ul << PORT\_PINCFG\_PULLEN\_Pos)}}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define PORT\_PINCFG\_DRVSTR\_Pos      6            }}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define PORT\_PINCFG\_DRVSTR          (0x1ul << PORT\_PINCFG\_DRVSTR\_Pos)}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define PORT\_PINCFG\_MASK            0x47ul       }}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{359 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{360   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___d_i_r___type}{PORT\_DIR\_Type}}             \mbox{\hyperlink{struct_port_group_a533ab975abaff02b836eb54561ed0a13}{DIR}};         }
+\DoxyCodeLine{361   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___d_i_r_c_l_r___type}{PORT\_DIRCLR\_Type}}          \mbox{\hyperlink{struct_port_group_a105f4e4b1a80ff2b68d19f98c58e2c65}{DIRCLR}};      }
+\DoxyCodeLine{362   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___d_i_r_s_e_t___type}{PORT\_DIRSET\_Type}}          \mbox{\hyperlink{struct_port_group_a33408604fc6e045323d25d605a895b15}{DIRSET}};      }
+\DoxyCodeLine{363   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___d_i_r_t_g_l___type}{PORT\_DIRTGL\_Type}}          \mbox{\hyperlink{struct_port_group_af7bc02326500d6fff2db47cbd0568130}{DIRTGL}};      }
+\DoxyCodeLine{364   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___o_u_t___type}{PORT\_OUT\_Type}}             \mbox{\hyperlink{struct_port_group_a865fdbe2a7cb1339868e58d9a244031c}{OUT}};         }
+\DoxyCodeLine{365   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___o_u_t_c_l_r___type}{PORT\_OUTCLR\_Type}}          \mbox{\hyperlink{struct_port_group_a817b54b38d64825d862ae2a5fc6386aa}{OUTCLR}};      }
+\DoxyCodeLine{366   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___o_u_t_s_e_t___type}{PORT\_OUTSET\_Type}}          \mbox{\hyperlink{struct_port_group_a97265e4a39bd1fc6b0f28db7cb9fa4ae}{OUTSET}};      }
+\DoxyCodeLine{367   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___o_u_t_t_g_l___type}{PORT\_OUTTGL\_Type}}          \mbox{\hyperlink{struct_port_group_a5367798690cf523de14f6a7b16dd6765}{OUTTGL}};      }
+\DoxyCodeLine{368   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_p_o_r_t___i_n___type}{PORT\_IN\_Type}}              \mbox{\hyperlink{struct_port_group_a98613cc1bfe5fdc666400f0cb4dd9f2e}{IN}};          }
+\DoxyCodeLine{369   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___c_t_r_l___type}{PORT\_CTRL\_Type}}            \mbox{\hyperlink{struct_port_group_a1a3e80749252d99d74d682c1df280d2c}{CTRL}};        }
+\DoxyCodeLine{370   \mbox{\hyperlink{core__cm0plus_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}  \mbox{\hyperlink{union_p_o_r_t___w_r_c_o_n_f_i_g___type}{PORT\_WRCONFIG\_Type}}        \mbox{\hyperlink{struct_port_group_a2db67b1c96ebd644f590b0b0e02b20c5}{WRCONFIG}};    }
+\DoxyCodeLine{371        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x4];}
+\DoxyCodeLine{372   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___p_m_u_x___type}{PORT\_PMUX\_Type}}            PMUX[16];    }
+\DoxyCodeLine{373   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_o_r_t___p_i_n_c_f_g___type}{PORT\_PINCFG\_Type}}          PINCFG[32];  }
+\DoxyCodeLine{374        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x20];}
+\DoxyCodeLine{375 \} \mbox{\hyperlink{struct_port_group}{PortGroup}};}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{380 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{381        \mbox{\hyperlink{struct_port_group}{PortGroup}}                 Group[2];    }
+\DoxyCodeLine{382 \} \mbox{\hyperlink{struct_port}{Port}};}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define SECTION\_PORT\_IOBUS}}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_PORT\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

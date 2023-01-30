@@ -1,0 +1,133 @@
+\hypertarget{power_8h_source}{}\doxysection{power.\+h}
+\label{power_8h_source}\index{src/ASF/sam0/drivers/system/power/power\_sam\_d\_r\_h/power.h@{src/ASF/sam0/drivers/system/power/power\_sam\_d\_r\_h/power.h}}
+\mbox{\hyperlink{power_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef POWER\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define POWER\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{42 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{/* MCU revision number */}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define \_SYSTEM\_MCU\_REVISION\_D 3}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define \_SYSTEM\_MCU\_REVISION\_E 4}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{60 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gae3ed274224184cfb1d173b146bd72170}{system\_voltage\_reference}} \{}
+\DoxyCodeLine{62     \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggae3ed274224184cfb1d173b146bd72170aec400f1f06b7017c7fdca8e2c8205e36}{SYSTEM\_VOLTAGE\_REFERENCE\_TEMPSENSE}},}
+\DoxyCodeLine{64     \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggae3ed274224184cfb1d173b146bd72170adc69630503aa676207e9183c388698dc}{SYSTEM\_VOLTAGE\_REFERENCE\_BANDGAP}},}
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{73 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__group_ga6a75333c00b88a5da14eb9ba5ead2be1}{system\_sleepmode}} \{}
+\DoxyCodeLine{75     \mbox{\hyperlink{group__asfdoc__sam0__system__group_gga6a75333c00b88a5da14eb9ba5ead2be1a273e166ed48d972d58d5d6e5466b7977}{SYSTEM\_SLEEPMODE\_IDLE\_0}},}
+\DoxyCodeLine{77     \mbox{\hyperlink{group__asfdoc__sam0__system__group_gga6a75333c00b88a5da14eb9ba5ead2be1ada43603665b981de310962b380ff2b62}{SYSTEM\_SLEEPMODE\_IDLE\_1}},}
+\DoxyCodeLine{79     \mbox{\hyperlink{group__asfdoc__sam0__system__group_gga6a75333c00b88a5da14eb9ba5ead2be1a7b03cf170b0a7b1b2335a270fbcb5df3}{SYSTEM\_SLEEPMODE\_IDLE\_2}},}
+\DoxyCodeLine{81     \mbox{\hyperlink{group__asfdoc__sam0__system__group_gga6a75333c00b88a5da14eb9ba5ead2be1a446eddfe38bc09277ed1863ffac261e3}{SYSTEM\_SLEEPMODE\_STANDBY}},}
+\DoxyCodeLine{82 \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{99 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_voltage\_reference\_enable(}
+\DoxyCodeLine{100         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gae3ed274224184cfb1d173b146bd72170}{system\_voltage\_reference}} vref)}
+\DoxyCodeLine{101 \{}
+\DoxyCodeLine{102     \textcolor{keywordflow}{switch} (vref) \{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggae3ed274224184cfb1d173b146bd72170aec400f1f06b7017c7fdca8e2c8205e36}{SYSTEM\_VOLTAGE\_REFERENCE\_TEMPSENSE}}:}
+\DoxyCodeLine{104             \mbox{\hyperlink{samd20e14_8h_af94c5196d5506d0a34a0938d9bdb480f}{SYSCTRL}}-\/>VREF.reg |= SYSCTRL\_VREF\_TSEN;}
+\DoxyCodeLine{105             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggae3ed274224184cfb1d173b146bd72170adc69630503aa676207e9183c388698dc}{SYSTEM\_VOLTAGE\_REFERENCE\_BANDGAP}}:}
+\DoxyCodeLine{108             \mbox{\hyperlink{samd20e14_8h_af94c5196d5506d0a34a0938d9bdb480f}{SYSCTRL}}-\/>VREF.reg |= SYSCTRL\_VREF\_BGOUTEN;}
+\DoxyCodeLine{109             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{112             \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{113             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115 \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{124 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_voltage\_reference\_disable(}
+\DoxyCodeLine{125         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gae3ed274224184cfb1d173b146bd72170}{system\_voltage\_reference}} vref)}
+\DoxyCodeLine{126 \{}
+\DoxyCodeLine{127     \textcolor{keywordflow}{switch} (vref) \{}
+\DoxyCodeLine{128         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggae3ed274224184cfb1d173b146bd72170aec400f1f06b7017c7fdca8e2c8205e36}{SYSTEM\_VOLTAGE\_REFERENCE\_TEMPSENSE}}:}
+\DoxyCodeLine{129             \mbox{\hyperlink{samd20e14_8h_af94c5196d5506d0a34a0938d9bdb480f}{SYSCTRL}}-\/>VREF.reg \&= \string~SYSCTRL\_VREF\_TSEN;}
+\DoxyCodeLine{130             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__group_ggae3ed274224184cfb1d173b146bd72170adc69630503aa676207e9183c388698dc}{SYSTEM\_VOLTAGE\_REFERENCE\_BANDGAP}}:}
+\DoxyCodeLine{133             \mbox{\hyperlink{samd20e14_8h_af94c5196d5506d0a34a0938d9bdb480f}{SYSCTRL}}-\/>VREF.reg \&= \string~SYSCTRL\_VREF\_BGOUTEN;}
+\DoxyCodeLine{134             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{137             \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{138             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140 \}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{167 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} system\_set\_sleepmode(}
+\DoxyCodeLine{168     \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__group_ga6a75333c00b88a5da14eb9ba5ead2be1}{system\_sleepmode}} sleep\_mode)}
+\DoxyCodeLine{169 \{}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#if (SAMD20 || SAMD21 || SAMR21)}}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{comment}{/* Get MCU revision */}}
+\DoxyCodeLine{174     uint32\_t rev = \mbox{\hyperlink{samd20e14_8h_a64552f972ce1670686fb30eb48ae1797}{DSU}}-\/>DID.reg;}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     rev \&= DSU\_DID\_REVISION\_Msk;}
+\DoxyCodeLine{177     rev = rev >> \mbox{\hyperlink{component_2dsu_8h_adf8c7ee986cf2cceec0a4d82efb513a2}{DSU\_DID\_REVISION\_Pos}};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#if (SAMD20)}}
+\DoxyCodeLine{180     \textcolor{keywordflow}{if} (rev < \_SYSTEM\_MCU\_REVISION\_E) \{}
+\DoxyCodeLine{181         \textcolor{comment}{/* Errata 13140: Make sure that the Flash does not power all the way down}}
+\DoxyCodeLine{182 \textcolor{comment}{         * when in sleep mode. */}}
+\DoxyCodeLine{183         \mbox{\hyperlink{samd20e14_8h_ad18608913d3d6e423f3a79d84348910a}{NVMCTRL}}-\/>CTRLB.bit.SLEEPPRM = \mbox{\hyperlink{component_2nvmctrl_8h_a2a6e0082abe992f41fe1e646e0b6b52a}{NVMCTRL\_CTRLB\_SLEEPPRM\_DISABLED\_Val}};}
+\DoxyCodeLine{184     \}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#if (SAMD21 || SAMR21)}}
+\DoxyCodeLine{188     \textcolor{keywordflow}{if} (rev < \_SYSTEM\_MCU\_REVISION\_D) \{}
+\DoxyCodeLine{189         \textcolor{comment}{/* Errata 13140: Make sure that the Flash does not power all the way down}}
+\DoxyCodeLine{190 \textcolor{comment}{         * when in sleep mode. */}}
+\DoxyCodeLine{191         \mbox{\hyperlink{samd20e14_8h_ad18608913d3d6e423f3a79d84348910a}{NVMCTRL}}-\/>CTRLB.bit.SLEEPPRM = \mbox{\hyperlink{component_2nvmctrl_8h_a2a6e0082abe992f41fe1e646e0b6b52a}{NVMCTRL\_CTRLB\_SLEEPPRM\_DISABLED\_Val}};}
+\DoxyCodeLine{192     \}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{keywordflow}{switch} (sleep\_mode) \{}
+\DoxyCodeLine{198         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gga6a75333c00b88a5da14eb9ba5ead2be1a273e166ed48d972d58d5d6e5466b7977}{SYSTEM\_SLEEPMODE\_IDLE\_0}}:}
+\DoxyCodeLine{199         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gga6a75333c00b88a5da14eb9ba5ead2be1ada43603665b981de310962b380ff2b62}{SYSTEM\_SLEEPMODE\_IDLE\_1}}:}
+\DoxyCodeLine{200         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gga6a75333c00b88a5da14eb9ba5ead2be1a7b03cf170b0a7b1b2335a270fbcb5df3}{SYSTEM\_SLEEPMODE\_IDLE\_2}}:}
+\DoxyCodeLine{201             \mbox{\hyperlink{group___c_m_s_i_s__core__base_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>SCR \&= \string~SCB\_SCR\_SLEEPDEEP\_Msk;}
+\DoxyCodeLine{202             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>SLEEP.reg = sleep\_mode;}
+\DoxyCodeLine{203             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__group_gga6a75333c00b88a5da14eb9ba5ead2be1a446eddfe38bc09277ed1863ffac261e3}{SYSTEM\_SLEEPMODE\_STANDBY}}:}
+\DoxyCodeLine{206             \mbox{\hyperlink{group___c_m_s_i_s__core__base_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>SCR |=  \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga77c06a69c63f4b3f6ec1032e911e18e7}{SCB\_SCR\_SLEEPDEEP\_Msk}};}
+\DoxyCodeLine{207             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{210             \textcolor{keywordflow}{return} STATUS\_ERR\_INVALID\_ARG;}
+\DoxyCodeLine{211     \}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{214 \}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{224 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_sleep(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{225 \{}
+\DoxyCodeLine{226     \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga7fe277f5385d23b9c44b2cbda1577ce9}{\_\_DSB}}();}
+\DoxyCodeLine{227     \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab28e2b328c4cf23c917ab18a23194f8e}{\_\_WFI}}();}
+\DoxyCodeLine{228 \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{236 \}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* POWER\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
