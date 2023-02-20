@@ -1,9 +1,6 @@
-/*
- * sail_actuator.h
- *
- * Created: 2023-02-20 12:32:49 PM
- *  Author: manav
- */ 
+/*! \file sail_actuator.h
+    \brief Contains definitions for functions used to get extension of actuator 
+*/
 
 #ifndef _SAIL_ACTUATOR_H
 #define _SAIL_ACTUATOR_H
