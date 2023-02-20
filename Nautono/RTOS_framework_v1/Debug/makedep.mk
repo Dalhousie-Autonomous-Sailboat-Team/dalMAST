@@ -4,6 +4,8 @@
 
 src\ASF\common2\services\delay\sam0\cycle_counter.c
 
+src\sail_actutor.c
+
 src\sail_adc.c
 
 src\sail_buffer.c

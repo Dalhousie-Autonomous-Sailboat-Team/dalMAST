@@ -1,0 +1,38 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.srec
+*.bin
+*.d
+*.eep
+*.map
+*.lss
+
+# Debug files
+*.dSYM/
+*.su
+
+# Visual Studio
+*.VC.opendb
+*.VC.db
+ 
