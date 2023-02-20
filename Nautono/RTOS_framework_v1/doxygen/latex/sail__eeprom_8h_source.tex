@@ -1,0 +1,126 @@
+\hypertarget{sail__eeprom_8h_source}{}\doxysection{sail\+\_\+eeprom.\+h}
+\label{sail__eeprom_8h_source}\index{src/sail\_eeprom.h@{src/sail\_eeprom.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_eeprom.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Header file for the EEPROM module manages waypoint access.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * The data stored in the EEPROM has the following format:}}
+\DoxyCodeLine{4 \textcolor{comment}{ * }}
+\DoxyCodeLine{5 \textcolor{comment}{ * byte |       0        |       1        |        2       |        3       |}}
+\DoxyCodeLine{6 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{7 \textcolor{comment}{ *  0   |       waypoint index (i)        |     number of waypoints (n)     |}}
+\DoxyCodeLine{8 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{9 \textcolor{comment}{ *  4   |                             reserved                              |}}
+\DoxyCodeLine{10 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{11 \textcolor{comment}{ *  8   |                             reserved                              |}}
+\DoxyCodeLine{12 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{13 \textcolor{comment}{ *  12  |                             reserved                              |}}
+\DoxyCodeLine{14 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{15 \textcolor{comment}{ *  16  | [waypoint \#0]       longitude (last 4 bytes)                      |}}
+\DoxyCodeLine{16 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{17 \textcolor{comment}{ *  20  | [waypoint \#0]       latitude (first 4 bytes)                      |}}
+\DoxyCodeLine{18 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{19 \textcolor{comment}{ *  24  | [waypoint \#0]       latitude (last 4 bytes)                       |}}
+\DoxyCodeLine{20 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{21 \textcolor{comment}{ *  28  | [waypoint \#0]       longitude (first 4 bytes)                     |}}
+\DoxyCodeLine{22 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{23 \textcolor{comment}{ *  32  | [waypoint \#0]       longitude (last 4 bytes)                      |}}
+\DoxyCodeLine{24 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  36  | [waypoint \#0]       radius (first 4 bytes)                        |}}
+\DoxyCodeLine{26 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{27 \textcolor{comment}{ *  40  | [waypoint \#0]       radius (last 4 bytes)                         |}}
+\DoxyCodeLine{28 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{29 \textcolor{comment}{ *  44  |      next way point index       |   checksum     |    reserved    |}}
+\DoxyCodeLine{30 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+ }}
+\DoxyCodeLine{31 \textcolor{comment}{ *   .  |                             ...                                   |}}
+\DoxyCodeLine{32 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{33 \textcolor{comment}{ *   .  | [waypoint \#n-\/1]     latitude (first 4 bytes)                      |}}
+\DoxyCodeLine{34 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{35 \textcolor{comment}{ *   .  | [waypoint \#n-\/1]     latitude (last 4 bytes)                       |}}
+\DoxyCodeLine{36 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{37 \textcolor{comment}{ *   .  | [waypoint \#n-\/1]     longitude (first 4 bytes)                     |}}
+\DoxyCodeLine{38 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{39 \textcolor{comment}{ *   .  | [waypoint \#n-\/1]     longitude (last 4 bytes)                      |}}
+\DoxyCodeLine{40 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{41 \textcolor{comment}{ *   .  | [waypoint \#n-\/1]     radius (first 4 bytes)                        |}}
+\DoxyCodeLine{42 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{43 \textcolor{comment}{ *   .  | [waypoint \#n-\/1]     radius (last 4 bytes)                         |}}
+\DoxyCodeLine{44 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{45 \textcolor{comment}{ *   .  |      next way point index       |   checksum     |    reserved    |}}
+\DoxyCodeLine{46 \textcolor{comment}{ * -\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+ }}
+\DoxyCodeLine{47 \textcolor{comment}{ * }}
+\DoxyCodeLine{48 \textcolor{comment}{ * Created on June 28, 2016.}}
+\DoxyCodeLine{49 \textcolor{comment}{ * Created by Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{50 \textcolor{comment}{ */}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#ifndef SAIL\_EEPROM\_H\_}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define SAIL\_EEPROM\_H\_}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include "{}sail\_types.h"{}}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define EEPROM\_START\_OFFSET     0   }\textcolor{comment}{// must be a multiple of 128 to ensure page alignment}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define EEPROM\_ENTRY\_LENGTH     32  }\textcolor{comment}{// 32 = 128/4 : 4 entries per page}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define EEPROM\_ENTRY\_OFFSET     32  }\textcolor{comment}{// offset from start offset to first entry}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define EEPROM\_IDX\_ADDR         EEPROM\_START\_OFFSET + 0}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define EEPROM\_COUNT\_ADDR       EEPROM\_START\_OFFSET + 2}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define EEPROM\_CHECKSUM\_IDX     26  }\textcolor{comment}{// index of checksum within an entry}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\mbox{\hyperlink{union_e_e_p_r_o_m___entry}{EEPROM\_Entry}} \{}
+\DoxyCodeLine{69     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{70         \mbox{\hyperlink{struct_e_e_p_r_o_m___way_point}{EEPROM\_WayPoint}} wp;}
+\DoxyCodeLine{71         uint16\_t next\_wp\_idx;}
+\DoxyCodeLine{72         uint8\_t checksum;}
+\DoxyCodeLine{73         uint8\_t reserved;}
+\DoxyCodeLine{74     \};}
+\DoxyCodeLine{75     uint8\_t data[EEPROM\_ENTRY\_LENGTH];}
+\DoxyCodeLine{76 \} \mbox{\hyperlink{union_e_e_p_r_o_m___entry}{EEPROM\_Entry}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{comment}{/* EEPROM\_Init}}
+\DoxyCodeLine{79 \textcolor{comment}{ * Initialize the EEPROM.}}
+\DoxyCodeLine{80 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{81 \textcolor{comment}{ *   STATUS\_OK -\/ initialization was successful}}
+\DoxyCodeLine{82 \textcolor{comment}{ *   STATUS\_ERR\_DENIED -\/ a driver error has occurred }}
+\DoxyCodeLine{83 \textcolor{comment}{ *   STATUS\_ERR\_BAD\_DATA -\/ the EEPROM data was not formatted correctly}}
+\DoxyCodeLine{84 \textcolor{comment}{ *   STATUS\_ERR\_ALREADY\_INITIALIZED -\/ the module should only be initialized once}}
+\DoxyCodeLine{85 \textcolor{comment}{ */}}
+\DoxyCodeLine{86 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} EEPROM\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{comment}{/* EEPROM\_GetCurrentWayPoint}}
+\DoxyCodeLine{90 \textcolor{comment}{ * Get the current way point.}}
+\DoxyCodeLine{91 \textcolor{comment}{ * Inputs/Outputs:}}
+\DoxyCodeLine{92 \textcolor{comment}{ *   wp -\/ pointer to an EEPROM\_WayPoint structure to store current way point}}
+\DoxyCodeLine{93 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{94 \textcolor{comment}{ *   STATUS\_OK -\/ way point was returned successfully}}
+\DoxyCodeLine{95 \textcolor{comment}{ *   STATUS\_ERR\_DENIED -\/ a driver error has occurred  }}
+\DoxyCodeLine{96 \textcolor{comment}{ *   STATUS\_ERR\_BAD\_ADDRESS -\/ an invalid pointer was provided}}
+\DoxyCodeLine{97 \textcolor{comment}{ *   STATUS\_ERR\_NOT\_INITIALIZED -\/ the EEPROM hasn't been initialized yet}}
+\DoxyCodeLine{98 \textcolor{comment}{ */}}
+\DoxyCodeLine{99 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} EEPROM\_GetCurrentWayPoint(\mbox{\hyperlink{struct_e_e_p_r_o_m___way_point}{EEPROM\_WayPoint}} *wp);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{comment}{/* EEPROM\_CompleteCurrentWayPoint}}
+\DoxyCodeLine{103 \textcolor{comment}{ * Complete the current way point and set the next way point as active.}}
+\DoxyCodeLine{104 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{105 \textcolor{comment}{ *   STATUS\_OK -\/ EEPROM index was changed successfully}}
+\DoxyCodeLine{106 \textcolor{comment}{ *   STATUS\_SUSPEND -\/ no more way points are available, suspend navigation}}
+\DoxyCodeLine{107 \textcolor{comment}{ *   STATUS\_ERR\_DENIED -\/ a driver error has occurred  }}
+\DoxyCodeLine{108 \textcolor{comment}{ *   STATUS\_ERR\_NOT\_INITIALIZED -\/ the EEPROM hasn't been initialized yet}}
+\DoxyCodeLine{109 \textcolor{comment}{ */} }
+\DoxyCodeLine{110 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} EEPROM\_CompleteCurrentWayPoint(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{comment}{// TODO Add documentation here}}
+\DoxyCodeLine{114 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} EEPROM\_StartMissionConfig(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{115 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} EEPROM\_LoadWayPoint(\mbox{\hyperlink{union_e_e_p_r_o_m___entry}{EEPROM\_Entry}} *entry);}
+\DoxyCodeLine{116 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} EEPROM\_EndMissionConfig(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} EEPROM\_GetWayPointCount(uint16\_t *wp\_count);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_EEPROM\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

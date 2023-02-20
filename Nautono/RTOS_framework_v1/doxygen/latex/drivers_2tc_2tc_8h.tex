@@ -1,0 +1,175 @@
+\hypertarget{drivers_2tc_2tc_8h}{}\doxysection{src/\+ASF/sam0/drivers/tc/tc.h File Reference}
+\label{drivers_2tc_2tc_8h}\index{src/ASF/sam0/drivers/tc/tc.h@{src/ASF/sam0/drivers/tc/tc.h}}
+
+
+SAM TC -\/ Timer Counter Driver.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$clock.\+h$>$}\newline
+{\ttfamily \#include $<$gclk.\+h$>$}\newline
+{\ttfamily \#include $<$pinmux.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtc__events}{tc\+\_\+events}}
+\begin{DoxyCompactList}\small\item\em TC event enable/disable structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__8bit__config}{tc\+\_\+8bit\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration struct for TC module in 8-\/bit size counter mode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__16bit__config}{tc\+\_\+16bit\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration struct for TC module in 16-\/bit size counter mode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__32bit__config}{tc\+\_\+32bit\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration struct for TC module in 32-\/bit size counter mode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__pwm__channel}{tc\+\_\+pwm\+\_\+channel}}
+\begin{DoxyCompactList}\small\item\em Configuration struct for TC module in 32-\/bit size counter mode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__config}{tc\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em TC configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}}
+\begin{DoxyCompactList}\small\item\em TC software device instance structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\+\_\+\+OF\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNELS}}~TC3\+\_\+\+CC8\+\_\+\+NUM
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga94cdbe531468f0975311bc2ce36f5e1c}{TC\+\_\+\+INST\+\_\+\+MAX\+\_\+\+ID}}~7
+\end{DoxyCompactItemize}
+
+\begin{Indent}\textbf{ Module Status Flags}\par
+{\em TC status flags, returned by tc\+\_\+get\+\_\+status() and cleared by tc\+\_\+clear\+\_\+status(). }\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae74e90dac05478452203a41a88853286}{TC\+\_\+\+STATUS\+\_\+\+CHANNEL\+\_\+0\+\_\+\+MATCH}}~(1UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaab140d8ac7858f45029fddf0fd3f4cf3}{TC\+\_\+\+STATUS\+\_\+\+CHANNEL\+\_\+1\+\_\+\+MATCH}}~(1UL $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga73bfbe04c8834ec55242bcd0b678f94e}{TC\+\_\+\+STATUS\+\_\+\+SYNC\+\_\+\+READY}}~(1UL $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac13395d51cc03b5c43eda7654649925f}{TC\+\_\+\+STATUS\+\_\+\+CAPTURE\+\_\+\+OVERFLOW}}~(1UL $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gada6e9a6bd144c0c2e360d1fdef944cdd}{TC\+\_\+\+STATUS\+\_\+\+COUNT\+\_\+\+OVERFLOW}}~(1UL $<$$<$ 4)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ TC Wave Generation Mode}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga3be501afca9dd97d2adb1959f30816a7}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+FREQ\+\_\+\+MODE}}~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+NFRQ
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga65ebbd3eaea3bd9cf6f81392770caae6}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+FREQ\+\_\+\+MODE}}~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+MFRQ
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaa7277c5eaa031dbd06159cd533346210}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+PWM\+\_\+\+MODE}}~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+NPWM
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4636ecc5d5a67c47a8b6551568c31ee6}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+PWM\+\_\+\+MODE}}~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+MPWM
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\+\_\+compare\+\_\+capture\+\_\+channel}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}{TC\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNEL\+\_\+0}}
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}{TC\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNEL\+\_\+1}}
+ \}
+\begin{DoxyCompactList}\small\item\em Index of the compare capture channels. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7f1302b7e3d675e471a554668b49d64}{tc\+\_\+wave\+\_\+generation}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a544e51b015f20263a9499ce28a0596e7}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+FREQ}} = TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+FREQ\+\_\+\+MODE
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a4c9b3fe1ad9a1d2c0f5d8544c0923b9f}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+FREQ}} = TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+FREQ\+\_\+\+MODE
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64aad9dc196250ce8ca5a98c7e49cf0c1a9}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+PWM}} = TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+PWM\+\_\+\+MODE
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a973273609713f828ce491f56fbf035d2}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+PWM}} = TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+PWM\+\_\+\+MODE
+ \}
+\begin{DoxyCompactList}\small\item\em TC wave generation mode enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}{tc\+\_\+counter\+\_\+size}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0abf2e8000eeeac2a4f259ba117d1ee934}{TC\+\_\+\+COUNTER\+\_\+\+SIZE\+\_\+8\+BIT}} = TC\+\_\+\+CTRLA\+\_\+\+MODE\+\_\+\+COUNT8
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a07c9fe9d2a5e78a9c1be46ce540adad1}{TC\+\_\+\+COUNTER\+\_\+\+SIZE\+\_\+16\+BIT}} = TC\+\_\+\+CTRLA\+\_\+\+MODE\+\_\+\+COUNT16
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a7d28e63b11a550605d003c894fe134c5}{TC\+\_\+\+COUNTER\+\_\+\+SIZE\+\_\+32\+BIT}} = TC\+\_\+\+CTRLA\+\_\+\+MODE\+\_\+\+COUNT32
+ \}
+\begin{DoxyCompactList}\small\item\em Specifies if the counter is 8-\/, 16-\/, or 32-\/bit. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga204bb4814c91e62e56d9297c05280aad}{tc\+\_\+reload\+\_\+action}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadaea50b7d7b79cfbd72298720e0f6d51ed}{TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+GCLK}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCSYNC\+\_\+\+GCLK
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aada97857fba0947beb9110ab79d2990e559}{TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+PRESC}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCSYNC\+\_\+\+PRESC
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadac78b7c50f80b33d5ef15a63348279f17}{TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+RESYNC}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCSYNC\+\_\+\+RESYNC
+ \}
+\begin{DoxyCompactList}\small\item\em TC Counter reload action enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98aed17b995157e67b9322a45f0ed5f4}{tc\+\_\+clock\+\_\+prescaler}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4abee76ee986e815120c67ff104dd77275}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV1}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(0)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a6326eb4305153ea58ea18ee6a74bc8f0}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV2}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(1)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a8c137a94b34809e544d50680c808da23}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV4}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(2)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a3dbb4f263ba1e940954ffe8a667bf7d1}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV8}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(3)
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aa0bec32bcf9a450d950f9ec9941a6c3a}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV16}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(4)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aea8fd1d9e795ec153e80cddc15ad501b}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV64}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(5)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a72552d0e6095d90da22981b7bd7a33ed}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV256}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(6)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4af1540c54586b7cd0c5e46c60162951ec}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV1024}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(7)
+ \}
+\begin{DoxyCompactList}\small\item\em TC clock prescaler values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga28777c47943dfb2b5de0fd7ae14eac1f}{tc\+\_\+count\+\_\+direction}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1faf247abdaef160b832fd09bc7597e8ca3}{TC\+\_\+\+COUNT\+\_\+\+DIRECTION\+\_\+\+UP}}
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1fade3defd512c1bff05ce6302c2d96b014}{TC\+\_\+\+COUNT\+\_\+\+DIRECTION\+\_\+\+DOWN}}
+ \}
+\begin{DoxyCompactList}\small\item\em TC module count direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Driver Initialization and Configuration}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98c7f5c97436c2f6cff87a0261597337}{tc\+\_\+init}} (struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, \mbox{\hyperlink{union_tc}{Tc}} $\ast$const hw, const struct \mbox{\hyperlink{structtc__config}{tc\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes a hardware TC module instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Event Management}\par
+\end{Indent}
+\begin{Indent}\textbf{ Enable/\+Disable/\+Reset}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gad147c1f0393a3ae0c830cec73986eddd}{tc\+\_\+reset}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst)
+\begin{DoxyCompactList}\small\item\em Resets the TC module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Get/\+Set Count Value}\par
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7d7eb91616c2dff02886dd8cdc87f2d}{tc\+\_\+get\+\_\+count\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst)
+\begin{DoxyCompactList}\small\item\em Get TC module count value. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga9c81066b0b88893e127fa521f0efde2e}{tc\+\_\+set\+\_\+count\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, const uint32\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Sets TC module count value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Start/\+Stop Counter}\par
+\end{Indent}
+\begin{Indent}\textbf{ Get Capture Set Compare}\par
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaf780bb09a00298868aa3b8e7627f92ff}{tc\+\_\+get\+\_\+capture\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, const enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\+\_\+compare\+\_\+capture\+\_\+channel}} channel\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Gets the TC module capture value. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga687208b24fd33a1da0cbe683adc15fa6}{tc\+\_\+set\+\_\+compare\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, const enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\+\_\+compare\+\_\+capture\+\_\+channel}} channel\+\_\+index, const uint32\+\_\+t compare\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Sets a TC module compare value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Set Top Value}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac22d633ece43bcd18f54283778471340}{tc\+\_\+set\+\_\+top\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, const uint32\+\_\+t top\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the timer TOP/period value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Status Management}\par
+\end{Indent}
+\doxysubsection*{Waveform Inversion Mode}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga50cb4d965dd6d607839abb71b3f034c0}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC0\+\_\+\+MODE}}~TC\+\_\+\+CTRLC\+\_\+\+INVEN(1)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae194715d12d4faa15f1d1b8555bf5b53}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC1\+\_\+\+MODE}}~TC\+\_\+\+CTRLC\+\_\+\+INVEN(2)
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaf681729d6b5f963705871f7d80754166}{tc\+\_\+waveform\+\_\+invert\+\_\+output}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a292cfce35b768eecd69f2a4320aaa96b}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+OUTPUT\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166af3ebe1706d0f442c6388619bc3d9fa58}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+OUTPUT\+\_\+\+CHANNEL\+\_\+0}} = TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC0\+\_\+\+MODE
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a97327e36339fbad207e7150d6ba7b283}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+OUTPUT\+\_\+\+CHANNEL\+\_\+1}} = TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC1\+\_\+\+MODE
+ \}
+\begin{DoxyCompactList}\small\item\em Waveform inversion mode. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4dcbf6cdb74bc3b7609ce8d16549462f}{tc\+\_\+event\+\_\+action}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa190e10df25f3f6a6c781cc751eb3489e}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+OFF}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+OFF
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa9696961ae81b1aba22582d8a35bdf14d}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+RETRIGGER}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+RETRIGGER
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa07b969496782cb311ddb13cfafb36aff}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+INCREMENT\+\_\+\+COUNTER}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+COUNT
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fac06c64382b572d0464138ae51b7876df}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+START}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+START
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa4957024d607401030b128f9b775edb7d}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+PPW}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+PPW
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462face22a0756d93b16a9b70511fe226a893}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+PWP}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+PWP
+ \}
+\begin{DoxyCompactList}\small\item\em Action to perform when the TC module is triggered by an event. \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bfseries \+\_\+tc\+\_\+get\+\_\+inst\+\_\+index} (\mbox{\hyperlink{union_tc}{Tc}} $\ast$const hw)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM TC -\/ Timer Counter Driver. 
+
+Copyright (c) 2013-\/2020 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

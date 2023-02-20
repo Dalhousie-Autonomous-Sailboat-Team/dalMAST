@@ -1,0 +1,80 @@
+\hypertarget{structi2c__master__module}{}\doxysection{i2c\+\_\+master\+\_\+module Struct Reference}
+\label{structi2c__master__module}\index{i2c\_master\_module@{i2c\_master\_module}}
+
+
+SERCOM I\textsuperscript{2}C Master driver software device instance structure.  
+
+
+
+
+{\ttfamily \#include $<$i2c\+\_\+master.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{union_sercom}{Sercom}} $\ast$ \mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}}
+\item 
+volatile bool \mbox{\hyperlink{structi2c__master__module_ab5203f05ca65698c848725467e342f17}{locked}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structi2c__master__module_a7949d7e1dd668816a08c6520d79b4df9}{unknown\+\_\+bus\+\_\+state\+\_\+timeout}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structi2c__master__module_a0763b15b0ad887cdc7aa4d023e3c872c}{buffer\+\_\+timeout}}
+\item 
+bool \mbox{\hyperlink{structi2c__master__module_ad5403e88b0ef5b7d61ab494a4034762e}{send\+\_\+stop}}
+\item 
+bool \mbox{\hyperlink{structi2c__master__module_aabb2db3f8def2961e73503861996f314}{send\+\_\+nack}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SERCOM I\textsuperscript{2}C Master driver software device instance structure. 
+
+SERCOM I\textsuperscript{2}C Master driver software instance structure, used to retain software state information of an associated hardware module instance.
+
+\begin{DoxyNote}{Note}
+The fields of this structure should not be altered by the user application; they are reserved for module-\/internal use only. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structi2c__master__module_a0763b15b0ad887cdc7aa4d023e3c872c}\label{structi2c__master__module_a0763b15b0ad887cdc7aa4d023e3c872c}} 
+\index{i2c\_master\_module@{i2c\_master\_module}!buffer\_timeout@{buffer\_timeout}}
+\index{buffer\_timeout@{buffer\_timeout}!i2c\_master\_module@{i2c\_master\_module}}
+\doxysubsubsection{\texorpdfstring{buffer\_timeout}{buffer\_timeout}}
+{\footnotesize\ttfamily uint16\+\_\+t i2c\+\_\+master\+\_\+module\+::buffer\+\_\+timeout}
+
+Buffer write timeout value \mbox{\Hypertarget{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}\label{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}} 
+\index{i2c\_master\_module@{i2c\_master\_module}!hw@{hw}}
+\index{hw@{hw}!i2c\_master\_module@{i2c\_master\_module}}
+\doxysubsubsection{\texorpdfstring{hw}{hw}}
+{\footnotesize\ttfamily \mbox{\hyperlink{union_sercom}{Sercom}}$\ast$ i2c\+\_\+master\+\_\+module\+::hw}
+
+Hardware instance initialized for the struct \mbox{\Hypertarget{structi2c__master__module_ab5203f05ca65698c848725467e342f17}\label{structi2c__master__module_ab5203f05ca65698c848725467e342f17}} 
+\index{i2c\_master\_module@{i2c\_master\_module}!locked@{locked}}
+\index{locked@{locked}!i2c\_master\_module@{i2c\_master\_module}}
+\doxysubsubsection{\texorpdfstring{locked}{locked}}
+{\footnotesize\ttfamily volatile bool i2c\+\_\+master\+\_\+module\+::locked}
+
+Module lock \mbox{\Hypertarget{structi2c__master__module_aabb2db3f8def2961e73503861996f314}\label{structi2c__master__module_aabb2db3f8def2961e73503861996f314}} 
+\index{i2c\_master\_module@{i2c\_master\_module}!send\_nack@{send\_nack}}
+\index{send\_nack@{send\_nack}!i2c\_master\_module@{i2c\_master\_module}}
+\doxysubsubsection{\texorpdfstring{send\_nack}{send\_nack}}
+{\footnotesize\ttfamily bool i2c\+\_\+master\+\_\+module\+::send\+\_\+nack}
+
+If true, nack signal will be sent after a read/write \mbox{\Hypertarget{structi2c__master__module_ad5403e88b0ef5b7d61ab494a4034762e}\label{structi2c__master__module_ad5403e88b0ef5b7d61ab494a4034762e}} 
+\index{i2c\_master\_module@{i2c\_master\_module}!send\_stop@{send\_stop}}
+\index{send\_stop@{send\_stop}!i2c\_master\_module@{i2c\_master\_module}}
+\doxysubsubsection{\texorpdfstring{send\_stop}{send\_stop}}
+{\footnotesize\ttfamily bool i2c\+\_\+master\+\_\+module\+::send\+\_\+stop}
+
+If true, stop condition will be sent after a read/write \mbox{\Hypertarget{structi2c__master__module_a7949d7e1dd668816a08c6520d79b4df9}\label{structi2c__master__module_a7949d7e1dd668816a08c6520d79b4df9}} 
+\index{i2c\_master\_module@{i2c\_master\_module}!unknown\_bus\_state\_timeout@{unknown\_bus\_state\_timeout}}
+\index{unknown\_bus\_state\_timeout@{unknown\_bus\_state\_timeout}!i2c\_master\_module@{i2c\_master\_module}}
+\doxysubsubsection{\texorpdfstring{unknown\_bus\_state\_timeout}{unknown\_bus\_state\_timeout}}
+{\footnotesize\ttfamily uint16\+\_\+t i2c\+\_\+master\+\_\+module\+::unknown\+\_\+bus\+\_\+state\+\_\+timeout}
+
+Unknown bus state timeout 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/sercom/i2c/\mbox{\hyperlink{i2c__master_8h}{i2c\+\_\+master.\+h}}\end{DoxyCompactItemize}

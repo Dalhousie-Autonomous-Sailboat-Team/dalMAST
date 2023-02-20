@@ -1,0 +1,57 @@
+\hypertarget{structarm__lms__instance__f32}{}\doxysection{arm\+\_\+lms\+\_\+instance\+\_\+f32 Struct Reference}
+\label{structarm__lms__instance__f32}\index{arm\_lms\_instance\_f32@{arm\_lms\_instance\_f32}}
+
+
+Instance structure for the floating-\/point LMS filter.  
+
+
+
+
+{\ttfamily \#include $<$arm\+\_\+math.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structarm__lms__instance__f32_af73880d9009982f5d14529869494ec3d}{num\+Taps}}
+\item 
+float32\+\_\+t $\ast$ \mbox{\hyperlink{structarm__lms__instance__f32_aaf94285be2f99b5b9af40bea8dcb14b9}{p\+State}}
+\item 
+float32\+\_\+t $\ast$ \mbox{\hyperlink{structarm__lms__instance__f32_a4795c6f7d3f17cec15c2fd09f66edd1a}{p\+Coeffs}}
+\item 
+float32\+\_\+t \mbox{\hyperlink{structarm__lms__instance__f32_ae2af43d74c93dba16b876e10c97a5b99}{mu}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Instance structure for the floating-\/point LMS filter. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structarm__lms__instance__f32_ae2af43d74c93dba16b876e10c97a5b99}\label{structarm__lms__instance__f32_ae2af43d74c93dba16b876e10c97a5b99}} 
+\index{arm\_lms\_instance\_f32@{arm\_lms\_instance\_f32}!mu@{mu}}
+\index{mu@{mu}!arm\_lms\_instance\_f32@{arm\_lms\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{mu}{mu}}
+{\footnotesize\ttfamily float32\+\_\+t arm\+\_\+lms\+\_\+instance\+\_\+f32\+::mu}
+
+step size that controls filter coefficient updates. \mbox{\Hypertarget{structarm__lms__instance__f32_af73880d9009982f5d14529869494ec3d}\label{structarm__lms__instance__f32_af73880d9009982f5d14529869494ec3d}} 
+\index{arm\_lms\_instance\_f32@{arm\_lms\_instance\_f32}!numTaps@{numTaps}}
+\index{numTaps@{numTaps}!arm\_lms\_instance\_f32@{arm\_lms\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{numTaps}{numTaps}}
+{\footnotesize\ttfamily uint16\+\_\+t arm\+\_\+lms\+\_\+instance\+\_\+f32\+::num\+Taps}
+
+number of coefficients in the filter. \mbox{\Hypertarget{structarm__lms__instance__f32_a4795c6f7d3f17cec15c2fd09f66edd1a}\label{structarm__lms__instance__f32_a4795c6f7d3f17cec15c2fd09f66edd1a}} 
+\index{arm\_lms\_instance\_f32@{arm\_lms\_instance\_f32}!pCoeffs@{pCoeffs}}
+\index{pCoeffs@{pCoeffs}!arm\_lms\_instance\_f32@{arm\_lms\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{pCoeffs}{pCoeffs}}
+{\footnotesize\ttfamily float32\+\_\+t$\ast$ arm\+\_\+lms\+\_\+instance\+\_\+f32\+::p\+Coeffs}
+
+points to the coefficient array. The array is of length num\+Taps. \mbox{\Hypertarget{structarm__lms__instance__f32_aaf94285be2f99b5b9af40bea8dcb14b9}\label{structarm__lms__instance__f32_aaf94285be2f99b5b9af40bea8dcb14b9}} 
+\index{arm\_lms\_instance\_f32@{arm\_lms\_instance\_f32}!pState@{pState}}
+\index{pState@{pState}!arm\_lms\_instance\_f32@{arm\_lms\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{pState}{pState}}
+{\footnotesize\ttfamily float32\+\_\+t$\ast$ arm\+\_\+lms\+\_\+instance\+\_\+f32\+::p\+State}
+
+points to the state variable array. The array is of length num\+Taps+block\+Size-\/1. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/thirdparty/\+CMSIS/\+Include/arm\+\_\+math.\+h\end{DoxyCompactItemize}

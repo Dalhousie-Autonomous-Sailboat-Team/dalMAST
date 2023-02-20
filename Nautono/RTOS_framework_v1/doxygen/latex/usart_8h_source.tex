@@ -1,0 +1,620 @@
+\hypertarget{usart_8h_source}{}\doxysection{usart.\+h}
+\label{usart_8h_source}\index{src/ASF/sam0/drivers/sercom/usart/usart.h@{src/ASF/sam0/drivers/sercom/usart/usart.h}}
+\mbox{\hyperlink{usart_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{34 \textcolor{comment}{/*}}
+\DoxyCodeLine{35 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{36 \textcolor{comment}{ */}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef USART\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define USART\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#include <sercom.h>}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pinmux_8h}{pinmux.h}}>}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#if USART\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#  include <\mbox{\hyperlink{sercom__interrupt_8h}{sercom\_interrupt.h}}>}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{269 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#if (SAMD21) || (SAMR21) || (SAMD09) || (SAMD10) || (SAMD11) || \(\backslash\)}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{    (SAML21) || (SAML22) || (SAMDA1) || (SAMC20) || (SAMC21) || \(\backslash\)}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{    (SAMR30) || (SAMHA1) || (SAMHA0) || (SAMR34) || (SAMR35) || (WLR089) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#  define FEATURE\_USART\_SYNC\_SCHEME\_V2}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#  define FEATURE\_USART\_OVER\_SAMPLE}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#  define FEATURE\_USART\_HARDWARE\_FLOW\_CONTROL}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#  define FEATURE\_USART\_IRDA}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#  define FEATURE\_USART\_LIN\_SLAVE}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#  define FEATURE\_USART\_COLLISION\_DECTION}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#  define FEATURE\_USART\_START\_FRAME\_DECTION}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#  define FEATURE\_USART\_IMMEDIATE\_BUFFER\_OVERFLOW\_NOTIFICATION}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#if (SAML22) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define FEATURE\_USART\_ISO7816}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#if (SAMC20) || (SAMC21) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define FEATURE\_USART\_LIN\_MASTER}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#if (SAML22) || (SAMC20) || (SAMC21) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#  define FEATURE\_USART\_RS485}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_LIN\_MASTER}}
+\DoxyCodeLine{319 \textcolor{keyword}{enum} lin\_node\_type \{}
+\DoxyCodeLine{321     LIN\_MASTER\_NODE = SERCOM\_USART\_CTRLA\_FORM(0x02),}
+\DoxyCodeLine{323     LIN\_SLAVE\_NODE = SERCOM\_USART\_CTRLA\_FORM(0x04),}
+\DoxyCodeLine{325     LIN\_INVALID\_MODE = SERCOM\_USART\_CTRLA\_FORM(0x00),}
+\DoxyCodeLine{326 \};}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{333 \textcolor{keyword}{enum} lin\_master\_cmd \{}
+\DoxyCodeLine{335     LIN\_MASTER\_SOFTWARE\_CONTROL\_TRANSMIT\_CMD = SERCOM\_USART\_CTRLB\_LINCMD(0x01),}
+\DoxyCodeLine{337     LIN\_MASTER\_AUTO\_TRANSMIT\_CMD = SERCOM\_USART\_CTRLB\_LINCMD(0x02),}
+\DoxyCodeLine{338 \};}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{347 \textcolor{keyword}{enum} lin\_master\_header\_delay \{}
+\DoxyCodeLine{350     LIN\_MASTER\_HEADER\_DELAY\_0 = SERCOM\_USART\_CTRLC\_HDRDLY(0x0),}
+\DoxyCodeLine{353     LIN\_MASTER\_HEADER\_DELAY\_1 = SERCOM\_USART\_CTRLC\_HDRDLY(0x01),}
+\DoxyCodeLine{356     LIN\_MASTER\_HEADER\_DELAY\_2 = SERCOM\_USART\_CTRLC\_HDRDLY(0x02),}
+\DoxyCodeLine{359     LIN\_MASTER\_HEADER\_DELAY\_3 = SERCOM\_USART\_CTRLC\_HDRDLY(0x03),}
+\DoxyCodeLine{360 \};}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{367 \textcolor{keyword}{enum} lin\_master\_break\_length \{}
+\DoxyCodeLine{369     LIN\_MASTER\_BREAK\_LENGTH\_13\_BIT = SERCOM\_USART\_CTRLC\_BRKLEN(0x0),}
+\DoxyCodeLine{371     LIN\_MASTER\_BREAK\_LENGTH\_17\_BIT = SERCOM\_USART\_CTRLC\_BRKLEN(0x1),}
+\DoxyCodeLine{373     LIN\_MASTER\_BREAK\_LENGTH\_21\_BIT = SERCOM\_USART\_CTRLC\_BRKLEN(0x2),}
+\DoxyCodeLine{375     LIN\_MASTER\_BREAK\_LENGTH\_26\_BIT = SERCOM\_USART\_CTRLC\_BRKLEN(0x3),}
+\DoxyCodeLine{376 \};}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_ISO7816}}
+\DoxyCodeLine{384 \textcolor{keyword}{enum} iso7816\_protocol\_type \{}
+\DoxyCodeLine{386     ISO7816\_PROTOCOL\_T\_0 = SERCOM\_USART\_CTRLA\_CMODE,}
+\DoxyCodeLine{388     ISO7816\_PROTOCOL\_T\_1 = (0x0ul << \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2sercom_8h_ad98b1700e833ae1e4433b54c5d96333a}{SERCOM\_USART\_CTRLA\_CMODE\_Pos}}),}
+\DoxyCodeLine{389 \};}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{396 \textcolor{keyword}{enum} iso7816\_guard\_time \{}
+\DoxyCodeLine{398     ISO7816\_GUARD\_TIME\_2\_BIT = 2,}
+\DoxyCodeLine{400     ISO7816\_GUARD\_TIME\_3\_BIT,}
+\DoxyCodeLine{402     ISO7816\_GUARD\_TIME\_4\_BIT,}
+\DoxyCodeLine{404     ISO7816\_GUARD\_TIME\_5\_BIT,}
+\DoxyCodeLine{406     ISO7816\_GUARD\_TIME\_6\_BIT,}
+\DoxyCodeLine{408     ISO7816\_GUARD\_TIME\_7\_BIT,}
+\DoxyCodeLine{409 \};}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{416 \textcolor{keyword}{enum} iso7816\_inhibit\_nack \{}
+\DoxyCodeLine{418     ISO7816\_INHIBIT\_NACK\_DISABLE = (0x0ul << SERCOM\_USART\_CTRLC\_INACK\_Pos),}
+\DoxyCodeLine{420     ISO7816\_INHIBIT\_NACK\_ENABLE = SERCOM\_USART\_CTRLC\_INACK,}
+\DoxyCodeLine{421 \};}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{428 \textcolor{keyword}{enum} iso7816\_successive\_recv\_nack \{}
+\DoxyCodeLine{430     ISO7816\_SUCCESSIVE\_RECV\_NACK\_DISABLE = (0x0ul << SERCOM\_USART\_CTRLC\_INACK\_Pos),}
+\DoxyCodeLine{432     ISO7816\_SUCCESSIVE\_RECV\_NACK\_ENABLE = SERCOM\_USART\_CTRLC\_DSNACK,}
+\DoxyCodeLine{433 \};}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{440 \textcolor{keyword}{struct }iso7816\_config\_t \{}
+\DoxyCodeLine{441     \textcolor{comment}{/* ISO7816 mode enable */}}
+\DoxyCodeLine{442     \textcolor{keywordtype}{bool} enabled;}
+\DoxyCodeLine{444     \textcolor{keyword}{enum} iso7816\_protocol\_type protocol\_t;}
+\DoxyCodeLine{446     \textcolor{keywordtype}{bool} enable\_inverse;}
+\DoxyCodeLine{448     \textcolor{keyword}{enum} iso7816\_guard\_time guard\_time;}
+\DoxyCodeLine{454     \textcolor{keyword}{enum} iso7816\_inhibit\_nack inhibit\_nack;}
+\DoxyCodeLine{463     \textcolor{keyword}{enum} iso7816\_successive\_recv\_nack successive\_recv\_nack;}
+\DoxyCodeLine{464     \textcolor{comment}{/* Max number of repetitions */}}
+\DoxyCodeLine{465     uint32\_t max\_iterations;}
+\DoxyCodeLine{466 \};}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{468 }
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#ifndef PINMUX\_DEFAULT}}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#  define PINMUX\_DEFAULT 0}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#ifndef PINMUX\_UNUSED}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#  define PINMUX\_UNUSED 0xFFFFFFFF}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#ifndef USART\_TIMEOUT}}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#  define USART\_TIMEOUT 0xFFFF}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#if USART\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{490 \textcolor{keyword}{enum} usart\_callback \{}
+\DoxyCodeLine{492     USART\_CALLBACK\_BUFFER\_TRANSMITTED,}
+\DoxyCodeLine{494     USART\_CALLBACK\_BUFFER\_RECEIVED,}
+\DoxyCodeLine{496     USART\_CALLBACK\_ERROR,}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_LIN\_SLAVE}}
+\DoxyCodeLine{499     USART\_CALLBACK\_BREAK\_RECEIVED,}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_HARDWARE\_FLOW\_CONTROL}}
+\DoxyCodeLine{503     USART\_CALLBACK\_CTS\_INPUT\_CHANGE,}
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_START\_FRAME\_DECTION}}
+\DoxyCodeLine{507     USART\_CALLBACK\_START\_RECEIVED,}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{509 \textcolor{preprocessor}{\#  if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{511     USART\_CALLBACK\_N,}
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{513 \};}
+\DoxyCodeLine{514 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{515 }
+\DoxyCodeLine{522 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4352d9150bb8cbd54d26abe3055a5ee1}{usart\_dataorder}} \{}
+\DoxyCodeLine{525     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1add3a3b7f39f32c42d22991ea981e2810}{USART\_DATAORDER\_MSB}} = 0,}
+\DoxyCodeLine{528     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1afb0c8f2d6f7da9f62dc67871d710b9af}{USART\_DATAORDER\_LSB}} = SERCOM\_USART\_CTRLA\_DORD,}
+\DoxyCodeLine{529 \};}
+\DoxyCodeLine{530 }
+\DoxyCodeLine{536 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga7ff4d85053b8ea0904b5a57587b39c8f}{usart\_transfer\_mode}} \{}
+\DoxyCodeLine{538     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa4756b64694eb2e2ca4f4c77c6f53786d}{USART\_TRANSFER\_SYNCHRONOUSLY}} = (SERCOM\_USART\_CTRLA\_CMODE),}
+\DoxyCodeLine{540     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa5662e0cc82a73f113bb13ebb1e4c65ef}{USART\_TRANSFER\_ASYNCHRONOUSLY}} = (0x0ul << \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2sercom_8h_ad98b1700e833ae1e4433b54c5d96333a}{SERCOM\_USART\_CTRLA\_CMODE\_Pos}}),}
+\DoxyCodeLine{541 \};}
+\DoxyCodeLine{542 }
+\DoxyCodeLine{548 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga867cc5f0ea7d3bf651d68f0046cf6f41}{usart\_parity}} \{}
+\DoxyCodeLine{551     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41a69c6cdd4d354d3b26c8d2f09f49d2ede}{USART\_PARITY\_ODD}}  = SERCOM\_USART\_CTRLB\_PMODE,}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{555     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41ae5d22c99a30184aff19d77c1a970fb23}{USART\_PARITY\_EVEN}} = 0,}
+\DoxyCodeLine{556 }
+\DoxyCodeLine{559     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41aecf52ec650226bdc63e12a21d3b5585d}{USART\_PARITY\_NONE}} = 0xFF,}
+\DoxyCodeLine{560 \};}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{570 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga87bbdb9f7edb3f1866aeb498bf7c9077}{usart\_signal\_mux\_settings}} \{}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_HARDWARE\_FLOW\_CONTROL}}
+\DoxyCodeLine{573     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ab2330cf3ae7faacb7fd28678a77327f4}{USART\_RX\_0\_TX\_0\_XCK\_1}} = (SERCOM\_USART\_CTRLA\_RXPO(0) | SERCOM\_USART\_CTRLA\_TXPO(0)),}
+\DoxyCodeLine{575     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a4ad0f5cd921dd8c0787ebeba372bcc70}{USART\_RX\_0\_TX\_2\_XCK\_3}} = (SERCOM\_USART\_CTRLA\_RXPO(0) | SERCOM\_USART\_CTRLA\_TXPO(1)),}
+\DoxyCodeLine{577     USART\_RX\_0\_TX\_0\_RTS\_2\_CTS\_3 = (SERCOM\_USART\_CTRLA\_RXPO(0) | SERCOM\_USART\_CTRLA\_TXPO(2)),}
+\DoxyCodeLine{579     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}{USART\_RX\_1\_TX\_0\_XCK\_1}} = (SERCOM\_USART\_CTRLA\_RXPO(1) | SERCOM\_USART\_CTRLA\_TXPO(0)),}
+\DoxyCodeLine{581     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a884ae3424a45469c20b4ecf9c65a8e48}{USART\_RX\_1\_TX\_2\_XCK\_3}} = (SERCOM\_USART\_CTRLA\_RXPO(1) | SERCOM\_USART\_CTRLA\_TXPO(1)),}
+\DoxyCodeLine{583     USART\_RX\_1\_TX\_0\_RTS\_2\_CTS\_3 = (SERCOM\_USART\_CTRLA\_RXPO(1) | SERCOM\_USART\_CTRLA\_TXPO(2)),}
+\DoxyCodeLine{585     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a730a5c0276235851c892b3a817a6d49f}{USART\_RX\_2\_TX\_0\_XCK\_1}} = (SERCOM\_USART\_CTRLA\_RXPO(2) | SERCOM\_USART\_CTRLA\_TXPO(0)),}
+\DoxyCodeLine{587     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077aa64f03365c6e57705c9a154741523956}{USART\_RX\_2\_TX\_2\_XCK\_3}} = (SERCOM\_USART\_CTRLA\_RXPO(2) | SERCOM\_USART\_CTRLA\_TXPO(1)),}
+\DoxyCodeLine{589     USART\_RX\_2\_TX\_0\_RTS\_2\_CTS\_3 = (SERCOM\_USART\_CTRLA\_RXPO(2) | SERCOM\_USART\_CTRLA\_TXPO(2)),}
+\DoxyCodeLine{591     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a01cd27a54558c7956d41d29c16cf4a40}{USART\_RX\_3\_TX\_0\_XCK\_1}} = (SERCOM\_USART\_CTRLA\_RXPO(3) | SERCOM\_USART\_CTRLA\_TXPO(0)),}
+\DoxyCodeLine{593     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}{USART\_RX\_3\_TX\_2\_XCK\_3}} = (SERCOM\_USART\_CTRLA\_RXPO(3) | SERCOM\_USART\_CTRLA\_TXPO(1)),}
+\DoxyCodeLine{595     USART\_RX\_3\_TX\_0\_RTS\_2\_CTS\_3 = (SERCOM\_USART\_CTRLA\_RXPO(3) | SERCOM\_USART\_CTRLA\_TXPO(2)),}
+\DoxyCodeLine{596 \#ifdef FEATURE\_USART\_RS485}
+\DoxyCodeLine{598     USART\_RX\_0\_TX\_0\_XCK\_1\_TE\_2 = (SERCOM\_USART\_CTRLA\_RXPO(0) | SERCOM\_USART\_CTRLA\_TXPO(3)),}
+\DoxyCodeLine{600     USART\_RX\_1\_TX\_0\_XCK\_1\_TE\_2 = (SERCOM\_USART\_CTRLA\_RXPO(1) | SERCOM\_USART\_CTRLA\_TXPO(3)),}
+\DoxyCodeLine{602     USART\_RX\_2\_TX\_0\_XCK\_1\_TE\_2 = (SERCOM\_USART\_CTRLA\_RXPO(2) | SERCOM\_USART\_CTRLA\_TXPO(3)),}
+\DoxyCodeLine{604     USART\_RX\_3\_TX\_0\_XCK\_1\_TE\_2 = (SERCOM\_USART\_CTRLA\_RXPO(3) | SERCOM\_USART\_CTRLA\_TXPO(3)),}
+\DoxyCodeLine{605 \#endif}
+\DoxyCodeLine{606 \#\textcolor{keywordflow}{else}}
+\DoxyCodeLine{608     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ab2330cf3ae7faacb7fd28678a77327f4}{USART\_RX\_0\_TX\_0\_XCK\_1}} = (SERCOM\_USART\_CTRLA\_RXPO(0)),}
+\DoxyCodeLine{610     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a4ad0f5cd921dd8c0787ebeba372bcc70}{USART\_RX\_0\_TX\_2\_XCK\_3}} = (SERCOM\_USART\_CTRLA\_RXPO(0) | SERCOM\_USART\_CTRLA\_TXPO),}
+\DoxyCodeLine{612     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}{USART\_RX\_1\_TX\_0\_XCK\_1}} = (SERCOM\_USART\_CTRLA\_RXPO(1)),}
+\DoxyCodeLine{614     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a884ae3424a45469c20b4ecf9c65a8e48}{USART\_RX\_1\_TX\_2\_XCK\_3}} = (SERCOM\_USART\_CTRLA\_RXPO(1) | SERCOM\_USART\_CTRLA\_TXPO),}
+\DoxyCodeLine{616     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a730a5c0276235851c892b3a817a6d49f}{USART\_RX\_2\_TX\_0\_XCK\_1}} = (SERCOM\_USART\_CTRLA\_RXPO(2)),}
+\DoxyCodeLine{618     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077aa64f03365c6e57705c9a154741523956}{USART\_RX\_2\_TX\_2\_XCK\_3}} = (SERCOM\_USART\_CTRLA\_RXPO(2) | SERCOM\_USART\_CTRLA\_TXPO),}
+\DoxyCodeLine{620     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a01cd27a54558c7956d41d29c16cf4a40}{USART\_RX\_3\_TX\_0\_XCK\_1}} = (SERCOM\_USART\_CTRLA\_RXPO(3)),}
+\DoxyCodeLine{622     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}{USART\_RX\_3\_TX\_2\_XCK\_3}} = (SERCOM\_USART\_CTRLA\_RXPO(3) | SERCOM\_USART\_CTRLA\_TXPO),}
+\DoxyCodeLine{623 \#endif}
+\DoxyCodeLine{624 \};}
+\DoxyCodeLine{625 }
+\DoxyCodeLine{631 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gab7d8ac715e2bd7ccddc65bf2c5ceb1f5}{usart\_stopbits}} \{}
+\DoxyCodeLine{633     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a9011413422d1340bb5c343a1f3b57341}{USART\_STOPBITS\_1}} = 0,}
+\DoxyCodeLine{635     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a1e3cd9a88a519d93c0c300e873437a2c}{USART\_STOPBITS\_2}} = SERCOM\_USART\_CTRLB\_SBMODE,}
+\DoxyCodeLine{636 \};}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{643 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}{usart\_character\_size}} \{}
+\DoxyCodeLine{645     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab1db6dc41b52d70a9185b963d9140c7f}{USART\_CHARACTER\_SIZE\_5BIT}} = SERCOM\_USART\_CTRLB\_CHSIZE(5),}
+\DoxyCodeLine{647     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a4b631e89e72f2b939afbc4a996d358b9}{USART\_CHARACTER\_SIZE\_6BIT}} = SERCOM\_USART\_CTRLB\_CHSIZE(6),}
+\DoxyCodeLine{649     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab5e1a6e76a61ee79563a551ad2431726}{USART\_CHARACTER\_SIZE\_7BIT}} = SERCOM\_USART\_CTRLB\_CHSIZE(7),}
+\DoxyCodeLine{651     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a8679bfe526e0d92b5d313f9f5880da4b}{USART\_CHARACTER\_SIZE\_8BIT}} = SERCOM\_USART\_CTRLB\_CHSIZE(0),}
+\DoxyCodeLine{653     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a6a7fe30ecca9dbde62c154d6619cab7f}{USART\_CHARACTER\_SIZE\_9BIT}} = SERCOM\_USART\_CTRLB\_CHSIZE(1),}
+\DoxyCodeLine{654 \};}
+\DoxyCodeLine{655 }
+\DoxyCodeLine{656 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_OVER\_SAMPLE}}
+\DoxyCodeLine{662 \textcolor{keyword}{enum} usart\_sample\_rate \{}
+\DoxyCodeLine{664     USART\_SAMPLE\_RATE\_16X\_ARITHMETIC = SERCOM\_USART\_CTRLA\_SAMPR(0),}
+\DoxyCodeLine{666     USART\_SAMPLE\_RATE\_16X\_FRACTIONAL = SERCOM\_USART\_CTRLA\_SAMPR(1),}
+\DoxyCodeLine{668     USART\_SAMPLE\_RATE\_8X\_ARITHMETIC = SERCOM\_USART\_CTRLA\_SAMPR(2),}
+\DoxyCodeLine{670     USART\_SAMPLE\_RATE\_8X\_FRACTIONAL = SERCOM\_USART\_CTRLA\_SAMPR(3),}
+\DoxyCodeLine{672     USART\_SAMPLE\_RATE\_3X\_ARITHMETIC = SERCOM\_USART\_CTRLA\_SAMPR(4),}
+\DoxyCodeLine{673 \};}
+\DoxyCodeLine{674 }
+\DoxyCodeLine{680 \textcolor{keyword}{enum} usart\_sample\_adjustment \{}
+\DoxyCodeLine{682     USART\_SAMPLE\_ADJUSTMENT\_7\_8\_9 = SERCOM\_USART\_CTRLA\_SAMPA(0),}
+\DoxyCodeLine{684     USART\_SAMPLE\_ADJUSTMENT\_9\_10\_11 = SERCOM\_USART\_CTRLA\_SAMPA(1),}
+\DoxyCodeLine{686     USART\_SAMPLE\_ADJUSTMENT\_11\_12\_13 = SERCOM\_USART\_CTRLA\_SAMPA(2),}
+\DoxyCodeLine{688     USART\_SAMPLE\_ADJUSTMENT\_13\_14\_15 = SERCOM\_USART\_CTRLA\_SAMPA(3),}
+\DoxyCodeLine{689 \};}
+\DoxyCodeLine{690 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{691 }
+\DoxyCodeLine{692 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_RS485}}
+\DoxyCodeLine{698 \textcolor{keyword}{enum} rs485\_guard\_time \{}
+\DoxyCodeLine{700     RS485\_GUARD\_TIME\_0\_BIT = 0,}
+\DoxyCodeLine{702     RS485\_GUARD\_TIME\_1\_BIT,}
+\DoxyCodeLine{704     RS485\_GUARD\_TIME\_2\_BIT,}
+\DoxyCodeLine{706     RS485\_GUARD\_TIME\_3\_BIT,}
+\DoxyCodeLine{708     RS485\_GUARD\_TIME\_4\_BIT,}
+\DoxyCodeLine{710     RS485\_GUARD\_TIME\_5\_BIT,}
+\DoxyCodeLine{712     RS485\_GUARD\_TIME\_6\_BIT,}
+\DoxyCodeLine{714     RS485\_GUARD\_TIME\_7\_BIT,}
+\DoxyCodeLine{715 \};}
+\DoxyCodeLine{716 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{717 }
+\DoxyCodeLine{723 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\_transceiver\_type}} \{}
+\DoxyCodeLine{725     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a627832963965f11ae53299b802582c48}{USART\_TRANSCEIVER\_RX}},}
+\DoxyCodeLine{727     \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a9d1050c223a28be7aefcbca46a0add81}{USART\_TRANSCEIVER\_TX}},}
+\DoxyCodeLine{728 \};}
+\DoxyCodeLine{729 }
+\DoxyCodeLine{735 \textcolor{keyword}{struct }\mbox{\hyperlink{structusart__config}{usart\_config}} \{}
+\DoxyCodeLine{737     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4352d9150bb8cbd54d26abe3055a5ee1}{usart\_dataorder}} \mbox{\hyperlink{structusart__config_aff86d0504eeb6585177a1b8d76105f13}{data\_order}};}
+\DoxyCodeLine{739     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga7ff4d85053b8ea0904b5a57587b39c8f}{usart\_transfer\_mode}} \mbox{\hyperlink{structusart__config_aff29317f5d390d68c33cf963bb451cb0}{transfer\_mode}};}
+\DoxyCodeLine{741     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga867cc5f0ea7d3bf651d68f0046cf6f41}{usart\_parity}} \mbox{\hyperlink{structusart__config_ae11b3a8ef883224d65e2ab23d2cf777a}{parity}};}
+\DoxyCodeLine{743     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gab7d8ac715e2bd7ccddc65bf2c5ceb1f5}{usart\_stopbits}} \mbox{\hyperlink{structusart__config_a228fc310d238ea668567c8e675902bf3}{stopbits}};}
+\DoxyCodeLine{745     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}{usart\_character\_size}} \mbox{\hyperlink{structusart__config_ab3ee90fd7b2a4a7b2f848afe41e2be38}{character\_size}};}
+\DoxyCodeLine{747     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga87bbdb9f7edb3f1866aeb498bf7c9077}{usart\_signal\_mux\_settings}} \mbox{\hyperlink{structusart__config_ab63978a559e122306fc9a890d526cf1e}{mux\_setting}};}
+\DoxyCodeLine{748 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_OVER\_SAMPLE}}
+\DoxyCodeLine{750     \textcolor{keyword}{enum} usart\_sample\_rate sample\_rate;}
+\DoxyCodeLine{752     \textcolor{keyword}{enum} usart\_sample\_adjustment sample\_adjustment;}
+\DoxyCodeLine{753 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{754 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_IMMEDIATE\_BUFFER\_OVERFLOW\_NOTIFICATION}}
+\DoxyCodeLine{756     \textcolor{keywordtype}{bool} immediate\_buffer\_overflow\_notification;}
+\DoxyCodeLine{757 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{758 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_IRDA}}
+\DoxyCodeLine{760     \textcolor{keywordtype}{bool} encoding\_format\_enable;}
+\DoxyCodeLine{762     uint8\_t receive\_pulse\_length;}
+\DoxyCodeLine{763 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{764 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_LIN\_SLAVE}}
+\DoxyCodeLine{766     \textcolor{keywordtype}{bool} lin\_slave\_enable;}
+\DoxyCodeLine{767 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{768 }
+\DoxyCodeLine{769 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_LIN\_MASTER}}
+\DoxyCodeLine{771     \textcolor{keyword}{enum} lin\_node\_type lin\_node;}
+\DoxyCodeLine{773     \textcolor{keyword}{enum} lin\_master\_header\_delay lin\_header\_delay;}
+\DoxyCodeLine{775     \textcolor{keyword}{enum} lin\_master\_break\_length lin\_break\_length;}
+\DoxyCodeLine{776 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{777 }
+\DoxyCodeLine{778 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_START\_FRAME\_DECTION}}
+\DoxyCodeLine{780     \textcolor{keywordtype}{bool} start\_frame\_detection\_enable;}
+\DoxyCodeLine{781 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{782 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_ISO7816}}
+\DoxyCodeLine{784     \textcolor{keyword}{struct }iso7816\_config\_t iso7816\_config;}
+\DoxyCodeLine{785 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{786 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_RS485}}
+\DoxyCodeLine{788     \textcolor{keyword}{enum} rs485\_guard\_time rs485\_guard\_time;}
+\DoxyCodeLine{789 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{790 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_COLLISION\_DECTION}}
+\DoxyCodeLine{792     \textcolor{keywordtype}{bool} collision\_detection\_enable;}
+\DoxyCodeLine{793 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{795     uint32\_t \mbox{\hyperlink{structusart__config_acacbd7ecb3d46f576ff1361ae40019fd}{baudrate}};}
+\DoxyCodeLine{797     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structusart__config_ab0345a4cd716d279e2e5154aea80bb25}{receiver\_enable}};}
+\DoxyCodeLine{799     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structusart__config_a9dd6801569eef96be5db12eba84b70a1}{transmitter\_enable}};}
+\DoxyCodeLine{800 }
+\DoxyCodeLine{807     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structusart__config_a9d1d37d2aafaa447a345a0a98c56a456}{clock\_polarity\_inverted}};}
+\DoxyCodeLine{808 }
+\DoxyCodeLine{813     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structusart__config_a7c5c958b33dac14a00d863930acdbcd0}{use\_external\_clock}};}
+\DoxyCodeLine{816     uint32\_t \mbox{\hyperlink{structusart__config_aae9b61e6a61fe5dfa4292920139d21d6}{ext\_clock\_freq}};}
+\DoxyCodeLine{818     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structusart__config_a963b378a7eef4f52449010185c5d8d69}{run\_in\_standby}};}
+\DoxyCodeLine{820     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\_generator}} \mbox{\hyperlink{structusart__config_a6f36554bb785451472ab8fa7909e47e5}{generator\_source}};}
+\DoxyCodeLine{828     uint32\_t \mbox{\hyperlink{structusart__config_ab9ef48b86e1a08309aa8ad2ba913e518}{pinmux\_pad0}};}
+\DoxyCodeLine{836     uint32\_t \mbox{\hyperlink{structusart__config_a52acb79236ebc14078e89465dfd42cdb}{pinmux\_pad1}};}
+\DoxyCodeLine{844     uint32\_t \mbox{\hyperlink{structusart__config_aa7655b1b53af1277af49c33947a30b8f}{pinmux\_pad2}};}
+\DoxyCodeLine{852     uint32\_t \mbox{\hyperlink{structusart__config_ac9beb73b85e4033b15b57395f214a8bc}{pinmux\_pad3}};}
+\DoxyCodeLine{853 \};}
+\DoxyCodeLine{854 }
+\DoxyCodeLine{855 \textcolor{preprocessor}{\#if USART\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{861 \textcolor{keyword}{struct }\mbox{\hyperlink{structusart__module}{usart\_module}};}
+\DoxyCodeLine{862 }
+\DoxyCodeLine{868 \textcolor{keyword}{typedef} void (*usart\_callback\_t)(\textcolor{keyword}{struct }\mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{869 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{870 }
+\DoxyCodeLine{880 \textcolor{keyword}{struct }\mbox{\hyperlink{structusart__module}{usart\_module}} \{}
+\DoxyCodeLine{881 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{883     \mbox{\hyperlink{union_sercom}{Sercom}} *\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}};}
+\DoxyCodeLine{885     \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} \mbox{\hyperlink{structusart__module_a9d57a26b063a478916a1890265f644f1}{locked}};}
+\DoxyCodeLine{887     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}{usart\_character\_size}} \mbox{\hyperlink{structusart__module_a7938c4ee4b4c5c12f14846fd31510cef}{character\_size}};}
+\DoxyCodeLine{889     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structusart__module_a33b3dff21d04ab4a62fddbc423275ebd}{receiver\_enabled}};}
+\DoxyCodeLine{891     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structusart__module_a03fe537b713e7d0adf041fd1e92780ca}{transmitter\_enabled}};}
+\DoxyCodeLine{892 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_LIN\_SLAVE}}
+\DoxyCodeLine{894     \textcolor{keywordtype}{bool} lin\_slave\_enabled;}
+\DoxyCodeLine{895 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{896 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_START\_FRAME\_DECTION}}
+\DoxyCodeLine{898     \textcolor{keywordtype}{bool} start\_frame\_detection\_enabled;}
+\DoxyCodeLine{899 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{900 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_ISO7816}}
+\DoxyCodeLine{902     \textcolor{keywordtype}{bool} iso7816\_mode\_enabled;}
+\DoxyCodeLine{903 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{904 \textcolor{preprocessor}{\#  if USART\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{906     usart\_callback\_t callback[USART\_CALLBACK\_N];}
+\DoxyCodeLine{908     \textcolor{keyword}{volatile} uint8\_t *rx\_buffer\_ptr;}
+\DoxyCodeLine{909 }
+\DoxyCodeLine{912     \textcolor{keyword}{volatile} uint8\_t *tx\_buffer\_ptr;}
+\DoxyCodeLine{914     \textcolor{keyword}{volatile} uint16\_t remaining\_rx\_buffer\_length;}
+\DoxyCodeLine{916     \textcolor{keyword}{volatile} uint16\_t remaining\_tx\_buffer\_length;}
+\DoxyCodeLine{918     uint8\_t callback\_reg\_mask;}
+\DoxyCodeLine{920     uint8\_t callback\_enable\_mask;}
+\DoxyCodeLine{922     \textcolor{keyword}{volatile} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} rx\_status;}
+\DoxyCodeLine{924     \textcolor{keyword}{volatile} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} tx\_status;}
+\DoxyCodeLine{925 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{926 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{927 \};}
+\DoxyCodeLine{928 }
+\DoxyCodeLine{949 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} usart\_lock(}
+\DoxyCodeLine{950         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{951 \{}
+\DoxyCodeLine{952     \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} status;}
+\DoxyCodeLine{953 }
+\DoxyCodeLine{954     system\_interrupt\_enter\_critical\_section();}
+\DoxyCodeLine{955 }
+\DoxyCodeLine{956     \textcolor{keywordflow}{if} (module-\/>\mbox{\hyperlink{structusart__module_a9d57a26b063a478916a1890265f644f1}{locked}}) \{}
+\DoxyCodeLine{957         status = STATUS\_BUSY;}
+\DoxyCodeLine{958     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{959         module-\/>\mbox{\hyperlink{structusart__module_a9d57a26b063a478916a1890265f644f1}{locked}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{960         status = STATUS\_OK;}
+\DoxyCodeLine{961     \}}
+\DoxyCodeLine{962 }
+\DoxyCodeLine{963     system\_interrupt\_leave\_critical\_section();}
+\DoxyCodeLine{964 }
+\DoxyCodeLine{965     \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{966 \}}
+\DoxyCodeLine{967 }
+\DoxyCodeLine{977 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} usart\_unlock(\textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{978 \{}
+\DoxyCodeLine{979     module-\/>\mbox{\hyperlink{structusart__module_a9d57a26b063a478916a1890265f644f1}{locked}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{980 \}}
+\DoxyCodeLine{981 }
+\DoxyCodeLine{1000 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} usart\_is\_syncing(}
+\DoxyCodeLine{1001         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{1002 \{}
+\DoxyCodeLine{1003     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1004     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1005     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}});}
+\DoxyCodeLine{1006 }
+\DoxyCodeLine{1007     \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}} *\textcolor{keyword}{const} usart\_hw = \&(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}-\/>\mbox{\hyperlink{union_sercom_ae82be07be50298f8e692f755dbbdc7ab}{USART}});}
+\DoxyCodeLine{1008 }
+\DoxyCodeLine{1009 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_SYNC\_SCHEME\_V2}}
+\DoxyCodeLine{1010     \textcolor{keywordflow}{return} (usart\_hw-\/>SYNCBUSY.reg);}
+\DoxyCodeLine{1011 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{1012     \textcolor{keywordflow}{return} (usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_aec9dc41e7c3727dcb02b794159f115da}{STATUS}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___s_t_a_t_u_s___type_a7efad022c0dae53b043e957f7f4410e1}{reg}} \& SERCOM\_USART\_STATUS\_SYNCBUSY);}
+\DoxyCodeLine{1013 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1014 \}}
+\DoxyCodeLine{1015 }
+\DoxyCodeLine{1016 \textcolor{preprocessor}{\#if !defined (\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{1021 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \_usart\_wait\_for\_sync(}
+\DoxyCodeLine{1022         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{1023 \{}
+\DoxyCodeLine{1024     \textcolor{comment}{/* Sanity check */}}
+\DoxyCodeLine{1025     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1026 }
+\DoxyCodeLine{1027     \textcolor{keywordflow}{while} (usart\_is\_syncing(module)) \{}
+\DoxyCodeLine{1028         \textcolor{comment}{/* Wait until the synchronization is complete */}}
+\DoxyCodeLine{1029     \}}
+\DoxyCodeLine{1030 \}}
+\DoxyCodeLine{1031 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1032 }
+\DoxyCodeLine{1051 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} usart\_get\_config\_defaults(}
+\DoxyCodeLine{1052         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__config}{usart\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{1053 \{}
+\DoxyCodeLine{1054     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1055     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{1056 }
+\DoxyCodeLine{1057     \textcolor{comment}{/* Set default config in the config struct */}}
+\DoxyCodeLine{1058     config-\/>\mbox{\hyperlink{structusart__config_aff86d0504eeb6585177a1b8d76105f13}{data\_order}}       = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1afb0c8f2d6f7da9f62dc67871d710b9af}{USART\_DATAORDER\_LSB}};}
+\DoxyCodeLine{1059     config-\/>\mbox{\hyperlink{structusart__config_aff29317f5d390d68c33cf963bb451cb0}{transfer\_mode}}    = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa5662e0cc82a73f113bb13ebb1e4c65ef}{USART\_TRANSFER\_ASYNCHRONOUSLY}};}
+\DoxyCodeLine{1060     config-\/>\mbox{\hyperlink{structusart__config_ae11b3a8ef883224d65e2ab23d2cf777a}{parity}}           = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41aecf52ec650226bdc63e12a21d3b5585d}{USART\_PARITY\_NONE}};}
+\DoxyCodeLine{1061     config-\/>\mbox{\hyperlink{structusart__config_a228fc310d238ea668567c8e675902bf3}{stopbits}}         = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a9011413422d1340bb5c343a1f3b57341}{USART\_STOPBITS\_1}};}
+\DoxyCodeLine{1062     config-\/>\mbox{\hyperlink{structusart__config_ab3ee90fd7b2a4a7b2f848afe41e2be38}{character\_size}}   = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a8679bfe526e0d92b5d313f9f5880da4b}{USART\_CHARACTER\_SIZE\_8BIT}};}
+\DoxyCodeLine{1063     config-\/>\mbox{\hyperlink{structusart__config_acacbd7ecb3d46f576ff1361ae40019fd}{baudrate}}         = 9600;}
+\DoxyCodeLine{1064     config-\/>\mbox{\hyperlink{structusart__config_ab0345a4cd716d279e2e5154aea80bb25}{receiver\_enable}}  = \textcolor{keyword}{true};}
+\DoxyCodeLine{1065     config-\/>\mbox{\hyperlink{structusart__config_a9dd6801569eef96be5db12eba84b70a1}{transmitter\_enable}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{1066     config-\/>\mbox{\hyperlink{structusart__config_a9d1d37d2aafaa447a345a0a98c56a456}{clock\_polarity\_inverted}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1067     config-\/>\mbox{\hyperlink{structusart__config_a7c5c958b33dac14a00d863930acdbcd0}{use\_external\_clock}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1068     config-\/>\mbox{\hyperlink{structusart__config_aae9b61e6a61fe5dfa4292920139d21d6}{ext\_clock\_freq}}   = 0;}
+\DoxyCodeLine{1069     config-\/>\mbox{\hyperlink{structusart__config_ab63978a559e122306fc9a890d526cf1e}{mux\_setting}}      = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a884ae3424a45469c20b4ecf9c65a8e48}{USART\_RX\_1\_TX\_2\_XCK\_3}};}
+\DoxyCodeLine{1070     config-\/>\mbox{\hyperlink{structusart__config_a963b378a7eef4f52449010185c5d8d69}{run\_in\_standby}}   = \textcolor{keyword}{false};}
+\DoxyCodeLine{1071     config-\/>\mbox{\hyperlink{structusart__config_a6f36554bb785451472ab8fa7909e47e5}{generator\_source}} = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\_GENERATOR\_0}};}
+\DoxyCodeLine{1072     config-\/>\mbox{\hyperlink{structusart__config_ab9ef48b86e1a08309aa8ad2ba913e518}{pinmux\_pad0}}      = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gae7bc85650aed61f97fe3d5df9b430456}{PINMUX\_DEFAULT}};}
+\DoxyCodeLine{1073     config-\/>\mbox{\hyperlink{structusart__config_a52acb79236ebc14078e89465dfd42cdb}{pinmux\_pad1}}      = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gae7bc85650aed61f97fe3d5df9b430456}{PINMUX\_DEFAULT}};}
+\DoxyCodeLine{1074     config-\/>\mbox{\hyperlink{structusart__config_aa7655b1b53af1277af49c33947a30b8f}{pinmux\_pad2}}      = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gae7bc85650aed61f97fe3d5df9b430456}{PINMUX\_DEFAULT}};}
+\DoxyCodeLine{1075     config-\/>\mbox{\hyperlink{structusart__config_ac9beb73b85e4033b15b57395f214a8bc}{pinmux\_pad3}}      = \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gae7bc85650aed61f97fe3d5df9b430456}{PINMUX\_DEFAULT}};}
+\DoxyCodeLine{1076 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_OVER\_SAMPLE}}
+\DoxyCodeLine{1077     config-\/>sample\_adjustment     = USART\_SAMPLE\_ADJUSTMENT\_7\_8\_9;}
+\DoxyCodeLine{1078     config-\/>sample\_rate           = USART\_SAMPLE\_RATE\_16X\_ARITHMETIC;}
+\DoxyCodeLine{1079 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1080 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_LIN\_SLAVE}}
+\DoxyCodeLine{1081     config-\/>lin\_slave\_enable      = \textcolor{keyword}{false};}
+\DoxyCodeLine{1082 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1083 }
+\DoxyCodeLine{1084 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_LIN\_MASTER}}
+\DoxyCodeLine{1085     config-\/>lin\_node = LIN\_INVALID\_MODE;}
+\DoxyCodeLine{1086     config-\/>lin\_header\_delay = LIN\_MASTER\_HEADER\_DELAY\_0;}
+\DoxyCodeLine{1087     config-\/>lin\_break\_length = LIN\_MASTER\_BREAK\_LENGTH\_13\_BIT;}
+\DoxyCodeLine{1088 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1089 }
+\DoxyCodeLine{1090 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_IMMEDIATE\_BUFFER\_OVERFLOW\_NOTIFICATION}}
+\DoxyCodeLine{1091     config-\/>immediate\_buffer\_overflow\_notification  = \textcolor{keyword}{false};}
+\DoxyCodeLine{1092 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1093 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_START\_FRAME\_DECTION}}
+\DoxyCodeLine{1094     config-\/>start\_frame\_detection\_enable            = \textcolor{keyword}{false};}
+\DoxyCodeLine{1095 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1096 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_IRDA}}
+\DoxyCodeLine{1097     config-\/>encoding\_format\_enable                  = \textcolor{keyword}{false};}
+\DoxyCodeLine{1098     config-\/>receive\_pulse\_length                    = 19;}
+\DoxyCodeLine{1099 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1100 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_ISO7816}}
+\DoxyCodeLine{1101     config-\/>iso7816\_config.enabled                  = \textcolor{keyword}{false};}
+\DoxyCodeLine{1102     config-\/>iso7816\_config.guard\_time               = ISO7816\_GUARD\_TIME\_2\_BIT;}
+\DoxyCodeLine{1103     config-\/>iso7816\_config.protocol\_t               = ISO7816\_PROTOCOL\_T\_0;}
+\DoxyCodeLine{1104     config-\/>iso7816\_config.enable\_inverse           = \textcolor{keyword}{false};}
+\DoxyCodeLine{1105     config-\/>iso7816\_config.inhibit\_nack             = ISO7816\_INHIBIT\_NACK\_DISABLE;}
+\DoxyCodeLine{1106     config-\/>iso7816\_config.successive\_recv\_nack     = ISO7816\_SUCCESSIVE\_RECV\_NACK\_DISABLE;}
+\DoxyCodeLine{1107     config-\/>iso7816\_config.max\_iterations           = 7;}
+\DoxyCodeLine{1108 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1109 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_COLLISION\_DECTION}}
+\DoxyCodeLine{1110     config-\/>collision\_detection\_enable              = \textcolor{keyword}{false};}
+\DoxyCodeLine{1111 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1112 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_RS485}}
+\DoxyCodeLine{1113     config-\/>rs485\_guard\_time = RS485\_GUARD\_TIME\_0\_BIT;}
+\DoxyCodeLine{1114 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1115 \}}
+\DoxyCodeLine{1116 }
+\DoxyCodeLine{1117 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gad67046f395137b2a7a1ef72f83907674}{usart\_init}}(}
+\DoxyCodeLine{1118         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1119         \mbox{\hyperlink{union_sercom}{Sercom}} *\textcolor{keyword}{const} hw,}
+\DoxyCodeLine{1120         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__config}{usart\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{1121 }
+\DoxyCodeLine{1129 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} usart\_enable(}
+\DoxyCodeLine{1130         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{1131 \{}
+\DoxyCodeLine{1132     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1133     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1134     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}});}
+\DoxyCodeLine{1135 }
+\DoxyCodeLine{1136     \textcolor{comment}{/* Get a pointer to the hardware module instance */}}
+\DoxyCodeLine{1137     \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}} *\textcolor{keyword}{const} usart\_hw = \&(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}-\/>\mbox{\hyperlink{union_sercom_ae82be07be50298f8e692f755dbbdc7ab}{USART}});}
+\DoxyCodeLine{1138 }
+\DoxyCodeLine{1139 \textcolor{preprocessor}{\#if USART\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{1140     \textcolor{comment}{/* Enable Global interrupt for module */}}
+\DoxyCodeLine{1141     system\_interrupt\_enable(\_sercom\_get\_interrupt\_vector(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}));}
+\DoxyCodeLine{1142 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1143 }
+\DoxyCodeLine{1144     \textcolor{comment}{/* Wait until synchronization is complete */}}
+\DoxyCodeLine{1145     \_usart\_wait\_for\_sync(module);}
+\DoxyCodeLine{1146 }
+\DoxyCodeLine{1147     \textcolor{comment}{/* Enable USART module */}}
+\DoxyCodeLine{1148     usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_a0d6e3df70af3c2599e2227162d7e481d}{CTRLA}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a5682f6274d3a895e5936743811c32536}{reg}} |= SERCOM\_USART\_CTRLA\_ENABLE;}
+\DoxyCodeLine{1149 \}}
+\DoxyCodeLine{1150 }
+\DoxyCodeLine{1158 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} usart\_disable(}
+\DoxyCodeLine{1159         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{1160 \{}
+\DoxyCodeLine{1161     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1162     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1163     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}});}
+\DoxyCodeLine{1164 }
+\DoxyCodeLine{1165     \textcolor{comment}{/* Get a pointer to the hardware module instance */}}
+\DoxyCodeLine{1166     \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}} *\textcolor{keyword}{const} usart\_hw = \&(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}-\/>\mbox{\hyperlink{union_sercom_ae82be07be50298f8e692f755dbbdc7ab}{USART}});}
+\DoxyCodeLine{1167 }
+\DoxyCodeLine{1168 \textcolor{preprocessor}{\#if USART\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{1169     \textcolor{comment}{/* Disable Global interrupt for module */}}
+\DoxyCodeLine{1170     system\_interrupt\_disable(\_sercom\_get\_interrupt\_vector(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}));}
+\DoxyCodeLine{1171 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1172 }
+\DoxyCodeLine{1173     \textcolor{comment}{/* Wait until synchronization is complete */}}
+\DoxyCodeLine{1174     \_usart\_wait\_for\_sync(module);}
+\DoxyCodeLine{1175 }
+\DoxyCodeLine{1176     \textcolor{comment}{/* Disable USART module */}}
+\DoxyCodeLine{1177     usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_a0d6e3df70af3c2599e2227162d7e481d}{CTRLA}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a5682f6274d3a895e5936743811c32536}{reg}} \&= \string~SERCOM\_USART\_CTRLA\_ENABLE;}
+\DoxyCodeLine{1178 \}}
+\DoxyCodeLine{1179 }
+\DoxyCodeLine{1187 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} usart\_reset(}
+\DoxyCodeLine{1188         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{1189 \{}
+\DoxyCodeLine{1190     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1191     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1192     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}});}
+\DoxyCodeLine{1193 }
+\DoxyCodeLine{1194     \textcolor{comment}{/* Get a pointer to the hardware module instance */}}
+\DoxyCodeLine{1195     \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}} *\textcolor{keyword}{const} usart\_hw = \&(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}-\/>\mbox{\hyperlink{union_sercom_ae82be07be50298f8e692f755dbbdc7ab}{USART}});}
+\DoxyCodeLine{1196 }
+\DoxyCodeLine{1197     usart\_disable(module);}
+\DoxyCodeLine{1198 }
+\DoxyCodeLine{1199     \textcolor{comment}{/* Wait until synchronization is complete */}}
+\DoxyCodeLine{1200     \_usart\_wait\_for\_sync(module);}
+\DoxyCodeLine{1201 }
+\DoxyCodeLine{1202     \textcolor{comment}{/* Reset module */}}
+\DoxyCodeLine{1203     usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_a0d6e3df70af3c2599e2227162d7e481d}{CTRLA}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_a___type_a5682f6274d3a895e5936743811c32536}{reg}} = SERCOM\_USART\_CTRLA\_SWRST;}
+\DoxyCodeLine{1204 \}}
+\DoxyCodeLine{1205 }
+\DoxyCodeLine{1210 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaee8b142e8ad13e1e226334a9954e853c}{usart\_write\_wait}}(}
+\DoxyCodeLine{1211         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1212         \textcolor{keyword}{const} uint16\_t tx\_data);}
+\DoxyCodeLine{1213 }
+\DoxyCodeLine{1214 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaf7db90c51a6f17edff5f1de2a0e3d8a5}{usart\_read\_wait}}(}
+\DoxyCodeLine{1215         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1216         uint16\_t *\textcolor{keyword}{const} rx\_data);}
+\DoxyCodeLine{1217 }
+\DoxyCodeLine{1218 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gacffd0845249348d37d14c65a41132e41}{usart\_write\_buffer\_wait}}(}
+\DoxyCodeLine{1219         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1220         \textcolor{keyword}{const} uint8\_t *tx\_data,}
+\DoxyCodeLine{1221         uint16\_t length);}
+\DoxyCodeLine{1222 }
+\DoxyCodeLine{1223 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4f788b3478e9c1fa8f0dd8d09939d3a6}{usart\_read\_buffer\_wait}}(}
+\DoxyCodeLine{1224         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1225         uint8\_t *rx\_data,}
+\DoxyCodeLine{1226         uint16\_t length);}
+\DoxyCodeLine{1242 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} usart\_enable\_transceiver(}
+\DoxyCodeLine{1243         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1244         \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\_transceiver\_type}} transceiver\_type)}
+\DoxyCodeLine{1245 \{}
+\DoxyCodeLine{1246     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1247     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1248     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}});}
+\DoxyCodeLine{1249 }
+\DoxyCodeLine{1250     \textcolor{comment}{/* Get a pointer to the hardware module instance */}}
+\DoxyCodeLine{1251     \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}} *\textcolor{keyword}{const} usart\_hw = \&(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}-\/>\mbox{\hyperlink{union_sercom_ae82be07be50298f8e692f755dbbdc7ab}{USART}});}
+\DoxyCodeLine{1252 }
+\DoxyCodeLine{1253     \textcolor{comment}{/* Wait until synchronization is complete */}}
+\DoxyCodeLine{1254     \_usart\_wait\_for\_sync(module);}
+\DoxyCodeLine{1255 }
+\DoxyCodeLine{1256     \textcolor{keywordflow}{switch} (transceiver\_type) \{}
+\DoxyCodeLine{1257         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a627832963965f11ae53299b802582c48}{USART\_TRANSCEIVER\_RX}}:}
+\DoxyCodeLine{1258             \textcolor{comment}{/* Enable RX */}}
+\DoxyCodeLine{1259             usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_a13f48d6962c20b0fbbc697b339b24637}{CTRLB}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a6aa63b052aef25b4b62bdd3a93107506}{reg}} |= SERCOM\_USART\_CTRLB\_RXEN;}
+\DoxyCodeLine{1260             module-\/>\mbox{\hyperlink{structusart__module_a33b3dff21d04ab4a62fddbc423275ebd}{receiver\_enabled}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{1261             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1262 }
+\DoxyCodeLine{1263         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a9d1050c223a28be7aefcbca46a0add81}{USART\_TRANSCEIVER\_TX}}:}
+\DoxyCodeLine{1264             \textcolor{comment}{/* Enable TX */}}
+\DoxyCodeLine{1265             usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_a13f48d6962c20b0fbbc697b339b24637}{CTRLB}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a6aa63b052aef25b4b62bdd3a93107506}{reg}} |= SERCOM\_USART\_CTRLB\_TXEN;}
+\DoxyCodeLine{1266             module-\/>\mbox{\hyperlink{structusart__module_a03fe537b713e7d0adf041fd1e92780ca}{transmitter\_enabled}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{1267             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1268     \}}
+\DoxyCodeLine{1269     \_usart\_wait\_for\_sync(module);}
+\DoxyCodeLine{1270 \}}
+\DoxyCodeLine{1271 }
+\DoxyCodeLine{1280 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} usart\_disable\_transceiver(}
+\DoxyCodeLine{1281         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1282         \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\_transceiver\_type}} transceiver\_type)}
+\DoxyCodeLine{1283 \{}
+\DoxyCodeLine{1284     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1285     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1286     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}});}
+\DoxyCodeLine{1287 }
+\DoxyCodeLine{1288     \textcolor{comment}{/* Get a pointer to the hardware module instance */}}
+\DoxyCodeLine{1289     \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}} *\textcolor{keyword}{const} usart\_hw = \&(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}-\/>\mbox{\hyperlink{union_sercom_ae82be07be50298f8e692f755dbbdc7ab}{USART}});}
+\DoxyCodeLine{1290 }
+\DoxyCodeLine{1291     \textcolor{comment}{/* Wait until synchronization is complete */}}
+\DoxyCodeLine{1292     \_usart\_wait\_for\_sync(module);}
+\DoxyCodeLine{1293 }
+\DoxyCodeLine{1294     \textcolor{keywordflow}{switch} (transceiver\_type) \{}
+\DoxyCodeLine{1295         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a627832963965f11ae53299b802582c48}{USART\_TRANSCEIVER\_RX}}:}
+\DoxyCodeLine{1296             \textcolor{comment}{/* Disable RX */}}
+\DoxyCodeLine{1297             usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_a13f48d6962c20b0fbbc697b339b24637}{CTRLB}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a6aa63b052aef25b4b62bdd3a93107506}{reg}} \&= \string~SERCOM\_USART\_CTRLB\_RXEN;}
+\DoxyCodeLine{1298             module-\/>\mbox{\hyperlink{structusart__module_a33b3dff21d04ab4a62fddbc423275ebd}{receiver\_enabled}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1299             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1300 }
+\DoxyCodeLine{1301         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a9d1050c223a28be7aefcbca46a0add81}{USART\_TRANSCEIVER\_TX}}:}
+\DoxyCodeLine{1302             \textcolor{comment}{/* Disable TX */}}
+\DoxyCodeLine{1303             usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_a13f48d6962c20b0fbbc697b339b24637}{CTRLB}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a6aa63b052aef25b4b62bdd3a93107506}{reg}} \&= \string~SERCOM\_USART\_CTRLB\_TXEN;}
+\DoxyCodeLine{1304             module-\/>\mbox{\hyperlink{structusart__module_a03fe537b713e7d0adf041fd1e92780ca}{transmitter\_enabled}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1305             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1306     \}}
+\DoxyCodeLine{1307 \}}
+\DoxyCodeLine{1308 }
+\DoxyCodeLine{1311 \textcolor{preprocessor}{\#ifdef FEATURE\_USART\_LIN\_MASTER}}
+\DoxyCodeLine{1325 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lin\_master\_send\_cmd(}
+\DoxyCodeLine{1326         \textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1327         \textcolor{keyword}{enum} lin\_master\_cmd cmd)}
+\DoxyCodeLine{1328 \{}
+\DoxyCodeLine{1329     \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}} *\textcolor{keyword}{const} usart\_hw = \&(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}-\/>\mbox{\hyperlink{union_sercom_ae82be07be50298f8e692f755dbbdc7ab}{USART}});}
+\DoxyCodeLine{1330     \_usart\_wait\_for\_sync(module);}
+\DoxyCodeLine{1331     usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_a13f48d6962c20b0fbbc697b339b24637}{CTRLB}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___c_t_r_l_b___type_a6aa63b052aef25b4b62bdd3a93107506}{reg}} |= cmd;}
+\DoxyCodeLine{1332 \}}
+\DoxyCodeLine{1333 }
+\DoxyCodeLine{1345 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lin\_master\_transmission\_status(\textcolor{keyword}{struct} \mbox{\hyperlink{structusart__module}{usart\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{1346 \{}
+\DoxyCodeLine{1347     \mbox{\hyperlink{struct_sercom_usart}{SercomUsart}} *\textcolor{keyword}{const} usart\_hw = \&(module-\/>\mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}-\/>\mbox{\hyperlink{union_sercom_ae82be07be50298f8e692f755dbbdc7ab}{USART}});}
+\DoxyCodeLine{1348     \textcolor{keywordflow}{return} ((usart\_hw-\/>\mbox{\hyperlink{struct_sercom_usart_aec9dc41e7c3727dcb02b794159f115da}{STATUS}}.\mbox{\hyperlink{union_s_e_r_c_o_m___u_s_a_r_t___s_t_a_t_u_s___type_a7efad022c0dae53b043e957f7f4410e1}{reg}} \& SERCOM\_USART\_STATUS\_TXE)? \textcolor{keyword}{true}:\textcolor{keyword}{false});}
+\DoxyCodeLine{1349 \}}
+\DoxyCodeLine{1350 }
+\DoxyCodeLine{1352 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1353 }
+\DoxyCodeLine{1354 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1355 \}}
+\DoxyCodeLine{1356 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1357 }
+\DoxyCodeLine{1589 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* USART\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

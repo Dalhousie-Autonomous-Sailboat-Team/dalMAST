@@ -1,0 +1,65 @@
+\hypertarget{sail__wind_8h_source}{}\doxysection{sail\+\_\+wind.\+h}
+\label{sail__wind_8h_source}\index{src/sail\_wind.h@{src/sail\_wind.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// sail\_wind.h}}
+\DoxyCodeLine{2 \textcolor{comment}{// Header file for wind vane module for autonomous sailboat.}}
+\DoxyCodeLine{3 \textcolor{comment}{// Created on June 20, 2016.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Created by Julia Sarty \& Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef SAIL\_WIND\_H\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define SAIL\_WIND\_H\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}sail\_types.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{// WIND\_Init}}
+\DoxyCodeLine{16 \textcolor{comment}{// Initialize wv module by clearing flags and buffer.}}
+\DoxyCodeLine{17 \textcolor{comment}{// Should be called before any other WIND functions.}}
+\DoxyCodeLine{18 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{19 \textcolor{comment}{//   STATUS\_OK -\/ WV initialization was successful}}
+\DoxyCodeLine{20 \textcolor{comment}{//   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{21 \textcolor{comment}{//   STATUS\_ERR\_ALREADY\_INITIALIZED -\/ the module should only be initialized once}}
+\DoxyCodeLine{22 \textcolor{comment}{//}}
+\DoxyCodeLine{23 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} WEATHERSTATION\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{// WIND\_Enable}}
+\DoxyCodeLine{27 \textcolor{comment}{// Calls NMEA\_RXStart to trigger the Wind channel to begin acquiring data}}
+\DoxyCodeLine{28 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{29 \textcolor{comment}{//   STATUS\_OK -\/ data acquisition was started successfully}}
+\DoxyCodeLine{30 \textcolor{comment}{//   STATUS\_ERR\_NOT\_INITIALIZED -\/ the channel hasn't been initialized yet}}
+\DoxyCodeLine{31 \textcolor{comment}{//   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{32 \textcolor{comment}{//}}
+\DoxyCodeLine{33 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} WS\_Enable(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{// WIND\_Disable}}
+\DoxyCodeLine{37 \textcolor{comment}{// Calls NMEA\_RXStop to stop the Wind channel from acquiring data.}}
+\DoxyCodeLine{38 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{39 \textcolor{comment}{//   STATUS\_OK -\/ data acquisition was started successfully}}
+\DoxyCodeLine{40 \textcolor{comment}{//   STATUS\_ERR\_NOT\_INITIALIZED -\/ the channel hasn't been initialized yet}}
+\DoxyCodeLine{41 \textcolor{comment}{//   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{42 \textcolor{comment}{//}}
+\DoxyCodeLine{43 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} WS\_Disable(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{// WIND\_GetReading}}
+\DoxyCodeLine{47 \textcolor{comment}{// Gets the most recent angle from the wind vane. Parses NMEA string to get}}
+\DoxyCodeLine{48 \textcolor{comment}{// data.}}
+\DoxyCodeLine{49 \textcolor{comment}{// Inputs/Outputs:}}
+\DoxyCodeLine{50 \textcolor{comment}{//   reading -\/ pointer to struct to store wind vane reading}}
+\DoxyCodeLine{51 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{52 \textcolor{comment}{//   STATUS\_OK -\/ command was valid and sent successfully and data was received successfully}}
+\DoxyCodeLine{53 \textcolor{comment}{//   STATUS\_ERR\_NOT\_INITIALIZED -\/ the channel hasn't been initialized yet}}
+\DoxyCodeLine{54 \textcolor{comment}{//   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{55 \textcolor{comment}{//   STATUS\_ERR\_BAD\_ADDRESS -\/ an invalid address was provided}}
+\DoxyCodeLine{56 \textcolor{comment}{//}}
+\DoxyCodeLine{57 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} WIND\_GetReading(\mbox{\hyperlink{struct_w_i_n_d___reading}{WIND\_Reading}} *reading);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_WIND\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

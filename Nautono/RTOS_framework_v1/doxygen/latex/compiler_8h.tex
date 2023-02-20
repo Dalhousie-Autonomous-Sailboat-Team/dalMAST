@@ -1,0 +1,430 @@
+\hypertarget{compiler_8h}{}\doxysection{src/\+ASF/sam0/utils/compiler.h File Reference}
+\label{compiler_8h}\index{src/ASF/sam0/utils/compiler.h@{src/ASF/sam0/utils/compiler.h}}
+
+
+Commonly used includes, types and macros.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$parts.\+h$>$}\newline
+{\ttfamily \#include $<$status\+\_\+codes.\+h$>$}\newline
+{\ttfamily \#include $<$preprocessor.\+h$>$}\newline
+{\ttfamily \#include $<$io.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}interrupt.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_union16}{Union16}}
+\item 
+union \mbox{\hyperlink{union_union32}{Union32}}
+\item 
+union \mbox{\hyperlink{union_union64}{Union64}}
+\item 
+union \mbox{\hyperlink{union_union_ptr}{Union\+Ptr}}
+\item 
+union \mbox{\hyperlink{union_union_v_ptr}{Union\+VPtr}}
+\item 
+union \mbox{\hyperlink{union_union_c_ptr}{Union\+CPtr}}
+\item 
+union \mbox{\hyperlink{union_union_c_v_ptr}{Union\+CVPtr}}
+\item 
+struct \mbox{\hyperlink{struct_struct_ptr}{Struct\+Ptr}}
+\item 
+struct \mbox{\hyperlink{struct_struct_v_ptr}{Struct\+VPtr}}
+\item 
+struct \mbox{\hyperlink{struct_struct_c_ptr}{Struct\+CPtr}}
+\item 
+struct \mbox{\hyperlink{struct_struct_c_v_ptr}{Struct\+CVPtr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries UNUSED}(v)~(void)(v)
+\begin{DoxyCompactList}\small\item\em Marking {\itshape v} as a unused parameter or value. \end{DoxyCompactList}\item 
+\#define {\bfseries barrier}()~asm (\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Memory barrier. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga85a3ab5701281268521f109ed0078668}{COMPILER\+\_\+\+PRAGMA}}(arg)~\+\_\+\+Pragma(\#arg)
+\begin{DoxyCompactList}\small\item\em Emit the compiler pragma {\itshape arg}. \end{DoxyCompactList}\item 
+\#define {\bfseries COMPILER\+\_\+\+PACK\+\_\+\+SET}(alignment)~\mbox{\hyperlink{group__group__sam0__utils_ga85a3ab5701281268521f109ed0078668}{COMPILER\+\_\+\+PRAGMA}}(pack(alignment))
+\begin{DoxyCompactList}\small\item\em Set maximum alignment for subsequent struct and union definitions to {\itshape alignment}. \end{DoxyCompactList}\item 
+\#define {\bfseries COMPILER\+\_\+\+PACK\+\_\+\+RESET}()~\mbox{\hyperlink{group__group__sam0__utils_ga85a3ab5701281268521f109ed0078668}{COMPILER\+\_\+\+PRAGMA}}(pack())
+\begin{DoxyCompactList}\small\item\em Set default alignment for subsequent struct and union definitions. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(expr)~((void) 0)
+\begin{DoxyCompactList}\small\item\em This macro is used to test fatal errors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga5b759626f343cc1af9159cc02b763837}{Long\+\_\+call}}(addr)~(($\ast$(void ($\ast$)(void))(addr))())
+\begin{DoxyCompactList}\small\item\em Calls the routine at address {\itshape addr}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga6d4ebd841bc96041a7f3a61e227c1fb2}{div\+\_\+ceil}}(a,  b)~(((a) + (b) -\/ 1) / (b))
+\begin{DoxyCompactList}\small\item\em Calculate $ \left\lceil \frac{a}{b} \right\rceil $ using integer arithmetic. \end{DoxyCompactList}\item 
+\#define {\bfseries FUNC\+\_\+\+PTR}~void $\ast$
+\item 
+\#define {\bfseries unused}(v)~do \{ (void)(v); \} while(0)
+\begin{DoxyCompactList}\small\item\em Marking {\itshape v} as a unused parameter or value. \end{DoxyCompactList}\item 
+\#define {\bfseries PASS}~0
+\item 
+\#define {\bfseries FAIL}~1
+\item 
+\#define {\bfseries LOW}~0
+\item 
+\#define {\bfseries HIGH}~1
+\item 
+\#define {\bfseries MSB}(u16)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u16))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of {\itshape u16}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB}(u16)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u16))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Least significant byte of {\itshape u16}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSH}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u32))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSH}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u32))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB0W}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u32))\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 1st rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB1W}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u32))\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 2nd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB2W}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u32))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 3rd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB3W}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u32))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 4th rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB3W}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga25110f05bdb5b5ea3fcb2854a1a07d7a}{MSB0W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 4th rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB2W}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga0f90ecd0b0f0e15608a95b8367b77ece}{MSB1W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 3rd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB1W}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga0207e10a3c4bcca172463cd5e3ebd865}{MSB2W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 2nd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB0W}(u32)~\mbox{\hyperlink{group__group__sam0__utils_gad6ab5ac6e3e95525d56d757c9718e352}{MSB3W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 1st rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSW}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga696390429f2f3b644bde8d0322a24124}{U32}} $\ast$)\&(u64))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant word of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSW}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga696390429f2f3b644bde8d0322a24124}{U32}} $\ast$)\&(u64))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Least significant word of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSH0}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u64))\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of 1st rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSH1}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u64))\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of 2nd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSH2}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u64))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of 3rd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSH3}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u64))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of 4th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSH3}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga280d6a94884872f6a5be80c873e8adc1}{MSH0}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of 4th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSH2}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga43de4fac62f938ff4eb448a87522ec0e}{MSH1}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of 3rd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSH1}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga5d32ec744212194c8106c51b89a5dfe9}{MSH2}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of 2nd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSH0}(u64)~\mbox{\hyperlink{group__group__sam0__utils_gabb233f238b63c12d2ff361d9ddb3114b}{MSH3}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of 1st rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB0D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}7\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 1st rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB1D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}6\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 2nd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB2D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}5\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 3rd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB3D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 4th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB4D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 5th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB5D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 6th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB6D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 7th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB7D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 8th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB7D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga5f24ecf381776ee415991a545a05e4c7}{MSB0D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 8th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB6D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga97a0ab6790df95cb4d8021d8850487f8}{MSB1D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 7th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB5D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_gad4ceacba543e7b8617ca4bd075abb146}{MSB2D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 6th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB4D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_gaf7972d3282ec9ecb97afa34e848ede2c}{MSB3D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 5th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB3D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga1c891624c33b13808633af8dbcaafa5f}{MSB4D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 4th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB2D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga5e61db58aaf5cbb3051240cdcb1b5147}{MSB5D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 3rd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB1D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_gacb8062d046ca06f5c28c9a015997494b}{MSB6D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 2nd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB0D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga0cbce69964fa2dd7bf05911d0b99b014}{MSB7D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 1st rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB0}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga2ca8582260a8ada6cdd457cf37ba37a7}{LSB0W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 1st rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB1}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga84cbbcad1971cdb2987418e6ae6cb4ff}{LSB1W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 2nd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB2}(u32)~\mbox{\hyperlink{group__group__sam0__utils_gad8fda97f8caa00fcfa84f712ee7627d6}{LSB2W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 3rd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries LSB3}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga04e75e548b33b9cc22699b4249ff6c64}{LSB3W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 4th rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB3}(u32)~\mbox{\hyperlink{group__group__sam0__utils_gad6ab5ac6e3e95525d56d757c9718e352}{MSB3W}}(u32)
+\begin{DoxyCompactList}\small\item\em Most significant byte of 4th rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB2}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga0207e10a3c4bcca172463cd5e3ebd865}{MSB2W}}(u32)
+\begin{DoxyCompactList}\small\item\em Most significant byte of 3rd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB1}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga0f90ecd0b0f0e15608a95b8367b77ece}{MSB1W}}(u32)
+\begin{DoxyCompactList}\small\item\em Most significant byte of 2nd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries MSB0}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga25110f05bdb5b5ea3fcb2854a1a07d7a}{MSB0W}}(u32)
+\begin{DoxyCompactList}\small\item\em Most significant byte of 1st rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define {\bfseries FLASH\+\_\+\+DECLARE}(x)~const x
+\item 
+\#define {\bfseries FLASH\+\_\+\+EXTERN}(x)~extern const x
+\item 
+\#define {\bfseries PGM\+\_\+\+READ\+\_\+\+BYTE}(x)~$\ast$(x)
+\item 
+\#define {\bfseries PGM\+\_\+\+READ\+\_\+\+WORD}(x)~$\ast$(x)
+\item 
+\#define {\bfseries MEMCPY\+\_\+\+ENDIAN}~memcpy
+\item 
+\#define {\bfseries PGM\+\_\+\+READ\+\_\+\+BLOCK}(dst,  src,  len)~memcpy((dst), (src), (len))
+\item 
+\#define {\bfseries CMD\+\_\+\+ID\+\_\+\+OCTET}~(0)
+\item 
+\#define {\bfseries CPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE16}(x)~(x)
+\item 
+\#define {\bfseries CPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE32}(x)~(x)
+\item 
+\#define {\bfseries CPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE64}(x)~(x)
+\item 
+\#define {\bfseries LE16\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\#define {\bfseries LE32\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\#define {\bfseries LE64\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\#define {\bfseries CLE16\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\#define {\bfseries CLE32\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\#define {\bfseries CLE64\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\#define {\bfseries CCPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE16}(x)~(x)
+\item 
+\#define {\bfseries CCPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE32}(x)~(x)
+\item 
+\#define {\bfseries CCPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE64}(x)~(x)
+\item 
+\#define {\bfseries ADDR\+\_\+\+COPY\+\_\+\+DST\+\_\+\+SRC\+\_\+16}(dst,  src)~((dst) = (src))
+\item 
+\#define {\bfseries ADDR\+\_\+\+COPY\+\_\+\+DST\+\_\+\+SRC\+\_\+64}(dst,  src)~((dst) = (src))
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Usual Constants}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries DISABLE}~0
+\item 
+\#define {\bfseries ENABLE}~1
+\item 
+\#define {\bfseries false}~0
+\item 
+\#define {\bfseries true}~1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Optimization Control}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries likely}(exp)~(exp)
+\begin{DoxyCompactList}\small\item\em The expression {\itshape exp} is likely to be true. \end{DoxyCompactList}\item 
+\#define {\bfseries unlikely}(exp)~(exp)
+\begin{DoxyCompactList}\small\item\em The expression {\itshape exp} is unlikely to be true. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga15892ad6884af110e5eaaa96994ebaa9}{is\+\_\+constant}}(exp)~(0)
+\begin{DoxyCompactList}\small\item\em Determine if an expression evaluates to a constant value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Bit-\/\+Field Handling}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}(value,  mask)~((value) \& (mask))
+\begin{DoxyCompactList}\small\item\em Reads the bits of a value specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}{Wr\+\_\+bits}}(lvalue,  mask,  bits)
+\begin{DoxyCompactList}\small\item\em Writes the bits of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gab1e92741077b101e6b2df74880e71e96}{Tst\+\_\+bits}}(value,  mask)~(\mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}(value, mask) != 0)
+\begin{DoxyCompactList}\small\item\em Tests the bits of a value specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaffbccbb234075f838e181522c864605f}{Clr\+\_\+bits}}(lvalue,  mask)~((lvalue) \&= $\sim$(mask))
+\begin{DoxyCompactList}\small\item\em Clears the bits of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga589436fa123e32e1063488ebd7fdc923}{Set\+\_\+bits}}(lvalue,  mask)~((lvalue) $\vert$=  (mask))
+\begin{DoxyCompactList}\small\item\em Sets the bits of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga9f29d1e990286322697ae8d0f4e365e0}{Tgl\+\_\+bits}}(lvalue,  mask)~((lvalue) $^\wedge$=  (mask))
+\begin{DoxyCompactList}\small\item\em Toggles the bits of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaa7ee388a5bd843e5e0ba3d194bc1d8a4}{Rd\+\_\+bitfield}}(value,  mask)~(\mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}( value, mask) $>$$>$ \mbox{\hyperlink{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}{ctz}}(mask))
+\begin{DoxyCompactList}\small\item\em Reads the bit-\/field of a value specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaa2ede64db1455ec339cd8a3303647644}{Wr\+\_\+bitfield}}(lvalue,  mask,  bitfield)~(\mbox{\hyperlink{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}{Wr\+\_\+bits}}(lvalue, mask, (uint32\+\_\+t)(bitfield) $<$$<$ \mbox{\hyperlink{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}{ctz}}(mask)))
+\begin{DoxyCompactList}\small\item\em Writes the bit-\/field of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Zero-\/\+Bit Counting}\par
+{\em Under GCC, \+\_\+\+\_\+builtin\+\_\+clz and \+\_\+\+\_\+builtin\+\_\+ctz behave like macros when applied to constant expressions (values known at compile time), so they are more optimized than the use of the corresponding assembly instructions and they can be used as constant expressions e.\+g. to initialize objects having static storage duration, and like the corresponding assembly instructions when applied to non-\/constant expressions (values unknown at compile time), so they are more optimized than an assembly periphrasis. Hence, clz and ctz ensure a possible and optimized behavior for both constant and non-\/constant expressions. }\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga004f88903a09b9c23017e697eaf5a845}{clz}}(u)
+\begin{DoxyCompactList}\small\item\em Counts the leading zero bits of the given value considered as a 32-\/bit integer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}{ctz}}(u)
+\begin{DoxyCompactList}\small\item\em Counts the trailing zero bits of the given value considered as a 32-\/bit integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Bit Reversing}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaef8832dcae9aaac78c5ebe91fc33084b}{bit\+\_\+reverse8}}(u8)~((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}})(\mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\+\_\+reverse32}}((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}})(u8)) $>$$>$ 24))
+\begin{DoxyCompactList}\small\item\em Reverses the bits of {\itshape u8}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gabab01124189eab03857671c05abfe377}{bit\+\_\+reverse16}}(u16)~((uint16\+\_\+t)(\mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\+\_\+reverse32}}((uint16\+\_\+t)(u16)) $>$$>$ 16))
+\begin{DoxyCompactList}\small\item\em Reverses the bits of {\itshape u16}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\+\_\+reverse32}}(u32)~\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf944a7b7d8fd70164cca27669316bcf7}{\+\_\+\+\_\+\+RBIT}}(u32)
+\begin{DoxyCompactList}\small\item\em Reverses the bits of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga7f3f2d786440776bab3f688cbd1e8030}{bit\+\_\+reverse64}}(u64)
+\begin{DoxyCompactList}\small\item\em Reverses the bits of {\itshape u64}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Alignment}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gad490b657cb147d3d1773f6559559b98b}{Test\+\_\+align}}(val,  n)~(!\mbox{\hyperlink{group__group__sam0__utils_gab1e92741077b101e6b2df74880e71e96}{Tst\+\_\+bits}}( val, (n) -\/ 1     )   )
+\begin{DoxyCompactList}\small\item\em Tests alignment of the number {\itshape val} with the {\itshape n} boundary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga526bddb313be14057f5d65e199f6d814}{Get\+\_\+align}}(val,  n)~(  \mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}( val, (n) -\/ 1     )   )
+\begin{DoxyCompactList}\small\item\em Gets alignment of the number {\itshape val} with respect to the {\itshape n} boundary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gad607b0e4ad3cf4cb5bd7a3619742f092}{Set\+\_\+align}}(lval,  n,  alg)~(  \mbox{\hyperlink{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}{Wr\+\_\+bits}}(lval, (n) -\/ 1, alg)   )
+\begin{DoxyCompactList}\small\item\em Sets alignment of the lvalue number {\itshape lval} to {\itshape alg} with respect to the {\itshape n} boundary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga2bac987572902a9a7b69442541d78c42}{Align\+\_\+up}}( val,  n)~(((val) + ((n) -\/ 1)) \& $\sim$((n) -\/ 1))
+\begin{DoxyCompactList}\small\item\em Aligns the number {\itshape val} with the upper {\itshape n} boundary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga1070d94a69b4e1955ac1723b4f382095}{Align\+\_\+down}}(val,  n)~( (val)              \& $\sim$((n) -\/ 1))
+\begin{DoxyCompactList}\small\item\em Aligns the number {\itshape val} with the lower {\itshape n} boundary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Mathematics}\par
+{\em The same considerations as for clz and ctz apply here but GCC does not provide built-\/in functions to access the assembly instructions abs, min and max and it does not produce them by itself in most cases, so two sets of macros are defined here\+:
+\begin{DoxyItemize}
+\item Abs, Min and Max to apply to constant expressions (values known at compile time);
+\item abs, min and max to apply to non-\/constant expressions (values unknown at compile time), abs is found in stdlib.\+h. 
+\end{DoxyItemize}}\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gae56b0282c58a65969c092e1eeeedd6f5}{Abs}}(a)~(((a) $<$  0 ) ? -\/(a) \+: (a))
+\begin{DoxyCompactList}\small\item\em Takes the absolute value of {\itshape a}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga9e04209162ea72f9985338596262b657}{Min}}(a,  b)~(((a) $<$ (b)) ?  (a) \+: (b))
+\begin{DoxyCompactList}\small\item\em Takes the minimal value of {\itshape a} and {\itshape b}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga4886a8f966a69949cefc46a6a3468006}{Max}}(a,  b)~(((a) $>$ (b)) ?  (a) \+: (b))
+\begin{DoxyCompactList}\small\item\em Takes the maximal value of {\itshape a} and {\itshape b}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gac6afabdc09a49a433ee19d8a9486056d}{min}}(a,  b)~\mbox{\hyperlink{group__group__sam0__utils_ga9e04209162ea72f9985338596262b657}{Min}}(a, b)
+\begin{DoxyCompactList}\small\item\em Takes the minimal value of {\itshape a} and {\itshape b}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaffe776513b24d84b39af8ab0930fef7f}{max}}(a,  b)~\mbox{\hyperlink{group__group__sam0__utils_ga4886a8f966a69949cefc46a6a3468006}{Max}}(a, b)
+\begin{DoxyCompactList}\small\item\em Takes the maximal value of {\itshape a} and {\itshape b}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ MCU Endianism Handling}\par
+{\em ARM is MCU little endian. }\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BE16}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\#define {\bfseries LE16}(x)~(x)
+\item 
+\#define {\bfseries le16\+\_\+to\+\_\+cpu}(x)~(x)
+\item 
+\#define {\bfseries cpu\+\_\+to\+\_\+le16}(x)~(x)
+\item 
+\#define {\bfseries LE16\+\_\+\+TO\+\_\+\+CPU}(x)~(x)
+\item 
+\#define {\bfseries CPU\+\_\+\+TO\+\_\+\+LE16}(x)~(x)
+\item 
+\#define {\bfseries be16\+\_\+to\+\_\+cpu}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\#define {\bfseries cpu\+\_\+to\+\_\+be16}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\#define {\bfseries BE16\+\_\+\+TO\+\_\+\+CPU}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\#define {\bfseries CPU\+\_\+\+TO\+\_\+\+BE16}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\#define {\bfseries le32\+\_\+to\+\_\+cpu}(x)~(x)
+\item 
+\#define {\bfseries cpu\+\_\+to\+\_\+le32}(x)~(x)
+\item 
+\#define {\bfseries LE32\+\_\+\+TO\+\_\+\+CPU}(x)~(x)
+\item 
+\#define {\bfseries CPU\+\_\+\+TO\+\_\+\+LE32}(x)~(x)
+\item 
+\#define {\bfseries be32\+\_\+to\+\_\+cpu}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(x)
+\item 
+\#define {\bfseries cpu\+\_\+to\+\_\+be32}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(x)
+\item 
+\#define {\bfseries BE32\+\_\+\+TO\+\_\+\+CPU}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(x)
+\item 
+\#define {\bfseries CPU\+\_\+\+TO\+\_\+\+BE32}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(x)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Endianism Conversion}\par
+{\em The same considerations as for clz and ctz apply here but GCC\textquotesingle{}s \+\_\+\+\_\+builtin\+\_\+bswap\+\_\+32 and \+\_\+\+\_\+builtin\+\_\+bswap\+\_\+64 do not behave like macros when applied to constant expressions, so two sets of macros are defined here\+:
+\begin{DoxyItemize}
+\item Swap16, Swap32 and Swap64 to apply to constant expressions (values known at compile time);
+\item swap16, swap32 and swap64 to apply to non-\/constant expressions (values unknown at compile time). 
+\end{DoxyItemize}}\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gadc9a009f53db3e7c3294ee6bc1027dca}{Swap16}}(u16)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u16} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga5e9bc2e3b3e43eadc3210b02cab6ac64}{Swap32}}(u32)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u32} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga33f3049d9b8374e8b93d5642bfe7f426}{Swap64}}(u64)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u64} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(u16)~\mbox{\hyperlink{group__group__sam0__utils_gadc9a009f53db3e7c3294ee6bc1027dca}{Swap16}}(u16)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u16} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga5e9bc2e3b3e43eadc3210b02cab6ac64}{Swap32}}(u32)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u32} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga78484801bd5bea7d382b34a4ed1f345d}{swap64}}(u64)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u64} (by swapping its bytes). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Target Abstraction}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gad4d03be3b8f3d15ed804170a1311ec98}{\+\_\+\+GLOBEXT\+\_\+}}~extern
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga8e0d79d43ad9295d5193ca29f109a762}{\+\_\+\+CONST\+\_\+\+TYPE\+\_\+}}~const
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga35d552e8456cfb2b810baa0a9212c98e}{\+\_\+\+MEM\+\_\+\+TYPE\+\_\+\+SLOW\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gadcd997c76f95854090b17513c4ef3891}{\+\_\+\+MEM\+\_\+\+TYPE\+\_\+\+MEDFAST\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gabf669e579471cadcf68d9ffc440e68b1}{\+\_\+\+MEM\+\_\+\+TYPE\+\_\+\+FAST\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga27819e952caa0a535a5901d2857834b7}{memcmp\+\_\+ram2ram}}~memcmp
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gab914bad47205a9b7afb9ac53ec71cb55}{memcmp\+\_\+code2ram}}~memcmp
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga9a4ff08e7c4cf79135a3bcbab68472b7}{memcpy\+\_\+ram2ram}}~memcpy
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga55724cc8f7d42eba122dac5bffa00024}{memcpy\+\_\+code2ram}}~memcpy
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int8\+\_\+t {\bfseries S8}
+\begin{DoxyCompactList}\small\item\em 8-\/bit signed integer. \end{DoxyCompactList}\item 
+typedef uint8\+\_\+t {\bfseries U8}
+\begin{DoxyCompactList}\small\item\em 8-\/bit unsigned integer. \end{DoxyCompactList}\item 
+typedef int16\+\_\+t {\bfseries S16}
+\begin{DoxyCompactList}\small\item\em 16-\/bit signed integer. \end{DoxyCompactList}\item 
+typedef uint16\+\_\+t {\bfseries U16}
+\begin{DoxyCompactList}\small\item\em 16-\/bit unsigned integer. \end{DoxyCompactList}\item 
+typedef int32\+\_\+t {\bfseries S32}
+\begin{DoxyCompactList}\small\item\em 32-\/bit signed integer. \end{DoxyCompactList}\item 
+typedef uint32\+\_\+t {\bfseries U32}
+\begin{DoxyCompactList}\small\item\em 32-\/bit unsigned integer. \end{DoxyCompactList}\item 
+typedef int64\+\_\+t {\bfseries S64}
+\begin{DoxyCompactList}\small\item\em 64-\/bit signed integer. \end{DoxyCompactList}\item 
+typedef uint64\+\_\+t {\bfseries U64}
+\begin{DoxyCompactList}\small\item\em 64-\/bit unsigned integer. \end{DoxyCompactList}\item 
+typedef float {\bfseries F32}
+\begin{DoxyCompactList}\small\item\em 32-\/bit floating-\/point number. \end{DoxyCompactList}\item 
+typedef double {\bfseries F64}
+\begin{DoxyCompactList}\small\item\em 64-\/bit floating-\/point number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Usual Types}\par
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char {\bfseries bool}
+\item 
+typedef uint16\+\_\+t {\bfseries le16\+\_\+t}
+\item 
+typedef uint16\+\_\+t {\bfseries be16\+\_\+t}
+\item 
+typedef uint32\+\_\+t {\bfseries le32\+\_\+t}
+\item 
+typedef uint32\+\_\+t {\bfseries be32\+\_\+t}
+\item 
+typedef uint32\+\_\+t {\bfseries iram\+\_\+size\+\_\+t}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Commonly used includes, types and macros. 
+
+Copyright (c) 2012-\/2019 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

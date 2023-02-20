@@ -1,0 +1,45 @@
+\hypertarget{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_acronyms}{}\doxysection{Acronyms}\label{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_acronyms}
+The table below presents the acronyms used in this module\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+DMA &Direct Memory Access  \\\cline{1-2}
+TC &Timer Counter  \\\cline{1-2}
+PWM &Pulse Width Modulation  \\\cline{1-2}
+PWP &Pulse Width Period  \\\cline{1-2}
+PPW &Period Pulse Width  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_dependencies}{}\doxysection{Dependencies}\label{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_dependencies}
+This driver has the following dependencies\+:
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group}{System Pin Multiplexer Driver}}
+\end{DoxyItemize}\hypertarget{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_errata}{}\doxysection{Errata}\label{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_errata}
+There are no errata related to this driver.\hypertarget{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_history}{}\doxysection{Module History}\label{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_history}
+An overview of the module history is presented in the table below, with details on the enhancements and fixes made to the module since its first release. The current version of this corresponds to the newest version in the table.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{1}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Changelog  }\\\cline{1-1}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Changelog  }\\\cline{1-1}
+\endhead
+Added support for SAM D21 and do some modifications as below\+: \begin{DoxyItemize}
+\item Clean up in the configuration structure, the counter size setting specific registers is accessed through the counter\+\_\+8\+\_\+bit, counter\+\_\+16\+\_\+bit, and counter\+\_\+32\+\_\+bit structures \item All event related settings moved into the tc\+\_\+event structure   \end{DoxyItemize}
+\\\cline{1-1}
+Added automatic digital clock interface enable for the slave TC module when a timer is initialized in 32-\/bit mode  \\\cline{1-1}
+Initial release  \\\cline{1-1}
+\end{longtabu}

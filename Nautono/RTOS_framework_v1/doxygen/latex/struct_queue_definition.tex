@@ -1,0 +1,49 @@
+\hypertarget{struct_queue_definition}{}\doxysection{Queue\+Definition Struct Reference}
+\label{struct_queue_definition}\index{QueueDefinition@{QueueDefinition}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a487dc7e43b380c58212cba72bc33e0ed}\label{struct_queue_definition_a487dc7e43b380c58212cba72bc33e0ed}} 
+int8\+\_\+t $\ast$ {\bfseries pc\+Head}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a189dc1b16fc2152dd9441ea1a117b0ce}\label{struct_queue_definition_a189dc1b16fc2152dd9441ea1a117b0ce}} 
+int8\+\_\+t $\ast$ {\bfseries pc\+Tail}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_abdf13cc013c8488848cee3fce4f0fed3}\label{struct_queue_definition_abdf13cc013c8488848cee3fce4f0fed3}} 
+int8\+\_\+t $\ast$ {\bfseries pc\+Write\+To}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_ab06f7660c6537240bc08690bc5f8b4ae}\label{struct_queue_definition_ab06f7660c6537240bc08690bc5f8b4ae}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>int8\_t $\ast$ {\bfseries pcReadFrom}\\
+\>UBaseType\_t {\bfseries uxRecursiveCallCount}\\
+\} {\bfseries u}\\
+
+\end{tabbing}\item 
+\mbox{\Hypertarget{struct_queue_definition_aaab135c4345cb0393d6ff3cd5164c7b2}\label{struct_queue_definition_aaab135c4345cb0393d6ff3cd5164c7b2}} 
+\mbox{\hyperlink{structx_l_i_s_t}{List\+\_\+t}} {\bfseries x\+Tasks\+Waiting\+To\+Send}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_af6d61526f77beee659cd604a0c473359}\label{struct_queue_definition_af6d61526f77beee659cd604a0c473359}} 
+\mbox{\hyperlink{structx_l_i_s_t}{List\+\_\+t}} {\bfseries x\+Tasks\+Waiting\+To\+Receive}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a12b07a40152d0f21488ca06d362d13d1}\label{struct_queue_definition_a12b07a40152d0f21488ca06d362d13d1}} 
+volatile UBase\+Type\+\_\+t {\bfseries ux\+Messages\+Waiting}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_ae80d17a812c669d4d41265b7f693988c}\label{struct_queue_definition_ae80d17a812c669d4d41265b7f693988c}} 
+UBase\+Type\+\_\+t {\bfseries ux\+Length}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a81bb7d3826909244baa9debf5a55abb0}\label{struct_queue_definition_a81bb7d3826909244baa9debf5a55abb0}} 
+UBase\+Type\+\_\+t {\bfseries ux\+Item\+Size}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_ac750a3f75a6e174adbc697e473a0dd13}\label{struct_queue_definition_ac750a3f75a6e174adbc697e473a0dd13}} 
+volatile int8\+\_\+t {\bfseries c\+Rx\+Lock}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a24ac3f0707f098da2a22244d843fcf82}\label{struct_queue_definition_a24ac3f0707f098da2a22244d843fcf82}} 
+volatile int8\+\_\+t {\bfseries c\+Tx\+Lock}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/thirdparty/freertos/freertos-\/10.\+0.\+0/\+Source/queue.\+c\end{DoxyCompactItemize}

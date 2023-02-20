@@ -1,0 +1,52 @@
+\hypertarget{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_acronyms}{}\doxysection{Acronyms}\label{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_acronyms}
+\mbox{\hyperlink{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_acronyms_table}{Below}} is a table listing the acronyms used in this module, along with their intended meanings.
+
+\label{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_acronyms_table}%
+\Hypertarget{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_acronyms_table}%
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Acronyms}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+SDA &Serial Data Line  \\\cline{1-2}
+SCL &Serial Clock Line  \\\cline{1-2}
+SERCOM &Serial Communication Interface  \\\cline{1-2}
+DMA &Direct Memory Access  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_dependencies}{}\doxysection{Dependencies}\label{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_dependencies}
+The I\textsuperscript{2}C driver has the following dependencies\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group}{System Pin Multiplexer Driver}}\end{DoxyItemize}
+\hypertarget{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_errata}{}\doxysection{Errata}\label{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_errata}
+There are no errata related to this driver.\hypertarget{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_history}{}\doxysection{Module History}\label{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_history}
+\mbox{\hyperlink{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_history_table}{Below}} is an overview of the module history, detailing enhancements and fixes made to the module since its first release. The current version of this corresponds to the newest version listed in \mbox{\hyperlink{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_history_table}{the table below}}.
+
+\label{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_history_table}%
+\Hypertarget{asfdoc_sam0_sercom_i2c_extra_info_page_asfdoc_sam0_sercom_i2c_extra_history_table}%
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{1}{|X[-1]}|}
+\caption{Module History}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Changelog  }\\\cline{1-1}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Changelog  }\\\cline{1-1}
+\endhead
+\begin{DoxyItemize}
+\item Added 10-\/bit addressing and high speed support in SAM D21 \item Separate structure i2c\+\_\+packet into \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} and i2c\+\_\+slave packet   \end{DoxyItemize}
+\\\cline{1-1}
+\begin{DoxyItemize}
+\item Added support for SCL stretch and extended timeout hardware features in SAM D21 \item Added fast mode plus support in SAM D21   \end{DoxyItemize}
+\\\cline{1-1}
+Fixed incorrect logical mask for determining if a bus error has occurred in I\textsuperscript{2}C Slave mode   \\\cline{1-1}
+Initial Release  \\\cline{1-1}
+\end{longtabu}

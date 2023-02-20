@@ -1,0 +1,119 @@
+\hypertarget{drivers_2wdt_2wdt_8h_source}{}\doxysection{wdt.\+h}
+\label{drivers_2wdt_2wdt_8h_source}\index{src/ASF/sam0/drivers/wdt/wdt.h@{src/ASF/sam0/drivers/wdt/wdt.h}}
+\mbox{\hyperlink{drivers_2wdt_2wdt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef WDT\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define WDT\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{clock_8h}{clock.h}}>}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#include <gclk.h>}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#if WDT\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#  include "{}\mbox{\hyperlink{wdt__callback_8h}{wdt\_callback.h}}"{}}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{196 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{205 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\_period}} \{}
+\DoxyCodeLine{209     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acac81ba52b1f5764278889cb86b37f9967}{WDT\_PERIOD\_NONE}}     = 0,}
+\DoxyCodeLine{211     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaae6546f95e5a45b62b14634bc4caa5aa}{WDT\_PERIOD\_8CLK}}     = 1,}
+\DoxyCodeLine{213     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaf0fea5f0fcc3e4ac16c7a6d6935758e5}{WDT\_PERIOD\_16CLK}}    = 2,}
+\DoxyCodeLine{215     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca99299b19ce68e9f9e91a53a26d88a3dc}{WDT\_PERIOD\_32CLK}}    = 3,}
+\DoxyCodeLine{217     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca85dae485276a3f098835aa03c87c07ae}{WDT\_PERIOD\_64CLK}}    = 4,}
+\DoxyCodeLine{219     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acae42c036f6bf98b94c08b7b7652ffc22b}{WDT\_PERIOD\_128CLK}}   = 5,}
+\DoxyCodeLine{221     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8e7c0cee4badc7f8ad850e08087f2220}{WDT\_PERIOD\_256CLK}}   = 6,}
+\DoxyCodeLine{223     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8ffed36019876eb8acd6341d0d5bde0d}{WDT\_PERIOD\_512CLK}}   = 7,}
+\DoxyCodeLine{225     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca5e17d21bc0b0eec87841ddf4e28b5307}{WDT\_PERIOD\_1024CLK}}  = 8,}
+\DoxyCodeLine{227     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabfa7c1a5f7c5cefeb23662b2f970ea45}{WDT\_PERIOD\_2048CLK}}  = 9,}
+\DoxyCodeLine{229     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca60835375c026680884ced851cb340c69}{WDT\_PERIOD\_4096CLK}}  = 10,}
+\DoxyCodeLine{231     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca6d95ace42b2eda19dbdb4f7342068d17}{WDT\_PERIOD\_8192CLK}}  = 11,}
+\DoxyCodeLine{233     \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabe11993c0838eebfc06889b8f1812d90}{WDT\_PERIOD\_16384CLK}} = 12,}
+\DoxyCodeLine{234 \};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{243 \textcolor{keyword}{struct }\mbox{\hyperlink{structwdt__conf}{wdt\_conf}} \{}
+\DoxyCodeLine{246     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structwdt__conf_a8941368a3f7c8f3d1666180078abfcb5}{always\_on}};}
+\DoxyCodeLine{248     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structwdt__conf_a5cc0ffa68ffe829451e183eb93e8f91c}{enable}};}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#if !(SAML21) \&\& !(SAML22) \&\& !(SAMC20) \&\& !(SAMC21) \&\& !(SAMR30) \&\& !(SAMR34) \&\& !(SAMR35) \&\& !(WLR089)}}
+\DoxyCodeLine{251     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\_generator}} \mbox{\hyperlink{structwdt__conf_a022118a463c6d9244b519b8a1cca5d41}{clock\_source}};}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{254     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\_period}} \mbox{\hyperlink{structwdt__conf_a1a3485dca5a0163b0289bd864f15026e}{timeout\_period}};}
+\DoxyCodeLine{256     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\_period}} \mbox{\hyperlink{structwdt__conf_adb533add1cf2774b690974cacf7c91eb}{window\_period}};}
+\DoxyCodeLine{259     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\_period}} \mbox{\hyperlink{structwdt__conf_ab93cb110a2d5cc1bdd28bc1f7389e3b3}{early\_warning\_period}};}
+\DoxyCodeLine{260 \};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{280 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} wdt\_is\_syncing(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{281 \{}
+\DoxyCodeLine{282     \mbox{\hyperlink{struct_wdt}{Wdt}} *\textcolor{keyword}{const} WDT\_module = \mbox{\hyperlink{samd20e14_8h_a9646f603341e1ee220bf5d9948f05cb0}{WDT}};}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#if (SAML21) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{285     \textcolor{keywordflow}{if} (WDT\_module-\/>SYNCBUSY.reg) \{}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{287     \textcolor{keywordflow}{if} (WDT\_module-\/>\mbox{\hyperlink{struct_wdt_aaf9d7fc7c9074ee46a4a80e8d17d28be}{STATUS}}.\mbox{\hyperlink{union_w_d_t___s_t_a_t_u_s___type_a7e48d84b9e6f44fb73825b7049f5e4ef}{reg}} \& WDT\_STATUS\_SYNCBUSY) \{}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{289         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{290     \}}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{293 \}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{313 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} wdt\_get\_config\_defaults(}
+\DoxyCodeLine{314         \textcolor{keyword}{struct} \mbox{\hyperlink{structwdt__conf}{wdt\_conf}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{315 \{}
+\DoxyCodeLine{316     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{317     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319     \textcolor{comment}{/* Default configuration values */}}
+\DoxyCodeLine{320     config-\/>\mbox{\hyperlink{structwdt__conf_a8941368a3f7c8f3d1666180078abfcb5}{always\_on}}            = \textcolor{keyword}{false};}
+\DoxyCodeLine{321     config-\/>\mbox{\hyperlink{structwdt__conf_a5cc0ffa68ffe829451e183eb93e8f91c}{enable}}               = \textcolor{keyword}{true};}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#if !(SAML21) \&\& !(SAML22) \&\& !(SAMC20) \&\& !(SAMC21) \&\& !(SAMR30) \&\& !(SAMR34) \&\& !(SAMR35) \&\& !(WLR089)}}
+\DoxyCodeLine{323     config-\/>\mbox{\hyperlink{structwdt__conf_a022118a463c6d9244b519b8a1cca5d41}{clock\_source}}         = GCLK\_GENERATOR\_4;}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{325     config-\/>\mbox{\hyperlink{structwdt__conf_a1a3485dca5a0163b0289bd864f15026e}{timeout\_period}}       = \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabe11993c0838eebfc06889b8f1812d90}{WDT\_PERIOD\_16384CLK}};}
+\DoxyCodeLine{326     config-\/>\mbox{\hyperlink{structwdt__conf_adb533add1cf2774b690974cacf7c91eb}{window\_period}}        = \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acac81ba52b1f5764278889cb86b37f9967}{WDT\_PERIOD\_NONE}};}
+\DoxyCodeLine{327     config-\/>\mbox{\hyperlink{structwdt__conf_ab93cb110a2d5cc1bdd28bc1f7389e3b3}{early\_warning\_period}} = \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acac81ba52b1f5764278889cb86b37f9967}{WDT\_PERIOD\_NONE}};}
+\DoxyCodeLine{328 \}}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaaed4dd784e073167a8588592fce7af69}{wdt\_set\_config}}(}
+\DoxyCodeLine{331         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structwdt__conf}{wdt\_conf}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{340 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} wdt\_is\_locked(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{341 \{}
+\DoxyCodeLine{342     \mbox{\hyperlink{struct_wdt}{Wdt}} *\textcolor{keyword}{const} WDT\_module = \mbox{\hyperlink{samd20e14_8h_a9646f603341e1ee220bf5d9948f05cb0}{WDT}};}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#if (SAML21) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{345     \textcolor{keywordflow}{return} (WDT\_module-\/>CTRLA.reg \& WDT\_CTRLA\_ALWAYSON);}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{347     \textcolor{keywordflow}{return} (WDT\_module-\/>\mbox{\hyperlink{struct_wdt_a8e1f17db596e26a89f5f6dac96e87706}{CTRL}}.\mbox{\hyperlink{union_w_d_t___c_t_r_l___type_abb62aaa560cd778ea7e76bf3a969023f}{reg}} \& WDT\_CTRL\_ALWAYSON);}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{349 \}}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{362 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} wdt\_clear\_early\_warning(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{363 \{}
+\DoxyCodeLine{364     \mbox{\hyperlink{struct_wdt}{Wdt}} *\textcolor{keyword}{const} WDT\_module = \mbox{\hyperlink{samd20e14_8h_a9646f603341e1ee220bf5d9948f05cb0}{WDT}};}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366     WDT\_module-\/>\mbox{\hyperlink{struct_wdt_a9b8833d2f9cddd60549ee979f0ca6cf6}{INTFLAG}}.\mbox{\hyperlink{union_w_d_t___i_n_t_f_l_a_g___type_a8d12a46530ef35b8477b2bab1accdf5d}{reg}} = WDT\_INTFLAG\_EW;}
+\DoxyCodeLine{367 \}}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{378 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} wdt\_is\_early\_warning(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{379 \{}
+\DoxyCodeLine{380     \mbox{\hyperlink{struct_wdt}{Wdt}} *\textcolor{keyword}{const} WDT\_module = \mbox{\hyperlink{samd20e14_8h_a9646f603341e1ee220bf5d9948f05cb0}{WDT}};}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382     \textcolor{keywordflow}{return} (WDT\_module-\/>\mbox{\hyperlink{struct_wdt_a9b8833d2f9cddd60549ee979f0ca6cf6}{INTFLAG}}.\mbox{\hyperlink{union_w_d_t___i_n_t_f_l_a_g___type_a8d12a46530ef35b8477b2bab1accdf5d}{reg}} \& WDT\_INTFLAG\_EW);}
+\DoxyCodeLine{383 \}}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga04e293d7ecf7703a3f6624f652f3a90a}{wdt\_reset\_count}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{390 \}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WDT\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

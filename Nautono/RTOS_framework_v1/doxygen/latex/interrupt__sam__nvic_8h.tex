@@ -1,0 +1,51 @@
+\hypertarget{interrupt__sam__nvic_8h}{}\doxysection{src/\+ASF/common/utils/interrupt/interrupt\+\_\+sam\+\_\+nvic.h File Reference}
+\label{interrupt__sam__nvic_8h}\index{src/ASF/common/utils/interrupt/interrupt\_sam\_nvic.h@{src/ASF/common/utils/interrupt/interrupt\_sam\_nvic.h}}
+
+
+Global interrupt management for SAM D20, SAM3 and SAM4 (NVIC based)  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$parts.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{Indent}\textbf{ Global interrupt flags}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__interrupt__group_gae4922a4bd8ba4150211fbc7f2302403c}{cpu\+\_\+irq\+\_\+enable}}()
+\begin{DoxyCompactList}\small\item\em Enable interrupts globally. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__interrupt__group_ga7b77391ed86e2e027f9ee1dd99a06980}{cpu\+\_\+irq\+\_\+disable}}()
+\begin{DoxyCompactList}\small\item\em Disable interrupts globally. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__interrupt__group_gae1545a2473614564550b9c4015c94978}{cpu\+\_\+irq\+\_\+is\+\_\+enabled}}()~(\mbox{\hyperlink{group___c_m_s_i_s___core___reg_acc_functions_ga4ff59fb9e280d19e79e6875863a65f0a}{\+\_\+\+\_\+get\+\_\+\+PRIMASK}}() == 0)
+\begin{DoxyCompactList}\small\item\em Check if interrupts are globally enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Interrupt Service Routine definition}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__interrupt__group_ga0da0a19156773eca7070722f26ff66a6}{ISR}}(func)~ void func (void)
+\begin{DoxyCompactList}\small\item\em Define service routine. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__interrupt__group_ga931b667f6490ad3d8905fa25bebb24b1}{irq\+\_\+initialize\+\_\+vectors}}()
+\begin{DoxyCompactList}\small\item\em Initialize interrupt vectors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__interrupt__group_gaa746642b1132af054826fb169f541965}{irq\+\_\+register\+\_\+handler}}(int\+\_\+num,  int\+\_\+prio)
+\begin{DoxyCompactList}\small\item\em Register handler for interrupt. \end{DoxyCompactList}\item 
+\#define {\bfseries Enable\+\_\+global\+\_\+interrupt}()~\mbox{\hyperlink{group__interrupt__group_gae4922a4bd8ba4150211fbc7f2302403c}{cpu\+\_\+irq\+\_\+enable}}()
+\item 
+\#define {\bfseries Disable\+\_\+global\+\_\+interrupt}()~\mbox{\hyperlink{group__interrupt__group_ga7b77391ed86e2e027f9ee1dd99a06980}{cpu\+\_\+irq\+\_\+disable}}()
+\item 
+\#define {\bfseries Is\+\_\+global\+\_\+interrupt\+\_\+enabled}()~\mbox{\hyperlink{group__interrupt__group_gae1545a2473614564550b9c4015c94978}{cpu\+\_\+irq\+\_\+is\+\_\+enabled}}()
+\item 
+typedef uint32\+\_\+t {\bfseries irqflags\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Type used for holding state of interrupt flag. \end{DoxyCompactList}\item 
+volatile bool {\bfseries g\+\_\+interrupt\+\_\+enabled}
+\item 
+void {\bfseries cpu\+\_\+irq\+\_\+enter\+\_\+critical} (void)
+\item 
+void {\bfseries cpu\+\_\+irq\+\_\+leave\+\_\+critical} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Global interrupt management for SAM D20, SAM3 and SAM4 (NVIC based) 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['vcoroutineschedule_0',['vCoRoutineSchedule',['../group__v_co_routine_schedule.html',1,'']]],
+  ['vector_20clarke_20transform_1',['Vector Clarke Transform',['../group__clarke.html',1,'']]],
+  ['vector_20inverse_20clarke_20transform_2',['Vector Inverse Clarke Transform',['../group__inv__clarke.html',1,'']]],
+  ['vector_20inverse_20park_20transform_3',['Vector Inverse Park transform',['../group__inv__park.html',1,'']]],
+  ['vector_20park_20transform_4',['Vector Park Transform',['../group__park.html',1,'']]],
+  ['vqueuedelete_5',['vQueueDelete',['../group__v_queue_delete.html',1,'']]],
+  ['vsemaphorecreatebinary_6',['vSemaphoreCreateBinary',['../group__v_semaphore_create_binary.html',1,'']]],
+  ['vsemaphoredelete_7',['vSemaphoreDelete',['../group__v_semaphore_delete.html',1,'']]],
+  ['vstreambufferdelete_8',['vStreamBufferDelete',['../group__v_stream_buffer_delete.html',1,'']]],
+  ['vtaskdelay_9',['vTaskDelay',['../group__v_task_delay.html',1,'']]],
+  ['vtaskdelayuntil_10',['vTaskDelayUntil',['../group__v_task_delay_until.html',1,'']]],
+  ['vtaskdelete_11',['vTaskDelete',['../group__v_task_delete.html',1,'']]],
+  ['vtaskendscheduler_12',['vTaskEndScheduler',['../group__v_task_end_scheduler.html',1,'']]],
+  ['vtaskgetinfo_13',['vTaskGetInfo',['../group__v_task_get_info.html',1,'']]],
+  ['vtaskgetruntimestats_14',['vTaskGetRunTimeStats',['../group__v_task_get_run_time_stats.html',1,'']]],
+  ['vtasklist_15',['vTaskList',['../group__v_task_list.html',1,'']]],
+  ['vtaskpriorityset_16',['vTaskPrioritySet',['../group__v_task_priority_set.html',1,'']]],
+  ['vtaskresume_17',['vTaskResume',['../group__v_task_resume.html',1,'']]],
+  ['vtaskresumefromisr_18',['vTaskResumeFromISR',['../group__v_task_resume_from_i_s_r.html',1,'']]],
+  ['vtaskstartscheduler_19',['vTaskStartScheduler',['../group__v_task_start_scheduler.html',1,'']]],
+  ['vtasksuspend_20',['vTaskSuspend',['../group__v_task_suspend.html',1,'']]],
+  ['vtasksuspendall_21',['vTaskSuspendAll',['../group__v_task_suspend_all.html',1,'']]]
+];

@@ -1,0 +1,29 @@
+\hypertarget{group__part__macros__group}{}\doxysection{Atmel part identification macros}
+\label{group__part__macros__group}\index{Atmel part identification macros@{Atmel part identification macros}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__uc3__part__macros__group}{AVR UC3 parts}}
+\item 
+\mbox{\hyperlink{group__xmega__part__macros__group}{AVR XMEGA parts}}
+\item 
+\mbox{\hyperlink{group__mega__part__macros__group}{mega\+AVR parts}}
+\item 
+\mbox{\hyperlink{group__sam__part__macros__group}{SAM parts}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Convenience macros for part checking}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__part__macros__group_ga2fb54ec8ba6d98af5ed21dfb4ec97483}\label{group__part__macros__group_ga2fb54ec8ba6d98af5ed21dfb4ec97483}} 
+\#define {\bfseries AVR8\+\_\+\+PART\+\_\+\+IS\+\_\+\+DEFINED}(part)~ (defined(\+\_\+\+\_\+ \#\# part \#\# \+\_\+\+\_\+) $\vert$$\vert$ defined(\+\_\+\+\_\+\+AVR\+\_\+ \#\# part \#\# \+\_\+\+\_\+))
+\item 
+\mbox{\Hypertarget{group__part__macros__group_gac253d1a424ff2bc355184e3cdb93514d}\label{group__part__macros__group_gac253d1a424ff2bc355184e3cdb93514d}} 
+\#define {\bfseries AVR32\+\_\+\+PART\+\_\+\+IS\+\_\+\+DEFINED}(part)~ (defined(\+\_\+\+\_\+\+AT32 \#\# part \#\# \+\_\+\+\_\+) $\vert$$\vert$ defined(\+\_\+\+\_\+\+AVR32\+\_\+ \#\# part \#\# \+\_\+\+\_\+))
+\item 
+\mbox{\Hypertarget{group__part__macros__group_ga50580478fd56bb842e0cbdd354a6933c}\label{group__part__macros__group_ga50580478fd56bb842e0cbdd354a6933c}} 
+\#define {\bfseries SAM\+\_\+\+PART\+\_\+\+IS\+\_\+\+DEFINED}(part)~(defined(\+\_\+\+\_\+ \#\# part \#\# \+\_\+\+\_\+))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This collection of macros identify which series and families that the various Atmel parts belong to. These can be used to select part-\/dependent sections of code at compile time. 

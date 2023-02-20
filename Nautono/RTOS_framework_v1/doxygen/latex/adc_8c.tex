@@ -1,0 +1,56 @@
+\hypertarget{adc_8c}{}\doxysection{src/\+ASF/sam0/drivers/adc/adc\+\_\+sam\+\_\+d\+\_\+r\+\_\+h/adc.c File Reference}
+\label{adc_8c}\index{src/ASF/sam0/drivers/adc/adc\_sam\_d\_r\_h/adc.c@{src/ASF/sam0/drivers/adc/adc\_sam\_d\_r\_h/adc.c}}
+
+
+SAM Peripheral Analog-\/to-\/\+Digital Converter Driver.  
+
+
+{\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{adc_8c_aa8d60370eb780ea1d7c98da242960905}\label{adc_8c_aa8d60370eb780ea1d7c98da242960905}} 
+\#define {\bfseries PIN\+\_\+\+INVALID\+\_\+\+ADC\+\_\+\+AIN}~0x\+FFFFUL
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5a5650a331819833c7a27309c131c55d}{adc\+\_\+get\+\_\+config\+\_\+defaults}} (struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes an ADC configuration structure to defaults. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga84ff86341c2e0d1a267b8dc54cb807ad}{adc\+\_\+set\+\_\+window\+\_\+mode}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module\+\_\+inst, const enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}{adc\+\_\+window\+\_\+mode}} window\+\_\+mode, const int16\+\_\+t window\+\_\+lower\+\_\+value, const int16\+\_\+t window\+\_\+upper\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Sets the ADC window mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{adc_8c_a73108c3a807b8aa42cd2dd6b2386044a}{adc\+\_\+regular\+\_\+ain\+\_\+channel}} (uint32\+\_\+t $\ast$pin\+\_\+array, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Initializes the ADC channel sequence. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga09de1dc91d7b101349d0577a306b762e}{adc\+\_\+init}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module\+\_\+inst, \mbox{\hyperlink{struct_adc}{Adc}} $\ast$hw, struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Initializes the ADC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM Peripheral Analog-\/to-\/\+Digital Converter Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{adc_8c_a73108c3a807b8aa42cd2dd6b2386044a}\label{adc_8c_a73108c3a807b8aa42cd2dd6b2386044a}} 
+\index{adc.c@{adc.c}!adc\_regular\_ain\_channel@{adc\_regular\_ain\_channel}}
+\index{adc\_regular\_ain\_channel@{adc\_regular\_ain\_channel}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_regular\_ain\_channel()}{adc\_regular\_ain\_channel()}}
+{\footnotesize\ttfamily void adc\+\_\+regular\+\_\+ain\+\_\+channel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{pin\+\_\+array,  }\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Initializes the ADC channel sequence. 
+
+Like SAMD and SAMR21 the INPUTOFFSET register will be incremented one automatically after a conversion done, causing the next conversion to be done with the positive input equal to MUXPOS + INPUTOFFSET, it is scanning continuously one by one even ADC channels are not continuous.
+
+Initializes the ADC channel sequence by the sequence of pin\+\_\+array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pin\+\_\+array} & The array of the Mux selection for the positive ADC input \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The size of pin\+\_\+array \\
+\hline
+\end{DoxyParams}

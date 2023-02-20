@@ -1,0 +1,82 @@
+\hypertarget{sail__nav_8h_source}{}\doxysection{sail\+\_\+nav.\+h}
+\label{sail__nav_8h_source}\index{src/sail\_nav.h@{src/sail\_nav.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_nav.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Header file for the navigation controller.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created on August 3, 2016.}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Created by Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef SAIL\_NAV\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define SAIL\_NAV\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}sail\_types.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{/* NAV\_UpdateCourse}}
+\DoxyCodeLine{17 \textcolor{comment}{ * Calculate the target course.}}
+\DoxyCodeLine{18 \textcolor{comment}{ * This function should be called at the same frequency as NAV\_CalculateSailPosition.}}
+\DoxyCodeLine{19 \textcolor{comment}{ * The course calculated by this function should be used as input to the NAV\_CalculateRudderPosition}}
+\DoxyCodeLine{20 \textcolor{comment}{ * function, which should be called more frequently.}}
+\DoxyCodeLine{21 \textcolor{comment}{ *}}
+\DoxyCodeLine{22 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{23 \textcolor{comment}{ *   wp:      the current way point's position}}
+\DoxyCodeLine{24 \textcolor{comment}{ *   gps:     the most recent GPS reading}}
+\DoxyCodeLine{25 \textcolor{comment}{ *   wind:    the most recent wind vane reading}}
+\DoxyCodeLine{26 \textcolor{comment}{ *   heading: the average heading}}
+\DoxyCodeLine{27 \textcolor{comment}{ *}}
+\DoxyCodeLine{28 \textcolor{comment}{ * Inputs/Outputs:}}
+\DoxyCodeLine{29 \textcolor{comment}{ *   course:     pointer to the target course, which will be updated when the function returns}}
+\DoxyCodeLine{30 \textcolor{comment}{ *   sail\_angle: pointer to the required sail angle for the given course}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ */}}
+\DoxyCodeLine{33 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NAV\_UpdateCourse(\mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}} wp, \mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}} gps, \mbox{\hyperlink{struct_w_i_n_d___reading}{WIND\_Reading}} wind, \textcolor{keywordtype}{float} heading, \textcolor{keywordtype}{float} *course, \textcolor{keywordtype}{float} *sail\_angle);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/* NAV\_CalculateRudderPosition}}
+\DoxyCodeLine{37 \textcolor{comment}{ * Calculate the rudder angle to maintain the course.}}
+\DoxyCodeLine{38 \textcolor{comment}{ * This function should be called frequently to keep the boat following the desired course.}}
+\DoxyCodeLine{39 \textcolor{comment}{ *}}
+\DoxyCodeLine{40 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{41 \textcolor{comment}{ *   course:  the boat's current course, calculated by NAV\_CalculateCourse}}
+\DoxyCodeLine{42 \textcolor{comment}{ *   heading: the boat's current heading, from the most recent compass reading}}
+\DoxyCodeLine{43 \textcolor{comment}{ *}}
+\DoxyCodeLine{44 \textcolor{comment}{ * Inputs/Outputs:}}
+\DoxyCodeLine{45 \textcolor{comment}{ *   rudder\_angle: the rudder angle required to maintain course}}
+\DoxyCodeLine{46 \textcolor{comment}{ *}}
+\DoxyCodeLine{47 \textcolor{comment}{ */}}
+\DoxyCodeLine{48 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NAV\_CalculateRudderPosition(\textcolor{keywordtype}{float} course, \textcolor{keywordtype}{float} heading, \textcolor{keywordtype}{float} *rudder\_angle);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{/* NAV\_GetDistance}}
+\DoxyCodeLine{52 \textcolor{comment}{ * Calculate the distance from GPS location to waypoint}}
+\DoxyCodeLine{53 \textcolor{comment}{ *}}
+\DoxyCodeLine{54 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{55 \textcolor{comment}{ *   wp:  the next waypoint}}
+\DoxyCodeLine{56 \textcolor{comment}{ *   gps: the boat's current location, from GPS reading}}
+\DoxyCodeLine{57 \textcolor{comment}{ *}}
+\DoxyCodeLine{58 \textcolor{comment}{ * Inputs/Outputs:}}
+\DoxyCodeLine{59 \textcolor{comment}{ *   distance: the calculated distance from GPS location to waypoint}}
+\DoxyCodeLine{60 \textcolor{comment}{ */}}
+\DoxyCodeLine{61 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NAV\_GetDistance(\mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}} wp, \mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}} gps, \textcolor{keywordtype}{double} *distance);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{/* NAV\_GetBearing}}
+\DoxyCodeLine{65 \textcolor{comment}{ * Math calculation to get bearing}}
+\DoxyCodeLine{66 \textcolor{comment}{ *}}
+\DoxyCodeLine{67 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{68 \textcolor{comment}{ *   wp:  the next waypoint}}
+\DoxyCodeLine{69 \textcolor{comment}{ *   gps: the boat's current location, from GPS reading}}
+\DoxyCodeLine{70 \textcolor{comment}{ *}}
+\DoxyCodeLine{71 \textcolor{comment}{ * Inputs/Outputs:}}
+\DoxyCodeLine{72 \textcolor{comment}{ *   bearing: the calculated bearing from GPS location to waypoint}}
+\DoxyCodeLine{73 \textcolor{comment}{ */}}
+\DoxyCodeLine{74 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NAV\_GetBearing(\mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}} wp, \mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}} gps, \textcolor{keywordtype}{double} *bearing);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_NAV\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

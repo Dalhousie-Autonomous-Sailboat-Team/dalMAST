@@ -1,0 +1,318 @@
+\hypertarget{instance_2evsys_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/instance/evsys.h File Reference}
+\label{instance_2evsys_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/evsys.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/evsys.h}}
+
+
+Instance description for EVSYS.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a9ff19a8ee6907e33f10cdc4befb052a0}\label{instance_2evsys_8h_a9ff19a8ee6907e33f10cdc4befb052a0}} 
+\#define {\bfseries REG\+\_\+\+EVSYS\+\_\+\+CTRL}~($\ast$(\mbox{\hyperlink{samd20e14_8h_a5e336e5a36ee12ebeafb021108e5275b}{Wo\+Reg8}} $\ast$)0x42000400U)
+\begin{DoxyCompactList}\small\item\em (EVSYS) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a476360a728ffe2c997e45d063b232424}\label{instance_2evsys_8h_a476360a728ffe2c997e45d063b232424}} 
+\#define {\bfseries REG\+\_\+\+EVSYS\+\_\+\+CHANNEL}~($\ast$(\mbox{\hyperlink{samd20e14_8h_acf1496e3bbe303e55f627fc7558a68c7}{Rw\+Reg}}  $\ast$)0x42000404U)
+\begin{DoxyCompactList}\small\item\em (EVSYS) Channel \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a0b8a906f943b304848d1b796cc19bae8}\label{instance_2evsys_8h_a0b8a906f943b304848d1b796cc19bae8}} 
+\#define {\bfseries REG\+\_\+\+EVSYS\+\_\+\+USER}~($\ast$(\mbox{\hyperlink{samd20e14_8h_acce07556c80fc352ae607f225f19fed5}{Rw\+Reg16}}$\ast$)0x42000408U)
+\begin{DoxyCompactList}\small\item\em (EVSYS) User Multiplexer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a21e101c20b1fe42fdfa4806935184889}\label{instance_2evsys_8h_a21e101c20b1fe42fdfa4806935184889}} 
+\#define {\bfseries REG\+\_\+\+EVSYS\+\_\+\+CHSTATUS}~($\ast$(\mbox{\hyperlink{samd20e14_8h_a5d556f8391af4141be23f7334ac9dd68}{Ro\+Reg}}  $\ast$)0x4200040\+CU)
+\begin{DoxyCompactList}\small\item\em (EVSYS) Channel Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ab1e5b2e982adb6f9d4404092d28ebb74}\label{instance_2evsys_8h_ab1e5b2e982adb6f9d4404092d28ebb74}} 
+\#define {\bfseries REG\+\_\+\+EVSYS\+\_\+\+INTENCLR}~($\ast$(\mbox{\hyperlink{samd20e14_8h_acf1496e3bbe303e55f627fc7558a68c7}{Rw\+Reg}}  $\ast$)0x42000410U)
+\begin{DoxyCompactList}\small\item\em (EVSYS) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{instance_2evsys_8h_aed6112bc40972f69f5a3dbc05d030a79}\label{instance_2evsys_8h_aed6112bc40972f69f5a3dbc05d030a79}} 
+\#define {\bfseries REG\+\_\+\+EVSYS\+\_\+\+INTENSET}~($\ast$(\mbox{\hyperlink{samd20e14_8h_acf1496e3bbe303e55f627fc7558a68c7}{Rw\+Reg}}  $\ast$)0x42000414U)
+\begin{DoxyCompactList}\small\item\em (EVSYS) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a2bbf79154c7b1c114d970c80cda05282}\label{instance_2evsys_8h_a2bbf79154c7b1c114d970c80cda05282}} 
+\#define {\bfseries REG\+\_\+\+EVSYS\+\_\+\+INTFLAG}~($\ast$(\mbox{\hyperlink{samd20e14_8h_acf1496e3bbe303e55f627fc7558a68c7}{Rw\+Reg}}  $\ast$)0x42000418U)
+\begin{DoxyCompactList}\small\item\em (EVSYS) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a07549a0a57d1efef473c6a6133d4fd8c}\label{instance_2evsys_8h_a07549a0a57d1efef473c6a6133d4fd8c}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNELS}~8
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a581a8acc11daabd8beaf60d54603b064}\label{instance_2evsys_8h_a581a8acc11daabd8beaf60d54603b064}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNELS\+\_\+\+BITS}~3
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a4b71f86ab99fe58deddbf76ac90a6554}\label{instance_2evsys_8h_a4b71f86ab99fe58deddbf76ac90a6554}} 
+\#define {\bfseries EVSYS\+\_\+\+CHANNELS\+\_\+\+MSB}~7
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a3247d35916ee09b62154c5f517e574c7}\label{instance_2evsys_8h_a3247d35916ee09b62154c5f517e574c7}} 
+\#define {\bfseries EVSYS\+\_\+\+EXTEVT\+\_\+\+NUM}~0
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_abf68de49f3db64e03241b444057b7188}\label{instance_2evsys_8h_abf68de49f3db64e03241b444057b7188}} 
+\#define {\bfseries EVSYS\+\_\+\+EXT\+\_\+\+EVT\+\_\+\+MSB}~0
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_af16103dd642e9b692776559e87e98c56}\label{instance_2evsys_8h_af16103dd642e9b692776559e87e98c56}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+0}~4
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a0d0701a44bae91a0288c5ac38f77bb73}\label{instance_2evsys_8h_a0d0701a44bae91a0288c5ac38f77bb73}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+1}~5
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a27b726f68edfdbc7a475366d56ac07f1}\label{instance_2evsys_8h_a27b726f68edfdbc7a475366d56ac07f1}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+2}~6
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a0a82d6fc43838ef6c3ef616c4c0b3e3c}\label{instance_2evsys_8h_a0a82d6fc43838ef6c3ef616c4c0b3e3c}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+3}~7
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_aa41f5ac442651eaddc4c5554178af0bc}\label{instance_2evsys_8h_aa41f5ac442651eaddc4c5554178af0bc}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+4}~8
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_aa074bb3a7cfb66622fe104a70114c1fc}\label{instance_2evsys_8h_aa074bb3a7cfb66622fe104a70114c1fc}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+5}~9
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ad3797c34864faf8c5f1098d5cfa49ee3}\label{instance_2evsys_8h_ad3797c34864faf8c5f1098d5cfa49ee3}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+6}~10
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_addb1ee0ea27f8126cb86472a0b8b8597}\label{instance_2evsys_8h_addb1ee0ea27f8126cb86472a0b8b8597}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+7}~11
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a7ce625be6fcbd5397a92f88393fdb9a2}\label{instance_2evsys_8h_a7ce625be6fcbd5397a92f88393fdb9a2}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+\+LSB}~4
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a9e23ec4803e440c8525d21280fe44fa9}\label{instance_2evsys_8h_a9e23ec4803e440c8525d21280fe44fa9}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+\+MSB}~11
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a3afb4208b8573396ddf58166801185ab}\label{instance_2evsys_8h_a3afb4208b8573396ddf58166801185ab}} 
+\#define {\bfseries EVSYS\+\_\+\+GCLK\+\_\+\+ID\+\_\+\+SIZE}~8
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a16e58fb3942b218ceb952e83ddf1c765}\label{instance_2evsys_8h_a16e58fb3942b218ceb952e83ddf1c765}} 
+\#define {\bfseries EVSYS\+\_\+\+GENERATORS}~59
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a2fd43bc9c3f014db8255d1791da88937}\label{instance_2evsys_8h_a2fd43bc9c3f014db8255d1791da88937}} 
+\#define {\bfseries EVSYS\+\_\+\+GENERATORS\+\_\+\+BITS}~6
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a8e32928d3f0b723f60757e33e3ae15f9}\label{instance_2evsys_8h_a8e32928d3f0b723f60757e33e3ae15f9}} 
+\#define {\bfseries EVSYS\+\_\+\+USERS}~14
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a9bc7daadeb656f58f1e5dca3bafff4d3}\label{instance_2evsys_8h_a9bc7daadeb656f58f1e5dca3bafff4d3}} 
+\#define {\bfseries EVSYS\+\_\+\+USERS\+\_\+\+BITS}~4
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ab57e465b92915c9e524b691c0fbf1cac}\label{instance_2evsys_8h_ab57e465b92915c9e524b691c0fbf1cac}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+CMP\+\_\+0}~1
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ad29cb290c9da3d9a299105f16a0fb8bb}\label{instance_2evsys_8h_ad29cb290c9da3d9a299105f16a0fb8bb}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+CMP\+\_\+1}~2
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a70c3b9a4dbc8a8fdf131f39c2897c011}\label{instance_2evsys_8h_a70c3b9a4dbc8a8fdf131f39c2897c011}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+OVF}~3
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_af86d49cc6936cbe00c23283a9384b4bb}\label{instance_2evsys_8h_af86d49cc6936cbe00c23283a9384b4bb}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+PER\+\_\+0}~4
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a26e2ea1702a7d5f906713cb0c90db324}\label{instance_2evsys_8h_a26e2ea1702a7d5f906713cb0c90db324}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+PER\+\_\+1}~5
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_adf6691f93ead12dc906723a35ce7d0b3}\label{instance_2evsys_8h_adf6691f93ead12dc906723a35ce7d0b3}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+PER\+\_\+2}~6
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_acb265fb1b45b2c494d3bd3433fde74cb}\label{instance_2evsys_8h_acb265fb1b45b2c494d3bd3433fde74cb}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+PER\+\_\+3}~7
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a1df94e06c7db303b7f679d956939517a}\label{instance_2evsys_8h_a1df94e06c7db303b7f679d956939517a}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+PER\+\_\+4}~8
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ab442a2a66001c3f0435aa908f6f0b730}\label{instance_2evsys_8h_ab442a2a66001c3f0435aa908f6f0b730}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+PER\+\_\+5}~9
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a378676dc102bde9fd56abf010eca5351}\label{instance_2evsys_8h_a378676dc102bde9fd56abf010eca5351}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+PER\+\_\+6}~10
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a52cb451a886d6297cd1d90c4f38e328a}\label{instance_2evsys_8h_a52cb451a886d6297cd1d90c4f38e328a}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+RTC\+\_\+\+PER\+\_\+7}~11
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a13fea3954fa4b4546998d2fd7ad0dd06}\label{instance_2evsys_8h_a13fea3954fa4b4546998d2fd7ad0dd06}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+0}~12
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a67e762e66249d285eacb39e46cd5c17d}\label{instance_2evsys_8h_a67e762e66249d285eacb39e46cd5c17d}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+1}~13
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a0ee2d9d4ed1f1972fc808f028ff3290c}\label{instance_2evsys_8h_a0ee2d9d4ed1f1972fc808f028ff3290c}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+2}~14
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a164d443460b55a235c9b5a91867820ab}\label{instance_2evsys_8h_a164d443460b55a235c9b5a91867820ab}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+3}~15
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_afdf23b5dcca6e7a93a8dd99d46a18b04}\label{instance_2evsys_8h_afdf23b5dcca6e7a93a8dd99d46a18b04}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+4}~16
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a7ac5638829ee18fd040249e83a3e2b33}\label{instance_2evsys_8h_a7ac5638829ee18fd040249e83a3e2b33}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+5}~17
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ac7c44fb66ff9516124cf5f3a2cd7458c}\label{instance_2evsys_8h_ac7c44fb66ff9516124cf5f3a2cd7458c}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+6}~18
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ab2618e1c31faf4173503ce17c77dcf49}\label{instance_2evsys_8h_ab2618e1c31faf4173503ce17c77dcf49}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+7}~19
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a436653f83636cd50d900d19f908d1bbe}\label{instance_2evsys_8h_a436653f83636cd50d900d19f908d1bbe}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+8}~20
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_aa38ba3badc0cda172e9ae7a6f6b42618}\label{instance_2evsys_8h_aa38ba3badc0cda172e9ae7a6f6b42618}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+9}~21
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a79e54312a33e8c3be9bd638ec5c5a7a3}\label{instance_2evsys_8h_a79e54312a33e8c3be9bd638ec5c5a7a3}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+10}~22
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a295894f5631e5e86af7eccfe6f1f1c8d}\label{instance_2evsys_8h_a295894f5631e5e86af7eccfe6f1f1c8d}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+11}~23
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ab967d91e133a74bc6239d53a0f6ad2b9}\label{instance_2evsys_8h_ab967d91e133a74bc6239d53a0f6ad2b9}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+12}~24
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_aa6b74fc1834e8604dc97b22521d7113a}\label{instance_2evsys_8h_aa6b74fc1834e8604dc97b22521d7113a}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+13}~25
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a5dccf212d24e30ee261b4edaaada7fcb}\label{instance_2evsys_8h_a5dccf212d24e30ee261b4edaaada7fcb}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+14}~26
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a8639ea648c68c851df75c6f91a9ab523}\label{instance_2evsys_8h_a8639ea648c68c851df75c6f91a9ab523}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+EIC\+\_\+\+EXTINT\+\_\+15}~27
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a402114de7de4eac83c6157a43dfe1cdf}\label{instance_2evsys_8h_a402114de7de4eac83c6157a43dfe1cdf}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC0\+\_\+\+OVF}~28
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a2ae52382573f2d87069f5f66ee9f4244}\label{instance_2evsys_8h_a2ae52382573f2d87069f5f66ee9f4244}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC0\+\_\+\+MCX\+\_\+0}~29
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a186804f5ed5d5c8506894e251bda74d3}\label{instance_2evsys_8h_a186804f5ed5d5c8506894e251bda74d3}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC0\+\_\+\+MCX\+\_\+1}~30
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_acd79a62a2c13ff461b9853c737a9aa9c}\label{instance_2evsys_8h_acd79a62a2c13ff461b9853c737a9aa9c}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC1\+\_\+\+OVF}~31
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_aa1c65dad65f27f62a6bc88510b19c63d}\label{instance_2evsys_8h_aa1c65dad65f27f62a6bc88510b19c63d}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC1\+\_\+\+MCX\+\_\+0}~32
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a15cbbfa3a6cd9eff7be7327b39385324}\label{instance_2evsys_8h_a15cbbfa3a6cd9eff7be7327b39385324}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC1\+\_\+\+MCX\+\_\+1}~33
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a664ef221d6dbf66b9c9faaf0acf4b3ff}\label{instance_2evsys_8h_a664ef221d6dbf66b9c9faaf0acf4b3ff}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC2\+\_\+\+OVF}~34
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_aa044cb50552f5199afe22f84cee17159}\label{instance_2evsys_8h_aa044cb50552f5199afe22f84cee17159}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC2\+\_\+\+MCX\+\_\+0}~35
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a9f229d197db8aae094c03bc1f2d1f5a5}\label{instance_2evsys_8h_a9f229d197db8aae094c03bc1f2d1f5a5}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC2\+\_\+\+MCX\+\_\+1}~36
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ada1736ce1141661d85d15c167d387b15}\label{instance_2evsys_8h_ada1736ce1141661d85d15c167d387b15}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC3\+\_\+\+OVF}~37
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a7fc7c80c28e3108671841efd16f05b2b}\label{instance_2evsys_8h_a7fc7c80c28e3108671841efd16f05b2b}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC3\+\_\+\+MCX\+\_\+0}~38
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a3c0a8bd86bdd5686d30f42d8eec2f749}\label{instance_2evsys_8h_a3c0a8bd86bdd5686d30f42d8eec2f749}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC3\+\_\+\+MCX\+\_\+1}~39
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ab905188c921d514f694b785ed986ebc0}\label{instance_2evsys_8h_ab905188c921d514f694b785ed986ebc0}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC4\+\_\+\+OVF}~40
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a709af3ed71c3aa6a0f9eefbe18ec6056}\label{instance_2evsys_8h_a709af3ed71c3aa6a0f9eefbe18ec6056}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC4\+\_\+\+MCX\+\_\+0}~41
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a8359dd9452a4e622344dda5e0cb6ded2}\label{instance_2evsys_8h_a8359dd9452a4e622344dda5e0cb6ded2}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC4\+\_\+\+MCX\+\_\+1}~42
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a939367afb53470b94db22fe56c87effb}\label{instance_2evsys_8h_a939367afb53470b94db22fe56c87effb}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC5\+\_\+\+OVF}~43
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a78ef8feb640552ac2e42b9fd33f6f2c1}\label{instance_2evsys_8h_a78ef8feb640552ac2e42b9fd33f6f2c1}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC5\+\_\+\+MCX\+\_\+0}~44
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ac4a3a14f1c0c57f201436a3a8c09c417}\label{instance_2evsys_8h_ac4a3a14f1c0c57f201436a3a8c09c417}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC5\+\_\+\+MCX\+\_\+1}~45
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a4707958570a5497b48ad20caf180fb62}\label{instance_2evsys_8h_a4707958570a5497b48ad20caf180fb62}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC6\+\_\+\+OVF}~46
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ae2146bde656d43ea89f13fc22d586fe5}\label{instance_2evsys_8h_ae2146bde656d43ea89f13fc22d586fe5}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC6\+\_\+\+MCX\+\_\+0}~47
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ae96e76c8653b4e9d5c61da095072018c}\label{instance_2evsys_8h_ae96e76c8653b4e9d5c61da095072018c}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC6\+\_\+\+MCX\+\_\+1}~48
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a194b923b1262390175abfda382b0cbf9}\label{instance_2evsys_8h_a194b923b1262390175abfda382b0cbf9}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC7\+\_\+\+OVF}~49
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ab79f43f5832bb154cd6a02bd5572e0ee}\label{instance_2evsys_8h_ab79f43f5832bb154cd6a02bd5572e0ee}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC7\+\_\+\+MCX\+\_\+0}~50
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a4cdaf7695640e237a17364bebf03a9fd}\label{instance_2evsys_8h_a4cdaf7695640e237a17364bebf03a9fd}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+TC7\+\_\+\+MCX\+\_\+1}~51
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a170628f4b6d4b1ff4eaf0292926f47c4}\label{instance_2evsys_8h_a170628f4b6d4b1ff4eaf0292926f47c4}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+ADC\+\_\+\+RESRDY}~52
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ab812db8311886332e0631d82bfcea002}\label{instance_2evsys_8h_ab812db8311886332e0631d82bfcea002}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+ADC\+\_\+\+WINMON}~53
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_acef45d7b64b383eac7f487bd827af1f3}\label{instance_2evsys_8h_acef45d7b64b383eac7f487bd827af1f3}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+AC\+\_\+\+COMP\+\_\+0}~54
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a3eeb885f1a62bdb39c150e06fa7f3922}\label{instance_2evsys_8h_a3eeb885f1a62bdb39c150e06fa7f3922}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+AC\+\_\+\+COMP\+\_\+1}~55
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a9da3e6c38f59486c54344e94cee05255}\label{instance_2evsys_8h_a9da3e6c38f59486c54344e94cee05255}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+AC\+\_\+\+WIN\+\_\+0}~56
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ac49b6b238c89d998b5b15d8929b8895f}\label{instance_2evsys_8h_ac49b6b238c89d998b5b15d8929b8895f}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+DAC\+\_\+\+EMPTY}~57
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_af05e8e854a797de13854d93a1b1524a8}\label{instance_2evsys_8h_af05e8e854a797de13854d93a1b1524a8}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+PTC\+\_\+\+EOC}~58
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a5164db837de112ef0536f2a9de935996}\label{instance_2evsys_8h_a5164db837de112ef0536f2a9de935996}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+GEN\+\_\+\+PTC\+\_\+\+WCOMP}~59
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a90d4073b746f3d2921831863034b2ea1}\label{instance_2evsys_8h_a90d4073b746f3d2921831863034b2ea1}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+TC0\+\_\+\+EVU}~0
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ac8cd9414940b08546440101e603d196e}\label{instance_2evsys_8h_ac8cd9414940b08546440101e603d196e}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+TC1\+\_\+\+EVU}~1
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a2cf465f0cd6d7ad8f8d92cf0a33295e9}\label{instance_2evsys_8h_a2cf465f0cd6d7ad8f8d92cf0a33295e9}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+TC2\+\_\+\+EVU}~2
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a94e30ba212800c403ce92be5b50a8c65}\label{instance_2evsys_8h_a94e30ba212800c403ce92be5b50a8c65}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+TC3\+\_\+\+EVU}~3
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a4b02555e9775f29822d246a99203d633}\label{instance_2evsys_8h_a4b02555e9775f29822d246a99203d633}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+TC4\+\_\+\+EVU}~4
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a8f02e5421e433eb9e5d0fbf754952a97}\label{instance_2evsys_8h_a8f02e5421e433eb9e5d0fbf754952a97}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+TC5\+\_\+\+EVU}~5
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a2466ea77d64d2bdac37f3e8d9ab68135}\label{instance_2evsys_8h_a2466ea77d64d2bdac37f3e8d9ab68135}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+TC6\+\_\+\+EVU}~6
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a7ffd6e23e0d07306586cca542e382b02}\label{instance_2evsys_8h_a7ffd6e23e0d07306586cca542e382b02}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+TC7\+\_\+\+EVU}~7
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a4bae86acc3d9007012e786261e5204b1}\label{instance_2evsys_8h_a4bae86acc3d9007012e786261e5204b1}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+ADC\+\_\+\+START}~8
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a6d88bceb85456ce644aa6bc3c0e060c2}\label{instance_2evsys_8h_a6d88bceb85456ce644aa6bc3c0e060c2}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+ADC\+\_\+\+SYNC}~9
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_abc7524fffa0af557fc32bd9376dfac14}\label{instance_2evsys_8h_abc7524fffa0af557fc32bd9376dfac14}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+AC\+\_\+\+SOC\+\_\+0}~10
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_ae3e90352d4e0589dfd0131dce68d7e44}\label{instance_2evsys_8h_ae3e90352d4e0589dfd0131dce68d7e44}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+AC\+\_\+\+SOC\+\_\+1}~11
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_a816293bc78cd1e3107374eb505d3dbcd}\label{instance_2evsys_8h_a816293bc78cd1e3107374eb505d3dbcd}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+DAC\+\_\+\+START}~12
+\item 
+\mbox{\Hypertarget{instance_2evsys_8h_aa7dc543d82e33edc889b4824f4e76a80}\label{instance_2evsys_8h_aa7dc543d82e33edc889b4824f4e76a80}} 
+\#define {\bfseries EVSYS\+\_\+\+ID\+\_\+\+USER\+\_\+\+PTC\+\_\+\+STCONV}~13
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Instance description for EVSYS. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

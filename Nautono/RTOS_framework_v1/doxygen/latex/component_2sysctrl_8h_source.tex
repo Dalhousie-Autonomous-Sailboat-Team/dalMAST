@@ -1,0 +1,618 @@
+\hypertarget{component_2sysctrl_8h_source}{}\doxysection{sysctrl.\+h}
+\label{component_2sysctrl_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/sysctrl.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/sysctrl.h}}
+\mbox{\hyperlink{component_2sysctrl_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_SYSCTRL\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_SYSCTRL\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define SYSCTRL\_U2100}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_SYSCTRL                 0x201}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_INTENCLR : (SYSCTRL Offset: 0x00) (R/W 32) Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a3460fc8adbeaac7c4cfd38ab19732d08}{XOSCRDY}}:1;        }
+\DoxyCodeLine{54     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a6c99d9cad3dc497d3051159642e7d494}{XOSC32KRDY}}:1;     }
+\DoxyCodeLine{55     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a87e8f9e97a86401020c7f8b0c04eb58f}{OSC32KRDY}}:1;      }
+\DoxyCodeLine{56     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a83da4a6d8e48775c382157aa3831e441}{OSC8MRDY}}:1;       }
+\DoxyCodeLine{57     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a59f7ac306ac421f350d634c088e2a70d}{DFLLRDY}}:1;        }
+\DoxyCodeLine{58     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a52f83346bf3ab847ecc0025812a9b4c4}{DFLLOOB}}:1;        }
+\DoxyCodeLine{59     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a319a38621081f225d596dc986e12dc9b}{DFLLLCKF}}:1;       }
+\DoxyCodeLine{60     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a0b263a478111178a7faaf7fff151a13d}{DFLLLCKC}}:1;       }
+\DoxyCodeLine{61     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a0e9ac5edb73a3f1b9e761db2a499a5b0}{DFLLRCS}}:1;        }
+\DoxyCodeLine{62     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_adb19c49124c83ef7f102a2ec4e8dd0a4}{BOD33RDY}}:1;       }
+\DoxyCodeLine{63     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_a360c8dead5233f81edbf6d3d265e1113}{BOD33DET}}:1;       }
+\DoxyCodeLine{64     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_ab9600834b5448d0460864efaa40d33ce}{B33SRDY}}:1;        }
+\DoxyCodeLine{65     uint32\_t :20;              }
+\DoxyCodeLine{66   \} bit;                       }
+\DoxyCodeLine{67   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type_ab06d4209601d4f7e2276f48ac164c97d}{reg}};                }
+\DoxyCodeLine{68 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type}{SYSCTRL\_INTENCLR\_Type}};}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_OFFSET     0x00         }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_XOSCRDY\_Pos 0            }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_XOSCRDY    (0x1ul << SYSCTRL\_INTENCLR\_XOSCRDY\_Pos)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_XOSC32KRDY\_Pos 1            }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_XOSC32KRDY (0x1ul << SYSCTRL\_INTENCLR\_XOSC32KRDY\_Pos)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_OSC32KRDY\_Pos 2            }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_OSC32KRDY  (0x1ul << SYSCTRL\_INTENCLR\_OSC32KRDY\_Pos)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_OSC8MRDY\_Pos 3            }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_OSC8MRDY   (0x1ul << SYSCTRL\_INTENCLR\_OSC8MRDY\_Pos)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLRDY\_Pos 4            }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLRDY    (0x1ul << SYSCTRL\_INTENCLR\_DFLLRDY\_Pos)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLOOB\_Pos 5            }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLOOB    (0x1ul << SYSCTRL\_INTENCLR\_DFLLOOB\_Pos)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLLCKF\_Pos 6            }}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLLCKF   (0x1ul << SYSCTRL\_INTENCLR\_DFLLLCKF\_Pos)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLLCKC\_Pos 7            }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLLCKC   (0x1ul << SYSCTRL\_INTENCLR\_DFLLLCKC\_Pos)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLRCS\_Pos 8            }}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_DFLLRCS    (0x1ul << SYSCTRL\_INTENCLR\_DFLLRCS\_Pos)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_BOD33RDY\_Pos 9            }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_BOD33RDY   (0x1ul << SYSCTRL\_INTENCLR\_BOD33RDY\_Pos)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_BOD33DET\_Pos 10           }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_BOD33DET   (0x1ul << SYSCTRL\_INTENCLR\_BOD33DET\_Pos)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_B33SRDY\_Pos 11           }}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_B33SRDY    (0x1ul << SYSCTRL\_INTENCLR\_B33SRDY\_Pos)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define SYSCTRL\_INTENCLR\_MASK       0x00000FFFul }}
+\DoxyCodeLine{100 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_INTENSET : (SYSCTRL Offset: 0x04) (R/W 32) Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{102 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{103   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{104     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a9ed475594e667975b2582bff6c525e51}{XOSCRDY}}:1;        }
+\DoxyCodeLine{105     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a29dc6c8844d681232f40ed8b6894864d}{XOSC32KRDY}}:1;     }
+\DoxyCodeLine{106     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a8e0616afea898aabf279871b86939099}{OSC32KRDY}}:1;      }
+\DoxyCodeLine{107     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a7ce8ad46ae4f3444b9ccf9a60b0f60f8}{OSC8MRDY}}:1;       }
+\DoxyCodeLine{108     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a54defa3de2eca3c4f5ce70cbe5420301}{DFLLRDY}}:1;        }
+\DoxyCodeLine{109     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_aafc1cc436f1a1b1a991e901604670f0d}{DFLLOOB}}:1;        }
+\DoxyCodeLine{110     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a76df29d1ae6539cb3d43d17fd48ee35b}{DFLLLCKF}}:1;       }
+\DoxyCodeLine{111     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a7c6acd366019f51174d885505461c0d4}{DFLLLCKC}}:1;       }
+\DoxyCodeLine{112     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a07479cd6196f58fe7498fd06408ad926}{DFLLRCS}}:1;        }
+\DoxyCodeLine{113     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_abaa01dd976c2490bd0a44044e053825d}{BOD33RDY}}:1;       }
+\DoxyCodeLine{114     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a177cae60faad473a2bae5c75b959218e}{BOD33DET}}:1;       }
+\DoxyCodeLine{115     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_aee325c157c2372a30c798f0555e3721d}{B33SRDY}}:1;        }
+\DoxyCodeLine{116     uint32\_t :20;              }
+\DoxyCodeLine{117   \} bit;                       }
+\DoxyCodeLine{118   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type_a346d83f2d7965f6df3c47f66edd2fcf1}{reg}};                }
+\DoxyCodeLine{119 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type}{SYSCTRL\_INTENSET\_Type}};}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_OFFSET     0x04         }}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_RESETVALUE 0x00000000ul }}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_XOSCRDY\_Pos 0            }}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_XOSCRDY    (0x1ul << SYSCTRL\_INTENSET\_XOSCRDY\_Pos)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_XOSC32KRDY\_Pos 1            }}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_XOSC32KRDY (0x1ul << SYSCTRL\_INTENSET\_XOSC32KRDY\_Pos)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_OSC32KRDY\_Pos 2            }}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_OSC32KRDY  (0x1ul << SYSCTRL\_INTENSET\_OSC32KRDY\_Pos)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_OSC8MRDY\_Pos 3            }}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_OSC8MRDY   (0x1ul << SYSCTRL\_INTENSET\_OSC8MRDY\_Pos)}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLRDY\_Pos 4            }}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLRDY    (0x1ul << SYSCTRL\_INTENSET\_DFLLRDY\_Pos)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLOOB\_Pos 5            }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLOOB    (0x1ul << SYSCTRL\_INTENSET\_DFLLOOB\_Pos)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLLCKF\_Pos 6            }}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLLCKF   (0x1ul << SYSCTRL\_INTENSET\_DFLLLCKF\_Pos)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLLCKC\_Pos 7            }}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLLCKC   (0x1ul << SYSCTRL\_INTENSET\_DFLLLCKC\_Pos)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLRCS\_Pos 8            }}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_DFLLRCS    (0x1ul << SYSCTRL\_INTENSET\_DFLLRCS\_Pos)}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_BOD33RDY\_Pos 9            }}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_BOD33RDY   (0x1ul << SYSCTRL\_INTENSET\_BOD33RDY\_Pos)}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_BOD33DET\_Pos 10           }}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_BOD33DET   (0x1ul << SYSCTRL\_INTENSET\_BOD33DET\_Pos)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_B33SRDY\_Pos 11           }}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_B33SRDY    (0x1ul << SYSCTRL\_INTENSET\_B33SRDY\_Pos)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define SYSCTRL\_INTENSET\_MASK       0x00000FFFul }}
+\DoxyCodeLine{151 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_INTFLAG : (SYSCTRL Offset: 0x08) (R/W 32) Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{153 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{154   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{155     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_ae415ace9cf750f201d5b8a218bd65e19}{XOSCRDY}}:1;    }
+\DoxyCodeLine{156     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_a74b42820913387e7cbfc3b6f3fb65c41}{XOSC32KRDY}}:1; }
+\DoxyCodeLine{157     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_a1eee353cc3f82c6a1e15579f54285db5}{OSC32KRDY}}:1;  }
+\DoxyCodeLine{158     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_a878343e1b4f51f50eb025b31af489d9b}{OSC8MRDY}}:1;   }
+\DoxyCodeLine{159     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_ab720310301a6deb5429b332c0bd8f3cf}{DFLLRDY}}:1;    }
+\DoxyCodeLine{160     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_a5737edb35c3a0a57366a09f5531a2bd0}{DFLLOOB}}:1;    }
+\DoxyCodeLine{161     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_af306d40f55c7b16e508382896cf8fa70}{DFLLLCKF}}:1;   }
+\DoxyCodeLine{162     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_a258b22a2ce57752fbd81fc9e60963bbb}{DFLLLCKC}}:1;   }
+\DoxyCodeLine{163     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_a802d288e090ce8f00e26fc49cb96ad8b}{DFLLRCS}}:1;    }
+\DoxyCodeLine{164     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_a946b31781ce3ce8a26ba7e94da079495}{BOD33RDY}}:1;   }
+\DoxyCodeLine{165     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_ad6a04ecb2eb9d2c5058c4c0d825b18d7}{BOD33DET}}:1;   }
+\DoxyCodeLine{166     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_a382254864b63853684c4aa8a8c19d47a}{B33SRDY}}:1;    }
+\DoxyCodeLine{167     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_a11d6d9b1bd6ab0b2741f09fd698d4787}{uint32\_t}} :20;          }
+\DoxyCodeLine{168   \} bit;                       }
+\DoxyCodeLine{169   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type_ad1002fbc5e8c566382f11f5aeff5a4d2}{reg}};                }
+\DoxyCodeLine{170 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type}{SYSCTRL\_INTFLAG\_Type}};}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_OFFSET      0x08         }}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_RESETVALUE  0x00000000ul }}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_XOSCRDY\_Pos 0            }}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_XOSCRDY     (0x1ul << SYSCTRL\_INTFLAG\_XOSCRDY\_Pos)}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_XOSC32KRDY\_Pos 1            }}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_XOSC32KRDY  (0x1ul << SYSCTRL\_INTFLAG\_XOSC32KRDY\_Pos)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_OSC32KRDY\_Pos 2            }}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_OSC32KRDY   (0x1ul << SYSCTRL\_INTFLAG\_OSC32KRDY\_Pos)}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_OSC8MRDY\_Pos 3            }}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_OSC8MRDY    (0x1ul << SYSCTRL\_INTFLAG\_OSC8MRDY\_Pos)}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLRDY\_Pos 4            }}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLRDY     (0x1ul << SYSCTRL\_INTFLAG\_DFLLRDY\_Pos)}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLOOB\_Pos 5            }}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLOOB     (0x1ul << SYSCTRL\_INTFLAG\_DFLLOOB\_Pos)}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLLCKF\_Pos 6            }}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLLCKF    (0x1ul << SYSCTRL\_INTFLAG\_DFLLLCKF\_Pos)}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLLCKC\_Pos 7            }}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLLCKC    (0x1ul << SYSCTRL\_INTFLAG\_DFLLLCKC\_Pos)}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLRCS\_Pos 8            }}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_DFLLRCS     (0x1ul << SYSCTRL\_INTFLAG\_DFLLRCS\_Pos)}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_BOD33RDY\_Pos 9            }}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_BOD33RDY    (0x1ul << SYSCTRL\_INTFLAG\_BOD33RDY\_Pos)}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_BOD33DET\_Pos 10           }}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_BOD33DET    (0x1ul << SYSCTRL\_INTFLAG\_BOD33DET\_Pos)}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_B33SRDY\_Pos 11           }}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_B33SRDY     (0x1ul << SYSCTRL\_INTFLAG\_B33SRDY\_Pos)}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define SYSCTRL\_INTFLAG\_MASK        0x00000FFFul }}
+\DoxyCodeLine{202 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_PCLKSR : (SYSCTRL Offset: 0x0C) (R/  32) Power and Clocks Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{204 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{205   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{206     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_aa0f8e3d0380c240f4e8ad9a8628407e7}{XOSCRDY}}:1;        }
+\DoxyCodeLine{207     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_ad58cfdddabd60dcf57ac5950aee6555f}{XOSC32KRDY}}:1;     }
+\DoxyCodeLine{208     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_a41d94250213a41c50b75d5740d7f3b89}{OSC32KRDY}}:1;      }
+\DoxyCodeLine{209     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_a41376d725d2cb90a9baa88bbee6fb49c}{OSC8MRDY}}:1;       }
+\DoxyCodeLine{210     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_a3427d299a3176cc27d5ab091b8f9dc67}{DFLLRDY}}:1;        }
+\DoxyCodeLine{211     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_ab4cbdbb31d9834617d0a729e44a2c26c}{DFLLOOB}}:1;        }
+\DoxyCodeLine{212     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_a9b6e8731a73ab433a05e09e4781c8036}{DFLLLCKF}}:1;       }
+\DoxyCodeLine{213     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_a58a8f965c3668f3a633a5ba430f80060}{DFLLLCKC}}:1;       }
+\DoxyCodeLine{214     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_a2f99ae9c19c073245ae38cd8842c1426}{DFLLRCS}}:1;        }
+\DoxyCodeLine{215     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_a965d65cddb8e3f96686f2afde00b9d72}{BOD33RDY}}:1;       }
+\DoxyCodeLine{216     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_af420ff0bbf320b8d9ecc752bec932eb4}{BOD33DET}}:1;       }
+\DoxyCodeLine{217     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_a7510d8c8ddb0c722e4291e8f7e10c654}{B33SRDY}}:1;        }
+\DoxyCodeLine{218     uint32\_t :20;              }
+\DoxyCodeLine{219   \} bit;                       }
+\DoxyCodeLine{220   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type_a1f18fce617b418e85b5d4eb08371c735}{reg}};                }
+\DoxyCodeLine{221 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type}{SYSCTRL\_PCLKSR\_Type}};}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_OFFSET       0x0C         }}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_RESETVALUE   0x00000000ul }}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_XOSCRDY\_Pos  0            }}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_XOSCRDY      (0x1ul << SYSCTRL\_PCLKSR\_XOSCRDY\_Pos)}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_XOSC32KRDY\_Pos 1            }}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_XOSC32KRDY   (0x1ul << SYSCTRL\_PCLKSR\_XOSC32KRDY\_Pos)}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_OSC32KRDY\_Pos 2            }}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_OSC32KRDY    (0x1ul << SYSCTRL\_PCLKSR\_OSC32KRDY\_Pos)}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_OSC8MRDY\_Pos 3            }}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_OSC8MRDY     (0x1ul << SYSCTRL\_PCLKSR\_OSC8MRDY\_Pos)}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLRDY\_Pos  4            }}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLRDY      (0x1ul << SYSCTRL\_PCLKSR\_DFLLRDY\_Pos)}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLOOB\_Pos  5            }}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLOOB      (0x1ul << SYSCTRL\_PCLKSR\_DFLLOOB\_Pos)}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLLCKF\_Pos 6            }}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLLCKF     (0x1ul << SYSCTRL\_PCLKSR\_DFLLLCKF\_Pos)}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLLCKC\_Pos 7            }}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLLCKC     (0x1ul << SYSCTRL\_PCLKSR\_DFLLLCKC\_Pos)}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLRCS\_Pos  8            }}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_DFLLRCS      (0x1ul << SYSCTRL\_PCLKSR\_DFLLRCS\_Pos)}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_BOD33RDY\_Pos 9            }}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_BOD33RDY     (0x1ul << SYSCTRL\_PCLKSR\_BOD33RDY\_Pos)}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_BOD33DET\_Pos 10           }}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_BOD33DET     (0x1ul << SYSCTRL\_PCLKSR\_BOD33DET\_Pos)}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_B33SRDY\_Pos  11           }}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_B33SRDY      (0x1ul << SYSCTRL\_PCLKSR\_B33SRDY\_Pos)}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define SYSCTRL\_PCLKSR\_MASK         0x00000FFFul }}
+\DoxyCodeLine{253 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_XOSC : (SYSCTRL Offset: 0x10) (R/W 16) XOSC Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{255 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{256   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{257     uint16\_t :1;               }
+\DoxyCodeLine{258     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type_a5aa2b93698bcbe3b133cc10ea5c36913}{ENABLE}}:1;         }
+\DoxyCodeLine{259     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type_abde68d46397594d594d3495545d4526e}{XTALEN}}:1;         }
+\DoxyCodeLine{260     uint16\_t :3;               }
+\DoxyCodeLine{261     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type_a28df0e2508e8b95db2eb7f111cfa7b5b}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{262     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type_a434eed05e8bb4d711e20f43fece17cfb}{ONDEMAND}}:1;       }
+\DoxyCodeLine{263     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type_a020d2ecb9b5aedc10ec553c50ac9f74a}{GAIN}}:3;           }
+\DoxyCodeLine{264     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type_a7e52f155ae41a689a3b823bc633a54d3}{AMPGC}}:1;          }
+\DoxyCodeLine{265     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type_a4f16a5dd111a374bc47989bb2eae149e}{STARTUP}}:4;        }
+\DoxyCodeLine{266   \} bit;                       }
+\DoxyCodeLine{267   uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type_af8996e3121ad885e8cee095735e76e31}{reg}};                }
+\DoxyCodeLine{268 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type}{SYSCTRL\_XOSC\_Type}};}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_OFFSET         0x10         }}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_RESETVALUE     0x0080ul     }}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_ENABLE\_Pos     1            }}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_ENABLE         (0x1ul << SYSCTRL\_XOSC\_ENABLE\_Pos)}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_XTALEN\_Pos     2            }}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_XTALEN         (0x1ul << SYSCTRL\_XOSC\_XTALEN\_Pos)}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_RUNSTDBY\_Pos   6            }}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_RUNSTDBY       (0x1ul << SYSCTRL\_XOSC\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_ONDEMAND\_Pos   7            }}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_ONDEMAND       (0x1ul << SYSCTRL\_XOSC\_ONDEMAND\_Pos)}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_GAIN\_Pos       8            }}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_GAIN\_Msk       (0x7ul << SYSCTRL\_XOSC\_GAIN\_Pos)}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_GAIN(value)    ((SYSCTRL\_XOSC\_GAIN\_Msk \& ((value) << SYSCTRL\_XOSC\_GAIN\_Pos)))}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_AMPGC\_Pos      11           }}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_AMPGC          (0x1ul << SYSCTRL\_XOSC\_AMPGC\_Pos)}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_STARTUP\_Pos    12           }}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_STARTUP\_Msk    (0xFul << SYSCTRL\_XOSC\_STARTUP\_Pos)}}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_STARTUP(value) ((SYSCTRL\_XOSC\_STARTUP\_Msk \& ((value) << SYSCTRL\_XOSC\_STARTUP\_Pos)))}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC\_MASK           0xFFC6ul     }}
+\DoxyCodeLine{292 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_XOSC32K : (SYSCTRL Offset: 0x14) (R/W 16) XOSC32K Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{294 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{295   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{296     uint16\_t :1;               }
+\DoxyCodeLine{297     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_a0b0e3d7fd927ebd774423869b06cce16}{ENABLE}}:1;         }
+\DoxyCodeLine{298     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_a264d9471c860ef4920ab000b1d997263}{XTALEN}}:1;         }
+\DoxyCodeLine{299     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_ac3e82d777bc6d46f4ad246ba05e2149c}{EN32K}}:1;          }
+\DoxyCodeLine{300     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_a018a7f1336683ad4fb14ff9e2214b6bc}{EN1K}}:1;           }
+\DoxyCodeLine{301     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_abd6b18539d9d0d2dc62a6301289df081}{AAMPEN}}:1;         }
+\DoxyCodeLine{302     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_ad69ec7a5a648afde839472f1a2c00b4f}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{303     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_a1ceb01afd71c878a9e06b93590784e0d}{ONDEMAND}}:1;       }
+\DoxyCodeLine{304     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_a0f988db217da5866f3e49ce10bdb1bc2}{STARTUP}}:3;        }
+\DoxyCodeLine{305     uint16\_t :1;               }
+\DoxyCodeLine{306     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_a306cfe8a03701688d8b3a4780ae4cf2d}{WRTLOCK}}:1;        }
+\DoxyCodeLine{307     uint16\_t :3;               }
+\DoxyCodeLine{308   \} bit;                       }
+\DoxyCodeLine{309   uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type_a2b97c62474daf023ee6df91f80b19e25}{reg}};                }
+\DoxyCodeLine{310 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type}{SYSCTRL\_XOSC32K\_Type}};}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_OFFSET      0x14         }}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_RESETVALUE  0x0080ul     }}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_ENABLE\_Pos  1            }}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_ENABLE      (0x1ul << SYSCTRL\_XOSC32K\_ENABLE\_Pos)}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_XTALEN\_Pos  2            }}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_XTALEN      (0x1ul << SYSCTRL\_XOSC32K\_XTALEN\_Pos)}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_EN32K\_Pos   3            }}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_EN32K       (0x1ul << SYSCTRL\_XOSC32K\_EN32K\_Pos)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_EN1K\_Pos    4            }}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_EN1K        (0x1ul << SYSCTRL\_XOSC32K\_EN1K\_Pos)}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_AAMPEN\_Pos  5            }}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_AAMPEN      (0x1ul << SYSCTRL\_XOSC32K\_AAMPEN\_Pos)}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_RUNSTDBY\_Pos 6            }}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_RUNSTDBY    (0x1ul << SYSCTRL\_XOSC32K\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_ONDEMAND\_Pos 7            }}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_ONDEMAND    (0x1ul << SYSCTRL\_XOSC32K\_ONDEMAND\_Pos)}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_STARTUP\_Pos 8            }}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_STARTUP\_Msk (0x7ul << SYSCTRL\_XOSC32K\_STARTUP\_Pos)}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_STARTUP(value) ((SYSCTRL\_XOSC32K\_STARTUP\_Msk \& ((value) << SYSCTRL\_XOSC32K\_STARTUP\_Pos)))}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_WRTLOCK\_Pos 12           }}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_WRTLOCK     (0x1ul << SYSCTRL\_XOSC32K\_WRTLOCK\_Pos)}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#define SYSCTRL\_XOSC32K\_MASK        0x17FEul     }}
+\DoxyCodeLine{337 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_OSC32K : (SYSCTRL Offset: 0x18) (R/W 32) OSC32K Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{339 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{340   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{341     uint32\_t :1;               }
+\DoxyCodeLine{342     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type_a76158729339cbfcd2a70a8c2cd93d0c6}{ENABLE}}:1;         }
+\DoxyCodeLine{343     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type_a361eeab50414e5da6c7ae7e178ae7274}{EN32K}}:1;          }
+\DoxyCodeLine{344     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type_a9d6907be93dad856d132b71d453ffcc1}{EN1K}}:1;           }
+\DoxyCodeLine{345     uint32\_t :2;               }
+\DoxyCodeLine{346     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type_a77722bd8555d28934ebdc83a3fbc71d3}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{347     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type_a0c365ce1e9fa2eb307f6370d3007e455}{ONDEMAND}}:1;       }
+\DoxyCodeLine{348     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type_a165c12badad79d30ed0891f92b1c9ce0}{STARTUP}}:3;        }
+\DoxyCodeLine{349     uint32\_t :1;               }
+\DoxyCodeLine{350     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type_aec9dffd07a5e80920b047b76802e2189}{WRTLOCK}}:1;        }
+\DoxyCodeLine{351     uint32\_t :3;               }
+\DoxyCodeLine{352     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type_abb92b88bb4c894db3f663d41e2926513}{CALIB}}:7;          }
+\DoxyCodeLine{353     uint32\_t :9;               }
+\DoxyCodeLine{354   \} bit;                       }
+\DoxyCodeLine{355   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type_afbb4464e48eb3c645ffef65e93d241c0}{reg}};                }
+\DoxyCodeLine{356 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type}{SYSCTRL\_OSC32K\_Type}};}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_OFFSET       0x18         }}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_RESETVALUE   0x003F0080ul }}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_ENABLE\_Pos   1            }}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_ENABLE       (0x1ul << SYSCTRL\_OSC32K\_ENABLE\_Pos)}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_EN32K\_Pos    2            }}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_EN32K        (0x1ul << SYSCTRL\_OSC32K\_EN32K\_Pos)}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_EN1K\_Pos     3            }}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_EN1K         (0x1ul << SYSCTRL\_OSC32K\_EN1K\_Pos)}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_RUNSTDBY\_Pos 6            }}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_RUNSTDBY     (0x1ul << SYSCTRL\_OSC32K\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_ONDEMAND\_Pos 7            }}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_ONDEMAND     (0x1ul << SYSCTRL\_OSC32K\_ONDEMAND\_Pos)}}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_STARTUP\_Pos  8            }}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_STARTUP\_Msk  (0x7ul << SYSCTRL\_OSC32K\_STARTUP\_Pos)}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_STARTUP(value) ((SYSCTRL\_OSC32K\_STARTUP\_Msk \& ((value) << SYSCTRL\_OSC32K\_STARTUP\_Pos)))}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_WRTLOCK\_Pos  12           }}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_WRTLOCK      (0x1ul << SYSCTRL\_OSC32K\_WRTLOCK\_Pos)}}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_CALIB\_Pos    16           }}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_CALIB\_Msk    (0x7Ful << SYSCTRL\_OSC32K\_CALIB\_Pos)}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_CALIB(value) ((SYSCTRL\_OSC32K\_CALIB\_Msk \& ((value) << SYSCTRL\_OSC32K\_CALIB\_Pos)))}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define SYSCTRL\_OSC32K\_MASK         0x007F17CEul }}
+\DoxyCodeLine{382 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_OSCULP32K : (SYSCTRL Offset: 0x1C) (R/W  8) OSCULP32K Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{384 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{385   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{386     uint8\_t  \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c_u_l_p32_k___type_ab44688a9b3d7763cdd510bc7eaf37ab4}{CALIB}}:5;          }
+\DoxyCodeLine{387     uint8\_t  :2;               }
+\DoxyCodeLine{388     uint8\_t  \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c_u_l_p32_k___type_afbbeff794f19e0f35ca3bde78b1dc4f5}{WRTLOCK}}:1;        }
+\DoxyCodeLine{389   \} bit;                       }
+\DoxyCodeLine{390   uint8\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c_u_l_p32_k___type_a4a80e7e2516fd8cca88b7a797137cd36}{reg}};                 }
+\DoxyCodeLine{391 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c_u_l_p32_k___type}{SYSCTRL\_OSCULP32K\_Type}};}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define SYSCTRL\_OSCULP32K\_OFFSET    0x1C         }}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#define SYSCTRL\_OSCULP32K\_RESETVALUE 0x0Ful       }}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define SYSCTRL\_OSCULP32K\_CALIB\_Pos 0            }}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define SYSCTRL\_OSCULP32K\_CALIB\_Msk (0x1Ful << SYSCTRL\_OSCULP32K\_CALIB\_Pos)}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#define SYSCTRL\_OSCULP32K\_CALIB(value) ((SYSCTRL\_OSCULP32K\_CALIB\_Msk \& ((value) << SYSCTRL\_OSCULP32K\_CALIB\_Pos)))}}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define SYSCTRL\_OSCULP32K\_WRTLOCK\_Pos 7            }}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define SYSCTRL\_OSCULP32K\_WRTLOCK   (0x1ul << SYSCTRL\_OSCULP32K\_WRTLOCK\_Pos)}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define SYSCTRL\_OSCULP32K\_MASK      0x9Ful       }}
+\DoxyCodeLine{404 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_OSC8M : (SYSCTRL Offset: 0x20) (R/W 32) OSC8M Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{406 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{407   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{408     uint32\_t :1;               }
+\DoxyCodeLine{409     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c8_m___type_a55e64f0d7540d96cd7a2421d65b9ce08}{ENABLE}}:1;         }
+\DoxyCodeLine{410     uint32\_t :4;               }
+\DoxyCodeLine{411     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c8_m___type_a78f6766a7ea7b00302db785d4b5fe786}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{412     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c8_m___type_a8fef89319ee388d05e16e8b986b31932}{ONDEMAND}}:1;       }
+\DoxyCodeLine{413     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c8_m___type_a72d29a5d0dd9d31aaadc81f0febe8b16}{PRESC}}:2;          }
+\DoxyCodeLine{414     uint32\_t :6;               }
+\DoxyCodeLine{415     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c8_m___type_aadbb2a0047ce2fe69c462f7ca6df851f}{CALIB}}:12;         }
+\DoxyCodeLine{416     uint32\_t :2;               }
+\DoxyCodeLine{417     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c8_m___type_a10dc0d3bf0cd1060c2d9819e3007e076}{FRANGE}}:2;         }
+\DoxyCodeLine{418   \} bit;                       }
+\DoxyCodeLine{419   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c8_m___type_a830fb47928f3d5ebbd911cdc7b25dd6c}{reg}};                }
+\DoxyCodeLine{420 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c8_m___type}{SYSCTRL\_OSC8M\_Type}};}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_OFFSET        0x20         }}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_RESETVALUE    0x87070382ul }}
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_ENABLE\_Pos    1            }}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_ENABLE        (0x1ul << SYSCTRL\_OSC8M\_ENABLE\_Pos)}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_RUNSTDBY\_Pos  6            }}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_RUNSTDBY      (0x1ul << SYSCTRL\_OSC8M\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_ONDEMAND\_Pos  7            }}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_ONDEMAND      (0x1ul << SYSCTRL\_OSC8M\_ONDEMAND\_Pos)}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_PRESC\_Pos     8            }}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_PRESC\_Msk     (0x3ul << SYSCTRL\_OSC8M\_PRESC\_Pos)}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_PRESC(value)  ((SYSCTRL\_OSC8M\_PRESC\_Msk \& ((value) << SYSCTRL\_OSC8M\_PRESC\_Pos)))}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_CALIB\_Pos     16           }}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_CALIB\_Msk     (0xFFFul << SYSCTRL\_OSC8M\_CALIB\_Pos)}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_CALIB(value)  ((SYSCTRL\_OSC8M\_CALIB\_Msk \& ((value) << SYSCTRL\_OSC8M\_CALIB\_Pos)))}}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_FRANGE\_Pos    30           }}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_FRANGE\_Msk    (0x3ul << SYSCTRL\_OSC8M\_FRANGE\_Pos)}}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_FRANGE(value) ((SYSCTRL\_OSC8M\_FRANGE\_Msk \& ((value) << SYSCTRL\_OSC8M\_FRANGE\_Pos)))}}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define SYSCTRL\_OSC8M\_MASK          0xCFFF03C2ul }}
+\DoxyCodeLine{443 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_DFLLCTRL : (SYSCTRL Offset: 0x24) (R/W 16) DFLL Config -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{445 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{446   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{447     uint16\_t :1;               }
+\DoxyCodeLine{448     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type_a59ecc9de33efc4666b4bdca87ef76ec8}{ENABLE}}:1;         }
+\DoxyCodeLine{449     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type_a8abd698299572dbc576f1ea0c94354fb}{MODE}}:1;           }
+\DoxyCodeLine{450     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type_a15db7ce4b17f08dcbee839f87c54e709}{STABLE}}:1;         }
+\DoxyCodeLine{451     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type_aa8361b4b24ca89a6628592dc5ef956b2}{LLAW}}:1;           }
+\DoxyCodeLine{452     uint16\_t :1;               }
+\DoxyCodeLine{453     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type_ab00a525002e85e2a1821718be8af002e}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{454     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type_a09ed87794d9e0c5d52a5215ab4a28a0a}{ONDEMAND}}:1;       }
+\DoxyCodeLine{455     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type_a7f18e6b86e07e0ffde1412419458b5c0}{CCDIS}}:1;          }
+\DoxyCodeLine{456     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type_a8b9fc24b1c06b8b1c29cf2f4bc6bc3ac}{QLDIS}}:1;          }
+\DoxyCodeLine{457     uint16\_t :6;               }
+\DoxyCodeLine{458   \} bit;                       }
+\DoxyCodeLine{459   uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type_aa8c55451f9cee8522b47f5f3d44725d1}{reg}};                }
+\DoxyCodeLine{460 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type}{SYSCTRL\_DFLLCTRL\_Type}};}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_OFFSET     0x24         }}
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_RESETVALUE 0x0080ul     }}
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_ENABLE\_Pos 1            }}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_ENABLE     (0x1ul << SYSCTRL\_DFLLCTRL\_ENABLE\_Pos)}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_MODE\_Pos   2            }}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_MODE       (0x1ul << SYSCTRL\_DFLLCTRL\_MODE\_Pos)}}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_STABLE\_Pos 3            }}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_STABLE     (0x1ul << SYSCTRL\_DFLLCTRL\_STABLE\_Pos)}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_LLAW\_Pos   4            }}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_LLAW       (0x1ul << SYSCTRL\_DFLLCTRL\_LLAW\_Pos)}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_RUNSTDBY\_Pos 6            }}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_RUNSTDBY   (0x1ul << SYSCTRL\_DFLLCTRL\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_ONDEMAND\_Pos 7            }}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_ONDEMAND   (0x1ul << SYSCTRL\_DFLLCTRL\_ONDEMAND\_Pos)}}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_CCDIS\_Pos  8            }}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_CCDIS      (0x1ul << SYSCTRL\_DFLLCTRL\_CCDIS\_Pos)}}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_QLDIS\_Pos  9            }}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_QLDIS      (0x1ul << SYSCTRL\_DFLLCTRL\_QLDIS\_Pos)}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLCTRL\_MASK       0x03DEul     }}
+\DoxyCodeLine{484 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_DFLLVAL : (SYSCTRL Offset: 0x28) (R/W 32) DFLL Calibration Value -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{486 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{487   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{488     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_v_a_l___type_a36975f4f32919746a893a16171769f0d}{FINE}}:10;          }
+\DoxyCodeLine{489     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_v_a_l___type_a03cd3468cec2904d2f4afc1cc8bb9b44}{COARSE}}:6;         }
+\DoxyCodeLine{490     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_v_a_l___type_ad2078188b30c92342d45f6ace1b2903c}{DIFF}}:16;          }
+\DoxyCodeLine{491   \} bit;                       }
+\DoxyCodeLine{492   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_v_a_l___type_aba0e436bc303016a12c4517c860fc644}{reg}};                }
+\DoxyCodeLine{493 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_v_a_l___type}{SYSCTRL\_DFLLVAL\_Type}};}
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_OFFSET      0x28         }}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_RESETVALUE  0x00000000ul }}
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_FINE\_Pos    0            }}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_FINE\_Msk    (0x3FFul << SYSCTRL\_DFLLVAL\_FINE\_Pos)}}
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_FINE(value) ((SYSCTRL\_DFLLVAL\_FINE\_Msk \& ((value) << SYSCTRL\_DFLLVAL\_FINE\_Pos)))}}
+\DoxyCodeLine{502 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_COARSE\_Pos  10           }}
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_COARSE\_Msk  (0x3Ful << SYSCTRL\_DFLLVAL\_COARSE\_Pos)}}
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_COARSE(value) ((SYSCTRL\_DFLLVAL\_COARSE\_Msk \& ((value) << SYSCTRL\_DFLLVAL\_COARSE\_Pos)))}}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_DIFF\_Pos    16           }}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_DIFF\_Msk    (0xFFFFul << SYSCTRL\_DFLLVAL\_DIFF\_Pos)}}
+\DoxyCodeLine{507 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_DIFF(value) ((SYSCTRL\_DFLLVAL\_DIFF\_Msk \& ((value) << SYSCTRL\_DFLLVAL\_DIFF\_Pos)))}}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLVAL\_MASK        0xFFFFFFFFul }}
+\DoxyCodeLine{510 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_DFLLMUL : (SYSCTRL Offset: 0x2C) (R/W 32) DFLL Multiplier -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{512 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{513   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{514     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_m_u_l___type_a2ded43e5e664e8a5f8df841afc77103a}{MUL}}:16;           }
+\DoxyCodeLine{515     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_m_u_l___type_a48a25d28beedac156219b2b722b53706}{FSTEP}}:10;         }
+\DoxyCodeLine{516     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_m_u_l___type_aa6941cd054703df22ba8065dea09110a}{CSTEP}}:6;          }
+\DoxyCodeLine{517   \} bit;                       }
+\DoxyCodeLine{518   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_m_u_l___type_a64337aee91e013d2bbff6df63cf109ad}{reg}};                }
+\DoxyCodeLine{519 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_m_u_l___type}{SYSCTRL\_DFLLMUL\_Type}};}
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{521 }
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_OFFSET      0x2C         }}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_RESETVALUE  0x00000000ul }}
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_MUL\_Pos     0            }}
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_MUL\_Msk     (0xFFFFul << SYSCTRL\_DFLLMUL\_MUL\_Pos)}}
+\DoxyCodeLine{527 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_MUL(value)  ((SYSCTRL\_DFLLMUL\_MUL\_Msk \& ((value) << SYSCTRL\_DFLLMUL\_MUL\_Pos)))}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_FSTEP\_Pos   16           }}
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_FSTEP\_Msk   (0x3FFul << SYSCTRL\_DFLLMUL\_FSTEP\_Pos)}}
+\DoxyCodeLine{530 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_FSTEP(value) ((SYSCTRL\_DFLLMUL\_FSTEP\_Msk \& ((value) << SYSCTRL\_DFLLMUL\_FSTEP\_Pos)))}}
+\DoxyCodeLine{531 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_CSTEP\_Pos   26           }}
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_CSTEP\_Msk   (0x3Ful << SYSCTRL\_DFLLMUL\_CSTEP\_Pos)}}
+\DoxyCodeLine{533 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_CSTEP(value) ((SYSCTRL\_DFLLMUL\_CSTEP\_Msk \& ((value) << SYSCTRL\_DFLLMUL\_CSTEP\_Pos)))}}
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLMUL\_MASK        0xFFFFFFFFul }}
+\DoxyCodeLine{536 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_DFLLSYNC : (SYSCTRL Offset: 0x30) (R/W  8) DFLL Synchronization -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{538 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{539   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{540     uint8\_t  :7;               }
+\DoxyCodeLine{541     uint8\_t  \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_s_y_n_c___type_aa63cb525d79706301db070ace1cf1dd1}{READREQ}}:1;        }
+\DoxyCodeLine{542   \} bit;                       }
+\DoxyCodeLine{543   uint8\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_s_y_n_c___type_a81b499835854b2d0e3dd801b1548d20a}{reg}};                 }
+\DoxyCodeLine{544 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_s_y_n_c___type}{SYSCTRL\_DFLLSYNC\_Type}};}
+\DoxyCodeLine{545 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{546 }
+\DoxyCodeLine{547 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLSYNC\_OFFSET     0x30         }}
+\DoxyCodeLine{548 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLSYNC\_RESETVALUE 0x00ul       }}
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLSYNC\_READREQ\_Pos 7            }}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLSYNC\_READREQ    (0x1ul << SYSCTRL\_DFLLSYNC\_READREQ\_Pos)}}
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#define SYSCTRL\_DFLLSYNC\_MASK       0x80ul       }}
+\DoxyCodeLine{554 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_BOD33 : (SYSCTRL Offset: 0x34) (R/W 32) 3.3V Brown-\/Out Detector (BOD33) Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{555 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{556 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{557   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{558     uint32\_t :1;               }
+\DoxyCodeLine{559     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type_adc9960aecaf6a21c5fa3e03a59adaa03}{ENABLE}}:1;         }
+\DoxyCodeLine{560     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type_a5b5567db30b2f997037b8f1e3924cea0}{HYST}}:1;           }
+\DoxyCodeLine{561     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type_a8c7d6c33817ad22fb4c310d118d7bb64}{ACTION}}:2;         }
+\DoxyCodeLine{562     uint32\_t :1;               }
+\DoxyCodeLine{563     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type_a053452d4029c3711d0a074195fc382d2}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{564     uint32\_t :1;               }
+\DoxyCodeLine{565     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type_a8d33447b379735357fe1480db15b8073}{MODE}}:1;           }
+\DoxyCodeLine{566     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type_a33e424fd5eb3c221c3dc39c2a579c471}{CEN}}:1;            }
+\DoxyCodeLine{567     uint32\_t :2;               }
+\DoxyCodeLine{568     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type_a6beb0928c74010a895d0ea3c83a8b887}{PSEL}}:4;           }
+\DoxyCodeLine{569     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type_aa9cbaf37d768c5afd5c894151d697cbf}{LEVEL}}:6;          }
+\DoxyCodeLine{570     uint32\_t :10;              }
+\DoxyCodeLine{571   \} bit;                       }
+\DoxyCodeLine{572   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type_a062ed1b50a4e3339e8e05be7bd71a6d7}{reg}};                }
+\DoxyCodeLine{573 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type}{SYSCTRL\_BOD33\_Type}};}
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{576 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_OFFSET        0x34         }}
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_RESETVALUE    0x00000000ul }}
+\DoxyCodeLine{579 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_ENABLE\_Pos    1            }}
+\DoxyCodeLine{580 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_ENABLE        (0x1ul << SYSCTRL\_BOD33\_ENABLE\_Pos)}}
+\DoxyCodeLine{581 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_HYST\_Pos      2            }}
+\DoxyCodeLine{582 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_HYST          (0x1ul << SYSCTRL\_BOD33\_HYST\_Pos)}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_ACTION\_Pos    3            }}
+\DoxyCodeLine{584 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_ACTION\_Msk    (0x3ul << SYSCTRL\_BOD33\_ACTION\_Pos)}}
+\DoxyCodeLine{585 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_ACTION(value) ((SYSCTRL\_BOD33\_ACTION\_Msk \& ((value) << SYSCTRL\_BOD33\_ACTION\_Pos)))}}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_RUNSTDBY\_Pos  6            }}
+\DoxyCodeLine{587 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_RUNSTDBY      (0x1ul << SYSCTRL\_BOD33\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{588 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_MODE\_Pos      8            }}
+\DoxyCodeLine{589 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_MODE          (0x1ul << SYSCTRL\_BOD33\_MODE\_Pos)}}
+\DoxyCodeLine{590 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_CEN\_Pos       9            }}
+\DoxyCodeLine{591 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_CEN           (0x1ul << SYSCTRL\_BOD33\_CEN\_Pos)}}
+\DoxyCodeLine{592 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_PSEL\_Pos      12           }}
+\DoxyCodeLine{593 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_PSEL\_Msk      (0xFul << SYSCTRL\_BOD33\_PSEL\_Pos)}}
+\DoxyCodeLine{594 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_PSEL(value)   ((SYSCTRL\_BOD33\_PSEL\_Msk \& ((value) << SYSCTRL\_BOD33\_PSEL\_Pos)))}}
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_LEVEL\_Pos     16           }}
+\DoxyCodeLine{596 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_LEVEL\_Msk     (0x3Ful << SYSCTRL\_BOD33\_LEVEL\_Pos)}}
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_LEVEL(value)  ((SYSCTRL\_BOD33\_LEVEL\_Msk \& ((value) << SYSCTRL\_BOD33\_LEVEL\_Pos)))}}
+\DoxyCodeLine{598 \textcolor{preprocessor}{\#define SYSCTRL\_BOD33\_MASK          0x003FF35Eul }}
+\DoxyCodeLine{600 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_VREG : (SYSCTRL Offset: 0x3C) (R/W 16) VREG Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{601 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{602 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{603   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{604     uint16\_t :6;               }
+\DoxyCodeLine{605     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_g___type_a9b4d07da89d5283a58f5cfdf59d3ee69}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{606     uint16\_t :6;               }
+\DoxyCodeLine{607     uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_g___type_a8ffa46a3b5cab0c829d5568304f0e4e3}{FORCELDO}}:1;       }
+\DoxyCodeLine{608     uint16\_t :2;               }
+\DoxyCodeLine{609   \} bit;                       }
+\DoxyCodeLine{610   uint16\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_g___type_ad418121d72e0757428f1f3d4828d50e1}{reg}};                }
+\DoxyCodeLine{611 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_g___type}{SYSCTRL\_VREG\_Type}};}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{613 }
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#define SYSCTRL\_VREG\_OFFSET         0x3C         }}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#define SYSCTRL\_VREG\_RESETVALUE     0x0402ul     }}
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#define SYSCTRL\_VREG\_RUNSTDBY\_Pos   6            }}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#define SYSCTRL\_VREG\_RUNSTDBY       (0x1ul << SYSCTRL\_VREG\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{619 \textcolor{preprocessor}{\#define SYSCTRL\_VREG\_FORCELDO\_Pos   13           }}
+\DoxyCodeLine{620 \textcolor{preprocessor}{\#define SYSCTRL\_VREG\_FORCELDO       (0x1ul << SYSCTRL\_VREG\_FORCELDO\_Pos)}}
+\DoxyCodeLine{621 \textcolor{preprocessor}{\#define SYSCTRL\_VREG\_MASK           0x2040ul     }}
+\DoxyCodeLine{623 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ SYSCTRL\_VREF : (SYSCTRL Offset: 0x40) (R/W 32) VREF Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{624 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{625 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{626   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{627     uint32\_t :1;               }
+\DoxyCodeLine{628     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_f___type_af47d78dde87e19543cc639cf20ec8e8b}{TSEN}}:1;           }
+\DoxyCodeLine{629     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_f___type_a6ca17e4f4b6708f197b5ef57ab23bda0}{BGOUTEN}}:1;        }
+\DoxyCodeLine{630     uint32\_t :13;              }
+\DoxyCodeLine{631     uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_f___type_a5e3dd989691ebaa3deaf0d3fc25b4bc5}{CALIB}}:11;         }
+\DoxyCodeLine{632     uint32\_t :5;               }
+\DoxyCodeLine{633   \} bit;                       }
+\DoxyCodeLine{634   uint32\_t \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_f___type_ad70799513265bc0da4c0e3ffa0ae5d85}{reg}};                }
+\DoxyCodeLine{635 \} \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_f___type}{SYSCTRL\_VREF\_Type}};}
+\DoxyCodeLine{636 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_OFFSET         0x40         }}
+\DoxyCodeLine{639 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_RESETVALUE     0x00000000ul }}
+\DoxyCodeLine{641 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_TSEN\_Pos       1            }}
+\DoxyCodeLine{642 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_TSEN           (0x1ul << SYSCTRL\_VREF\_TSEN\_Pos)}}
+\DoxyCodeLine{643 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_BGOUTEN\_Pos    2            }}
+\DoxyCodeLine{644 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_BGOUTEN        (0x1ul << SYSCTRL\_VREF\_BGOUTEN\_Pos)}}
+\DoxyCodeLine{645 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_CALIB\_Pos      16           }}
+\DoxyCodeLine{646 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_CALIB\_Msk      (0x7FFul << SYSCTRL\_VREF\_CALIB\_Pos)}}
+\DoxyCodeLine{647 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_CALIB(value)   ((SYSCTRL\_VREF\_CALIB\_Msk \& ((value) << SYSCTRL\_VREF\_CALIB\_Pos)))}}
+\DoxyCodeLine{648 \textcolor{preprocessor}{\#define SYSCTRL\_VREF\_MASK           0x07FF0006ul }}
+\DoxyCodeLine{651 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{652 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{653   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_c_l_r___type}{SYSCTRL\_INTENCLR\_Type}}     \mbox{\hyperlink{struct_sysctrl_a70785226a416f7b53ff219827ee810d4}{INTENCLR}};    }
+\DoxyCodeLine{654   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_e_n_s_e_t___type}{SYSCTRL\_INTENSET\_Type}}     \mbox{\hyperlink{struct_sysctrl_afc702e8594a998c7ef5c72017c2f614e}{INTENSET}};    }
+\DoxyCodeLine{655   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___i_n_t_f_l_a_g___type}{SYSCTRL\_INTFLAG\_Type}}      \mbox{\hyperlink{struct_sysctrl_a4100bde368282e445015eef060076ff0}{INTFLAG}};     }
+\DoxyCodeLine{656   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_s_y_s_c_t_r_l___p_c_l_k_s_r___type}{SYSCTRL\_PCLKSR\_Type}}       \mbox{\hyperlink{struct_sysctrl_a7f5cc388f4d59b0481c3df6251d87ea0}{PCLKSR}};      }
+\DoxyCodeLine{657   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c___type}{SYSCTRL\_XOSC\_Type}}         \mbox{\hyperlink{struct_sysctrl_a5835251be4edcbcdc1f42bf9cca2ace5}{XOSC}};        }
+\DoxyCodeLine{658        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x2];}
+\DoxyCodeLine{659   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___x_o_s_c32_k___type}{SYSCTRL\_XOSC32K\_Type}}      \mbox{\hyperlink{struct_sysctrl_a6d0506bde409cd60f3286af82ed6275c}{XOSC32K}};     }
+\DoxyCodeLine{660        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x2];}
+\DoxyCodeLine{661   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c32_k___type}{SYSCTRL\_OSC32K\_Type}}       \mbox{\hyperlink{struct_sysctrl_a07bd14a2ca7ec863a549d296cf135acd}{OSC32K}};      }
+\DoxyCodeLine{662   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c_u_l_p32_k___type}{SYSCTRL\_OSCULP32K\_Type}}    \mbox{\hyperlink{struct_sysctrl_a96965d0cc47d570c8561d10dbb71b4ac}{OSCULP32K}};   }
+\DoxyCodeLine{663        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x3];}
+\DoxyCodeLine{664   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___o_s_c8_m___type}{SYSCTRL\_OSC8M\_Type}}        \mbox{\hyperlink{struct_sysctrl_a9a9451b83d7aa5e66e9efdea924adbd2}{OSC8M}};       }
+\DoxyCodeLine{665   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_c_t_r_l___type}{SYSCTRL\_DFLLCTRL\_Type}}     \mbox{\hyperlink{struct_sysctrl_a13f1cd783ef908775dd1a46e1057eddb}{DFLLCTRL}};    }
+\DoxyCodeLine{666        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved4[0x2];}
+\DoxyCodeLine{667   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_v_a_l___type}{SYSCTRL\_DFLLVAL\_Type}}      \mbox{\hyperlink{struct_sysctrl_a271e4bd2e3391c0f20373109a359221d}{DFLLVAL}};     }
+\DoxyCodeLine{668   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_m_u_l___type}{SYSCTRL\_DFLLMUL\_Type}}      \mbox{\hyperlink{struct_sysctrl_a912fe549ccdb19e7d9aa87516983204b}{DFLLMUL}};     }
+\DoxyCodeLine{669   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___d_f_l_l_s_y_n_c___type}{SYSCTRL\_DFLLSYNC\_Type}}     \mbox{\hyperlink{struct_sysctrl_a706b3e409be2224c66161da29837bab9}{DFLLSYNC}};    }
+\DoxyCodeLine{670        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved5[0x3];}
+\DoxyCodeLine{671   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___b_o_d33___type}{SYSCTRL\_BOD33\_Type}}        \mbox{\hyperlink{struct_sysctrl_a9157590dce5faafde833fc1f5364559c}{BOD33}};       }
+\DoxyCodeLine{672        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved6[0x4];}
+\DoxyCodeLine{673   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_g___type}{SYSCTRL\_VREG\_Type}}         \mbox{\hyperlink{struct_sysctrl_a46656a7a4a800c96a04343a9ba88cac9}{VREG}};        }
+\DoxyCodeLine{674        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved7[0x2];}
+\DoxyCodeLine{675   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_s_y_s_c_t_r_l___v_r_e_f___type}{SYSCTRL\_VREF\_Type}}         \mbox{\hyperlink{struct_sysctrl_af52dde24bfc29b423d587d22e3c6bec2}{VREF}};        }
+\DoxyCodeLine{676 \} \mbox{\hyperlink{struct_sysctrl}{Sysctrl}};}
+\DoxyCodeLine{677 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{681 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_SYSCTRL\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

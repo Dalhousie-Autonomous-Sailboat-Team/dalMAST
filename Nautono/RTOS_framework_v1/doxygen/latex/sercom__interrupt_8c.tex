@@ -1,0 +1,55 @@
+\hypertarget{sercom__interrupt_8c}{}\doxysection{src/\+ASF/sam0/drivers/sercom/sercom\+\_\+interrupt.c File Reference}
+\label{sercom__interrupt_8c}\index{src/ASF/sam0/drivers/sercom/sercom\_interrupt.c@{src/ASF/sam0/drivers/sercom/sercom\_interrupt.c}}
+
+
+SAM Serial Peripheral Interface Driver.  
+
+
+{\ttfamily \#include \char`\"{}sercom\+\_\+interrupt.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sercom__interrupt_8c_a676f40d75ddec20ed856aaf48f9a0141}\label{sercom__interrupt_8c_a676f40d75ddec20ed856aaf48f9a0141}} 
+\#define {\bfseries \+\_\+\+SERCOM\+\_\+\+INTERRUPT\+\_\+\+VECT\+\_\+\+NUM}(n,  \mbox{\hyperlink{group__group__sam0__utils_ga417dba7f63dde98dbebd6336d8af9d91}{unused}})~  SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+SERCOM\#\#n,
+\item 
+\#define \mbox{\hyperlink{sercom__interrupt_8c_ab339b46508b6e3e10340b5c744538053}{\+\_\+\+SERCOM\+\_\+\+INTERRUPT\+\_\+\+HANDLER}}(n,  \mbox{\hyperlink{group__group__sam0__utils_ga417dba7f63dde98dbebd6336d8af9d91}{unused}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sercom__interrupt_8c_abcfb9d3b6db889472deccb21790eff22}\label{sercom__interrupt_8c_abcfb9d3b6db889472deccb21790eff22}} 
+void {\bfseries \+\_\+sercom\+\_\+set\+\_\+handler} (const uint8\+\_\+t instance, const sercom\+\_\+handler\+\_\+t interrupt\+\_\+handler)
+\item 
+\mbox{\Hypertarget{sercom__interrupt_8c_a31969cd6c90114499ca6887b2a777e65}\label{sercom__interrupt_8c_a31969cd6c90114499ca6887b2a777e65}} 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} {\bfseries \+\_\+sercom\+\_\+get\+\_\+interrupt\+\_\+vector} (\mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const sercom\+\_\+instance)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sercom__interrupt_8c_a8c878f488f03160d9adfe10dea937e55}\label{sercom__interrupt_8c_a8c878f488f03160d9adfe10dea937e55}} 
+void $\ast$ {\bfseries \+\_\+sercom\+\_\+instances} \mbox{[}\mbox{\hyperlink{samd20e14_8h_a75f7d8cff25db3f1353efb6f7990fce5}{SERCOM\+\_\+\+INST\+\_\+\+NUM}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM Serial Peripheral Interface Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{sercom__interrupt_8c_ab339b46508b6e3e10340b5c744538053}\label{sercom__interrupt_8c_ab339b46508b6e3e10340b5c744538053}} 
+\index{sercom\_interrupt.c@{sercom\_interrupt.c}!\_SERCOM\_INTERRUPT\_HANDLER@{\_SERCOM\_INTERRUPT\_HANDLER}}
+\index{\_SERCOM\_INTERRUPT\_HANDLER@{\_SERCOM\_INTERRUPT\_HANDLER}!sercom\_interrupt.c@{sercom\_interrupt.c}}
+\doxysubsubsection{\texorpdfstring{\_SERCOM\_INTERRUPT\_HANDLER}{\_SERCOM\_INTERRUPT\_HANDLER}}
+{\footnotesize\ttfamily \#define \+\_\+\+SERCOM\+\_\+\+INTERRUPT\+\_\+\+HANDLER(\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{\mbox{\hyperlink{group__group__sam0__utils_ga417dba7f63dde98dbebd6336d8af9d91}{unused}} }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        \textcolor{keywordtype}{void} SERCOM\#\#n\#\#\_Handler(\textcolor{keywordtype}{void}) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            \_sercom\_interrupt\_handlers[n](n); \(\backslash\)}
+\DoxyCodeLine{        \}}
+
+\end{DoxyCode}

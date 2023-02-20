@@ -1,0 +1,75 @@
+\hypertarget{structsystem__clock__source__osc32k__config}{}\doxysection{system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config Struct Reference}
+\label{structsystem__clock__source__osc32k__config}\index{system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}}
+
+
+Configuration structure for OSC32K.  
+
+
+
+
+{\ttfamily \#include $<$clock\+\_\+feature.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf2f527fc5dd85dcf1c7091d6059d05cb}{system\+\_\+osc32k\+\_\+startup}} \mbox{\hyperlink{structsystem__clock__source__osc32k__config_ad2169190b6f7ee1d43b2c5b33c737a28}{startup\+\_\+time}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a59ab9bd62b538b90df2d5bb7937b2f04}{enable\+\_\+1khz\+\_\+output}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a7c0cd2f0b44f5f347e1e99a502b22522}{enable\+\_\+32khz\+\_\+output}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a6fdd2d3da882c56fb34eca581b5cc24a}{run\+\_\+in\+\_\+standby}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a206c36356a447fa7a274fe3aa524b3a3}{on\+\_\+demand}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a12d43e28c690c1cd441b8659f66b9c09}{write\+\_\+once}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration structure for OSC32K. 
+
+Internal 32KHz (nominal) oscillator configuration structure. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structsystem__clock__source__osc32k__config_a59ab9bd62b538b90df2d5bb7937b2f04}\label{structsystem__clock__source__osc32k__config_a59ab9bd62b538b90df2d5bb7937b2f04}} 
+\index{system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}!enable\_1khz\_output@{enable\_1khz\_output}}
+\index{enable\_1khz\_output@{enable\_1khz\_output}!system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}}
+\doxysubsubsection{\texorpdfstring{enable\_1khz\_output}{enable\_1khz\_output}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config\+::enable\+\_\+1khz\+\_\+output}
+
+Enable 1KHz output. \mbox{\Hypertarget{structsystem__clock__source__osc32k__config_a7c0cd2f0b44f5f347e1e99a502b22522}\label{structsystem__clock__source__osc32k__config_a7c0cd2f0b44f5f347e1e99a502b22522}} 
+\index{system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}!enable\_32khz\_output@{enable\_32khz\_output}}
+\index{enable\_32khz\_output@{enable\_32khz\_output}!system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}}
+\doxysubsubsection{\texorpdfstring{enable\_32khz\_output}{enable\_32khz\_output}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config\+::enable\+\_\+32khz\+\_\+output}
+
+Enable 32KHz output. \mbox{\Hypertarget{structsystem__clock__source__osc32k__config_a206c36356a447fa7a274fe3aa524b3a3}\label{structsystem__clock__source__osc32k__config_a206c36356a447fa7a274fe3aa524b3a3}} 
+\index{system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}!on\_demand@{on\_demand}}
+\index{on\_demand@{on\_demand}!system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}}
+\doxysubsubsection{\texorpdfstring{on\_demand}{on\_demand}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config\+::on\+\_\+demand}
+
+Run On Demand. If this is set the OSC32K won\textquotesingle{}t run until requested by a peripheral. \mbox{\Hypertarget{structsystem__clock__source__osc32k__config_a6fdd2d3da882c56fb34eca581b5cc24a}\label{structsystem__clock__source__osc32k__config_a6fdd2d3da882c56fb34eca581b5cc24a}} 
+\index{system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}!run\_in\_standby@{run\_in\_standby}}
+\index{run\_in\_standby@{run\_in\_standby}!system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}}
+\doxysubsubsection{\texorpdfstring{run\_in\_standby}{run\_in\_standby}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config\+::run\+\_\+in\+\_\+standby}
+
+Keep the OSC32K enabled in standby sleep mode. \mbox{\Hypertarget{structsystem__clock__source__osc32k__config_ad2169190b6f7ee1d43b2c5b33c737a28}\label{structsystem__clock__source__osc32k__config_ad2169190b6f7ee1d43b2c5b33c737a28}} 
+\index{system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}!startup\_time@{startup\_time}}
+\index{startup\_time@{startup\_time}!system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}}
+\doxysubsubsection{\texorpdfstring{startup\_time}{startup\_time}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf2f527fc5dd85dcf1c7091d6059d05cb}{system\+\_\+osc32k\+\_\+startup}} system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config\+::startup\+\_\+time}
+
+Startup time. \mbox{\Hypertarget{structsystem__clock__source__osc32k__config_a12d43e28c690c1cd441b8659f66b9c09}\label{structsystem__clock__source__osc32k__config_a12d43e28c690c1cd441b8659f66b9c09}} 
+\index{system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}!write\_once@{write\_once}}
+\index{write\_once@{write\_once}!system\_clock\_source\_osc32k\_config@{system\_clock\_source\_osc32k\_config}}
+\doxysubsubsection{\texorpdfstring{write\_once}{write\_once}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+osc32k\+\_\+config\+::write\+\_\+once}
+
+Lock configuration after it has been written, a device reset will release the lock. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/system/clock/clock\+\_\+samd20/\mbox{\hyperlink{clock__feature_8h}{clock\+\_\+feature.\+h}}\end{DoxyCompactItemize}

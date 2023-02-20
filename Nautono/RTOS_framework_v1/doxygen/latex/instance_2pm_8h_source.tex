@@ -1,0 +1,56 @@
+\hypertarget{instance_2pm_8h_source}{}\doxysection{pm.\+h}
+\label{instance_2pm_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/pm.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/pm.h}}
+\mbox{\hyperlink{instance_2pm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_PM\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_PM\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for PM peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_PM\_CTRL                (0x40000400U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_PM\_SLEEP               (0x40000401U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_PM\_CPUSEL              (0x40000408U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_PM\_APBASEL             (0x40000409U) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_PM\_APBBSEL             (0x4000040AU) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_PM\_APBCSEL             (0x4000040BU) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_PM\_AHBMASK             (0x40000414U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_PM\_APBAMASK            (0x40000418U) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_PM\_APBBMASK            (0x4000041CU) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_PM\_APBCMASK            (0x40000420U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_PM\_INTENCLR            (0x40000434U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_PM\_INTENSET            (0x40000435U) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_PM\_INTFLAG             (0x40000436U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_PM\_RCAUSE              (0x40000438U) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_PM\_CTRL                (*(RwReg8 *)0x40000400U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_PM\_SLEEP               (*(RwReg8 *)0x40000401U) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_PM\_CPUSEL              (*(RwReg8 *)0x40000408U) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_PM\_APBASEL             (*(RwReg8 *)0x40000409U) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define REG\_PM\_APBBSEL             (*(RwReg8 *)0x4000040AU) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define REG\_PM\_APBCSEL             (*(RwReg8 *)0x4000040BU) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define REG\_PM\_AHBMASK             (*(RwReg  *)0x40000414U) }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define REG\_PM\_APBAMASK            (*(RwReg  *)0x40000418U) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define REG\_PM\_APBBMASK            (*(RwReg  *)0x4000041CU) }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define REG\_PM\_APBCMASK            (*(RwReg  *)0x40000420U) }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define REG\_PM\_INTENCLR            (*(RwReg8 *)0x40000434U) }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define REG\_PM\_INTENSET            (*(RwReg8 *)0x40000435U) }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define REG\_PM\_INTFLAG             (*(RwReg8 *)0x40000436U) }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define REG\_PM\_RCAUSE              (*(RoReg8 *)0x40000438U) }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/* ========== Instance parameters for PM peripheral ========== */}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define PM\_CTRL\_MCSEL\_DFLL48M       3       }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define PM\_CTRL\_MCSEL\_GCLK          0       }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define PM\_CTRL\_MCSEL\_OSC8M         1       }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define PM\_CTRL\_MCSEL\_XOSC          2       }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define PM\_PM\_CLK\_APB\_NUM           2       }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define PM\_SYSTEM\_CLOCK             1000000  }\textcolor{comment}{// System Clock Frequency at Reset}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_PM\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

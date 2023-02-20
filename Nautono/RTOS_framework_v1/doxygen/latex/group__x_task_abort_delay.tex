@@ -1,0 +1,18 @@
+\hypertarget{group__x_task_abort_delay}{}\doxysection{x\+Task\+Abort\+Delay}
+\label{group__x_task_abort_delay}\index{xTaskAbortDelay@{xTaskAbortDelay}}
+task. h 
+\begin{DoxyPre}BaseType\_t xTaskAbortDelay( TaskHandle\_t xTask );\end{DoxyPre}
+
+
+INCLUDE\+\_\+x\+Task\+Abort\+Delay must be defined as 1 in \mbox{\hyperlink{_free_r_t_o_s_config_8h_source}{Free\+RTOSConfig.\+h}} for this function to be available.
+
+A task will enter the Blocked state when it is waiting for an event. The event it is waiting for can be a temporal event (waiting for a time), such as when v\+Task\+Delay() is called, or an event on an object, such as when x\+Queue\+Receive() or ul\+Task\+Notify\+Take() is called. If the handle of a task that is in the Blocked state is used in a call to x\+Task\+Abort\+Delay() then the task will leave the Blocked state, and return from whichever function call placed the task into the Blocked state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Task} & The handle of the task to remove from the Blocked state.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the task referenced by x\+Task was not in the Blocked state then pd\+FAIL is returned. Otherwise pd\+PASS is returned. 
+\end{DoxyReturn}

@@ -1,0 +1,579 @@
+\hypertarget{component_2dsu_8h_source}{}\doxysection{dsu.\+h}
+\label{component_2dsu_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/dsu.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/dsu.h}}
+\mbox{\hyperlink{component_2dsu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_DSU\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_DSU\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define DSU\_U2209}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_DSU                     0x103}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_CTRL : (DSU Offset: 0x0000) ( /W  8) Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint8\_t  \mbox{\hyperlink{union_d_s_u___c_t_r_l___type_a73a94d5d5c3dc5b218c6bc1e4bc6165d}{SWRST}}:1;          }
+\DoxyCodeLine{54     uint8\_t  :1;               }
+\DoxyCodeLine{55     uint8\_t  \mbox{\hyperlink{union_d_s_u___c_t_r_l___type_a9a351c7d3ed4db72fe199f29441b24e4}{CRC}}:1;            }
+\DoxyCodeLine{56     uint8\_t  \mbox{\hyperlink{union_d_s_u___c_t_r_l___type_a0b11d4226d2417422ef909e10ed17bc9}{MBIST}}:1;          }
+\DoxyCodeLine{57     uint8\_t  \mbox{\hyperlink{union_d_s_u___c_t_r_l___type_a197b7e23186112885542ca537e8083ba}{CE}}:1;             }
+\DoxyCodeLine{58     uint8\_t  :1;               }
+\DoxyCodeLine{59     uint8\_t  \mbox{\hyperlink{union_d_s_u___c_t_r_l___type_a65fe38370088ef03ea4be1a7e98d91b6}{ARR}}:1;            }
+\DoxyCodeLine{60     uint8\_t  \mbox{\hyperlink{union_d_s_u___c_t_r_l___type_a88845326ae957d9f9ce3c15a0cac4963}{SMSA}}:1;           }
+\DoxyCodeLine{61   \} bit;                       }
+\DoxyCodeLine{62   uint8\_t \mbox{\hyperlink{union_d_s_u___c_t_r_l___type_aead0ceef9a72bc2e2e07d865be80b89c}{reg}};                 }
+\DoxyCodeLine{63 \} \mbox{\hyperlink{union_d_s_u___c_t_r_l___type}{DSU\_CTRL\_Type}};}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define DSU\_CTRL\_OFFSET             0x0000       }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define DSU\_CTRL\_RESETVALUE         0x00ul       }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define DSU\_CTRL\_SWRST\_Pos          0            }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define DSU\_CTRL\_SWRST              (0x1ul << DSU\_CTRL\_SWRST\_Pos)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define DSU\_CTRL\_CRC\_Pos            2            }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define DSU\_CTRL\_CRC                (0x1ul << DSU\_CTRL\_CRC\_Pos)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define DSU\_CTRL\_MBIST\_Pos          3            }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define DSU\_CTRL\_MBIST              (0x1ul << DSU\_CTRL\_MBIST\_Pos)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define DSU\_CTRL\_CE\_Pos             4            }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define DSU\_CTRL\_CE                 (0x1ul << DSU\_CTRL\_CE\_Pos)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define DSU\_CTRL\_ARR\_Pos            6            }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define DSU\_CTRL\_ARR                (0x1ul << DSU\_CTRL\_ARR\_Pos)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define DSU\_CTRL\_SMSA\_Pos           7            }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define DSU\_CTRL\_SMSA               (0x1ul << DSU\_CTRL\_SMSA\_Pos)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define DSU\_CTRL\_MASK               0xDDul       }}
+\DoxyCodeLine{83 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_STATUSA : (DSU Offset: 0x0001) (R/W  8) Status A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{85 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{86   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{87     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_a___type_aff619e1a118784b3e8600a50128db18c}{DONE}}:1;           }
+\DoxyCodeLine{88     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_a___type_aa8f9dffc31935fc4537884bf167786df}{CRSTEXT}}:1;        }
+\DoxyCodeLine{89     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_a___type_a23415dfa2ba81d7e98774bd358c40db8}{BERR}}:1;           }
+\DoxyCodeLine{90     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_a___type_aba8f270d5cf8d7fee472b5888bea81b8}{FAIL}}:1;           }
+\DoxyCodeLine{91     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_a___type_a8fefe4470a39f6ef4547a501dbf028b0}{PERR}}:1;           }
+\DoxyCodeLine{92     uint8\_t  :3;               }
+\DoxyCodeLine{93   \} bit;                       }
+\DoxyCodeLine{94   uint8\_t \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_a___type_a6c012a1306fb8f409347e5a8a333998a}{reg}};                 }
+\DoxyCodeLine{95 \} \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_a___type}{DSU\_STATUSA\_Type}};}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define DSU\_STATUSA\_OFFSET          0x0001       }}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define DSU\_STATUSA\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define DSU\_STATUSA\_DONE\_Pos        0            }}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define DSU\_STATUSA\_DONE            (0x1ul << DSU\_STATUSA\_DONE\_Pos)}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define DSU\_STATUSA\_CRSTEXT\_Pos     1            }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define DSU\_STATUSA\_CRSTEXT         (0x1ul << DSU\_STATUSA\_CRSTEXT\_Pos)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define DSU\_STATUSA\_BERR\_Pos        2            }}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define DSU\_STATUSA\_BERR            (0x1ul << DSU\_STATUSA\_BERR\_Pos)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define DSU\_STATUSA\_FAIL\_Pos        3            }}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define DSU\_STATUSA\_FAIL            (0x1ul << DSU\_STATUSA\_FAIL\_Pos)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define DSU\_STATUSA\_PERR\_Pos        4            }}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define DSU\_STATUSA\_PERR            (0x1ul << DSU\_STATUSA\_PERR\_Pos)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define DSU\_STATUSA\_MASK            0x1Ful       }}
+\DoxyCodeLine{113 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_STATUSB : (DSU Offset: 0x0002) (R/   8) Status B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{115 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{116   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{117     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type_a9db72198105203a1f2a2408e0cea70d9}{PROT}}:1;           }
+\DoxyCodeLine{118     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type_aad7ae489397e242eeaa42e11e32654ec}{DBGPRES}}:1;        }
+\DoxyCodeLine{119     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type_ad3344aa28fed34c08fe7c730282fb40d}{DCCD0}}:1;          }
+\DoxyCodeLine{120     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type_a3d465bfe936ba897bb74af320f5cc41a}{DCCD1}}:1;          }
+\DoxyCodeLine{121     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type_a8d1bbe448ed8ffb57221323c43f585c3}{HPE}}:1;            }
+\DoxyCodeLine{122     uint8\_t  :3;               }
+\DoxyCodeLine{123   \} bit;                       }
+\DoxyCodeLine{124   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{125     uint8\_t  :2;               }
+\DoxyCodeLine{126     uint8\_t  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type_a952de07a52a1d8d6e928126ebcbc6d7b}{DCCD}}:2;           }
+\DoxyCodeLine{127     uint8\_t  :4;               }
+\DoxyCodeLine{128   \} vec;                       }
+\DoxyCodeLine{129   uint8\_t \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type_aa96f9c8c3695cc1a4535a02983201946}{reg}};                 }
+\DoxyCodeLine{130 \} \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type}{DSU\_STATUSB\_Type}};}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define DSU\_STATUSB\_OFFSET          0x0002       }}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define DSU\_STATUSB\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define DSU\_STATUSB\_PROT\_Pos        0            }}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define DSU\_STATUSB\_PROT            (0x1ul << DSU\_STATUSB\_PROT\_Pos)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define DSU\_STATUSB\_DBGPRES\_Pos     1            }}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define DSU\_STATUSB\_DBGPRES         (0x1ul << DSU\_STATUSB\_DBGPRES\_Pos)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define DSU\_STATUSB\_DCCD0\_Pos       2            }}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define DSU\_STATUSB\_DCCD0           (1 << DSU\_STATUSB\_DCCD0\_Pos)}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define DSU\_STATUSB\_DCCD1\_Pos       3            }}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define DSU\_STATUSB\_DCCD1           (1 << DSU\_STATUSB\_DCCD1\_Pos)}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define DSU\_STATUSB\_DCCD\_Pos        2            }}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define DSU\_STATUSB\_DCCD\_Msk        (0x3ul << DSU\_STATUSB\_DCCD\_Pos)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define DSU\_STATUSB\_DCCD(value)     ((DSU\_STATUSB\_DCCD\_Msk \& ((value) << DSU\_STATUSB\_DCCD\_Pos)))}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define DSU\_STATUSB\_HPE\_Pos         4            }}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define DSU\_STATUSB\_HPE             (0x1ul << DSU\_STATUSB\_HPE\_Pos)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define DSU\_STATUSB\_MASK            0x1Ful       }}
+\DoxyCodeLine{151 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_ADDR : (DSU Offset: 0x0004) (R/W 32) Address -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{153 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{154   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{155     uint32\_t \mbox{\hyperlink{union_d_s_u___a_d_d_r___type_a3504f788bdf784989bb670de25fd26a7}{AMOD}}:2;           }
+\DoxyCodeLine{156     uint32\_t \mbox{\hyperlink{union_d_s_u___a_d_d_r___type_af80527c464042fc13266915c73e62ef4}{ADDR}}:30;          }
+\DoxyCodeLine{157   \} bit;                       }
+\DoxyCodeLine{158   uint32\_t \mbox{\hyperlink{union_d_s_u___a_d_d_r___type_a21c57af42627a2ac52a4e1599582c241}{reg}};                }
+\DoxyCodeLine{159 \} \mbox{\hyperlink{union_d_s_u___a_d_d_r___type}{DSU\_ADDR\_Type}};}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define DSU\_ADDR\_OFFSET             0x0004       }}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define DSU\_ADDR\_RESETVALUE         0x00000000ul }}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define DSU\_ADDR\_AMOD\_Pos           0            }}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define DSU\_ADDR\_AMOD\_Msk           (0x3ul << DSU\_ADDR\_AMOD\_Pos)}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define DSU\_ADDR\_AMOD(value)        ((DSU\_ADDR\_AMOD\_Msk \& ((value) << DSU\_ADDR\_AMOD\_Pos)))}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define DSU\_ADDR\_ADDR\_Pos           2            }}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define DSU\_ADDR\_ADDR\_Msk           (0x3FFFFFFFul << DSU\_ADDR\_ADDR\_Pos)}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define DSU\_ADDR\_ADDR(value)        ((DSU\_ADDR\_ADDR\_Msk \& ((value) << DSU\_ADDR\_ADDR\_Pos)))}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define DSU\_ADDR\_MASK               0xFFFFFFFFul }}
+\DoxyCodeLine{173 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_LENGTH : (DSU Offset: 0x0008) (R/W 32) Length -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{175 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{176   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{177     uint32\_t :2;               }
+\DoxyCodeLine{178     uint32\_t \mbox{\hyperlink{union_d_s_u___l_e_n_g_t_h___type_adadf43167c8c012916cd60e1916a93f3}{LENGTH}}:30;        }
+\DoxyCodeLine{179   \} bit;                       }
+\DoxyCodeLine{180   uint32\_t \mbox{\hyperlink{union_d_s_u___l_e_n_g_t_h___type_a6c1bdd63165dd29edf1dc8a4d775cffb}{reg}};                }
+\DoxyCodeLine{181 \} \mbox{\hyperlink{union_d_s_u___l_e_n_g_t_h___type}{DSU\_LENGTH\_Type}};}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define DSU\_LENGTH\_OFFSET           0x0008       }}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define DSU\_LENGTH\_RESETVALUE       0x00000000ul }}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define DSU\_LENGTH\_LENGTH\_Pos       2            }}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define DSU\_LENGTH\_LENGTH\_Msk       (0x3FFFFFFFul << DSU\_LENGTH\_LENGTH\_Pos)}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define DSU\_LENGTH\_LENGTH(value)    ((DSU\_LENGTH\_LENGTH\_Msk \& ((value) << DSU\_LENGTH\_LENGTH\_Pos)))}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define DSU\_LENGTH\_MASK             0xFFFFFFFCul }}
+\DoxyCodeLine{192 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_DATA : (DSU Offset: 0x000C) (R/W 32) Data -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{194 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{195   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{196     uint32\_t \mbox{\hyperlink{union_d_s_u___d_a_t_a___type_a0793b4370bb1175b9222fa2ec65667b7}{DATA}}:32;          }
+\DoxyCodeLine{197   \} bit;                       }
+\DoxyCodeLine{198   uint32\_t \mbox{\hyperlink{union_d_s_u___d_a_t_a___type_a951faee0c32af5210e62a071cc0afe96}{reg}};                }
+\DoxyCodeLine{199 \} \mbox{\hyperlink{union_d_s_u___d_a_t_a___type}{DSU\_DATA\_Type}};}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define DSU\_DATA\_OFFSET             0x000C       }}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define DSU\_DATA\_RESETVALUE         0x00000000ul }}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define DSU\_DATA\_DATA\_Pos           0            }}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define DSU\_DATA\_DATA\_Msk           (0xFFFFFFFFul << DSU\_DATA\_DATA\_Pos)}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define DSU\_DATA\_DATA(value)        ((DSU\_DATA\_DATA\_Msk \& ((value) << DSU\_DATA\_DATA\_Pos)))}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define DSU\_DATA\_MASK               0xFFFFFFFFul }}
+\DoxyCodeLine{210 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_DCC : (DSU Offset: 0x0010) (R/W 32) Debug Communication Channel n -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{212 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{213   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{214     uint32\_t \mbox{\hyperlink{union_d_s_u___d_c_c___type_a7be3abb1e94c3dae4c10b6a4ce5253de}{DATA}}:32;          }
+\DoxyCodeLine{215   \} bit;                       }
+\DoxyCodeLine{216   uint32\_t \mbox{\hyperlink{union_d_s_u___d_c_c___type_ae3e5ccae0e39ab81ad4667dc5dab6f66}{reg}};                }
+\DoxyCodeLine{217 \} \mbox{\hyperlink{union_d_s_u___d_c_c___type}{DSU\_DCC\_Type}};}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define DSU\_DCC\_OFFSET              0x0010       }}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define DSU\_DCC\_RESETVALUE          0x00000000ul }}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define DSU\_DCC\_DATA\_Pos            0            }}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define DSU\_DCC\_DATA\_Msk            (0xFFFFFFFFul << DSU\_DCC\_DATA\_Pos)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define DSU\_DCC\_DATA(value)         ((DSU\_DCC\_DATA\_Msk \& ((value) << DSU\_DCC\_DATA\_Pos)))}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define DSU\_DCC\_MASK                0xFFFFFFFFul }}
+\DoxyCodeLine{228 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_DID : (DSU Offset: 0x0018) (R/  32) Device Identification -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{230 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{231   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{232     uint32\_t \mbox{\hyperlink{union_d_s_u___d_i_d___type_a6b84fbd4364f870cc96a9da2fe7fe02b}{DEVSEL}}:8;         }
+\DoxyCodeLine{233     uint32\_t \mbox{\hyperlink{union_d_s_u___d_i_d___type_aa5a2580fa69f97b349dba6650dfec919}{REVISION}}:4;       }
+\DoxyCodeLine{234     uint32\_t \mbox{\hyperlink{union_d_s_u___d_i_d___type_aa98a458040daf79582a83e77c0a55a5d}{DIE}}:4;            }
+\DoxyCodeLine{235     uint32\_t \mbox{\hyperlink{union_d_s_u___d_i_d___type_a0705eab15d8481c0a60ae42e3443e260}{SERIES}}:6;         }
+\DoxyCodeLine{236     uint32\_t :1;               }
+\DoxyCodeLine{237     uint32\_t \mbox{\hyperlink{union_d_s_u___d_i_d___type_a391b0d47c1bbd48442298eaabe71ca61}{FAMILY}}:5;         }
+\DoxyCodeLine{238     uint32\_t \mbox{\hyperlink{union_d_s_u___d_i_d___type_a090fd5a629b80d2adfcb388b825b8dd8}{PROCESSOR}}:4;      }
+\DoxyCodeLine{239   \} bit;                       }
+\DoxyCodeLine{240   uint32\_t \mbox{\hyperlink{union_d_s_u___d_i_d___type_a56e43c203792644e8b50621c3d1dd7d6}{reg}};                }
+\DoxyCodeLine{241 \} \mbox{\hyperlink{union_d_s_u___d_i_d___type}{DSU\_DID\_Type}};}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define DSU\_DID\_OFFSET              0x0018       }}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define DSU\_DID\_DEVSEL\_Pos          0            }}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define DSU\_DID\_DEVSEL\_Msk          (0xFFul << DSU\_DID\_DEVSEL\_Pos)}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define DSU\_DID\_DEVSEL(value)       ((DSU\_DID\_DEVSEL\_Msk \& ((value) << DSU\_DID\_DEVSEL\_Pos)))}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define DSU\_DID\_REVISION\_Pos        8            }}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define DSU\_DID\_REVISION\_Msk        (0xFul << DSU\_DID\_REVISION\_Pos)}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define DSU\_DID\_REVISION(value)     ((DSU\_DID\_REVISION\_Msk \& ((value) << DSU\_DID\_REVISION\_Pos)))}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define DSU\_DID\_DIE\_Pos             12           }}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define DSU\_DID\_DIE\_Msk             (0xFul << DSU\_DID\_DIE\_Pos)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define DSU\_DID\_DIE(value)          ((DSU\_DID\_DIE\_Msk \& ((value) << DSU\_DID\_DIE\_Pos)))}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define DSU\_DID\_SERIES\_Pos          16           }}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define DSU\_DID\_SERIES\_Msk          (0x3Ful << DSU\_DID\_SERIES\_Pos)}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#define DSU\_DID\_SERIES(value)       ((DSU\_DID\_SERIES\_Msk \& ((value) << DSU\_DID\_SERIES\_Pos)))}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#define   DSU\_DID\_SERIES\_0\_Val            0x0ul  }}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define   DSU\_DID\_SERIES\_1\_Val            0x1ul  }}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define DSU\_DID\_SERIES\_0            (DSU\_DID\_SERIES\_0\_Val          << DSU\_DID\_SERIES\_Pos)}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define DSU\_DID\_SERIES\_1            (DSU\_DID\_SERIES\_1\_Val          << DSU\_DID\_SERIES\_Pos)}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define DSU\_DID\_FAMILY\_Pos          23           }}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define DSU\_DID\_FAMILY\_Msk          (0x1Ful << DSU\_DID\_FAMILY\_Pos)}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#define DSU\_DID\_FAMILY(value)       ((DSU\_DID\_FAMILY\_Msk \& ((value) << DSU\_DID\_FAMILY\_Pos)))}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#define   DSU\_DID\_FAMILY\_0\_Val            0x0ul  }}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#define   DSU\_DID\_FAMILY\_1\_Val            0x1ul  }}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#define DSU\_DID\_FAMILY\_0            (DSU\_DID\_FAMILY\_0\_Val          << DSU\_DID\_FAMILY\_Pos)}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#define DSU\_DID\_FAMILY\_1            (DSU\_DID\_FAMILY\_1\_Val          << DSU\_DID\_FAMILY\_Pos)}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#define DSU\_DID\_PROCESSOR\_Pos       28           }}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define DSU\_DID\_PROCESSOR\_Msk       (0xFul << DSU\_DID\_PROCESSOR\_Pos)}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define DSU\_DID\_PROCESSOR(value)    ((DSU\_DID\_PROCESSOR\_Msk \& ((value) << DSU\_DID\_PROCESSOR\_Pos)))}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define   DSU\_DID\_PROCESSOR\_0\_Val         0x0ul  }}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define   DSU\_DID\_PROCESSOR\_1\_Val         0x1ul  }}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define   DSU\_DID\_PROCESSOR\_2\_Val         0x2ul  }}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define   DSU\_DID\_PROCESSOR\_3\_Val         0x3ul  }}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define DSU\_DID\_PROCESSOR\_0         (DSU\_DID\_PROCESSOR\_0\_Val       << DSU\_DID\_PROCESSOR\_Pos)}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define DSU\_DID\_PROCESSOR\_1         (DSU\_DID\_PROCESSOR\_1\_Val       << DSU\_DID\_PROCESSOR\_Pos)}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define DSU\_DID\_PROCESSOR\_2         (DSU\_DID\_PROCESSOR\_2\_Val       << DSU\_DID\_PROCESSOR\_Pos)}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#define DSU\_DID\_PROCESSOR\_3         (DSU\_DID\_PROCESSOR\_3\_Val       << DSU\_DID\_PROCESSOR\_Pos)}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define DSU\_DID\_MASK                0xFFBFFFFFul }}
+\DoxyCodeLine{282 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_DCFG : (DSU Offset: 0x00F0) (R/W 32) Device Configuration -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{284 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{285   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{286     uint32\_t \mbox{\hyperlink{union_d_s_u___d_c_f_g___type_a603727df06fa13f6f429e9e8e30c5258}{DCFG}}:32;          }
+\DoxyCodeLine{287   \} bit;                       }
+\DoxyCodeLine{288   uint32\_t \mbox{\hyperlink{union_d_s_u___d_c_f_g___type_ab5c3a95ab864f6f18e793ae200f13706}{reg}};                }
+\DoxyCodeLine{289 \} \mbox{\hyperlink{union_d_s_u___d_c_f_g___type}{DSU\_DCFG\_Type}};}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#define DSU\_DCFG\_OFFSET             0x00F0       }}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define DSU\_DCFG\_RESETVALUE         0x00000000ul }}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#define DSU\_DCFG\_DCFG\_Pos           0            }}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define DSU\_DCFG\_DCFG\_Msk           (0xFFFFFFFFul << DSU\_DCFG\_DCFG\_Pos)}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define DSU\_DCFG\_DCFG(value)        ((DSU\_DCFG\_DCFG\_Msk \& ((value) << DSU\_DCFG\_DCFG\_Pos)))}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#define DSU\_DCFG\_MASK               0xFFFFFFFFul }}
+\DoxyCodeLine{300 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_ENTRY : (DSU Offset: 0x1000) (R/  32) Coresight ROM Table Entry n -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{302 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{303   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{304     uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_t_r_y___type_a84ed5d41044da015e6f6a3e1e04141ab}{EPRES}}:1;          }
+\DoxyCodeLine{305     uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_t_r_y___type_a0edaf25c914220bee52adf0cc0630058}{FMT}}:1;            }
+\DoxyCodeLine{306     uint32\_t :10;              }
+\DoxyCodeLine{307     uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_t_r_y___type_a67b44f00c68d318dc91ab169dd305275}{ADDOFF}}:20;        }
+\DoxyCodeLine{308   \} bit;                       }
+\DoxyCodeLine{309   uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_t_r_y___type_ad535114abe667c010c7cc5f4a5d50064}{reg}};                }
+\DoxyCodeLine{310 \} \mbox{\hyperlink{union_d_s_u___e_n_t_r_y___type}{DSU\_ENTRY\_Type}};}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define DSU\_ENTRY\_OFFSET            0x1000       }}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define DSU\_ENTRY\_RESETVALUE        0x00000002ul }}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define DSU\_ENTRY\_EPRES\_Pos         0            }}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define DSU\_ENTRY\_EPRES             (0x1ul << DSU\_ENTRY\_EPRES\_Pos)}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define DSU\_ENTRY\_FMT\_Pos           1            }}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define DSU\_ENTRY\_FMT               (0x1ul << DSU\_ENTRY\_FMT\_Pos)}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define DSU\_ENTRY\_ADDOFF\_Pos        12           }}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define DSU\_ENTRY\_ADDOFF\_Msk        (0xFFFFFul << DSU\_ENTRY\_ADDOFF\_Pos)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define DSU\_ENTRY\_ADDOFF(value)     ((DSU\_ENTRY\_ADDOFF\_Msk \& ((value) << DSU\_ENTRY\_ADDOFF\_Pos)))}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#define DSU\_ENTRY\_MASK              0xFFFFF003ul }}
+\DoxyCodeLine{324 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_ENTRY0 : (DSU Offset: 0x1000) (R/  32) Coresight ROM Table Entry 0 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{326 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{327   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{328     uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_t_r_y0___type_a3f265550e3d4a038a1e359d8ae807c48}{EPRES}}:1;          }
+\DoxyCodeLine{329     uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_t_r_y0___type_aa3926f1f9527552a50337fd2b24716ff}{FMT}}:1;            }
+\DoxyCodeLine{330     uint32\_t :10;              }
+\DoxyCodeLine{331     uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_t_r_y0___type_ac8df1fef5c69a4e75d67608e8e100b47}{ADDOFF}}:20;        }
+\DoxyCodeLine{332   \} bit;                       }
+\DoxyCodeLine{333   uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_t_r_y0___type_ad57b888a19f61bf49aea7ab2058ea9f0}{reg}};                }
+\DoxyCodeLine{334 \} \mbox{\hyperlink{union_d_s_u___e_n_t_r_y0___type}{DSU\_ENTRY0\_Type}};}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_OFFSET           0x1000       }}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_RESETVALUE       \_U\_(0x9F9FC002) }}
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_EPRES\_Pos        0            }}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_EPRES            (\_U\_(0x1) << DSU\_ENTRY0\_EPRES\_Pos)}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_FMT\_Pos          1            }}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_FMT              (\_U\_(0x1) << DSU\_ENTRY0\_FMT\_Pos)}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_ADDOFF\_Pos       12           }}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_ADDOFF\_Msk       (\_U\_(0xFFFFF) << DSU\_ENTRY0\_ADDOFF\_Pos)}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_ADDOFF(value)    (DSU\_ENTRY0\_ADDOFF\_Msk \& ((value) << DSU\_ENTRY0\_ADDOFF\_Pos))}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define DSU\_ENTRY0\_MASK             \_U\_(0xFFFFF003) }}
+\DoxyCodeLine{349 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_ENTRY1 : (DSU Offset: 0x1004) (R/  32) Coresight ROM Table Entry 1 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{351 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{352   uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_t_r_y1___type_a524ab8d2471aafcf1a353ae5626de59c}{reg}};                }
+\DoxyCodeLine{353 \} \mbox{\hyperlink{union_d_s_u___e_n_t_r_y1___type}{DSU\_ENTRY1\_Type}};}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define DSU\_ENTRY1\_OFFSET           0x1004       }}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define DSU\_ENTRY1\_RESETVALUE       \_U\_(0x00000000) }}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define DSU\_ENTRY1\_MASK             \_U\_(0xFFFFFFFF) }}
+\DoxyCodeLine{360 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_END : (DSU Offset: 0x1008) (R/  32) Coresight ROM Table End -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{362 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{363   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{364     uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_d___type_a24ad2e64ac7f159c62d9e1d30184432b}{END}}:32;           }
+\DoxyCodeLine{365   \} bit;                       }
+\DoxyCodeLine{366   uint32\_t \mbox{\hyperlink{union_d_s_u___e_n_d___type_a0d914056a7cd5c80c5b2204a15ae09ae}{reg}};                }
+\DoxyCodeLine{367 \} \mbox{\hyperlink{union_d_s_u___e_n_d___type}{DSU\_END\_Type}};}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define DSU\_END\_OFFSET              0x1008       }}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define DSU\_END\_RESETVALUE          0x00000000ul }}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define DSU\_END\_END\_Pos             0            }}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define DSU\_END\_END\_Msk             (0xFFFFFFFFul << DSU\_END\_END\_Pos)}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define DSU\_END\_END(value)          ((DSU\_END\_END\_Msk \& ((value) << DSU\_END\_END\_Pos)))}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define DSU\_END\_MASK                0xFFFFFFFFul }}
+\DoxyCodeLine{378 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_MEMTYPE : (DSU Offset: 0x1FCC) (R/  32) Coresight ROM Table Memory Type -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{380 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{381   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{382     uint32\_t \mbox{\hyperlink{union_d_s_u___m_e_m_t_y_p_e___type_a3dca5becd5a8a8e28fe39180c824eaaf}{SMEMP}}:1;          }
+\DoxyCodeLine{383     uint32\_t :31;              }
+\DoxyCodeLine{384   \} bit;                       }
+\DoxyCodeLine{385   uint32\_t \mbox{\hyperlink{union_d_s_u___m_e_m_t_y_p_e___type_a9811ad777bc9653aaa34c9c298031513}{reg}};                }
+\DoxyCodeLine{386 \} \mbox{\hyperlink{union_d_s_u___m_e_m_t_y_p_e___type}{DSU\_MEMTYPE\_Type}};}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define DSU\_MEMTYPE\_OFFSET          0x1FCC       }}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define DSU\_MEMTYPE\_RESETVALUE      0x00000000ul }}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define DSU\_MEMTYPE\_SMEMP\_Pos       0            }}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#define DSU\_MEMTYPE\_SMEMP           (0x1ul << DSU\_MEMTYPE\_SMEMP\_Pos)}}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define DSU\_MEMTYPE\_MASK            0x00000001ul }}
+\DoxyCodeLine{396 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_PID4 : (DSU Offset: 0x1FD0) (R/  32) Peripheral Identification 4 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{398 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{399   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{400     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d4___type_a351cf48be2b0e2845a7a8987c3c869f8}{JEPCC}}:4;          }
+\DoxyCodeLine{401     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d4___type_a6fdd5fe268e92ffe333394c0eb34431a}{FKBC}}:4;           }
+\DoxyCodeLine{402     uint32\_t :24;              }
+\DoxyCodeLine{403   \} bit;                       }
+\DoxyCodeLine{404   uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d4___type_aff254cb82f68cb64e7f09f0e49aff7f6}{reg}};                }
+\DoxyCodeLine{405 \} \mbox{\hyperlink{union_d_s_u___p_i_d4___type}{DSU\_PID4\_Type}};}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define DSU\_PID4\_OFFSET             0x1FD0       }}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define DSU\_PID4\_RESETVALUE         0x00000000ul }}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define DSU\_PID4\_JEPCC\_Pos          0            }}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define DSU\_PID4\_JEPCC\_Msk          (0xFul << DSU\_PID4\_JEPCC\_Pos)}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define DSU\_PID4\_JEPCC(value)       ((DSU\_PID4\_JEPCC\_Msk \& ((value) << DSU\_PID4\_JEPCC\_Pos)))}}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#define DSU\_PID4\_FKBC\_Pos           4            }}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define DSU\_PID4\_FKBC\_Msk           (0xFul << DSU\_PID4\_FKBC\_Pos)}}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define DSU\_PID4\_FKBC(value)        ((DSU\_PID4\_FKBC\_Msk \& ((value) << DSU\_PID4\_FKBC\_Pos)))}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define DSU\_PID4\_MASK               0x000000FFul }}
+\DoxyCodeLine{419 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_PID5 : (DSU Offset: 0x1FD4) (R/  32) Peripheral Identification 5 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{421 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{422   uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d5___type_a381ed71ad8950e0059bf48ed20c78e9d}{reg}};                }
+\DoxyCodeLine{423 \} \mbox{\hyperlink{union_d_s_u___p_i_d5___type}{DSU\_PID5\_Type}};}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define DSU\_PID5\_OFFSET             0x1FD4       }}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define DSU\_PID5\_MASK               0x00000000ul }}
+\DoxyCodeLine{429 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_PID6 : (DSU Offset: 0x1FD8) (R/  32) Peripheral Identification 6 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{431 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{432   uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d6___type_a5c9f3720d55b56e6aef2b71ac0b50a13}{reg}};                }
+\DoxyCodeLine{433 \} \mbox{\hyperlink{union_d_s_u___p_i_d6___type}{DSU\_PID6\_Type}};}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define DSU\_PID6\_OFFSET             0x1FD8       }}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define DSU\_PID6\_MASK               0x00000000ul }}
+\DoxyCodeLine{439 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_PID7 : (DSU Offset: 0x1FDC) (R/  32) Peripheral Identification 7 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{441 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{442   uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d7___type_a6a2b728de75e4bee6b44a6e2c50305bc}{reg}};                }
+\DoxyCodeLine{443 \} \mbox{\hyperlink{union_d_s_u___p_i_d7___type}{DSU\_PID7\_Type}};}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define DSU\_PID7\_OFFSET             0x1FDC       }}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define DSU\_PID7\_MASK               0x00000000ul }}
+\DoxyCodeLine{449 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_PID0 : (DSU Offset: 0x1FE0) (R/  32) Peripheral Identification 0 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{451 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{452   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{453     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d0___type_a2411582de03ec05e573cff798437b9b2}{PARTNBL}}:8;        }
+\DoxyCodeLine{454     uint32\_t :24;              }
+\DoxyCodeLine{455   \} bit;                       }
+\DoxyCodeLine{456   uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d0___type_a7db2231c24781271c48df2f5fb7805a6}{reg}};                }
+\DoxyCodeLine{457 \} \mbox{\hyperlink{union_d_s_u___p_i_d0___type}{DSU\_PID0\_Type}};}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{459 }
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#define DSU\_PID0\_OFFSET             0x1FE0       }}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#define DSU\_PID0\_RESETVALUE         0x000000D0ul }}
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#define DSU\_PID0\_PARTNBL\_Pos        0            }}
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define DSU\_PID0\_PARTNBL\_Msk        (0xFFul << DSU\_PID0\_PARTNBL\_Pos)}}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define DSU\_PID0\_PARTNBL(value)     ((DSU\_PID0\_PARTNBL\_Msk \& ((value) << DSU\_PID0\_PARTNBL\_Pos)))}}
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#define DSU\_PID0\_MASK               0x000000FFul }}
+\DoxyCodeLine{468 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_PID1 : (DSU Offset: 0x1FE4) (R/  32) Peripheral Identification 1 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{470 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{471   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{472     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d1___type_af789ec8a7e1fa2718283e9374643cd10}{PARTNBH}}:4;        }
+\DoxyCodeLine{473     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d1___type_a00638eca3237e0bfedae6c22418203e5}{JEPIDCL}}:4;        }
+\DoxyCodeLine{474     uint32\_t :24;              }
+\DoxyCodeLine{475   \} bit;                       }
+\DoxyCodeLine{476   uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d1___type_aae19e346570eb31d8eec6d0a7b093954}{reg}};                }
+\DoxyCodeLine{477 \} \mbox{\hyperlink{union_d_s_u___p_i_d1___type}{DSU\_PID1\_Type}};}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define DSU\_PID1\_OFFSET             0x1FE4       }}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define DSU\_PID1\_RESETVALUE         0x000000FCul }}
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#define DSU\_PID1\_PARTNBH\_Pos        0            }}
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#define DSU\_PID1\_PARTNBH\_Msk        (0xFul << DSU\_PID1\_PARTNBH\_Pos)}}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#define DSU\_PID1\_PARTNBH(value)     ((DSU\_PID1\_PARTNBH\_Msk \& ((value) << DSU\_PID1\_PARTNBH\_Pos)))}}
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define DSU\_PID1\_JEPIDCL\_Pos        4            }}
+\DoxyCodeLine{487 \textcolor{preprocessor}{\#define DSU\_PID1\_JEPIDCL\_Msk        (0xFul << DSU\_PID1\_JEPIDCL\_Pos)}}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#define DSU\_PID1\_JEPIDCL(value)     ((DSU\_PID1\_JEPIDCL\_Msk \& ((value) << DSU\_PID1\_JEPIDCL\_Pos)))}}
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#define DSU\_PID1\_MASK               0x000000FFul }}
+\DoxyCodeLine{491 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_PID2 : (DSU Offset: 0x1FE8) (R/  32) Peripheral Identification 2 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{493 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{494   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{495     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d2___type_a98d6ae81bae471444221dad368417fcb}{JEPIDCH}}:3;        }
+\DoxyCodeLine{496     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d2___type_ae1fa34e088136d567cd1769499c50ab3}{JEPU}}:1;           }
+\DoxyCodeLine{497     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d2___type_ad619ce9aa07fdb32c8d57feebaab130c}{REVISION}}:4;       }
+\DoxyCodeLine{498     uint32\_t :24;              }
+\DoxyCodeLine{499   \} bit;                       }
+\DoxyCodeLine{500   uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d2___type_aa77daad8160c0503bf4348a988c1580d}{reg}};                }
+\DoxyCodeLine{501 \} \mbox{\hyperlink{union_d_s_u___p_i_d2___type}{DSU\_PID2\_Type}};}
+\DoxyCodeLine{502 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#define DSU\_PID2\_OFFSET             0x1FE8       }}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#define DSU\_PID2\_RESETVALUE         0x00000009ul }}
+\DoxyCodeLine{507 \textcolor{preprocessor}{\#define DSU\_PID2\_JEPIDCH\_Pos        0            }}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#define DSU\_PID2\_JEPIDCH\_Msk        (0x7ul << DSU\_PID2\_JEPIDCH\_Pos)}}
+\DoxyCodeLine{509 \textcolor{preprocessor}{\#define DSU\_PID2\_JEPIDCH(value)     ((DSU\_PID2\_JEPIDCH\_Msk \& ((value) << DSU\_PID2\_JEPIDCH\_Pos)))}}
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#define DSU\_PID2\_JEPU\_Pos           3            }}
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#define DSU\_PID2\_JEPU               (0x1ul << DSU\_PID2\_JEPU\_Pos)}}
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#define DSU\_PID2\_REVISION\_Pos       4            }}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#define DSU\_PID2\_REVISION\_Msk       (0xFul << DSU\_PID2\_REVISION\_Pos)}}
+\DoxyCodeLine{514 \textcolor{preprocessor}{\#define DSU\_PID2\_REVISION(value)    ((DSU\_PID2\_REVISION\_Msk \& ((value) << DSU\_PID2\_REVISION\_Pos)))}}
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#define DSU\_PID2\_MASK               0x000000FFul }}
+\DoxyCodeLine{517 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_PID3 : (DSU Offset: 0x1FEC) (R/  32) Peripheral Identification 3 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{519 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{520   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{521     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d3___type_a04d461de3bfc43fdf0d13ce6bd6568fb}{CUSMOD}}:4;         }
+\DoxyCodeLine{522     uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d3___type_a598eacfd55f65545266573f0a4008e3b}{REVAND}}:4;         }
+\DoxyCodeLine{523     uint32\_t :24;              }
+\DoxyCodeLine{524   \} bit;                       }
+\DoxyCodeLine{525   uint32\_t \mbox{\hyperlink{union_d_s_u___p_i_d3___type_a9f46417b3c6f6f6625067322d6c53e3d}{reg}};                }
+\DoxyCodeLine{526 \} \mbox{\hyperlink{union_d_s_u___p_i_d3___type}{DSU\_PID3\_Type}};}
+\DoxyCodeLine{527 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#define DSU\_PID3\_OFFSET             0x1FEC       }}
+\DoxyCodeLine{530 \textcolor{preprocessor}{\#define DSU\_PID3\_RESETVALUE         0x00000000ul }}
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#define DSU\_PID3\_CUSMOD\_Pos         0            }}
+\DoxyCodeLine{533 \textcolor{preprocessor}{\#define DSU\_PID3\_CUSMOD\_Msk         (0xFul << DSU\_PID3\_CUSMOD\_Pos)}}
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#define DSU\_PID3\_CUSMOD(value)      ((DSU\_PID3\_CUSMOD\_Msk \& ((value) << DSU\_PID3\_CUSMOD\_Pos)))}}
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#define DSU\_PID3\_REVAND\_Pos         4            }}
+\DoxyCodeLine{536 \textcolor{preprocessor}{\#define DSU\_PID3\_REVAND\_Msk         (0xFul << DSU\_PID3\_REVAND\_Pos)}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{\#define DSU\_PID3\_REVAND(value)      ((DSU\_PID3\_REVAND\_Msk \& ((value) << DSU\_PID3\_REVAND\_Pos)))}}
+\DoxyCodeLine{538 \textcolor{preprocessor}{\#define DSU\_PID3\_MASK               0x000000FFul }}
+\DoxyCodeLine{540 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_CID0 : (DSU Offset: 0x1FF0) (R/  32) Component Identification 0 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{541 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{542 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{543   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{544     uint32\_t \mbox{\hyperlink{union_d_s_u___c_i_d0___type_a4f67dbdccd818eacce9caee8184313b6}{PREAMBLEB0}}:8;     }
+\DoxyCodeLine{545     uint32\_t :24;              }
+\DoxyCodeLine{546   \} bit;                       }
+\DoxyCodeLine{547   uint32\_t \mbox{\hyperlink{union_d_s_u___c_i_d0___type_a8a4e4e66f3ac668edceaa595bea2b403}{reg}};                }
+\DoxyCodeLine{548 \} \mbox{\hyperlink{union_d_s_u___c_i_d0___type}{DSU\_CID0\_Type}};}
+\DoxyCodeLine{549 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{550 }
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#define DSU\_CID0\_OFFSET             0x1FF0       }}
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#define DSU\_CID0\_RESETVALUE         0x0000000Dul }}
+\DoxyCodeLine{554 \textcolor{preprocessor}{\#define DSU\_CID0\_PREAMBLEB0\_Pos     0            }}
+\DoxyCodeLine{555 \textcolor{preprocessor}{\#define DSU\_CID0\_PREAMBLEB0\_Msk     (0xFFul << DSU\_CID0\_PREAMBLEB0\_Pos)}}
+\DoxyCodeLine{556 \textcolor{preprocessor}{\#define DSU\_CID0\_PREAMBLEB0(value)  ((DSU\_CID0\_PREAMBLEB0\_Msk \& ((value) << DSU\_CID0\_PREAMBLEB0\_Pos)))}}
+\DoxyCodeLine{557 \textcolor{preprocessor}{\#define DSU\_CID0\_MASK               0x000000FFul }}
+\DoxyCodeLine{559 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_CID1 : (DSU Offset: 0x1FF4) (R/  32) Component Identification 1 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{560 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{561 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{562   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{563     uint32\_t \mbox{\hyperlink{union_d_s_u___c_i_d1___type_a5cbc7c9fca7f9e5bb863a79ea9646a22}{PREAMBLE}}:4;       }
+\DoxyCodeLine{564     uint32\_t \mbox{\hyperlink{union_d_s_u___c_i_d1___type_a6a434f2ad6ac5cfa07c0b03ca983bf4a}{CCLASS}}:4;         }
+\DoxyCodeLine{565     uint32\_t :24;              }
+\DoxyCodeLine{566   \} bit;                       }
+\DoxyCodeLine{567   uint32\_t \mbox{\hyperlink{union_d_s_u___c_i_d1___type_a16b80bf740c34d6627ab2ede385062bd}{reg}};                }
+\DoxyCodeLine{568 \} \mbox{\hyperlink{union_d_s_u___c_i_d1___type}{DSU\_CID1\_Type}};}
+\DoxyCodeLine{569 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#define DSU\_CID1\_OFFSET             0x1FF4       }}
+\DoxyCodeLine{572 \textcolor{preprocessor}{\#define DSU\_CID1\_RESETVALUE         0x00000010ul }}
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#define DSU\_CID1\_PREAMBLE\_Pos       0            }}
+\DoxyCodeLine{575 \textcolor{preprocessor}{\#define DSU\_CID1\_PREAMBLE\_Msk       (0xFul << DSU\_CID1\_PREAMBLE\_Pos)}}
+\DoxyCodeLine{576 \textcolor{preprocessor}{\#define DSU\_CID1\_PREAMBLE(value)    ((DSU\_CID1\_PREAMBLE\_Msk \& ((value) << DSU\_CID1\_PREAMBLE\_Pos)))}}
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#define DSU\_CID1\_CCLASS\_Pos         4            }}
+\DoxyCodeLine{578 \textcolor{preprocessor}{\#define DSU\_CID1\_CCLASS\_Msk         (0xFul << DSU\_CID1\_CCLASS\_Pos)}}
+\DoxyCodeLine{579 \textcolor{preprocessor}{\#define DSU\_CID1\_CCLASS(value)      ((DSU\_CID1\_CCLASS\_Msk \& ((value) << DSU\_CID1\_CCLASS\_Pos)))}}
+\DoxyCodeLine{580 \textcolor{preprocessor}{\#define DSU\_CID1\_MASK               0x000000FFul }}
+\DoxyCodeLine{582 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_CID2 : (DSU Offset: 0x1FF8) (R/  32) Component Identification 2 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{584 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{585   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{586     uint32\_t \mbox{\hyperlink{union_d_s_u___c_i_d2___type_a0d67e7e8f97e11bd49cc3027552f3982}{PREAMBLEB2}}:8;     }
+\DoxyCodeLine{587     uint32\_t :24;              }
+\DoxyCodeLine{588   \} bit;                       }
+\DoxyCodeLine{589   uint32\_t \mbox{\hyperlink{union_d_s_u___c_i_d2___type_aa92726fca48db414a4835715945680a6}{reg}};                }
+\DoxyCodeLine{590 \} \mbox{\hyperlink{union_d_s_u___c_i_d2___type}{DSU\_CID2\_Type}};}
+\DoxyCodeLine{591 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593 \textcolor{preprocessor}{\#define DSU\_CID2\_OFFSET             0x1FF8       }}
+\DoxyCodeLine{594 \textcolor{preprocessor}{\#define DSU\_CID2\_RESETVALUE         0x00000005ul }}
+\DoxyCodeLine{596 \textcolor{preprocessor}{\#define DSU\_CID2\_PREAMBLEB2\_Pos     0            }}
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#define DSU\_CID2\_PREAMBLEB2\_Msk     (0xFFul << DSU\_CID2\_PREAMBLEB2\_Pos)}}
+\DoxyCodeLine{598 \textcolor{preprocessor}{\#define DSU\_CID2\_PREAMBLEB2(value)  ((DSU\_CID2\_PREAMBLEB2\_Msk \& ((value) << DSU\_CID2\_PREAMBLEB2\_Pos)))}}
+\DoxyCodeLine{599 \textcolor{preprocessor}{\#define DSU\_CID2\_MASK               0x000000FFul }}
+\DoxyCodeLine{601 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DSU\_CID3 : (DSU Offset: 0x1FFC) (R/  32) Component Identification 3 -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{602 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{603 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{604   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{605     uint32\_t \mbox{\hyperlink{union_d_s_u___c_i_d3___type_a60cd69bfe21330ce7858e113b8da44ae}{PREAMBLEB3}}:8;     }
+\DoxyCodeLine{606     uint32\_t :24;              }
+\DoxyCodeLine{607   \} bit;                       }
+\DoxyCodeLine{608   uint32\_t \mbox{\hyperlink{union_d_s_u___c_i_d3___type_afeb585a31166086d971e8b8fb779bb9d}{reg}};                }
+\DoxyCodeLine{609 \} \mbox{\hyperlink{union_d_s_u___c_i_d3___type}{DSU\_CID3\_Type}};}
+\DoxyCodeLine{610 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#define DSU\_CID3\_OFFSET             0x1FFC       }}
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#define DSU\_CID3\_RESETVALUE         0x000000B1ul }}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#define DSU\_CID3\_PREAMBLEB3\_Pos     0            }}
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#define DSU\_CID3\_PREAMBLEB3\_Msk     (0xFFul << DSU\_CID3\_PREAMBLEB3\_Pos)}}
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#define DSU\_CID3\_PREAMBLEB3(value)  ((DSU\_CID3\_PREAMBLEB3\_Msk \& ((value) << DSU\_CID3\_PREAMBLEB3\_Pos)))}}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#define DSU\_CID3\_MASK               0x000000FFul }}
+\DoxyCodeLine{621 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{622 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{623   \mbox{\hyperlink{core__cm0plus_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}  \mbox{\hyperlink{union_d_s_u___c_t_r_l___type}{DSU\_CTRL\_Type}}             \mbox{\hyperlink{struct_dsu_a37a45b5734e68c25515884abbc7354bc}{CTRL}};        }
+\DoxyCodeLine{624   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_a___type}{DSU\_STATUSA\_Type}}          \mbox{\hyperlink{struct_dsu_af251ab6944603f4ffcc03a04c3a591af}{STATUSA}};     }
+\DoxyCodeLine{625   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type}{DSU\_STATUSB\_Type}}          \mbox{\hyperlink{struct_dsu_aff3083b68480ee6d95d4213577136659}{STATUSB}};     }
+\DoxyCodeLine{626        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{627   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_s_u___a_d_d_r___type}{DSU\_ADDR\_Type}}             \mbox{\hyperlink{struct_dsu_a453e7beb133d9b05320a24aba312f7f0}{ADDR}};        }
+\DoxyCodeLine{628   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_s_u___l_e_n_g_t_h___type}{DSU\_LENGTH\_Type}}           \mbox{\hyperlink{struct_dsu_af13eeff822c0542965939b8a078bc496}{LENGTH}};      }
+\DoxyCodeLine{629   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_s_u___d_a_t_a___type}{DSU\_DATA\_Type}}             \mbox{\hyperlink{struct_dsu_a0a0cae05796695f78b4e5536792c8953}{DATA}};        }
+\DoxyCodeLine{630   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_s_u___d_c_c___type}{DSU\_DCC\_Type}}              DCC[2];      }
+\DoxyCodeLine{631   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___d_i_d___type}{DSU\_DID\_Type}}              \mbox{\hyperlink{struct_dsu_ae8a2a4525dd77831e3bba601b5eaf924}{DID}};         }
+\DoxyCodeLine{632        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0xD4];}
+\DoxyCodeLine{633   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_s_u___d_c_f_g___type}{DSU\_DCFG\_Type}}             DCFG[2];     }
+\DoxyCodeLine{634        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0xF08];}
+\DoxyCodeLine{635   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___e_n_t_r_y0___type}{DSU\_ENTRY0\_Type}}           \mbox{\hyperlink{struct_dsu_a42805e1dcd37f9686cf024f3ab13e486}{ENTRY0}};      }
+\DoxyCodeLine{636   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___e_n_t_r_y1___type}{DSU\_ENTRY1\_Type}}           \mbox{\hyperlink{struct_dsu_a8d46a28676e73cd6c269d047ca71550e}{ENTRY1}};      }
+\DoxyCodeLine{637   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___e_n_d___type}{DSU\_END\_Type}}              \mbox{\hyperlink{struct_dsu_ae320db89e4b834b02befb5aa2867ce09}{END}};         }
+\DoxyCodeLine{638        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved4[0xFC0];}
+\DoxyCodeLine{639   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___m_e_m_t_y_p_e___type}{DSU\_MEMTYPE\_Type}}          \mbox{\hyperlink{struct_dsu_a408d8afc257ed78a3169ca958d24a5aa}{MEMTYPE}};     }
+\DoxyCodeLine{640   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___p_i_d4___type}{DSU\_PID4\_Type}}             \mbox{\hyperlink{struct_dsu_af1aef1af23b9c04fa51bb38d3d49d980}{PID4}};        }
+\DoxyCodeLine{641   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___p_i_d5___type}{DSU\_PID5\_Type}}             \mbox{\hyperlink{struct_dsu_a96116374ab1f4811e73ce3b53b2a4908}{PID5}};        }
+\DoxyCodeLine{642   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___p_i_d6___type}{DSU\_PID6\_Type}}             \mbox{\hyperlink{struct_dsu_affd7dad98096b621d482b72f42fce5e8}{PID6}};        }
+\DoxyCodeLine{643   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___p_i_d7___type}{DSU\_PID7\_Type}}             \mbox{\hyperlink{struct_dsu_a8a733fbde9d20baf89a47df500770071}{PID7}};        }
+\DoxyCodeLine{644   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___p_i_d0___type}{DSU\_PID0\_Type}}             \mbox{\hyperlink{struct_dsu_a60c2a9199ffaae85c76de6c28fc15ec1}{PID0}};        }
+\DoxyCodeLine{645   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___p_i_d1___type}{DSU\_PID1\_Type}}             \mbox{\hyperlink{struct_dsu_aeafe6f433e6983dedb1b78efe1508991}{PID1}};        }
+\DoxyCodeLine{646   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___p_i_d2___type}{DSU\_PID2\_Type}}             \mbox{\hyperlink{struct_dsu_ae7543be9132a30e1a0a3d2585fa74ad7}{PID2}};        }
+\DoxyCodeLine{647   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___p_i_d3___type}{DSU\_PID3\_Type}}             \mbox{\hyperlink{struct_dsu_a12e3fc61b1f37f213768fded01011226}{PID3}};        }
+\DoxyCodeLine{648   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___c_i_d0___type}{DSU\_CID0\_Type}}             \mbox{\hyperlink{struct_dsu_acd4b45b637efcb62b9f67c877dcbb4ce}{CID0}};        }
+\DoxyCodeLine{649   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___c_i_d1___type}{DSU\_CID1\_Type}}             \mbox{\hyperlink{struct_dsu_afeea7b5b5fee7f91ca2886b616f3d4c3}{CID1}};        }
+\DoxyCodeLine{650   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___c_i_d2___type}{DSU\_CID2\_Type}}             \mbox{\hyperlink{struct_dsu_afaa3b33371d8b21883936c53a879d61f}{CID2}};        }
+\DoxyCodeLine{651   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_s_u___c_i_d3___type}{DSU\_CID3\_Type}}             \mbox{\hyperlink{struct_dsu_a8ce289f77dfa3331bc94ae699c6031d7}{CID3}};        }
+\DoxyCodeLine{652 \} \mbox{\hyperlink{struct_dsu}{Dsu}};}
+\DoxyCodeLine{653 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{657 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_DSU\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

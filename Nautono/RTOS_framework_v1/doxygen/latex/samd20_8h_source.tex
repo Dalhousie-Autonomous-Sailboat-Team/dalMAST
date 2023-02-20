@@ -1,0 +1,71 @@
+\hypertarget{samd20_8h_source}{}\doxysection{samd20.\+h}
+\label{samd20_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/samd20.h@{src/ASF/sam0/utils/cmsis/samd20/include/samd20.h}}
+\mbox{\hyperlink{samd20_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#if defined(\_\_SAMD20E14\_\_) || defined(\_\_ATSAMD20E14\_\_)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}samd20e14.h"{}}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20E15\_\_) || defined(\_\_ATSAMD20E15\_\_)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include "{}samd20e15.h"{}}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20E16\_\_) || defined(\_\_ATSAMD20E16\_\_)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include "{}samd20e16.h"{}}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20E17\_\_) || defined(\_\_ATSAMD20E17\_\_)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}samd20e17.h"{}}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20E18\_\_) || defined(\_\_ATSAMD20E18\_\_)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include "{}samd20e18.h"{}}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G14\_\_) || defined(\_\_ATSAMD20G14\_\_)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include "{}samd20g14.h"{}}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G15\_\_) || defined(\_\_ATSAMD20G15\_\_)}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include "{}samd20g15.h"{}}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G16\_\_) || defined(\_\_ATSAMD20G16\_\_)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#include "{}samd20g16.h"{}}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G17\_\_) || defined(\_\_ATSAMD20G17\_\_)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include "{}samd20g17.h"{}}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G17U\_\_) || defined(\_\_ATSAMD20G17U\_\_)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include "{}samd20g17u.h"{}}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G18\_\_) || defined(\_\_ATSAMD20G18\_\_)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#include "{}samd20g18.h"{}}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G18U\_\_) || defined(\_\_ATSAMD20G18U\_\_)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#include "{}samd20g18u.h"{}}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20J14\_\_) || defined(\_\_ATSAMD20J14\_\_)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#include "{}samd20j14.h"{}}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20J15\_\_) || defined(\_\_ATSAMD20J15\_\_)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#include "{}samd20j15.h"{}}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20J16\_\_) || defined(\_\_ATSAMD20J16\_\_)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#include "{}samd20j16.h"{}}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20J17\_\_) || defined(\_\_ATSAMD20J17\_\_)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#include "{}samd20j17.h"{}}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20J18\_\_) || defined(\_\_ATSAMD20J18\_\_)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#include "{}samd20j18.h"{}}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20E14B\_\_) || defined(\_\_ATSAMD20E14B\_\_)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#include "{}samd20e14b.h"{}}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20E15B\_\_) || defined(\_\_ATSAMD20E15B\_\_)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#include "{}samd20e15b.h"{}}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20E16B\_\_) || defined(\_\_ATSAMD20E16B\_\_)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#include "{}samd20e16b.h"{}}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G14B\_\_) || defined(\_\_ATSAMD20G14B\_\_)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#include "{}samd20g14b.h"{}}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G15B\_\_) || defined(\_\_ATSAMD20G15B\_\_)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#include "{}samd20g15b.h"{}}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20G16B\_\_) || defined(\_\_ATSAMD20G16B\_\_)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#include "{}samd20g16b.h"{}}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20J14B\_\_) || defined(\_\_ATSAMD20J14B\_\_)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#include "{}samd20j14b.h"{}}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20J15B\_\_) || defined(\_\_ATSAMD20J15B\_\_)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#include "{}samd20j15b.h"{}}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#elif defined(\_\_SAMD20J16B\_\_) || defined(\_\_ATSAMD20J16B\_\_)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#include "{}samd20j16b.h"{}}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{  \#error Library does not support the specified device.}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

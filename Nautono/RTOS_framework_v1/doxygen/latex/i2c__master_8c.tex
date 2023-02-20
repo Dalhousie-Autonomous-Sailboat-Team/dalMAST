@@ -1,0 +1,41 @@
+\hypertarget{i2c__master_8c}{}\doxysection{src/\+ASF/sam0/drivers/sercom/i2c/i2c\+\_\+samd20/i2c\+\_\+master.c File Reference}
+\label{i2c__master_8c}\index{src/ASF/sam0/drivers/sercom/i2c/i2c\_samd20/i2c\_master.c@{src/ASF/sam0/drivers/sercom/i2c/i2c\_samd20/i2c\_master.c}}
+
+
+SAM D20 I2C Master Driver.  
+
+
+{\ttfamily \#include \char`\"{}i2c\+\_\+master.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga1c174d923b525f6d60402f66bc9c3451}{i2c\+\_\+master\+\_\+init}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, \mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const hw, const struct \mbox{\hyperlink{structi2c__master__config}{i2c\+\_\+master\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes the requested I\textsuperscript{2}C hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga6dc5e9982ce4d7c6acc68cb69c57883d}{i2c\+\_\+master\+\_\+reset}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Resets the hardware module. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga238a755f972b9c3287131cda5fc25725}{i2c\+\_\+master\+\_\+read\+\_\+packet\+\_\+wait}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Reads data packet from slave. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaa8b27eb9e3a8ae0f907bf7078d4001f0}{i2c\+\_\+master\+\_\+read\+\_\+packet\+\_\+wait\+\_\+no\+\_\+stop}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Reads data packet from slave without sending a stop condition when done. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries i2c\+\_\+master\+\_\+read\+\_\+packet\+\_\+wait\+\_\+no\+\_\+nack} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga6c07057fe2534e8b4a3ce2cfe2dafc1b}{i2c\+\_\+master\+\_\+write\+\_\+packet\+\_\+wait}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Writes data packet to slave. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga4d874599c2bff10cd08f5474041c66bb}{i2c\+\_\+master\+\_\+write\+\_\+packet\+\_\+wait\+\_\+no\+\_\+stop}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Writes data packet to slave without sending a stop condition when done. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga6bddf9e717847b5fa8462596e7e1489c}{i2c\+\_\+master\+\_\+send\+\_\+stop}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Sends stop condition on bus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaf9bb3b3174c1fc602c3097bc40eadcef}{i2c\+\_\+master\+\_\+send\+\_\+nack}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Sends nack signal on bus. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga54cf79ca8aa80e2163881ca4164e35f7}{i2c\+\_\+master\+\_\+read\+\_\+byte}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$byte)
+\begin{DoxyCompactList}\small\item\em Reads one byte data from slave. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaee2de09ec9474331f354eec703b80b6e}{i2c\+\_\+master\+\_\+write\+\_\+byte}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Write one byte data to slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM D20 I2C Master Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
