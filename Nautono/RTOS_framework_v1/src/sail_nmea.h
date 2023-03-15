@@ -20,7 +20,7 @@
 
 typedef enum NMEA_ChannelIDs {
 	NMEA_GPS,
-	//NMEA_WEATHERSTATION,
+	NMEA_WIND,
 	NMEA_RADIO,
 	NMEA_NUM_CHANNELS
 } NMEA_ChannelID;

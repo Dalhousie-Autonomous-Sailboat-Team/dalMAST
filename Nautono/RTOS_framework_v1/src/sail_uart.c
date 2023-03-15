@@ -48,7 +48,7 @@ static uint32_t baud_rates[] = {
 /*
 UART_ChannelIDs:
 	UART_GPS,
-	UART_WEATHERSTATION,
+	UART_WIND,
 	UART_RADIO,
 	UART_XEOS,
 	UART_NUM_CHANNELS
@@ -327,7 +327,7 @@ void GPS_RxCallback(struct usart_module *const usart_module) {
 }
 
 void WIND_RxCallback(struct usart_module *const usart_module) {
-	UART_RxCallback(UART_WEATHERSTATION);
+	UART_RxCallback(UART_WIND);
 }
 
 void RADIO_RxCallback(struct usart_module *const usart_module) {
@@ -345,7 +345,7 @@ void GPS_TxCallback(struct usart_module *const usart_module) {
 }
 
 void WIND_TxCallback(struct usart_module *const usart_module) {
-	UART_TxCallback(UART_WEATHERSTATION);
+	UART_TxCallback(UART_WIND);
 }
 
 void RADIO_TxCallback(struct usart_module *const usart_module) {

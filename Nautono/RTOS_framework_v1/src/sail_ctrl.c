@@ -152,17 +152,28 @@ enum status_code CTRL_InitSensors(void)
 	
 	//todo: add initialization for AIS module
 	//DEBUG_Write("Test 456");
-	if (COMP_Init() != STATUS_OK) {
-		DEBUG_Write_Unprotected("Compass not initialized...\r\n");
-	}
+	//if (COMP_Init() != STATUS_OK) {
+	//	DEBUG_Write_Unprotected("Compass not initialized...\r\n");
+	//}
 	//DEBUG_Write("Test 123");
+    
+    if(WIND_Init() != STATUS_OK){
+        DEBUG_Write_Unprotected("Wind Vane not initialized... \r\n");
+    }else{
+        DEBUG_Write_Unprotected("Wind Init Ok ...\r\n");
+    }
+    
+    // When status is okay, shouldn't this return a different status? - KT
+    
+    /*
 	if (WEATHERSTATION_Init() != STATUS_OK) {
 		DEBUG_Write_Unprotected("WS not initialized...\r\n");
 	}
 	else{
 		DEBUG_Write_Unprotected("WS initialized.\r\n");
 		//DEBUG_Write("WS initialized.\r\n");
-	}
+	} 
+    */
 	
 	return STATUS_OK;
 }
@@ -172,9 +183,10 @@ enum status_code CTRL_InitSensors(void)
 enum status_code startup(void)
 {
 	// Enable wind vane
-	if (WS_Enable() != STATUS_OK) {
+	if (WIND_Enable() != STATUS_OK) {
 		DEBUG_Write_Unprotected("WS not enabled...\r\n");
-		} else {
+        // Return bad status? - KT
+	} else {
 		DEBUG_Write_Unprotected("WS enabled...\r\n");
 	}
 	
@@ -290,7 +302,7 @@ static void EnableWeatherStation(void)
 	}
 
 	// Enable the wind vane
-	WS_Enable();
+	WIND_Enable();
 }
 
 static void DisableWeatherStation(void)
@@ -301,7 +313,7 @@ static void DisableWeatherStation(void)
 	}
 
 	// Disable the wind vane
-	WS_Disable();
+	WIND_Disable();
 }
 
 void process_heading_readings(void)
