@@ -104,9 +104,10 @@ void ReadWIND(void){
         
         if (WIND_RxMsg(&msg) == STATUS_OK){
             WIND_data.msg_array[msg.type] = msg;
+			DEBUG_Write("Wind data received\r\n");
             
         }
-        
+		
         vTaskDelay(read_wind_delay);
     }
 }
