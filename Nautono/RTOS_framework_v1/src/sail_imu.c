@@ -232,7 +232,14 @@ typedef struct {
 } adafruit_bno055_rev_info_t;
 
 
+/* Static function for IMU */
+static enum status_code ReadEEPROM(uint8_t addr, uint8_t *data);
+static enum status_code WriteEEPROM(uint8_t addr, uint8_t data);
+
+
 static bool init_flag = false;
+static adafruit_bno055_opmode_t _mode = OPERATION_MODE_NDOF;
+static bool calibrate_flag = false;
 
 /*!
  *	
@@ -276,9 +283,9 @@ enum status_code bno055_init(void)
 	}
 	
 	/* Set mode of BNO055 */
-	adafruit_bno055_opmode_t mode = OPERATION_MODE_NDOF;
+	_mode = OPERATION_MODE_NDOF;
 	
-	I2C_WriteBuffer(I2C_IMU, &mode, 1, I2C_WRITE_NORMAL);
+	I2C_WriteBuffer(I2C_IMU, &_mode, 1, I2C_WRITE_NORMAL);
 	
 	/* Reset */
 	WriteEEPROM(BNO055_SYS_TRIGGER_ADDR, 0x20);
@@ -301,11 +308,77 @@ enum status_code bno055_init(void)
 	delay_ms(10);
 	
 	/* Set the operating mode */
-	I2C_WriteBuffer(I2C_IMU, &mode, 1, I2C_WRITE_NORMAL);
+	I2C_WriteBuffer(I2C_IMU, &_mode, 1, I2C_WRITE_NORMAL);
 	delay_ms(20);
 	
 	init_flag = true;
 	
+	return STATUS_OK;
+}
+
+void getCalibration(uint8_t *sys, uint8_t *gyro, uint8_t *accel, uint8_t *mag) {
+
+	uint8_t calData = 0;
+
+	ReadEEPROM(BNO055_CALIB_STAT_ADDR, &calData);
+
+	if (sys != NULL) {
+		*sys = (calData >> 6) & 0x03;
+	}
+	if (gyro != NULL) {
+		*gyro = (calData >> 4) & 0x03;
+	}
+	if (accel != NULL) {
+		*accel = (calData >> 2) & 0x03;
+	}
+	if (mag != NULL) {
+		*mag = calData & 0x03;
+	}
+}
+
+bool isFullyCalibrated() {
+  uint8_t system, gyro, accel, mag;
+  getCalibration(&system, &gyro, &accel, &mag);
+
+  switch (_mode) {
+  case OPERATION_MODE_ACCONLY:
+    return (accel == 3);
+  case OPERATION_MODE_MAGONLY:
+    return (mag == 3);
+  case OPERATION_MODE_GYRONLY:
+  case OPERATION_MODE_M4G: /* No magnetometer calibration required. */
+    return (gyro == 3);
+  case OPERATION_MODE_ACCMAG:
+  case OPERATION_MODE_COMPASS:
+    return (accel == 3 && mag == 3);
+  case OPERATION_MODE_ACCGYRO:
+  case OPERATION_MODE_IMUPLUS:
+    return (accel == 3 && gyro == 3);
+  case OPERATION_MODE_MAGGYRO:
+    return (mag == 3 && gyro == 3);
+  default:
+    return (system == 3 && gyro == 3 && accel == 3 && mag == 3);
+  }
+}
+
+enum status_code IMU_calibrate(void)
+{
+	if(!init_flag) {
+		return STATUS_ERR_NOT_INITIALIZED;
+	}
+
+	if(calibrate_flag) {
+		return STATUS_NO_CHANGE;
+	}
+
+	while(!isFullyCalibrated())
+	{
+		DEBUG_Write("\n\r<<<<<<<<<<< Calibrating IMU >>>>>>>>>>\n\r");
+		delay_ms(BNO055_SAMPLERATE_DELAY_MS);
+	}
+
+	calibrate_flag = true;
+
 	return STATUS_OK;
 }
 
