@@ -20,6 +20,7 @@
 #include "sail_ctrl.h"
 #include "sail_radio.h"
 #include "sail_actuator.h"
+#include "sail_imu.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -71,7 +72,9 @@ enum status_code init_tasks(void) {
 	// Task for reseting the watchdog so that the microcontroller is not restarted
 	//xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	
-	xTaskCreate(Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate(Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	
+	xTaskCreate(Test_imu, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();

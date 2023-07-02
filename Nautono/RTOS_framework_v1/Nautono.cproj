@@ -812,6 +812,12 @@
     <Compile Include="src\sail_i2c.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\sail_imu.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_imu.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sail_math.c">
       <SubType>compile</SubType>
     </Compile>
