@@ -3,6 +3,8 @@
  *
  *  Created on: Jun 28, 2016
  *      Author: JULIA SARTY
+ * 
+ * 	Old compass code, no longer in use.
  */
 
 #include "sail_comp.h"

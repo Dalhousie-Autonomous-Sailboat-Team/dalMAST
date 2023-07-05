@@ -25,6 +25,8 @@
 /** Offsets registers **/
 #define NUM_BNO055_OFFSET_REGISTERS (22)
 
+#define BNO055_SAMPLERATE_DELAY_MS (100)
+
 /** Operation mode settings **/
 typedef enum {
 	OPERATION_MODE_CONFIG = 0X00,
@@ -231,6 +233,25 @@ typedef struct {
 	uint8_t bl_rev;    /**< boot loader rev */
 } adafruit_bno055_rev_info_t;
 
+/** A structure to represent offsets **/
+typedef struct {
+  int16_t accel_offset_x; /**< x acceleration offset */
+  int16_t accel_offset_y; /**< y acceleration offset */
+  int16_t accel_offset_z; /**< z acceleration offset */
+
+  int16_t mag_offset_x; /**< x magnetometer offset */
+  int16_t mag_offset_y; /**< y magnetometer offset */
+  int16_t mag_offset_z; /**< z magnetometer offset */
+
+  int16_t gyro_offset_x; /**< x gyroscrope offset */
+  int16_t gyro_offset_y; /**< y gyroscrope offset */
+  int16_t gyro_offset_z; /**< z gyroscrope offset */
+
+  int16_t accel_radius; /**< acceleration radius */
+
+  int16_t mag_radius; /**< magnetometer radius */
+} adafruit_bno055_offsets_t;
+
 
 /* Static function for IMU */
 static enum status_code ReadEEPROM(uint8_t addr, uint8_t *data);
@@ -257,9 +278,9 @@ enum status_code bno055_init(void)
 	switch (I2C_Init()) {
 		case STATUS_OK:
 		case STATUS_ERR_ALREADY_INITIALIZED:
-		break;
+			break;
 		default:
-		return STATUS_ERR_DENIED;
+			return STATUS_ERR_DENIED;
 	}
 	
 	delay_ms(500);
@@ -274,7 +295,7 @@ enum status_code bno055_init(void)
 	// Return if an incorrect slave address is provided
 	if (slave_addr != BNO055_ID) {
 		delay_ms(1000); //wait for boot
-		if (ReadEEPROM(0x00, &slave_addr) != STATUS_OK) {
+		if (ReadEEPROM(0x00, &slave_addr, 1) != STATUS_OK) {
 			return STATUS_ERR_DENIED;
 		}
 		if (slave_addr != BNO055_ID) {
@@ -291,9 +312,9 @@ enum status_code bno055_init(void)
 	WriteEEPROM(BNO055_SYS_TRIGGER_ADDR, 0x20);
 	
 	delay_ms(30);
-	ReadEEPROM(BNO055_CHIP_ID_ADDR, slave_addr);
+	ReadEEPROM(BNO055_CHIP_ID_ADDR, slave_addr, 1);
 	while (slave_addr != BNO055_ID) {
-	ReadEEPROM(BNO055_CHIP_ID_ADDR, slave_addr); 
+	ReadEEPROM(BNO055_CHIP_ID_ADDR, slave_addr, 1); 
 		delay_ms(10);
 	}
 	delay_ms(50);
@@ -316,11 +337,12 @@ enum status_code bno055_init(void)
 	return STATUS_OK;
 }
 
-void getCalibration(uint8_t *sys, uint8_t *gyro, uint8_t *accel, uint8_t *mag) {
+//static void getCalibration(CalibOffset * Calib) {
+static void getCalibration(uint8_t *sys, uint8_t *gyro, uint8_t *accel, uint8_t *mag) {
 
 	uint8_t calData = 0;
 
-	ReadEEPROM(BNO055_CALIB_STAT_ADDR, &calData);
+	ReadEEPROM(BNO055_CALIB_STAT_ADDR, &calData, 1);
 
 	if (sys != NULL) {
 		*sys = (calData >> 6) & 0x03;
@@ -336,32 +358,36 @@ void getCalibration(uint8_t *sys, uint8_t *gyro, uint8_t *accel, uint8_t *mag) {
 	}
 }
 
-bool isFullyCalibrated() {
-  uint8_t system, gyro, accel, mag;
-  getCalibration(&system, &gyro, &accel, &mag);
+static bool isFullyCalibrated() {
 
-  switch (_mode) {
-  case OPERATION_MODE_ACCONLY:
-    return (accel == 3);
-  case OPERATION_MODE_MAGONLY:
-    return (mag == 3);
-  case OPERATION_MODE_GYRONLY:
-  case OPERATION_MODE_M4G: /* No magnetometer calibration required. */
-    return (gyro == 3);
-  case OPERATION_MODE_ACCMAG:
-  case OPERATION_MODE_COMPASS:
-    return (accel == 3 && mag == 3);
-  case OPERATION_MODE_ACCGYRO:
-  case OPERATION_MODE_IMUPLUS:
-    return (accel == 3 && gyro == 3);
-  case OPERATION_MODE_MAGGYRO:
-    return (mag == 3 && gyro == 3);
-  default:
-    return (system == 3 && gyro == 3 && accel == 3 && mag == 3);
-  }
+	// CalibOffset Calib;
+	
+	uint8_t system, gyro, accel, mag;
+	//getCalibration(&Calib);
+	getCalibration(&system, &gyro, &accel, &mag);
+
+	switch (_mode) {
+	case OPERATION_MODE_ACCONLY:
+		return (accel == 3);
+	case OPERATION_MODE_MAGONLY:
+		return (mag == 3);
+	case OPERATION_MODE_GYRONLY:
+	case OPERATION_MODE_M4G: /* No magnetometer calibration required. */
+		return (gyro == 3);
+	case OPERATION_MODE_ACCMAG:
+	case OPERATION_MODE_COMPASS:
+		return (accel == 3 && mag == 3);
+	case OPERATION_MODE_ACCGYRO:
+	case OPERATION_MODE_IMUPLUS:
+		return (accel == 3 && gyro == 3);
+	case OPERATION_MODE_MAGGYRO:
+		return (mag == 3 && gyro == 3);
+	default:
+		return (system == 3 && gyro == 3 && accel == 3 && mag == 3);
+	}
 }
 
-enum status_code IMU_calibrate(void)
+static enum status_code IMU_calibrate(void)
 {
 	if(!init_flag) {
 		return STATUS_ERR_NOT_INITIALIZED;
@@ -382,7 +408,12 @@ enum status_code IMU_calibrate(void)
 	return STATUS_OK;
 }
 
-static enum status_code ReadEEPROM(uint8_t addr, uint8_t *data)
+// static enum status_code IMU_GetReading(COMP_ReadingType type, COMP_Reading *reading)
+// {
+
+// }
+
+static enum status_code ReadEEPROM(uint8_t addr, uint8_t *data,  uint8_t len)
 {
 	// Return if the pointer is NULL
 	if (data == NULL) {
@@ -401,7 +432,7 @@ static enum status_code ReadEEPROM(uint8_t addr, uint8_t *data)
 	delay_ms(10);
 	
 	// Read the data back from the compass
-	if (I2C_ReadBuffer(I2C_COMPASS, data, 1, I2C_READ_NORMAL) != STATUS_OK) {
+	if (I2C_ReadBuffer(I2C_COMPASS, data, len, I2C_READ_NORMAL) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
 	}	
 	
@@ -444,7 +475,13 @@ void Test_IMU(void){
 		running_task = eUpdateCourse;
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");
 		
+		WriteEEPROM(BNO055_OPR_MODE_ADDR, OPERATION_MODE_CONFIG);
 		
+		uint8_t calibData;
+		
+		ReadEEPROM(ACCEL_OFFSET_X_LSB_ADDR, &calibData, NUM_BNO055_OFFSET_REGISTERS);
+		
+		DEBUG_Write("calibData: %d\r\n", calibData);
 
 		vTaskDelay(testDelay);
 	}

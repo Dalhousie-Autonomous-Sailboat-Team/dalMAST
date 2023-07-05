@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "status_codes.h": "c",
+        "inttypes.h": "c",
+        "sail_types.h": "c"
+    }
+}
