@@ -291,11 +291,10 @@ enum status_code NMEA_RxString(NMEA_ChannelID id, uint8_t *str, uint16_t length)
 	while(*rx_ptr++ != '$') {
 		// Return if we've reached the end of the buffer prematurely
 		if(++rx_idx == rx_length) {
-			DEBUG_Write("reach end of buffer\r\n\n");
+			//DEBUG_Write("reach end of buffer\r\n\n");
 			return STATUS_ERR_BAD_DATA;
 		}
 	}
-	
 	// Return if we've reached the end of the buffer prematurely
 	if(rx_idx >= rx_length) {
 		return STATUS_ERR_BAD_DATA;

@@ -12,6 +12,7 @@
 #include <asf.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include <inttypes.h>
 #include <status_codes.h>
@@ -78,6 +79,10 @@ void ReadWIND(void){
     EventBits_t event_bits;
     
     TickType_t read_wind_delay = pdMS_TO_TICKS(WIND_SLEEP_PERIOD_MS);
+	
+	NMEA_GenericMsg msg;
+	
+	DEBUG_Write("************ Performing Wind Vane Testing ****************\r\n");
     
     while(1) {
         
@@ -90,8 +95,7 @@ void ReadWIND(void){
         taskENTER_CRITICAL();
         watchdog_counter |= 0x01;
         taskEXIT_CRITICAL();
-        
-        DEBUG_Write("************ Performing Wind Vane Reading ****************\r\n");
+      
         
         // TODO: Add code to make the wind run and try to collect data. See gps.c for reference implementation
         // - Kamden Thebeau (08-02-2023)
@@ -100,13 +104,13 @@ void ReadWIND(void){
         
         running_task = eReadWIND;
         
-        NMEA_GenericMsg msg;
         
-        if (WIND_RxMsg(&msg) == STATUS_OK){
-            WIND_data.msg_array[msg.type] = msg;
-			DEBUG_Write("Wind data received\r\n");
-            
-        }
+		enum status_code code = WIND_RxMsg(&msg);
+		
+		if(code == STATUS_VALID_DATA) {
+			WIND_data.msg_array[msg.type] = msg;
+			DEBUG_Write("Received Wind data\r\n");
+		}
 		
         vTaskDelay(read_wind_delay);
     }
@@ -221,20 +225,23 @@ enum status_code WIND_RxMsg(NMEA_GenericMsg* msg)
     }
     
     enum status_code rc;
-    rc = NMEA_RxString(NMEA_WIND, (uint8_t)*msg_buffer, NMEA_BUFFER_LENGTH);
-    
+    rc = NMEA_RxString(NMEA_WIND, (uint8_t*)&msg_buffer, NMEA_BUFFER_LENGTH);
     // Check the NMEA receiver for new data
     if (rc != STATUS_VALID_DATA){
         return rc;
     }
+	
     
     // Extract the raw data from the message
     WIND_MsgRawData_t raw_data;
     char* msg_ptr;
     
     uint8_t arg_count = 0;
-    
-    DEBUG_Write("WIND: %s\r\n", msg_buffer);
+	
+    #ifdef DEBUG_WIND
+		DEBUG_Write("WIND: %s\r\n", msg_buffer);
+	#endif
+	
     msg_ptr = strtok(msg_buffer, ",");
     // Check that msg is valid NMEA type within the type list
     if (!get_NMEA_type(&raw_data.type, msg_ptr)){
@@ -301,10 +308,13 @@ static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t*
 			break; */
 
 	case eWIMWV:
+	case eIIMWV:
 		msg->fields.wimwv.wind_dir_rel = atof(data->args[0]);
 		msg->fields.wimwv.wind_speed_ms = atof(data->args[2]);
-        DEBUG_Write("Relative wind direction %s", data->args[0]);
-        DEBUG_Write("Wind Speed [m/s] %s", data->args[2]);
+		
+		DEBUG_Write("\n\rRelative wind direction %s\r\n", data->args[0]);
+		DEBUG_Write("\n\rWind Speed [m/s] %s\r\n", data->args[2]);
+		
 		break;
     // A bunch more NMEA message types exist here...
     
