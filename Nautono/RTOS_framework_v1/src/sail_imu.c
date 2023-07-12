@@ -9,7 +9,6 @@
 #include "sail_imu.h"
 
 #include <asf.h>
-#include <bno055.h>
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -18,6 +17,12 @@
 
 #include "sail_debug.h"
 #include "sail_i2c.h"
+
+#include "FreeRTOS.h"
+#include "FreeRTOSConfig.h"
+#include "task.h"
+#include "sail_ctrl.h"
+#include "sail_tasksinit.h"
 
 /** BNO055 ID **/
 #define BNO055_ID (0xA0)
@@ -254,7 +259,7 @@ typedef struct {
 
 
 /* Static function for IMU */
-static enum status_code ReadEEPROM(uint8_t addr, uint8_t *data);
+static enum status_code ReadEEPROM(uint8_t addr, uint8_t *data, uint8_t len);
 static enum status_code WriteEEPROM(uint8_t addr, uint8_t data);
 
 
@@ -288,7 +293,7 @@ enum status_code bno055_init(void)
 	uint8_t slave_addr;
 	
 	// Read from IMU and get it's slave address:
-	if (ReadEEPROM(0x00, &slave_addr) != STATUS_OK) {
+	if (ReadEEPROM(0x00, &slave_addr, 1) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
 	}
 	
@@ -305,8 +310,8 @@ enum status_code bno055_init(void)
 	
 	/* Set mode of BNO055 */
 	_mode = OPERATION_MODE_NDOF;
-	
-	I2C_WriteBuffer(I2C_IMU, &_mode, 1, I2C_WRITE_NORMAL);
+	WriteEEPROM(BNO055_OPR_MODE_ADDR, _mode);
+	//I2C_WriteBuffer(I2C_IMU, &_mode, 1, I2C_WRITE_NORMAL);
 	
 	/* Reset */
 	WriteEEPROM(BNO055_SYS_TRIGGER_ADDR, 0x20);
@@ -329,7 +334,8 @@ enum status_code bno055_init(void)
 	delay_ms(10);
 	
 	/* Set the operating mode */
-	I2C_WriteBuffer(I2C_IMU, &_mode, 1, I2C_WRITE_NORMAL);
+	//I2C_WriteBuffer(I2C_IMU, &_mode, 1, I2C_WRITE_NORMAL);
+	WriteEEPROM(BNO055_OPR_MODE_ADDR, _mode);
 	delay_ms(20);
 	
 	init_flag = true;
@@ -458,31 +464,49 @@ static enum status_code WriteEEPROM(uint8_t addr, uint8_t data)
 }
 
 
-#define TEST_IMU_DELAY_MS 10000
+#define TEST_IMU_DELAY_MS 1000
 
 void Test_IMU(void){
 	
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_IMU_DELAY_MS);
-	
+	#ifdef TEST
 	if(bno055_init() != STATUS_OK){
 		DEBUG_Write("\n\r<<<<< Failed IMU initialization >>>>>n\r");
 	}
+	#endif
+	
+	uint8_t bno_id = 0;
+	
+	uint8_t mode_buffer[2] = {BNO055_OPR_MODE_ADDR, OPERATION_MODE_ACCONLY};
+		
+	uint8_t reg_addr = BNO055_TEMP_ADDR;
+	//i2c_send_stop();
+	I2C_WriteBuffer(I2C_IMU, mode_buffer, 2, I2C_WRITE_NORMAL);
 
 	while(1){
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x20;
 		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
+		#ifdef TEST
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");
 		
-		WriteEEPROM(BNO055_OPR_MODE_ADDR, OPERATION_MODE_CONFIG);
+		WriteEEPROM(BNO055_OPR_MODE_ADDR, OPERATION_MODE_NDOF);
 		
-		uint8_t calibData;
+		//uint8_t calibData;
 		
-		ReadEEPROM(ACCEL_OFFSET_X_LSB_ADDR, &calibData, NUM_BNO055_OFFSET_REGISTERS);
+		//ReadEEPROM(ACCEL_OFFSET_X_LSB_ADDR, &calibData, NUM_BNO055_OFFSET_REGISTERS);
+		ReadEEPROM(0x00, &bno_id, 1);
 		
-		DEBUG_Write("calibData: %d\r\n", calibData);
-
+		DEBUG_Write("Bno ID: %d\r\n", bno_id);
+		#endif
+		
+		I2C_WriteBuffer(I2C_IMU, &reg_addr, 1, I2C_WRITE_NORMAL);
+		I2C_ReadBuffer(I2C_IMU, &bno_id, 1, I2C_READ_NORMAL);
+		DEBUG_Write("Bno ID: %d\r\n", bno_id);
+		//uint8_t buffer[2] = {0x00, 0xAA};
+		//I2C_WriteBuffer(I2C_IMU, buffer, 2, I2C_WRITE_NORMAL);
+		
 		vTaskDelay(testDelay);
 	}
 }

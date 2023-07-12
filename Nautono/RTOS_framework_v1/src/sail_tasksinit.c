@@ -74,7 +74,7 @@ enum status_code init_tasks(void) {
 	
 	//xTaskCreate(Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
-	xTaskCreate(Test_imu, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate(Test_IMU, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();

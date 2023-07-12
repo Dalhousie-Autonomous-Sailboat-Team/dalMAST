@@ -77,3 +77,4 @@ enum status_code I2C_WriteBuffer(I2C_DeviceID id, uint8_t *data, uint16_t data_l
 
 #endif /* SAIL_I2C_H_ */
 
+

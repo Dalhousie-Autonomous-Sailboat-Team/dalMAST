@@ -4,7 +4,7 @@
 
 src\ASF\common2\services\delay\sam0\cycle_counter.c
 
-src\sail_actutor.c
+src\sail_actuator.c
 
 src\sail_adc.c
 
@@ -18,7 +18,11 @@ src\sail_debug.c
 
 src\sail_eeprom.c
 
+src\sail_gps.c
+
 src\sail_i2c.c
+
+src\sail_imu.c
 
 src\sail_math.c
 

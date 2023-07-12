@@ -262,13 +262,15 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* d
 		}
 		//TODO
 		//wrap this so it only shows during debug config
-		#ifdef DEBUG_GPS{
+		#ifdef DEBUG_GPS
+		
 		DEBUG_Write("LAT DATA: >%s<\r\n", data->args[1]);
 		DEBUG_Write("LON DATA: >%s<\r\n", data->args[3]);
 		
 		DEBUG_Write("LAT DATA: >%d<\r\n", (int)msg->fields.gpgga.lat.lat);
 		DEBUG_Write("LON DATA: >%f<\r\n", msg->fields.gpgga.lon.lon);
-		}endif
+		
+		#endif
 
 		break;
 

@@ -26,8 +26,8 @@ uint8_t init_flag = 0;
 // Addresses of slave devices
 static uint8_t slave_addrs[I2C_NUM_DEVICES] = {
 	0x50,	// EEPROM address
-	0x19	// Old compass
-	0x29,	// IMU address
+	0x19,	// Old compass
+	0x28,	// IMU address
 	0x41,	// INA 1
 	0x42,	// INA 2
 	0x43,	// INA 3
@@ -141,8 +141,11 @@ static void configure_i2c(void) {
 	config_i2c_master.buffer_timeout = 65535;
 	
 	// Select SERCOM port
-	config_i2c_master.pinmux_pad0 = SERCOM2_PAD0_DEFAULT;
-	config_i2c_master.pinmux_pad1 = SERCOM2_PAD1_DEFAULT;
+	//config_i2c_master.pinmux_pad0 = SERCOM2_PAD0_DEFAULT;
+	//config_i2c_master.pinmux_pad1 = SERCOM2_PAD1_DEFAULT;
+	
+	config_i2c_master.pinmux_pad0 = PINMUX_PA08D_SERCOM2_PAD0;
+	config_i2c_master.pinmux_pad1 = PINMUX_PA09D_SERCOM2_PAD1;
 
 	// Apply configuration
 	// TODO Put a timeout here
@@ -151,5 +154,4 @@ static void configure_i2c(void) {
 	// Enable the module
 	i2c_master_enable(&i2c_master);
 }
-
 
