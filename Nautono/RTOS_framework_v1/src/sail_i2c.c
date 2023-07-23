@@ -32,7 +32,7 @@ static uint8_t slave_addrs[I2C_NUM_DEVICES] = {
 	0x42,	// INA 2
 	0x43,	// INA 3
 	0x77,	// BME
-	0x40	// sail angle sensor (or 0x38)
+	0x36	// sail angle sensor (or 0x38)
 };
 
 
@@ -144,8 +144,8 @@ static void configure_i2c(void) {
 	//config_i2c_master.pinmux_pad0 = SERCOM2_PAD0_DEFAULT;
 	//config_i2c_master.pinmux_pad1 = SERCOM2_PAD1_DEFAULT;
 	
-	config_i2c_master.pinmux_pad0 = PINMUX_PA08D_SERCOM2_PAD0;
-	config_i2c_master.pinmux_pad1 = PINMUX_PA09D_SERCOM2_PAD1;
+	config_i2c_master.pinmux_pad0 = PINMUX_PA12C_SERCOM2_PAD0;
+	config_i2c_master.pinmux_pad1 = PINMUX_PA13C_SERCOM2_PAD1;
 
 	// Apply configuration
 	// TODO Put a timeout here

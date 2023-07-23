@@ -15,6 +15,11 @@
 #include "sail_i2c.h"
 #include "sail_debug.h"
 
+#include "FreeRTOS.h"
+#include "FreeRTOSConfig.h"
+#include "task.h"
+#include "sail_tasksinit.h"
+
 static union {
 	struct {
 		uint16_t addr;
@@ -77,6 +82,7 @@ enum status_code EEPROM_Init(void)
 	}
 
 	// Return if an error occurred while initializing the I2C driver
+	
 	switch (I2C_Init()) {
 		case STATUS_OK:
 		case STATUS_ERR_ALREADY_INITIALIZED:
@@ -84,7 +90,7 @@ enum status_code EEPROM_Init(void)
 		default:
 			return STATUS_ERR_DENIED;
 	}
-
+	
 	// Set the EEPROM module's state to READY
 	state = EEPROM_READY;
 
@@ -242,6 +248,7 @@ enum status_code EEPROM_LoadWayPoint(EEPROM_Entry *entry)
 	delay_ms(10);
 	
 	// Write the data
+	
 	if (WriteBufferToAddr(entry_addr, entry->data, EEPROM_ENTRY_LENGTH) != STATUS_OK) {
 		return STATUS_ERR_IO;
 	}
@@ -525,4 +532,176 @@ static uint16_t Idx2Addr(uint16_t idx)
 	return EEPROM_START_OFFSET + EEPROM_ENTRY_OFFSET + EEPROM_ENTRY_LENGTH *idx;
 }
 
+#define MISSION_ENTRY_COUNT		40
+#define MISSION_LENGTH			EEPROM_ENTRY_OFFSET + EEPROM_ENTRY_LENGTH * MISSION_ENTRY_COUNT
+#define WRITE_DATA_LENGTH		EEPROM_ENTRY_LENGTH
+#define WRITE_BUFFER_LENGTH		EEPROM_ENTRY_LENGTH + 2
 
+typedef union Mission {
+	struct {
+		uint16_t current_wp_idx;
+		uint16_t wp_count;
+		EEPROM_Entry entries[MISSION_ENTRY_COUNT];
+	};
+	uint8_t bytes[MISSION_LENGTH];
+} Mission;
+
+#define TEST_EEPROM_DELAY_MS 1000
+
+#include "sail_anglesensor.h"
+
+void Test_EEPROM(void)
+{
+	TickType_t testDelay = pdMS_TO_TICKS(TEST_EEPROM_DELAY_MS);
+	
+	bool test = true;
+	
+	unsigned int i, j;
+	
+	uint8_t bno_id = 0;
+	uint8_t reg_addr = 0x34;
+	
+	uint16_t raw_angle;
+	
+	
+	
+	uint8_t mode_buffer[2] = {0X3D, 0X01};
+	I2C_WriteBuffer(I2C_IMU, mode_buffer, 2, I2C_WRITE_NORMAL);
+
+	while(test){
+		taskENTER_CRITICAL();
+		watchdog_counter |= 0x20;
+		taskEXIT_CRITICAL();
+		running_task = eUpdateCourse;
+		/*
+		DEBUG_Write("Initializing EEPROM ... ");
+
+		// Stop if EEPROM initialization fails
+		if (EEPROM_Init() != STATUS_OK) {
+			DEBUG_Write("Failed!\r\n");
+			return 0;
+		}
+		
+		DEBUG_Write("Complete.\r\n");
+		*/
+		#ifdef TEST
+		DEBUG_Write("Creating a mission ... \r\n");
+		
+		// Create the mission
+		Mission test_mission;
+		test_mission.current_wp_idx = 0;
+		test_mission.wp_count = 1;
+		
+		// Create entries
+		uint8_t checksum;
+		srand(1234);
+		for (i = 0; i < MISSION_ENTRY_COUNT; i++) {
+			test_mission.entries[i].wp.pos.lat = 40.0 + 10.0 * rand() / (double)RAND_MAX;
+			test_mission.entries[i].wp.pos.lon = -60.0 + 10.0 * rand() / (double)RAND_MAX;
+			test_mission.entries[i].wp.rad = 1000.0 + 1000.0 * rand() / (double)RAND_MAX;
+			test_mission.entries[i].next_wp_idx = (uint16_t)((i + 1) % MISSION_ENTRY_COUNT);
+			checksum = test_mission.entries[i].data[0];
+			for (j = 1; j < 26; j++) {
+				checksum ^= test_mission.entries[i].data[j];
+			}
+			test_mission.entries[i].checksum = checksum;
+			test_mission.entries[i].reserved = 0x00;
+		}
+		
+		DEBUG_Write("Complete.\r\n");
+		
+		DEBUG_Write("Writing mission to the EEPROM:\r\n");
+		
+		// Write the mission header to the EEPROM
+		EEPROM_StartMissionConfig();
+		
+		enum status_code code = STATUS_OK;
+		
+		for (i = 0; i < MISSION_ENTRY_COUNT; i++) {
+			DEBUG_Write_Unprotected("Entry %2d ... ", i + 1);
+			//if (EEPROM_LoadWayPoint(&test_mission.entries[i]) != STATUS_OK) {
+				
+			code = EEPROM_LoadWayPoint(&test_mission.entries[i]);
+			if (code != STATUS_OK) {
+				DEBUG_Write_Unprotected("Failed, code: %d!\r\n", code);
+			}
+			
+			DEBUG_Write_Unprotected("Complete.\r\n");
+		}
+		
+		EEPROM_EndMissionConfig();
+		
+		delay_s(1);
+		
+		// Loop through way points and compare to mission
+		EEPROM_WayPoint wp;
+		for (i = 0; i < MISSION_ENTRY_COUNT; i++) {
+			DEBUG_Write("Getting current way point %2d ... ", i + 1);
+			// Get the waypoint
+			if (EEPROM_GetCurrentWayPoint(&wp) != STATUS_OK) {
+				DEBUG_Write("Failed!\r\n");
+				return 0;
+			}
+			DEBUG_Write("Complete!\r\n");
+			// Compare the waypoint
+			DEBUG_Write("lat: %4"PRIi16".%"PRIu32" deg  | %4"PRIi16".%"PRIu32" deg\r\n",
+			(int16_t)wp.pos.lat, (uint32_t)(fmod(fabs(wp.pos.lat), 1.0)*1000000.0),
+			(int16_t)test_mission.entries[i].wp.pos.lat, (uint32_t)(fmod(fabs(test_mission.entries[i].wp.pos.lat), 1.0)*1000000.0));
+			DEBUG_Write("lon: %4"PRIi16".%"PRIu32" deg  | %4"PRIi16".%"PRIu32" deg\r\n",
+			(int16_t)wp.pos.lon, (uint32_t)(fmod(fabs(wp.pos.lon), 1.0)*1000000.0),
+			(int16_t)test_mission.entries[i].wp.pos.lon, (uint32_t)(fmod(fabs(test_mission.entries[i].wp.pos.lon), 1.0)*1000000.0));
+			DEBUG_Write("rad: %4"PRIi16".%"PRIu32" m  | %4"PRIi16".%"PRIu32" m\r\n",
+			(int16_t)wp.rad, (uint32_t)(fmod(fabs(wp.rad), 1.0)*1000000.0),
+			(int16_t)test_mission.entries[i].wp.rad, (uint32_t)(fmod(fabs(test_mission.entries[i].wp.rad), 1.0)*1000000.0));
+			// Move to the next way point
+			DEBUG_Write("Completing way point ... ");
+			if (EEPROM_CompleteCurrentWayPoint() != STATUS_OK) {
+				DEBUG_Write("Failed!\r\n");
+				return 0;
+			}
+			DEBUG_Write("Complete.\r\n");
+		}
+		
+		DEBUG_Write("Test complete!\r\n");
+		#endif
+		
+		#ifndef TEST2
+		DEBUG_Write("<<<<<<<<<<<<<<<<< Testing EEPROM >>>>>>>>>>>>>>>> \r\n");
+		
+		uint8_t buffer[2] = {0x02, 0x10};
+			
+		//I2C_WriteBuffer(I2C_EEPROM, buffer, 2, I2C_WRITE_NORMAL);
+		
+		//WriteByteToAddr(32, 0x20);
+		
+		uint8_t addr = 0x02;
+		uint8_t data = 0;
+		
+		//delay_ms(10);
+		
+		ReadByteFromAddr(32, &data);
+		
+		//I2C_WriteBuffer(I2C_EEPROM, &addr, 1, I2C_WRITE_NORMAL);
+		
+		//I2C_ReadBuffer(I2C_EEPROM, &data, 1, I2C_READ_NORMAL);
+		
+		DEBUG_Write("Data: %d\r\n", data);
+		/*
+		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");
+		
+		I2C_WriteBuffer(I2C_IMU, &reg_addr, 1, I2C_WRITE_NORMAL);
+		I2C_ReadBuffer(I2C_IMU, &bno_id, 1, I2C_READ_NORMAL);
+		DEBUG_Write("Bno temp: %d\r\n", bno_id);
+		
+		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");
+		
+		rawAngle(&raw_angle);
+		
+		DEBUG_Write_Unprotected("Raw Angle: %d\r\n", raw_angle);
+		*/
+		#endif
+		
+		vTaskDelay(testDelay);
+	}
+	
+}

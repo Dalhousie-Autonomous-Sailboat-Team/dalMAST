@@ -21,6 +21,8 @@
 #include "sail_radio.h"
 #include "sail_actuator.h"
 #include "sail_imu.h"
+#include "sail_anglesensor.h"
+#include "sail_eeprom.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -74,7 +76,11 @@ enum status_code init_tasks(void) {
 	
 	//xTaskCreate(Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
-	xTaskCreate(Test_IMU, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate(Test_IMU, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	
+	//xTaskCreate(Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	
+	xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();

@@ -479,7 +479,7 @@ void Test_IMU(void){
 	
 	uint8_t mode_buffer[2] = {BNO055_OPR_MODE_ADDR, OPERATION_MODE_ACCONLY};
 		
-	uint8_t reg_addr = BNO055_TEMP_ADDR;
+	uint8_t reg_addr = BNO055_CHIP_ID_ADDR;
 	//i2c_send_stop();
 	I2C_WriteBuffer(I2C_IMU, mode_buffer, 2, I2C_WRITE_NORMAL);
 
