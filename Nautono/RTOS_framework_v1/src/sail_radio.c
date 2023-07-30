@@ -139,6 +139,7 @@ enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg)
 			return STATUS_NO_CHANGE;
 		// An error occurred
 		default:
+			DEBUG_Write("Rx_radio: %s\r\n", msg_buffer);
 			return STATUS_ERR_DENIED;
 	}
 	
@@ -643,8 +644,9 @@ void RadioHandler(void) {
 			RADIO_Enable();
 			
 			//DEBUG_Write("TEST\r\n");
+			enum status_code code = STATUS_OK;
 			
-			switch (RADIO_RxMsg(&rx_msg)) {
+			switch (code = RADIO_RxMsg(&rx_msg)) {
 				case STATUS_OK:
 				DEBUG_Write("Received a message!\r\n");
 				HandleMessage(&rx_msg);
@@ -654,6 +656,7 @@ void RadioHandler(void) {
 				RADIO_Ack(RADIO_STATUS_ERROR);
 				break;
 				default:
+				//DEBUG_Write("Code: %d\r\n", code);
 				break;
 			}
 			

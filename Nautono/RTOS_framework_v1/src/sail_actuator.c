@@ -11,33 +11,30 @@
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
 
-#define TEST_ACTUATOR_DELAY_MS 10000
+#define TEST_ACTUATOR_DELAY_MS 1000
 
-/*! \var uint16_t sail_angle_min
-	\brief The angle of the sail when linear actuator is at 0 extension. Measured from the x-axis.
-*/
-static const uint16_t sail_angle_min = 25;
-static const uint16_t sail_angle_max = 115;
-static const uint8_t angle_increment = 5;
+#define SAIL_ANGLE_MIN 25
+#define SAIL_ANGLE_MAX 115
+#define ACTUATOR_EXT_MIN 0
+#define ACTUATOR_EXT_MAX 255
 
-/*! \var uint32_t ActuatorPresets
-	\brief Preset extension values for the linear actuator, measured by the Mechanical team.
-*/
-static const uint32_t ActuatorPresets[18] = {0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 0, 0};
-
-/*! \fn uint8_t GetExtensionIndex(uint16_t angle)
-	\brief Gets the index of actuator presets based on \a angle. 
-	\param angle the desired angle for the small sail.
-*/
-extern uint8_t GetExtensionIndex(uint16_t angle) {
-	return (angle-sail_angle_min)/angle_increment;	
+static void getExtnesion(float sail_angle, float * extension) {
+	*extension = ((sail_angle - SAIL_ANGLE_MIN) * (ACTUATOR_EXT_MAX - ACTUATOR_EXT_MIN) / (SAIL_ANGLE_MAX - SAIL_ANGLE_MIN)) + ACTUATOR_EXT_MIN;
 }
-/*! \fn uint16_t GetActuatorExtension(uint8_t index)
-	\brief returns the value stored at \a index in ActuatorPresets
-	\param index The index of values in ActuatorPresets.
-*/
-extern uint16_t GetActuatorExtension(uint8_t index) {
-	return ActuatorPresets[index];
+
+static void SetExtension(uint8_t extension) {
+	PWM_SetDuty(PWM_SAIL, extension);
+	return STATUS_OK;
+}
+
+enum status_code setActuator(float sail_angle) {
+	
+	float extension = 0;
+	getExtnesion(sail_angle, &extension);
+	uint8_t _extension = (uint8_t)extension;
+	SetExtension(_extension);
+	
+	return STATUS_OK;
 }
 
 /* <<For testing>>*/
@@ -50,7 +47,7 @@ void Test_Actuator(void){
 	uint8_t index = 0;
 	uint16_t extension = 0;
 
-	while(angle < sail_angle_max){
+	while(1){
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x20;
 		taskEXIT_CRITICAL();
@@ -58,14 +55,6 @@ void Test_Actuator(void){
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Actuator >>>>>>>>>>\n\r");
 		
 		
-		index = GetExtensionIndex(angle);
-		extension = GetActuatorExtension(index);
-		
-		DEBUG_Write("\n\r angle: %d && Duty: %d%% \n\r", angle, extension);
-		
-		PWM_SetDuty(PWM_SAIL, extension);
-		
-		angle += 8;
 		
 		vTaskDelay(testDelay);
 	}

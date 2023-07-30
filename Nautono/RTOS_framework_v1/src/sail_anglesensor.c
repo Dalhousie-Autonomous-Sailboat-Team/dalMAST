@@ -1,7 +1,6 @@
 #include "sail_anglesensor.h"
 
 #include <asf.h>
-
 #include <stdint.h>
 #include <stdbool.h>
 #include <inttypes.h>
@@ -138,6 +137,8 @@ const uint8_t AS5600_MAGNET_DETECT = 0x20;
 static uint16_t _offset;
 static uint8_t _directionPin;
 static uint8_t _direction;
+static uint32_t _lastMeasurement;
+static int _lastAngle;
 
 /*
  *  Functions for AS5600 
@@ -211,20 +212,56 @@ static enum status_code setDirection(uint8_t direction)
 	_direction = direction;
 	if (_directionPin != AS5600_SW_DIRECTION_PIN)
 	{
-		//digitalWrite(_directionPin, _direction);
+		port_pin_set_output_level(_directionPin, _direction);
 	}
+	
+	return STATUS_OK;
 }
 
-static enum status_code AS_init(uint8_t direction)
+static enum status_code readStatus(uint8_t * data)
 {
-		
+	if(data == NULL) {
+		return STATUS_ERR_BAD_DATA;
+	}
+	
+	if(ReadByte(AS5600_STATUS, data) != STATUS_OK) {
+		return STATUS_ERR_DENIED;
+	}
+	
+	return STATUS_OK;
+}
+
+static enum status_code detectMagnet()
+{
+	uint8_t data = 0;
+	readStatus(data);
+	return (data & AS5600_MAGNET_DETECT) > 1;
+}
+
+static void initPins(void)
+{
+	struct port_config config_port_pin;
+	port_get_config_defaults(&config_port_pin);
+	
+	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
+	
+	port_pin_set_config(_directionPin, &config_port_pin);	
+}
+
+static void AS_init(uint8_t directionPin)
+{
+	_directionPin = directionPin;	
+	if (_directionPin != AS5600_SW_DIRECTION_PIN) 
+	{
+		initPins();
+	}
+	setDirection(AS5600_CLOCK_WISE);
 }
 
 enum status_code rawAngle(uint16_t *data)
 {
 	ReadWord(AS5600_RAW_ANGLE, data);
 	
-	/*
 	if (_offset > 0) *data = (*data + _offset) & 0x0FFF;
 
 	if ((_directionPin == AS5600_SW_DIRECTION_PIN) &&
@@ -232,8 +269,64 @@ enum status_code rawAngle(uint16_t *data)
 	{
 		*data = (4096 - *data) & 0x0FFF;
 	}
-	*/
+	
 	return STATUS_OK;	
+}
+
+enum status_code readAngle(uint16_t *data)
+{
+	ReadWord(AS5600_ANGLE, data);
+	
+	if (_offset > 0) *data = (*data + _offset) & 0x0FFF;
+
+	if ((_directionPin == AS5600_SW_DIRECTION_PIN) &&
+	(_direction == AS5600_COUNTERCLOCK_WISE))
+	{
+		*data = (4096 - *data) & 0x0FFF;
+	}
+	
+	return STATUS_OK;
+}
+
+static void getTicks(uint16_t * data) {
+	*data = xTaskGetTickCount();
+}
+
+enum status_code getAngularSpeed(uint8_t mode, float *data)
+{
+	uint32_t now = 0;
+	getTicks(&now);
+	
+	int	angle = 0;
+	readAngle(&angle);
+	
+	uint32_t deltaT  = now - _lastMeasurement;
+	int      deltaA  = angle - _lastAngle;
+
+	//  assumption is that there is no more than 180° rotation
+	//  between two consecutive measurements.
+	//  => at least two measurements per rotation (preferred 4).
+	if (deltaA >  2048) deltaA -= 4096;
+	if (deltaA < -2048) deltaA += 4096;
+	*data   = (deltaA * 1e6) / deltaT;
+
+	//  remember last time & angle
+	_lastMeasurement = now;
+	_lastAngle       = angle;
+
+	//  return radians, RPM or degrees.
+	if (mode == AS5600_MODE_RADIANS)
+	{
+		*data * AS5600_RAW_TO_RADIANS;
+	}
+	if (mode == AS5600_MODE_RPM)
+	{
+		*data * AS5600_RAW_TO_RPM;
+	}
+	//  default return degrees
+	*data * AS5600_RAW_TO_DEGREES;
+	
+	return STATUS_OK;
 }
 
 #define TEST_AS_DELAY_MS 1000
@@ -242,40 +335,25 @@ void Test_AS(void){
 	
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_AS_DELAY_MS);
 	
-	/*
-	if(bno055_init(OPERATION_MODE_NDOF) != STATUS_OK){
-		DEBUG_Write("\n\r<<<<< Failed AngleSensor initialization >>>>>n\r");
-	}
-	*/
-	
 	uint16_t raw_angle = 0;
+	uint16_t ticks = 0;
 	
-	uint8_t bno_id = 0;
-	uint8_t reg_addr = 0x34;
-	
-	
-	
-	uint8_t mode_buffer[2] = {0X3D, 0X01};
-	I2C_WriteBuffer(I2C_IMU, mode_buffer, 2, I2C_WRITE_NORMAL);
+	// Need direction pin: 
+	// AS_init();
 	
 	while(1){
-			taskENTER_CRITICAL();
+		taskENTER_CRITICAL();
 		watchdog_counter |= 0x20;
 		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 
 		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");
+		//rawAngle(&raw_angle);
+		//
+		//DEBUG_Write_Unprotected("Raw Angle: %d\r\n", raw_angle);
+		getTicks(&ticks);
+		DEBUG_Write("Ticks: %d\r\n", ticks);
 		
-		rawAngle(&raw_angle);
-		
-		DEBUG_Write_Unprotected("Raw Angle: %d\r\n", raw_angle);
-		
-		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");
-		
-		I2C_WriteBuffer(I2C_IMU, &reg_addr, 1, I2C_WRITE_NORMAL);
-		I2C_ReadBuffer(I2C_IMU, &bno_id, 1, I2C_READ_NORMAL);
-		DEBUG_Write("Bno temp: %d\r\n", bno_id);
-
 		vTaskDelay(testDelay);
 	}
 }
