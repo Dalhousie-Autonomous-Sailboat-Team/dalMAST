@@ -36,6 +36,8 @@ SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
 unsigned char watchdog_counter;
 unsigned char watchdog_reset_value = 0x3F;
 
+void Debug_LED(void);
+
 enum status_code init_tasks(void) {
 	
 	// Initialize the mode event group
@@ -63,7 +65,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( ControlRudder, NULL, CONTROL_RUDDER_STACK_SIZE, NULL, CONTROL_RUDDER_PRIORITY, NULL );
 	
 	// Task for handling incoming messages to the radio
-	xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
+	//xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
 	
 	// Task for transmitting logs using the radio
 	//xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
@@ -81,6 +83,8 @@ enum status_code init_tasks(void) {
 	//xTaskCreate(Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	
+	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
@@ -143,4 +147,37 @@ void vApplicationDaemonTaskStartupHook(void) {
 	//StartWatchDog();
 }
 
+static uint8_t _directionPin;
+#define DEBUG_LED_DELAY 1000
+
+void Debug_LED(void)
+{
+	TickType_t testDelay = pdMS_TO_TICKS(DEBUG_LED_DELAY);
+	
+	_directionPin = PIN_PA25;
+	
+	struct port_config config_port_pin;
+	port_get_config_defaults(&config_port_pin);
+
+	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
+
+	port_pin_set_config(_directionPin, &config_port_pin);
+	
+	while(1)
+	{
+		taskENTER_CRITICAL();
+		watchdog_counter |= 0x20;
+		taskEXIT_CRITICAL();
+		running_task = eUpdateCourse;
+		DEBUG_Write_Unprotected("<<<<<<<<<<< Flashing PA25 >>>>>>>>>>\n\r");
+		
+		port_pin_set_output_level(_directionPin, true);
+		
+		delay_ms(1000);
+		
+		port_pin_set_output_level(_directionPin, false);
+		
+		vTaskDelay(testDelay);
+	}
+}
 

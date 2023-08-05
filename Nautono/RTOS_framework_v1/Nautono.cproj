@@ -297,7 +297,7 @@
       </framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
-    <avrtoolserialnumber>ATML1873081800009565</avrtoolserialnumber>
+    <avrtoolserialnumber>ATML1873071800008936</avrtoolserialnumber>
     <avrdeviceexpectedsignature>0x10001400</avrdeviceexpectedsignature>
     <avrtoolinterface>SWD</avrtoolinterface>
     <com_atmel_avrdbg_tool_edbg>
@@ -308,10 +308,21 @@
         <InterfaceName>SWD</InterfaceName>
       </ToolOptions>
       <ToolType>com.atmel.avrdbg.tool.edbg</ToolType>
-      <ToolNumber>ATML1873081800009565</ToolNumber>
+      <ToolNumber>ATML1873071800008936</ToolNumber>
       <ToolName>EDBG</ToolName>
     </com_atmel_avrdbg_tool_edbg>
     <avrtoolinterfaceclock>2000000</avrtoolinterfaceclock>
+    <custom>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType xmlns="">custom</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Custom Programming Tool</ToolName>
+    </custom>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -834,6 +845,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_imu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_ina.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_ina.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_math.c">
