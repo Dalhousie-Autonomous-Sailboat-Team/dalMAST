@@ -147,7 +147,7 @@ static void configure_i2c(void) {
 
 	// Apply configuration
 	// TODO Put a timeout here
-	while (i2c_master_init(&i2c_master, SERCOM2, &config_i2c_master) != STATUS_OK);
+	while (i2c_master_init(&i2c_master, SERCOM1, &config_i2c_master) != STATUS_OK);
 
 	// Enable the module
 	i2c_master_enable(&i2c_master);

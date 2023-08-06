@@ -139,7 +139,6 @@ enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg)
 			return STATUS_NO_CHANGE;
 		// An error occurred
 		default:
-			DEBUG_Write("Rx_radio: %s\r\n", msg_buffer);
 			return STATUS_ERR_DENIED;
 	}
 	
@@ -638,10 +637,14 @@ void RadioHandler(void) {
 		
 		TickType_t radio_handler_delay = pdMS_TO_TICKS(RADIO_SLEEP_PERIOD_MS);
 
+		UART_Init(UART_RADIO);
+		UART_Enable(UART_RADIO);
+		#ifndef TEST
+		
 		while (1) {
 			running_task = eRadioHandler;
 			RADIO_GenericMsg rx_msg;
-			RADIO_Enable();
+			
 			
 			//DEBUG_Write("TEST\r\n");
 			
@@ -675,28 +678,23 @@ void RadioHandler(void) {
 				DEBUG_Write("Radio waking up...\r\n");
 			}
 				
-		}	
-
-		//while(1) {
-			//running_task = eRadioHandler;
-			//taskENTER_CRITICAL();
-			//watchdog_counter |= 0x08;
-			//taskEXIT_CRITICAL();
-			//RADIO_GenericMsg rx_msg;
-			//RADIO_Enable();
-			//
-			//NMEA_Enable(UART_GPS);
-			//NMEA_Enable(UART_WEATHERSTATION);
-			//NMEA_Enable(UART_RADIO);
-			//
-			//memset(msg_buffer, 0, RADIO_BUFFER_LENGTH*sizeof(char));
-			//
-			////NMEA_RxString(NMEA_RADIO, (uint8_t *)msg_buffer, RADIO_BUFFER_LENGTH);
-			//UART_RxString(UART_WEATHERSTATION, msg_buffer, RADIO_BUFFER_LENGTH);
-			//DEBUG_Write("message: %s\r\n", msg_buffer);
-			//vTaskDelay(radio_handler_delay);
-		//}
-
+		}
+		#else
+		while(1) {
+			running_task = eRadioHandler;
+			taskENTER_CRITICAL();
+			watchdog_counter |= 0x08;
+			taskEXIT_CRITICAL();
+			RADIO_GenericMsg rx_msg;
+			
+			memset(msg_buffer, 0, RADIO_BUFFER_LENGTH*sizeof(char));
+			
+			//NMEA_RxString(NMEA_RADIO, (uint8_t *)msg_buffer, RADIO_BUFFER_LENGTH);
+			UART_RxString(UART_RADIO, msg_buffer, RADIO_BUFFER_LENGTH);
+			DEBUG_Write("message: %s\r\n", msg_buffer);
+			vTaskDelay(radio_handler_delay);
+		}
+		#endif
 }
 
 void Radio_Sleep_Sec(unsigned time_sec) {

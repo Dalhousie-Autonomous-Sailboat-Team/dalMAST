@@ -339,7 +339,7 @@ void Test_AS(void){
 	uint16_t ticks = 0;
 	
 	// Need direction pin: 
-	// AS_init();
+	// AS_init(4);
 	
 	while(1){
 		taskENTER_CRITICAL();
@@ -348,11 +348,8 @@ void Test_AS(void){
 		running_task = eUpdateCourse;
 
 		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");
-		//rawAngle(&raw_angle);
-		//
-		//DEBUG_Write_Unprotected("Raw Angle: %d\r\n", raw_angle);
-		getTicks(&ticks);
-		DEBUG_Write("Ticks: %d\r\n", ticks);
+		rawAngle(&raw_angle);
+		DEBUG_Write("raw angle: %d\r\n", raw_angle);
 		
 		vTaskDelay(testDelay);
 	}
