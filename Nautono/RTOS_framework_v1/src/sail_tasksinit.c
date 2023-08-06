@@ -36,6 +36,7 @@ SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
 unsigned char watchdog_counter;
 unsigned char watchdog_reset_value = 0x3F;
 
+#define PCB
 
 #ifdef PCB
 void Debug_LED(void);
@@ -69,7 +70,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( ControlRudder, NULL, CONTROL_RUDDER_STACK_SIZE, NULL, CONTROL_RUDDER_PRIORITY, NULL );
 	
 	// Task for handling incoming messages to the radio
-	xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
+	// xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
 	
 	// Task for transmitting logs using the radio
 	//xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
@@ -175,8 +176,9 @@ void Debug_LED(void)
 		watchdog_counter |= 0x20;
 		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
-		DEBUG_Write_Unprotected("<<<<<<<<<<< Flashing PA25 >>>>>>>>>>\n\r");
 		
+		//DEBUG_Write_Unprotected("Flashing LED\r\n");
+	
 		port_pin_set_output_level(_directionPin, true);
 		
 		delay_ms(1000);

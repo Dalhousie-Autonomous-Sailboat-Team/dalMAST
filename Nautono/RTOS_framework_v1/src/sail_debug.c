@@ -11,6 +11,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+#define DEBUG
+
 #ifdef DEBUG
 //static uint8_t debug_buffer[DEBUG_BUFFER_LENGTH];
 static bool init_flag = false;

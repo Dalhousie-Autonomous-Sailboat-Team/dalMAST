@@ -22,7 +22,7 @@
 
 // TODO Check with Mark to see if these have changed
 //ws = weatherstation
-#define WS_ON_OFF_PIN		PIN_PA22
+#define WS_ON_OFF_PIN		PIN_PA04
 #define WS_ON_STATE		true
 
 #define WS_BUFFER_LENGTH	NMEA_BUFFER_LENGTH

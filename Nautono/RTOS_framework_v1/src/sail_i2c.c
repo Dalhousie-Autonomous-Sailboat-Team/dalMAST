@@ -141,11 +141,9 @@ static void configure_i2c(void) {
 	config_i2c_master.buffer_timeout = 65535;
 	
 	// Select SERCOM port
-	//config_i2c_master.pinmux_pad0 = SERCOM2_PAD0_DEFAULT;
-	//config_i2c_master.pinmux_pad1 = SERCOM2_PAD1_DEFAULT;
 	
-	config_i2c_master.pinmux_pad0 = PINMUX_PA12C_SERCOM2_PAD0;
-	config_i2c_master.pinmux_pad1 = PINMUX_PA13C_SERCOM2_PAD1;
+	config_i2c_master.pinmux_pad0 = PINMUX_PA16C_SERCOM1_PAD0;
+	config_i2c_master.pinmux_pad1 = PINMUX_PA17C_SERCOM1_PAD1;
 
 	// Apply configuration
 	// TODO Put a timeout here

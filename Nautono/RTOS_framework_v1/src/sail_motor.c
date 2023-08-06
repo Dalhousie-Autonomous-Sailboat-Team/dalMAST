@@ -14,13 +14,13 @@
 #include "sail_debug.h"
 #include "sail_math.h"
 
-#define MOTOR_POWER_PIN			PIN_PB15
+#define MOTOR_POWER_PIN			PIN_PA03
 #define MOTOR_ON_STATE			true
 
 #define MOTOR_SAIL_DIR_PIN		PIN_PB06
 #define MOTOR_SAIL_CW_STATE		true
 
-#define MOTOR_RUDDER_DIR_PIN	PIN_PB07
+#define MOTOR_RUDDER_DIR_PIN	PIN_PB04
 #define MOTOR_RUDDER_CW_STATE	true
 
 typedef enum MOTOR_Directions {

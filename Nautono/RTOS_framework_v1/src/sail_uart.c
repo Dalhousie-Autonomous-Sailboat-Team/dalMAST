@@ -3,7 +3,7 @@
  * Created on June 13, 2016.
  * Created by Thomas Gwynne-Timothy.
  */
-
+#define PCB
 
 #include "sail_uart.h"
 
@@ -42,6 +42,7 @@ static uint32_t baud_rates[] = {
 	9600,
 	4800,
 	9600,
+	57600,
 	57600
 };
 
@@ -51,17 +52,43 @@ UART_ChannelIDs:
 	UART_WEATHERSTATION,
 	UART_RADIO,
 	UART_XEOS,
+	UART_VCOM,
 	UART_NUM_CHANNELS
 */
 
 
+#ifdef PCB
+static enum usart_signal_mux_settings mux_settings[] = {
+	USART_RX_3_TX_2_XCK_3,
+	USART_RX_1_TX_0_XCK_1,
+	USART_RX_1_TX_0_XCK_1,
+	USART_RX_1_TX_0_XCK_1, // Temp same as vcom for PCB
+	USART_RX_1_TX_0_XCK_1  // vcom for pcb
+};
 
+static uint32_t pinmux_pads[][UART_NUM_CHANNELS] = {
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA18D_SERCOM3_PAD2, PINMUX_PA19D_SERCOM3_PAD3},
+	{PINMUX_PB08D_SERCOM4_PAD0, PINMUX_PB09D_SERCOM4_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
+	{PINMUX_PA12C_SERCOM2_PAD0, PINMUX_PA13C_SERCOM2_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
+	{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},// same as vcom for PCB, temp
+	{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED} // VCOM for PCB
+};
+
+static Sercom *const sercom_ptrs[] = {
+	SERCOM3,
+	SERCOM4,
+	SERCOM2,
+	SERCOM5, // temp same as vcom for PCB	
+	SERCOM5  // vcom for PCB
+};
+
+#else
+// Dev Board
 static enum usart_signal_mux_settings mux_settings[] = {
 	USART_RX_1_TX_0_XCK_1,
 	USART_RX_1_TX_0_XCK_1,
 	USART_RX_1_TX_0_XCK_1,
 	USART_RX_3_TX_2_XCK_3
-	//USART_RX_1_TX_0_XCK_1 For PCB
 };
 
 static uint32_t pinmux_pads[][UART_NUM_CHANNELS] = {
@@ -69,15 +96,15 @@ static uint32_t pinmux_pads[][UART_NUM_CHANNELS] = {
 	{PINMUX_PB08D_SERCOM4_PAD0, PINMUX_PB09D_SERCOM4_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
 	{PINMUX_PB16C_SERCOM5_PAD0, PINMUX_PB17C_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
 	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA24C_SERCOM3_PAD2, PINMUX_PA25C_SERCOM3_PAD3}
-	//{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED} FOR PCB
 };
 
 static Sercom *const sercom_ptrs[] = {
 	SERCOM0,
 	SERCOM4,
 	SERCOM5,
-	SERCOM3 //Sercom 5 now for PCB
+	SERCOM3
 };
+#endif
 
 // Receiver states
 typedef enum UART_RxStates {
