@@ -11,8 +11,6 @@
 #include <string.h>
 #include <stdbool.h>
 
-//#define DEBUG
-
 #ifdef DEBUG
 //static uint8_t debug_buffer[DEBUG_BUFFER_LENGTH];
 static bool init_flag = false;
@@ -92,7 +90,6 @@ enum status_code DEBUG_Write_Unprotected(const char *format, ...) {
 	
 	return STATUS_OK;
 }
-
 
 
 

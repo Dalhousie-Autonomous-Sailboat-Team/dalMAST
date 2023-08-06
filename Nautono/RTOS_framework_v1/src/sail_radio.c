@@ -629,7 +629,7 @@ static void HandleMessage(RADIO_GenericMsg *msg)
 	}
 	return;
 }
-
+#define TEST_XBEE
 
 void RadioHandler(void) {
 		unsigned int loop_cnt = 0;
@@ -637,16 +637,15 @@ void RadioHandler(void) {
 		unsigned int loop_max = 100000; //500000;
 		
 		TickType_t radio_handler_delay = pdMS_TO_TICKS(RADIO_SLEEP_PERIOD_MS);
-		
+
 		while (1) {
 			running_task = eRadioHandler;
 			RADIO_GenericMsg rx_msg;
 			RADIO_Enable();
 			
 			//DEBUG_Write("TEST\r\n");
-			enum status_code code = STATUS_OK;
 			
-			switch (code = RADIO_RxMsg(&rx_msg)) {
+			switch (RADIO_RxMsg(&rx_msg)) {
 				case STATUS_OK:
 				DEBUG_Write("Received a message!\r\n");
 				HandleMessage(&rx_msg);
@@ -656,7 +655,6 @@ void RadioHandler(void) {
 				RADIO_Ack(RADIO_STATUS_ERROR);
 				break;
 				default:
-				//DEBUG_Write("Code: %d\r\n", code);
 				break;
 			}
 			
@@ -677,7 +675,28 @@ void RadioHandler(void) {
 				DEBUG_Write("Radio waking up...\r\n");
 			}
 				
-		}		
+		}	
+
+		//while(1) {
+			//running_task = eRadioHandler;
+			//taskENTER_CRITICAL();
+			//watchdog_counter |= 0x08;
+			//taskEXIT_CRITICAL();
+			//RADIO_GenericMsg rx_msg;
+			//RADIO_Enable();
+			//
+			//NMEA_Enable(UART_GPS);
+			//NMEA_Enable(UART_WEATHERSTATION);
+			//NMEA_Enable(UART_RADIO);
+			//
+			//memset(msg_buffer, 0, RADIO_BUFFER_LENGTH*sizeof(char));
+			//
+			////NMEA_RxString(NMEA_RADIO, (uint8_t *)msg_buffer, RADIO_BUFFER_LENGTH);
+			//UART_RxString(UART_WEATHERSTATION, msg_buffer, RADIO_BUFFER_LENGTH);
+			//DEBUG_Write("message: %s\r\n", msg_buffer);
+			//vTaskDelay(radio_handler_delay);
+		//}
+
 }
 
 void Radio_Sleep_Sec(unsigned time_sec) {

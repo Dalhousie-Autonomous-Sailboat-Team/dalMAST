@@ -36,7 +36,11 @@ SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
 unsigned char watchdog_counter;
 unsigned char watchdog_reset_value = 0x3F;
 
+
+#ifdef PCB
 void Debug_LED(void);
+#endif
+
 
 enum status_code init_tasks(void) {
 	
@@ -65,7 +69,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( ControlRudder, NULL, CONTROL_RUDDER_STACK_SIZE, NULL, CONTROL_RUDDER_PRIORITY, NULL );
 	
 	// Task for handling incoming messages to the radio
-	//xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
+	xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
 	
 	// Task for transmitting logs using the radio
 	//xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
@@ -83,9 +87,9 @@ enum status_code init_tasks(void) {
 	//xTaskCreate(Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	
+#ifdef PCB
 	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	
+#endif
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
 	
@@ -147,6 +151,8 @@ void vApplicationDaemonTaskStartupHook(void) {
 	//StartWatchDog();
 }
 
+#ifdef PCB
+
 static uint8_t _directionPin;
 #define DEBUG_LED_DELAY 1000
 
@@ -181,3 +187,4 @@ void Debug_LED(void)
 	}
 }
 
+#endif
