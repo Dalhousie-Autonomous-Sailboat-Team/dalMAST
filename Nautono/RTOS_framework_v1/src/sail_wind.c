@@ -126,7 +126,10 @@ void ReadWIND(void){
         // - Kamden Thebeau (08-02-2023
         
         running_task = eReadWIND;
-        
+		
+		if(!init_flag) {
+			WIND_On();
+		}
         
 		enum status_code code = WIND_RxMsg(&msg);
 		
@@ -134,11 +137,6 @@ void ReadWIND(void){
 			WIND_data.msg_array[msg.type] = msg;
 			DEBUG_Write("Received Wind data\r\n");
 		}
-		//DEBUG_Write("WV powered on\r\n");
-		//WIND_PWR_ON();
-		//delay_ms(10000);
-		//DEBUG_Write("WV powered off\r\n");
-		//WIND_PWR_OFF();
 		
 		
         vTaskDelay(read_wind_delay);
