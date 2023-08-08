@@ -6,6 +6,8 @@
  * Created by Serge Toutsenko
  */
 
+#define PCB
+
 #include "sail_tasksinit.h"
 #include "FreeRTOS.h"
 #include "task.h"
@@ -24,6 +26,7 @@
 #include "sail_anglesensor.h"
 #include "sail_eeprom.h"
 #include "sail_wind.h"
+#include "sail_motor.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -37,7 +40,7 @@ SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
 unsigned char watchdog_counter;
 unsigned char watchdog_reset_value = 0x3F;
 
-//#define PCB
+
 
 #ifdef PCB
 void Debug_LED(void);
@@ -86,10 +89,11 @@ enum status_code init_tasks(void) {
 	
 	//xTaskCreate(Test_IMU, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
-	xTaskCreate(Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate(Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
+	xTaskCreate(Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 
 #ifdef PCB
 	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);

@@ -103,6 +103,10 @@ void ReadWIND(void){
 	
 	NMEA_GenericMsg msg;
 	
+	//init_pins();
+	
+	WIND_On();
+	
 	DEBUG_Write("************ Performing Wind Vane Testing ****************\r\n");
     
     while(1) {
@@ -119,9 +123,7 @@ void ReadWIND(void){
       
         
         // TODO: Add code to make the wind run and try to collect data. See gps.c for reference implementation
-        // - Kamden Thebeau (08-02-2023)
-        
-        // WIND_On();
+        // - Kamden Thebeau (08-02-2023
         
         running_task = eReadWIND;
         
@@ -132,6 +134,12 @@ void ReadWIND(void){
 			WIND_data.msg_array[msg.type] = msg;
 			DEBUG_Write("Received Wind data\r\n");
 		}
+		//DEBUG_Write("WV powered on\r\n");
+		//WIND_PWR_ON();
+		//delay_ms(10000);
+		//DEBUG_Write("WV powered off\r\n");
+		//WIND_PWR_OFF();
+		
 		
         vTaskDelay(read_wind_delay);
     }

@@ -14,6 +14,10 @@
 #include "sail_debug.h"
 #include "sail_math.h"
 
+#include "sail_tasksinit.h"
+#include "FreeRTOSConfig.h"
+#include "FreeRTOS.h"
+
 #define MOTOR_POWER_PIN			PIN_PA03
 #define MOTOR_ON_STATE			true
 
@@ -387,9 +391,75 @@ static void SetDirection(MOTOR_ChannelID id, MOTOR_Direction dir)
 			//DEBUG_Write("%s\r\n", (dir == MOTOR_CW ? "CW" : "CCW"));
 			break;
 		case MOTOR_RUDDER:
-			port_pin_set_output_level(MOTOR_RUDDER_DIR_PIN, (dir == MOTOR_CW ? MOTOR_RUDDER_CW_STATE : !MOTOR_RUDDER_CW_STATE));
+			port_pin_set_output_level(MOTOR_RUDDER_DIR_PIN, (dir == MOTOR_CW ? !MOTOR_RUDDER_CW_STATE : MOTOR_RUDDER_CW_STATE));
 			break;
 		default:
 			break;
+	}
+}
+
+static void pot_pos(double * data) {
+	ADC_GetReading(MOTOR_RUDDER, data);
+}
+
+#define TESTING
+
+static void set_pos(double pos) {
+	
+	double curr_pos = 0;
+	pot_pos(&curr_pos);
+	
+	MOTOR_Direction dir = MOTOR_CW;
+	
+	if(curr_pos > pos) {
+		dir = MOTOR_CCW;
+	}
+	
+	SetDirection(MOTOR_RUDDER, dir);
+	#ifdef TESTING
+	DEBUG_Write("Setting rudder to pos: %d\r\n", (int)pos);
+	#endif
+	while(curr_pos <= 0.95*pos || curr_pos >= 1.05*pos) {
+		TurnOn(MOTOR_RUDDER);
+		pot_pos(&curr_pos);
+		#ifdef TESTING
+		DEBUG_Write("Curr pos: %d\r\n", (int)curr_pos);
+		#endif
+	}
+	
+	TurnOff(MOTOR_RUDDER);
+	
+	int int_curr_pos = curr_pos;
+	#ifdef TESTING
+	DEBUG_Write("Reached pos: %d\r\n", int_curr_pos);
+	#endif
+}
+
+#define TEST_RUDDER_DELAY_MS 1000
+
+void Test_Rudder(void){ 
+
+	TickType_t testDelay = pdMS_TO_TICKS(TEST_RUDDER_DELAY_MS);
+	
+	MOTOR_Init();
+	
+	double pos = 0;
+	int int_pos = 0;
+
+	while(1){
+		taskENTER_CRITICAL();
+		watchdog_counter |= 0x20;
+		taskEXIT_CRITICAL();
+		running_task = eUpdateCourse;
+		DEBUG_Write("\n\r<<<<<<<<<<< Testing POT >>>>>>>>>>\n\r");
+		
+		pot_pos(&pos);
+		
+		int_pos = pos;
+		DEBUG_Write("POT reading: %d\r\n", int_pos);
+		
+		set_pos(50);
+		
+		vTaskDelay(testDelay);
 	}
 }

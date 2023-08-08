@@ -33,7 +33,7 @@ enum status_code ADC_Init(void) {
 	config_adc.gain_factor                = ADC_GAIN_FACTOR_DIV2;
 	config_adc.reference                  = ADC_REFERENCE_INTVCC1;
 	config_adc.resolution                 = ADC_RESOLUTION_12BIT;
-	config_adc.positive_input             = ADC_POSITIVE_INPUT_PIN0;
+	config_adc.positive_input             = ADC_POSITIVE_INPUT_PIN16;
 
     if (adc_init(&adc, ADC, &config_adc) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
@@ -76,7 +76,7 @@ enum status_code ADC_GetReading(ADC_ChannelID id, double *reading)
     } while (adc_read(&adc, &result) == STATUS_BUSY);
 	
 	// Return the output
-	*reading = MATH_Map((double)result, 0.0, 4095.0, 0.0, 3.3);
+	*reading = MATH_Map((double)result, 0.0, 4095.0, 0.0, 300);
 	
 	return STATUS_OK;
 }

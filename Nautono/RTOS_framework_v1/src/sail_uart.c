@@ -3,7 +3,9 @@
  * Created on June 13, 2016.
  * Created by Thomas Gwynne-Timothy.
  */
-//#define PCB
+
+
+#define PCB
 
 #include "sail_uart.h"
 

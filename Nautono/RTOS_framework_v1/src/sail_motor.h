@@ -43,4 +43,6 @@ enum status_code MOTOR_SetSail(double angle);
  */
 enum status_code MOTOR_SetRudder(double angle);
 
+void Test_Rudder(void);
+
 #endif // SAIL_MOTOR_H_
