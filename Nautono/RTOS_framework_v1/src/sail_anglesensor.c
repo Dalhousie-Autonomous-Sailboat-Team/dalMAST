@@ -275,15 +275,13 @@ enum status_code rawAngle(uint16_t *data)
 
 enum status_code readAngle(uint16_t *data)
 {
-	ReadWord(AS5600_ANGLE, data);
+	rawAngle(data);
+	uint8_t msb = *data & 0xff;
+	uint8_t lsb = (*data >> 8) & 0xff;
+	*data = msb << 8 | lsb;
 	
-	if (_offset > 0) *data = (*data + _offset) & 0x0FFF;
-
-	if ((_directionPin == AS5600_SW_DIRECTION_PIN) &&
-	(_direction == AS5600_COUNTERCLOCK_WISE))
-	{
-		*data = (4096 - *data) & 0x0FFF;
-	}
+	//rawAngle(&raw_angle);
+	*data = (*data)*AS5600_RAW_TO_DEGREES;
 	
 	return STATUS_OK;
 }
@@ -348,8 +346,7 @@ void Test_AS(void){
 		running_task = eUpdateCourse;
 
 		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");
-		rawAngle(&raw_angle);
-		raw_angle = raw_angle*AS5600_RAW_TO_DEGREES;
+		readAngle(&raw_angle);
 		DEBUG_Write("raw angle: %d\r\n", raw_angle);
 		
 		vTaskDelay(testDelay);

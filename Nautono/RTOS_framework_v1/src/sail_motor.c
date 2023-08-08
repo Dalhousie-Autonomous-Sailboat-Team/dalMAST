@@ -458,7 +458,7 @@ void Test_Rudder(void){
 		int_pos = pos;
 		DEBUG_Write("POT reading: %d\r\n", int_pos);
 		
-		set_pos(50);
+		set_pos(250);
 		
 		vTaskDelay(testDelay);
 	}
