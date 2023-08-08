@@ -39,6 +39,8 @@
 // Number of fields in the format string							
 #define MWV_FMT_LENGTH		7 
 
+#define KNOTS_TO_MS 0.51444444
+
 // Buffer to hold wind vane strings from NMEA module
 // static uint8_t wind_buffer[WS_BUFFER_LENGTH];
 // static uint8_t mwv_buffer[WS_BUFFER_LENGTH];
@@ -338,10 +340,10 @@ static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t*
 	case eWIMWV:
 	case eIIMWV:
 		msg->fields.wimwv.wind_dir_rel = atof(data->args[0]);
-		msg->fields.wimwv.wind_speed_ms = atof(data->args[2]);
+		msg->fields.wimwv.wind_speed_ms = atof(data->args[2])*KNOTS_TO_MS;
 		
 		DEBUG_Write("\n\rRelative wind direction %s\r\n", data->args[0]);
-		DEBUG_Write("\n\rWind Speed [m/s] %s\r\n", data->args[2]);
+		DEBUG_Write("\n\rWind Speed [knots] %s\r\n", data->args[2]);
 		
 		break;
     // A bunch more NMEA message types exist here...
