@@ -13,7 +13,7 @@
 #include "sail_debug.h"
 #include "usart_interrupt.h"
 #include "sail_nmea.h"
-#include "Sail_WEATHERSTATION.h"
+//#include "Sail_WEATHERSTATION.h"
 #include "sail_gps.h"
 #include "sail_types.h"
 #include "sail_nav.h"
@@ -23,6 +23,7 @@
 #include "sail_imu.h"
 #include "sail_anglesensor.h"
 #include "sail_eeprom.h"
+#include "sail_wind.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -36,7 +37,7 @@ SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
 unsigned char watchdog_counter;
 unsigned char watchdog_reset_value = 0x3F;
 
-#define PCB
+//#define PCB
 
 #ifdef PCB
 void Debug_LED(void);
@@ -70,7 +71,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( ControlRudder, NULL, CONTROL_RUDDER_STACK_SIZE, NULL, CONTROL_RUDDER_PRIORITY, NULL );
 	
 	// Task for handling incoming messages to the radio
-	 xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
+	// xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
 	
 	// Task for transmitting logs using the radio
 	//xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
@@ -85,9 +86,11 @@ enum status_code init_tasks(void) {
 	
 	//xTaskCreate(Test_IMU, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
-	//xTaskCreate(Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate(Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
+
 #ifdef PCB
 	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 #endif

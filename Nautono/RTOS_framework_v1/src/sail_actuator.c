@@ -11,7 +11,7 @@
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
 
-#define TEST_ACTUATOR_DELAY_MS 1000
+
 
 #define SAIL_ANGLE_MIN 25
 #define SAIL_ANGLE_MAX 115
@@ -39,6 +39,8 @@ enum status_code setActuator(float sail_angle) {
 
 /* <<For testing>>*/
 
+#define TEST_ACTUATOR_DELAY_MS 10000
+
 void Test_Actuator(void){
 
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_ACTUATOR_DELAY_MS);
@@ -54,7 +56,11 @@ void Test_Actuator(void){
 		running_task = eUpdateCourse;
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Actuator >>>>>>>>>>\n\r");
 		
-		
+		setActuator(45);
+		delay_ms(10000);
+		setActuator(75);
+		delay_ms(10000);
+		setActuator(101);
 		
 		vTaskDelay(testDelay);
 	}

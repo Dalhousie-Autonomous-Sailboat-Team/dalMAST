@@ -4,6 +4,7 @@
  * Created on June 29, 2016.
  * Created by Thomas Gwynne-Timothy.
  */
+//#define PCB
 
 #include "sail_i2c.h"
 #include "sail_debug.h"
@@ -141,13 +142,25 @@ static void configure_i2c(void) {
 	config_i2c_master.buffer_timeout = 65535;
 	
 	// Select SERCOM port
+	//#ifdef PCB
+	//
+	//config_i2c_master.pinmux_pad0 = PINMUX_PA16C_SERCOM1_PAD0;
+	//config_i2c_master.pinmux_pad1 = PINMUX_PA17C_SERCOM1_PAD1;
+//
+	//// Apply configuration
+	//// TODO Put a timeout here
+	//while (i2c_master_init(&i2c_master, SERCOM1, &config_i2c_master) != STATUS_OK);
+	//
+	//#else
 	
-	config_i2c_master.pinmux_pad0 = PINMUX_PA16C_SERCOM1_PAD0;
-	config_i2c_master.pinmux_pad1 = PINMUX_PA17C_SERCOM1_PAD1;
+	config_i2c_master.pinmux_pad0 = PINMUX_PA12C_SERCOM2_PAD0;
+	config_i2c_master.pinmux_pad1 = PINMUX_PA13C_SERCOM2_PAD1;
 
 	// Apply configuration
 	// TODO Put a timeout here
-	while (i2c_master_init(&i2c_master, SERCOM1, &config_i2c_master) != STATUS_OK);
+	while (i2c_master_init(&i2c_master, SERCOM2, &config_i2c_master) != STATUS_OK);
+	
+	//#endif
 
 	// Enable the module
 	i2c_master_enable(&i2c_master);

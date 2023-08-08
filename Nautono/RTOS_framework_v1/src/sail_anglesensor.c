@@ -339,7 +339,7 @@ void Test_AS(void){
 	uint16_t ticks = 0;
 	
 	// Need direction pin: 
-	// AS_init(4);
+	AS_init(PIN_PA08);
 	
 	while(1){
 		taskENTER_CRITICAL();
@@ -349,6 +349,7 @@ void Test_AS(void){
 
 		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");
 		rawAngle(&raw_angle);
+		raw_angle = raw_angle*AS5600_RAW_TO_DEGREES;
 		DEBUG_Write("raw angle: %d\r\n", raw_angle);
 		
 		vTaskDelay(testDelay);

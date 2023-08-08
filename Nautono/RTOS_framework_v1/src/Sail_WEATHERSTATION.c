@@ -62,7 +62,7 @@ void ReadWeatherSensor(void) {
 
 		WeatherStation_On();
 		//DEBUG_Write("Weather Station is READING\r\n");
-		running_task = eReadWeatherSensor;
+		//running_task = eReadWeatherSensor;
 		
 		NMEA_GenericMsg msg;
 
@@ -333,4 +333,3 @@ static enum status_code WEATHERSENSOR_ExtractMsg(NMEA_GenericMsg *msg, WEATHERSE
 
 	return STATUS_OK;
 }
-

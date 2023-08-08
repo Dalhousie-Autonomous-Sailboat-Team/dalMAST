@@ -125,9 +125,7 @@ enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg)
 		return STATUS_ERR_BAD_ADDRESS;
 	}
 	
-	for(int i = 0; i < NMEA_BUFFER_LENGTH; i++) {
-		msg_buffer[i] = NULL;
-	}
+	memset(msg_buffer, NULL, NMEA_BUFFER_LENGTH*sizeof(char));
 	
 	// Check the NMEA receiver for new data
 	switch (NMEA_RxString(NMEA_RADIO, (uint8_t *)msg_buffer, RADIO_BUFFER_LENGTH)) {
@@ -636,11 +634,9 @@ void RadioHandler(void) {
 		unsigned int loop_max = 100000; //500000;
 		
 		TickType_t radio_handler_delay = pdMS_TO_TICKS(RADIO_SLEEP_PERIOD_MS);
-
-		UART_Init(UART_RADIO);
-		UART_Enable(UART_RADIO);
-		#ifndef TEST
 		
+		#ifndef TEST
+
 		while (1) {
 			running_task = eRadioHandler;
 			RADIO_GenericMsg rx_msg;
@@ -650,33 +646,35 @@ void RadioHandler(void) {
 			
 			switch (RADIO_RxMsg(&rx_msg)) {
 				case STATUS_OK:
-				DEBUG_Write("Received a message!\r\n");
-				HandleMessage(&rx_msg);
-				break;
+					DEBUG_Write("Received a message!\r\n");
+					HandleMessage(&rx_msg);
+					break;
+				
 				case STATUS_ERR_BAD_DATA:
-				DEBUG_Write("Received a corrupt message!\r\n");
-				RADIO_Ack(RADIO_STATUS_ERROR);
-				break;
+					DEBUG_Write("Received a corrupt message!\r\n");
+					RADIO_Ack(RADIO_STATUS_ERROR);
+					break;
+				
 				default:
-				break;
+					break;
 			}
-			
-			loop_cnt++;
-				
-			if(loop_cnt > loop_max) {
-				//DEBUG_Write("loop_cnt: %d\r\n", (int)loop_cnt);
-				taskENTER_CRITICAL();
-				watchdog_counter |= 0x08;
-				taskEXIT_CRITICAL();
-				
-				DEBUG_Write("Radio going to sleep...\r\n");
-				loop_cnt = 0;
-								
-				//put thread to sleep until a specific tick count is reached
-				vTaskDelay(radio_handler_delay);
-				
-				DEBUG_Write("Radio waking up...\r\n");
-			}
+			vTaskDelay(radio_handler_delay);
+			//loop_cnt++;
+				//
+			//if(loop_cnt > loop_max) {
+				////DEBUG_Write("loop_cnt: %d\r\n", (int)loop_cnt);
+				//taskENTER_CRITICAL();
+				//watchdog_counter |= 0x08;
+				//taskEXIT_CRITICAL();
+				//
+				//DEBUG_Write("Radio going to sleep...\r\n");
+				//loop_cnt = 0;
+								//
+				////put thread to sleep until a specific tick count is reached
+				//vTaskDelay(radio_handler_delay);
+				//
+				//DEBUG_Write("Radio waking up...\r\n");
+			//}
 				
 		}
 		#else
@@ -692,6 +690,7 @@ void RadioHandler(void) {
 			//NMEA_RxString(NMEA_RADIO, (uint8_t *)msg_buffer, RADIO_BUFFER_LENGTH);
 			UART_RxString(UART_RADIO, msg_buffer, RADIO_BUFFER_LENGTH);
 			DEBUG_Write("message: %s\r\n", msg_buffer);
+			HandleMessage(msg_buffer);
 			vTaskDelay(radio_handler_delay);
 		}
 		#endif

@@ -34,6 +34,8 @@ static bool calibrate_flag = false;
 static enum status_code read8(uint8_t addr, uint8_t *data);
 static enum status_code readLen(uint8_t addr, uint8_t *data, uint8_t len);
 static enum status_code write8(uint8_t addr, uint8_t data);
+static void setSensorOffsets(const uint8_t *calibData);
+static void getSensorOffsets(adafruit_bno055_offsets_t * offsets_type);
 
 static enum status_code read8(uint8_t addr, uint8_t *data)
 {
@@ -47,11 +49,13 @@ static enum status_code read8(uint8_t addr, uint8_t *data)
 	
 	// Write the command to the compass
 	if (I2C_WriteBuffer(I2C_IMU, &buffer, 1, I2C_WRITE_NORMAL) != STATUS_OK) {
+		DEBUG_Write("Write in read Error\r\n");
 		return STATUS_ERR_DENIED;
 	}
 	
 	// Read the data back from the compass
 	if (I2C_ReadBuffer(I2C_IMU, data, 1, I2C_READ_NORMAL) != STATUS_OK) {
+		DEBUG_Write("Read Error\r\n");
 		return STATUS_ERR_DENIED;
 	}
 	
@@ -70,15 +74,37 @@ static enum status_code readLen(uint8_t addr, uint8_t *data,  uint8_t len)
 	
 	// Write the command to the compass
 	if (I2C_WriteBuffer(I2C_IMU, &buffer, 1, I2C_WRITE_NORMAL) != STATUS_OK) {
+		DEBUG_Write("write in readlen Error\r\n");
 		return STATUS_ERR_DENIED;
 	}
 	
-	// Give the compass time to prepare the data (see data sheet)
-	delay_ms(10);
-	
 	// Read the data back from the compass
-	if (I2C_ReadBuffer(I2C_IMU, data, len, I2C_READ_NORMAL) != STATUS_OK) {
-		return STATUS_ERR_DENIED;
+	bool read_complete = false;
+	uint8_t i=0, sz = 0;
+	while(len && !read_complete) {
+		if(len>2) {
+			sz = 2;
+			} else {
+			sz = len;
+		}
+		
+		switch(I2C_ReadBuffer(I2C_IMU, &data[i], sz, I2C_READ_NORMAL))  {
+			case STATUS_OK:
+			read_complete = true;
+			i+=len;
+			len -= sz;
+			break;
+			// Continue the loop if the write could not be completed because the device was busy
+			case STATUS_BUSY:
+			read_complete = false;
+			i+=len;
+			len -= sz;
+			//i++;len--;
+			break;
+			// Return if an error occurred while writing to the I2C line
+			default:
+			return STATUS_ERR_DENIED;
+		}
 	}
 	
 	return STATUS_OK;
@@ -96,6 +122,7 @@ static enum status_code write8(uint8_t addr, uint8_t data)
 	
 	// Write to the compass
 	if (I2C_WriteBuffer(I2C_IMU, buffer, 2, I2C_WRITE_NORMAL) != STATUS_OK) {
+		DEBUG_Write("Write Error\r\n");
 		return STATUS_ERR_DENIED;
 	}
 	
@@ -129,6 +156,8 @@ static bool isFullyCalibrated() {
 	uint8_t system, gyro, accel, mag;
 	//getCalibration(&Calib);
 	getCalibration(&system, &gyro, &accel, &mag);
+	
+	DEBUG_Write("sys: %d\tgyro: %d\taccel: %d\tmag: %d\r\n", system, gyro, accel, mag);
 
 	switch (_mode) {
 	case OPERATION_MODE_ACCONLY:
@@ -148,6 +177,7 @@ static bool isFullyCalibrated() {
 		return (mag == 3 && gyro == 3);
 	default:
 		return (system == 3 && gyro == 3 && accel == 3 && mag == 3);
+		//return (system == 3 && gyro == 3 && mag == 3);
 	}
 }
 
@@ -168,6 +198,9 @@ static enum status_code IMU_calibrate(void)
 	}
 
 	calibrate_flag = true;
+	adafruit_bno055_offsets_t offsets;
+	getSensorOffsets(&offsets);
+	setSensorOffsets(&offsets);
 
 	return STATUS_OK;
 }
@@ -196,9 +229,9 @@ static void setExtCrystalUse(bool usextal) {
 	delay_ms(20);
 }
 
-bool getSensorOffsets(adafruit_bno055_offsets_t * offsets_type) {
+static void getSensorOffsets(adafruit_bno055_offsets_t * offsets_type) {
 	if (!isFullyCalibrated()){
-		return false;
+		return;
 	}
 	adafruit_bno055_opmode_t lastMode = _mode;
 	setMode(OPERATION_MODE_CONFIG);
@@ -267,7 +300,6 @@ bool getSensorOffsets(adafruit_bno055_offsets_t * offsets_type) {
 	offsets_type->mag_radius = (msb << 8) | (lsb);
 
 	setMode(lastMode);
-	return true;
 }
 
 static void setSensorOffsets(const uint8_t *calibData) {
@@ -312,61 +344,31 @@ static void setSensorOffsets(const uint8_t *calibData) {
 }
 
 static void getVector(adafruit_vector_type_t vector_type, float *data) {
-  uint8_t buffer[6];
-  memset(buffer, 0, 6*sizeof(uint8_t));
+	uint8_t buffer[6];
+	memset(buffer, 0, 6*sizeof(uint8_t));
 
-  int16_t x, y, z;
-  x = y = z = 0;
+	int16_t x, y, z;
+	x = y = z = 0;
 
-  /* Read vector data (6 bytes) */
-  readLen((adafruit_bno055_reg_t)vector_type, buffer, 6);
+	/* Read vector data (6 bytes) */
+	//readLen((adafruit_bno055_reg_t)vector_type, buffer, 6);
+  
+	read8(BNO055_EULER_H_LSB_ADDR, &buffer[0]);
+	read8(BNO055_EULER_H_MSB_ADDR, &buffer[1]);
+	read8(BNO055_EULER_R_LSB_ADDR, &buffer[2]);
+	read8(BNO055_EULER_R_MSB_ADDR, &buffer[3]);
+	read8(BNO055_EULER_P_LSB_ADDR, &buffer[4]);
+	read8(BNO055_EULER_P_MSB_ADDR, &buffer[5]);
 
-  x = ((int16_t)buffer[0]) | (((int16_t)buffer[1]) << 8);
-  y = ((int16_t)buffer[2]) | (((int16_t)buffer[3]) << 8);
-  z = ((int16_t)buffer[4]) | (((int16_t)buffer[5]) << 8);
+	x = ((int16_t)buffer[0]) | (((int16_t)buffer[1]) << 8);
+	y = ((int16_t)buffer[2]) | (((int16_t)buffer[3]) << 8);
+	z = ((int16_t)buffer[4]) | (((int16_t)buffer[5]) << 8);
 
-  /*!
-   * Convert the value to an appropriate range (section 3.6.4)
-   * and assign the value to the Vector type
-   */
-  switch (vector_type) {
-  case VECTOR_MAGNETOMETER:
-    /* 1uT = 16 LSB */
-    data[0] = ((double)x) / 16.0;
-    data[1] = ((double)y) / 16.0;
-    data[2] = ((double)z) / 16.0;
-    break;
-  case VECTOR_GYROSCOPE:
-    /* 1dps = 16 LSB */
-    data[0] = ((double)x) / 16.0;
-    data[1] = ((double)y) / 16.0;
-    data[2] = ((double)z) / 16.0;
-    break;
-  case VECTOR_EULER:
-    /* 1 degree = 16 LSB */
-    data[0] = ((double)x) / 16.0;
-    data[1] = ((double)y) / 16.0;
-    data[2] = ((double)z) / 16.0;
-    break;
-  case VECTOR_ACCELEROMETER:
-    /* 1m/s^2 = 100 LSB */
-    data[0] = ((double)x) / 100.0;
-    data[1] = ((double)y) / 100.0;
-    data[2] = ((double)z) / 100.0;
-    break;
-  case VECTOR_LINEARACCEL:
-    /* 1m/s^2 = 100 LSB */
-    data[0] = ((double)x) / 100.0;
-    data[1] = ((double)y) / 100.0;
-    data[2] = ((double)z) / 100.0;
-    break;
-  case VECTOR_GRAVITY:
-    /* 1m/s^2 = 100 LSB */
-    data[0] = ((double)x) / 100.0;
-    data[1] = ((double)y) / 100.0;
-    data[2] = ((double)z) / 100.0;
-    break;
-  }
+  
+	/* 1 degree = 16 LSB */
+	data[0] = ((double)x) / 16.0;
+	data[1] = ((double)y) / 16.0;
+	data[2] = ((double)z) / 16.0;
 }
 
 enum status_code getHeading(COMP_Reading *reading) {
@@ -377,6 +379,8 @@ enum status_code getHeading(COMP_Reading *reading) {
 
 	/* Get a Euler angle sample for orientation */
 	float euler[3];
+	memset(euler, 0, 3*sizeof(float));
+	
 	getVector(VECTOR_EULER, euler);
 	reading->data.heading.heading = euler[0];
 	reading->data.heading.roll = euler[1];
@@ -426,15 +430,14 @@ enum status_code bno055_init(void)
 	/* Set mode of BNO055 */
 	_mode = OPERATION_MODE_NDOF;
 	write8(BNO055_OPR_MODE_ADDR, _mode);
-	//I2C_WriteBuffer(I2C_IMU, &_mode, 1, I2C_WRITE_NORMAL);
 	
 	/* Reset */
-	write8(BNO055_SYS_TRIGGER_ADDR, 0x20);
+	//write8(BNO055_SYS_TRIGGER_ADDR, 0x20);
 	
 	delay_ms(30);
-	read8(BNO055_CHIP_ID_ADDR, slave_addr);
+	read8(BNO055_CHIP_ID_ADDR, &slave_addr);
 	while (slave_addr != BNO055_ID) {
-		read8(BNO055_CHIP_ID_ADDR, slave_addr);
+		read8(BNO055_CHIP_ID_ADDR, &slave_addr);
 		delay_ms(10);
 	}
 	delay_ms(50);
@@ -448,7 +451,7 @@ enum status_code bno055_init(void)
 	write8(BNO055_SYS_TRIGGER_ADDR, 0x0);
 	delay_ms(10);
 	
-	/* Set the operating mode */
+	///* Set the operating mode */
 	write8(BNO055_OPR_MODE_ADDR, _mode);
 	delay_ms(20);
 	
@@ -463,48 +466,45 @@ void Test_IMU(void){
 	
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_IMU_DELAY_MS);
 
-	//if(bno055_init() != STATUS_OK){
-		//DEBUG_Write("\n\r<<<<< Failed IMU initialization >>>>>n\r");
-	//}
+	if(bno055_init() != STATUS_OK){
+		DEBUG_Write("\n\r<<<<< Failed IMU initialization >>>>>n\r");
+	}
 
 
 	COMP_Reading reading;
 	int heading, roll, pitch;
-	//
-	//uint8_t bno_id = 0;
-	//uint8_t reg_addr = BNO055_CHIP_ID_ADDR;
 	
+	uint8_t temp = 0;
 	uint8_t reg_addr = BNO055_TEMP_ADDR;
 	
-	uint8_t mode_buffer[2] = {BNO055_OPR_MODE_ADDR, OPERATION_MODE_ACCONLY};
-	I2C_WriteBuffer(I2C_IMU, mode_buffer, 2, I2C_WRITE_NORMAL);
+	setMode(OPERATION_MODE_NDOF);
+	IMU_calibrate();
 	
-	uint8_t temp;
+	adafruit_bno055_offsets_t offsets;
+	
+	//getSensorOffsets(&offsets);
+	//setSensorOffsets(&offsets);
+
 	while(1){
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x20;
 		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 		
-		DEBUG_Write("<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");
-		//getHeading(&reading);
-		//
-		//heading = reading.data.heading.heading;
-		//roll = reading.data.heading.roll;
-		//pitch = reading.data.heading.pitch;
-		//
-		//DEBUG_Write("The magnetic heading is: %d\r\n", heading);
-		//DEBUG_Write("The roll is: %d\r\n", roll);
-		//DEBUG_Write("The pitch is: %d\r\n", pitch);
+		DEBUG_Write("<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");\
 		
-		//I2C_WriteBuffer(I2C_IMU, &reg_addr, 1, I2C_WRITE_NORMAL);
-		//I2C_ReadBuffer(I2C_IMU, &bno_id, 1, I2C_READ_NORMAL);
-		//DEBUG_Write("Bno ID: %02X\r\n", bno_id);
+		getHeading(&reading);
 		
-		//read8(0x34, &temp);
-		I2C_WriteBuffer(I2C_IMU, &reg_addr, 1, I2C_WRITE_NORMAL);
-		I2C_ReadBuffer(I2C_IMU, &temp, 1, I2C_READ_NORMAL);
-		DEBUG_Write("Temp: %d\r\n", temp);
+		heading = reading.data.heading.heading;
+		roll = reading.data.heading.roll;
+		pitch = reading.data.heading.pitch;
+		
+		DEBUG_Write("The magnetic heading is: %d\r\n", heading);
+		DEBUG_Write("The roll is: %d\r\n", roll);
+		DEBUG_Write("The pitch is: %d\r\n", pitch);
+		
+		//read8(BNO055_TEMP_ADDR, &temp);
+		//DEBUG_Write("Temp: %d\r\n", temp);
 		
 		vTaskDelay(testDelay);
 	}

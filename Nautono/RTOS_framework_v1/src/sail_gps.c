@@ -63,7 +63,7 @@ void ReadGPS(void) {
 		
 		GPS_On();
 
-		running_task = eReadWeatherSensor; //Replace this with gps, see tasksinit.c/.h
+		running_task = eReadGPS; //Replace this with gps, see tasksinit.c/.h
 
 		NMEA_GenericMsg msg;
 

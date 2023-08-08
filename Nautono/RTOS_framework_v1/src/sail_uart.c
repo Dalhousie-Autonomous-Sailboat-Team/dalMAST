@@ -3,7 +3,7 @@
  * Created on June 13, 2016.
  * Created by Thomas Gwynne-Timothy.
  */
-#define PCB
+//#define PCB
 
 #include "sail_uart.h"
 
@@ -357,7 +357,7 @@ void GPS_RxCallback(struct usart_module *const usart_module) {
 }
 
 void WIND_RxCallback(struct usart_module *const usart_module) {
-	UART_RxCallback(UART_WEATHERSTATION);
+	UART_RxCallback(UART_WIND);
 }
 
 void RADIO_RxCallback(struct usart_module *const usart_module) {
@@ -375,7 +375,7 @@ void GPS_TxCallback(struct usart_module *const usart_module) {
 }
 
 void WIND_TxCallback(struct usart_module *const usart_module) {
-	UART_TxCallback(UART_WEATHERSTATION);
+	UART_TxCallback(UART_WIND);
 }
 
 void RADIO_TxCallback(struct usart_module *const usart_module) {
