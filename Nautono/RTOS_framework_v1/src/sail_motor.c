@@ -404,7 +404,7 @@ static void pot_pos(double * data) {
 
 #define TESTING
 
-static void set_pos(double pos) {
+void set_pos(double pos) {
 	
 	double curr_pos = 0;
 	pot_pos(&curr_pos);
@@ -458,7 +458,7 @@ void Test_Rudder(void){
 		int_pos = pos;
 		DEBUG_Write("POT reading: %d\r\n", int_pos);
 		
-		set_pos(250);
+		//set_pos(250);
 		
 		vTaskDelay(testDelay);
 	}

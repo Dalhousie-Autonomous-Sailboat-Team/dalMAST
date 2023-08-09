@@ -39,15 +39,12 @@ enum status_code setActuator(float sail_angle) {
 
 /* <<For testing>>*/
 
-#define TEST_ACTUATOR_DELAY_MS 10000
+#define TEST_ACTUATOR_DELAY_MS 20000
 
 void Test_Actuator(void){
 
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_ACTUATOR_DELAY_MS);
-	
-	uint8_t angle = 29;
-	uint8_t index = 0;
-	uint16_t extension = 0;
+	PWM_Init();
 
 	while(1){
 		taskENTER_CRITICAL();
@@ -56,10 +53,13 @@ void Test_Actuator(void){
 		running_task = eUpdateCourse;
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Actuator >>>>>>>>>>\n\r");
 		
+		DEBUG_Write("Setting to angle: 45\r\n");
 		setActuator(45);
-		delay_ms(10000);
+		delay_ms(20000);
+		DEBUG_Write("Setting to angle: 75\r\n");
 		setActuator(75);
-		delay_ms(10000);
+		delay_ms(20000);
+		DEBUG_Write("Setting to angle: 101\r\n");
 		setActuator(101);
 		
 		vTaskDelay(testDelay);
