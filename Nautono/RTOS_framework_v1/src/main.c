@@ -17,6 +17,6 @@ int main(void)
 	CTRL_InitSystem(); // Init -> DEBUG UART, RADIO, EERPROM
 	//CTRL_InitSensors(); // Initialize the WeatherStation
 	startup(); //Enable WS - Init Motors - Get the first waypoint
-	//MOTOR_Init();
+	MOTOR_Init();
 	init_tasks();
 }

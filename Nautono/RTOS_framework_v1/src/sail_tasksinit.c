@@ -93,7 +93,7 @@ enum status_code init_tasks(void) {
 	
 	//xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
-	xTaskCreate(Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate(Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 
 #ifdef PCB
 	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);

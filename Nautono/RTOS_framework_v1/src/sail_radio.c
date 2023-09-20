@@ -594,7 +594,7 @@ static RADIO_Status AdjustMotors(int8_t sail_angle, int8_t rudder_angle)
 	//MOTOR_SetRudder((double)rudder_angle);
 	set_pos((double)rudder_angle);
 	setActuator((float)sail_angle);
-	DEBUG_Write("Setting rudder angle to %d\r\n", rudder_angle);
+	DEBUG_Write("Finished setting rudder angle to %d\r\n", rudder_angle);
 	return RADIO_STATUS_SUCCESS;	
 }
 
@@ -618,7 +618,8 @@ static void HandleMessage(RADIO_GenericMsg *msg)
 		RADIO_Ack(ChangeState(msg->fields.state.state));
 		break;
 		case RADIO_REMOTE:
-		RADIO_Ack(AdjustMotors(msg->fields.remote.sail_angle, msg->fields.remote.rudder_angle));
+		RADIO_Ack(RADIO_STATUS_SUCCESS);
+		AdjustMotors(msg->fields.remote.sail_angle, msg->fields.remote.rudder_angle);
 		break;
 		case RADIO_WAY_POINT:
 		RADIO_Ack(AddWayPoint(&msg->fields.wp));

@@ -31,8 +31,8 @@ enum status_code setActuator(float sail_angle) {
 	
 	float extension = 0;
 	getExtnesion(sail_angle, &extension);
-	uint8_t _extension = (uint8_t)extension;
-	SetExtension(_extension);
+	/*uint8_t _extension = (uint8_t)extension;*/
+	SetExtension((uint8_t)extension);
 	
 	return STATUS_OK;
 }

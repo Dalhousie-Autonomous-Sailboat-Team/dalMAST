@@ -423,7 +423,7 @@ void set_pos(double pos) {
 		TurnOn(MOTOR_RUDDER);
 		pot_pos(&curr_pos);
 		#ifdef TESTING
-		DEBUG_Write("Curr pos: %d\r\n", (int)curr_pos);
+		//DEBUG_Write("Curr pos: %d\r\n", (int)curr_pos);
 		#endif
 	}
 	
