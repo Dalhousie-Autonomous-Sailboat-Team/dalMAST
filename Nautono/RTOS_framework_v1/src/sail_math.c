@@ -10,10 +10,10 @@ double MATH_Clamp(double val, double low, double high)
 	if (val < low) {
 		return low;
 		// If the value is above the upper threshold, clamp it
-	} else if (val > high) {
+		} else if (val > high) {
 		return high;
 		// Otherwise, return the value
-	} else {
+		} else {
 		return val;
 	}
 }

@@ -7,6 +7,8 @@
 #include "sail_debug.h"
 #include "sail_tasksinit.h"
 #include "sail_pwm.h"
+#include "sail_adc.h"
+#include <stdbool.h>
 
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
@@ -39,12 +41,103 @@ enum status_code setActuator(float sail_angle) {
 
 /* <<For testing>>*/
 
-#define TEST_ACTUATOR_DELAY_MS 20000
+// Backward
+#define LIN_PWM1 PIN_PB16 
+// Forward
+#define LIN_PWM2 PIN_PB17
+
+#define LAC_OFF_STATE false
+#define LAC_ON_STATE true
+
+#define TEST_ACTUATOR_DELAY_MS 1000
+
+
+
+static void init_pins(void) {
+	
+	struct port_config config_port_pin;
+	port_get_config_defaults(&config_port_pin);
+	
+	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
+	
+	// Set the Forward direction pin
+	port_pin_set_config(LIN_PWM1, &config_port_pin);
+
+	// Set the backward direction pin
+	port_pin_set_config(LIN_PWM2, &config_port_pin);
+}
+
+static void TurnOff(void) {
+	port_pin_set_output_level(LIN_PWM1, LAC_OFF_STATE);
+	port_pin_set_output_level(LIN_PWM2, LAC_OFF_STATE);
+}
+
+static void pot_pos(double *data) {
+	ADC_GetReading(ADC_SAIL, data);
+}
+
+static void LAC_forward(void) {
+	port_pin_set_output_level(LIN_PWM1, LAC_OFF_STATE);
+	port_pin_set_output_level(LIN_PWM2, LAC_ON_STATE);
+}
+
+static void LAC_backward(void) {
+	port_pin_set_output_level(LIN_PWM1, LAC_ON_STATE);
+	port_pin_set_output_level(LIN_PWM2, LAC_OFF_STATE);
+}
+
+void AC_init(void) {
+	
+	init_pins();
+	
+	ADC_Init(ADC_SAIL);
+	
+	TurnOff();
+}
+
+void LAC_set_pos(double pos) 
+{
+	double curr_pos = 0;
+	pot_pos(&curr_pos);
+	
+	//void (*mov_func)(void);
+	//
+	//mov_func = *LAC_forward;
+	//
+	//if(curr_pos > pos) {
+		//mov_func = *LAC_backward;
+	//}
+	
+	DEBUG_Write("Setting LAC to pos: %d\r\n", (int)pos);
+	
+	while(curr_pos <= pos*0.98 || curr_pos >= pos*1.02) {
+		
+		if(curr_pos > pos) {
+			LAC_backward();
+		} else {
+			LAC_forward();
+		}
+		delay_ms(500);
+		TurnOff();
+		
+		pot_pos(&curr_pos);
+		DEBUG_Write("curr pos: %d\r\n", (int)curr_pos);
+	}
+	//TurnOff();
+	//pot_pos(&curr_pos);
+	//DEBUG_Write("Reached pos: %d\r\n", (int)curr_pos);
+	
+	DEBUG_Write("<<< Done >>>\r\n");
+}
 
 void Test_Actuator(void){
 
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_ACTUATOR_DELAY_MS);
-	PWM_Init();
+	//PWM_Init();
+	
+	AC_init();
+	
+	double curr_pos = 0;
 
 	while(1){
 		taskENTER_CRITICAL();
@@ -53,14 +146,9 @@ void Test_Actuator(void){
 		running_task = eUpdateCourse;
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Actuator >>>>>>>>>>\n\r");
 		
-		DEBUG_Write("Setting to angle: 45\r\n");
-		setActuator(45);
-		delay_ms(20000);
-		DEBUG_Write("Setting to angle: 75\r\n");
-		setActuator(75);
-		delay_ms(20000);
-		DEBUG_Write("Setting to angle: 101\r\n");
-		setActuator(101);
+		//LAC_set_pos(20);
+		pot_pos(&curr_pos);
+		DEBUG_Write("curr pos: %d\r\n", (int)curr_pos);
 		
 		vTaskDelay(testDelay);
 	}

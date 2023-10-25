@@ -8,6 +8,7 @@
 #include <asf.h>
 
 extern enum status_code setActuator(float sail_angle);
+extern void LAC_set_pos(double pos); 
 void Test_Actuator(void);
 
 #endif

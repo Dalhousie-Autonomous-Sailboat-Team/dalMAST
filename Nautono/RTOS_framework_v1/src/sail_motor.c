@@ -105,7 +105,7 @@ enum status_code MOTOR_Init(void)
 	InitPins();
 
 	// Initialize the ADC
-	ADC_Init();
+	ADC_Init(ADC_RUDDER);
 
 	// Initialize the PWM
 	PWM_Init();
@@ -419,7 +419,7 @@ void set_pos(double pos) {
 	#ifdef TESTING
 	DEBUG_Write("Setting rudder to pos: %d\r\n", (int)pos);
 	#endif
-	while(curr_pos <= 0.95*pos || curr_pos >= 1.05*pos) {
+	while(curr_pos <= pos-2 || curr_pos >= pos+2) {
 		TurnOn(MOTOR_RUDDER);
 		pot_pos(&curr_pos);
 		#ifdef TESTING
@@ -429,9 +429,8 @@ void set_pos(double pos) {
 	
 	TurnOff(MOTOR_RUDDER);
 	
-	int int_curr_pos = curr_pos;
 	#ifdef TESTING
-	DEBUG_Write("Reached pos: %d\r\n", int_curr_pos);
+	DEBUG_Write("Reached pos: %d\r\n", (double)curr_pos);
 	#endif
 }
 
