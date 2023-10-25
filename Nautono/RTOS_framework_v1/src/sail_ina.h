@@ -1,14 +1,21 @@
+// TO DO:
+// Run through code with Manav
+// Ask what includes to use and any compiler flags to use
 
-/*
- * sail_ina.h
- *
- * Created: 2023-07-30 12:36:38 PM
- *  Author: manav
- */ 
+#include <stdlib.h>
+#include <inttypes.h>
+#include "sail_i2c.h"
 
-#ifndef _SAIL_INA_H
-#define _SAIL_INA_H
+typedef enum Reg_Names {
+	CH1_BUSV,
+	CH2_BUSV,
+	CH3_BUSV,
+	CH1_SHUNTV,
+	CH2_SHUNTV,
+	CH3_SHUNTV,
+	NUM_REGISTERS
+} Reg_Names;
 
-
-
-#endif
+float ReadVoltage(I2C_DeviceID address, int channel);
+float ReadCurrent(I2C_DeviceID address, int channel);
+void Test_INA(void);

@@ -5,12 +5,14 @@
  * Created by
  */
 
+
 #include "sail_ctrl.h"
 #include "sail_debug.h"
 #include "sail_tasksinit.h"
 #include "sail_pwm.h"
 #include "sail_motor.h"
 #include "sail_pwm.h"
+#include "sail_actuator.h"
 
 int main(void)
 {
@@ -18,5 +20,6 @@ int main(void)
 	//CTRL_InitSensors(); // Initialize the WeatherStation
 	startup(); //Enable WS - Init Motors - Get the first waypoint
 	MOTOR_Init();
+	AC_init();
 	init_tasks();
 }

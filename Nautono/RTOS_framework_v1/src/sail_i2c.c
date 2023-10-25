@@ -31,9 +31,9 @@ static uint8_t slave_addrs[I2C_NUM_DEVICES] = {
 	0x50,	// EEPROM address
 	0x19,	// Old compass
 	0x28,	// IMU address
-	0x41,	// INA 1
-	0x42,	// INA 2
-	0x43,	// INA 3
+	0x40,	// INA 1
+	0x41,	// INA 2
+	0x42,	// INA 3
 	0x77,	// BME
 	0x36	// sail angle sensor (or 0x38)
 };
