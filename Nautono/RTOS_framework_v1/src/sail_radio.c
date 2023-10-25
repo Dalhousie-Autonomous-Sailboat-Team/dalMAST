@@ -593,14 +593,10 @@ static RADIO_Status AdjustMotors(int8_t sail_angle, int8_t rudder_angle)
 	//MOTOR_SetSail((double)sail_angle);
 	//MOTOR_SetRudder((double)rudder_angle);
 	set_pos((double)rudder_angle);
-	setActuator((float)sail_angle);
+	LAC_set_pos((double)sail_angle);
 	DEBUG_Write("Finished setting rudder angle to %d\r\n", rudder_angle);
 	return RADIO_STATUS_SUCCESS;	
 }
-
-
-
-
 
 static void HandleMessage(RADIO_GenericMsg *msg)
 {

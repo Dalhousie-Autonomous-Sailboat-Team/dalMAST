@@ -13,8 +13,6 @@
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
 
-
-
 #define SAIL_ANGLE_MIN 25
 #define SAIL_ANGLE_MAX 115
 #define ACTUATOR_EXT_MIN 0
@@ -117,16 +115,16 @@ void LAC_set_pos(double pos)
 		} else {
 			LAC_forward();
 		}
-		delay_ms(500);
-		TurnOff();
-		
+		//TurnOff();
 		pot_pos(&curr_pos);
-		DEBUG_Write("curr pos: %d\r\n", (int)curr_pos);
+		delay_ms(10);
+		pot_pos(&curr_pos);
+		//DEBUG_Write("curr pos: %d\r\n", (int)curr_pos);
 	}
-	//TurnOff();
+	TurnOff();
 	//pot_pos(&curr_pos);
-	//DEBUG_Write("Reached pos: %d\r\n", (int)curr_pos);
 	
+	DEBUG_Write("Reached pos: %d\r\n", (int)curr_pos);
 	DEBUG_Write("<<< Done >>>\r\n");
 }
 
@@ -146,10 +144,11 @@ void Test_Actuator(void){
 		running_task = eUpdateCourse;
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Actuator >>>>>>>>>>\n\r");
 		
-		//LAC_set_pos(20);
+		
+		LAC_set_pos(100);
 		pot_pos(&curr_pos);
 		DEBUG_Write("curr pos: %d\r\n", (int)curr_pos);
-		
+	
 		vTaskDelay(testDelay);
 	}
 }
