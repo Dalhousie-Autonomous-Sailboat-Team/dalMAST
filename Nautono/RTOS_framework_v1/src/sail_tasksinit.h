@@ -7,13 +7,12 @@
 #ifndef SAIL_TASKSINIT_H
 #define SAIL_TASKSINIT_H
 
-
+#include "config.h"
 #include "FreeRTOS.h"
 #include "event_groups.h"
 #include "semphr.h"
-#include "sail_nmea.h"
-#include "Sail_WEATHERSTATION.h"
 
+#include "sail_nmea.h"
 
 // The event group used for setting sailboat modes
 extern EventGroupHandle_t mode_event_group;

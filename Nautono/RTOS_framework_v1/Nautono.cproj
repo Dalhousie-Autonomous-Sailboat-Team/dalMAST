@@ -781,6 +781,9 @@
     <Compile Include="src\ASF\sam0\drivers\rtc\rtc_calendar_interrupt.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\config.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sail_actuator.c">
       <SubType>compile</SubType>
     </Compile>
@@ -803,12 +806,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_buffer.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\sail_comp.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\sail_comp.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_ctrl.c">
@@ -853,16 +850,22 @@
     <Compile Include="src\sail_ina.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\sail_led.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_led.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sail_math.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_math.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\sail_motor.c">
+    <Compile Include="src\sail_rudder.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\sail_motor.h">
+    <Compile Include="src\sail_rudder.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_nav.c">
@@ -902,12 +905,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_uart.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Sail_WEATHERSTATION.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Sail_WEATHERSTATION.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_wind.c">

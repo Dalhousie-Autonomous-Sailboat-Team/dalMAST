@@ -4,10 +4,7 @@
  * Created on June 29, 2016.
  * Created by Thomas Gwynne-Timothy.
  */
-
-
-#define PCB
-
+#include "config.h"
 #include "sail_i2c.h"
 #include "sail_debug.h"
 
@@ -29,7 +26,6 @@ uint8_t init_flag = 0;
 // Addresses of slave devices
 static uint8_t slave_addrs[I2C_NUM_DEVICES] = {
 	0x50,	// EEPROM address
-	0x19,	// Old compass
 	0x28,	// IMU address
 	0x40,	// INA 1
 	0x41,	// INA 2

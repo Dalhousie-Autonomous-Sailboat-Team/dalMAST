@@ -6,18 +6,21 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "sail_math.h"
-#include "sail_debug.h"
 #include "sail_radio.h"
 #include "sail_wind.h"
 #include "sail_eeprom.h"
-#include "sail_types.h"
-#include "sail_nav.h"
-#include "sail_motor.h"
-#include "sail_comp.h"
-#include "sail_tasksinit.h"
-//#include "Sail_WEATHERSTATION.h"///////////////////////////////////////////////////
+#include "sail_rudder.h"
 #include "sail_gps.h"
+#include "sail_rudder.h"
+#include "sail_actuator.h"
+
+#include "sail_nav.h"
+#include "sail_debug.h"
+
+#include "sail_math.h"
+#include "sail_types.h"
+
+#include "sail_tasksinit.h"
 #include "delay.h"
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
@@ -151,12 +154,6 @@ enum status_code CTRL_InitSensors(void)
 {
 	
 	//todo: add initialization for AIS module
-	//DEBUG_Write("Test 456");
-	//if (COMP_Init() != STATUS_OK) {
-	//	DEBUG_Write_Unprotected("Compass not initialized...\r\n");
-	//}
-	//DEBUG_Write("Test 123");
-    
     if(WIND_Init() != STATUS_OK){
         DEBUG_Write_Unprotected("Wind Vane not initialized... \r\n");
     }else{
@@ -164,17 +161,7 @@ enum status_code CTRL_InitSensors(void)
     }
     
     // When status is okay, shouldn't this return a different status? - KT
-    
-    /*
-	if (WEATHERSTATION_Init() != STATUS_OK) {
-		DEBUG_Write_Unprotected("WS not initialized...\r\n");
-	}
-	else{
-		DEBUG_Write_Unprotected("WS initialized.\r\n");
-		//DEBUG_Write("WS initialized.\r\n");
-	} 
-    */
-	
+
 	return STATUS_OK;
 }
 
@@ -200,7 +187,11 @@ enum status_code startup(void)
 	/*
 	// Start the motor controller
 	MOTOR_Init();
-*/
+	*/
+	
+	RUDDER_Init();
+	AC_init();
+	
 	
 	return STATUS_OK;
 }
@@ -451,12 +442,17 @@ void ReadCompass(void)
 		
 
 		// Get the compass reading
+		
+/* Updated this code for new compass:
+		
 		if(COMP_GetReading(COMP_HEADING, &comp) !=  STATUS_OK){
 			DEBUG_Write("\nERROR\r\n");
 		}
 
 		// Update the averaged heading
 		avg_heading_deg = 0.9 * avg_heading_deg + 0.1 * comp.data.heading.heading;
+		
+*/
 		
 		vTaskDelay(read_compass_delay);
 

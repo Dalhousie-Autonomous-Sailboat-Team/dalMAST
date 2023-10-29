@@ -1,3 +1,6 @@
+// Unused code, left for learning purposes.
+
+
 /* sail_pwm.c
  * Implementation of the PWM driver module for the autonomous sailboat project.
  * Created on Thomas Gwynne-Timothy.

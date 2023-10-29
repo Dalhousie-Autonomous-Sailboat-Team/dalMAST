@@ -6,28 +6,28 @@
  * Created by Serge Toutsenko
  */
 
-#define PCB
-
 #include "sail_tasksinit.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "sail_wind.h"
 #include "sail_debug.h"
 #include "usart_interrupt.h"
-#include "sail_nmea.h"
-//#include "Sail_WEATHERSTATION.h"
-#include "sail_gps.h"
+
 #include "sail_types.h"
-#include "sail_nav.h"
 #include "sail_ctrl.h"
-#include "sail_radio.h"
+#include "sail_led.h"
+
+// Header files of different devices containing RTOS tasks.
 #include "sail_actuator.h"
-#include "sail_imu.h"
 #include "sail_anglesensor.h"
 #include "sail_eeprom.h"
-#include "sail_wind.h"
-#include "sail_motor.h"
+#include "sail_gps.h"
+#include "sail_imu.h"
 #include "sail_ina.h"
+#include "sail_nav.h"
+#include "sail_nmea.h"
+#include "sail_radio.h"
+#include "sail_rudder.h"
+#include "sail_wind.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -40,12 +40,6 @@ SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
 
 unsigned char watchdog_counter;
 unsigned char watchdog_reset_value = 0x3F;
-
-
-
-#ifdef PCB
-void Debug_LED(void);
-#endif
 
 
 enum status_code init_tasks(void) {
@@ -86,28 +80,26 @@ enum status_code init_tasks(void) {
 	// Task for reseting the watchdog so that the microcontroller is not restarted
 	//xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	
+	/* Device Testing tasks: */
+	
 	//xTaskCreate(Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	
 	//xTaskCreate(Test_IMU, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	
 	//xTaskCreate(Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	
 	//xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
 	//xTaskCreate(Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate(Test_INA, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 
-#ifdef PCB
+
+	// Task to blink an LED on the pcb, to ensure that the CPU is working.
 	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-#endif
+	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
-	
 	
 	// The program should not reach this point
 	// If it does, more freeRTOS heap memory must be allocated
 	return STATUS_ERR_INSUFFICIENT_RTOS_HEAP;
-	
 }
 
 void WatchDogTask(void){
@@ -126,9 +118,6 @@ void WatchDogTask(void){
 			DEBUG_Write("#################Kicked the watchdog######################\r\n");
 		}
 		taskEXIT_CRITICAL(); 
-		
-		
-		
 	}
 }
 
@@ -160,42 +149,3 @@ void vApplicationDaemonTaskStartupHook(void) {
 	// Start the watchdog timer
 	//StartWatchDog();
 }
-
-#ifdef PCB
-
-static uint8_t _directionPin;
-#define DEBUG_LED_DELAY 1000
-
-void Debug_LED(void)
-{
-	TickType_t testDelay = pdMS_TO_TICKS(DEBUG_LED_DELAY);
-	
-	_directionPin = PIN_PA25;
-	
-	struct port_config config_port_pin;
-	port_get_config_defaults(&config_port_pin);
-
-	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
-
-	port_pin_set_config(_directionPin, &config_port_pin);
-	
-	while(1)
-	{
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
-		running_task = eUpdateCourse;
-		
-		//DEBUG_Write_Unprotected("Flashing LED\r\n");
-	
-		port_pin_set_output_level(_directionPin, true);
-		
-		delay_ms(1000);
-		
-		port_pin_set_output_level(_directionPin, false);
-		
-		vTaskDelay(testDelay);
-	}
-}
-
-#endif

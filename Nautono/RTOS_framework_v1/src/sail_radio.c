@@ -8,7 +8,7 @@
 
 #include "sail_nmea.h"
 #include "sail_debug.h"
-#include "sail_motor.h"
+#include "sail_rudder.h"
 #include "sail_actuator.h"
 #include "delay.h"
 #include "FreeRTOS.h"
@@ -592,7 +592,7 @@ static RADIO_Status AdjustMotors(int8_t sail_angle, int8_t rudder_angle)
 {
 	//MOTOR_SetSail((double)sail_angle);
 	//MOTOR_SetRudder((double)rudder_angle);
-	set_pos((double)rudder_angle);
+	RudderSetPos((double)rudder_angle);
 	LAC_set_pos((double)sail_angle);
 	DEBUG_Write("Finished setting rudder angle to %d\r\n", rudder_angle);
 	return RADIO_STATUS_SUCCESS;	

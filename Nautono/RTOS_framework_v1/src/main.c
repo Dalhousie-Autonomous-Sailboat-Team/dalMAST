@@ -9,17 +9,11 @@
 #include "sail_ctrl.h"
 #include "sail_debug.h"
 #include "sail_tasksinit.h"
-#include "sail_pwm.h"
-#include "sail_motor.h"
-#include "sail_pwm.h"
-#include "sail_actuator.h"
 
 int main(void)
 {
 	CTRL_InitSystem(); // Init -> DEBUG UART, RADIO, EERPROM
 	//CTRL_InitSensors(); // Initialize the WeatherStation
-	startup(); //Enable WS - Init Motors - Get the first waypoint
-	MOTOR_Init();
-	AC_init();
+	startup();
 	init_tasks();
 }

@@ -18,8 +18,8 @@ static struct adc_module adc[ADC_NUM_CHANNELS];
 
 // ADC pin mappings
 static const enum adc_positive_input input_pins[ADC_NUM_CHANNELS] = {
-	ADC_POSITIVE_INPUT_PIN19,
-	ADC_POSITIVE_INPUT_PIN16
+	ADC_POSITIVE_INPUT_PIN19, // Sail pot pin
+	ADC_POSITIVE_INPUT_PIN16  // Rudder pot pin
 };
 
 // Flag to indicate the module has been initialized

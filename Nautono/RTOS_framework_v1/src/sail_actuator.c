@@ -2,54 +2,24 @@
 	\author Manav Sohi
 	\brief Contains functions to get the %extension for linear actuator based on desired sail angle
 */
-
-#include "sail_actuator.h"
-#include "sail_debug.h"
-#include "sail_tasksinit.h"
-#include "sail_pwm.h"
-#include "sail_adc.h"
 #include <stdbool.h>
+#include <asf.h>
 
+#include "sail_debug.h"
+#include "sail_adc.h"
+#include "sail_actuator.h"
+
+#include "sail_tasksinit.h"
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
 
-#define SAIL_ANGLE_MIN 25
-#define SAIL_ANGLE_MAX 115
-#define ACTUATOR_EXT_MIN 0
-#define ACTUATOR_EXT_MAX 255
-
-static void getExtnesion(float sail_angle, float * extension) {
-	*extension = ((sail_angle - SAIL_ANGLE_MIN) * (ACTUATOR_EXT_MAX - ACTUATOR_EXT_MIN) / (SAIL_ANGLE_MAX - SAIL_ANGLE_MIN)) + ACTUATOR_EXT_MIN;
-}
-
-static void SetExtension(uint8_t extension) {
-	PWM_SetDuty(PWM_SAIL, extension);
-	return STATUS_OK;
-}
-
-enum status_code setActuator(float sail_angle) {
-	
-	float extension = 0;
-	getExtnesion(sail_angle, &extension);
-	/*uint8_t _extension = (uint8_t)extension;*/
-	SetExtension((uint8_t)extension);
-	
-	return STATUS_OK;
-}
-
-/* <<For testing>>*/
-
-// Backward
+// Actuator retraction pin
 #define LIN_PWM1 PIN_PB16 
-// Forward
+// Actuator extension pin
 #define LIN_PWM2 PIN_PB17
 
 #define LAC_OFF_STATE false
 #define LAC_ON_STATE true
-
-#define TEST_ACTUATOR_DELAY_MS 1000
-
-
 
 static void init_pins(void) {
 	
@@ -70,7 +40,7 @@ static void TurnOff(void) {
 	port_pin_set_output_level(LIN_PWM2, LAC_OFF_STATE);
 }
 
-static void pot_pos(double *data) {
+static void ActuatorPotPos(double *data) {
 	ADC_GetReading(ADC_SAIL, data);
 }
 
@@ -96,17 +66,7 @@ void AC_init(void) {
 void LAC_set_pos(double pos) 
 {
 	double curr_pos = 0;
-	pot_pos(&curr_pos);
-	
-	//void (*mov_func)(void);
-	//
-	//mov_func = *LAC_forward;
-	//
-	//if(curr_pos > pos) {
-		//mov_func = *LAC_backward;
-	//}
-	
-	DEBUG_Write("Setting LAC to pos: %d\r\n", (int)pos);
+	ActuatorPotPos(&curr_pos);
 	
 	while(curr_pos <= pos*0.98 || curr_pos >= pos*1.02) {
 		
@@ -115,23 +75,18 @@ void LAC_set_pos(double pos)
 		} else {
 			LAC_forward();
 		}
-		//TurnOff();
-		pot_pos(&curr_pos);
+		ActuatorPotPos(&curr_pos);
 		delay_ms(10);
-		pot_pos(&curr_pos);
-		//DEBUG_Write("curr pos: %d\r\n", (int)curr_pos);
+		ActuatorPotPos(&curr_pos);
 	}
 	TurnOff();
-	//pot_pos(&curr_pos);
-	
-	DEBUG_Write("Reached pos: %d\r\n", (int)curr_pos);
-	DEBUG_Write("<<< Done >>>\r\n");
 }
+
+#define TEST_ACTUATOR_DELAY_MS 1000
 
 void Test_Actuator(void){
 
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_ACTUATOR_DELAY_MS);
-	//PWM_Init();
 	
 	AC_init();
 	
@@ -142,12 +97,12 @@ void Test_Actuator(void){
 		watchdog_counter |= 0x20;
 		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
+		
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Actuator >>>>>>>>>>\n\r");
 		
-		
 		LAC_set_pos(100);
-		pot_pos(&curr_pos);
-		DEBUG_Write("curr pos: %d\r\n", (int)curr_pos);
+		ActuatorPotPos(&curr_pos);
+		DEBUG_Write("current pos: %d\r\n", (int)curr_pos);
 	
 		vTaskDelay(testDelay);
 	}

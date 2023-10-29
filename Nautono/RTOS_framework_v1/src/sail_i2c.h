@@ -13,7 +13,6 @@
 
 typedef enum I2C_DeviceIDs {
 	I2C_EEPROM,
-	I2C_COMPASS,
 	I2C_IMU,
 	I2C_INA1,
 	I2C_INA2,
