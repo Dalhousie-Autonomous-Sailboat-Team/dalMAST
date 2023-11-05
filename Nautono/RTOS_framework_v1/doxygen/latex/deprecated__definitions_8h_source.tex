@@ -1,0 +1,286 @@
+\hypertarget{deprecated__definitions_8h_source}{}\doxysection{deprecated\+\_\+definitions.\+h}
+\label{deprecated__definitions_8h_source}\index{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/deprecated\_definitions.h@{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/deprecated\_definitions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * FreeRTOS Kernel V10.0.0}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining a copy of}}
+\DoxyCodeLine{6 \textcolor{comment}{ * this software and associated documentation files (the "{}Software"{}), to deal in}}
+\DoxyCodeLine{7 \textcolor{comment}{ * the Software without restriction, including without limitation the rights to}}
+\DoxyCodeLine{8 \textcolor{comment}{ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of}}
+\DoxyCodeLine{9 \textcolor{comment}{ * the Software, and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * The above copyright notice and this permission notice shall be included in all}}
+\DoxyCodeLine{13 \textcolor{comment}{ * copies or substantial portions of the Software. If you wish to use our Amazon}}
+\DoxyCodeLine{14 \textcolor{comment}{ * FreeRTOS name, please do so in a fair use way that does not cause confusion.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{17 \textcolor{comment}{ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS}}
+\DoxyCodeLine{18 \textcolor{comment}{ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR}}
+\DoxyCodeLine{19 \textcolor{comment}{ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER}}
+\DoxyCodeLine{20 \textcolor{comment}{ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN}}
+\DoxyCodeLine{21 \textcolor{comment}{ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * http://www.FreeRTOS.org}}
+\DoxyCodeLine{24 \textcolor{comment}{ * http://aws.amazon.com/freertos}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ * 1 tab == 4 spaces!}}
+\DoxyCodeLine{27 \textcolor{comment}{ */}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef DEPRECATED\_DEFINITIONS\_H}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define DEPRECATED\_DEFINITIONS\_H}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{/* Each FreeRTOS port has a unique portmacro.h header file.  Originally a}}
+\DoxyCodeLine{34 \textcolor{comment}{pre-\/processor definition was used to ensure the pre-\/processor found the correct}}
+\DoxyCodeLine{35 \textcolor{comment}{portmacro.h file for the port being used.  That scheme was deprecated in favour}}
+\DoxyCodeLine{36 \textcolor{comment}{of setting the compiler's include path such that it found the correct}}
+\DoxyCodeLine{37 \textcolor{comment}{portmacro.h file -\/ removing the need for the constant and allowing the}}
+\DoxyCodeLine{38 \textcolor{comment}{portmacro.h file to be located anywhere in relation to the port being used.  The}}
+\DoxyCodeLine{39 \textcolor{comment}{definitions below remain in the code for backward compatibility only.  New}}
+\DoxyCodeLine{40 \textcolor{comment}{projects should not use them. */}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifdef OPEN\_WATCOM\_INDUSTRIAL\_PC\_PORT}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)owatcom\(\backslash\)16bitdos\(\backslash\)pc\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{44     \textcolor{keyword}{typedef} void ( \_\_interrupt \_\_far *pxISR )();}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#ifdef OPEN\_WATCOM\_FLASH\_LITE\_186\_PORT}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)owatcom\(\backslash\)16bitdos\(\backslash\)flsh186\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{49     \textcolor{keyword}{typedef} void ( \_\_interrupt \_\_far *pxISR )();}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifdef GCC\_MEGA\_AVR}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{    \#include "{}../portable/GCC/ATMega323/portmacro.h"{}}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifdef IAR\_MEGA\_AVR}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{    \#include "{}../portable/IAR/ATMega323/portmacro.h"{}}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#ifdef MPLAB\_PIC24\_PORT}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{    \#include "{}../../Source/portable/MPLAB/PIC24\_dsPIC/portmacro.h"{}}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#ifdef MPLAB\_DSPIC\_PORT}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{    \#include "{}../../Source/portable/MPLAB/PIC24\_dsPIC/portmacro.h"{}}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#ifdef MPLAB\_PIC18F\_PORT}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{    \#include "{}../../Source/portable/MPLAB/PIC18F/portmacro.h"{}}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#ifdef MPLAB\_PIC32MX\_PORT}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{    \#include "{}../../Source/portable/MPLAB/PIC32MX/portmacro.h"{}}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#ifdef \_FEDPICC}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{    \#include "{}libFreeRTOS/Include/portmacro.h"{}}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#ifdef SDCC\_CYGNAL}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{    \#include "{}../../Source/portable/SDCC/Cygnal/portmacro.h"{}}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#ifdef GCC\_ARM7}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/ARM7\_LPC2000/portmacro.h"{}}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#ifdef GCC\_ARM7\_ECLIPSE}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{    \#include "{}portmacro.h"{}}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#ifdef ROWLEY\_LPC23xx}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/ARM7\_LPC23xx/portmacro.h"{}}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#ifdef IAR\_MSP430}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)IAR\(\backslash\)MSP430\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#ifdef GCC\_MSP430}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/MSP430F449/portmacro.h"{}}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifdef ROWLEY\_MSP430}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{    \#include "{}../../Source/portable/Rowley/MSP430F449/portmacro.h"{}}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#ifdef ARM7\_LPC21xx\_KEIL\_RVDS}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)RVDS\(\backslash\)ARM7\_LPC21xx\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#ifdef SAM7\_GCC}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/ARM7\_AT91SAM7S/portmacro.h"{}}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#ifdef SAM7\_IAR}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)IAR\(\backslash\)AtmelSAM7S64\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#ifdef SAM9XE\_IAR}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)IAR\(\backslash\)AtmelSAM9XE\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#ifdef LPC2000\_IAR}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)IAR\(\backslash\)LPC2000\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#ifdef STR71X\_IAR}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)IAR\(\backslash\)STR71x\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#ifdef STR75X\_IAR}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)IAR\(\backslash\)STR75x\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#ifdef STR75X\_GCC}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)GCC\(\backslash\)STR75x\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#ifdef STR91X\_IAR}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)IAR\(\backslash\)STR91x\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#ifdef GCC\_H8S}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/H8S2329/portmacro.h"{}}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#ifdef GCC\_AT91FR40008}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/ARM7\_AT91FR40008/portmacro.h"{}}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#ifdef RVDS\_ARMCM3\_LM3S102}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{    \#include "{}../../Source/portable/RVDS/ARM\_CM3/portmacro.h"{}}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#ifdef GCC\_ARMCM3\_LM3S102}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/ARM\_CM3/portmacro.h"{}}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#ifdef GCC\_ARMCM3}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/ARM\_CM3/portmacro.h"{}}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#ifdef IAR\_ARM\_CM3}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{    \#include "{}../../Source/portable/IAR/ARM\_CM3/portmacro.h"{}}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#ifdef IAR\_ARMCM3\_LM}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{    \#include "{}../../Source/portable/IAR/ARM\_CM3/portmacro.h"{}}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#ifdef HCS12\_CODE\_WARRIOR}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{    \#include "{}../../Source/portable/CodeWarrior/HCS12/portmacro.h"{}}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#ifdef MICROBLAZE\_GCC}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/MicroBlaze/portmacro.h"{}}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#ifdef TERN\_EE}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)Paradigm\(\backslash\)Tern\_EE\(\backslash\)small\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#ifdef GCC\_HCS12}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/HCS12/portmacro.h"{}}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#ifdef GCC\_MCF5235}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/MCF5235/portmacro.h"{}}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#ifdef COLDFIRE\_V2\_GCC}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{    \#include "{}../../../Source/portable/GCC/ColdFire\_V2/portmacro.h"{}}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#ifdef COLDFIRE\_V2\_CODEWARRIOR}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{    \#include "{}../../Source/portable/CodeWarrior/ColdFire\_V2/portmacro.h"{}}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#ifdef GCC\_PPC405}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/PPC405\_Xilinx/portmacro.h"{}}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#ifdef GCC\_PPC440}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{    \#include "{}../../Source/portable/GCC/PPC440\_Xilinx/portmacro.h"{}}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#ifdef \_16FX\_SOFTUNE}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)..\(\backslash\)Source\(\backslash\)portable\(\backslash\)Softune\(\backslash\)MB96340\(\backslash\)portmacro.h"{}}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#ifdef BCC\_INDUSTRIAL\_PC\_PORT}}
+\DoxyCodeLine{213     \textcolor{comment}{/* A short file name has to be used in place of the normal}}
+\DoxyCodeLine{214 \textcolor{comment}{    FreeRTOSConfig.h when using the Borland compiler. */}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{    \#include "{}frconfig.h"{}}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)portable\(\backslash\)BCC\(\backslash\)16BitDOS\(\backslash\)PC\(\backslash\)prtmacro.h"{}}}
+\DoxyCodeLine{217     \textcolor{keyword}{typedef} void ( \_\_interrupt \_\_far *pxISR )();}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#ifdef BCC\_FLASH\_LITE\_186\_PORT}}
+\DoxyCodeLine{221     \textcolor{comment}{/* A short file name has to be used in place of the normal}}
+\DoxyCodeLine{222 \textcolor{comment}{    FreeRTOSConfig.h when using the Borland compiler. */}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{    \#include "{}frconfig.h"{}}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{    \#include "{}..\(\backslash\)portable\(\backslash\)BCC\(\backslash\)16BitDOS\(\backslash\)flsh186\(\backslash\)prtmacro.h"{}}}
+\DoxyCodeLine{225     \textcolor{keyword}{typedef} void ( \_\_interrupt \_\_far *pxISR )();}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{   \#ifdef \_\_AVR32\_AVR32A\_\_}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{       \#include "{}portmacro.h"{}}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{   \#endif}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#ifdef \_\_ICCAVR32\_\_}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{   \#ifdef \_\_CORE\_\_}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{      \#if \_\_CORE\_\_ == \_\_AVR32A\_\_}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{          \#include "{}portmacro.h"{}}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{      \#endif}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{   \#endif}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#ifdef \_\_91467D}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{    \#include "{}portmacro.h"{}}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#ifdef \_\_96340}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{    \#include "{}portmacro.h"{}}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#ifdef \_\_IAR\_V850ES\_Fx3\_\_}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{    \#include "{}../../Source/portable/IAR/V850ES/portmacro.h"{}}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#ifdef \_\_IAR\_V850ES\_Jx3\_\_}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{    \#include "{}../../Source/portable/IAR/V850ES/portmacro.h"{}}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#ifdef \_\_IAR\_V850ES\_Jx3\_L\_\_}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{    \#include "{}../../Source/portable/IAR/V850ES/portmacro.h"{}}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#ifdef \_\_IAR\_V850ES\_Jx2\_\_}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{    \#include "{}../../Source/portable/IAR/V850ES/portmacro.h"{}}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#ifdef \_\_IAR\_V850ES\_Hx2\_\_}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{    \#include "{}../../Source/portable/IAR/V850ES/portmacro.h"{}}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#ifdef \_\_IAR\_78K0R\_Kx3\_\_}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{    \#include "{}../../Source/portable/IAR/78K0R/portmacro.h"{}}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#ifdef \_\_IAR\_78K0R\_Kx3L\_\_}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{    \#include "{}../../Source/portable/IAR/78K0R/portmacro.h"{}}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DEPRECATED\_DEFINITIONS\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{280 }
+
+\end{DoxyCode}

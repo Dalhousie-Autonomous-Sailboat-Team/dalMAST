@@ -1,0 +1,146 @@
+\hypertarget{structtc__config}{}\doxysection{tc\+\_\+config Struct Reference}
+\label{structtc__config}\index{tc\_config@{tc\_config}}
+
+
+TC configuration structure.  
+
+
+
+
+{\ttfamily \#include $<$tc.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} \mbox{\hyperlink{structtc__config_a02caf6c9b480dce4bff693e0a132c14d}{clock\+\_\+source}}
+\item 
+bool \mbox{\hyperlink{structtc__config_aa9da10508a84c542c9a4db4a40939b91}{run\+\_\+in\+\_\+standby}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}{tc\+\_\+counter\+\_\+size}} \mbox{\hyperlink{structtc__config_a5893bd6c8e929e00d3190d707219a655}{counter\+\_\+size}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98aed17b995157e67b9322a45f0ed5f4}{tc\+\_\+clock\+\_\+prescaler}} \mbox{\hyperlink{structtc__config_a64c06e1749c5a1c850bab3a9627e9950}{clock\+\_\+prescaler}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7f1302b7e3d675e471a554668b49d64}{tc\+\_\+wave\+\_\+generation}} \mbox{\hyperlink{structtc__config_aee2956506b6ce95c7e1869f29095efaf}{wave\+\_\+generation}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga204bb4814c91e62e56d9297c05280aad}{tc\+\_\+reload\+\_\+action}} \mbox{\hyperlink{structtc__config_a01ceff394bad76be28ef96f877d594a8}{reload\+\_\+action}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structtc__config_ad401f54dbedfaf1e6656af3b3fa4bfd9}{waveform\+\_\+invert\+\_\+output}}
+\item 
+bool \mbox{\hyperlink{structtc__config_a69bd05db4229e58963360e7ed9d9d3b7}{enable\+\_\+capture\+\_\+on\+\_\+channel}} \mbox{[}\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\+\_\+\+OF\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNELS}}\mbox{]}
+\item 
+bool \mbox{\hyperlink{structtc__config_a3ac6596c0098d120df9d68894ca952ff}{oneshot}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga28777c47943dfb2b5de0fd7ae14eac1f}{tc\+\_\+count\+\_\+direction}} \mbox{\hyperlink{structtc__config_a16bb64835f49d978cba5fb63da7af336}{count\+\_\+direction}}
+\item 
+struct \mbox{\hyperlink{structtc__pwm__channel}{tc\+\_\+pwm\+\_\+channel}} \mbox{\hyperlink{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}{pwm\+\_\+channel}} \mbox{[}\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\+\_\+\+OF\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNELS}}\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \mbox{\hyperlink{structtc__8bit__config}{tc\_8bit\_config}} \mbox{\hyperlink{structtc__config_a96784398ede92f263776670adfcd622e}{counter\_8\_bit}}\\
+\>struct \mbox{\hyperlink{structtc__16bit__config}{tc\_16bit\_config}} \mbox{\hyperlink{structtc__config_affb0c91936b6a7eb7befc3b87bd85fbd}{counter\_16\_bit}}\\
+\>struct \mbox{\hyperlink{structtc__32bit__config}{tc\_32bit\_config}} \mbox{\hyperlink{structtc__config_a6ce15280110ad259701c4291cfd26a19}{counter\_32\_bit}}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TC configuration structure. 
+
+Configuration struct for a TC instance. This structure should be initialized by the tc\+\_\+get\+\_\+config\+\_\+defaults function before being modified by the user application. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtc__config_a1dd9a31fc16a99bf6daeca4e7c31e921}\label{structtc__config_a1dd9a31fc16a99bf6daeca4e7c31e921}} 
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily union  \{ ... \}  tc\+\_\+config\+::@1}
+
+Access the different counter size settings through this configuration member. \mbox{\Hypertarget{structtc__config_a64c06e1749c5a1c850bab3a9627e9950}\label{structtc__config_a64c06e1749c5a1c850bab3a9627e9950}} 
+\index{tc\_config@{tc\_config}!clock\_prescaler@{clock\_prescaler}}
+\index{clock\_prescaler@{clock\_prescaler}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{clock\_prescaler}{clock\_prescaler}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98aed17b995157e67b9322a45f0ed5f4}{tc\+\_\+clock\+\_\+prescaler}} tc\+\_\+config\+::clock\+\_\+prescaler}
+
+Specifies the prescaler value for GCLK\+\_\+\+TC \mbox{\Hypertarget{structtc__config_a02caf6c9b480dce4bff693e0a132c14d}\label{structtc__config_a02caf6c9b480dce4bff693e0a132c14d}} 
+\index{tc\_config@{tc\_config}!clock\_source@{clock\_source}}
+\index{clock\_source@{clock\_source}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{clock\_source}{clock\_source}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} tc\+\_\+config\+::clock\+\_\+source}
+
+GCLK generator used to clock the peripheral \mbox{\Hypertarget{structtc__config_a16bb64835f49d978cba5fb63da7af336}\label{structtc__config_a16bb64835f49d978cba5fb63da7af336}} 
+\index{tc\_config@{tc\_config}!count\_direction@{count\_direction}}
+\index{count\_direction@{count\_direction}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{count\_direction}{count\_direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga28777c47943dfb2b5de0fd7ae14eac1f}{tc\+\_\+count\+\_\+direction}} tc\+\_\+config\+::count\+\_\+direction}
+
+Specifies the direction for the TC to count \mbox{\Hypertarget{structtc__config_affb0c91936b6a7eb7befc3b87bd85fbd}\label{structtc__config_affb0c91936b6a7eb7befc3b87bd85fbd}} 
+\index{tc\_config@{tc\_config}!counter\_16\_bit@{counter\_16\_bit}}
+\index{counter\_16\_bit@{counter\_16\_bit}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{counter\_16\_bit}{counter\_16\_bit}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtc__16bit__config}{tc\+\_\+16bit\+\_\+config}} tc\+\_\+config\+::counter\+\_\+16\+\_\+bit}
+
+Struct for 16-\/bit specific timer configuration \mbox{\Hypertarget{structtc__config_a6ce15280110ad259701c4291cfd26a19}\label{structtc__config_a6ce15280110ad259701c4291cfd26a19}} 
+\index{tc\_config@{tc\_config}!counter\_32\_bit@{counter\_32\_bit}}
+\index{counter\_32\_bit@{counter\_32\_bit}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{counter\_32\_bit}{counter\_32\_bit}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtc__32bit__config}{tc\+\_\+32bit\+\_\+config}} tc\+\_\+config\+::counter\+\_\+32\+\_\+bit}
+
+Struct for 32-\/bit specific timer configuration \mbox{\Hypertarget{structtc__config_a96784398ede92f263776670adfcd622e}\label{structtc__config_a96784398ede92f263776670adfcd622e}} 
+\index{tc\_config@{tc\_config}!counter\_8\_bit@{counter\_8\_bit}}
+\index{counter\_8\_bit@{counter\_8\_bit}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{counter\_8\_bit}{counter\_8\_bit}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtc__8bit__config}{tc\+\_\+8bit\+\_\+config}} tc\+\_\+config\+::counter\+\_\+8\+\_\+bit}
+
+Struct for 8-\/bit specific timer configuration \mbox{\Hypertarget{structtc__config_a5893bd6c8e929e00d3190d707219a655}\label{structtc__config_a5893bd6c8e929e00d3190d707219a655}} 
+\index{tc\_config@{tc\_config}!counter\_size@{counter\_size}}
+\index{counter\_size@{counter\_size}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{counter\_size}{counter\_size}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}{tc\+\_\+counter\+\_\+size}} tc\+\_\+config\+::counter\+\_\+size}
+
+Specifies either 8-\/, 16-\/, or 32-\/bit counter size \mbox{\Hypertarget{structtc__config_a69bd05db4229e58963360e7ed9d9d3b7}\label{structtc__config_a69bd05db4229e58963360e7ed9d9d3b7}} 
+\index{tc\_config@{tc\_config}!enable\_capture\_on\_channel@{enable\_capture\_on\_channel}}
+\index{enable\_capture\_on\_channel@{enable\_capture\_on\_channel}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{enable\_capture\_on\_channel}{enable\_capture\_on\_channel}}
+{\footnotesize\ttfamily bool tc\+\_\+config\+::enable\+\_\+capture\+\_\+on\+\_\+channel\mbox{[}\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\+\_\+\+OF\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNELS}}\mbox{]}}
+
+Specifies which channel(s) to enable channel capture operation on \mbox{\Hypertarget{structtc__config_a3ac6596c0098d120df9d68894ca952ff}\label{structtc__config_a3ac6596c0098d120df9d68894ca952ff}} 
+\index{tc\_config@{tc\_config}!oneshot@{oneshot}}
+\index{oneshot@{oneshot}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{oneshot}{oneshot}}
+{\footnotesize\ttfamily bool tc\+\_\+config\+::oneshot}
+
+When {\ttfamily true}, one-\/shot will stop the TC on next hardware or software re-\/trigger event or overflow/underflow \mbox{\Hypertarget{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}\label{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}} 
+\index{tc\_config@{tc\_config}!pwm\_channel@{pwm\_channel}}
+\index{pwm\_channel@{pwm\_channel}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{pwm\_channel}{pwm\_channel}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtc__pwm__channel}{tc\+\_\+pwm\+\_\+channel}} tc\+\_\+config\+::pwm\+\_\+channel\mbox{[}\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\+\_\+\+OF\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNELS}}\mbox{]}}
+
+Specifies the PWM channel for TC \mbox{\Hypertarget{structtc__config_a01ceff394bad76be28ef96f877d594a8}\label{structtc__config_a01ceff394bad76be28ef96f877d594a8}} 
+\index{tc\_config@{tc\_config}!reload\_action@{reload\_action}}
+\index{reload\_action@{reload\_action}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{reload\_action}{reload\_action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga204bb4814c91e62e56d9297c05280aad}{tc\+\_\+reload\+\_\+action}} tc\+\_\+config\+::reload\+\_\+action}
+
+Specifies the reload or reset time of the counter and prescaler resynchronization on a re-\/trigger event for the TC \mbox{\Hypertarget{structtc__config_aa9da10508a84c542c9a4db4a40939b91}\label{structtc__config_aa9da10508a84c542c9a4db4a40939b91}} 
+\index{tc\_config@{tc\_config}!run\_in\_standby@{run\_in\_standby}}
+\index{run\_in\_standby@{run\_in\_standby}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{run\_in\_standby}{run\_in\_standby}}
+{\footnotesize\ttfamily bool tc\+\_\+config\+::run\+\_\+in\+\_\+standby}
+
+When {\ttfamily true} the module is enabled during standby \mbox{\Hypertarget{structtc__config_aee2956506b6ce95c7e1869f29095efaf}\label{structtc__config_aee2956506b6ce95c7e1869f29095efaf}} 
+\index{tc\_config@{tc\_config}!wave\_generation@{wave\_generation}}
+\index{wave\_generation@{wave\_generation}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{wave\_generation}{wave\_generation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7f1302b7e3d675e471a554668b49d64}{tc\+\_\+wave\+\_\+generation}} tc\+\_\+config\+::wave\+\_\+generation}
+
+Specifies which waveform generation mode to use \mbox{\Hypertarget{structtc__config_ad401f54dbedfaf1e6656af3b3fa4bfd9}\label{structtc__config_ad401f54dbedfaf1e6656af3b3fa4bfd9}} 
+\index{tc\_config@{tc\_config}!waveform\_invert\_output@{waveform\_invert\_output}}
+\index{waveform\_invert\_output@{waveform\_invert\_output}!tc\_config@{tc\_config}}
+\doxysubsubsection{\texorpdfstring{waveform\_invert\_output}{waveform\_invert\_output}}
+{\footnotesize\ttfamily uint8\+\_\+t tc\+\_\+config\+::waveform\+\_\+invert\+\_\+output}
+
+Specifies which channel(s) to invert the waveform on. For SAM L21/\+L22/\+C20/\+C21, it\textquotesingle{}s also used to invert I/O input pin. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/tc/\mbox{\hyperlink{drivers_2tc_2tc_8h}{tc.\+h}}\end{DoxyCompactItemize}

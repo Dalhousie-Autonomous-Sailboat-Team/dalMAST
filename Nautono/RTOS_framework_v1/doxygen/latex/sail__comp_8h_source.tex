@@ -1,0 +1,63 @@
+\hypertarget{sail__comp_8h_source}{}\doxysection{sail\+\_\+comp.\+h}
+\label{sail__comp_8h_source}\index{src/sail\_comp.h@{src/sail\_comp.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// sail\_comp.h}}
+\DoxyCodeLine{2 \textcolor{comment}{// Header file for compass module for autonomous sailboat.}}
+\DoxyCodeLine{3 \textcolor{comment}{// Created on June 28, 2016.}}
+\DoxyCodeLine{4 \textcolor{comment}{// Created by Julia Sarty \& Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef SRC\_SAIL\_COMP\_H\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define SRC\_SAIL\_COMP\_H\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}sail\_types.h"{}}}
+\DoxyCodeLine{13     }
+\DoxyCodeLine{14 \textcolor{comment}{// COMP\_Init}}
+\DoxyCodeLine{15 \textcolor{comment}{// Turn on compass and initialize driver}}
+\DoxyCodeLine{16 \textcolor{comment}{// Status: }}
+\DoxyCodeLine{17 \textcolor{comment}{//   STATUS\_OK -\/ Compass initialization was successful}}
+\DoxyCodeLine{18 \textcolor{comment}{//   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{19 \textcolor{comment}{//   STATUS\_ERR\_ALREADY\_INITIALIZED -\/ the module should only be initialized once}}
+\DoxyCodeLine{20 \textcolor{comment}{//}}
+\DoxyCodeLine{21 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} COMP\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// COMP\_GetReading}}
+\DoxyCodeLine{25 \textcolor{comment}{// Get specified reading from the compass via I2C interface}}
+\DoxyCodeLine{26 \textcolor{comment}{// Inputs/Outputs:}}
+\DoxyCodeLine{27 \textcolor{comment}{//   type -\/ type of data to read (accel, heading, etc.)}}
+\DoxyCodeLine{28 \textcolor{comment}{//   reading -\/ pointer to struct containing specified compass values}}
+\DoxyCodeLine{29 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{30 \textcolor{comment}{//   STATUS\_OK -\/ data was read successfully}}
+\DoxyCodeLine{31 \textcolor{comment}{//   STATUS\_ERR\_NOT\_INITIALIZED -\/ compass module was not initialized}}
+\DoxyCodeLine{32 \textcolor{comment}{//   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{33 \textcolor{comment}{//}}
+\DoxyCodeLine{34 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} COMP\_GetReading(COMP\_ReadingType type, \mbox{\hyperlink{struct_c_o_m_p___reading}{COMP\_Reading}} *reading);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{// COMP\_StartCalibration}}
+\DoxyCodeLine{38 \textcolor{comment}{// Put the compass into calibration mode}}
+\DoxyCodeLine{39 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{40 \textcolor{comment}{//   STATUS\_OK -\/ the compass was successfully placed into calibration mode.}}
+\DoxyCodeLine{41 \textcolor{comment}{//   STATUS\_ERR\_NOT\_INITIALIZED -\/ the compass could not be placed into calibration }}
+\DoxyCodeLine{42 \textcolor{comment}{//                                mode because it was not previously initialized}}
+\DoxyCodeLine{43 \textcolor{comment}{//   STATUS\_NO\_CHANGE -\/ the compass is already in calibration mode}}
+\DoxyCodeLine{44 \textcolor{comment}{//}}
+\DoxyCodeLine{45 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} COMP\_StartCalibration(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{// COMP\_StopCalibration}}
+\DoxyCodeLine{49 \textcolor{comment}{// Get the compass out of calibration mode}}
+\DoxyCodeLine{50 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{51 \textcolor{comment}{//   STATUS\_OK -\/ calibration mode was successfully stopped}}
+\DoxyCodeLine{52 \textcolor{comment}{//   STATUS\_ERR\_NOT\_INITIALIZED -\/ the compass was not initialized}}
+\DoxyCodeLine{53 \textcolor{comment}{//   STATUS\_NO\_CHANGE -\/ the compass wasn't even in calibration mode}}
+\DoxyCodeLine{54 \textcolor{comment}{//}}
+\DoxyCodeLine{55 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} COMP\_StopCalibration(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SRC\_SAIL\_COMP\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

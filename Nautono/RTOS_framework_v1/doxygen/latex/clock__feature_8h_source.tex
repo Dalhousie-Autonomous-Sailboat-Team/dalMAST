@@ -1,0 +1,495 @@
+\hypertarget{clock__feature_8h_source}{}\doxysection{clock\+\_\+feature.\+h}
+\label{clock__feature_8h_source}\index{src/ASF/sam0/drivers/system/clock/clock\_samd20/clock\_feature.h@{src/ASF/sam0/drivers/system/clock/clock\_samd20/clock\_feature.h}}
+\mbox{\hyperlink{clock__feature_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef SYSTEM\_CLOCK\_FEATURE\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define SYSTEM\_CLOCK\_FEATURE\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{40 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#include <gclk.h>}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#if (SAMD21) || (SAMR21) || (SAMD11) || (SAMD10) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#  define FEATURE\_SYSTEM\_CLOCK\_DPLL}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{276 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6a5226fe65f283da094a3d1bd6c5692f}{system\_xosc32k\_startup}} \{}
+\DoxyCodeLine{278     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692faa91d598f764710a4266770238e413717}{SYSTEM\_XOSC32K\_STARTUP\_0}},}
+\DoxyCodeLine{280     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa762b4a74172784915df68700e51d4e0f}{SYSTEM\_XOSC32K\_STARTUP\_32}},}
+\DoxyCodeLine{282     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fafa1cf29c3c5c3f74d1a2ffdd7c3199e3}{SYSTEM\_XOSC32K\_STARTUP\_2048}},}
+\DoxyCodeLine{284     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa6c5f69164630ba16faa100873bd73dc0}{SYSTEM\_XOSC32K\_STARTUP\_4096}},}
+\DoxyCodeLine{286     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fae9d3c139f5442c2ba949a8d04ee7d38e}{SYSTEM\_XOSC32K\_STARTUP\_16384}},}
+\DoxyCodeLine{288     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa78dab161af7b89436e8efde14b12b087}{SYSTEM\_XOSC32K\_STARTUP\_32768}},}
+\DoxyCodeLine{290     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fa7205636a0c4b4d7bc1b1aad12aaf9a49}{SYSTEM\_XOSC32K\_STARTUP\_65536}},}
+\DoxyCodeLine{292     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fab44c3b77e6d8a8e49a1ed5b474eca9c2}{SYSTEM\_XOSC32K\_STARTUP\_131072}},}
+\DoxyCodeLine{293 \};}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{301 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga93797ad2901b27dd84fa8b7edc9bb5c5}{system\_xosc\_startup}} \{}
+\DoxyCodeLine{303     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a227f4495c112940e43509578037632ee}{SYSTEM\_XOSC\_STARTUP\_1}},}
+\DoxyCodeLine{305     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5adf5e2fc400d091e4cbee763fbde41555}{SYSTEM\_XOSC\_STARTUP\_2}},}
+\DoxyCodeLine{307     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a71f9f687b6dec03eb27dc81a3aa4ffff}{SYSTEM\_XOSC\_STARTUP\_4}},}
+\DoxyCodeLine{309     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a654a284191eaaea5bcef63b7208edff0}{SYSTEM\_XOSC\_STARTUP\_8}},}
+\DoxyCodeLine{311     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5aed33da000f564d1d359c71837cee5432}{SYSTEM\_XOSC\_STARTUP\_16}},}
+\DoxyCodeLine{313     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3f7b3d4801503461d11a422e8cc6f7a0}{SYSTEM\_XOSC\_STARTUP\_32}},}
+\DoxyCodeLine{315     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a6cc582d7547628f75e628a1051a9ffd2}{SYSTEM\_XOSC\_STARTUP\_64}},}
+\DoxyCodeLine{317     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ae82c389b69fa1ca5e394b5d56c63bea9}{SYSTEM\_XOSC\_STARTUP\_128}},}
+\DoxyCodeLine{319     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a4d289f922705cd65e0a3868a183a9b46}{SYSTEM\_XOSC\_STARTUP\_256}},}
+\DoxyCodeLine{321     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a051d6e2bc0f94985cdf93c695f3db631}{SYSTEM\_XOSC\_STARTUP\_512}},}
+\DoxyCodeLine{323     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a23f21ffa4d8f2b857e4d127ea4d8663e}{SYSTEM\_XOSC\_STARTUP\_1024}},}
+\DoxyCodeLine{325     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a3d1162a14cc1864dc5ccd14217e25e3a}{SYSTEM\_XOSC\_STARTUP\_2048}},}
+\DoxyCodeLine{327     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a20a913fb63eacee74498d44d062ee88f}{SYSTEM\_XOSC\_STARTUP\_4096}},}
+\DoxyCodeLine{329     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a096b8260e41cfc4937dfaf418eb512c4}{SYSTEM\_XOSC\_STARTUP\_8192}},}
+\DoxyCodeLine{331     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ad3cf17457e11c5fecd12172c75d67229}{SYSTEM\_XOSC\_STARTUP\_16384}},}
+\DoxyCodeLine{333     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5a1eff23f1ee9c792ec44683af90206d50}{SYSTEM\_XOSC\_STARTUP\_32768}},}
+\DoxyCodeLine{334 \};}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{342 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf2f527fc5dd85dcf1c7091d6059d05cb}{system\_osc32k\_startup}} \{}
+\DoxyCodeLine{344     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba5d0159245ad2909eec4256416f6fdb39}{SYSTEM\_OSC32K\_STARTUP\_3}},}
+\DoxyCodeLine{346     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba8fe93dbb45d1663d550847b93097f7ec}{SYSTEM\_OSC32K\_STARTUP\_4}},}
+\DoxyCodeLine{348     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba0608b4ca71442d2e2c52338849793ac9}{SYSTEM\_OSC32K\_STARTUP\_6}},}
+\DoxyCodeLine{350     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbaba3eac44eee0816a8e79776d0e9f4e07}{SYSTEM\_OSC32K\_STARTUP\_10}},}
+\DoxyCodeLine{352     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba2a852a8d4f9f7b93396d256372233d7a}{SYSTEM\_OSC32K\_STARTUP\_18}},}
+\DoxyCodeLine{354     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba780a6ed8f1bd9d66190eb9296c47c5f6}{SYSTEM\_OSC32K\_STARTUP\_34}},}
+\DoxyCodeLine{356     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cba1d9a2791a3e0f3a49bd969e192be0d2c}{SYSTEM\_OSC32K\_STARTUP\_66}},}
+\DoxyCodeLine{358     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbab47cb8c22788fa124a7fa91d469972fa}{SYSTEM\_OSC32K\_STARTUP\_130}},}
+\DoxyCodeLine{359 \};}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{366 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ee1b0be167bd253038400d9c6d0cbef}{system\_osc8m\_div}} \{}
+\DoxyCodeLine{368     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa564fc679b9f90127b6666b6bced33463}{SYSTEM\_OSC8M\_DIV\_1}},}
+\DoxyCodeLine{370     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa5484854b8a0bb16902b603dd8024d76d}{SYSTEM\_OSC8M\_DIV\_2}},}
+\DoxyCodeLine{372     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa6f70022cf44a05a464d1a5af02ceed1b}{SYSTEM\_OSC8M\_DIV\_4}},}
+\DoxyCodeLine{374     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa23f917a883d385d557b7e9ee9b80e14c}{SYSTEM\_OSC8M\_DIV\_8}},}
+\DoxyCodeLine{375 \};}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{382 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac2e75dd14e805255aa11f5d7fc41b12e}{system\_osc8m\_frequency\_range}} \{}
+\DoxyCodeLine{384     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12eac5944f501f38e9a7977adc284718d914}{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_4\_TO\_6}},}
+\DoxyCodeLine{386     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea3dce70db9bd774fda44dddc7ee696672}{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_6\_TO\_8}},}
+\DoxyCodeLine{388     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6577a603b473039bc40689e9cafb415e}{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_8\_TO\_11}},}
+\DoxyCodeLine{390     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac2e75dd14e805255aa11f5d7fc41b12ea6cf9e419674c782b14267ee452889195}{SYSTEM\_OSC8M\_FREQUENCY\_RANGE\_11\_TO\_15}},}
+\DoxyCodeLine{391 \};}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{398 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga30e9b73868506309f3dc4935fbe9ce4b}{system\_main\_clock\_div}} \{}
+\DoxyCodeLine{400     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa4e9b93b809ddfbdffb13f72da94c1d7}{SYSTEM\_MAIN\_CLOCK\_DIV\_1}},}
+\DoxyCodeLine{402     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6b64d2dd96c00b24b5abe48c605959c4}{SYSTEM\_MAIN\_CLOCK\_DIV\_2}},}
+\DoxyCodeLine{404     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6e6564b4069b1d0a3244697b525c516b}{SYSTEM\_MAIN\_CLOCK\_DIV\_4}},}
+\DoxyCodeLine{406     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baa88dc289422295f74b1be13341bae02d}{SYSTEM\_MAIN\_CLOCK\_DIV\_8}},}
+\DoxyCodeLine{408     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba6742ac478e6df1a9999bc1852ac90ea9}{SYSTEM\_MAIN\_CLOCK\_DIV\_16}},}
+\DoxyCodeLine{410     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4ba739314ab4a798f75c254214f9c64f23b}{SYSTEM\_MAIN\_CLOCK\_DIV\_32}},}
+\DoxyCodeLine{412     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4bae988c4e7ef255b846e552da9c9b4e11b}{SYSTEM\_MAIN\_CLOCK\_DIV\_64}},}
+\DoxyCodeLine{414     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga30e9b73868506309f3dc4935fbe9ce4baec6efb1ec57e2967ff513074e145d110}{SYSTEM\_MAIN\_CLOCK\_DIV\_128}},}
+\DoxyCodeLine{415 \};}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{422 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\_clock\_external}} \{}
+\DoxyCodeLine{424     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1f1e123ed025f2e02f063d0d75b3ff56}{SYSTEM\_CLOCK\_EXTERNAL\_CRYSTAL}},}
+\DoxyCodeLine{426     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1521ad5b8607dd8bf7a6b5df1adee2f3}{SYSTEM\_CLOCK\_EXTERNAL\_CLOCK}},}
+\DoxyCodeLine{427 \};}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{434 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf264d9ce05843104cb8a393b1d9ddfa2}{system\_clock\_dfll\_loop\_mode}} \{}
+\DoxyCodeLine{436     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a3d9e15bfd0803e41da1f59f8b699184a}{SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_OPEN}},}
+\DoxyCodeLine{440     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a1a18e1d9233792ba5e4663c978d7a46b}{SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_CLOSED}} = SYSCTRL\_DFLLCTRL\_MODE,}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#ifdef SYSCTRL\_DFLLCTRL\_USBCRM}}
+\DoxyCodeLine{446     SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_USB\_RECOVERY = SYSCTRL\_DFLLCTRL\_USBCRM,}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{448 \};}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{455 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6ce68deec62f12bb85ddb2f8c103ada5}{system\_clock\_dfll\_wakeup\_lock}} \{}
+\DoxyCodeLine{457     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5abbfd6c5e90f1ee8e9865723f6c1da64e}{SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_KEEP}},}
+\DoxyCodeLine{459     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5a291a819f86924e0d60fc5a2a14b5456c}{SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_LOSE}} = SYSCTRL\_DFLLCTRL\_LLAW,}
+\DoxyCodeLine{460 \};}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{467 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf9b0eb010541f1d7c8af3eeb0573043d}{system\_clock\_dfll\_stable\_tracking}} \{}
+\DoxyCodeLine{469     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da4a92b58e1ea9c95123b83aa6ee4e3f21}{SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_TRACK\_AFTER\_LOCK}},}
+\DoxyCodeLine{471     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da40176c0aa1d57b6ec9f7de182b937c5a}{SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_FIX\_AFTER\_LOCK}} = SYSCTRL\_DFLLCTRL\_STABLE,}
+\DoxyCodeLine{472 \};}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{481 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga04ee95a872995397e3db9cf1494721e3}{system\_clock\_dfll\_chill\_cycle}} \{}
+\DoxyCodeLine{483     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3ad75095e64d38dbba6451c496645b7e01}{SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_ENABLE}},}
+\DoxyCodeLine{485     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3a1f84a60dcc044d7bc33cf71cddb985a3}{SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_DISABLE}} = SYSCTRL\_DFLLCTRL\_CCDIS,}
+\DoxyCodeLine{486 \};}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{494 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga56ab87696abcd4e0103d6259386017ae}{system\_clock\_dfll\_quick\_lock}} \{}
+\DoxyCodeLine{496     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea0599c04b640c394c9fba065ae8e8b616}{SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_ENABLE}},}
+\DoxyCodeLine{498     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea1d2b1b500737f7722a86e3242cf2250c}{SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_DISABLE}} = SYSCTRL\_DFLLCTRL\_QLDIS,}
+\DoxyCodeLine{499 \};}
+\DoxyCodeLine{500 }
+\DoxyCodeLine{506 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\_clock\_source}} \{}
+\DoxyCodeLine{508     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a7a76d4184666899a7b6c4e7f49395f3d}{SYSTEM\_CLOCK\_SOURCE\_OSC8M}}    = GCLK\_SOURCE\_OSC8M,}
+\DoxyCodeLine{510     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a558e3f5af5f17dad6386eaad5bfc5ea7}{SYSTEM\_CLOCK\_SOURCE\_OSC32K}}   = GCLK\_SOURCE\_OSC32K,}
+\DoxyCodeLine{512     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a3838555d84536119b61101649678ef4a}{SYSTEM\_CLOCK\_SOURCE\_XOSC}}     = GCLK\_SOURCE\_XOSC ,}
+\DoxyCodeLine{514     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a122233d164de1b1847acc526e1d83360}{SYSTEM\_CLOCK\_SOURCE\_XOSC32K}}  = GCLK\_SOURCE\_XOSC32K,}
+\DoxyCodeLine{516     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58a6115cfc6953d6fceaaa84fbfcfd51212}{SYSTEM\_CLOCK\_SOURCE\_DFLL}}     = GCLK\_SOURCE\_DFLL48M,}
+\DoxyCodeLine{518     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58af5975ab246b9e6750998d0fcb313c288}{SYSTEM\_CLOCK\_SOURCE\_ULP32K}}   = GCLK\_SOURCE\_OSCULP32K,}
+\DoxyCodeLine{520     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58aba00702aad6c05fe8c0a864dedf6dbea}{SYSTEM\_CLOCK\_SOURCE\_GCLKIN}}     = GCLK\_SOURCE\_GCLKIN,}
+\DoxyCodeLine{522     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga86882dc960f2552722e9713da97fcc58ab873ebe5b9dd823cb794be31ef0fc1ef}{SYSTEM\_CLOCK\_SOURCE\_GCLKGEN1}}   = GCLK\_SOURCE\_GCLKGEN1,}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#ifdef FEATURE\_SYSTEM\_CLOCK\_DPLL}}
+\DoxyCodeLine{527     SYSTEM\_CLOCK\_SOURCE\_DPLL     = GCLK\_SOURCE\_FDPLL,}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{529 \};}
+\DoxyCodeLine{530 }
+\DoxyCodeLine{536 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}{system\_clock\_apb\_bus}} \{}
+\DoxyCodeLine{538     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a25197a2c1efe6a444a5cdcef7d82a1de}{SYSTEM\_CLOCK\_APB\_APBA}},}
+\DoxyCodeLine{540     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5aa94daeca3198d35ba50839f69fa97fb2}{SYSTEM\_CLOCK\_APB\_APBB}},}
+\DoxyCodeLine{542     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a53168b7d478e1634594203d1ec2a654a}{SYSTEM\_CLOCK\_APB\_APBC}},}
+\DoxyCodeLine{543 \};}
+\DoxyCodeLine{544 }
+\DoxyCodeLine{550 \textcolor{keyword}{struct }\mbox{\hyperlink{structsystem__clock__source__xosc__config}{system\_clock\_source\_xosc\_config}} \{}
+\DoxyCodeLine{552     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\_clock\_external}} \mbox{\hyperlink{structsystem__clock__source__xosc__config_af5c23b6fb5e51451f66896a608d92ca1}{external\_clock}};}
+\DoxyCodeLine{554     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga93797ad2901b27dd84fa8b7edc9bb5c5}{system\_xosc\_startup}} \mbox{\hyperlink{structsystem__clock__source__xosc__config_a2bab1540cb80df1db3dcad0c1c762e59}{startup\_time}};}
+\DoxyCodeLine{556     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__xosc__config_a19d5578b41e1e6d06476aadccb568b89}{auto\_gain\_control}};}
+\DoxyCodeLine{558     uint32\_t \mbox{\hyperlink{structsystem__clock__source__xosc__config_a9ed2c1087eb1fde0c1a6359316345217}{frequency}};}
+\DoxyCodeLine{560     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__xosc__config_af9e53e7b1c8ae7fdea7bde1ace44a37b}{run\_in\_standby}};}
+\DoxyCodeLine{563     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__xosc__config_aa7c5ef8b70dd597ed5df61111f62083f}{on\_demand}};}
+\DoxyCodeLine{564 \};}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{571 \textcolor{keyword}{struct }\mbox{\hyperlink{structsystem__clock__source__xosc32k__config}{system\_clock\_source\_xosc32k\_config}} \{}
+\DoxyCodeLine{573     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\_clock\_external}} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_abc74acc8c89646046fdcdbb67e2002c1}{external\_clock}};}
+\DoxyCodeLine{575     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6a5226fe65f283da094a3d1bd6c5692f}{system\_xosc32k\_startup}} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_ab5045bee96a97500ef6ed3919b484b01}{startup\_time}};}
+\DoxyCodeLine{577     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a1919b43d9fb8111b6e9c892ea8a77ff3}{auto\_gain\_control}};}
+\DoxyCodeLine{579     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a0a8d1f4eba0f26a173970a96688cb6b5}{enable\_1khz\_output}};}
+\DoxyCodeLine{581     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a6bba30827b398486586c3f4247784569}{enable\_32khz\_output}};}
+\DoxyCodeLine{583     uint32\_t \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a56c5635a9da3e66d8290e67f88b41dad}{frequency}};}
+\DoxyCodeLine{585     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_adfeaf728938feb99742b1fba1f8ead09}{run\_in\_standby}};}
+\DoxyCodeLine{588     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_ae2c80dd7ca268e41ae121af9cbf21b05}{on\_demand}};}
+\DoxyCodeLine{591     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_ae7f0e6f78dfc51887e8cfb6e29ddbf62}{write\_once}};}
+\DoxyCodeLine{592 \};}
+\DoxyCodeLine{593 }
+\DoxyCodeLine{599 \textcolor{keyword}{struct }\mbox{\hyperlink{structsystem__clock__source__osc8m__config}{system\_clock\_source\_osc8m\_config}} \{}
+\DoxyCodeLine{601     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ee1b0be167bd253038400d9c6d0cbef}{system\_osc8m\_div}} \mbox{\hyperlink{structsystem__clock__source__osc8m__config_af68977fd0b3e8cb447f0ee78fe11794a}{prescaler}};}
+\DoxyCodeLine{603     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__osc8m__config_a5700fe7dc31fcd05bba95e690808cda5}{run\_in\_standby}};}
+\DoxyCodeLine{606     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__osc8m__config_ab793c78431ec9a92fab32ec1a085e34a}{on\_demand}};}
+\DoxyCodeLine{607 \};}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{614 \textcolor{keyword}{struct }\mbox{\hyperlink{structsystem__clock__source__osc32k__config}{system\_clock\_source\_osc32k\_config}} \{}
+\DoxyCodeLine{616     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf2f527fc5dd85dcf1c7091d6059d05cb}{system\_osc32k\_startup}} \mbox{\hyperlink{structsystem__clock__source__osc32k__config_ad2169190b6f7ee1d43b2c5b33c737a28}{startup\_time}};}
+\DoxyCodeLine{618     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a59ab9bd62b538b90df2d5bb7937b2f04}{enable\_1khz\_output}};}
+\DoxyCodeLine{620     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a7c0cd2f0b44f5f347e1e99a502b22522}{enable\_32khz\_output}};}
+\DoxyCodeLine{622     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a6fdd2d3da882c56fb34eca581b5cc24a}{run\_in\_standby}};}
+\DoxyCodeLine{625     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a206c36356a447fa7a274fe3aa524b3a3}{on\_demand}};}
+\DoxyCodeLine{628     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__osc32k__config_a12d43e28c690c1cd441b8659f66b9c09}{write\_once}};}
+\DoxyCodeLine{629 \};}
+\DoxyCodeLine{630 }
+\DoxyCodeLine{636 \textcolor{keyword}{struct }\mbox{\hyperlink{structsystem__clock__source__dfll__config}{system\_clock\_source\_dfll\_config}} \{}
+\DoxyCodeLine{638     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf264d9ce05843104cb8a393b1d9ddfa2}{system\_clock\_dfll\_loop\_mode}} \mbox{\hyperlink{structsystem__clock__source__dfll__config_ae663132445f8ef77a307d279c076079d}{loop\_mode}};}
+\DoxyCodeLine{641     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__clock__source__dfll__config_aa94a4eca6ec4759e3a31a9c18b8b23ff}{on\_demand}};}
+\DoxyCodeLine{643     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga56ab87696abcd4e0103d6259386017ae}{system\_clock\_dfll\_quick\_lock}} \mbox{\hyperlink{structsystem__clock__source__dfll__config_a0e667258f2c0092d5b4467addc6bb7ac}{quick\_lock}};}
+\DoxyCodeLine{645     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga04ee95a872995397e3db9cf1494721e3}{system\_clock\_dfll\_chill\_cycle}} \mbox{\hyperlink{structsystem__clock__source__dfll__config_a4ee2745456a1c8b8c4358e11310008af}{chill\_cycle}};}
+\DoxyCodeLine{647     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6ce68deec62f12bb85ddb2f8c103ada5}{system\_clock\_dfll\_wakeup\_lock}} \mbox{\hyperlink{structsystem__clock__source__dfll__config_af9da0ee3fc9a7bfcbff7de9e5055b067}{wakeup\_lock}};}
+\DoxyCodeLine{649     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf9b0eb010541f1d7c8af3eeb0573043d}{system\_clock\_dfll\_stable\_tracking}} \mbox{\hyperlink{structsystem__clock__source__dfll__config_a338195dd3b14efe31974bd18e57b6e0f}{stable\_tracking}};}
+\DoxyCodeLine{651     uint8\_t \mbox{\hyperlink{structsystem__clock__source__dfll__config_a25c01edd3015b56b31c89ec90db86055}{coarse\_value}};}
+\DoxyCodeLine{653     uint16\_t \mbox{\hyperlink{structsystem__clock__source__dfll__config_a7adf81228e739cd1602a553c2a2892d9}{fine\_value}};}
+\DoxyCodeLine{655     uint8\_t \mbox{\hyperlink{structsystem__clock__source__dfll__config_a039c34c0e5acf48eb2e68259f5221708}{coarse\_max\_step}};}
+\DoxyCodeLine{657     uint16\_t \mbox{\hyperlink{structsystem__clock__source__dfll__config_a1860d54e873833aa3874979f46a408e1}{fine\_max\_step}};}
+\DoxyCodeLine{659     uint16\_t \mbox{\hyperlink{structsystem__clock__source__dfll__config_a085c2ed29f19c0fb00a914b1f8cfbd5c}{multiply\_factor}};}
+\DoxyCodeLine{660 \};}
+\DoxyCodeLine{661 }
+\DoxyCodeLine{681 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_clock\_source\_xosc\_get\_config\_defaults(}
+\DoxyCodeLine{682         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__xosc__config}{system\_clock\_source\_xosc\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{683 \{}
+\DoxyCodeLine{684     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{685 }
+\DoxyCodeLine{686     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc__config_af5c23b6fb5e51451f66896a608d92ca1}{external\_clock}}    = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1f1e123ed025f2e02f063d0d75b3ff56}{SYSTEM\_CLOCK\_EXTERNAL\_CRYSTAL}};}
+\DoxyCodeLine{687     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc__config_a2bab1540cb80df1db3dcad0c1c762e59}{startup\_time}}      = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga93797ad2901b27dd84fa8b7edc9bb5c5ad3cf17457e11c5fecd12172c75d67229}{SYSTEM\_XOSC\_STARTUP\_16384}};}
+\DoxyCodeLine{688     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc__config_a19d5578b41e1e6d06476aadccb568b89}{auto\_gain\_control}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{689     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc__config_a9ed2c1087eb1fde0c1a6359316345217}{frequency}}         = 12000000UL;}
+\DoxyCodeLine{690     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc__config_af9e53e7b1c8ae7fdea7bde1ace44a37b}{run\_in\_standby}}    = \textcolor{keyword}{false};}
+\DoxyCodeLine{691     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc__config_aa7c5ef8b70dd597ed5df61111f62083f}{on\_demand}}         = \textcolor{keyword}{false};}
+\DoxyCodeLine{692 \}}
+\DoxyCodeLine{693 }
+\DoxyCodeLine{694 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacd16e7e13de08d55c028620d845a5cb5}{system\_clock\_source\_xosc\_set\_config}}(}
+\DoxyCodeLine{695         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__xosc__config}{system\_clock\_source\_xosc\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{724 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_clock\_source\_xosc32k\_get\_config\_defaults(}
+\DoxyCodeLine{725         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config}{system\_clock\_source\_xosc32k\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{726 \{}
+\DoxyCodeLine{727     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{728 }
+\DoxyCodeLine{729     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc32k__config_abc74acc8c89646046fdcdbb67e2002c1}{external\_clock}}      = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggab463f9d80799466f12321e6252493e70a1f1e123ed025f2e02f063d0d75b3ff56}{SYSTEM\_CLOCK\_EXTERNAL\_CRYSTAL}};}
+\DoxyCodeLine{730     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc32k__config_ab5045bee96a97500ef6ed3919b484b01}{startup\_time}}        = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6a5226fe65f283da094a3d1bd6c5692fae9d3c139f5442c2ba949a8d04ee7d38e}{SYSTEM\_XOSC32K\_STARTUP\_16384}};}
+\DoxyCodeLine{731     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a1919b43d9fb8111b6e9c892ea8a77ff3}{auto\_gain\_control}}   = \textcolor{keyword}{false};}
+\DoxyCodeLine{732     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a56c5635a9da3e66d8290e67f88b41dad}{frequency}}           = 32768UL;}
+\DoxyCodeLine{733     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a0a8d1f4eba0f26a173970a96688cb6b5}{enable\_1khz\_output}}  = \textcolor{keyword}{false};}
+\DoxyCodeLine{734     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a6bba30827b398486586c3f4247784569}{enable\_32khz\_output}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{735     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc32k__config_adfeaf728938feb99742b1fba1f8ead09}{run\_in\_standby}}      = \textcolor{keyword}{false};}
+\DoxyCodeLine{736     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc32k__config_ae2c80dd7ca268e41ae121af9cbf21b05}{on\_demand}}           = \textcolor{keyword}{true};}
+\DoxyCodeLine{737     config-\/>\mbox{\hyperlink{structsystem__clock__source__xosc32k__config_ae7f0e6f78dfc51887e8cfb6e29ddbf62}{write\_once}}          = \textcolor{keyword}{false};}
+\DoxyCodeLine{738 \}}
+\DoxyCodeLine{739 }
+\DoxyCodeLine{740 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga076bff009d78de95a0b2c9672f62b224}{system\_clock\_source\_xosc32k\_set\_config}}(}
+\DoxyCodeLine{741         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config}{system\_clock\_source\_xosc32k\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{766 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_clock\_source\_osc32k\_get\_config\_defaults(}
+\DoxyCodeLine{767         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__osc32k__config}{system\_clock\_source\_osc32k\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{768 \{}
+\DoxyCodeLine{769     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{771     config-\/>\mbox{\hyperlink{structsystem__clock__source__osc32k__config_a59ab9bd62b538b90df2d5bb7937b2f04}{enable\_1khz\_output}}  = \textcolor{keyword}{true};}
+\DoxyCodeLine{772     config-\/>\mbox{\hyperlink{structsystem__clock__source__osc32k__config_a7c0cd2f0b44f5f347e1e99a502b22522}{enable\_32khz\_output}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{773     config-\/>\mbox{\hyperlink{structsystem__clock__source__osc32k__config_a6fdd2d3da882c56fb34eca581b5cc24a}{run\_in\_standby}}      = \textcolor{keyword}{false};}
+\DoxyCodeLine{774     config-\/>\mbox{\hyperlink{structsystem__clock__source__osc32k__config_a206c36356a447fa7a274fe3aa524b3a3}{on\_demand}}           = \textcolor{keyword}{true};}
+\DoxyCodeLine{775     config-\/>\mbox{\hyperlink{structsystem__clock__source__osc32k__config_ad2169190b6f7ee1d43b2c5b33c737a28}{startup\_time}}        = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf2f527fc5dd85dcf1c7091d6059d05cbab47cb8c22788fa124a7fa91d469972fa}{SYSTEM\_OSC32K\_STARTUP\_130}};}
+\DoxyCodeLine{776     config-\/>\mbox{\hyperlink{structsystem__clock__source__osc32k__config_a12d43e28c690c1cd441b8659f66b9c09}{write\_once}}          = \textcolor{keyword}{false};}
+\DoxyCodeLine{777 \}}
+\DoxyCodeLine{778 }
+\DoxyCodeLine{779 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga9c110273354846e5a6cf877d6180296f}{system\_clock\_source\_osc32k\_set\_config}}(}
+\DoxyCodeLine{780         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__osc32k__config}{system\_clock\_source\_osc32k\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{781 }
+\DoxyCodeLine{803 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_clock\_source\_osc8m\_get\_config\_defaults(}
+\DoxyCodeLine{804         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__osc8m__config}{system\_clock\_source\_osc8m\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{805 \{}
+\DoxyCodeLine{806     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{807 }
+\DoxyCodeLine{808     config-\/>\mbox{\hyperlink{structsystem__clock__source__osc8m__config_af68977fd0b3e8cb447f0ee78fe11794a}{prescaler}}       = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ee1b0be167bd253038400d9c6d0cbefa23f917a883d385d557b7e9ee9b80e14c}{SYSTEM\_OSC8M\_DIV\_8}};}
+\DoxyCodeLine{809     config-\/>\mbox{\hyperlink{structsystem__clock__source__osc8m__config_a5700fe7dc31fcd05bba95e690808cda5}{run\_in\_standby}}  = \textcolor{keyword}{false};}
+\DoxyCodeLine{810     config-\/>\mbox{\hyperlink{structsystem__clock__source__osc8m__config_ab793c78431ec9a92fab32ec1a085e34a}{on\_demand}}       = \textcolor{keyword}{true};}
+\DoxyCodeLine{811 \}}
+\DoxyCodeLine{812 }
+\DoxyCodeLine{813 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab96253dd348ce56a591acfcd4ecda01f}{system\_clock\_source\_osc8m\_set\_config}}(}
+\DoxyCodeLine{814         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__osc8m__config}{system\_clock\_source\_osc8m\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{815 }
+\DoxyCodeLine{843 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_clock\_source\_dfll\_get\_config\_defaults(}
+\DoxyCodeLine{844         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__dfll__config}{system\_clock\_source\_dfll\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{845 \{}
+\DoxyCodeLine{846     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{847 }
+\DoxyCodeLine{848     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_ae663132445f8ef77a307d279c076079d}{loop\_mode}}       = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf264d9ce05843104cb8a393b1d9ddfa2a3d9e15bfd0803e41da1f59f8b699184a}{SYSTEM\_CLOCK\_DFLL\_LOOP\_MODE\_OPEN}};}
+\DoxyCodeLine{849     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_a0e667258f2c0092d5b4467addc6bb7ac}{quick\_lock}}      = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga56ab87696abcd4e0103d6259386017aea0599c04b640c394c9fba065ae8e8b616}{SYSTEM\_CLOCK\_DFLL\_QUICK\_LOCK\_ENABLE}};}
+\DoxyCodeLine{850     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_a4ee2745456a1c8b8c4358e11310008af}{chill\_cycle}}     = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga04ee95a872995397e3db9cf1494721e3ad75095e64d38dbba6451c496645b7e01}{SYSTEM\_CLOCK\_DFLL\_CHILL\_CYCLE\_ENABLE}};}
+\DoxyCodeLine{851     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_af9da0ee3fc9a7bfcbff7de9e5055b067}{wakeup\_lock}}     = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga6ce68deec62f12bb85ddb2f8c103ada5abbfd6c5e90f1ee8e9865723f6c1da64e}{SYSTEM\_CLOCK\_DFLL\_WAKEUP\_LOCK\_KEEP}};}
+\DoxyCodeLine{852     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_a338195dd3b14efe31974bd18e57b6e0f}{stable\_tracking}} = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggaf9b0eb010541f1d7c8af3eeb0573043da4a92b58e1ea9c95123b83aa6ee4e3f21}{SYSTEM\_CLOCK\_DFLL\_STABLE\_TRACKING\_TRACK\_AFTER\_LOCK}};}
+\DoxyCodeLine{853     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_aa94a4eca6ec4759e3a31a9c18b8b23ff}{on\_demand}}       = \textcolor{keyword}{true};}
+\DoxyCodeLine{854 }
+\DoxyCodeLine{855     \textcolor{comment}{/* Open loop mode calibration value */}}
+\DoxyCodeLine{856     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_a25c01edd3015b56b31c89ec90db86055}{coarse\_value}}    = 0x1f / 4; \textcolor{comment}{/* Midpoint */}}
+\DoxyCodeLine{857     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_a7adf81228e739cd1602a553c2a2892d9}{fine\_value}}      = 0xff / 4; \textcolor{comment}{/* Midpoint */}}
+\DoxyCodeLine{858 }
+\DoxyCodeLine{859     \textcolor{comment}{/* Closed loop mode */}}
+\DoxyCodeLine{860     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_a039c34c0e5acf48eb2e68259f5221708}{coarse\_max\_step}} = 1;}
+\DoxyCodeLine{861     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_a1860d54e873833aa3874979f46a408e1}{fine\_max\_step}}   = 1;}
+\DoxyCodeLine{862     config-\/>\mbox{\hyperlink{structsystem__clock__source__dfll__config_a085c2ed29f19c0fb00a914b1f8cfbd5c}{multiply\_factor}} = 6; \textcolor{comment}{/* Multiply 8MHz by 6 to get 48MHz */}}
+\DoxyCodeLine{863 \}}
+\DoxyCodeLine{864 }
+\DoxyCodeLine{865 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaa15073d0d4bd347bf8855ac20fd1b93c}{system\_clock\_source\_dfll\_set\_config}}(}
+\DoxyCodeLine{866         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__clock__source__dfll__config}{system\_clock\_source\_dfll\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{867 }
+\DoxyCodeLine{876 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{clock_8c_ac1cddb0ee0044e0253dc54ad36ff9ae3}{system\_clock\_source\_write\_calibration}}(}
+\DoxyCodeLine{877         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\_clock\_source}} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\_clock\_source}},}
+\DoxyCodeLine{878         \textcolor{keyword}{const} uint16\_t calibration\_value,}
+\DoxyCodeLine{879         \textcolor{keyword}{const} uint8\_t freq\_range);}
+\DoxyCodeLine{880 }
+\DoxyCodeLine{881 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{clock_8c_a478a54a6d9998051d2791bea13fbcb43}{system\_clock\_source\_enable}}(}
+\DoxyCodeLine{882         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\_clock\_source}} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\_clock\_source}});}
+\DoxyCodeLine{883 }
+\DoxyCodeLine{884 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacea9ce7a68fc3b0b2a46f3a8c3d6d89b}{system\_clock\_source\_disable}}(}
+\DoxyCodeLine{885         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\_clock\_source}} clk\_source);}
+\DoxyCodeLine{886 }
+\DoxyCodeLine{887 \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2f18617c9770bf1c3ab8fdac5081e65e}{system\_clock\_source\_is\_ready}}(}
+\DoxyCodeLine{888         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\_clock\_source}} clk\_source);}
+\DoxyCodeLine{889 }
+\DoxyCodeLine{890 uint32\_t \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1894d901b7ed10e4c1e52a784c8962be}{system\_clock\_source\_get\_hz}}(}
+\DoxyCodeLine{891         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\_clock\_source}} clk\_source);}
+\DoxyCodeLine{892 }
+\DoxyCodeLine{909 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_cpu\_clock\_set\_divider(}
+\DoxyCodeLine{910         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga30e9b73868506309f3dc4935fbe9ce4b}{system\_main\_clock\_div}} divider)}
+\DoxyCodeLine{911 \{}
+\DoxyCodeLine{912     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(((uint32\_t)divider \& PM\_CPUSEL\_CPUDIV\_Msk) == divider);}
+\DoxyCodeLine{913     \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>CPUSEL.reg = (uint32\_t)divider;}
+\DoxyCodeLine{914 \}}
+\DoxyCodeLine{915 }
+\DoxyCodeLine{924 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t system\_cpu\_clock\_get\_hz(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{925 \{}
+\DoxyCodeLine{926     \textcolor{keywordflow}{return} (\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf5cd7b482ee14413084669c32eef84cb}{system\_gclk\_gen\_get\_hz}}(\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\_GENERATOR\_0}}) >> \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>CPUSEL.reg);}
+\DoxyCodeLine{927 \}}
+\DoxyCodeLine{928 }
+\DoxyCodeLine{943 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} system\_apb\_clock\_set\_divider(}
+\DoxyCodeLine{944         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}{system\_clock\_apb\_bus}} bus,}
+\DoxyCodeLine{945         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga30e9b73868506309f3dc4935fbe9ce4b}{system\_main\_clock\_div}} divider)}
+\DoxyCodeLine{946 \{}
+\DoxyCodeLine{947     \textcolor{keywordflow}{switch} (bus) \{}
+\DoxyCodeLine{948         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a25197a2c1efe6a444a5cdcef7d82a1de}{SYSTEM\_CLOCK\_APB\_APBA}}:}
+\DoxyCodeLine{949             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBASEL.reg = (uint32\_t)divider;}
+\DoxyCodeLine{950             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{951         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5aa94daeca3198d35ba50839f69fa97fb2}{SYSTEM\_CLOCK\_APB\_APBB}}:}
+\DoxyCodeLine{952             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBBSEL.reg = (uint32\_t)divider;}
+\DoxyCodeLine{953             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{954         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a53168b7d478e1634594203d1ec2a654a}{SYSTEM\_CLOCK\_APB\_APBC}}:}
+\DoxyCodeLine{955             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBCSEL.reg = (uint32\_t)divider;}
+\DoxyCodeLine{956             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{957         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{958             \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{959             \textcolor{keywordflow}{return} STATUS\_ERR\_INVALID\_ARG;}
+\DoxyCodeLine{960     \}}
+\DoxyCodeLine{961 }
+\DoxyCodeLine{962     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{963 \}}
+\DoxyCodeLine{964 }
+\DoxyCodeLine{973 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t system\_apb\_clock\_get\_hz(}
+\DoxyCodeLine{974         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}{system\_clock\_apb\_bus}} bus)}
+\DoxyCodeLine{975 \{}
+\DoxyCodeLine{976     uint16\_t bus\_divider = 0;}
+\DoxyCodeLine{977 }
+\DoxyCodeLine{978     \textcolor{keywordflow}{switch} (bus) \{}
+\DoxyCodeLine{979         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a25197a2c1efe6a444a5cdcef7d82a1de}{SYSTEM\_CLOCK\_APB\_APBA}}:}
+\DoxyCodeLine{980             bus\_divider = \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBASEL.reg;}
+\DoxyCodeLine{981             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{982         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5aa94daeca3198d35ba50839f69fa97fb2}{SYSTEM\_CLOCK\_APB\_APBB}}:}
+\DoxyCodeLine{983             bus\_divider = \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBBSEL.reg;}
+\DoxyCodeLine{984             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{985         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a53168b7d478e1634594203d1ec2a654a}{SYSTEM\_CLOCK\_APB\_APBC}}:}
+\DoxyCodeLine{986             bus\_divider = \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBCSEL.reg;}
+\DoxyCodeLine{987             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{988         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{989             \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{990             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{991     \}}
+\DoxyCodeLine{992 }
+\DoxyCodeLine{993     \textcolor{keywordflow}{return} (\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf5cd7b482ee14413084669c32eef84cb}{system\_gclk\_gen\_get\_hz}}(\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\_GENERATOR\_0}}) >> bus\_divider);}
+\DoxyCodeLine{994 \}}
+\DoxyCodeLine{995 }
+\DoxyCodeLine{996 }
+\DoxyCodeLine{1015 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_ahb\_clock\_set\_mask(}
+\DoxyCodeLine{1016         \textcolor{keyword}{const} uint32\_t ahb\_mask)}
+\DoxyCodeLine{1017 \{}
+\DoxyCodeLine{1018     \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>AHBMASK.reg |= ahb\_mask;}
+\DoxyCodeLine{1019 \}}
+\DoxyCodeLine{1020 }
+\DoxyCodeLine{1030 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_ahb\_clock\_clear\_mask(}
+\DoxyCodeLine{1031         \textcolor{keyword}{const} uint32\_t ahb\_mask)}
+\DoxyCodeLine{1032 \{}
+\DoxyCodeLine{1033     \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>AHBMASK.reg \&= \string~ahb\_mask;}
+\DoxyCodeLine{1034 \}}
+\DoxyCodeLine{1035 }
+\DoxyCodeLine{1053 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} system\_apb\_clock\_set\_mask(}
+\DoxyCodeLine{1054         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}{system\_clock\_apb\_bus}} bus,}
+\DoxyCodeLine{1055         \textcolor{keyword}{const} uint32\_t mask)}
+\DoxyCodeLine{1056 \{}
+\DoxyCodeLine{1057     \textcolor{keywordflow}{switch} (bus) \{}
+\DoxyCodeLine{1058         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a25197a2c1efe6a444a5cdcef7d82a1de}{SYSTEM\_CLOCK\_APB\_APBA}}:}
+\DoxyCodeLine{1059             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBAMASK.reg |= mask;}
+\DoxyCodeLine{1060             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1061 }
+\DoxyCodeLine{1062         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5aa94daeca3198d35ba50839f69fa97fb2}{SYSTEM\_CLOCK\_APB\_APBB}}:}
+\DoxyCodeLine{1063             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBBMASK.reg |= mask;}
+\DoxyCodeLine{1064             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1065 }
+\DoxyCodeLine{1066         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a53168b7d478e1634594203d1ec2a654a}{SYSTEM\_CLOCK\_APB\_APBC}}:}
+\DoxyCodeLine{1067             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBCMASK.reg |= mask;}
+\DoxyCodeLine{1068             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1069 }
+\DoxyCodeLine{1070         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{1071             \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{1072             \textcolor{keywordflow}{return} STATUS\_ERR\_INVALID\_ARG;}
+\DoxyCodeLine{1073 }
+\DoxyCodeLine{1074     \}}
+\DoxyCodeLine{1075 }
+\DoxyCodeLine{1076     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{1077 \}}
+\DoxyCodeLine{1078 }
+\DoxyCodeLine{1095 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} system\_apb\_clock\_clear\_mask(}
+\DoxyCodeLine{1096         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gac4ca1e52df2ab46c663dc51b51f9f2d5}{system\_clock\_apb\_bus}} bus,}
+\DoxyCodeLine{1097         \textcolor{keyword}{const} uint32\_t mask)}
+\DoxyCodeLine{1098 \{}
+\DoxyCodeLine{1099     \textcolor{keywordflow}{switch} (bus) \{}
+\DoxyCodeLine{1100         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a25197a2c1efe6a444a5cdcef7d82a1de}{SYSTEM\_CLOCK\_APB\_APBA}}:}
+\DoxyCodeLine{1101             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBAMASK.reg \&= \string~mask;}
+\DoxyCodeLine{1102             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1103 }
+\DoxyCodeLine{1104         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5aa94daeca3198d35ba50839f69fa97fb2}{SYSTEM\_CLOCK\_APB\_APBB}}:}
+\DoxyCodeLine{1105             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBBMASK.reg \&= \string~mask;}
+\DoxyCodeLine{1106             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1107 }
+\DoxyCodeLine{1108         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ggac4ca1e52df2ab46c663dc51b51f9f2d5a53168b7d478e1634594203d1ec2a654a}{SYSTEM\_CLOCK\_APB\_APBC}}:}
+\DoxyCodeLine{1109             \mbox{\hyperlink{samd20e14_8h_a23c7d58108d99a089ce0824823e6b950}{PM}}-\/>APBCMASK.reg \&= \string~mask;}
+\DoxyCodeLine{1110             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1111 }
+\DoxyCodeLine{1112         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{1113             \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{1114             \textcolor{keywordflow}{return} STATUS\_ERR\_INVALID\_ARG;}
+\DoxyCodeLine{1115     \}}
+\DoxyCodeLine{1116 }
+\DoxyCodeLine{1117     \textcolor{keywordflow}{return} STATUS\_OK;}
+\DoxyCodeLine{1118 \}}
+\DoxyCodeLine{1119 }
+\DoxyCodeLine{1124 \textcolor{preprocessor}{\#ifdef FEATURE\_SYSTEM\_CLOCK\_DPLL}}
+\DoxyCodeLine{1128 \textcolor{keyword}{enum} system\_clock\_source\_dpll\_reference\_clock \{}
+\DoxyCodeLine{1130     SYSTEM\_CLOCK\_SOURCE\_DPLL\_REFERENCE\_CLOCK\_XOSC32K,}
+\DoxyCodeLine{1132     SYSTEM\_CLOCK\_SOURCE\_DPLL\_REFERENCE\_CLOCK\_XOSC,}
+\DoxyCodeLine{1134     SYSTEM\_CLOCK\_SOURCE\_DPLL\_REFERENCE\_CLOCK\_GCLK,}
+\DoxyCodeLine{1135 \};}
+\DoxyCodeLine{1136 }
+\DoxyCodeLine{1140 \textcolor{keyword}{enum} system\_clock\_source\_dpll\_lock\_time \{}
+\DoxyCodeLine{1142     SYSTEM\_CLOCK\_SOURCE\_DPLL\_LOCK\_TIME\_DEFAULT,}
+\DoxyCodeLine{1144     SYSTEM\_CLOCK\_SOURCE\_DPLL\_LOCK\_TIME\_8MS = 0x04,}
+\DoxyCodeLine{1146     SYSTEM\_CLOCK\_SOURCE\_DPLL\_LOCK\_TIME\_9MS,}
+\DoxyCodeLine{1148     SYSTEM\_CLOCK\_SOURCE\_DPLL\_LOCK\_TIME\_10MS,}
+\DoxyCodeLine{1150     SYSTEM\_CLOCK\_SOURCE\_DPLL\_LOCK\_TIME\_11MS,}
+\DoxyCodeLine{1151 \};}
+\DoxyCodeLine{1152 }
+\DoxyCodeLine{1156 \textcolor{keyword}{enum} system\_clock\_source\_dpll\_filter \{}
+\DoxyCodeLine{1158     SYSTEM\_CLOCK\_SOURCE\_DPLL\_FILTER\_DEFAULT,}
+\DoxyCodeLine{1160     SYSTEM\_CLOCK\_SOURCE\_DPLL\_FILTER\_LOW\_BANDWIDTH\_FILTER,}
+\DoxyCodeLine{1162     SYSTEM\_CLOCK\_SOURCE\_DPLL\_FILTER\_HIGH\_BANDWIDTH\_FILTER,}
+\DoxyCodeLine{1164     SYSTEM\_CLOCK\_SOURCE\_DPLL\_FILTER\_HIGH\_DAMPING\_FILTER,}
+\DoxyCodeLine{1165 \};}
+\DoxyCodeLine{1166 }
+\DoxyCodeLine{1172 \textcolor{keyword}{struct }system\_clock\_source\_dpll\_config \{}
+\DoxyCodeLine{1175     \textcolor{keywordtype}{bool} on\_demand;}
+\DoxyCodeLine{1177     \textcolor{keywordtype}{bool} run\_in\_standby;}
+\DoxyCodeLine{1179     \textcolor{keywordtype}{bool} lock\_bypass;}
+\DoxyCodeLine{1182     \textcolor{keywordtype}{bool} wake\_up\_fast;}
+\DoxyCodeLine{1184     \textcolor{keywordtype}{bool} low\_power\_enable;}
+\DoxyCodeLine{1185 }
+\DoxyCodeLine{1187     uint32\_t output\_frequency;}
+\DoxyCodeLine{1189     uint32\_t reference\_frequency;}
+\DoxyCodeLine{1191     uint16\_t reference\_divider;}
+\DoxyCodeLine{1192 }
+\DoxyCodeLine{1194     \textcolor{keyword}{enum} system\_clock\_source\_dpll\_filter          filter;}
+\DoxyCodeLine{1196     \textcolor{keyword}{enum} system\_clock\_source\_dpll\_lock\_time       lock\_time;}
+\DoxyCodeLine{1198     \textcolor{keyword}{enum} system\_clock\_source\_dpll\_reference\_clock reference\_clock;}
+\DoxyCodeLine{1199 \};}
+\DoxyCodeLine{1200 }
+\DoxyCodeLine{1225 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_clock\_source\_dpll\_get\_config\_defaults(}
+\DoxyCodeLine{1226         \textcolor{keyword}{struct} system\_clock\_source\_dpll\_config *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{1227 \{}
+\DoxyCodeLine{1228     config-\/>on\_demand           = \textcolor{keyword}{true};}
+\DoxyCodeLine{1229     config-\/>run\_in\_standby      = \textcolor{keyword}{false};}
+\DoxyCodeLine{1230     config-\/>lock\_bypass         = \textcolor{keyword}{false};}
+\DoxyCodeLine{1231     config-\/>wake\_up\_fast        = \textcolor{keyword}{false};}
+\DoxyCodeLine{1232     config-\/>low\_power\_enable    = \textcolor{keyword}{false};}
+\DoxyCodeLine{1233 }
+\DoxyCodeLine{1234     config-\/>output\_frequency    = 48000000;}
+\DoxyCodeLine{1235     config-\/>reference\_frequency = 32768;}
+\DoxyCodeLine{1236     config-\/>reference\_divider   = 1;}
+\DoxyCodeLine{1237     config-\/>reference\_clock     = SYSTEM\_CLOCK\_SOURCE\_DPLL\_REFERENCE\_CLOCK\_XOSC32K;}
+\DoxyCodeLine{1238 }
+\DoxyCodeLine{1239     config-\/>lock\_time           = SYSTEM\_CLOCK\_SOURCE\_DPLL\_LOCK\_TIME\_DEFAULT;}
+\DoxyCodeLine{1240     config-\/>filter              = SYSTEM\_CLOCK\_SOURCE\_DPLL\_FILTER\_DEFAULT;}
+\DoxyCodeLine{1241 \};}
+\DoxyCodeLine{1242 }
+\DoxyCodeLine{1243 \textcolor{keywordtype}{void} system\_clock\_source\_dpll\_set\_config(}
+\DoxyCodeLine{1244         \textcolor{keyword}{struct} system\_clock\_source\_dpll\_config *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{1245 }
+\DoxyCodeLine{1246 \textcolor{comment}{/* @\} */}}
+\DoxyCodeLine{1247 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1248 }
+\DoxyCodeLine{1254 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga128236c1939f726786521434d8488b37}{system\_clock\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{1255 }
+\DoxyCodeLine{1275 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_flash\_set\_waitstates(uint8\_t wait\_states)}
+\DoxyCodeLine{1276 \{}
+\DoxyCodeLine{1277     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(NVMCTRL\_CTRLB\_RWS((uint32\_t)wait\_states) ==}
+\DoxyCodeLine{1278             ((uint32\_t)wait\_states << \mbox{\hyperlink{component_2nvmctrl_8h_a43e4b7eb29abd297bee59f003d715e26}{NVMCTRL\_CTRLB\_RWS\_Pos}}));}
+\DoxyCodeLine{1279 }
+\DoxyCodeLine{1280     \mbox{\hyperlink{samd20e14_8h_ad18608913d3d6e423f3a79d84348910a}{NVMCTRL}}-\/>CTRLB.bit.RWS = wait\_states;}
+\DoxyCodeLine{1281 \}}
+\DoxyCodeLine{1477 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1478 \}}
+\DoxyCodeLine{1479 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1480 }
+\DoxyCodeLine{1481 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SYSTEM\_CLOCK\_FEATURE\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

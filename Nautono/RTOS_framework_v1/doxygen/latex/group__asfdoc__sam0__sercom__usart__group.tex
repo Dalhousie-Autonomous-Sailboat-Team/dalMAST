@@ -1,0 +1,883 @@
+\hypertarget{group__asfdoc__sam0__sercom__usart__group}{}\doxysection{SAM Serial USART (SERCOM USART) Driver}
+\label{group__asfdoc__sam0__sercom__usart__group}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structusart__config}{usart\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em USART configuration struct. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}}
+\begin{DoxyCompactList}\small\item\em SERCOM USART driver software device instance structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gad67046f395137b2a7a1ef72f83907674}{usart\+\_\+init}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, \mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const hw, const struct \mbox{\hyperlink{structusart__config}{usart\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Driver Feature Definition}
+Define SERCOM USART features set according to different device family. \begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4352d9150bb8cbd54d26abe3055a5ee1}{usart\+\_\+dataorder}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1add3a3b7f39f32c42d22991ea981e2810}{USART\+\_\+\+DATAORDER\+\_\+\+MSB}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1afb0c8f2d6f7da9f62dc67871d710b9af}{USART\+\_\+\+DATAORDER\+\_\+\+LSB}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+DORD
+ \}
+\begin{DoxyCompactList}\small\item\em USART Data Order enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga7ff4d85053b8ea0904b5a57587b39c8f}{usart\+\_\+transfer\+\_\+mode}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa4756b64694eb2e2ca4f4c77c6f53786d}{USART\+\_\+\+TRANSFER\+\_\+\+SYNCHRONOUSLY}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+CMODE)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa5662e0cc82a73f113bb13ebb1e4c65ef}{USART\+\_\+\+TRANSFER\+\_\+\+ASYNCHRONOUSLY}} = (0x0ul \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+CMODE\+\_\+\+Pos)
+ \}
+\begin{DoxyCompactList}\small\item\em USART Transfer mode enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga867cc5f0ea7d3bf651d68f0046cf6f41}{usart\+\_\+parity}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41a69c6cdd4d354d3b26c8d2f09f49d2ede}{USART\+\_\+\+PARITY\+\_\+\+ODD}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+PMODE
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41ae5d22c99a30184aff19d77c1a970fb23}{USART\+\_\+\+PARITY\+\_\+\+EVEN}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41aecf52ec650226bdc63e12a21d3b5585d}{USART\+\_\+\+PARITY\+\_\+\+NONE}} = 0x\+FF
+ \}
+\begin{DoxyCompactList}\small\item\em USART Parity enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga87bbdb9f7edb3f1866aeb498bf7c9077}{usart\+\_\+signal\+\_\+mux\+\_\+settings}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ab2330cf3ae7faacb7fd28678a77327f4}{USART\+\_\+\+RX\+\_\+0\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(0))
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a4ad0f5cd921dd8c0787ebeba372bcc70}{USART\+\_\+\+RX\+\_\+0\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(0) $\vert$ SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+TXPO)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}{USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(1))
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a884ae3424a45469c20b4ecf9c65a8e48}{USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(1) $\vert$ SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+TXPO)
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a730a5c0276235851c892b3a817a6d49f}{USART\+\_\+\+RX\+\_\+2\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(2))
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077aa64f03365c6e57705c9a154741523956}{USART\+\_\+\+RX\+\_\+2\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(2) $\vert$ SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+TXPO)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a01cd27a54558c7956d41d29c16cf4a40}{USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(3))
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}{USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(3) $\vert$ SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+TXPO)
+ \}
+\begin{DoxyCompactList}\small\item\em USART signal MUX settings. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gab7d8ac715e2bd7ccddc65bf2c5ceb1f5}{usart\+\_\+stopbits}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a9011413422d1340bb5c343a1f3b57341}{USART\+\_\+\+STOPBITS\+\_\+1}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a1e3cd9a88a519d93c0c300e873437a2c}{USART\+\_\+\+STOPBITS\+\_\+2}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+SBMODE
+ \}
+\begin{DoxyCompactList}\small\item\em USART Stop Bits enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}{usart\+\_\+character\+\_\+size}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab1db6dc41b52d70a9185b963d9140c7f}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+5\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(5)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a4b631e89e72f2b939afbc4a996d358b9}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+6\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(6)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab5e1a6e76a61ee79563a551ad2431726}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+7\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(7)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a8679bfe526e0d92b5d313f9f5880da4b}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+8\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(0)
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a6a7fe30ecca9dbde62c154d6619cab7f}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+9\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(1)
+ \}
+\begin{DoxyCompactList}\small\item\em USART Character Size. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\+\_\+transceiver\+\_\+type}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a627832963965f11ae53299b802582c48}{USART\+\_\+\+TRANSCEIVER\+\_\+\+RX}}
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a9d1050c223a28be7aefcbca46a0add81}{USART\+\_\+\+TRANSCEIVER\+\_\+\+TX}}
+ \}
+\begin{DoxyCompactList}\small\item\em USART Transceiver. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gae7bc85650aed61f97fe3d5df9b430456}{PINMUX\+\_\+\+DEFAULT}}~0
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}~0x\+FFFFFFFF
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gad3e37fdd22ce059c9158a818d608447a}{USART\+\_\+\+TIMEOUT}}~0x\+FFFF
+\end{DoxyCompactItemize}
+\doxysubsection*{Writing and Reading}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaee8b142e8ad13e1e226334a9954e853c}{usart\+\_\+write\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, const uint16\+\_\+t tx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Transmit a character via the USART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaf7db90c51a6f17edff5f1de2a0e3d8a5}{usart\+\_\+read\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint16\+\_\+t $\ast$const rx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Receive a character via the USART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gacffd0845249348d37d14c65a41132e41}{usart\+\_\+write\+\_\+buffer\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, const uint8\+\_\+t $\ast$tx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Transmit a buffer of characters via the USART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4f788b3478e9c1fa8f0dd8d09939d3a6}{usart\+\_\+read\+\_\+buffer\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$rx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Receive a buffer of {\ttfamily length} characters via the USART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Callback Management}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga39e38593fb41abe34cec95d53c7b1e37}{usart\+\_\+register\+\_\+callback}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, usart\+\_\+callback\+\_\+t callback\+\_\+func, enum usart\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Registers a callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga5be8cd239bf4acd63e341be97a5cd602}{usart\+\_\+unregister\+\_\+callback}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$module, enum usart\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Unregisters a callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Writing and Reading}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga3e68847c609aa708be3e1f282f760e8d}{usart\+\_\+write\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, const uint16\+\_\+t $\ast$tx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Asynchronous write a single char. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga095085e94cc009c31243df62395896fd}{usart\+\_\+read\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint16\+\_\+t $\ast$const rx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Asynchronous read a single char. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga2811c1f5cd7fdcf653eac02812f2265c}{usart\+\_\+write\+\_\+buffer\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$tx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Asynchronous buffer write. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga95b1e55af02e69454ecff04c3d712527}{usart\+\_\+read\+\_\+buffer\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$rx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Asynchronous buffer read. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga08e77aeb7ff01d060c5c936a63581a99}{usart\+\_\+abort\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\+\_\+transceiver\+\_\+type}} transceiver\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Cancels ongoing read/write operation. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga80364bc53d6d6405a2a7f3b1aa507503}{usart\+\_\+get\+\_\+job\+\_\+status}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\+\_\+transceiver\+\_\+type}} transceiver\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Get status from the ongoing or last asynchronous transfer operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of the SERCOM module in its USART mode to transfer or receive USART data frames. The following driver API modes are covered by this manual\+:
+
+
+\begin{DoxyItemize}
+\item Polled APIs 
+\end{DoxyItemize}
+
+The following peripheral is used by this module\+:
+\begin{DoxyItemize}
+\item SERCOM (Serial Communication Interface)
+\end{DoxyItemize}
+
+The following devices can use this module\+:
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D09/\+D10/\+D11
+\item Atmel $\vert$ SMART SAM D10/\+D11
+\item Atmel $\vert$ SMART SAM L21/\+L22
+\item Atmel $\vert$ SMART SAM DA1
+\item Atmel $\vert$ SMART SAM C20/\+C21
+\item Atmel $\vert$ SMART SAM HA1
+\item Atmel $\vert$ SMART SAM R30
+\item Atmel $\vert$ SMART SAM R34
+\item Atmel $\vert$ SMART SAM R35
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_extra_info}{Extra Information}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_prerequisites}
+To use the USART you need to have a GCLK generator enabled and running that can be used as the SERCOM clock source. This can either be configured in \mbox{\hyperlink{conf__clocks_8h}{conf\+\_\+clocks.\+h}} or by using the system clock driver.\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview}
+This driver will use one (or more) SERCOM interface(s) in the system and configure it to run as a USART interface in either synchronous or asynchronous mode.\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_features}{}\doxysubsubsection{Driver Feature Macro Definition}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_features}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endhead
+FEATURE\+\_\+\+USART\+\_\+\+SYNC\+\_\+\+SCHEME\+\_\+\+V2 &SAM D21/\+R21/\+D09/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+USART\+\_\+\+OVER\+\_\+\+SAMPLE &SAM D21/\+R21/\+D09/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+USART\+\_\+\+HARDWARE\+\_\+\+FLOW\+\_\+\+CONTROL &SAM D21/\+R21/\+D09/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+USART\+\_\+\+IRDA &SAM D21/\+R21/\+D09/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+USART\+\_\+\+LIN\+\_\+\+SLAVE &SAM D21/\+R21/\+D09/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+USART\+\_\+\+COLLISION\+\_\+\+DECTION &SAM D21/\+R21/\+D09/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+USART\+\_\+\+START\+\_\+\+FRAME\+\_\+\+DECTION &SAM D21/\+R21/\+D09/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+USART\+\_\+\+IMMEDIATE\+\_\+\+BUFFER\+\_\+\+OVERFLOW\+\_\+\+NOTIFICATION &SAM D21/\+R21/\+D09/\+D10/\+D11/\+L21/\+L22/\+DA1/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+USART\+\_\+\+RS485 &SAM C20/\+C21  \\\cline{1-2}
+FEATURE\+\_\+\+USART\+\_\+\+LIN\+\_\+\+MASTER &SAM L22/\+C20/\+C21  \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+The specific features are only available in the driver when the selected device supports those features.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_frame_format}{}\doxysubsubsection{Frame Format}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_frame_format}
+Communication is based on frames, where the frame format can be customized to accommodate a wide range of standards. A frame consists of a start bit, a number of data bits, an optional parity bit for error detection as well as a configurable length stop bit(s) -\/ see \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_frame_diagram}{the figure below}}. \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_frame_params}{The table below}} shows the available parameters you can change in a frame.
+
+\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_frame_params}%
+\Hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_frame_params}%
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{USART Frame Parameters}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\cellcolor{\tableheadbgcolor}\textbf{ Options  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\cellcolor{\tableheadbgcolor}\textbf{ Options  }\\\cline{1-2}
+\endhead
+Start bit &1  \\\cline{1-2}
+Data bits &5, 6, 7, 8, 9  \\\cline{1-2}
+Parity bit &None, Even, Odd  \\\cline{1-2}
+Stop bits &1, 2  \\\cline{1-2}
+\end{longtabu}
+
+
+\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_frame_diagram}%
+\Hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_frame_diagram}%
+\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_sync}{}\doxysubsubsection{Synchronous Mode}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_sync}
+In synchronous mode a dedicated clock line is provided; either by the USART itself if in master mode, or by an external master if in slave mode. Maximum transmission speed is the same as the GCLK clocking the USART peripheral when in slave mode, and the GCLK divided by two if in master mode. In synchronous mode the interface needs three lines to communicate\+:
+\begin{DoxyItemize}
+\item TX (Transmit pin)
+\item RX (Receive pin)
+\item XCK (Clock pin)
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_sync_sampling}{}\doxyparagraph{Data Sampling}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_sync_sampling}
+In synchronous mode the data is sampled on either the rising or falling edge of the clock signal. This is configured by setting the clock polarity in the configuration struct.\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_async}{}\doxysubsubsection{Asynchronous Mode}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_async}
+In asynchronous mode no dedicated clock line is used, and the communication is based on matching the clock speed on the transmitter and receiver. The clock is generated from the internal SERCOM baudrate generator, and the frames are synchronized by using the frame start bits. Maximum transmission speed is limited to the SERCOM GCLK divided by 16. In asynchronous mode the interface only needs two lines to communicate\+:
+\begin{DoxyItemize}
+\item TX (Transmit pin)
+\item RX (Receive pin)
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_async_clock_matching}{}\doxyparagraph{Transmitter/receiver Clock Matching}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_async_clock_matching}
+For successful transmit and receive using the asynchronous mode the receiver and transmitter clocks needs to be closely matched. When receiving a frame that does not match the selected baudrate closely enough the receiver will be unable to synchronize the frame(s), and garbage transmissions will result.\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_parity}{}\doxysubsubsection{Parity}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_parity}
+Parity can be enabled to detect if a transmission was in error. This is done by counting the number of \char`\"{}1\char`\"{} bits in the frame. When using even parity the parity bit will be set if the total number of \char`\"{}1\char`\"{}s in the frame are an even number. If using odd parity the parity bit will be set if the total number of \char`\"{}1\char`\"{}s are odd.
+
+When receiving a character the receiver will count the number of \char`\"{}1\char`\"{}s in the frame and give an error if the received frame and parity bit disagree.\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_pin_configuration}{}\doxysubsubsection{GPIO Configuration}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_overview_pin_configuration}
+The SERCOM module has four internal pads; the RX pin can be placed freely on any one of the four pads, and the TX and XCK pins have two predefined positions that can be selected as a pair. The pads can then be routed to an external GPIO pin using the normal pin multiplexing scheme on the SAM.\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_special_considerations}{}\doxysubsection{Special Considerations}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_special_considerations}
+No special considerations. \hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_extra_info}{}\doxysubsection{Extra Information}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_extra_info}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_sercom_usart_extra}{Extra Information for SERCOM USART Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_sercom_usart_extra_asfdoc_sam0_sercom_usart_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_examples}{}\doxysubsection{Examples}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_sercom_usart_exqsg}{Examples for SERCOM USART Driver}}.\hypertarget{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__sam0__sercom__usart__group_asfdoc_sam0_sercom_usart_api_overview}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gae7bc85650aed61f97fe3d5df9b430456}\label{group__asfdoc__sam0__sercom__usart__group_gae7bc85650aed61f97fe3d5df9b430456}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!PINMUX\_DEFAULT@{PINMUX\_DEFAULT}}
+\index{PINMUX\_DEFAULT@{PINMUX\_DEFAULT}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{PINMUX\_DEFAULT}{PINMUX\_DEFAULT}}
+{\footnotesize\ttfamily \#define PINMUX\+\_\+\+DEFAULT~0}
+
+Default pinmux \mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}\label{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!PINMUX\_UNUSED@{PINMUX\_UNUSED}}
+\index{PINMUX\_UNUSED@{PINMUX\_UNUSED}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{PINMUX\_UNUSED}{PINMUX\_UNUSED}}
+{\footnotesize\ttfamily \#define PINMUX\+\_\+\+UNUSED~0x\+FFFFFFFF}
+
+Unused pinmux \mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gad3e37fdd22ce059c9158a818d608447a}\label{group__asfdoc__sam0__sercom__usart__group_gad3e37fdd22ce059c9158a818d608447a}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_TIMEOUT@{USART\_TIMEOUT}}
+\index{USART\_TIMEOUT@{USART\_TIMEOUT}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{USART\_TIMEOUT}{USART\_TIMEOUT}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+TIMEOUT~0x\+FFFF}
+
+USART timeout value 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}\label{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_character\_size@{usart\_character\_size}}
+\index{usart\_character\_size@{usart\_character\_size}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_character\_size}{usart\_character\_size}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}{usart\+\_\+character\+\_\+size}}}
+
+
+
+USART Character Size. 
+
+Number of bits for the character sent in a frame. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_CHARACTER\_SIZE\_5BIT@{USART\_CHARACTER\_SIZE\_5BIT}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_CHARACTER\_SIZE\_5BIT@{USART\_CHARACTER\_SIZE\_5BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab1db6dc41b52d70a9185b963d9140c7f}\label{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab1db6dc41b52d70a9185b963d9140c7f}} 
+USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+5\+BIT&The char being sent in a frame is five bits long \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_CHARACTER\_SIZE\_6BIT@{USART\_CHARACTER\_SIZE\_6BIT}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_CHARACTER\_SIZE\_6BIT@{USART\_CHARACTER\_SIZE\_6BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a4b631e89e72f2b939afbc4a996d358b9}\label{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a4b631e89e72f2b939afbc4a996d358b9}} 
+USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+6\+BIT&The char being sent in a frame is six bits long \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_CHARACTER\_SIZE\_7BIT@{USART\_CHARACTER\_SIZE\_7BIT}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_CHARACTER\_SIZE\_7BIT@{USART\_CHARACTER\_SIZE\_7BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab5e1a6e76a61ee79563a551ad2431726}\label{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab5e1a6e76a61ee79563a551ad2431726}} 
+USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+7\+BIT&The char being sent in a frame is seven bits long \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_CHARACTER\_SIZE\_8BIT@{USART\_CHARACTER\_SIZE\_8BIT}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_CHARACTER\_SIZE\_8BIT@{USART\_CHARACTER\_SIZE\_8BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a8679bfe526e0d92b5d313f9f5880da4b}\label{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a8679bfe526e0d92b5d313f9f5880da4b}} 
+USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+8\+BIT&The char being sent in a frame is eight bits long \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_CHARACTER\_SIZE\_9BIT@{USART\_CHARACTER\_SIZE\_9BIT}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_CHARACTER\_SIZE\_9BIT@{USART\_CHARACTER\_SIZE\_9BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a6a7fe30ecca9dbde62c154d6619cab7f}\label{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a6a7fe30ecca9dbde62c154d6619cab7f}} 
+USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+9\+BIT&The char being sent in a frame is nine bits long \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga4352d9150bb8cbd54d26abe3055a5ee1}\label{group__asfdoc__sam0__sercom__usart__group_ga4352d9150bb8cbd54d26abe3055a5ee1}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_dataorder@{usart\_dataorder}}
+\index{usart\_dataorder@{usart\_dataorder}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_dataorder}{usart\_dataorder}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4352d9150bb8cbd54d26abe3055a5ee1}{usart\+\_\+dataorder}}}
+
+
+
+USART Data Order enum. 
+
+The data order decides which MSB or LSB is shifted out first when data is transferred. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_DATAORDER\_MSB@{USART\_DATAORDER\_MSB}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_DATAORDER\_MSB@{USART\_DATAORDER\_MSB}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1add3a3b7f39f32c42d22991ea981e2810}\label{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1add3a3b7f39f32c42d22991ea981e2810}} 
+USART\+\_\+\+DATAORDER\+\_\+\+MSB&The MSB will be shifted out first during transmission, and shifted in first during reception \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_DATAORDER\_LSB@{USART\_DATAORDER\_LSB}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_DATAORDER\_LSB@{USART\_DATAORDER\_LSB}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1afb0c8f2d6f7da9f62dc67871d710b9af}\label{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1afb0c8f2d6f7da9f62dc67871d710b9af}} 
+USART\+\_\+\+DATAORDER\+\_\+\+LSB&The LSB will be shifted out first during transmission, and shifted in first during reception \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga867cc5f0ea7d3bf651d68f0046cf6f41}\label{group__asfdoc__sam0__sercom__usart__group_ga867cc5f0ea7d3bf651d68f0046cf6f41}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_parity@{usart\_parity}}
+\index{usart\_parity@{usart\_parity}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_parity}{usart\_parity}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga867cc5f0ea7d3bf651d68f0046cf6f41}{usart\+\_\+parity}}}
+
+
+
+USART Parity enum. 
+
+Select parity USART parity mode. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_PARITY\_ODD@{USART\_PARITY\_ODD}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_PARITY\_ODD@{USART\_PARITY\_ODD}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41a69c6cdd4d354d3b26c8d2f09f49d2ede}\label{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41a69c6cdd4d354d3b26c8d2f09f49d2ede}} 
+USART\+\_\+\+PARITY\+\_\+\+ODD&For odd parity checking, the parity bit will be set if number of ones being transferred is even \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_PARITY\_EVEN@{USART\_PARITY\_EVEN}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_PARITY\_EVEN@{USART\_PARITY\_EVEN}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41ae5d22c99a30184aff19d77c1a970fb23}\label{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41ae5d22c99a30184aff19d77c1a970fb23}} 
+USART\+\_\+\+PARITY\+\_\+\+EVEN&For even parity checking, the parity bit will be set if number of ones being received is odd \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_PARITY\_NONE@{USART\_PARITY\_NONE}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_PARITY\_NONE@{USART\_PARITY\_NONE}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41aecf52ec650226bdc63e12a21d3b5585d}\label{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41aecf52ec650226bdc63e12a21d3b5585d}} 
+USART\+\_\+\+PARITY\+\_\+\+NONE&No parity checking will be executed, and there will be no parity bit in the received frame \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga87bbdb9f7edb3f1866aeb498bf7c9077}\label{group__asfdoc__sam0__sercom__usart__group_ga87bbdb9f7edb3f1866aeb498bf7c9077}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_signal\_mux\_settings@{usart\_signal\_mux\_settings}}
+\index{usart\_signal\_mux\_settings@{usart\_signal\_mux\_settings}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_signal\_mux\_settings}{usart\_signal\_mux\_settings}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga87bbdb9f7edb3f1866aeb498bf7c9077}{usart\+\_\+signal\+\_\+mux\+\_\+settings}}}
+
+
+
+USART signal MUX settings. 
+
+Set the functionality of the SERCOM pins.
+
+See \mbox{\hyperlink{asfdoc_sam0_sercom_usart_mux_settings}{SERCOM USART MUX Settings}} for a description of the various MUX setting options. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_RX\_0\_TX\_0\_XCK\_1@{USART\_RX\_0\_TX\_0\_XCK\_1}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_RX\_0\_TX\_0\_XCK\_1@{USART\_RX\_0\_TX\_0\_XCK\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ab2330cf3ae7faacb7fd28678a77327f4}\label{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ab2330cf3ae7faacb7fd28678a77327f4}} 
+USART\+\_\+\+RX\+\_\+0\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1&MUX setting RX\+\_\+0\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_RX\_0\_TX\_2\_XCK\_3@{USART\_RX\_0\_TX\_2\_XCK\_3}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_RX\_0\_TX\_2\_XCK\_3@{USART\_RX\_0\_TX\_2\_XCK\_3}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a4ad0f5cd921dd8c0787ebeba372bcc70}\label{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a4ad0f5cd921dd8c0787ebeba372bcc70}} 
+USART\+\_\+\+RX\+\_\+0\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3&MUX setting RX\+\_\+0\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_RX\_1\_TX\_0\_XCK\_1@{USART\_RX\_1\_TX\_0\_XCK\_1}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_RX\_1\_TX\_0\_XCK\_1@{USART\_RX\_1\_TX\_0\_XCK\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}\label{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}} 
+USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1&MUX setting RX\+\_\+1\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_RX\_1\_TX\_2\_XCK\_3@{USART\_RX\_1\_TX\_2\_XCK\_3}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_RX\_1\_TX\_2\_XCK\_3@{USART\_RX\_1\_TX\_2\_XCK\_3}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a884ae3424a45469c20b4ecf9c65a8e48}\label{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a884ae3424a45469c20b4ecf9c65a8e48}} 
+USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3&MUX setting RX\+\_\+1\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_RX\_2\_TX\_0\_XCK\_1@{USART\_RX\_2\_TX\_0\_XCK\_1}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_RX\_2\_TX\_0\_XCK\_1@{USART\_RX\_2\_TX\_0\_XCK\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a730a5c0276235851c892b3a817a6d49f}\label{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a730a5c0276235851c892b3a817a6d49f}} 
+USART\+\_\+\+RX\+\_\+2\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1&MUX setting RX\+\_\+2\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_RX\_2\_TX\_2\_XCK\_3@{USART\_RX\_2\_TX\_2\_XCK\_3}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_RX\_2\_TX\_2\_XCK\_3@{USART\_RX\_2\_TX\_2\_XCK\_3}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077aa64f03365c6e57705c9a154741523956}\label{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077aa64f03365c6e57705c9a154741523956}} 
+USART\+\_\+\+RX\+\_\+2\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3&MUX setting RX\+\_\+2\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_RX\_3\_TX\_0\_XCK\_1@{USART\_RX\_3\_TX\_0\_XCK\_1}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_RX\_3\_TX\_0\_XCK\_1@{USART\_RX\_3\_TX\_0\_XCK\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a01cd27a54558c7956d41d29c16cf4a40}\label{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a01cd27a54558c7956d41d29c16cf4a40}} 
+USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1&MUX setting RX\+\_\+3\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_RX\_3\_TX\_2\_XCK\_3@{USART\_RX\_3\_TX\_2\_XCK\_3}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_RX\_3\_TX\_2\_XCK\_3@{USART\_RX\_3\_TX\_2\_XCK\_3}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}\label{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}} 
+USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3&MUX setting RX\+\_\+3\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gab7d8ac715e2bd7ccddc65bf2c5ceb1f5}\label{group__asfdoc__sam0__sercom__usart__group_gab7d8ac715e2bd7ccddc65bf2c5ceb1f5}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_stopbits@{usart\_stopbits}}
+\index{usart\_stopbits@{usart\_stopbits}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_stopbits}{usart\_stopbits}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gab7d8ac715e2bd7ccddc65bf2c5ceb1f5}{usart\+\_\+stopbits}}}
+
+
+
+USART Stop Bits enum. 
+
+Number of stop bits for a frame. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_STOPBITS\_1@{USART\_STOPBITS\_1}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_STOPBITS\_1@{USART\_STOPBITS\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a9011413422d1340bb5c343a1f3b57341}\label{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a9011413422d1340bb5c343a1f3b57341}} 
+USART\+\_\+\+STOPBITS\+\_\+1&Each transferred frame contains one stop bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_STOPBITS\_2@{USART\_STOPBITS\_2}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_STOPBITS\_2@{USART\_STOPBITS\_2}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a1e3cd9a88a519d93c0c300e873437a2c}\label{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a1e3cd9a88a519d93c0c300e873437a2c}} 
+USART\+\_\+\+STOPBITS\+\_\+2&Each transferred frame contains two stop bits \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}\label{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_transceiver\_type@{usart\_transceiver\_type}}
+\index{usart\_transceiver\_type@{usart\_transceiver\_type}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_transceiver\_type}{usart\_transceiver\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\+\_\+transceiver\+\_\+type}}}
+
+
+
+USART Transceiver. 
+
+Select Receiver or Transmitter. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_TRANSCEIVER\_RX@{USART\_TRANSCEIVER\_RX}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_TRANSCEIVER\_RX@{USART\_TRANSCEIVER\_RX}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a627832963965f11ae53299b802582c48}\label{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a627832963965f11ae53299b802582c48}} 
+USART\+\_\+\+TRANSCEIVER\+\_\+\+RX&The parameter is for the Receiver \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_TRANSCEIVER\_TX@{USART\_TRANSCEIVER\_TX}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_TRANSCEIVER\_TX@{USART\_TRANSCEIVER\_TX}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a9d1050c223a28be7aefcbca46a0add81}\label{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a9d1050c223a28be7aefcbca46a0add81}} 
+USART\+\_\+\+TRANSCEIVER\+\_\+\+TX&The parameter is for the Transmitter \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga7ff4d85053b8ea0904b5a57587b39c8f}\label{group__asfdoc__sam0__sercom__usart__group_ga7ff4d85053b8ea0904b5a57587b39c8f}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_transfer\_mode@{usart\_transfer\_mode}}
+\index{usart\_transfer\_mode@{usart\_transfer\_mode}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_transfer\_mode}{usart\_transfer\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga7ff4d85053b8ea0904b5a57587b39c8f}{usart\+\_\+transfer\+\_\+mode}}}
+
+
+
+USART Transfer mode enum. 
+
+Select USART transfer mode. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_TRANSFER\_SYNCHRONOUSLY@{USART\_TRANSFER\_SYNCHRONOUSLY}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_TRANSFER\_SYNCHRONOUSLY@{USART\_TRANSFER\_SYNCHRONOUSLY}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa4756b64694eb2e2ca4f4c77c6f53786d}\label{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa4756b64694eb2e2ca4f4c77c6f53786d}} 
+USART\+\_\+\+TRANSFER\+\_\+\+SYNCHRONOUSLY&Transfer of data is done synchronously \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USART\_TRANSFER\_ASYNCHRONOUSLY@{USART\_TRANSFER\_ASYNCHRONOUSLY}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!USART\_TRANSFER\_ASYNCHRONOUSLY@{USART\_TRANSFER\_ASYNCHRONOUSLY}}}\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa5662e0cc82a73f113bb13ebb1e4c65ef}\label{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa5662e0cc82a73f113bb13ebb1e4c65ef}} 
+USART\+\_\+\+TRANSFER\+\_\+\+ASYNCHRONOUSLY&Transfer of data is done asynchronously \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga08e77aeb7ff01d060c5c936a63581a99}\label{group__asfdoc__sam0__sercom__usart__group_ga08e77aeb7ff01d060c5c936a63581a99}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_abort\_job@{usart\_abort\_job}}
+\index{usart\_abort\_job@{usart\_abort\_job}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_abort\_job()}{usart\_abort\_job()}}
+{\footnotesize\ttfamily void usart\+\_\+abort\+\_\+job (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\+\_\+transceiver\+\_\+type}}}]{transceiver\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Cancels ongoing read/write operation. 
+
+Cancels the ongoing read/write operation modifying parameters in the USART software struct.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em transceiver\+\_\+type} & Transfer type to cancel \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga80364bc53d6d6405a2a7f3b1aa507503}\label{group__asfdoc__sam0__sercom__usart__group_ga80364bc53d6d6405a2a7f3b1aa507503}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_get\_job\_status@{usart\_get\_job\_status}}
+\index{usart\_get\_job\_status@{usart\_get\_job\_status}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_get\_job\_status()}{usart\_get\_job\_status()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+get\+\_\+job\+\_\+status (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\+\_\+transceiver\+\_\+type}}}]{transceiver\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Get status from the ongoing or last asynchronous transfer operation. 
+
+Returns the error from a given ongoing or last asynchronous transfer operation. Either from a read or write transfer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em transceiver\+\_\+type} & Transfer type to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the given job. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & No error occurred during the last transfer \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & A transfer is ongoing \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+DATA} & The last operation was aborted due to a parity error. The transfer could be affected by external noise \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FORMAT} & The last operation was aborted due to a frame error \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+OVERFLOW} & The last operation was aborted due to a buffer overflow \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & An invalid transceiver enum given \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gad67046f395137b2a7a1ef72f83907674}\label{group__asfdoc__sam0__sercom__usart__group_gad67046f395137b2a7a1ef72f83907674}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_init@{usart\_init}}
+\index{usart\_init@{usart\_init}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_init()}{usart\_init()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{\mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const}]{hw,  }\item[{const struct \mbox{\hyperlink{structusart__config}{usart\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Initializes the device. 
+
+Initializes the USART device based on the setting specified in the configuration struct.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em module} & Pointer to USART device \\
+\hline
+\mbox{\texttt{ in}}  & {\em hw} & Pointer to USART hardware instance \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Pointer to configuration struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the initialization.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The initialization was successful \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & The USART module is busy resetting \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & The USART has not been disabled in advance of initialization \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & The configuration struct contains invalid configuration \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+ALREADY\+\_\+\+INITIALIZED} & The SERCOM instance has already been initialized with different clock configuration \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAUD\+\_\+\+UNAVAILABLE} & The BAUD rate given by the configuration struct cannot be reached with the current clock configuration \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga95b1e55af02e69454ecff04c3d712527}\label{group__asfdoc__sam0__sercom__usart__group_ga95b1e55af02e69454ecff04c3d712527}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_read\_buffer\_job@{usart\_read\_buffer\_job}}
+\index{usart\_read\_buffer\_job@{usart\_read\_buffer\_job}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_read\_buffer\_job()}{usart\_read\_buffer\_job()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+read\+\_\+buffer\+\_\+job (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{uint8\+\_\+t $\ast$}]{rx\+\_\+data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Asynchronous buffer read. 
+
+Sets up the driver to read from the USART to a given buffer. If registered and enabled, a callback function will be called.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ out}}  & {\em rx\+\_\+data} & Pointer to data buffer to receive \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & Data buffer length\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If using 9-\/bit data, the array that {\itshape rx\+\_\+data point to should be defined as uint16\+\_\+t array and should be casted to uint8\+\_\+t} pointer. Because it is an address pointer, the highest byte is not discarded. For example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define RX\_LEN 3}}
+\DoxyCodeLine{uint16\_t rx\_buf[RX\_LEN] = \{0x0,\};}
+\DoxyCodeLine{\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga95b1e55af02e69454ecff04c3d712527}{usart\_read\_buffer\_job}}(\&module, (uint8\_t*)rx\_buf, RX\_LEN);}
+
+\end{DoxyCode}
+
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If operation was completed \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & If operation was not completed, due to the USART module being busy \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If operation was not completed, due to invalid arguments \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & If the transmitter is not enabled \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga4f788b3478e9c1fa8f0dd8d09939d3a6}\label{group__asfdoc__sam0__sercom__usart__group_ga4f788b3478e9c1fa8f0dd8d09939d3a6}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_read\_buffer\_wait@{usart\_read\_buffer\_wait}}
+\index{usart\_read\_buffer\_wait@{usart\_read\_buffer\_wait}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_read\_buffer\_wait()}{usart\_read\_buffer\_wait()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+read\+\_\+buffer\+\_\+wait (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{uint8\+\_\+t $\ast$}]{rx\+\_\+data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Receive a buffer of {\ttfamily length} characters via the USART. 
+
+This blocking function will receive a block of {\ttfamily length} characters via the USART.
+
+\begin{DoxyNote}{Note}
+Using this function in combination with the interrupt ({\ttfamily $\ast$\+\_\+job}) functions is not recommended as it has no functionality to check if there is an ongoing interrupt driven operation running or not.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ out}}  & {\em rx\+\_\+data} & Pointer to receive buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & Number of characters to receive\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If using 9-\/bit data, the array that {\itshape rx\+\_\+data point to should be defined as uint16\+\_\+t array and should be casted to uint8\+\_\+t} pointer. Because it is an address pointer, the highest byte is not discarded. For example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define RX\_LEN 3}}
+\DoxyCodeLine{uint16\_t rx\_buf[RX\_LEN] = \{0x0,\};}
+\DoxyCodeLine{\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4f788b3478e9c1fa8f0dd8d09939d3a6}{usart\_read\_buffer\_wait}}(\&module, (uint8\_t*)rx\_buf, RX\_LEN);}
+
+\end{DoxyCode}
+
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If operation was completed \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If operation was not completed, due to an invalid argument being supplied \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+TIMEOUT} & If operation was not completed, due to USART module timing out \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FORMAT} & If the operation was not completed, due to a configuration mismatch between USART and the sender \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+OVERFLOW} & If the operation was not completed, due to the baudrate being too low or the system frequency being too high \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+DATA} & If the operation was not completed, due to data being corrupted \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & If the receiver is not enabled \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga095085e94cc009c31243df62395896fd}\label{group__asfdoc__sam0__sercom__usart__group_ga095085e94cc009c31243df62395896fd}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_read\_job@{usart\_read\_job}}
+\index{usart\_read\_job@{usart\_read\_job}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_read\_job()}{usart\_read\_job()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+read\+\_\+job (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{uint16\+\_\+t $\ast$const}]{rx\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Asynchronous read a single char. 
+
+Sets up the driver to read data from the USART module to the data pointer given. If registered and enabled, a callback will be called when the receiving is completed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ out}}  & {\em rx\+\_\+data} & Pointer to where received data should be put\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If operation was completed \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & If operation was not completed \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gaf7db90c51a6f17edff5f1de2a0e3d8a5}\label{group__asfdoc__sam0__sercom__usart__group_gaf7db90c51a6f17edff5f1de2a0e3d8a5}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_read\_wait@{usart\_read\_wait}}
+\index{usart\_read\_wait@{usart\_read\_wait}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_read\_wait()}{usart\_read\_wait()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+read\+\_\+wait (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{uint16\+\_\+t $\ast$const}]{rx\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Receive a character via the USART. 
+
+This blocking function will receive a character via the USART.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ out}}  & {\em rx\+\_\+data} & Pointer to received data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If the operation was completed \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & If the operation was not completed, due to the USART module being busy \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FORMAT} & If the operation was not completed, due to configuration mismatch between USART and the sender \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+OVERFLOW} & If the operation was not completed, due to the baudrate being too low or the system frequency being too high \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+DATA} & If the operation was not completed, due to data being corrupted \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & If the receiver is not enabled \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga39e38593fb41abe34cec95d53c7b1e37}\label{group__asfdoc__sam0__sercom__usart__group_ga39e38593fb41abe34cec95d53c7b1e37}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_register\_callback@{usart\_register\_callback}}
+\index{usart\_register\_callback@{usart\_register\_callback}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_register\_callback()}{usart\_register\_callback()}}
+{\footnotesize\ttfamily void usart\+\_\+register\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{usart\+\_\+callback\+\_\+t}]{callback\+\_\+func,  }\item[{enum usart\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Registers a callback. 
+
+Registers a callback function, which is implemented by the user.
+
+\begin{DoxyNote}{Note}
+The callback must be enabled by usart\+\_\+enable\+\_\+callback in order for the interrupt handler to call it when the conditions for the callback type are met.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+func} & Pointer to callback function \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Callback type given by an enum \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga5be8cd239bf4acd63e341be97a5cd602}\label{group__asfdoc__sam0__sercom__usart__group_ga5be8cd239bf4acd63e341be97a5cd602}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_unregister\_callback@{usart\_unregister\_callback}}
+\index{usart\_unregister\_callback@{usart\_unregister\_callback}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_unregister\_callback()}{usart\_unregister\_callback()}}
+{\footnotesize\ttfamily void usart\+\_\+unregister\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{enum usart\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Unregisters a callback. 
+
+Unregisters a callback function, which is implemented by the user.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Callback type given by an enum \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga2811c1f5cd7fdcf653eac02812f2265c}\label{group__asfdoc__sam0__sercom__usart__group_ga2811c1f5cd7fdcf653eac02812f2265c}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_write\_buffer\_job@{usart\_write\_buffer\_job}}
+\index{usart\_write\_buffer\_job@{usart\_write\_buffer\_job}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_write\_buffer\_job()}{usart\_write\_buffer\_job()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+write\+\_\+buffer\+\_\+job (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{uint8\+\_\+t $\ast$}]{tx\+\_\+data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Asynchronous buffer write. 
+
+Sets up the driver to write a given buffer over the USART. If registered and enabled, a callback function will be called.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em tx\+\_\+data} & Pointer do data buffer to transmit \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & Length of the data to transmit\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If using 9-\/bit data, the array that {\itshape tx\+\_\+data point to should be defined as uint16\+\_\+t array and should be casted to uint8\+\_\+t} pointer. Because it is an address pointer, the highest byte is not discarded. For example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define TX\_LEN 3}}
+\DoxyCodeLine{uint16\_t tx\_buf[TX\_LEN] = \{0x0111, 0x0022, 0x0133\};}
+\DoxyCodeLine{\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga2811c1f5cd7fdcf653eac02812f2265c}{usart\_write\_buffer\_job}}(\&module, (uint8\_t*)tx\_buf, TX\_LEN);}
+
+\end{DoxyCode}
+
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If operation was completed successfully. \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & If operation was not completed, due to the USART module being busy \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If operation was not completed, due to invalid arguments \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & If the transmitter is not enabled \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gacffd0845249348d37d14c65a41132e41}\label{group__asfdoc__sam0__sercom__usart__group_gacffd0845249348d37d14c65a41132e41}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_write\_buffer\_wait@{usart\_write\_buffer\_wait}}
+\index{usart\_write\_buffer\_wait@{usart\_write\_buffer\_wait}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_write\_buffer\_wait()}{usart\_write\_buffer\_wait()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+write\+\_\+buffer\+\_\+wait (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{const uint8\+\_\+t $\ast$}]{tx\+\_\+data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Transmit a buffer of characters via the USART. 
+
+This blocking function will transmit a block of {\ttfamily length} characters via the USART.
+
+\begin{DoxyNote}{Note}
+Using this function in combination with the interrupt ({\ttfamily \+\_\+job}) functions is not recommended as it has no functionality to check if there is an ongoing interrupt driven operation running or not.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em tx\+\_\+data} & Pointer to data to transmit \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & Number of characters to transmit\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If using 9-\/bit data, the array that {\itshape tx\+\_\+data point to should be defined as uint16\+\_\+t array and should be casted to uint8\+\_\+t} pointer. Because it is an address pointer, the highest byte is not discarded. For example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define TX\_LEN 3}}
+\DoxyCodeLine{uint16\_t tx\_buf[TX\_LEN] = \{0x0111, 0x0022, 0x0133\};}
+\DoxyCodeLine{\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gacffd0845249348d37d14c65a41132e41}{usart\_write\_buffer\_wait}}(\&module, (uint8\_t*)tx\_buf, TX\_LEN);}
+
+\end{DoxyCode}
+
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If operation was completed \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If operation was not completed, due to invalid arguments \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+TIMEOUT} & If operation was not completed, due to USART module timing out \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & If the transmitter is not enabled \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_ga3e68847c609aa708be3e1f282f760e8d}\label{group__asfdoc__sam0__sercom__usart__group_ga3e68847c609aa708be3e1f282f760e8d}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_write\_job@{usart\_write\_job}}
+\index{usart\_write\_job@{usart\_write\_job}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_write\_job()}{usart\_write\_job()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+write\+\_\+job (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{const uint16\+\_\+t $\ast$}]{tx\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Asynchronous write a single char. 
+
+Sets up the driver to write the data given. If registered and enabled, a callback function will be called when the transmit is completed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to USART software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em tx\+\_\+data} & Data to transfer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If operation was completed \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & If operation was not completed, due to the USART module being busy \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & If the transmitter is not enabled \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__sercom__usart__group_gaee8b142e8ad13e1e226334a9954e853c}\label{group__asfdoc__sam0__sercom__usart__group_gaee8b142e8ad13e1e226334a9954e853c}} 
+\index{SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}!usart\_write\_wait@{usart\_write\_wait}}
+\index{usart\_write\_wait@{usart\_write\_wait}!SAM Serial USART (SERCOM USART) Driver@{SAM Serial USART (SERCOM USART) Driver}}
+\doxysubsubsection{\texorpdfstring{usart\_write\_wait()}{usart\_write\_wait()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} usart\+\_\+write\+\_\+wait (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const}]{module,  }\item[{const uint16\+\_\+t}]{tx\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Transmit a character via the USART. 
+
+This blocking function will transmit a single character via the USART.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em tx\+\_\+data} & Data to transfer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If the operation was completed \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & If the operation was not completed, due to the USART module being busy \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & If the transmitter is not enabled \\
+\hline
+\end{DoxyRetVals}

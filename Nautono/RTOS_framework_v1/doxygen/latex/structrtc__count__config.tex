@@ -1,0 +1,67 @@
+\hypertarget{structrtc__count__config}{}\doxysection{rtc\+\_\+count\+\_\+config Struct Reference}
+\label{structrtc__count__config}\index{rtc\_count\_config@{rtc\_count\_config}}
+
+
+RTC Count configuration structure.  
+
+
+
+
+{\ttfamily \#include $<$rtc\+\_\+count.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gacce60ab36a74de9a173788f4aa896d15}{rtc\+\_\+count\+\_\+prescaler}} \mbox{\hyperlink{structrtc__count__config_ae0707ec99887d5b4ce67ae9b6f3ef1c4}{prescaler}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga1c6c05a342b2711713cfac6fb3d6256c}{rtc\+\_\+count\+\_\+mode}} \mbox{\hyperlink{structrtc__count__config_ae21239a4b10bf3243d71dbf51cfac86e}{mode}}
+\item 
+bool \mbox{\hyperlink{structrtc__count__config_a6ebdd35f8fcf14e066ec2c997acfcce4}{clear\+\_\+on\+\_\+match}}
+\item 
+bool \mbox{\hyperlink{structrtc__count__config_ab2dc5f7ab7028a512ee589ced12a2e01}{continuously\+\_\+update}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structrtc__count__config_afdc777ad1d7be84875cb7c208459d937}{compare\+\_\+values}} \mbox{[}RTC\+\_\+\+NUM\+\_\+\+OF\+\_\+\+COMP16\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RTC Count configuration structure. 
+
+Configuration structure for the RTC instance. This structure should be initialized using the rtc\+\_\+count\+\_\+get\+\_\+config\+\_\+defaults() before any user configurations are set. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structrtc__count__config_a6ebdd35f8fcf14e066ec2c997acfcce4}\label{structrtc__count__config_a6ebdd35f8fcf14e066ec2c997acfcce4}} 
+\index{rtc\_count\_config@{rtc\_count\_config}!clear\_on\_match@{clear\_on\_match}}
+\index{clear\_on\_match@{clear\_on\_match}!rtc\_count\_config@{rtc\_count\_config}}
+\doxysubsubsection{\texorpdfstring{clear\_on\_match}{clear\_on\_match}}
+{\footnotesize\ttfamily bool rtc\+\_\+count\+\_\+config\+::clear\+\_\+on\+\_\+match}
+
+If true, clears the counter value on compare match. Only available whilst running in 32-\/bit mode \mbox{\Hypertarget{structrtc__count__config_afdc777ad1d7be84875cb7c208459d937}\label{structrtc__count__config_afdc777ad1d7be84875cb7c208459d937}} 
+\index{rtc\_count\_config@{rtc\_count\_config}!compare\_values@{compare\_values}}
+\index{compare\_values@{compare\_values}!rtc\_count\_config@{rtc\_count\_config}}
+\doxysubsubsection{\texorpdfstring{compare\_values}{compare\_values}}
+{\footnotesize\ttfamily uint32\+\_\+t rtc\+\_\+count\+\_\+config\+::compare\+\_\+values\mbox{[}RTC\+\_\+\+NUM\+\_\+\+OF\+\_\+\+COMP16\mbox{]}}
+
+Array of Compare values. Not all Compare values are available in 32-\/bit mode \mbox{\Hypertarget{structrtc__count__config_ab2dc5f7ab7028a512ee589ced12a2e01}\label{structrtc__count__config_ab2dc5f7ab7028a512ee589ced12a2e01}} 
+\index{rtc\_count\_config@{rtc\_count\_config}!continuously\_update@{continuously\_update}}
+\index{continuously\_update@{continuously\_update}!rtc\_count\_config@{rtc\_count\_config}}
+\doxysubsubsection{\texorpdfstring{continuously\_update}{continuously\_update}}
+{\footnotesize\ttfamily bool rtc\+\_\+count\+\_\+config\+::continuously\+\_\+update}
+
+Continuously update the counter value so no synchronization is needed for reading \mbox{\Hypertarget{structrtc__count__config_ae21239a4b10bf3243d71dbf51cfac86e}\label{structrtc__count__config_ae21239a4b10bf3243d71dbf51cfac86e}} 
+\index{rtc\_count\_config@{rtc\_count\_config}!mode@{mode}}
+\index{mode@{mode}!rtc\_count\_config@{rtc\_count\_config}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga1c6c05a342b2711713cfac6fb3d6256c}{rtc\+\_\+count\+\_\+mode}} rtc\+\_\+count\+\_\+config\+::mode}
+
+Select the operation mode of the RTC \mbox{\Hypertarget{structrtc__count__config_ae0707ec99887d5b4ce67ae9b6f3ef1c4}\label{structrtc__count__config_ae0707ec99887d5b4ce67ae9b6f3ef1c4}} 
+\index{rtc\_count\_config@{rtc\_count\_config}!prescaler@{prescaler}}
+\index{prescaler@{prescaler}!rtc\_count\_config@{rtc\_count\_config}}
+\doxysubsubsection{\texorpdfstring{prescaler}{prescaler}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gacce60ab36a74de9a173788f4aa896d15}{rtc\+\_\+count\+\_\+prescaler}} rtc\+\_\+count\+\_\+config\+::prescaler}
+
+Input clock prescaler for the RTC module 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/rtc/\mbox{\hyperlink{rtc__count_8h}{rtc\+\_\+count.\+h}}\end{DoxyCompactItemize}

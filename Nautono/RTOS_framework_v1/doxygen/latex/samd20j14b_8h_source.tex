@@ -1,0 +1,435 @@
+\hypertarget{samd20j14b_8h_source}{}\doxysection{samd20j14b.\+h}
+\label{samd20j14b_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/samd20j14b.h@{src/ASF/sam0/utils/cmsis/samd20/include/samd20j14b.h}}
+\mbox{\hyperlink{samd20j14b_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#ifndef \_SAMD20J14B\_}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define \_SAMD20J14B\_}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{49  \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#ifndef \_\_cplusplus}}
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile} \textcolor{keyword}{const} uint32\_t \mbox{\hyperlink{samd20j14b_8h_a5d556f8391af4141be23f7334ac9dd68}{RoReg}};   }
+\DoxyCodeLine{56 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile} \textcolor{keyword}{const} uint16\_t \mbox{\hyperlink{samd20j14b_8h_aebf6e33c2d49a802e06e22a95ea9d0d0}{RoReg16}}; }
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile} \textcolor{keyword}{const} uint8\_t  \mbox{\hyperlink{samd20j14b_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}};  }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile}       uint32\_t \mbox{\hyperlink{samd20j14b_8h_a5d556f8391af4141be23f7334ac9dd68}{RoReg}};   }
+\DoxyCodeLine{60 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile}       uint16\_t \mbox{\hyperlink{samd20j14b_8h_aebf6e33c2d49a802e06e22a95ea9d0d0}{RoReg16}}; }
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile}       uint8\_t  \mbox{\hyperlink{samd20j14b_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}};  }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile}       uint32\_t \mbox{\hyperlink{samd20j14b_8h_ac0f96d4e8018367b38f527007cf0eafd}{WoReg}};   }
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile}       uint16\_t \mbox{\hyperlink{samd20j14b_8h_a0ab0e5f6c8301aa1c2068e511d854094}{WoReg16}}; }
+\DoxyCodeLine{65 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile}       uint8\_t  \mbox{\hyperlink{samd20j14b_8h_a5e336e5a36ee12ebeafb021108e5275b}{WoReg8}};  }
+\DoxyCodeLine{66 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile}       uint32\_t \mbox{\hyperlink{samd20j14b_8h_acf1496e3bbe303e55f627fc7558a68c7}{RwReg}};   }
+\DoxyCodeLine{67 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile}       uint16\_t \mbox{\hyperlink{samd20j14b_8h_acce07556c80fc352ae607f225f19fed5}{RwReg16}}; }
+\DoxyCodeLine{68 \textcolor{keyword}{typedef} \textcolor{keyword}{volatile}       uint8\_t  \mbox{\hyperlink{samd20j14b_8h_ae361754be775bb192f85821d3ab33c17}{RwReg8}};  }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#if !defined(SKIP\_INTEGER\_LITERALS)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#if defined(\_U\_) || defined(\_L\_) || defined(\_UL\_)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{  \#error "{}Integer Literals macros already defined elsewhere"{}}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{77 \textcolor{comment}{/* Macros that deal with adding suffixes to integer literal constants for C/C++ */}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define \_U\_(x)         x \#\# U            }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define \_L\_(x)         x \#\# L            }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define \_UL\_(x)        x \#\# UL           }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* Assembler */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define \_U\_(x)         x                 }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define \_L\_(x)         x                 }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define \_UL\_(x)        x                 }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SKIP\_INTEGER\_LITERALS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{90 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{95 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083}{IRQn}}}
+\DoxyCodeLine{96 \{}
+\DoxyCodeLine{97 \textcolor{comment}{  /******  Cortex-\/M0+ Processor Exceptions Numbers ******************************/}}
+\DoxyCodeLine{98   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083ade177d9c70c89e084093024b932a4e30}{NonMaskableInt\_IRQn}}      = -\/14,}
+\DoxyCodeLine{99   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083ab1a222a34a32f0ef5ac65e714efc1f85}{HardFault\_IRQn}}           = -\/13,}
+\DoxyCodeLine{100   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a4ce820b3cc6cf3a796b41aadc0cf1237}{SVCall\_IRQn}}              = -\/5, }
+\DoxyCodeLine{101   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a03c3cc89984928816d81793fc7bce4a2}{PendSV\_IRQn}}              = -\/2, }
+\DoxyCodeLine{102   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a6dbff8f8543325f3474cbae2446776e7}{SysTick\_IRQn}}             = -\/1, }
+\DoxyCodeLine{103 \textcolor{comment}{  /******  SAMD20J14B-\/specific Interrupt Numbers ***********************/}}
+\DoxyCodeLine{104   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083adb4772651d36d91686d77e8437abe8a6}{PM\_IRQn}}                  =  0, }
+\DoxyCodeLine{105   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a6395b50b5d103bc4e8e662bf1565d7d5}{SYSCTRL\_IRQn}}             =  1, }
+\DoxyCodeLine{106   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a78573b84a4133ef5812b33ce10dcba12}{WDT\_IRQn}}                 =  2, }
+\DoxyCodeLine{107   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083adcc0f2770f7f57f75fac3d8bcac0e858}{RTC\_IRQn}}                 =  3, }
+\DoxyCodeLine{108   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083af79af3fab866057a9b79b2cae4214aa0}{EIC\_IRQn}}                 =  4, }
+\DoxyCodeLine{109   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a3a96e5f663c92af52124cdfc38e691b8}{NVMCTRL\_IRQn}}             =  5, }
+\DoxyCodeLine{110   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a14cf381e1a271022130551e8d67ad1fe}{EVSYS\_IRQn}}               =  6, }
+\DoxyCodeLine{111   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a7de56c2fd252934ef8204200fde5cc17}{SERCOM0\_IRQn}}             =  7, }
+\DoxyCodeLine{112   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083ae19aa80e84d6404afe3c8e4edf3118ab}{SERCOM1\_IRQn}}             =  8, }
+\DoxyCodeLine{113   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a050632df3441af36eb040640b3c61857}{SERCOM2\_IRQn}}             =  9, }
+\DoxyCodeLine{114   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083ab11153ec56e41cd24fca360d3babf75e}{SERCOM3\_IRQn}}             = 10, }
+\DoxyCodeLine{115   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083aebb4badf538744190c6e7b06c07c20ef}{SERCOM4\_IRQn}}             = 11, }
+\DoxyCodeLine{116   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a272983763da38a9d268167f2f7d31d79}{SERCOM5\_IRQn}}             = 12, }
+\DoxyCodeLine{117   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a22b1945416945d43c4da17beff9a07f5}{TC0\_IRQn}}                 = 13, }
+\DoxyCodeLine{118   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a619d4d4ba34fade28f678663948b234e}{TC1\_IRQn}}                 = 14, }
+\DoxyCodeLine{119   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a8feb20461cae509e115a4965df4851bb}{TC2\_IRQn}}                 = 15, }
+\DoxyCodeLine{120   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a9b195297aae3d4fffaf47d63f76dd54d}{TC3\_IRQn}}                 = 16, }
+\DoxyCodeLine{121   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a5810a6df881ddcfe8347f6400c76fffb}{TC4\_IRQn}}                 = 17, }
+\DoxyCodeLine{122   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a7d84acc2578d91161cb9cb56481cb71f}{TC5\_IRQn}}                 = 18, }
+\DoxyCodeLine{123   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a18da57ace992c87e49fa06a456516a43}{TC6\_IRQn}}                 = 19, }
+\DoxyCodeLine{124   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a86f45ef73b0f9e601dd8854f22e729c8}{TC7\_IRQn}}                 = 20, }
+\DoxyCodeLine{125   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a4d69175258ae261dd545001e810421b3}{ADC\_IRQn}}                 = 21, }
+\DoxyCodeLine{126   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a34da89bb41e38a1e619624f9f1472351}{AC\_IRQn}}                  = 22, }
+\DoxyCodeLine{127   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083afe396b0c790fb592adb3813c718d2dcd}{DAC\_IRQn}}                 = 23, }
+\DoxyCodeLine{128   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a243541e12cd7da23479c6d77758012cc}{PTC\_IRQn}}                 = 24, }
+\DoxyCodeLine{130   \mbox{\hyperlink{samd20j14b_8h_a666eb0caeb12ec0e281415592ae89083a80bbec9a16e6c5b75d55e20b1a318c22}{PERIPH\_COUNT\_IRQn}}        = 25  }
+\DoxyCodeLine{131 \} \mbox{\hyperlink{samd20j14b_8h_a4a0206df9604302e0741c1aa4ca1ded3}{IRQn\_Type}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___device_vectors}{\_DeviceVectors}}}
+\DoxyCodeLine{134 \{}
+\DoxyCodeLine{135   \textcolor{comment}{/* Stack pointer */}}
+\DoxyCodeLine{136   \textcolor{keywordtype}{void}* pvStack;}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   \textcolor{comment}{/* Cortex-\/M handlers */}}
+\DoxyCodeLine{139   \textcolor{keywordtype}{void}* pfnReset\_Handler;}
+\DoxyCodeLine{140   \textcolor{keywordtype}{void}* pfnNMI\_Handler;}
+\DoxyCodeLine{141   \textcolor{keywordtype}{void}* pfnHardFault\_Handler;}
+\DoxyCodeLine{142   \textcolor{keywordtype}{void}* pvReservedM12;}
+\DoxyCodeLine{143   \textcolor{keywordtype}{void}* pvReservedM11;}
+\DoxyCodeLine{144   \textcolor{keywordtype}{void}* pvReservedM10;}
+\DoxyCodeLine{145   \textcolor{keywordtype}{void}* pvReservedM9;}
+\DoxyCodeLine{146   \textcolor{keywordtype}{void}* pvReservedM8;}
+\DoxyCodeLine{147   \textcolor{keywordtype}{void}* pvReservedM7;}
+\DoxyCodeLine{148   \textcolor{keywordtype}{void}* pvReservedM6;}
+\DoxyCodeLine{149   \textcolor{keywordtype}{void}* pfnSVC\_Handler;}
+\DoxyCodeLine{150   \textcolor{keywordtype}{void}* pvReservedM4;}
+\DoxyCodeLine{151   \textcolor{keywordtype}{void}* pvReservedM3;}
+\DoxyCodeLine{152   \textcolor{keywordtype}{void}* pfnPendSV\_Handler;}
+\DoxyCodeLine{153   \textcolor{keywordtype}{void}* pfnSysTick\_Handler;}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155   \textcolor{comment}{/* Peripheral handlers */}}
+\DoxyCodeLine{156   \textcolor{keywordtype}{void}* pfnPM\_Handler;                    \textcolor{comment}{/*  0 Power Manager */}}
+\DoxyCodeLine{157   \textcolor{keywordtype}{void}* pfnSYSCTRL\_Handler;               \textcolor{comment}{/*  1 System Control */}}
+\DoxyCodeLine{158   \textcolor{keywordtype}{void}* pfnWDT\_Handler;                   \textcolor{comment}{/*  2 Watchdog Timer */}}
+\DoxyCodeLine{159   \textcolor{keywordtype}{void}* pfnRTC\_Handler;                   \textcolor{comment}{/*  3 Real-\/Time Counter */}}
+\DoxyCodeLine{160   \textcolor{keywordtype}{void}* pfnEIC\_Handler;                   \textcolor{comment}{/*  4 External Interrupt Controller */}}
+\DoxyCodeLine{161   \textcolor{keywordtype}{void}* pfnNVMCTRL\_Handler;               \textcolor{comment}{/*  5 Non-\/Volatile Memory Controller */}}
+\DoxyCodeLine{162   \textcolor{keywordtype}{void}* pfnEVSYS\_Handler;                 \textcolor{comment}{/*  6 Event System Interface */}}
+\DoxyCodeLine{163   \textcolor{keywordtype}{void}* pfnSERCOM0\_Handler;               \textcolor{comment}{/*  7 Serial Communication Interface 0 */}}
+\DoxyCodeLine{164   \textcolor{keywordtype}{void}* pfnSERCOM1\_Handler;               \textcolor{comment}{/*  8 Serial Communication Interface 1 */}}
+\DoxyCodeLine{165   \textcolor{keywordtype}{void}* pfnSERCOM2\_Handler;               \textcolor{comment}{/*  9 Serial Communication Interface 2 */}}
+\DoxyCodeLine{166   \textcolor{keywordtype}{void}* pfnSERCOM3\_Handler;               \textcolor{comment}{/* 10 Serial Communication Interface 3 */}}
+\DoxyCodeLine{167   \textcolor{keywordtype}{void}* pfnSERCOM4\_Handler;               \textcolor{comment}{/* 11 Serial Communication Interface 4 */}}
+\DoxyCodeLine{168   \textcolor{keywordtype}{void}* pfnSERCOM5\_Handler;               \textcolor{comment}{/* 12 Serial Communication Interface 5 */}}
+\DoxyCodeLine{169   \textcolor{keywordtype}{void}* pfnTC0\_Handler;                   \textcolor{comment}{/* 13 Basic Timer Counter 0 */}}
+\DoxyCodeLine{170   \textcolor{keywordtype}{void}* pfnTC1\_Handler;                   \textcolor{comment}{/* 14 Basic Timer Counter 1 */}}
+\DoxyCodeLine{171   \textcolor{keywordtype}{void}* pfnTC2\_Handler;                   \textcolor{comment}{/* 15 Basic Timer Counter 2 */}}
+\DoxyCodeLine{172   \textcolor{keywordtype}{void}* pfnTC3\_Handler;                   \textcolor{comment}{/* 16 Basic Timer Counter 3 */}}
+\DoxyCodeLine{173   \textcolor{keywordtype}{void}* pfnTC4\_Handler;                   \textcolor{comment}{/* 17 Basic Timer Counter 4 */}}
+\DoxyCodeLine{174   \textcolor{keywordtype}{void}* pfnTC5\_Handler;                   \textcolor{comment}{/* 18 Basic Timer Counter 5 */}}
+\DoxyCodeLine{175   \textcolor{keywordtype}{void}* pfnTC6\_Handler;                   \textcolor{comment}{/* 19 Basic Timer Counter 6 */}}
+\DoxyCodeLine{176   \textcolor{keywordtype}{void}* pfnTC7\_Handler;                   \textcolor{comment}{/* 20 Basic Timer Counter 7 */}}
+\DoxyCodeLine{177   \textcolor{keywordtype}{void}* pfnADC\_Handler;                   \textcolor{comment}{/* 21 Analog Digital Converter */}}
+\DoxyCodeLine{178   \textcolor{keywordtype}{void}* pfnAC\_Handler;                    \textcolor{comment}{/* 22 Analog Comparators */}}
+\DoxyCodeLine{179   \textcolor{keywordtype}{void}* pfnDAC\_Handler;                   \textcolor{comment}{/* 23 Digital Analog Converter */}}
+\DoxyCodeLine{180   \textcolor{keywordtype}{void}* pfnPTC\_Handler;                   \textcolor{comment}{/* 24 Peripheral Touch Controller */}}
+\DoxyCodeLine{181 \} \mbox{\hyperlink{struct___device_vectors}{DeviceVectors}};}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{comment}{/* Cortex-\/M0+ processor handlers */}}
+\DoxyCodeLine{184 \textcolor{keywordtype}{void} \mbox{\hyperlink{samd20j14b_8h_ae7ee340978f5c25f52f0cad1457c6616}{Reset\_Handler}}               ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{185 \textcolor{keywordtype}{void} NMI\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{186 \textcolor{keywordtype}{void} HardFault\_Handler           ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{187 \textcolor{keywordtype}{void} SVC\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{188 \textcolor{keywordtype}{void} PendSV\_Handler              ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{189 \textcolor{keywordtype}{void} SysTick\_Handler             ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{comment}{/* Peripherals handlers */}}
+\DoxyCodeLine{192 \textcolor{keywordtype}{void} PM\_Handler                  ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{193 \textcolor{keywordtype}{void} SYSCTRL\_Handler             ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{194 \textcolor{keywordtype}{void} \mbox{\hyperlink{samd20j14b_8h_a3a2e83b64bfd57689085381db4ac7dee}{WDT\_Handler}}                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{195 \textcolor{keywordtype}{void} RTC\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{196 \textcolor{keywordtype}{void} EIC\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{197 \textcolor{keywordtype}{void} NVMCTRL\_Handler             ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{198 \textcolor{keywordtype}{void} EVSYS\_Handler               ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{199 \textcolor{keywordtype}{void} SERCOM0\_Handler             ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{200 \textcolor{keywordtype}{void} SERCOM1\_Handler             ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{201 \textcolor{keywordtype}{void} SERCOM2\_Handler             ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{202 \textcolor{keywordtype}{void} SERCOM3\_Handler             ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{203 \textcolor{keywordtype}{void} SERCOM4\_Handler             ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{204 \textcolor{keywordtype}{void} SERCOM5\_Handler             ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{205 \textcolor{keywordtype}{void} TC0\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{206 \textcolor{keywordtype}{void} TC1\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{207 \textcolor{keywordtype}{void} TC2\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{208 \textcolor{keywordtype}{void} TC3\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{209 \textcolor{keywordtype}{void} TC4\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{210 \textcolor{keywordtype}{void} TC5\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{211 \textcolor{keywordtype}{void} TC6\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{212 \textcolor{keywordtype}{void} TC7\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{213 \textcolor{keywordtype}{void} \mbox{\hyperlink{samd20j14b_8h_ada953331e0adc056867e918bc80ce8a5}{ADC\_Handler}}                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{214 \textcolor{keywordtype}{void} AC\_Handler                  ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{215 \textcolor{keywordtype}{void} DAC\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{216 \textcolor{keywordtype}{void} PTC\_Handler                 ( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{comment}{/*}}
+\DoxyCodeLine{219 \textcolor{comment}{ * \(\backslash\)brief Configuration of the Cortex-\/M0+ Processor and Core Peripherals}}
+\DoxyCodeLine{220 \textcolor{comment}{ */}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define LITTLE\_ENDIAN          1        }}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define \_\_CM0PLUS\_REV          1         }}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define \_\_MPU\_PRESENT          0         }}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define \_\_NVIC\_PRIO\_BITS       2         }}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define \_\_VTOR\_PRESENT         1         }}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define \_\_Vendor\_SysTickConfig 0         }}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{core__cm0plus_8h}{core\_cm0plus.h}}>}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#if !defined DONT\_USE\_CMSIS\_INIT}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__samd20_8h}{system\_samd20.h}}"{}}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DONT\_USE\_CMSIS\_INIT */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{240 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{242 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component_2ac_8h}{component/ac.h}}"{}}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2adc_8h}{component/adc.h}}"{}}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component_2dac_8h}{component/dac.h}}"{}}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component_2dsu_8h}{component/dsu.h}}"{}}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component_2eic_8h}{component/eic.h}}"{}}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component_2evsys_8h}{component/evsys.h}}"{}}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2gclk_8h}{component/gclk.h}}"{}}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component_2nvmctrl_8h}{component/nvmctrl.h}}"{}}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pac_8h}{component/pac.h}}"{}}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component_2pm_8h}{component/pm.h}}"{}}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2port_8h}{component/port.h}}"{}}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component_2rtc_8h}{component/rtc.h}}"{}}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2sercom_8h}{component/sercom.h}}"{}}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component_2sysctrl_8h}{component/sysctrl.h}}"{}}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2tc_8h}{component/tc.h}}"{}}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2wdt_8h}{component/wdt.h}}"{}}}
+\DoxyCodeLine{264 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{266 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{instance_2ac_8h}{instance/ac.h}}"{}}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2instance_2adc_8h}{instance/adc.h}}"{}}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{instance_2dac_8h}{instance/dac.h}}"{}}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{instance_2dsu_8h}{instance/dsu.h}}"{}}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{instance_2eic_8h}{instance/eic.h}}"{}}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{instance_2evsys_8h}{instance/evsys.h}}"{}}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2instance_2gclk_8h}{instance/gclk.h}}"{}}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{instance_2nvmctrl_8h}{instance/nvmctrl.h}}"{}}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pac0_8h}{instance/pac0.h}}"{}}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pac1_8h}{instance/pac1.h}}"{}}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pac2_8h}{instance/pac2.h}}"{}}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{instance_2pm_8h}{instance/pm.h}}"{}}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2instance_2port_8h}{instance/port.h}}"{}}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{instance_2rtc_8h}{instance/rtc.h}}"{}}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sercom0_8h}{instance/sercom0.h}}"{}}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sercom1_8h}{instance/sercom1.h}}"{}}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sercom2_8h}{instance/sercom2.h}}"{}}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sercom3_8h}{instance/sercom3.h}}"{}}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sercom4_8h}{instance/sercom4.h}}"{}}}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sercom5_8h}{instance/sercom5.h}}"{}}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{instance_2sysctrl_8h}{instance/sysctrl.h}}"{}}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{tc0_8h}{instance/tc0.h}}"{}}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{tc1_8h}{instance/tc1.h}}"{}}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{tc2_8h}{instance/tc2.h}}"{}}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{tc3_8h}{instance/tc3.h}}"{}}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{tc4_8h}{instance/tc4.h}}"{}}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{tc5_8h}{instance/tc5.h}}"{}}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{tc6_8h}{instance/tc6.h}}"{}}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{tc7_8h}{instance/tc7.h}}"{}}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2instance_2wdt_8h}{instance/wdt.h}}"{}}}
+\DoxyCodeLine{302 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{304 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308 \textcolor{comment}{// Peripheral instances on HPB0 bridge}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define ID\_PAC0           0 }}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define ID\_PM             1 }}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#define ID\_SYSCTRL        2 }}
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#define ID\_GCLK           3 }}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define ID\_WDT            4 }}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define ID\_RTC            5 }}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define ID\_EIC            6 }}
+\DoxyCodeLine{317 \textcolor{comment}{// Peripheral instances on HPB1 bridge}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define ID\_PAC1          32 }}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define ID\_DSU           33 }}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define ID\_NVMCTRL       34 }}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define ID\_PORT          35 }}
+\DoxyCodeLine{323 \textcolor{comment}{// Peripheral instances on HPB2 bridge}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define ID\_PAC2          64 }}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define ID\_EVSYS         65 }}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define ID\_SERCOM0       66 }}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#define ID\_SERCOM1       67 }}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define ID\_SERCOM2       68 }}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define ID\_SERCOM3       69 }}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#define ID\_SERCOM4       70 }}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define ID\_SERCOM5       71 }}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#define ID\_TC0           72 }}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define ID\_TC1           73 }}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#define ID\_TC2           74 }}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#define ID\_TC3           75 }}
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#define ID\_TC4           76 }}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define ID\_TC5           77 }}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#define ID\_TC6           78 }}
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#define ID\_TC7           79 }}
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define ID\_ADC           80 }}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#define ID\_AC            81 }}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define ID\_DAC           82 }}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define ID\_PTC           83 }}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define ID\_PERIPH\_COUNT  84 }}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{350 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#if defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define AC                            (0x42004400) }}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define ADC                           (0x42004000) }}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define DAC                           (0x42004800) }}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define DSU                           (0x41002000) }}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define EIC                           (0x40001800) }}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define EVSYS                         (0x42000400) }}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define GCLK                          (0x40000C00) }}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define NVMCTRL                       (0x41004000) }}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define NVMCTRL\_CAL                   (0x00800000) }}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define NVMCTRL\_LOCKBIT               (0x00802000) }}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define NVMCTRL\_OTP1                  (0x00806000) }}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define NVMCTRL\_OTP2                  (0x00806008) }}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define NVMCTRL\_OTP4                  (0x00806020) }}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define NVMCTRL\_TEMP\_LOG              (0x00806030) }}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define NVMCTRL\_USER                  (0x00804000) }}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define PAC0                          (0x40000000) }}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define PAC1                          (0x41000000) }}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#define PAC2                          (0x42000000) }}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define PM                            (0x40000400) }}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define PORT                          (0x41004400) }}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define PORT\_IOBUS                    (0x60000000) }}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define PTC                           (0x42004C00) }}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#define RTC                           (0x40001400) }}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define SERCOM0                       (0x42000800) }}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define SERCOM1                       (0x42000C00) }}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define SERCOM2                       (0x42001000) }}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define SERCOM3                       (0x42001400) }}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#define SERCOM4                       (0x42001800) }}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define SERCOM5                       (0x42001C00) }}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define SYSCTRL                       (0x40000800) }}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define TC0                           (0x42002000) }}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define TC1                           (0x42002400) }}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define TC2                           (0x42002800) }}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define TC3                           (0x42002C00) }}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define TC4                           (0x42003000) }}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define TC5                           (0x42003400) }}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define TC6                           (0x42003800) }}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define TC7                           (0x42003C00) }}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#define WDT                           (0x40001000) }}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#define AC                ((Ac       *)0x42004400UL) }}
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#define AC\_INST\_NUM       1                          }}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define AC\_INSTS          \{ AC \}                     }}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#define ADC               ((Adc      *)0x42004000UL) }}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define ADC\_INST\_NUM      1                          }}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define ADC\_INSTS         \{ ADC \}                    }}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#define DAC               ((Dac      *)0x42004800UL) }}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define DAC\_INST\_NUM      1                          }}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define DAC\_INSTS         \{ DAC \}                    }}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#define DSU               ((Dsu      *)0x41002000UL) }}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define DSU\_INST\_NUM      1                          }}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define DSU\_INSTS         \{ DSU \}                    }}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define EIC               ((Eic      *)0x40001800UL) }}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define EIC\_INST\_NUM      1                          }}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define EIC\_INSTS         \{ EIC \}                    }}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define EVSYS             ((Evsys    *)0x42000400UL) }}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define EVSYS\_INST\_NUM    1                          }}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define EVSYS\_INSTS       \{ EVSYS \}                  }}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define GCLK              ((Gclk     *)0x40000C00UL) }}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#define GCLK\_INST\_NUM     1                          }}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#define GCLK\_INSTS        \{ GCLK \}                   }}
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define NVMCTRL           ((Nvmctrl  *)0x41004000UL) }}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define NVMCTRL\_CAL                   (0x00800000UL) }}
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define NVMCTRL\_LOCKBIT               (0x00802000UL) }}
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define NVMCTRL\_OTP1                  (0x00806000UL) }}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define NVMCTRL\_OTP2                  (0x00806008UL) }}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define NVMCTRL\_OTP4                  (0x00806020UL) }}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define NVMCTRL\_TEMP\_LOG              (0x00806030UL) }}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define NVMCTRL\_USER                  (0x00804000UL) }}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#define NVMCTRL\_INST\_NUM  1                          }}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define NVMCTRL\_INSTS     \{ NVMCTRL \}                }}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#define PAC0              ((Pac      *)0x40000000UL) }}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define PAC1              ((Pac      *)0x41000000UL) }}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define PAC2              ((Pac      *)0x42000000UL) }}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define PAC\_INST\_NUM      3                          }}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#define PAC\_INSTS         \{ PAC0, PAC1, PAC2 \}       }}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#define PM                ((Pm       *)0x40000400UL) }}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define PM\_INST\_NUM       1                          }}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#define PM\_INSTS          \{ PM \}                     }}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define PORT              ((Port     *)0x41004400UL) }}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define PORT\_IOBUS        ((Port     *)0x60000000UL) }}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define PORT\_INST\_NUM     1                          }}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define PORT\_INSTS        \{ PORT \}                   }}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define PORT\_IOBUS\_INST\_NUM 1                          }}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define PORT\_IOBUS\_INSTS  \{ PORT\_IOBUS \}             }}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define PTC               ((void     *)0x42004C00UL) }}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#define PTC\_GCLK\_ID       27}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define PTC\_INST\_NUM      1                          }}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define PTC\_INSTS         \{ PTC \}                    }}
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#define RTC               ((Rtc      *)0x40001400UL) }}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#define RTC\_INST\_NUM      1                          }}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#define RTC\_INSTS         \{ RTC \}                    }}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#define SERCOM0           ((Sercom   *)0x42000800UL) }}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#define SERCOM1           ((Sercom   *)0x42000C00UL) }}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define SERCOM2           ((Sercom   *)0x42001000UL) }}
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#define SERCOM3           ((Sercom   *)0x42001400UL) }}
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define SERCOM4           ((Sercom   *)0x42001800UL) }}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define SERCOM5           ((Sercom   *)0x42001C00UL) }}
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#define SERCOM\_INST\_NUM   6                          }}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#define SERCOM\_INSTS      \{ SERCOM0, SERCOM1, SERCOM2, SERCOM3, SERCOM4, SERCOM5 \} }}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#define SYSCTRL           ((Sysctrl  *)0x40000800UL) }}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#define SYSCTRL\_INST\_NUM  1                          }}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define SYSCTRL\_INSTS     \{ SYSCTRL \}                }}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define TC0               ((Tc       *)0x42002000UL) }}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define TC1               ((Tc       *)0x42002400UL) }}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define TC2               ((Tc       *)0x42002800UL) }}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define TC3               ((Tc       *)0x42002C00UL) }}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define TC4               ((Tc       *)0x42003000UL) }}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define TC5               ((Tc       *)0x42003400UL) }}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#define TC6               ((Tc       *)0x42003800UL) }}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define TC7               ((Tc       *)0x42003C00UL) }}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define TC\_INST\_NUM       8                          }}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#define TC\_INSTS          \{ TC0, TC1, TC2, TC3, TC4, TC5, TC6, TC7 \} }}
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#define WDT               ((Wdt      *)0x40001000UL) }}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#define WDT\_INST\_NUM      1                          }}
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define WDT\_INSTS         \{ WDT \}                    }}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{491 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{493 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pio_2samd20j14b_8h}{pio/samd20j14b.h}}"{}}}
+\DoxyCodeLine{500 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{502 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#define FLASH\_SIZE            \_UL\_(0x00004000) }\textcolor{comment}{/* 16 kB */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#define FLASH\_PAGE\_SIZE       64}}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#define FLASH\_NB\_OF\_PAGES     256}}
+\DoxyCodeLine{507 \textcolor{preprocessor}{\#define FLASH\_USER\_PAGE\_SIZE  64}}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#define HRAMC0\_SIZE           \_UL\_(0x00000800) }\textcolor{comment}{/* 2 kB */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#define FLASH\_ADDR            \_UL\_(0x00000000) }}
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#define FLASH\_USER\_PAGE\_ADDR  \_UL\_(0x00800000) }}
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#define HRAMC0\_ADDR           \_UL\_(0x20000000) }}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#define HPB0\_ADDR             \_UL\_(0x40000000) }}
+\DoxyCodeLine{514 \textcolor{preprocessor}{\#define HPB1\_ADDR             \_UL\_(0x41000000) }}
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#define HPB2\_ADDR             \_UL\_(0x42000000) }}
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#define PPB\_ADDR              \_UL\_(0xE0000000) }}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#define DSU\_DID\_RESETVALUE    \_UL\_(0x10001604)}}
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#define PORT\_GROUPS           2}}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{523 \textcolor{comment}{/* ************************************************************************** */}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525 }
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{527 \}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAMD20J14B\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,81 @@
+\hypertarget{structarm__pid__instance__f32}{}\doxysection{arm\+\_\+pid\+\_\+instance\+\_\+f32 Struct Reference}
+\label{structarm__pid__instance__f32}\index{arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}}
+
+
+Instance structure for the floating-\/point PID Control.  
+
+
+
+
+{\ttfamily \#include $<$arm\+\_\+math.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float32\+\_\+t \mbox{\hyperlink{structarm__pid__instance__f32_ad7b0bed64915d0a25a3409fa2dc45556}{A0}}
+\item 
+float32\+\_\+t \mbox{\hyperlink{structarm__pid__instance__f32_a7def89571c50f7137a213326a396e560}{A1}}
+\item 
+float32\+\_\+t \mbox{\hyperlink{structarm__pid__instance__f32_a155acf642ba2f521869f19d694cd7fa0}{A2}}
+\item 
+float32\+\_\+t \mbox{\hyperlink{structarm__pid__instance__f32_afd394e1e52fb1d526aa472c83b8f2464}{state}} \mbox{[}3\mbox{]}
+\item 
+float32\+\_\+t \mbox{\hyperlink{structarm__pid__instance__f32_aa9b9aa9e413c6cec376a9dddc9f01ebe}{Kp}}
+\item 
+float32\+\_\+t \mbox{\hyperlink{structarm__pid__instance__f32_ac0feffde05fe391eeab3bf78e953830a}{Ki}}
+\item 
+float32\+\_\+t \mbox{\hyperlink{structarm__pid__instance__f32_ad5b68fbf84d16188ae4747ff91f6f088}{Kd}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Instance structure for the floating-\/point PID Control. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structarm__pid__instance__f32_ad7b0bed64915d0a25a3409fa2dc45556}\label{structarm__pid__instance__f32_ad7b0bed64915d0a25a3409fa2dc45556}} 
+\index{arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}!A0@{A0}}
+\index{A0@{A0}!arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{A0}{A0}}
+{\footnotesize\ttfamily float32\+\_\+t arm\+\_\+pid\+\_\+instance\+\_\+f32\+::\+A0}
+
+The derived gain, A0 = Kp + Ki + Kd . \mbox{\Hypertarget{structarm__pid__instance__f32_a7def89571c50f7137a213326a396e560}\label{structarm__pid__instance__f32_a7def89571c50f7137a213326a396e560}} 
+\index{arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}!A1@{A1}}
+\index{A1@{A1}!arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{A1}{A1}}
+{\footnotesize\ttfamily float32\+\_\+t arm\+\_\+pid\+\_\+instance\+\_\+f32\+::\+A1}
+
+The derived gain, A1 = -\/Kp -\/ 2Kd. \mbox{\Hypertarget{structarm__pid__instance__f32_a155acf642ba2f521869f19d694cd7fa0}\label{structarm__pid__instance__f32_a155acf642ba2f521869f19d694cd7fa0}} 
+\index{arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}!A2@{A2}}
+\index{A2@{A2}!arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{A2}{A2}}
+{\footnotesize\ttfamily float32\+\_\+t arm\+\_\+pid\+\_\+instance\+\_\+f32\+::\+A2}
+
+The derived gain, A2 = Kd . \mbox{\Hypertarget{structarm__pid__instance__f32_ad5b68fbf84d16188ae4747ff91f6f088}\label{structarm__pid__instance__f32_ad5b68fbf84d16188ae4747ff91f6f088}} 
+\index{arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}!Kd@{Kd}}
+\index{Kd@{Kd}!arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{Kd}{Kd}}
+{\footnotesize\ttfamily float32\+\_\+t arm\+\_\+pid\+\_\+instance\+\_\+f32\+::\+Kd}
+
+The derivative gain. \mbox{\Hypertarget{structarm__pid__instance__f32_ac0feffde05fe391eeab3bf78e953830a}\label{structarm__pid__instance__f32_ac0feffde05fe391eeab3bf78e953830a}} 
+\index{arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}!Ki@{Ki}}
+\index{Ki@{Ki}!arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{Ki}{Ki}}
+{\footnotesize\ttfamily float32\+\_\+t arm\+\_\+pid\+\_\+instance\+\_\+f32\+::\+Ki}
+
+The integral gain. \mbox{\Hypertarget{structarm__pid__instance__f32_aa9b9aa9e413c6cec376a9dddc9f01ebe}\label{structarm__pid__instance__f32_aa9b9aa9e413c6cec376a9dddc9f01ebe}} 
+\index{arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}!Kp@{Kp}}
+\index{Kp@{Kp}!arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{Kp}{Kp}}
+{\footnotesize\ttfamily float32\+\_\+t arm\+\_\+pid\+\_\+instance\+\_\+f32\+::\+Kp}
+
+The proportional gain. \mbox{\Hypertarget{structarm__pid__instance__f32_afd394e1e52fb1d526aa472c83b8f2464}\label{structarm__pid__instance__f32_afd394e1e52fb1d526aa472c83b8f2464}} 
+\index{arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}!state@{state}}
+\index{state@{state}!arm\_pid\_instance\_f32@{arm\_pid\_instance\_f32}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily float32\+\_\+t arm\+\_\+pid\+\_\+instance\+\_\+f32\+::state\mbox{[}3\mbox{]}}
+
+The state array of length 3. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/thirdparty/\+CMSIS/\+Include/arm\+\_\+math.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,282 @@
+\hypertarget{group__asfdoc__common__freertos__dbg__print__group}{}\doxysection{Debug Print Service for Free\+RTOS}
+\label{group__asfdoc__common__freertos__dbg__print__group}\index{Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}}
+\doxysubsection*{Initialization}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga9bd1ce061869e93a4bb5438aa599d048}{dbg\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize and enable debug UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Print to string}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gacce1fd7454589e2db13972866900aa86}{dbg\+\_\+sprint\+\_\+hexint}} (char $\ast$outstr, uint32\+\_\+t outint)
+\begin{DoxyCompactList}\small\item\em Write an integer as hex digits (ASCII) into string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Print to buffer}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga5f5b851136b087016e7060ff32a4ea13}{dbg\+\_\+print\+\_\+hexint}} (uint32\+\_\+t outint)
+\begin{DoxyCompactList}\small\item\em Print an integer as hex digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga3cb124fc035aa9d5388f6fad8ca7eb23}{dbg\+\_\+print\+\_\+str}} (const char $\ast$outstr)
+\begin{DoxyCompactList}\small\item\em Print a zero-\/terminated string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gafadf1fd80c628de3233fb460c5430eb4}{dbg\+\_\+print\+\_\+char}} (const char outchar)
+\begin{DoxyCompactList}\small\item\em Print a single character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Configuration macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_ga28be5e1a6a7ccc9bd3509c4020c43299}\label{group__asfdoc__common__freertos__dbg__print__group_ga28be5e1a6a7ccc9bd3509c4020c43299}} 
+\#define {\bfseries CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+SERCOM}~EDBG\+\_\+\+CDC\+\_\+\+MODULE
+\begin{DoxyCompactList}\small\item\em SERCOM module to use as UART. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_gaad65ecaff034abce1462de260e330edb}\label{group__asfdoc__common__freertos__dbg__print__group_gaad65ecaff034abce1462de260e330edb}} 
+\#define {\bfseries CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+BUFFER\+\_\+\+SIZE}~128
+\begin{DoxyCompactList}\small\item\em Size of print buffer (must be a power of 2) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_ga1d58d936c1562f02d911cac5c1c07afb}\label{group__asfdoc__common__freertos__dbg__print__group_ga1d58d936c1562f02d911cac5c1c07afb}} 
+\#define {\bfseries CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+GCLK\+\_\+\+SOURCE}~\mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\+\_\+\+GENERATOR\+\_\+0}}
+\begin{DoxyCompactList}\small\item\em GCLK generator to use for SERCOM. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_gae32643e9c8af2eb53829248834b10922}\label{group__asfdoc__common__freertos__dbg__print__group_gae32643e9c8af2eb53829248834b10922}} 
+\#define {\bfseries CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+SERCOM\+\_\+\+MUX}~EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+MUX\+\_\+\+SETTING
+\begin{DoxyCompactList}\small\item\em SERCOM signal MUX setting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_ga6cf9890eb0ddf6db2db6bc788b84621c}\label{group__asfdoc__common__freertos__dbg__print__group_ga6cf9890eb0ddf6db2db6bc788b84621c}} 
+\#define {\bfseries CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+PINMUX\+\_\+\+PAD0}~EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD0
+\begin{DoxyCompactList}\small\item\em Pin MUX setting for SERCOM pad 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_gae1bfae1be05503633bbf0e3254da819a}\label{group__asfdoc__common__freertos__dbg__print__group_gae1bfae1be05503633bbf0e3254da819a}} 
+\#define {\bfseries CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+PINMUX\+\_\+\+PAD1}~EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD1
+\begin{DoxyCompactList}\small\item\em Pin MUX setting for SERCOM pad 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_ga7b44d66f78aea99f90a938d46b723b4a}\label{group__asfdoc__common__freertos__dbg__print__group_ga7b44d66f78aea99f90a938d46b723b4a}} 
+\#define {\bfseries CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+PINMUX\+\_\+\+PAD2}~EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD2
+\begin{DoxyCompactList}\small\item\em Pin MUX setting for SERCOM pad 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_ga60fd33cbd4f738cee66f9fe80b44ab56}\label{group__asfdoc__common__freertos__dbg__print__group_ga60fd33cbd4f738cee66f9fe80b44ab56}} 
+\#define {\bfseries CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+PINMUX\+\_\+\+PAD3}~EDBG\+\_\+\+CDC\+\_\+\+SERCOM\+\_\+\+PINMUX\+\_\+\+PAD3
+\begin{DoxyCompactList}\small\item\em Pin MUX setting for SERCOM pad 3. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This service provides a thread-\/safe, buffered debug print facility via UART for Free\+RTOS-\/based applications.
+
+It can also be used without Free\+RTOS, but will then not be thread-\/safe nor have efficient waiting when the buffer is full.
+
+The following peripherals are used by this module\+:
+\begin{DoxyItemize}
+\item SERCOM (Serial Communication Interface)
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_module_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_info}{Extra Info}}
+\item \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_prerequisites}
+The reader is assumed to be familiar with configuration of the SERCOM USART driver since this service uses similar configuration settings.
+
+To enable Free\+RTOS-\/support, the symbol {\ttfamily \+\_\+\+\_\+\+FREERTOS\+\_\+\+\_\+} must be defined. This will typically be done automatically if Free\+RTOS is included from ASF. As this service is meant to be used in tasks, the Free\+RTOS scheduler should be started before any of the print functions are called.
+
+To get thread-\/safety and efficient waiting with other OS or schedulers, the following functions in \mbox{\hyperlink{dbg__print_8c}{dbg\+\_\+print.\+c}} must be modified\+:
+\begin{DoxyItemize}
+\item \+\_\+dbg\+\_\+wait\+\_\+for\+\_\+lock()
+\item \+\_\+dbg\+\_\+unlock()
+\item \+\_\+dbg\+\_\+interrupt\+\_\+handler()
+\item \+\_\+dbg\+\_\+wait\+\_\+for\+\_\+requested\+\_\+space()
+\item \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga9bd1ce061869e93a4bb5438aa599d048}{dbg\+\_\+init()}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_module_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_module_overview}
+This service essentially consists of a print buffer and functions for doing protected writes to it, and an interrupt handler which performs transmission of the buffer contents using a SERCOM module in UART mode. It has been written for use in Free\+RTOS-\/based applications where concurrent tasks need to output debug messages, for example via the Communication Device Class (CDC) of the Embedded Debugger (EDBG) on Xplained Pro boards.
+
+This service can be used without Free\+RTOS, but will then not be thread safe nor have efficient waiting when the buffer is full. To support other OSes and schedulers, see \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_prerequisites}{Prerequisites}} for a list of the functions that must be modified.
+
+This service should not be used within interrupts.\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_buffer}{}\doxysubsubsection{Print Buffer}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_buffer}
+The reason for using a print buffer is to minimize the time it takes for a task to output its debug message, so the impact on application response time and functionality is reduced. Instead of waiting for the debug message to be sent, the calling task only needs to wait for the message to get into the print buffer. Of course, if the print buffer becomes full, the tasks must wait for buffer space to free up.
+
+Both buffer size and UART baud rate are configurable, so one may find a reasonable balance between memory usage and interrupt rate. As a minimum requirement, the print buffer should not be smaller than the longest debug message in the application.\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_access}{}\doxysubsubsection{Access Control}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_access}
+Access control for the print buffer is built into this service to prevent concurrent calls from corrupting each other\textquotesingle{}s print output. The Free\+RTOS mechanism for this access control, a mutex, will keep other calling tasks waiting while the print buffer is being modified by one task. Once the print buffer becomes available again, the waiting task with the highest priority is given access to the buffer.
+
+Note that this mechanism may cause tasks of lower priority to be kept waiting indefinitely if the print buffer is small and there is a lot of waiting for buffer space to free up. In such cases, the higher priority tasks may end up taking turns waiting for enough buffer space to get their respective debug messages into it.\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_config}{}\doxysubsubsection{Configuration}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_config}
+This service implements a single debug print interface, which is compile-\/time configured via the header file \mbox{\hyperlink{conf__dbg__print_8h}{conf\+\_\+dbg\+\_\+print.\+h}} to ensure the smallest size code and highest execution speed.
+
+The available configuration symbols are\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Name }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Name }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+\mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gaad65ecaff034abce1462de260e330edb}{CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+BUFFER\+\_\+\+SIZE}} &Print buffer size. Must be a power of 2 (.., 32, 64, 128, ..).  \\\cline{1-2}
+\mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga28be5e1a6a7ccc9bd3509c4020c43299}{CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+SERCOM}} &The SERCOM module to use as UART.  \\\cline{1-2}
+\mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga1d58d936c1562f02d911cac5c1c07afb}{CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+GCLK\+\_\+\+SOURCE}} &The GCLK that the SERCOM shall use as clock source  \\\cline{1-2}
+CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+BAUD\+\_\+\+RATE &Target baud rate for computation of the SERCOM\textquotesingle{}s BAUD register value.   \\\cline{1-2}
+CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+BAUD\+\_\+\+VALUE &Optional override of CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+BAUD\+\_\+\+RATE, lets user explicitly set the register value to reduce code size.  \\\cline{1-2}
+\mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gae32643e9c8af2eb53829248834b10922}{CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+SERCOM\+\_\+\+MUX}} &The SERCOM signal MUX setting to use.  \\\cline{1-2}
+\mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga6cf9890eb0ddf6db2db6bc788b84621c}{CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+PINMUX\+\_\+\+PAD0}} &Pin MUX setting for connecting pin with SERCOM pad 0.  \\\cline{1-2}
+\mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gae1bfae1be05503633bbf0e3254da819a}{CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+PINMUX\+\_\+\+PAD1}} &Pin MUX setting for connecting pin with SERCOM pad 1.  \\\cline{1-2}
+\mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga7b44d66f78aea99f90a938d46b723b4a}{CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+PINMUX\+\_\+\+PAD2}} &Pin MUX setting for connecting pin with SERCOM pad 2.  \\\cline{1-2}
+\mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga60fd33cbd4f738cee66f9fe80b44ab56}{CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+PINMUX\+\_\+\+PAD3}} &Pin MUX setting for connecting pin with SERCOM pad 3.  \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyNote}{Note}
+If {\ttfamily CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+BAUD\+\_\+\+VALUE} is defined, the symbol {\ttfamily CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+BAUD\+\_\+\+RATE} will not have any effect, and does not need to be defined at all.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_info}{}\doxysubsection{Extra Info}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_info}
+For extra information see \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group}{Extra Information for Debug Print Service for Free\+RTOS}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_freertos}{Free\+RTOS Version}}
+\item \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_dependencies}{Dependencies}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_examples}{}\doxysubsection{Examples}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group}{Examples for Debug Print Service for Free\+RTOS}}.\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_api_overview}
+\hypertarget{asfdoc_common_freertos_dbg_print_extra}{}\doxysubsubsection{Extra Information for Debug Print Service for Free\+RTOS}\label{asfdoc_common_freertos_dbg_print_extra}
+\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_freertos}{}\doxysubsection{Free\+RTOS Version}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_freertos}
+\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_acronyms}{}\doxysubsection{Acronyms}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_acronyms}
+Below is a table listing the acronyms used in this module, along with their intended meanings.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Acronym }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+CDC &Communications Device Class  \\\cline{1-2}
+EDBG &Embedded Debugger  \\\cline{1-2}
+GCLK &Generic Clock  \\\cline{1-2}
+UART &Universal Asynchronous Receiver/\+Transmitter  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_dependencies}{}\doxysubsection{Dependencies}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_dependencies}
+This driver has the following dependencies\+:
+\begin{DoxyItemize}
+\item Free\+RTOS
+\item \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group}{SERCOM USART Driver}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group}{System Clock Driver}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group}{System Pin MUX Driver}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_errata}{}\doxysubsection{Errata}\label{group__asfdoc__common__freertos__dbg__print__group_asfdoc_common_freertos_dbg_print_extra_errata}
+There are no errata related to this driver. \hypertarget{asfdoc_common_freertos_dbg_print_exqsg}{}\doxysubsubsection{Examples for Debug Print Service for Free\+RTOS}\label{asfdoc_common_freertos_dbg_print_exqsg}
+This is a list of the available Quick Start guides (QSGs) and example applications for \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group}{Debug Print Service for Free\+RTOS}}. QSGs are simple examples with step-\/by-\/step instructions to configure and use this driver in a selection of use cases. Note that QSGs can be compiled as a standalone application or be added to the user application.
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_common_freertos_dbg_print_basic_use_case}{Quick Start Guide for Debug Print Service for Free\+RTOS}} 
+\end{DoxyItemize}\hypertarget{asfdoc_common_freertos_dbg_print_document_revision_history}{}\doxysubsubsection{Document Revision History}\label{asfdoc_common_freertos_dbg_print_document_revision_history}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Doc. Rev. }&\cellcolor{\tableheadbgcolor}\textbf{ Date }&\cellcolor{\tableheadbgcolor}\textbf{ Comments  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Doc. Rev. }&\cellcolor{\tableheadbgcolor}\textbf{ Date }&\cellcolor{\tableheadbgcolor}\textbf{ Comments  }\\\cline{1-3}
+\endhead
+A &02/2014 &Initial release  \\\cline{1-3}
+\end{longtabu}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_ga9bd1ce061869e93a4bb5438aa599d048}\label{group__asfdoc__common__freertos__dbg__print__group_ga9bd1ce061869e93a4bb5438aa599d048}} 
+\index{Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}!dbg\_init@{dbg\_init}}
+\index{dbg\_init@{dbg\_init}!Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}}
+\doxysubsubsection{\texorpdfstring{dbg\_init()}{dbg\_init()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} dbg\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize and enable debug UART. 
+
+This function sets up the configured SERCOM with the following static features\+:
+\begin{DoxyItemize}
+\item asynchronous, internally clocked (UART)
+\item TX only
+\item 1 stop bit
+\item 8-\/bit data
+\item LSB first
+\item no parity bit
+\end{DoxyItemize}
+
+The baud rate, SERCOM signal MUX and pin MUX are set up as configured in conf\+\_\+debug\+\_\+print.\+h, which also contains the configuration of which SERCOM to use.
+
+The SERCOM UART is left enabled after this function call.
+
+\begin{DoxyReturn}{Returns}
+Indication whether or not initialization succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & if initialization was successful. \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAUDRATE\+\_\+\+UNAVAILABLE} & if configured baud rate is too high.\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+This function is based on \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gad67046f395137b2a7a1ef72f83907674}{usart\+\_\+init()}} from ASF, but is modified to use a single instance in order to reduce code size. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_gafadf1fd80c628de3233fb460c5430eb4}\label{group__asfdoc__common__freertos__dbg__print__group_gafadf1fd80c628de3233fb460c5430eb4}} 
+\index{Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}!dbg\_print\_char@{dbg\_print\_char}}
+\index{dbg\_print\_char@{dbg\_print\_char}!Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}}
+\doxysubsubsection{\texorpdfstring{dbg\_print\_char()}{dbg\_print\_char()}}
+{\footnotesize\ttfamily void dbg\+\_\+print\+\_\+char (\begin{DoxyParamCaption}\item[{const char}]{out\+\_\+char }\end{DoxyParamCaption})}
+
+
+
+Print a single character. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out\+\_\+char} & The character to print. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_ga5f5b851136b087016e7060ff32a4ea13}\label{group__asfdoc__common__freertos__dbg__print__group_ga5f5b851136b087016e7060ff32a4ea13}} 
+\index{Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}!dbg\_print\_hexint@{dbg\_print\_hexint}}
+\index{dbg\_print\_hexint@{dbg\_print\_hexint}!Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}}
+\doxysubsubsection{\texorpdfstring{dbg\_print\_hexint()}{dbg\_print\_hexint()}}
+{\footnotesize\ttfamily void dbg\+\_\+print\+\_\+hexint (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{out\+\_\+int }\end{DoxyParamCaption})}
+
+
+
+Print an integer as hex digits. 
+
+This function will put the hex digits of a 32-\/bit integer into the print buffer. It does not add the \textquotesingle{}0x\textquotesingle{}-\/prefix.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out\+\_\+int} & The integer to print. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_ga3cb124fc035aa9d5388f6fad8ca7eb23}\label{group__asfdoc__common__freertos__dbg__print__group_ga3cb124fc035aa9d5388f6fad8ca7eb23}} 
+\index{Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}!dbg\_print\_str@{dbg\_print\_str}}
+\index{dbg\_print\_str@{dbg\_print\_str}!Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}}
+\doxysubsubsection{\texorpdfstring{dbg\_print\_str()}{dbg\_print\_str()}}
+{\footnotesize\ttfamily void dbg\+\_\+print\+\_\+str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{out\+\_\+str }\end{DoxyParamCaption})}
+
+
+
+Print a zero-\/terminated string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out\+\_\+str} & The string to print. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__common__freertos__dbg__print__group_gacce1fd7454589e2db13972866900aa86}\label{group__asfdoc__common__freertos__dbg__print__group_gacce1fd7454589e2db13972866900aa86}} 
+\index{Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}!dbg\_sprint\_hexint@{dbg\_sprint\_hexint}}
+\index{dbg\_sprint\_hexint@{dbg\_sprint\_hexint}!Debug Print Service for FreeRTOS@{Debug Print Service for FreeRTOS}}
+\doxysubsubsection{\texorpdfstring{dbg\_sprint\_hexint()}{dbg\_sprint\_hexint()}}
+{\footnotesize\ttfamily void dbg\+\_\+sprint\+\_\+hexint (\begin{DoxyParamCaption}\item[{char $\ast$}]{out\+\_\+str,  }\item[{uint32\+\_\+t}]{out\+\_\+int }\end{DoxyParamCaption})}
+
+
+
+Write an integer as hex digits (ASCII) into string. 
+
+This function will convert a 32-\/bit integer into a string of hexadecimal digits (0-\/9, A-\/F) and store them to the specified location, most significant digit first.
+
+Note that this function does not add the \textquotesingle{}0x\textquotesingle{}-\/prefix, which.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out\+\_\+str} & Pointer to where digits shall be written. \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+int} & The integer to write. \\
+\hline
+\end{DoxyParams}

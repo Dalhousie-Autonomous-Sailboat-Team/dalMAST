@@ -1,0 +1,29 @@
+\hypertarget{sail__beacon_8h_source}{}\doxysection{sail\+\_\+beacon.\+h}
+\label{sail__beacon_8h_source}\index{src/sail\_beacon.h@{src/sail\_beacon.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * sail\_beacon.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * this is the header file for the stream 211 SDB beacon}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Created: 2022-\/06-\/03 6:45:03 PM}}
+\DoxyCodeLine{5 \textcolor{comment}{ *  Author: Matthew Cockburn}}
+\DoxyCodeLine{6 \textcolor{comment}{ */} }
+\DoxyCodeLine{7 \textcolor{comment}{// sail boat libraries }}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{comment}{// beacon types and defs}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{enum} beacon\_msg\_type\{}
+\DoxyCodeLine{12     beacon\_AT\_msg,}
+\DoxyCodeLine{13     beacon\_ERROR\_msg,}
+\DoxyCodeLine{14     beacon\_msg\_type\_total}
+\DoxyCodeLine{15 \};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{// Function Prototypes }}
+\DoxyCodeLine{18 \textcolor{keywordtype}{void} DataLogTask(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{19 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} beacon\_status(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{20 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} signal\_strength(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{21 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} tx\_sbd\_msg(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{22 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} rx\_sbd\_msg(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{23 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} gather\_data(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

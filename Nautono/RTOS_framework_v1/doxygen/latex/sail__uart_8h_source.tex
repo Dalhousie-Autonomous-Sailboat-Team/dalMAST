@@ -1,0 +1,72 @@
+\hypertarget{sail__uart_8h_source}{}\doxysection{sail\+\_\+uart.\+h}
+\label{sail__uart_8h_source}\index{src/sail\_uart.h@{src/sail\_uart.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_uart.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Header file for the UART driver module for the autonomous sailboat project.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created on June 13, 2016.}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Created by Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef SAIL\_UART\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define SAIL\_UART\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} UART\_ChannelIDs \{}
+\DoxyCodeLine{14     UART\_GPS,}
+\DoxyCodeLine{15     UART\_WEATHERSTATION,}
+\DoxyCodeLine{16     UART\_RADIO,}
+\DoxyCodeLine{17     UART\_XEOS,}
+\DoxyCodeLine{18     UART\_NUM\_CHANNELS}
+\DoxyCodeLine{19 \} UART\_ChannelID;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{//UART\_Init}}
+\DoxyCodeLine{23 \textcolor{comment}{// Initialize a specific UART port.}}
+\DoxyCodeLine{24 \textcolor{comment}{// Inputs:}}
+\DoxyCodeLine{25 \textcolor{comment}{//   id -\/ ID of the specified UART port}}
+\DoxyCodeLine{26 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{27 \textcolor{comment}{//   STATUS\_OK -\/ UART was initialized successfully}}
+\DoxyCodeLine{28 \textcolor{comment}{//   STATUS\_ERR\_INVALID\_ARG -\/ The provided ID is invalid}}
+\DoxyCodeLine{29 \textcolor{comment}{//   STATUS\_ERR\_DENIED -\/ A driver error occurred}}
+\DoxyCodeLine{30 \textcolor{comment}{//}}
+\DoxyCodeLine{31 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} UART\_Init(UART\_ChannelID \textcolor{keywordtype}{id});}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{comment}{// UART\_Enable}}
+\DoxyCodeLine{35 \textcolor{comment}{// Starts the receive job for the specified buffer.}}
+\DoxyCodeLine{36 \textcolor{comment}{//}}
+\DoxyCodeLine{37 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} UART\_Enable(UART\_ChannelID \textcolor{keywordtype}{id});}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// UART\_Disable}}
+\DoxyCodeLine{41 \textcolor{comment}{// Stops the receiver from acquiring anymore data.}}
+\DoxyCodeLine{42 \textcolor{comment}{//}}
+\DoxyCodeLine{43 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} UART\_Disable(UART\_ChannelID \textcolor{keywordtype}{id});}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{// UART\_TxString}}
+\DoxyCodeLine{47 \textcolor{comment}{// Sends a null-\/terminated string with the specified UART.}}
+\DoxyCodeLine{48 \textcolor{comment}{//}}
+\DoxyCodeLine{49 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} UART\_TxString(UART\_ChannelID \textcolor{keywordtype}{id}, uint8\_t *data);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{// UART\_TxString\_Unprotected}}
+\DoxyCodeLine{52 \textcolor{comment}{// The same as UART\_TxString except it does not call the mutex protecting the}}
+\DoxyCodeLine{53 \textcolor{comment}{// circular buffer, so the function can be used before the freeRTOS scheduler is started}}
+\DoxyCodeLine{54 \textcolor{comment}{//}}
+\DoxyCodeLine{55 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} UART\_TxString\_Unprotected(UART\_ChannelID \textcolor{keywordtype}{id}, uint8\_t *data);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{// UART\_RxString}}
+\DoxyCodeLine{59 \textcolor{comment}{// Parses the FIFO buffer for a string (delimited with \(\backslash\)r, \(\backslash\)n, or \(\backslash\)0)}}
+\DoxyCodeLine{60 \textcolor{comment}{// and copies it to the provided memory.}}
+\DoxyCodeLine{61 \textcolor{comment}{//}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} UART\_RxString(UART\_ChannelID \textcolor{keywordtype}{id}, uint8\_t *data, uint16\_t length);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SAIL\_UART\_H}}
+\DoxyCodeLine{66 }
+
+\end{DoxyCode}

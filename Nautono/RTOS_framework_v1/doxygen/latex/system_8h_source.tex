@@ -1,0 +1,42 @@
+\hypertarget{system_8h_source}{}\doxysection{system.\+h}
+\label{system_8h_source}\index{src/ASF/sam0/drivers/system/system.h@{src/ASF/sam0/drivers/system/system.h}}
+\mbox{\hyperlink{system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef SYSTEM\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define SYSTEM\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{clock_8h}{clock.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <gclk.h>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pinmux_8h}{pinmux.h}}>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{power_8h}{power.h}}>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{reset_8h}{reset.h}}>}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{47 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{516 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} system\_is\_debugger\_present(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{517 \{}
+\DoxyCodeLine{518     \textcolor{keywordflow}{return} \mbox{\hyperlink{samd20e14_8h_a64552f972ce1670686fb30eb48ae1797}{DSU}}-\/>STATUSB.reg \& DSU\_STATUSB\_DBGPRES;}
+\DoxyCodeLine{519 \}}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{537 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t system\_get\_device\_id(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{538 \{}
+\DoxyCodeLine{539     \textcolor{keywordflow}{return} \mbox{\hyperlink{samd20e14_8h_a64552f972ce1670686fb30eb48ae1797}{DSU}}-\/>DID.reg;}
+\DoxyCodeLine{540 \}}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{551 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__group_ga43f5e0d6db0fb41a437cc9096b32e9b5}{system\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{716 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{717 \}}
+\DoxyCodeLine{718 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{719 }
+\DoxyCodeLine{720 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SYSTEM\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{721 }
+
+\end{DoxyCode}

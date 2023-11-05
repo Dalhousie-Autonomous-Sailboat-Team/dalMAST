@@ -1,0 +1,64 @@
+\hypertarget{structsystem__pinmux__config}{}\doxysection{system\+\_\+pinmux\+\_\+config Struct Reference}
+\label{structsystem__pinmux__config}\index{system\_pinmux\_config@{system\_pinmux\_config}}
+
+
+\mbox{\hyperlink{struct_port}{Port}} pin configuration structure.  
+
+
+
+
+{\ttfamily \#include $<$pinmux.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structsystem__pinmux__config_a0ea0fe95ab984ace216ceeb71b8784f9}{mux\+\_\+position}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaef5ed797ec6ce6e7f2ca4bafd3f77df2}{system\+\_\+pinmux\+\_\+pin\+\_\+dir}} \mbox{\hyperlink{structsystem__pinmux__config_a49376a76efa41dfc4a0b27663eb75296}{direction}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga936e823e4b08dc981d39c273182eb1c6}{system\+\_\+pinmux\+\_\+pin\+\_\+pull}} \mbox{\hyperlink{structsystem__pinmux__config_ab9c3289af6faf7aa5bb7f4ab150a56cf}{input\+\_\+pull}}
+\item 
+bool \mbox{\hyperlink{structsystem__pinmux__config_a254bdc25c9912ebf875fd7f377905bf3}{powersave}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_port}{Port}} pin configuration structure. 
+
+Configuration structure for a port pin instance. This structure should be initialized by the system\+\_\+pinmux\+\_\+get\+\_\+config\+\_\+defaults() function before being modified by the user application. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structsystem__pinmux__config_a49376a76efa41dfc4a0b27663eb75296}\label{structsystem__pinmux__config_a49376a76efa41dfc4a0b27663eb75296}} 
+\index{system\_pinmux\_config@{system\_pinmux\_config}!direction@{direction}}
+\index{direction@{direction}!system\_pinmux\_config@{system\_pinmux\_config}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaef5ed797ec6ce6e7f2ca4bafd3f77df2}{system\+\_\+pinmux\+\_\+pin\+\_\+dir}} system\+\_\+pinmux\+\_\+config\+::direction}
+
+\mbox{\hyperlink{struct_port}{Port}} buffer input/output direction \mbox{\Hypertarget{structsystem__pinmux__config_ab9c3289af6faf7aa5bb7f4ab150a56cf}\label{structsystem__pinmux__config_ab9c3289af6faf7aa5bb7f4ab150a56cf}} 
+\index{system\_pinmux\_config@{system\_pinmux\_config}!input\_pull@{input\_pull}}
+\index{input\_pull@{input\_pull}!system\_pinmux\_config@{system\_pinmux\_config}}
+\doxysubsubsection{\texorpdfstring{input\_pull}{input\_pull}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga936e823e4b08dc981d39c273182eb1c6}{system\+\_\+pinmux\+\_\+pin\+\_\+pull}} system\+\_\+pinmux\+\_\+config\+::input\+\_\+pull}
+
+Logic level pull of the input buffer \mbox{\Hypertarget{structsystem__pinmux__config_a0ea0fe95ab984ace216ceeb71b8784f9}\label{structsystem__pinmux__config_a0ea0fe95ab984ace216ceeb71b8784f9}} 
+\index{system\_pinmux\_config@{system\_pinmux\_config}!mux\_position@{mux\_position}}
+\index{mux\_position@{mux\_position}!system\_pinmux\_config@{system\_pinmux\_config}}
+\doxysubsubsection{\texorpdfstring{mux\_position}{mux\_position}}
+{\footnotesize\ttfamily uint8\+\_\+t system\+\_\+pinmux\+\_\+config\+::mux\+\_\+position}
+
+MUX index of the peripheral that should control the pin, if peripheral control is desired. For GPIO use, this should be set to \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaf212e7bc2a29cb57ab7b1130e4404a6b}{SYSTEM\+\_\+\+PINMUX\+\_\+\+GPIO}}. \mbox{\Hypertarget{structsystem__pinmux__config_a254bdc25c9912ebf875fd7f377905bf3}\label{structsystem__pinmux__config_a254bdc25c9912ebf875fd7f377905bf3}} 
+\index{system\_pinmux\_config@{system\_pinmux\_config}!powersave@{powersave}}
+\index{powersave@{powersave}!system\_pinmux\_config@{system\_pinmux\_config}}
+\doxysubsubsection{\texorpdfstring{powersave}{powersave}}
+{\footnotesize\ttfamily bool system\+\_\+pinmux\+\_\+config\+::powersave}
+
+Enable lowest possible powerstate on the pin
+
+\begin{DoxyNote}{Note}
+All other configurations will be ignored, the pin will be disabled. 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/system/pinmux/\mbox{\hyperlink{pinmux_8h}{pinmux.\+h}}\end{DoxyCompactItemize}

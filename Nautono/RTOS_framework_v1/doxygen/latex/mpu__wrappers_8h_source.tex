@@ -1,0 +1,188 @@
+\hypertarget{mpu__wrappers_8h_source}{}\doxysection{mpu\+\_\+wrappers.\+h}
+\label{mpu__wrappers_8h_source}\index{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/mpu\_wrappers.h@{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/mpu\_wrappers.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * FreeRTOS Kernel V10.0.0}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining a copy of}}
+\DoxyCodeLine{6 \textcolor{comment}{ * this software and associated documentation files (the "{}Software"{}), to deal in}}
+\DoxyCodeLine{7 \textcolor{comment}{ * the Software without restriction, including without limitation the rights to}}
+\DoxyCodeLine{8 \textcolor{comment}{ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of}}
+\DoxyCodeLine{9 \textcolor{comment}{ * the Software, and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * The above copyright notice and this permission notice shall be included in all}}
+\DoxyCodeLine{13 \textcolor{comment}{ * copies or substantial portions of the Software. If you wish to use our Amazon}}
+\DoxyCodeLine{14 \textcolor{comment}{ * FreeRTOS name, please do so in a fair use way that does not cause confusion.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{17 \textcolor{comment}{ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS}}
+\DoxyCodeLine{18 \textcolor{comment}{ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR}}
+\DoxyCodeLine{19 \textcolor{comment}{ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER}}
+\DoxyCodeLine{20 \textcolor{comment}{ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN}}
+\DoxyCodeLine{21 \textcolor{comment}{ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * http://www.FreeRTOS.org}}
+\DoxyCodeLine{24 \textcolor{comment}{ * http://aws.amazon.com/freertos}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ * 1 tab == 4 spaces!}}
+\DoxyCodeLine{27 \textcolor{comment}{ */}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef MPU\_WRAPPERS\_H}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define MPU\_WRAPPERS\_H}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/* This file redefines API functions to be called through a wrapper macro, but}}
+\DoxyCodeLine{33 \textcolor{comment}{only for ports that are using the MPU. */}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#ifdef portUSING\_MPU\_WRAPPERS}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{comment}{/* MPU\_WRAPPERS\_INCLUDED\_FROM\_API\_FILE will be defined when this file is}}
+\DoxyCodeLine{37 \textcolor{comment}{    included from queue.c or task.c to prevent it from having an effect within}}
+\DoxyCodeLine{38 \textcolor{comment}{    those files. */}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{    \#ifndef MPU\_WRAPPERS\_INCLUDED\_FROM\_API\_FILE}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{comment}{/*}}
+\DoxyCodeLine{42 \textcolor{comment}{         * Map standard (non MPU) API functions to equivalents that start}}
+\DoxyCodeLine{43 \textcolor{comment}{         * "{}MPU\_"{}.  This will cause the application code to call the MPU\_}}
+\DoxyCodeLine{44 \textcolor{comment}{         * version, which wraps the non-\/MPU version with privilege promoting}}
+\DoxyCodeLine{45 \textcolor{comment}{         * then demoting code, so the kernel code always runs will full}}
+\DoxyCodeLine{46 \textcolor{comment}{         * privileges.}}
+\DoxyCodeLine{47 \textcolor{comment}{         */}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{comment}{/* Map standard tasks.h API functions to the MPU equivalents. */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{        \#define xTaskCreate                             MPU\_xTaskCreate}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{        \#define xTaskCreateStatic                       MPU\_xTaskCreateStatic}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{        \#define xTaskCreateRestricted                   MPU\_xTaskCreateRestricted}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{        \#define vTaskAllocateMPURegions                 MPU\_vTaskAllocateMPURegions}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{        \#define vTaskDelete                             MPU\_vTaskDelete}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{        \#define vTaskDelay                              MPU\_vTaskDelay}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{        \#define vTaskDelayUntil                         MPU\_vTaskDelayUntil}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{        \#define xTaskAbortDelay                         MPU\_xTaskAbortDelay}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{        \#define uxTaskPriorityGet                       MPU\_uxTaskPriorityGet}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{        \#define eTaskGetState                           MPU\_eTaskGetState}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{        \#define vTaskGetInfo                            MPU\_vTaskGetInfo}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{        \#define vTaskPrioritySet                        MPU\_vTaskPrioritySet}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{        \#define vTaskSuspend                            MPU\_vTaskSuspend}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{        \#define vTaskResume                             MPU\_vTaskResume}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{        \#define vTaskSuspendAll                         MPU\_vTaskSuspendAll}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{        \#define xTaskResumeAll                          MPU\_xTaskResumeAll}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{        \#define xTaskGetTickCount                       MPU\_xTaskGetTickCount}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{        \#define uxTaskGetNumberOfTasks                  MPU\_uxTaskGetNumberOfTasks}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{        \#define pcTaskGetName                           MPU\_pcTaskGetName}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{        \#define xTaskGetHandle                          MPU\_xTaskGetHandle}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{        \#define uxTaskGetStackHighWaterMark             MPU\_uxTaskGetStackHighWaterMark}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{        \#define vTaskSetApplicationTaskTag              MPU\_vTaskSetApplicationTaskTag}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{        \#define xTaskGetApplicationTaskTag              MPU\_xTaskGetApplicationTaskTag}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{        \#define vTaskSetThreadLocalStoragePointer       MPU\_vTaskSetThreadLocalStoragePointer}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{        \#define pvTaskGetThreadLocalStoragePointer      MPU\_pvTaskGetThreadLocalStoragePointer}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{        \#define xTaskCallApplicationTaskHook            MPU\_xTaskCallApplicationTaskHook}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{        \#define xTaskGetIdleTaskHandle                  MPU\_xTaskGetIdleTaskHandle}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{        \#define uxTaskGetSystemState                    MPU\_uxTaskGetSystemState}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{        \#define vTaskList                               MPU\_vTaskList}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{        \#define vTaskGetRunTimeStats                    MPU\_vTaskGetRunTimeStats}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{        \#define xTaskGenericNotify                      MPU\_xTaskGenericNotify}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{        \#define xTaskNotifyWait                         MPU\_xTaskNotifyWait}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{        \#define ulTaskNotifyTake                        MPU\_ulTaskNotifyTake}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{        \#define xTaskNotifyStateClear                   MPU\_xTaskNotifyStateClear}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{        \#define xTaskGetCurrentTaskHandle               MPU\_xTaskGetCurrentTaskHandle}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{        \#define vTaskSetTimeOutState                    MPU\_vTaskSetTimeOutState}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{        \#define xTaskCheckForTimeOut                    MPU\_xTaskCheckForTimeOut}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{        \#define xTaskGetSchedulerState                  MPU\_xTaskGetSchedulerState}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \textcolor{comment}{/* Map standard queue.h API functions to the MPU equivalents. */}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{        \#define xQueueGenericSend                       MPU\_xQueueGenericSend}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{        \#define xQueueReceive                           MPU\_xQueueReceive}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{        \#define xQueuePeek                              MPU\_xQueuePeek}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{        \#define xQueueSemaphoreTake                     MPU\_xQueueSemaphoreTake}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{        \#define uxQueueMessagesWaiting                  MPU\_uxQueueMessagesWaiting}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{        \#define uxQueueSpacesAvailable                  MPU\_uxQueueSpacesAvailable}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{        \#define vQueueDelete                            MPU\_vQueueDelete}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{        \#define xQueueCreateMutex                       MPU\_xQueueCreateMutex}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{        \#define xQueueCreateMutexStatic                 MPU\_xQueueCreateMutexStatic}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{        \#define xQueueCreateCountingSemaphore           MPU\_xQueueCreateCountingSemaphore}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{        \#define xQueueCreateCountingSemaphoreStatic     MPU\_xQueueCreateCountingSemaphoreStatic}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{        \#define xQueueGetMutexHolder                    MPU\_xQueueGetMutexHolder}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{        \#define xQueueTakeMutexRecursive                MPU\_xQueueTakeMutexRecursive}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{        \#define xQueueGiveMutexRecursive                MPU\_xQueueGiveMutexRecursive}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{        \#define xQueueGenericCreate                     MPU\_xQueueGenericCreate}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{        \#define xQueueGenericCreateStatic               MPU\_xQueueGenericCreateStatic}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{        \#define xQueueCreateSet                         MPU\_xQueueCreateSet}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{        \#define xQueueAddToSet                          MPU\_xQueueAddToSet}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{        \#define xQueueRemoveFromSet                     MPU\_xQueueRemoveFromSet}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{        \#define xQueueSelectFromSet                     MPU\_xQueueSelectFromSet}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{        \#define xQueueGenericReset                      MPU\_xQueueGenericReset}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{        \#if( configQUEUE\_REGISTRY\_SIZE > 0 )}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{            \#define vQueueAddToRegistry                     MPU\_vQueueAddToRegistry}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{            \#define vQueueUnregisterQueue                   MPU\_vQueueUnregisterQueue}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{            \#define pcQueueGetName                          MPU\_pcQueueGetName}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119         \textcolor{comment}{/* Map standard timer.h API functions to the MPU equivalents. */}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{        \#define xTimerCreate                            MPU\_xTimerCreate}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{        \#define xTimerCreateStatic                      MPU\_xTimerCreateStatic}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{        \#define pvTimerGetTimerID                       MPU\_pvTimerGetTimerID}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{        \#define vTimerSetTimerID                        MPU\_vTimerSetTimerID}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{        \#define xTimerIsTimerActive                     MPU\_xTimerIsTimerActive}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{        \#define xTimerGetTimerDaemonTaskHandle          MPU\_xTimerGetTimerDaemonTaskHandle}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{        \#define xTimerPendFunctionCall                  MPU\_xTimerPendFunctionCall}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{        \#define pcTimerGetName                          MPU\_pcTimerGetName}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{        \#define xTimerGetPeriod                         MPU\_xTimerGetPeriod}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{        \#define xTimerGetExpiryTime                     MPU\_xTimerGetExpiryTime}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{        \#define xTimerGenericCommand                    MPU\_xTimerGenericCommand}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132         \textcolor{comment}{/* Map standard event\_group.h API functions to the MPU equivalents. */}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{        \#define xEventGroupCreate                       MPU\_xEventGroupCreate}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{        \#define xEventGroupCreateStatic                 MPU\_xEventGroupCreateStatic}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{        \#define xEventGroupWaitBits                     MPU\_xEventGroupWaitBits}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{        \#define xEventGroupClearBits                    MPU\_xEventGroupClearBits}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{        \#define xEventGroupSetBits                      MPU\_xEventGroupSetBits}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{        \#define xEventGroupSync                         MPU\_xEventGroupSync}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{        \#define vEventGroupDelete                       MPU\_vEventGroupDelete}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141         \textcolor{comment}{/* Map standard message/stream\_buffer.h API functions to the MPU}}
+\DoxyCodeLine{142 \textcolor{comment}{        equivalents. */}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{        \#define xStreamBufferSend                       MPU\_xStreamBufferSend}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{        \#define xStreamBufferSendFromISR                MPU\_xStreamBufferSendFromISR}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{        \#define xStreamBufferReceive                    MPU\_xStreamBufferReceive}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{        \#define xStreamBufferReceiveFromISR             MPU\_xStreamBufferReceiveFromISR}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{        \#define vStreamBufferDelete                     MPU\_vStreamBufferDelete}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{        \#define xStreamBufferIsFull                     MPU\_xStreamBufferIsFull}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{        \#define xStreamBufferIsEmpty                    MPU\_xStreamBufferIsEmpty}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{        \#define xStreamBufferReset                      MPU\_xStreamBufferReset}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{        \#define xStreamBufferSpacesAvailable            MPU\_xStreamBufferSpacesAvailable}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{        \#define xStreamBufferBytesAvailable             MPU\_xStreamBufferBytesAvailable}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{        \#define xStreamBufferSetTriggerLevel            MPU\_xStreamBufferSetTriggerLevel}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{        \#define xStreamBufferGenericCreate              MPU\_xStreamBufferGenericCreate}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{        \#define xStreamBufferGenericCreateStatic        MPU\_xStreamBufferGenericCreateStatic}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158         \textcolor{comment}{/* Remove the privileged function macro, but keep the PRIVILEGED\_DATA}}
+\DoxyCodeLine{159 \textcolor{comment}{        macro so applications can place data in privileged access sections}}
+\DoxyCodeLine{160 \textcolor{comment}{        (useful when using statically allocated objects). */}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{        \#define PRIVILEGED\_FUNCTION}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{        \#define PRIVILEGED\_DATA \_\_attribute\_\_((section("{}privileged\_data"{}})))}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{    \#else }\textcolor{comment}{/* MPU\_WRAPPERS\_INCLUDED\_FROM\_API\_FILE */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166         \textcolor{comment}{/* Ensure API functions go in the privileged execution section. */}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{        \#define PRIVILEGED\_FUNCTION \_\_attribute\_\_((section("{}privileged\_functions"{}})))}
+\DoxyCodeLine{168 \textcolor{preprocessor}{        \#define PRIVILEGED\_DATA \_\_attribute\_\_((section("{}privileged\_data"{}})))}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{preprocessor}{    \#endif }\textcolor{comment}{/* MPU\_WRAPPERS\_INCLUDED\_FROM\_API\_FILE */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* portUSING\_MPU\_WRAPPERS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{preprocessor}{    \#define PRIVILEGED\_FUNCTION}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{    \#define PRIVILEGED\_DATA}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{    \#define portUSING\_MPU\_WRAPPERS 0}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* portUSING\_MPU\_WRAPPERS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* MPU\_WRAPPERS\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{182 }
+
+\end{DoxyCode}

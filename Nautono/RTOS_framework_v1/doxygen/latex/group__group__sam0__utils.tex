@@ -1,0 +1,1327 @@
+\hypertarget{group__group__sam0__utils}{}\doxysection{Compiler abstraction layer and code utilities}
+\label{group__group__sam0__utils}\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__group__sam0__utils__mrecursion}{Preprocessor -\/ Macro Recursion}}
+\item 
+\mbox{\hyperlink{group__group__sam0__utils__mrepeat}{Preprocessor -\/ Macro Repeat}}
+\item 
+\mbox{\hyperlink{group__group__sam0__utils__stringz}{Preprocessor -\/ Stringize}}
+\item 
+\mbox{\hyperlink{group__group__sam0__utils__tpaste}{Preprocessor -\/ Token Paste}}
+\item 
+\mbox{\hyperlink{group__group__sam0__utils__status__codes}{Status Codes}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_union16}{Union16}}
+\item 
+union \mbox{\hyperlink{union_union32}{Union32}}
+\item 
+union \mbox{\hyperlink{union_union64}{Union64}}
+\item 
+union \mbox{\hyperlink{union_union_ptr}{Union\+Ptr}}
+\item 
+union \mbox{\hyperlink{union_union_v_ptr}{Union\+VPtr}}
+\item 
+union \mbox{\hyperlink{union_union_c_ptr}{Union\+CPtr}}
+\item 
+union \mbox{\hyperlink{union_union_c_v_ptr}{Union\+CVPtr}}
+\item 
+struct \mbox{\hyperlink{struct_struct_ptr}{Struct\+Ptr}}
+\item 
+struct \mbox{\hyperlink{struct_struct_v_ptr}{Struct\+VPtr}}
+\item 
+struct \mbox{\hyperlink{struct_struct_c_ptr}{Struct\+CPtr}}
+\item 
+struct \mbox{\hyperlink{struct_struct_c_v_ptr}{Struct\+CVPtr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gada67c62b1c57e07efa04431bc40b9238}\label{group__group__sam0__utils_gada67c62b1c57e07efa04431bc40b9238}} 
+\#define {\bfseries UNUSED}(v)~(void)(v)
+\begin{DoxyCompactList}\small\item\em Marking {\itshape v} as a unused parameter or value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga53290ac2df2384738b8769c76622f803}\label{group__group__sam0__utils_ga53290ac2df2384738b8769c76622f803}} 
+\#define {\bfseries barrier}()~asm (\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Memory barrier. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga85a3ab5701281268521f109ed0078668}{COMPILER\+\_\+\+PRAGMA}}(arg)~\+\_\+\+Pragma(\#arg)
+\begin{DoxyCompactList}\small\item\em Emit the compiler pragma {\itshape arg}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gae2c02ff865ca6538b4b1bddbf2a6876c}\label{group__group__sam0__utils_gae2c02ff865ca6538b4b1bddbf2a6876c}} 
+\#define {\bfseries COMPILER\+\_\+\+PACK\+\_\+\+SET}(alignment)~\mbox{\hyperlink{group__group__sam0__utils_ga85a3ab5701281268521f109ed0078668}{COMPILER\+\_\+\+PRAGMA}}(pack(alignment))
+\begin{DoxyCompactList}\small\item\em Set maximum alignment for subsequent struct and union definitions to {\itshape alignment}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga38d28b622a4bc7b0f3fb2be2ef1e0086}\label{group__group__sam0__utils_ga38d28b622a4bc7b0f3fb2be2ef1e0086}} 
+\#define {\bfseries COMPILER\+\_\+\+PACK\+\_\+\+RESET}()~\mbox{\hyperlink{group__group__sam0__utils_ga85a3ab5701281268521f109ed0078668}{COMPILER\+\_\+\+PRAGMA}}(pack())
+\begin{DoxyCompactList}\small\item\em Set default alignment for subsequent struct and union definitions. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(expr)~((void) 0)
+\begin{DoxyCompactList}\small\item\em This macro is used to test fatal errors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga5b759626f343cc1af9159cc02b763837}{Long\+\_\+call}}(addr)~(($\ast$(void ($\ast$)(void))(addr))())
+\begin{DoxyCompactList}\small\item\em Calls the routine at address {\itshape addr}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga6d4ebd841bc96041a7f3a61e227c1fb2}{div\+\_\+ceil}}(a,  b)~(((a) + (b) -\/ 1) / (b))
+\begin{DoxyCompactList}\small\item\em Calculate $ \left\lceil \frac{a}{b} \right\rceil $ using integer arithmetic. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gacce64924b686dd08a83042b35d0d1480}\label{group__group__sam0__utils_gacce64924b686dd08a83042b35d0d1480}} 
+\#define {\bfseries FUNC\+\_\+\+PTR}~void $\ast$
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga417dba7f63dde98dbebd6336d8af9d91}\label{group__group__sam0__utils_ga417dba7f63dde98dbebd6336d8af9d91}} 
+\#define {\bfseries unused}(v)~do \{ (void)(v); \} while(0)
+\begin{DoxyCompactList}\small\item\em Marking {\itshape v} as a unused parameter or value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaba5c54fadff8d880b1945dde87496e31}\label{group__group__sam0__utils_gaba5c54fadff8d880b1945dde87496e31}} 
+\#define {\bfseries PASS}~0
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gabb508ea8227673f419e9fe3a86c30d8e}\label{group__group__sam0__utils_gabb508ea8227673f419e9fe3a86c30d8e}} 
+\#define {\bfseries FAIL}~1
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gab811d8c6ff3a505312d3276590444289}\label{group__group__sam0__utils_gab811d8c6ff3a505312d3276590444289}} 
+\#define {\bfseries LOW}~0
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga5bb885982ff66a2e0a0a45a8ee9c35e2}\label{group__group__sam0__utils_ga5bb885982ff66a2e0a0a45a8ee9c35e2}} 
+\#define {\bfseries HIGH}~1
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gabee1b74eceef5a0cf26efbf3ff87ccbf}\label{group__group__sam0__utils_gabee1b74eceef5a0cf26efbf3ff87ccbf}} 
+\#define {\bfseries MSB}(u16)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u16))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of {\itshape u16}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gabd2fa7b756342ae251e3a7a66670c2fe}\label{group__group__sam0__utils_gabd2fa7b756342ae251e3a7a66670c2fe}} 
+\#define {\bfseries LSB}(u16)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u16))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Least significant byte of {\itshape u16}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga2e9046f49816ad27148660f5ba993696}\label{group__group__sam0__utils_ga2e9046f49816ad27148660f5ba993696}} 
+\#define {\bfseries MSH}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u32))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gae79954742b5a668ce83ab79ac9d9804b}\label{group__group__sam0__utils_gae79954742b5a668ce83ab79ac9d9804b}} 
+\#define {\bfseries LSH}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u32))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga25110f05bdb5b5ea3fcb2854a1a07d7a}\label{group__group__sam0__utils_ga25110f05bdb5b5ea3fcb2854a1a07d7a}} 
+\#define {\bfseries MSB0W}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u32))\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 1st rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga0f90ecd0b0f0e15608a95b8367b77ece}\label{group__group__sam0__utils_ga0f90ecd0b0f0e15608a95b8367b77ece}} 
+\#define {\bfseries MSB1W}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u32))\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 2nd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga0207e10a3c4bcca172463cd5e3ebd865}\label{group__group__sam0__utils_ga0207e10a3c4bcca172463cd5e3ebd865}} 
+\#define {\bfseries MSB2W}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u32))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 3rd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gad6ab5ac6e3e95525d56d757c9718e352}\label{group__group__sam0__utils_gad6ab5ac6e3e95525d56d757c9718e352}} 
+\#define {\bfseries MSB3W}(u32)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u32))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 4th rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga04e75e548b33b9cc22699b4249ff6c64}\label{group__group__sam0__utils_ga04e75e548b33b9cc22699b4249ff6c64}} 
+\#define {\bfseries LSB3W}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga25110f05bdb5b5ea3fcb2854a1a07d7a}{MSB0W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 4th rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gad8fda97f8caa00fcfa84f712ee7627d6}\label{group__group__sam0__utils_gad8fda97f8caa00fcfa84f712ee7627d6}} 
+\#define {\bfseries LSB2W}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga0f90ecd0b0f0e15608a95b8367b77ece}{MSB1W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 3rd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga84cbbcad1971cdb2987418e6ae6cb4ff}\label{group__group__sam0__utils_ga84cbbcad1971cdb2987418e6ae6cb4ff}} 
+\#define {\bfseries LSB1W}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga0207e10a3c4bcca172463cd5e3ebd865}{MSB2W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 2nd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga2ca8582260a8ada6cdd457cf37ba37a7}\label{group__group__sam0__utils_ga2ca8582260a8ada6cdd457cf37ba37a7}} 
+\#define {\bfseries LSB0W}(u32)~\mbox{\hyperlink{group__group__sam0__utils_gad6ab5ac6e3e95525d56d757c9718e352}{MSB3W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 1st rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gad71e5e84d2cec4387415a55f5c62b01b}\label{group__group__sam0__utils_gad71e5e84d2cec4387415a55f5c62b01b}} 
+\#define {\bfseries MSW}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga696390429f2f3b644bde8d0322a24124}{U32}} $\ast$)\&(u64))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant word of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga0633993fb1f2d96a56385f09beed7bc7}\label{group__group__sam0__utils_ga0633993fb1f2d96a56385f09beed7bc7}} 
+\#define {\bfseries LSW}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga696390429f2f3b644bde8d0322a24124}{U32}} $\ast$)\&(u64))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Least significant word of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga280d6a94884872f6a5be80c873e8adc1}\label{group__group__sam0__utils_ga280d6a94884872f6a5be80c873e8adc1}} 
+\#define {\bfseries MSH0}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u64))\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of 1st rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga43de4fac62f938ff4eb448a87522ec0e}\label{group__group__sam0__utils_ga43de4fac62f938ff4eb448a87522ec0e}} 
+\#define {\bfseries MSH1}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u64))\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of 2nd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga5d32ec744212194c8106c51b89a5dfe9}\label{group__group__sam0__utils_ga5d32ec744212194c8106c51b89a5dfe9}} 
+\#define {\bfseries MSH2}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u64))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of 3rd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gabb233f238b63c12d2ff361d9ddb3114b}\label{group__group__sam0__utils_gabb233f238b63c12d2ff361d9ddb3114b}} 
+\#define {\bfseries MSH3}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}{U16}} $\ast$)\&(u64))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant half-\/word of 4th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga1ec33d340ef17c91cb0530d00ccb0ea8}\label{group__group__sam0__utils_ga1ec33d340ef17c91cb0530d00ccb0ea8}} 
+\#define {\bfseries LSH3}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga280d6a94884872f6a5be80c873e8adc1}{MSH0}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of 4th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga2efccfe683ebf7d89a972fbbdea2c26d}\label{group__group__sam0__utils_ga2efccfe683ebf7d89a972fbbdea2c26d}} 
+\#define {\bfseries LSH2}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga43de4fac62f938ff4eb448a87522ec0e}{MSH1}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of 3rd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gac593b0be4555d883b4297b45cffc4168}\label{group__group__sam0__utils_gac593b0be4555d883b4297b45cffc4168}} 
+\#define {\bfseries LSH1}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga5d32ec744212194c8106c51b89a5dfe9}{MSH2}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of 2nd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga3026b9288b45a9794fd3eb585cbe10bc}\label{group__group__sam0__utils_ga3026b9288b45a9794fd3eb585cbe10bc}} 
+\#define {\bfseries LSH0}(u64)~\mbox{\hyperlink{group__group__sam0__utils_gabb233f238b63c12d2ff361d9ddb3114b}{MSH3}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant half-\/word of 1st rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga5f24ecf381776ee415991a545a05e4c7}\label{group__group__sam0__utils_ga5f24ecf381776ee415991a545a05e4c7}} 
+\#define {\bfseries MSB0D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}7\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 1st rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga97a0ab6790df95cb4d8021d8850487f8}\label{group__group__sam0__utils_ga97a0ab6790df95cb4d8021d8850487f8}} 
+\#define {\bfseries MSB1D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}6\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 2nd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gad4ceacba543e7b8617ca4bd075abb146}\label{group__group__sam0__utils_gad4ceacba543e7b8617ca4bd075abb146}} 
+\#define {\bfseries MSB2D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}5\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 3rd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaf7972d3282ec9ecb97afa34e848ede2c}\label{group__group__sam0__utils_gaf7972d3282ec9ecb97afa34e848ede2c}} 
+\#define {\bfseries MSB3D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 4th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga1c891624c33b13808633af8dbcaafa5f}\label{group__group__sam0__utils_ga1c891624c33b13808633af8dbcaafa5f}} 
+\#define {\bfseries MSB4D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 5th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga5e61db58aaf5cbb3051240cdcb1b5147}\label{group__group__sam0__utils_ga5e61db58aaf5cbb3051240cdcb1b5147}} 
+\#define {\bfseries MSB5D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 6th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gacb8062d046ca06f5c28c9a015997494b}\label{group__group__sam0__utils_gacb8062d046ca06f5c28c9a015997494b}} 
+\#define {\bfseries MSB6D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 7th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga0cbce69964fa2dd7bf05911d0b99b014}\label{group__group__sam0__utils_ga0cbce69964fa2dd7bf05911d0b99b014}} 
+\#define {\bfseries MSB7D}(u64)~(((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}}  $\ast$)\&(u64))\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em Most significant byte of 8th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga79fb849e13082fdd4adb02debbad7f1a}\label{group__group__sam0__utils_ga79fb849e13082fdd4adb02debbad7f1a}} 
+\#define {\bfseries LSB7D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga5f24ecf381776ee415991a545a05e4c7}{MSB0D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 8th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gab90afefaf3b5cb2507ab3c496d8f643c}\label{group__group__sam0__utils_gab90afefaf3b5cb2507ab3c496d8f643c}} 
+\#define {\bfseries LSB6D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga97a0ab6790df95cb4d8021d8850487f8}{MSB1D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 7th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gac379acb246797736332fa1b8ae481b34}\label{group__group__sam0__utils_gac379acb246797736332fa1b8ae481b34}} 
+\#define {\bfseries LSB5D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_gad4ceacba543e7b8617ca4bd075abb146}{MSB2D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 6th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaab745f30b9b841f9ccd9ace0a5a1a9e5}\label{group__group__sam0__utils_gaab745f30b9b841f9ccd9ace0a5a1a9e5}} 
+\#define {\bfseries LSB4D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_gaf7972d3282ec9ecb97afa34e848ede2c}{MSB3D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 5th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga99213c01b979c347950eba4277f0499a}\label{group__group__sam0__utils_ga99213c01b979c347950eba4277f0499a}} 
+\#define {\bfseries LSB3D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga1c891624c33b13808633af8dbcaafa5f}{MSB4D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 4th rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaba3bea07dcc4a37039b7effd4da03b9e}\label{group__group__sam0__utils_gaba3bea07dcc4a37039b7effd4da03b9e}} 
+\#define {\bfseries LSB2D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga5e61db58aaf5cbb3051240cdcb1b5147}{MSB5D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 3rd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga42179f159b798116eb615102a549aa85}\label{group__group__sam0__utils_ga42179f159b798116eb615102a549aa85}} 
+\#define {\bfseries LSB1D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_gacb8062d046ca06f5c28c9a015997494b}{MSB6D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 2nd rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga2e20f5ef87ccf0ad44c1d49d6ffd80a3}\label{group__group__sam0__utils_ga2e20f5ef87ccf0ad44c1d49d6ffd80a3}} 
+\#define {\bfseries LSB0D}(u64)~\mbox{\hyperlink{group__group__sam0__utils_ga0cbce69964fa2dd7bf05911d0b99b014}{MSB7D}}(u64)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 1st rank of {\itshape u64}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga844ec34df36feb927dc92007af14674a}\label{group__group__sam0__utils_ga844ec34df36feb927dc92007af14674a}} 
+\#define {\bfseries LSB0}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga2ca8582260a8ada6cdd457cf37ba37a7}{LSB0W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 1st rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga2d1e45154b07481f0579ecc725e4edff}\label{group__group__sam0__utils_ga2d1e45154b07481f0579ecc725e4edff}} 
+\#define {\bfseries LSB1}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga84cbbcad1971cdb2987418e6ae6cb4ff}{LSB1W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 2nd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga8967f5ae0174b01ce44c502ebd14035a}\label{group__group__sam0__utils_ga8967f5ae0174b01ce44c502ebd14035a}} 
+\#define {\bfseries LSB2}(u32)~\mbox{\hyperlink{group__group__sam0__utils_gad8fda97f8caa00fcfa84f712ee7627d6}{LSB2W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 3rd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga5d9ff393e7c8764112a1167db19b16b1}\label{group__group__sam0__utils_ga5d9ff393e7c8764112a1167db19b16b1}} 
+\#define {\bfseries LSB3}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga04e75e548b33b9cc22699b4249ff6c64}{LSB3W}}(u32)
+\begin{DoxyCompactList}\small\item\em Least significant byte of 4th rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaeeb8918fc580ce01d45f71863eebff90}\label{group__group__sam0__utils_gaeeb8918fc580ce01d45f71863eebff90}} 
+\#define {\bfseries MSB3}(u32)~\mbox{\hyperlink{group__group__sam0__utils_gad6ab5ac6e3e95525d56d757c9718e352}{MSB3W}}(u32)
+\begin{DoxyCompactList}\small\item\em Most significant byte of 4th rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga8683254be29bcfe3cf2fa646890d3942}\label{group__group__sam0__utils_ga8683254be29bcfe3cf2fa646890d3942}} 
+\#define {\bfseries MSB2}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga0207e10a3c4bcca172463cd5e3ebd865}{MSB2W}}(u32)
+\begin{DoxyCompactList}\small\item\em Most significant byte of 3rd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga3facab9f8ebf70ad6e16038465e2bedc}\label{group__group__sam0__utils_ga3facab9f8ebf70ad6e16038465e2bedc}} 
+\#define {\bfseries MSB1}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga0f90ecd0b0f0e15608a95b8367b77ece}{MSB1W}}(u32)
+\begin{DoxyCompactList}\small\item\em Most significant byte of 2nd rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gafb81783b8186acd7182a971048b0c6b3}\label{group__group__sam0__utils_gafb81783b8186acd7182a971048b0c6b3}} 
+\#define {\bfseries MSB0}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga25110f05bdb5b5ea3fcb2854a1a07d7a}{MSB0W}}(u32)
+\begin{DoxyCompactList}\small\item\em Most significant byte of 1st rank of {\itshape u32}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga9b84ecc6b34a71f797ceb8b8f7b8d384}\label{group__group__sam0__utils_ga9b84ecc6b34a71f797ceb8b8f7b8d384}} 
+\#define {\bfseries FLASH\+\_\+\+DECLARE}(x)~const x
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaaef0fd990bb5bd9cdf11334f7c689fd7}\label{group__group__sam0__utils_gaaef0fd990bb5bd9cdf11334f7c689fd7}} 
+\#define {\bfseries FLASH\+\_\+\+EXTERN}(x)~extern const x
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gafe9b83c73d4840986478ec67d3eb7718}\label{group__group__sam0__utils_gafe9b83c73d4840986478ec67d3eb7718}} 
+\#define {\bfseries PGM\+\_\+\+READ\+\_\+\+BYTE}(x)~$\ast$(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga92576bffe51090dcb6d5c67e07b9eec7}\label{group__group__sam0__utils_ga92576bffe51090dcb6d5c67e07b9eec7}} 
+\#define {\bfseries PGM\+\_\+\+READ\+\_\+\+WORD}(x)~$\ast$(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga85a7d71a016789b1766f9b27d0530347}\label{group__group__sam0__utils_ga85a7d71a016789b1766f9b27d0530347}} 
+\#define {\bfseries MEMCPY\+\_\+\+ENDIAN}~memcpy
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga8900e4615b7d7143a6c38e2a39087538}\label{group__group__sam0__utils_ga8900e4615b7d7143a6c38e2a39087538}} 
+\#define {\bfseries PGM\+\_\+\+READ\+\_\+\+BLOCK}(dst,  src,  len)~memcpy((dst), (src), (len))
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gabf2b95fa77301377cdcf79eb615551db}\label{group__group__sam0__utils_gabf2b95fa77301377cdcf79eb615551db}} 
+\#define {\bfseries CMD\+\_\+\+ID\+\_\+\+OCTET}~(0)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga7c15ca0f3159182efc4b80a00768c2c0}\label{group__group__sam0__utils_ga7c15ca0f3159182efc4b80a00768c2c0}} 
+\#define {\bfseries CPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE16}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaa2fd4bfb7af44220ce4205e2aa371017}\label{group__group__sam0__utils_gaa2fd4bfb7af44220ce4205e2aa371017}} 
+\#define {\bfseries CPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE32}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga6f1e86f452c8f327f9ca96cbf6a65c81}\label{group__group__sam0__utils_ga6f1e86f452c8f327f9ca96cbf6a65c81}} 
+\#define {\bfseries CPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE64}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaceb02fdef243c22d2559e260185fb579}\label{group__group__sam0__utils_gaceb02fdef243c22d2559e260185fb579}} 
+\#define {\bfseries LE16\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga2df63369ef525ba98832132ce5a43346}\label{group__group__sam0__utils_ga2df63369ef525ba98832132ce5a43346}} 
+\#define {\bfseries LE32\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gab675071ce5a4644b205cdbc858417ccd}\label{group__group__sam0__utils_gab675071ce5a4644b205cdbc858417ccd}} 
+\#define {\bfseries LE64\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga4ac6e032d1ce0ae6d2e460da93ce8732}\label{group__group__sam0__utils_ga4ac6e032d1ce0ae6d2e460da93ce8732}} 
+\#define {\bfseries CLE16\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga3ff07a7496222efe8bc7d7b7b0342b0d}\label{group__group__sam0__utils_ga3ff07a7496222efe8bc7d7b7b0342b0d}} 
+\#define {\bfseries CLE32\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gacbbba93256e2d892c748d56a42f00f9b}\label{group__group__sam0__utils_gacbbba93256e2d892c748d56a42f00f9b}} 
+\#define {\bfseries CLE64\+\_\+\+TO\+\_\+\+CPU\+\_\+\+ENDIAN}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga5fd2d3ed2fc9234277b659b67d33bc64}\label{group__group__sam0__utils_ga5fd2d3ed2fc9234277b659b67d33bc64}} 
+\#define {\bfseries CCPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE16}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga1e3290451e5c7b98175911c9219b5123}\label{group__group__sam0__utils_ga1e3290451e5c7b98175911c9219b5123}} 
+\#define {\bfseries CCPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE32}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga00483bf27ea1e8a2143c6baf22b31f16}\label{group__group__sam0__utils_ga00483bf27ea1e8a2143c6baf22b31f16}} 
+\#define {\bfseries CCPU\+\_\+\+ENDIAN\+\_\+\+TO\+\_\+\+LE64}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gac4609178e5c825e815f44fa123dcaaf7}\label{group__group__sam0__utils_gac4609178e5c825e815f44fa123dcaaf7}} 
+\#define {\bfseries ADDR\+\_\+\+COPY\+\_\+\+DST\+\_\+\+SRC\+\_\+16}(dst,  src)~((dst) = (src))
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga0454afa80924c2183c8c672c043440cc}\label{group__group__sam0__utils_ga0454afa80924c2183c8c672c043440cc}} 
+\#define {\bfseries ADDR\+\_\+\+COPY\+\_\+\+DST\+\_\+\+SRC\+\_\+64}(dst,  src)~((dst) = (src))
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaf1475a0bb1962ef08dd1f78bd5dba87a}\label{group__group__sam0__utils_gaf1475a0bb1962ef08dd1f78bd5dba87a}} 
+typedef int8\+\_\+t {\bfseries S8}
+\begin{DoxyCompactList}\small\item\em 8-\/bit signed integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}\label{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}} 
+typedef uint8\+\_\+t {\bfseries U8}
+\begin{DoxyCompactList}\small\item\em 8-\/bit unsigned integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga6d241ad21a823c90d4835380787db5d4}\label{group__group__sam0__utils_ga6d241ad21a823c90d4835380787db5d4}} 
+typedef int16\+\_\+t {\bfseries S16}
+\begin{DoxyCompactList}\small\item\em 16-\/bit signed integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}\label{group__group__sam0__utils_ga0a0a322d5fa4a546d293a77ba8b4a71f}} 
+typedef uint16\+\_\+t {\bfseries U16}
+\begin{DoxyCompactList}\small\item\em 16-\/bit unsigned integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga39c786017723555afb9e8b85accec0de}\label{group__group__sam0__utils_ga39c786017723555afb9e8b85accec0de}} 
+typedef int32\+\_\+t {\bfseries S32}
+\begin{DoxyCompactList}\small\item\em 32-\/bit signed integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga696390429f2f3b644bde8d0322a24124}\label{group__group__sam0__utils_ga696390429f2f3b644bde8d0322a24124}} 
+typedef uint32\+\_\+t {\bfseries U32}
+\begin{DoxyCompactList}\small\item\em 32-\/bit unsigned integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga1d293e5c494dd6826239b02f5fe98e7f}\label{group__group__sam0__utils_ga1d293e5c494dd6826239b02f5fe98e7f}} 
+typedef int64\+\_\+t {\bfseries S64}
+\begin{DoxyCompactList}\small\item\em 64-\/bit signed integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga25809e0734a149248fcf5831efa4e33d}\label{group__group__sam0__utils_ga25809e0734a149248fcf5831efa4e33d}} 
+typedef uint64\+\_\+t {\bfseries U64}
+\begin{DoxyCompactList}\small\item\em 64-\/bit unsigned integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga841d3674577a1e86afdc2f4845f46c4b}\label{group__group__sam0__utils_ga841d3674577a1e86afdc2f4845f46c4b}} 
+typedef float {\bfseries F32}
+\begin{DoxyCompactList}\small\item\em 32-\/bit floating-\/point number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gadc9896ee12db3bb116fc63b3464c72c7}\label{group__group__sam0__utils_gadc9896ee12db3bb116fc63b3464c72c7}} 
+typedef double {\bfseries F64}
+\begin{DoxyCompactList}\small\item\em 64-\/bit floating-\/point number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Usual Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga97a80ca1602ebf2303258971a2c938e2}\label{group__group__sam0__utils_ga97a80ca1602ebf2303258971a2c938e2}} 
+typedef unsigned char {\bfseries bool}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gadb35b8c1c002c23dcc87bdd8f520dd5f}\label{group__group__sam0__utils_gadb35b8c1c002c23dcc87bdd8f520dd5f}} 
+typedef uint16\+\_\+t {\bfseries le16\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gadafc3ed99e530f27d0d954334c389748}\label{group__group__sam0__utils_gadafc3ed99e530f27d0d954334c389748}} 
+typedef uint16\+\_\+t {\bfseries be16\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga14351c68ce47837d05ce857cfff07c92}\label{group__group__sam0__utils_ga14351c68ce47837d05ce857cfff07c92}} 
+typedef uint32\+\_\+t {\bfseries le32\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga3410b85f2a5afdf8b35f5c7c3414fe2d}\label{group__group__sam0__utils_ga3410b85f2a5afdf8b35f5c7c3414fe2d}} 
+typedef uint32\+\_\+t {\bfseries be32\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga2aa1108d10dcbee73bb35aefe25287c1}\label{group__group__sam0__utils_ga2aa1108d10dcbee73bb35aefe25287c1}} 
+typedef uint32\+\_\+t {\bfseries iram\+\_\+size\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Usual Constants}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga99496f7308834e8b220f7894efa0b6ab}\label{group__group__sam0__utils_ga99496f7308834e8b220f7894efa0b6ab}} 
+\#define {\bfseries DISABLE}~0
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga514ad415fb6125ba296793df7d1a468a}\label{group__group__sam0__utils_ga514ad415fb6125ba296793df7d1a468a}} 
+\#define {\bfseries ENABLE}~1
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga65e9886d74aaee76545e83dd09011727}\label{group__group__sam0__utils_ga65e9886d74aaee76545e83dd09011727}} 
+\#define {\bfseries false}~0
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}\label{group__group__sam0__utils_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}} 
+\#define {\bfseries true}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Optimization Control}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gac082df2dd9a1024f6e8d16a61855d989}\label{group__group__sam0__utils_gac082df2dd9a1024f6e8d16a61855d989}} 
+\#define {\bfseries likely}(exp)~(exp)
+\begin{DoxyCompactList}\small\item\em The expression {\itshape exp} is likely to be true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga1c0c89beb84d05c5ba0bc7ce527a3925}\label{group__group__sam0__utils_ga1c0c89beb84d05c5ba0bc7ce527a3925}} 
+\#define {\bfseries unlikely}(exp)~(exp)
+\begin{DoxyCompactList}\small\item\em The expression {\itshape exp} is unlikely to be true. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga15892ad6884af110e5eaaa96994ebaa9}{is\+\_\+constant}}(exp)~(0)
+\begin{DoxyCompactList}\small\item\em Determine if an expression evaluates to a constant value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Bit-\/\+Field Handling}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}(value,  mask)~((value) \& (mask))
+\begin{DoxyCompactList}\small\item\em Reads the bits of a value specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}{Wr\+\_\+bits}}(lvalue,  mask,  bits)
+\begin{DoxyCompactList}\small\item\em Writes the bits of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gab1e92741077b101e6b2df74880e71e96}{Tst\+\_\+bits}}(value,  mask)~(\mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}(value, mask) != 0)
+\begin{DoxyCompactList}\small\item\em Tests the bits of a value specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaffbccbb234075f838e181522c864605f}{Clr\+\_\+bits}}(lvalue,  mask)~((lvalue) \&= $\sim$(mask))
+\begin{DoxyCompactList}\small\item\em Clears the bits of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga589436fa123e32e1063488ebd7fdc923}{Set\+\_\+bits}}(lvalue,  mask)~((lvalue) $\vert$=  (mask))
+\begin{DoxyCompactList}\small\item\em Sets the bits of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga9f29d1e990286322697ae8d0f4e365e0}{Tgl\+\_\+bits}}(lvalue,  mask)~((lvalue) $^\wedge$=  (mask))
+\begin{DoxyCompactList}\small\item\em Toggles the bits of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaa7ee388a5bd843e5e0ba3d194bc1d8a4}{Rd\+\_\+bitfield}}(value,  mask)~(\mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}( value, mask) $>$$>$ \mbox{\hyperlink{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}{ctz}}(mask))
+\begin{DoxyCompactList}\small\item\em Reads the bit-\/field of a value specified by a given bit-\/mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaa2ede64db1455ec339cd8a3303647644}{Wr\+\_\+bitfield}}(lvalue,  mask,  bitfield)~(\mbox{\hyperlink{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}{Wr\+\_\+bits}}(lvalue, mask, (uint32\+\_\+t)(bitfield) $<$$<$ \mbox{\hyperlink{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}{ctz}}(mask)))
+\begin{DoxyCompactList}\small\item\em Writes the bit-\/field of a C lvalue specified by a given bit-\/mask. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Zero-\/\+Bit Counting}
+Under GCC, \+\_\+\+\_\+builtin\+\_\+clz and \+\_\+\+\_\+builtin\+\_\+ctz behave like macros when applied to constant expressions (values known at compile time), so they are more optimized than the use of the corresponding assembly instructions and they can be used as constant expressions e.\+g. to initialize objects having static storage duration, and like the corresponding assembly instructions when applied to non-\/constant expressions (values unknown at compile time), so they are more optimized than an assembly periphrasis. Hence, clz and ctz ensure a possible and optimized behavior for both constant and non-\/constant expressions. \begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga004f88903a09b9c23017e697eaf5a845}{clz}}(u)
+\begin{DoxyCompactList}\small\item\em Counts the leading zero bits of the given value considered as a 32-\/bit integer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}{ctz}}(u)
+\begin{DoxyCompactList}\small\item\em Counts the trailing zero bits of the given value considered as a 32-\/bit integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Bit Reversing}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaef8832dcae9aaac78c5ebe91fc33084b}{bit\+\_\+reverse8}}(u8)~((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}})(\mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\+\_\+reverse32}}((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}})(u8)) $>$$>$ 24))
+\begin{DoxyCompactList}\small\item\em Reverses the bits of {\itshape u8}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gabab01124189eab03857671c05abfe377}{bit\+\_\+reverse16}}(u16)~((uint16\+\_\+t)(\mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\+\_\+reverse32}}((uint16\+\_\+t)(u16)) $>$$>$ 16))
+\begin{DoxyCompactList}\small\item\em Reverses the bits of {\itshape u16}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\+\_\+reverse32}}(u32)~\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf944a7b7d8fd70164cca27669316bcf7}{\+\_\+\+\_\+\+RBIT}}(u32)
+\begin{DoxyCompactList}\small\item\em Reverses the bits of {\itshape u32}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga7f3f2d786440776bab3f688cbd1e8030}{bit\+\_\+reverse64}}(u64)
+\begin{DoxyCompactList}\small\item\em Reverses the bits of {\itshape u64}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Alignment}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gad490b657cb147d3d1773f6559559b98b}{Test\+\_\+align}}(val,  n)~(!\mbox{\hyperlink{group__group__sam0__utils_gab1e92741077b101e6b2df74880e71e96}{Tst\+\_\+bits}}( val, (n) -\/ 1     )   )
+\begin{DoxyCompactList}\small\item\em Tests alignment of the number {\itshape val} with the {\itshape n} boundary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga526bddb313be14057f5d65e199f6d814}{Get\+\_\+align}}(val,  n)~(  \mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}( val, (n) -\/ 1     )   )
+\begin{DoxyCompactList}\small\item\em Gets alignment of the number {\itshape val} with respect to the {\itshape n} boundary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gad607b0e4ad3cf4cb5bd7a3619742f092}{Set\+\_\+align}}(lval,  n,  alg)~(  \mbox{\hyperlink{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}{Wr\+\_\+bits}}(lval, (n) -\/ 1, alg)   )
+\begin{DoxyCompactList}\small\item\em Sets alignment of the lvalue number {\itshape lval} to {\itshape alg} with respect to the {\itshape n} boundary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga2bac987572902a9a7b69442541d78c42}{Align\+\_\+up}}( val,  n)~(((val) + ((n) -\/ 1)) \& $\sim$((n) -\/ 1))
+\begin{DoxyCompactList}\small\item\em Aligns the number {\itshape val} with the upper {\itshape n} boundary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga1070d94a69b4e1955ac1723b4f382095}{Align\+\_\+down}}(val,  n)~( (val)              \& $\sim$((n) -\/ 1))
+\begin{DoxyCompactList}\small\item\em Aligns the number {\itshape val} with the lower {\itshape n} boundary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Mathematics}
+The same considerations as for clz and ctz apply here but GCC does not provide built-\/in functions to access the assembly instructions abs, min and max and it does not produce them by itself in most cases, so two sets of macros are defined here\+:
+\begin{DoxyItemize}
+\item Abs, Min and Max to apply to constant expressions (values known at compile time);
+\item abs, min and max to apply to non-\/constant expressions (values unknown at compile time), abs is found in stdlib.\+h. 
+\end{DoxyItemize}\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gae56b0282c58a65969c092e1eeeedd6f5}{Abs}}(a)~(((a) $<$  0 ) ? -\/(a) \+: (a))
+\begin{DoxyCompactList}\small\item\em Takes the absolute value of {\itshape a}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga9e04209162ea72f9985338596262b657}{Min}}(a,  b)~(((a) $<$ (b)) ?  (a) \+: (b))
+\begin{DoxyCompactList}\small\item\em Takes the minimal value of {\itshape a} and {\itshape b}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga4886a8f966a69949cefc46a6a3468006}{Max}}(a,  b)~(((a) $>$ (b)) ?  (a) \+: (b))
+\begin{DoxyCompactList}\small\item\em Takes the maximal value of {\itshape a} and {\itshape b}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gac6afabdc09a49a433ee19d8a9486056d}{min}}(a,  b)~\mbox{\hyperlink{group__group__sam0__utils_ga9e04209162ea72f9985338596262b657}{Min}}(a, b)
+\begin{DoxyCompactList}\small\item\em Takes the minimal value of {\itshape a} and {\itshape b}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gaffe776513b24d84b39af8ab0930fef7f}{max}}(a,  b)~\mbox{\hyperlink{group__group__sam0__utils_ga4886a8f966a69949cefc46a6a3468006}{Max}}(a, b)
+\begin{DoxyCompactList}\small\item\em Takes the maximal value of {\itshape a} and {\itshape b}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{MCU Endianism Handling}
+ARM is MCU little endian. \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga34c0ccbaef341c224a18eb4dcaf44407}\label{group__group__sam0__utils_ga34c0ccbaef341c224a18eb4dcaf44407}} 
+\#define {\bfseries BE16}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga54d648861a1120a3f8d6255e9cf54125}\label{group__group__sam0__utils_ga54d648861a1120a3f8d6255e9cf54125}} 
+\#define {\bfseries LE16}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga65e9510f535c1ee2f826d447471289fa}\label{group__group__sam0__utils_ga65e9510f535c1ee2f826d447471289fa}} 
+\#define {\bfseries le16\+\_\+to\+\_\+cpu}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaeda3065f344779edb9023e22d84d5f92}\label{group__group__sam0__utils_gaeda3065f344779edb9023e22d84d5f92}} 
+\#define {\bfseries cpu\+\_\+to\+\_\+le16}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaa0da5576d76569d3a7452897a91ea0e6}\label{group__group__sam0__utils_gaa0da5576d76569d3a7452897a91ea0e6}} 
+\#define {\bfseries LE16\+\_\+\+TO\+\_\+\+CPU}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaa3d310efe7cd6126823b8721852d7e56}\label{group__group__sam0__utils_gaa3d310efe7cd6126823b8721852d7e56}} 
+\#define {\bfseries CPU\+\_\+\+TO\+\_\+\+LE16}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga48f33ad7b3de0010e5c802ced48f8a7b}\label{group__group__sam0__utils_ga48f33ad7b3de0010e5c802ced48f8a7b}} 
+\#define {\bfseries be16\+\_\+to\+\_\+cpu}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaf42a6506135fe9e671c40973bacc849f}\label{group__group__sam0__utils_gaf42a6506135fe9e671c40973bacc849f}} 
+\#define {\bfseries cpu\+\_\+to\+\_\+be16}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gac1d027e9e570b4714b2e7e7fbd4b1e9e}\label{group__group__sam0__utils_gac1d027e9e570b4714b2e7e7fbd4b1e9e}} 
+\#define {\bfseries BE16\+\_\+\+TO\+\_\+\+CPU}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gaea91d96b724b4a83b28c7c91cd920db4}\label{group__group__sam0__utils_gaea91d96b724b4a83b28c7c91cd920db4}} 
+\#define {\bfseries CPU\+\_\+\+TO\+\_\+\+BE16}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga48f527b00bc1d5e46366d720280a1039}\label{group__group__sam0__utils_ga48f527b00bc1d5e46366d720280a1039}} 
+\#define {\bfseries le32\+\_\+to\+\_\+cpu}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga1d5ae0c36d519a1b0a789db69a598f28}\label{group__group__sam0__utils_ga1d5ae0c36d519a1b0a789db69a598f28}} 
+\#define {\bfseries cpu\+\_\+to\+\_\+le32}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga488a93b151ee4920c0a117fe66cc2efb}\label{group__group__sam0__utils_ga488a93b151ee4920c0a117fe66cc2efb}} 
+\#define {\bfseries LE32\+\_\+\+TO\+\_\+\+CPU}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gac904d01eec66efc89dba5a687749d5f5}\label{group__group__sam0__utils_gac904d01eec66efc89dba5a687749d5f5}} 
+\#define {\bfseries CPU\+\_\+\+TO\+\_\+\+LE32}(x)~(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_ga650ecb20996a13e0c0bc530ba83fe5dc}\label{group__group__sam0__utils_ga650ecb20996a13e0c0bc530ba83fe5dc}} 
+\#define {\bfseries be32\+\_\+to\+\_\+cpu}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gafd3274bb70aea7cf9be403940e001cc7}\label{group__group__sam0__utils_gafd3274bb70aea7cf9be403940e001cc7}} 
+\#define {\bfseries cpu\+\_\+to\+\_\+be32}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gad6fd2e5e0a54fb6300fe98868141175e}\label{group__group__sam0__utils_gad6fd2e5e0a54fb6300fe98868141175e}} 
+\#define {\bfseries BE32\+\_\+\+TO\+\_\+\+CPU}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(x)
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils_gabe5b68e77b7f6870895076278368d201}\label{group__group__sam0__utils_gabe5b68e77b7f6870895076278368d201}} 
+\#define {\bfseries CPU\+\_\+\+TO\+\_\+\+BE32}(x)~\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Endianism Conversion}
+The same considerations as for clz and ctz apply here but GCC\textquotesingle{}s \+\_\+\+\_\+builtin\+\_\+bswap\+\_\+32 and \+\_\+\+\_\+builtin\+\_\+bswap\+\_\+64 do not behave like macros when applied to constant expressions, so two sets of macros are defined here\+:
+\begin{DoxyItemize}
+\item Swap16, Swap32 and Swap64 to apply to constant expressions (values known at compile time);
+\item swap16, swap32 and swap64 to apply to non-\/constant expressions (values unknown at compile time). 
+\end{DoxyItemize}\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gadc9a009f53db3e7c3294ee6bc1027dca}{Swap16}}(u16)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u16} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga5e9bc2e3b3e43eadc3210b02cab6ac64}{Swap32}}(u32)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u32} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga33f3049d9b8374e8b93d5642bfe7f426}{Swap64}}(u64)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u64} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}{swap16}}(u16)~\mbox{\hyperlink{group__group__sam0__utils_gadc9a009f53db3e7c3294ee6bc1027dca}{Swap16}}(u16)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u16} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}(u32)~\mbox{\hyperlink{group__group__sam0__utils_ga5e9bc2e3b3e43eadc3210b02cab6ac64}{Swap32}}(u32)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u32} (by swapping its bytes). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga78484801bd5bea7d382b34a4ed1f345d}{swap64}}(u64)
+\begin{DoxyCompactList}\small\item\em Toggles the endianism of {\itshape u64} (by swapping its bytes). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Target Abstraction}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gad4d03be3b8f3d15ed804170a1311ec98}{\+\_\+\+GLOBEXT\+\_\+}}~extern
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga8e0d79d43ad9295d5193ca29f109a762}{\+\_\+\+CONST\+\_\+\+TYPE\+\_\+}}~const
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga35d552e8456cfb2b810baa0a9212c98e}{\+\_\+\+MEM\+\_\+\+TYPE\+\_\+\+SLOW\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gadcd997c76f95854090b17513c4ef3891}{\+\_\+\+MEM\+\_\+\+TYPE\+\_\+\+MEDFAST\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gabf669e579471cadcf68d9ffc440e68b1}{\+\_\+\+MEM\+\_\+\+TYPE\+\_\+\+FAST\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga27819e952caa0a535a5901d2857834b7}{memcmp\+\_\+ram2ram}}~memcmp
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_gab914bad47205a9b7afb9ac53ec71cb55}{memcmp\+\_\+code2ram}}~memcmp
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga9a4ff08e7c4cf79135a3bcbab68472b7}{memcpy\+\_\+ram2ram}}~memcpy
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils_ga55724cc8f7d42eba122dac5bffa00024}{memcpy\+\_\+code2ram}}~memcpy
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Compiler abstraction layer and code utilities for Cortex-\/\+M0+ based Atmel SAM devices. This module provides various abstraction layers and utilities to make code compatible between different compilers. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__group__sam0__utils_ga8e0d79d43ad9295d5193ca29f109a762}\label{group__group__sam0__utils_ga8e0d79d43ad9295d5193ca29f109a762}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!\_CONST\_TYPE\_@{\_CONST\_TYPE\_}}
+\index{\_CONST\_TYPE\_@{\_CONST\_TYPE\_}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{\_CONST\_TYPE\_}{\_CONST\_TYPE\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+CONST\+\_\+\+TYPE\+\_\+~const}
+
+const type qualifier. \mbox{\Hypertarget{group__group__sam0__utils_gad4d03be3b8f3d15ed804170a1311ec98}\label{group__group__sam0__utils_gad4d03be3b8f3d15ed804170a1311ec98}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!\_GLOBEXT\_@{\_GLOBEXT\_}}
+\index{\_GLOBEXT\_@{\_GLOBEXT\_}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{\_GLOBEXT\_}{\_GLOBEXT\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLOBEXT\+\_\+~extern}
+
+extern storage-\/class specifier. \mbox{\Hypertarget{group__group__sam0__utils_gabf669e579471cadcf68d9ffc440e68b1}\label{group__group__sam0__utils_gabf669e579471cadcf68d9ffc440e68b1}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!\_MEM\_TYPE\_FAST\_@{\_MEM\_TYPE\_FAST\_}}
+\index{\_MEM\_TYPE\_FAST\_@{\_MEM\_TYPE\_FAST\_}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{\_MEM\_TYPE\_FAST\_}{\_MEM\_TYPE\_FAST\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+MEM\+\_\+\+TYPE\+\_\+\+FAST\+\_\+}
+
+Fast memory type. \mbox{\Hypertarget{group__group__sam0__utils_gadcd997c76f95854090b17513c4ef3891}\label{group__group__sam0__utils_gadcd997c76f95854090b17513c4ef3891}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!\_MEM\_TYPE\_MEDFAST\_@{\_MEM\_TYPE\_MEDFAST\_}}
+\index{\_MEM\_TYPE\_MEDFAST\_@{\_MEM\_TYPE\_MEDFAST\_}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{\_MEM\_TYPE\_MEDFAST\_}{\_MEM\_TYPE\_MEDFAST\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+MEM\+\_\+\+TYPE\+\_\+\+MEDFAST\+\_\+}
+
+Fairly fast memory type. \mbox{\Hypertarget{group__group__sam0__utils_ga35d552e8456cfb2b810baa0a9212c98e}\label{group__group__sam0__utils_ga35d552e8456cfb2b810baa0a9212c98e}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!\_MEM\_TYPE\_SLOW\_@{\_MEM\_TYPE\_SLOW\_}}
+\index{\_MEM\_TYPE\_SLOW\_@{\_MEM\_TYPE\_SLOW\_}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{\_MEM\_TYPE\_SLOW\_}{\_MEM\_TYPE\_SLOW\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+MEM\+\_\+\+TYPE\+\_\+\+SLOW\+\_\+}
+
+Slow memory type. \mbox{\Hypertarget{group__group__sam0__utils_gae56b0282c58a65969c092e1eeeedd6f5}\label{group__group__sam0__utils_gae56b0282c58a65969c092e1eeeedd6f5}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Abs@{Abs}}
+\index{Abs@{Abs}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Abs}{Abs}}
+{\footnotesize\ttfamily \#define Abs(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~(((a) $<$  0 ) ? -\/(a) \+: (a))}
+
+
+
+Takes the absolute value of {\itshape a}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Input value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Absolute value of {\itshape a}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values known at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_ga1070d94a69b4e1955ac1723b4f382095}\label{group__group__sam0__utils_ga1070d94a69b4e1955ac1723b4f382095}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Align\_down@{Align\_down}}
+\index{Align\_down@{Align\_down}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Align\_down}{Align\_down}}
+{\footnotesize\ttfamily \#define Align\+\_\+down(\begin{DoxyParamCaption}\item[{}]{val,  }\item[{}]{n }\end{DoxyParamCaption})~( (val)              \& $\sim$((n) -\/ 1))}
+
+
+
+Aligns the number {\itshape val} with the lower {\itshape n} boundary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & Input value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & Boundary.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from the number {\itshape val} aligned with the lower {\itshape n} boundary. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga2bac987572902a9a7b69442541d78c42}\label{group__group__sam0__utils_ga2bac987572902a9a7b69442541d78c42}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Align\_up@{Align\_up}}
+\index{Align\_up@{Align\_up}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Align\_up}{Align\_up}}
+{\footnotesize\ttfamily \#define Align\+\_\+up(\begin{DoxyParamCaption}\item[{}]{val,  }\item[{}]{n }\end{DoxyParamCaption})~(((val) + ((n) -\/ 1)) \& $\sim$((n) -\/ 1))}
+
+
+
+Aligns the number {\itshape val} with the upper {\itshape n} boundary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & Input value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & Boundary.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from the number {\itshape val} aligned with the upper {\itshape n} boundary. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}\label{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Assert@{Assert}}
+\index{Assert@{Assert}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Assert}{Assert}}
+{\footnotesize\ttfamily \#define Assert(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~((void) 0)}
+
+
+
+This macro is used to test fatal errors. 
+
+The macro tests if the expression is false. If it is, a fatal error is detected and the application hangs up. If {\ttfamily TEST\+\_\+\+SUITE\+\_\+\+DEFINE\+\_\+\+ASSERT\+\_\+\+MACRO} is defined, a unit test version of the macro is used, to allow execution of further tests after a false expression.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em expr} & Expression to evaluate and supposed to be nonzero. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__group__sam0__utils_gabab01124189eab03857671c05abfe377}\label{group__group__sam0__utils_gabab01124189eab03857671c05abfe377}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!bit\_reverse16@{bit\_reverse16}}
+\index{bit\_reverse16@{bit\_reverse16}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{bit\_reverse16}{bit\_reverse16}}
+{\footnotesize\ttfamily \#define bit\+\_\+reverse16(\begin{DoxyParamCaption}\item[{}]{u16 }\end{DoxyParamCaption})~((uint16\+\_\+t)(\mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\+\_\+reverse32}}((uint16\+\_\+t)(u16)) $>$$>$ 16))}
+
+
+
+Reverses the bits of {\itshape u16}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u16} & U16 of which to reverse the bits.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u16} with reversed bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}\label{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!bit\_reverse32@{bit\_reverse32}}
+\index{bit\_reverse32@{bit\_reverse32}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{bit\_reverse32}{bit\_reverse32}}
+{\footnotesize\ttfamily \#define bit\+\_\+reverse32(\begin{DoxyParamCaption}\item[{}]{u32 }\end{DoxyParamCaption})~\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf944a7b7d8fd70164cca27669316bcf7}{\+\_\+\+\_\+\+RBIT}}(u32)}
+
+
+
+Reverses the bits of {\itshape u32}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u32} & U32 of which to reverse the bits.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u32} with reversed bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga7f3f2d786440776bab3f688cbd1e8030}\label{group__group__sam0__utils_ga7f3f2d786440776bab3f688cbd1e8030}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!bit\_reverse64@{bit\_reverse64}}
+\index{bit\_reverse64@{bit\_reverse64}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{bit\_reverse64}{bit\_reverse64}}
+{\footnotesize\ttfamily \#define bit\+\_\+reverse64(\begin{DoxyParamCaption}\item[{}]{u64 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                   ((uint64\_t)(((uint64\_t)\mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\_reverse32}}((uint64\_t)(u64) >> 32)) |\(\backslash\)}
+\DoxyCodeLine{                                   ((uint64\_t)\mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\_reverse32}}((uint64\_t)(u64)) << 32)))}
+
+\end{DoxyCode}
+
+
+Reverses the bits of {\itshape u64}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u64} & U64 of which to reverse the bits.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u64} with reversed bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_gaef8832dcae9aaac78c5ebe91fc33084b}\label{group__group__sam0__utils_gaef8832dcae9aaac78c5ebe91fc33084b}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!bit\_reverse8@{bit\_reverse8}}
+\index{bit\_reverse8@{bit\_reverse8}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{bit\_reverse8}{bit\_reverse8}}
+{\footnotesize\ttfamily \#define bit\+\_\+reverse8(\begin{DoxyParamCaption}\item[{}]{u8 }\end{DoxyParamCaption})~((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}})(\mbox{\hyperlink{group__group__sam0__utils_gaff755a5c107b5e28e5b846c5f122e69f}{bit\+\_\+reverse32}}((\mbox{\hyperlink{group__group__sam0__utils_gaa63ef7b996d5487ce35a5a66601f3e73}{U8}})(u8)) $>$$>$ 24))}
+
+
+
+Reverses the bits of {\itshape u8}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u8} & U8 of which to reverse the bits.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u8} with reversed bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_gaffbccbb234075f838e181522c864605f}\label{group__group__sam0__utils_gaffbccbb234075f838e181522c864605f}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Clr\_bits@{Clr\_bits}}
+\index{Clr\_bits@{Clr\_bits}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Clr\_bits}{Clr\_bits}}
+{\footnotesize\ttfamily \#define Clr\+\_\+bits(\begin{DoxyParamCaption}\item[{}]{lvalue,  }\item[{}]{mask }\end{DoxyParamCaption})~((lvalue) \&= $\sim$(mask))}
+
+
+
+Clears the bits of a C lvalue specified by a given bit-\/mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lvalue} & C lvalue of which to clear bits. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Bit-\/mask indicating bits to clear.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting value with cleared bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga004f88903a09b9c23017e697eaf5a845}\label{group__group__sam0__utils_ga004f88903a09b9c23017e697eaf5a845}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!clz@{clz}}
+\index{clz@{clz}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{clz}{clz}}
+{\footnotesize\ttfamily \#define clz(\begin{DoxyParamCaption}\item[{}]{u }\end{DoxyParamCaption})}
+
+
+
+Counts the leading zero bits of the given value considered as a 32-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u} & Value of which to count the leading zero bits.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The count of leading zero bits in {\itshape u}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga85a3ab5701281268521f109ed0078668}\label{group__group__sam0__utils_ga85a3ab5701281268521f109ed0078668}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!COMPILER\_PRAGMA@{COMPILER\_PRAGMA}}
+\index{COMPILER\_PRAGMA@{COMPILER\_PRAGMA}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{COMPILER\_PRAGMA}{COMPILER\_PRAGMA}}
+{\footnotesize\ttfamily \#define COMPILER\+\_\+\+PRAGMA(\begin{DoxyParamCaption}\item[{}]{arg }\end{DoxyParamCaption})~\+\_\+\+Pragma(\#arg)}
+
+
+
+Emit the compiler pragma {\itshape arg}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em arg} & The pragma directive as it would appear after {\itshape \#pragma} (i.\+e. not stringified). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}\label{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!ctz@{ctz}}
+\index{ctz@{ctz}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{ctz}{ctz}}
+{\footnotesize\ttfamily \#define ctz(\begin{DoxyParamCaption}\item[{}]{u }\end{DoxyParamCaption})}
+
+
+
+Counts the trailing zero bits of the given value considered as a 32-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u} & Value of which to count the trailing zero bits.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The count of trailing zero bits in {\itshape u}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga6d4ebd841bc96041a7f3a61e227c1fb2}\label{group__group__sam0__utils_ga6d4ebd841bc96041a7f3a61e227c1fb2}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!div\_ceil@{div\_ceil}}
+\index{div\_ceil@{div\_ceil}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{div\_ceil}{div\_ceil}}
+{\footnotesize\ttfamily \#define div\+\_\+ceil(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) + (b) -\/ 1) / (b))}
+
+
+
+Calculate $ \left\lceil \frac{a}{b} \right\rceil $ using integer arithmetic. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & An integer \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Another integer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+({\itshape a} / {\itshape b}) rounded up to the nearest integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga526bddb313be14057f5d65e199f6d814}\label{group__group__sam0__utils_ga526bddb313be14057f5d65e199f6d814}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Get\_align@{Get\_align}}
+\index{Get\_align@{Get\_align}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Get\_align}{Get\_align}}
+{\footnotesize\ttfamily \#define Get\+\_\+align(\begin{DoxyParamCaption}\item[{}]{val,  }\item[{}]{n }\end{DoxyParamCaption})~(  \mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}( val, (n) -\/ 1     )   )}
+
+
+
+Gets alignment of the number {\itshape val} with respect to the {\itshape n} boundary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & Input value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & Boundary.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Alignment of the number {\itshape val} with respect to the {\itshape n} boundary. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga15892ad6884af110e5eaaa96994ebaa9}\label{group__group__sam0__utils_ga15892ad6884af110e5eaaa96994ebaa9}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!is\_constant@{is\_constant}}
+\index{is\_constant@{is\_constant}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{is\_constant}{is\_constant}}
+{\footnotesize\ttfamily \#define is\+\_\+constant(\begin{DoxyParamCaption}\item[{}]{exp }\end{DoxyParamCaption})~(0)}
+
+
+
+Determine if an expression evaluates to a constant value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em exp} & Any expression\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape exp} is constant, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga5b759626f343cc1af9159cc02b763837}\label{group__group__sam0__utils_ga5b759626f343cc1af9159cc02b763837}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Long\_call@{Long\_call}}
+\index{Long\_call@{Long\_call}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Long\_call}{Long\_call}}
+{\footnotesize\ttfamily \#define Long\+\_\+call(\begin{DoxyParamCaption}\item[{}]{addr }\end{DoxyParamCaption})~(($\ast$(void ($\ast$)(void))(addr))())}
+
+
+
+Calls the routine at address {\itshape addr}. 
+
+It generates a long call opcode.
+
+For example, `\mbox{\hyperlink{group__group__sam0__utils_ga5b759626f343cc1af9159cc02b763837}{Long\+\_\+call(0x80000000)}}' generates a software reset on a UC3 if it is invoked from the CPU supervisor mode.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em addr} & Address of the routine to call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+It may be used as a long jump opcode in some special cases. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_ga4886a8f966a69949cefc46a6a3468006}\label{group__group__sam0__utils_ga4886a8f966a69949cefc46a6a3468006}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Max@{Max}}
+\index{Max@{Max}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Max}{Max}}
+{\footnotesize\ttfamily \#define Max(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $>$ (b)) ?  (a) \+: (b))}
+
+
+
+Takes the maximal value of {\itshape a} and {\itshape b}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Input value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Input value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Maximal value of {\itshape a} and {\itshape b}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values known at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_gaffe776513b24d84b39af8ab0930fef7f}\label{group__group__sam0__utils_gaffe776513b24d84b39af8ab0930fef7f}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!max@{max}}
+\index{max@{max}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily \#define max(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~\mbox{\hyperlink{group__group__sam0__utils_ga4886a8f966a69949cefc46a6a3468006}{Max}}(a, b)}
+
+
+
+Takes the maximal value of {\itshape a} and {\itshape b}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Input value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Input value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Maximal value of {\itshape a} and {\itshape b}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values unknown at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_gab914bad47205a9b7afb9ac53ec71cb55}\label{group__group__sam0__utils_gab914bad47205a9b7afb9ac53ec71cb55}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!memcmp\_code2ram@{memcmp\_code2ram}}
+\index{memcmp\_code2ram@{memcmp\_code2ram}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{memcmp\_code2ram}{memcmp\_code2ram}}
+{\footnotesize\ttfamily \#define memcmp\+\_\+code2ram~memcmp}
+
+Target-\/specific memcmp of RAM to NVRAM. \mbox{\Hypertarget{group__group__sam0__utils_ga27819e952caa0a535a5901d2857834b7}\label{group__group__sam0__utils_ga27819e952caa0a535a5901d2857834b7}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!memcmp\_ram2ram@{memcmp\_ram2ram}}
+\index{memcmp\_ram2ram@{memcmp\_ram2ram}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{memcmp\_ram2ram}{memcmp\_ram2ram}}
+{\footnotesize\ttfamily \#define memcmp\+\_\+ram2ram~memcmp}
+
+Target-\/specific memcmp of RAM to RAM. \mbox{\Hypertarget{group__group__sam0__utils_ga55724cc8f7d42eba122dac5bffa00024}\label{group__group__sam0__utils_ga55724cc8f7d42eba122dac5bffa00024}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!memcpy\_code2ram@{memcpy\_code2ram}}
+\index{memcpy\_code2ram@{memcpy\_code2ram}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{memcpy\_code2ram}{memcpy\_code2ram}}
+{\footnotesize\ttfamily \#define memcpy\+\_\+code2ram~memcpy}
+
+Target-\/specific memcpy from NVRAM to RAM. \mbox{\Hypertarget{group__group__sam0__utils_ga9a4ff08e7c4cf79135a3bcbab68472b7}\label{group__group__sam0__utils_ga9a4ff08e7c4cf79135a3bcbab68472b7}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!memcpy\_ram2ram@{memcpy\_ram2ram}}
+\index{memcpy\_ram2ram@{memcpy\_ram2ram}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{memcpy\_ram2ram}{memcpy\_ram2ram}}
+{\footnotesize\ttfamily \#define memcpy\+\_\+ram2ram~memcpy}
+
+Target-\/specific memcpy from RAM to RAM. \mbox{\Hypertarget{group__group__sam0__utils_ga9e04209162ea72f9985338596262b657}\label{group__group__sam0__utils_ga9e04209162ea72f9985338596262b657}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Min@{Min}}
+\index{Min@{Min}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Min}{Min}}
+{\footnotesize\ttfamily \#define Min(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $<$ (b)) ?  (a) \+: (b))}
+
+
+
+Takes the minimal value of {\itshape a} and {\itshape b}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Input value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Input value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Minimal value of {\itshape a} and {\itshape b}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values known at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_gac6afabdc09a49a433ee19d8a9486056d}\label{group__group__sam0__utils_gac6afabdc09a49a433ee19d8a9486056d}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!min@{min}}
+\index{min@{min}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily \#define min(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~\mbox{\hyperlink{group__group__sam0__utils_ga9e04209162ea72f9985338596262b657}{Min}}(a, b)}
+
+
+
+Takes the minimal value of {\itshape a} and {\itshape b}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Input value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Input value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Minimal value of {\itshape a} and {\itshape b}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values unknown at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_gaa7ee388a5bd843e5e0ba3d194bc1d8a4}\label{group__group__sam0__utils_gaa7ee388a5bd843e5e0ba3d194bc1d8a4}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Rd\_bitfield@{Rd\_bitfield}}
+\index{Rd\_bitfield@{Rd\_bitfield}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Rd\_bitfield}{Rd\_bitfield}}
+{\footnotesize\ttfamily \#define Rd\+\_\+bitfield(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{mask }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}( value, mask) $>$$>$ \mbox{\hyperlink{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}{ctz}}(mask))}
+
+
+
+Reads the bit-\/field of a value specified by a given bit-\/mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to read a bit-\/field from. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Bit-\/mask indicating the bit-\/field to read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Read bit-\/field. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}\label{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Rd\_bits@{Rd\_bits}}
+\index{Rd\_bits@{Rd\_bits}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Rd\_bits}{Rd\_bits}}
+{\footnotesize\ttfamily \#define Rd\+\_\+bits(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{mask }\end{DoxyParamCaption})~((value) \& (mask))}
+
+
+
+Reads the bits of a value specified by a given bit-\/mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to read bits from. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Bit-\/mask indicating bits to read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Read bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_gad607b0e4ad3cf4cb5bd7a3619742f092}\label{group__group__sam0__utils_gad607b0e4ad3cf4cb5bd7a3619742f092}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Set\_align@{Set\_align}}
+\index{Set\_align@{Set\_align}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Set\_align}{Set\_align}}
+{\footnotesize\ttfamily \#define Set\+\_\+align(\begin{DoxyParamCaption}\item[{}]{lval,  }\item[{}]{n,  }\item[{}]{alg }\end{DoxyParamCaption})~(  \mbox{\hyperlink{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}{Wr\+\_\+bits}}(lval, (n) -\/ 1, alg)   )}
+
+
+
+Sets alignment of the lvalue number {\itshape lval} to {\itshape alg} with respect to the {\itshape n} boundary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lval} & Input/output lvalue. \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & Boundary. \\
+\hline
+\mbox{\texttt{ in}}  & {\em alg} & Alignment.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New value of {\itshape lval} resulting from its alignment set to {\itshape alg} with respect to the {\itshape n} boundary. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga589436fa123e32e1063488ebd7fdc923}\label{group__group__sam0__utils_ga589436fa123e32e1063488ebd7fdc923}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Set\_bits@{Set\_bits}}
+\index{Set\_bits@{Set\_bits}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Set\_bits}{Set\_bits}}
+{\footnotesize\ttfamily \#define Set\+\_\+bits(\begin{DoxyParamCaption}\item[{}]{lvalue,  }\item[{}]{mask }\end{DoxyParamCaption})~((lvalue) $\vert$=  (mask))}
+
+
+
+Sets the bits of a C lvalue specified by a given bit-\/mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lvalue} & C lvalue of which to set bits. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Bit-\/mask indicating bits to set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting value with set bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_gadc9a009f53db3e7c3294ee6bc1027dca}\label{group__group__sam0__utils_gadc9a009f53db3e7c3294ee6bc1027dca}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Swap16@{Swap16}}
+\index{Swap16@{Swap16}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Swap16}{Swap16}}
+{\footnotesize\ttfamily \#define Swap16(\begin{DoxyParamCaption}\item[{}]{u16 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                           ((uint16\_t)(((uint16\_t)(u16) >> 8) |\(\backslash\)}
+\DoxyCodeLine{                           ((uint16\_t)(u16) << 8)))}
+
+\end{DoxyCode}
+
+
+Toggles the endianism of {\itshape u16} (by swapping its bytes). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u16} & U16 of which to toggle the endianism.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u16} with toggled endianism.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values known at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}\label{group__group__sam0__utils_ga3067f71c33a89726a107430050253045}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!swap16@{swap16}}
+\index{swap16@{swap16}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{swap16}{swap16}}
+{\footnotesize\ttfamily \#define swap16(\begin{DoxyParamCaption}\item[{}]{u16 }\end{DoxyParamCaption})~\mbox{\hyperlink{group__group__sam0__utils_gadc9a009f53db3e7c3294ee6bc1027dca}{Swap16}}(u16)}
+
+
+
+Toggles the endianism of {\itshape u16} (by swapping its bytes). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u16} & U16 of which to toggle the endianism.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u16} with toggled endianism.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values unknown at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_ga5e9bc2e3b3e43eadc3210b02cab6ac64}\label{group__group__sam0__utils_ga5e9bc2e3b3e43eadc3210b02cab6ac64}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Swap32@{Swap32}}
+\index{Swap32@{Swap32}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Swap32}{Swap32}}
+{\footnotesize\ttfamily \#define Swap32(\begin{DoxyParamCaption}\item[{}]{u32 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                           ((uint32\_t)(((uint32\_t)\mbox{\hyperlink{group__group__sam0__utils_gadc9a009f53db3e7c3294ee6bc1027dca}{Swap16}}((uint32\_t)(u32) >> 16)) |\(\backslash\)}
+\DoxyCodeLine{                           ((uint32\_t)\mbox{\hyperlink{group__group__sam0__utils_gadc9a009f53db3e7c3294ee6bc1027dca}{Swap16}}((uint32\_t)(u32)) << 16)))}
+
+\end{DoxyCode}
+
+
+Toggles the endianism of {\itshape u32} (by swapping its bytes). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u32} & U32 of which to toggle the endianism.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u32} with toggled endianism.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values known at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}\label{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!swap32@{swap32}}
+\index{swap32@{swap32}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{swap32}{swap32}}
+{\footnotesize\ttfamily \#define swap32(\begin{DoxyParamCaption}\item[{}]{u32 }\end{DoxyParamCaption})~\mbox{\hyperlink{group__group__sam0__utils_ga5e9bc2e3b3e43eadc3210b02cab6ac64}{Swap32}}(u32)}
+
+
+
+Toggles the endianism of {\itshape u32} (by swapping its bytes). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u32} & U32 of which to toggle the endianism.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u32} with toggled endianism.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values unknown at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_ga33f3049d9b8374e8b93d5642bfe7f426}\label{group__group__sam0__utils_ga33f3049d9b8374e8b93d5642bfe7f426}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Swap64@{Swap64}}
+\index{Swap64@{Swap64}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Swap64}{Swap64}}
+{\footnotesize\ttfamily \#define Swap64(\begin{DoxyParamCaption}\item[{}]{u64 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                           ((uint64\_t)(((uint64\_t)\mbox{\hyperlink{group__group__sam0__utils_ga5e9bc2e3b3e43eadc3210b02cab6ac64}{Swap32}}((uint64\_t)(u64) >> 32)) |\(\backslash\)}
+\DoxyCodeLine{                           ((uint64\_t)\mbox{\hyperlink{group__group__sam0__utils_ga5e9bc2e3b3e43eadc3210b02cab6ac64}{Swap32}}((uint64\_t)(u64)) << 32)))}
+
+\end{DoxyCode}
+
+
+Toggles the endianism of {\itshape u64} (by swapping its bytes). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u64} & U64 of which to toggle the endianism.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u64} with toggled endianism.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values known at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_ga78484801bd5bea7d382b34a4ed1f345d}\label{group__group__sam0__utils_ga78484801bd5bea7d382b34a4ed1f345d}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!swap64@{swap64}}
+\index{swap64@{swap64}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{swap64}{swap64}}
+{\footnotesize\ttfamily \#define swap64(\begin{DoxyParamCaption}\item[{}]{u64 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                         ((uint64\_t)(((uint64\_t)\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}((uint64\_t)(u64) >> 32)) |\(\backslash\)}
+\DoxyCodeLine{                         ((uint64\_t)\mbox{\hyperlink{group__group__sam0__utils_ga46025d8a12ccc9f4268c84e56c457416}{swap32}}((uint64\_t)(u64)) << 32)))}
+
+\end{DoxyCode}
+
+
+Toggles the endianism of {\itshape u64} (by swapping its bytes). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em u64} & U64 of which to toggle the endianism.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value resulting from {\itshape u64} with toggled endianism.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+More optimized if only used with values unknown at compile time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils_gad490b657cb147d3d1773f6559559b98b}\label{group__group__sam0__utils_gad490b657cb147d3d1773f6559559b98b}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Test\_align@{Test\_align}}
+\index{Test\_align@{Test\_align}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Test\_align}{Test\_align}}
+{\footnotesize\ttfamily \#define Test\+\_\+align(\begin{DoxyParamCaption}\item[{}]{val,  }\item[{}]{n }\end{DoxyParamCaption})~(!\mbox{\hyperlink{group__group__sam0__utils_gab1e92741077b101e6b2df74880e71e96}{Tst\+\_\+bits}}( val, (n) -\/ 1     )   )}
+
+
+
+Tests alignment of the number {\itshape val} with the {\itshape n} boundary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & Input value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & Boundary.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} if the number {\itshape val} is aligned with the {\itshape n} boundary, else {\ttfamily 0}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga9f29d1e990286322697ae8d0f4e365e0}\label{group__group__sam0__utils_ga9f29d1e990286322697ae8d0f4e365e0}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Tgl\_bits@{Tgl\_bits}}
+\index{Tgl\_bits@{Tgl\_bits}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Tgl\_bits}{Tgl\_bits}}
+{\footnotesize\ttfamily \#define Tgl\+\_\+bits(\begin{DoxyParamCaption}\item[{}]{lvalue,  }\item[{}]{mask }\end{DoxyParamCaption})~((lvalue) $^\wedge$=  (mask))}
+
+
+
+Toggles the bits of a C lvalue specified by a given bit-\/mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lvalue} & C lvalue of which to toggle bits. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Bit-\/mask indicating bits to toggle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting value with toggled bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_gab1e92741077b101e6b2df74880e71e96}\label{group__group__sam0__utils_gab1e92741077b101e6b2df74880e71e96}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Tst\_bits@{Tst\_bits}}
+\index{Tst\_bits@{Tst\_bits}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Tst\_bits}{Tst\_bits}}
+{\footnotesize\ttfamily \#define Tst\+\_\+bits(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{mask }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__group__sam0__utils_ga53d9294b7065346ffa04d7991d2bc31e}{Rd\+\_\+bits}}(value, mask) != 0)}
+
+
+
+Tests the bits of a value specified by a given bit-\/mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value of which to test bits. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Bit-\/mask indicating bits to test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} if at least one of the tested bits is set, else {\ttfamily 0}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_gaa2ede64db1455ec339cd8a3303647644}\label{group__group__sam0__utils_gaa2ede64db1455ec339cd8a3303647644}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Wr\_bitfield@{Wr\_bitfield}}
+\index{Wr\_bitfield@{Wr\_bitfield}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Wr\_bitfield}{Wr\_bitfield}}
+{\footnotesize\ttfamily \#define Wr\+\_\+bitfield(\begin{DoxyParamCaption}\item[{}]{lvalue,  }\item[{}]{mask,  }\item[{}]{bitfield }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}{Wr\+\_\+bits}}(lvalue, mask, (uint32\+\_\+t)(bitfield) $<$$<$ \mbox{\hyperlink{group__group__sam0__utils_gab069bfec305db5213465d3b689836404}{ctz}}(mask)))}
+
+
+
+Writes the bit-\/field of a C lvalue specified by a given bit-\/mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lvalue} & C lvalue to write a bit-\/field to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Bit-\/mask indicating the bit-\/field to write. \\
+\hline
+\mbox{\texttt{ in}}  & {\em bitfield} & Bit-\/field to write.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting value with written bit-\/field. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}\label{group__group__sam0__utils_ga97b2bc0b5cdc7ec5293b7a5304cee0f0}} 
+\index{Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}!Wr\_bits@{Wr\_bits}}
+\index{Wr\_bits@{Wr\_bits}!Compiler abstraction layer and code utilities@{Compiler abstraction layer and code utilities}}
+\doxysubsubsection{\texorpdfstring{Wr\_bits}{Wr\_bits}}
+{\footnotesize\ttfamily \#define Wr\+\_\+bits(\begin{DoxyParamCaption}\item[{}]{lvalue,  }\item[{}]{mask,  }\item[{}]{bits }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                 ((lvalue) = ((lvalue) \& \string~(mask)) |\(\backslash\)}
+\DoxyCodeLine{                                                 ((bits  ) \&  (mask)))}
+
+\end{DoxyCode}
+
+
+Writes the bits of a C lvalue specified by a given bit-\/mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lvalue} & C lvalue to write bits to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & Bit-\/mask indicating bits to write. \\
+\hline
+\mbox{\texttt{ in}}  & {\em bits} & Bits to write.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting value with written bits. 
+\end{DoxyReturn}

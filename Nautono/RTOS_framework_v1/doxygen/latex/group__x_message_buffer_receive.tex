@@ -1,0 +1,54 @@
+\hypertarget{group__x_message_buffer_receive}{}\doxysection{x\+Message\+Buffer\+Receive}
+\label{group__x_message_buffer_receive}\index{xMessageBufferReceive@{xMessageBufferReceive}}
+\mbox{\hyperlink{message__buffer_8h_source}{message\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+size\_t xMessageBufferReceive( MessageBufferHandle\_t xMessageBuffer,                               void *pvRxData,                               size\_t xBufferLengthBytes,                               TickType\_t xTicksToWait );
+\end{DoxyPre}
+
+
+Receives a discrete message from a message buffer. Messages can be of variable length and are copied out of the buffer.
+
+{\itshape {\bfseries{NOTE}}}\+: Uniquely among Free\+RTOS objects, the stream buffer implementation (so also the message buffer implementation, as message buffers are built on top of stream buffers) assumes there is only one task or interrupt that will write to the buffer (the writer), and only one task or interrupt that will read from the buffer (the reader). It is safe for the writer and reader to be different tasks or interrupts, but, unlike other Free\+RTOS objects, it is not safe to have multiple different writers or multiple different readers. If there are to be multiple different writers then the application writer must place each call to a writing API function (such as x\+Message\+Buffer\+Send()) inside a critical section and set the send block time to 0. Likewise, if there are to be multiple different readers then the application writer must place each call to a reading API function (such as x\+Message\+Buffer\+Read()) inside a critical section and set the receive block time to 0.
+
+Use x\+Message\+Buffer\+Receive() to read from a message buffer from a task. Use x\+Message\+Buffer\+Receive\+From\+ISR() to read from a message buffer from an interrupt service routine (ISR).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Message\+Buffer} & The handle of the message buffer from which a message is being received.\\
+\hline
+{\em pv\+Rx\+Data} & A pointer to the buffer into which the received message is to be copied.\\
+\hline
+{\em x\+Buffer\+Length\+Bytes} & The length of the buffer pointed to by the pv\+Rx\+Data parameter. This sets the maximum length of the message that can be received. If x\+Buffer\+Length\+Bytes is too small to hold the next message then the message will be left in the message buffer and 0 will be returned.\\
+\hline
+{\em x\+Ticks\+To\+Wait} & The maximum amount of time the task should remain in the Blocked state to wait for a message, should the message buffer be empty. x\+Message\+Buffer\+Receive() will return immediately if x\+Ticks\+To\+Wait is zero and the message buffer is empty. The block time is specified in tick periods, so the absolute time it represents is dependent on the tick frequency. The macro pd\+MS\+\_\+\+TO\+\_\+\+TICKS() can be used to convert a time specified in milliseconds into a time specified in ticks. Setting x\+Ticks\+To\+Wait to port\+MAX\+\_\+\+DELAY will cause the task to wait indefinitely (without timing out), provided INCLUDE\+\_\+v\+Task\+Suspend is set to 1 in \mbox{\hyperlink{_free_r_t_o_s_config_8h_source}{Free\+RTOSConfig.\+h}}. Tasks do not use any CPU time when they are in the Blocked state.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length, in bytes, of the message read from the message buffer, if any. If x\+Message\+Buffer\+Receive() times out before a message became available then zero is returned. If the length of the message is greater than x\+Buffer\+Length\+Bytes then the message will be left in the message buffer and zero is returned.
+\end{DoxyReturn}
+Example use\+: 
+\begin{DoxyPre}
+void vAFunction( MessageBuffer\_t xMessageBuffer )
+\{
+uint8\_t ucRxData[ 20 ];
+size\_t xReceivedBytes;
+const TickType\_t xBlockTime = pdMS\_TO\_TICKS( 20 );
+
+    // Receive the next message from the message buffer.  Wait in the Blocked
+    // state (so not using any CPU processing time) for a maximum of 100ms for
+    // a message to become available.
+    xReceivedBytes = xMessageBufferReceive( xMessageBuffer,
+                                            ( void * ) ucRxData,
+                                            sizeof( ucRxData ),
+                                            xBlockTime );
+
+    if( xReceivedBytes > 0 )
+    \{
+        // A ucRxData contains a message that is xReceivedBytes long.  Process
+        // the message here....
+    \}
+\}
+\end{DoxyPre}
+ 

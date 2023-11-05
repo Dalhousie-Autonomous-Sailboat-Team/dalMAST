@@ -1,0 +1,49 @@
+\hypertarget{instance_2eic_8h_source}{}\doxysection{eic.\+h}
+\label{instance_2eic_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/eic.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/eic.h}}
+\mbox{\hyperlink{instance_2eic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_EIC\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_EIC\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for EIC peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_EIC\_CTRL               (0x40001800U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_EIC\_STATUS             (0x40001801U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_EIC\_NMICTRL            (0x40001802U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_EIC\_NMIFLAG            (0x40001803U) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_EIC\_EVCTRL             (0x40001804U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_EIC\_INTENCLR           (0x40001808U) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_EIC\_INTENSET           (0x4000180CU) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_EIC\_INTFLAG            (0x40001810U) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_EIC\_WAKEUP             (0x40001814U) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_EIC\_CONFIG0            (0x40001818U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_EIC\_CONFIG1            (0x4000181CU) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_EIC\_CTRL               (*(RwReg8 *)0x40001800U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_EIC\_STATUS             (*(RoReg8 *)0x40001801U) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_EIC\_NMICTRL            (*(RwReg8 *)0x40001802U) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_EIC\_NMIFLAG            (*(RwReg8 *)0x40001803U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_EIC\_EVCTRL             (*(RwReg  *)0x40001804U) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_EIC\_INTENCLR           (*(RwReg  *)0x40001808U) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_EIC\_INTENSET           (*(RwReg  *)0x4000180CU) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define REG\_EIC\_INTFLAG            (*(RwReg  *)0x40001810U) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define REG\_EIC\_WAKEUP             (*(RwReg  *)0x40001814U) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define REG\_EIC\_CONFIG0            (*(RwReg  *)0x40001818U) }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define REG\_EIC\_CONFIG1            (*(RwReg  *)0x4000181CU) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{/* ========== Instance parameters for EIC peripheral ========== */}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define EIC\_CONFIG\_NUM              2        }\textcolor{comment}{// Number of CONFIG registers}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define EIC\_EXTINT\_NUM              16       }\textcolor{comment}{// Number of External Interrupts}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define EIC\_GCLK\_ID                 3        }\textcolor{comment}{// Index of Generic Clock}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define EIC\_NUMBER\_OF\_CONFIG\_REGS   2        }\textcolor{comment}{// Number of CONFIG registers (obsolete)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define EIC\_NUMBER\_OF\_INTERRUPTS    16       }\textcolor{comment}{// Number of External Interrupts (obsolete)}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_EIC\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

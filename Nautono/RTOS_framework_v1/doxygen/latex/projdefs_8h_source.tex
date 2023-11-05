@@ -1,0 +1,131 @@
+\hypertarget{projdefs_8h_source}{}\doxysection{projdefs.\+h}
+\label{projdefs_8h_source}\index{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/projdefs.h@{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/projdefs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * FreeRTOS Kernel V10.0.0}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining a copy of}}
+\DoxyCodeLine{6 \textcolor{comment}{ * this software and associated documentation files (the "{}Software"{}), to deal in}}
+\DoxyCodeLine{7 \textcolor{comment}{ * the Software without restriction, including without limitation the rights to}}
+\DoxyCodeLine{8 \textcolor{comment}{ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of}}
+\DoxyCodeLine{9 \textcolor{comment}{ * the Software, and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * The above copyright notice and this permission notice shall be included in all}}
+\DoxyCodeLine{13 \textcolor{comment}{ * copies or substantial portions of the Software. If you wish to use our Amazon}}
+\DoxyCodeLine{14 \textcolor{comment}{ * FreeRTOS name, please do so in a fair use way that does not cause confusion.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{17 \textcolor{comment}{ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS}}
+\DoxyCodeLine{18 \textcolor{comment}{ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR}}
+\DoxyCodeLine{19 \textcolor{comment}{ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER}}
+\DoxyCodeLine{20 \textcolor{comment}{ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN}}
+\DoxyCodeLine{21 \textcolor{comment}{ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * http://www.FreeRTOS.org}}
+\DoxyCodeLine{24 \textcolor{comment}{ * http://aws.amazon.com/freertos}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ * 1 tab == 4 spaces!}}
+\DoxyCodeLine{27 \textcolor{comment}{ */}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef PROJDEFS\_H}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define PROJDEFS\_H}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/*}}
+\DoxyCodeLine{33 \textcolor{comment}{ * Defines the prototype to which task functions must conform.  Defined in this}}
+\DoxyCodeLine{34 \textcolor{comment}{ * file to ensure the type is known before portable.h is included.}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} void (*TaskFunction\_t)( \textcolor{keywordtype}{void} * );}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{/* Converts a time in milliseconds to a time in ticks.  This macro can be}}
+\DoxyCodeLine{39 \textcolor{comment}{overridden by a macro of the same name defined in FreeRTOSConfig.h in case the}}
+\DoxyCodeLine{40 \textcolor{comment}{definition here is not suitable for your application. */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifndef pdMS\_TO\_TICKS}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{    \#define pdMS\_TO\_TICKS( xTimeInMs ) ( ( TickType\_t ) ( ( ( TickType\_t ) ( xTimeInMs ) * ( TickType\_t ) configTICK\_RATE\_HZ ) / ( TickType\_t ) 1000 ) )}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define pdFALSE         ( ( BaseType\_t ) 0 )}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define pdTRUE          ( ( BaseType\_t ) 1 )}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define pdPASS          ( pdTRUE )}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define pdFAIL          ( pdFALSE )}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define errQUEUE\_EMPTY  ( ( BaseType\_t ) 0 )}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define errQUEUE\_FULL   ( ( BaseType\_t ) 0 )}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/* FreeRTOS error definitions. */}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define errCOULD\_NOT\_ALLOCATE\_REQUIRED\_MEMORY   ( -\/1 )}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define errQUEUE\_BLOCKED                        ( -\/4 )}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define errQUEUE\_YIELD                          ( -\/5 )}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{/* Macros used for basic data corruption checks. */}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#ifndef configUSE\_LIST\_DATA\_INTEGRITY\_CHECK\_BYTES}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{    \#define configUSE\_LIST\_DATA\_INTEGRITY\_CHECK\_BYTES 0}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#if( configUSE\_16\_BIT\_TICKS == 1 )}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{    \#define pdINTEGRITY\_CHECK\_VALUE 0x5a5a}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{    \#define pdINTEGRITY\_CHECK\_VALUE 0x5a5a5a5aUL}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{/* The following errno values are used by FreeRTOS+ components, not FreeRTOS}}
+\DoxyCodeLine{70 \textcolor{comment}{itself. */}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_NONE           0   }\textcolor{comment}{/* No errors */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENOENT         2   }\textcolor{comment}{/* No such file or directory */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EINTR          4   }\textcolor{comment}{/* Interrupted system call */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EIO            5   }\textcolor{comment}{/* I/O error */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENXIO          6   }\textcolor{comment}{/* No such device or address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EBADF          9   }\textcolor{comment}{/* Bad file number */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EAGAIN         11  }\textcolor{comment}{/* No more processes */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EWOULDBLOCK    11  }\textcolor{comment}{/* Operation would block */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENOMEM         12  }\textcolor{comment}{/* Not enough memory */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EACCES         13  }\textcolor{comment}{/* Permission denied */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EFAULT         14  }\textcolor{comment}{/* Bad address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EBUSY          16  }\textcolor{comment}{/* Mount device busy */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EEXIST         17  }\textcolor{comment}{/* File exists */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EXDEV          18  }\textcolor{comment}{/* Cross-\/device link */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENODEV         19  }\textcolor{comment}{/* No such device */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENOTDIR        20  }\textcolor{comment}{/* Not a directory */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EISDIR         21  }\textcolor{comment}{/* Is a directory */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EINVAL         22  }\textcolor{comment}{/* Invalid argument */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENOSPC         28  }\textcolor{comment}{/* No space left on device */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ESPIPE         29  }\textcolor{comment}{/* Illegal seek */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EROFS          30  }\textcolor{comment}{/* Read only file system */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EUNATCH        42  }\textcolor{comment}{/* Protocol driver not attached */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EBADE          50  }\textcolor{comment}{/* Invalid exchange */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EFTYPE         79  }\textcolor{comment}{/* Inappropriate file type or format */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENMFILE        89  }\textcolor{comment}{/* No more files */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENOTEMPTY      90  }\textcolor{comment}{/* Directory not empty */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENAMETOOLONG   91  }\textcolor{comment}{/* File or path name too long */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EOPNOTSUPP     95  }\textcolor{comment}{/* Operation not supported on transport endpoint */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENOBUFS        105 }\textcolor{comment}{/* No buffer space available */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENOPROTOOPT    109 }\textcolor{comment}{/* Protocol not available */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EADDRINUSE     112 }\textcolor{comment}{/* Address already in use */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ETIMEDOUT      116 }\textcolor{comment}{/* Connection timed out */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EINPROGRESS    119 }\textcolor{comment}{/* Connection already in progress */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EALREADY       120 }\textcolor{comment}{/* Socket already connected */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EADDRNOTAVAIL  125 }\textcolor{comment}{/* Address not available */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EISCONN        127 }\textcolor{comment}{/* Socket is already connected */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENOTCONN       128 }\textcolor{comment}{/* Socket is not connected */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ENOMEDIUM      135 }\textcolor{comment}{/* No medium inserted */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_EILSEQ         138 }\textcolor{comment}{/* An invalid UTF-\/16 sequence was encountered. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define pdFREERTOS\_ERRNO\_ECANCELED      140 }\textcolor{comment}{/* Operation canceled. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{comment}{/* The following endian values are used by FreeRTOS+ components, not FreeRTOS}}
+\DoxyCodeLine{113 \textcolor{comment}{itself. */}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define pdFREERTOS\_LITTLE\_ENDIAN        0}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define pdFREERTOS\_BIG\_ENDIAN           1}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{comment}{/* Re-\/defining endian values for generic naming. */}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define pdLITTLE\_ENDIAN                 pdFREERTOS\_LITTLE\_ENDIAN}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define pdBIG\_ENDIAN                    pdFREERTOS\_BIG\_ENDIAN}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PROJDEFS\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 }
+
+\end{DoxyCode}

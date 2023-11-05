@@ -1,0 +1,215 @@
+\hypertarget{pinmux_8h_source}{}\doxysection{pinmux.\+h}
+\label{pinmux_8h_source}\index{src/ASF/sam0/drivers/system/pinmux/pinmux.h@{src/ASF/sam0/drivers/system/pinmux/pinmux.h}}
+\mbox{\hyperlink{pinmux_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef PINMUX\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define PINMUX\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{193 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#if (SAML21) || (SAMC20) || (SAMC21) || (SAMD21) || (SAMD10) || (SAMD11) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#  define FEATURE\_SYSTEM\_PINMUX\_DRIVE\_STRENGTH}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define SYSTEM\_PINMUX\_GPIO    (1 << 7)}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{212 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaef5ed797ec6ce6e7f2ca4bafd3f77df2}{system\_pinmux\_pin\_dir}} \{}
+\DoxyCodeLine{215     \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae9eec757570dd8e703060cd249076f29}{SYSTEM\_PINMUX\_PIN\_DIR\_INPUT}},}
+\DoxyCodeLine{218     \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ab20cb484d8d81cea0eccd85608636f8a}{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT}},}
+\DoxyCodeLine{221     \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae7f0fe12708b38583366e7f09c37f413}{SYSTEM\_PINMUX\_PIN\_DIR\_OUTPUT\_WITH\_READBACK}},}
+\DoxyCodeLine{222 \};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{230 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga936e823e4b08dc981d39c273182eb1c6}{system\_pinmux\_pin\_pull}} \{}
+\DoxyCodeLine{232     \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a6de6c84525642ff68da72bc3dd5fad4b}{SYSTEM\_PINMUX\_PIN\_PULL\_NONE}},}
+\DoxyCodeLine{234     \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6ac9fa59589685abc00e18426750100e35}{SYSTEM\_PINMUX\_PIN\_PULL\_UP}},}
+\DoxyCodeLine{236     \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6a0dec6136103bdccb64576c9bf431ae41}{SYSTEM\_PINMUX\_PIN\_PULL\_DOWN}},}
+\DoxyCodeLine{237 \};}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{245 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}{system\_pinmux\_pin\_sample}} \{}
+\DoxyCodeLine{247     \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggac0c5f124b2d0deed3751156f20135994ac6a9b047d924787a9bd6df78eb92bf36}{SYSTEM\_PINMUX\_PIN\_SAMPLE\_CONTINUOUS}},}
+\DoxyCodeLine{249     \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggac0c5f124b2d0deed3751156f20135994ad695b5c51ca3cb2a7c35bb32209325a2}{SYSTEM\_PINMUX\_PIN\_SAMPLE\_ONDEMAND}},}
+\DoxyCodeLine{250 \};}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{259 \textcolor{keyword}{struct }\mbox{\hyperlink{structsystem__pinmux__config}{system\_pinmux\_config}} \{}
+\DoxyCodeLine{263     uint8\_t \mbox{\hyperlink{structsystem__pinmux__config_a0ea0fe95ab984ace216ceeb71b8784f9}{mux\_position}};}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{266     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaef5ed797ec6ce6e7f2ca4bafd3f77df2}{system\_pinmux\_pin\_dir}} \mbox{\hyperlink{structsystem__pinmux__config_a49376a76efa41dfc4a0b27663eb75296}{direction}};}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{269     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga936e823e4b08dc981d39c273182eb1c6}{system\_pinmux\_pin\_pull}} \mbox{\hyperlink{structsystem__pinmux__config_ab9c3289af6faf7aa5bb7f4ab150a56cf}{input\_pull}};}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{275     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__pinmux__config_a254bdc25c9912ebf875fd7f377905bf3}{powersave}};}
+\DoxyCodeLine{276 \};}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{296 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_pinmux\_get\_config\_defaults(}
+\DoxyCodeLine{297         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__pinmux__config}{system\_pinmux\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{298 \{}
+\DoxyCodeLine{299     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{300     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302     \textcolor{comment}{/* Default configuration values */}}
+\DoxyCodeLine{303     config-\/>\mbox{\hyperlink{structsystem__pinmux__config_a0ea0fe95ab984ace216ceeb71b8784f9}{mux\_position}} = \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaf212e7bc2a29cb57ab7b1130e4404a6b}{SYSTEM\_PINMUX\_GPIO}};}
+\DoxyCodeLine{304     config-\/>\mbox{\hyperlink{structsystem__pinmux__config_a49376a76efa41dfc4a0b27663eb75296}{direction}}    = \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggaef5ed797ec6ce6e7f2ca4bafd3f77df2ae9eec757570dd8e703060cd249076f29}{SYSTEM\_PINMUX\_PIN\_DIR\_INPUT}};}
+\DoxyCodeLine{305     config-\/>\mbox{\hyperlink{structsystem__pinmux__config_ab9c3289af6faf7aa5bb7f4ab150a56cf}{input\_pull}}   = \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gga936e823e4b08dc981d39c273182eb1c6ac9fa59589685abc00e18426750100e35}{SYSTEM\_PINMUX\_PIN\_PULL\_UP}};}
+\DoxyCodeLine{306     config-\/>\mbox{\hyperlink{structsystem__pinmux__config_a254bdc25c9912ebf875fd7f377905bf3}{powersave}}    = \textcolor{keyword}{false};}
+\DoxyCodeLine{307 \}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga4aff9a23bc1233d74847bcdee4494439}{system\_pinmux\_pin\_set\_config}}(}
+\DoxyCodeLine{310         \textcolor{keyword}{const} uint8\_t gpio\_pin,}
+\DoxyCodeLine{311         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__pinmux__config}{system\_pinmux\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga7f19e634e8c05c0a84cebaf36054d78e}{system\_pinmux\_group\_set\_config}}(}
+\DoxyCodeLine{314         \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{315         \textcolor{keyword}{const} uint32\_t mask,}
+\DoxyCodeLine{316         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__pinmux__config}{system\_pinmux\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{334 \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{struct_port_group}{PortGroup}}* system\_pinmux\_get\_group\_from\_gpio\_pin(}
+\DoxyCodeLine{335         \textcolor{keyword}{const} uint8\_t gpio\_pin)}
+\DoxyCodeLine{336 \{}
+\DoxyCodeLine{337     uint8\_t port\_index  = (gpio\_pin / 128);}
+\DoxyCodeLine{338     uint8\_t group\_index = (gpio\_pin / 32);}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340     \textcolor{comment}{/* Array of available ports */}}
+\DoxyCodeLine{341     \mbox{\hyperlink{struct_port}{Port}} *\textcolor{keyword}{const} ports[\mbox{\hyperlink{samd20e14_8h_ac581aef3aa2ab0b067ee84aa3443be17}{PORT\_INST\_NUM}}] = \mbox{\hyperlink{samd20e14_8h_a58dbd6d300ad7fca1c3f7a685edd26de}{PORT\_INSTS}};}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343     \textcolor{keywordflow}{if} (port\_index < \mbox{\hyperlink{samd20e14_8h_ac581aef3aa2ab0b067ee84aa3443be17}{PORT\_INST\_NUM}}) \{}
+\DoxyCodeLine{344         \textcolor{keywordflow}{return} \&(ports[port\_index]-\/>\mbox{\hyperlink{struct_port_a4b09978ac42934c6cf96f26829ec1f63}{Group}}[group\_index]);}
+\DoxyCodeLine{345     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{346         \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{347         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{348     \}}
+\DoxyCodeLine{349 \}}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaf01f6297e4699bf54b3df70d29f72593}{system\_pinmux\_group\_set\_input\_sample\_mode}}(}
+\DoxyCodeLine{352         \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{353         \textcolor{keyword}{const} uint32\_t mask,}
+\DoxyCodeLine{354         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}{system\_pinmux\_pin\_sample}} mode);}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{371 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint8\_t system\_pinmux\_pin\_get\_mux\_position(}
+\DoxyCodeLine{372         \textcolor{keyword}{const} uint8\_t gpio\_pin)}
+\DoxyCodeLine{373 \{}
+\DoxyCodeLine{374     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port = system\_pinmux\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{375     uint32\_t pin\_index = (gpio\_pin \% 32);}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377     \textcolor{keywordflow}{if} (!(port-\/>PINCFG[pin\_index].reg \& PORT\_PINCFG\_PMUXEN)) \{}
+\DoxyCodeLine{378         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaf212e7bc2a29cb57ab7b1130e4404a6b}{SYSTEM\_PINMUX\_GPIO}};}
+\DoxyCodeLine{379     \}}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381     uint32\_t pmux\_reg = port-\/>PMUX[pin\_index / 2].reg;}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383     \textcolor{keywordflow}{if} (pin\_index \& 1) \{}
+\DoxyCodeLine{384         \textcolor{keywordflow}{return} (pmux\_reg \& PORT\_PMUX\_PMUXO\_Msk) >> \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2port_8h_a80a28619ad2db553b64d4ce4545368d3}{PORT\_PMUX\_PMUXO\_Pos}};}
+\DoxyCodeLine{385     \}}
+\DoxyCodeLine{386     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{387         \textcolor{keywordflow}{return} (pmux\_reg \& PORT\_PMUX\_PMUXE\_Msk) >> \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2port_8h_a38a4c4871ecabeb4ad36398b73685bac}{PORT\_PMUX\_PMUXE\_Pos}};}
+\DoxyCodeLine{388     \}}
+\DoxyCodeLine{389 \}}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{401 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_pinmux\_pin\_set\_input\_sample\_mode(}
+\DoxyCodeLine{402         \textcolor{keyword}{const} uint8\_t gpio\_pin,}
+\DoxyCodeLine{403         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}{system\_pinmux\_pin\_sample}} mode)}
+\DoxyCodeLine{404 \{}
+\DoxyCodeLine{405     \mbox{\hyperlink{struct_port_group}{PortGroup}}* \textcolor{keyword}{const} port = system\_pinmux\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{406     uint32\_t pin\_index = (gpio\_pin \% 32);}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408     \textcolor{keywordflow}{if} (mode == \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ggac0c5f124b2d0deed3751156f20135994ad695b5c51ca3cb2a7c35bb32209325a2}{SYSTEM\_PINMUX\_PIN\_SAMPLE\_ONDEMAND}}) \{}
+\DoxyCodeLine{409         port-\/>CTRL.reg |= (1 << pin\_index);}
+\DoxyCodeLine{410     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{411         port-\/>CTRL.reg \&= \string~(1 << pin\_index);}
+\DoxyCodeLine{412     \}}
+\DoxyCodeLine{413 \}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#ifdef FEATURE\_SYSTEM\_PINMUX\_DRIVE\_STRENGTH}}
+\DoxyCodeLine{425 \textcolor{keyword}{enum} system\_pinmux\_pin\_strength \{}
+\DoxyCodeLine{427   SYSTEM\_PINMUX\_PIN\_STRENGTH\_NORMAL,}
+\DoxyCodeLine{429   SYSTEM\_PINMUX\_PIN\_STRENGTH\_HIGH,}
+\DoxyCodeLine{430 \};}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{441 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_pinmux\_pin\_set\_output\_strength(}
+\DoxyCodeLine{442     \textcolor{keyword}{const} uint8\_t gpio\_pin,}
+\DoxyCodeLine{443     \textcolor{keyword}{const} \textcolor{keyword}{enum} system\_pinmux\_pin\_strength mode)}
+\DoxyCodeLine{444 \{}
+\DoxyCodeLine{445   \mbox{\hyperlink{struct_port_group}{PortGroup}}* \textcolor{keyword}{const} port = system\_pinmux\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{446   uint32\_t pin\_index = (gpio\_pin \% 32);}
+\DoxyCodeLine{447 }
+\DoxyCodeLine{448   \textcolor{keywordflow}{if} (mode == SYSTEM\_PINMUX\_PIN\_STRENGTH\_HIGH) \{}
+\DoxyCodeLine{449     port-\/>PINCFG[pin\_index].reg |=  PORT\_PINCFG\_DRVSTR;}
+\DoxyCodeLine{450   \}}
+\DoxyCodeLine{451  \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{452     port-\/>PINCFG[pin\_index].reg \&= \string~PORT\_PINCFG\_DRVSTR;}
+\DoxyCodeLine{453  \}}
+\DoxyCodeLine{454 \}}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456 \textcolor{keywordtype}{void} system\_pinmux\_group\_set\_output\_strength(}
+\DoxyCodeLine{457     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{458     \textcolor{keyword}{const} uint32\_t mask,}
+\DoxyCodeLine{459     \textcolor{keyword}{const} \textcolor{keyword}{enum} system\_pinmux\_pin\_strength mode);}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#ifdef FEATURE\_SYSTEM\_PINMUX\_SLEWRATE\_LIMITER}}
+\DoxyCodeLine{470 \textcolor{keyword}{enum} system\_pinmux\_pin\_slew\_rate \{}
+\DoxyCodeLine{472   SYSTEM\_PINMUX\_PIN\_SLEW\_RATE\_NORMAL,}
+\DoxyCodeLine{474   SYSTEM\_PINMUX\_PIN\_SLEW\_RATE\_LIMITED,}
+\DoxyCodeLine{475 \};}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{487 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_pinmux\_pin\_set\_output\_slew\_rate(}
+\DoxyCodeLine{488     \textcolor{keyword}{const} uint8\_t gpio\_pin,}
+\DoxyCodeLine{489     \textcolor{keyword}{const} \textcolor{keyword}{enum} system\_pinmux\_pin\_slew\_rate mode)}
+\DoxyCodeLine{490 \{}
+\DoxyCodeLine{491   \mbox{\hyperlink{struct_port_group}{PortGroup}}* \textcolor{keyword}{const} port = system\_pinmux\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{492   uint32\_t pin\_index = (gpio\_pin \% 32);}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{494   \textcolor{keywordflow}{if} (mode == SYSTEM\_PINMUX\_PIN\_SLEW\_RATE\_LIMITED) \{}
+\DoxyCodeLine{495     port-\/>PINCFG[pin\_index].reg |=  PORT\_PINCFG\_SLEWLIM;}
+\DoxyCodeLine{496   \}}
+\DoxyCodeLine{497   \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{498     port-\/>PINCFG[pin\_index].reg \&= \string~PORT\_PINCFG\_SLEWLIM;}
+\DoxyCodeLine{499   \}}
+\DoxyCodeLine{500 \}}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502 \textcolor{keywordtype}{void} system\_pinmux\_group\_set\_output\_slew\_rate(}
+\DoxyCodeLine{503    \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{504     \textcolor{keyword}{const} uint32\_t mask,}
+\DoxyCodeLine{505     \textcolor{keyword}{const} \textcolor{keyword}{enum} system\_pinmux\_pin\_slew\_rate mode);}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#ifdef FEATURE\_SYSTEM\_PINMUX\_OPEN\_DRAIN}}
+\DoxyCodeLine{515 \textcolor{keyword}{enum} system\_pinmux\_pin\_drive \{}
+\DoxyCodeLine{517   SYSTEM\_PINMUX\_PIN\_DRIVE\_TOTEM,}
+\DoxyCodeLine{519   SYSTEM\_PINMUX\_PIN\_DRIVE\_OPEN\_DRAIN,}
+\DoxyCodeLine{520 \};}
+\DoxyCodeLine{521 }
+\DoxyCodeLine{531 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_pinmux\_pin\_set\_output\_drive(}
+\DoxyCodeLine{532     \textcolor{keyword}{const} uint8\_t gpio\_pin,}
+\DoxyCodeLine{533     \textcolor{keyword}{const} \textcolor{keyword}{enum} system\_pinmux\_pin\_drive mode)}
+\DoxyCodeLine{534 \{}
+\DoxyCodeLine{535   \mbox{\hyperlink{struct_port_group}{PortGroup}}* \textcolor{keyword}{const} port = system\_pinmux\_get\_group\_from\_gpio\_pin(gpio\_pin);}
+\DoxyCodeLine{536   uint32\_t pin\_index = (gpio\_pin \% 32);}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538   \textcolor{keywordflow}{if} (mode == SYSTEM\_PINMUX\_PIN\_DRIVE\_OPEN\_DRAIN) \{}
+\DoxyCodeLine{539     port-\/>PINCFG[pin\_index].reg |=  PORT\_PINCFG\_ODRAIN;}
+\DoxyCodeLine{540   \}}
+\DoxyCodeLine{541   \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{542     port-\/>PINCFG[pin\_index].reg \&= \string~PORT\_PINCFG\_ODRAIN;}
+\DoxyCodeLine{543   \}}
+\DoxyCodeLine{544 \}}
+\DoxyCodeLine{545 }
+\DoxyCodeLine{546 \textcolor{keywordtype}{void} system\_pinmux\_group\_set\_output\_drive(}
+\DoxyCodeLine{547     \mbox{\hyperlink{struct_port_group}{PortGroup}} *\textcolor{keyword}{const} port,}
+\DoxyCodeLine{548     \textcolor{keyword}{const} uint32\_t mask,}
+\DoxyCodeLine{549     \textcolor{keyword}{const} \textcolor{keyword}{enum} system\_pinmux\_pin\_drive mode);}
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{553 \}}
+\DoxyCodeLine{554 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{669 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

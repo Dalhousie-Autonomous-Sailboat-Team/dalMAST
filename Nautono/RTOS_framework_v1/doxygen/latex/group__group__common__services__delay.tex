@@ -1,0 +1,81 @@
+\hypertarget{group__group__common__services__delay}{}\doxysection{Busy-\/\+Wait Delay Routines}
+\label{group__group__common__services__delay}\index{Busy-\/Wait Delay Routines@{Busy-\/Wait Delay Routines}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__common__services__delay_gafdccadc6c16847907b3252cdef83e8b0}{delay\+\_\+s}}(delay)~((delay) ? cpu\+\_\+delay\+\_\+s(delay) \+: \mbox{\hyperlink{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}{cpu\+\_\+delay\+\_\+us}}(1))
+\begin{DoxyCompactList}\small\item\em Delay in at least specified number of seconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__common__services__delay_gad917a5d772ddbd99ad97a1c999ce40d4}{delay\+\_\+ms}}(delay)~((delay) ? \mbox{\hyperlink{cycle__counter_8h_acdbe5e2991f2b665ef2babea7b978667}{cpu\+\_\+delay\+\_\+ms}}(delay) \+: \mbox{\hyperlink{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}{cpu\+\_\+delay\+\_\+us}}(1))
+\begin{DoxyCompactList}\small\item\em Delay in at least specified number of milliseconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__group__common__services__delay_gaf9a0c0e0f880d818a4c2c3ea9fe8cba1}{delay\+\_\+us}}(delay)~((delay) ? \mbox{\hyperlink{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}{cpu\+\_\+delay\+\_\+us}}(delay) \+: \mbox{\hyperlink{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}{cpu\+\_\+delay\+\_\+us}}(1))
+\begin{DoxyCompactList}\small\item\em Delay in at least specified number of microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__group__common__services__delay_gaf3c040fe31e69be32855715a75e0cda4}{delay\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the delay driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module provides simple loop-\/based delay routines for those applications requiring a brief wait during execution. Common for API ver. 2. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__group__common__services__delay_gad917a5d772ddbd99ad97a1c999ce40d4}\label{group__group__common__services__delay_gad917a5d772ddbd99ad97a1c999ce40d4}} 
+\index{Busy-\/Wait Delay Routines@{Busy-\/Wait Delay Routines}!delay\_ms@{delay\_ms}}
+\index{delay\_ms@{delay\_ms}!Busy-\/Wait Delay Routines@{Busy-\/Wait Delay Routines}}
+\doxysubsubsection{\texorpdfstring{delay\_ms}{delay\_ms}}
+{\footnotesize\ttfamily \#define delay\+\_\+ms(\begin{DoxyParamCaption}\item[{}]{delay }\end{DoxyParamCaption})~((delay) ? \mbox{\hyperlink{cycle__counter_8h_acdbe5e2991f2b665ef2babea7b978667}{cpu\+\_\+delay\+\_\+ms}}(delay) \+: \mbox{\hyperlink{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}{cpu\+\_\+delay\+\_\+us}}(1))}
+
+
+
+Delay in at least specified number of milliseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & Delay in milliseconds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__group__common__services__delay_gafdccadc6c16847907b3252cdef83e8b0}\label{group__group__common__services__delay_gafdccadc6c16847907b3252cdef83e8b0}} 
+\index{Busy-\/Wait Delay Routines@{Busy-\/Wait Delay Routines}!delay\_s@{delay\_s}}
+\index{delay\_s@{delay\_s}!Busy-\/Wait Delay Routines@{Busy-\/Wait Delay Routines}}
+\doxysubsubsection{\texorpdfstring{delay\_s}{delay\_s}}
+{\footnotesize\ttfamily \#define delay\+\_\+s(\begin{DoxyParamCaption}\item[{}]{delay }\end{DoxyParamCaption})~((delay) ? cpu\+\_\+delay\+\_\+s(delay) \+: \mbox{\hyperlink{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}{cpu\+\_\+delay\+\_\+us}}(1))}
+
+
+
+Delay in at least specified number of seconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & Delay in seconds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__group__common__services__delay_gaf9a0c0e0f880d818a4c2c3ea9fe8cba1}\label{group__group__common__services__delay_gaf9a0c0e0f880d818a4c2c3ea9fe8cba1}} 
+\index{Busy-\/Wait Delay Routines@{Busy-\/Wait Delay Routines}!delay\_us@{delay\_us}}
+\index{delay\_us@{delay\_us}!Busy-\/Wait Delay Routines@{Busy-\/Wait Delay Routines}}
+\doxysubsubsection{\texorpdfstring{delay\_us}{delay\_us}}
+{\footnotesize\ttfamily \#define delay\+\_\+us(\begin{DoxyParamCaption}\item[{}]{delay }\end{DoxyParamCaption})~((delay) ? \mbox{\hyperlink{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}{cpu\+\_\+delay\+\_\+us}}(delay) \+: \mbox{\hyperlink{cycle__counter_8h_a25de6f000bcc542a5f3292e369e49681}{cpu\+\_\+delay\+\_\+us}}(1))}
+
+
+
+Delay in at least specified number of microseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & Delay in microseconds \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__group__common__services__delay_gaf3c040fe31e69be32855715a75e0cda4}\label{group__group__common__services__delay_gaf3c040fe31e69be32855715a75e0cda4}} 
+\index{Busy-\/Wait Delay Routines@{Busy-\/Wait Delay Routines}!delay\_init@{delay\_init}}
+\index{delay\_init@{delay\_init}!Busy-\/Wait Delay Routines@{Busy-\/Wait Delay Routines}}
+\doxysubsubsection{\texorpdfstring{delay\_init()}{delay\_init()}}
+{\footnotesize\ttfamily void delay\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the delay driver. 
+
+Not used in cycle mode. 

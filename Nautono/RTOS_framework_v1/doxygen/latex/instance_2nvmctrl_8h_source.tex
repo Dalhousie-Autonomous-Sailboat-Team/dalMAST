@@ -1,0 +1,62 @@
+\hypertarget{instance_2nvmctrl_8h_source}{}\doxysection{nvmctrl.\+h}
+\label{instance_2nvmctrl_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/nvmctrl.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/nvmctrl.h}}
+\mbox{\hyperlink{instance_2nvmctrl_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_NVMCTRL\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_NVMCTRL\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for NVMCTRL peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_CTRLA          (0x41004000U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_CTRLB          (0x41004004U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_PARAM          (0x41004008U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_INTENCLR       (0x4100400CU) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_INTENSET       (0x41004010U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_INTFLAG        (0x41004014U) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_STATUS         (0x41004018U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_ADDR           (0x4100401CU) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_LOCK           (0x41004020U) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_CTRLA          (*(RwReg16*)0x41004000U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_CTRLB          (*(RwReg  *)0x41004004U) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_PARAM          (*(RwReg  *)0x41004008U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_INTENCLR       (*(RwReg8 *)0x4100400CU) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_INTENSET       (*(RwReg8 *)0x41004010U) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_INTFLAG        (*(RwReg8 *)0x41004014U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_STATUS         (*(RwReg16*)0x41004018U) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_ADDR           (*(RwReg  *)0x4100401CU) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_NVMCTRL\_LOCK           (*(RwReg16*)0x41004020U) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{/* ========== Instance parameters for NVMCTRL peripheral ========== */}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define NVMCTRL\_AUX0\_ADDRESS        0x00804000}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define NVMCTRL\_AUX1\_ADDRESS        0x00806000}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define NVMCTRL\_AUX2\_ADDRESS        0x00808000}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define NVMCTRL\_AUX3\_ADDRESS        0x0080A000}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define NVMCTRL\_CLK\_AHB\_ID          4        }\textcolor{comment}{// Index of AHB Clock in PM.AHBMASK register}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define NVMCTRL\_FACTORY\_WORD\_IMPLEMENTED\_MASK 0xC0000007FFFFFFFF}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define NVMCTRL\_FLASH\_SIZE          262144}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define NVMCTRL\_FLASH\_SIZE\_VAR\_B    65536   }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define NVMCTRL\_LOCKBIT\_ADDRESS     0x00802000}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define NVMCTRL\_PAGES               4096}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define NVMCTRL\_PAGES\_VAR\_B         1024     }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define NVMCTRL\_PAGE\_HW             32      }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define NVMCTRL\_PAGE\_SIZE           64      }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define NVMCTRL\_PAGE\_W              16      }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define NVMCTRL\_PMSB                3       }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define NVMCTRL\_PSZ\_BITS            6       }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define NVMCTRL\_ROW\_PAGES           4       }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define NVMCTRL\_ROW\_SIZE            256     }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define NVMCTRL\_TEMP\_LOG\_ADDRESS    0x00806030}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define NVMCTRL\_USER\_PAGE\_ADDRESS   0x00800000}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define NVMCTRL\_USER\_PAGE\_OFFSET    0x00800000}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define NVMCTRL\_USER\_WORD\_IMPLEMENTED\_MASK 0xC01FFFFFFFFFFFFF}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_NVMCTRL\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

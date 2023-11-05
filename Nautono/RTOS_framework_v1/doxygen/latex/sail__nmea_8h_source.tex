@@ -1,0 +1,325 @@
+\hypertarget{sail__nmea_8h_source}{}\doxysection{sail\+\_\+nmea.\+h}
+\label{sail__nmea_8h_source}\index{src/sail\_nmea.h@{src/sail\_nmea.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_nmea.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Header file for the NMEA module that takes raw data buffers from the UART module}}
+\DoxyCodeLine{3 \textcolor{comment}{ * and verifies them before passing them along to the application layer.}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Created on June 22, 2016.}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Created by Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef SAIL\_NMEA\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define SAIL\_NMEA\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}sail\_uart.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define NMEA\_BUFFER\_LENGTH 128}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define PREFIX\_LIM 6}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} NMEA\_ChannelIDs \{}
+\DoxyCodeLine{22     NMEA\_GPS,}
+\DoxyCodeLine{23     \textcolor{comment}{//NMEA\_WEATHERSTATION,}}
+\DoxyCodeLine{24     NMEA\_RADIO,}
+\DoxyCodeLine{25     NMEA\_NUM\_CHANNELS}
+\DoxyCodeLine{26 \} NMEA\_ChannelID;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/********** NMEA Message Types **********/}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/* List the various NMEA message types */}}
+\DoxyCodeLine{31 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} eNMEA\_TRX \{}
+\DoxyCodeLine{32     eGPGGA,}
+\DoxyCodeLine{33     eWIMWV,}
+\DoxyCodeLine{34     eYXXDR,}
+\DoxyCodeLine{35     eHCHDT,}
+\DoxyCodeLine{36     \textcolor{comment}{//the rest of the types are listed below, but not currently used}}
+\DoxyCodeLine{37     \textcolor{comment}{/*}}
+\DoxyCodeLine{38 \textcolor{comment}{    eGPVTG,}}
+\DoxyCodeLine{39 \textcolor{comment}{    eGPDTM,     }}
+\DoxyCodeLine{40 \textcolor{comment}{    eGPGLL,     }}
+\DoxyCodeLine{41 \textcolor{comment}{    eGPGSA,   }}
+\DoxyCodeLine{42 \textcolor{comment}{    eGPGSV,     }}
+\DoxyCodeLine{43 \textcolor{comment}{    eGPRMC,     }}
+\DoxyCodeLine{44 \textcolor{comment}{    eGPVTG,    }}
+\DoxyCodeLine{45 \textcolor{comment}{    eGPZDA,}}
+\DoxyCodeLine{46 \textcolor{comment}{    eHCHDT,     }}
+\DoxyCodeLine{47 \textcolor{comment}{    eHCHDG,         }}
+\DoxyCodeLine{48 \textcolor{comment}{    eHCTHS,     }}
+\DoxyCodeLine{49 \textcolor{comment}{    eTIROT,     }}
+\DoxyCodeLine{50 \textcolor{comment}{    eWIMDA,     }}
+\DoxyCodeLine{51 \textcolor{comment}{    eWIMWV,}}
+\DoxyCodeLine{52 \textcolor{comment}{    eWIMWR,}}
+\DoxyCodeLine{53 \textcolor{comment}{    eWIMWT, }}
+\DoxyCodeLine{54 \textcolor{comment}{    */}}
+\DoxyCodeLine{55     NUM\_NMEA\_TYPES}
+\DoxyCodeLine{56 \} eNMEA\_TRX\_t;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_n_m_e_a___t_y_p_e_s___i_n_f_o}{NMEA\_TYPES\_INFO}} \{}
+\DoxyCodeLine{59     eNMEA\_TRX\_t MSG\_id;}
+\DoxyCodeLine{60     \textcolor{keywordtype}{char} NMEA\_Prefix[PREFIX\_LIM];}
+\DoxyCodeLine{61 \} \mbox{\hyperlink{struct_n_m_e_a___t_y_p_e_s___i_n_f_o}{NMEA\_TYPE\_MAP}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{static} \mbox{\hyperlink{struct_n_m_e_a___t_y_p_e_s___i_n_f_o}{NMEA\_TYPE\_MAP}} NMEA\_TYPE\_TABLE[NUM\_NMEA\_TYPES] = \{}
+\DoxyCodeLine{64     \{ eGPGGA, \textcolor{stringliteral}{"{}GPGGA"{}}\}, }
+\DoxyCodeLine{65     \{ eWIMWV, \textcolor{stringliteral}{"{}WIMWV"{}}\}, }
+\DoxyCodeLine{66     \{ eYXXDR, \textcolor{stringliteral}{"{}YXXDR"{}}\}, }
+\DoxyCodeLine{67     \{ eHCHDT, \textcolor{stringliteral}{"{}HCHDT"{}}\}}
+\DoxyCodeLine{68     }
+\DoxyCodeLine{69     \textcolor{comment}{//remaining fields}}
+\DoxyCodeLine{70     \textcolor{comment}{/*}}
+\DoxyCodeLine{71 \textcolor{comment}{    \{ eGPDTM, "{}GPDTM"{}\}, }}
+\DoxyCodeLine{72 \textcolor{comment}{    \{ eGPGLL, "{}GPGLL"{}\}, }}
+\DoxyCodeLine{73 \textcolor{comment}{    \{ eGPGSA, "{}GPGSA"{}\},}}
+\DoxyCodeLine{74 \textcolor{comment}{    \{ eGPGSV, "{}GPGSV"{}\}, }}
+\DoxyCodeLine{75 \textcolor{comment}{    \{ eGPRMC, "{}GPRMC"{}\},}}
+\DoxyCodeLine{76 \textcolor{comment}{    \{ eGPVTG, "{}GPVTG"{}\}, }}
+\DoxyCodeLine{77 \textcolor{comment}{    \{ eGPZDA, "{}GPZDA"{}\},}}
+\DoxyCodeLine{78 \textcolor{comment}{    \{ eHCHDG, "{}HCHDG"{}\}, }}
+\DoxyCodeLine{79 \textcolor{comment}{    \{ eHCTHS, "{}HCTHS"{}\}, }}
+\DoxyCodeLine{80 \textcolor{comment}{    \{ eTIROT, "{}TIROT"{}\},}}
+\DoxyCodeLine{81 \textcolor{comment}{    \{ eWIMDA, "{}WIMDA"{}\}, }}
+\DoxyCodeLine{82 \textcolor{comment}{    \{ eWIMWV, "{}WIMWV"{}\}, }}
+\DoxyCodeLine{83 \textcolor{comment}{    \{ eWIMWR, "{}WIMWR"{}\},}}
+\DoxyCodeLine{84 \textcolor{comment}{    \{ eWIMWT, "{}WIMWT"{}\}, }}
+\DoxyCodeLine{85 \textcolor{comment}{    \{ eYXXDR, "{}YXXDR"{}\},}}
+\DoxyCodeLine{86 \textcolor{comment}{        */}}
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{enum} west\_east \{west, east\};}
+\DoxyCodeLine{90 \textcolor{keyword}{enum} north\_south \{north, south\};    }
+\DoxyCodeLine{91     }
+\DoxyCodeLine{92 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structlatitude__info}{latitude\_info}} \{}
+\DoxyCodeLine{93     \textcolor{keywordtype}{double} lat;}
+\DoxyCodeLine{94     \textcolor{keyword}{enum} north\_south ns;}
+\DoxyCodeLine{95 \} \mbox{\hyperlink{structlatitude__info}{latitude}};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structlongitude__info}{longitude\_info}} \{}
+\DoxyCodeLine{98     \textcolor{keywordtype}{double} lon;}
+\DoxyCodeLine{99     \textcolor{keyword}{enum} west\_east we;}
+\DoxyCodeLine{100 \} \mbox{\hyperlink{structlongitude__info}{longitude}};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structe_n_m_e_a___g_p_g_g_a}{eNMEA\_GPGGA}} \{}
+\DoxyCodeLine{103     \mbox{\hyperlink{structlatitude__info}{latitude}} lat;}
+\DoxyCodeLine{104     \mbox{\hyperlink{structlongitude__info}{longitude}} lon;}
+\DoxyCodeLine{105     \textcolor{keywordtype}{float} alt;}
+\DoxyCodeLine{106 \} \mbox{\hyperlink{structe_n_m_e_a___g_p_g_g_a}{eNMEA\_GPGGA}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{comment}{/*}}
+\DoxyCodeLine{109 \textcolor{comment}{typedef struct eNMEA\_HCHDT \{}}
+\DoxyCodeLine{110 \textcolor{comment}{    float bearing;}}
+\DoxyCodeLine{111 \textcolor{comment}{\} eNMEA\_HCHDT;}}
+\DoxyCodeLine{112 \textcolor{comment}{*/}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structe_n_m_e_a___g_p_v_t_g}{eNMEA\_GPVTG}} \{}
+\DoxyCodeLine{115     \textcolor{keywordtype}{float} course\_over\_ground;}
+\DoxyCodeLine{116 \} \mbox{\hyperlink{structe_n_m_e_a___g_p_v_t_g}{eNMEA\_GPVTG}};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structe_n_m_e_a___w_i_m_w_v}{eNMEA\_WIMWV}} \{}
+\DoxyCodeLine{119     \textcolor{comment}{//float wind\_dir\_true, wind\_dir\_mag, wind\_speed\_ms, wind\_speed\_knot;}}
+\DoxyCodeLine{120     \textcolor{keywordtype}{float} wind\_dir\_rel, wind\_speed\_ms; \textcolor{comment}{//relative wind direction and wind speed}}
+\DoxyCodeLine{121 \} \mbox{\hyperlink{structe_n_m_e_a___w_i_m_w_v}{eNMEA\_WIMWV}};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{comment}{/*YXXDR\_B*/}}
+\DoxyCodeLine{124 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structe_n_m_e_a___y_x_x_d_r}{eNMEA\_YXXDR}} \{}
+\DoxyCodeLine{125     \textcolor{keywordtype}{float} roll\_deg;}
+\DoxyCodeLine{126     \textcolor{keywordtype}{float} pitch\_deg;}
+\DoxyCodeLine{127 \} \mbox{\hyperlink{structe_n_m_e_a___y_x_x_d_r}{eNMEA\_YXXDR}};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{comment}{/*HCHDT*/}}
+\DoxyCodeLine{130 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structe_n_m_e_a___h_c_h_d_t}{eNMEA\_HCHDT}} \{}
+\DoxyCodeLine{131     \textcolor{keywordtype}{float} bearing;}
+\DoxyCodeLine{132 \} \mbox{\hyperlink{structe_n_m_e_a___h_c_h_d_t}{eNMEA\_HCHDT}};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_n_m_e_a___generic_msg}{NMEA\_GenericMsg}} \{}
+\DoxyCodeLine{135     eNMEA\_TRX\_t type;}
+\DoxyCodeLine{136     \textcolor{keyword}{union }\mbox{\hyperlink{union_n_m_e_a___generic_msg_1_1_w_e_a_t_h_e_r_s_e_n_s_o_r___generic_data_union}{WEATHERSENSOR\_GenericDataUnion}} \{}
+\DoxyCodeLine{137         \mbox{\hyperlink{structe_n_m_e_a___g_p_g_g_a}{eNMEA\_GPGGA}}      gpgga;}
+\DoxyCodeLine{138         \mbox{\hyperlink{structe_n_m_e_a___h_c_h_d_t}{eNMEA\_HCHDT}}      hchdt;}
+\DoxyCodeLine{139         \textcolor{comment}{//eNMEA\_GPVTG       gpvtg;}}
+\DoxyCodeLine{140         \mbox{\hyperlink{structe_n_m_e_a___w_i_m_w_v}{eNMEA\_WIMWV}}      wimwv;}
+\DoxyCodeLine{141         \mbox{\hyperlink{structe_n_m_e_a___y_x_x_d_r}{eNMEA\_YXXDR}}      yxxdr;}
+\DoxyCodeLine{142         \textcolor{comment}{/* the remaining fields}}
+\DoxyCodeLine{143 \textcolor{comment}{        eNMEA\_GPDTM     gpdtm;}}
+\DoxyCodeLine{144 \textcolor{comment}{        eNMEA\_GPGLL     gpgll;}}
+\DoxyCodeLine{145 \textcolor{comment}{        eNMEA\_GPGSA     gpgsa; //Add this in}}
+\DoxyCodeLine{146 \textcolor{comment}{        eNMEA\_GPGSV     gpgsv;}}
+\DoxyCodeLine{147 \textcolor{comment}{        eNMEA\_GPRMC     gprmc;}}
+\DoxyCodeLine{148 \textcolor{comment}{        eNMEA\_GPVTG     gpvtg;}}
+\DoxyCodeLine{149 \textcolor{comment}{        eNMEA\_GPZDA     gpzda;}}
+\DoxyCodeLine{150 \textcolor{comment}{        eNMEA\_HCHDG     hchdg;}}
+\DoxyCodeLine{151 \textcolor{comment}{        eNMEA\_HCTHS     hcths;}}
+\DoxyCodeLine{152 \textcolor{comment}{        eNMEA\_TIROT     tirot;}}
+\DoxyCodeLine{153 \textcolor{comment}{        eNMEA\_WIMDA     wimda;}}
+\DoxyCodeLine{154 \textcolor{comment}{        eNMEA\_WIMWV     wiwmv;}}
+\DoxyCodeLine{155 \textcolor{comment}{        eNMEA\_WIMWR     wimwr;}}
+\DoxyCodeLine{156 \textcolor{comment}{        eNMEA\_WIMWT     wimwt;}}
+\DoxyCodeLine{157 \textcolor{comment}{        */}}
+\DoxyCodeLine{158     \} fields;}
+\DoxyCodeLine{159 \} \mbox{\hyperlink{struct_n_m_e_a___generic_msg}{NMEA\_GenericMsg}};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{comment}{/* The struct templates for the remaining NMEA fields are listed below}}
+\DoxyCodeLine{162 \textcolor{comment}{}}
+\DoxyCodeLine{163 \textcolor{comment}{typedef struct eNMEA\_GPGLL \{}}
+\DoxyCodeLine{164 \textcolor{comment}{}}
+\DoxyCodeLine{165 \textcolor{comment}{\} eNMEA\_GPGLL;}}
+\DoxyCodeLine{166 \textcolor{comment}{}}
+\DoxyCodeLine{167 \textcolor{comment}{typedef struct eNMEA\_GPGSA \{}}
+\DoxyCodeLine{168 \textcolor{comment}{}}
+\DoxyCodeLine{169 \textcolor{comment}{\} eNMEA\_GPGSA;}}
+\DoxyCodeLine{170 \textcolor{comment}{}}
+\DoxyCodeLine{171 \textcolor{comment}{typedef struct eNMEA\_GPGSV \{}}
+\DoxyCodeLine{172 \textcolor{comment}{}}
+\DoxyCodeLine{173 \textcolor{comment}{\} eNMEA\_GPGSV;}}
+\DoxyCodeLine{174 \textcolor{comment}{}}
+\DoxyCodeLine{175 \textcolor{comment}{typedef struct eNMEA\_GPRMC \{}}
+\DoxyCodeLine{176 \textcolor{comment}{}}
+\DoxyCodeLine{177 \textcolor{comment}{\} eNMEA\_GPRMC;}}
+\DoxyCodeLine{178 \textcolor{comment}{}}
+\DoxyCodeLine{179 \textcolor{comment}{typedef struct eNMEA\_GPVTG \{}}
+\DoxyCodeLine{180 \textcolor{comment}{}}
+\DoxyCodeLine{181 \textcolor{comment}{\} eNMEA\_GPVTG;}}
+\DoxyCodeLine{182 \textcolor{comment}{}}
+\DoxyCodeLine{183 \textcolor{comment}{typedef struct eNMEA\_GPZDA \{}}
+\DoxyCodeLine{184 \textcolor{comment}{}}
+\DoxyCodeLine{185 \textcolor{comment}{\} eNMEA\_GPZDA;}}
+\DoxyCodeLine{186 \textcolor{comment}{}}
+\DoxyCodeLine{187 \textcolor{comment}{typedef struct eNMEA\_HCHDG \{}}
+\DoxyCodeLine{188 \textcolor{comment}{}}
+\DoxyCodeLine{189 \textcolor{comment}{\} eNMEA\_HCHDG;}}
+\DoxyCodeLine{190 \textcolor{comment}{}}
+\DoxyCodeLine{191 \textcolor{comment}{typedef struct eNMEA\_HCTHS \{}}
+\DoxyCodeLine{192 \textcolor{comment}{}}
+\DoxyCodeLine{193 \textcolor{comment}{\} eNMEA\_HCTHS;}}
+\DoxyCodeLine{194 \textcolor{comment}{}}
+\DoxyCodeLine{195 \textcolor{comment}{typedef struct eNMEA\_TIROT \{}}
+\DoxyCodeLine{196 \textcolor{comment}{}}
+\DoxyCodeLine{197 \textcolor{comment}{\} eNMEA\_TIROT;}}
+\DoxyCodeLine{198 \textcolor{comment}{}}
+\DoxyCodeLine{199 \textcolor{comment}{typedef struct eNMEA\_WIMDA \{}}
+\DoxyCodeLine{200 \textcolor{comment}{}}
+\DoxyCodeLine{201 \textcolor{comment}{\} eNMEA\_WIMDA;}}
+\DoxyCodeLine{202 \textcolor{comment}{}}
+\DoxyCodeLine{203 \textcolor{comment}{typedef struct eNMEA\_WIMWV \{}}
+\DoxyCodeLine{204 \textcolor{comment}{}}
+\DoxyCodeLine{205 \textcolor{comment}{\} eNMEA\_WIMWV;}}
+\DoxyCodeLine{206 \textcolor{comment}{}}
+\DoxyCodeLine{207 \textcolor{comment}{typedef struct eNMEA\_WIMWR \{}}
+\DoxyCodeLine{208 \textcolor{comment}{}}
+\DoxyCodeLine{209 \textcolor{comment}{\} eNMEA\_WIMWR;}}
+\DoxyCodeLine{210 \textcolor{comment}{}}
+\DoxyCodeLine{211 \textcolor{comment}{typedef struct eNMEA\_WIMWT \{}}
+\DoxyCodeLine{212 \textcolor{comment}{}}
+\DoxyCodeLine{213 \textcolor{comment}{\} eNMEA\_WIMWT;}}
+\DoxyCodeLine{214 \textcolor{comment}{}}
+\DoxyCodeLine{215 \textcolor{comment}{typedef enum eLOCAL\_DATUM\_CODE \{}}
+\DoxyCodeLine{216 \textcolor{comment}{    eWGS84,}}
+\DoxyCodeLine{217 \textcolor{comment}{    eWGS72,}}
+\DoxyCodeLine{218 \textcolor{comment}{    eSGS85,}}
+\DoxyCodeLine{219 \textcolor{comment}{    ePE90,}}
+\DoxyCodeLine{220 \textcolor{comment}{    eUSER\_DEFINED}}
+\DoxyCodeLine{221 \textcolor{comment}{\} eLocalDatumCode;}}
+\DoxyCodeLine{222 \textcolor{comment}{}}
+\DoxyCodeLine{223 \textcolor{comment}{typedef struct eNMEA\_GPDTM \{}}
+\DoxyCodeLine{224 \textcolor{comment}{    eLocalDatumCode eDatumCode;}}
+\DoxyCodeLine{225 \textcolor{comment}{    uint8\_t ucLocalDatumSubcode;}}
+\DoxyCodeLine{226 \textcolor{comment}{    double xLatitudeOffset;}}
+\DoxyCodeLine{227 \textcolor{comment}{    //SEE ONLINE}}
+\DoxyCodeLine{228 \textcolor{comment}{\} eNMEA\_GPDTM;}}
+\DoxyCodeLine{229 \textcolor{comment}{*/}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{keywordtype}{bool} get\_NMEA\_type(eNMEA\_TRX\_t* type, \textcolor{keywordtype}{char}* msg\_ptr);}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{comment}{/* NMEA\_Init}}
+\DoxyCodeLine{234 \textcolor{comment}{ * Initialize a specific NMEA channel.}}
+\DoxyCodeLine{235 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{236 \textcolor{comment}{ *   id -\/ ID of the desired NMEA channel to initialize}}
+\DoxyCodeLine{237 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{238 \textcolor{comment}{ *   STATUS\_OK -\/ initialization was successful}}
+\DoxyCodeLine{239 \textcolor{comment}{ *   STATUS\_ERR\_INVALID\_ARG -\/ an invalid channel ID was provided}}
+\DoxyCodeLine{240 \textcolor{comment}{ *   STATUS\_ERR\_DENIED -\/ a driver error has occurred }}
+\DoxyCodeLine{241 \textcolor{comment}{ *   STATUS\_ERR\_ALREADY\_INITIALIZED -\/ the module should only be initialized once}}
+\DoxyCodeLine{242 \textcolor{comment}{ */}}
+\DoxyCodeLine{243 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NMEA\_Init(NMEA\_ChannelID \textcolor{keywordtype}{id});}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{comment}{/* NMEA\_Enable}}
+\DoxyCodeLine{247 \textcolor{comment}{ * Trigger the NMEA channel to begin acquiring data.}}
+\DoxyCodeLine{248 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{249 \textcolor{comment}{ *   id -\/ ID of the desired NMEA channel}}
+\DoxyCodeLine{250 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{251 \textcolor{comment}{ *   STATUS\_OK -\/ data acquisition was started successfully}}
+\DoxyCodeLine{252 \textcolor{comment}{ *   STATUS\_ERR\_INVALID\_ARG -\/ an invalid channel ID was provided  }}
+\DoxyCodeLine{253 \textcolor{comment}{ *   STATUS\_ERR\_NOT\_INITIALIZED -\/ the channel hasn't been initialized yet}}
+\DoxyCodeLine{254 \textcolor{comment}{ *   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{255 \textcolor{comment}{ */}}
+\DoxyCodeLine{256 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NMEA\_Enable(NMEA\_ChannelID \textcolor{keywordtype}{id});}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{comment}{/* NMEA\_Disable}}
+\DoxyCodeLine{260 \textcolor{comment}{ * Trigger the NMEA channel to stop acquiring data.}}
+\DoxyCodeLine{261 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{262 \textcolor{comment}{ *   id -\/ ID of the desired NMEA channel}}
+\DoxyCodeLine{263 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{264 \textcolor{comment}{ *   STATUS\_OK -\/ data acquisition was stopped successfully}}
+\DoxyCodeLine{265 \textcolor{comment}{ *   STATUS\_ERR\_INVALID\_ARG -\/ an invalid channel ID was provided   }}
+\DoxyCodeLine{266 \textcolor{comment}{ *   STATUS\_ERR\_NOT\_INITIALIZED -\/ the channel hasn't been initialized and/or started}}
+\DoxyCodeLine{267 \textcolor{comment}{ *   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{268 \textcolor{comment}{ */}}
+\DoxyCodeLine{269 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NMEA\_Disable(NMEA\_ChannelID \textcolor{keywordtype}{id});}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{comment}{/* NMEA\_TxCommand}}
+\DoxyCodeLine{273 \textcolor{comment}{ * Transmit a string to the NMEA device.}}
+\DoxyCodeLine{274 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{275 \textcolor{comment}{ *   id -\/ ID of the desired NMEA channel}}
+\DoxyCodeLine{276 \textcolor{comment}{ *   str -\/ pointer to the command (without \$ or *checksum)}}
+\DoxyCodeLine{277 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{278 \textcolor{comment}{ *   STATUS\_OK -\/ command was valid and sent successfully and data was received successfully}}
+\DoxyCodeLine{279 \textcolor{comment}{ *   STATUS\_ERR\_INVALID\_ARG -\/ an invalid channel ID was provided   }}
+\DoxyCodeLine{280 \textcolor{comment}{ *   STATUS\_ERR\_NOT\_INITIALIZED -\/ the channel hasn't been initialized yet}}
+\DoxyCodeLine{281 \textcolor{comment}{ *   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{282 \textcolor{comment}{ *   STATUS\_ERR\_BAD\_ADDRESS -\/ an invalid address was provided }}
+\DoxyCodeLine{283 \textcolor{comment}{ *   STATUS\_ERR\_TIMEOUT -\/ no response was received before the timeout counter expired}}
+\DoxyCodeLine{284 \textcolor{comment}{ */}}
+\DoxyCodeLine{285 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NMEA\_TxString(NMEA\_ChannelID \textcolor{keywordtype}{id}, uint8\_t *str);}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 \textcolor{comment}{/* NMEA\_TxString\_Unprotected}}
+\DoxyCodeLine{288 \textcolor{comment}{ * Transmit a string to the NMEA device.}}
+\DoxyCodeLine{289 \textcolor{comment}{ * The same as NMEA\_TxString except the mutex on the write buffer is not used so}}
+\DoxyCodeLine{290 \textcolor{comment}{ * the function can be called before the FreeRTOS scheduler is started}}
+\DoxyCodeLine{291 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{292 \textcolor{comment}{ *   id -\/ ID of the desired NMEA channel}}
+\DoxyCodeLine{293 \textcolor{comment}{ *   str -\/ pointer to the command (without \$ or *checksum)}}
+\DoxyCodeLine{294 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{295 \textcolor{comment}{ *   STATUS\_OK -\/ command was valid and sent successfully and data was received successfully}}
+\DoxyCodeLine{296 \textcolor{comment}{ *   STATUS\_ERR\_INVALID\_ARG -\/ an invalid channel ID was provided   }}
+\DoxyCodeLine{297 \textcolor{comment}{ *   STATUS\_ERR\_NOT\_INITIALIZED -\/ the channel hasn't been initialized yet}}
+\DoxyCodeLine{298 \textcolor{comment}{ *   STATUS\_ERR\_DENIED -\/ a driver error has occurred}}
+\DoxyCodeLine{299 \textcolor{comment}{ *   STATUS\_ERR\_BAD\_ADDRESS -\/ an invalid address was provided }}
+\DoxyCodeLine{300 \textcolor{comment}{ *   STATUS\_ERR\_TIMEOUT -\/ no response was received before the timeout counter expired}}
+\DoxyCodeLine{301 \textcolor{comment}{ */}}
+\DoxyCodeLine{302 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NMEA\_TxString\_Unprotected(NMEA\_ChannelID \textcolor{keywordtype}{id}, uint8\_t *str);}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{comment}{/* NMEA\_RxString}}
+\DoxyCodeLine{305 \textcolor{comment}{ * Trigger the NMEA channel to check its buffer and process the data if there is anything}}
+\DoxyCodeLine{306 \textcolor{comment}{ * available. If there is new, valid data available, the processed data will be copied}}
+\DoxyCodeLine{307 \textcolor{comment}{ * into the output buffer and the output flag will be set.}}
+\DoxyCodeLine{308 \textcolor{comment}{ * Inputs:}}
+\DoxyCodeLine{309 \textcolor{comment}{ *   id -\/ ID of the desired NMEA channel}}
+\DoxyCodeLine{310 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{311 \textcolor{comment}{ *   STATUS\_VALID\_DATA -\/ valid data has been placed into the output buffer}}
+\DoxyCodeLine{312 \textcolor{comment}{ *   STATUS\_NO\_CHANGE -\/ no new data is available}}
+\DoxyCodeLine{313 \textcolor{comment}{ *   STATUS\_ERR\_BAD\_DATA -\/ data was available, but the checksum was incorrect}}
+\DoxyCodeLine{314 \textcolor{comment}{ *   STATUS\_ERR\_NOT\_INITIALIZED -\/ the channel hasn't been initialized yet}}
+\DoxyCodeLine{315 \textcolor{comment}{ *   STATUS\_ERR\_INVALID\_ARG -\/ an invalid channel ID was provided   }}
+\DoxyCodeLine{316 \textcolor{comment}{ */}}
+\DoxyCodeLine{317 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} NMEA\_RxString(NMEA\_ChannelID \textcolor{keywordtype}{id}, uint8\_t *str, uint16\_t length);}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_NMEA\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

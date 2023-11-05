@@ -1,0 +1,1147 @@
+\hypertarget{component_2eic_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/component/eic.h File Reference}
+\label{component_2eic_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/eic.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/eic.h}}
+
+
+Component description for EIC.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_e_i_c___c_t_r_l___type}{EIC\+\_\+\+CTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_i_c___s_t_a_t_u_s___type}{EIC\+\_\+\+STATUS\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_i_c___n_m_i_c_t_r_l___type}{EIC\+\_\+\+NMICTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_i_c___n_m_i_f_l_a_g___type}{EIC\+\_\+\+NMIFLAG\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type}{EIC\+\_\+\+EVCTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type}{EIC\+\_\+\+INTENCLR\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type}{EIC\+\_\+\+INTENSET\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type}{EIC\+\_\+\+INTFLAG\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type}{EIC\+\_\+\+WAKEUP\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type}{EIC\+\_\+\+CONFIG\+\_\+\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_eic}{Eic}}
+\begin{DoxyCompactList}\small\item\em EIC hardware registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{component_2eic_8h_adfade8e25dd47920190c67452bfde1d9}\label{component_2eic_8h_adfade8e25dd47920190c67452bfde1d9}} 
+\#define {\bfseries EIC\+\_\+\+U2217}
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a903f62b04b916a92b23d16735a1569da}\label{component_2eic_8h_a903f62b04b916a92b23d16735a1569da}} 
+\#define {\bfseries REV\+\_\+\+EIC}~0x101
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a54b8dc9939741d73cafffb3faf0fb653}\label{component_2eic_8h_a54b8dc9939741d73cafffb3faf0fb653}} 
+\#define {\bfseries EIC\+\_\+\+CTRL\+\_\+\+OFFSET}~0x00
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CTRL offset) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a25bdb39b0de222dd212167e080c13ff7}\label{component_2eic_8h_a25bdb39b0de222dd212167e080c13ff7}} 
+\#define {\bfseries EIC\+\_\+\+CTRL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CTRL reset\+\_\+value) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa54031c7addc659dba8a92598c7460f9}\label{component_2eic_8h_aa54031c7addc659dba8a92598c7460f9}} 
+\#define {\bfseries EIC\+\_\+\+CTRL\+\_\+\+SWRST\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CTRL) Software Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ab75d09d92fb6fa516bf44e033dde9c59}\label{component_2eic_8h_ab75d09d92fb6fa516bf44e033dde9c59}} 
+\#define {\bfseries EIC\+\_\+\+CTRL\+\_\+\+SWRST}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_aa54031c7addc659dba8a92598c7460f9}{EIC\+\_\+\+CTRL\+\_\+\+SWRST\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a3c030b3c5815c0a09eb01394a22db9e2}\label{component_2eic_8h_a3c030b3c5815c0a09eb01394a22db9e2}} 
+\#define {\bfseries EIC\+\_\+\+CTRL\+\_\+\+ENABLE\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CTRL) Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ad426e6bb13bf7968cf5ebd9537c69d59}\label{component_2eic_8h_ad426e6bb13bf7968cf5ebd9537c69d59}} 
+\#define {\bfseries EIC\+\_\+\+CTRL\+\_\+\+ENABLE}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a3c030b3c5815c0a09eb01394a22db9e2}{EIC\+\_\+\+CTRL\+\_\+\+ENABLE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a7e5ab886f4192989cf55304ed358e3a6}\label{component_2eic_8h_a7e5ab886f4192989cf55304ed358e3a6}} 
+\#define {\bfseries EIC\+\_\+\+CTRL\+\_\+\+MASK}~0x03ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa1d6b3e57648f82b7ec4f6789fa434e1}\label{component_2eic_8h_aa1d6b3e57648f82b7ec4f6789fa434e1}} 
+\#define {\bfseries EIC\+\_\+\+STATUS\+\_\+\+OFFSET}~0x01
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+STATUS offset) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a4532e4f07ef6eccb30714dd24698b971}\label{component_2eic_8h_a4532e4f07ef6eccb30714dd24698b971}} 
+\#define {\bfseries EIC\+\_\+\+STATUS\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+STATUS reset\+\_\+value) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_acd0b3a3c3852e2f6be475f2284d4fabd}\label{component_2eic_8h_acd0b3a3c3852e2f6be475f2284d4fabd}} 
+\#define {\bfseries EIC\+\_\+\+STATUS\+\_\+\+SYNCBUSY\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+STATUS) Synchronization Busy \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a6794d69c63eac731887e5734b821d1f0}\label{component_2eic_8h_a6794d69c63eac731887e5734b821d1f0}} 
+\#define {\bfseries EIC\+\_\+\+STATUS\+\_\+\+SYNCBUSY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_acd0b3a3c3852e2f6be475f2284d4fabd}{EIC\+\_\+\+STATUS\+\_\+\+SYNCBUSY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aec28f4f25de8375cb9ec6e4b9bd85337}\label{component_2eic_8h_aec28f4f25de8375cb9ec6e4b9bd85337}} 
+\#define {\bfseries EIC\+\_\+\+STATUS\+\_\+\+MASK}~0x80ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+STATUS) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a955df6174347427aaaed840874fa273f}\label{component_2eic_8h_a955df6174347427aaaed840874fa273f}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+OFFSET}~0x02
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL offset) Non-\/\+Maskable Interrupt Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a45890ac5e43ba08bf235b5ba44aa434c}\label{component_2eic_8h_a45890ac5e43ba08bf235b5ba44aa434c}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL reset\+\_\+value) Non-\/\+Maskable Interrupt Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}\label{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL) Non-\/\+Maskable Interrupt Sense \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ab9c1c6466c0a1f2d669d61904b4ad1c0}\label{component_2eic_8h_ab9c1c6466c0a1f2d669d61904b4ad1c0}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ae96214c1f37b2db4a8fa349edb32996f}\label{component_2eic_8h_ae96214c1f37b2db4a8fa349edb32996f}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE}(value)~((EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a0c36b33d81bd5571bc49345e2e83b9ff}\label{component_2eic_8h_a0c36b33d81bd5571bc49345e2e83b9ff}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+NONE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL) No detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a40a369ae631516099e85c14096312797}\label{component_2eic_8h_a40a369ae631516099e85c14096312797}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+RISE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL) Rising-\/edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa0a05bae1746f2942044c926350f1ebe}\label{component_2eic_8h_aa0a05bae1746f2942044c926350f1ebe}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+FALL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL) Falling-\/edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a7c987cbee9b60bfd4e68ddd11982a512}\label{component_2eic_8h_a7c987cbee9b60bfd4e68ddd11982a512}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+BOTH\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL) Both-\/edges detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a30c9d119b917f1bec88af90d0c7fa180}\label{component_2eic_8h_a30c9d119b917f1bec88af90d0c7fa180}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+HIGH\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL) High-\/level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa3b9af8d6d835716ec282a17a72f7052}\label{component_2eic_8h_aa3b9af8d6d835716ec282a17a72f7052}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+LOW\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL) Low-\/level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ae353bd7582bca51ade21150774b0db04}\label{component_2eic_8h_ae353bd7582bca51ade21150774b0db04}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+NONE}~(\mbox{\hyperlink{component_2eic_8h_a0c36b33d81bd5571bc49345e2e83b9ff}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+NONE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aa8f021b20a26f0619fac57f6ef9547e3}\label{component_2eic_8h_aa8f021b20a26f0619fac57f6ef9547e3}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+RISE}~(\mbox{\hyperlink{component_2eic_8h_a40a369ae631516099e85c14096312797}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+RISE\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aa9b32280bacb50689c86bd21de314ae7}\label{component_2eic_8h_aa9b32280bacb50689c86bd21de314ae7}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+FALL}~(\mbox{\hyperlink{component_2eic_8h_aa0a05bae1746f2942044c926350f1ebe}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+FALL\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ad83b3c9ea023f0c8c0c56b5a027c7ae4}\label{component_2eic_8h_ad83b3c9ea023f0c8c0c56b5a027c7ae4}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+BOTH}~(\mbox{\hyperlink{component_2eic_8h_a7c987cbee9b60bfd4e68ddd11982a512}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+BOTH\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a7d49f4b3ad088c21e1e248b6ead40a4d}\label{component_2eic_8h_a7d49f4b3ad088c21e1e248b6ead40a4d}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+HIGH}~(\mbox{\hyperlink{component_2eic_8h_a30c9d119b917f1bec88af90d0c7fa180}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+HIGH\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aee7719cf601b054085fc6d588052ed3c}\label{component_2eic_8h_aee7719cf601b054085fc6d588052ed3c}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+LOW}~(\mbox{\hyperlink{component_2eic_8h_aa3b9af8d6d835716ec282a17a72f7052}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+LOW\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2eic_8h_a48859c121f51b57ddf343ba53ff169a1}{EIC\+\_\+\+NMICTRL\+\_\+\+NMISENSE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a38d9267b17841862f6a70ce455f52da0}\label{component_2eic_8h_a38d9267b17841862f6a70ce455f52da0}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMIFILTEN\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL) Non-\/\+Maskable Interrupt Filter Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ac4f421180e2c30aabb16780b60d5d145}\label{component_2eic_8h_ac4f421180e2c30aabb16780b60d5d145}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+NMIFILTEN}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a38d9267b17841862f6a70ce455f52da0}{EIC\+\_\+\+NMICTRL\+\_\+\+NMIFILTEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_af52070ecba91c5d7d6ece825763d5ac3}\label{component_2eic_8h_af52070ecba91c5d7d6ece825763d5ac3}} 
+\#define {\bfseries EIC\+\_\+\+NMICTRL\+\_\+\+MASK}~0x0\+Ful
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMICTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aaf1e851a2bf7b57210d255b797305b5a}\label{component_2eic_8h_aaf1e851a2bf7b57210d255b797305b5a}} 
+\#define {\bfseries EIC\+\_\+\+NMIFLAG\+\_\+\+OFFSET}~0x03
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMIFLAG offset) Non-\/\+Maskable Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_abdc3ee824c8c2631f56077b9eb4af6c0}\label{component_2eic_8h_abdc3ee824c8c2631f56077b9eb4af6c0}} 
+\#define {\bfseries EIC\+\_\+\+NMIFLAG\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMIFLAG reset\+\_\+value) Non-\/\+Maskable Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ae75faeffe2957a80cbdacf5c0239e2af}\label{component_2eic_8h_ae75faeffe2957a80cbdacf5c0239e2af}} 
+\#define {\bfseries EIC\+\_\+\+NMIFLAG\+\_\+\+NMI\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMIFLAG) Non-\/\+Maskable Interrupt \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_adeb5d88236a7732ba0c74a95460abf51}\label{component_2eic_8h_adeb5d88236a7732ba0c74a95460abf51}} 
+\#define {\bfseries EIC\+\_\+\+NMIFLAG\+\_\+\+NMI}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_ae75faeffe2957a80cbdacf5c0239e2af}{EIC\+\_\+\+NMIFLAG\+\_\+\+NMI\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a540d29cea93e30799215ac9a446bb8f9}\label{component_2eic_8h_a540d29cea93e30799215ac9a446bb8f9}} 
+\#define {\bfseries EIC\+\_\+\+NMIFLAG\+\_\+\+MASK}~0x01ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+NMIFLAG) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a1e9f53fbff309ef9b2ecfa6276b72f15}\label{component_2eic_8h_a1e9f53fbff309ef9b2ecfa6276b72f15}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+OFFSET}~0x04
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL offset) Event Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa55f28b19d883994bcd6ade4425eea0a}\label{component_2eic_8h_aa55f28b19d883994bcd6ade4425eea0a}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL reset\+\_\+value) Event Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a8d4fd992a63059b410149af497b2b7bc}\label{component_2eic_8h_a8d4fd992a63059b410149af497b2b7bc}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 0 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a3d56c5e3944578f4a2c9502aef7242c4}\label{component_2eic_8h_a3d56c5e3944578f4a2c9502aef7242c4}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO0}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a8d4fd992a63059b410149af497b2b7bc}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a52b37e5d5286cd75a1f4f750c2aaaa36}\label{component_2eic_8h_a52b37e5d5286cd75a1f4f750c2aaaa36}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 1 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aeaf96f2784c24d3db55f93543d6f4c61}\label{component_2eic_8h_aeaf96f2784c24d3db55f93543d6f4c61}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO1}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a52b37e5d5286cd75a1f4f750c2aaaa36}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a33d2db9ec5aef407e5c355b9ffe81c27}\label{component_2eic_8h_a33d2db9ec5aef407e5c355b9ffe81c27}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 2 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a3e4b3c7c9348c940b1b7f90efb07990e}\label{component_2eic_8h_a3e4b3c7c9348c940b1b7f90efb07990e}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO2}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a33d2db9ec5aef407e5c355b9ffe81c27}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a958d9ba364c218a57206251cda93b075}\label{component_2eic_8h_a958d9ba364c218a57206251cda93b075}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO3\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 3 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a874e53ebba2e0877a5885c2329537ac8}\label{component_2eic_8h_a874e53ebba2e0877a5885c2329537ac8}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO3}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a958d9ba364c218a57206251cda93b075}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aeac161558062b840314749c4ef010b3b}\label{component_2eic_8h_aeac161558062b840314749c4ef010b3b}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO4\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 4 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a9fd28e59e149d809defd4daf94ffbe58}\label{component_2eic_8h_a9fd28e59e149d809defd4daf94ffbe58}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO4}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aeac161558062b840314749c4ef010b3b}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ae3b6013cb283d41b444af13f51a517cb}\label{component_2eic_8h_ae3b6013cb283d41b444af13f51a517cb}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO5\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 5 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ae0d76882efbda24a2c0d7d24f4c43490}\label{component_2eic_8h_ae0d76882efbda24a2c0d7d24f4c43490}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO5}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ae3b6013cb283d41b444af13f51a517cb}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a95ebc723740e7e916817a753131144e9}\label{component_2eic_8h_a95ebc723740e7e916817a753131144e9}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO6\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 6 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa3f99ae35b11fb996f4333e248100c3b}\label{component_2eic_8h_aa3f99ae35b11fb996f4333e248100c3b}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO6}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a95ebc723740e7e916817a753131144e9}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a69d864d864249b36e4310ab9377c3c97}\label{component_2eic_8h_a69d864d864249b36e4310ab9377c3c97}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO7\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 7 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ae3d72773fb60767a3d0bf56ecabed18c}\label{component_2eic_8h_ae3d72773fb60767a3d0bf56ecabed18c}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO7}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a69d864d864249b36e4310ab9377c3c97}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ab85176b4359e5d32805337285401b2e3}\label{component_2eic_8h_ab85176b4359e5d32805337285401b2e3}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO8\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 8 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a7312c2b274098e50777ec548ed53600e}\label{component_2eic_8h_a7312c2b274098e50777ec548ed53600e}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO8}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab85176b4359e5d32805337285401b2e3}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO8\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ac159e02d60cf8514b4ca4b30f229cc4c}\label{component_2eic_8h_ac159e02d60cf8514b4ca4b30f229cc4c}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO9\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 9 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_afdfc49ed12660f52c0c1015b4a544bc5}\label{component_2eic_8h_afdfc49ed12660f52c0c1015b4a544bc5}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO9}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ac159e02d60cf8514b4ca4b30f229cc4c}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO9\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a252bfd2a45018981e1d59a43137775a8}\label{component_2eic_8h_a252bfd2a45018981e1d59a43137775a8}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO10\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 10 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ad74402d2cb3a516a13c7d5f8f8707eea}\label{component_2eic_8h_ad74402d2cb3a516a13c7d5f8f8707eea}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO10}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a252bfd2a45018981e1d59a43137775a8}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO10\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a4d130ad6d8d6fe20d430951fb7f27035}\label{component_2eic_8h_a4d130ad6d8d6fe20d430951fb7f27035}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO11\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 11 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ae932c7f3d389d9ed0500567ddbc24e45}\label{component_2eic_8h_ae932c7f3d389d9ed0500567ddbc24e45}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO11}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a4d130ad6d8d6fe20d430951fb7f27035}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO11\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_afee7db70d88521dc34b2d750e696ef00}\label{component_2eic_8h_afee7db70d88521dc34b2d750e696ef00}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO12\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 12 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa3f0bbb2ac8ce4a1830310b41d93fd3e}\label{component_2eic_8h_aa3f0bbb2ac8ce4a1830310b41d93fd3e}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO12}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_afee7db70d88521dc34b2d750e696ef00}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO12\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ab633e9d1b7a20384b2ced862685ce5a7}\label{component_2eic_8h_ab633e9d1b7a20384b2ced862685ce5a7}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO13\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 13 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a874a28fbea2baad59dffdd26ae44c56e}\label{component_2eic_8h_a874a28fbea2baad59dffdd26ae44c56e}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO13}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab633e9d1b7a20384b2ced862685ce5a7}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO13\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a0c4ce264a32c47fe2893aa90e66f228d}\label{component_2eic_8h_a0c4ce264a32c47fe2893aa90e66f228d}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO14\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 14 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a6f458e4b0d996843d21a2525cff4760f}\label{component_2eic_8h_a6f458e4b0d996843d21a2525cff4760f}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO14}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a0c4ce264a32c47fe2893aa90e66f228d}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO14\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a0b1418a8ed08d831ea2f69483673a77a}\label{component_2eic_8h_a0b1418a8ed08d831ea2f69483673a77a}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO15\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt 15 Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a53abbbc4306a06419ed0c71f86509362}\label{component_2eic_8h_a53abbbc4306a06419ed0c71f86509362}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO15}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a0b1418a8ed08d831ea2f69483673a77a}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO15\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aed4eb850843b4dea239dd997ae81008a}\label{component_2eic_8h_aed4eb850843b4dea239dd997ae81008a}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) External Interrupt x Event Output Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a941107dea5516bf17998a0012bee9e7d}\label{component_2eic_8h_a941107dea5516bf17998a0012bee9e7d}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2eic_8h_aed4eb850843b4dea239dd997ae81008a}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a6644ed2806b2b22764ccdb89aa74c945}\label{component_2eic_8h_a6644ed2806b2b22764ccdb89aa74c945}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO}(value)~((EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_aed4eb850843b4dea239dd997ae81008a}{EIC\+\_\+\+EVCTRL\+\_\+\+EXTINTEO\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a613f01075fe9c2dd9dcc34c5dacfd6ed}\label{component_2eic_8h_a613f01075fe9c2dd9dcc34c5dacfd6ed}} 
+\#define {\bfseries EIC\+\_\+\+EVCTRL\+\_\+\+MASK}~0x0000\+FFFFul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+EVCTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_af64517ce260f6884f881223efcd4fe66}\label{component_2eic_8h_af64517ce260f6884f881223efcd4fe66}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+OFFSET}~0x08
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR offset) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa93fcdad643eb338a3f20268b85555f9}\label{component_2eic_8h_aa93fcdad643eb338a3f20268b85555f9}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR reset\+\_\+value) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ab684943ba269293c15ffd55e11d7452d}\label{component_2eic_8h_ab684943ba269293c15ffd55e11d7452d}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 0 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a92a8836c3cc235df44e885df41abb5ea}\label{component_2eic_8h_a92a8836c3cc235df44e885df41abb5ea}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT0}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab684943ba269293c15ffd55e11d7452d}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ab038548766ba19cdb3a7d5253ee360a5}\label{component_2eic_8h_ab038548766ba19cdb3a7d5253ee360a5}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 1 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ab4c500828c28355f88556141b123f629}\label{component_2eic_8h_ab4c500828c28355f88556141b123f629}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT1}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab038548766ba19cdb3a7d5253ee360a5}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a7e299f4b14ab4cfb097f4604298b649e}\label{component_2eic_8h_a7e299f4b14ab4cfb097f4604298b649e}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 2 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a0109236afa5e8b05033c2b59f4ce951c}\label{component_2eic_8h_a0109236afa5e8b05033c2b59f4ce951c}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT2}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a7e299f4b14ab4cfb097f4604298b649e}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a63db1262c3613b7c514d30302f074e19}\label{component_2eic_8h_a63db1262c3613b7c514d30302f074e19}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT3\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 3 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a7eb37086571cded092cefccbeebe54bf}\label{component_2eic_8h_a7eb37086571cded092cefccbeebe54bf}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT3}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a63db1262c3613b7c514d30302f074e19}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aac6b8b8efdaaed20aef3e53058dba41b}\label{component_2eic_8h_aac6b8b8efdaaed20aef3e53058dba41b}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT4\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 4 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a0575dc83efee676918befed00e469a57}\label{component_2eic_8h_a0575dc83efee676918befed00e469a57}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT4}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aac6b8b8efdaaed20aef3e53058dba41b}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a6efdef00445de6a92d44450ed56bc9e3}\label{component_2eic_8h_a6efdef00445de6a92d44450ed56bc9e3}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT5\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 5 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ad4d32b983f7233ad20785e6c5ee9184f}\label{component_2eic_8h_ad4d32b983f7233ad20785e6c5ee9184f}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT5}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a6efdef00445de6a92d44450ed56bc9e3}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ac7cac9c81b62ffa17527510350bca8da}\label{component_2eic_8h_ac7cac9c81b62ffa17527510350bca8da}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT6\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 6 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a0bd9985e154a2bce79c5561f99a0744b}\label{component_2eic_8h_a0bd9985e154a2bce79c5561f99a0744b}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT6}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ac7cac9c81b62ffa17527510350bca8da}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a56d3350d7a42ffaa65f8c7109aaebcde}\label{component_2eic_8h_a56d3350d7a42ffaa65f8c7109aaebcde}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT7\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 7 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_afe8502c78f05d6e05d77c56890c819b2}\label{component_2eic_8h_afe8502c78f05d6e05d77c56890c819b2}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT7}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a56d3350d7a42ffaa65f8c7109aaebcde}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aab987f75db9c2846a65dd7696387b806}\label{component_2eic_8h_aab987f75db9c2846a65dd7696387b806}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT8\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 8 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a4ca0406faeec49bc366b9a31bfff386a}\label{component_2eic_8h_a4ca0406faeec49bc366b9a31bfff386a}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT8}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aab987f75db9c2846a65dd7696387b806}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT8\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ab3c4cf69b58d14ad07e3aa9b9a8eb94f}\label{component_2eic_8h_ab3c4cf69b58d14ad07e3aa9b9a8eb94f}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT9\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 9 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a453170ecc850c2e79ac5002c70acbd2f}\label{component_2eic_8h_a453170ecc850c2e79ac5002c70acbd2f}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT9}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab3c4cf69b58d14ad07e3aa9b9a8eb94f}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT9\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_af6bc0d7f62df9ad67842a5e3c334077e}\label{component_2eic_8h_af6bc0d7f62df9ad67842a5e3c334077e}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT10\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 10 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ad58698119d36f348d1311745d13d536a}\label{component_2eic_8h_ad58698119d36f348d1311745d13d536a}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT10}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_af6bc0d7f62df9ad67842a5e3c334077e}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT10\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ae13f645c92feaed280646ec20ba9b0ae}\label{component_2eic_8h_ae13f645c92feaed280646ec20ba9b0ae}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT11\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 11 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ab925794384448e9c251142e4cd80044a}\label{component_2eic_8h_ab925794384448e9c251142e4cd80044a}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT11}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ae13f645c92feaed280646ec20ba9b0ae}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT11\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a5ca5b6366c5eb9e8b7fb456e03ace391}\label{component_2eic_8h_a5ca5b6366c5eb9e8b7fb456e03ace391}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT12\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 12 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_acca3a989fa9cb8980aeb70f848dd897b}\label{component_2eic_8h_acca3a989fa9cb8980aeb70f848dd897b}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT12}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a5ca5b6366c5eb9e8b7fb456e03ace391}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT12\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aa824ea53d5732b81f46a80bad394136c}\label{component_2eic_8h_aa824ea53d5732b81f46a80bad394136c}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT13\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 13 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a7fcfb4fd26d936816b8e8cdaa6a364cb}\label{component_2eic_8h_a7fcfb4fd26d936816b8e8cdaa6a364cb}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT13}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aa824ea53d5732b81f46a80bad394136c}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT13\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a5a96821494e7f96a289036be6b1f4be9}\label{component_2eic_8h_a5a96821494e7f96a289036be6b1f4be9}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT14\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 14 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a421f3237ff35c0999b74c15571ab63e3}\label{component_2eic_8h_a421f3237ff35c0999b74c15571ab63e3}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT14}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a5a96821494e7f96a289036be6b1f4be9}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT14\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a2149fe16a706ea419380b1b1d3892170}\label{component_2eic_8h_a2149fe16a706ea419380b1b1d3892170}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT15\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt 15 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_abfd06dc86f2a85667712bab8f0bbbcf7}\label{component_2eic_8h_abfd06dc86f2a85667712bab8f0bbbcf7}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT15}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a2149fe16a706ea419380b1b1d3892170}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT15\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a741348eb720fbcd5a997515060a08f79}\label{component_2eic_8h_a741348eb720fbcd5a997515060a08f79}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) External Interrupt x Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a5ff4b9c6c227cf5c2af5b9ab1ba1e358}\label{component_2eic_8h_a5ff4b9c6c227cf5c2af5b9ab1ba1e358}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a741348eb720fbcd5a997515060a08f79}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ace82ce29ec0f78de7cd95a1bfbcc4600}\label{component_2eic_8h_ace82ce29ec0f78de7cd95a1bfbcc4600}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT}(value)~((EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_a741348eb720fbcd5a997515060a08f79}{EIC\+\_\+\+INTENCLR\+\_\+\+EXTINT\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ac121def07c8b3d84e3d58470fa7e0a2a}\label{component_2eic_8h_ac121def07c8b3d84e3d58470fa7e0a2a}} 
+\#define {\bfseries EIC\+\_\+\+INTENCLR\+\_\+\+MASK}~0x0000\+FFFFul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENCLR) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a7544cf9b337e414ddccd4d849d263bc9}\label{component_2eic_8h_a7544cf9b337e414ddccd4d849d263bc9}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+OFFSET}~0x0C
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET offset) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ae72659b00ea4c8017352485df071fff8}\label{component_2eic_8h_ae72659b00ea4c8017352485df071fff8}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET reset\+\_\+value) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a87e14e8c175643e1d96fee4a54c96215}\label{component_2eic_8h_a87e14e8c175643e1d96fee4a54c96215}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 0 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a88a86ca390ac19b15ef53bee5a9e7dd9}\label{component_2eic_8h_a88a86ca390ac19b15ef53bee5a9e7dd9}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT0}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a87e14e8c175643e1d96fee4a54c96215}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ae2db314009a95784f17312b29950ef9e}\label{component_2eic_8h_ae2db314009a95784f17312b29950ef9e}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 1 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ae943a4e0ffc75c73bd0a636d85f81163}\label{component_2eic_8h_ae943a4e0ffc75c73bd0a636d85f81163}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT1}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ae2db314009a95784f17312b29950ef9e}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a810fe7674ced21dd9bf2b22d47fc3323}\label{component_2eic_8h_a810fe7674ced21dd9bf2b22d47fc3323}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 2 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ac83167d554dc155c5f916e1310495a34}\label{component_2eic_8h_ac83167d554dc155c5f916e1310495a34}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT2}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a810fe7674ced21dd9bf2b22d47fc3323}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_acdaef28157f0fefedf193ab4263975ea}\label{component_2eic_8h_acdaef28157f0fefedf193ab4263975ea}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT3\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 3 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a675accece5429161f799fe792021924f}\label{component_2eic_8h_a675accece5429161f799fe792021924f}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT3}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_acdaef28157f0fefedf193ab4263975ea}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a5a46c4311103844b309fa994ff4390dd}\label{component_2eic_8h_a5a46c4311103844b309fa994ff4390dd}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT4\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 4 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ac5a21705f81eef53ce4bcfbac5553187}\label{component_2eic_8h_ac5a21705f81eef53ce4bcfbac5553187}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT4}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a5a46c4311103844b309fa994ff4390dd}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aa6dcb5d4e8e279bf628858b20421df8b}\label{component_2eic_8h_aa6dcb5d4e8e279bf628858b20421df8b}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT5\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 5 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a313391eefbeee5d95e5052b7e65adc79}\label{component_2eic_8h_a313391eefbeee5d95e5052b7e65adc79}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT5}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aa6dcb5d4e8e279bf628858b20421df8b}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a5413d77895a28fb5fc89965ab1d29a26}\label{component_2eic_8h_a5413d77895a28fb5fc89965ab1d29a26}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT6\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 6 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a0ca0531a8d888ec49b58cb8a95030fbd}\label{component_2eic_8h_a0ca0531a8d888ec49b58cb8a95030fbd}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT6}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a5413d77895a28fb5fc89965ab1d29a26}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ac9e0bbd8f7f901943141712545b44a40}\label{component_2eic_8h_ac9e0bbd8f7f901943141712545b44a40}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT7\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 7 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a85b063787d4f0d5f489df76553b32b80}\label{component_2eic_8h_a85b063787d4f0d5f489df76553b32b80}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT7}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ac9e0bbd8f7f901943141712545b44a40}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a5fd8de888967b5dfba7f064d729f2eb8}\label{component_2eic_8h_a5fd8de888967b5dfba7f064d729f2eb8}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT8\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 8 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a46924ea5e457886f5ffc5622572cfcbf}\label{component_2eic_8h_a46924ea5e457886f5ffc5622572cfcbf}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT8}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a5fd8de888967b5dfba7f064d729f2eb8}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT8\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_acbcf0bfa1d72884f7c63f2c7c3e2d0c1}\label{component_2eic_8h_acbcf0bfa1d72884f7c63f2c7c3e2d0c1}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT9\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 9 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a02bbfeab64c9ed0a9f3c75bcd4cb4bcb}\label{component_2eic_8h_a02bbfeab64c9ed0a9f3c75bcd4cb4bcb}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT9}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_acbcf0bfa1d72884f7c63f2c7c3e2d0c1}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT9\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aec53134c4daed24a7102c8e81445f46a}\label{component_2eic_8h_aec53134c4daed24a7102c8e81445f46a}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT10\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 10 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a214a5fbdf6ecfa3e5b01de933a10945a}\label{component_2eic_8h_a214a5fbdf6ecfa3e5b01de933a10945a}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT10}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aec53134c4daed24a7102c8e81445f46a}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT10\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a5d177c44fc3866d2d14278aa95afd447}\label{component_2eic_8h_a5d177c44fc3866d2d14278aa95afd447}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT11\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 11 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a690c989e8eaf5f994ac8c4c9950dd440}\label{component_2eic_8h_a690c989e8eaf5f994ac8c4c9950dd440}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT11}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a5d177c44fc3866d2d14278aa95afd447}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT11\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ad1186bcac46ea1ece7e61bdc5810bed5}\label{component_2eic_8h_ad1186bcac46ea1ece7e61bdc5810bed5}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT12\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 12 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a2c74d132ab3b5bc4ad5c6013ac8694e5}\label{component_2eic_8h_a2c74d132ab3b5bc4ad5c6013ac8694e5}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT12}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ad1186bcac46ea1ece7e61bdc5810bed5}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT12\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a2af04d8820ffa025bb1082d3407b0ac7}\label{component_2eic_8h_a2af04d8820ffa025bb1082d3407b0ac7}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT13\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 13 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a2ae3ed5aa1828d63960496a6d417a701}\label{component_2eic_8h_a2ae3ed5aa1828d63960496a6d417a701}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT13}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a2af04d8820ffa025bb1082d3407b0ac7}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT13\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a2b67a69b30c95a0f89c4cf524d506046}\label{component_2eic_8h_a2b67a69b30c95a0f89c4cf524d506046}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT14\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 14 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_abbf26aa5a97d7f5e20e8a8cdcfe7cebd}\label{component_2eic_8h_abbf26aa5a97d7f5e20e8a8cdcfe7cebd}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT14}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a2b67a69b30c95a0f89c4cf524d506046}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT14\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ae2bef3759a1e7b986ca3b1a6f3968be8}\label{component_2eic_8h_ae2bef3759a1e7b986ca3b1a6f3968be8}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT15\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt 15 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a18995aee60fc71ee2facb676cbd3333d}\label{component_2eic_8h_a18995aee60fc71ee2facb676cbd3333d}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT15}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ae2bef3759a1e7b986ca3b1a6f3968be8}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT15\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_afd6be1eb2fc6554616eb65915a12c245}\label{component_2eic_8h_afd6be1eb2fc6554616eb65915a12c245}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) External Interrupt x Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_afb39751004f288b53ff8530265a67eaa}\label{component_2eic_8h_afb39751004f288b53ff8530265a67eaa}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2eic_8h_afd6be1eb2fc6554616eb65915a12c245}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a22189f36f0881268c4c82ace424dff16}\label{component_2eic_8h_a22189f36f0881268c4c82ace424dff16}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+EXTINT}(value)~((EIC\+\_\+\+INTENSET\+\_\+\+EXTINT\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_afd6be1eb2fc6554616eb65915a12c245}{EIC\+\_\+\+INTENSET\+\_\+\+EXTINT\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a518b934f1f683eea112f810134e11386}\label{component_2eic_8h_a518b934f1f683eea112f810134e11386}} 
+\#define {\bfseries EIC\+\_\+\+INTENSET\+\_\+\+MASK}~0x0000\+FFFFul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTENSET) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a4e51877a81710951770d2bd40145d6b7}\label{component_2eic_8h_a4e51877a81710951770d2bd40145d6b7}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+OFFSET}~0x10
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG offset) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a4672c235b09428fde9c98d6d844c09d9}\label{component_2eic_8h_a4672c235b09428fde9c98d6d844c09d9}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG reset\+\_\+value) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aac8717088ddcaa5af8f2df153c7798ed}\label{component_2eic_8h_aac8717088ddcaa5af8f2df153c7798ed}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a5d477d3673662d1f76972ed22c7bbcdd}\label{component_2eic_8h_a5d477d3673662d1f76972ed22c7bbcdd}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT0}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aac8717088ddcaa5af8f2df153c7798ed}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ab4577bd71fd9382deccab5062f8cd53f}\label{component_2eic_8h_ab4577bd71fd9382deccab5062f8cd53f}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_af4e949ccc1e9a7c8e417b3f4b7bbb2ef}\label{component_2eic_8h_af4e949ccc1e9a7c8e417b3f4b7bbb2ef}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT1}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab4577bd71fd9382deccab5062f8cd53f}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a955d04de0792787a80f26c585b180b2a}\label{component_2eic_8h_a955d04de0792787a80f26c585b180b2a}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ad3cd4db4d139be9d2abba661dbb96561}\label{component_2eic_8h_ad3cd4db4d139be9d2abba661dbb96561}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT2}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a955d04de0792787a80f26c585b180b2a}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a11e3d3fec097b0d415e60aab9931e738}\label{component_2eic_8h_a11e3d3fec097b0d415e60aab9931e738}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT3\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a198d42f7974b7b441610de1c99257975}\label{component_2eic_8h_a198d42f7974b7b441610de1c99257975}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT3}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a11e3d3fec097b0d415e60aab9931e738}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a64ee25399a90d6c2cec22480a218fed5}\label{component_2eic_8h_a64ee25399a90d6c2cec22480a218fed5}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT4\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aeea7dff3f5857191507b6916c0d8b219}\label{component_2eic_8h_aeea7dff3f5857191507b6916c0d8b219}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT4}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a64ee25399a90d6c2cec22480a218fed5}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a6a9bceb55e1b968caffb82f444ec2089}\label{component_2eic_8h_a6a9bceb55e1b968caffb82f444ec2089}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT5\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 5 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a33a63f43338d663d61313b6caf8e037d}\label{component_2eic_8h_a33a63f43338d663d61313b6caf8e037d}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT5}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a6a9bceb55e1b968caffb82f444ec2089}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a41706b9efd8e2d88dd7249e1755dd7f8}\label{component_2eic_8h_a41706b9efd8e2d88dd7249e1755dd7f8}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT6\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 6 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a455717f643de18f05f18ed1db2e9be52}\label{component_2eic_8h_a455717f643de18f05f18ed1db2e9be52}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT6}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a41706b9efd8e2d88dd7249e1755dd7f8}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aeb26fb4cfd061bac8196dc3b13855606}\label{component_2eic_8h_aeb26fb4cfd061bac8196dc3b13855606}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT7\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 7 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_afe39159c3ac629b3f6fdd5f908f972e1}\label{component_2eic_8h_afe39159c3ac629b3f6fdd5f908f972e1}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT7}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aeb26fb4cfd061bac8196dc3b13855606}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ade057b6002352d804b6e2bb3ec640bfe}\label{component_2eic_8h_ade057b6002352d804b6e2bb3ec640bfe}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT8\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 8 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a77b3b3f789474cad01794fc460a70a94}\label{component_2eic_8h_a77b3b3f789474cad01794fc460a70a94}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT8}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ade057b6002352d804b6e2bb3ec640bfe}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT8\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a0f1ade503ec9f21497973b67e86f55c6}\label{component_2eic_8h_a0f1ade503ec9f21497973b67e86f55c6}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT9\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 9 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a563d592e519bb18ad95d131642d126f4}\label{component_2eic_8h_a563d592e519bb18ad95d131642d126f4}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT9}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a0f1ade503ec9f21497973b67e86f55c6}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT9\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a3a5d49fb3642d219f967a907b657507d}\label{component_2eic_8h_a3a5d49fb3642d219f967a907b657507d}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT10\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 10 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a04f775ec5822140957d93bacaf2f8362}\label{component_2eic_8h_a04f775ec5822140957d93bacaf2f8362}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT10}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a3a5d49fb3642d219f967a907b657507d}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT10\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a7f0f658fe9b2a7832314151a2b6fc642}\label{component_2eic_8h_a7f0f658fe9b2a7832314151a2b6fc642}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT11\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 11 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a629b5be48b77c30a6640792bb1b291b6}\label{component_2eic_8h_a629b5be48b77c30a6640792bb1b291b6}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT11}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a7f0f658fe9b2a7832314151a2b6fc642}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT11\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ac4a7a7f3c1c98d5b7c38ffdc70f3272b}\label{component_2eic_8h_ac4a7a7f3c1c98d5b7c38ffdc70f3272b}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT12\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 12 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a937a8a2e639b439c6d94b56c76bab11f}\label{component_2eic_8h_a937a8a2e639b439c6d94b56c76bab11f}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT12}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_ac4a7a7f3c1c98d5b7c38ffdc70f3272b}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT12\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a8cfef74a895e1d2b23705ba66b288067}\label{component_2eic_8h_a8cfef74a895e1d2b23705ba66b288067}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT13\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 13 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a86884768751f15b3f53dbab7fb965873}\label{component_2eic_8h_a86884768751f15b3f53dbab7fb965873}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT13}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a8cfef74a895e1d2b23705ba66b288067}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT13\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a6eb3f9d8c35bd6ca591f9fb982565df0}\label{component_2eic_8h_a6eb3f9d8c35bd6ca591f9fb982565df0}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT14\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 14 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a712f07ef113a89facba545e17f30a58b}\label{component_2eic_8h_a712f07ef113a89facba545e17f30a58b}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT14}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a6eb3f9d8c35bd6ca591f9fb982565df0}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT14\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a4153dc60db3caf7bc3e136b542f37298}\label{component_2eic_8h_a4153dc60db3caf7bc3e136b542f37298}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT15\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt 15 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a5bc136aa774eabd13360841b734d440c}\label{component_2eic_8h_a5bc136aa774eabd13360841b734d440c}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT15}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a4153dc60db3caf7bc3e136b542f37298}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT15\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_adcbc791cf87b0cbd60e76f1958249501}\label{component_2eic_8h_adcbc791cf87b0cbd60e76f1958249501}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) External Interrupt x \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ae66d3b315a5d706346ec79d4e8348b2e}\label{component_2eic_8h_ae66d3b315a5d706346ec79d4e8348b2e}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2eic_8h_adcbc791cf87b0cbd60e76f1958249501}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a9be0394a7b0f0deed1340527b6485f5c}\label{component_2eic_8h_a9be0394a7b0f0deed1340527b6485f5c}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT}(value)~((EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_adcbc791cf87b0cbd60e76f1958249501}{EIC\+\_\+\+INTFLAG\+\_\+\+EXTINT\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a81b4c53bcfec0717a26cde921d364062}\label{component_2eic_8h_a81b4c53bcfec0717a26cde921d364062}} 
+\#define {\bfseries EIC\+\_\+\+INTFLAG\+\_\+\+MASK}~0x0000\+FFFFul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+INTFLAG) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ac0631d7a5f41ab67669c129c0e6daeb9}\label{component_2eic_8h_ac0631d7a5f41ab67669c129c0e6daeb9}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+OFFSET}~0x14
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP offset) Wake-\/\+Up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a41805c4be5d18516c7b466f2872d8169}\label{component_2eic_8h_a41805c4be5d18516c7b466f2872d8169}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP reset\+\_\+value) Wake-\/\+Up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a09cc498c639a1fc66ac0c7fefcc9904a}\label{component_2eic_8h_a09cc498c639a1fc66ac0c7fefcc9904a}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 0 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a86cac9aaa54491aeaa74c64d6b7e9028}\label{component_2eic_8h_a86cac9aaa54491aeaa74c64d6b7e9028}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN0}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a09cc498c639a1fc66ac0c7fefcc9904a}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aeb982e09b2eb4cc28badf87b3b353bd4}\label{component_2eic_8h_aeb982e09b2eb4cc28badf87b3b353bd4}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 1 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa73e7cc09934ecc9e0b57c71134060a2}\label{component_2eic_8h_aa73e7cc09934ecc9e0b57c71134060a2}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN1}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aeb982e09b2eb4cc28badf87b3b353bd4}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a9868da564c302649d8fd8a7137a7130b}\label{component_2eic_8h_a9868da564c302649d8fd8a7137a7130b}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 2 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a1211685698deb1e80b769bddc99df82c}\label{component_2eic_8h_a1211685698deb1e80b769bddc99df82c}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN2}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9868da564c302649d8fd8a7137a7130b}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a58062cfb09a37725bfebf13ae6ed6efc}\label{component_2eic_8h_a58062cfb09a37725bfebf13ae6ed6efc}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN3\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 3 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a1f72497b10a9094d7911bf1336cae12d}\label{component_2eic_8h_a1f72497b10a9094d7911bf1336cae12d}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN3}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a58062cfb09a37725bfebf13ae6ed6efc}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a8ccdcbc56f526b9c95fe6be73a453300}\label{component_2eic_8h_a8ccdcbc56f526b9c95fe6be73a453300}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN4\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 4 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a03d6f1c7095011399a02928c4cfd92d8}\label{component_2eic_8h_a03d6f1c7095011399a02928c4cfd92d8}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN4}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a8ccdcbc56f526b9c95fe6be73a453300}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a77d0d99df4dda49b41206049604346e7}\label{component_2eic_8h_a77d0d99df4dda49b41206049604346e7}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN5\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 5 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_af12f201566f2aeca5f8c2b6fef9a890f}\label{component_2eic_8h_af12f201566f2aeca5f8c2b6fef9a890f}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN5}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a77d0d99df4dda49b41206049604346e7}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_abae0b5760d3b19a19e8cc8cbb3d34f00}\label{component_2eic_8h_abae0b5760d3b19a19e8cc8cbb3d34f00}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN6\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 6 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a10607964ed21a8a2b0960f0032f42fe9}\label{component_2eic_8h_a10607964ed21a8a2b0960f0032f42fe9}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN6}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_abae0b5760d3b19a19e8cc8cbb3d34f00}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_af85c758bb81382d2482a3e4148f80d67}\label{component_2eic_8h_af85c758bb81382d2482a3e4148f80d67}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN7\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 7 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a4ff342851806a7125a2f69b034cc4888}\label{component_2eic_8h_a4ff342851806a7125a2f69b034cc4888}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN7}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_af85c758bb81382d2482a3e4148f80d67}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a4ea6d6f840e6b3c765e2709d3a8a1ca4}\label{component_2eic_8h_a4ea6d6f840e6b3c765e2709d3a8a1ca4}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN8\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 8 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_acb997ffc8107685a43049194694f1815}\label{component_2eic_8h_acb997ffc8107685a43049194694f1815}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN8}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a4ea6d6f840e6b3c765e2709d3a8a1ca4}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN8\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a3447eca2bd58027fa43ce88f35f5fb38}\label{component_2eic_8h_a3447eca2bd58027fa43ce88f35f5fb38}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN9\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 9 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a0dc41f5f331cd5398dafc0febe6188f4}\label{component_2eic_8h_a0dc41f5f331cd5398dafc0febe6188f4}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN9}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a3447eca2bd58027fa43ce88f35f5fb38}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN9\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a4a26f7fac25544b9467d8951d9fa5590}\label{component_2eic_8h_a4a26f7fac25544b9467d8951d9fa5590}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN10\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 10 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a3e1747be27ae69e509c0f5fcace995c3}\label{component_2eic_8h_a3e1747be27ae69e509c0f5fcace995c3}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN10}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a4a26f7fac25544b9467d8951d9fa5590}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN10\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aaad54cabab507c08b4a8e13a145b77c7}\label{component_2eic_8h_aaad54cabab507c08b4a8e13a145b77c7}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN11\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 11 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a6738597ca18d1c1938942f84a9ba7e89}\label{component_2eic_8h_a6738597ca18d1c1938942f84a9ba7e89}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN11}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_aaad54cabab507c08b4a8e13a145b77c7}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN11\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a41c5deb6e5f0ccd8cd276e87c6cf9d35}\label{component_2eic_8h_a41c5deb6e5f0ccd8cd276e87c6cf9d35}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN12\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 12 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aea9822ac470fc5ad3ceeff45c3698730}\label{component_2eic_8h_aea9822ac470fc5ad3ceeff45c3698730}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN12}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a41c5deb6e5f0ccd8cd276e87c6cf9d35}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN12\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a9fb79fab8777d68ff3fbdc6150c56689}\label{component_2eic_8h_a9fb79fab8777d68ff3fbdc6150c56689}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN13\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 13 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a2f806e0d78bb3e00e5fefdadc6d3eb0d}\label{component_2eic_8h_a2f806e0d78bb3e00e5fefdadc6d3eb0d}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN13}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9fb79fab8777d68ff3fbdc6150c56689}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN13\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a37d15df8b1587e2efb5efa57a7bbc7bb}\label{component_2eic_8h_a37d15df8b1587e2efb5efa57a7bbc7bb}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN14\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 14 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a152288468eb0a924a36b3de34baa2212}\label{component_2eic_8h_a152288468eb0a924a36b3de34baa2212}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN14}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a37d15df8b1587e2efb5efa57a7bbc7bb}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN14\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a0329468ca05b076c0153c9f86be0913a}\label{component_2eic_8h_a0329468ca05b076c0153c9f86be0913a}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN15\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt 15 Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a65eaf82e6e578151cbdaf2e9e8b0e1f0}\label{component_2eic_8h_a65eaf82e6e578151cbdaf2e9e8b0e1f0}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN15}~(1 $<$$<$ \mbox{\hyperlink{component_2eic_8h_a0329468ca05b076c0153c9f86be0913a}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN15\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a473d9edc03a0108cc4493a118d086734}\label{component_2eic_8h_a473d9edc03a0108cc4493a118d086734}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) External Interrupt x Wake-\/up Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ada47806b64ac5416a917b8360ebb9566}\label{component_2eic_8h_ada47806b64ac5416a917b8360ebb9566}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a473d9edc03a0108cc4493a118d086734}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a4e9f9b0d33b5b627c7a106272ab8d301}\label{component_2eic_8h_a4e9f9b0d33b5b627c7a106272ab8d301}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN}(value)~((EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_a473d9edc03a0108cc4493a118d086734}{EIC\+\_\+\+WAKEUP\+\_\+\+WAKEUPEN\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ab0993db12e1ba692caec292399701484}\label{component_2eic_8h_ab0993db12e1ba692caec292399701484}} 
+\#define {\bfseries EIC\+\_\+\+WAKEUP\+\_\+\+MASK}~0x0000\+FFFFul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+WAKEUP) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a35ff22e6265c54180a3967466b95361a}\label{component_2eic_8h_a35ff22e6265c54180a3967466b95361a}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+OFFSET}~0x18
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG offset) Configuration n \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_afa5a8efe9b088c3ef448f32bf86d537d}\label{component_2eic_8h_afa5a8efe9b088c3ef448f32bf86d537d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG reset\+\_\+value) Configuration n \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}\label{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Input Sense 0 Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_add199a75cf7a674ddc1ffc8dc8246dc5}\label{component_2eic_8h_add199a75cf7a674ddc1ffc8dc8246dc5}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a5072e249ac60a58be9d31168eebf2aa6}\label{component_2eic_8h_a5072e249ac60a58be9d31168eebf2aa6}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0}(value)~((EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a986d4e3fc22b167f6eb21a178ff4c45e}\label{component_2eic_8h_a986d4e3fc22b167f6eb21a178ff4c45e}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+NONE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) No detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_adf381990c5471ceec041a27a028a51be}\label{component_2eic_8h_adf381990c5471ceec041a27a028a51be}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+RISE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Rising-\/edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a7fb62a57d10876d7cc1f6e22992c469d}\label{component_2eic_8h_a7fb62a57d10876d7cc1f6e22992c469d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+FALL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Falling-\/edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ac0808674223b5a4fe5e7d1e24c1499a3}\label{component_2eic_8h_ac0808674223b5a4fe5e7d1e24c1499a3}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+BOTH\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Both-\/edges detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_add8658a97c85968dea3f8bdcceabca94}\label{component_2eic_8h_add8658a97c85968dea3f8bdcceabca94}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+HIGH\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) High-\/level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ad578c3896d5b3cdc4631cba1a6f3f8e2}\label{component_2eic_8h_ad578c3896d5b3cdc4631cba1a6f3f8e2}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+LOW\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Low-\/level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a378c783f77963e228dac8f9a6a370e6f}\label{component_2eic_8h_a378c783f77963e228dac8f9a6a370e6f}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+NONE}~(\mbox{\hyperlink{component_2eic_8h_a986d4e3fc22b167f6eb21a178ff4c45e}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+NONE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a6d9aa621526bcaef219a3b4ba0acc592}\label{component_2eic_8h_a6d9aa621526bcaef219a3b4ba0acc592}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+RISE}~(\mbox{\hyperlink{component_2eic_8h_adf381990c5471ceec041a27a028a51be}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+RISE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a763b0b029d345528a83d415e4defb312}\label{component_2eic_8h_a763b0b029d345528a83d415e4defb312}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+FALL}~(\mbox{\hyperlink{component_2eic_8h_a7fb62a57d10876d7cc1f6e22992c469d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+FALL\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a9a2fff6dc806d4edd3892528639e2271}\label{component_2eic_8h_a9a2fff6dc806d4edd3892528639e2271}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+BOTH}~(\mbox{\hyperlink{component_2eic_8h_ac0808674223b5a4fe5e7d1e24c1499a3}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+BOTH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aec9d7be0ef210c2438c8f72d3d15366f}\label{component_2eic_8h_aec9d7be0ef210c2438c8f72d3d15366f}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+HIGH}~(\mbox{\hyperlink{component_2eic_8h_add8658a97c85968dea3f8bdcceabca94}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+HIGH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a932e047ca4b45c95903a2e575fe0bcd4}\label{component_2eic_8h_a932e047ca4b45c95903a2e575fe0bcd4}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+LOW}~(\mbox{\hyperlink{component_2eic_8h_ad578c3896d5b3cdc4631cba1a6f3f8e2}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+LOW\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2eic_8h_a9a191a13be42b2e0283c890d9302f461}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aa17527a9aab80477ff20ed73d2d7177a}\label{component_2eic_8h_aa17527a9aab80477ff20ed73d2d7177a}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN0\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Filter 0 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_af3dda3c75f2f02a4d4c532526cc29230}\label{component_2eic_8h_af3dda3c75f2f02a4d4c532526cc29230}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN0}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_aa17527a9aab80477ff20ed73d2d7177a}{EIC\+\_\+\+CONFIG\+\_\+\+FILTEN0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}\label{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Input Sense 1 Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a77aa5f88d3ea77e93becbd87eec2ffde}\label{component_2eic_8h_a77aa5f88d3ea77e93becbd87eec2ffde}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a1ce58639b6e0135e1061584726b1c705}\label{component_2eic_8h_a1ce58639b6e0135e1061584726b1c705}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1}(value)~((EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a2dd12fe5d69cac11eb3b807a1ba2972a}\label{component_2eic_8h_a2dd12fe5d69cac11eb3b807a1ba2972a}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+NONE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) No detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a390eb7bfde2edc0c8f7c2aecc55f2f11}\label{component_2eic_8h_a390eb7bfde2edc0c8f7c2aecc55f2f11}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+RISE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Rising edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a0ca6a376817490cb3ef82906ffe21923}\label{component_2eic_8h_a0ca6a376817490cb3ef82906ffe21923}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+FALL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Falling edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_abb0c4499b66df5612c61697749c38f6f}\label{component_2eic_8h_abb0c4499b66df5612c61697749c38f6f}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+BOTH\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Both edges detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ad9d6fe0929c266f663d7fb7b05296098}\label{component_2eic_8h_ad9d6fe0929c266f663d7fb7b05296098}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+HIGH\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) High level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aece415d353240e8ee175072f6a5224cd}\label{component_2eic_8h_aece415d353240e8ee175072f6a5224cd}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+LOW\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Low level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a8ee9de103d7fa21e56b6ee8fb6a75df5}\label{component_2eic_8h_a8ee9de103d7fa21e56b6ee8fb6a75df5}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+NONE}~(\mbox{\hyperlink{component_2eic_8h_a2dd12fe5d69cac11eb3b807a1ba2972a}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+NONE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a21bd95765bfe75083196d06747ed35ed}\label{component_2eic_8h_a21bd95765bfe75083196d06747ed35ed}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+RISE}~(\mbox{\hyperlink{component_2eic_8h_a390eb7bfde2edc0c8f7c2aecc55f2f11}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+RISE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_af55ad673c13920e9d0c93a9427b9c4bb}\label{component_2eic_8h_af55ad673c13920e9d0c93a9427b9c4bb}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+FALL}~(\mbox{\hyperlink{component_2eic_8h_a0ca6a376817490cb3ef82906ffe21923}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+FALL\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ac3a09f66728d85d1ee060b14e71f14db}\label{component_2eic_8h_ac3a09f66728d85d1ee060b14e71f14db}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+BOTH}~(\mbox{\hyperlink{component_2eic_8h_abb0c4499b66df5612c61697749c38f6f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+BOTH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_af4366f6ade99ae499566669c526842c2}\label{component_2eic_8h_af4366f6ade99ae499566669c526842c2}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+HIGH}~(\mbox{\hyperlink{component_2eic_8h_ad9d6fe0929c266f663d7fb7b05296098}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+HIGH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a41a9cb9e978d4cbfccd4673a6afd500c}\label{component_2eic_8h_a41a9cb9e978d4cbfccd4673a6afd500c}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+LOW}~(\mbox{\hyperlink{component_2eic_8h_aece415d353240e8ee175072f6a5224cd}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+LOW\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab34794f88d0b20fa2792afe7fecd7fc1}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a930f7f68f458eb61711fcad9b7b0e33d}\label{component_2eic_8h_a930f7f68f458eb61711fcad9b7b0e33d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN1\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Filter 1 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aed447b99e55e694beb50f9d65de606c3}\label{component_2eic_8h_aed447b99e55e694beb50f9d65de606c3}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN1}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a930f7f68f458eb61711fcad9b7b0e33d}{EIC\+\_\+\+CONFIG\+\_\+\+FILTEN1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}\label{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Input Sense 2 Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_afba4355db43ca8318bc2ce2f6c8ae464}\label{component_2eic_8h_afba4355db43ca8318bc2ce2f6c8ae464}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ac962ab50d64cad7bdffe1589d05ea8fe}\label{component_2eic_8h_ac962ab50d64cad7bdffe1589d05ea8fe}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2}(value)~((EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a89231a2e48fe64b47ec85f545280b7df}\label{component_2eic_8h_a89231a2e48fe64b47ec85f545280b7df}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+NONE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) No detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a4c6f24459946c4c716e15f887cf91732}\label{component_2eic_8h_a4c6f24459946c4c716e15f887cf91732}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+RISE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Rising edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a2f603343d04d42dfa3c238016be954b5}\label{component_2eic_8h_a2f603343d04d42dfa3c238016be954b5}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+FALL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Falling edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a7809a27e221937b35d9e6b969a3771fb}\label{component_2eic_8h_a7809a27e221937b35d9e6b969a3771fb}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+BOTH\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Both edges detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a949642d01c96957d1e5f9279d3b48c2c}\label{component_2eic_8h_a949642d01c96957d1e5f9279d3b48c2c}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+HIGH\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) High level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a475f78069ac4ecbb6c2115497fa686f0}\label{component_2eic_8h_a475f78069ac4ecbb6c2115497fa686f0}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+LOW\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Low level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a4a1c1d2feea55032d7ae9fc0734428dc}\label{component_2eic_8h_a4a1c1d2feea55032d7ae9fc0734428dc}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+NONE}~(\mbox{\hyperlink{component_2eic_8h_a89231a2e48fe64b47ec85f545280b7df}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+NONE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a13082e6745ab833b03c4ae3f6ac2987b}\label{component_2eic_8h_a13082e6745ab833b03c4ae3f6ac2987b}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+RISE}~(\mbox{\hyperlink{component_2eic_8h_a4c6f24459946c4c716e15f887cf91732}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+RISE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a9fdf05ef44c96150dec20de4e599acca}\label{component_2eic_8h_a9fdf05ef44c96150dec20de4e599acca}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+FALL}~(\mbox{\hyperlink{component_2eic_8h_a2f603343d04d42dfa3c238016be954b5}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+FALL\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a714d2b832c236d31cca6edec3104a77d}\label{component_2eic_8h_a714d2b832c236d31cca6edec3104a77d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+BOTH}~(\mbox{\hyperlink{component_2eic_8h_a7809a27e221937b35d9e6b969a3771fb}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+BOTH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a3b91ead92d5a5e553982a5cc7fae8bf8}\label{component_2eic_8h_a3b91ead92d5a5e553982a5cc7fae8bf8}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+HIGH}~(\mbox{\hyperlink{component_2eic_8h_a949642d01c96957d1e5f9279d3b48c2c}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+HIGH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a6ccc3301fd3545d826b275289fb05c99}\label{component_2eic_8h_a6ccc3301fd3545d826b275289fb05c99}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+LOW}~(\mbox{\hyperlink{component_2eic_8h_a475f78069ac4ecbb6c2115497fa686f0}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+LOW\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2eic_8h_af67e9a2938eae7c6f9f4d19c405e243f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a54e72c526cf4c31edf453b7f50618043}\label{component_2eic_8h_a54e72c526cf4c31edf453b7f50618043}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN2\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Filter 2 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a30d78ba0b6725cd2a5bdb971430773fb}\label{component_2eic_8h_a30d78ba0b6725cd2a5bdb971430773fb}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN2}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a54e72c526cf4c31edf453b7f50618043}{EIC\+\_\+\+CONFIG\+\_\+\+FILTEN2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}\label{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Input Sense 3 Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a098cccccbc01e4565d38bcd6426fb6ff}\label{component_2eic_8h_a098cccccbc01e4565d38bcd6426fb6ff}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aa690400bd1b29ec479f6fac590b96a4d}\label{component_2eic_8h_aa690400bd1b29ec479f6fac590b96a4d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3}(value)~((EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ae6cb4f8bb0afd3fd2c89dad8d552ec1f}\label{component_2eic_8h_ae6cb4f8bb0afd3fd2c89dad8d552ec1f}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+NONE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) No detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ae1f57c9ebb1706bb46bc77ef24f56a81}\label{component_2eic_8h_ae1f57c9ebb1706bb46bc77ef24f56a81}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+RISE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Rising edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_af4c91968458631be4fa57f3c0c15404c}\label{component_2eic_8h_af4c91968458631be4fa57f3c0c15404c}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+FALL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Falling edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa8713c71e12ac27aed9182636e488bc6}\label{component_2eic_8h_aa8713c71e12ac27aed9182636e488bc6}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+BOTH\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Both edges detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ac73c1ef1256ac37c4a05f3f3437ca87d}\label{component_2eic_8h_ac73c1ef1256ac37c4a05f3f3437ca87d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+HIGH\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) High level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_acd770ca16cc8b9bd76408b1ab7391ff5}\label{component_2eic_8h_acd770ca16cc8b9bd76408b1ab7391ff5}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+LOW\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Low level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a98941a10dd51749042a10b67ed8eb3b2}\label{component_2eic_8h_a98941a10dd51749042a10b67ed8eb3b2}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+NONE}~(\mbox{\hyperlink{component_2eic_8h_ae6cb4f8bb0afd3fd2c89dad8d552ec1f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+NONE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a1ca0923ce75dad191065a40e021b6028}\label{component_2eic_8h_a1ca0923ce75dad191065a40e021b6028}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+RISE}~(\mbox{\hyperlink{component_2eic_8h_ae1f57c9ebb1706bb46bc77ef24f56a81}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+RISE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a9f494d43bb1b2fd098c3acc91bd95bc2}\label{component_2eic_8h_a9f494d43bb1b2fd098c3acc91bd95bc2}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+FALL}~(\mbox{\hyperlink{component_2eic_8h_af4c91968458631be4fa57f3c0c15404c}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+FALL\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a14fc23701b9b6d750aac9c6fa9437907}\label{component_2eic_8h_a14fc23701b9b6d750aac9c6fa9437907}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+BOTH}~(\mbox{\hyperlink{component_2eic_8h_aa8713c71e12ac27aed9182636e488bc6}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+BOTH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a578849e63e490e04dda9f78ec3674da1}\label{component_2eic_8h_a578849e63e490e04dda9f78ec3674da1}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+HIGH}~(\mbox{\hyperlink{component_2eic_8h_ac73c1ef1256ac37c4a05f3f3437ca87d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+HIGH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a69a5938a46054fe30a1661c0194814ba}\label{component_2eic_8h_a69a5938a46054fe30a1661c0194814ba}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+LOW}~(\mbox{\hyperlink{component_2eic_8h_acd770ca16cc8b9bd76408b1ab7391ff5}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+LOW\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2eic_8h_a831aeaf54a89c732e999bddee6ad0cbf}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_af8ffa2628676573b96658108f610e95e}\label{component_2eic_8h_af8ffa2628676573b96658108f610e95e}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN3\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Filter 3 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a34cd2035be4ce980a8480e58c79d6dd1}\label{component_2eic_8h_a34cd2035be4ce980a8480e58c79d6dd1}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN3}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_af8ffa2628676573b96658108f610e95e}{EIC\+\_\+\+CONFIG\+\_\+\+FILTEN3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}\label{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Pos}~16
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Input Sense 4 Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a3547b0433af586c98918da630dc3a997}\label{component_2eic_8h_a3547b0433af586c98918da630dc3a997}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a772ab24259c926229113844e9dbaa99e}\label{component_2eic_8h_a772ab24259c926229113844e9dbaa99e}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4}(value)~((EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a4317fae5e621e618c7e7bdf654a1b2b0}\label{component_2eic_8h_a4317fae5e621e618c7e7bdf654a1b2b0}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+NONE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) No detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aad52f78c0fc34ba713282c4f2cb52965}\label{component_2eic_8h_aad52f78c0fc34ba713282c4f2cb52965}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+RISE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Rising edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a4fe8ad8e7d22ba42d070d9108213d907}\label{component_2eic_8h_a4fe8ad8e7d22ba42d070d9108213d907}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+FALL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Falling edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a90038bdcd72cf77acd74f46032eb292c}\label{component_2eic_8h_a90038bdcd72cf77acd74f46032eb292c}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+BOTH\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Both edges detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_af61da74ee963e779f81a0fa2f81e9c75}\label{component_2eic_8h_af61da74ee963e779f81a0fa2f81e9c75}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+HIGH\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) High level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a92370d05cd0d822893f57ecf0ff7a2a5}\label{component_2eic_8h_a92370d05cd0d822893f57ecf0ff7a2a5}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+LOW\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Low level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ab7d82940b55cdc2637827b449febf0a6}\label{component_2eic_8h_ab7d82940b55cdc2637827b449febf0a6}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+NONE}~(\mbox{\hyperlink{component_2eic_8h_a4317fae5e621e618c7e7bdf654a1b2b0}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+NONE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a3b5ae1a6631feb1f3dfd6a2c79d9be79}\label{component_2eic_8h_a3b5ae1a6631feb1f3dfd6a2c79d9be79}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+RISE}~(\mbox{\hyperlink{component_2eic_8h_aad52f78c0fc34ba713282c4f2cb52965}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+RISE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aa4ecdea1d3d333051a1004aed81462de}\label{component_2eic_8h_aa4ecdea1d3d333051a1004aed81462de}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+FALL}~(\mbox{\hyperlink{component_2eic_8h_a4fe8ad8e7d22ba42d070d9108213d907}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+FALL\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a44e9df8a2cd69346f9f43c98ce9d9a12}\label{component_2eic_8h_a44e9df8a2cd69346f9f43c98ce9d9a12}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+BOTH}~(\mbox{\hyperlink{component_2eic_8h_a90038bdcd72cf77acd74f46032eb292c}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+BOTH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aaefb9ad90ae4dc4e600aef617e6ecf1d}\label{component_2eic_8h_aaefb9ad90ae4dc4e600aef617e6ecf1d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+HIGH}~(\mbox{\hyperlink{component_2eic_8h_af61da74ee963e779f81a0fa2f81e9c75}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+HIGH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a515a4fbaa282d5a49e1f322810888543}\label{component_2eic_8h_a515a4fbaa282d5a49e1f322810888543}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+LOW}~(\mbox{\hyperlink{component_2eic_8h_a92370d05cd0d822893f57ecf0ff7a2a5}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+LOW\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2eic_8h_ad23c76b1fbf7d30fa3aa738a38c453c3}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a96cc4d08e7114ef41793a0323c1890fc}\label{component_2eic_8h_a96cc4d08e7114ef41793a0323c1890fc}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN4\+\_\+\+Pos}~19
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Filter 4 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a2f593f4ca6b61fc82cbe2e4900655fd5}\label{component_2eic_8h_a2f593f4ca6b61fc82cbe2e4900655fd5}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN4}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a96cc4d08e7114ef41793a0323c1890fc}{EIC\+\_\+\+CONFIG\+\_\+\+FILTEN4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}\label{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Pos}~20
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Input Sense 5 Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a6091029100aaca65d8ce76d3ab137444}\label{component_2eic_8h_a6091029100aaca65d8ce76d3ab137444}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a13a13ad711a9ca5496c5fca4fbf4ee37}\label{component_2eic_8h_a13a13ad711a9ca5496c5fca4fbf4ee37}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5}(value)~((EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a1f73b11cdad345f444d6267c016e7d06}\label{component_2eic_8h_a1f73b11cdad345f444d6267c016e7d06}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+NONE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) No detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa79135e0c433132db7b3df88472fda74}\label{component_2eic_8h_aa79135e0c433132db7b3df88472fda74}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+RISE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Rising edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a2f575e054321eef78315a123006b62dc}\label{component_2eic_8h_a2f575e054321eef78315a123006b62dc}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+FALL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Falling edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a020047d3418afa7b60b72bfc4872bfb0}\label{component_2eic_8h_a020047d3418afa7b60b72bfc4872bfb0}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+BOTH\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Both edges detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_afc521f838a152ea846c8ba29d2d7e578}\label{component_2eic_8h_afc521f838a152ea846c8ba29d2d7e578}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+HIGH\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) High level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a4a2958b65315240e85c9bf06c9c92305}\label{component_2eic_8h_a4a2958b65315240e85c9bf06c9c92305}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+LOW\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Low level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a9de75fb4e0ca1290179613d6bcb55631}\label{component_2eic_8h_a9de75fb4e0ca1290179613d6bcb55631}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+NONE}~(\mbox{\hyperlink{component_2eic_8h_a1f73b11cdad345f444d6267c016e7d06}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+NONE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ac0a8b0ca8b52ba680ded94efc88f3c4f}\label{component_2eic_8h_ac0a8b0ca8b52ba680ded94efc88f3c4f}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+RISE}~(\mbox{\hyperlink{component_2eic_8h_aa79135e0c433132db7b3df88472fda74}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+RISE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a2bed9ee5946a92d537ab465bba113860}\label{component_2eic_8h_a2bed9ee5946a92d537ab465bba113860}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+FALL}~(\mbox{\hyperlink{component_2eic_8h_a2f575e054321eef78315a123006b62dc}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+FALL\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a4b3ac1d5fdffe8ace39887ccabede68b}\label{component_2eic_8h_a4b3ac1d5fdffe8ace39887ccabede68b}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+BOTH}~(\mbox{\hyperlink{component_2eic_8h_a020047d3418afa7b60b72bfc4872bfb0}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+BOTH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a2444c739cc4da9c4da66e9b43c8eb75d}\label{component_2eic_8h_a2444c739cc4da9c4da66e9b43c8eb75d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+HIGH}~(\mbox{\hyperlink{component_2eic_8h_afc521f838a152ea846c8ba29d2d7e578}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+HIGH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_af861de0eab75083882db5df50f0330c8}\label{component_2eic_8h_af861de0eab75083882db5df50f0330c8}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+LOW}~(\mbox{\hyperlink{component_2eic_8h_a4a2958b65315240e85c9bf06c9c92305}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+LOW\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2eic_8h_ace7caae074bf08e88805b591c626fb7f}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ab3c6837a90614cf79a4d0feece41fdd6}\label{component_2eic_8h_ab3c6837a90614cf79a4d0feece41fdd6}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN5\+\_\+\+Pos}~23
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Filter 5 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a01928d66cdcdba5ec3176653d2b3ea2a}\label{component_2eic_8h_a01928d66cdcdba5ec3176653d2b3ea2a}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN5}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_ab3c6837a90614cf79a4d0feece41fdd6}{EIC\+\_\+\+CONFIG\+\_\+\+FILTEN5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a17d194da98be0777ff750650293d386d}\label{component_2eic_8h_a17d194da98be0777ff750650293d386d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Pos}~24
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Input Sense 6 Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ac684b5c6844dd155ee1507dbb1e83d87}\label{component_2eic_8h_ac684b5c6844dd155ee1507dbb1e83d87}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a17d194da98be0777ff750650293d386d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a8cd719665a49e3077bf14150693a94d7}\label{component_2eic_8h_a8cd719665a49e3077bf14150693a94d7}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6}(value)~((EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_a17d194da98be0777ff750650293d386d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a9c966fa77b4176c92e747e52084cfbd8}\label{component_2eic_8h_a9c966fa77b4176c92e747e52084cfbd8}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+NONE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) No detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a6a5001e8379757251033150764c6dcba}\label{component_2eic_8h_a6a5001e8379757251033150764c6dcba}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+RISE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Rising edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa3b18a5b6647f583a1b276ad9b5aa4d6}\label{component_2eic_8h_aa3b18a5b6647f583a1b276ad9b5aa4d6}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+FALL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Falling edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a30183c55bdd242f2e73f8e9510c3208a}\label{component_2eic_8h_a30183c55bdd242f2e73f8e9510c3208a}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+BOTH\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Both edges detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a308809e49e6d8ddd024e96f22f1cf72c}\label{component_2eic_8h_a308809e49e6d8ddd024e96f22f1cf72c}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+HIGH\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) High level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a3df3d29ae144b0c1d5b95a4f898fb78d}\label{component_2eic_8h_a3df3d29ae144b0c1d5b95a4f898fb78d}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+LOW\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Low level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a7631d16699c592b20e9b8b0edadd0368}\label{component_2eic_8h_a7631d16699c592b20e9b8b0edadd0368}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+NONE}~(\mbox{\hyperlink{component_2eic_8h_a9c966fa77b4176c92e747e52084cfbd8}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+NONE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a17d194da98be0777ff750650293d386d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a53c04777fd42c073f8f1bed777c89e26}\label{component_2eic_8h_a53c04777fd42c073f8f1bed777c89e26}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+RISE}~(\mbox{\hyperlink{component_2eic_8h_a6a5001e8379757251033150764c6dcba}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+RISE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a17d194da98be0777ff750650293d386d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ad0772048f10199d34db19472fc416e23}\label{component_2eic_8h_ad0772048f10199d34db19472fc416e23}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+FALL}~(\mbox{\hyperlink{component_2eic_8h_aa3b18a5b6647f583a1b276ad9b5aa4d6}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+FALL\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a17d194da98be0777ff750650293d386d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a7b8a2ab45d8e40ff1cbedf8222a0d691}\label{component_2eic_8h_a7b8a2ab45d8e40ff1cbedf8222a0d691}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+BOTH}~(\mbox{\hyperlink{component_2eic_8h_a30183c55bdd242f2e73f8e9510c3208a}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+BOTH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a17d194da98be0777ff750650293d386d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aa288bee325b96239efcae0546b82b7bf}\label{component_2eic_8h_aa288bee325b96239efcae0546b82b7bf}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+HIGH}~(\mbox{\hyperlink{component_2eic_8h_a308809e49e6d8ddd024e96f22f1cf72c}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+HIGH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a17d194da98be0777ff750650293d386d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_aa7f53acd84244664504de0dcd73d1bf3}\label{component_2eic_8h_aa7f53acd84244664504de0dcd73d1bf3}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+LOW}~(\mbox{\hyperlink{component_2eic_8h_a3df3d29ae144b0c1d5b95a4f898fb78d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+LOW\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2eic_8h_a17d194da98be0777ff750650293d386d}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a1138acbe8b4dedc40a413a58ec7b2c57}\label{component_2eic_8h_a1138acbe8b4dedc40a413a58ec7b2c57}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN6\+\_\+\+Pos}~27
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Filter 6 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_aa478e221fcdc48e552b61567e53ad83f}\label{component_2eic_8h_aa478e221fcdc48e552b61567e53ad83f}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN6}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a1138acbe8b4dedc40a413a58ec7b2c57}{EIC\+\_\+\+CONFIG\+\_\+\+FILTEN6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}\label{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Pos}~28
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Input Sense 7 Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a02110a1b2861cc0350c98fc35963c3a6}\label{component_2eic_8h_a02110a1b2861cc0350c98fc35963c3a6}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a65967e0d923c427a2dbebafb0dd5238b}\label{component_2eic_8h_a65967e0d923c427a2dbebafb0dd5238b}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7}(value)~((EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ad238f5412dacf421dc698fbb1e6be2f2}\label{component_2eic_8h_ad238f5412dacf421dc698fbb1e6be2f2}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+NONE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) No detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a84e2898643261f390c3f329d59357cb6}\label{component_2eic_8h_a84e2898643261f390c3f329d59357cb6}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+RISE\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Rising edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a456906de38943b836b26294cd9735251}\label{component_2eic_8h_a456906de38943b836b26294cd9735251}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+FALL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Falling edge detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a461a0f4bd20a83b7c935ba3fb4e640ac}\label{component_2eic_8h_a461a0f4bd20a83b7c935ba3fb4e640ac}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+BOTH\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Both edges detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a90352dd0ca9acbd823c87862d2046489}\label{component_2eic_8h_a90352dd0ca9acbd823c87862d2046489}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+HIGH\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) High level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a090c5aaf967e49c1634a02bae7799fa6}\label{component_2eic_8h_a090c5aaf967e49c1634a02bae7799fa6}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+LOW\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Low level detection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_a10033675399a7e1ce96cd0adba7969a3}\label{component_2eic_8h_a10033675399a7e1ce96cd0adba7969a3}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+NONE}~(\mbox{\hyperlink{component_2eic_8h_ad238f5412dacf421dc698fbb1e6be2f2}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+NONE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a4da7e1c88d72147081f3cde64c67733e}\label{component_2eic_8h_a4da7e1c88d72147081f3cde64c67733e}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+RISE}~(\mbox{\hyperlink{component_2eic_8h_a84e2898643261f390c3f329d59357cb6}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+RISE\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a11e90ceb16705cc83dcf38b9e1cb29ab}\label{component_2eic_8h_a11e90ceb16705cc83dcf38b9e1cb29ab}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+FALL}~(\mbox{\hyperlink{component_2eic_8h_a456906de38943b836b26294cd9735251}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+FALL\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a12fccfbecfd7d16ca1fb13f84b089f17}\label{component_2eic_8h_a12fccfbecfd7d16ca1fb13f84b089f17}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+BOTH}~(\mbox{\hyperlink{component_2eic_8h_a461a0f4bd20a83b7c935ba3fb4e640ac}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+BOTH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_ab54aa3b8ebf878f33caa571b6dd6e261}\label{component_2eic_8h_ab54aa3b8ebf878f33caa571b6dd6e261}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+HIGH}~(\mbox{\hyperlink{component_2eic_8h_a90352dd0ca9acbd823c87862d2046489}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+HIGH\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a4e10aa00420a52db6cf0eb9610777771}\label{component_2eic_8h_a4e10aa00420a52db6cf0eb9610777771}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+LOW}~(\mbox{\hyperlink{component_2eic_8h_a090c5aaf967e49c1634a02bae7799fa6}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+LOW\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2eic_8h_a19583c715708b15f578f5cc2a8f394fc}{EIC\+\_\+\+CONFIG\+\_\+\+SENSE7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a77bd3664d9f1c1d6b212eac416d40341}\label{component_2eic_8h_a77bd3664d9f1c1d6b212eac416d40341}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN7\+\_\+\+Pos}~31
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) Filter 7 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2eic_8h_ac996c8f278ab9f4af7588a785eef8c04}\label{component_2eic_8h_ac996c8f278ab9f4af7588a785eef8c04}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+FILTEN7}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2eic_8h_a77bd3664d9f1c1d6b212eac416d40341}{EIC\+\_\+\+CONFIG\+\_\+\+FILTEN7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2eic_8h_a713278aaffe59a230cb4f7642ee4900e}\label{component_2eic_8h_a713278aaffe59a230cb4f7642ee4900e}} 
+\#define {\bfseries EIC\+\_\+\+CONFIG\+\_\+\+MASK}~0x\+FFFFFFFFul
+\begin{DoxyCompactList}\small\item\em (EIC\+\_\+\+CONFIG) MASK Register \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component description for EIC. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

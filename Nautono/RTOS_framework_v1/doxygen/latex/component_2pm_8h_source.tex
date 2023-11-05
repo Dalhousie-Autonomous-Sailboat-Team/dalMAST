@@ -1,0 +1,449 @@
+\hypertarget{component_2pm_8h_source}{}\doxysection{pm.\+h}
+\label{component_2pm_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/pm.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/pm.h}}
+\mbox{\hyperlink{component_2pm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_PM\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_PM\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define PM\_U2206}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_PM                      0x202}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_CTRL : (PM Offset: 0x00) (R/W  8) Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   uint8\_t \mbox{\hyperlink{union_p_m___c_t_r_l___type_a996b5a6765c2fc424041be4d5ec0d53a}{reg}};                 }
+\DoxyCodeLine{53 \} \mbox{\hyperlink{union_p_m___c_t_r_l___type}{PM\_CTRL\_Type}};}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define PM\_CTRL\_OFFSET              0x00         }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define PM\_CTRL\_RESETVALUE          0x00ul       }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define PM\_CTRL\_MASK                0x00ul       }}
+\DoxyCodeLine{61 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_SLEEP : (PM Offset: 0x01) (R/W  8) Sleep Mode -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{64   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{65     uint8\_t  \mbox{\hyperlink{union_p_m___s_l_e_e_p___type_a906881551efa39707b9c68e19b052259}{IDLE}}:2;           }
+\DoxyCodeLine{66     uint8\_t  :6;               }
+\DoxyCodeLine{67   \} bit;                       }
+\DoxyCodeLine{68   uint8\_t \mbox{\hyperlink{union_p_m___s_l_e_e_p___type_ab3a4f134b37e5557cf369786359471dd}{reg}};                 }
+\DoxyCodeLine{69 \} \mbox{\hyperlink{union_p_m___s_l_e_e_p___type}{PM\_SLEEP\_Type}};}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define PM\_SLEEP\_OFFSET             0x01         }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define PM\_SLEEP\_RESETVALUE         0x00ul       }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define PM\_SLEEP\_IDLE\_Pos           0            }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define PM\_SLEEP\_IDLE\_Msk           (0x3ul << PM\_SLEEP\_IDLE\_Pos)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define PM\_SLEEP\_IDLE(value)        ((PM\_SLEEP\_IDLE\_Msk \& ((value) << PM\_SLEEP\_IDLE\_Pos)))}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define   PM\_SLEEP\_IDLE\_CPU\_Val           0x0ul  }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define   PM\_SLEEP\_IDLE\_AHB\_Val           0x1ul  }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define   PM\_SLEEP\_IDLE\_APB\_Val           0x2ul  }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define PM\_SLEEP\_IDLE\_CPU           (PM\_SLEEP\_IDLE\_CPU\_Val         << PM\_SLEEP\_IDLE\_Pos)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define PM\_SLEEP\_IDLE\_AHB           (PM\_SLEEP\_IDLE\_AHB\_Val         << PM\_SLEEP\_IDLE\_Pos)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define PM\_SLEEP\_IDLE\_APB           (PM\_SLEEP\_IDLE\_APB\_Val         << PM\_SLEEP\_IDLE\_Pos)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define PM\_SLEEP\_MASK               0x03ul       }}
+\DoxyCodeLine{86 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_CPUSEL : (PM Offset: 0x08) (R/W  8) CPU Clock Select -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{88 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{89   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{90     uint8\_t  \mbox{\hyperlink{union_p_m___c_p_u_s_e_l___type_a55164215e1a724c8b957aa338bc392ca}{CPUDIV}}:3;         }
+\DoxyCodeLine{91     uint8\_t  :5;               }
+\DoxyCodeLine{92   \} bit;                       }
+\DoxyCodeLine{93   uint8\_t \mbox{\hyperlink{union_p_m___c_p_u_s_e_l___type_a0deda3acd838bb0ba2886fef3f93e213}{reg}};                 }
+\DoxyCodeLine{94 \} \mbox{\hyperlink{union_p_m___c_p_u_s_e_l___type}{PM\_CPUSEL\_Type}};}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define PM\_CPUSEL\_OFFSET            0x08         }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define PM\_CPUSEL\_RESETVALUE        0x00ul       }}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_Pos        0            }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_Msk        (0x7ul << PM\_CPUSEL\_CPUDIV\_Pos)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV(value)     ((PM\_CPUSEL\_CPUDIV\_Msk \& ((value) << PM\_CPUSEL\_CPUDIV\_Pos)))}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define   PM\_CPUSEL\_CPUDIV\_DIV1\_Val       0x0ul  }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define   PM\_CPUSEL\_CPUDIV\_DIV2\_Val       0x1ul  }}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define   PM\_CPUSEL\_CPUDIV\_DIV4\_Val       0x2ul  }}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define   PM\_CPUSEL\_CPUDIV\_DIV8\_Val       0x3ul  }}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define   PM\_CPUSEL\_CPUDIV\_DIV16\_Val      0x4ul  }}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define   PM\_CPUSEL\_CPUDIV\_DIV32\_Val      0x5ul  }}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define   PM\_CPUSEL\_CPUDIV\_DIV64\_Val      0x6ul  }}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define   PM\_CPUSEL\_CPUDIV\_DIV128\_Val     0x7ul  }}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_DIV1       (PM\_CPUSEL\_CPUDIV\_DIV1\_Val     << PM\_CPUSEL\_CPUDIV\_Pos)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_DIV2       (PM\_CPUSEL\_CPUDIV\_DIV2\_Val     << PM\_CPUSEL\_CPUDIV\_Pos)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_DIV4       (PM\_CPUSEL\_CPUDIV\_DIV4\_Val     << PM\_CPUSEL\_CPUDIV\_Pos)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_DIV8       (PM\_CPUSEL\_CPUDIV\_DIV8\_Val     << PM\_CPUSEL\_CPUDIV\_Pos)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_DIV16      (PM\_CPUSEL\_CPUDIV\_DIV16\_Val    << PM\_CPUSEL\_CPUDIV\_Pos)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_DIV32      (PM\_CPUSEL\_CPUDIV\_DIV32\_Val    << PM\_CPUSEL\_CPUDIV\_Pos)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_DIV64      (PM\_CPUSEL\_CPUDIV\_DIV64\_Val    << PM\_CPUSEL\_CPUDIV\_Pos)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define PM\_CPUSEL\_CPUDIV\_DIV128     (PM\_CPUSEL\_CPUDIV\_DIV128\_Val   << PM\_CPUSEL\_CPUDIV\_Pos)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define PM\_CPUSEL\_MASK              0x07ul       }}
+\DoxyCodeLine{121 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_APBASEL : (PM Offset: 0x09) (R/W  8) APBA Clock Select -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{123 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{124   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{125     uint8\_t  \mbox{\hyperlink{union_p_m___a_p_b_a_s_e_l___type_a920abda75dd08e7123e9b5e6d3b4289e}{APBADIV}}:3;        }
+\DoxyCodeLine{126     uint8\_t  :5;               }
+\DoxyCodeLine{127   \} bit;                       }
+\DoxyCodeLine{128   uint8\_t \mbox{\hyperlink{union_p_m___a_p_b_a_s_e_l___type_abdbe6abed16f96caaa8fb6430b6738ee}{reg}};                 }
+\DoxyCodeLine{129 \} \mbox{\hyperlink{union_p_m___a_p_b_a_s_e_l___type}{PM\_APBASEL\_Type}};}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define PM\_APBASEL\_OFFSET           0x09         }}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define PM\_APBASEL\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_Pos      0            }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_Msk      (0x7ul << PM\_APBASEL\_APBADIV\_Pos)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV(value)   ((PM\_APBASEL\_APBADIV\_Msk \& ((value) << PM\_APBASEL\_APBADIV\_Pos)))}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define   PM\_APBASEL\_APBADIV\_DIV1\_Val     0x0ul  }}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define   PM\_APBASEL\_APBADIV\_DIV2\_Val     0x1ul  }}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define   PM\_APBASEL\_APBADIV\_DIV4\_Val     0x2ul  }}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define   PM\_APBASEL\_APBADIV\_DIV8\_Val     0x3ul  }}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define   PM\_APBASEL\_APBADIV\_DIV16\_Val    0x4ul  }}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define   PM\_APBASEL\_APBADIV\_DIV32\_Val    0x5ul  }}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define   PM\_APBASEL\_APBADIV\_DIV64\_Val    0x6ul  }}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define   PM\_APBASEL\_APBADIV\_DIV128\_Val   0x7ul  }}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_DIV1     (PM\_APBASEL\_APBADIV\_DIV1\_Val   << PM\_APBASEL\_APBADIV\_Pos)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_DIV2     (PM\_APBASEL\_APBADIV\_DIV2\_Val   << PM\_APBASEL\_APBADIV\_Pos)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_DIV4     (PM\_APBASEL\_APBADIV\_DIV4\_Val   << PM\_APBASEL\_APBADIV\_Pos)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_DIV8     (PM\_APBASEL\_APBADIV\_DIV8\_Val   << PM\_APBASEL\_APBADIV\_Pos)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_DIV16    (PM\_APBASEL\_APBADIV\_DIV16\_Val  << PM\_APBASEL\_APBADIV\_Pos)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_DIV32    (PM\_APBASEL\_APBADIV\_DIV32\_Val  << PM\_APBASEL\_APBADIV\_Pos)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_DIV64    (PM\_APBASEL\_APBADIV\_DIV64\_Val  << PM\_APBASEL\_APBADIV\_Pos)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define PM\_APBASEL\_APBADIV\_DIV128   (PM\_APBASEL\_APBADIV\_DIV128\_Val << PM\_APBASEL\_APBADIV\_Pos)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define PM\_APBASEL\_MASK             0x07ul       }}
+\DoxyCodeLine{156 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_APBBSEL : (PM Offset: 0x0A) (R/W  8) APBB Clock Select -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{158 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{159   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{160     uint8\_t  \mbox{\hyperlink{union_p_m___a_p_b_b_s_e_l___type_ad854853a6ab15ed10c91c246c8ba43a9}{APBBDIV}}:3;        }
+\DoxyCodeLine{161     uint8\_t  :5;               }
+\DoxyCodeLine{162   \} bit;                       }
+\DoxyCodeLine{163   uint8\_t \mbox{\hyperlink{union_p_m___a_p_b_b_s_e_l___type_a8062cfaee801b38811bc975c59165a3e}{reg}};                 }
+\DoxyCodeLine{164 \} \mbox{\hyperlink{union_p_m___a_p_b_b_s_e_l___type}{PM\_APBBSEL\_Type}};}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define PM\_APBBSEL\_OFFSET           0x0A         }}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define PM\_APBBSEL\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_Pos      0            }}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_Msk      (0x7ul << PM\_APBBSEL\_APBBDIV\_Pos)}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV(value)   ((PM\_APBBSEL\_APBBDIV\_Msk \& ((value) << PM\_APBBSEL\_APBBDIV\_Pos)))}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define   PM\_APBBSEL\_APBBDIV\_DIV1\_Val     0x0ul  }}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define   PM\_APBBSEL\_APBBDIV\_DIV2\_Val     0x1ul  }}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define   PM\_APBBSEL\_APBBDIV\_DIV4\_Val     0x2ul  }}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define   PM\_APBBSEL\_APBBDIV\_DIV8\_Val     0x3ul  }}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define   PM\_APBBSEL\_APBBDIV\_DIV16\_Val    0x4ul  }}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define   PM\_APBBSEL\_APBBDIV\_DIV32\_Val    0x5ul  }}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define   PM\_APBBSEL\_APBBDIV\_DIV64\_Val    0x6ul  }}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define   PM\_APBBSEL\_APBBDIV\_DIV128\_Val   0x7ul  }}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_DIV1     (PM\_APBBSEL\_APBBDIV\_DIV1\_Val   << PM\_APBBSEL\_APBBDIV\_Pos)}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_DIV2     (PM\_APBBSEL\_APBBDIV\_DIV2\_Val   << PM\_APBBSEL\_APBBDIV\_Pos)}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_DIV4     (PM\_APBBSEL\_APBBDIV\_DIV4\_Val   << PM\_APBBSEL\_APBBDIV\_Pos)}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_DIV8     (PM\_APBBSEL\_APBBDIV\_DIV8\_Val   << PM\_APBBSEL\_APBBDIV\_Pos)}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_DIV16    (PM\_APBBSEL\_APBBDIV\_DIV16\_Val  << PM\_APBBSEL\_APBBDIV\_Pos)}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_DIV32    (PM\_APBBSEL\_APBBDIV\_DIV32\_Val  << PM\_APBBSEL\_APBBDIV\_Pos)}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_DIV64    (PM\_APBBSEL\_APBBDIV\_DIV64\_Val  << PM\_APBBSEL\_APBBDIV\_Pos)}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define PM\_APBBSEL\_APBBDIV\_DIV128   (PM\_APBBSEL\_APBBDIV\_DIV128\_Val << PM\_APBBSEL\_APBBDIV\_Pos)}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define PM\_APBBSEL\_MASK             0x07ul       }}
+\DoxyCodeLine{191 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_APBCSEL : (PM Offset: 0x0B) (R/W  8) APBC Clock Select -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{193 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{194   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{195     uint8\_t  \mbox{\hyperlink{union_p_m___a_p_b_c_s_e_l___type_aa0d60b6323df0d7133145310748ccb7c}{APBCDIV}}:3;        }
+\DoxyCodeLine{196     uint8\_t  :5;               }
+\DoxyCodeLine{197   \} bit;                       }
+\DoxyCodeLine{198   uint8\_t \mbox{\hyperlink{union_p_m___a_p_b_c_s_e_l___type_a34b8f4255cebd7bcc6b074bfefee737e}{reg}};                 }
+\DoxyCodeLine{199 \} \mbox{\hyperlink{union_p_m___a_p_b_c_s_e_l___type}{PM\_APBCSEL\_Type}};}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define PM\_APBCSEL\_OFFSET           0x0B         }}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define PM\_APBCSEL\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_Pos      0            }}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_Msk      (0x7ul << PM\_APBCSEL\_APBCDIV\_Pos)}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV(value)   ((PM\_APBCSEL\_APBCDIV\_Msk \& ((value) << PM\_APBCSEL\_APBCDIV\_Pos)))}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define   PM\_APBCSEL\_APBCDIV\_DIV1\_Val     0x0ul  }}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define   PM\_APBCSEL\_APBCDIV\_DIV2\_Val     0x1ul  }}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define   PM\_APBCSEL\_APBCDIV\_DIV4\_Val     0x2ul  }}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define   PM\_APBCSEL\_APBCDIV\_DIV8\_Val     0x3ul  }}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define   PM\_APBCSEL\_APBCDIV\_DIV16\_Val    0x4ul  }}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define   PM\_APBCSEL\_APBCDIV\_DIV32\_Val    0x5ul  }}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define   PM\_APBCSEL\_APBCDIV\_DIV64\_Val    0x6ul  }}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define   PM\_APBCSEL\_APBCDIV\_DIV128\_Val   0x7ul  }}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_DIV1     (PM\_APBCSEL\_APBCDIV\_DIV1\_Val   << PM\_APBCSEL\_APBCDIV\_Pos)}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_DIV2     (PM\_APBCSEL\_APBCDIV\_DIV2\_Val   << PM\_APBCSEL\_APBCDIV\_Pos)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_DIV4     (PM\_APBCSEL\_APBCDIV\_DIV4\_Val   << PM\_APBCSEL\_APBCDIV\_Pos)}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_DIV8     (PM\_APBCSEL\_APBCDIV\_DIV8\_Val   << PM\_APBCSEL\_APBCDIV\_Pos)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_DIV16    (PM\_APBCSEL\_APBCDIV\_DIV16\_Val  << PM\_APBCSEL\_APBCDIV\_Pos)}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_DIV32    (PM\_APBCSEL\_APBCDIV\_DIV32\_Val  << PM\_APBCSEL\_APBCDIV\_Pos)}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_DIV64    (PM\_APBCSEL\_APBCDIV\_DIV64\_Val  << PM\_APBCSEL\_APBCDIV\_Pos)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define PM\_APBCSEL\_APBCDIV\_DIV128   (PM\_APBCSEL\_APBCDIV\_DIV128\_Val << PM\_APBCSEL\_APBCDIV\_Pos)}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define PM\_APBCSEL\_MASK             0x07ul       }}
+\DoxyCodeLine{226 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_AHBMASK : (PM Offset: 0x14) (R/W 32) AHB Mask -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{228 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{229   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{230     uint32\_t \mbox{\hyperlink{union_p_m___a_h_b_m_a_s_k___type_a100f8262a51dde0bc5a2757a6969de8a}{HPB0\_}}:1;          }
+\DoxyCodeLine{231     uint32\_t \mbox{\hyperlink{union_p_m___a_h_b_m_a_s_k___type_a03dda98d2d2715be549376b3b7689998}{HPB1\_}}:1;          }
+\DoxyCodeLine{232     uint32\_t \mbox{\hyperlink{union_p_m___a_h_b_m_a_s_k___type_ad871d19eb3a1d8c3a285893b6ede350a}{HPB2\_}}:1;          }
+\DoxyCodeLine{233     uint32\_t \mbox{\hyperlink{union_p_m___a_h_b_m_a_s_k___type_aec59c216e65111b19ada1f943e22e7f6}{DSU\_}}:1;           }
+\DoxyCodeLine{234     uint32\_t \mbox{\hyperlink{union_p_m___a_h_b_m_a_s_k___type_ac4c4ea6e5e3419acb48add94688b0841}{NVMCTRL\_}}:1;       }
+\DoxyCodeLine{235     uint32\_t :27;              }
+\DoxyCodeLine{236   \} bit;                       }
+\DoxyCodeLine{237   uint32\_t \mbox{\hyperlink{union_p_m___a_h_b_m_a_s_k___type_a525f63d95a18178a1cfd321ad6cbb6a6}{reg}};                }
+\DoxyCodeLine{238 \} \mbox{\hyperlink{union_p_m___a_h_b_m_a_s_k___type}{PM\_AHBMASK\_Type}};}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#define PM\_AHBMASK\_OFFSET           0x14         }}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#define PM\_AHBMASK\_RESETVALUE       0x0000001Ful }}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define PM\_AHBMASK\_HPB0\_Pos         0            }}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define PM\_AHBMASK\_HPB0             (0x1ul << PM\_AHBMASK\_HPB0\_Pos)}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define PM\_AHBMASK\_HPB1\_Pos         1            }}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define PM\_AHBMASK\_HPB1             (0x1ul << PM\_AHBMASK\_HPB1\_Pos)}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define PM\_AHBMASK\_HPB2\_Pos         2            }}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define PM\_AHBMASK\_HPB2             (0x1ul << PM\_AHBMASK\_HPB2\_Pos)}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define PM\_AHBMASK\_DSU\_Pos          3            }}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define PM\_AHBMASK\_DSU              (0x1ul << PM\_AHBMASK\_DSU\_Pos)}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define PM\_AHBMASK\_NVMCTRL\_Pos      4            }}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define PM\_AHBMASK\_NVMCTRL          (0x1ul << PM\_AHBMASK\_NVMCTRL\_Pos)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define PM\_AHBMASK\_MASK             0x0000001Ful }}
+\DoxyCodeLine{256 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_APBAMASK : (PM Offset: 0x18) (R/W 32) APBA Mask -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{258 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{259   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{260     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type_a1498b0e5aa568518785ea9a75226351b}{PAC0\_}}:1;          }
+\DoxyCodeLine{261     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type_ae30a4d40a276ed74efb40a5d30bcc5cd}{PM\_}}:1;            }
+\DoxyCodeLine{262     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type_a27a102393baa8144355acbf5a4ebaace}{SYSCTRL\_}}:1;       }
+\DoxyCodeLine{263     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type_a7ba29e4e94e76e7eb80e5a8f71586bb9}{GCLK\_}}:1;          }
+\DoxyCodeLine{264     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type_ac5977fa20746849cca1920658708d4c3}{WDT\_}}:1;           }
+\DoxyCodeLine{265     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type_a62f8f655c1616a7402c06a30c3be2be7}{RTC\_}}:1;           }
+\DoxyCodeLine{266     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type_acb7b6603050e21b543a1fd24d41e5b80}{EIC\_}}:1;           }
+\DoxyCodeLine{267     uint32\_t :25;              }
+\DoxyCodeLine{268   \} bit;                       }
+\DoxyCodeLine{269   uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type_acbd2a62d1071be86c00efdf8a967a4a8}{reg}};                }
+\DoxyCodeLine{270 \} \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type}{PM\_APBAMASK\_Type}};}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define PM\_APBAMASK\_OFFSET          0x18         }}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define PM\_APBAMASK\_RESETVALUE      0x0000007Ful }}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define PM\_APBAMASK\_PAC0\_Pos        0            }}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define PM\_APBAMASK\_PAC0            (0x1ul << PM\_APBAMASK\_PAC0\_Pos)}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define PM\_APBAMASK\_PM\_Pos          1            }}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#define PM\_APBAMASK\_PM              (0x1ul << PM\_APBAMASK\_PM\_Pos)}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define PM\_APBAMASK\_SYSCTRL\_Pos     2            }}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#define PM\_APBAMASK\_SYSCTRL         (0x1ul << PM\_APBAMASK\_SYSCTRL\_Pos)}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define PM\_APBAMASK\_GCLK\_Pos        3            }}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define PM\_APBAMASK\_GCLK            (0x1ul << PM\_APBAMASK\_GCLK\_Pos)}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#define PM\_APBAMASK\_WDT\_Pos         4            }}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#define PM\_APBAMASK\_WDT             (0x1ul << PM\_APBAMASK\_WDT\_Pos)}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define PM\_APBAMASK\_RTC\_Pos         5            }}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define PM\_APBAMASK\_RTC             (0x1ul << PM\_APBAMASK\_RTC\_Pos)}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define PM\_APBAMASK\_EIC\_Pos         6            }}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define PM\_APBAMASK\_EIC             (0x1ul << PM\_APBAMASK\_EIC\_Pos)}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define PM\_APBAMASK\_MASK            0x0000007Ful }}
+\DoxyCodeLine{292 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_APBBMASK : (PM Offset: 0x1C) (R/W 32) APBB Mask -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{294 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{295   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{296     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_b_m_a_s_k___type_aae35807129edeae642fddbb1dba87465}{PAC1\_}}:1;          }
+\DoxyCodeLine{297     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_b_m_a_s_k___type_a3c111bfed591098cc618ae8924b9d31c}{DSU\_}}:1;           }
+\DoxyCodeLine{298     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_b_m_a_s_k___type_ae0fb61642fd210c54101459bfa544e4c}{NVMCTRL\_}}:1;       }
+\DoxyCodeLine{299     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_b_m_a_s_k___type_a4c9c3ec491c09d89481917505a87e725}{PORT\_}}:1;          }
+\DoxyCodeLine{300     uint32\_t :28;              }
+\DoxyCodeLine{301   \} bit;                       }
+\DoxyCodeLine{302   uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_b_m_a_s_k___type_ac0bdb711231d2f9289566b6bb85c3c2a}{reg}};                }
+\DoxyCodeLine{303 \} \mbox{\hyperlink{union_p_m___a_p_b_b_m_a_s_k___type}{PM\_APBBMASK\_Type}};}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#define PM\_APBBMASK\_OFFSET          0x1C         }}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define PM\_APBBMASK\_RESETVALUE      0x0000001Ful }}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define PM\_APBBMASK\_PAC1\_Pos        0            }}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define PM\_APBBMASK\_PAC1            (0x1ul << PM\_APBBMASK\_PAC1\_Pos)}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#define PM\_APBBMASK\_DSU\_Pos         1            }}
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#define PM\_APBBMASK\_DSU             (0x1ul << PM\_APBBMASK\_DSU\_Pos)}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define PM\_APBBMASK\_NVMCTRL\_Pos     2            }}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define PM\_APBBMASK\_NVMCTRL         (0x1ul << PM\_APBBMASK\_NVMCTRL\_Pos)}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define PM\_APBBMASK\_PORT\_Pos        3            }}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define PM\_APBBMASK\_PORT            (0x1ul << PM\_APBBMASK\_PORT\_Pos)}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define PM\_APBBMASK\_MASK            0x0000000Ful }}
+\DoxyCodeLine{319 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_APBCMASK : (PM Offset: 0x20) (R/W 32) APBC Mask -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{321 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{322   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{323     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a830b8d066b014c11489d1c20afd6b452}{PAC2\_}}:1;          }
+\DoxyCodeLine{324     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a33691979a473de6ecd46ad6bc0445916}{EVSYS\_}}:1;         }
+\DoxyCodeLine{325     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a9bff3cd7291c6d07cc2a7377a2d39944}{SERCOM0\_}}:1;       }
+\DoxyCodeLine{326     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_acb77afd065fbe20c7194c66ba36a4c28}{SERCOM1\_}}:1;       }
+\DoxyCodeLine{327     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a8758ab4b1e87fe0f1776996d98a4988e}{SERCOM2\_}}:1;       }
+\DoxyCodeLine{328     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a2197646cc9c5110fd3eda4fdcad05c31}{SERCOM3\_}}:1;       }
+\DoxyCodeLine{329     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a87f5bc0be04431d8d28b6591de30d6a2}{SERCOM4\_}}:1;       }
+\DoxyCodeLine{330     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a053630131e716d82bf55ad0c34b957ce}{SERCOM5\_}}:1;       }
+\DoxyCodeLine{331     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a9bf4e7f94d8889e2c9e46d4f4c2d2c5d}{TC0\_}}:1;           }
+\DoxyCodeLine{332     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_abe346fc135d604f8226627b77b963b74}{TC1\_}}:1;           }
+\DoxyCodeLine{333     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a0d55480ac3a3d4c950f236286b04054e}{TC2\_}}:1;           }
+\DoxyCodeLine{334     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_abc7d47fa2d57b6f65e12c51c7d511def}{TC3\_}}:1;           }
+\DoxyCodeLine{335     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_ab135d280aa8aa4679f5197f35c057a19}{TC4\_}}:1;           }
+\DoxyCodeLine{336     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a89a1c7c6c0342b3c9e84ecaa36aa764b}{TC5\_}}:1;           }
+\DoxyCodeLine{337     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_ab1cfcf5d47e4e57b61e8abfe4be6131b}{TC6\_}}:1;           }
+\DoxyCodeLine{338     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a902279984b64f2326bed72f9fd50d146}{TC7\_}}:1;           }
+\DoxyCodeLine{339     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_aa45748ef3813172195a535ba770690a7}{ADC\_}}:1;           }
+\DoxyCodeLine{340     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_aeae6e5d6f6524596da8fbd9aa0f1f2e4}{AC\_}}:1;            }
+\DoxyCodeLine{341     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a9e37cf1a96e05a558d0ccc02a9369fb0}{DAC\_}}:1;           }
+\DoxyCodeLine{342     uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a2ec2884a7908c6924f5f7a0370de58eb}{PTC\_}}:1;           }
+\DoxyCodeLine{343     uint32\_t :12;              }
+\DoxyCodeLine{344   \} bit;                       }
+\DoxyCodeLine{345   uint32\_t \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type_a02254222a7d98eac6d2b7eee8e05d3a0}{reg}};                }
+\DoxyCodeLine{346 \} \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type}{PM\_APBCMASK\_Type}};}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define PM\_APBCMASK\_OFFSET          0x20         }}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define PM\_APBCMASK\_RESETVALUE      0x00010000ul }}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define PM\_APBCMASK\_PAC2\_Pos        0            }}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define PM\_APBCMASK\_PAC2            (0x1ul << PM\_APBCMASK\_PAC2\_Pos)}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define PM\_APBCMASK\_EVSYS\_Pos       1            }}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define PM\_APBCMASK\_EVSYS           (0x1ul << PM\_APBCMASK\_EVSYS\_Pos)}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM0\_Pos     2            }}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM0         (0x1ul << PM\_APBCMASK\_SERCOM0\_Pos)}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM1\_Pos     3            }}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM1         (0x1ul << PM\_APBCMASK\_SERCOM1\_Pos)}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM2\_Pos     4            }}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM2         (0x1ul << PM\_APBCMASK\_SERCOM2\_Pos)}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM3\_Pos     5            }}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM3         (0x1ul << PM\_APBCMASK\_SERCOM3\_Pos)}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM4\_Pos     6            }}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM4         (0x1ul << PM\_APBCMASK\_SERCOM4\_Pos)}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM5\_Pos     7            }}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define PM\_APBCMASK\_SERCOM5         (0x1ul << PM\_APBCMASK\_SERCOM5\_Pos)}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC0\_Pos         8            }}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC0             (0x1ul << PM\_APBCMASK\_TC0\_Pos)}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC1\_Pos         9            }}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC1             (0x1ul << PM\_APBCMASK\_TC1\_Pos)}}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC2\_Pos         10           }}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC2             (0x1ul << PM\_APBCMASK\_TC2\_Pos)}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC3\_Pos         11           }}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC3             (0x1ul << PM\_APBCMASK\_TC3\_Pos)}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC4\_Pos         12           }}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC4             (0x1ul << PM\_APBCMASK\_TC4\_Pos)}}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC5\_Pos         13           }}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC5             (0x1ul << PM\_APBCMASK\_TC5\_Pos)}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC6\_Pos         14           }}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC6             (0x1ul << PM\_APBCMASK\_TC6\_Pos)}}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC7\_Pos         15           }}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define PM\_APBCMASK\_TC7             (0x1ul << PM\_APBCMASK\_TC7\_Pos)}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define PM\_APBCMASK\_ADC\_Pos         16           }}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define PM\_APBCMASK\_ADC             (0x1ul << PM\_APBCMASK\_ADC\_Pos)}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define PM\_APBCMASK\_AC\_Pos          17           }}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define PM\_APBCMASK\_AC              (0x1ul << PM\_APBCMASK\_AC\_Pos)}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define PM\_APBCMASK\_DAC\_Pos         18           }}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define PM\_APBCMASK\_DAC             (0x1ul << PM\_APBCMASK\_DAC\_Pos)}}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define PM\_APBCMASK\_PTC\_Pos         19           }}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define PM\_APBCMASK\_PTC             (0x1ul << PM\_APBCMASK\_PTC\_Pos)}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define PM\_APBCMASK\_MASK            0x000FFFFFul }}
+\DoxyCodeLine{394 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_INTENCLR : (PM Offset: 0x34) (R/W  8) Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{396 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{397   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{398     uint8\_t  \mbox{\hyperlink{union_p_m___i_n_t_e_n_c_l_r___type_a644c6bd88abfbe0fe538b9f9587195ed}{CKRDY}}:1;          }
+\DoxyCodeLine{399     uint8\_t  :7;               }
+\DoxyCodeLine{400   \} bit;                       }
+\DoxyCodeLine{401   uint8\_t \mbox{\hyperlink{union_p_m___i_n_t_e_n_c_l_r___type_a6d8b0b5c281b9d15d9709302ae515f07}{reg}};                 }
+\DoxyCodeLine{402 \} \mbox{\hyperlink{union_p_m___i_n_t_e_n_c_l_r___type}{PM\_INTENCLR\_Type}};}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define PM\_INTENCLR\_OFFSET          0x34         }}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#define PM\_INTENCLR\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define PM\_INTENCLR\_CKRDY\_Pos       0            }}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define PM\_INTENCLR\_CKRDY           (0x1ul << PM\_INTENCLR\_CKRDY\_Pos)}}
+\DoxyCodeLine{410 \textcolor{preprocessor}{\#define PM\_INTENCLR\_MASK            0x01ul       }}
+\DoxyCodeLine{412 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_INTENSET : (PM Offset: 0x35) (R/W  8) Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{414 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{415   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{416     uint8\_t  \mbox{\hyperlink{union_p_m___i_n_t_e_n_s_e_t___type_a9aedeb2acd15fc17301ce5a698d47274}{CKRDY}}:1;          }
+\DoxyCodeLine{417     uint8\_t  :7;               }
+\DoxyCodeLine{418   \} bit;                       }
+\DoxyCodeLine{419   uint8\_t \mbox{\hyperlink{union_p_m___i_n_t_e_n_s_e_t___type_aea623941e13f9fa48547ffd84350bbf8}{reg}};                 }
+\DoxyCodeLine{420 \} \mbox{\hyperlink{union_p_m___i_n_t_e_n_s_e_t___type}{PM\_INTENSET\_Type}};}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define PM\_INTENSET\_OFFSET          0x35         }}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define PM\_INTENSET\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define PM\_INTENSET\_CKRDY\_Pos       0            }}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define PM\_INTENSET\_CKRDY           (0x1ul << PM\_INTENSET\_CKRDY\_Pos)}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define PM\_INTENSET\_MASK            0x01ul       }}
+\DoxyCodeLine{430 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_INTFLAG : (PM Offset: 0x36) (R/W  8) Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{432 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{433   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{434     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_p_m___i_n_t_f_l_a_g___type_a6e45eb653ed58b803bbfb89a253bc75e}{CKRDY}}:1;      }
+\DoxyCodeLine{435     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_p_m___i_n_t_f_l_a_g___type_a8fa12a38bd1b48716eb6f33c6569f8a5}{uint8\_t}}  :7;           }
+\DoxyCodeLine{436   \} bit;                       }
+\DoxyCodeLine{437   uint8\_t \mbox{\hyperlink{union_p_m___i_n_t_f_l_a_g___type_a02f67588995f159aa56ced08b2280c40}{reg}};                 }
+\DoxyCodeLine{438 \} \mbox{\hyperlink{union_p_m___i_n_t_f_l_a_g___type}{PM\_INTFLAG\_Type}};}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define PM\_INTFLAG\_OFFSET           0x36         }}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#define PM\_INTFLAG\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define PM\_INTFLAG\_CKRDY\_Pos        0            }}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define PM\_INTFLAG\_CKRDY            (0x1ul << PM\_INTFLAG\_CKRDY\_Pos)}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define PM\_INTFLAG\_MASK             0x01ul       }}
+\DoxyCodeLine{448 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ PM\_RCAUSE : (PM Offset: 0x38) (R/   8) Reset Cause -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{450 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{451   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{452     uint8\_t  \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type_a9fcc972fc018bc9a58759d0ad8b04e54}{POR}}:1;            }
+\DoxyCodeLine{453     uint8\_t  \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type_ad8afac2b92114aaeccb1aebc3f6f6462}{BOD12}}:1;          }
+\DoxyCodeLine{454     uint8\_t  \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type_a95335188f5f8c2d6384246a8d3a1607b}{BOD33}}:1;          }
+\DoxyCodeLine{455     uint8\_t  :1;               }
+\DoxyCodeLine{456     uint8\_t  \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type_a38c71c3a5e5b28d99720c67e9a1203e1}{EXT}}:1;            }
+\DoxyCodeLine{457     uint8\_t  \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type_a388d3ff5c0d8e2abb9dc4f272ed49348}{WDT}}:1;            }
+\DoxyCodeLine{458     uint8\_t  \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type_ae9605adc5712905fc1e8a8b4fc77a0ff}{SYST}}:1;           }
+\DoxyCodeLine{459     uint8\_t  :1;               }
+\DoxyCodeLine{460   \} bit;                       }
+\DoxyCodeLine{461   uint8\_t \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type_a381ab048ec0370787f9bfc664044562a}{reg}};                 }
+\DoxyCodeLine{462 \} \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type}{PM\_RCAUSE\_Type}};}
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define PM\_RCAUSE\_OFFSET            0x38         }}
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#define PM\_RCAUSE\_RESETVALUE        0x01ul       }}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define PM\_RCAUSE\_POR\_Pos           0            }}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#define PM\_RCAUSE\_POR               (0x1ul << PM\_RCAUSE\_POR\_Pos)}}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#define PM\_RCAUSE\_BOD12\_Pos         1            }}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define PM\_RCAUSE\_BOD12             (0x1ul << PM\_RCAUSE\_BOD12\_Pos)}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#define PM\_RCAUSE\_BOD33\_Pos         2            }}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define PM\_RCAUSE\_BOD33             (0x1ul << PM\_RCAUSE\_BOD33\_Pos)}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define PM\_RCAUSE\_EXT\_Pos           4            }}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define PM\_RCAUSE\_EXT               (0x1ul << PM\_RCAUSE\_EXT\_Pos)}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define PM\_RCAUSE\_WDT\_Pos           5            }}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define PM\_RCAUSE\_WDT               (0x1ul << PM\_RCAUSE\_WDT\_Pos)}}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define PM\_RCAUSE\_SYST\_Pos          6            }}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#define PM\_RCAUSE\_SYST              (0x1ul << PM\_RCAUSE\_SYST\_Pos)}}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define PM\_RCAUSE\_MASK              0x77ul       }}
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{484 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{485   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___c_t_r_l___type}{PM\_CTRL\_Type}}              \mbox{\hyperlink{struct_pm_aef42c58ab5c063e6a945dd495b3ef699}{CTRL}};        }
+\DoxyCodeLine{486   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___s_l_e_e_p___type}{PM\_SLEEP\_Type}}             \mbox{\hyperlink{struct_pm_af251884e32f97cb31897ce95f732273f}{SLEEP}};       }
+\DoxyCodeLine{487        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x6];}
+\DoxyCodeLine{488   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___c_p_u_s_e_l___type}{PM\_CPUSEL\_Type}}            \mbox{\hyperlink{struct_pm_a6cf9cfd38912d1ae73254de472f53da9}{CPUSEL}};      }
+\DoxyCodeLine{489   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___a_p_b_a_s_e_l___type}{PM\_APBASEL\_Type}}           \mbox{\hyperlink{struct_pm_a1bd45b482862137454aa6289844de2c6}{APBASEL}};     }
+\DoxyCodeLine{490   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___a_p_b_b_s_e_l___type}{PM\_APBBSEL\_Type}}           \mbox{\hyperlink{struct_pm_a7509ceb6ee60f47bb5af85f5f389a31b}{APBBSEL}};     }
+\DoxyCodeLine{491   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___a_p_b_c_s_e_l___type}{PM\_APBCSEL\_Type}}           \mbox{\hyperlink{struct_pm_a7e5cd950298742957bd6a0b4b910ce41}{APBCSEL}};     }
+\DoxyCodeLine{492        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x8];}
+\DoxyCodeLine{493   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___a_h_b_m_a_s_k___type}{PM\_AHBMASK\_Type}}           \mbox{\hyperlink{struct_pm_ad6532a01dd6aac5013f0a469b29e01de}{AHBMASK}};     }
+\DoxyCodeLine{494   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type}{PM\_APBAMASK\_Type}}          \mbox{\hyperlink{struct_pm_a8e1bd964e55f8ae9a40f66ed8fa4645c}{APBAMASK}};    }
+\DoxyCodeLine{495   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___a_p_b_b_m_a_s_k___type}{PM\_APBBMASK\_Type}}          \mbox{\hyperlink{struct_pm_a286baea167bcb92013efd30b0da1d453}{APBBMASK}};    }
+\DoxyCodeLine{496   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type}{PM\_APBCMASK\_Type}}          \mbox{\hyperlink{struct_pm_ab0e4d6b7cf58703a1a3d3d0014ecc602}{APBCMASK}};    }
+\DoxyCodeLine{497        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x10];}
+\DoxyCodeLine{498   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___i_n_t_e_n_c_l_r___type}{PM\_INTENCLR\_Type}}          \mbox{\hyperlink{struct_pm_ad0083e323b10f67deea9354e60c691dd}{INTENCLR}};    }
+\DoxyCodeLine{499   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___i_n_t_e_n_s_e_t___type}{PM\_INTENSET\_Type}}          \mbox{\hyperlink{struct_pm_aae11f1dff46c370d8fd6cea5a1ba4bce}{INTENSET}};    }
+\DoxyCodeLine{500   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_p_m___i_n_t_f_l_a_g___type}{PM\_INTFLAG\_Type}}           \mbox{\hyperlink{struct_pm_a8089472da81397d8469b1426ccb85bc6}{INTFLAG}};     }
+\DoxyCodeLine{501        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved4[0x1];}
+\DoxyCodeLine{502   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type}{PM\_RCAUSE\_Type}}            \mbox{\hyperlink{struct_pm_a9dfcf563b5fc773dea7a8216703e3937}{RCAUSE}};      }
+\DoxyCodeLine{503 \} \mbox{\hyperlink{struct_pm}{Pm}};}
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_PM\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,65 @@
+\hypertarget{system__interrupt__features_8h_source}{}\doxysection{system\+\_\+interrupt\+\_\+features.\+h}
+\label{system__interrupt__features_8h_source}\index{src/ASF/sam0/drivers/system/interrupt/system\_interrupt\_samd20/system\_interrupt\_features.h@{src/ASF/sam0/drivers/system/interrupt/system\_interrupt\_samd20/system\_interrupt\_features.h}}
+\mbox{\hyperlink{system__interrupt__features_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef SYSTEM\_INTERRUPT\_FEATURES\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define SYSTEM\_INTERRUPT\_FEATURES\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{/* Generates a interrupt vector table enum list entry for a given module type}}
+\DoxyCodeLine{43 \textcolor{comment}{   and index (e.g. "{}SYSTEM\_INTERRUPT\_MODULE\_TC0 = TC0\_IRQn,"{}). */}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#  define \_MODULE\_IRQn(n, module) \(\backslash\)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{        SYSTEM\_INTERRUPT\_MODULE\_\#\#module\#\#n = module\#\#n\#\#\_IRQn,}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{/* Generates interrupt vector table enum list entries for all instances of a}}
+\DoxyCodeLine{48 \textcolor{comment}{   given module type on the selected device. */}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#  define \_SYSTEM\_INTERRUPT\_MODULES(name) \(\backslash\)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{        MREPEAT(name\#\#\_INST\_NUM, \_MODULE\_IRQn, name)}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#  define \_SYSTEM\_INTERRUPT\_IPSR\_MASK              0x0000003f}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#  define \_SYSTEM\_INTERRUPT\_PRIORITY\_MASK          0x00000003}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#  define \_SYSTEM\_INTERRUPT\_EXTERNAL\_VECTOR\_START  0}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#  define \_SYSTEM\_INTERRUPT\_SYSTICK\_PRI\_POS        30}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{73 \textcolor{keyword}{enum} system\_interrupt\_vector\_samd20 \{}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{75 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\_interrupt\_vector}} \{}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{78     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa8967f7e5e661234c374fd8fe6a7c7b4a}{SYSTEM\_INTERRUPT\_NON\_MASKABLE}}      = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083ade177d9c70c89e084093024b932a4e30}{NonMaskableInt\_IRQn}},}
+\DoxyCodeLine{80     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabef47b275e187a3c4cc3d79fdefeb43a}{SYSTEM\_INTERRUPT\_HARD\_FAULT}}        = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083ab1a222a34a32f0ef5ac65e714efc1f85}{HardFault\_IRQn}},}
+\DoxyCodeLine{82     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa91a0f47299fac0d5a4bbd776a049a7a1}{SYSTEM\_INTERRUPT\_SV\_CALL}}           = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083a4ce820b3cc6cf3a796b41aadc0cf1237}{SVCall\_IRQn}},}
+\DoxyCodeLine{84     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa9aa2c667976293c6b9a0f046984696aa}{SYSTEM\_INTERRUPT\_PENDING\_SV}}        = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083a03c3cc89984928816d81793fc7bce4a2}{PendSV\_IRQn}},}
+\DoxyCodeLine{86     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfadef3a6521ea01f9fa669fa3951d97668}{SYSTEM\_INTERRUPT\_SYSTICK}}           = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083a6dbff8f8543325f3474cbae2446776e7}{SysTick\_IRQn}},}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa192f3323b0a11ad28690ee4c0eaa9e4c}{SYSTEM\_INTERRUPT\_MODULE\_PM}}         = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083adb4772651d36d91686d77e8437abe8a6}{PM\_IRQn}},}
+\DoxyCodeLine{91     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa04f73ceede7fafa99c7fd85524ebe323}{SYSTEM\_INTERRUPT\_MODULE\_SYSCTRL}}    = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083a6395b50b5d103bc4e8e662bf1565d7d5}{SYSCTRL\_IRQn}},}
+\DoxyCodeLine{93     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa02ba7488cb2e602f86b42848bff250b4}{SYSTEM\_INTERRUPT\_MODULE\_WDT}}        = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083a78573b84a4133ef5812b33ce10dcba12}{WDT\_IRQn}},}
+\DoxyCodeLine{95     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfab7c8739bd4a9cd7616ba30a9dd2ef1f8}{SYSTEM\_INTERRUPT\_MODULE\_RTC}}        = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083adcc0f2770f7f57f75fac3d8bcac0e858}{RTC\_IRQn}},}
+\DoxyCodeLine{97     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa78111f06deafa9412afd0eb7c2bf88bf}{SYSTEM\_INTERRUPT\_MODULE\_EIC}}        = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083af79af3fab866057a9b79b2cae4214aa0}{EIC\_IRQn}},}
+\DoxyCodeLine{99     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfac04b00eaa6c6c9eb2bd9695fc63dd5fd}{SYSTEM\_INTERRUPT\_MODULE\_NVMCTRL}}    = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083a3a96e5f663c92af52124cdfc38e691b8}{NVMCTRL\_IRQn}},}
+\DoxyCodeLine{101     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa15167598ce4e6982800cb394ceabf901}{SYSTEM\_INTERRUPT\_MODULE\_EVSYS}}      = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083a14cf381e1a271022130551e8d67ad1fe}{EVSYS\_IRQn}},}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{110     SYSTEM\_INTERRUPT\_MODULE\_SERCOMn    = SERCOMn\_IRQn,}
+\DoxyCodeLine{118     SYSTEM\_INTERRUPT\_MODULE\_TCn        = TCn\_IRQn,}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{120     \_SYSTEM\_INTERRUPT\_MODULES(SERCOM)}
+\DoxyCodeLine{121     \_SYSTEM\_INTERRUPT\_MODULES(TC)}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfaa390b62747f343615e8bf32df0ea9871}{SYSTEM\_INTERRUPT\_MODULE\_AC}}         = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083a34da89bb41e38a1e619624f9f1472351}{AC\_IRQn}},}
+\DoxyCodeLine{126     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabe508bdf9df07e4f95b69118525cc3c6}{SYSTEM\_INTERRUPT\_MODULE\_ADC}}        = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083a4d69175258ae261dd545001e810421b3}{ADC\_IRQn}},}
+\DoxyCodeLine{128     \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa9875c5d3f3d47908b3553e180525059d}{SYSTEM\_INTERRUPT\_MODULE\_DAC}}        = \mbox{\hyperlink{samd20e14_8h_a666eb0caeb12ec0e281415592ae89083afe396b0c790fb592adb3813c718d2dcd}{DAC\_IRQn}},}
+\DoxyCodeLine{129 \};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

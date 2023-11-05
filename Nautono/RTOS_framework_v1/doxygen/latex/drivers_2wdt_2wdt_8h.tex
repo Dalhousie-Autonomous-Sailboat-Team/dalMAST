@@ -1,0 +1,58 @@
+\hypertarget{drivers_2wdt_2wdt_8h}{}\doxysection{src/\+ASF/sam0/drivers/wdt/wdt.h File Reference}
+\label{drivers_2wdt_2wdt_8h}\index{src/ASF/sam0/drivers/wdt/wdt.h@{src/ASF/sam0/drivers/wdt/wdt.h}}
+
+
+SAM Watchdog Driver.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$clock.\+h$>$}\newline
+{\ttfamily \#include $<$gclk.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structwdt__conf}{wdt\+\_\+conf}}
+\begin{DoxyCompactList}\small\item\em Watchdog Timer configuration structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\+\_\+period}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acac81ba52b1f5764278889cb86b37f9967}{WDT\+\_\+\+PERIOD\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaae6546f95e5a45b62b14634bc4caa5aa}{WDT\+\_\+\+PERIOD\+\_\+8\+CLK}} = 1
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acaf0fea5f0fcc3e4ac16c7a6d6935758e5}{WDT\+\_\+\+PERIOD\+\_\+16\+CLK}} = 2
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca99299b19ce68e9f9e91a53a26d88a3dc}{WDT\+\_\+\+PERIOD\+\_\+32\+CLK}} = 3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca85dae485276a3f098835aa03c87c07ae}{WDT\+\_\+\+PERIOD\+\_\+64\+CLK}} = 4
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acae42c036f6bf98b94c08b7b7652ffc22b}{WDT\+\_\+\+PERIOD\+\_\+128\+CLK}} = 5
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8e7c0cee4badc7f8ad850e08087f2220}{WDT\+\_\+\+PERIOD\+\_\+256\+CLK}} = 6
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca8ffed36019876eb8acd6341d0d5bde0d}{WDT\+\_\+\+PERIOD\+\_\+512\+CLK}} = 7
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca5e17d21bc0b0eec87841ddf4e28b5307}{WDT\+\_\+\+PERIOD\+\_\+1024\+CLK}} = 8
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabfa7c1a5f7c5cefeb23662b2f970ea45}{WDT\+\_\+\+PERIOD\+\_\+2048\+CLK}} = 9
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca60835375c026680884ced851cb340c69}{WDT\+\_\+\+PERIOD\+\_\+4096\+CLK}} = 10
+, \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635aca6d95ace42b2eda19dbdb4f7342068d17}{WDT\+\_\+\+PERIOD\+\_\+8192\+CLK}} = 11
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ggac5c6859562f5bd23984bc0fe998635acabe11993c0838eebfc06889b8f1812d90}{WDT\+\_\+\+PERIOD\+\_\+16384\+CLK}} = 12
+ \}
+\begin{DoxyCompactList}\small\item\em Watchdog Timer period configuration enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Configuration and Initialization}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gaaed4dd784e073167a8588592fce7af69}{wdt\+\_\+set\+\_\+config}} (const struct \mbox{\hyperlink{structwdt__conf}{wdt\+\_\+conf}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Sets up the WDT hardware module based on the configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Timeout and Early Warning Management}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_ga04e293d7ecf7703a3f6624f652f3a90a}{wdt\+\_\+reset\+\_\+count}} (void)
+\begin{DoxyCompactList}\small\item\em Resets the count of the running Watchdog Timer that was previously enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM Watchdog Driver. 
+
+Copyright (c) 2012-\/2020 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

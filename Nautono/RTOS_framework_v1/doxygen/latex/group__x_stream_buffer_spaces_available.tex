@@ -1,0 +1,20 @@
+\hypertarget{group__x_stream_buffer_spaces_available}{}\doxysection{x\+Stream\+Buffer\+Spaces\+Available}
+\label{group__x_stream_buffer_spaces_available}\index{xStreamBufferSpacesAvailable@{xStreamBufferSpacesAvailable}}
+\mbox{\hyperlink{stream__buffer_8h_source}{stream\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+size\_t xStreamBufferSpacesAvailable( StreamBufferHandle\_t xStreamBuffer );
+\end{DoxyPre}
+
+
+Queries a stream buffer to see how much free space it contains, which is equal to the amount of data that can be sent to the stream buffer before it is full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Stream\+Buffer} & The handle of the stream buffer being queried.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes that can be written to the stream buffer before the stream buffer would be full. 
+\end{DoxyReturn}

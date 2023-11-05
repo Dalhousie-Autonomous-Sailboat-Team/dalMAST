@@ -1,0 +1,73 @@
+\hypertarget{tc6_8h_source}{}\doxysection{tc6.\+h}
+\label{tc6_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/tc6.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/tc6.h}}
+\mbox{\hyperlink{tc6_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_TC6\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_TC6\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for TC6 peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_TC6\_CTRLA              (0x42003800U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_TC6\_READREQ            (0x42003802U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_TC6\_CTRLBCLR           (0x42003804U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_TC6\_CTRLBSET           (0x42003805U) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_TC6\_CTRLC              (0x42003806U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_TC6\_DBGCTRL            (0x42003808U) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_TC6\_EVCTRL             (0x4200380AU) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_TC6\_INTENCLR           (0x4200380CU) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_TC6\_INTENSET           (0x4200380DU) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_TC6\_INTFLAG            (0x4200380EU) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_TC6\_STATUS             (0x4200380FU) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT16\_COUNT      (0x42003810U) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT16\_CC0        (0x42003818U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT16\_CC1        (0x4200381AU) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT32\_COUNT      (0x42003810U) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT32\_CC0        (0x42003818U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT32\_CC1        (0x4200381CU) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT8\_COUNT       (0x42003810U) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT8\_PER         (0x42003814U) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT8\_CC0         (0x42003818U) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT8\_CC1         (0x42003819U) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define REG\_TC6\_CTRLA              (*(RwReg16*)0x42003800U) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define REG\_TC6\_READREQ            (*(RwReg16*)0x42003802U) }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define REG\_TC6\_CTRLBCLR           (*(RwReg8 *)0x42003804U) }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define REG\_TC6\_CTRLBSET           (*(RwReg8 *)0x42003805U) }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define REG\_TC6\_CTRLC              (*(RwReg8 *)0x42003806U) }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define REG\_TC6\_DBGCTRL            (*(RwReg8 *)0x42003808U) }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define REG\_TC6\_EVCTRL             (*(RwReg16*)0x4200380AU) }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define REG\_TC6\_INTENCLR           (*(RwReg8 *)0x4200380CU) }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define REG\_TC6\_INTENSET           (*(RwReg8 *)0x4200380DU) }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define REG\_TC6\_INTFLAG            (*(RwReg8 *)0x4200380EU) }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define REG\_TC6\_STATUS             (*(RoReg8 *)0x4200380FU) }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT16\_COUNT      (*(RwReg16*)0x42003810U) }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT16\_CC0        (*(RwReg16*)0x42003818U) }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT16\_CC1        (*(RwReg16*)0x4200381AU) }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT32\_COUNT      (*(RwReg  *)0x42003810U) }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT32\_CC0        (*(RwReg  *)0x42003818U) }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT32\_CC1        (*(RwReg  *)0x4200381CU) }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT8\_COUNT       (*(RwReg8 *)0x42003810U) }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT8\_PER         (*(RwReg8 *)0x42003814U) }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT8\_CC0         (*(RwReg8 *)0x42003818U) }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define REG\_TC6\_COUNT8\_CC1         (*(RwReg8 *)0x42003819U) }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{comment}{/* ========== Instance parameters for TC6 peripheral ========== */}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define TC6\_CC8\_NUM                 2}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define TC6\_CC16\_NUM                2}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define TC6\_CC32\_NUM                2}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define TC6\_DITHERING\_EXT           0}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define TC6\_GCLK\_ID                 22}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define TC6\_MASTER                  1}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define TC6\_OW\_NUM                  2}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define TC6\_PERIOD\_EXT              0}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define TC6\_SHADOW\_EXT              0}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_TC6\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

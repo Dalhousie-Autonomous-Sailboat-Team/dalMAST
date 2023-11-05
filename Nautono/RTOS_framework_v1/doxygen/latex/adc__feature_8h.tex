@@ -1,0 +1,176 @@
+\hypertarget{adc__feature_8h}{}\doxysection{src/\+ASF/sam0/drivers/adc/adc\+\_\+sam\+\_\+d\+\_\+r\+\_\+h/adc\+\_\+feature.h File Reference}
+\label{adc__feature_8h}\index{src/ASF/sam0/drivers/adc/adc\_sam\_d\_r\_h/adc\_feature.h@{src/ASF/sam0/drivers/adc/adc\_sam\_d\_r\_h/adc\_feature.h}}
+
+
+SAM ADC functionality.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structadc__window__config}{adc\+\_\+window\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Window monitor configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__events}{adc\+\_\+events}}
+\begin{DoxyCompactList}\small\item\em ADC event enable/disable structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__correction__config}{adc\+\_\+correction\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Gain and offset correction configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__pin__scan__config}{adc\+\_\+pin\+\_\+scan\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Pin scan configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em ADC configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}}
+\begin{DoxyCompactList}\small\item\em ADC software device instance structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga91b0f997d73739cf9f7349b7581e1f56}{adc\+\_\+reference}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56acf1c624e7e18cb56f5bcb3e1e0b6642c}{ADC\+\_\+\+REFERENCE\+\_\+\+INT1V}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+INT1V
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56afb4c0d6bd2b6e02be571b51186b45683}{ADC\+\_\+\+REFERENCE\+\_\+\+INTVCC0}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+INTVCC0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56ad03999dc2effdd29bbfed7251f067b36}{ADC\+\_\+\+REFERENCE\+\_\+\+INTVCC1}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+INTVCC1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56ae021ea92c76141620c6b4ce85cb778e8}{ADC\+\_\+\+REFERENCE\+\_\+\+AREFA}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+AREFA
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga91b0f997d73739cf9f7349b7581e1f56a66806ebbfdfd8e09998bc614c517c3f1}{ADC\+\_\+\+REFERENCE\+\_\+\+AREFB}} = ADC\+\_\+\+REFCTRL\+\_\+\+REFSEL\+\_\+\+AREFB
+ \}
+\begin{DoxyCompactList}\small\item\em ADC reference voltage enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5aea9abd2ca3e570987d4ee7b8d2ece5}{adc\+\_\+clock\+\_\+prescaler}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a6e875ef2cd6f5c6f9fd78bcd6627949e}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV4}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5aa7e0a326cc7d097b591d5d56157c1c13}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV8}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV8
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a550ecabab995374de5b826ebcc954e5c}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV16}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV16
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5af3cb664768de192aebe534bfb3b94fb1}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV32}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV32
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a014e287d3f1de1b3bdb495780e7633f0}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV64}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV64
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5a1dd0cb330bd44342705a596ac11390ab}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV128}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV128
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5ac2dde6d469371d78c2ef907666aeccad}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV256}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV256
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga5aea9abd2ca3e570987d4ee7b8d2ece5aa85903a04f1a1f6d746e9b38126a275b}{ADC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV512}} = ADC\+\_\+\+CTRLB\+\_\+\+PRESCALER\+\_\+\+DIV512
+ \}
+\begin{DoxyCompactList}\small\item\em ADC clock prescaler enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga14f1a9a4dda5ef84b87ca7a76b0c91b6}{adc\+\_\+resolution}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ac002266035b9c3a14762154237da8e87}{ADC\+\_\+\+RESOLUTION\+\_\+12\+BIT}} = ADC\+\_\+\+CTRLB\+\_\+\+RESSEL\+\_\+12\+BIT
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a5c3c11dff8c5b740d209faac34047aeb}{ADC\+\_\+\+RESOLUTION\+\_\+16\+BIT}} = ADC\+\_\+\+CTRLB\+\_\+\+RESSEL\+\_\+16\+BIT
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ab625f9c689590bb0776d235da84a482f}{ADC\+\_\+\+RESOLUTION\+\_\+10\+BIT}} = ADC\+\_\+\+CTRLB\+\_\+\+RESSEL\+\_\+10\+BIT
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a86ea19f1e19e119fff18a7fcfee4197e}{ADC\+\_\+\+RESOLUTION\+\_\+8\+BIT}} = ADC\+\_\+\+CTRLB\+\_\+\+RESSEL\+\_\+8\+BIT
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a48a9c78f8d7f1a20298a9e5e3619548a}{ADC\+\_\+\+RESOLUTION\+\_\+13\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6ac111802c80856797d5defaf470219f8e}{ADC\+\_\+\+RESOLUTION\+\_\+14\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a686d7d04459f73bd50326aaaa54dd8f8}{ADC\+\_\+\+RESOLUTION\+\_\+15\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga14f1a9a4dda5ef84b87ca7a76b0c91b6a7f9551aaba02ea51450bbc2bfdf61ab1}{ADC\+\_\+\+RESOLUTION\+\_\+\+CUSTOM}}
+ \}
+\begin{DoxyCompactList}\small\item\em ADC resolution enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}{adc\+\_\+window\+\_\+mode}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743af3e39b4c9be38f1f0a6ecf75c1ea8cbe}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+DISABLE}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+DISABLE
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a1cc02d311670c608fb3f94d66d69d6e5}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+ABOVE\+\_\+\+LOWER}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+MODE1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a9f48dc13719c9e63b8bc02274338760e}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+BELOW\+\_\+\+UPPER}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+MODE2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a37bd3416d9e48464a35fef1acf7d223a}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+BETWEEN}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+MODE3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga720c2e38565e27d2fd31941fede1f743a33864e0b72c9d2e984bfaf0dd51a684c}{ADC\+\_\+\+WINDOW\+\_\+\+MODE\+\_\+\+BETWEEN\+\_\+\+INVERTED}} = ADC\+\_\+\+WINCTRL\+\_\+\+WINMODE\+\_\+\+MODE4
+ \}
+\begin{DoxyCompactList}\small\item\em ADC window monitor mode enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gad0058beaf7a14f02aa55ef8db9b966c3}{adc\+\_\+gain\+\_\+factor}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3af569c2a1b7125d592b89bcc7b4b8962f}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+1X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+1X
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3ae50ac8d79cd35f3cfdf60c9530d3d167}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+2X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+2X
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3a3a1dc496142f4d763210e3d9835cad4d}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+4X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+4X
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3ab2ffc2d2c43434789e2bf644e62bbb75}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+8X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+8X
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3a3c36ae74026c9ecb565bc9e945c034f1}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+16X}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+16X
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggad0058beaf7a14f02aa55ef8db9b966c3acdbe91c385a50189186f891dd2b77330}{ADC\+\_\+\+GAIN\+\_\+\+FACTOR\+\_\+\+DIV2}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+GAIN\+\_\+\+DIV2
+ \}
+\begin{DoxyCompactList}\small\item\em ADC gain factor selection enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gae861d175edda2f67644f6dd042cb7c57}{adc\+\_\+event\+\_\+action}} \{ \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a85909538fe55b349d66682bddf65679f}{ADC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+DISABLED}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a6bf50dcd3ae57b8088a303ee20c2c7d2}{ADC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+FLUSH\+\_\+\+START\+\_\+\+CONV}} = ADC\+\_\+\+EVCTRL\+\_\+\+SYNCEI
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ggae861d175edda2f67644f6dd042cb7c57a372cec0abf928ab983ff75af0e7b8b73}{ADC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+START\+\_\+\+CONV}} = ADC\+\_\+\+EVCTRL\+\_\+\+STARTEI
+ \}
+\begin{DoxyCompactList}\small\item\em ADC event action enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga7df963d2d3118abe65841e0886764002}{adc\+\_\+positive\+\_\+input}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a48ca725380527e4fae4a8655337d9834}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN0}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002ac32e1773e96d0eef0834cc6c9df28268}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN1}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002abd22e1691be1f7e4213f79ff4a0e972b}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN2}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a575a332342f949396458fb2e3728b93d}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN3}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a9232638ffa14ea886e0725ef2d8a9362}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN4}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a69f21ecc292a9507885b0d2a160cb882}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN5}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN5
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002aca6cb50cbb52d64119547836f3fd844a}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN6}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN6
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002af1c35b22dba6c695f09821a937bb1580}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN7}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN7
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a50315b885f4d5dc5b853feb2d7ed09b7}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN8}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN8
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a7e451831b5865fbeeda2b438ca5c7023}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN9}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN9
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a750b7a61c6013814eb47bdb19f9df796}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN10}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN10
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002add576b1cb9a899a3cb021fa1bdeb6342}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN11}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN11
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a05e3f55cc7fc6e99c075a9b9465a67c9}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN12}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN12
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a3f4290e5e16d67dee8dd3483b752c248}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN13}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN13
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a2997bb9560e17eda218d6dcf625b60c8}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN14}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN14
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a34d8a94ec9e08d7af32c5ef2891f84b0}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN15}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN15
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002afa2f0f5bee2b6590a3305d0ce24bfa92}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN16}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN16
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002acfc0ef01ed95677c6479c6df7b9c0a52}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN17}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN17
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a877deeff49a2b4161452e3742729b965}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN18}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN18
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002adbe62b64b5b98925b5928e297d745198}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+PIN19}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+PIN19
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002adabcff6e8428f83e81ea2135e7ae53b9}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+TEMP}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+TEMP
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a3adf00b1f4ec3ca1c1d66665330093c4}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+BANDGAP}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+BANDGAP
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a2070a5cb0deeeefdede1c288149923de}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+SCALEDCOREVCC}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+SCALEDCOREVCC
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002af0c348dffc31707de467f01292217db9}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+SCALEDIOVCC}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+SCALEDIOVCC
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga7df963d2d3118abe65841e0886764002a567a2aaf94710eebb553aed8ec7a21ad}{ADC\+\_\+\+POSITIVE\+\_\+\+INPUT\+\_\+\+DAC}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXPOS\+\_\+\+DAC
+ \}
+\begin{DoxyCompactList}\small\item\em ADC positive MUX input selection enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga843290f150383271ef2ed82792d76e81}{adc\+\_\+negative\+\_\+input}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81aee4369641b2ea0ca47374c644e34f07a}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN0}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a764ee2f799492bc808044e9cb35ed2cc}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN1}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81aec5d2c08d5fe6b417f029dcae1d64908}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN2}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a69374c04bc5d4207eff2e39abbdea2bc}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN3}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a7bbe03a4f4fdf46a1604134749b7734f}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN4}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81af761f928cc2cfd5218b25b26f7efe506}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN5}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN5
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a2aff0e5765101dbaee7bb5cdb871195f}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN6}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN6
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81ab7fd0b3e2c427146c9beed5495710503}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+PIN7}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+PIN7
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a00c49e7f6fd08611c5cb18eefd1603f9}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+GND}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+GND
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga843290f150383271ef2ed82792d76e81a6d9dc39cbf8f78b74be8c6b32bdd2ed5}{ADC\+\_\+\+NEGATIVE\+\_\+\+INPUT\+\_\+\+IOGND}} = ADC\+\_\+\+INPUTCTRL\+\_\+\+MUXNEG\+\_\+\+IOGND
+ \}
+\begin{DoxyCompactList}\small\item\em ADC negative Multiplexer(\+MUX) input selection enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga56aaaff7d846dd74b6818bdb16959ac0}{adc\+\_\+accumulate\+\_\+samples}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0ada13ab8ecb96ae0543db2fb3e4679403}{ADC\+\_\+\+ACCUMULATE\+\_\+\+DISABLE}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a0c1618c11e39fbd427bae4ec3e0886e4}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+2}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a944070f42200b70ff2fadf858c7414e5}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+4}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a676140b814df640bc8a4b2a17a455f7c}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+8}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+8
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a705bad5f9182d37190f428b00ae31b00}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+16}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+16
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a9b669122d8ffb253360e37261f0e411e}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+32}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+32
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0af0f2d7843ec92a9df10ef5f2fb195336}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+64}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+64
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a6285100fc4e3593de6bc737b9f873cbb}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+128}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+128
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a31eed8d56d7310069c21382c64db0127}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+256}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+256
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0aae5806c1db5f61c355244c0b89d6fdcc}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+512}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+512
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga56aaaff7d846dd74b6818bdb16959ac0a2f8ab1615b05347b1dc606faddac757e}{ADC\+\_\+\+ACCUMULATE\+\_\+\+SAMPLES\+\_\+1024}} = ADC\+\_\+\+AVGCTRL\+\_\+\+SAMPLENUM\+\_\+1024
+ \}
+\begin{DoxyCompactList}\small\item\em ADC number of accumulated samples enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga00f645151edbf08c7d90d8beb9b8b217}{adc\+\_\+divide\+\_\+result}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217af61a5897c77571bad72f678fb0ccfec5}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+\+DISABLE}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a71406f1247479b52ac0cd4784dcbcb42}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+2}} = 1
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a72abaf9d060435661e96c05a6efc19d5}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+4}} = 2
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aac2528e93c2da89e5ae830c8c3241636}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+8}} = 3
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aeb8d09107d36ee2442f7509cd8a8a256}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+16}} = 4
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217a6b79da965ae9b1820d64ba57c38b34a8}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+32}} = 5
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aa0e348b5dbff085674b10d61f910302e}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+64}} = 6
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga00f645151edbf08c7d90d8beb9b8b217aca99c11e38fc96d9538bfdd03515f6b3}{ADC\+\_\+\+DIVIDE\+\_\+\+RESULT\+\_\+128}} = 7
+ \}
+\begin{DoxyCompactList}\small\item\em ADC possible dividers for the result register. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga3f29e25af83669caf0d3d9d515c9b03b}{adc\+\_\+oversampling\+\_\+and\+\_\+decimation}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba2332ce4791a500f1f15bdfd5e7184e5b}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+\+DISABLE}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba571bfd1207d0eb0486fe555aedf2e8a5}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+1\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03baa6a03f5858c3267fdc01f28450995ab2}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+2\+BIT}}
+, \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03ba0325abc8f8d717878d86a20cf70ebee6}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+3\+BIT}}
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__adc__group_gga3f29e25af83669caf0d3d9d515c9b03baec92375375637c40812d4e0a54a9ab16}{ADC\+\_\+\+OVERSAMPLING\+\_\+\+AND\+\_\+\+DECIMATION\+\_\+4\+BIT}}
+ \}
+\begin{DoxyCompactList}\small\item\em ADC oversampling and decimation enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM ADC functionality. 
+
+Copyright (c) 2014-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

@@ -1,0 +1,332 @@
+\hypertarget{group__asfdoc__sam0__system__interrupt__group}{}\doxysection{SAM System Interrupt (SYSTEM INTERRUPT) Driver}
+\label{group__asfdoc__sam0__system__interrupt__group}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa8967f7e5e661234c374fd8fe6a7c7b4a}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+NON\+\_\+\+MASKABLE}} = Non\+Maskable\+Int\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabef47b275e187a3c4cc3d79fdefeb43a}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+HARD\+\_\+\+FAULT}} = Hard\+Fault\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa91a0f47299fac0d5a4bbd776a049a7a1}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+SV\+\_\+\+CALL}} = SVCall\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa9aa2c667976293c6b9a0f046984696aa}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PENDING\+\_\+\+SV}} = Pend\+SV\+\_\+\+IRQn
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfadef3a6521ea01f9fa669fa3951d97668}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+SYSTICK}} = Sys\+Tick\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa192f3323b0a11ad28690ee4c0eaa9e4c}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+PM}} = PM\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa04f73ceede7fafa99c7fd85524ebe323}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+SYSCTRL}} = SYSCTRL\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa02ba7488cb2e602f86b42848bff250b4}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+WDT}} = WDT\+\_\+\+IRQn
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfab7c8739bd4a9cd7616ba30a9dd2ef1f8}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+RTC}} = RTC\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa78111f06deafa9412afd0eb7c2bf88bf}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+EIC}} = EIC\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfac04b00eaa6c6c9eb2bd9695fc63dd5fd}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+NVMCTRL}} = NVMCTRL\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa15167598ce4e6982800cb394ceabf901}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+EVSYS}} = EVSYS\+\_\+\+IRQn
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfaa390b62747f343615e8bf32df0ea9871}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+AC}} = AC\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabe508bdf9df07e4f95b69118525cc3c6}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+ADC}} = ADC\+\_\+\+IRQn
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa9875c5d3f3d47908b3553e180525059d}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+DAC}} = DAC\+\_\+\+IRQn
+ \}
+\begin{DoxyCompactList}\small\item\em Table of possible system interrupt/exception vector numbers. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\+\_\+interrupt\+\_\+priority\+\_\+level}} \{ \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a0f1cdf1b338d57e8ca09e7007f72086f}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PRIORITY\+\_\+\+LEVEL\+\_\+0}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589af0f65bd2a3ef76e3e3dabcfc00a012e4}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PRIORITY\+\_\+\+LEVEL\+\_\+1}} = 1
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a1223c3ab580e129c952773a0726d33ea}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PRIORITY\+\_\+\+LEVEL\+\_\+2}} = 2
+, \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a97e6f898ad4d881e5c693ce14c242761}{SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PRIORITY\+\_\+\+LEVEL\+\_\+3}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Table of possible system interrupt/exception vector priorities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Interrupt State Management}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga08ea1ee1c7020c64e18a1673ca8548a4}{system\+\_\+interrupt\+\_\+is\+\_\+pending}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector)
+\begin{DoxyCompactList}\small\item\em Check if a interrupt line is pending. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga03184d235f73957b4226205219783ba3}{system\+\_\+interrupt\+\_\+set\+\_\+pending}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector)
+\begin{DoxyCompactList}\small\item\em Set a interrupt vector as pending. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga3c4191c58c9dda28890ec8153d8c83af}{system\+\_\+interrupt\+\_\+clear\+\_\+pending}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector)
+\begin{DoxyCompactList}\small\item\em Clear pending interrupt vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Interrupt Priority Management}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga0be1259c9dc64c3dd8f0d45e3f04ee76}{system\+\_\+interrupt\+\_\+set\+\_\+priority}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector, const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\+\_\+interrupt\+\_\+priority\+\_\+level}} priority\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Set interrupt vector priority level. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\+\_\+interrupt\+\_\+priority\+\_\+level}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga586466a55934c76a69332b6819f4904a}{system\+\_\+interrupt\+\_\+get\+\_\+priority}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector)
+\begin{DoxyCompactList}\small\item\em Get interrupt vector priority level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of internal software and hardware interrupts/exceptions.
+
+The following peripheral is used by this module\+:
+\begin{DoxyItemize}
+\item NVIC (Nested Vector Interrupt Controller)
+\end{DoxyItemize}
+
+The following devices can use this module\+:
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D09/\+D10/\+D11
+\item Atmel $\vert$ SMART SAM L21/\+L22
+\item Atmel $\vert$ SMART SAM DA1
+\item Atmel $\vert$ SMART SAM C20/\+C21
+\item Atmel $\vert$ SMART SAM HA1
+\item Atmel $\vert$ SMART SAM R30
+\item Atmel $\vert$ SMART SAM R34
+\item Atmel $\vert$ SMART SAM R35
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_module_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_extra_info}{Extra Information}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_prerequisites}
+There are no prerequisites for this module.\hypertarget{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_module_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_module_overview}
+The ARM\textregistered{} Cortex\textregistered{} M0+ core contains an interrupt and exception vector table, which can be used to configure the device\textquotesingle{}s interrupt handlers; individual interrupts and exceptions can be enabled and disabled, as well as configured with a variable priority.
+
+This driver provides a set of wrappers around the core interrupt functions, to expose a simple API for the management of global and individual interrupts within the device.\hypertarget{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_module_overview_criticalsec}{}\doxysubsubsection{Critical Sections}\label{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_module_overview_criticalsec}
+In some applications it is important to ensure that no interrupts may be executed by the system whilst a critical portion of code is being run; for example, a buffer may be copied from one context to another -\/ during which interrupts must be disabled to avoid corruption of the source buffer contents until the copy has completed. This driver provides a basic API to enter and exit nested critical sections, so that global interrupts can be kept disabled for as long as necessary to complete a critical application code section.\hypertarget{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_module_overview_softints}{}\doxysubsubsection{Software Interrupts}\label{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_module_overview_softints}
+For some applications, it may be desirable to raise a module or core interrupt via software. For this reason, a set of APIs to set an interrupt or exception as pending are provided to the user application.\hypertarget{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_special_considerations}{}\doxysubsection{Special Considerations}\label{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_special_considerations}
+Interrupts from peripherals in the SAM devices are on a per-\/module basis; an interrupt raised from any source within a module will cause a single, module-\/common handler to execute. It is the user application or driver\textquotesingle{}s responsibility to de-\/multiplex the module-\/common interrupt to determine the exact interrupt cause.\hypertarget{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_extra_info}{}\doxysubsection{Extra Information}\label{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_extra_info}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_system_interrupt_extra}{Extra Information for SYSTEM INTERRUPT Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_system_interrupt_extra_asfdoc_sam0_system_interrupt_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_system_interrupt_extra_asfdoc_sam0_system_interrupt_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_system_interrupt_extra_asfdoc_sam0_system_interrupt_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_system_interrupt_extra_asfdoc_sam0_system_interrupt_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_examples}{}\doxysubsection{Examples}\label{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_system_interrupt_exqsg}{Examples for SYSTEM INTERRUPT Driver}}.\hypertarget{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__sam0__system__interrupt__group_asfdoc_sam0_system_interrupt_api_overview}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}\label{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}} 
+\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!system\_interrupt\_priority\_level@{system\_interrupt\_priority\_level}}
+\index{system\_interrupt\_priority\_level@{system\_interrupt\_priority\_level}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_interrupt\_priority\_level}{system\_interrupt\_priority\_level}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\+\_\+interrupt\+\_\+priority\+\_\+level}}}
+
+
+
+Table of possible system interrupt/exception vector priorities. 
+
+Table of all possible interrupt and exception vector priorities within the device. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_0@{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_0}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_0@{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_0}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a0f1cdf1b338d57e8ca09e7007f72086f}\label{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a0f1cdf1b338d57e8ca09e7007f72086f}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PRIORITY\+\_\+\+LEVEL\+\_\+0&Priority level 0, the highest possible interrupt priority \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_1@{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_1}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_1@{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589af0f65bd2a3ef76e3e3dabcfc00a012e4}\label{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589af0f65bd2a3ef76e3e3dabcfc00a012e4}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PRIORITY\+\_\+\+LEVEL\+\_\+1&Priority level 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_2@{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_2}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_2@{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_2}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a1223c3ab580e129c952773a0726d33ea}\label{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a1223c3ab580e129c952773a0726d33ea}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PRIORITY\+\_\+\+LEVEL\+\_\+2&Priority level 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_3@{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_3}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_3@{SYSTEM\_INTERRUPT\_PRIORITY\_LEVEL\_3}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a97e6f898ad4d881e5c693ce14c242761}\label{group__asfdoc__sam0__system__interrupt__group_gga6d21907577ff204de7f5fa4642c84589a97e6f898ad4d881e5c693ce14c242761}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PRIORITY\+\_\+\+LEVEL\+\_\+3&Priority level 3, the lowest possible interrupt priority \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}\label{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}} 
+\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!system\_interrupt\_vector@{system\_interrupt\_vector}}
+\index{system\_interrupt\_vector@{system\_interrupt\_vector}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_interrupt\_vector}{system\_interrupt\_vector}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}}}
+
+
+
+Table of possible system interrupt/exception vector numbers. 
+
+Table of all possible interrupt and exception vector indexes within the SAM D20 device. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_NON\_MASKABLE@{SYSTEM\_INTERRUPT\_NON\_MASKABLE}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_NON\_MASKABLE@{SYSTEM\_INTERRUPT\_NON\_MASKABLE}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa8967f7e5e661234c374fd8fe6a7c7b4a}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa8967f7e5e661234c374fd8fe6a7c7b4a}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+NON\+\_\+\+MASKABLE&Interrupt vector index for a NMI interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_HARD\_FAULT@{SYSTEM\_INTERRUPT\_HARD\_FAULT}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_HARD\_FAULT@{SYSTEM\_INTERRUPT\_HARD\_FAULT}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabef47b275e187a3c4cc3d79fdefeb43a}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabef47b275e187a3c4cc3d79fdefeb43a}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+HARD\+\_\+\+FAULT&Interrupt vector index for a Hard Fault memory access exception \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_SV\_CALL@{SYSTEM\_INTERRUPT\_SV\_CALL}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_SV\_CALL@{SYSTEM\_INTERRUPT\_SV\_CALL}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa91a0f47299fac0d5a4bbd776a049a7a1}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa91a0f47299fac0d5a4bbd776a049a7a1}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+SV\+\_\+\+CALL&Interrupt vector index for a Supervisor Call exception \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_PENDING\_SV@{SYSTEM\_INTERRUPT\_PENDING\_SV}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_PENDING\_SV@{SYSTEM\_INTERRUPT\_PENDING\_SV}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa9aa2c667976293c6b9a0f046984696aa}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa9aa2c667976293c6b9a0f046984696aa}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+PENDING\+\_\+\+SV&Interrupt vector index for a Pending Supervisor interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_SYSTICK@{SYSTEM\_INTERRUPT\_SYSTICK}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_SYSTICK@{SYSTEM\_INTERRUPT\_SYSTICK}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfadef3a6521ea01f9fa669fa3951d97668}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfadef3a6521ea01f9fa669fa3951d97668}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+SYSTICK&Interrupt vector index for a System Tick interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_PM@{SYSTEM\_INTERRUPT\_MODULE\_PM}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_PM@{SYSTEM\_INTERRUPT\_MODULE\_PM}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa192f3323b0a11ad28690ee4c0eaa9e4c}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa192f3323b0a11ad28690ee4c0eaa9e4c}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+PM&Interrupt vector index for a Power Manager peripheral interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_SYSCTRL@{SYSTEM\_INTERRUPT\_MODULE\_SYSCTRL}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_SYSCTRL@{SYSTEM\_INTERRUPT\_MODULE\_SYSCTRL}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa04f73ceede7fafa99c7fd85524ebe323}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa04f73ceede7fafa99c7fd85524ebe323}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+SYSCTRL&Interrupt vector index for a System Control peripheral interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_WDT@{SYSTEM\_INTERRUPT\_MODULE\_WDT}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_WDT@{SYSTEM\_INTERRUPT\_MODULE\_WDT}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa02ba7488cb2e602f86b42848bff250b4}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa02ba7488cb2e602f86b42848bff250b4}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+WDT&Interrupt vector index for a Watch Dog peripheral interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_RTC@{SYSTEM\_INTERRUPT\_MODULE\_RTC}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_RTC@{SYSTEM\_INTERRUPT\_MODULE\_RTC}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfab7c8739bd4a9cd7616ba30a9dd2ef1f8}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfab7c8739bd4a9cd7616ba30a9dd2ef1f8}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+RTC&Interrupt vector index for a Real Time Clock peripheral interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_EIC@{SYSTEM\_INTERRUPT\_MODULE\_EIC}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_EIC@{SYSTEM\_INTERRUPT\_MODULE\_EIC}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa78111f06deafa9412afd0eb7c2bf88bf}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa78111f06deafa9412afd0eb7c2bf88bf}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+EIC&Interrupt vector index for an External Interrupt peripheral interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_NVMCTRL@{SYSTEM\_INTERRUPT\_MODULE\_NVMCTRL}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_NVMCTRL@{SYSTEM\_INTERRUPT\_MODULE\_NVMCTRL}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfac04b00eaa6c6c9eb2bd9695fc63dd5fd}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfac04b00eaa6c6c9eb2bd9695fc63dd5fd}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+NVMCTRL&Interrupt vector index for a Non Volatile Memory Controller interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_EVSYS@{SYSTEM\_INTERRUPT\_MODULE\_EVSYS}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_EVSYS@{SYSTEM\_INTERRUPT\_MODULE\_EVSYS}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa15167598ce4e6982800cb394ceabf901}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa15167598ce4e6982800cb394ceabf901}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+EVSYS&Interrupt vector index for an Event System interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_AC@{SYSTEM\_INTERRUPT\_MODULE\_AC}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_AC@{SYSTEM\_INTERRUPT\_MODULE\_AC}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfaa390b62747f343615e8bf32df0ea9871}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfaa390b62747f343615e8bf32df0ea9871}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+AC&Interrupt vector index for an Analog Comparator peripheral interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_ADC@{SYSTEM\_INTERRUPT\_MODULE\_ADC}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_ADC@{SYSTEM\_INTERRUPT\_MODULE\_ADC}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabe508bdf9df07e4f95b69118525cc3c6}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfabe508bdf9df07e4f95b69118525cc3c6}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+ADC&Interrupt vector index for an Analog-\/to-\/\+Digital peripheral interrupt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_INTERRUPT\_MODULE\_DAC@{SYSTEM\_INTERRUPT\_MODULE\_DAC}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!SYSTEM\_INTERRUPT\_MODULE\_DAC@{SYSTEM\_INTERRUPT\_MODULE\_DAC}}}\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa9875c5d3f3d47908b3553e180525059d}\label{group__asfdoc__sam0__system__interrupt__group_gga43378e6222cc05290c1a0c6a9ba125cfa9875c5d3f3d47908b3553e180525059d}} 
+SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+DAC&Interrupt vector index for a Digital-\/to-\/\+Analog peripheral interrupt \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_ga3c4191c58c9dda28890ec8153d8c83af}\label{group__asfdoc__sam0__system__interrupt__group_ga3c4191c58c9dda28890ec8153d8c83af}} 
+\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!system\_interrupt\_clear\_pending@{system\_interrupt\_clear\_pending}}
+\index{system\_interrupt\_clear\_pending@{system\_interrupt\_clear\_pending}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_interrupt\_clear\_pending()}{system\_interrupt\_clear\_pending()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} system\+\_\+interrupt\+\_\+clear\+\_\+pending (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}}}]{vector }\end{DoxyParamCaption})}
+
+
+
+Clear pending interrupt vector. 
+
+Clear a pending interrupt vector, so the software handler is not executed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vector} & Interrupt vector number to clear\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A status code identifying if the interrupt pending state was successfully cleared.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If no error was detected \\
+\hline
+{\em STATUS\+\_\+\+INVALID\+\_\+\+ARG} & If an unsupported interrupt vector number was given \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_ga586466a55934c76a69332b6819f4904a}\label{group__asfdoc__sam0__system__interrupt__group_ga586466a55934c76a69332b6819f4904a}} 
+\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!system\_interrupt\_get\_priority@{system\_interrupt\_get\_priority}}
+\index{system\_interrupt\_get\_priority@{system\_interrupt\_get\_priority}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_interrupt\_get\_priority()}{system\_interrupt\_get\_priority()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\+\_\+interrupt\+\_\+priority\+\_\+level}} system\+\_\+interrupt\+\_\+get\+\_\+priority (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}}}]{vector }\end{DoxyParamCaption})}
+
+
+
+Get interrupt vector priority level. 
+
+Retrieves the priority level of the requested external interrupt or exception.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vector} & Interrupt vector of which the priority level will be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Currently configured interrupt priority level of the given interrupt vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_ga08ea1ee1c7020c64e18a1673ca8548a4}\label{group__asfdoc__sam0__system__interrupt__group_ga08ea1ee1c7020c64e18a1673ca8548a4}} 
+\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!system\_interrupt\_is\_pending@{system\_interrupt\_is\_pending}}
+\index{system\_interrupt\_is\_pending@{system\_interrupt\_is\_pending}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_interrupt\_is\_pending()}{system\_interrupt\_is\_pending()}}
+{\footnotesize\ttfamily bool system\+\_\+interrupt\+\_\+is\+\_\+pending (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}}}]{vector }\end{DoxyParamCaption})}
+
+
+
+Check if a interrupt line is pending. 
+
+Checks if the requested interrupt vector is pending.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vector} & Interrupt vector number to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean identifying if the requested interrupt vector is pending.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & Specified interrupt vector is pending \\
+\hline
+{\em false} & Specified interrupt vector is not pending \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_ga03184d235f73957b4226205219783ba3}\label{group__asfdoc__sam0__system__interrupt__group_ga03184d235f73957b4226205219783ba3}} 
+\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!system\_interrupt\_set\_pending@{system\_interrupt\_set\_pending}}
+\index{system\_interrupt\_set\_pending@{system\_interrupt\_set\_pending}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_interrupt\_set\_pending()}{system\_interrupt\_set\_pending()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} system\+\_\+interrupt\+\_\+set\+\_\+pending (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}}}]{vector }\end{DoxyParamCaption})}
+
+
+
+Set a interrupt vector as pending. 
+
+Set the requested interrupt vector as pending (i.\+e. issues a software interrupt request for the specified vector). The software handler will be handled (if enabled) in a priority order based on vector number and configured priority settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vector} & Interrupt vector number which is set as pending\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code identifying if the vector was successfully set as pending.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If no error was detected \\
+\hline
+{\em STATUS\+\_\+\+INVALID\+\_\+\+ARG} & If an unsupported interrupt vector number was given \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__system__interrupt__group_ga0be1259c9dc64c3dd8f0d45e3f04ee76}\label{group__asfdoc__sam0__system__interrupt__group_ga0be1259c9dc64c3dd8f0d45e3f04ee76}} 
+\index{SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}!system\_interrupt\_set\_priority@{system\_interrupt\_set\_priority}}
+\index{system\_interrupt\_set\_priority@{system\_interrupt\_set\_priority}!SAM System Interrupt (SYSTEM INTERRUPT) Driver@{SAM System Interrupt (SYSTEM INTERRUPT) Driver}}
+\doxysubsubsection{\texorpdfstring{system\_interrupt\_set\_priority()}{system\_interrupt\_set\_priority()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} system\+\_\+interrupt\+\_\+set\+\_\+priority (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}}}]{vector,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\+\_\+interrupt\+\_\+priority\+\_\+level}}}]{priority\+\_\+level }\end{DoxyParamCaption})}
+
+
+
+Set interrupt vector priority level. 
+
+Set the priority level of an external interrupt or exception.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vector} & Interrupt vector to change \\
+\hline
+\mbox{\texttt{ in}}  & {\em priority\+\_\+level} & New vector priority level to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code indicating if the priority level of the interrupt was successfully set.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If no error was detected \\
+\hline
+{\em STATUS\+\_\+\+INVALID\+\_\+\+ARG} & If an unsupported interrupt vector number was given \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,26 @@
+\hypertarget{group__x_stream_buffer_receive_completed_from_i_s_r}{}\doxysection{x\+Stream\+Buffer\+Receive\+Completed\+From\+ISR}
+\label{group__x_stream_buffer_receive_completed_from_i_s_r}\index{xStreamBufferReceiveCompletedFromISR@{xStreamBufferReceiveCompletedFromISR}}
+\mbox{\hyperlink{stream__buffer_8h_source}{stream\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+BaseType\_t xStreamBufferReceiveCompletedFromISR( StreamBufferHandle\_t xStreamBuffer, BaseType\_t *pxHigherPriorityTaskWoken );
+\end{DoxyPre}
+
+
+For advanced users only.
+
+The sb\+RECEIVE\+\_\+\+COMPLETED() macro is called from within the Free\+RTOS APIs when data is read out of a message buffer or stream buffer. If there was a task that was blocked on the message or stream buffer waiting for data to arrive then the sb\+RECEIVE\+\_\+\+COMPLETED() macro sends a notification to the task to remove it from the Blocked state. x\+Stream\+Buffer\+Receive\+Completed\+From\+ISR() does the same thing. It is provided to enable application writers to implement their own version of sb\+RECEIVE\+\_\+\+COMPLETED(), and MUST NOT BE USED AT ANY OTHER TIME.
+
+See the example implemented in Free\+RTOS/\+Demo/\+Minimal/\+Message\+Buffer\+AMP.\+c for additional information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Stream\+Buffer} & The handle of the stream buffer from which data was read.\\
+\hline
+{\em px\+Higher\+Priority\+Task\+Woken} & $\ast$px\+Higher\+Priority\+Task\+Woken should be initialised to pd\+FALSE before it is passed into x\+Stream\+Buffer\+Receive\+Completed\+From\+ISR(). If calling x\+Stream\+Buffer\+Receive\+Completed\+From\+ISR() removes a task from the Blocked state, and the task has a priority above the priority of the currently running task, then $\ast$px\+Higher\+Priority\+Task\+Woken will get set to pd\+TRUE indicating that a context switch should be performed before exiting the ISR.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If a task was removed from the Blocked state then pd\+TRUE is returned. Otherwise pd\+FALSE is returned. 
+\end{DoxyReturn}

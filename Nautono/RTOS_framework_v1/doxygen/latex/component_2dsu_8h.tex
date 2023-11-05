@@ -1,0 +1,753 @@
+\hypertarget{component_2dsu_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/component/dsu.h File Reference}
+\label{component_2dsu_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/dsu.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/dsu.h}}
+
+
+Component description for DSU.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_d_s_u___c_t_r_l___type}{DSU\+\_\+\+CTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_a___type}{DSU\+\_\+\+STATUSA\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___s_t_a_t_u_s_b___type}{DSU\+\_\+\+STATUSB\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___a_d_d_r___type}{DSU\+\_\+\+ADDR\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___l_e_n_g_t_h___type}{DSU\+\_\+\+LENGTH\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___d_a_t_a___type}{DSU\+\_\+\+DATA\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___d_c_c___type}{DSU\+\_\+\+DCC\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___d_i_d___type}{DSU\+\_\+\+DID\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___d_c_f_g___type}{DSU\+\_\+\+DCFG\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___e_n_t_r_y___type}{DSU\+\_\+\+ENTRY\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___e_n_t_r_y0___type}{DSU\+\_\+\+ENTRY0\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___e_n_t_r_y1___type}{DSU\+\_\+\+ENTRY1\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___e_n_d___type}{DSU\+\_\+\+END\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___m_e_m_t_y_p_e___type}{DSU\+\_\+\+MEMTYPE\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___p_i_d4___type}{DSU\+\_\+\+PID4\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___p_i_d5___type}{DSU\+\_\+\+PID5\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___p_i_d6___type}{DSU\+\_\+\+PID6\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___p_i_d7___type}{DSU\+\_\+\+PID7\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___p_i_d0___type}{DSU\+\_\+\+PID0\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___p_i_d1___type}{DSU\+\_\+\+PID1\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___p_i_d2___type}{DSU\+\_\+\+PID2\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___p_i_d3___type}{DSU\+\_\+\+PID3\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___c_i_d0___type}{DSU\+\_\+\+CID0\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___c_i_d1___type}{DSU\+\_\+\+CID1\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___c_i_d2___type}{DSU\+\_\+\+CID2\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_d_s_u___c_i_d3___type}{DSU\+\_\+\+CID3\+\_\+\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_dsu}{Dsu}}
+\begin{DoxyCompactList}\small\item\em DSU hardware registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a8aec87ba15ad5773fa8672a0b7ac1167}\label{component_2dsu_8h_a8aec87ba15ad5773fa8672a0b7ac1167}} 
+\#define {\bfseries DSU\+\_\+\+U2209}
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_af465c179d3af87802176de84057eaf96}\label{component_2dsu_8h_af465c179d3af87802176de84057eaf96}} 
+\#define {\bfseries REV\+\_\+\+DSU}~0x103
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a16d35bf197958eb309724f1d0fd8e842}\label{component_2dsu_8h_a16d35bf197958eb309724f1d0fd8e842}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+OFFSET}~0x0000
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CTRL offset) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a2d27ac9a8ec8798ed407281b387c2fd0}\label{component_2dsu_8h_a2d27ac9a8ec8798ed407281b387c2fd0}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CTRL reset\+\_\+value) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a2d08bbc3f34f53bc95415ac1c3d2ae72}\label{component_2dsu_8h_a2d08bbc3f34f53bc95415ac1c3d2ae72}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+SWRST\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CTRL) Software Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a271a775cfa8f562f64ab3a6f0e328a51}\label{component_2dsu_8h_a271a775cfa8f562f64ab3a6f0e328a51}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+SWRST}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a2d08bbc3f34f53bc95415ac1c3d2ae72}{DSU\+\_\+\+CTRL\+\_\+\+SWRST\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a3f42a18f629eccf5698c46d591b827bc}\label{component_2dsu_8h_a3f42a18f629eccf5698c46d591b827bc}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+CRC\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CTRL) 32-\/bit Cyclic Redundancy Code \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aa949503f8848f8d688497ed13a2e29b1}\label{component_2dsu_8h_aa949503f8848f8d688497ed13a2e29b1}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+CRC}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a3f42a18f629eccf5698c46d591b827bc}{DSU\+\_\+\+CTRL\+\_\+\+CRC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ae2f8bb8c8fde9739e8e15e76b5a052fc}\label{component_2dsu_8h_ae2f8bb8c8fde9739e8e15e76b5a052fc}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+MBIST\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CTRL) Memory built-\/in self-\/test \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a29a4889c6f02e7f58d390da5cb809eab}\label{component_2dsu_8h_a29a4889c6f02e7f58d390da5cb809eab}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+MBIST}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ae2f8bb8c8fde9739e8e15e76b5a052fc}{DSU\+\_\+\+CTRL\+\_\+\+MBIST\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aef5ca1fd2f78e579bae1661fb54ccae7}\label{component_2dsu_8h_aef5ca1fd2f78e579bae1661fb54ccae7}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+CE\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CTRL) Chip-\/\+Erase \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a5e11b643b12c8d48be1e324bc42008b6}\label{component_2dsu_8h_a5e11b643b12c8d48be1e324bc42008b6}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+CE}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_aef5ca1fd2f78e579bae1661fb54ccae7}{DSU\+\_\+\+CTRL\+\_\+\+CE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a73ceacd04bd9669ed1853da944fa0c4a}\label{component_2dsu_8h_a73ceacd04bd9669ed1853da944fa0c4a}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+ARR\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CTRL) Auxiliary Row Read \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a5f2577836c76675ccc10c18819e11f39}\label{component_2dsu_8h_a5f2577836c76675ccc10c18819e11f39}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+ARR}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a73ceacd04bd9669ed1853da944fa0c4a}{DSU\+\_\+\+CTRL\+\_\+\+ARR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ae5bcaa4f2c2619c8cedb1672a23bb902}\label{component_2dsu_8h_ae5bcaa4f2c2619c8cedb1672a23bb902}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+SMSA\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CTRL) Start Memory Stream Access \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a83eade410db4dba9e0ae9930b67e1d4c}\label{component_2dsu_8h_a83eade410db4dba9e0ae9930b67e1d4c}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+SMSA}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ae5bcaa4f2c2619c8cedb1672a23bb902}{DSU\+\_\+\+CTRL\+\_\+\+SMSA\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ad7cc167d8a8791942e3149bd93278134}\label{component_2dsu_8h_ad7cc167d8a8791942e3149bd93278134}} 
+\#define {\bfseries DSU\+\_\+\+CTRL\+\_\+\+MASK}~0x\+DDul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a5bbcb19f47173c3bdee8ce58b612eac0}\label{component_2dsu_8h_a5bbcb19f47173c3bdee8ce58b612eac0}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+OFFSET}~0x0001
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSA offset) Status A \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a39ce3f6cadacf2ea11a0e8ab5d6bcd4b}\label{component_2dsu_8h_a39ce3f6cadacf2ea11a0e8ab5d6bcd4b}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSA reset\+\_\+value) Status A \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a608007c6aa3ae0221483e370d9ca999b}\label{component_2dsu_8h_a608007c6aa3ae0221483e370d9ca999b}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+DONE\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSA) Done \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a824b2ff5600830ebc7971da3eeea0b7b}\label{component_2dsu_8h_a824b2ff5600830ebc7971da3eeea0b7b}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+DONE}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a608007c6aa3ae0221483e370d9ca999b}{DSU\+\_\+\+STATUSA\+\_\+\+DONE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab5c6d644e1ec7f67cf2a9ad97a5262a2}\label{component_2dsu_8h_ab5c6d644e1ec7f67cf2a9ad97a5262a2}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+CRSTEXT\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSA) CPU Reset Phase Extension \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a4ce5d24ab18ad2bf2cc5925d30432907}\label{component_2dsu_8h_a4ce5d24ab18ad2bf2cc5925d30432907}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+CRSTEXT}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ab5c6d644e1ec7f67cf2a9ad97a5262a2}{DSU\+\_\+\+STATUSA\+\_\+\+CRSTEXT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_afa02b78e838184c6f5a895f0f16c213a}\label{component_2dsu_8h_afa02b78e838184c6f5a895f0f16c213a}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+BERR\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSA) Bus Error \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a74dbd3779decac8f909b6f2fde2df451}\label{component_2dsu_8h_a74dbd3779decac8f909b6f2fde2df451}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+BERR}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_afa02b78e838184c6f5a895f0f16c213a}{DSU\+\_\+\+STATUSA\+\_\+\+BERR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a379cd81ca596d64fff4cdf4cd0642e9d}\label{component_2dsu_8h_a379cd81ca596d64fff4cdf4cd0642e9d}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+FAIL\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSA) Failure \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_acfa2c317afc818826c5ee60f7fd5b06a}\label{component_2dsu_8h_acfa2c317afc818826c5ee60f7fd5b06a}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+FAIL}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a379cd81ca596d64fff4cdf4cd0642e9d}{DSU\+\_\+\+STATUSA\+\_\+\+FAIL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a2d5f7f64db290d822709d358b9d8baf6}\label{component_2dsu_8h_a2d5f7f64db290d822709d358b9d8baf6}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+PERR\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSA) Protection Error \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a0d09a64d9359e44b57ebd1734163e059}\label{component_2dsu_8h_a0d09a64d9359e44b57ebd1734163e059}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+PERR}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a2d5f7f64db290d822709d358b9d8baf6}{DSU\+\_\+\+STATUSA\+\_\+\+PERR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a054a84324fddaaecb1b58f35c2314bc7}\label{component_2dsu_8h_a054a84324fddaaecb1b58f35c2314bc7}} 
+\#define {\bfseries DSU\+\_\+\+STATUSA\+\_\+\+MASK}~0x1\+Ful
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSA) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a6633a1098b38470e1cefd46795f0cf93}\label{component_2dsu_8h_a6633a1098b38470e1cefd46795f0cf93}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+OFFSET}~0x0002
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSB offset) Status B \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aef2faaac59541260b63b58569da04dee}\label{component_2dsu_8h_aef2faaac59541260b63b58569da04dee}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSB reset\+\_\+value) Status B \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_acd0a6b404b8ba52afe784b653e1b4ee7}\label{component_2dsu_8h_acd0a6b404b8ba52afe784b653e1b4ee7}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+PROT\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSB) Protected \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a0ba62e190f2b944deffdbfc40a7ce33a}\label{component_2dsu_8h_a0ba62e190f2b944deffdbfc40a7ce33a}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+PROT}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_acd0a6b404b8ba52afe784b653e1b4ee7}{DSU\+\_\+\+STATUSB\+\_\+\+PROT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a36bd47009661963b8c71c9dc4cb62ecb}\label{component_2dsu_8h_a36bd47009661963b8c71c9dc4cb62ecb}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+DBGPRES\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSB) Debugger Present \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a9eae843ddddb99bef3d7358ccb5e8dc9}\label{component_2dsu_8h_a9eae843ddddb99bef3d7358ccb5e8dc9}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+DBGPRES}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a36bd47009661963b8c71c9dc4cb62ecb}{DSU\+\_\+\+STATUSB\+\_\+\+DBGPRES\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_adc27fc361eacd9fdd30cad6459bdc7c4}\label{component_2dsu_8h_adc27fc361eacd9fdd30cad6459bdc7c4}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+DCCD0\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSB) Debug Communication Channel 0 Dirty \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac68c39af9734e2a6e6db0dc67bf12507}\label{component_2dsu_8h_ac68c39af9734e2a6e6db0dc67bf12507}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+DCCD0}~(1 $<$$<$ \mbox{\hyperlink{component_2dsu_8h_adc27fc361eacd9fdd30cad6459bdc7c4}{DSU\+\_\+\+STATUSB\+\_\+\+DCCD0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a43c23fdfaa496f809db2e9b7d0bea8a9}\label{component_2dsu_8h_a43c23fdfaa496f809db2e9b7d0bea8a9}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+DCCD1\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSB) Debug Communication Channel 1 Dirty \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ad229e036a6ca3ec924ca37250b6ea81c}\label{component_2dsu_8h_ad229e036a6ca3ec924ca37250b6ea81c}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+DCCD1}~(1 $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a43c23fdfaa496f809db2e9b7d0bea8a9}{DSU\+\_\+\+STATUSB\+\_\+\+DCCD1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a93a180646ddd3ecc99793ef1b5bde5aa}\label{component_2dsu_8h_a93a180646ddd3ecc99793ef1b5bde5aa}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+DCCD\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSB) Debug Communication Channel x Dirty \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a044e55aae67a53e47ac714df1cfda6da}\label{component_2dsu_8h_a044e55aae67a53e47ac714df1cfda6da}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+DCCD\+\_\+\+Msk}~(0x3ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a93a180646ddd3ecc99793ef1b5bde5aa}{DSU\+\_\+\+STATUSB\+\_\+\+DCCD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aef2128822b4dc82be7e1c4971676c6ad}\label{component_2dsu_8h_aef2128822b4dc82be7e1c4971676c6ad}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+DCCD}(value)~((DSU\+\_\+\+STATUSB\+\_\+\+DCCD\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a93a180646ddd3ecc99793ef1b5bde5aa}{DSU\+\_\+\+STATUSB\+\_\+\+DCCD\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a99433528b614cd9294b33c828a1a5003}\label{component_2dsu_8h_a99433528b614cd9294b33c828a1a5003}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+HPE\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSB) Hot-\/\+Plugging Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab622c042fd6dd7d2d8b619ab875d2cda}\label{component_2dsu_8h_ab622c042fd6dd7d2d8b619ab875d2cda}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+HPE}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a99433528b614cd9294b33c828a1a5003}{DSU\+\_\+\+STATUSB\+\_\+\+HPE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a81d42e65d6d856087a32f89cd8ebcc23}\label{component_2dsu_8h_a81d42e65d6d856087a32f89cd8ebcc23}} 
+\#define {\bfseries DSU\+\_\+\+STATUSB\+\_\+\+MASK}~0x1\+Ful
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+STATUSB) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_abf4bde31f974267a5be16e838fb4c385}\label{component_2dsu_8h_abf4bde31f974267a5be16e838fb4c385}} 
+\#define {\bfseries DSU\+\_\+\+ADDR\+\_\+\+OFFSET}~0x0004
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ADDR offset) Address \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a20348917b1dead19b4cf118c7470c2e4}\label{component_2dsu_8h_a20348917b1dead19b4cf118c7470c2e4}} 
+\#define {\bfseries DSU\+\_\+\+ADDR\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ADDR reset\+\_\+value) Address \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ad4121595b48dfe29aaec9b674634bc57}\label{component_2dsu_8h_ad4121595b48dfe29aaec9b674634bc57}} 
+\#define {\bfseries DSU\+\_\+\+ADDR\+\_\+\+AMOD\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ADDR) Access Mode \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a977bea859b9813e830d1993d5cd0ff86}\label{component_2dsu_8h_a977bea859b9813e830d1993d5cd0ff86}} 
+\#define {\bfseries DSU\+\_\+\+ADDR\+\_\+\+AMOD\+\_\+\+Msk}~(0x3ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ad4121595b48dfe29aaec9b674634bc57}{DSU\+\_\+\+ADDR\+\_\+\+AMOD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac53e3c3b1ad8d530a190d066ae1396e3}\label{component_2dsu_8h_ac53e3c3b1ad8d530a190d066ae1396e3}} 
+\#define {\bfseries DSU\+\_\+\+ADDR\+\_\+\+AMOD}(value)~((DSU\+\_\+\+ADDR\+\_\+\+AMOD\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ad4121595b48dfe29aaec9b674634bc57}{DSU\+\_\+\+ADDR\+\_\+\+AMOD\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a028619d29a30f3abc4ff67ce0797952c}\label{component_2dsu_8h_a028619d29a30f3abc4ff67ce0797952c}} 
+\#define {\bfseries DSU\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ADDR) Address \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_abd32d0522daddb84bbf02228c190fc49}\label{component_2dsu_8h_abd32d0522daddb84bbf02228c190fc49}} 
+\#define {\bfseries DSU\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Msk}~(0x3\+FFFFFFFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a028619d29a30f3abc4ff67ce0797952c}{DSU\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a87f4d8a3d868be1f3d8cc880a0b67b65}\label{component_2dsu_8h_a87f4d8a3d868be1f3d8cc880a0b67b65}} 
+\#define {\bfseries DSU\+\_\+\+ADDR\+\_\+\+ADDR}(value)~((DSU\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a028619d29a30f3abc4ff67ce0797952c}{DSU\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_adfb5c4d624bfbe3736315ad712fc3238}\label{component_2dsu_8h_adfb5c4d624bfbe3736315ad712fc3238}} 
+\#define {\bfseries DSU\+\_\+\+ADDR\+\_\+\+MASK}~0x\+FFFFFFFFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ADDR) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aa51326ede30d0596a90a8758846527b9}\label{component_2dsu_8h_aa51326ede30d0596a90a8758846527b9}} 
+\#define {\bfseries DSU\+\_\+\+LENGTH\+\_\+\+OFFSET}~0x0008
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+LENGTH offset) Length \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a055ab4dd190617fd309ed8db03c185ac}\label{component_2dsu_8h_a055ab4dd190617fd309ed8db03c185ac}} 
+\#define {\bfseries DSU\+\_\+\+LENGTH\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+LENGTH reset\+\_\+value) Length \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a6aa7babac0719eb769c08ca1a945aa57}\label{component_2dsu_8h_a6aa7babac0719eb769c08ca1a945aa57}} 
+\#define {\bfseries DSU\+\_\+\+LENGTH\+\_\+\+LENGTH\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+LENGTH) Length \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af8420428fca225dd9b92fb53c4498124}\label{component_2dsu_8h_af8420428fca225dd9b92fb53c4498124}} 
+\#define {\bfseries DSU\+\_\+\+LENGTH\+\_\+\+LENGTH\+\_\+\+Msk}~(0x3\+FFFFFFFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a6aa7babac0719eb769c08ca1a945aa57}{DSU\+\_\+\+LENGTH\+\_\+\+LENGTH\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a89bbb4abfbd477e9791957d57d5baf5f}\label{component_2dsu_8h_a89bbb4abfbd477e9791957d57d5baf5f}} 
+\#define {\bfseries DSU\+\_\+\+LENGTH\+\_\+\+LENGTH}(value)~((DSU\+\_\+\+LENGTH\+\_\+\+LENGTH\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a6aa7babac0719eb769c08ca1a945aa57}{DSU\+\_\+\+LENGTH\+\_\+\+LENGTH\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a1bdb22215616287bf9f8ee6b97e7f803}\label{component_2dsu_8h_a1bdb22215616287bf9f8ee6b97e7f803}} 
+\#define {\bfseries DSU\+\_\+\+LENGTH\+\_\+\+MASK}~0x\+FFFFFFFCul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+LENGTH) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a723e04c18648c402a75cce7e93de351a}\label{component_2dsu_8h_a723e04c18648c402a75cce7e93de351a}} 
+\#define {\bfseries DSU\+\_\+\+DATA\+\_\+\+OFFSET}~0x000C
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DATA offset) Data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a3a9b805b6870ba197f179b0c6cc366ab}\label{component_2dsu_8h_a3a9b805b6870ba197f179b0c6cc366ab}} 
+\#define {\bfseries DSU\+\_\+\+DATA\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DATA reset\+\_\+value) Data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a035409bf73a654618f87c65e2742bc35}\label{component_2dsu_8h_a035409bf73a654618f87c65e2742bc35}} 
+\#define {\bfseries DSU\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DATA) Data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a23b8e4cde6cb91cf05bb65a48c1250c2}\label{component_2dsu_8h_a23b8e4cde6cb91cf05bb65a48c1250c2}} 
+\#define {\bfseries DSU\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Msk}~(0x\+FFFFFFFFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a035409bf73a654618f87c65e2742bc35}{DSU\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aeb9ece8dc9d2857876bb710844551cda}\label{component_2dsu_8h_aeb9ece8dc9d2857876bb710844551cda}} 
+\#define {\bfseries DSU\+\_\+\+DATA\+\_\+\+DATA}(value)~((DSU\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a035409bf73a654618f87c65e2742bc35}{DSU\+\_\+\+DATA\+\_\+\+DATA\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a8ef0cc4d206f8b748482d8f40d4743e5}\label{component_2dsu_8h_a8ef0cc4d206f8b748482d8f40d4743e5}} 
+\#define {\bfseries DSU\+\_\+\+DATA\+\_\+\+MASK}~0x\+FFFFFFFFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DATA) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a79bf45c7c66b3d6ce28c7c9f9e6b3b89}\label{component_2dsu_8h_a79bf45c7c66b3d6ce28c7c9f9e6b3b89}} 
+\#define {\bfseries DSU\+\_\+\+DCC\+\_\+\+OFFSET}~0x0010
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DCC offset) Debug Communication Channel n \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af005efb1f6ed05574d398463365093b8}\label{component_2dsu_8h_af005efb1f6ed05574d398463365093b8}} 
+\#define {\bfseries DSU\+\_\+\+DCC\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DCC reset\+\_\+value) Debug Communication Channel n \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a5d96d9ba36151557c8211afc631280c6}\label{component_2dsu_8h_a5d96d9ba36151557c8211afc631280c6}} 
+\#define {\bfseries DSU\+\_\+\+DCC\+\_\+\+DATA\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DCC) Data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a10a910bf866c48cce4bafb987cdbe360}\label{component_2dsu_8h_a10a910bf866c48cce4bafb987cdbe360}} 
+\#define {\bfseries DSU\+\_\+\+DCC\+\_\+\+DATA\+\_\+\+Msk}~(0x\+FFFFFFFFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a5d96d9ba36151557c8211afc631280c6}{DSU\+\_\+\+DCC\+\_\+\+DATA\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a64c66dc7faaa799d1f4f852504d8e65c}\label{component_2dsu_8h_a64c66dc7faaa799d1f4f852504d8e65c}} 
+\#define {\bfseries DSU\+\_\+\+DCC\+\_\+\+DATA}(value)~((DSU\+\_\+\+DCC\+\_\+\+DATA\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a5d96d9ba36151557c8211afc631280c6}{DSU\+\_\+\+DCC\+\_\+\+DATA\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a68f123ca6976eeb7b1320d0075b315d2}\label{component_2dsu_8h_a68f123ca6976eeb7b1320d0075b315d2}} 
+\#define {\bfseries DSU\+\_\+\+DCC\+\_\+\+MASK}~0x\+FFFFFFFFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DCC) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a1f8a682ec241602def0bb6f06481e4ed}\label{component_2dsu_8h_a1f8a682ec241602def0bb6f06481e4ed}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+OFFSET}~0x0018
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID offset) Device Identification \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af7877874825444352e8c546a2e1a2595}\label{component_2dsu_8h_af7877874825444352e8c546a2e1a2595}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+DEVSEL\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Device Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a00a89f3dabb49fc218fa169f510affb1}\label{component_2dsu_8h_a00a89f3dabb49fc218fa169f510affb1}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+DEVSEL\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af7877874825444352e8c546a2e1a2595}{DSU\+\_\+\+DID\+\_\+\+DEVSEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ae7f77a8a06e459bf42b0bb130c1a1e58}\label{component_2dsu_8h_ae7f77a8a06e459bf42b0bb130c1a1e58}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+DEVSEL}(value)~((DSU\+\_\+\+DID\+\_\+\+DEVSEL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af7877874825444352e8c546a2e1a2595}{DSU\+\_\+\+DID\+\_\+\+DEVSEL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_adf8c7ee986cf2cceec0a4d82efb513a2}\label{component_2dsu_8h_adf8c7ee986cf2cceec0a4d82efb513a2}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+REVISION\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Revision Number \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab5dba5b8a06073b6c8a2cdffe5b4fc20}\label{component_2dsu_8h_ab5dba5b8a06073b6c8a2cdffe5b4fc20}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+REVISION\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_adf8c7ee986cf2cceec0a4d82efb513a2}{DSU\+\_\+\+DID\+\_\+\+REVISION\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a1c662b22d53f1e09610c2c4df24e26d8}\label{component_2dsu_8h_a1c662b22d53f1e09610c2c4df24e26d8}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+REVISION}(value)~((DSU\+\_\+\+DID\+\_\+\+REVISION\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_adf8c7ee986cf2cceec0a4d82efb513a2}{DSU\+\_\+\+DID\+\_\+\+REVISION\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_acd344f630eefc7e02ceb5f8210017b8b}\label{component_2dsu_8h_acd344f630eefc7e02ceb5f8210017b8b}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+DIE\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Die Number \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a41443f7e74fd63e24f7990557d9ebb28}\label{component_2dsu_8h_a41443f7e74fd63e24f7990557d9ebb28}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+DIE\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_acd344f630eefc7e02ceb5f8210017b8b}{DSU\+\_\+\+DID\+\_\+\+DIE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_adcbee73ae2aeed99b44050be79c41b6d}\label{component_2dsu_8h_adcbee73ae2aeed99b44050be79c41b6d}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+DIE}(value)~((DSU\+\_\+\+DID\+\_\+\+DIE\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_acd344f630eefc7e02ceb5f8210017b8b}{DSU\+\_\+\+DID\+\_\+\+DIE\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a7f9f64f65c0ec3d507ba5bc03b1a9b68}\label{component_2dsu_8h_a7f9f64f65c0ec3d507ba5bc03b1a9b68}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+\+Pos}~16
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Series \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af0a694364add4f49a3d7ad19af011e0b}\label{component_2dsu_8h_af0a694364add4f49a3d7ad19af011e0b}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+\+Msk}~(0x3\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a7f9f64f65c0ec3d507ba5bc03b1a9b68}{DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aa8e2293c54c5435c7b90cc4ab8b0c91b}\label{component_2dsu_8h_aa8e2293c54c5435c7b90cc4ab8b0c91b}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+SERIES}(value)~((DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a7f9f64f65c0ec3d507ba5bc03b1a9b68}{DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aa55d2175bbc40ac9d81bd297a4241916}\label{component_2dsu_8h_aa55d2175bbc40ac9d81bd297a4241916}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+0\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Cortex-\/\+M0+ processor, basic feature set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a5b1ab97381d29e6d852f6ef0aec8f479}\label{component_2dsu_8h_a5b1ab97381d29e6d852f6ef0aec8f479}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+1\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Cortex-\/\+M0+ processor, USB \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ad25a0fe0a4a9ee82609243db4147eaeb}\label{component_2dsu_8h_ad25a0fe0a4a9ee82609243db4147eaeb}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+0}~(\mbox{\hyperlink{component_2dsu_8h_aa55d2175bbc40ac9d81bd297a4241916}{DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+0\+\_\+\+Val}}          $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a7f9f64f65c0ec3d507ba5bc03b1a9b68}{DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a0393d52bdee9a481f611e749fad390ec}\label{component_2dsu_8h_a0393d52bdee9a481f611e749fad390ec}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+1}~(\mbox{\hyperlink{component_2dsu_8h_a5b1ab97381d29e6d852f6ef0aec8f479}{DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+1\+\_\+\+Val}}          $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a7f9f64f65c0ec3d507ba5bc03b1a9b68}{DSU\+\_\+\+DID\+\_\+\+SERIES\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a738ead915cfef1cb2261b900bc2125e7}\label{component_2dsu_8h_a738ead915cfef1cb2261b900bc2125e7}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+\+Pos}~23
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Family \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_afadbeccaa25afb79e44bfa3e1585c116}\label{component_2dsu_8h_afadbeccaa25afb79e44bfa3e1585c116}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+\+Msk}~(0x1\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a738ead915cfef1cb2261b900bc2125e7}{DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a60b98d79fd8846339905b75d8df68abb}\label{component_2dsu_8h_a60b98d79fd8846339905b75d8df68abb}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+FAMILY}(value)~((DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a738ead915cfef1cb2261b900bc2125e7}{DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aa68390a3dd287f0f36e30d40994bcb1e}\label{component_2dsu_8h_aa68390a3dd287f0f36e30d40994bcb1e}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+0\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) General purpose microcontroller \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ade6548ba38e36d9bd1487d02b2825f1c}\label{component_2dsu_8h_ade6548ba38e36d9bd1487d02b2825f1c}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+1\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Pico\+Power \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab7d711b0df12398741eb2ff32acb54f6}\label{component_2dsu_8h_ab7d711b0df12398741eb2ff32acb54f6}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+0}~(\mbox{\hyperlink{component_2dsu_8h_aa68390a3dd287f0f36e30d40994bcb1e}{DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+0\+\_\+\+Val}}          $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a738ead915cfef1cb2261b900bc2125e7}{DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a275b17cc8a72d0075cb1d867c8a253aa}\label{component_2dsu_8h_a275b17cc8a72d0075cb1d867c8a253aa}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+1}~(\mbox{\hyperlink{component_2dsu_8h_ade6548ba38e36d9bd1487d02b2825f1c}{DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+1\+\_\+\+Val}}          $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a738ead915cfef1cb2261b900bc2125e7}{DSU\+\_\+\+DID\+\_\+\+FAMILY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_af39e8c9b37c218a74228db9507493fa2}\label{component_2dsu_8h_af39e8c9b37c218a74228db9507493fa2}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+\+Pos}~28
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Processor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ad4accb27c5fd296512c1ed43dd84c93d}\label{component_2dsu_8h_ad4accb27c5fd296512c1ed43dd84c93d}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af39e8c9b37c218a74228db9507493fa2}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a7631b295029e2c4f2068fb1aeef05634}\label{component_2dsu_8h_a7631b295029e2c4f2068fb1aeef05634}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR}(value)~((DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af39e8c9b37c218a74228db9507493fa2}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_af459a9041b7290a8779e95ae31a0ac91}\label{component_2dsu_8h_af459a9041b7290a8779e95ae31a0ac91}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+0\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Cortex-\/\+M0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac2f32025209af56842bfe0f9fc892b56}\label{component_2dsu_8h_ac2f32025209af56842bfe0f9fc892b56}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+1\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Cortex-\/\+M0+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a723c965c65022c1bf4315e59dfe3591c}\label{component_2dsu_8h_a723c965c65022c1bf4315e59dfe3591c}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+2\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Cortex-\/\+M3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af13d713f6369fd6ddf23f9cc03e307c5}\label{component_2dsu_8h_af13d713f6369fd6ddf23f9cc03e307c5}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+3\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) Cortex-\/\+M4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_adb76fb8bd329f769d6a412eaba90d344}\label{component_2dsu_8h_adb76fb8bd329f769d6a412eaba90d344}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+0}~(\mbox{\hyperlink{component_2dsu_8h_af459a9041b7290a8779e95ae31a0ac91}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+0\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af39e8c9b37c218a74228db9507493fa2}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a54d8a4c5a16fd004138fc90b8c42a6ae}\label{component_2dsu_8h_a54d8a4c5a16fd004138fc90b8c42a6ae}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+1}~(\mbox{\hyperlink{component_2dsu_8h_ac2f32025209af56842bfe0f9fc892b56}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+1\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af39e8c9b37c218a74228db9507493fa2}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a0a0e686c8a1e814ede8a99e934800732}\label{component_2dsu_8h_a0a0e686c8a1e814ede8a99e934800732}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+2}~(\mbox{\hyperlink{component_2dsu_8h_a723c965c65022c1bf4315e59dfe3591c}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+2\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af39e8c9b37c218a74228db9507493fa2}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ad454ff64fa3c806d3498956f879f1cea}\label{component_2dsu_8h_ad454ff64fa3c806d3498956f879f1cea}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+3}~(\mbox{\hyperlink{component_2dsu_8h_af13d713f6369fd6ddf23f9cc03e307c5}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+3\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af39e8c9b37c218a74228db9507493fa2}{DSU\+\_\+\+DID\+\_\+\+PROCESSOR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac1403dba443577379c24df9d1bff8cb1}\label{component_2dsu_8h_ac1403dba443577379c24df9d1bff8cb1}} 
+\#define {\bfseries DSU\+\_\+\+DID\+\_\+\+MASK}~0x\+FFBFFFFFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DID) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a9a4b5cb0b0da6a2c4a085b5f7b2a69e8}\label{component_2dsu_8h_a9a4b5cb0b0da6a2c4a085b5f7b2a69e8}} 
+\#define {\bfseries DSU\+\_\+\+DCFG\+\_\+\+OFFSET}~0x00\+F0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DCFG offset) Device Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a0aa811e0e4f8e89e24c99f75474fe970}\label{component_2dsu_8h_a0aa811e0e4f8e89e24c99f75474fe970}} 
+\#define {\bfseries DSU\+\_\+\+DCFG\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DCFG reset\+\_\+value) Device Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a348297fbddb02f9feae2e71d890f447a}\label{component_2dsu_8h_a348297fbddb02f9feae2e71d890f447a}} 
+\#define {\bfseries DSU\+\_\+\+DCFG\+\_\+\+DCFG\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DCFG) Device Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a3e4e3f317b6651412351a130375cfab5}\label{component_2dsu_8h_a3e4e3f317b6651412351a130375cfab5}} 
+\#define {\bfseries DSU\+\_\+\+DCFG\+\_\+\+DCFG\+\_\+\+Msk}~(0x\+FFFFFFFFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a348297fbddb02f9feae2e71d890f447a}{DSU\+\_\+\+DCFG\+\_\+\+DCFG\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_addf763024200abb98a7b07f6a46b841f}\label{component_2dsu_8h_addf763024200abb98a7b07f6a46b841f}} 
+\#define {\bfseries DSU\+\_\+\+DCFG\+\_\+\+DCFG}(value)~((DSU\+\_\+\+DCFG\+\_\+\+DCFG\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a348297fbddb02f9feae2e71d890f447a}{DSU\+\_\+\+DCFG\+\_\+\+DCFG\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a65a54aa6066842546bda78f1b9d8abaa}\label{component_2dsu_8h_a65a54aa6066842546bda78f1b9d8abaa}} 
+\#define {\bfseries DSU\+\_\+\+DCFG\+\_\+\+MASK}~0x\+FFFFFFFFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+DCFG) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_abf579a43c4cd13d6c94af6656ad564fd}\label{component_2dsu_8h_abf579a43c4cd13d6c94af6656ad564fd}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+OFFSET}~0x1000
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY offset) Coresight ROM Table Entry n \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac085c78a25a715450028693587be6f33}\label{component_2dsu_8h_ac085c78a25a715450028693587be6f33}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+RESETVALUE}~0x00000002ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY reset\+\_\+value) Coresight ROM Table Entry n \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a17db89e8a7cdd4950fb0f754cdf91c9e}\label{component_2dsu_8h_a17db89e8a7cdd4950fb0f754cdf91c9e}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+EPRES\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY) Entry Present \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af9d14d3c1085ee9a8ddc2e7c0f4e2c1d}\label{component_2dsu_8h_af9d14d3c1085ee9a8ddc2e7c0f4e2c1d}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+EPRES}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a17db89e8a7cdd4950fb0f754cdf91c9e}{DSU\+\_\+\+ENTRY\+\_\+\+EPRES\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a64b5a6e8e4e1cb7c47f263c9ec0c0eb0}\label{component_2dsu_8h_a64b5a6e8e4e1cb7c47f263c9ec0c0eb0}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+FMT\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY) Format \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a4cd9b410d66436af77429ab7c66fe798}\label{component_2dsu_8h_a4cd9b410d66436af77429ab7c66fe798}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+FMT}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a64b5a6e8e4e1cb7c47f263c9ec0c0eb0}{DSU\+\_\+\+ENTRY\+\_\+\+FMT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab71d31f158a348f32e1a357991d598e4}\label{component_2dsu_8h_ab71d31f158a348f32e1a357991d598e4}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+ADDOFF\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY) Address Offset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a5aed4c8d11cb4035eb6e903e323f1bd2}\label{component_2dsu_8h_a5aed4c8d11cb4035eb6e903e323f1bd2}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+ADDOFF\+\_\+\+Msk}~(0x\+FFFFFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ab71d31f158a348f32e1a357991d598e4}{DSU\+\_\+\+ENTRY\+\_\+\+ADDOFF\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a2b06caa1302db199b3b62849e2b5200f}\label{component_2dsu_8h_a2b06caa1302db199b3b62849e2b5200f}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+ADDOFF}(value)~((DSU\+\_\+\+ENTRY\+\_\+\+ADDOFF\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ab71d31f158a348f32e1a357991d598e4}{DSU\+\_\+\+ENTRY\+\_\+\+ADDOFF\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_af0cc765a53fad8ea6a66d738de6e1613}\label{component_2dsu_8h_af0cc765a53fad8ea6a66d738de6e1613}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY\+\_\+\+MASK}~0x\+FFFFF003ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aab06d4df5675d46495c1506ff2f2bf2c}\label{component_2dsu_8h_aab06d4df5675d46495c1506ff2f2bf2c}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+OFFSET}~0x1000
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY0 offset) Coresight ROM Table Entry 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a8017bdfde4195a88bccf08a7ad26f5ca}\label{component_2dsu_8h_a8017bdfde4195a88bccf08a7ad26f5ca}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+RESETVALUE}~\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x9\+F9\+FC002)
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY0 reset\+\_\+value) Coresight ROM Table Entry 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab0c18ae2688f543939477aebbe76ee54}\label{component_2dsu_8h_ab0c18ae2688f543939477aebbe76ee54}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+EPRES\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY0) Entry Present \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a6c401381fced4d940cef9ed1cb0bf71a}\label{component_2dsu_8h_a6c401381fced4d940cef9ed1cb0bf71a}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+EPRES}~(\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x1) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ab0c18ae2688f543939477aebbe76ee54}{DSU\+\_\+\+ENTRY0\+\_\+\+EPRES\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ad27fea4487d4ce75afd0b580219487b6}\label{component_2dsu_8h_ad27fea4487d4ce75afd0b580219487b6}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+FMT\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY0) Format \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af52ac00c014438b8c28c1e5cd3acc389}\label{component_2dsu_8h_af52ac00c014438b8c28c1e5cd3acc389}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+FMT}~(\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x1) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ad27fea4487d4ce75afd0b580219487b6}{DSU\+\_\+\+ENTRY0\+\_\+\+FMT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a281853c30a01a33bb71d921008daf56c}\label{component_2dsu_8h_a281853c30a01a33bb71d921008daf56c}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+ADDOFF\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY0) Address Offset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_acebdea9b5a2589153faa09bdfd152bd2}\label{component_2dsu_8h_acebdea9b5a2589153faa09bdfd152bd2}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+ADDOFF\+\_\+\+Msk}~(\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x\+FFFFF) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a281853c30a01a33bb71d921008daf56c}{DSU\+\_\+\+ENTRY0\+\_\+\+ADDOFF\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a8069c18e95c0860b3a09774c20a6ec67}\label{component_2dsu_8h_a8069c18e95c0860b3a09774c20a6ec67}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+ADDOFF}(value)~(DSU\+\_\+\+ENTRY0\+\_\+\+ADDOFF\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a281853c30a01a33bb71d921008daf56c}{DSU\+\_\+\+ENTRY0\+\_\+\+ADDOFF\+\_\+\+Pos}}))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aefdc95e7fcd5bc171ef80131a547588e}\label{component_2dsu_8h_aefdc95e7fcd5bc171ef80131a547588e}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY0\+\_\+\+MASK}~\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x\+FFFFF003)
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY0) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac5708bb2fe2ee100cdddae6442828217}\label{component_2dsu_8h_ac5708bb2fe2ee100cdddae6442828217}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY1\+\_\+\+OFFSET}~0x1004
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY1 offset) Coresight ROM Table Entry 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a9f8fce8b585b23a09dd0abac9fadf06e}\label{component_2dsu_8h_a9f8fce8b585b23a09dd0abac9fadf06e}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY1\+\_\+\+RESETVALUE}~\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x00000000)
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY1 reset\+\_\+value) Coresight ROM Table Entry 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_afdfc580b0b4e1677b6ce0b4843199d76}\label{component_2dsu_8h_afdfc580b0b4e1677b6ce0b4843199d76}} 
+\#define {\bfseries DSU\+\_\+\+ENTRY1\+\_\+\+MASK}~\mbox{\hyperlink{samd20e14b_8h_ab21106c87e6a98f4e2833499325b2867}{\+\_\+\+U\+\_\+}}(0x\+FFFFFFFF)
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+ENTRY1) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ae6ea9aca4f5434a9e01445fc08782f59}\label{component_2dsu_8h_ae6ea9aca4f5434a9e01445fc08782f59}} 
+\#define {\bfseries DSU\+\_\+\+END\+\_\+\+OFFSET}~0x1008
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+END offset) Coresight ROM Table End \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aa4380f101e160fd70e41789f57871f63}\label{component_2dsu_8h_aa4380f101e160fd70e41789f57871f63}} 
+\#define {\bfseries DSU\+\_\+\+END\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+END reset\+\_\+value) Coresight ROM Table End \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a490d2f02762f42681fc4dcaa0db570bb}\label{component_2dsu_8h_a490d2f02762f42681fc4dcaa0db570bb}} 
+\#define {\bfseries DSU\+\_\+\+END\+\_\+\+END\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+END) End Marker \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aaf87e985a2898109e146e505e1bc603e}\label{component_2dsu_8h_aaf87e985a2898109e146e505e1bc603e}} 
+\#define {\bfseries DSU\+\_\+\+END\+\_\+\+END\+\_\+\+Msk}~(0x\+FFFFFFFFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a490d2f02762f42681fc4dcaa0db570bb}{DSU\+\_\+\+END\+\_\+\+END\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a7f75f47734b0964eae647d11b91f7748}\label{component_2dsu_8h_a7f75f47734b0964eae647d11b91f7748}} 
+\#define {\bfseries DSU\+\_\+\+END\+\_\+\+END}(value)~((DSU\+\_\+\+END\+\_\+\+END\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a490d2f02762f42681fc4dcaa0db570bb}{DSU\+\_\+\+END\+\_\+\+END\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac1fdb41335952f536cc506c75a0f2e5f}\label{component_2dsu_8h_ac1fdb41335952f536cc506c75a0f2e5f}} 
+\#define {\bfseries DSU\+\_\+\+END\+\_\+\+MASK}~0x\+FFFFFFFFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+END) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a9cfb1a386c96d79aa14d0556e89a9847}\label{component_2dsu_8h_a9cfb1a386c96d79aa14d0556e89a9847}} 
+\#define {\bfseries DSU\+\_\+\+MEMTYPE\+\_\+\+OFFSET}~0x1\+FCC
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+MEMTYPE offset) Coresight ROM Table Memory Type \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ae696aac50623781af5c363bb4819a651}\label{component_2dsu_8h_ae696aac50623781af5c363bb4819a651}} 
+\#define {\bfseries DSU\+\_\+\+MEMTYPE\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+MEMTYPE reset\+\_\+value) Coresight ROM Table Memory Type \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af9e3cd3a0a5383eb7790554b6b26b2d3}\label{component_2dsu_8h_af9e3cd3a0a5383eb7790554b6b26b2d3}} 
+\#define {\bfseries DSU\+\_\+\+MEMTYPE\+\_\+\+SMEMP\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+MEMTYPE) System Memory Present \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aab193425e2e460aea861c9c2ef10fd42}\label{component_2dsu_8h_aab193425e2e460aea861c9c2ef10fd42}} 
+\#define {\bfseries DSU\+\_\+\+MEMTYPE\+\_\+\+SMEMP}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af9e3cd3a0a5383eb7790554b6b26b2d3}{DSU\+\_\+\+MEMTYPE\+\_\+\+SMEMP\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a1452bd6135db23612661a14aba71c287}\label{component_2dsu_8h_a1452bd6135db23612661a14aba71c287}} 
+\#define {\bfseries DSU\+\_\+\+MEMTYPE\+\_\+\+MASK}~0x00000001ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+MEMTYPE) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a9b2486d7ffbc473daa210a53c58ae205}\label{component_2dsu_8h_a9b2486d7ffbc473daa210a53c58ae205}} 
+\#define {\bfseries DSU\+\_\+\+PID4\+\_\+\+OFFSET}~0x1\+FD0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID4 offset) Peripheral Identification 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_abff45dc09472f6ef982d193afd7841cc}\label{component_2dsu_8h_abff45dc09472f6ef982d193afd7841cc}} 
+\#define {\bfseries DSU\+\_\+\+PID4\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID4 reset\+\_\+value) Peripheral Identification 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a09592aca2e0907f95a7a1b7898f77734}\label{component_2dsu_8h_a09592aca2e0907f95a7a1b7898f77734}} 
+\#define {\bfseries DSU\+\_\+\+PID4\+\_\+\+JEPCC\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID4) JEP-\/106 Continuation Code \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a2a82152e8d4b608bac249b7a20648725}\label{component_2dsu_8h_a2a82152e8d4b608bac249b7a20648725}} 
+\#define {\bfseries DSU\+\_\+\+PID4\+\_\+\+JEPCC\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a09592aca2e0907f95a7a1b7898f77734}{DSU\+\_\+\+PID4\+\_\+\+JEPCC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a5fd67c05238d1180cab16bd3363d12e3}\label{component_2dsu_8h_a5fd67c05238d1180cab16bd3363d12e3}} 
+\#define {\bfseries DSU\+\_\+\+PID4\+\_\+\+JEPCC}(value)~((DSU\+\_\+\+PID4\+\_\+\+JEPCC\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a09592aca2e0907f95a7a1b7898f77734}{DSU\+\_\+\+PID4\+\_\+\+JEPCC\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aa75dd4a5e3f39a78aacfe256a1db4df9}\label{component_2dsu_8h_aa75dd4a5e3f39a78aacfe256a1db4df9}} 
+\#define {\bfseries DSU\+\_\+\+PID4\+\_\+\+FKBC\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID4) 4KB count \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_acf7090567b13986ca1ee4903dfbc1157}\label{component_2dsu_8h_acf7090567b13986ca1ee4903dfbc1157}} 
+\#define {\bfseries DSU\+\_\+\+PID4\+\_\+\+FKBC\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_aa75dd4a5e3f39a78aacfe256a1db4df9}{DSU\+\_\+\+PID4\+\_\+\+FKBC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac37ce079f68b9fd6e3fc8b02bc876590}\label{component_2dsu_8h_ac37ce079f68b9fd6e3fc8b02bc876590}} 
+\#define {\bfseries DSU\+\_\+\+PID4\+\_\+\+FKBC}(value)~((DSU\+\_\+\+PID4\+\_\+\+FKBC\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_aa75dd4a5e3f39a78aacfe256a1db4df9}{DSU\+\_\+\+PID4\+\_\+\+FKBC\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a4d757ce3a91f809a48fe7fbe9a72724e}\label{component_2dsu_8h_a4d757ce3a91f809a48fe7fbe9a72724e}} 
+\#define {\bfseries DSU\+\_\+\+PID4\+\_\+\+MASK}~0x000000\+FFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID4) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a55456b82aa4473e1294da9cddff8dc7f}\label{component_2dsu_8h_a55456b82aa4473e1294da9cddff8dc7f}} 
+\#define {\bfseries DSU\+\_\+\+PID5\+\_\+\+OFFSET}~0x1\+FD4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID5 offset) Peripheral Identification 5 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a5859f5a5ab794ef6639607ee21c9bfb0}\label{component_2dsu_8h_a5859f5a5ab794ef6639607ee21c9bfb0}} 
+\#define {\bfseries DSU\+\_\+\+PID5\+\_\+\+MASK}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID5) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aef7906d7c83735893dad365a6292f4c2}\label{component_2dsu_8h_aef7906d7c83735893dad365a6292f4c2}} 
+\#define {\bfseries DSU\+\_\+\+PID6\+\_\+\+OFFSET}~0x1\+FD8
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID6 offset) Peripheral Identification 6 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac1a214954faa7cfd1597c2f5dc50b61e}\label{component_2dsu_8h_ac1a214954faa7cfd1597c2f5dc50b61e}} 
+\#define {\bfseries DSU\+\_\+\+PID6\+\_\+\+MASK}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID6) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a177551481d873cd49c5348a580bb583d}\label{component_2dsu_8h_a177551481d873cd49c5348a580bb583d}} 
+\#define {\bfseries DSU\+\_\+\+PID7\+\_\+\+OFFSET}~0x1\+FDC
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID7 offset) Peripheral Identification 7 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a16cbaf00d0e9956cdbf2f3f627576ecc}\label{component_2dsu_8h_a16cbaf00d0e9956cdbf2f3f627576ecc}} 
+\#define {\bfseries DSU\+\_\+\+PID7\+\_\+\+MASK}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID7) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aea9d171f0922c1d3459cd94571421b57}\label{component_2dsu_8h_aea9d171f0922c1d3459cd94571421b57}} 
+\#define {\bfseries DSU\+\_\+\+PID0\+\_\+\+OFFSET}~0x1\+FE0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID0 offset) Peripheral Identification 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_afbf547350eaa735fb153d3b6dcc09408}\label{component_2dsu_8h_afbf547350eaa735fb153d3b6dcc09408}} 
+\#define {\bfseries DSU\+\_\+\+PID0\+\_\+\+RESETVALUE}~0x000000\+D0ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID0 reset\+\_\+value) Peripheral Identification 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af2273a145c71eec0de2c40ddd80e4283}\label{component_2dsu_8h_af2273a145c71eec0de2c40ddd80e4283}} 
+\#define {\bfseries DSU\+\_\+\+PID0\+\_\+\+PARTNBL\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID0) Part Number Low \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a54a82c896045decd005d66a532015c5f}\label{component_2dsu_8h_a54a82c896045decd005d66a532015c5f}} 
+\#define {\bfseries DSU\+\_\+\+PID0\+\_\+\+PARTNBL\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af2273a145c71eec0de2c40ddd80e4283}{DSU\+\_\+\+PID0\+\_\+\+PARTNBL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a7ae8e82452e6c2e7bafadf3233ca549b}\label{component_2dsu_8h_a7ae8e82452e6c2e7bafadf3233ca549b}} 
+\#define {\bfseries DSU\+\_\+\+PID0\+\_\+\+PARTNBL}(value)~((DSU\+\_\+\+PID0\+\_\+\+PARTNBL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_af2273a145c71eec0de2c40ddd80e4283}{DSU\+\_\+\+PID0\+\_\+\+PARTNBL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ae813809af590e3ba3aa212704b194593}\label{component_2dsu_8h_ae813809af590e3ba3aa212704b194593}} 
+\#define {\bfseries DSU\+\_\+\+PID0\+\_\+\+MASK}~0x000000\+FFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID0) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a1114e2adaab2fe61ed027acf899418de}\label{component_2dsu_8h_a1114e2adaab2fe61ed027acf899418de}} 
+\#define {\bfseries DSU\+\_\+\+PID1\+\_\+\+OFFSET}~0x1\+FE4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID1 offset) Peripheral Identification 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a257a59dab5e1bef2c233b637968f2786}\label{component_2dsu_8h_a257a59dab5e1bef2c233b637968f2786}} 
+\#define {\bfseries DSU\+\_\+\+PID1\+\_\+\+RESETVALUE}~0x000000\+FCul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID1 reset\+\_\+value) Peripheral Identification 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a6dff7e586efe49ba2aa268119a27218d}\label{component_2dsu_8h_a6dff7e586efe49ba2aa268119a27218d}} 
+\#define {\bfseries DSU\+\_\+\+PID1\+\_\+\+PARTNBH\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID1) Part Number High \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a03bce9efd137e37e8c749cdb2bdfe890}\label{component_2dsu_8h_a03bce9efd137e37e8c749cdb2bdfe890}} 
+\#define {\bfseries DSU\+\_\+\+PID1\+\_\+\+PARTNBH\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a6dff7e586efe49ba2aa268119a27218d}{DSU\+\_\+\+PID1\+\_\+\+PARTNBH\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a61b0efd1cd16141a3808d1bad644a5aa}\label{component_2dsu_8h_a61b0efd1cd16141a3808d1bad644a5aa}} 
+\#define {\bfseries DSU\+\_\+\+PID1\+\_\+\+PARTNBH}(value)~((DSU\+\_\+\+PID1\+\_\+\+PARTNBH\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a6dff7e586efe49ba2aa268119a27218d}{DSU\+\_\+\+PID1\+\_\+\+PARTNBH\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a64528557ce517ad0117a1416e03e0be9}\label{component_2dsu_8h_a64528557ce517ad0117a1416e03e0be9}} 
+\#define {\bfseries DSU\+\_\+\+PID1\+\_\+\+JEPIDCL\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID1) Low part of the JEP-\/106 Identity Code \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_af45a07f7bcaedb965d705f1575f1438f}\label{component_2dsu_8h_af45a07f7bcaedb965d705f1575f1438f}} 
+\#define {\bfseries DSU\+\_\+\+PID1\+\_\+\+JEPIDCL\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a64528557ce517ad0117a1416e03e0be9}{DSU\+\_\+\+PID1\+\_\+\+JEPIDCL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aea602fc378fd5fb10111e3d8e9022cf3}\label{component_2dsu_8h_aea602fc378fd5fb10111e3d8e9022cf3}} 
+\#define {\bfseries DSU\+\_\+\+PID1\+\_\+\+JEPIDCL}(value)~((DSU\+\_\+\+PID1\+\_\+\+JEPIDCL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a64528557ce517ad0117a1416e03e0be9}{DSU\+\_\+\+PID1\+\_\+\+JEPIDCL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a2398899995a62f2a20b4390051c5d269}\label{component_2dsu_8h_a2398899995a62f2a20b4390051c5d269}} 
+\#define {\bfseries DSU\+\_\+\+PID1\+\_\+\+MASK}~0x000000\+FFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID1) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ae848d742529a04e4fc64065f2bfde2d7}\label{component_2dsu_8h_ae848d742529a04e4fc64065f2bfde2d7}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+OFFSET}~0x1\+FE8
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID2 offset) Peripheral Identification 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a34f08ebf29928fc5c95f018abbc6d3a3}\label{component_2dsu_8h_a34f08ebf29928fc5c95f018abbc6d3a3}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+RESETVALUE}~0x00000009ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID2 reset\+\_\+value) Peripheral Identification 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a4b2aa922b81ecb07b672d813558306fc}\label{component_2dsu_8h_a4b2aa922b81ecb07b672d813558306fc}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+JEPIDCH\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID2) JEP-\/106 Identity Code High \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a9aa269300c59a1466dd1e04f8bfbd7a1}\label{component_2dsu_8h_a9aa269300c59a1466dd1e04f8bfbd7a1}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+JEPIDCH\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a4b2aa922b81ecb07b672d813558306fc}{DSU\+\_\+\+PID2\+\_\+\+JEPIDCH\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a37fa971dc278d5f39db2207b421c5dc3}\label{component_2dsu_8h_a37fa971dc278d5f39db2207b421c5dc3}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+JEPIDCH}(value)~((DSU\+\_\+\+PID2\+\_\+\+JEPIDCH\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a4b2aa922b81ecb07b672d813558306fc}{DSU\+\_\+\+PID2\+\_\+\+JEPIDCH\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a88346fef117d36aa2dba1ffabc5e908a}\label{component_2dsu_8h_a88346fef117d36aa2dba1ffabc5e908a}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+JEPU\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID2) JEP-\/106 Identity Code is used \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a967771691bc8307f873ebe12770a9b46}\label{component_2dsu_8h_a967771691bc8307f873ebe12770a9b46}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+JEPU}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a88346fef117d36aa2dba1ffabc5e908a}{DSU\+\_\+\+PID2\+\_\+\+JEPU\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_acb24de7b25b93dd1c040ed75899fd545}\label{component_2dsu_8h_acb24de7b25b93dd1c040ed75899fd545}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+REVISION\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID2) Revision Number \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a82145131b9b62c23c97969def2900d5d}\label{component_2dsu_8h_a82145131b9b62c23c97969def2900d5d}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+REVISION\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_acb24de7b25b93dd1c040ed75899fd545}{DSU\+\_\+\+PID2\+\_\+\+REVISION\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a2aded9774af773c83f88843254b3921b}\label{component_2dsu_8h_a2aded9774af773c83f88843254b3921b}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+REVISION}(value)~((DSU\+\_\+\+PID2\+\_\+\+REVISION\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_acb24de7b25b93dd1c040ed75899fd545}{DSU\+\_\+\+PID2\+\_\+\+REVISION\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a4166d965b2c546c98a12d698fd27aa37}\label{component_2dsu_8h_a4166d965b2c546c98a12d698fd27aa37}} 
+\#define {\bfseries DSU\+\_\+\+PID2\+\_\+\+MASK}~0x000000\+FFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID2) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a0dadf53ca912be72cc37e2eddedbacfa}\label{component_2dsu_8h_a0dadf53ca912be72cc37e2eddedbacfa}} 
+\#define {\bfseries DSU\+\_\+\+PID3\+\_\+\+OFFSET}~0x1\+FEC
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID3 offset) Peripheral Identification 3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_aaf4259207024e68a7734aa815f281bb2}\label{component_2dsu_8h_aaf4259207024e68a7734aa815f281bb2}} 
+\#define {\bfseries DSU\+\_\+\+PID3\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID3 reset\+\_\+value) Peripheral Identification 3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab4e2a84699bcb677236554a721bbe8f4}\label{component_2dsu_8h_ab4e2a84699bcb677236554a721bbe8f4}} 
+\#define {\bfseries DSU\+\_\+\+PID3\+\_\+\+CUSMOD\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID3) ARM CUSMOD \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a42edeb1d05942c2e02601a8e1abebdaa}\label{component_2dsu_8h_a42edeb1d05942c2e02601a8e1abebdaa}} 
+\#define {\bfseries DSU\+\_\+\+PID3\+\_\+\+CUSMOD\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ab4e2a84699bcb677236554a721bbe8f4}{DSU\+\_\+\+PID3\+\_\+\+CUSMOD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_affea388f2f5da700b0e9143232f45d37}\label{component_2dsu_8h_affea388f2f5da700b0e9143232f45d37}} 
+\#define {\bfseries DSU\+\_\+\+PID3\+\_\+\+CUSMOD}(value)~((DSU\+\_\+\+PID3\+\_\+\+CUSMOD\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ab4e2a84699bcb677236554a721bbe8f4}{DSU\+\_\+\+PID3\+\_\+\+CUSMOD\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a10e1892be1ad4ad3d2eb63267999efb9}\label{component_2dsu_8h_a10e1892be1ad4ad3d2eb63267999efb9}} 
+\#define {\bfseries DSU\+\_\+\+PID3\+\_\+\+REVAND\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID3) Revision Number \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a8aa490a6598622e9f161af9ec209d893}\label{component_2dsu_8h_a8aa490a6598622e9f161af9ec209d893}} 
+\#define {\bfseries DSU\+\_\+\+PID3\+\_\+\+REVAND\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a10e1892be1ad4ad3d2eb63267999efb9}{DSU\+\_\+\+PID3\+\_\+\+REVAND\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_af2028d73f3440267982dc85909f7eecc}\label{component_2dsu_8h_af2028d73f3440267982dc85909f7eecc}} 
+\#define {\bfseries DSU\+\_\+\+PID3\+\_\+\+REVAND}(value)~((DSU\+\_\+\+PID3\+\_\+\+REVAND\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a10e1892be1ad4ad3d2eb63267999efb9}{DSU\+\_\+\+PID3\+\_\+\+REVAND\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aeaed416954ecb7d99c60af8c7b68b8bb}\label{component_2dsu_8h_aeaed416954ecb7d99c60af8c7b68b8bb}} 
+\#define {\bfseries DSU\+\_\+\+PID3\+\_\+\+MASK}~0x000000\+FFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+PID3) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a04d4b050a6adad9da4caf0993e010d8f}\label{component_2dsu_8h_a04d4b050a6adad9da4caf0993e010d8f}} 
+\#define {\bfseries DSU\+\_\+\+CID0\+\_\+\+OFFSET}~0x1\+FF0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID0 offset) Component Identification 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a614c4aa7339cc2b804cd773e20ca7bf5}\label{component_2dsu_8h_a614c4aa7339cc2b804cd773e20ca7bf5}} 
+\#define {\bfseries DSU\+\_\+\+CID0\+\_\+\+RESETVALUE}~0x0000000\+Dul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID0 reset\+\_\+value) Component Identification 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a684c02c36c7acb7066c55e248c85c44e}\label{component_2dsu_8h_a684c02c36c7acb7066c55e248c85c44e}} 
+\#define {\bfseries DSU\+\_\+\+CID0\+\_\+\+PREAMBLEB0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID0) Preamble Byte 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_accaacf599c31ea471efbdf7838d26de6}\label{component_2dsu_8h_accaacf599c31ea471efbdf7838d26de6}} 
+\#define {\bfseries DSU\+\_\+\+CID0\+\_\+\+PREAMBLEB0\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a684c02c36c7acb7066c55e248c85c44e}{DSU\+\_\+\+CID0\+\_\+\+PREAMBLEB0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a38870d39881d4e6cbacc18de7a44529c}\label{component_2dsu_8h_a38870d39881d4e6cbacc18de7a44529c}} 
+\#define {\bfseries DSU\+\_\+\+CID0\+\_\+\+PREAMBLEB0}(value)~((DSU\+\_\+\+CID0\+\_\+\+PREAMBLEB0\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a684c02c36c7acb7066c55e248c85c44e}{DSU\+\_\+\+CID0\+\_\+\+PREAMBLEB0\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a7c41f1841c69429dc59c6466b4fc0742}\label{component_2dsu_8h_a7c41f1841c69429dc59c6466b4fc0742}} 
+\#define {\bfseries DSU\+\_\+\+CID0\+\_\+\+MASK}~0x000000\+FFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID0) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a1000fee5818fa48da89833ca079a3a5c}\label{component_2dsu_8h_a1000fee5818fa48da89833ca079a3a5c}} 
+\#define {\bfseries DSU\+\_\+\+CID1\+\_\+\+OFFSET}~0x1\+FF4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID1 offset) Component Identification 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a0ddd2062d17bc1957afe23b2f02a46bd}\label{component_2dsu_8h_a0ddd2062d17bc1957afe23b2f02a46bd}} 
+\#define {\bfseries DSU\+\_\+\+CID1\+\_\+\+RESETVALUE}~0x00000010ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID1 reset\+\_\+value) Component Identification 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a7496e12eabba3a78eaef45bd496a9c89}\label{component_2dsu_8h_a7496e12eabba3a78eaef45bd496a9c89}} 
+\#define {\bfseries DSU\+\_\+\+CID1\+\_\+\+PREAMBLE\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID1) Preamble \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a10a983b3963ff405e03427c16369b0be}\label{component_2dsu_8h_a10a983b3963ff405e03427c16369b0be}} 
+\#define {\bfseries DSU\+\_\+\+CID1\+\_\+\+PREAMBLE\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a7496e12eabba3a78eaef45bd496a9c89}{DSU\+\_\+\+CID1\+\_\+\+PREAMBLE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac5f44f703f59fd2e482381626a483701}\label{component_2dsu_8h_ac5f44f703f59fd2e482381626a483701}} 
+\#define {\bfseries DSU\+\_\+\+CID1\+\_\+\+PREAMBLE}(value)~((DSU\+\_\+\+CID1\+\_\+\+PREAMBLE\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a7496e12eabba3a78eaef45bd496a9c89}{DSU\+\_\+\+CID1\+\_\+\+PREAMBLE\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aa505d5dbcb38fd84adf608eaaa7948a6}\label{component_2dsu_8h_aa505d5dbcb38fd84adf608eaaa7948a6}} 
+\#define {\bfseries DSU\+\_\+\+CID1\+\_\+\+CCLASS\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID1) Component Class \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a4266168966ac857f7f418fa53692dc42}\label{component_2dsu_8h_a4266168966ac857f7f418fa53692dc42}} 
+\#define {\bfseries DSU\+\_\+\+CID1\+\_\+\+CCLASS\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2dsu_8h_aa505d5dbcb38fd84adf608eaaa7948a6}{DSU\+\_\+\+CID1\+\_\+\+CCLASS\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab1b3d33d5908526ca1032a0ac8d792a1}\label{component_2dsu_8h_ab1b3d33d5908526ca1032a0ac8d792a1}} 
+\#define {\bfseries DSU\+\_\+\+CID1\+\_\+\+CCLASS}(value)~((DSU\+\_\+\+CID1\+\_\+\+CCLASS\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_aa505d5dbcb38fd84adf608eaaa7948a6}{DSU\+\_\+\+CID1\+\_\+\+CCLASS\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab3c48e6716c2288f0cbecf4a4991dcff}\label{component_2dsu_8h_ab3c48e6716c2288f0cbecf4a4991dcff}} 
+\#define {\bfseries DSU\+\_\+\+CID1\+\_\+\+MASK}~0x000000\+FFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID1) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ab07b638d6710bb917955217815dcd84e}\label{component_2dsu_8h_ab07b638d6710bb917955217815dcd84e}} 
+\#define {\bfseries DSU\+\_\+\+CID2\+\_\+\+OFFSET}~0x1\+FF8
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID2 offset) Component Identification 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a0276c33d43081b5c8cd478b611723f36}\label{component_2dsu_8h_a0276c33d43081b5c8cd478b611723f36}} 
+\#define {\bfseries DSU\+\_\+\+CID2\+\_\+\+RESETVALUE}~0x00000005ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID2 reset\+\_\+value) Component Identification 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a755afb0dc289f0eeaaf805636836da72}\label{component_2dsu_8h_a755afb0dc289f0eeaaf805636836da72}} 
+\#define {\bfseries DSU\+\_\+\+CID2\+\_\+\+PREAMBLEB2\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID2) Preamble Byte 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ac588c40c7349a7b9803a8e38bfe9118a}\label{component_2dsu_8h_ac588c40c7349a7b9803a8e38bfe9118a}} 
+\#define {\bfseries DSU\+\_\+\+CID2\+\_\+\+PREAMBLEB2\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a755afb0dc289f0eeaaf805636836da72}{DSU\+\_\+\+CID2\+\_\+\+PREAMBLEB2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a826f45b240e84f67a102fd541f6184f1}\label{component_2dsu_8h_a826f45b240e84f67a102fd541f6184f1}} 
+\#define {\bfseries DSU\+\_\+\+CID2\+\_\+\+PREAMBLEB2}(value)~((DSU\+\_\+\+CID2\+\_\+\+PREAMBLEB2\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_a755afb0dc289f0eeaaf805636836da72}{DSU\+\_\+\+CID2\+\_\+\+PREAMBLEB2\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aedee750a7bad4de75131402ddea84c91}\label{component_2dsu_8h_aedee750a7bad4de75131402ddea84c91}} 
+\#define {\bfseries DSU\+\_\+\+CID2\+\_\+\+MASK}~0x000000\+FFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID2) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a9863199733ba4498f102f28fc2c40021}\label{component_2dsu_8h_a9863199733ba4498f102f28fc2c40021}} 
+\#define {\bfseries DSU\+\_\+\+CID3\+\_\+\+OFFSET}~0x1\+FFC
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID3 offset) Component Identification 3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a8cfe3b4da150c87da70eccd4c07280f4}\label{component_2dsu_8h_a8cfe3b4da150c87da70eccd4c07280f4}} 
+\#define {\bfseries DSU\+\_\+\+CID3\+\_\+\+RESETVALUE}~0x000000\+B1ul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID3 reset\+\_\+value) Component Identification 3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_ad11a14455b5f888c07616d9c56808b09}\label{component_2dsu_8h_ad11a14455b5f888c07616d9c56808b09}} 
+\#define {\bfseries DSU\+\_\+\+CID3\+\_\+\+PREAMBLEB3\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID3) Preamble Byte 3 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2dsu_8h_a371986d5abba79b7e4389d750150cad1}\label{component_2dsu_8h_a371986d5abba79b7e4389d750150cad1}} 
+\#define {\bfseries DSU\+\_\+\+CID3\+\_\+\+PREAMBLEB3\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ad11a14455b5f888c07616d9c56808b09}{DSU\+\_\+\+CID3\+\_\+\+PREAMBLEB3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_aa750f726cef165ba74dd6469057fa7d9}\label{component_2dsu_8h_aa750f726cef165ba74dd6469057fa7d9}} 
+\#define {\bfseries DSU\+\_\+\+CID3\+\_\+\+PREAMBLEB3}(value)~((DSU\+\_\+\+CID3\+\_\+\+PREAMBLEB3\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2dsu_8h_ad11a14455b5f888c07616d9c56808b09}{DSU\+\_\+\+CID3\+\_\+\+PREAMBLEB3\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2dsu_8h_a7b551efb4b690585f91a21e36b24215f}\label{component_2dsu_8h_a7b551efb4b690585f91a21e36b24215f}} 
+\#define {\bfseries DSU\+\_\+\+CID3\+\_\+\+MASK}~0x000000\+FFul
+\begin{DoxyCompactList}\small\item\em (DSU\+\_\+\+CID3) MASK Register \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component description for DSU. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

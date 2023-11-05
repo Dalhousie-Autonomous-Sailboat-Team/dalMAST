@@ -1,0 +1,34 @@
+\hypertarget{interrupt_8h_source}{}\doxysection{interrupt.\+h}
+\label{interrupt_8h_source}\index{src/ASF/common/utils/interrupt.h@{src/ASF/common/utils/interrupt.h}}
+\mbox{\hyperlink{interrupt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef UTILS\_INTERRUPT\_H}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define UTILS\_INTERRUPT\_H}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{parts_8h}{parts.h}}>}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if XMEGA || MEGA}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#  include "{}interrupt/interrupt\_avr8.h"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#elif UC3}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#  include "{}interrupt/interrupt\_avr32.h"{}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#elif SAM || SAMB}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#  include "{}\mbox{\hyperlink{interrupt__sam__nvic_8h}{interrupt/interrupt\_sam\_nvic.h}}"{}}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#  error Unsupported device.}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#  define CONFIG\_INTERRUPT\_FORCE\_INTC}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{124 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* UTILS\_INTERRUPT\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

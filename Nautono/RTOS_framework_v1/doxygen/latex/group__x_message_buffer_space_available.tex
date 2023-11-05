@@ -1,0 +1,16 @@
+\hypertarget{group__x_message_buffer_space_available}{}\doxysection{x\+Message\+Buffer\+Space\+Available}
+\label{group__x_message_buffer_space_available}\index{xMessageBufferSpaceAvailable@{xMessageBufferSpaceAvailable}}
+\mbox{\hyperlink{message__buffer_8h_source}{message\+\_\+buffer.\+h}} 
+\begin{DoxyPre}
+size\_t xMessageBufferSpaceAvailable( MessageBufferHandle\_t xMessageBuffer ) );
+\end{DoxyPre}
+ Returns the number of bytes of free space in the message buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Message\+Buffer} & The handle of the message buffer being queried.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes that can be written to the message buffer before the message buffer would be full. When a message is written to the message buffer an additional sizeof( size\+\_\+t ) bytes are also written to store the message\textquotesingle{}s length. sizeof( size\+\_\+t ) is typically 4 bytes on a 32-\/bit architecture, so if x\+Message\+Buffer\+Spaces\+Available() returns 10, then the size of the largest message that can be written to the message buffer is 6 bytes. 
+\end{DoxyReturn}

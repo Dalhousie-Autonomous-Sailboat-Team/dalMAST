@@ -1,0 +1,140 @@
+\hypertarget{_stack_macros_8h_source}{}\doxysection{Stack\+Macros.\+h}
+\label{_stack_macros_8h_source}\index{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/StackMacros.h@{src/ASF/thirdparty/freertos/freertos-\/10.0.0/Source/include/StackMacros.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * FreeRTOS Kernel V10.0.0}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining a copy of}}
+\DoxyCodeLine{6 \textcolor{comment}{ * this software and associated documentation files (the "{}Software"{}), to deal in}}
+\DoxyCodeLine{7 \textcolor{comment}{ * the Software without restriction, including without limitation the rights to}}
+\DoxyCodeLine{8 \textcolor{comment}{ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of}}
+\DoxyCodeLine{9 \textcolor{comment}{ * the Software, and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * The above copyright notice and this permission notice shall be included in all}}
+\DoxyCodeLine{13 \textcolor{comment}{ * copies or substantial portions of the Software. If you wish to use our Amazon}}
+\DoxyCodeLine{14 \textcolor{comment}{ * FreeRTOS name, please do so in a fair use way that does not cause confusion.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{17 \textcolor{comment}{ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS}}
+\DoxyCodeLine{18 \textcolor{comment}{ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR}}
+\DoxyCodeLine{19 \textcolor{comment}{ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER}}
+\DoxyCodeLine{20 \textcolor{comment}{ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN}}
+\DoxyCodeLine{21 \textcolor{comment}{ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * http://www.FreeRTOS.org}}
+\DoxyCodeLine{24 \textcolor{comment}{ * http://aws.amazon.com/freertos}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ * 1 tab == 4 spaces!}}
+\DoxyCodeLine{27 \textcolor{comment}{ */}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef STACK\_MACROS\_H}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define STACK\_MACROS\_H}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#ifndef \_MSC\_VER }\textcolor{comment}{/* Visual Studio doesn't support \#warning. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{    \#warning The name of this file has changed to stack\_macros.h.  Please update your code accordingly.  This source file (which has the original name) will be removed in future released.}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/*}}
+\DoxyCodeLine{37 \textcolor{comment}{ * Call the stack overflow hook function if the stack of the task being swapped}}
+\DoxyCodeLine{38 \textcolor{comment}{ * out is currently overflowed, or looks like it might have overflowed in the}}
+\DoxyCodeLine{39 \textcolor{comment}{ * past.}}
+\DoxyCodeLine{40 \textcolor{comment}{ *}}
+\DoxyCodeLine{41 \textcolor{comment}{ * Setting configCHECK\_FOR\_STACK\_OVERFLOW to 1 will cause the macro to check}}
+\DoxyCodeLine{42 \textcolor{comment}{ * the current stack state only -\/ comparing the current top of stack value to}}
+\DoxyCodeLine{43 \textcolor{comment}{ * the stack limit.  Setting configCHECK\_FOR\_STACK\_OVERFLOW to greater than 1}}
+\DoxyCodeLine{44 \textcolor{comment}{ * will also cause the last few stack bytes to be checked to ensure the value}}
+\DoxyCodeLine{45 \textcolor{comment}{ * to which the bytes were set when the task was created have not been}}
+\DoxyCodeLine{46 \textcolor{comment}{ * overwritten.  Note this second test does not guarantee that an overflowed}}
+\DoxyCodeLine{47 \textcolor{comment}{ * stack will always be recognised.}}
+\DoxyCodeLine{48 \textcolor{comment}{ */}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#if( ( configCHECK\_FOR\_STACK\_OVERFLOW == 1 ) \&\& ( portSTACK\_GROWTH < 0 ) )}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{/* Only the current stack state is to be checked. */}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{    \#define taskCHECK\_FOR\_STACK\_OVERFLOW()                                                              \(\backslash\)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{    \{                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{        }\textcolor{comment}{/* Is the currently saved stack pointer within the stack limit? */}\textcolor{preprocessor}{                              \(\backslash\)}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{        if( pxCurrentTCB-\/>pxTopOfStack <= pxCurrentTCB-\/>pxStack )                                       \(\backslash\)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{        \{                                                                                               \(\backslash\)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{            vApplicationStackOverflowHook( ( TaskHandle\_t ) pxCurrentTCB, pxCurrentTCB-\/>pcTaskName );   \(\backslash\)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{        \}                                                                                               \(\backslash\)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* configCHECK\_FOR\_STACK\_OVERFLOW == 1 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{65 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#if( ( configCHECK\_FOR\_STACK\_OVERFLOW == 1 ) \&\& ( portSTACK\_GROWTH > 0 ) )}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{comment}{/* Only the current stack state is to be checked. */}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{    \#define taskCHECK\_FOR\_STACK\_OVERFLOW()                                                              \(\backslash\)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{    \{                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{        }\textcolor{comment}{/* Is the currently saved stack pointer within the stack limit? */}\textcolor{preprocessor}{                              \(\backslash\)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{        if( pxCurrentTCB-\/>pxTopOfStack >= pxCurrentTCB-\/>pxEndOfStack )                                  \(\backslash\)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{        \{                                                                                               \(\backslash\)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{            vApplicationStackOverflowHook( ( TaskHandle\_t ) pxCurrentTCB, pxCurrentTCB-\/>pcTaskName );   \(\backslash\)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{        \}                                                                                               \(\backslash\)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* configCHECK\_FOR\_STACK\_OVERFLOW == 1 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{81 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#if( ( configCHECK\_FOR\_STACK\_OVERFLOW > 1 ) \&\& ( portSTACK\_GROWTH < 0 ) )}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{    \#define taskCHECK\_FOR\_STACK\_OVERFLOW()                                                              \(\backslash\)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{    \{                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{        const uint32\_t * const pulStack = ( uint32\_t * ) pxCurrentTCB-\/>pxStack;                         \(\backslash\)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{        const uint32\_t ulCheckValue = ( uint32\_t ) 0xa5a5a5a5;                                          \(\backslash\)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{        if( ( pulStack[ 0 ] != ulCheckValue ) ||                                                \(\backslash\)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{            ( pulStack[ 1 ] != ulCheckValue ) ||                                                \(\backslash\)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{            ( pulStack[ 2 ] != ulCheckValue ) ||                                                \(\backslash\)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{            ( pulStack[ 3 ] != ulCheckValue ) )                                             \(\backslash\)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{        \{                                                                                               \(\backslash\)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{            vApplicationStackOverflowHook( ( TaskHandle\_t ) pxCurrentTCB, pxCurrentTCB-\/>pcTaskName );   \(\backslash\)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{        \}                                                                                               \(\backslash\)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \#if( configCHECK\_FOR\_STACK\_OVERFLOW > 1 ) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{100 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#if( ( configCHECK\_FOR\_STACK\_OVERFLOW > 1 ) \&\& ( portSTACK\_GROWTH > 0 ) )}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{    \#define taskCHECK\_FOR\_STACK\_OVERFLOW()                                                                                              \(\backslash\)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{    \{                                                                                                                                   \(\backslash\)}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{    int8\_t *pcEndOfStack = ( int8\_t * ) pxCurrentTCB-\/>pxEndOfStack;                                                                     \(\backslash\)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{    static const uint8\_t ucExpectedStackBytes[] = \{ tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE,     \(\backslash\)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{                                                    tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE,     \(\backslash\)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{                                                    tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE,     \(\backslash\)}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{                                                    tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE,     \(\backslash\)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{                                                    tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE, tskSTACK\_FILL\_BYTE \};   \(\backslash\)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{                                                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{                                                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{        pcEndOfStack -\/= sizeof( ucExpectedStackBytes );                                                                                 \(\backslash\)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{                                                                                                                                        \(\backslash\)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{        }\textcolor{comment}{/* Has the extremity of the task stack ever been written over? */}\textcolor{preprocessor}{                                                               \(\backslash\)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{        if( memcmp( ( void * ) pcEndOfStack, ( void * ) ucExpectedStackBytes, sizeof( ucExpectedStackBytes ) ) != 0 )                   \(\backslash\)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{        \{                                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{            vApplicationStackOverflowHook( ( TaskHandle\_t ) pxCurrentTCB, pxCurrentTCB-\/>pcTaskName );                                   \(\backslash\)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{        \}                                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \#if( configCHECK\_FOR\_STACK\_OVERFLOW > 1 ) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{124 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{comment}{/* Remove stack overflow macro if not being used. */}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#ifndef taskCHECK\_FOR\_STACK\_OVERFLOW}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{    \#define taskCHECK\_FOR\_STACK\_OVERFLOW()}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* STACK\_MACROS\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{134 }
+
+\end{DoxyCode}

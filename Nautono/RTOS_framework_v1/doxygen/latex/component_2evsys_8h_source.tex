@@ -1,0 +1,417 @@
+\hypertarget{component_2evsys_8h_source}{}\doxysection{evsys.\+h}
+\label{component_2evsys_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/evsys.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/evsys.h}}
+\mbox{\hyperlink{component_2evsys_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_EVSYS\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_EVSYS\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define EVSYS\_U2208}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_EVSYS                   0x101}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EVSYS\_CTRL : (EVSYS Offset: 0x00) ( /W  8) Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint8\_t  \mbox{\hyperlink{union_e_v_s_y_s___c_t_r_l___type_a958d2fec62944a0c1b24b2d5ebca6c6b}{SWRST}}:1;          }
+\DoxyCodeLine{54     uint8\_t  :3;               }
+\DoxyCodeLine{55     uint8\_t  \mbox{\hyperlink{union_e_v_s_y_s___c_t_r_l___type_a16dbc77504b156752d1b4ec6a79b3a8b}{GCLKREQ}}:1;        }
+\DoxyCodeLine{56     uint8\_t  :3;               }
+\DoxyCodeLine{57   \} bit;                       }
+\DoxyCodeLine{58   uint8\_t \mbox{\hyperlink{union_e_v_s_y_s___c_t_r_l___type_ac62ea190e63107d708b9a9aded938412}{reg}};                 }
+\DoxyCodeLine{59 \} \mbox{\hyperlink{union_e_v_s_y_s___c_t_r_l___type}{EVSYS\_CTRL\_Type}};}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define EVSYS\_CTRL\_OFFSET           0x00         }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define EVSYS\_CTRL\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define EVSYS\_CTRL\_SWRST\_Pos        0            }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define EVSYS\_CTRL\_SWRST            (0x1ul << EVSYS\_CTRL\_SWRST\_Pos)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define EVSYS\_CTRL\_GCLKREQ\_Pos      4            }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define EVSYS\_CTRL\_GCLKREQ          (0x1ul << EVSYS\_CTRL\_GCLKREQ\_Pos)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define EVSYS\_CTRL\_MASK             0x11ul       }}
+\DoxyCodeLine{71 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EVSYS\_CHANNEL : (EVSYS Offset: 0x04) (R/W 32) Channel -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{74   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{75     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_a_n_n_e_l___type_aabbd170a6472502efa5de1a9d7e85459}{CHANNEL}}:3;        }
+\DoxyCodeLine{76     uint32\_t :5;               }
+\DoxyCodeLine{77     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_a_n_n_e_l___type_ad05aeb89ba486d68b37f1496e55c8434}{SWEVT}}:1;          }
+\DoxyCodeLine{78     uint32\_t :7;               }
+\DoxyCodeLine{79     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_a_n_n_e_l___type_a0957aff322bb3ee83788e1abd7eb6e75}{EVGEN}}:6;          }
+\DoxyCodeLine{80     uint32\_t :2;               }
+\DoxyCodeLine{81     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_a_n_n_e_l___type_ad728121f372e812fa7402884e8d22781}{PATH}}:2;           }
+\DoxyCodeLine{82     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_a_n_n_e_l___type_adc808d5b320a64575d6bb66885730661}{EDGSEL}}:2;         }
+\DoxyCodeLine{83     uint32\_t :4;               }
+\DoxyCodeLine{84   \} bit;                       }
+\DoxyCodeLine{85   uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_a_n_n_e_l___type_a65fa25c1930ca41265f2e5f002139c62}{reg}};                }
+\DoxyCodeLine{86 \} \mbox{\hyperlink{union_e_v_s_y_s___c_h_a_n_n_e_l___type}{EVSYS\_CHANNEL\_Type}};}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_OFFSET        0x04         }}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_RESETVALUE    0x00000000ul }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_CHANNEL\_Pos   0            }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_CHANNEL\_Msk   (0x7ul << EVSYS\_CHANNEL\_CHANNEL\_Pos)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_CHANNEL(value) ((EVSYS\_CHANNEL\_CHANNEL\_Msk \& ((value) << EVSYS\_CHANNEL\_CHANNEL\_Pos)))}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_SWEVT\_Pos     8            }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_SWEVT         (0x1ul << EVSYS\_CHANNEL\_SWEVT\_Pos)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EVGEN\_Pos     16           }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EVGEN\_Msk     (0x3Ful << EVSYS\_CHANNEL\_EVGEN\_Pos)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EVGEN(value)  ((EVSYS\_CHANNEL\_EVGEN\_Msk \& ((value) << EVSYS\_CHANNEL\_EVGEN\_Pos)))}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_PATH\_Pos      24           }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_PATH\_Msk      (0x3ul << EVSYS\_CHANNEL\_PATH\_Pos)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_PATH(value)   ((EVSYS\_CHANNEL\_PATH\_Msk \& ((value) << EVSYS\_CHANNEL\_PATH\_Pos)))}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define   EVSYS\_CHANNEL\_PATH\_SYNCHRONOUS\_Val 0x0ul  }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define   EVSYS\_CHANNEL\_PATH\_RESYNCHRONIZED\_Val 0x1ul  }}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define   EVSYS\_CHANNEL\_PATH\_ASYNCHRONOUS\_Val 0x2ul  }}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_PATH\_SYNCHRONOUS (EVSYS\_CHANNEL\_PATH\_SYNCHRONOUS\_Val << EVSYS\_CHANNEL\_PATH\_Pos)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_PATH\_RESYNCHRONIZED (EVSYS\_CHANNEL\_PATH\_RESYNCHRONIZED\_Val << EVSYS\_CHANNEL\_PATH\_Pos)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_PATH\_ASYNCHRONOUS (EVSYS\_CHANNEL\_PATH\_ASYNCHRONOUS\_Val << EVSYS\_CHANNEL\_PATH\_Pos)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EDGSEL\_Pos    26           }}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EDGSEL\_Msk    (0x3ul << EVSYS\_CHANNEL\_EDGSEL\_Pos)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EDGSEL(value) ((EVSYS\_CHANNEL\_EDGSEL\_Msk \& ((value) << EVSYS\_CHANNEL\_EDGSEL\_Pos)))}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define   EVSYS\_CHANNEL\_EDGSEL\_NO\_EVT\_OUTPUT\_Val 0x0ul  }}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define   EVSYS\_CHANNEL\_EDGSEL\_RISING\_EDGE\_Val 0x1ul  }}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define   EVSYS\_CHANNEL\_EDGSEL\_FALLING\_EDGE\_Val 0x2ul  }}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define   EVSYS\_CHANNEL\_EDGSEL\_BOTH\_EDGES\_Val 0x3ul  }}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EDGSEL\_NO\_EVT\_OUTPUT (EVSYS\_CHANNEL\_EDGSEL\_NO\_EVT\_OUTPUT\_Val << EVSYS\_CHANNEL\_EDGSEL\_Pos)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EDGSEL\_RISING\_EDGE (EVSYS\_CHANNEL\_EDGSEL\_RISING\_EDGE\_Val << EVSYS\_CHANNEL\_EDGSEL\_Pos)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EDGSEL\_FALLING\_EDGE (EVSYS\_CHANNEL\_EDGSEL\_FALLING\_EDGE\_Val << EVSYS\_CHANNEL\_EDGSEL\_Pos)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_EDGSEL\_BOTH\_EDGES (EVSYS\_CHANNEL\_EDGSEL\_BOTH\_EDGES\_Val << EVSYS\_CHANNEL\_EDGSEL\_Pos)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define EVSYS\_CHANNEL\_MASK          0x0F3F0107ul }}
+\DoxyCodeLine{122 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EVSYS\_USER : (EVSYS Offset: 0x08) (R/W 16) User Multiplexer -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{124 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{125   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{126     uint16\_t \mbox{\hyperlink{union_e_v_s_y_s___u_s_e_r___type_adc1799f23711c3b601b908f2649433a7}{USER}}:4;           }
+\DoxyCodeLine{127     uint16\_t :4;               }
+\DoxyCodeLine{128     uint16\_t \mbox{\hyperlink{union_e_v_s_y_s___u_s_e_r___type_ac33d935b793e7c60bee3c341a68dedf5}{CHANNEL}}:4;        }
+\DoxyCodeLine{129     uint16\_t :4;               }
+\DoxyCodeLine{130   \} bit;                       }
+\DoxyCodeLine{131   uint16\_t \mbox{\hyperlink{union_e_v_s_y_s___u_s_e_r___type_a45d1081cbb3fc464ca272995cdfdc117}{reg}};                }
+\DoxyCodeLine{132 \} \mbox{\hyperlink{union_e_v_s_y_s___u_s_e_r___type}{EVSYS\_USER\_Type}};}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define EVSYS\_USER\_OFFSET           0x08         }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define EVSYS\_USER\_RESETVALUE       0x0000ul     }}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define EVSYS\_USER\_USER\_Pos         0            }}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define EVSYS\_USER\_USER\_Msk         (0xFul << EVSYS\_USER\_USER\_Pos)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define EVSYS\_USER\_USER(value)      ((EVSYS\_USER\_USER\_Msk \& ((value) << EVSYS\_USER\_USER\_Pos)))}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define EVSYS\_USER\_CHANNEL\_Pos      8            }}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define EVSYS\_USER\_CHANNEL\_Msk      (0xFul << EVSYS\_USER\_CHANNEL\_Pos)}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define EVSYS\_USER\_CHANNEL(value)   ((EVSYS\_USER\_CHANNEL\_Msk \& ((value) << EVSYS\_USER\_CHANNEL\_Pos)))}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define   EVSYS\_USER\_CHANNEL\_0\_Val        \_U\_(0x0)   }}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define EVSYS\_USER\_CHANNEL\_0        (EVSYS\_USER\_CHANNEL\_0\_Val      << EVSYS\_USER\_CHANNEL\_Pos)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define EVSYS\_USER\_MASK             \_U\_(0x0F0F)  }}
+\DoxyCodeLine{148 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EVSYS\_CHSTATUS : (EVSYS Offset: 0x0C) (R/  32) Channel Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{150 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{151   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{152     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_aeeeacbd24c2d6016bf09d2b78da29880}{USRRDY0}}:1;        }
+\DoxyCodeLine{153     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_acd55fba237d0bdde95b399f9595aeb3f}{USRRDY1}}:1;        }
+\DoxyCodeLine{154     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_addd3120b348a9ec00ea4e1df62f306ea}{USRRDY2}}:1;        }
+\DoxyCodeLine{155     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a0d330f19c8fc4880100a05734deaaa7d}{USRRDY3}}:1;        }
+\DoxyCodeLine{156     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a6d9da16c146b3537d9366a8cb401855e}{USRRDY4}}:1;        }
+\DoxyCodeLine{157     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a399211d9292acd1d6750936a6f71a800}{USRRDY5}}:1;        }
+\DoxyCodeLine{158     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_ad454cc75ac64f709b9855787750a30ee}{USRRDY6}}:1;        }
+\DoxyCodeLine{159     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a33697e01aea3c22981f366df1860329d}{USRRDY7}}:1;        }
+\DoxyCodeLine{160     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a67e4e8cdc29ab05fb48dcf65b5f130be}{CHBUSY0}}:1;        }
+\DoxyCodeLine{161     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a5557d670ca170982c47afe38888fb249}{CHBUSY1}}:1;        }
+\DoxyCodeLine{162     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_abffb548e039253aa659c6943c2b7e580}{CHBUSY2}}:1;        }
+\DoxyCodeLine{163     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a99a78aaedf8a1ff7550db5d96ab8c980}{CHBUSY3}}:1;        }
+\DoxyCodeLine{164     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_aae5ab58ad86a371dda4a1ee176ef85e7}{CHBUSY4}}:1;        }
+\DoxyCodeLine{165     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a8ec3d2ee09f811b243f58ef33a8ba0bd}{CHBUSY5}}:1;        }
+\DoxyCodeLine{166     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a13cfa6521c0e6b26c03ee592f4900cea}{CHBUSY6}}:1;        }
+\DoxyCodeLine{167     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a8b9a423d8179e37d0c5b7686f556e397}{CHBUSY7}}:1;        }
+\DoxyCodeLine{168     uint32\_t :16;              }
+\DoxyCodeLine{169   \} bit;                       }
+\DoxyCodeLine{170   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{171     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a5137b313d890d629cc3aea37e4ef6894}{USRRDY}}:8;         }
+\DoxyCodeLine{172     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a8046ca93fb1fac4f1d4512396c29f4b0}{CHBUSY}}:8;         }
+\DoxyCodeLine{173     uint32\_t :16;              }
+\DoxyCodeLine{174   \} vec;                       }
+\DoxyCodeLine{175   uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type_a6a44867eb94c3eb107fdcb9ac9ff1f70}{reg}};                }
+\DoxyCodeLine{176 \} \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type}{EVSYS\_CHSTATUS\_Type}};}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_OFFSET       0x0C         }}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_RESETVALUE   0x00000000ul }}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_RESETVALUE\_VAR\_B  \_U\_(0x000F00FF) }}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY0\_Pos  0            }}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY0      (1 << EVSYS\_CHSTATUS\_USRRDY0\_Pos)}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY1\_Pos  1            }}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY1      (1 << EVSYS\_CHSTATUS\_USRRDY1\_Pos)}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY2\_Pos  2            }}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY2      (1 << EVSYS\_CHSTATUS\_USRRDY2\_Pos)}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY3\_Pos  3            }}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY3      (1 << EVSYS\_CHSTATUS\_USRRDY3\_Pos)}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY4\_Pos  4            }}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY4      (1 << EVSYS\_CHSTATUS\_USRRDY4\_Pos)}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY5\_Pos  5            }}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY5      (1 << EVSYS\_CHSTATUS\_USRRDY5\_Pos)}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY6\_Pos  6            }}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY6      (1 << EVSYS\_CHSTATUS\_USRRDY6\_Pos)}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY7\_Pos  7            }}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY7      (1 << EVSYS\_CHSTATUS\_USRRDY7\_Pos)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY\_Pos   0            }}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY\_Msk   (0xFFul << EVSYS\_CHSTATUS\_USRRDY\_Pos)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_USRRDY(value) ((EVSYS\_CHSTATUS\_USRRDY\_Msk \& ((value) << EVSYS\_CHSTATUS\_USRRDY\_Pos)))}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY0\_Pos  8            }}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY0      (1 << EVSYS\_CHSTATUS\_CHBUSY0\_Pos)}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY1\_Pos  9            }}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY1      (1 << EVSYS\_CHSTATUS\_CHBUSY1\_Pos)}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY2\_Pos  10           }}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY2      (1 << EVSYS\_CHSTATUS\_CHBUSY2\_Pos)}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY3\_Pos  11           }}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY3      (1 << EVSYS\_CHSTATUS\_CHBUSY3\_Pos)}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY4\_Pos  12           }}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY4      (1 << EVSYS\_CHSTATUS\_CHBUSY4\_Pos)}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY5\_Pos  13           }}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY5      (1 << EVSYS\_CHSTATUS\_CHBUSY5\_Pos)}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY6\_Pos  14           }}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY6      (1 << EVSYS\_CHSTATUS\_CHBUSY6\_Pos)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY7\_Pos  15           }}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY7      (1 << EVSYS\_CHSTATUS\_CHBUSY7\_Pos)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY\_Pos   8            }}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY\_Msk   (0xFFul << EVSYS\_CHSTATUS\_CHBUSY\_Pos)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_CHBUSY(value) ((EVSYS\_CHSTATUS\_CHBUSY\_Msk \& ((value) << EVSYS\_CHSTATUS\_CHBUSY\_Pos)))}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define EVSYS\_CHSTATUS\_MASK         0x0000FFFFul }}
+\DoxyCodeLine{223 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EVSYS\_INTENCLR : (EVSYS Offset: 0x10) (R/W 32) Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{225 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{226   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{227     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_ae9e18909f43eb36673487377b2e25a67}{OVR0}}:1;           }
+\DoxyCodeLine{228     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_a0fb5a62b0ee65f28684559616f62ef20}{OVR1}}:1;           }
+\DoxyCodeLine{229     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_a2055e838df0685863700ff0c3e2818bf}{OVR2}}:1;           }
+\DoxyCodeLine{230     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_ae39c5d803a7a306d6f88150bba9af0eb}{OVR3}}:1;           }
+\DoxyCodeLine{231     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_a1c927c18769f02ff6a27366fd0dd3fb7}{OVR4}}:1;           }
+\DoxyCodeLine{232     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_ae96e9300725a14f3e2259d28b0b89434}{OVR5}}:1;           }
+\DoxyCodeLine{233     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_ac74b0dd2ecf30dd19220d19f9c29801e}{OVR6}}:1;           }
+\DoxyCodeLine{234     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_a241b50aab1823df3ecd58b3de2dd1db1}{OVR7}}:1;           }
+\DoxyCodeLine{235     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_a81aef6f3cc9ec265529ccdde803ad75c}{EVD0}}:1;           }
+\DoxyCodeLine{236     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_af79ef7bb8a788e1d5d501ae40fc1e134}{EVD1}}:1;           }
+\DoxyCodeLine{237     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_ae0e989348bfe848433a9f4b3a62a1de0}{EVD2}}:1;           }
+\DoxyCodeLine{238     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_afed8f2ad3107dfd8ec4002a2a89ac84e}{EVD3}}:1;           }
+\DoxyCodeLine{239     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_a039ee2d25d1f96f800fbae88bc6b88fd}{EVD4}}:1;           }
+\DoxyCodeLine{240     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_ace961ac9cbc1529d05c6c495687fae5b}{EVD5}}:1;           }
+\DoxyCodeLine{241     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_a9472705dd98a0e8da12113169e23b8a6}{EVD6}}:1;           }
+\DoxyCodeLine{242     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_ae9a1381c2c102218e1532724a9a98854}{EVD7}}:1;           }
+\DoxyCodeLine{243     uint32\_t :16;              }
+\DoxyCodeLine{244   \} bit;                       }
+\DoxyCodeLine{245   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{246     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_a5a37b5bd57975ae30886d54867cc8df2}{OVR}}:8;            }
+\DoxyCodeLine{247     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_ae1c3e3cc32af6967f1371375476eadf3}{EVD}}:8;            }
+\DoxyCodeLine{248     uint32\_t :16;              }
+\DoxyCodeLine{249   \} vec;                       }
+\DoxyCodeLine{250   uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type_a6012f1ba196f2936f1ed198e05ff47e6}{reg}};                }
+\DoxyCodeLine{251 \} \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type}{EVSYS\_INTENCLR\_Type}};}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OFFSET       0x10         }}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_RESETVALUE   0x00000000ul }}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR0\_Pos     0            }}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR0         (1 << EVSYS\_INTENCLR\_OVR0\_Pos)}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR1\_Pos     1            }}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR1         (1 << EVSYS\_INTENCLR\_OVR1\_Pos)}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR2\_Pos     2            }}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR2         (1 << EVSYS\_INTENCLR\_OVR2\_Pos)}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR3\_Pos     3            }}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR3         (1 << EVSYS\_INTENCLR\_OVR3\_Pos)}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR4\_Pos     4            }}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR4         (1 << EVSYS\_INTENCLR\_OVR4\_Pos)}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR5\_Pos     5            }}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR5         (1 << EVSYS\_INTENCLR\_OVR5\_Pos)}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR6\_Pos     6            }}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR6         (1 << EVSYS\_INTENCLR\_OVR6\_Pos)}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR7\_Pos     7            }}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR7         (1 << EVSYS\_INTENCLR\_OVR7\_Pos)}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR\_Pos      0            }}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR\_Msk      (0xFFul << EVSYS\_INTENCLR\_OVR\_Pos)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_OVR(value)   ((EVSYS\_INTENCLR\_OVR\_Msk \& ((value) << EVSYS\_INTENCLR\_OVR\_Pos)))}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD0\_Pos     8            }}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD0         (1 << EVSYS\_INTENCLR\_EVD0\_Pos)}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD1\_Pos     9            }}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD1         (1 << EVSYS\_INTENCLR\_EVD1\_Pos)}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD2\_Pos     10           }}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD2         (1 << EVSYS\_INTENCLR\_EVD2\_Pos)}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD3\_Pos     11           }}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD3         (1 << EVSYS\_INTENCLR\_EVD3\_Pos)}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD4\_Pos     12           }}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD4         (1 << EVSYS\_INTENCLR\_EVD4\_Pos)}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD5\_Pos     13           }}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD5         (1 << EVSYS\_INTENCLR\_EVD5\_Pos)}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD6\_Pos     14           }}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD6         (1 << EVSYS\_INTENCLR\_EVD6\_Pos)}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD7\_Pos     15           }}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD7         (1 << EVSYS\_INTENCLR\_EVD7\_Pos)}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD\_Pos      8            }}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD\_Msk      (0xFFul << EVSYS\_INTENCLR\_EVD\_Pos)}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_EVD(value)   ((EVSYS\_INTENCLR\_EVD\_Msk \& ((value) << EVSYS\_INTENCLR\_EVD\_Pos)))}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#define EVSYS\_INTENCLR\_MASK         0x0000FFFFul }}
+\DoxyCodeLine{297 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EVSYS\_INTENSET : (EVSYS Offset: 0x14) (R/W 32) Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{299 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{300   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{301     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a152e4fc1db0abb13942f6300ad1700f5}{OVR0}}:1;           }
+\DoxyCodeLine{302     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a5c3b8af84e92e1743ce9e32e83fd24fb}{OVR1}}:1;           }
+\DoxyCodeLine{303     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a87fb83a148ceed1e27718fd20a5f6c52}{OVR2}}:1;           }
+\DoxyCodeLine{304     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_acc61df3fc7993eae6b65d16256a67c77}{OVR3}}:1;           }
+\DoxyCodeLine{305     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a33605547f61ef85f329c00308d7ca60a}{OVR4}}:1;           }
+\DoxyCodeLine{306     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_addd98224c5bd16c72ba12e0c6156c90b}{OVR5}}:1;           }
+\DoxyCodeLine{307     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_af899c412fb6e49c2d4a16f640f8c7905}{OVR6}}:1;           }
+\DoxyCodeLine{308     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a75716bb6c75c2529c9d0912105737620}{OVR7}}:1;           }
+\DoxyCodeLine{309     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a086b68685a3d188466fb9817ea8c1692}{EVD0}}:1;           }
+\DoxyCodeLine{310     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_aaad411ac0cd97af3400bbb1f0a9302a5}{EVD1}}:1;           }
+\DoxyCodeLine{311     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a70c0058734c055d02c3f3b3d6db2b541}{EVD2}}:1;           }
+\DoxyCodeLine{312     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a1ad853b421607ebf4a5f5acf1d95178c}{EVD3}}:1;           }
+\DoxyCodeLine{313     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_aa604fb499287ad1c55ec1c9cd9e57989}{EVD4}}:1;           }
+\DoxyCodeLine{314     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a48fcb2c9f936d01278d98d6a6a2b247c}{EVD5}}:1;           }
+\DoxyCodeLine{315     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a09712ad50dd040cc3ddcece2817f9d2d}{EVD6}}:1;           }
+\DoxyCodeLine{316     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a57e9110790b0cda9994e38ed1a08ba9f}{EVD7}}:1;           }
+\DoxyCodeLine{317     uint32\_t :16;              }
+\DoxyCodeLine{318   \} bit;                       }
+\DoxyCodeLine{319   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{320     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a72380d92490eee5989dce53121771b95}{OVR}}:8;            }
+\DoxyCodeLine{321     uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_af203b8292f0887bcfc1923be024dac0b}{EVD}}:8;            }
+\DoxyCodeLine{322     uint32\_t :16;              }
+\DoxyCodeLine{323   \} vec;                       }
+\DoxyCodeLine{324   uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type_a1969f181438315567ad5062274d042df}{reg}};                }
+\DoxyCodeLine{325 \} \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type}{EVSYS\_INTENSET\_Type}};}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OFFSET       0x14         }}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_RESETVALUE   0x00000000ul }}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR0\_Pos     0            }}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR0         (1 << EVSYS\_INTENSET\_OVR0\_Pos)}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR1\_Pos     1            }}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR1         (1 << EVSYS\_INTENSET\_OVR1\_Pos)}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR2\_Pos     2            }}
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR2         (1 << EVSYS\_INTENSET\_OVR2\_Pos)}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR3\_Pos     3            }}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR3         (1 << EVSYS\_INTENSET\_OVR3\_Pos)}}
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR4\_Pos     4            }}
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR4         (1 << EVSYS\_INTENSET\_OVR4\_Pos)}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR5\_Pos     5            }}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR5         (1 << EVSYS\_INTENSET\_OVR5\_Pos)}}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR6\_Pos     6            }}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR6         (1 << EVSYS\_INTENSET\_OVR6\_Pos)}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR7\_Pos     7            }}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR7         (1 << EVSYS\_INTENSET\_OVR7\_Pos)}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR\_Pos      0            }}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR\_Msk      (0xFFul << EVSYS\_INTENSET\_OVR\_Pos)}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_OVR(value)   ((EVSYS\_INTENSET\_OVR\_Msk \& ((value) << EVSYS\_INTENSET\_OVR\_Pos)))}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD0\_Pos     8            }}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD0         (1 << EVSYS\_INTENSET\_EVD0\_Pos)}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD1\_Pos     9            }}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD1         (1 << EVSYS\_INTENSET\_EVD1\_Pos)}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD2\_Pos     10           }}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD2         (1 << EVSYS\_INTENSET\_EVD2\_Pos)}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD3\_Pos     11           }}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD3         (1 << EVSYS\_INTENSET\_EVD3\_Pos)}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD4\_Pos     12           }}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD4         (1 << EVSYS\_INTENSET\_EVD4\_Pos)}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD5\_Pos     13           }}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD5         (1 << EVSYS\_INTENSET\_EVD5\_Pos)}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD6\_Pos     14           }}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD6         (1 << EVSYS\_INTENSET\_EVD6\_Pos)}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD7\_Pos     15           }}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD7         (1 << EVSYS\_INTENSET\_EVD7\_Pos)}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD\_Pos      8            }}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD\_Msk      (0xFFul << EVSYS\_INTENSET\_EVD\_Pos)}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_EVD(value)   ((EVSYS\_INTENSET\_EVD\_Msk \& ((value) << EVSYS\_INTENSET\_EVD\_Pos)))}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define EVSYS\_INTENSET\_MASK         0x0000FFFFul }}
+\DoxyCodeLine{371 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EVSYS\_INTFLAG : (EVSYS Offset: 0x18) (R/W 32) Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{373 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{374   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{375     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a2bb7a7d1dd1229d8999612f66f5aa3e9}{OVR0}}:1;       }
+\DoxyCodeLine{376     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_aacb9d2b1cb7c73152fec5cb93e54c0fc}{OVR1}}:1;       }
+\DoxyCodeLine{377     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_ae18bb8cc52b76aa56b853ac4298f1cac}{OVR2}}:1;       }
+\DoxyCodeLine{378     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a0ce693f5adec2fe72c0f224ce7f76337}{OVR3}}:1;       }
+\DoxyCodeLine{379     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a59df2c2f1e3fc21790362ed908904ece}{OVR4}}:1;       }
+\DoxyCodeLine{380     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_ab670a95161508896bffc550183828f7a}{OVR5}}:1;       }
+\DoxyCodeLine{381     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a55c0178aa35000ef3c200b88dd68fafa}{OVR6}}:1;       }
+\DoxyCodeLine{382     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a017a844d291e4e1a87c56a0a1bd9ae89}{OVR7}}:1;       }
+\DoxyCodeLine{383     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_ae1245d8e93f25ade6b04f8fd99578e0e}{EVD0}}:1;       }
+\DoxyCodeLine{384     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a77dd4304d12227c3e1491ed57bc6f549}{EVD1}}:1;       }
+\DoxyCodeLine{385     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a50f66ceca63c41b254416263aa0d5a1b}{EVD2}}:1;       }
+\DoxyCodeLine{386     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a43baa91664c96889f5a1671319c7383a}{EVD3}}:1;       }
+\DoxyCodeLine{387     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a02fd8d57bff1ea4b8de30bb97278c070}{EVD4}}:1;       }
+\DoxyCodeLine{388     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_abcf0edc037f6423841a5eefdf2bd52fe}{EVD5}}:1;       }
+\DoxyCodeLine{389     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a9fdacbe204660755d505854e7cb2192d}{EVD6}}:1;       }
+\DoxyCodeLine{390     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a815e71fe908586737ec198f870bb1cde}{EVD7}}:1;       }
+\DoxyCodeLine{391     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a47182409321e652042cea5d3d7fed408}{uint32\_t}} :16;          }
+\DoxyCodeLine{392   \} bit;                       }
+\DoxyCodeLine{393   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{394     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_a17b889dc241c2ff8aa8ae8841759540a}{OVR}}:8;        }
+\DoxyCodeLine{395     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_ab62a975e3e073db84b47f2ef7cf2a757}{EVD}}:8;        }
+\DoxyCodeLine{396     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t :16;          }
+\DoxyCodeLine{397   \} vec;                       }
+\DoxyCodeLine{398   uint32\_t \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type_aed33f970ee21ddb6ba02d88c82473879}{reg}};                }
+\DoxyCodeLine{399 \} \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type}{EVSYS\_INTFLAG\_Type}};}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OFFSET        0x18         }}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_RESETVALUE    0x00000000ul }}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR0\_Pos      0            }}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR0          (1 << EVSYS\_INTFLAG\_OVR0\_Pos)}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR1\_Pos      1            }}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR1          (1 << EVSYS\_INTFLAG\_OVR1\_Pos)}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR2\_Pos      2            }}
+\DoxyCodeLine{410 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR2          (1 << EVSYS\_INTFLAG\_OVR2\_Pos)}}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR3\_Pos      3            }}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR3          (1 << EVSYS\_INTFLAG\_OVR3\_Pos)}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR4\_Pos      4            }}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR4          (1 << EVSYS\_INTFLAG\_OVR4\_Pos)}}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR5\_Pos      5            }}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR5          (1 << EVSYS\_INTFLAG\_OVR5\_Pos)}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR6\_Pos      6            }}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR6          (1 << EVSYS\_INTFLAG\_OVR6\_Pos)}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR7\_Pos      7            }}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR7          (1 << EVSYS\_INTFLAG\_OVR7\_Pos)}}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR\_Pos       0            }}
+\DoxyCodeLine{422 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR\_Msk       (0xFFul << EVSYS\_INTFLAG\_OVR\_Pos)}}
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_OVR(value)    ((EVSYS\_INTFLAG\_OVR\_Msk \& ((value) << EVSYS\_INTFLAG\_OVR\_Pos)))}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD0\_Pos      8            }}
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD0          (1 << EVSYS\_INTFLAG\_EVD0\_Pos)}}
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD1\_Pos      9            }}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD1          (1 << EVSYS\_INTFLAG\_EVD1\_Pos)}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD2\_Pos      10           }}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD2          (1 << EVSYS\_INTFLAG\_EVD2\_Pos)}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD3\_Pos      11           }}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD3          (1 << EVSYS\_INTFLAG\_EVD3\_Pos)}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD4\_Pos      12           }}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD4          (1 << EVSYS\_INTFLAG\_EVD4\_Pos)}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD5\_Pos      13           }}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD5          (1 << EVSYS\_INTFLAG\_EVD5\_Pos)}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD6\_Pos      14           }}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD6          (1 << EVSYS\_INTFLAG\_EVD6\_Pos)}}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD7\_Pos      15           }}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD7          (1 << EVSYS\_INTFLAG\_EVD7\_Pos)}}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD\_Pos       8            }}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD\_Msk       (0xFFul << EVSYS\_INTFLAG\_EVD\_Pos)}}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_EVD(value)    ((EVSYS\_INTFLAG\_EVD\_Msk \& ((value) << EVSYS\_INTFLAG\_EVD\_Pos)))}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define EVSYS\_INTFLAG\_MASK          0x0000FFFFul }}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{447 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{448   \mbox{\hyperlink{core__cm0plus_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}  \mbox{\hyperlink{union_e_v_s_y_s___c_t_r_l___type}{EVSYS\_CTRL\_Type}}           \mbox{\hyperlink{struct_evsys_a9c56f96cd5efc51fef8b96e628a89d47}{CTRL}};        }
+\DoxyCodeLine{449        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x3];}
+\DoxyCodeLine{450   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_v_s_y_s___c_h_a_n_n_e_l___type}{EVSYS\_CHANNEL\_Type}}        \mbox{\hyperlink{struct_evsys_ae2f40b2105d33d7d02d443b5a5ea2e49}{CHANNEL}};     }
+\DoxyCodeLine{451   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_v_s_y_s___u_s_e_r___type}{EVSYS\_USER\_Type}}           \mbox{\hyperlink{struct_evsys_a1b6579803317a293d3c8290250222e89}{USER}};        }
+\DoxyCodeLine{452        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x2];}
+\DoxyCodeLine{453   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_e_v_s_y_s___c_h_s_t_a_t_u_s___type}{EVSYS\_CHSTATUS\_Type}}       \mbox{\hyperlink{struct_evsys_ab403e15ee5bcbbdd4f109060a542389b}{CHSTATUS}};    }
+\DoxyCodeLine{454   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_c_l_r___type}{EVSYS\_INTENCLR\_Type}}       \mbox{\hyperlink{struct_evsys_abf4fbac9cafcccf61e2ebd07ec2303e0}{INTENCLR}};    }
+\DoxyCodeLine{455   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_e_n_s_e_t___type}{EVSYS\_INTENSET\_Type}}       \mbox{\hyperlink{struct_evsys_ad229dda0287da2b22779eda19c094bfc}{INTENSET}};    }
+\DoxyCodeLine{456   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_v_s_y_s___i_n_t_f_l_a_g___type}{EVSYS\_INTFLAG\_Type}}        \mbox{\hyperlink{struct_evsys_ada8394787618e3fe291fb8debef6fc52}{INTFLAG}};     }
+\DoxyCodeLine{457 \} \mbox{\hyperlink{struct_evsys}{Evsys}};}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{459 }
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_EVSYS\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

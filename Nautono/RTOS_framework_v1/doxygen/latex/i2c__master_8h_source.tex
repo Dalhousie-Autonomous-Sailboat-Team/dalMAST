@@ -1,0 +1,343 @@
+\hypertarget{i2c__master_8h_source}{}\doxysection{i2c\+\_\+master.\+h}
+\label{i2c__master_8h_source}\index{src/ASF/sam0/drivers/sercom/i2c/i2c\_master.h@{src/ASF/sam0/drivers/sercom/i2c/i2c\_master.h}}
+\mbox{\hyperlink{i2c__master_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef I2C\_MASTER\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define I2C\_MASTER\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{i2c__common_8h}{i2c\_common.h}}"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <sercom.h>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pinmux_8h}{pinmux.h}}>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#if I2C\_MASTER\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#  include <\mbox{\hyperlink{sercom__interrupt_8h}{sercom\_interrupt.h}}>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{49 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifndef PINMUX\_DEFAULT}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#  define PINMUX\_DEFAULT 0}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{67 \textcolor{keyword}{struct }\mbox{\hyperlink{structi2c__master__packet}{i2c\_master\_packet}} \{}
+\DoxyCodeLine{69     uint16\_t \mbox{\hyperlink{structi2c__master__packet_a55939417f66fd6b3505bd1bc78ee8fa7}{address}};}
+\DoxyCodeLine{71     uint16\_t \mbox{\hyperlink{structi2c__master__packet_a4f7c52645a0015f3d9a1263b2d304563}{data\_length}};}
+\DoxyCodeLine{73     uint8\_t *\mbox{\hyperlink{structi2c__master__packet_a166b31cf7f64b2a7b3d5a2b3c8bb52f1}{data}};}
+\DoxyCodeLine{75     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structi2c__master__packet_adacdca06b2f876b6984f6f338645861b}{ten\_bit\_address}};}
+\DoxyCodeLine{77     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structi2c__master__packet_a62fec6f6b0d30c4548674735f2de1970}{high\_speed}};}
+\DoxyCodeLine{79     uint8\_t \mbox{\hyperlink{structi2c__master__packet_a8ab67b2ae365efb8d84932f4c1b662a0}{hs\_master\_code}};}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{86 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga9f73c4fbd225704c2e0da23319c25555}{i2c\_master\_interrupt\_flag}} \{}
+\DoxyCodeLine{88     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga9f73c4fbd225704c2e0da23319c25555a39c138d5f063f3d43b4e974870364d2e}{I2C\_MASTER\_INTERRUPT\_WRITE}} = 0,}
+\DoxyCodeLine{90     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga9f73c4fbd225704c2e0da23319c25555a3087032aa3a5218a0cdc54179d9e1d09}{I2C\_MASTER\_INTERRUPT\_READ}}  = 1,}
+\DoxyCodeLine{91 \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{99 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gadd8aa7cabbddc1cd2c1a8753c9b99d20}{i2c\_master\_start\_hold\_time}} \{}
+\DoxyCodeLine{101     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggadd8aa7cabbddc1cd2c1a8753c9b99d20a85f0b592eef5f8b5ecae9f2cca2d4cd1}{I2C\_MASTER\_START\_HOLD\_TIME\_DISABLED}} = SERCOM\_I2CM\_CTRLA\_SDAHOLD(0),}
+\DoxyCodeLine{103     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggadd8aa7cabbddc1cd2c1a8753c9b99d20a41403c4a18a1220f031c99e52f384e39}{I2C\_MASTER\_START\_HOLD\_TIME\_50NS\_100NS}} = SERCOM\_I2CM\_CTRLA\_SDAHOLD(1),}
+\DoxyCodeLine{105     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggadd8aa7cabbddc1cd2c1a8753c9b99d20acc3f7849862510590acc2e3bebc29d0c}{I2C\_MASTER\_START\_HOLD\_TIME\_300NS\_600NS}} = SERCOM\_I2CM\_CTRLA\_SDAHOLD(2),}
+\DoxyCodeLine{107     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggadd8aa7cabbddc1cd2c1a8753c9b99d20a38cf380ace8d180528eb34bc38b7da9e}{I2C\_MASTER\_START\_HOLD\_TIME\_400NS\_800NS}} = SERCOM\_I2CM\_CTRLA\_SDAHOLD(3),}
+\DoxyCodeLine{108 \};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{116 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga4640bee224bf835f4c38d7702be0742c}{i2c\_master\_inactive\_timeout}} \{}
+\DoxyCodeLine{118     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga4640bee224bf835f4c38d7702be0742ca52414c5127a26a6811f30324102cc3b1}{I2C\_MASTER\_INACTIVE\_TIMEOUT\_DISABLED}} = SERCOM\_I2CM\_CTRLA\_INACTOUT(0),}
+\DoxyCodeLine{120     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga4640bee224bf835f4c38d7702be0742ca9e204c432b52e77b4d34a5b64d4432e9}{I2C\_MASTER\_INACTIVE\_TIMEOUT\_55US}} = SERCOM\_I2CM\_CTRLA\_INACTOUT(1),}
+\DoxyCodeLine{122     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga4640bee224bf835f4c38d7702be0742ca9f37beb962cccc4538b0c226c921c553}{I2C\_MASTER\_INACTIVE\_TIMEOUT\_105US}} = SERCOM\_I2CM\_CTRLA\_INACTOUT(2),}
+\DoxyCodeLine{124     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga4640bee224bf835f4c38d7702be0742ca7412f98fd47572a75dc17727fdf735d0}{I2C\_MASTER\_INACTIVE\_TIMEOUT\_205US}} = SERCOM\_I2CM\_CTRLA\_INACTOUT(3),}
+\DoxyCodeLine{125 \};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{137 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gace1e0023f2eee92565496a2e30006548}{i2c\_master\_baud\_rate}} \{}
+\DoxyCodeLine{139     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggace1e0023f2eee92565496a2e30006548a24ddfbe034a690d3a553a17508cbd625}{I2C\_MASTER\_BAUD\_RATE\_100KHZ}} = 100,}
+\DoxyCodeLine{141     \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggace1e0023f2eee92565496a2e30006548a970dccbbc3dd1d01c1070db6d9aa24cb}{I2C\_MASTER\_BAUD\_RATE\_400KHZ}} = 400,}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#ifdef FEATURE\_I2C\_FAST\_MODE\_PLUS\_AND\_HIGH\_SPEED}}
+\DoxyCodeLine{144     I2C\_MASTER\_BAUD\_RATE\_1000KHZ = 1000,}
+\DoxyCodeLine{146     I2C\_MASTER\_BAUD\_RATE\_3400KHZ = 3400,}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{148 \};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#ifdef FEATURE\_I2C\_FAST\_MODE\_PLUS\_AND\_HIGH\_SPEED}}
+\DoxyCodeLine{156 \textcolor{keyword}{enum} i2c\_master\_transfer\_speed \{}
+\DoxyCodeLine{158     I2C\_MASTER\_SPEED\_STANDARD\_AND\_FAST = SERCOM\_I2CM\_CTRLA\_SPEED(0),}
+\DoxyCodeLine{160     I2C\_MASTER\_SPEED\_FAST\_MODE\_PLUS = SERCOM\_I2CM\_CTRLA\_SPEED(1),}
+\DoxyCodeLine{162     I2C\_MASTER\_SPEED\_HIGH\_SPEED = SERCOM\_I2CM\_CTRLA\_SPEED(2),}
+\DoxyCodeLine{163 \};}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#if I2C\_MASTER\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{172 \textcolor{keyword}{enum} i2c\_master\_callback \{}
+\DoxyCodeLine{174     I2C\_MASTER\_CALLBACK\_WRITE\_COMPLETE = 0,}
+\DoxyCodeLine{176     I2C\_MASTER\_CALLBACK\_READ\_COMPLETE  = 1,}
+\DoxyCodeLine{178     I2C\_MASTER\_CALLBACK\_ERROR          = 2,}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#  if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{181     \_I2C\_MASTER\_CALLBACK\_N             = 3,}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{183 \};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#  if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{186 \textcolor{comment}{/* Prototype for software module */}}
+\DoxyCodeLine{187 \textcolor{keyword}{struct }\mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}};}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{keyword}{typedef} void (*i2c\_master\_callback\_t)(}
+\DoxyCodeLine{190         \textcolor{keyword}{struct }\mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{203 \textcolor{keyword}{struct }\mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} \{}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{206     \mbox{\hyperlink{union_sercom}{Sercom}} *\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}};}
+\DoxyCodeLine{208     \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} \mbox{\hyperlink{structi2c__master__module_ab5203f05ca65698c848725467e342f17}{locked}};}
+\DoxyCodeLine{210     uint16\_t \mbox{\hyperlink{structi2c__master__module_a7949d7e1dd668816a08c6520d79b4df9}{unknown\_bus\_state\_timeout}};}
+\DoxyCodeLine{212     uint16\_t \mbox{\hyperlink{structi2c__master__module_a0763b15b0ad887cdc7aa4d023e3c872c}{buffer\_timeout}};}
+\DoxyCodeLine{214     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structi2c__master__module_ad5403e88b0ef5b7d61ab494a4034762e}{send\_stop}};}
+\DoxyCodeLine{216     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structi2c__master__module_aabb2db3f8def2961e73503861996f314}{send\_nack}};}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#  if I2C\_MASTER\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{219     \textcolor{keyword}{volatile} i2c\_master\_callback\_t callbacks[\_I2C\_MASTER\_CALLBACK\_N];}
+\DoxyCodeLine{221     \textcolor{keyword}{volatile} uint8\_t registered\_callback;}
+\DoxyCodeLine{223     \textcolor{keyword}{volatile} uint8\_t enabled\_callback;}
+\DoxyCodeLine{225     \textcolor{keyword}{volatile} uint16\_t buffer\_length;}
+\DoxyCodeLine{230     \textcolor{keyword}{volatile} uint16\_t buffer\_remaining;}
+\DoxyCodeLine{232     \textcolor{keyword}{volatile} uint8\_t *buffer;}
+\DoxyCodeLine{234     \textcolor{keyword}{volatile} \textcolor{keyword}{enum} \mbox{\hyperlink{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fc}{i2c\_transfer\_direction}} transfer\_direction;}
+\DoxyCodeLine{236     \textcolor{keyword}{volatile} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} status;}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{239 \};}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{249 \textcolor{keyword}{struct }\mbox{\hyperlink{structi2c__master__config}{i2c\_master\_config}} \{}
+\DoxyCodeLine{253     uint32\_t \mbox{\hyperlink{structi2c__master__config_abf70eb47fda40d5d150f815df8185e5a}{baud\_rate}};}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#ifdef FEATURE\_I2C\_FAST\_MODE\_PLUS\_AND\_HIGH\_SPEED}}
+\DoxyCodeLine{257     uint32\_t baud\_rate\_high\_speed;}
+\DoxyCodeLine{259     \textcolor{keyword}{enum} i2c\_master\_transfer\_speed transfer\_speed;}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{262     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\_generator}} \mbox{\hyperlink{structi2c__master__config_a1be7a4da8c55ee0a63d3e9d72cd083ae}{generator\_source}};}
+\DoxyCodeLine{264     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gadd8aa7cabbddc1cd2c1a8753c9b99d20}{i2c\_master\_start\_hold\_time}} \mbox{\hyperlink{structi2c__master__config_ad9040e95cf92b0726cd8548861e12b6b}{start\_hold\_time}};}
+\DoxyCodeLine{266     uint16\_t \mbox{\hyperlink{structi2c__master__config_a340042a7706b159b124f2ea04928d24c}{unknown\_bus\_state\_timeout}};}
+\DoxyCodeLine{268     uint16\_t \mbox{\hyperlink{structi2c__master__config_a41b36d6b88666af7e8ba7b22a569b6c6}{buffer\_timeout}};}
+\DoxyCodeLine{270     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structi2c__master__config_ad0c6e77641ddd40d61dca365dcfb30c4}{run\_in\_standby}};}
+\DoxyCodeLine{272     uint32\_t \mbox{\hyperlink{structi2c__master__config_a7294d8ef5e3f7bb1ff9b25fb3af616ca}{pinmux\_pad0}};}
+\DoxyCodeLine{274     uint32\_t \mbox{\hyperlink{structi2c__master__config_a34a4e47d636cd61db7e3c70dff218187}{pinmux\_pad1}};}
+\DoxyCodeLine{276     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structi2c__master__config_a5307ecc3aedeb429fcacdc2fd44a10b8}{scl\_low\_timeout}};}
+\DoxyCodeLine{278     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga4640bee224bf835f4c38d7702be0742c}{i2c\_master\_inactive\_timeout}} \mbox{\hyperlink{structi2c__master__config_aacc3fbf3395d1b6e7293a34d93fbfb0d}{inactive\_timeout}};}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#ifdef FEATURE\_I2C\_SCL\_STRETCH\_MODE}}
+\DoxyCodeLine{281     \textcolor{keywordtype}{bool} scl\_stretch\_only\_after\_ack\_bit;}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#ifdef FEATURE\_I2C\_SCL\_EXTEND\_TIMEOUT}}
+\DoxyCodeLine{285     \textcolor{keywordtype}{bool} slave\_scl\_low\_extend\_timeout;}
+\DoxyCodeLine{287     \textcolor{keywordtype}{bool} master\_scl\_low\_extend\_timeout;}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{290     uint16\_t \mbox{\hyperlink{structi2c__master__config_aa40cf5e345a9345df111c40d2ad797c4}{sda\_scl\_rise\_time\_ns}};}
+\DoxyCodeLine{291 \};}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{313 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} i2c\_master\_lock(}
+\DoxyCodeLine{314         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{315 \{}
+\DoxyCodeLine{316     \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} status;}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318     system\_interrupt\_enter\_critical\_section();}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320     \textcolor{keywordflow}{if} (module-\/>\mbox{\hyperlink{structi2c__master__module_ab5203f05ca65698c848725467e342f17}{locked}}) \{}
+\DoxyCodeLine{321         status = STATUS\_BUSY;}
+\DoxyCodeLine{322     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{323         module-\/>\mbox{\hyperlink{structi2c__master__module_ab5203f05ca65698c848725467e342f17}{locked}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{324         status = STATUS\_OK;}
+\DoxyCodeLine{325     \}}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327     system\_interrupt\_leave\_critical\_section();}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329     \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{330 \}}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{343 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} i2c\_master\_unlock(\textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{344 \{}
+\DoxyCodeLine{345     module-\/>\mbox{\hyperlink{structi2c__master__module_ab5203f05ca65698c848725467e342f17}{locked}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{346 \}}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{366 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} i2c\_master\_is\_syncing (}
+\DoxyCodeLine{367         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{368 \{}
+\DoxyCodeLine{369     \textcolor{comment}{/* Sanity check */}}
+\DoxyCodeLine{370     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{371     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}});}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373     \mbox{\hyperlink{struct_sercom_i2cm}{SercomI2cm}} *\textcolor{keyword}{const} i2c\_hw = \&(module-\/>\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}}-\/>\mbox{\hyperlink{union_sercom_adb28862e03096b4bb9e55030b3ff670b}{I2CM}});}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#if defined(FEATURE\_SERCOM\_SYNCBUSY\_SCHEME\_VERSION\_1)}}
+\DoxyCodeLine{376     \textcolor{keywordflow}{return} (i2c\_hw-\/>\mbox{\hyperlink{struct_sercom_i2cm_a7ccd67936d2c8e555c167db38729e43f}{STATUS}}.\mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a05c3de0b46943949ab1e03c378c1c57b}{reg}} \& SERCOM\_I2CM\_STATUS\_SYNCBUSY);}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#elif defined(FEATURE\_SERCOM\_SYNCBUSY\_SCHEME\_VERSION\_2)}}
+\DoxyCodeLine{378     \textcolor{keywordflow}{return} (i2c\_hw-\/>SYNCBUSY.reg \& SERCOM\_I2CM\_SYNCBUSY\_MASK);}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#  error Unknown SERCOM SYNCBUSY scheme!}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{382 \}}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{391 \textcolor{keyword}{static} \textcolor{keywordtype}{void} \_i2c\_master\_wait\_for\_sync(}
+\DoxyCodeLine{392         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{393 \{}
+\DoxyCodeLine{394     \textcolor{comment}{/* Sanity check */}}
+\DoxyCodeLine{395     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397     \textcolor{keywordflow}{while} (i2c\_master\_is\_syncing(module)) \{}
+\DoxyCodeLine{398         \textcolor{comment}{/* Wait for I2C module to sync. */}}
+\DoxyCodeLine{399     \}}
+\DoxyCodeLine{400 \}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{427 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} i2c\_master\_get\_config\_defaults(}
+\DoxyCodeLine{428         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__config}{i2c\_master\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{429 \{}
+\DoxyCodeLine{430     \textcolor{comment}{/*Sanity check argument */}}
+\DoxyCodeLine{431     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{432     config-\/>\mbox{\hyperlink{structi2c__master__config_abf70eb47fda40d5d150f815df8185e5a}{baud\_rate}}        = \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggace1e0023f2eee92565496a2e30006548a24ddfbe034a690d3a553a17508cbd625}{I2C\_MASTER\_BAUD\_RATE\_100KHZ}};}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#ifdef FEATURE\_I2C\_FAST\_MODE\_PLUS\_AND\_HIGH\_SPEED}}
+\DoxyCodeLine{434     config-\/>baud\_rate\_high\_speed = I2C\_MASTER\_BAUD\_RATE\_3400KHZ;}
+\DoxyCodeLine{435     config-\/>transfer\_speed       = I2C\_MASTER\_SPEED\_STANDARD\_AND\_FAST;}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{437     config-\/>\mbox{\hyperlink{structi2c__master__config_a1be7a4da8c55ee0a63d3e9d72cd083ae}{generator\_source}} = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\_GENERATOR\_0}};}
+\DoxyCodeLine{438     config-\/>\mbox{\hyperlink{structi2c__master__config_ad0c6e77641ddd40d61dca365dcfb30c4}{run\_in\_standby}}   = \textcolor{keyword}{false};}
+\DoxyCodeLine{439     config-\/>\mbox{\hyperlink{structi2c__master__config_ad9040e95cf92b0726cd8548861e12b6b}{start\_hold\_time}}  = \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggadd8aa7cabbddc1cd2c1a8753c9b99d20acc3f7849862510590acc2e3bebc29d0c}{I2C\_MASTER\_START\_HOLD\_TIME\_300NS\_600NS}};}
+\DoxyCodeLine{440     config-\/>\mbox{\hyperlink{structi2c__master__config_a41b36d6b88666af7e8ba7b22a569b6c6}{buffer\_timeout}}   = 65535;}
+\DoxyCodeLine{441     config-\/>\mbox{\hyperlink{structi2c__master__config_a340042a7706b159b124f2ea04928d24c}{unknown\_bus\_state\_timeout}} = 65535;}
+\DoxyCodeLine{442     config-\/>\mbox{\hyperlink{structi2c__master__config_a7294d8ef5e3f7bb1ff9b25fb3af616ca}{pinmux\_pad0}}      = PINMUX\_DEFAULT;}
+\DoxyCodeLine{443     config-\/>\mbox{\hyperlink{structi2c__master__config_a34a4e47d636cd61db7e3c70dff218187}{pinmux\_pad1}}      = PINMUX\_DEFAULT;}
+\DoxyCodeLine{444     config-\/>\mbox{\hyperlink{structi2c__master__config_a5307ecc3aedeb429fcacdc2fd44a10b8}{scl\_low\_timeout}}  = \textcolor{keyword}{false};}
+\DoxyCodeLine{445     config-\/>\mbox{\hyperlink{structi2c__master__config_aacc3fbf3395d1b6e7293a34d93fbfb0d}{inactive\_timeout}} = \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga4640bee224bf835f4c38d7702be0742ca52414c5127a26a6811f30324102cc3b1}{I2C\_MASTER\_INACTIVE\_TIMEOUT\_DISABLED}};}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#ifdef FEATURE\_I2C\_SCL\_STRETCH\_MODE}}
+\DoxyCodeLine{447     config-\/>scl\_stretch\_only\_after\_ack\_bit = \textcolor{keyword}{false};}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#ifdef FEATURE\_I2C\_SCL\_EXTEND\_TIMEOUT}}
+\DoxyCodeLine{450     config-\/>slave\_scl\_low\_extend\_timeout   = \textcolor{keyword}{false};}
+\DoxyCodeLine{451     config-\/>master\_scl\_low\_extend\_timeout  = \textcolor{keyword}{false};}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{453     \textcolor{comment}{/* The typical value is 215ns */}}
+\DoxyCodeLine{454     config-\/>\mbox{\hyperlink{structi2c__master__config_aa40cf5e345a9345df111c40d2ad797c4}{sda\_scl\_rise\_time\_ns}} = 215;}
+\DoxyCodeLine{455 \}}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga1c174d923b525f6d60402f66bc9c3451}{i2c\_master\_init}}(}
+\DoxyCodeLine{458         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{459         \mbox{\hyperlink{union_sercom}{Sercom}} *\textcolor{keyword}{const} hw,}
+\DoxyCodeLine{460         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__config}{i2c\_master\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{471 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} i2c\_master\_enable(}
+\DoxyCodeLine{472         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{473 \{}
+\DoxyCodeLine{474     \textcolor{comment}{/* Sanity check of arguments */}}
+\DoxyCodeLine{475     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{476     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}});}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478     \mbox{\hyperlink{struct_sercom_i2cm}{SercomI2cm}} *\textcolor{keyword}{const} i2c\_module = \&(module-\/>\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}}-\/>\mbox{\hyperlink{union_sercom_adb28862e03096b4bb9e55030b3ff670b}{I2CM}});}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480     \textcolor{comment}{/* Timeout counter used to force bus state */}}
+\DoxyCodeLine{481     uint32\_t timeout\_counter = 0;}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483     \textcolor{comment}{/* Wait for module to sync */}}
+\DoxyCodeLine{484     \_i2c\_master\_wait\_for\_sync(module);}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486     \textcolor{comment}{/* Enable module */}}
+\DoxyCodeLine{487     i2c\_module-\/>\mbox{\hyperlink{struct_sercom_i2cm_ada5a8e80a8a309062779659a8520a301}{CTRLA}}.\mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_adf469c2df660074d13f5b854ae13f1c0}{reg}} |= SERCOM\_I2CM\_CTRLA\_ENABLE;}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#if I2C\_MASTER\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{490     \textcolor{comment}{/* Enable module interrupts */}}
+\DoxyCodeLine{491     system\_interrupt\_enable(\_sercom\_get\_interrupt\_vector(module-\/>\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}}));}
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{493     \textcolor{comment}{/* Start timeout if bus state is unknown */}}
+\DoxyCodeLine{494     \textcolor{keywordflow}{while} (!(i2c\_module-\/>\mbox{\hyperlink{struct_sercom_i2cm_a7ccd67936d2c8e555c167db38729e43f}{STATUS}}.\mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a05c3de0b46943949ab1e03c378c1c57b}{reg}} \& SERCOM\_I2CM\_STATUS\_BUSSTATE(1))) \{}
+\DoxyCodeLine{495         timeout\_counter++;}
+\DoxyCodeLine{496         \textcolor{keywordflow}{if}(timeout\_counter >= (module-\/>\mbox{\hyperlink{structi2c__master__module_a7949d7e1dd668816a08c6520d79b4df9}{unknown\_bus\_state\_timeout}})) \{}
+\DoxyCodeLine{497             \textcolor{comment}{/* Timeout, force bus state to idle */}}
+\DoxyCodeLine{498             i2c\_module-\/>\mbox{\hyperlink{struct_sercom_i2cm_a7ccd67936d2c8e555c167db38729e43f}{STATUS}}.\mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___s_t_a_t_u_s___type_a05c3de0b46943949ab1e03c378c1c57b}{reg}} = SERCOM\_I2CM\_STATUS\_BUSSTATE(1);}
+\DoxyCodeLine{499             \textcolor{comment}{/* Workaround \#1 */}}
+\DoxyCodeLine{500             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{501         \}}
+\DoxyCodeLine{502     \}}
+\DoxyCodeLine{503 \}}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{512 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} i2c\_master\_disable(}
+\DoxyCodeLine{513         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{514 \{}
+\DoxyCodeLine{515     \textcolor{comment}{/* Sanity check of arguments */}}
+\DoxyCodeLine{516     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{517     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}});}
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519     \mbox{\hyperlink{struct_sercom_i2cm}{SercomI2cm}} *\textcolor{keyword}{const} i2c\_module = \&(module-\/>\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}}-\/>\mbox{\hyperlink{union_sercom_adb28862e03096b4bb9e55030b3ff670b}{I2CM}});}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#if I2C\_MASTER\_CALLBACK\_MODE == true}}
+\DoxyCodeLine{522         \textcolor{comment}{/* Disable module interrupts */}}
+\DoxyCodeLine{523         system\_interrupt\_disable(\_sercom\_get\_interrupt\_vector(module-\/>\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}}));}
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{525 }
+\DoxyCodeLine{526     \textcolor{comment}{/* Wait for module to sync */}}
+\DoxyCodeLine{527     \_i2c\_master\_wait\_for\_sync(module);}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{529     \textcolor{comment}{/* Disbale interrupt */}}
+\DoxyCodeLine{530     i2c\_module-\/>\mbox{\hyperlink{struct_sercom_i2cm_a115c20fd68cbae0011a3e013c4fc7f87}{INTENCLR}}.\mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_e_n_c_l_r___type_ac1ac0cef60ae4a33ea327baba6c1e9ae}{reg}} = \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2sercom_8h_a64bc8103105ba11779a0370eea2d61ea}{SERCOM\_I2CM\_INTENCLR\_MASK}};}
+\DoxyCodeLine{531     \textcolor{comment}{/* Clear interrupt flag */}}
+\DoxyCodeLine{532     i2c\_module-\/>\mbox{\hyperlink{struct_sercom_i2cm_a08beddd4d34c9cd8e3c54fca1e6d9dc1}{INTFLAG}}.\mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___i_n_t_f_l_a_g___type_a6f7542976ea39b83db973002f2bdf619}{reg}} = \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2sercom_8h_a90850c74e4bd0d0fee5fad6a0f66f798}{SERCOM\_I2CM\_INTFLAG\_MASK}};}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534     \textcolor{comment}{/* Disable module */}}
+\DoxyCodeLine{535     i2c\_module-\/>\mbox{\hyperlink{struct_sercom_i2cm_ada5a8e80a8a309062779659a8520a301}{CTRLA}}.\mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___c_t_r_l_a___type_adf469c2df660074d13f5b854ae13f1c0}{reg}} \&= \string~SERCOM\_I2CM\_CTRLA\_ENABLE;}
+\DoxyCodeLine{536 }
+\DoxyCodeLine{537 \}}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{539 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga6dc5e9982ce4d7c6acc68cb69c57883d}{i2c\_master\_reset}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{540 }
+\DoxyCodeLine{548 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga238a755f972b9c3287131cda5fc25725}{i2c\_master\_read\_packet\_wait}}(}
+\DoxyCodeLine{549         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{550         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__packet}{i2c\_master\_packet}} *\textcolor{keyword}{const} packet);}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaa8b27eb9e3a8ae0f907bf7078d4001f0}{i2c\_master\_read\_packet\_wait\_no\_stop}}(}
+\DoxyCodeLine{553         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{554         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__packet}{i2c\_master\_packet}} *\textcolor{keyword}{const} packet);}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga6c07057fe2534e8b4a3ce2cfe2dafc1b}{i2c\_master\_write\_packet\_wait}}(}
+\DoxyCodeLine{557         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{558         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__packet}{i2c\_master\_packet}} *\textcolor{keyword}{const} packet);}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga4d874599c2bff10cd08f5474041c66bb}{i2c\_master\_write\_packet\_wait\_no\_stop}}(}
+\DoxyCodeLine{561         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{562         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__packet}{i2c\_master\_packet}} *\textcolor{keyword}{const} packet);}
+\DoxyCodeLine{563 }
+\DoxyCodeLine{564 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga6bddf9e717847b5fa8462596e7e1489c}{i2c\_master\_send\_stop}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaf9bb3b3174c1fc602c3097bc40eadcef}{i2c\_master\_send\_nack}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{568 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga54cf79ca8aa80e2163881ca4164e35f7}{i2c\_master\_read\_byte}}(}
+\DoxyCodeLine{569         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{570         uint8\_t *\textcolor{keywordtype}{byte});}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{572 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaee2de09ec9474331f354eec703b80b6e}{i2c\_master\_write\_byte}}(}
+\DoxyCodeLine{573         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{574         uint8\_t \textcolor{keywordtype}{byte});}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{576 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} i2c\_master\_read\_packet\_wait\_no\_nack(}
+\DoxyCodeLine{577         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{578         \textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__packet}{i2c\_master\_packet}} *\textcolor{keyword}{const} packet);}
+\DoxyCodeLine{579 }
+\DoxyCodeLine{582 \textcolor{preprocessor}{\#ifdef FEATURE\_I2C\_DMA\_SUPPORT}}
+\DoxyCodeLine{600 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} i2c\_master\_dma\_set\_transfer(\textcolor{keyword}{struct} \mbox{\hyperlink{structi2c__master__module}{i2c\_master\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{601         uint16\_t addr, uint8\_t length, \textcolor{keyword}{enum} \mbox{\hyperlink{i2c__common_8h_ad7ea327439ceaf6931b91865d12449fc}{i2c\_transfer\_direction}} direction)}
+\DoxyCodeLine{602 \{}
+\DoxyCodeLine{603     module-\/>\mbox{\hyperlink{structi2c__master__module_a3d158e3263edcacfb6d753e9b38f6743}{hw}}-\/>\mbox{\hyperlink{union_sercom_adb28862e03096b4bb9e55030b3ff670b}{I2CM}}.\mbox{\hyperlink{struct_sercom_i2cm_af72d46dd28fcccf39d6cb6d582b0bf37}{ADDR}}.\mbox{\hyperlink{union_s_e_r_c_o_m___i2_c_m___a_d_d_r___type_ab4e0d926d249121a13d22f2ab2bd4afc}{reg}} =}
+\DoxyCodeLine{604         SERCOM\_I2CM\_ADDR\_ADDR(addr<<1) |}
+\DoxyCodeLine{605         SERCOM\_I2CM\_ADDR\_LENEN |}
+\DoxyCodeLine{606         SERCOM\_I2CM\_ADDR\_LEN(length) |}
+\DoxyCodeLine{607         direction;}
+\DoxyCodeLine{608 \}}
+\DoxyCodeLine{609 }
+\DoxyCodeLine{611 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{612 }
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{616 \}}
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{618 }
+\DoxyCodeLine{619 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* I2C\_MASTER\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

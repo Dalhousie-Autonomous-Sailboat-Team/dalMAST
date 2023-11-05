@@ -1,0 +1,132 @@
+\hypertarget{sail__types_8h_source}{}\doxysection{sail\+\_\+types.\+h}
+\label{sail__types_8h_source}\index{src/sail\_types.h@{src/sail\_types.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_types.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * A header to maintain data structures shared between different modules of the}}
+\DoxyCodeLine{3 \textcolor{comment}{ * autonomous sailboat.}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Created on August 4, 2016.}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Created by Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef SAIL\_TYPES\_H\_ }}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define SAIL\_TYPES\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/*}}
+\DoxyCodeLine{12 \textcolor{comment}{ *** CONTROL ****************************************************}}
+\DoxyCodeLine{13 \textcolor{comment}{ * Data structures and enumerations to maintain the state of the }}
+\DoxyCodeLine{14 \textcolor{comment}{ * sailboat's control system.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * CTRL\_Mode: List of operating modes.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *     * AUTO       -\/ autonomous navigation}}
+\DoxyCodeLine{18 \textcolor{comment}{ *     * REMOTE     -\/ remote control}}
+\DoxyCodeLine{19 \textcolor{comment}{ *     * LOAD       -\/ mission loading to EEPROM}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * CTRL\_State: List of operating states.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *     * DEPLOY     -\/ status messages are sent via satellite}}
+\DoxyCodeLine{23 \textcolor{comment}{ *     * TEST       -\/ status messages are sent via radio}}
+\DoxyCodeLine{24 \textcolor{comment}{ *}}
+\DoxyCodeLine{25 \textcolor{comment}{ * CTRL\_ResetCause: List of reset causes.}}
+\DoxyCodeLine{26 \textcolor{comment}{ *     * POWER      -\/ power loss}}
+\DoxyCodeLine{27 \textcolor{comment}{ *     * WDT        -\/ watchdog timer}}
+\DoxyCodeLine{28 \textcolor{comment}{ *     * SW         -\/ software controlled}}
+\DoxyCodeLine{29 \textcolor{comment}{ *     * EXT        -\/ external reset pin}}
+\DoxyCodeLine{30 \textcolor{comment}{ *     * OTHER      -\/ other causes}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ **************************************************************}}
+\DoxyCodeLine{33 \textcolor{comment}{ */}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} CTRL\_Modes \{}
+\DoxyCodeLine{36     CTRL\_MODE\_AUTO,}
+\DoxyCodeLine{37     CTRL\_MODE\_REMOTE,}
+\DoxyCodeLine{38     CTRL\_MODE\_LOAD,}
+\DoxyCodeLine{39     CTRL\_NUM\_MODES}
+\DoxyCodeLine{40 \} CTRL\_Mode;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} CTRL\_States \{}
+\DoxyCodeLine{43     CTRL\_STATE\_DEPLOY,}
+\DoxyCodeLine{44     CTRL\_STATE\_TEST,}
+\DoxyCodeLine{45     CTRL\_NUM\_STATES}
+\DoxyCodeLine{46 \} CTRL\_State;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} CTRL\_ResetCauses \{}
+\DoxyCodeLine{49     CTRL\_RESET\_POWER,}
+\DoxyCodeLine{50     CTRL\_RESET\_WDT,}
+\DoxyCodeLine{51     CTRL\_RESET\_SW,}
+\DoxyCodeLine{52     CTRL\_RESET\_EXT,}
+\DoxyCodeLine{53     CTRL\_RESET\_OTHER,}
+\DoxyCodeLine{54     CTRL\_NUM\_CAUSES}
+\DoxyCodeLine{55 \} CTRL\_ResetCause;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{/**** SENSORS ************************************************************}}
+\DoxyCodeLine{59 \textcolor{comment}{ * Data structures and enumerations to maintain readings from the sailboat's}}
+\DoxyCodeLine{60 \textcolor{comment}{ * various sensors.}}
+\DoxyCodeLine{61 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}} \{}
+\DoxyCodeLine{64     \textcolor{keywordtype}{double} lat;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{double} lon;}
+\DoxyCodeLine{66 \} \mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_w_i_n_d___reading}{WIND\_Reading}}\{}
+\DoxyCodeLine{69     \textcolor{keywordtype}{float} angle;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{float} speed;}
+\DoxyCodeLine{71 \} \mbox{\hyperlink{struct_w_i_n_d___reading}{WIND\_Reading}};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} COMP\_ReadingTypes \{}
+\DoxyCodeLine{74     COMP\_ACCEL,}
+\DoxyCodeLine{75     COMP\_MAG,}
+\DoxyCodeLine{76     COMP\_HEADING,}
+\DoxyCodeLine{77     COMP\_TILT,}
+\DoxyCodeLine{78     COMP\_NUM\_TYPES}
+\DoxyCodeLine{79 \} COMP\_ReadingType;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_c_o_m_p___accel_data}{COMP\_AccelData}} \{}
+\DoxyCodeLine{82     \textcolor{keywordtype}{float} x;}
+\DoxyCodeLine{83     \textcolor{keywordtype}{float} y;}
+\DoxyCodeLine{84     \textcolor{keywordtype}{float} z;}
+\DoxyCodeLine{85 \} \mbox{\hyperlink{struct_c_o_m_p___accel_data}{COMP\_AccelData}};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_c_o_m_p___mag_data}{COMP\_MagData}} \{}
+\DoxyCodeLine{88     \textcolor{keywordtype}{float} x;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{float} y;}
+\DoxyCodeLine{90     \textcolor{keywordtype}{float} z;}
+\DoxyCodeLine{91 \} \mbox{\hyperlink{struct_c_o_m_p___mag_data}{COMP\_MagData}};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_c_o_m_p___heading_data}{COMP\_HeadingData}} \{}
+\DoxyCodeLine{94     \textcolor{keywordtype}{float} heading;}
+\DoxyCodeLine{95     \textcolor{keywordtype}{float} pitch;}
+\DoxyCodeLine{96     \textcolor{keywordtype}{float} roll;}
+\DoxyCodeLine{97 \} \mbox{\hyperlink{struct_c_o_m_p___heading_data}{COMP\_HeadingData}};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_c_o_m_p___tilt_data}{COMP\_TiltData}} \{}
+\DoxyCodeLine{100     \textcolor{keywordtype}{float} pitch;}
+\DoxyCodeLine{101     \textcolor{keywordtype}{float} roll;}
+\DoxyCodeLine{102     \textcolor{keywordtype}{float} temp;}
+\DoxyCodeLine{103 \} \mbox{\hyperlink{struct_c_o_m_p___tilt_data}{COMP\_TiltData}};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_c_o_m_p___reading}{COMP\_Reading}} \{}
+\DoxyCodeLine{106     COMP\_ReadingType type;}
+\DoxyCodeLine{107     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{108         \mbox{\hyperlink{struct_c_o_m_p___accel_data}{COMP\_AccelData}} accel;}
+\DoxyCodeLine{109         \mbox{\hyperlink{struct_c_o_m_p___mag_data}{COMP\_MagData}} mag;}
+\DoxyCodeLine{110         \mbox{\hyperlink{struct_c_o_m_p___heading_data}{COMP\_HeadingData}} heading;}
+\DoxyCodeLine{111         \mbox{\hyperlink{struct_c_o_m_p___tilt_data}{COMP\_TiltData}} tilt;}
+\DoxyCodeLine{112         \textcolor{keywordtype}{double} fields[3];}
+\DoxyCodeLine{113     \} data;}
+\DoxyCodeLine{114 \} \mbox{\hyperlink{struct_c_o_m_p___reading}{COMP\_Reading}};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{comment}{/**** EEPROM ************************************************************}}
+\DoxyCodeLine{118 \textcolor{comment}{ * Data structures and enumerations for reading and writing to the EEPROM.}}
+\DoxyCodeLine{119 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{120  }
+\DoxyCodeLine{121 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_e_e_p_r_o_m___way_point}{EEPROM\_WayPoint}} \{}
+\DoxyCodeLine{122     \mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}} pos;}
+\DoxyCodeLine{123     \textcolor{keywordtype}{double} rad;     \textcolor{comment}{// tolerance radius of way point (meters)}}
+\DoxyCodeLine{124 \} \mbox{\hyperlink{struct_e_e_p_r_o_m___way_point}{EEPROM\_WayPoint}};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_TYPES\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

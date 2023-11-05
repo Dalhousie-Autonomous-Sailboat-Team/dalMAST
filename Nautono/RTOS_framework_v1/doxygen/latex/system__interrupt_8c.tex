@@ -1,0 +1,29 @@
+\hypertarget{system__interrupt_8c}{}\doxysection{src/\+ASF/sam0/drivers/system/interrupt/system\+\_\+interrupt.c File Reference}
+\label{system__interrupt_8c}\index{src/ASF/sam0/drivers/system/interrupt/system\_interrupt.c@{src/ASF/sam0/drivers/system/interrupt/system\_interrupt.c}}
+
+
+SAM System Interrupt Driver.  
+
+
+{\ttfamily \#include \char`\"{}system\+\_\+interrupt.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga08ea1ee1c7020c64e18a1673ca8548a4}{system\+\_\+interrupt\+\_\+is\+\_\+pending}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector)
+\begin{DoxyCompactList}\small\item\em Check if a interrupt line is pending. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga03184d235f73957b4226205219783ba3}{system\+\_\+interrupt\+\_\+set\+\_\+pending}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector)
+\begin{DoxyCompactList}\small\item\em Set a interrupt vector as pending. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga3c4191c58c9dda28890ec8153d8c83af}{system\+\_\+interrupt\+\_\+clear\+\_\+pending}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector)
+\begin{DoxyCompactList}\small\item\em Clear pending interrupt vector. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga0be1259c9dc64c3dd8f0d45e3f04ee76}{system\+\_\+interrupt\+\_\+set\+\_\+priority}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector, const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\+\_\+interrupt\+\_\+priority\+\_\+level}} priority\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Set interrupt vector priority level. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga6d21907577ff204de7f5fa4642c84589}{system\+\_\+interrupt\+\_\+priority\+\_\+level}} \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga586466a55934c76a69332b6819f4904a}{system\+\_\+interrupt\+\_\+get\+\_\+priority}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} vector)
+\begin{DoxyCompactList}\small\item\em Get interrupt vector priority level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM System Interrupt Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

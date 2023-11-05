@@ -61,9 +61,9 @@ Uploading to EEPROM using Processing KML Uploader script
 3. Run [script]() with 
 4.
 
-## Function Map Diagram
+## Function Map Diagram (From Yimming)
 
-## Navigation
+## Navigation Algorithm
 
 ## Radio Message Decoding Table
 

@@ -1,0 +1,79 @@
+\hypertarget{sail__i2c_8h_source}{}\doxysection{sail\+\_\+i2c.\+h}
+\label{sail__i2c_8h_source}\index{src/sail\_i2c.h@{src/sail\_i2c.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_i2c.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Header file for the I2C driver module that handles communication with the }}
+\DoxyCodeLine{3 \textcolor{comment}{ * EEPROM and compass.}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Created on June 29, 2016.}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Created by Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef SAIL\_I2C\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define SAIL\_I2C\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} I2C\_DeviceIDs \{}
+\DoxyCodeLine{15     I2C\_EEPROM,}
+\DoxyCodeLine{16     I2C\_COMPASS,}
+\DoxyCodeLine{17     I2C\_NUM\_DEVICES}
+\DoxyCodeLine{18 \} I2C\_DeviceID;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} I2C\_ReadFormats \{}
+\DoxyCodeLine{21     I2C\_READ\_NORMAL,}
+\DoxyCodeLine{22     I2C\_READ\_NO\_NACK,}
+\DoxyCodeLine{23     I2C\_READ\_NO\_STOP,}
+\DoxyCodeLine{24     I2C\_NUM\_READ\_FMTS}
+\DoxyCodeLine{25 \} I2C\_ReadFormat;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} I2C\_WriteFormats \{}
+\DoxyCodeLine{28     I2C\_WRITE\_NORMAL,}
+\DoxyCodeLine{29     I2C\_WRITE\_NO\_STOP,}
+\DoxyCodeLine{30     I2C\_NUM\_WRITE\_FMTS}
+\DoxyCodeLine{31 \} I2C\_WriteFormat;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{comment}{// I2C\_Init}}
+\DoxyCodeLine{35 \textcolor{comment}{// Initialize the I2C master module.}}
+\DoxyCodeLine{36 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{37 \textcolor{comment}{//}}
+\DoxyCodeLine{38 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} I2C\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// I2C\_ReadBuffer}}
+\DoxyCodeLine{41 \textcolor{comment}{// Send a command to the specified I2C device and store the response.}}
+\DoxyCodeLine{42 \textcolor{comment}{// Inputs:}}
+\DoxyCodeLine{43 \textcolor{comment}{//   id -\/ ID of the specified I2C device}}
+\DoxyCodeLine{44 \textcolor{comment}{//   fmt -\/ format of read}}
+\DoxyCodeLine{45 \textcolor{comment}{// Inputs/Outputs:}}
+\DoxyCodeLine{46 \textcolor{comment}{//   data -\/ pointer to location where response should be stored}}
+\DoxyCodeLine{47 \textcolor{comment}{//   data\_len -\/ number of bytes to store}}
+\DoxyCodeLine{48 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{49 \textcolor{comment}{//   STATUS\_OK -\/ data was read successfully}}
+\DoxyCodeLine{50 \textcolor{comment}{//   STATUS\_ERR\_NOT\_INITIALIZED -\/ I2C module was not initialized}}
+\DoxyCodeLine{51 \textcolor{comment}{//   STATUS\_ERR\_INVALID\_ARG -\/ an invalid ID or format was provided}}
+\DoxyCodeLine{52 \textcolor{comment}{//   STATUS\_ERR\_BAD\_ACCRESS -\/ a null pointer was provided}}
+\DoxyCodeLine{53 \textcolor{comment}{//}}
+\DoxyCodeLine{54 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} I2C\_ReadBuffer(I2C\_DeviceID \textcolor{keywordtype}{id}, uint8\_t *data, uint16\_t data\_len, I2C\_ReadFormat fmt);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{// I2C\_WriteBuffer}}
+\DoxyCodeLine{58 \textcolor{comment}{// Write the provided data to the specified I2C device.}}
+\DoxyCodeLine{59 \textcolor{comment}{// Inputs:}}
+\DoxyCodeLine{60 \textcolor{comment}{//   id -\/ ID of the specified I2C device}}
+\DoxyCodeLine{61 \textcolor{comment}{//   data -\/ pointer to location of data to send}}
+\DoxyCodeLine{62 \textcolor{comment}{//   data\_len -\/ number of bytes to send}}
+\DoxyCodeLine{63 \textcolor{comment}{//   fmt -\/ format of the write}}
+\DoxyCodeLine{64 \textcolor{comment}{// Status:}}
+\DoxyCodeLine{65 \textcolor{comment}{//   STATUS\_OK -\/ data was read successfully}}
+\DoxyCodeLine{66 \textcolor{comment}{//   STATUS\_ERR\_NOT\_INITIALIZED -\/ I2C module was not initialized}}
+\DoxyCodeLine{67 \textcolor{comment}{//   STATUS\_ERR\_INVALID\_ARG -\/ an invalid ID was provided}}
+\DoxyCodeLine{68 \textcolor{comment}{//   STATUS\_ERR\_BAD\_ACCRESS -\/ a null pointer was provided}}
+\DoxyCodeLine{69 \textcolor{comment}{//}}
+\DoxyCodeLine{70 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} I2C\_WriteBuffer(I2C\_DeviceID \textcolor{keywordtype}{id}, uint8\_t *data, uint16\_t data\_len, I2C\_WriteFormat fmt);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_I2C\_H\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{73 }
+
+\end{DoxyCode}

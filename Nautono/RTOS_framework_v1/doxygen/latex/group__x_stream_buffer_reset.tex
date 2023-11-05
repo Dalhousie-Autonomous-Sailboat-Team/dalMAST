@@ -1,0 +1,20 @@
+\hypertarget{group__x_stream_buffer_reset}{}\doxysection{x\+Stream\+Buffer\+Reset}
+\label{group__x_stream_buffer_reset}\index{xStreamBufferReset@{xStreamBufferReset}}
+\mbox{\hyperlink{stream__buffer_8h_source}{stream\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+BaseType\_t xStreamBufferReset( StreamBufferHandle\_t xStreamBuffer );
+\end{DoxyPre}
+
+
+Resets a stream buffer to its initial, empty, state. Any data that was in the stream buffer is discarded. A stream buffer can only be reset if there are no tasks blocked waiting to either send to or receive from the stream buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Stream\+Buffer} & The handle of the stream buffer being reset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the stream buffer is reset then pd\+PASS is returned. If there was a task blocked waiting to send to or read from the stream buffer then the stream buffer is not reset and pd\+FAIL is returned. 
+\end{DoxyReturn}

@@ -1,0 +1,133 @@
+\hypertarget{instance_2evsys_8h_source}{}\doxysection{evsys.\+h}
+\label{instance_2evsys_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/evsys.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/evsys.h}}
+\mbox{\hyperlink{instance_2evsys_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_EVSYS\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_EVSYS\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for EVSYS peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_EVSYS\_CTRL             (0x42000400U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_EVSYS\_CHANNEL          (0x42000404U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_EVSYS\_USER             (0x42000408U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_EVSYS\_CHSTATUS         (0x4200040CU) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_EVSYS\_INTENCLR         (0x42000410U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_EVSYS\_INTENSET         (0x42000414U) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_EVSYS\_INTFLAG          (0x42000418U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_EVSYS\_CTRL             (*(WoReg8 *)0x42000400U) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_EVSYS\_CHANNEL          (*(RwReg  *)0x42000404U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_EVSYS\_USER             (*(RwReg16*)0x42000408U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_EVSYS\_CHSTATUS         (*(RoReg  *)0x4200040CU) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_EVSYS\_INTENCLR         (*(RwReg  *)0x42000410U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_EVSYS\_INTENSET         (*(RwReg  *)0x42000414U) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_EVSYS\_INTFLAG          (*(RwReg  *)0x42000418U) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{/* ========== Instance parameters for EVSYS peripheral ========== */}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define EVSYS\_CHANNELS              8        }\textcolor{comment}{// Number of Channels}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define EVSYS\_CHANNELS\_BITS         3        }\textcolor{comment}{// Number of bits to select Channel}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define EVSYS\_CHANNELS\_MSB          7        }\textcolor{comment}{// Number of Channels -\/ 1}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define EVSYS\_EXTEVT\_NUM            0        }\textcolor{comment}{// Number of External Event Generators}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define EVSYS\_EXT\_EVT\_MSB           0        }\textcolor{comment}{// Number of External Event Generators -\/ 1}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_0             4}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_1             5}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_2             6}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_3             7}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_4             8}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_5             9}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_6             10}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_7             11}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_LSB           4}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_MSB           11}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define EVSYS\_GCLK\_ID\_SIZE          8}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define EVSYS\_GENERATORS            59       }\textcolor{comment}{// Total Number of Event Generators}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define EVSYS\_GENERATORS\_BITS       6        }\textcolor{comment}{// Number of bits to select Event Generator}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define EVSYS\_USERS                 14       }\textcolor{comment}{// Total Number of Event Users}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define EVSYS\_USERS\_BITS            4        }\textcolor{comment}{// Number of bits to select Event User}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{// GENERATORS}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_CMP\_0      1}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_CMP\_1      2}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_OVF        3}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_PER\_0      4}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_PER\_1      5}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_PER\_2      6}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_PER\_3      7}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_PER\_4      8}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_PER\_5      9}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_PER\_6      10}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_RTC\_PER\_7      11}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_0   12}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_1   13}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_2   14}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_3   15}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_4   16}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_5   17}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_6   18}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_7   19}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_8   20}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_9   21}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_10  22}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_11  23}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_12  24}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_13  25}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_14  26}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_EIC\_EXTINT\_15  27}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC0\_OVF        28}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC0\_MCX\_0      29}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC0\_MCX\_1      30}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC1\_OVF        31}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC1\_MCX\_0      32}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC1\_MCX\_1      33}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC2\_OVF        34}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC2\_MCX\_0      35}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC2\_MCX\_1      36}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC3\_OVF        37}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC3\_MCX\_0      38}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC3\_MCX\_1      39}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC4\_OVF        40}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC4\_MCX\_0      41}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC4\_MCX\_1      42}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC5\_OVF        43}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC5\_MCX\_0      44}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC5\_MCX\_1      45}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC6\_OVF        46}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC6\_MCX\_0      47}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC6\_MCX\_1      48}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC7\_OVF        49}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC7\_MCX\_0      50}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_TC7\_MCX\_1      51}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_ADC\_RESRDY     52}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_ADC\_WINMON     53}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_AC\_COMP\_0      54}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_AC\_COMP\_1      55}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_AC\_WIN\_0       56}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_DAC\_EMPTY      57}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_PTC\_EOC        58}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define EVSYS\_ID\_GEN\_PTC\_WCOMP      59}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{comment}{// USERS}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_TC0\_EVU       0}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_TC1\_EVU       1}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_TC2\_EVU       2}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_TC3\_EVU       3}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_TC4\_EVU       4}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_TC5\_EVU       5}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_TC6\_EVU       6}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_TC7\_EVU       7}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_ADC\_START     8}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_ADC\_SYNC      9}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_AC\_SOC\_0      10}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_AC\_SOC\_1      11}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_DAC\_START     12}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define EVSYS\_ID\_USER\_PTC\_STCONV    13}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_EVSYS\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

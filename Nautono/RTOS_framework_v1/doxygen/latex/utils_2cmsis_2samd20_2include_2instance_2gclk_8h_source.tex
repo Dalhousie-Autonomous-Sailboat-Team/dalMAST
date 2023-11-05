@@ -1,0 +1,46 @@
+\hypertarget{utils_2cmsis_2samd20_2include_2instance_2gclk_8h_source}{}\doxysection{gclk.\+h}
+\label{utils_2cmsis_2samd20_2include_2instance_2gclk_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/gclk.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/gclk.h}}
+\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2instance_2gclk_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_GCLK\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_GCLK\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for GCLK peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_GCLK\_CTRL              (0x40000C00U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_GCLK\_STATUS            (0x40000C01U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_GCLK\_CLKCTRL           (0x40000C02U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_GCLK\_GENCTRL           (0x40000C04U) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_GCLK\_GENDIV            (0x40000C08U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_GCLK\_CTRL              (*(RwReg8 *)0x40000C00U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_GCLK\_STATUS            (*(RoReg8 *)0x40000C01U) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_GCLK\_CLKCTRL           (*(RwReg16*)0x40000C02U) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_GCLK\_GENCTRL           (*(RwReg  *)0x40000C04U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_GCLK\_GENDIV            (*(RwReg  *)0x40000C08U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/* ========== Instance parameters for GCLK peripheral ========== */}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define GCLK\_GENDIV\_BITS            16      }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define GCLK\_GEN\_NUM                8        }\textcolor{comment}{// Number of Generic Clock Generators}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define GCLK\_GEN\_NUM\_MSB            7        }\textcolor{comment}{// Number of Generic Clock Generators -\/ 1}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define GCLK\_GEN\_SOURCE\_NUM\_MSB     7        }\textcolor{comment}{// Number of Generic Clock Sources -\/ 1}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define GCLK\_NUM                    28       }\textcolor{comment}{// Number of Generic Clock Users}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define GCLK\_SOURCE\_DFLL48M         7       }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define GCLK\_SOURCE\_GCLKGEN1        2       }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define GCLK\_SOURCE\_GCLKIN          1       }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define GCLK\_SOURCE\_NUM             8        }\textcolor{comment}{// Number of Generic Clock Sources}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define GCLK\_SOURCE\_OSCULP32K       3       }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define GCLK\_SOURCE\_OSC8M           6       }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define GCLK\_SOURCE\_OSC32K          4       }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define GCLK\_SOURCE\_XOSC            0       }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define GCLK\_SOURCE\_XOSC32K         5       }}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_GCLK\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

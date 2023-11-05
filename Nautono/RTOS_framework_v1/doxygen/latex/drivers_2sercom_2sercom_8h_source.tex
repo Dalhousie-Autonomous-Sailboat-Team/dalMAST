@@ -1,0 +1,73 @@
+\hypertarget{drivers_2sercom_2sercom_8h_source}{}\doxysection{sercom.\+h}
+\label{drivers_2sercom_2sercom_8h_source}\index{src/ASF/sam0/drivers/sercom/sercom.h@{src/ASF/sam0/drivers/sercom/sercom.h}}
+\mbox{\hyperlink{drivers_2sercom_2sercom_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef SERCOM\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define SERCOM\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{system_8h}{system.h}}>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{clock_8h}{clock.h}}>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{system__interrupt_8h}{system\_interrupt.h}}>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sercom__pinout_8h}{sercom\_pinout.h}}"{}}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{47 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{/* SERCOM modules should share  same slow GCLK channel ID */}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define SERCOM\_GCLK\_ID SERCOM0\_GCLK\_ID\_SLOW}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#if (0x1ff >= REV\_SERCOM)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#  define FEATURE\_SERCOM\_SYNCBUSY\_SCHEME\_VERSION\_1}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#elif (0x400 >= REV\_SERCOM)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#  define FEATURE\_SERCOM\_SYNCBUSY\_SCHEME\_VERSION\_2}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#  error "{}Unknown SYNCBUSY scheme for this SERCOM revision"{}}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66 \textcolor{keyword}{enum} \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a05f9e8b65fff0120fce38ee4ddd40386}{sercom\_asynchronous\_operation\_mode}} \{}
+\DoxyCodeLine{67     SERCOM\_ASYNC\_OPERATION\_MODE\_ARITHMETIC = 0,}
+\DoxyCodeLine{68     SERCOM\_ASYNC\_OPERATION\_MODE\_FRACTIONAL,}
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{76 \textcolor{keyword}{enum} \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a6936fb2a7711cb55dc717256bbcacb12}{sercom\_asynchronous\_sample\_num}} \{}
+\DoxyCodeLine{77     SERCOM\_ASYNC\_SAMPLE\_NUM\_3 = 3,}
+\DoxyCodeLine{78     SERCOM\_ASYNC\_SAMPLE\_NUM\_8 = 8,}
+\DoxyCodeLine{79     SERCOM\_ASYNC\_SAMPLE\_NUM\_16 = 16,}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a11de7a16f2be1223a140bfe1cd7bddca}{sercom\_set\_gclk\_generator}}(}
+\DoxyCodeLine{83         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\_generator}} generator\_source,}
+\DoxyCodeLine{84         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} force\_change);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \_sercom\_get\_sync\_baud\_val(}
+\DoxyCodeLine{87         \textcolor{keyword}{const} uint32\_t baudrate,}
+\DoxyCodeLine{88         \textcolor{keyword}{const} uint32\_t external\_clock,}
+\DoxyCodeLine{89         uint16\_t *\textcolor{keyword}{const} baudval);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \_sercom\_get\_async\_baud\_val(}
+\DoxyCodeLine{92         \textcolor{keyword}{const} uint32\_t baudrate,}
+\DoxyCodeLine{93         \textcolor{keyword}{const} uint32\_t peripheral\_clock,}
+\DoxyCodeLine{94         uint16\_t *\textcolor{keyword}{const} baudval,}
+\DoxyCodeLine{95         \textcolor{keyword}{enum} \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a05f9e8b65fff0120fce38ee4ddd40386}{sercom\_asynchronous\_operation\_mode}} mode,}
+\DoxyCodeLine{96         \textcolor{keyword}{enum} \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a6936fb2a7711cb55dc717256bbcacb12}{sercom\_asynchronous\_sample\_num}} sample\_num);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 uint32\_t \_sercom\_get\_default\_pad(}
+\DoxyCodeLine{99         \mbox{\hyperlink{union_sercom}{Sercom}} *\textcolor{keyword}{const} sercom\_module,}
+\DoxyCodeLine{100         \textcolor{keyword}{const} uint8\_t pad);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 uint8\_t \_sercom\_get\_sercom\_inst\_index(}
+\DoxyCodeLine{103         \mbox{\hyperlink{union_sercom}{Sercom}} *\textcolor{keyword}{const} sercom\_instance);}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{105 \}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_SERCOM\_H\_INCLUDED}}
+
+\end{DoxyCode}

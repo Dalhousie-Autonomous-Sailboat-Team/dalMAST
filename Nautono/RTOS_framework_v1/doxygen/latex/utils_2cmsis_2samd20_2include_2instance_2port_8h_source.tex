@@ -1,0 +1,104 @@
+\hypertarget{utils_2cmsis_2samd20_2include_2instance_2port_8h_source}{}\doxysection{port.\+h}
+\label{utils_2cmsis_2samd20_2include_2instance_2port_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/port.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/port.h}}
+\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2instance_2port_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_PORT\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_PORT\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for PORT peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_PORT\_DIR0              (0x41004400U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_PORT\_DIRCLR0           (0x41004404U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_PORT\_DIRSET0           (0x41004408U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_PORT\_DIRTGL0           (0x4100440CU) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_PORT\_OUT0              (0x41004410U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_PORT\_OUTCLR0           (0x41004414U) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_PORT\_OUTSET0           (0x41004418U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_PORT\_OUTTGL0           (0x4100441CU) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_PORT\_IN0               (0x41004420U) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_PORT\_CTRL0             (0x41004424U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_PORT\_WRCONFIG0         (0x41004428U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_PORT\_PMUX0             (0x41004430U) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_PORT\_PINCFG0           (0x41004440U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_PORT\_DIR1              (0x41004480U) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_PORT\_DIRCLR1           (0x41004484U) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_PORT\_DIRSET1           (0x41004488U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_PORT\_DIRTGL1           (0x4100448CU) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_PORT\_OUT1              (0x41004490U) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_PORT\_OUTCLR1           (0x41004494U) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define REG\_PORT\_OUTSET1           (0x41004498U) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define REG\_PORT\_OUTTGL1           (0x4100449CU) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define REG\_PORT\_IN1               (0x410044A0U) }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define REG\_PORT\_CTRL1             (0x410044A4U) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define REG\_PORT\_WRCONFIG1         (0x410044A8U) }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define REG\_PORT\_PMUX1             (0x410044B0U) }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define REG\_PORT\_PINCFG1           (0x410044C0U) }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define REG\_PORT\_DIR0              (*(RwReg  *)0x41004400U) }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define REG\_PORT\_DIRCLR0           (*(RwReg  *)0x41004404U) }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define REG\_PORT\_DIRSET0           (*(RwReg  *)0x41004408U) }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define REG\_PORT\_DIRTGL0           (*(RwReg  *)0x4100440CU) }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define REG\_PORT\_OUT0              (*(RwReg  *)0x41004410U) }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define REG\_PORT\_OUTCLR0           (*(RwReg  *)0x41004414U) }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define REG\_PORT\_OUTSET0           (*(RwReg  *)0x41004418U) }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define REG\_PORT\_OUTTGL0           (*(RwReg  *)0x4100441CU) }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define REG\_PORT\_IN0               (*(RoReg  *)0x41004420U) }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define REG\_PORT\_CTRL0             (*(RwReg  *)0x41004424U) }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define REG\_PORT\_WRCONFIG0         (*(WoReg  *)0x41004428U) }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define REG\_PORT\_PMUX0             (*(RwReg  *)0x41004430U) }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define REG\_PORT\_PINCFG0           (*(RwReg  *)0x41004440U) }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define REG\_PORT\_DIR1              (*(RwReg  *)0x41004480U) }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define REG\_PORT\_DIRCLR1           (*(RwReg  *)0x41004484U) }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define REG\_PORT\_DIRSET1           (*(RwReg  *)0x41004488U) }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define REG\_PORT\_DIRTGL1           (*(RwReg  *)0x4100448CU) }}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define REG\_PORT\_OUT1              (*(RwReg  *)0x41004490U) }}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define REG\_PORT\_OUTCLR1           (*(RwReg  *)0x41004494U) }}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define REG\_PORT\_OUTSET1           (*(RwReg  *)0x41004498U) }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define REG\_PORT\_OUTTGL1           (*(RwReg  *)0x4100449CU) }}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define REG\_PORT\_IN1               (*(RoReg  *)0x410044A0U) }}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define REG\_PORT\_CTRL1             (*(RwReg  *)0x410044A4U) }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define REG\_PORT\_WRCONFIG1         (*(WoReg  *)0x410044A8U) }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define REG\_PORT\_PMUX1             (*(RwReg  *)0x410044B0U) }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define REG\_PORT\_PINCFG1           (*(RwReg  *)0x410044C0U) }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{comment}{/* ========== Instance parameters for PORT peripheral ========== */}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define PORT\_BITS                   64       }\textcolor{comment}{// Number of PORT pins}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define PORT\_DIR\_DEFAULT\_VAL        \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Default value for DIR of all pins}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define PORT\_DIR\_IMPLEMENTED        \{ 0xDBFFFFFF, 0xC0C3FFFF \} }\textcolor{comment}{// Implementation mask for DIR of all pins}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define PORT\_DRVSTR                 1        }\textcolor{comment}{// DRVSTR supported}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define PORT\_DRVSTR\_DEFAULT\_VAL     \{ 0xDBFFFFFF, 0xC0C3FFFF \} }\textcolor{comment}{// Default value for DRVSTR of all pins}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define PORT\_DRVSTR\_IMPLEMENTED     \{ 0xDBFFFFFF, 0xC0C3FFFF \} }\textcolor{comment}{// Implementation mask for DRVSTR of all pins}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define PORT\_EVENT\_IMPLEMENTED      \{ 0x00000000, 0x00000000 \}}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define PORT\_INEN\_DEFAULT\_VAL       \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Default value for INEN of all pins}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define PORT\_INEN\_IMPLEMENTED       \{ 0xDBFFFFFF, 0xC0C3FFFF \} }\textcolor{comment}{// Implementation mask for INEN of all pins}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define PORT\_ODRAIN                 0        }\textcolor{comment}{// ODRAIN supported}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define PORT\_ODRAIN\_DEFAULT\_VAL     \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Default value for ODRAIN of all pins}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define PORT\_ODRAIN\_IMPLEMENTED     \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Implementation mask for ODRAIN of all pins}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define PORT\_OUT\_DEFAULT\_VAL        \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Default value for OUT of all pins}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define PORT\_OUT\_IMPLEMENTED        \{ 0xDBFFFFFF, 0xC0C3FFFF \} }\textcolor{comment}{// Implementation mask for OUT of all pins}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define PORT\_PIN\_IMPLEMENTED        \{ 0xDBFFFFFF, 0xC0C3FFFF \} }\textcolor{comment}{// Implementation mask for all PORT pins}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define PORT\_PMUXBIT0\_DEFAULT\_VAL   \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Default value for PMUX[0] of all pins}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define PORT\_PMUXBIT0\_IMPLEMENTED   \{ 0xDBFFFFFF, 0xC0C3FFFF \} }\textcolor{comment}{// Implementation mask for PMUX[0] of all pins}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define PORT\_PMUXBIT1\_DEFAULT\_VAL   \{ 0x40000000, 0x00000000 \} }\textcolor{comment}{// Default value for PMUX[1] of all pins}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define PORT\_PMUXBIT1\_IMPLEMENTED   \{ 0xDBFFFFF3, 0xC0C3FF0F \} }\textcolor{comment}{// Implementation mask for PMUX[1] of all pins}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define PORT\_PMUXBIT2\_DEFAULT\_VAL   \{ 0x40000000, 0x00000000 \} }\textcolor{comment}{// Default value for PMUX[2] of all pins}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define PORT\_PMUXBIT2\_IMPLEMENTED   \{ 0xDBFFFFF3, 0xC0C3FF0F \} }\textcolor{comment}{// Implementation mask for PMUX[2] of all pins}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define PORT\_PMUXBIT3\_DEFAULT\_VAL   \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Default value for PMUX[3] of all pins}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define PORT\_PMUXBIT3\_IMPLEMENTED   \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Implementation mask for PMUX[3] of all pins}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define PORT\_PMUXEN\_DEFAULT\_VAL     \{ 0x64000000, 0x3F3C0000 \} }\textcolor{comment}{// Default value for PMUXEN of all pins}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define PORT\_PMUXEN\_IMPLEMENTED     \{ 0xDBFFFFFF, 0xC0C3FFFF \} }\textcolor{comment}{// Implementation mask for PMUXEN of all pins}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define PORT\_PULLEN\_DEFAULT\_VAL     \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Default value for PULLEN of all pins}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define PORT\_PULLEN\_IMPLEMENTED     \{ 0xDBFFFFFF, 0xC0C3FFFF \} }\textcolor{comment}{// Implementation mask for PULLEN of all pins}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define PORT\_SLEWLIM                0        }\textcolor{comment}{// SLEWLIM supported}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define PORT\_SLEWLIM\_DEFAULT\_VAL    \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Default value for SLEWLIM of all pins}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define PORT\_SLEWLIM\_IMPLEMENTED    \{ 0x00000000, 0x00000000 \} }\textcolor{comment}{// Implementation mask for SLEWLIM of all pins}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_PORT\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

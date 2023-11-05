@@ -1,0 +1,727 @@
+\hypertarget{drivers_2tc_2tc_8h_source}{}\doxysection{tc.\+h}
+\label{drivers_2tc_2tc_8h_source}\index{src/ASF/sam0/drivers/tc/tc.h@{src/ASF/sam0/drivers/tc/tc.h}}
+\mbox{\hyperlink{drivers_2tc_2tc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef TC\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define TC\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{clock_8h}{clock.h}}>}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#include <gclk.h>}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pinmux_8h}{pinmux.h}}>}}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#if (SAML21) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30)|| (SAMR34) || (SAMR35) || (WLR089) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#  define FEATURE\_TC\_DOUBLE\_BUFFERED}}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#  define FEATURE\_TC\_SYNCBUSY\_SCHEME\_VERSION\_2}}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#  define FEATURE\_TC\_STAMP\_PW\_CAPTURE}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#  define FEATURE\_TC\_READ\_SYNC}}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#  define FEATURE\_TC\_IO\_CAPTURE}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#if (SAML21XXXB) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#  define FEATURE\_TC\_GENERATE\_DMA\_TRIGGER}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#if SAMD20 || SAML21 || SAML22 || SAMC20 || SAMC21 || SAMR30 || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#  define TC\_INSTANCE\_OFFSET 0}}
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#if SAMD21 || SAMR21 || SAMDA1 || (SAMHA1) || (SAMHA0)}}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#  define TC\_INSTANCE\_OFFSET 3}}
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{487 \textcolor{preprocessor}{\#if SAMD09 || SAMD10 || SAMD11}}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#  define TC\_INSTANCE\_OFFSET 1}}
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{490 }
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#if SAMD20}}
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#  define NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS TC0\_CC8\_NUM}}
+\DoxyCodeLine{493 \textcolor{preprocessor}{\#elif SAML21 || SAML22 || SAMC20 || SAMC21 || SAMR30 || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#  define NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS TC0\_CC\_NUM}}
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#elif SAMD09 || SAMD10 || SAMD11}}
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#  define NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS TC1\_CC8\_NUM}}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{498 \textcolor{preprocessor}{\#  define NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS TC3\_CC8\_NUM}}
+\DoxyCodeLine{499    \textcolor{comment}{/* Same number for 8-\/, 16-\/ or 32-\/bit TC and all TC instances */}}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#if SAMD20E || SAMD20G || SAMD21G || SAMD21E || SAMR21}}
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#  if SAMD21GXXL || SAM\_PART\_IS\_DEFINED(SAMD21G17AU) || SAM\_PART\_IS\_DEFINED(SAMD21G18AU)}}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#    define TC\_INST\_MAX\_ID  7}}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{507 \textcolor{preprocessor}{\#    define TC\_INST\_MAX\_ID  5}}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{509 \textcolor{preprocessor}{\#elif SAML21 || SAMC20 || SAMC21 || SAMR30 || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#  define TC\_INST\_MAX\_ID  4}}
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#elif SAML22}}
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#  define TC\_INST\_MAX\_ID  3}}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#elif SAMD09 || SAMD10 || SAMD11}}
+\DoxyCodeLine{514 \textcolor{preprocessor}{\#  define TC\_INST\_MAX\_ID  2}}
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#  define TC\_INST\_MAX\_ID  7}}
+\DoxyCodeLine{517 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#if TC\_ASYNC == true}}
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#  include <\mbox{\hyperlink{system__interrupt_8h}{system\_interrupt.h}}>}}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{526 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{527 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#if TC\_ASYNC == true}}
+\DoxyCodeLine{531 \textcolor{keyword}{enum} tc\_callback \{}
+\DoxyCodeLine{533     TC\_CALLBACK\_OVERFLOW,}
+\DoxyCodeLine{535     TC\_CALLBACK\_ERROR,}
+\DoxyCodeLine{537     TC\_CALLBACK\_CC\_CHANNEL0,}
+\DoxyCodeLine{539     TC\_CALLBACK\_CC\_CHANNEL1,}
+\DoxyCodeLine{540 \textcolor{preprocessor}{\#  if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{542     TC\_CALLBACK\_N,}
+\DoxyCodeLine{543 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{544 \};}
+\DoxyCodeLine{545 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{546 }
+\DoxyCodeLine{559 \textcolor{preprocessor}{\#define TC\_STATUS\_CHANNEL\_0\_MATCH    (1UL << 0)}}
+\DoxyCodeLine{560 }
+\DoxyCodeLine{564 \textcolor{preprocessor}{\#define TC\_STATUS\_CHANNEL\_1\_MATCH    (1UL << 1)}}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{569 \textcolor{preprocessor}{\#define TC\_STATUS\_SYNC\_READY         (1UL << 2)}}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#define TC\_STATUS\_CAPTURE\_OVERFLOW   (1UL << 3)}}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{580 \textcolor{preprocessor}{\#define TC\_STATUS\_COUNT\_OVERFLOW     (1UL << 4)}}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{582 \textcolor{preprocessor}{\#ifdef FEATURE\_TC\_DOUBLE\_BUFFERED}}
+\DoxyCodeLine{584 \textcolor{preprocessor}{\#define TC\_STATUS\_CHN0\_BUFFER\_VALID     (1UL << 5)}}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#define TC\_STATUS\_CHN1\_BUFFER\_VALID     (1UL << 6)}}
+\DoxyCodeLine{588 \textcolor{preprocessor}{\#define TC\_STATUS\_PERIOD\_BUFFER\_VALID     (1UL << 7)}}
+\DoxyCodeLine{589 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{598 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\_compare\_capture\_channel}} \{}
+\DoxyCodeLine{600     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}{TC\_COMPARE\_CAPTURE\_CHANNEL\_0}},}
+\DoxyCodeLine{602     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}{TC\_COMPARE\_CAPTURE\_CHANNEL\_1}},}
+\DoxyCodeLine{603 \};}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{610 \textcolor{preprocessor}{\#if SAML21 || SAML22 || SAMC20 || SAMC21 || SAMR30 || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#define TC\_WAVE\_GENERATION\_NORMAL\_FREQ\_MODE TC\_WAVE\_WAVEGEN\_NFRQ}}
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#define TC\_WAVE\_GENERATION\_MATCH\_FREQ\_MODE  TC\_WAVE\_WAVEGEN\_MFRQ}}
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#define TC\_WAVE\_GENERATION\_NORMAL\_PWM\_MODE  TC\_WAVE\_WAVEGEN\_NPWM}}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#define TC\_WAVE\_GENERATION\_MATCH\_PWM\_MODE   TC\_WAVE\_WAVEGEN\_MPWM}}
+\DoxyCodeLine{619 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{621 \textcolor{preprocessor}{\#define TC\_WAVE\_GENERATION\_NORMAL\_FREQ\_MODE TC\_CTRLA\_WAVEGEN\_NFRQ}}
+\DoxyCodeLine{623 \textcolor{preprocessor}{\#define TC\_WAVE\_GENERATION\_MATCH\_FREQ\_MODE  TC\_CTRLA\_WAVEGEN\_MFRQ}}
+\DoxyCodeLine{625 \textcolor{preprocessor}{\#define TC\_WAVE\_GENERATION\_NORMAL\_PWM\_MODE  TC\_CTRLA\_WAVEGEN\_NPWM}}
+\DoxyCodeLine{627 \textcolor{preprocessor}{\#define TC\_WAVE\_GENERATION\_MATCH\_PWM\_MODE   TC\_CTRLA\_WAVEGEN\_MPWM}}
+\DoxyCodeLine{628 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{638 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7f1302b7e3d675e471a554668b49d64}{tc\_wave\_generation}} \{}
+\DoxyCodeLine{642     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a544e51b015f20263a9499ce28a0596e7}{TC\_WAVE\_GENERATION\_NORMAL\_FREQ}}      = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga3be501afca9dd97d2adb1959f30816a7}{TC\_WAVE\_GENERATION\_NORMAL\_FREQ\_MODE}},}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{647     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a4c9b3fe1ad9a1d2c0f5d8544c0923b9f}{TC\_WAVE\_GENERATION\_MATCH\_FREQ}}       = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga65ebbd3eaea3bd9cf6f81392770caae6}{TC\_WAVE\_GENERATION\_MATCH\_FREQ\_MODE}},}
+\DoxyCodeLine{648 }
+\DoxyCodeLine{652     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64aad9dc196250ce8ca5a98c7e49cf0c1a9}{TC\_WAVE\_GENERATION\_NORMAL\_PWM}}       = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaa7277c5eaa031dbd06159cd533346210}{TC\_WAVE\_GENERATION\_NORMAL\_PWM\_MODE}},}
+\DoxyCodeLine{653 }
+\DoxyCodeLine{657     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a973273609713f828ce491f56fbf035d2}{TC\_WAVE\_GENERATION\_MATCH\_PWM}}        = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4636ecc5d5a67c47a8b6551568c31ee6}{TC\_WAVE\_GENERATION\_MATCH\_PWM\_MODE}},}
+\DoxyCodeLine{658 \};}
+\DoxyCodeLine{659 }
+\DoxyCodeLine{665 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}{tc\_counter\_size}} \{}
+\DoxyCodeLine{669     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0abf2e8000eeeac2a4f259ba117d1ee934}{TC\_COUNTER\_SIZE\_8BIT}}                = TC\_CTRLA\_MODE\_COUNT8,}
+\DoxyCodeLine{670 }
+\DoxyCodeLine{676     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a07c9fe9d2a5e78a9c1be46ce540adad1}{TC\_COUNTER\_SIZE\_16BIT}}               = TC\_CTRLA\_MODE\_COUNT16,}
+\DoxyCodeLine{677 }
+\DoxyCodeLine{683     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a7d28e63b11a550605d003c894fe134c5}{TC\_COUNTER\_SIZE\_32BIT}}               = TC\_CTRLA\_MODE\_COUNT32,}
+\DoxyCodeLine{684 \};}
+\DoxyCodeLine{685 }
+\DoxyCodeLine{691 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga204bb4814c91e62e56d9297c05280aad}{tc\_reload\_action}} \{}
+\DoxyCodeLine{695     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadaea50b7d7b79cfbd72298720e0f6d51ed}{TC\_RELOAD\_ACTION\_GCLK}}               = TC\_CTRLA\_PRESCSYNC\_GCLK,}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{699     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aada97857fba0947beb9110ab79d2990e559}{TC\_RELOAD\_ACTION\_PRESC}}              = TC\_CTRLA\_PRESCSYNC\_PRESC,}
+\DoxyCodeLine{700 }
+\DoxyCodeLine{704     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadac78b7c50f80b33d5ef15a63348279f17}{TC\_RELOAD\_ACTION\_RESYNC}}             = TC\_CTRLA\_PRESCSYNC\_RESYNC,}
+\DoxyCodeLine{705 \};}
+\DoxyCodeLine{706 }
+\DoxyCodeLine{714 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98aed17b995157e67b9322a45f0ed5f4}{tc\_clock\_prescaler}} \{}
+\DoxyCodeLine{716     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4abee76ee986e815120c67ff104dd77275}{TC\_CLOCK\_PRESCALER\_DIV1}}             = TC\_CTRLA\_PRESCALER(0),}
+\DoxyCodeLine{718     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a6326eb4305153ea58ea18ee6a74bc8f0}{TC\_CLOCK\_PRESCALER\_DIV2}}             = TC\_CTRLA\_PRESCALER(1),}
+\DoxyCodeLine{720     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a8c137a94b34809e544d50680c808da23}{TC\_CLOCK\_PRESCALER\_DIV4}}             = TC\_CTRLA\_PRESCALER(2),}
+\DoxyCodeLine{722     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a3dbb4f263ba1e940954ffe8a667bf7d1}{TC\_CLOCK\_PRESCALER\_DIV8}}             = TC\_CTRLA\_PRESCALER(3),}
+\DoxyCodeLine{724     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aa0bec32bcf9a450d950f9ec9941a6c3a}{TC\_CLOCK\_PRESCALER\_DIV16}}            = TC\_CTRLA\_PRESCALER(4),}
+\DoxyCodeLine{726     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aea8fd1d9e795ec153e80cddc15ad501b}{TC\_CLOCK\_PRESCALER\_DIV64}}            = TC\_CTRLA\_PRESCALER(5),}
+\DoxyCodeLine{728     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a72552d0e6095d90da22981b7bd7a33ed}{TC\_CLOCK\_PRESCALER\_DIV256}}           = TC\_CTRLA\_PRESCALER(6),}
+\DoxyCodeLine{730     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4af1540c54586b7cd0c5e46c60162951ec}{TC\_CLOCK\_PRESCALER\_DIV1024}}          = TC\_CTRLA\_PRESCALER(7),}
+\DoxyCodeLine{731 \};}
+\DoxyCodeLine{732 }
+\DoxyCodeLine{738 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga28777c47943dfb2b5de0fd7ae14eac1f}{tc\_count\_direction}} \{}
+\DoxyCodeLine{740     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1faf247abdaef160b832fd09bc7597e8ca3}{TC\_COUNT\_DIRECTION\_UP}},}
+\DoxyCodeLine{741 }
+\DoxyCodeLine{743     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1fade3defd512c1bff05ce6302c2d96b014}{TC\_COUNT\_DIRECTION\_DOWN}},}
+\DoxyCodeLine{744 \};}
+\DoxyCodeLine{745 }
+\DoxyCodeLine{751 \textcolor{preprocessor}{\#if SAML21 || SAML22 || SAMC20 || SAMC21 || SAMR30 || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{753 \textcolor{preprocessor}{\#define TC\_WAVEFORM\_INVERT\_CC0\_MODE  TC\_DRVCTRL\_INVEN(1)}}
+\DoxyCodeLine{755 \textcolor{preprocessor}{\#define TC\_WAVEFORM\_INVERT\_CC1\_MODE  TC\_DRVCTRL\_INVEN(2)}}
+\DoxyCodeLine{756 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{758 \textcolor{preprocessor}{\#define TC\_WAVEFORM\_INVERT\_CC0\_MODE  TC\_CTRLC\_INVEN(1)}}
+\DoxyCodeLine{760 \textcolor{preprocessor}{\#define TC\_WAVEFORM\_INVERT\_CC1\_MODE  TC\_CTRLC\_INVEN(2)}}
+\DoxyCodeLine{761 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{768 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaf681729d6b5f963705871f7d80754166}{tc\_waveform\_invert\_output}} \{}
+\DoxyCodeLine{770     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a292cfce35b768eecd69f2a4320aaa96b}{TC\_WAVEFORM\_INVERT\_OUTPUT\_NONE}}      = 0,}
+\DoxyCodeLine{772     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166af3ebe1706d0f442c6388619bc3d9fa58}{TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_0}} = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga50cb4d965dd6d607839abb71b3f034c0}{TC\_WAVEFORM\_INVERT\_CC0\_MODE}},}
+\DoxyCodeLine{774     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a97327e36339fbad207e7150d6ba7b283}{TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_1}} = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae194715d12d4faa15f1d1b8555bf5b53}{TC\_WAVEFORM\_INVERT\_CC1\_MODE}},}
+\DoxyCodeLine{775 \};}
+\DoxyCodeLine{776 }
+\DoxyCodeLine{782 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4dcbf6cdb74bc3b7609ce8d16549462f}{tc\_event\_action}} \{}
+\DoxyCodeLine{784     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa190e10df25f3f6a6c781cc751eb3489e}{TC\_EVENT\_ACTION\_OFF}}                 = TC\_EVCTRL\_EVACT\_OFF,}
+\DoxyCodeLine{786     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa9696961ae81b1aba22582d8a35bdf14d}{TC\_EVENT\_ACTION\_RETRIGGER}}           = TC\_EVCTRL\_EVACT\_RETRIGGER,}
+\DoxyCodeLine{788     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa07b969496782cb311ddb13cfafb36aff}{TC\_EVENT\_ACTION\_INCREMENT\_COUNTER}}   = TC\_EVCTRL\_EVACT\_COUNT,}
+\DoxyCodeLine{790     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fac06c64382b572d0464138ae51b7876df}{TC\_EVENT\_ACTION\_START}}               = TC\_EVCTRL\_EVACT\_START,}
+\DoxyCodeLine{791 }
+\DoxyCodeLine{795     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa4957024d607401030b128f9b775edb7d}{TC\_EVENT\_ACTION\_PPW}}                 = TC\_EVCTRL\_EVACT\_PPW,}
+\DoxyCodeLine{796 }
+\DoxyCodeLine{800     \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462face22a0756d93b16a9b70511fe226a893}{TC\_EVENT\_ACTION\_PWP}}                 = TC\_EVCTRL\_EVACT\_PWP,}
+\DoxyCodeLine{801 \textcolor{preprocessor}{\#ifdef FEATURE\_TC\_STAMP\_PW\_CAPTURE}}
+\DoxyCodeLine{803     TC\_EVENT\_ACTION\_STAMP               = TC\_EVCTRL\_EVACT\_STAMP,}
+\DoxyCodeLine{805     TC\_EVENT\_ACTION\_PW                  = TC\_EVCTRL\_EVACT\_PW,}
+\DoxyCodeLine{806 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{807 \};}
+\DoxyCodeLine{808 }
+\DoxyCodeLine{814 \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__events}{tc\_events}} \{}
+\DoxyCodeLine{816     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtc__events_a56f64a482c0397251bf62b1412350d8b}{generate\_event\_on\_compare\_channel}}}
+\DoxyCodeLine{817             [\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}];}
+\DoxyCodeLine{819     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtc__events_a087840a59d2e97f63cdef95b312dd675}{generate\_event\_on\_overflow}};}
+\DoxyCodeLine{821     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtc__events_a81fccd68b31fe786c6e146b2014b67aa}{on\_event\_perform\_action}};}
+\DoxyCodeLine{825     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtc__events_a2a08fb562ab19a0ba5ca7059ce020523}{invert\_event\_input}};}
+\DoxyCodeLine{827     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4dcbf6cdb74bc3b7609ce8d16549462f}{tc\_event\_action}} \mbox{\hyperlink{structtc__events_a6974f2d6da575c5b15463fa4ed8cd3b8}{event\_action}};}
+\DoxyCodeLine{828 \};}
+\DoxyCodeLine{829 }
+\DoxyCodeLine{833 \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__8bit__config}{tc\_8bit\_config}} \{}
+\DoxyCodeLine{835     uint8\_t \mbox{\hyperlink{structtc__8bit__config_a41c6aae5be8e375f7d64ce1a4afc7b01}{value}};}
+\DoxyCodeLine{837     uint8\_t \mbox{\hyperlink{structtc__8bit__config_a874f92d07d545969b61e804979a19e95}{period}};}
+\DoxyCodeLine{839     uint8\_t \mbox{\hyperlink{structtc__8bit__config_a68355e45f97d676bd81c76e2254c3f72}{compare\_capture\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}];}
+\DoxyCodeLine{840 \};}
+\DoxyCodeLine{841 }
+\DoxyCodeLine{845 \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__16bit__config}{tc\_16bit\_config}} \{}
+\DoxyCodeLine{847     uint16\_t \mbox{\hyperlink{structtc__16bit__config_a005c00e963fa4ab792896a591c359489}{value}};}
+\DoxyCodeLine{849     uint16\_t \mbox{\hyperlink{structtc__16bit__config_af4fc5c443c7dbae58a928047bf92724f}{compare\_capture\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}];}
+\DoxyCodeLine{850 \};}
+\DoxyCodeLine{851 }
+\DoxyCodeLine{855 \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__32bit__config}{tc\_32bit\_config}} \{}
+\DoxyCodeLine{857     uint32\_t \mbox{\hyperlink{structtc__32bit__config_ab8715d57227fa445115a9c643e5cb4a7}{value}};}
+\DoxyCodeLine{859     uint32\_t \mbox{\hyperlink{structtc__32bit__config_a0ef13753e2436b61412ce5f3f256b496}{compare\_capture\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}];}
+\DoxyCodeLine{860 \};}
+\DoxyCodeLine{861 }
+\DoxyCodeLine{865 \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__pwm__channel}{tc\_pwm\_channel}} \{}
+\DoxyCodeLine{867     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtc__pwm__channel_a1caf4ceecd0371148353f9a7808c8dd8}{enabled}};}
+\DoxyCodeLine{869     uint32\_t \mbox{\hyperlink{structtc__pwm__channel_a62fffe5d16a7ff0cdc9580667084cbbe}{pin\_out}};}
+\DoxyCodeLine{871     uint32\_t \mbox{\hyperlink{structtc__pwm__channel_a964d88ef632606244c057bcc06518307}{pin\_mux}};}
+\DoxyCodeLine{872 \};}
+\DoxyCodeLine{873 }
+\DoxyCodeLine{881 \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__config}{tc\_config}} \{}
+\DoxyCodeLine{883     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\_generator}} \mbox{\hyperlink{structtc__config_a02caf6c9b480dce4bff693e0a132c14d}{clock\_source}};}
+\DoxyCodeLine{884 }
+\DoxyCodeLine{886     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtc__config_aa9da10508a84c542c9a4db4a40939b91}{run\_in\_standby}};}
+\DoxyCodeLine{887 \textcolor{preprocessor}{\#if (SAML21) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{889     \textcolor{keywordtype}{bool} on\_demand;}
+\DoxyCodeLine{890 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{892     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}{tc\_counter\_size}} \mbox{\hyperlink{structtc__config_a5893bd6c8e929e00d3190d707219a655}{counter\_size}};}
+\DoxyCodeLine{894     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98aed17b995157e67b9322a45f0ed5f4}{tc\_clock\_prescaler}} \mbox{\hyperlink{structtc__config_a64c06e1749c5a1c850bab3a9627e9950}{clock\_prescaler}};}
+\DoxyCodeLine{896     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7f1302b7e3d675e471a554668b49d64}{tc\_wave\_generation}} \mbox{\hyperlink{structtc__config_aee2956506b6ce95c7e1869f29095efaf}{wave\_generation}};}
+\DoxyCodeLine{897 }
+\DoxyCodeLine{901     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga204bb4814c91e62e56d9297c05280aad}{tc\_reload\_action}} \mbox{\hyperlink{structtc__config_a01ceff394bad76be28ef96f877d594a8}{reload\_action}};}
+\DoxyCodeLine{902 }
+\DoxyCodeLine{905     uint8\_t \mbox{\hyperlink{structtc__config_ad401f54dbedfaf1e6656af3b3fa4bfd9}{waveform\_invert\_output}};}
+\DoxyCodeLine{906 }
+\DoxyCodeLine{910     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtc__config_a69bd05db4229e58963360e7ed9d9d3b7}{enable\_capture\_on\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}];}
+\DoxyCodeLine{911 \textcolor{preprocessor}{\#ifdef  FEATURE\_TC\_IO\_CAPTURE}}
+\DoxyCodeLine{915     \textcolor{keywordtype}{bool} enable\_capture\_on\_IO[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}];}
+\DoxyCodeLine{916 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{917 }
+\DoxyCodeLine{921     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtc__config_a3ac6596c0098d120df9d68894ca952ff}{oneshot}};}
+\DoxyCodeLine{922 }
+\DoxyCodeLine{924     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga28777c47943dfb2b5de0fd7ae14eac1f}{tc\_count\_direction}} \mbox{\hyperlink{structtc__config_a16bb64835f49d978cba5fb63da7af336}{count\_direction}};}
+\DoxyCodeLine{925 }
+\DoxyCodeLine{927     \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__pwm__channel}{tc\_pwm\_channel}} \mbox{\hyperlink{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}{pwm\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}];}
+\DoxyCodeLine{928 }
+\DoxyCodeLine{930     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{932         \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__8bit__config}{tc\_8bit\_config}} counter\_8\_bit;}
+\DoxyCodeLine{934         \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__16bit__config}{tc\_16bit\_config}} counter\_16\_bit;}
+\DoxyCodeLine{936         \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__32bit__config}{tc\_32bit\_config}} counter\_32\_bit;}
+\DoxyCodeLine{937     \};}
+\DoxyCodeLine{938 }
+\DoxyCodeLine{939 \textcolor{preprocessor}{\#ifdef FEATURE\_TC\_DOUBLE\_BUFFERED}}
+\DoxyCodeLine{946     \textcolor{keywordtype}{bool} double\_buffering\_enabled;}
+\DoxyCodeLine{947 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{948 \};}
+\DoxyCodeLine{949 }
+\DoxyCodeLine{950 \textcolor{preprocessor}{\#if TC\_ASYNC == true}}
+\DoxyCodeLine{952 \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__module}{tc\_module}};}
+\DoxyCodeLine{953 }
+\DoxyCodeLine{955 \textcolor{keyword}{typedef} void (*tc\_callback\_t)(\textcolor{keyword}{struct }\mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{956 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{957 }
+\DoxyCodeLine{967 \textcolor{keyword}{struct }\mbox{\hyperlink{structtc__module}{tc\_module}} \{}
+\DoxyCodeLine{968 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{970     \mbox{\hyperlink{union_tc}{Tc}} *\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}};}
+\DoxyCodeLine{971 }
+\DoxyCodeLine{973     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}{tc\_counter\_size}} \mbox{\hyperlink{structtc__module_a7787889d3128a1d8197c3584b24e71a1}{counter\_size}};}
+\DoxyCodeLine{974 \textcolor{preprocessor}{\#  if TC\_ASYNC == true}}
+\DoxyCodeLine{976     tc\_callback\_t callback[TC\_CALLBACK\_N];}
+\DoxyCodeLine{978     uint8\_t register\_callback\_mask;}
+\DoxyCodeLine{980     uint8\_t enable\_callback\_mask;}
+\DoxyCodeLine{981 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{982 \textcolor{preprocessor}{\#ifdef FEATURE\_TC\_DOUBLE\_BUFFERED}}
+\DoxyCodeLine{984     \textcolor{keywordtype}{bool} double\_buffering\_enabled;}
+\DoxyCodeLine{985 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{986 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{987 \};}
+\DoxyCodeLine{988 }
+\DoxyCodeLine{989 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{990 uint8\_t \_tc\_get\_inst\_index(}
+\DoxyCodeLine{991         \mbox{\hyperlink{union_tc}{Tc}} *\textcolor{keyword}{const} hw);}
+\DoxyCodeLine{992 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{993 }
+\DoxyCodeLine{1016 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} tc\_is\_syncing(}
+\DoxyCodeLine{1017         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{1018 \{}
+\DoxyCodeLine{1019     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1020     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1021     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1022 }
+\DoxyCodeLine{1023     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1024     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1025 }
+\DoxyCodeLine{1026 \textcolor{preprocessor}{\#if (SAML21) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{1027     \textcolor{keywordflow}{return} (\mbox{\hyperlink{structtc__module}{tc\_module}}-\/>SYNCBUSY.reg);}
+\DoxyCodeLine{1028 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{1029     \textcolor{keywordflow}{return} (\mbox{\hyperlink{structtc__module}{tc\_module}}-\/>STATUS.reg \& TC\_STATUS\_SYNCBUSY);}
+\DoxyCodeLine{1030 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1031 \}}
+\DoxyCodeLine{1032 }
+\DoxyCodeLine{1067 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_get\_config\_defaults(}
+\DoxyCodeLine{1068         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__config}{tc\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{1069 \{}
+\DoxyCodeLine{1070     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1071     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{1072 }
+\DoxyCodeLine{1073     \textcolor{comment}{/* Write default config to config struct */}}
+\DoxyCodeLine{1074     config-\/>\mbox{\hyperlink{structtc__config_a02caf6c9b480dce4bff693e0a132c14d}{clock\_source}}               = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\_GENERATOR\_0}};}
+\DoxyCodeLine{1075     config-\/>\mbox{\hyperlink{structtc__config_a5893bd6c8e929e00d3190d707219a655}{counter\_size}}               = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a07c9fe9d2a5e78a9c1be46ce540adad1}{TC\_COUNTER\_SIZE\_16BIT}};}
+\DoxyCodeLine{1076     config-\/>\mbox{\hyperlink{structtc__config_a64c06e1749c5a1c850bab3a9627e9950}{clock\_prescaler}}            = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4abee76ee986e815120c67ff104dd77275}{TC\_CLOCK\_PRESCALER\_DIV1}};}
+\DoxyCodeLine{1077     config-\/>\mbox{\hyperlink{structtc__config_aee2956506b6ce95c7e1869f29095efaf}{wave\_generation}}            = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a544e51b015f20263a9499ce28a0596e7}{TC\_WAVE\_GENERATION\_NORMAL\_FREQ}};}
+\DoxyCodeLine{1078     config-\/>\mbox{\hyperlink{structtc__config_a01ceff394bad76be28ef96f877d594a8}{reload\_action}}              = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadaea50b7d7b79cfbd72298720e0f6d51ed}{TC\_RELOAD\_ACTION\_GCLK}};}
+\DoxyCodeLine{1079     config-\/>\mbox{\hyperlink{structtc__config_aa9da10508a84c542c9a4db4a40939b91}{run\_in\_standby}}             = \textcolor{keyword}{false};}
+\DoxyCodeLine{1080 \textcolor{preprocessor}{\#if (SAML21) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{1081     config-\/>on\_demand                  = \textcolor{keyword}{false};}
+\DoxyCodeLine{1082 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1083     config-\/>\mbox{\hyperlink{structtc__config_ad401f54dbedfaf1e6656af3b3fa4bfd9}{waveform\_invert\_output}}     = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a292cfce35b768eecd69f2a4320aaa96b}{TC\_WAVEFORM\_INVERT\_OUTPUT\_NONE}};}
+\DoxyCodeLine{1084     config-\/>\mbox{\hyperlink{structtc__config_a69bd05db4229e58963360e7ed9d9d3b7}{enable\_capture\_on\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}{TC\_COMPARE\_CAPTURE\_CHANNEL\_0}}] = \textcolor{keyword}{false};}
+\DoxyCodeLine{1085     config-\/>\mbox{\hyperlink{structtc__config_a69bd05db4229e58963360e7ed9d9d3b7}{enable\_capture\_on\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}{TC\_COMPARE\_CAPTURE\_CHANNEL\_1}}] = \textcolor{keyword}{false};}
+\DoxyCodeLine{1086 \textcolor{preprocessor}{\#ifdef  FEATURE\_TC\_IO\_CAPTURE}}
+\DoxyCodeLine{1087     config-\/>enable\_capture\_on\_IO[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}{TC\_COMPARE\_CAPTURE\_CHANNEL\_0}}] = \textcolor{keyword}{false};}
+\DoxyCodeLine{1088     config-\/>enable\_capture\_on\_IO[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}{TC\_COMPARE\_CAPTURE\_CHANNEL\_1}}] = \textcolor{keyword}{false};}
+\DoxyCodeLine{1089 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1090 }
+\DoxyCodeLine{1091     config-\/>\mbox{\hyperlink{structtc__config_a16bb64835f49d978cba5fb63da7af336}{count\_direction}}            = \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1faf247abdaef160b832fd09bc7597e8ca3}{TC\_COUNT\_DIRECTION\_UP}};}
+\DoxyCodeLine{1092     config-\/>\mbox{\hyperlink{structtc__config_a3ac6596c0098d120df9d68894ca952ff}{oneshot}}                    = \textcolor{keyword}{false};}
+\DoxyCodeLine{1093 }
+\DoxyCodeLine{1094     config-\/>\mbox{\hyperlink{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}{pwm\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}{TC\_COMPARE\_CAPTURE\_CHANNEL\_0}}].\mbox{\hyperlink{structtc__pwm__channel_a1caf4ceecd0371148353f9a7808c8dd8}{enabled}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1095     config-\/>\mbox{\hyperlink{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}{pwm\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}{TC\_COMPARE\_CAPTURE\_CHANNEL\_0}}].\mbox{\hyperlink{structtc__pwm__channel_a62fffe5d16a7ff0cdc9580667084cbbe}{pin\_out}} = 0;}
+\DoxyCodeLine{1096     config-\/>\mbox{\hyperlink{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}{pwm\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}{TC\_COMPARE\_CAPTURE\_CHANNEL\_0}}].\mbox{\hyperlink{structtc__pwm__channel_a964d88ef632606244c057bcc06518307}{pin\_mux}} = 0;}
+\DoxyCodeLine{1097 }
+\DoxyCodeLine{1098     config-\/>\mbox{\hyperlink{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}{pwm\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}{TC\_COMPARE\_CAPTURE\_CHANNEL\_1}}].\mbox{\hyperlink{structtc__pwm__channel_a1caf4ceecd0371148353f9a7808c8dd8}{enabled}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1099     config-\/>\mbox{\hyperlink{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}{pwm\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}{TC\_COMPARE\_CAPTURE\_CHANNEL\_1}}].\mbox{\hyperlink{structtc__pwm__channel_a62fffe5d16a7ff0cdc9580667084cbbe}{pin\_out}} = 0;}
+\DoxyCodeLine{1100     config-\/>\mbox{\hyperlink{structtc__config_a28da410c1e3c636b03e5dac4524cb2a7}{pwm\_channel}}[\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}{TC\_COMPARE\_CAPTURE\_CHANNEL\_1}}].\mbox{\hyperlink{structtc__pwm__channel_a964d88ef632606244c057bcc06518307}{pin\_mux}} = 0;}
+\DoxyCodeLine{1101 }
+\DoxyCodeLine{1102     config-\/>\mbox{\hyperlink{structtc__config_affb0c91936b6a7eb7befc3b87bd85fbd}{counter\_16\_bit}}.\mbox{\hyperlink{structtc__16bit__config_a005c00e963fa4ab792896a591c359489}{value}}                   = 0x0000;}
+\DoxyCodeLine{1103     config-\/>\mbox{\hyperlink{structtc__config_affb0c91936b6a7eb7befc3b87bd85fbd}{counter\_16\_bit}}.\mbox{\hyperlink{structtc__16bit__config_af4fc5c443c7dbae58a928047bf92724f}{compare\_capture\_channel}}\(\backslash\)}
+\DoxyCodeLine{1104         [\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}{TC\_COMPARE\_CAPTURE\_CHANNEL\_0}}]                        = 0x0000;}
+\DoxyCodeLine{1105     config-\/>\mbox{\hyperlink{structtc__config_affb0c91936b6a7eb7befc3b87bd85fbd}{counter\_16\_bit}}.\mbox{\hyperlink{structtc__16bit__config_af4fc5c443c7dbae58a928047bf92724f}{compare\_capture\_channel}}\(\backslash\)}
+\DoxyCodeLine{1106         [\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}{TC\_COMPARE\_CAPTURE\_CHANNEL\_1}}]                        = 0x0000;}
+\DoxyCodeLine{1107 \textcolor{preprocessor}{\#ifdef FEATURE\_TC\_DOUBLE\_BUFFERED}}
+\DoxyCodeLine{1108     config-\/>double\_buffering\_enabled = \textcolor{keyword}{false};}
+\DoxyCodeLine{1109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1110 }
+\DoxyCodeLine{1111 \}}
+\DoxyCodeLine{1112 }
+\DoxyCodeLine{1113 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98c7f5c97436c2f6cff87a0261597337}{tc\_init}}(}
+\DoxyCodeLine{1114         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{1115         \mbox{\hyperlink{union_tc}{Tc}} *\textcolor{keyword}{const} hw,}
+\DoxyCodeLine{1116         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__config}{tc\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{1117 }
+\DoxyCodeLine{1136 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_enable\_events(}
+\DoxyCodeLine{1137         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{1138         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__events}{tc\_events}} *\textcolor{keyword}{const} events)}
+\DoxyCodeLine{1139 \{}
+\DoxyCodeLine{1140     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1141     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1142     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1143     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(events);}
+\DoxyCodeLine{1144 }
+\DoxyCodeLine{1145     \mbox{\hyperlink{union_tc}{Tc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}};}
+\DoxyCodeLine{1146 }
+\DoxyCodeLine{1147     uint32\_t event\_mask = 0;}
+\DoxyCodeLine{1148 }
+\DoxyCodeLine{1149     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structtc__events_a2a08fb562ab19a0ba5ca7059ce020523}{invert\_event\_input}} == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{1150         event\_mask |= TC\_EVCTRL\_TCINV;}
+\DoxyCodeLine{1151     \}}
+\DoxyCodeLine{1152 }
+\DoxyCodeLine{1153     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structtc__events_a81fccd68b31fe786c6e146b2014b67aa}{on\_event\_perform\_action}} == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{1154         event\_mask |= TC\_EVCTRL\_TCEI;}
+\DoxyCodeLine{1155     \}}
+\DoxyCodeLine{1156 }
+\DoxyCodeLine{1157     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structtc__events_a087840a59d2e97f63cdef95b312dd675}{generate\_event\_on\_overflow}} == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{1158         event\_mask |= TC\_EVCTRL\_OVFEO;}
+\DoxyCodeLine{1159     \}}
+\DoxyCodeLine{1160 }
+\DoxyCodeLine{1161     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}; i++) \{}
+\DoxyCodeLine{1162         \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structtc__events_a56f64a482c0397251bf62b1412350d8b}{generate\_event\_on\_compare\_channel}}[i] == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{1163             event\_mask |= (TC\_EVCTRL\_MCEO(1) << i);}
+\DoxyCodeLine{1164         \}}
+\DoxyCodeLine{1165     \}}
+\DoxyCodeLine{1166 }
+\DoxyCodeLine{1167     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>COUNT8.EVCTRL.reg |= event\_mask | events-\/>\mbox{\hyperlink{structtc__events_a6974f2d6da575c5b15463fa4ed8cd3b8}{event\_action}};}
+\DoxyCodeLine{1168 \}}
+\DoxyCodeLine{1169 }
+\DoxyCodeLine{1181 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_disable\_events(}
+\DoxyCodeLine{1182         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{1183         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__events}{tc\_events}} *\textcolor{keyword}{const} events)}
+\DoxyCodeLine{1184 \{}
+\DoxyCodeLine{1185     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1186     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1187     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1188     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(events);}
+\DoxyCodeLine{1189 }
+\DoxyCodeLine{1190     \mbox{\hyperlink{union_tc}{Tc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}};}
+\DoxyCodeLine{1191 }
+\DoxyCodeLine{1192     uint32\_t event\_mask = 0;}
+\DoxyCodeLine{1193 }
+\DoxyCodeLine{1194     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structtc__events_a2a08fb562ab19a0ba5ca7059ce020523}{invert\_event\_input}} == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{1195         event\_mask |= TC\_EVCTRL\_TCINV;}
+\DoxyCodeLine{1196     \}}
+\DoxyCodeLine{1197 }
+\DoxyCodeLine{1198     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structtc__events_a81fccd68b31fe786c6e146b2014b67aa}{on\_event\_perform\_action}} == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{1199         event\_mask |= TC\_EVCTRL\_TCEI;}
+\DoxyCodeLine{1200     \}}
+\DoxyCodeLine{1201 }
+\DoxyCodeLine{1202     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structtc__events_a087840a59d2e97f63cdef95b312dd675}{generate\_event\_on\_overflow}} == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{1203         event\_mask |= TC\_EVCTRL\_OVFEO;}
+\DoxyCodeLine{1204     \}}
+\DoxyCodeLine{1205 }
+\DoxyCodeLine{1206     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}; i++) \{}
+\DoxyCodeLine{1207         \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structtc__events_a56f64a482c0397251bf62b1412350d8b}{generate\_event\_on\_compare\_channel}}[i] == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{1208             event\_mask |= (TC\_EVCTRL\_MCEO(1) << i);}
+\DoxyCodeLine{1209         \}}
+\DoxyCodeLine{1210     \}}
+\DoxyCodeLine{1211 }
+\DoxyCodeLine{1212     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>COUNT8.EVCTRL.reg \&= \string~event\_mask;}
+\DoxyCodeLine{1213 \}}
+\DoxyCodeLine{1214 }
+\DoxyCodeLine{1222 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gad147c1f0393a3ae0c830cec73986eddd}{tc\_reset}}(}
+\DoxyCodeLine{1223         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst);}
+\DoxyCodeLine{1224 }
+\DoxyCodeLine{1236 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_enable(}
+\DoxyCodeLine{1237         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{1238 \{}
+\DoxyCodeLine{1239     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1240     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1241     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1242 }
+\DoxyCodeLine{1243     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1244     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1245 }
+\DoxyCodeLine{1246     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1247         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1248     \}}
+\DoxyCodeLine{1249 }
+\DoxyCodeLine{1250     \textcolor{comment}{/* Enable TC module */}}
+\DoxyCodeLine{1251     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLA.reg |= TC\_CTRLA\_ENABLE;}
+\DoxyCodeLine{1252 \}}
+\DoxyCodeLine{1253 }
+\DoxyCodeLine{1261 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_disable(}
+\DoxyCodeLine{1262         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{1263 \{}
+\DoxyCodeLine{1264     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1265     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1266     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1267 }
+\DoxyCodeLine{1268     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1269     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1270 }
+\DoxyCodeLine{1271     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1272         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1273     \}}
+\DoxyCodeLine{1274 }
+\DoxyCodeLine{1275     \textcolor{comment}{/* Disbale interrupt */}}
+\DoxyCodeLine{1276     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>INTENCLR.reg = \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2tc_8h_a5a020033ada1e4c780d4c58366687acb}{TC\_INTENCLR\_MASK}};}
+\DoxyCodeLine{1277     \textcolor{comment}{/* Clear interrupt flag */}}
+\DoxyCodeLine{1278     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>INTFLAG.reg = \mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2tc_8h_ac69d1b7db4f432e95a7d497385267656}{TC\_INTFLAG\_MASK}};}
+\DoxyCodeLine{1279 }
+\DoxyCodeLine{1280     \textcolor{comment}{/* Disable TC module */}}
+\DoxyCodeLine{1281     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLA.reg  \&= \string~TC\_CTRLA\_ENABLE;}
+\DoxyCodeLine{1282 \}}
+\DoxyCodeLine{1283 }
+\DoxyCodeLine{1291 uint32\_t \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7d7eb91616c2dff02886dd8cdc87f2d}{tc\_get\_count\_value}}(}
+\DoxyCodeLine{1292         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst);}
+\DoxyCodeLine{1293 }
+\DoxyCodeLine{1294 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga9c81066b0b88893e127fa521f0efde2e}{tc\_set\_count\_value}}(}
+\DoxyCodeLine{1295         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{1296         \textcolor{keyword}{const} uint32\_t count);}
+\DoxyCodeLine{1297 }
+\DoxyCodeLine{1315 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_stop\_counter(}
+\DoxyCodeLine{1316         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{1317 \{}
+\DoxyCodeLine{1318     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1319     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1320     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1321 }
+\DoxyCodeLine{1322     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1323     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1324 }
+\DoxyCodeLine{1325     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1326         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1327     \}}
+\DoxyCodeLine{1328 }
+\DoxyCodeLine{1329     \textcolor{comment}{/* Write command to execute */}}
+\DoxyCodeLine{1330     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBSET.reg = TC\_CTRLBSET\_CMD(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2tc_8h_aa4a9a321dfc02191674396c7a2af47a4}{TC\_CTRLBSET\_CMD\_STOP\_Val}});}
+\DoxyCodeLine{1331 \}}
+\DoxyCodeLine{1332 }
+\DoxyCodeLine{1340 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_start\_counter(}
+\DoxyCodeLine{1341         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{1342 \{}
+\DoxyCodeLine{1343     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1344     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1345     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1346 }
+\DoxyCodeLine{1347     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1348     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1349 }
+\DoxyCodeLine{1350     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1351         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1352     \}}
+\DoxyCodeLine{1353 }
+\DoxyCodeLine{1354     \textcolor{comment}{/* Make certain that there are no conflicting commands in the register */}}
+\DoxyCodeLine{1355     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBCLR.reg = TC\_CTRLBCLR\_CMD\_NONE;}
+\DoxyCodeLine{1356 }
+\DoxyCodeLine{1357     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1358         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1359     \}}
+\DoxyCodeLine{1360 }
+\DoxyCodeLine{1361     \textcolor{comment}{/* Write command to execute */}}
+\DoxyCodeLine{1362     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBSET.reg = TC\_CTRLBSET\_CMD(\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2tc_8h_ad87065a7d932e5e64d901a09e38552e6}{TC\_CTRLBSET\_CMD\_RETRIGGER\_Val}});}
+\DoxyCodeLine{1363 \}}
+\DoxyCodeLine{1364 }
+\DoxyCodeLine{1367 \textcolor{preprocessor}{\#ifdef FEATURE\_TC\_DOUBLE\_BUFFERED}}
+\DoxyCodeLine{1380 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_update\_double\_buffer(}
+\DoxyCodeLine{1381         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{1382 \{}
+\DoxyCodeLine{1383     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1384     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1385     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1386 }
+\DoxyCodeLine{1387     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1388     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1389 }
+\DoxyCodeLine{1390     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1391         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1392     \}}
+\DoxyCodeLine{1393 }
+\DoxyCodeLine{1394     \textcolor{comment}{/* Make certain that there are no conflicting commands in the register */}}
+\DoxyCodeLine{1395     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBCLR.reg = TC\_CTRLBCLR\_CMD\_NONE;}
+\DoxyCodeLine{1396 }
+\DoxyCodeLine{1397     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1398         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1399     \}}
+\DoxyCodeLine{1400 }
+\DoxyCodeLine{1401     \textcolor{comment}{/* Write command to execute */}}
+\DoxyCodeLine{1402     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBSET.reg = TC\_CTRLBSET\_CMD(TC\_CTRLBSET\_CMD\_UPDATE\_Val);}
+\DoxyCodeLine{1403 \}}
+\DoxyCodeLine{1405 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1406 }
+\DoxyCodeLine{1407 \textcolor{preprocessor}{\#ifdef FEATURE\_TC\_READ\_SYNC}}
+\DoxyCodeLine{1420 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_sync\_read\_count(}
+\DoxyCodeLine{1421         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{1422 \{}
+\DoxyCodeLine{1423     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1424     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1425     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1426 }
+\DoxyCodeLine{1427     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1428     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1429 }
+\DoxyCodeLine{1430     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1431         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1432     \}}
+\DoxyCodeLine{1433 }
+\DoxyCodeLine{1434     \textcolor{comment}{/* Make certain that there are no conflicting commands in the register */}}
+\DoxyCodeLine{1435     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBCLR.reg = TC\_CTRLBCLR\_CMD\_NONE;}
+\DoxyCodeLine{1436 }
+\DoxyCodeLine{1437     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1438         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1439     \}}
+\DoxyCodeLine{1440 }
+\DoxyCodeLine{1441     \textcolor{comment}{/* Write command to execute */}}
+\DoxyCodeLine{1442     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBSET.reg = TC\_CTRLBSET\_CMD(TC\_CTRLBSET\_CMD\_READSYNC\_Val);}
+\DoxyCodeLine{1443 \textcolor{preprocessor}{\#if (SAMC20) || (SAMC21) || (SAML21) || (SAML22) || (SAMR30)}}
+\DoxyCodeLine{1444     \textcolor{comment}{/* wait for the CMD bits in CTRLBSET to be cleared, meaning the CMD has been executed */}}
+\DoxyCodeLine{1445     \textcolor{keywordflow}{while}(\mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBSET.reg \& TC\_CTRLBSET\_CMD\_READSYNC); }
+\DoxyCodeLine{1446 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1447 \}}
+\DoxyCodeLine{1449 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1450 }
+\DoxyCodeLine{1451 \textcolor{preprocessor}{\#ifdef FEATURE\_TC\_GENERATE\_DMA\_TRIGGER}}
+\DoxyCodeLine{1464 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_dma\_trigger\_command(}
+\DoxyCodeLine{1465         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{1466 \{}
+\DoxyCodeLine{1467     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1468     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1469     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1470 }
+\DoxyCodeLine{1471     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1472     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1473 }
+\DoxyCodeLine{1474     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1475         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1476     \}}
+\DoxyCodeLine{1477 }
+\DoxyCodeLine{1478     \textcolor{comment}{/* Make certain that there are no conflicting commands in the register */}}
+\DoxyCodeLine{1479     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBCLR.reg = TC\_CTRLBCLR\_CMD\_NONE;}
+\DoxyCodeLine{1480 }
+\DoxyCodeLine{1481     \textcolor{keywordflow}{while} (tc\_is\_syncing(module\_inst)) \{}
+\DoxyCodeLine{1482         \textcolor{comment}{/* Wait for sync */}}
+\DoxyCodeLine{1483     \}}
+\DoxyCodeLine{1484 }
+\DoxyCodeLine{1485 \textcolor{preprocessor}{\#if (SAMC20) || (SAMC21) || (SAML22) || (SAML21XXXB) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{1486     \textcolor{comment}{/* Write command to execute */}}
+\DoxyCodeLine{1487     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>CTRLBSET.reg = TC\_CTRLBSET\_CMD(TC\_CTRLBSET\_CMD\_DMAOS\_Val);}
+\DoxyCodeLine{1488 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1489 \}}
+\DoxyCodeLine{1491 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1492 }
+\DoxyCodeLine{1498 uint32\_t \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaf780bb09a00298868aa3b8e7627f92ff}{tc\_get\_capture\_value}}(}
+\DoxyCodeLine{1499         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{1500         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\_compare\_capture\_channel}} channel\_index);}
+\DoxyCodeLine{1501 }
+\DoxyCodeLine{1502 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga687208b24fd33a1da0cbe683adc15fa6}{tc\_set\_compare\_value}}(}
+\DoxyCodeLine{1503         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{1504         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\_compare\_capture\_channel}} channel\_index,}
+\DoxyCodeLine{1505         \textcolor{keyword}{const} uint32\_t compare\_value);}
+\DoxyCodeLine{1506 }
+\DoxyCodeLine{1514 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac22d633ece43bcd18f54283778471340}{tc\_set\_top\_value}}(}
+\DoxyCodeLine{1515         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{1516         \textcolor{keyword}{const} uint32\_t top\_value);}
+\DoxyCodeLine{1517 }
+\DoxyCodeLine{1543 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t tc\_get\_status(}
+\DoxyCodeLine{1544         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst)}
+\DoxyCodeLine{1545 \{}
+\DoxyCodeLine{1546     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1547     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1548     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1549 }
+\DoxyCodeLine{1550     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1551     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1552 }
+\DoxyCodeLine{1553     uint32\_t int\_flags = \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>INTFLAG.reg;}
+\DoxyCodeLine{1554 }
+\DoxyCodeLine{1555     uint32\_t status\_flags = 0;}
+\DoxyCodeLine{1556 }
+\DoxyCodeLine{1557     \textcolor{comment}{/* Check for TC channel 0 match */}}
+\DoxyCodeLine{1558     \textcolor{keywordflow}{if} (int\_flags \& TC\_INTFLAG\_MC(1)) \{}
+\DoxyCodeLine{1559         status\_flags |= \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae74e90dac05478452203a41a88853286}{TC\_STATUS\_CHANNEL\_0\_MATCH}};}
+\DoxyCodeLine{1560     \}}
+\DoxyCodeLine{1561 }
+\DoxyCodeLine{1562     \textcolor{comment}{/* Check for TC channel 1 match */}}
+\DoxyCodeLine{1563     \textcolor{keywordflow}{if} (int\_flags \& TC\_INTFLAG\_MC(2)) \{}
+\DoxyCodeLine{1564         status\_flags |= \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaab140d8ac7858f45029fddf0fd3f4cf3}{TC\_STATUS\_CHANNEL\_1\_MATCH}};}
+\DoxyCodeLine{1565     \}}
+\DoxyCodeLine{1566 }
+\DoxyCodeLine{1567 \textcolor{preprocessor}{\#if !defined(FEATURE\_TC\_SYNCBUSY\_SCHEME\_VERSION\_2)}}
+\DoxyCodeLine{1568     \textcolor{comment}{/* Check for TC read synchronization ready */}}
+\DoxyCodeLine{1569     \textcolor{keywordflow}{if} (int\_flags \& TC\_INTFLAG\_SYNCRDY) \{}
+\DoxyCodeLine{1570         status\_flags |= \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga73bfbe04c8834ec55242bcd0b678f94e}{TC\_STATUS\_SYNC\_READY}};}
+\DoxyCodeLine{1571     \}}
+\DoxyCodeLine{1572 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1573 }
+\DoxyCodeLine{1574     \textcolor{comment}{/* Check for TC capture overflow */}}
+\DoxyCodeLine{1575     \textcolor{keywordflow}{if} (int\_flags \& TC\_INTFLAG\_ERR) \{}
+\DoxyCodeLine{1576         status\_flags |= \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac13395d51cc03b5c43eda7654649925f}{TC\_STATUS\_CAPTURE\_OVERFLOW}};}
+\DoxyCodeLine{1577     \}}
+\DoxyCodeLine{1578 }
+\DoxyCodeLine{1579     \textcolor{comment}{/* Check for TC count overflow */}}
+\DoxyCodeLine{1580     \textcolor{keywordflow}{if} (int\_flags \& TC\_INTFLAG\_OVF) \{}
+\DoxyCodeLine{1581         status\_flags |= \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gada6e9a6bd144c0c2e360d1fdef944cdd}{TC\_STATUS\_COUNT\_OVERFLOW}};}
+\DoxyCodeLine{1582     \}}
+\DoxyCodeLine{1583 \textcolor{preprocessor}{\#ifdef FEATURE\_TC\_DOUBLE\_BUFFERED}}
+\DoxyCodeLine{1584     uint8\_t double\_buffer\_valid\_status = \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>STATUS.reg;}
+\DoxyCodeLine{1585 }
+\DoxyCodeLine{1586     \textcolor{comment}{/* Check channel 0 compare or capture buffer valid */}}
+\DoxyCodeLine{1587     \textcolor{keywordflow}{if} (double\_buffer\_valid\_status \& TC\_STATUS\_CCBUFV0) \{}
+\DoxyCodeLine{1588         status\_flags |= TC\_STATUS\_CHN0\_BUFFER\_VALID;}
+\DoxyCodeLine{1589     \}}
+\DoxyCodeLine{1590     \textcolor{comment}{/* Check channel 0 compare or capture buffer valid */}}
+\DoxyCodeLine{1591     \textcolor{keywordflow}{if} (double\_buffer\_valid\_status \& TC\_STATUS\_CCBUFV1) \{}
+\DoxyCodeLine{1592         status\_flags |= TC\_STATUS\_CHN1\_BUFFER\_VALID;}
+\DoxyCodeLine{1593     \}}
+\DoxyCodeLine{1594     \textcolor{comment}{/* Check period buffer valid */}}
+\DoxyCodeLine{1595     \textcolor{keywordflow}{if} (double\_buffer\_valid\_status \& TC\_STATUS\_PERBUFV) \{}
+\DoxyCodeLine{1596         status\_flags |= TC\_STATUS\_PERIOD\_BUFFER\_VALID;}
+\DoxyCodeLine{1597     \}}
+\DoxyCodeLine{1598 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1599 }
+\DoxyCodeLine{1600     \textcolor{keywordflow}{return} status\_flags;}
+\DoxyCodeLine{1601 \}}
+\DoxyCodeLine{1602 }
+\DoxyCodeLine{1611 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tc\_clear\_status(}
+\DoxyCodeLine{1612         \textcolor{keyword}{struct} \mbox{\hyperlink{structtc__module}{tc\_module}} *\textcolor{keyword}{const} module\_inst,}
+\DoxyCodeLine{1613         \textcolor{keyword}{const} uint32\_t status\_flags)}
+\DoxyCodeLine{1614 \{}
+\DoxyCodeLine{1615     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1616     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst);}
+\DoxyCodeLine{1617     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}});}
+\DoxyCodeLine{1618 }
+\DoxyCodeLine{1619     \textcolor{comment}{/* Get a pointer to the module's hardware instance */}}
+\DoxyCodeLine{1620     \mbox{\hyperlink{struct_tc_count8}{TcCount8}} *\textcolor{keyword}{const} \mbox{\hyperlink{structtc__module}{tc\_module}} = \&(module\_inst-\/>\mbox{\hyperlink{structtc__module_a6e75578533eb0a5e8c8171f90e0ca9f6}{hw}}-\/>\mbox{\hyperlink{union_tc_ab10f40f06530569d88a9db8904ef5232}{COUNT8}});}
+\DoxyCodeLine{1621 }
+\DoxyCodeLine{1622     uint32\_t int\_flags = 0;}
+\DoxyCodeLine{1623 }
+\DoxyCodeLine{1624     \textcolor{comment}{/* Check for TC channel 0 match */}}
+\DoxyCodeLine{1625     \textcolor{keywordflow}{if} (status\_flags \& \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae74e90dac05478452203a41a88853286}{TC\_STATUS\_CHANNEL\_0\_MATCH}}) \{}
+\DoxyCodeLine{1626         int\_flags |= TC\_INTFLAG\_MC(1);}
+\DoxyCodeLine{1627     \}}
+\DoxyCodeLine{1628 }
+\DoxyCodeLine{1629     \textcolor{comment}{/* Check for TC channel 1 match */}}
+\DoxyCodeLine{1630     \textcolor{keywordflow}{if} (status\_flags \& \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaab140d8ac7858f45029fddf0fd3f4cf3}{TC\_STATUS\_CHANNEL\_1\_MATCH}}) \{}
+\DoxyCodeLine{1631         int\_flags |= TC\_INTFLAG\_MC(2);}
+\DoxyCodeLine{1632     \}}
+\DoxyCodeLine{1633 }
+\DoxyCodeLine{1634 \textcolor{preprocessor}{\#if !defined(FEATURE\_TC\_SYNCBUSY\_SCHEME\_VERSION\_2)}}
+\DoxyCodeLine{1635     \textcolor{comment}{/* Check for TC read synchronization ready */}}
+\DoxyCodeLine{1636     \textcolor{keywordflow}{if} (status\_flags \& \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga73bfbe04c8834ec55242bcd0b678f94e}{TC\_STATUS\_SYNC\_READY}}) \{}
+\DoxyCodeLine{1637         int\_flags |= TC\_INTFLAG\_SYNCRDY;}
+\DoxyCodeLine{1638     \}}
+\DoxyCodeLine{1639 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1640 }
+\DoxyCodeLine{1641     \textcolor{comment}{/* Check for TC capture overflow */}}
+\DoxyCodeLine{1642     \textcolor{keywordflow}{if} (status\_flags \& \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac13395d51cc03b5c43eda7654649925f}{TC\_STATUS\_CAPTURE\_OVERFLOW}}) \{}
+\DoxyCodeLine{1643         int\_flags |= TC\_INTFLAG\_ERR;}
+\DoxyCodeLine{1644     \}}
+\DoxyCodeLine{1645 }
+\DoxyCodeLine{1646     \textcolor{comment}{/* Check for TC count overflow */}}
+\DoxyCodeLine{1647     \textcolor{keywordflow}{if} (status\_flags \& \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gada6e9a6bd144c0c2e360d1fdef944cdd}{TC\_STATUS\_COUNT\_OVERFLOW}}) \{}
+\DoxyCodeLine{1648         int\_flags |= TC\_INTFLAG\_OVF;}
+\DoxyCodeLine{1649     \}}
+\DoxyCodeLine{1650 }
+\DoxyCodeLine{1651     \textcolor{comment}{/* Clear interrupt flag */}}
+\DoxyCodeLine{1652     \mbox{\hyperlink{structtc__module}{tc\_module}}-\/>INTFLAG.reg = int\_flags;}
+\DoxyCodeLine{1653 \}}
+\DoxyCodeLine{1654 }
+\DoxyCodeLine{1659 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1660 \}}
+\DoxyCodeLine{1661 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1662 }
+\DoxyCodeLine{1788 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* TC\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

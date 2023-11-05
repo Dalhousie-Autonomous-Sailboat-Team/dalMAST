@@ -1,0 +1,99 @@
+\hypertarget{structsystem__clock__source__xosc32k__config}{}\doxysection{system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config Struct Reference}
+\label{structsystem__clock__source__xosc32k__config}\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+
+
+Configuration structure for XOSC32K.  
+
+
+
+
+{\ttfamily \#include $<$clock\+\_\+feature.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\+\_\+clock\+\_\+external}} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_abc74acc8c89646046fdcdbb67e2002c1}{external\+\_\+clock}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6a5226fe65f283da094a3d1bd6c5692f}{system\+\_\+xosc32k\+\_\+startup}} \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_ab5045bee96a97500ef6ed3919b484b01}{startup\+\_\+time}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a1919b43d9fb8111b6e9c892ea8a77ff3}{auto\+\_\+gain\+\_\+control}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a0a8d1f4eba0f26a173970a96688cb6b5}{enable\+\_\+1khz\+\_\+output}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a6bba30827b398486586c3f4247784569}{enable\+\_\+32khz\+\_\+output}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_a56c5635a9da3e66d8290e67f88b41dad}{frequency}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_adfeaf728938feb99742b1fba1f8ead09}{run\+\_\+in\+\_\+standby}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_ae2c80dd7ca268e41ae121af9cbf21b05}{on\+\_\+demand}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__xosc32k__config_ae7f0e6f78dfc51887e8cfb6e29ddbf62}{write\+\_\+once}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration structure for XOSC32K. 
+
+External 32KHz oscillator clock configuration structure. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structsystem__clock__source__xosc32k__config_a1919b43d9fb8111b6e9c892ea8a77ff3}\label{structsystem__clock__source__xosc32k__config_a1919b43d9fb8111b6e9c892ea8a77ff3}} 
+\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}!auto\_gain\_control@{auto\_gain\_control}}
+\index{auto\_gain\_control@{auto\_gain\_control}!system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+\doxysubsubsection{\texorpdfstring{auto\_gain\_control}{auto\_gain\_control}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config\+::auto\+\_\+gain\+\_\+control}
+
+Enable automatic amplitude control. \mbox{\Hypertarget{structsystem__clock__source__xosc32k__config_a0a8d1f4eba0f26a173970a96688cb6b5}\label{structsystem__clock__source__xosc32k__config_a0a8d1f4eba0f26a173970a96688cb6b5}} 
+\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}!enable\_1khz\_output@{enable\_1khz\_output}}
+\index{enable\_1khz\_output@{enable\_1khz\_output}!system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+\doxysubsubsection{\texorpdfstring{enable\_1khz\_output}{enable\_1khz\_output}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config\+::enable\+\_\+1khz\+\_\+output}
+
+Enable 1KHz output. \mbox{\Hypertarget{structsystem__clock__source__xosc32k__config_a6bba30827b398486586c3f4247784569}\label{structsystem__clock__source__xosc32k__config_a6bba30827b398486586c3f4247784569}} 
+\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}!enable\_32khz\_output@{enable\_32khz\_output}}
+\index{enable\_32khz\_output@{enable\_32khz\_output}!system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+\doxysubsubsection{\texorpdfstring{enable\_32khz\_output}{enable\_32khz\_output}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config\+::enable\+\_\+32khz\+\_\+output}
+
+Enable 32KHz output. \mbox{\Hypertarget{structsystem__clock__source__xosc32k__config_abc74acc8c89646046fdcdbb67e2002c1}\label{structsystem__clock__source__xosc32k__config_abc74acc8c89646046fdcdbb67e2002c1}} 
+\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}!external\_clock@{external\_clock}}
+\index{external\_clock@{external\_clock}!system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+\doxysubsubsection{\texorpdfstring{external\_clock}{external\_clock}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\+\_\+clock\+\_\+external}} system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config\+::external\+\_\+clock}
+
+External clock type. \mbox{\Hypertarget{structsystem__clock__source__xosc32k__config_a56c5635a9da3e66d8290e67f88b41dad}\label{structsystem__clock__source__xosc32k__config_a56c5635a9da3e66d8290e67f88b41dad}} 
+\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}!frequency@{frequency}}
+\index{frequency@{frequency}!system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+\doxysubsubsection{\texorpdfstring{frequency}{frequency}}
+{\footnotesize\ttfamily uint32\+\_\+t system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config\+::frequency}
+
+External clock/crystal frequency. \mbox{\Hypertarget{structsystem__clock__source__xosc32k__config_ae2c80dd7ca268e41ae121af9cbf21b05}\label{structsystem__clock__source__xosc32k__config_ae2c80dd7ca268e41ae121af9cbf21b05}} 
+\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}!on\_demand@{on\_demand}}
+\index{on\_demand@{on\_demand}!system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+\doxysubsubsection{\texorpdfstring{on\_demand}{on\_demand}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config\+::on\+\_\+demand}
+
+Run On Demand. If this is set the XOSC32K won\textquotesingle{}t run until requested by a peripheral. \mbox{\Hypertarget{structsystem__clock__source__xosc32k__config_adfeaf728938feb99742b1fba1f8ead09}\label{structsystem__clock__source__xosc32k__config_adfeaf728938feb99742b1fba1f8ead09}} 
+\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}!run\_in\_standby@{run\_in\_standby}}
+\index{run\_in\_standby@{run\_in\_standby}!system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+\doxysubsubsection{\texorpdfstring{run\_in\_standby}{run\_in\_standby}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config\+::run\+\_\+in\+\_\+standby}
+
+Keep the XOSC32K enabled in standby sleep mode. \mbox{\Hypertarget{structsystem__clock__source__xosc32k__config_ab5045bee96a97500ef6ed3919b484b01}\label{structsystem__clock__source__xosc32k__config_ab5045bee96a97500ef6ed3919b484b01}} 
+\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}!startup\_time@{startup\_time}}
+\index{startup\_time@{startup\_time}!system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+\doxysubsubsection{\texorpdfstring{startup\_time}{startup\_time}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6a5226fe65f283da094a3d1bd6c5692f}{system\+\_\+xosc32k\+\_\+startup}} system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config\+::startup\+\_\+time}
+
+Crystal oscillator start-\/up time. \mbox{\Hypertarget{structsystem__clock__source__xosc32k__config_ae7f0e6f78dfc51887e8cfb6e29ddbf62}\label{structsystem__clock__source__xosc32k__config_ae7f0e6f78dfc51887e8cfb6e29ddbf62}} 
+\index{system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}!write\_once@{write\_once}}
+\index{write\_once@{write\_once}!system\_clock\_source\_xosc32k\_config@{system\_clock\_source\_xosc32k\_config}}
+\doxysubsubsection{\texorpdfstring{write\_once}{write\_once}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+xosc32k\+\_\+config\+::write\+\_\+once}
+
+Lock configuration after it has been written, a device reset will release the lock. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/system/clock/clock\+\_\+samd20/\mbox{\hyperlink{clock__feature_8h}{clock\+\_\+feature.\+h}}\end{DoxyCompactItemize}

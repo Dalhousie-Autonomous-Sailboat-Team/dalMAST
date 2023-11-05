@@ -1,0 +1,158 @@
+\hypertarget{drivers_2system_2clock_2gclk_8h_source}{}\doxysection{gclk.\+h}
+\label{drivers_2system_2clock_2gclk_8h_source}\index{src/ASF/sam0/drivers/system/clock/gclk.h@{src/ASF/sam0/drivers/system/clock/gclk.h}}
+\mbox{\hyperlink{drivers_2system_2clock_2gclk_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef SYSTEM\_CLOCK\_GCLK\_H\_INCLUDED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define SYSTEM\_CLOCK\_GCLK\_H\_INCLUDED}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{48 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{59 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\_generator}} \{}
+\DoxyCodeLine{61     \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\_GENERATOR\_0}},}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 0)}}
+\DoxyCodeLine{64     GCLK\_GENERATOR\_1,}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 1)}}
+\DoxyCodeLine{68     GCLK\_GENERATOR\_2,}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 2)}}
+\DoxyCodeLine{72     GCLK\_GENERATOR\_3,}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 3)}}
+\DoxyCodeLine{76     GCLK\_GENERATOR\_4,}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 4)}}
+\DoxyCodeLine{80     GCLK\_GENERATOR\_5,}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 5)}}
+\DoxyCodeLine{84     GCLK\_GENERATOR\_6,}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 6)}}
+\DoxyCodeLine{88     GCLK\_GENERATOR\_7,}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 7)}}
+\DoxyCodeLine{92     GCLK\_GENERATOR\_8,}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 8)}}
+\DoxyCodeLine{96     GCLK\_GENERATOR\_9,}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 9)}}
+\DoxyCodeLine{100     GCLK\_GENERATOR\_10,}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 10)}}
+\DoxyCodeLine{104     GCLK\_GENERATOR\_11,}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 11)}}
+\DoxyCodeLine{108     GCLK\_GENERATOR\_12,}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 12)}}
+\DoxyCodeLine{112     GCLK\_GENERATOR\_13,}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 13)}}
+\DoxyCodeLine{116     GCLK\_GENERATOR\_14,}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 14)}}
+\DoxyCodeLine{120     GCLK\_GENERATOR\_15,}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#if defined(\_\_DOXYGEN\_\_) || (GCLK\_GEN\_NUM\_MSB > 15)}}
+\DoxyCodeLine{124     GCLK\_GENERATOR\_16,}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{126 \};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{136 \textcolor{keyword}{struct }\mbox{\hyperlink{structsystem__gclk__gen__config}{system\_gclk\_gen\_config}} \{}
+\DoxyCodeLine{138     uint8\_t \mbox{\hyperlink{structsystem__gclk__gen__config_ac1d1534220a67670932264315ed0666f}{source\_clock}};}
+\DoxyCodeLine{140     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__gclk__gen__config_a04e70fd6155a612b17f9908ac50265a4}{high\_when\_disabled}};}
+\DoxyCodeLine{142     uint32\_t \mbox{\hyperlink{structsystem__gclk__gen__config_ad8e19a07b12d87392e0d409d7d138739}{division\_factor}};}
+\DoxyCodeLine{144     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__gclk__gen__config_a4fd6592b1f5c80511e28cefadef7b538}{run\_in\_standby}};}
+\DoxyCodeLine{146     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structsystem__gclk__gen__config_a4a070571b88c647f8c7a6b1be0d226f0}{output\_enable}};}
+\DoxyCodeLine{147 \};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{156 \textcolor{keyword}{struct }\mbox{\hyperlink{structsystem__gclk__chan__config}{system\_gclk\_chan\_config}} \{}
+\DoxyCodeLine{158     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\_generator}} \mbox{\hyperlink{structsystem__gclk__chan__config_a337b05594fe76576d4a15e6ce0e48f1b}{source\_generator}};}
+\DoxyCodeLine{159 \};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{164 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2e73072514e6300d60f18039ca47bf09}{system\_gclk\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{191 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_gclk\_gen\_get\_config\_defaults(}
+\DoxyCodeLine{192         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__gclk__gen__config}{system\_gclk\_gen\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{193 \{}
+\DoxyCodeLine{194     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{195     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{comment}{/* Default configuration values */}}
+\DoxyCodeLine{198     config-\/>\mbox{\hyperlink{structsystem__gclk__gen__config_ad8e19a07b12d87392e0d409d7d138739}{division\_factor}}    = 1;}
+\DoxyCodeLine{199     config-\/>\mbox{\hyperlink{structsystem__gclk__gen__config_a04e70fd6155a612b17f9908ac50265a4}{high\_when\_disabled}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#if SAML21 || SAML22  || SAMR30 || SAMR34 || SAMR35 || (WLR089)}}
+\DoxyCodeLine{201     config-\/>\mbox{\hyperlink{structsystem__gclk__gen__config_ac1d1534220a67670932264315ed0666f}{source\_clock}}       = GCLK\_SOURCE\_OSC16M;}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#elif (SAMC20) || (SAMC21)}}
+\DoxyCodeLine{203     config-\/>\mbox{\hyperlink{structsystem__gclk__gen__config_ac1d1534220a67670932264315ed0666f}{source\_clock}}       = GCLK\_SOURCE\_OSC48M;}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{205     config-\/>\mbox{\hyperlink{structsystem__gclk__gen__config_ac1d1534220a67670932264315ed0666f}{source\_clock}}       = GCLK\_SOURCE\_OSC8M;}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{207     config-\/>\mbox{\hyperlink{structsystem__gclk__gen__config_a4fd6592b1f5c80511e28cefadef7b538}{run\_in\_standby}}     = \textcolor{keyword}{false};}
+\DoxyCodeLine{208     config-\/>\mbox{\hyperlink{structsystem__gclk__gen__config_a4a070571b88c647f8c7a6b1be0d226f0}{output\_enable}}      = \textcolor{keyword}{false};}
+\DoxyCodeLine{209 \}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gacfd3360ccc8abb013f66b11ff44a5d0d}{system\_gclk\_gen\_set\_config}}(}
+\DoxyCodeLine{212         \textcolor{keyword}{const} uint8\_t generator,}
+\DoxyCodeLine{213         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__gclk__gen__config}{system\_gclk\_gen\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2bad007fcf1f649a3919dcc72dccea8b}{system\_gclk\_gen\_enable}}(}
+\DoxyCodeLine{216         \textcolor{keyword}{const} uint8\_t generator);}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga98a280a22a780c05e87c676f8c651dc3}{system\_gclk\_gen\_disable}}(}
+\DoxyCodeLine{219         \textcolor{keyword}{const} uint8\_t generator);}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga113af9a430f74e082401383109e4eefd}{system\_gclk\_gen\_is\_enabled}}(}
+\DoxyCodeLine{222         \textcolor{keyword}{const} uint8\_t generator);}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{246 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} system\_gclk\_chan\_get\_config\_defaults(}
+\DoxyCodeLine{247         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__gclk__chan__config}{system\_gclk\_chan\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{248 \{}
+\DoxyCodeLine{249     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{250     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252     \textcolor{comment}{/* Default configuration values */}}
+\DoxyCodeLine{253     config-\/>\mbox{\hyperlink{structsystem__gclk__chan__config_a337b05594fe76576d4a15e6ce0e48f1b}{source\_generator}} = \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gga1ab9bb87560ad127ed982591b7d67311a66f60c7b34b5fc16a9845d83370f7231}{GCLK\_GENERATOR\_0}};}
+\DoxyCodeLine{254 \}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga0dfbe40e700101f619ddc5b4eb83d78b}{system\_gclk\_chan\_set\_config}}(}
+\DoxyCodeLine{257         \textcolor{keyword}{const} uint8\_t channel,}
+\DoxyCodeLine{258         \textcolor{keyword}{struct} \mbox{\hyperlink{structsystem__gclk__chan__config}{system\_gclk\_chan\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga53e46ab144632c877a635ab70a7b51e1}{system\_gclk\_chan\_enable}}(}
+\DoxyCodeLine{261         \textcolor{keyword}{const} uint8\_t channel);}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaa1b945c9deba13fe8640563de4e11a53}{system\_gclk\_chan\_disable}}(}
+\DoxyCodeLine{264         \textcolor{keyword}{const} uint8\_t channel);}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga2467f733c23f6ad18e58a4f60deae0bb}{system\_gclk\_chan\_is\_enabled}}(}
+\DoxyCodeLine{267         \textcolor{keyword}{const} uint8\_t channel);}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga59856030d55e3e50091116ffe930a356}{system\_gclk\_chan\_lock}}(}
+\DoxyCodeLine{270         \textcolor{keyword}{const} uint8\_t channel);}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga343a0b14dce2d7f2724382292ac1d8ef}{system\_gclk\_chan\_is\_locked}}(}
+\DoxyCodeLine{273         \textcolor{keyword}{const} uint8\_t channel);}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{283 uint32\_t \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gaf5cd7b482ee14413084669c32eef84cb}{system\_gclk\_gen\_get\_hz}}(}
+\DoxyCodeLine{284         \textcolor{keyword}{const} uint8\_t generator);}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 uint32\_t \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga6683b93425b58d6c94b850419dd4c860}{system\_gclk\_chan\_get\_hz}}(}
+\DoxyCodeLine{287         \textcolor{keyword}{const} uint8\_t channel);}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{292 \}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

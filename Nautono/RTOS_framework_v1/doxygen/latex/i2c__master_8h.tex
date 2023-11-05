@@ -1,0 +1,89 @@
+\hypertarget{i2c__master_8h}{}\doxysection{src/\+ASF/sam0/drivers/sercom/i2c/i2c\+\_\+master.h File Reference}
+\label{i2c__master_8h}\index{src/ASF/sam0/drivers/sercom/i2c/i2c\_master.h@{src/ASF/sam0/drivers/sercom/i2c/i2c\_master.h}}
+
+
+SAM SERCOM I2C Master Driver.  
+
+
+{\ttfamily \#include \char`\"{}i2c\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sercom.\+h$>$}\newline
+{\ttfamily \#include $<$pinmux.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}}
+\begin{DoxyCompactList}\small\item\em I\textsuperscript{2}C master packet for read/write. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}}
+\begin{DoxyCompactList}\small\item\em SERCOM I\textsuperscript{2}C Master driver software device instance structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structi2c__master__config}{i2c\+\_\+master\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration structure for the I\textsuperscript{2}C Master device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{i2c__master_8h_ae7bc85650aed61f97fe3d5df9b430456}\label{i2c__master_8h_ae7bc85650aed61f97fe3d5df9b430456}} 
+\#define {\bfseries PINMUX\+\_\+\+DEFAULT}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga9f73c4fbd225704c2e0da23319c25555}{i2c\+\_\+master\+\_\+interrupt\+\_\+flag}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga9f73c4fbd225704c2e0da23319c25555a39c138d5f063f3d43b4e974870364d2e}{I2\+C\+\_\+\+MASTER\+\_\+\+INTERRUPT\+\_\+\+WRITE}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga9f73c4fbd225704c2e0da23319c25555a3087032aa3a5218a0cdc54179d9e1d09}{I2\+C\+\_\+\+MASTER\+\_\+\+INTERRUPT\+\_\+\+READ}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Interrupt flags. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gadd8aa7cabbddc1cd2c1a8753c9b99d20}{i2c\+\_\+master\+\_\+start\+\_\+hold\+\_\+time}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggadd8aa7cabbddc1cd2c1a8753c9b99d20a85f0b592eef5f8b5ecae9f2cca2d4cd1}{I2\+C\+\_\+\+MASTER\+\_\+\+START\+\_\+\+HOLD\+\_\+\+TIME\+\_\+\+DISABLED}} = SERCOM\+\_\+\+I2\+CM\+\_\+\+CTRLA\+\_\+\+SDAHOLD(0)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggadd8aa7cabbddc1cd2c1a8753c9b99d20a41403c4a18a1220f031c99e52f384e39}{I2\+C\+\_\+\+MASTER\+\_\+\+START\+\_\+\+HOLD\+\_\+\+TIME\+\_\+50\+NS\+\_\+100\+NS}} = SERCOM\+\_\+\+I2\+CM\+\_\+\+CTRLA\+\_\+\+SDAHOLD(1)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggadd8aa7cabbddc1cd2c1a8753c9b99d20acc3f7849862510590acc2e3bebc29d0c}{I2\+C\+\_\+\+MASTER\+\_\+\+START\+\_\+\+HOLD\+\_\+\+TIME\+\_\+300\+NS\+\_\+600\+NS}} = SERCOM\+\_\+\+I2\+CM\+\_\+\+CTRLA\+\_\+\+SDAHOLD(2)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggadd8aa7cabbddc1cd2c1a8753c9b99d20a38cf380ace8d180528eb34bc38b7da9e}{I2\+C\+\_\+\+MASTER\+\_\+\+START\+\_\+\+HOLD\+\_\+\+TIME\+\_\+400\+NS\+\_\+800\+NS}} = SERCOM\+\_\+\+I2\+CM\+\_\+\+CTRLA\+\_\+\+SDAHOLD(3)
+ \}
+\begin{DoxyCompactList}\small\item\em Values for hold time after start bit. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga4640bee224bf835f4c38d7702be0742c}{i2c\+\_\+master\+\_\+inactive\+\_\+timeout}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga4640bee224bf835f4c38d7702be0742ca52414c5127a26a6811f30324102cc3b1}{I2\+C\+\_\+\+MASTER\+\_\+\+INACTIVE\+\_\+\+TIMEOUT\+\_\+\+DISABLED}} = SERCOM\+\_\+\+I2\+CM\+\_\+\+CTRLA\+\_\+\+INACTOUT(0)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga4640bee224bf835f4c38d7702be0742ca9e204c432b52e77b4d34a5b64d4432e9}{I2\+C\+\_\+\+MASTER\+\_\+\+INACTIVE\+\_\+\+TIMEOUT\+\_\+55\+US}} = SERCOM\+\_\+\+I2\+CM\+\_\+\+CTRLA\+\_\+\+INACTOUT(1)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga4640bee224bf835f4c38d7702be0742ca9f37beb962cccc4538b0c226c921c553}{I2\+C\+\_\+\+MASTER\+\_\+\+INACTIVE\+\_\+\+TIMEOUT\+\_\+105\+US}} = SERCOM\+\_\+\+I2\+CM\+\_\+\+CTRLA\+\_\+\+INACTOUT(2)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gga4640bee224bf835f4c38d7702be0742ca7412f98fd47572a75dc17727fdf735d0}{I2\+C\+\_\+\+MASTER\+\_\+\+INACTIVE\+\_\+\+TIMEOUT\+\_\+205\+US}} = SERCOM\+\_\+\+I2\+CM\+\_\+\+CTRLA\+\_\+\+INACTOUT(3)
+ \}
+\begin{DoxyCompactList}\small\item\em Values for inactive bus time-\/out. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gace1e0023f2eee92565496a2e30006548}{i2c\+\_\+master\+\_\+baud\+\_\+rate}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggace1e0023f2eee92565496a2e30006548a24ddfbe034a690d3a553a17508cbd625}{I2\+C\+\_\+\+MASTER\+\_\+\+BAUD\+\_\+\+RATE\+\_\+100\+KHZ}} = 100
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ggace1e0023f2eee92565496a2e30006548a970dccbbc3dd1d01c1070db6d9aa24cb}{I2\+C\+\_\+\+MASTER\+\_\+\+BAUD\+\_\+\+RATE\+\_\+400\+KHZ}} = 400
+ \}
+\begin{DoxyCompactList}\small\item\em I\textsuperscript{2}C frequencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Lock/\+Unlock}\par
+\end{Indent}
+\begin{Indent}\textbf{ Configuration and Initialization}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga1c174d923b525f6d60402f66bc9c3451}{i2c\+\_\+master\+\_\+init}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, \mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const hw, const struct \mbox{\hyperlink{structi2c__master__config}{i2c\+\_\+master\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes the requested I\textsuperscript{2}C hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga6dc5e9982ce4d7c6acc68cb69c57883d}{i2c\+\_\+master\+\_\+reset}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Resets the hardware module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Read and Write}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga238a755f972b9c3287131cda5fc25725}{i2c\+\_\+master\+\_\+read\+\_\+packet\+\_\+wait}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Reads data packet from slave. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaa8b27eb9e3a8ae0f907bf7078d4001f0}{i2c\+\_\+master\+\_\+read\+\_\+packet\+\_\+wait\+\_\+no\+\_\+stop}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Reads data packet from slave without sending a stop condition when done. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga6c07057fe2534e8b4a3ce2cfe2dafc1b}{i2c\+\_\+master\+\_\+write\+\_\+packet\+\_\+wait}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Writes data packet to slave. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga4d874599c2bff10cd08f5474041c66bb}{i2c\+\_\+master\+\_\+write\+\_\+packet\+\_\+wait\+\_\+no\+\_\+stop}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Writes data packet to slave without sending a stop condition when done. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga6bddf9e717847b5fa8462596e7e1489c}{i2c\+\_\+master\+\_\+send\+\_\+stop}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Sends stop condition on bus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaf9bb3b3174c1fc602c3097bc40eadcef}{i2c\+\_\+master\+\_\+send\+\_\+nack}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Sends nack signal on bus. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga54cf79ca8aa80e2163881ca4164e35f7}{i2c\+\_\+master\+\_\+read\+\_\+byte}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$byte)
+\begin{DoxyCompactList}\small\item\em Reads one byte data from slave. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaee2de09ec9474331f354eec703b80b6e}{i2c\+\_\+master\+\_\+write\+\_\+byte}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Write one byte data to slave. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries i2c\+\_\+master\+\_\+read\+\_\+packet\+\_\+wait\+\_\+no\+\_\+nack} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM SERCOM I2C Master Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

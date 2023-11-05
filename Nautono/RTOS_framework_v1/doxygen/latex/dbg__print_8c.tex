@@ -1,0 +1,88 @@
+\hypertarget{dbg__print_8c}{}\doxysection{src/\+ASF/common/services/freertos/dbg\+\_\+print/dbg\+\_\+print.c File Reference}
+\label{dbg__print_8c}\index{src/ASF/common/services/freertos/dbg\_print/dbg\_print.c@{src/ASF/common/services/freertos/dbg\_print/dbg\_print.c}}
+
+
+Debug print implementation.  
+
+
+{\ttfamily \#include \char`\"{}dbg\+\_\+print.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$gclk.\+h$>$}\newline
+{\ttfamily \#include $<$sercom.\+h$>$}\newline
+{\ttfamily \#include $<$status\+\_\+codes.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$system.\+h$>$}\newline
+{\ttfamily \#include $<$usart.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Access lock/unlock}\par
+\end{Indent}
+\begin{Indent}\textbf{ UART start/stop}\par
+\end{Indent}
+\begin{Indent}\textbf{ Internal buffer helpers}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gacce1fd7454589e2db13972866900aa86}{dbg\+\_\+sprint\+\_\+hexint}} (char $\ast$out\+\_\+str, uint32\+\_\+t out\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Write an integer as hex digits (ASCII) into string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga5f5b851136b087016e7060ff32a4ea13}{dbg\+\_\+print\+\_\+hexint}} (uint32\+\_\+t out\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Print an integer as hex digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga3cb124fc035aa9d5388f6fad8ca7eb23}{dbg\+\_\+print\+\_\+str}} (const char $\ast$out\+\_\+str)
+\begin{DoxyCompactList}\small\item\em Print a zero-\/terminated string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gafadf1fd80c628de3233fb460c5430eb4}{dbg\+\_\+print\+\_\+char}} (const char out\+\_\+char)
+\begin{DoxyCompactList}\small\item\em Print a single character. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_ga9bd1ce061869e93a4bb5438aa599d048}{dbg\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize and enable debug UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Convenience macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{dbg__print_8c_ab815f84c42abf9c186da868a4d3dd565}\label{dbg__print_8c_ab815f84c42abf9c186da868a4d3dd565}} 
+\#define {\bfseries DBG\+\_\+\+BUFFER\+\_\+\+SIZE}~(\mbox{\hyperlink{group__asfdoc__common__freertos__dbg__print__group_gaad65ecaff034abce1462de260e330edb}{CONF\+\_\+\+DBG\+\_\+\+PRINT\+\_\+\+BUFFER\+\_\+\+SIZE}})
+\begin{DoxyCompactList}\small\item\em Size of print buffer (must be power of 2) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dbg__print_8c_a2e3f4f72fc6df8edbbdf2500d682180a}{DBG\+\_\+\+BUFFER\+\_\+\+SPACE}}~(\mbox{\hyperlink{dbg__print_8c_ab815f84c42abf9c186da868a4d3dd565}{DBG\+\_\+\+BUFFER\+\_\+\+SIZE}} -\/ 1)
+\begin{DoxyCompactList}\small\item\em Maximum number of simultaneously queued bytes in print buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dbg__print_8c_a88a07cc3df3c1a17b188366a59efc180}\label{dbg__print_8c_a88a07cc3df3c1a17b188366a59efc180}} 
+\#define {\bfseries DBG\+\_\+\+BUFFER\+\_\+\+MASK}~(\mbox{\hyperlink{dbg__print_8c_ab815f84c42abf9c186da868a4d3dd565}{DBG\+\_\+\+BUFFER\+\_\+\+SIZE}} -\/ 1)
+\begin{DoxyCompactList}\small\item\em Bitmask for print buffer head and tail. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dbg__print_8c_a9965f18ee1defd6d9931d9a3c6f456af}\label{dbg__print_8c_a9965f18ee1defd6d9931d9a3c6f456af}} 
+\#define {\bfseries TRANSLATE\+\_\+\+NIBBLE\+\_\+\+TO\+\_\+\+ASCII}(nibble\+\_\+var)~  (nibble\+\_\+var) += ((nibble\+\_\+var) $<$ 0x0a) ? \textquotesingle{}0\textquotesingle{} \+: (\textquotesingle{}A\textquotesingle{} -\/ 0x0a)
+\begin{DoxyCompactList}\small\item\em Translate nibble (4-\/bit) value to ASCII symbol. \end{DoxyCompactList}\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{dbg__print_8c_a6408e2897bc7ab92c8a6ad50ce4575c4}{dbg\+\_\+buffer\+\_\+space\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Type for buffer space and indexes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Debug print implementation. 
+
+Copyright (c) 2014-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dbg__print_8c_a2e3f4f72fc6df8edbbdf2500d682180a}\label{dbg__print_8c_a2e3f4f72fc6df8edbbdf2500d682180a}} 
+\index{dbg\_print.c@{dbg\_print.c}!DBG\_BUFFER\_SPACE@{DBG\_BUFFER\_SPACE}}
+\index{DBG\_BUFFER\_SPACE@{DBG\_BUFFER\_SPACE}!dbg\_print.c@{dbg\_print.c}}
+\doxysubsubsection{\texorpdfstring{DBG\_BUFFER\_SPACE}{DBG\_BUFFER\_SPACE}}
+{\footnotesize\ttfamily \#define DBG\+\_\+\+BUFFER\+\_\+\+SPACE~(\mbox{\hyperlink{dbg__print_8c_ab815f84c42abf9c186da868a4d3dd565}{DBG\+\_\+\+BUFFER\+\_\+\+SIZE}} -\/ 1)}
+
+
+
+Maximum number of simultaneously queued bytes in print buffer. 
+
+\begin{DoxyNote}{Note}
+This number is one less than the size of the buffer due to its circular nature. Otherwise, it would be impossible to tell whether the buffer is full or empty as computed in \+\_\+dbg\+\_\+get\+\_\+free\+\_\+buffer\+\_\+space(). 
+\end{DoxyNote}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{dbg__print_8c_a6408e2897bc7ab92c8a6ad50ce4575c4}\label{dbg__print_8c_a6408e2897bc7ab92c8a6ad50ce4575c4}} 
+\index{dbg\_print.c@{dbg\_print.c}!dbg\_buffer\_space\_t@{dbg\_buffer\_space\_t}}
+\index{dbg\_buffer\_space\_t@{dbg\_buffer\_space\_t}!dbg\_print.c@{dbg\_print.c}}
+\doxysubsubsection{\texorpdfstring{dbg\_buffer\_space\_t}{dbg\_buffer\_space\_t}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{dbg__print_8c_a6408e2897bc7ab92c8a6ad50ce4575c4}{dbg\+\_\+buffer\+\_\+space\+\_\+t}}}
+
+
+
+Type for buffer space and indexes. 
+
+\begin{DoxyNote}{Note}
+This type must have at least as many bits as \mbox{\hyperlink{dbg__print_8c_a2e3f4f72fc6df8edbbdf2500d682180a}{DBG\+\_\+\+BUFFER\+\_\+\+SPACE}}. 
+\end{DoxyNote}

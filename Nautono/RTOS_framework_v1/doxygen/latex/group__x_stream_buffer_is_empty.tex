@@ -1,0 +1,20 @@
+\hypertarget{group__x_stream_buffer_is_empty}{}\doxysection{x\+Stream\+Buffer\+Is\+Empty}
+\label{group__x_stream_buffer_is_empty}\index{xStreamBufferIsEmpty@{xStreamBufferIsEmpty}}
+\mbox{\hyperlink{stream__buffer_8h_source}{stream\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+BaseType\_t xStreamBufferIsEmpty( StreamBufferHandle\_t xStreamBuffer );
+\end{DoxyPre}
+
+
+Queries a stream buffer to see if it is empty. A stream buffer is empty if it does not contain any data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Stream\+Buffer} & The handle of the stream buffer being queried.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the stream buffer is empty then pd\+TRUE is returned. Otherwise pd\+FALSE is returned. 
+\end{DoxyReturn}

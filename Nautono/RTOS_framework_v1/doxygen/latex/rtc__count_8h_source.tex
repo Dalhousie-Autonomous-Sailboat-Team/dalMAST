@@ -1,0 +1,513 @@
+\hypertarget{rtc__count_8h_source}{}\doxysection{rtc\+\_\+count.\+h}
+\label{rtc__count_8h_source}\index{src/ASF/sam0/drivers/rtc/rtc\_count.h@{src/ASF/sam0/drivers/rtc/rtc\_count.h}}
+\mbox{\hyperlink{rtc__count_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef RTC\_COUNT\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define RTC\_COUNT\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{conf__clocks_8h}{conf\_clocks.h}}>}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#if RTC\_COUNT\_ASYNC == true}}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#  include <\mbox{\hyperlink{system__interrupt_8h}{system\_interrupt.h}}>}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{361 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#if (SAML21) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#  define FEATURE\_RTC\_PERIODIC\_INT}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#  define FEATURE\_RTC\_PRESCALER\_OFF}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#  define FEATURE\_RTC\_CLOCK\_SELECTION}}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#  if !(SAMC20) \&\& !(SAMC21)}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#  define FEATURE\_RTC\_GENERAL\_PURPOSE\_REG}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#  define FEATURE\_RTC\_CONTINUOUSLY\_UPDATED}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#if (SAML22) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#  define FEATURE\_RTC\_TAMPER\_DETECTION}}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_CLOCK\_SELECTION}}
+\DoxyCodeLine{398 \textcolor{keyword}{enum} rtc\_clock\_sel \{}
+\DoxyCodeLine{400     RTC\_CLOCK\_SELECTION\_ULP1K = OSC32KCTRL\_RTCCTRL\_RTCSEL\_ULP1K\_Val,}
+\DoxyCodeLine{402     RTC\_CLOCK\_SELECTION\_ULP32K = OSC32KCTRL\_RTCCTRL\_RTCSEL\_ULP32K\_Val,}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#if !(SAML22)}}
+\DoxyCodeLine{405     RTC\_CLOCK\_SELECTION\_OSC1K = OSC32KCTRL\_RTCCTRL\_RTCSEL\_OSC1K\_Val,}
+\DoxyCodeLine{407     RTC\_CLOCK\_SELECTION\_OSC32K = OSC32KCTRL\_RTCCTRL\_RTCSEL\_OSC32K\_Val,}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{410     RTC\_CLOCK\_SELECTION\_XOSC1K = OSC32KCTRL\_RTCCTRL\_RTCSEL\_XOSC1K\_Val,}
+\DoxyCodeLine{412     RTC\_CLOCK\_SELECTION\_XOSC32K = OSC32KCTRL\_RTCCTRL\_RTCSEL\_XOSC32K\_Val,}
+\DoxyCodeLine{413 \};}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{422 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga1c6c05a342b2711713cfac6fb3d6256c}{rtc\_count\_mode}} \{}
+\DoxyCodeLine{424     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gga1c6c05a342b2711713cfac6fb3d6256cac1469285bb822ce84f262cd4117e8edc}{RTC\_COUNT\_MODE\_16BIT}} = 0,}
+\DoxyCodeLine{426     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gga1c6c05a342b2711713cfac6fb3d6256cad94f227d25afd2fa3c26ef9a5a33e4d8}{RTC\_COUNT\_MODE\_32BIT}} = 1,}
+\DoxyCodeLine{427 \};}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#if !defined (RTC\_NUM\_OF\_COMP16) \&\& defined(RTC\_COMP16\_NUM)}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define RTC\_NUM\_OF\_COMP16 RTC\_COMP16\_NUM}}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{432 }
+\DoxyCodeLine{438 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\_count\_compare}} \{}
+\DoxyCodeLine{440     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggadfcb8b12ca245948cbedc1ad81c3e589ac7340ee61643d3bdb0a7b4264335f080}{RTC\_COUNT\_COMPARE\_0}} = 0,}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#if (RTC\_NUM\_OF\_COMP16 > 1) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{443     RTC\_COUNT\_COMPARE\_1 = 1,}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#if (RTC\_NUM\_OF\_COMP16 > 2) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{447     RTC\_COUNT\_COMPARE\_2 = 2,}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#if (RTC\_NUM\_OF\_COMP16 > 3) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{451     RTC\_COUNT\_COMPARE\_3 = 3,}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#if (RTC\_NUM\_OF\_COMP16 > 4) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{455     RTC\_COUNT\_COMPARE\_4 = 4,}
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#if (RTC\_NUM\_OF\_COMP16 > 5) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{459     RTC\_COUNT\_COMPARE\_5 = 5,}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{461 \};}
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_PERIODIC\_INT}}
+\DoxyCodeLine{467 \textcolor{keyword}{enum} rtc\_count\_periodic\_interval\{}
+\DoxyCodeLine{469     RTC\_COUNT\_PERIODIC\_INTERVAL\_0 = 0,}
+\DoxyCodeLine{471     RTC\_COUNT\_PERIODIC\_INTERVAL\_1 = 1,}
+\DoxyCodeLine{473     RTC\_COUNT\_PERIODIC\_INTERVAL\_2 = 2,}
+\DoxyCodeLine{475     RTC\_COUNT\_PERIODIC\_INTERVAL\_3 = 3,}
+\DoxyCodeLine{477     RTC\_COUNT\_PERIODIC\_INTERVAL\_4 = 4,}
+\DoxyCodeLine{479     RTC\_COUNT\_PERIODIC\_INTERVAL\_5 = 5,}
+\DoxyCodeLine{481     RTC\_COUNT\_PERIODIC\_INTERVAL\_6 = 6,}
+\DoxyCodeLine{483     RTC\_COUNT\_PERIODIC\_INTERVAL\_7 = 7,}
+\DoxyCodeLine{484 \};}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{486 }
+\DoxyCodeLine{487 \textcolor{preprocessor}{\#if RTC\_COUNT\_ASYNC == true}}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_PERIODIC\_INT}}
+\DoxyCodeLine{494 \textcolor{keyword}{enum} rtc\_count\_callback \{}
+\DoxyCodeLine{496     RTC\_COUNT\_CALLBACK\_PERIODIC\_INTERVAL\_0 = 0,}
+\DoxyCodeLine{498     RTC\_COUNT\_CALLBACK\_PERIODIC\_INTERVAL\_1,}
+\DoxyCodeLine{500     RTC\_COUNT\_CALLBACK\_PERIODIC\_INTERVAL\_2,}
+\DoxyCodeLine{502     RTC\_COUNT\_CALLBACK\_PERIODIC\_INTERVAL\_3,}
+\DoxyCodeLine{504     RTC\_COUNT\_CALLBACK\_PERIODIC\_INTERVAL\_4,}
+\DoxyCodeLine{506     RTC\_COUNT\_CALLBACK\_PERIODIC\_INTERVAL\_5,}
+\DoxyCodeLine{508     RTC\_COUNT\_CALLBACK\_PERIODIC\_INTERVAL\_6,}
+\DoxyCodeLine{510     RTC\_COUNT\_CALLBACK\_PERIODIC\_INTERVAL\_7,}
+\DoxyCodeLine{512     RTC\_COUNT\_CALLBACK\_COMPARE\_0,}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 1) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{515     RTC\_COUNT\_CALLBACK\_COMPARE\_1,}
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{517 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 2) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{519     RTC\_COUNT\_CALLBACK\_COMPARE\_2,}
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 3) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{523     RTC\_COUNT\_CALLBACK\_COMPARE\_3,}
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 4) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{527     RTC\_COUNT\_CALLBACK\_COMPARE\_4,}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 5) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{531     RTC\_COUNT\_CALLBACK\_COMPARE\_5,}
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_TAMPER\_DETECTION}}
+\DoxyCodeLine{536     RTC\_COUNT\_CALLBACK\_TAMPER,}
+\DoxyCodeLine{537 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{540     RTC\_COUNT\_CALLBACK\_OVERFLOW,}
+\DoxyCodeLine{541 \textcolor{preprocessor}{\#  if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{543     \_RTC\_COUNT\_CALLBACK\_N}
+\DoxyCodeLine{544 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{545 \};}
+\DoxyCodeLine{546 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{552 \textcolor{keyword}{enum} rtc\_count\_callback \{}
+\DoxyCodeLine{554     RTC\_COUNT\_CALLBACK\_COMPARE\_0 = 0,}
+\DoxyCodeLine{555 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 1) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{557     RTC\_COUNT\_CALLBACK\_COMPARE\_1,}
+\DoxyCodeLine{558 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{559 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 2) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{561     RTC\_COUNT\_CALLBACK\_COMPARE\_2,}
+\DoxyCodeLine{562 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{563 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 3) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{565     RTC\_COUNT\_CALLBACK\_COMPARE\_3,}
+\DoxyCodeLine{566 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{567 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 4) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{569     RTC\_COUNT\_CALLBACK\_COMPARE\_4,}
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#  if (RTC\_NUM\_OF\_COMP16 > 5) || defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{573     RTC\_COUNT\_CALLBACK\_COMPARE\_5,}
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{576 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_TAMPER\_DETECTION}}
+\DoxyCodeLine{578     RTC\_COUNT\_CALLBACK\_TAMPER,}
+\DoxyCodeLine{579 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{580 }
+\DoxyCodeLine{582     RTC\_COUNT\_CALLBACK\_OVERFLOW,}
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#  if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{585     \_RTC\_COUNT\_CALLBACK\_N}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{587 \};}
+\DoxyCodeLine{588 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{589 }
+\DoxyCodeLine{590 \textcolor{preprocessor}{\#  if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{591 \textcolor{keyword}{typedef} void (*rtc\_count\_callback\_t)(void);}
+\DoxyCodeLine{592 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{593 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_PRESCALER\_OFF}}
+\DoxyCodeLine{601 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gacce60ab36a74de9a173788f4aa896d15}{rtc\_count\_prescaler}} \{}
+\DoxyCodeLine{604     RTC\_COUNT\_PRESCALER\_OFF      = RTC\_MODE0\_CTRLA\_PRESCALER\_OFF,}
+\DoxyCodeLine{606     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15aa5a98b865348eb598140b2a4247916e9}{RTC\_COUNT\_PRESCALER\_DIV\_1}}    = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV1,}
+\DoxyCodeLine{608     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a312d3c72451ac000e95d335183ad7ec3}{RTC\_COUNT\_PRESCALER\_DIV\_2}}    = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV2,}
+\DoxyCodeLine{610     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac82d71266c2f83c3d51b51fedd1ae920}{RTC\_COUNT\_PRESCALER\_DIV\_4}}    = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV4,}
+\DoxyCodeLine{612     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac0061a5a79673614095663596f9e79f4}{RTC\_COUNT\_PRESCALER\_DIV\_8}}    = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV8,}
+\DoxyCodeLine{614     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4e17e7e9d43d022235a7550dccffcddd}{RTC\_COUNT\_PRESCALER\_DIV\_16}}   = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV16,}
+\DoxyCodeLine{616     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a3b83f1963700137784f61cd05ef49b7e}{RTC\_COUNT\_PRESCALER\_DIV\_32}}   = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV32,}
+\DoxyCodeLine{618     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a8b59673e870fd1205aa08b667fcc58b6}{RTC\_COUNT\_PRESCALER\_DIV\_64}}   = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV64,}
+\DoxyCodeLine{620     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a2d736f3fdd6be715588ee09d7a8d1deb}{RTC\_COUNT\_PRESCALER\_DIV\_128}}  = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV128,}
+\DoxyCodeLine{622     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4d6f94d95f1e40f463a83148a57edcfa}{RTC\_COUNT\_PRESCALER\_DIV\_256}}  = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV256,}
+\DoxyCodeLine{624     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ab58a33623afbb13b74dcbd7e50e7760b}{RTC\_COUNT\_PRESCALER\_DIV\_512}}  = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV512,}
+\DoxyCodeLine{626     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a9766bc273a9d05a8345615c5707eb4a7}{RTC\_COUNT\_PRESCALER\_DIV\_1024}} = RTC\_MODE0\_CTRLA\_PRESCALER\_DIV1024,}
+\DoxyCodeLine{627 \};}
+\DoxyCodeLine{628 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{634 \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gacce60ab36a74de9a173788f4aa896d15}{rtc\_count\_prescaler}} \{}
+\DoxyCodeLine{636     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15aa5a98b865348eb598140b2a4247916e9}{RTC\_COUNT\_PRESCALER\_DIV\_1}}    = RTC\_MODE0\_CTRL\_PRESCALER\_DIV1,}
+\DoxyCodeLine{638     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a312d3c72451ac000e95d335183ad7ec3}{RTC\_COUNT\_PRESCALER\_DIV\_2}}    = RTC\_MODE0\_CTRL\_PRESCALER\_DIV2,}
+\DoxyCodeLine{640     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac82d71266c2f83c3d51b51fedd1ae920}{RTC\_COUNT\_PRESCALER\_DIV\_4}}    = RTC\_MODE0\_CTRL\_PRESCALER\_DIV4,}
+\DoxyCodeLine{642     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac0061a5a79673614095663596f9e79f4}{RTC\_COUNT\_PRESCALER\_DIV\_8}}    = RTC\_MODE0\_CTRL\_PRESCALER\_DIV8,}
+\DoxyCodeLine{644     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4e17e7e9d43d022235a7550dccffcddd}{RTC\_COUNT\_PRESCALER\_DIV\_16}}   = RTC\_MODE0\_CTRL\_PRESCALER\_DIV16,}
+\DoxyCodeLine{646     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a3b83f1963700137784f61cd05ef49b7e}{RTC\_COUNT\_PRESCALER\_DIV\_32}}   = RTC\_MODE0\_CTRL\_PRESCALER\_DIV32,}
+\DoxyCodeLine{648     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a8b59673e870fd1205aa08b667fcc58b6}{RTC\_COUNT\_PRESCALER\_DIV\_64}}   = RTC\_MODE0\_CTRL\_PRESCALER\_DIV64,}
+\DoxyCodeLine{650     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a2d736f3fdd6be715588ee09d7a8d1deb}{RTC\_COUNT\_PRESCALER\_DIV\_128}}  = RTC\_MODE0\_CTRL\_PRESCALER\_DIV128,}
+\DoxyCodeLine{652     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4d6f94d95f1e40f463a83148a57edcfa}{RTC\_COUNT\_PRESCALER\_DIV\_256}}  = RTC\_MODE0\_CTRL\_PRESCALER\_DIV256,}
+\DoxyCodeLine{654     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ab58a33623afbb13b74dcbd7e50e7760b}{RTC\_COUNT\_PRESCALER\_DIV\_512}}  = RTC\_MODE0\_CTRL\_PRESCALER\_DIV512,}
+\DoxyCodeLine{656     \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a9766bc273a9d05a8345615c5707eb4a7}{RTC\_COUNT\_PRESCALER\_DIV\_1024}} = RTC\_MODE0\_CTRL\_PRESCALER\_DIV1024,}
+\DoxyCodeLine{657 \};}
+\DoxyCodeLine{658 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{659 }
+\DoxyCodeLine{666 \textcolor{keyword}{struct }\mbox{\hyperlink{structrtc__count__events}{rtc\_count\_events}} \{}
+\DoxyCodeLine{668     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structrtc__count__events_a1f79e03227cb9860d800a404eacee9b8}{generate\_event\_on\_overflow}};}
+\DoxyCodeLine{671     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structrtc__count__events_a8ddb610d3682fe5c39560673735c0433}{generate\_event\_on\_compare}}[RTC\_NUM\_OF\_COMP16];}
+\DoxyCodeLine{674     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structrtc__count__events_a7505fa8780cedd162032cfac8b08fd7b}{generate\_event\_on\_periodic}}[8];}
+\DoxyCodeLine{675 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_TAMPER\_DETECTION}}
+\DoxyCodeLine{677     \textcolor{keywordtype}{bool} generate\_event\_on\_tamper;}
+\DoxyCodeLine{679     \textcolor{keywordtype}{bool} on\_event\_to\_tamper;}
+\DoxyCodeLine{680 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{681 \};}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{687 \textcolor{keyword}{struct }\mbox{\hyperlink{structrtc__module}{rtc\_module}} \{}
+\DoxyCodeLine{689     \mbox{\hyperlink{union_rtc}{Rtc}} *\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}};}
+\DoxyCodeLine{691     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga1c6c05a342b2711713cfac6fb3d6256c}{rtc\_count\_mode}} \mbox{\hyperlink{structrtc__module_aeffe48db1908c31bc3cd6ea0e404d3ab}{mode}};}
+\DoxyCodeLine{692 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_CONTINUOUSLY\_UPDATED}}
+\DoxyCodeLine{694     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structrtc__module_a14bfa4d563cec2b2731feb2c778c8628}{continuously\_update}};}
+\DoxyCodeLine{695 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{696 \textcolor{preprocessor}{\#  if RTC\_COUNT\_ASYNC == true}}
+\DoxyCodeLine{698     \textcolor{keyword}{volatile} rtc\_count\_callback\_t callbacks[\_RTC\_COUNT\_CALLBACK\_N];}
+\DoxyCodeLine{700     \textcolor{keyword}{volatile} uint16\_t registered\_callback;}
+\DoxyCodeLine{702     \textcolor{keyword}{volatile} uint16\_t enabled\_callback;}
+\DoxyCodeLine{703 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{704 \};}
+\DoxyCodeLine{705 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{706 }
+\DoxyCodeLine{714 \textcolor{keyword}{struct }\mbox{\hyperlink{structrtc__count__config}{rtc\_count\_config}} \{}
+\DoxyCodeLine{716     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gacce60ab36a74de9a173788f4aa896d15}{rtc\_count\_prescaler}} \mbox{\hyperlink{structrtc__count__config_ae0707ec99887d5b4ce67ae9b6f3ef1c4}{prescaler}};}
+\DoxyCodeLine{718     \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga1c6c05a342b2711713cfac6fb3d6256c}{rtc\_count\_mode}} \mbox{\hyperlink{structrtc__count__config_ae21239a4b10bf3243d71dbf51cfac86e}{mode}};}
+\DoxyCodeLine{721     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structrtc__count__config_a6ebdd35f8fcf14e066ec2c997acfcce4}{clear\_on\_match}};}
+\DoxyCodeLine{722 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_CONTINUOUSLY\_UPDATED}}
+\DoxyCodeLine{725     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structrtc__count__config_ab2dc5f7ab7028a512ee589ced12a2e01}{continuously\_update}};}
+\DoxyCodeLine{726 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{727 \textcolor{preprocessor}{\#if (SAML21XXXB) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{731     \textcolor{keywordtype}{bool} enable\_read\_sync;}
+\DoxyCodeLine{732 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{733 }
+\DoxyCodeLine{736     uint32\_t \mbox{\hyperlink{structrtc__count__config_afdc777ad1d7be84875cb7c208459d937}{compare\_values}}[RTC\_NUM\_OF\_COMP16];}
+\DoxyCodeLine{737 \};}
+\DoxyCodeLine{738 }
+\DoxyCodeLine{739 }
+\DoxyCodeLine{763 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} rtc\_count\_get\_config\_defaults(}
+\DoxyCodeLine{764         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__count__config}{rtc\_count\_config}} *\textcolor{keyword}{const} config)}
+\DoxyCodeLine{765 \{}
+\DoxyCodeLine{766     \textcolor{comment}{/* Sanity check argument */}}
+\DoxyCodeLine{767     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(config);}
+\DoxyCodeLine{768 }
+\DoxyCodeLine{769     \textcolor{comment}{/* Set default into configuration structure */}}
+\DoxyCodeLine{770     config-\/>\mbox{\hyperlink{structrtc__count__config_ae0707ec99887d5b4ce67ae9b6f3ef1c4}{prescaler}}           = \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a9766bc273a9d05a8345615c5707eb4a7}{RTC\_COUNT\_PRESCALER\_DIV\_1024}};}
+\DoxyCodeLine{771     config-\/>\mbox{\hyperlink{structrtc__count__config_ae21239a4b10bf3243d71dbf51cfac86e}{mode}}                = \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gga1c6c05a342b2711713cfac6fb3d6256cad94f227d25afd2fa3c26ef9a5a33e4d8}{RTC\_COUNT\_MODE\_32BIT}};}
+\DoxyCodeLine{772     config-\/>\mbox{\hyperlink{structrtc__count__config_a6ebdd35f8fcf14e066ec2c997acfcce4}{clear\_on\_match}}      = \textcolor{keyword}{false};}
+\DoxyCodeLine{773 }
+\DoxyCodeLine{774 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_CONTINUOUSLY\_UPDATED}}
+\DoxyCodeLine{775     config-\/>\mbox{\hyperlink{structrtc__count__config_ab2dc5f7ab7028a512ee589ced12a2e01}{continuously\_update}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{776 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{777 \textcolor{preprocessor}{\#if (SAML21XXXB) || (SAML22) || (SAMC20) || (SAMC21) || (SAMR30) || (SAMR34) || (SAMR35) || (WLR089)}}
+\DoxyCodeLine{778     config-\/>enable\_read\_sync    = \textcolor{keyword}{true};}
+\DoxyCodeLine{779 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{781     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < RTC\_NUM\_OF\_COMP16; i++) \{}
+\DoxyCodeLine{782         config-\/>\mbox{\hyperlink{structrtc__count__config_afdc777ad1d7be84875cb7c208459d937}{compare\_values}}[i] = 0;}
+\DoxyCodeLine{783     \}}
+\DoxyCodeLine{784 \}}
+\DoxyCodeLine{785 }
+\DoxyCodeLine{786 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga161d6cf1f6f717e8c6c650dc587cdf7a}{rtc\_count\_reset}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{787 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gad49e022ac982b14f592b4741fe076add}{rtc\_count\_enable}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{788 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga40f97a58f45fe3fdeec606c155d4d8f3}{rtc\_count\_disable}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{789 }
+\DoxyCodeLine{790 \textcolor{preprocessor}{\#if (RTC\_INST\_NUM > 1) \&\& !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{798 uint8\_t \_rtc\_get\_inst\_index(}
+\DoxyCodeLine{799         \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} hw)}
+\DoxyCodeLine{800 \{}
+\DoxyCodeLine{801     \textcolor{comment}{/* List of available RTC modules */}}
+\DoxyCodeLine{802     \textcolor{keyword}{static} \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} rtc\_modules[\mbox{\hyperlink{samd20e14_8h_aa60e91b52e1886f06e68901250d0f7ff}{RTC\_INST\_NUM}}] = \mbox{\hyperlink{samd20e14_8h_adf318081bc13d8cc65280fb772db8ba7}{RTC\_INSTS}};}
+\DoxyCodeLine{803 }
+\DoxyCodeLine{804     \textcolor{comment}{/* Find index for RTC instance */}}
+\DoxyCodeLine{805     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < \mbox{\hyperlink{samd20e14_8h_aa60e91b52e1886f06e68901250d0f7ff}{RTC\_INST\_NUM}}; i++) \{}
+\DoxyCodeLine{806         \textcolor{keywordflow}{if} (hw == rtc\_modules[i]) \{}
+\DoxyCodeLine{807             \textcolor{keywordflow}{return} i;}
+\DoxyCodeLine{808         \}}
+\DoxyCodeLine{809     \}}
+\DoxyCodeLine{810 }
+\DoxyCodeLine{811     \textcolor{comment}{/* Invalid data given */}}
+\DoxyCodeLine{812     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{813     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{814 \}}
+\DoxyCodeLine{815 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (RTC\_INST\_NUM > 1) \&\& !defined(\_\_DOXYGEN\_\_) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{816 }
+\DoxyCodeLine{817 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gaff43df79be7aeea0d559eafbe5fdbdc3}{rtc\_count\_init}}(}
+\DoxyCodeLine{818         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{819         \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} hw,}
+\DoxyCodeLine{820         \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__count__config}{rtc\_count\_config}} *\textcolor{keyword}{const} config);}
+\DoxyCodeLine{821 }
+\DoxyCodeLine{822 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadccb737db7dd01d7190a7f9e18b23a1b}{rtc\_count\_frequency\_correction}}(}
+\DoxyCodeLine{823         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{824         \textcolor{keyword}{const} int8\_t value);}
+\DoxyCodeLine{825 }
+\DoxyCodeLine{831 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga3770c2c6f82daca6ca28670cd87be46f}{rtc\_count\_set\_count}}(}
+\DoxyCodeLine{832         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{833         \textcolor{keyword}{const} uint32\_t count\_value);}
+\DoxyCodeLine{834 }
+\DoxyCodeLine{835 uint32\_t \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga3ad10283f223feb3c958ccabe9d0662a}{rtc\_count\_get\_count}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{836 }
+\DoxyCodeLine{837 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga56c76be0e0fdfb5b1f9a883f396756f4}{rtc\_count\_set\_compare}}(}
+\DoxyCodeLine{838         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{839         \textcolor{keyword}{const} uint32\_t comp\_value,}
+\DoxyCodeLine{840         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\_count\_compare}} comp\_index);}
+\DoxyCodeLine{841 }
+\DoxyCodeLine{842 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga40e535c1375a99492e114722af93b675}{rtc\_count\_get\_compare}}(}
+\DoxyCodeLine{843         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{844         uint32\_t *\textcolor{keyword}{const} comp\_value,}
+\DoxyCodeLine{845         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\_count\_compare}} comp\_index);}
+\DoxyCodeLine{846 }
+\DoxyCodeLine{847 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gac0b0d3a10ee5368b5484f99e6b6fecb8}{rtc\_count\_set\_period}}(}
+\DoxyCodeLine{848         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{849         uint16\_t period\_value);}
+\DoxyCodeLine{850 }
+\DoxyCodeLine{851 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga747385c5686f746a64f118705c22c894}{rtc\_count\_get\_period}}(}
+\DoxyCodeLine{852         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{853         uint16\_t *\textcolor{keyword}{const} period\_value);}
+\DoxyCodeLine{854 }
+\DoxyCodeLine{876 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} rtc\_count\_is\_overflow(\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{877 \{}
+\DoxyCodeLine{878     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{879     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{880     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{881 }
+\DoxyCodeLine{882     \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structrtc__module}{rtc\_module}} = module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}};}
+\DoxyCodeLine{883 }
+\DoxyCodeLine{884     \textcolor{comment}{/* Return status of flag */}}
+\DoxyCodeLine{885     \textcolor{keywordflow}{return} (\mbox{\hyperlink{structrtc__module}{rtc\_module}}-\/>MODE0.INTFLAG.reg \& RTC\_MODE0\_INTFLAG\_OVF);}
+\DoxyCodeLine{886 \}}
+\DoxyCodeLine{887 }
+\DoxyCodeLine{896 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} rtc\_count\_clear\_overflow(\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module)}
+\DoxyCodeLine{897 \{}
+\DoxyCodeLine{898     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{899     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{900     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{901 }
+\DoxyCodeLine{902     \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structrtc__module}{rtc\_module}} = module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}};}
+\DoxyCodeLine{903 }
+\DoxyCodeLine{904     \textcolor{comment}{/* Clear OVF flag */}}
+\DoxyCodeLine{905     \mbox{\hyperlink{structrtc__module}{rtc\_module}}-\/>MODE0.INTFLAG.reg = RTC\_MODE0\_INTFLAG\_OVF;}
+\DoxyCodeLine{906 \}}
+\DoxyCodeLine{907 }
+\DoxyCodeLine{908 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_PERIODIC\_INT}}
+\DoxyCodeLine{922 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} rtc\_count\_is\_periodic\_interval(\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{923                                         \textcolor{keyword}{enum} rtc\_count\_periodic\_interval n)}
+\DoxyCodeLine{924 \{}
+\DoxyCodeLine{925     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{926     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{927     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{928 }
+\DoxyCodeLine{929     \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structrtc__module}{rtc\_module}} = module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}};}
+\DoxyCodeLine{930 }
+\DoxyCodeLine{931     \textcolor{comment}{/* Return status of flag */}}
+\DoxyCodeLine{932     \textcolor{keywordflow}{return} (\mbox{\hyperlink{structrtc__module}{rtc\_module}}-\/>MODE0.INTFLAG.reg \& RTC\_MODE0\_INTFLAG\_PER(1 << n));}
+\DoxyCodeLine{933 \}}
+\DoxyCodeLine{934 }
+\DoxyCodeLine{944 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} rtc\_count\_clear\_periodic\_interval(\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{945                                                 \textcolor{keyword}{enum} rtc\_count\_periodic\_interval n)}
+\DoxyCodeLine{946 \{}
+\DoxyCodeLine{947     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{948     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{949     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{950 }
+\DoxyCodeLine{951     \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structrtc__module}{rtc\_module}} = module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}};}
+\DoxyCodeLine{952 }
+\DoxyCodeLine{953     \textcolor{comment}{/* Clear periodic interval flag */}}
+\DoxyCodeLine{954     \mbox{\hyperlink{structrtc__module}{rtc\_module}}-\/>MODE0.INTFLAG.reg = RTC\_MODE0\_INTFLAG\_PER(1 << n);}
+\DoxyCodeLine{955 \}}
+\DoxyCodeLine{956 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{957 \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga354d81abc8c33bc39a238418611b3239}{rtc\_count\_is\_compare\_match}}(}
+\DoxyCodeLine{958         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{959         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\_count\_compare}} comp\_index);}
+\DoxyCodeLine{960 }
+\DoxyCodeLine{961 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga51cd67b23c2a4716d09b08bf2422a222}{rtc\_count\_clear\_compare\_match}}(}
+\DoxyCodeLine{962         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{963         \textcolor{keyword}{const} \textcolor{keyword}{enum} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\_count\_compare}} comp\_index);}
+\DoxyCodeLine{964 }
+\DoxyCodeLine{984 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} rtc\_count\_enable\_events(}
+\DoxyCodeLine{985         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{986         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__count__events}{rtc\_count\_events}} *\textcolor{keyword}{const} events)}
+\DoxyCodeLine{987 \{}
+\DoxyCodeLine{988     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{989     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{990     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{991 }
+\DoxyCodeLine{992     \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structrtc__module}{rtc\_module}} = module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}};}
+\DoxyCodeLine{993 }
+\DoxyCodeLine{994     uint32\_t event\_mask = 0;}
+\DoxyCodeLine{995 }
+\DoxyCodeLine{996     \textcolor{comment}{/* Check if the user has requested an overflow event */}}
+\DoxyCodeLine{997     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structrtc__count__events_a1f79e03227cb9860d800a404eacee9b8}{generate\_event\_on\_overflow}}) \{}
+\DoxyCodeLine{998         event\_mask |= RTC\_MODE0\_EVCTRL\_OVFEO;}
+\DoxyCodeLine{999     \}}
+\DoxyCodeLine{1000 }
+\DoxyCodeLine{1001     \textcolor{comment}{/* Check if the user has requested any compare events */}}
+\DoxyCodeLine{1002     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < RTC\_NUM\_OF\_COMP16; i++) \{}
+\DoxyCodeLine{1003         \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structrtc__count__events_a8ddb610d3682fe5c39560673735c0433}{generate\_event\_on\_compare}}[i]) \{}
+\DoxyCodeLine{1004             event\_mask |= RTC\_MODE0\_EVCTRL\_CMPEO(1 << i);}
+\DoxyCodeLine{1005         \}}
+\DoxyCodeLine{1006     \}}
+\DoxyCodeLine{1007 }
+\DoxyCodeLine{1008     \textcolor{comment}{/* Check if the user has requested any periodic events */}}
+\DoxyCodeLine{1009     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < 8; i++) \{}
+\DoxyCodeLine{1010         \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structrtc__count__events_a7505fa8780cedd162032cfac8b08fd7b}{generate\_event\_on\_periodic}}[i]) \{}
+\DoxyCodeLine{1011             event\_mask |= RTC\_MODE0\_EVCTRL\_PEREO(1 << i);}
+\DoxyCodeLine{1012         \}}
+\DoxyCodeLine{1013     \}}
+\DoxyCodeLine{1014 }
+\DoxyCodeLine{1015 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_TAMPER\_DETECTION}}
+\DoxyCodeLine{1016     \textcolor{comment}{/* Check if the user has requested a tamper event output. */}}
+\DoxyCodeLine{1017     \textcolor{keywordflow}{if} (events-\/>generate\_event\_on\_tamper) \{}
+\DoxyCodeLine{1018         event\_mask |= RTC\_MODE0\_EVCTRL\_TAMPEREO;}
+\DoxyCodeLine{1019     \}}
+\DoxyCodeLine{1020 }
+\DoxyCodeLine{1021     \textcolor{comment}{/* Check if the user has requested a tamper event input. */}}
+\DoxyCodeLine{1022     \textcolor{keywordflow}{if} (events-\/>on\_event\_to\_tamper) \{}
+\DoxyCodeLine{1023         event\_mask |= RTC\_MODE0\_EVCTRL\_TAMPEVEI;}
+\DoxyCodeLine{1024     \}}
+\DoxyCodeLine{1025 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1026 }
+\DoxyCodeLine{1027     \textcolor{comment}{/* Enable given event(s). */}}
+\DoxyCodeLine{1028     \mbox{\hyperlink{structrtc__module}{rtc\_module}}-\/>MODE0.EVCTRL.reg |= event\_mask;}
+\DoxyCodeLine{1029 \}}
+\DoxyCodeLine{1030 }
+\DoxyCodeLine{1042 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} rtc\_count\_disable\_events(}
+\DoxyCodeLine{1043         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1044         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__count__events}{rtc\_count\_events}} *\textcolor{keyword}{const} events)}
+\DoxyCodeLine{1045 \{}
+\DoxyCodeLine{1046     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1047     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1048     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{1049 }
+\DoxyCodeLine{1050     \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structrtc__module}{rtc\_module}} = module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}};}
+\DoxyCodeLine{1051 }
+\DoxyCodeLine{1052     uint32\_t event\_mask = 0;}
+\DoxyCodeLine{1053 }
+\DoxyCodeLine{1054     \textcolor{comment}{/* Check if the user has requested an overflow event */}}
+\DoxyCodeLine{1055     \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structrtc__count__events_a1f79e03227cb9860d800a404eacee9b8}{generate\_event\_on\_overflow}}) \{}
+\DoxyCodeLine{1056         event\_mask |= RTC\_MODE0\_EVCTRL\_OVFEO;}
+\DoxyCodeLine{1057     \}}
+\DoxyCodeLine{1058 }
+\DoxyCodeLine{1059     \textcolor{comment}{/* Check if the user has requested any compare events */}}
+\DoxyCodeLine{1060     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < RTC\_NUM\_OF\_COMP16; i++) \{}
+\DoxyCodeLine{1061         \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structrtc__count__events_a8ddb610d3682fe5c39560673735c0433}{generate\_event\_on\_compare}}[i]) \{}
+\DoxyCodeLine{1062             event\_mask |= RTC\_MODE0\_EVCTRL\_CMPEO(1 << i);}
+\DoxyCodeLine{1063         \}}
+\DoxyCodeLine{1064     \}}
+\DoxyCodeLine{1065 }
+\DoxyCodeLine{1066     \textcolor{comment}{/* Check if the user has requested any periodic events */}}
+\DoxyCodeLine{1067     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < 8; i++) \{}
+\DoxyCodeLine{1068         \textcolor{keywordflow}{if} (events-\/>\mbox{\hyperlink{structrtc__count__events_a7505fa8780cedd162032cfac8b08fd7b}{generate\_event\_on\_periodic}}[i]) \{}
+\DoxyCodeLine{1069             event\_mask |= RTC\_MODE0\_EVCTRL\_PEREO(1 << i);}
+\DoxyCodeLine{1070         \}}
+\DoxyCodeLine{1071     \}}
+\DoxyCodeLine{1072 }
+\DoxyCodeLine{1073 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_TAMPER\_DETECTION}}
+\DoxyCodeLine{1074     \textcolor{comment}{/* Check if the user has requested a tamper event output. */}}
+\DoxyCodeLine{1075     \textcolor{keywordflow}{if} (events-\/>generate\_event\_on\_tamper) \{}
+\DoxyCodeLine{1076         event\_mask |= RTC\_MODE0\_EVCTRL\_TAMPEREO;}
+\DoxyCodeLine{1077     \}}
+\DoxyCodeLine{1078 }
+\DoxyCodeLine{1079     \textcolor{comment}{/* Check if the user has requested a tamper event input. */}}
+\DoxyCodeLine{1080     \textcolor{keywordflow}{if} (events-\/>on\_event\_to\_tamper) \{}
+\DoxyCodeLine{1081         event\_mask |= RTC\_MODE0\_EVCTRL\_TAMPEVEI;}
+\DoxyCodeLine{1082     \}}
+\DoxyCodeLine{1083 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1084 }
+\DoxyCodeLine{1085     \textcolor{comment}{/* Disable given event(s). */}}
+\DoxyCodeLine{1086     \mbox{\hyperlink{structrtc__module}{rtc\_module}}-\/>MODE0.EVCTRL.reg \&= \string~event\_mask;}
+\DoxyCodeLine{1087 \}}
+\DoxyCodeLine{1088 }
+\DoxyCodeLine{1091 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_GENERAL\_PURPOSE\_REG}}
+\DoxyCodeLine{1105 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} rtc\_write\_general\_purpose\_reg(}
+\DoxyCodeLine{1106     \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1107     \textcolor{keyword}{const}  uint8\_t index,}
+\DoxyCodeLine{1108     uint32\_t value)}
+\DoxyCodeLine{1109 \{}
+\DoxyCodeLine{1110     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1111     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1112     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{1113     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(index <= 3);}
+\DoxyCodeLine{1114 }
+\DoxyCodeLine{1115     \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structrtc__module}{rtc\_module}} = module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}};}
+\DoxyCodeLine{1116 }
+\DoxyCodeLine{1117     \mbox{\hyperlink{structrtc__module}{rtc\_module}}-\/>MODE0.GP[index].reg = value;}
+\DoxyCodeLine{1118 \}}
+\DoxyCodeLine{1119 }
+\DoxyCodeLine{1128 \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t rtc\_read\_general\_purpose\_reg(}
+\DoxyCodeLine{1129     \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{1130     \textcolor{keyword}{const}  uint8\_t index)}
+\DoxyCodeLine{1131 \{}
+\DoxyCodeLine{1132     \textcolor{comment}{/* Sanity check arguments */}}
+\DoxyCodeLine{1133     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module);}
+\DoxyCodeLine{1134     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}});}
+\DoxyCodeLine{1135     \mbox{\hyperlink{group__group__sam0__utils_gaab1e54dcc40192f9704e8b252635450f}{Assert}}(index <= 3);}
+\DoxyCodeLine{1136 }
+\DoxyCodeLine{1137     \mbox{\hyperlink{union_rtc}{Rtc}} *\textcolor{keyword}{const} \mbox{\hyperlink{structrtc__module}{rtc\_module}} = module-\/>\mbox{\hyperlink{structrtc__module_add2f71a276feab8de12680435b283977}{hw}};}
+\DoxyCodeLine{1138 }
+\DoxyCodeLine{1139     \textcolor{keywordflow}{return} \mbox{\hyperlink{structrtc__module}{rtc\_module}}-\/>MODE0.GP[index].reg;}
+\DoxyCodeLine{1140 \}}
+\DoxyCodeLine{1141 }
+\DoxyCodeLine{1143 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1144 }
+\DoxyCodeLine{1145 \textcolor{preprocessor}{\#ifdef FEATURE\_RTC\_TAMPER\_DETECTION}}
+\DoxyCodeLine{1146 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{rtc__tamper_8h}{rtc\_tamper.h}}"{}}}
+\DoxyCodeLine{1154 uint32\_t rtc\_tamper\_get\_stamp (\textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module);}
+\DoxyCodeLine{1155 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1156 }
+\DoxyCodeLine{1157 }
+\DoxyCodeLine{1160 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1161 \}}
+\DoxyCodeLine{1162 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1163 }
+\DoxyCodeLine{1293 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* RTC\_COUNT\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

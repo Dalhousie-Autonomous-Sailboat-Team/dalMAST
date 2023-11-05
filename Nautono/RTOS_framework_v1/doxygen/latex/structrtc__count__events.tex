@@ -1,0 +1,51 @@
+\hypertarget{structrtc__count__events}{}\doxysection{rtc\+\_\+count\+\_\+events Struct Reference}
+\label{structrtc__count__events}\index{rtc\_count\_events@{rtc\_count\_events}}
+
+
+RTC Count event enable/disable structure.  
+
+
+
+
+{\ttfamily \#include $<$rtc\+\_\+count.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structrtc__count__events_a1f79e03227cb9860d800a404eacee9b8}{generate\+\_\+event\+\_\+on\+\_\+overflow}}
+\item 
+bool \mbox{\hyperlink{structrtc__count__events_a8ddb610d3682fe5c39560673735c0433}{generate\+\_\+event\+\_\+on\+\_\+compare}} \mbox{[}RTC\+\_\+\+NUM\+\_\+\+OF\+\_\+\+COMP16\mbox{]}
+\item 
+bool \mbox{\hyperlink{structrtc__count__events_a7505fa8780cedd162032cfac8b08fd7b}{generate\+\_\+event\+\_\+on\+\_\+periodic}} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RTC Count event enable/disable structure. 
+
+Event flags for the rtc\+\_\+count\+\_\+enable\+\_\+events() and rtc\+\_\+count\+\_\+disable\+\_\+events(). 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structrtc__count__events_a8ddb610d3682fe5c39560673735c0433}\label{structrtc__count__events_a8ddb610d3682fe5c39560673735c0433}} 
+\index{rtc\_count\_events@{rtc\_count\_events}!generate\_event\_on\_compare@{generate\_event\_on\_compare}}
+\index{generate\_event\_on\_compare@{generate\_event\_on\_compare}!rtc\_count\_events@{rtc\_count\_events}}
+\doxysubsubsection{\texorpdfstring{generate\_event\_on\_compare}{generate\_event\_on\_compare}}
+{\footnotesize\ttfamily bool rtc\+\_\+count\+\_\+events\+::generate\+\_\+event\+\_\+on\+\_\+compare\mbox{[}RTC\+\_\+\+NUM\+\_\+\+OF\+\_\+\+COMP16\mbox{]}}
+
+Generate an output event on a compare channel match against the RTC count \mbox{\Hypertarget{structrtc__count__events_a1f79e03227cb9860d800a404eacee9b8}\label{structrtc__count__events_a1f79e03227cb9860d800a404eacee9b8}} 
+\index{rtc\_count\_events@{rtc\_count\_events}!generate\_event\_on\_overflow@{generate\_event\_on\_overflow}}
+\index{generate\_event\_on\_overflow@{generate\_event\_on\_overflow}!rtc\_count\_events@{rtc\_count\_events}}
+\doxysubsubsection{\texorpdfstring{generate\_event\_on\_overflow}{generate\_event\_on\_overflow}}
+{\footnotesize\ttfamily bool rtc\+\_\+count\+\_\+events\+::generate\+\_\+event\+\_\+on\+\_\+overflow}
+
+Generate an output event on each overflow of the RTC count \mbox{\Hypertarget{structrtc__count__events_a7505fa8780cedd162032cfac8b08fd7b}\label{structrtc__count__events_a7505fa8780cedd162032cfac8b08fd7b}} 
+\index{rtc\_count\_events@{rtc\_count\_events}!generate\_event\_on\_periodic@{generate\_event\_on\_periodic}}
+\index{generate\_event\_on\_periodic@{generate\_event\_on\_periodic}!rtc\_count\_events@{rtc\_count\_events}}
+\doxysubsubsection{\texorpdfstring{generate\_event\_on\_periodic}{generate\_event\_on\_periodic}}
+{\footnotesize\ttfamily bool rtc\+\_\+count\+\_\+events\+::generate\+\_\+event\+\_\+on\+\_\+periodic\mbox{[}8\mbox{]}}
+
+Generate an output event periodically at a binary division of the RTC counter frequency 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/rtc/\mbox{\hyperlink{rtc__count_8h}{rtc\+\_\+count.\+h}}\end{DoxyCompactItemize}

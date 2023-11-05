@@ -1,0 +1,43 @@
+\hypertarget{structadc__pin__scan__config}{}\doxysection{adc\+\_\+pin\+\_\+scan\+\_\+config Struct Reference}
+\label{structadc__pin__scan__config}\index{adc\_pin\_scan\_config@{adc\_pin\_scan\_config}}
+
+
+Pin scan configuration structure.  
+
+
+
+
+{\ttfamily \#include $<$adc\+\_\+feature.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structadc__pin__scan__config_a55b0b571f3272e6074d9ac2451e2eb14}{offset\+\_\+start\+\_\+scan}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structadc__pin__scan__config_a0021ac9f90886c30dec7ba4c5f908c90}{inputs\+\_\+to\+\_\+scan}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pin scan configuration structure. 
+
+Pin scan configuration structure. Part of the \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} struct and will be initialized by \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5a5650a331819833c7a27309c131c55d}{adc\+\_\+get\+\_\+config\+\_\+defaults}}. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structadc__pin__scan__config_a0021ac9f90886c30dec7ba4c5f908c90}\label{structadc__pin__scan__config_a0021ac9f90886c30dec7ba4c5f908c90}} 
+\index{adc\_pin\_scan\_config@{adc\_pin\_scan\_config}!inputs\_to\_scan@{inputs\_to\_scan}}
+\index{inputs\_to\_scan@{inputs\_to\_scan}!adc\_pin\_scan\_config@{adc\_pin\_scan\_config}}
+\doxysubsubsection{\texorpdfstring{inputs\_to\_scan}{inputs\_to\_scan}}
+{\footnotesize\ttfamily uint8\+\_\+t adc\+\_\+pin\+\_\+scan\+\_\+config\+::inputs\+\_\+to\+\_\+scan}
+
+Number of input pins to scan in pin scan mode. A value below two will disable pin scan mode. \mbox{\Hypertarget{structadc__pin__scan__config_a55b0b571f3272e6074d9ac2451e2eb14}\label{structadc__pin__scan__config_a55b0b571f3272e6074d9ac2451e2eb14}} 
+\index{adc\_pin\_scan\_config@{adc\_pin\_scan\_config}!offset\_start\_scan@{offset\_start\_scan}}
+\index{offset\_start\_scan@{offset\_start\_scan}!adc\_pin\_scan\_config@{adc\_pin\_scan\_config}}
+\doxysubsubsection{\texorpdfstring{offset\_start\_scan}{offset\_start\_scan}}
+{\footnotesize\ttfamily uint8\+\_\+t adc\+\_\+pin\+\_\+scan\+\_\+config\+::offset\+\_\+start\+\_\+scan}
+
+Offset (relative to selected positive input) of the first input pin to be used in pin scan mode 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/adc/adc\+\_\+sam\+\_\+d\+\_\+r\+\_\+h/\mbox{\hyperlink{adc__feature_8h}{adc\+\_\+feature.\+h}}\end{DoxyCompactItemize}

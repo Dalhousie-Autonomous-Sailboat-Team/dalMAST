@@ -1,0 +1,115 @@
+\hypertarget{structi2c__master__config}{}\doxysection{i2c\+\_\+master\+\_\+config Struct Reference}
+\label{structi2c__master__config}\index{i2c\_master\_config@{i2c\_master\_config}}
+
+
+Configuration structure for the I\textsuperscript{2}C Master device.  
+
+
+
+
+{\ttfamily \#include $<$i2c\+\_\+master.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structi2c__master__config_abf70eb47fda40d5d150f815df8185e5a}{baud\+\_\+rate}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} \mbox{\hyperlink{structi2c__master__config_a1be7a4da8c55ee0a63d3e9d72cd083ae}{generator\+\_\+source}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gadd8aa7cabbddc1cd2c1a8753c9b99d20}{i2c\+\_\+master\+\_\+start\+\_\+hold\+\_\+time}} \mbox{\hyperlink{structi2c__master__config_ad9040e95cf92b0726cd8548861e12b6b}{start\+\_\+hold\+\_\+time}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structi2c__master__config_a340042a7706b159b124f2ea04928d24c}{unknown\+\_\+bus\+\_\+state\+\_\+timeout}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structi2c__master__config_a41b36d6b88666af7e8ba7b22a569b6c6}{buffer\+\_\+timeout}}
+\item 
+bool \mbox{\hyperlink{structi2c__master__config_ad0c6e77641ddd40d61dca365dcfb30c4}{run\+\_\+in\+\_\+standby}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structi2c__master__config_a7294d8ef5e3f7bb1ff9b25fb3af616ca}{pinmux\+\_\+pad0}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structi2c__master__config_a34a4e47d636cd61db7e3c70dff218187}{pinmux\+\_\+pad1}}
+\item 
+bool \mbox{\hyperlink{structi2c__master__config_a5307ecc3aedeb429fcacdc2fd44a10b8}{scl\+\_\+low\+\_\+timeout}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga4640bee224bf835f4c38d7702be0742c}{i2c\+\_\+master\+\_\+inactive\+\_\+timeout}} \mbox{\hyperlink{structi2c__master__config_aacc3fbf3395d1b6e7293a34d93fbfb0d}{inactive\+\_\+timeout}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structi2c__master__config_aa40cf5e345a9345df111c40d2ad797c4}{sda\+\_\+scl\+\_\+rise\+\_\+time\+\_\+ns}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration structure for the I\textsuperscript{2}C Master device. 
+
+This is the configuration structure for the I\textsuperscript{2}C Master device. It is used as an argument for \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga1c174d923b525f6d60402f66bc9c3451}{i2c\+\_\+master\+\_\+init}} to provide the desired configurations for the module. The structure should be initialized using the i2c\+\_\+master\+\_\+get\+\_\+config\+\_\+defaults. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structi2c__master__config_abf70eb47fda40d5d150f815df8185e5a}\label{structi2c__master__config_abf70eb47fda40d5d150f815df8185e5a}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!baud\_rate@{baud\_rate}}
+\index{baud\_rate@{baud\_rate}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{baud\_rate}{baud\_rate}}
+{\footnotesize\ttfamily uint32\+\_\+t i2c\+\_\+master\+\_\+config\+::baud\+\_\+rate}
+
+Baud rate (in KHz) for I\textsuperscript{2}C operations in standard-\/mode, Fast-\/mode, and Fast-\/mode Plus Transfers, \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gace1e0023f2eee92565496a2e30006548}{i2c\+\_\+master\+\_\+baud\+\_\+rate}} \mbox{\Hypertarget{structi2c__master__config_a41b36d6b88666af7e8ba7b22a569b6c6}\label{structi2c__master__config_a41b36d6b88666af7e8ba7b22a569b6c6}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!buffer\_timeout@{buffer\_timeout}}
+\index{buffer\_timeout@{buffer\_timeout}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{buffer\_timeout}{buffer\_timeout}}
+{\footnotesize\ttfamily uint16\+\_\+t i2c\+\_\+master\+\_\+config\+::buffer\+\_\+timeout}
+
+Timeout for packet write to wait for slave \mbox{\Hypertarget{structi2c__master__config_a1be7a4da8c55ee0a63d3e9d72cd083ae}\label{structi2c__master__config_a1be7a4da8c55ee0a63d3e9d72cd083ae}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!generator\_source@{generator\_source}}
+\index{generator\_source@{generator\_source}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{generator\_source}{generator\_source}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} i2c\+\_\+master\+\_\+config\+::generator\+\_\+source}
+
+GCLK generator to use as clock source \mbox{\Hypertarget{structi2c__master__config_aacc3fbf3395d1b6e7293a34d93fbfb0d}\label{structi2c__master__config_aacc3fbf3395d1b6e7293a34d93fbfb0d}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!inactive\_timeout@{inactive\_timeout}}
+\index{inactive\_timeout@{inactive\_timeout}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{inactive\_timeout}{inactive\_timeout}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga4640bee224bf835f4c38d7702be0742c}{i2c\+\_\+master\+\_\+inactive\+\_\+timeout}} i2c\+\_\+master\+\_\+config\+::inactive\+\_\+timeout}
+
+Inactive bus time out \mbox{\Hypertarget{structi2c__master__config_a7294d8ef5e3f7bb1ff9b25fb3af616ca}\label{structi2c__master__config_a7294d8ef5e3f7bb1ff9b25fb3af616ca}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!pinmux\_pad0@{pinmux\_pad0}}
+\index{pinmux\_pad0@{pinmux\_pad0}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{pinmux\_pad0}{pinmux\_pad0}}
+{\footnotesize\ttfamily uint32\+\_\+t i2c\+\_\+master\+\_\+config\+::pinmux\+\_\+pad0}
+
+PAD0 (SDA) pinmux \mbox{\Hypertarget{structi2c__master__config_a34a4e47d636cd61db7e3c70dff218187}\label{structi2c__master__config_a34a4e47d636cd61db7e3c70dff218187}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!pinmux\_pad1@{pinmux\_pad1}}
+\index{pinmux\_pad1@{pinmux\_pad1}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{pinmux\_pad1}{pinmux\_pad1}}
+{\footnotesize\ttfamily uint32\+\_\+t i2c\+\_\+master\+\_\+config\+::pinmux\+\_\+pad1}
+
+PAD1 (SCL) pinmux \mbox{\Hypertarget{structi2c__master__config_ad0c6e77641ddd40d61dca365dcfb30c4}\label{structi2c__master__config_ad0c6e77641ddd40d61dca365dcfb30c4}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!run\_in\_standby@{run\_in\_standby}}
+\index{run\_in\_standby@{run\_in\_standby}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{run\_in\_standby}{run\_in\_standby}}
+{\footnotesize\ttfamily bool i2c\+\_\+master\+\_\+config\+::run\+\_\+in\+\_\+standby}
+
+Set to keep module active in sleep modes \mbox{\Hypertarget{structi2c__master__config_a5307ecc3aedeb429fcacdc2fd44a10b8}\label{structi2c__master__config_a5307ecc3aedeb429fcacdc2fd44a10b8}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!scl\_low\_timeout@{scl\_low\_timeout}}
+\index{scl\_low\_timeout@{scl\_low\_timeout}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{scl\_low\_timeout}{scl\_low\_timeout}}
+{\footnotesize\ttfamily bool i2c\+\_\+master\+\_\+config\+::scl\+\_\+low\+\_\+timeout}
+
+Set to enable SCL low time-\/out \mbox{\Hypertarget{structi2c__master__config_aa40cf5e345a9345df111c40d2ad797c4}\label{structi2c__master__config_aa40cf5e345a9345df111c40d2ad797c4}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!sda\_scl\_rise\_time\_ns@{sda\_scl\_rise\_time\_ns}}
+\index{sda\_scl\_rise\_time\_ns@{sda\_scl\_rise\_time\_ns}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{sda\_scl\_rise\_time\_ns}{sda\_scl\_rise\_time\_ns}}
+{\footnotesize\ttfamily uint16\+\_\+t i2c\+\_\+master\+\_\+config\+::sda\+\_\+scl\+\_\+rise\+\_\+time\+\_\+ns}
+
+Get more accurate BAUD, considering rise time(required for standard-\/mode and Fast-\/mode) \mbox{\Hypertarget{structi2c__master__config_ad9040e95cf92b0726cd8548861e12b6b}\label{structi2c__master__config_ad9040e95cf92b0726cd8548861e12b6b}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!start\_hold\_time@{start\_hold\_time}}
+\index{start\_hold\_time@{start\_hold\_time}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{start\_hold\_time}{start\_hold\_time}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gadd8aa7cabbddc1cd2c1a8753c9b99d20}{i2c\+\_\+master\+\_\+start\+\_\+hold\+\_\+time}} i2c\+\_\+master\+\_\+config\+::start\+\_\+hold\+\_\+time}
+
+Bus hold time after start signal on data line \mbox{\Hypertarget{structi2c__master__config_a340042a7706b159b124f2ea04928d24c}\label{structi2c__master__config_a340042a7706b159b124f2ea04928d24c}} 
+\index{i2c\_master\_config@{i2c\_master\_config}!unknown\_bus\_state\_timeout@{unknown\_bus\_state\_timeout}}
+\index{unknown\_bus\_state\_timeout@{unknown\_bus\_state\_timeout}!i2c\_master\_config@{i2c\_master\_config}}
+\doxysubsubsection{\texorpdfstring{unknown\_bus\_state\_timeout}{unknown\_bus\_state\_timeout}}
+{\footnotesize\ttfamily uint16\+\_\+t i2c\+\_\+master\+\_\+config\+::unknown\+\_\+bus\+\_\+state\+\_\+timeout}
+
+Unknown bus state \mbox{\hyperlink{i2c__common_8h_asfdoc_sam0_sercom_i2c_unknown_bus_timeout}{timeout}} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/sercom/i2c/\mbox{\hyperlink{i2c__master_8h}{i2c\+\_\+master.\+h}}\end{DoxyCompactItemize}

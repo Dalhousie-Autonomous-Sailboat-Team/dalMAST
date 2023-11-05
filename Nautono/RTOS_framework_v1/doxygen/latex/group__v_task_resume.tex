@@ -1,0 +1,47 @@
+\hypertarget{group__v_task_resume}{}\doxysection{v\+Task\+Resume}
+\label{group__v_task_resume}\index{vTaskResume@{vTaskResume}}
+task. h 
+\begin{DoxyPre}void vTaskResume( TaskHandle\_t xTaskToResume );\end{DoxyPre}
+
+
+INCLUDE\+\_\+v\+Task\+Suspend must be defined as 1 for this function to be available. See the configuration section for more information.
+
+Resumes a suspended task.
+
+A task that has been suspended by one or more calls to v\+Task\+Suspend () will be made available for running again by a single call to v\+Task\+Resume ().
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Task\+To\+Resume} & Handle to the task being readied.\\
+\hline
+\end{DoxyParams}
+Example usage\+: 
+\begin{DoxyPre}
+void vAFunction( void )
+\{
+TaskHandle\_t xHandle;
+
+    // Create a task, storing the handle.
+    xTaskCreate( vTaskCode, "{}NAME"{}, STACK\_SIZE, NULL, tskIDLE\_PRIORITY, \&xHandle );
+
+    // ...
+
+    // Use the handle to suspend the created task.
+    vTaskSuspend( xHandle );
+
+    // ...
+
+    // The created task will not run during this period, unless
+    // another task calls vTaskResume( xHandle ).
+
+    //...
+
+
+    // Resume the suspended task ourselves.
+    vTaskResume( xHandle );
+
+    // The created task will once again get microcontroller processing
+    // time in accordance with its priority within the system.
+\}
+  \end{DoxyPre}
+ 

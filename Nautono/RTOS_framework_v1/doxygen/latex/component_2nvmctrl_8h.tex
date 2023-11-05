@@ -1,0 +1,854 @@
+\hypertarget{component_2nvmctrl_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/component/nvmctrl.h File Reference}
+\label{component_2nvmctrl_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/nvmctrl.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/nvmctrl.h}}
+
+
+Component description for NVMCTRL.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_a___type}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_n_v_m_c_t_r_l___c_t_r_l_b___type}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_n_v_m_c_t_r_l___p_a_r_a_m___type}{NVMCTRL\+\_\+\+PARAM\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_c_l_r___type}{NVMCTRL\+\_\+\+INTENCLR\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_e_n_s_e_t___type}{NVMCTRL\+\_\+\+INTENSET\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_n_v_m_c_t_r_l___i_n_t_f_l_a_g___type}{NVMCTRL\+\_\+\+INTFLAG\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_n_v_m_c_t_r_l___s_t_a_t_u_s___type}{NVMCTRL\+\_\+\+STATUS\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_n_v_m_c_t_r_l___a_d_d_r___type}{NVMCTRL\+\_\+\+ADDR\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_n_v_m_c_t_r_l___l_o_c_k___type}{NVMCTRL\+\_\+\+LOCK\+\_\+\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_nvmctrl}{Nvmctrl}}
+\begin{DoxyCompactList}\small\item\em NVMCTRL APB hardware registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3ea48740d5f4e1f68a7dd06753eb20d5}\label{component_2nvmctrl_8h_a3ea48740d5f4e1f68a7dd06753eb20d5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+U2207}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad91d0ed581519e0bb057ede9db891e87}\label{component_2nvmctrl_8h_ad91d0ed581519e0bb057ede9db891e87}} 
+\#define {\bfseries REV\+\_\+\+NVMCTRL}~0x109
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a4853195148a26c13e84af06b27099a5a}\label{component_2nvmctrl_8h_a4853195148a26c13e84af06b27099a5a}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+OFFSET}~0x00
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA offset) Control A \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_afda7d874f8e5f91f9590105c7bc984b5}\label{component_2nvmctrl_8h_afda7d874f8e5f91f9590105c7bc984b5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+RESETVALUE}~0x0000ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA reset\+\_\+value) Control A \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}\label{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a0d19f301cea0ef37b638f1961a1abae9}\label{component_2nvmctrl_8h_a0d19f301cea0ef37b638f1961a1abae9}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Msk}~(0x7\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a1dd6561aa8e0944fda54ac91591a7672}\label{component_2nvmctrl_8h_a1dd6561aa8e0944fda54ac91591a7672}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD}(value)~((NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a6c7936d9e4cd317170b54ffb5b3b428d}\label{component_2nvmctrl_8h_a6c7936d9e4cd317170b54ffb5b3b428d}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+ER\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Erase Row -\/ Erases the row addressed by the ADDR register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad7cfc5fc0cd04b2bbe3337a035b6d127}\label{component_2nvmctrl_8h_ad7cfc5fc0cd04b2bbe3337a035b6d127}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+WP\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Write Page -\/ Writes the contents of the page buffer to the page addressed by the ADDR register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a07c4451d3f3e0d0dbed551ef0c3bbd21}\label{component_2nvmctrl_8h_a07c4451d3f3e0d0dbed551ef0c3bbd21}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+EAR\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Erase Auxiliary Row -\/ Erases the auxiliary row addressed by the ADDR register. This command can be given only when the security bit is not set and only to the user configuration row. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a16088beab7d82fdbb34bac9971d21859}\label{component_2nvmctrl_8h_a16088beab7d82fdbb34bac9971d21859}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+WAP\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Write Auxiliary Page -\/ Writes the contents of the page buffer to the page addressed by the ADDR register. This command can be given only when the security bit is not set and only to the user configuration row. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a37bc89b225c1b5d5a07bc707ef910ecb}\label{component_2nvmctrl_8h_a37bc89b225c1b5d5a07bc707ef910ecb}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+SF\+\_\+\+Val}~0x\+Aul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Security Flow Command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a16cd33731304aa0ed2db58be2f6fe599}\label{component_2nvmctrl_8h_a16cd33731304aa0ed2db58be2f6fe599}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+WL\+\_\+\+Val}~0x\+Ful
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Write lockbits \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a30ddc4581bb1d3ba0a5dfebff3025ae6}\label{component_2nvmctrl_8h_a30ddc4581bb1d3ba0a5dfebff3025ae6}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+LR\+\_\+\+Val}~0x40ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Lock Region -\/ Locks the region containing the address location in the ADDR register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a594434a1450c942a3a1b8938d7f8ee50}\label{component_2nvmctrl_8h_a594434a1450c942a3a1b8938d7f8ee50}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+UR\+\_\+\+Val}~0x41ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Unlock Region -\/ Unlocks the region containing the address location in the ADDR register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5e5184e115f92e2037793f468f07e912}\label{component_2nvmctrl_8h_a5e5184e115f92e2037793f468f07e912}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+SPRM\+\_\+\+Val}~0x42ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Sets the power reduction mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5af4406a70755e9869cbddf9aeccba45}\label{component_2nvmctrl_8h_a5af4406a70755e9869cbddf9aeccba45}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+CPRM\+\_\+\+Val}~0x43ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Clears the power reduction mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa88d2aeae32e10443a0e9dc516dfbf44}\label{component_2nvmctrl_8h_aa88d2aeae32e10443a0e9dc516dfbf44}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+PBC\+\_\+\+Val}~0x44ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Page Buffer Clear -\/ Clears the page buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a9192307a9292a8144f18adfe8ea0d3f0}\label{component_2nvmctrl_8h_a9192307a9292a8144f18adfe8ea0d3f0}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+SSB\+\_\+\+Val}~0x45ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Set Security Bit -\/ Sets the security bit by writing 0x00 to the first byte in the lockbit row. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a0bef792b0234a40587a3dd7254e1764d}\label{component_2nvmctrl_8h_a0bef792b0234a40587a3dd7254e1764d}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+INVALL\+\_\+\+Val}~0x46ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Invalidate all cache lines. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aaecf1953d86bef9ad9bef7309493954d}\label{component_2nvmctrl_8h_aaecf1953d86bef9ad9bef7309493954d}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+ER}~(\mbox{\hyperlink{component_2nvmctrl_8h_a6c7936d9e4cd317170b54ffb5b3b428d}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+ER\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad21e753f2741af430e0a52f2a9a15eab}\label{component_2nvmctrl_8h_ad21e753f2741af430e0a52f2a9a15eab}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+WP}~(\mbox{\hyperlink{component_2nvmctrl_8h_ad7cfc5fc0cd04b2bbe3337a035b6d127}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+WP\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac046ff781ead0748e07c007c15e41ad7}\label{component_2nvmctrl_8h_ac046ff781ead0748e07c007c15e41ad7}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+EAR}~(\mbox{\hyperlink{component_2nvmctrl_8h_a07c4451d3f3e0d0dbed551ef0c3bbd21}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+EAR\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a2ce3d94a5f09832706179f27bbe94d71}\label{component_2nvmctrl_8h_a2ce3d94a5f09832706179f27bbe94d71}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+WAP}~(\mbox{\hyperlink{component_2nvmctrl_8h_a16088beab7d82fdbb34bac9971d21859}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+WAP\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a98dcae15125d4efee881b3964b7d23a1}\label{component_2nvmctrl_8h_a98dcae15125d4efee881b3964b7d23a1}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+SF}~(\mbox{\hyperlink{component_2nvmctrl_8h_a37bc89b225c1b5d5a07bc707ef910ecb}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+SF\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a1986c7240415a189e9b8d5e867830354}\label{component_2nvmctrl_8h_a1986c7240415a189e9b8d5e867830354}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+WL}~(\mbox{\hyperlink{component_2nvmctrl_8h_a16cd33731304aa0ed2db58be2f6fe599}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+WL\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a39f7730dc87114a29f25c569b9c78cbb}\label{component_2nvmctrl_8h_a39f7730dc87114a29f25c569b9c78cbb}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+LR}~(\mbox{\hyperlink{component_2nvmctrl_8h_a30ddc4581bb1d3ba0a5dfebff3025ae6}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+LR\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a30fba14a1d68d389de8d0e878e9aeed5}\label{component_2nvmctrl_8h_a30fba14a1d68d389de8d0e878e9aeed5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+UR}~(\mbox{\hyperlink{component_2nvmctrl_8h_a594434a1450c942a3a1b8938d7f8ee50}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+UR\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aaa9412be92f5cb4cbf868ce2532930aa}\label{component_2nvmctrl_8h_aaa9412be92f5cb4cbf868ce2532930aa}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+SPRM}~(\mbox{\hyperlink{component_2nvmctrl_8h_a5e5184e115f92e2037793f468f07e912}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+SPRM\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a682f47adcc9972101304cccbc5c112bd}\label{component_2nvmctrl_8h_a682f47adcc9972101304cccbc5c112bd}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+CPRM}~(\mbox{\hyperlink{component_2nvmctrl_8h_a5af4406a70755e9869cbddf9aeccba45}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+CPRM\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a99e7d43b40b4c0db731bae7c936af4a4}\label{component_2nvmctrl_8h_a99e7d43b40b4c0db731bae7c936af4a4}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+PBC}~(\mbox{\hyperlink{component_2nvmctrl_8h_aa88d2aeae32e10443a0e9dc516dfbf44}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+PBC\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7c3505981ea288eb37c268fbe5320d36}\label{component_2nvmctrl_8h_a7c3505981ea288eb37c268fbe5320d36}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+SSB}~(\mbox{\hyperlink{component_2nvmctrl_8h_a9192307a9292a8144f18adfe8ea0d3f0}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+SSB\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_afdd1495fff0fe785746334cb2b902409}\label{component_2nvmctrl_8h_afdd1495fff0fe785746334cb2b902409}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+INVALL}~(\mbox{\hyperlink{component_2nvmctrl_8h_a0bef792b0234a40587a3dd7254e1764d}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+INVALL\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5346c6f8ba695f7cadb7f07bde6e25f8}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a6ac235db7c8301778321fa6898c7f490}\label{component_2nvmctrl_8h_a6ac235db7c8301778321fa6898c7f490}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Command Execution \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad40754e7ab3d73ad07b2fca0c4ca8de3}\label{component_2nvmctrl_8h_ad40754e7ab3d73ad07b2fca0c4ca8de3}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a6ac235db7c8301778321fa6898c7f490}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a9e234ce19fc870b1be42fad5a7183220}\label{component_2nvmctrl_8h_a9e234ce19fc870b1be42fad5a7183220}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX}(value)~((NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a6ac235db7c8301778321fa6898c7f490}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a22224d9a78d4033732134f8b564ba6d9}\label{component_2nvmctrl_8h_a22224d9a78d4033732134f8b564ba6d9}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX\+\_\+\+KEY\+\_\+\+Val}~0x\+A5ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) Execution Key \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab13bf4c69aa0378ad5cc866fe066e8c5}\label{component_2nvmctrl_8h_ab13bf4c69aa0378ad5cc866fe066e8c5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX\+\_\+\+KEY}~(\mbox{\hyperlink{component_2nvmctrl_8h_a22224d9a78d4033732134f8b564ba6d9}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX\+\_\+\+KEY\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a6ac235db7c8301778321fa6898c7f490}{NVMCTRL\+\_\+\+CTRLA\+\_\+\+CMDEX\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a59f02a3ccafaec97563b7369c88d548c}\label{component_2nvmctrl_8h_a59f02a3ccafaec97563b7369c88d548c}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLA\+\_\+\+MASK}~0x\+FF7\+Ful
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLA) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a96b31df212035cedc4f6a370222e5b67}\label{component_2nvmctrl_8h_a96b31df212035cedc4f6a370222e5b67}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+OFFSET}~0x04
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB offset) Control B \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac0a835cf0ee617133dc445147d2af448}\label{component_2nvmctrl_8h_ac0a835cf0ee617133dc445147d2af448}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB reset\+\_\+value) Control B \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a43e4b7eb29abd297bee59f003d715e26}\label{component_2nvmctrl_8h_a43e4b7eb29abd297bee59f003d715e26}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) NVM Read Wait States \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab5ad30e9547cbcc159748e0f014567f0}\label{component_2nvmctrl_8h_ab5ad30e9547cbcc159748e0f014567f0}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a43e4b7eb29abd297bee59f003d715e26}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5b3f59c294e4c40249e9b361cb580e6f}\label{component_2nvmctrl_8h_a5b3f59c294e4c40249e9b361cb580e6f}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS}(value)~((NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a43e4b7eb29abd297bee59f003d715e26}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a38b52d3de7998f872c54a599e4e21f25}\label{component_2nvmctrl_8h_a38b52d3de7998f872c54a599e4e21f25}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+SINGLE\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) Single Auto Wait State \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aaf0413ccbb9e3c4ebfe2c2f8f2a10da6}\label{component_2nvmctrl_8h_aaf0413ccbb9e3c4ebfe2c2f8f2a10da6}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+HALF\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) Half Auto Wait State \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a757070851f4e48ecc24b2d75da0aa6e2}\label{component_2nvmctrl_8h_a757070851f4e48ecc24b2d75da0aa6e2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+DUAL\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) Dual Auto Wait State \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3011ea9db7c53bb00f357712c1d7d4b2}\label{component_2nvmctrl_8h_a3011ea9db7c53bb00f357712c1d7d4b2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+SINGLE}~(\mbox{\hyperlink{component_2nvmctrl_8h_a38b52d3de7998f872c54a599e4e21f25}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+SINGLE\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a43e4b7eb29abd297bee59f003d715e26}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a49c5e1bdebf752025bc9874c096865e4}\label{component_2nvmctrl_8h_a49c5e1bdebf752025bc9874c096865e4}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+HALF}~(\mbox{\hyperlink{component_2nvmctrl_8h_aaf0413ccbb9e3c4ebfe2c2f8f2a10da6}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+HALF\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a43e4b7eb29abd297bee59f003d715e26}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5b895ffd7c3df025c5accf229c03512e}\label{component_2nvmctrl_8h_a5b895ffd7c3df025c5accf229c03512e}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+DUAL}~(\mbox{\hyperlink{component_2nvmctrl_8h_a757070851f4e48ecc24b2d75da0aa6e2}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+DUAL\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a43e4b7eb29abd297bee59f003d715e26}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+RWS\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_af17fac4102804e50810c49ec470be5e2}\label{component_2nvmctrl_8h_af17fac4102804e50810c49ec470be5e2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+MANW\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) Manual Write \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab926dd3f8e1a5dd7bd6ab82e32e97f00}\label{component_2nvmctrl_8h_ab926dd3f8e1a5dd7bd6ab82e32e97f00}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+MANW}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_af17fac4102804e50810c49ec470be5e2}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+MANW\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac7d2e32d78d79b7a7b67e1f6aa1571df}\label{component_2nvmctrl_8h_ac7d2e32d78d79b7a7b67e1f6aa1571df}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) Power Reduction Mode during Sleep \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ae19435c78d5011e7bb34cb879c66bc8b}\label{component_2nvmctrl_8h_ae19435c78d5011e7bb34cb879c66bc8b}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+Msk}~(0x3ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ac7d2e32d78d79b7a7b67e1f6aa1571df}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3fbdffb0fca7ae059f4c803d8547a0d5}\label{component_2nvmctrl_8h_a3fbdffb0fca7ae059f4c803d8547a0d5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM}(value)~((NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ac7d2e32d78d79b7a7b67e1f6aa1571df}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa1ab6787e59eac433c25ac307dd7a2aa}\label{component_2nvmctrl_8h_aa1ab6787e59eac433c25ac307dd7a2aa}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+WAKEONACCESS\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) NVM block enters low-\/power mode when entering sleep.\+NVM block exits low-\/power mode upon first access. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a45d3a8b31b16b2b1204de0b61e5c12fc}\label{component_2nvmctrl_8h_a45d3a8b31b16b2b1204de0b61e5c12fc}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+WAKEUPINSTANT\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) NVM block enters low-\/power mode when entering sleep.\+NVM block exits low-\/power mode when exiting sleep. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a2a6e0082abe992f41fe1e646e0b6b52a}\label{component_2nvmctrl_8h_a2a6e0082abe992f41fe1e646e0b6b52a}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+DISABLED\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) Auto power reduction disabled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a65e9f8270f7eaf6119d83c67049d63cc}\label{component_2nvmctrl_8h_a65e9f8270f7eaf6119d83c67049d63cc}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+WAKEONACCESS}~(\mbox{\hyperlink{component_2nvmctrl_8h_aa1ab6787e59eac433c25ac307dd7a2aa}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+WAKEONACCESS\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ac7d2e32d78d79b7a7b67e1f6aa1571df}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a6c32d4daa17d08d810b673df9bf3a3bf}\label{component_2nvmctrl_8h_a6c32d4daa17d08d810b673df9bf3a3bf}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+WAKEUPINSTANT}~(\mbox{\hyperlink{component_2nvmctrl_8h_a45d3a8b31b16b2b1204de0b61e5c12fc}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+WAKEUPINSTANT\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ac7d2e32d78d79b7a7b67e1f6aa1571df}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab612ef2163b9b3f3b243a5a58ebbada0}\label{component_2nvmctrl_8h_ab612ef2163b9b3f3b243a5a58ebbada0}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+DISABLED}~(\mbox{\hyperlink{component_2nvmctrl_8h_a2a6e0082abe992f41fe1e646e0b6b52a}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+DISABLED\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ac7d2e32d78d79b7a7b67e1f6aa1571df}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+SLEEPPRM\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a46b5014db97bf5ce4da54dce52d162f9}\label{component_2nvmctrl_8h_a46b5014db97bf5ce4da54dce52d162f9}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+Pos}~16
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) NVMCTRL Read Mode \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a1a5b8a600e2d62a49984a1c75ea693a2}\label{component_2nvmctrl_8h_a1a5b8a600e2d62a49984a1c75ea693a2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+Msk}~(0x3ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a46b5014db97bf5ce4da54dce52d162f9}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aaa05ed9df2291f44b919f5b0fa447767}\label{component_2nvmctrl_8h_aaa05ed9df2291f44b919f5b0fa447767}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE}(value)~((NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a46b5014db97bf5ce4da54dce52d162f9}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a4a4b96f2109c47245bc98e69b66fff74}\label{component_2nvmctrl_8h_a4a4b96f2109c47245bc98e69b66fff74}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+NO\+\_\+\+MISS\+\_\+\+PENALTY\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) The NVM Controller (cache system) does not insert wait states on a cache miss. Gives the best system performance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa992cf03ba51b466d0e1f18fba2982d2}\label{component_2nvmctrl_8h_aa992cf03ba51b466d0e1f18fba2982d2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+LOW\+\_\+\+POWER\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) Reduces power consumption of the cache system, but inserts a wait state each time there is a cache miss. This mode may not be relevant if CPU performance is required, as the application will be stalled and may lead to increase run time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a330c07f70cd004957ce3ab80e77f06d8}\label{component_2nvmctrl_8h_a330c07f70cd004957ce3ab80e77f06d8}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+DETERMINISTIC\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) The cache system ensures that a cache hit or miss takes the same amount of time, determined by the number of programmed flash wait states. This mode can be used for real-\/time applications that require deterministic execution timings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a566f1952886163d66be5acb1d632646c}\label{component_2nvmctrl_8h_a566f1952886163d66be5acb1d632646c}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+NO\+\_\+\+MISS\+\_\+\+PENALTY}~(\mbox{\hyperlink{component_2nvmctrl_8h_a4a4b96f2109c47245bc98e69b66fff74}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+NO\+\_\+\+MISS\+\_\+\+PENALTY\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a46b5014db97bf5ce4da54dce52d162f9}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad68c23f250b571ae61e8c9ad730b42a4}\label{component_2nvmctrl_8h_ad68c23f250b571ae61e8c9ad730b42a4}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+LOW\+\_\+\+POWER}~(\mbox{\hyperlink{component_2nvmctrl_8h_aa992cf03ba51b466d0e1f18fba2982d2}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+LOW\+\_\+\+POWER\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a46b5014db97bf5ce4da54dce52d162f9}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_afb30f0bebe63e725ddd44be344011985}\label{component_2nvmctrl_8h_afb30f0bebe63e725ddd44be344011985}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+DETERMINISTIC}~(\mbox{\hyperlink{component_2nvmctrl_8h_a330c07f70cd004957ce3ab80e77f06d8}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+DETERMINISTIC\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a46b5014db97bf5ce4da54dce52d162f9}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+READMODE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_af4c3e69fb60d156a007a7edd11022b55}\label{component_2nvmctrl_8h_af4c3e69fb60d156a007a7edd11022b55}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+CACHEDIS\+\_\+\+Pos}~18
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) Cache Disable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab1f4105b83a240096ef70c4a9c989907}\label{component_2nvmctrl_8h_ab1f4105b83a240096ef70c4a9c989907}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+CACHEDIS}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_af4c3e69fb60d156a007a7edd11022b55}{NVMCTRL\+\_\+\+CTRLB\+\_\+\+CACHEDIS\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aaf2272ac3ee696dfe0d222a87bc7cbe1}\label{component_2nvmctrl_8h_aaf2272ac3ee696dfe0d222a87bc7cbe1}} 
+\#define {\bfseries NVMCTRL\+\_\+\+CTRLB\+\_\+\+MASK}~0x0007039\+Eul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+CTRLB) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a6624597605fc956079a9818778a34abe}\label{component_2nvmctrl_8h_a6624597605fc956079a9818778a34abe}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+OFFSET}~0x08
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM offset) NVM Parameter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a70c3c90bcb2318bb472cc9565751ff04}\label{component_2nvmctrl_8h_a70c3c90bcb2318bb472cc9565751ff04}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM reset\+\_\+value) NVM Parameter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a08f9f5de86a6c44ce2d6ecdb9f995443}\label{component_2nvmctrl_8h_a08f9f5de86a6c44ce2d6ecdb9f995443}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+NVMP\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) NVM Pages \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a767641a1cda9faa90b0b721f356158c7}\label{component_2nvmctrl_8h_a767641a1cda9faa90b0b721f356158c7}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+NVMP\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a08f9f5de86a6c44ce2d6ecdb9f995443}{NVMCTRL\+\_\+\+PARAM\+\_\+\+NVMP\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_abe03070a8e72b6577e46fa73ad53e552}\label{component_2nvmctrl_8h_abe03070a8e72b6577e46fa73ad53e552}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+NVMP}(value)~((NVMCTRL\+\_\+\+PARAM\+\_\+\+NVMP\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a08f9f5de86a6c44ce2d6ecdb9f995443}{NVMCTRL\+\_\+\+PARAM\+\_\+\+NVMP\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}\label{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}~16
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) Page Size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_acd9411e012f3e690b4e835de166dde28}\label{component_2nvmctrl_8h_acd9411e012f3e690b4e835de166dde28}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a58491f9494d89b466f85269fcdb1f26e}\label{component_2nvmctrl_8h_a58491f9494d89b466f85269fcdb1f26e}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ}(value)~((NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a9a83c6574dc48ac1c69701673922d2f3}\label{component_2nvmctrl_8h_a9a83c6574dc48ac1c69701673922d2f3}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+8\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) 8 bytes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a10b4a62c2bab14a45967ee663cfbdd10}\label{component_2nvmctrl_8h_a10b4a62c2bab14a45967ee663cfbdd10}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+16\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) 16 bytes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ae80b28e70177db78d7d5a0d748809192}\label{component_2nvmctrl_8h_ae80b28e70177db78d7d5a0d748809192}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+32\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) 32 bytes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a464e20508682489f9283f535148c27b1}\label{component_2nvmctrl_8h_a464e20508682489f9283f535148c27b1}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+64\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) 64 bytes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac8f620598445b047b44dfc8081439744}\label{component_2nvmctrl_8h_ac8f620598445b047b44dfc8081439744}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+128\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) 128 bytes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7f53d9c6161bf83ef35275e90438e9e2}\label{component_2nvmctrl_8h_a7f53d9c6161bf83ef35275e90438e9e2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+256\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) 256 bytes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac19388a03c011b81e82b35dfd7da69b1}\label{component_2nvmctrl_8h_ac19388a03c011b81e82b35dfd7da69b1}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+512\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) 512 bytes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7bffb82ccc9a71552882baabdfa97b13}\label{component_2nvmctrl_8h_a7bffb82ccc9a71552882baabdfa97b13}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+1024\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) 1024 bytes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a39d4fde607f28b120777885c44f2e0dd}\label{component_2nvmctrl_8h_a39d4fde607f28b120777885c44f2e0dd}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+8}~(\mbox{\hyperlink{component_2nvmctrl_8h_a9a83c6574dc48ac1c69701673922d2f3}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+8\+\_\+\+Val}}       $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a12d78d73359d02253053b1ef6ed067c6}\label{component_2nvmctrl_8h_a12d78d73359d02253053b1ef6ed067c6}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+16}~(\mbox{\hyperlink{component_2nvmctrl_8h_a10b4a62c2bab14a45967ee663cfbdd10}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+16\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a4a6a6748a1eda03967d73ff67d8b4e5d}\label{component_2nvmctrl_8h_a4a6a6748a1eda03967d73ff67d8b4e5d}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+32}~(\mbox{\hyperlink{component_2nvmctrl_8h_ae80b28e70177db78d7d5a0d748809192}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+32\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a010ee7c6ad7172ef6b2b7ff5020fa540}\label{component_2nvmctrl_8h_a010ee7c6ad7172ef6b2b7ff5020fa540}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+64}~(\mbox{\hyperlink{component_2nvmctrl_8h_a464e20508682489f9283f535148c27b1}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+64\+\_\+\+Val}}      $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a19008e48e571c1882e4476ac5e0a53ab}\label{component_2nvmctrl_8h_a19008e48e571c1882e4476ac5e0a53ab}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+128}~(\mbox{\hyperlink{component_2nvmctrl_8h_ac8f620598445b047b44dfc8081439744}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+128\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a4ed90755a60fe915da872cb1151170a9}\label{component_2nvmctrl_8h_a4ed90755a60fe915da872cb1151170a9}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+256}~(\mbox{\hyperlink{component_2nvmctrl_8h_a7f53d9c6161bf83ef35275e90438e9e2}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+256\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a0c5eba0af849936464336787aaa30734}\label{component_2nvmctrl_8h_a0c5eba0af849936464336787aaa30734}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+512}~(\mbox{\hyperlink{component_2nvmctrl_8h_ac19388a03c011b81e82b35dfd7da69b1}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+512\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3dc7aa1196aff3381eefe55a8789ca5d}\label{component_2nvmctrl_8h_a3dc7aa1196aff3381eefe55a8789ca5d}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+1024}~(\mbox{\hyperlink{component_2nvmctrl_8h_a7bffb82ccc9a71552882baabdfa97b13}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+1024\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_abec5624158a60a0f0d0b8a62afe18af8}{NVMCTRL\+\_\+\+PARAM\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aadfbc70cd6cbb088b215b8e6322c4295}\label{component_2nvmctrl_8h_aadfbc70cd6cbb088b215b8e6322c4295}} 
+\#define {\bfseries NVMCTRL\+\_\+\+PARAM\+\_\+\+MASK}~0x0007\+FFFFul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+PARAM) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_af69e18ecea21ffbf47dc28f66161a768}\label{component_2nvmctrl_8h_af69e18ecea21ffbf47dc28f66161a768}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENCLR\+\_\+\+OFFSET}~0x0C
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENCLR offset) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_acc5d7dab614b1d4e05402a8c97de3954}\label{component_2nvmctrl_8h_acc5d7dab614b1d4e05402a8c97de3954}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENCLR\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENCLR reset\+\_\+value) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_af655addcfd79db2cb6324f92209a9896}\label{component_2nvmctrl_8h_af655addcfd79db2cb6324f92209a9896}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENCLR\+\_\+\+READY\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENCLR) NVM Ready Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a442a07f4d8e084c114976267dfc2dc86}\label{component_2nvmctrl_8h_a442a07f4d8e084c114976267dfc2dc86}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENCLR\+\_\+\+READY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_af655addcfd79db2cb6324f92209a9896}{NVMCTRL\+\_\+\+INTENCLR\+\_\+\+READY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aefcc9c986918d880edfb8b05fe0a6bcb}\label{component_2nvmctrl_8h_aefcc9c986918d880edfb8b05fe0a6bcb}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENCLR\+\_\+\+ERROR\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENCLR) Error Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a21e287f2b5ff9239dd9cca1068d6a5a5}\label{component_2nvmctrl_8h_a21e287f2b5ff9239dd9cca1068d6a5a5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENCLR\+\_\+\+ERROR}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aefcc9c986918d880edfb8b05fe0a6bcb}{NVMCTRL\+\_\+\+INTENCLR\+\_\+\+ERROR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a399cac515ae8b6bfd864314732defbe9}\label{component_2nvmctrl_8h_a399cac515ae8b6bfd864314732defbe9}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENCLR\+\_\+\+MASK}~0x03ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENCLR) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_acbc15881a076ca6d111540304e571a20}\label{component_2nvmctrl_8h_acbc15881a076ca6d111540304e571a20}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENSET\+\_\+\+OFFSET}~0x10
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENSET offset) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad48eea420ef04c6f0c75a074991ad6d6}\label{component_2nvmctrl_8h_ad48eea420ef04c6f0c75a074991ad6d6}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENSET\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENSET reset\+\_\+value) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a4eca7adfbfcaa40c9a3904c9c141058a}\label{component_2nvmctrl_8h_a4eca7adfbfcaa40c9a3904c9c141058a}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENSET\+\_\+\+READY\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENSET) NVM Ready Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aec9faf993409c2da8bc71efd88933666}\label{component_2nvmctrl_8h_aec9faf993409c2da8bc71efd88933666}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENSET\+\_\+\+READY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a4eca7adfbfcaa40c9a3904c9c141058a}{NVMCTRL\+\_\+\+INTENSET\+\_\+\+READY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aac02b4043d398b4dc876e542fda447e0}\label{component_2nvmctrl_8h_aac02b4043d398b4dc876e542fda447e0}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENSET\+\_\+\+ERROR\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENSET) Error Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a0ed8ea82f01157010d7c740abd3b80a2}\label{component_2nvmctrl_8h_a0ed8ea82f01157010d7c740abd3b80a2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENSET\+\_\+\+ERROR}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aac02b4043d398b4dc876e542fda447e0}{NVMCTRL\+\_\+\+INTENSET\+\_\+\+ERROR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac49294b6f689477f53cabe7aba8a4975}\label{component_2nvmctrl_8h_ac49294b6f689477f53cabe7aba8a4975}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTENSET\+\_\+\+MASK}~0x03ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTENSET) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a28bff79f1cf058fa8a6c7072f5913862}\label{component_2nvmctrl_8h_a28bff79f1cf058fa8a6c7072f5913862}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTFLAG\+\_\+\+OFFSET}~0x14
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTFLAG offset) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a2d7e54384a5f6445cc9b9769ddf32ac2}\label{component_2nvmctrl_8h_a2d7e54384a5f6445cc9b9769ddf32ac2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTFLAG\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTFLAG reset\+\_\+value) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab04b4aece1f516c2e7ee00e7f29c9b69}\label{component_2nvmctrl_8h_ab04b4aece1f516c2e7ee00e7f29c9b69}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTFLAG\+\_\+\+READY\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTFLAG) NVM Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3c427a204dab120e2aee8839fbe1cc7c}\label{component_2nvmctrl_8h_a3c427a204dab120e2aee8839fbe1cc7c}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTFLAG\+\_\+\+READY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ab04b4aece1f516c2e7ee00e7f29c9b69}{NVMCTRL\+\_\+\+INTFLAG\+\_\+\+READY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad0ee9e136df1b894499ee13b6509c08f}\label{component_2nvmctrl_8h_ad0ee9e136df1b894499ee13b6509c08f}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTFLAG\+\_\+\+ERROR\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTFLAG) Error \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a4dc7bd2f8228424f2f305284a0425d64}\label{component_2nvmctrl_8h_a4dc7bd2f8228424f2f305284a0425d64}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTFLAG\+\_\+\+ERROR}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ad0ee9e136df1b894499ee13b6509c08f}{NVMCTRL\+\_\+\+INTFLAG\+\_\+\+ERROR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a77cb82e875b1988ba35455d842df74c5}\label{component_2nvmctrl_8h_a77cb82e875b1988ba35455d842df74c5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+INTFLAG\+\_\+\+MASK}~0x03ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+INTFLAG) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa210cb991451778d9df1a804b189799a}\label{component_2nvmctrl_8h_aa210cb991451778d9df1a804b189799a}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+OFFSET}~0x18
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+STATUS offset) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac30e36e00c486c218383a4d318fe59c8}\label{component_2nvmctrl_8h_ac30e36e00c486c218383a4d318fe59c8}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+RESETVALUE}~0x0000ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+STATUS reset\+\_\+value) Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab7f1c04b15d3c4fc8c9ab4bfbfd0731c}\label{component_2nvmctrl_8h_ab7f1c04b15d3c4fc8c9ab4bfbfd0731c}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+PRM\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+STATUS) Power Reduction Mode \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_af0aef4e5cc8a239d347d60eec6c4cac2}\label{component_2nvmctrl_8h_af0aef4e5cc8a239d347d60eec6c4cac2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+PRM}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ab7f1c04b15d3c4fc8c9ab4bfbfd0731c}{NVMCTRL\+\_\+\+STATUS\+\_\+\+PRM\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_af65957fca966956aebcb205a480376cf}\label{component_2nvmctrl_8h_af65957fca966956aebcb205a480376cf}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+LOAD\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+STATUS) NVM Page Buffer Active Loading \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ade5ff44980a885bebf5604ac806a2900}\label{component_2nvmctrl_8h_ade5ff44980a885bebf5604ac806a2900}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+LOAD}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_af65957fca966956aebcb205a480376cf}{NVMCTRL\+\_\+\+STATUS\+\_\+\+LOAD\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_af78e886e6aa15d5f0d4324f02d46388a}\label{component_2nvmctrl_8h_af78e886e6aa15d5f0d4324f02d46388a}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+PROGE\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+STATUS) Programming Error Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a1e724b991e54d3d59cbe47774e7c0df4}\label{component_2nvmctrl_8h_a1e724b991e54d3d59cbe47774e7c0df4}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+PROGE}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_af78e886e6aa15d5f0d4324f02d46388a}{NVMCTRL\+\_\+\+STATUS\+\_\+\+PROGE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a425654bd99f5c0f035b444932ad9d698}\label{component_2nvmctrl_8h_a425654bd99f5c0f035b444932ad9d698}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+LOCKE\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+STATUS) Lock Error Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad10b2faf4e6af34fc8a163ff96f54cc5}\label{component_2nvmctrl_8h_ad10b2faf4e6af34fc8a163ff96f54cc5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+LOCKE}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a425654bd99f5c0f035b444932ad9d698}{NVMCTRL\+\_\+\+STATUS\+\_\+\+LOCKE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a0e5c4f746519844207a933b98d3fd883}\label{component_2nvmctrl_8h_a0e5c4f746519844207a933b98d3fd883}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+NVME\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+STATUS) NVM Error \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_af1648cdd416b1b9c59c36664ca71480b}\label{component_2nvmctrl_8h_af1648cdd416b1b9c59c36664ca71480b}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+NVME}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a0e5c4f746519844207a933b98d3fd883}{NVMCTRL\+\_\+\+STATUS\+\_\+\+NVME\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_acccc823d51d05b7675cb22b0274f70c3}\label{component_2nvmctrl_8h_acccc823d51d05b7675cb22b0274f70c3}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+SB\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+STATUS) Security Bit Status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab3f3d247dde4f7d65d04625007681f34}\label{component_2nvmctrl_8h_ab3f3d247dde4f7d65d04625007681f34}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+SB}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_acccc823d51d05b7675cb22b0274f70c3}{NVMCTRL\+\_\+\+STATUS\+\_\+\+SB\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_acb0fa540b3def00184ee02da753f171e}\label{component_2nvmctrl_8h_acb0fa540b3def00184ee02da753f171e}} 
+\#define {\bfseries NVMCTRL\+\_\+\+STATUS\+\_\+\+MASK}~0x011\+Ful
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+STATUS) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a2540268cdeb3644aa722cb8cce5546c8}\label{component_2nvmctrl_8h_a2540268cdeb3644aa722cb8cce5546c8}} 
+\#define {\bfseries NVMCTRL\+\_\+\+ADDR\+\_\+\+OFFSET}~0x1C
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+ADDR offset) Address \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a150652b364483d20d947140a67e2fe25}\label{component_2nvmctrl_8h_a150652b364483d20d947140a67e2fe25}} 
+\#define {\bfseries NVMCTRL\+\_\+\+ADDR\+\_\+\+RESETVALUE}~0x00000000ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+ADDR reset\+\_\+value) Address \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7af974b171527d13bf216b3d5ef5650b}\label{component_2nvmctrl_8h_a7af974b171527d13bf216b3d5ef5650b}} 
+\#define {\bfseries NVMCTRL\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+ADDR) NVM Address \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7e4935b01a519044aee16debc2d7118a}\label{component_2nvmctrl_8h_a7e4935b01a519044aee16debc2d7118a}} 
+\#define {\bfseries NVMCTRL\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Msk}~(0x3\+FFFFFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a7af974b171527d13bf216b3d5ef5650b}{NVMCTRL\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a131b42e625db8057944d4501855bf984}\label{component_2nvmctrl_8h_a131b42e625db8057944d4501855bf984}} 
+\#define {\bfseries NVMCTRL\+\_\+\+ADDR\+\_\+\+ADDR}(value)~((NVMCTRL\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a7af974b171527d13bf216b3d5ef5650b}{NVMCTRL\+\_\+\+ADDR\+\_\+\+ADDR\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab7e62000f793147227a50fa0217a0efd}\label{component_2nvmctrl_8h_ab7e62000f793147227a50fa0217a0efd}} 
+\#define {\bfseries NVMCTRL\+\_\+\+ADDR\+\_\+\+MASK}~0x003\+FFFFFul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+ADDR) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7cb3b7118b0cfe9f2279ccb766382275}\label{component_2nvmctrl_8h_a7cb3b7118b0cfe9f2279ccb766382275}} 
+\#define {\bfseries NVMCTRL\+\_\+\+LOCK\+\_\+\+OFFSET}~0x20
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+LOCK offset) Lock Section \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5aff098bc10d43dd406efed4369c53b6}\label{component_2nvmctrl_8h_a5aff098bc10d43dd406efed4369c53b6}} 
+\#define {\bfseries NVMCTRL\+\_\+\+LOCK\+\_\+\+RESETVALUE}~0x0000ul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+LOCK reset\+\_\+value) Lock Section \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7e641135617433c92419f3c6272c0856}\label{component_2nvmctrl_8h_a7e641135617433c92419f3c6272c0856}} 
+\#define {\bfseries NVMCTRL\+\_\+\+LOCK\+\_\+\+LOCK\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+LOCK) Region Lock Bits \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7bd561a9c9c43c4f0272f91528fa8b55}\label{component_2nvmctrl_8h_a7bd561a9c9c43c4f0272f91528fa8b55}} 
+\#define {\bfseries NVMCTRL\+\_\+\+LOCK\+\_\+\+LOCK\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a7e641135617433c92419f3c6272c0856}{NVMCTRL\+\_\+\+LOCK\+\_\+\+LOCK\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_adfd6303702a1ec835b3959a2001b73a2}\label{component_2nvmctrl_8h_adfd6303702a1ec835b3959a2001b73a2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+LOCK\+\_\+\+LOCK}(value)~((NVMCTRL\+\_\+\+LOCK\+\_\+\+LOCK\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a7e641135617433c92419f3c6272c0856}{NVMCTRL\+\_\+\+LOCK\+\_\+\+LOCK\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5d4ac6aa3fe484566828978a57d521c9}\label{component_2nvmctrl_8h_a5d4ac6aa3fe484566828978a57d521c9}} 
+\#define {\bfseries NVMCTRL\+\_\+\+LOCK\+\_\+\+MASK}~0x\+FFFFul
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+LOCK) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad236e440ed3bfcbe9e9aef855f891d54}\label{component_2nvmctrl_8h_ad236e440ed3bfcbe9e9aef855f891d54}} 
+\#define {\bfseries SECTION\+\_\+\+NVMCTRL\+\_\+\+CAL}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aaa20a08294e753fed16b9ff464c193bb}\label{component_2nvmctrl_8h_aaa20a08294e753fed16b9ff464c193bb}} 
+\#define {\bfseries SECTION\+\_\+\+NVMCTRL\+\_\+\+LOCKBIT}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a8ce74f42d874759451c826206a4ae72a}\label{component_2nvmctrl_8h_a8ce74f42d874759451c826206a4ae72a}} 
+\#define {\bfseries SECTION\+\_\+\+NVMCTRL\+\_\+\+OTP1}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a0c7b108217be6703d66a3f9a4ba7cceb}\label{component_2nvmctrl_8h_a0c7b108217be6703d66a3f9a4ba7cceb}} 
+\#define {\bfseries SECTION\+\_\+\+NVMCTRL\+\_\+\+OTP2}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ae3a3ffc2f4fc43897e4240ceee77508b}\label{component_2nvmctrl_8h_ae3a3ffc2f4fc43897e4240ceee77508b}} 
+\#define {\bfseries SECTION\+\_\+\+NVMCTRL\+\_\+\+OTP4}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a363fcc6e714fce240e4ab7827c1bb03b}\label{component_2nvmctrl_8h_a363fcc6e714fce240e4ab7827c1bb03b}} 
+\#define {\bfseries SECTION\+\_\+\+NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa567c13e0afc586393b8621a19247615}\label{component_2nvmctrl_8h_aa567c13e0afc586393b8621a19247615}} 
+\#define {\bfseries SECTION\+\_\+\+NVMCTRL\+\_\+\+USER}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a8972b5e1d68c668524cb8dc8e053dfa9}\label{component_2nvmctrl_8h_a8972b5e1d68c668524cb8dc8e053dfa9}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+BIASCAL\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a138b4aca5a0446a745fe143c1dca8165}{NVMCTRL\+\_\+\+OTP4}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a27a6321a91ab931e0933dbcae98c350d}\label{component_2nvmctrl_8h_a27a6321a91ab931e0933dbcae98c350d}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+BIASCAL\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+OTP4) ADC Bias Calibration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aafc2b176601d6999e9cef3e9219b9738}\label{component_2nvmctrl_8h_aafc2b176601d6999e9cef3e9219b9738}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+BIASCAL\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a27a6321a91ab931e0933dbcae98c350d}{ADC\+\_\+\+FUSES\+\_\+\+BIASCAL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a378f726f6f4e5ef7b6d5b17e79792ad8}\label{component_2nvmctrl_8h_a378f726f6f4e5ef7b6d5b17e79792ad8}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+BIASCAL}(value)~((ADC\+\_\+\+FUSES\+\_\+\+BIASCAL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a27a6321a91ab931e0933dbcae98c350d}{ADC\+\_\+\+FUSES\+\_\+\+BIASCAL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac72a81c4dcae61916107c114d2942c32}\label{component_2nvmctrl_8h_ac72a81c4dcae61916107c114d2942c32}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+0\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a138b4aca5a0446a745fe143c1dca8165}{NVMCTRL\+\_\+\+OTP4}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa1879ab54367d19c2a0996cee7fcbb0a}\label{component_2nvmctrl_8h_aa1879ab54367d19c2a0996cee7fcbb0a}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+0\+\_\+\+Pos}~27
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+OTP4) ADC Linearity bits 4\+:0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a6488772af94070cb940e38c5a9907f75}\label{component_2nvmctrl_8h_a6488772af94070cb940e38c5a9907f75}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+0\+\_\+\+Msk}~(0x1\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aa1879ab54367d19c2a0996cee7fcbb0a}{ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa518374cbe69a5df6b31b542da885848}\label{component_2nvmctrl_8h_aa518374cbe69a5df6b31b542da885848}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+0}(value)~((ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+0\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aa1879ab54367d19c2a0996cee7fcbb0a}{ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+0\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aea300217e39f9fc02685547c8d89f6b4}\label{component_2nvmctrl_8h_aea300217e39f9fc02685547c8d89f6b4}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+1\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a138b4aca5a0446a745fe143c1dca8165}{NVMCTRL\+\_\+\+OTP4}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7b2cdd7d4d88223dff349b08725abdb3}\label{component_2nvmctrl_8h_a7b2cdd7d4d88223dff349b08725abdb3}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+1\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+OTP4) ADC Linearity bits 7\+:5 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a8092b3ae5649eb642bedf679b326157e}\label{component_2nvmctrl_8h_a8092b3ae5649eb642bedf679b326157e}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+1\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a7b2cdd7d4d88223dff349b08725abdb3}{ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a36b36b36eb62a16285f7cd406f88d6c4}\label{component_2nvmctrl_8h_a36b36b36eb62a16285f7cd406f88d6c4}} 
+\#define {\bfseries ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+1}(value)~((ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+1\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a7b2cdd7d4d88223dff349b08725abdb3}{ADC\+\_\+\+FUSES\+\_\+\+LINEARITY\+\_\+1\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a4fad8c709dc5dec570b92db72eace451}\label{component_2nvmctrl_8h_a4fad8c709dc5dec570b92db72eace451}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+USERLEVEL\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a9e8109cd0996312419933645a2f2a089}\label{component_2nvmctrl_8h_a9e8109cd0996312419933645a2f2a089}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+USERLEVEL\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) BOD33 User Level \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a830dd49d8c3e2d1f2ab5f77a901315c3}\label{component_2nvmctrl_8h_a830dd49d8c3e2d1f2ab5f77a901315c3}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+USERLEVEL\+\_\+\+Msk}~(0x3\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a9e8109cd0996312419933645a2f2a089}{FUSES\+\_\+\+BOD33\+USERLEVEL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a8cc7a1bcf2ec2f7486235c9ae5c40c18}\label{component_2nvmctrl_8h_a8cc7a1bcf2ec2f7486235c9ae5c40c18}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+USERLEVEL}(value)~((FUSES\+\_\+\+BOD33\+USERLEVEL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a9e8109cd0996312419933645a2f2a089}{FUSES\+\_\+\+BOD33\+USERLEVEL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a569f05e870ad0d72456c8e15c3b1c148}\label{component_2nvmctrl_8h_a569f05e870ad0d72456c8e15c3b1c148}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+ACTION\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aac742323e1fa3072afa8ce20817c58f3}\label{component_2nvmctrl_8h_aac742323e1fa3072afa8ce20817c58f3}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+ACTION\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) BOD33 Action \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a732fae9ecd483358a62bd56dc3e0a71b}\label{component_2nvmctrl_8h_a732fae9ecd483358a62bd56dc3e0a71b}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+ACTION\+\_\+\+Msk}~(0x3ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aac742323e1fa3072afa8ce20817c58f3}{FUSES\+\_\+\+BOD33\+\_\+\+ACTION\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aceb879a4bc8e1843e2553cb0c22ccfb9}\label{component_2nvmctrl_8h_aceb879a4bc8e1843e2553cb0c22ccfb9}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+ACTION}(value)~((FUSES\+\_\+\+BOD33\+\_\+\+ACTION\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aac742323e1fa3072afa8ce20817c58f3}{FUSES\+\_\+\+BOD33\+\_\+\+ACTION\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7a3d4e8e251c7801bd7c773adcfc9521}\label{component_2nvmctrl_8h_a7a3d4e8e251c7801bd7c773adcfc9521}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+EN\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a8b739225c0c8c6c979ea16ce43f8b1fc}\label{component_2nvmctrl_8h_a8b739225c0c8c6c979ea16ce43f8b1fc}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+EN\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) BOD33 Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a70c5995a49997fbf53a66942f99e45db}\label{component_2nvmctrl_8h_a70c5995a49997fbf53a66942f99e45db}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+EN\+\_\+\+Msk}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a8b739225c0c8c6c979ea16ce43f8b1fc}{FUSES\+\_\+\+BOD33\+\_\+\+EN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a527d8615ff4066ce38cd38c335b0a4e4}\label{component_2nvmctrl_8h_a527d8615ff4066ce38cd38c335b0a4e4}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+HYST\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5ab9b1d814cf783918e8b12a908295ef}\label{component_2nvmctrl_8h_a5ab9b1d814cf783918e8b12a908295ef}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+HYST\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) BOD33 Hysteresis \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ae3c35a744a83881ef64bbacce43752a9}\label{component_2nvmctrl_8h_ae3c35a744a83881ef64bbacce43752a9}} 
+\#define {\bfseries FUSES\+\_\+\+BOD33\+\_\+\+HYST\+\_\+\+Msk}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5ab9b1d814cf783918e8b12a908295ef}{FUSES\+\_\+\+BOD33\+\_\+\+HYST\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a2803d9715b1dc596593a746846b6e320}\label{component_2nvmctrl_8h_a2803d9715b1dc596593a746846b6e320}} 
+\#define {\bfseries FUSES\+\_\+\+DFLL48\+M\+\_\+\+COARSE\+\_\+\+CAL\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a138b4aca5a0446a745fe143c1dca8165}{NVMCTRL\+\_\+\+OTP4}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ae354249a65d7b4d818bbcc3594aa4991}\label{component_2nvmctrl_8h_ae354249a65d7b4d818bbcc3594aa4991}} 
+\#define {\bfseries FUSES\+\_\+\+DFLL48\+M\+\_\+\+COARSE\+\_\+\+CAL\+\_\+\+Pos}~26
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+OTP4) DFLL48M Coarse Calibration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a0dc28e80d782bf23e5b6ad8d7fb5670e}\label{component_2nvmctrl_8h_a0dc28e80d782bf23e5b6ad8d7fb5670e}} 
+\#define {\bfseries FUSES\+\_\+\+DFLL48\+M\+\_\+\+COARSE\+\_\+\+CAL\+\_\+\+Msk}~(0x3\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ae354249a65d7b4d818bbcc3594aa4991}{FUSES\+\_\+\+DFLL48\+M\+\_\+\+COARSE\+\_\+\+CAL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad4952803016d6de9aaaa2dd5c8f28c5a}\label{component_2nvmctrl_8h_ad4952803016d6de9aaaa2dd5c8f28c5a}} 
+\#define {\bfseries FUSES\+\_\+\+DFLL48\+M\+\_\+\+COARSE\+\_\+\+CAL}(value)~((FUSES\+\_\+\+DFLL48\+M\+\_\+\+COARSE\+\_\+\+CAL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ae354249a65d7b4d818bbcc3594aa4991}{FUSES\+\_\+\+DFLL48\+M\+\_\+\+COARSE\+\_\+\+CAL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac9c0f651b70935ceb423075f1faa41fe}\label{component_2nvmctrl_8h_ac9c0f651b70935ceb423075f1faa41fe}} 
+\#define {\bfseries FUSES\+\_\+\+DFLL48\+M\+\_\+\+FINE\+\_\+\+CAL\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a138b4aca5a0446a745fe143c1dca8165}{NVMCTRL\+\_\+\+OTP4}} + 8)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a40e6a2aa26dfc93b0759bd39abeb1764}\label{component_2nvmctrl_8h_a40e6a2aa26dfc93b0759bd39abeb1764}} 
+\#define {\bfseries FUSES\+\_\+\+DFLL48\+M\+\_\+\+FINE\+\_\+\+CAL\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+OTP4) DFLL48M Fine Calibration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_af8a609bbffdf4350a5a5997f662f9d87}\label{component_2nvmctrl_8h_af8a609bbffdf4350a5a5997f662f9d87}} 
+\#define {\bfseries FUSES\+\_\+\+DFLL48\+M\+\_\+\+FINE\+\_\+\+CAL\+\_\+\+Msk}~(0x3\+FFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a40e6a2aa26dfc93b0759bd39abeb1764}{FUSES\+\_\+\+DFLL48\+M\+\_\+\+FINE\+\_\+\+CAL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad19e3e6eeb2c61330d6db3217512f7fb}\label{component_2nvmctrl_8h_ad19e3e6eeb2c61330d6db3217512f7fb}} 
+\#define {\bfseries FUSES\+\_\+\+DFLL48\+M\+\_\+\+FINE\+\_\+\+CAL}(value)~((FUSES\+\_\+\+DFLL48\+M\+\_\+\+FINE\+\_\+\+CAL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a40e6a2aa26dfc93b0759bd39abeb1764}{FUSES\+\_\+\+DFLL48\+M\+\_\+\+FINE\+\_\+\+CAL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac06b1e889c295169c9ce1f389fa0447b}\label{component_2nvmctrl_8h_ac06b1e889c295169c9ce1f389fa0447b}} 
+\#define {\bfseries FUSES\+\_\+\+OSC32\+KCAL\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a138b4aca5a0446a745fe143c1dca8165}{NVMCTRL\+\_\+\+OTP4}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a80db674913df77201e60bf9861195c33}\label{component_2nvmctrl_8h_a80db674913df77201e60bf9861195c33}} 
+\#define {\bfseries FUSES\+\_\+\+OSC32\+KCAL\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+OTP4) OSC32K Calibration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa9c229cd9e41332221d18c2e47367bd0}\label{component_2nvmctrl_8h_aa9c229cd9e41332221d18c2e47367bd0}} 
+\#define {\bfseries FUSES\+\_\+\+OSC32\+KCAL\+\_\+\+Msk}~(0x7\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a80db674913df77201e60bf9861195c33}{FUSES\+\_\+\+OSC32\+KCAL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a642a040bf1a5cf0d95a462fcd967cb4b}\label{component_2nvmctrl_8h_a642a040bf1a5cf0d95a462fcd967cb4b}} 
+\#define {\bfseries FUSES\+\_\+\+OSC32\+KCAL}(value)~((FUSES\+\_\+\+OSC32\+KCAL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a80db674913df77201e60bf9861195c33}{FUSES\+\_\+\+OSC32\+KCAL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a9c0a81f9fd5adfc5fb23ea51357116ee}\label{component_2nvmctrl_8h_a9c0a81f9fd5adfc5fb23ea51357116ee}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+BOOTPROT\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ac2867e0c1d1fc1b327991134a24983ca}\label{component_2nvmctrl_8h_ac2867e0c1d1fc1b327991134a24983ca}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+BOOTPROT\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) Bootloader Size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a88a9f3dd3aa15ef56a9867ae71bf5fce}\label{component_2nvmctrl_8h_a88a9f3dd3aa15ef56a9867ae71bf5fce}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+BOOTPROT\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ac2867e0c1d1fc1b327991134a24983ca}{NVMCTRL\+\_\+\+FUSES\+\_\+\+BOOTPROT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_abba1dc9ec174e4c2a55fca8795d56aa8}\label{component_2nvmctrl_8h_abba1dc9ec174e4c2a55fca8795d56aa8}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+BOOTPROT}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+BOOTPROT\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ac2867e0c1d1fc1b327991134a24983ca}{NVMCTRL\+\_\+\+FUSES\+\_\+\+BOOTPROT\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a9f56c050e270b536768d2b27081faac5}\label{component_2nvmctrl_8h_a9f56c050e270b536768d2b27081faac5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+EEPROM\+\_\+\+SIZE\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad4d1aae7645f998f9be29556ae21136b}\label{component_2nvmctrl_8h_ad4d1aae7645f998f9be29556ae21136b}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+EEPROM\+\_\+\+SIZE\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) EEPROM Size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab5af398b29da2f557c6e364dd6c13397}\label{component_2nvmctrl_8h_ab5af398b29da2f557c6e364dd6c13397}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+EEPROM\+\_\+\+SIZE\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ad4d1aae7645f998f9be29556ae21136b}{NVMCTRL\+\_\+\+FUSES\+\_\+\+EEPROM\+\_\+\+SIZE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a646501eee0f33491dd39c0a67ab7e933}\label{component_2nvmctrl_8h_a646501eee0f33491dd39c0a67ab7e933}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+EEPROM\+\_\+\+SIZE}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+EEPROM\+\_\+\+SIZE\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ad4d1aae7645f998f9be29556ae21136b}{NVMCTRL\+\_\+\+FUSES\+\_\+\+EEPROM\+\_\+\+SIZE\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a250363970227949f6707a9f320906a39}\label{component_2nvmctrl_8h_a250363970227949f6707a9f320906a39}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_ae900d443ec6d7cf1c90d21b6662fa447}{NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aac9fd382f744bac789208a43215a0392}\label{component_2nvmctrl_8h_aac9fd382f744bac789208a43215a0392}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Pos}~20
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG) 12-\/bit ADC conversion at hot temperature \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab61955d82cacb5aba01b14d41ce77057}\label{component_2nvmctrl_8h_ab61955d82cacb5aba01b14d41ce77057}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Msk}~(0x\+FFFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aac9fd382f744bac789208a43215a0392}{NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad0bdca247d24909d344b5da3ec380694}\label{component_2nvmctrl_8h_ad0bdca247d24909d344b5da3ec380694}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+ADC\+\_\+\+VAL}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aac9fd382f744bac789208a43215a0392}{NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a36366a3b37f567b131a80d29c9889940}\label{component_2nvmctrl_8h_a36366a3b37f567b131a80d29c9889940}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_ae900d443ec6d7cf1c90d21b6662fa447}{NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad1b7b3b85a3a761b154b59975f5de897}\label{component_2nvmctrl_8h_ad1b7b3b85a3a761b154b59975f5de897}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG) 2\textquotesingle{}s complement of the internal 1V reference drift at hot temperature (versus a 1.\+0 centered value) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a597db170df2ccec19aff4e7067f9e291}\label{component_2nvmctrl_8h_a597db170df2ccec19aff4e7067f9e291}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ad1b7b3b85a3a761b154b59975f5de897}{NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3ee8ba9068f82ea8e788b499548e53dc}\label{component_2nvmctrl_8h_a3ee8ba9068f82ea8e788b499548e53dc}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+INT1\+V\+\_\+\+VAL}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ad1b7b3b85a3a761b154b59975f5de897}{NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_acbbda60a858bcd87ac67eded99860f5e}\label{component_2nvmctrl_8h_acbbda60a858bcd87ac67eded99860f5e}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_ae900d443ec6d7cf1c90d21b6662fa447}{NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5dd188f426f80a6ad1f51c4815482ae6}\label{component_2nvmctrl_8h_a5dd188f426f80a6ad1f51c4815482ae6}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Pos}~20
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG) Decimal part of hot temperature \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a9590f44c54507db098841324ba8162e5}\label{component_2nvmctrl_8h_a9590f44c54507db098841324ba8162e5}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5dd188f426f80a6ad1f51c4815482ae6}{NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a117d4dfd8a1a03957376cddfae9ed5f3}\label{component_2nvmctrl_8h_a117d4dfd8a1a03957376cddfae9ed5f3}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a5dd188f426f80a6ad1f51c4815482ae6}{NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad10eed1f2e268f732461b35ff0a5534d}\label{component_2nvmctrl_8h_ad10eed1f2e268f732461b35ff0a5534d}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_ae900d443ec6d7cf1c90d21b6662fa447}{NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a77ded05d5530304d7f7c5e00616e24a2}\label{component_2nvmctrl_8h_a77ded05d5530304d7f7c5e00616e24a2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG) Integer part of hot temperature in oC \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_acf566db13458407fa624d255585d43c3}\label{component_2nvmctrl_8h_acf566db13458407fa624d255585d43c3}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a77ded05d5530304d7f7c5e00616e24a2}{NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa03571b8d91357795b213f28a90a69e3}\label{component_2nvmctrl_8h_aa03571b8d91357795b213f28a90a69e3}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a77ded05d5530304d7f7c5e00616e24a2}{NVMCTRL\+\_\+\+FUSES\+\_\+\+HOT\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab463c1bc180f79dbedd44d8bddbad895}\label{component_2nvmctrl_8h_ab463c1bc180f79dbedd44d8bddbad895}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+NVMP\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a6ebf76a96eae94342ff79fce4311baf3}{NVMCTRL\+\_\+\+OTP1}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a84b390f298c352468c8c28b2f808f3e2}\label{component_2nvmctrl_8h_a84b390f298c352468c8c28b2f808f3e2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+NVMP\+\_\+\+Pos}~16
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+OTP1) Number of NVM Pages \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a07ea0f71fba3f0fdd28503bc4ed46a27}\label{component_2nvmctrl_8h_a07ea0f71fba3f0fdd28503bc4ed46a27}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+NVMP\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a84b390f298c352468c8c28b2f808f3e2}{NVMCTRL\+\_\+\+FUSES\+\_\+\+NVMP\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a76a79f06e6c611fcac1769e52c6366cf}\label{component_2nvmctrl_8h_a76a79f06e6c611fcac1769e52c6366cf}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+NVMP}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+NVMP\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a84b390f298c352468c8c28b2f808f3e2}{NVMCTRL\+\_\+\+FUSES\+\_\+\+NVMP\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a84c90d310e0f0ea70df85c5b69ab7403}\label{component_2nvmctrl_8h_a84c90d310e0f0ea70df85c5b69ab7403}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+NVM\+\_\+\+LOCK\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a6ebf76a96eae94342ff79fce4311baf3}{NVMCTRL\+\_\+\+OTP1}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a54fc50fd04594f4183baf9a51d5ff8e9}\label{component_2nvmctrl_8h_a54fc50fd04594f4183baf9a51d5ff8e9}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+NVM\+\_\+\+LOCK\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+OTP1) NVM Lock \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a2a99d48671efe5519af35a0749175ddd}\label{component_2nvmctrl_8h_a2a99d48671efe5519af35a0749175ddd}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+NVM\+\_\+\+LOCK\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a54fc50fd04594f4183baf9a51d5ff8e9}{NVMCTRL\+\_\+\+FUSES\+\_\+\+NVM\+\_\+\+LOCK\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a518470e6884a1b5a283df85948352b4d}\label{component_2nvmctrl_8h_a518470e6884a1b5a283df85948352b4d}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+NVM\+\_\+\+LOCK}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+NVM\+\_\+\+LOCK\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a54fc50fd04594f4183baf9a51d5ff8e9}{NVMCTRL\+\_\+\+FUSES\+\_\+\+NVM\+\_\+\+LOCK\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a091c7224e520cdc69ccfc096ceeea7c3}\label{component_2nvmctrl_8h_a091c7224e520cdc69ccfc096ceeea7c3}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+PSZ\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a6ebf76a96eae94342ff79fce4311baf3}{NVMCTRL\+\_\+\+OTP1}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aea11bcd13d9dca02cf64ca6fd5d2da50}\label{component_2nvmctrl_8h_aea11bcd13d9dca02cf64ca6fd5d2da50}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+PSZ\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+OTP1) NVM Page Size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a1b83b9fe9ee6d60d95a35566a1fc3049}\label{component_2nvmctrl_8h_a1b83b9fe9ee6d60d95a35566a1fc3049}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+PSZ\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aea11bcd13d9dca02cf64ca6fd5d2da50}{NVMCTRL\+\_\+\+FUSES\+\_\+\+PSZ\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5ef4e83f041f9add8bad0103206acd30}\label{component_2nvmctrl_8h_a5ef4e83f041f9add8bad0103206acd30}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+PSZ}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+PSZ\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aea11bcd13d9dca02cf64ca6fd5d2da50}{NVMCTRL\+\_\+\+FUSES\+\_\+\+PSZ\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aa6991e05f9343dab06efb7e275ab84fd}\label{component_2nvmctrl_8h_aa6991e05f9343dab06efb7e275ab84fd}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+REGION\+\_\+\+LOCKS\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a553b4d761e65080381c6af440abee0f0}\label{component_2nvmctrl_8h_a553b4d761e65080381c6af440abee0f0}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+REGION\+\_\+\+LOCKS\+\_\+\+Pos}~16
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) NVM Region Locks \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad7be5211197af07d4d82363d29264bf9}\label{component_2nvmctrl_8h_ad7be5211197af07d4d82363d29264bf9}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+REGION\+\_\+\+LOCKS\+\_\+\+Msk}~(0x\+FFFFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a553b4d761e65080381c6af440abee0f0}{NVMCTRL\+\_\+\+FUSES\+\_\+\+REGION\+\_\+\+LOCKS\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a61ade65b0ec65479f42594be4d9ba94f}\label{component_2nvmctrl_8h_a61ade65b0ec65479f42594be4d9ba94f}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+REGION\+\_\+\+LOCKS}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+REGION\+\_\+\+LOCKS\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a553b4d761e65080381c6af440abee0f0}{NVMCTRL\+\_\+\+FUSES\+\_\+\+REGION\+\_\+\+LOCKS\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3cd3b88d04873665b1ce924b685711a7}\label{component_2nvmctrl_8h_a3cd3b88d04873665b1ce924b685711a7}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_ae900d443ec6d7cf1c90d21b6662fa447}{NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab18b97e87d18589e6efa8423dd12c6c1}\label{component_2nvmctrl_8h_ab18b97e87d18589e6efa8423dd12c6c1}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG) 12-\/bit ADC conversion at room temperature \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab74bb49e2241a91fbca615aaa5583021}\label{component_2nvmctrl_8h_ab74bb49e2241a91fbca615aaa5583021}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Msk}~(0x\+FFFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ab18b97e87d18589e6efa8423dd12c6c1}{NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aebf0b6ce2279c66f7d62b28e76f912da}\label{component_2nvmctrl_8h_aebf0b6ce2279c66f7d62b28e76f912da}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+ADC\+\_\+\+VAL}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ab18b97e87d18589e6efa8423dd12c6c1}{NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+ADC\+\_\+\+VAL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3315311ea194c341cdfffdee46859b1e}\label{component_2nvmctrl_8h_a3315311ea194c341cdfffdee46859b1e}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_ae900d443ec6d7cf1c90d21b6662fa447}{NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3d18222622e6af65958612aaf3fcc326}\label{component_2nvmctrl_8h_a3d18222622e6af65958612aaf3fcc326}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Pos}~24
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG) 2\textquotesingle{}s complement of the internal 1V reference drift at room temperature (versus a 1.\+0 centered value) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3ceba0511a6acad457dce53d86b17230}\label{component_2nvmctrl_8h_a3ceba0511a6acad457dce53d86b17230}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a3d18222622e6af65958612aaf3fcc326}{NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aed5d39e28d98b1bb7a028a68e96a3ce7}\label{component_2nvmctrl_8h_aed5d39e28d98b1bb7a028a68e96a3ce7}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+INT1\+V\+\_\+\+VAL}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a3d18222622e6af65958612aaf3fcc326}{NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+INT1\+V\+\_\+\+VAL\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a79376d296cde495121a714c2bcb33c92}\label{component_2nvmctrl_8h_a79376d296cde495121a714c2bcb33c92}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_ae900d443ec6d7cf1c90d21b6662fa447}{NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab9dc4439ac02a58c79db1446ec462f97}\label{component_2nvmctrl_8h_ab9dc4439ac02a58c79db1446ec462f97}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG) Decimal part of room temperature \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a0ee859efa14d77eee478107b91eb8953}\label{component_2nvmctrl_8h_a0ee859efa14d77eee478107b91eb8953}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ab9dc4439ac02a58c79db1446ec462f97}{NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a539f1e73b1dc3578d1d133756df0ea3c}\label{component_2nvmctrl_8h_a539f1e73b1dc3578d1d133756df0ea3c}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ab9dc4439ac02a58c79db1446ec462f97}{NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+DEC\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab9ee95916d82d60e281cf17ec84125a2}\label{component_2nvmctrl_8h_ab9ee95916d82d60e281cf17ec84125a2}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_ae900d443ec6d7cf1c90d21b6662fa447}{NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a433fd1bc26aa2c728b0d82a4d831a309}\label{component_2nvmctrl_8h_a433fd1bc26aa2c728b0d82a4d831a309}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+TEMP\+\_\+\+LOG) Integer part of room temperature in oC \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a5119bd310c82c2058af49f619b1bee0e}\label{component_2nvmctrl_8h_a5119bd310c82c2058af49f619b1bee0e}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Msk}~(0x\+FFul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a433fd1bc26aa2c728b0d82a4d831a309}{NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a72e160d5c41270f351122257243b6b6c}\label{component_2nvmctrl_8h_a72e160d5c41270f351122257243b6b6c}} 
+\#define {\bfseries NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT}(value)~((NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a433fd1bc26aa2c728b0d82a4d831a309}{NVMCTRL\+\_\+\+FUSES\+\_\+\+ROOM\+\_\+\+TEMP\+\_\+\+VAL\+\_\+\+INT\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3eb73a36a8769a4f7e0dfdac5e488351}\label{component_2nvmctrl_8h_a3eb73a36a8769a4f7e0dfdac5e488351}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+ALWAYSON\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_aad4f4fec9a3339faea07db386174b75e}\label{component_2nvmctrl_8h_aad4f4fec9a3339faea07db386174b75e}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+ALWAYSON\+\_\+\+Pos}~26
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) WDT Always On \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a05c6f0eb24d3052a4741e4ac15f4eba7}\label{component_2nvmctrl_8h_a05c6f0eb24d3052a4741e4ac15f4eba7}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+ALWAYSON\+\_\+\+Msk}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_aad4f4fec9a3339faea07db386174b75e}{WDT\+\_\+\+FUSES\+\_\+\+ALWAYSON\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ae27b2582fb347f81b42d4722e93c19eb}\label{component_2nvmctrl_8h_ae27b2582fb347f81b42d4722e93c19eb}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+ENABLE\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a3e49258fa52a7aededcc7b3e54533ef5}\label{component_2nvmctrl_8h_a3e49258fa52a7aededcc7b3e54533ef5}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+ENABLE\+\_\+\+Pos}~25
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) WDT Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7321a6dde7b33a36af18c07c65c6a55e}\label{component_2nvmctrl_8h_a7321a6dde7b33a36af18c07c65c6a55e}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+ENABLE\+\_\+\+Msk}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a3e49258fa52a7aededcc7b3e54533ef5}{WDT\+\_\+\+FUSES\+\_\+\+ENABLE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a04fb0607afaf725d76bd4205ea0d4f94}\label{component_2nvmctrl_8h_a04fb0607afaf725d76bd4205ea0d4f94}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+EWOFFSET\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ae2f89f15eabc293811402651af74d059}\label{component_2nvmctrl_8h_ae2f89f15eabc293811402651af74d059}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+EWOFFSET\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) WDT Early Warning Offset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a7acf63462b40241031a53d6ecf5a0d69}\label{component_2nvmctrl_8h_a7acf63462b40241031a53d6ecf5a0d69}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+EWOFFSET\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ae2f89f15eabc293811402651af74d059}{WDT\+\_\+\+FUSES\+\_\+\+EWOFFSET\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a97578a46129ba8e2a78d9c2d7e15186e}\label{component_2nvmctrl_8h_a97578a46129ba8e2a78d9c2d7e15186e}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+EWOFFSET}(value)~((WDT\+\_\+\+FUSES\+\_\+\+EWOFFSET\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_ae2f89f15eabc293811402651af74d059}{WDT\+\_\+\+FUSES\+\_\+\+EWOFFSET\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a2c50bf4f2c97da8a4a6ae114cc9c0c69}\label{component_2nvmctrl_8h_a2c50bf4f2c97da8a4a6ae114cc9c0c69}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+PER\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a87db8b2566c9dd04e5c0cb3838175952}\label{component_2nvmctrl_8h_a87db8b2566c9dd04e5c0cb3838175952}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+PER\+\_\+\+Pos}~27
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) WDT Period \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a8c0047dcebe5a6775a5f141a9f1e1342}\label{component_2nvmctrl_8h_a8c0047dcebe5a6775a5f141a9f1e1342}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+PER\+\_\+\+Msk}~(0x\+Ful $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a87db8b2566c9dd04e5c0cb3838175952}{WDT\+\_\+\+FUSES\+\_\+\+PER\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_adea5dd3449831980a604a0fe3dd323cb}\label{component_2nvmctrl_8h_adea5dd3449831980a604a0fe3dd323cb}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+PER}(value)~((WDT\+\_\+\+FUSES\+\_\+\+PER\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a87db8b2566c9dd04e5c0cb3838175952}{WDT\+\_\+\+FUSES\+\_\+\+PER\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a9c4f3a13c1cdf6a6f975e5dc304427fc}\label{component_2nvmctrl_8h_a9c4f3a13c1cdf6a6f975e5dc304427fc}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WEN\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a87c9e50a26f5095b90217f854536d90f}\label{component_2nvmctrl_8h_a87c9e50a26f5095b90217f854536d90f}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WEN\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) WDT Window Mode Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ad6114332dfc7f6b0dd36326af632aa9d}\label{component_2nvmctrl_8h_ad6114332dfc7f6b0dd36326af632aa9d}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WEN\+\_\+\+Msk}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a87c9e50a26f5095b90217f854536d90f}{WDT\+\_\+\+FUSES\+\_\+\+WEN\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_ab779c4810b89e87904823d1c39c92023}\label{component_2nvmctrl_8h_ab779c4810b89e87904823d1c39c92023}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+0\+\_\+\+ADDR}~\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}}
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a6be021299139a6dcbc80f2b8921afab8}\label{component_2nvmctrl_8h_a6be021299139a6dcbc80f2b8921afab8}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+0\+\_\+\+Pos}~31
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) WDT Window bit 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a37e433bf27dd1905d83d6c32a7597eb2}\label{component_2nvmctrl_8h_a37e433bf27dd1905d83d6c32a7597eb2}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+0\+\_\+\+Msk}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a6be021299139a6dcbc80f2b8921afab8}{WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a099b07c0c8496b371f1d3796a2afc28a}\label{component_2nvmctrl_8h_a099b07c0c8496b371f1d3796a2afc28a}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+1\+\_\+\+ADDR}~(\mbox{\hyperlink{samd20e14_8h_a7a7a83a5753fa323b61536e396083c99}{NVMCTRL\+\_\+\+USER}} + 4)
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a6415817cbbb76773225a7e0ac54b6f80}\label{component_2nvmctrl_8h_a6415817cbbb76773225a7e0ac54b6f80}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+1\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (NVMCTRL\+\_\+\+USER) WDT Window bits 3\+:1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a6a142163c91fe087e0e8e445d849b220}\label{component_2nvmctrl_8h_a6a142163c91fe087e0e8e445d849b220}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+1\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a6415817cbbb76773225a7e0ac54b6f80}{WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2nvmctrl_8h_a4ee0d85de09c6cbf1a4fdb8c3eec9d9f}\label{component_2nvmctrl_8h_a4ee0d85de09c6cbf1a4fdb8c3eec9d9f}} 
+\#define {\bfseries WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+1}(value)~((WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+1\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2nvmctrl_8h_a6415817cbbb76773225a7e0ac54b6f80}{WDT\+\_\+\+FUSES\+\_\+\+WINDOW\+\_\+1\+\_\+\+Pos}})))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component description for NVMCTRL. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

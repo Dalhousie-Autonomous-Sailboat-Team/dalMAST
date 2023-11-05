@@ -1,0 +1,201 @@
+\hypertarget{group__group__sam0__utils__status__codes}{}\doxysection{Status Codes}
+\label{group__group__sam0__utils__status__codes}\index{Status Codes@{Status Codes}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga5bf938a904077896054cd093bf7d8fa8}{STATUS\+\_\+\+CATEGORY\+\_\+\+MASK}}~0x\+F0
+\item 
+\#define \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga4c46d8f176ca46ab775db0fe270d2f98}{STATUS\+\_\+\+ERROR\+\_\+\+MASK}}~0x0F
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gac00c8566f7cf35542ab21a113933f485}\label{group__group__sam0__utils__status__codes_gac00c8566f7cf35542ab21a113933f485}} 
+typedef enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries status\+\_\+code\+\_\+genare\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__group__sam0__utils__status__codes_ga68396b4d6dda8fc779819385588e4853}\label{group__group__sam0__utils__status__codes_ga68396b4d6dda8fc779819385588e4853}} 
+typedef enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga29235ed38b6f02861f29daae665ac3a2}{status\+\_\+code\+\_\+wireless}} {\bfseries status\+\_\+code\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga477539e8a67b0cab096e8ecda6f5d7d6}{status\+\_\+categories}} \{ \newline
+{\bfseries STATUS\+\_\+\+CATEGORY\+\_\+\+OK} = 0x00
+, {\bfseries STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON} = 0x10
+, {\bfseries STATUS\+\_\+\+CATEGORY\+\_\+\+ANALOG} = 0x30
+, {\bfseries STATUS\+\_\+\+CATEGORY\+\_\+\+COM} = 0x40
+, \newline
+{\bfseries STATUS\+\_\+\+CATEGORY\+\_\+\+IO} = 0x50
+ \}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \{ \newline
+{\bfseries STATUS\+\_\+\+OK} = STATUS\+\_\+\+CATEGORY\+\_\+\+OK $\vert$ 0x00
+, {\bfseries STATUS\+\_\+\+VALID\+\_\+\+DATA} = STATUS\+\_\+\+CATEGORY\+\_\+\+OK $\vert$ 0x01
+, {\bfseries STATUS\+\_\+\+NO\+\_\+\+CHANGE} = STATUS\+\_\+\+CATEGORY\+\_\+\+OK $\vert$ 0x02
+, {\bfseries STATUS\+\_\+\+ABORTED} = STATUS\+\_\+\+CATEGORY\+\_\+\+OK $\vert$ 0x04
+, \newline
+{\bfseries STATUS\+\_\+\+BUSY} = STATUS\+\_\+\+CATEGORY\+\_\+\+OK $\vert$ 0x05
+, {\bfseries STATUS\+\_\+\+SUSPEND} = STATUS\+\_\+\+CATEGORY\+\_\+\+OK $\vert$ 0x06
+, {\bfseries STATUS\+\_\+\+DATA\+\_\+\+NOT\+\_\+\+NEEDED} = STATUS\+\_\+\+CATEGORY\+\_\+\+OK $\vert$ 0x07
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+IO} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x00
+, \newline
+{\bfseries STATUS\+\_\+\+ERR\+\_\+\+REQ\+\_\+\+FLUSHED} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x01
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+TIMEOUT} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x02
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+DATA} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x03
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+FOUND} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x04
+, \newline
+{\bfseries STATUS\+\_\+\+ERR\+\_\+\+UNSUPPORTED\+\_\+\+DEV} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x05
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+NO\+\_\+\+MEMORY} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x06
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x07
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+ADDRESS} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x08
+, \newline
+{\bfseries STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FORMAT} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x0A
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FRQ} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x0B
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+DENIED} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x0c
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+ALREADY\+\_\+\+INITIALIZED} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x0d
+, \newline
+{\bfseries STATUS\+\_\+\+ERR\+\_\+\+OVERFLOW} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x0e
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+INITIALIZED} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x0f
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+INSUFFICIENT\+\_\+\+RTOS\+\_\+\+HEAP} = STATUS\+\_\+\+CATEGORY\+\_\+\+COMMON $\vert$ 0x10
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+SAMPLERATE\+\_\+\+UNAVAILABLE} = STATUS\+\_\+\+CATEGORY\+\_\+\+ANALOG $\vert$ 0x00
+, \newline
+{\bfseries STATUS\+\_\+\+ERR\+\_\+\+RESOLUTION\+\_\+\+UNAVAILABLE} = STATUS\+\_\+\+CATEGORY\+\_\+\+ANALOG $\vert$ 0x01
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+BAUDRATE\+\_\+\+UNAVAILABLE} = STATUS\+\_\+\+CATEGORY\+\_\+\+COM $\vert$ 0x00
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+PACKET\+\_\+\+COLLISION} = STATUS\+\_\+\+CATEGORY\+\_\+\+COM $\vert$ 0x01
+, {\bfseries STATUS\+\_\+\+ERR\+\_\+\+PROTOCOL} = STATUS\+\_\+\+CATEGORY\+\_\+\+COM $\vert$ 0x02
+, \newline
+{\bfseries STATUS\+\_\+\+ERR\+\_\+\+PIN\+\_\+\+MUX\+\_\+\+INVALID} = STATUS\+\_\+\+CATEGORY\+\_\+\+IO $\vert$ 0x00
+ \}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga29235ed38b6f02861f29daae665ac3a2}{status\+\_\+code\+\_\+wireless}} \{ \newline
+\mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a0162f46cd42e6d3332b79c7284bcfcde}{ERR\+\_\+\+IO\+\_\+\+ERROR}} = -\/1
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a9d415cac501d1e51b419985ef8644e7f}{ERR\+\_\+\+FLUSHED}} = -\/2
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ac568baeb6407ef5e2630084ccbc34be8}{ERR\+\_\+\+TIMEOUT}} = -\/3
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a7aee3b5c2b62ef9de286635fc4d0ed44}{ERR\+\_\+\+BAD\+\_\+\+DATA}} = -\/4
+, \newline
+\mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ace90946755daec754646e5f528ce1dcf}{ERR\+\_\+\+PROTOCOL}} = -\/5
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ab83b44cb6a1972de125f0f2efd45260e}{ERR\+\_\+\+UNSUPPORTED\+\_\+\+DEV}} = -\/6
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a308199736159a4f167ad4f58db8a3830}{ERR\+\_\+\+NO\+\_\+\+MEMORY}} = -\/7
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a70aa759d292a0e4be7123d01959357da}{ERR\+\_\+\+INVALID\+\_\+\+ARG}} = -\/8
+, \newline
+\mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ab7f7c844a2381a5b981a5e3d4a13ee17}{ERR\+\_\+\+BAD\+\_\+\+ADDRESS}} = -\/9
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a8d4f409eda53a10f049dc6d5a833ccba}{ERR\+\_\+\+BUSY}} = -\/10
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2aacb8e19f1a844f9dcef8448afaddc01f}{ERR\+\_\+\+BAD\+\_\+\+FORMAT}} = -\/11
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a6d0a40d6d1356ffebe4fc22ec41b267f}{ERR\+\_\+\+NO\+\_\+\+TIMER}} = -\/12
+, \newline
+\mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2affb72bf05bbe079b38c284796cf3e746}{ERR\+\_\+\+TIMER\+\_\+\+ALREADY\+\_\+\+RUNNING}} = -\/13
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a2119391dfc2668780bfd41a25426c32d}{ERR\+\_\+\+TIMER\+\_\+\+NOT\+\_\+\+RUNNING}} = -\/14
+, \mbox{\hyperlink{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a9b25aed7ac4ef4fc3c7250543bb113c0}{OPERATION\+\_\+\+IN\+\_\+\+PROGRESS}} = -\/128
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__group__sam0__utils__status__codes_ga5bf938a904077896054cd093bf7d8fa8}\label{group__group__sam0__utils__status__codes_ga5bf938a904077896054cd093bf7d8fa8}} 
+\index{Status Codes@{Status Codes}!STATUS\_CATEGORY\_MASK@{STATUS\_CATEGORY\_MASK}}
+\index{STATUS\_CATEGORY\_MASK@{STATUS\_CATEGORY\_MASK}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{STATUS\_CATEGORY\_MASK}{STATUS\_CATEGORY\_MASK}}
+{\footnotesize\ttfamily \#define STATUS\+\_\+\+CATEGORY\+\_\+\+MASK~0x\+F0}
+
+Mask to retrieve the error category of a status code. \mbox{\Hypertarget{group__group__sam0__utils__status__codes_ga4c46d8f176ca46ab775db0fe270d2f98}\label{group__group__sam0__utils__status__codes_ga4c46d8f176ca46ab775db0fe270d2f98}} 
+\index{Status Codes@{Status Codes}!STATUS\_ERROR\_MASK@{STATUS\_ERROR\_MASK}}
+\index{STATUS\_ERROR\_MASK@{STATUS\_ERROR\_MASK}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{STATUS\_ERROR\_MASK}{STATUS\_ERROR\_MASK}}
+{\footnotesize\ttfamily \#define STATUS\+\_\+\+ERROR\+\_\+\+MASK~0x0F}
+
+Mask to retrieve the error code within the category of a status code. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__group__sam0__utils__status__codes_ga477539e8a67b0cab096e8ecda6f5d7d6}\label{group__group__sam0__utils__status__codes_ga477539e8a67b0cab096e8ecda6f5d7d6}} 
+\index{Status Codes@{Status Codes}!status\_categories@{status\_categories}}
+\index{status\_categories@{status\_categories}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{status\_categories}{status\_categories}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga477539e8a67b0cab096e8ecda6f5d7d6}{status\+\_\+categories}}}
+
+Status code error categories. \mbox{\Hypertarget{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}\label{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}} 
+\index{Status Codes@{Status Codes}!status\_code@{status\_code}}
+\index{status\_code@{status\_code}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{status\_code}{status\_code}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}}}
+
+Status code that may be returned by shell commands and protocol implementations.
+
+\begin{DoxyNote}{Note}
+Any change to these status codes and the corresponding message strings is strictly forbidden. New codes can be added, however, but make sure that any message string tables are updated at the same time. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__group__sam0__utils__status__codes_ga29235ed38b6f02861f29daae665ac3a2}\label{group__group__sam0__utils__status__codes_ga29235ed38b6f02861f29daae665ac3a2}} 
+\index{Status Codes@{Status Codes}!status\_code\_wireless@{status\_code\_wireless}}
+\index{status\_code\_wireless@{status\_code\_wireless}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{status\_code\_wireless}{status\_code\_wireless}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga29235ed38b6f02861f29daae665ac3a2}{status\+\_\+code\+\_\+wireless}}}
+
+Status codes used by MAC stack. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_IO\_ERROR@{ERR\_IO\_ERROR}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_IO\_ERROR@{ERR\_IO\_ERROR}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a0162f46cd42e6d3332b79c7284bcfcde}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a0162f46cd42e6d3332b79c7284bcfcde}} 
+ERR\+\_\+\+IO\+\_\+\+ERROR&I/O error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_FLUSHED@{ERR\_FLUSHED}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_FLUSHED@{ERR\_FLUSHED}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a9d415cac501d1e51b419985ef8644e7f}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a9d415cac501d1e51b419985ef8644e7f}} 
+ERR\+\_\+\+FLUSHED&Request flushed from queue. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_TIMEOUT@{ERR\_TIMEOUT}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_TIMEOUT@{ERR\_TIMEOUT}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ac568baeb6407ef5e2630084ccbc34be8}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ac568baeb6407ef5e2630084ccbc34be8}} 
+ERR\+\_\+\+TIMEOUT&Operation timed out. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_BAD\_DATA@{ERR\_BAD\_DATA}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_BAD\_DATA@{ERR\_BAD\_DATA}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a7aee3b5c2b62ef9de286635fc4d0ed44}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a7aee3b5c2b62ef9de286635fc4d0ed44}} 
+ERR\+\_\+\+BAD\+\_\+\+DATA&Data integrity check failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_PROTOCOL@{ERR\_PROTOCOL}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_PROTOCOL@{ERR\_PROTOCOL}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ace90946755daec754646e5f528ce1dcf}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ace90946755daec754646e5f528ce1dcf}} 
+ERR\+\_\+\+PROTOCOL&Protocol error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_UNSUPPORTED\_DEV@{ERR\_UNSUPPORTED\_DEV}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_UNSUPPORTED\_DEV@{ERR\_UNSUPPORTED\_DEV}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ab83b44cb6a1972de125f0f2efd45260e}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ab83b44cb6a1972de125f0f2efd45260e}} 
+ERR\+\_\+\+UNSUPPORTED\+\_\+\+DEV&Unsupported device. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_NO\_MEMORY@{ERR\_NO\_MEMORY}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_NO\_MEMORY@{ERR\_NO\_MEMORY}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a308199736159a4f167ad4f58db8a3830}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a308199736159a4f167ad4f58db8a3830}} 
+ERR\+\_\+\+NO\+\_\+\+MEMORY&Insufficient memory. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INVALID\_ARG@{ERR\_INVALID\_ARG}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_INVALID\_ARG@{ERR\_INVALID\_ARG}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a70aa759d292a0e4be7123d01959357da}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a70aa759d292a0e4be7123d01959357da}} 
+ERR\+\_\+\+INVALID\+\_\+\+ARG&Invalid argument. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_BAD\_ADDRESS@{ERR\_BAD\_ADDRESS}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_BAD\_ADDRESS@{ERR\_BAD\_ADDRESS}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ab7f7c844a2381a5b981a5e3d4a13ee17}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2ab7f7c844a2381a5b981a5e3d4a13ee17}} 
+ERR\+\_\+\+BAD\+\_\+\+ADDRESS&Bad address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_BUSY@{ERR\_BUSY}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_BUSY@{ERR\_BUSY}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a8d4f409eda53a10f049dc6d5a833ccba}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a8d4f409eda53a10f049dc6d5a833ccba}} 
+ERR\+\_\+\+BUSY&Resource is busy. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_BAD\_FORMAT@{ERR\_BAD\_FORMAT}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_BAD\_FORMAT@{ERR\_BAD\_FORMAT}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2aacb8e19f1a844f9dcef8448afaddc01f}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2aacb8e19f1a844f9dcef8448afaddc01f}} 
+ERR\+\_\+\+BAD\+\_\+\+FORMAT&Data format not recognized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_NO\_TIMER@{ERR\_NO\_TIMER}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_NO\_TIMER@{ERR\_NO\_TIMER}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a6d0a40d6d1356ffebe4fc22ec41b267f}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a6d0a40d6d1356ffebe4fc22ec41b267f}} 
+ERR\+\_\+\+NO\+\_\+\+TIMER&No timer available. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_TIMER\_ALREADY\_RUNNING@{ERR\_TIMER\_ALREADY\_RUNNING}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_TIMER\_ALREADY\_RUNNING@{ERR\_TIMER\_ALREADY\_RUNNING}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2affb72bf05bbe079b38c284796cf3e746}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2affb72bf05bbe079b38c284796cf3e746}} 
+ERR\+\_\+\+TIMER\+\_\+\+ALREADY\+\_\+\+RUNNING&Timer already running. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_TIMER\_NOT\_RUNNING@{ERR\_TIMER\_NOT\_RUNNING}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!ERR\_TIMER\_NOT\_RUNNING@{ERR\_TIMER\_NOT\_RUNNING}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a2119391dfc2668780bfd41a25426c32d}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a2119391dfc2668780bfd41a25426c32d}} 
+ERR\+\_\+\+TIMER\+\_\+\+NOT\+\_\+\+RUNNING&Timer not running. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPERATION\_IN\_PROGRESS@{OPERATION\_IN\_PROGRESS}!Status Codes@{Status Codes}}\index{Status Codes@{Status Codes}!OPERATION\_IN\_PROGRESS@{OPERATION\_IN\_PROGRESS}}}\mbox{\Hypertarget{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a9b25aed7ac4ef4fc3c7250543bb113c0}\label{group__group__sam0__utils__status__codes_gga29235ed38b6f02861f29daae665ac3a2a9b25aed7ac4ef4fc3c7250543bb113c0}} 
+OPERATION\+\_\+\+IN\+\_\+\+PROGRESS&Operation in progress. This status code is for driver-\/internal use when an operation is currently being performed.
+
+\begin{DoxyNote}{Note}
+Drivers should never return this status code to any callers. It is strictly for internal use. 
+\end{DoxyNote}
+\\
+\hline
+
+\end{DoxyEnumFields}

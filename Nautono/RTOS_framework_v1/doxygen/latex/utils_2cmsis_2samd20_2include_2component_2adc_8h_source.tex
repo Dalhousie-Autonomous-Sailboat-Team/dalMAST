@@ -1,0 +1,621 @@
+\hypertarget{utils_2cmsis_2samd20_2include_2component_2adc_8h_source}{}\doxysection{adc.\+h}
+\label{utils_2cmsis_2samd20_2include_2component_2adc_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/adc.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/adc.h}}
+\mbox{\hyperlink{utils_2cmsis_2samd20_2include_2component_2adc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_ADC\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_ADC\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define ADC\_U2204}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_ADC                     0x111}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_CTRLA : (ADC Offset: 0x00) (R/W  8) Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint8\_t  \mbox{\hyperlink{union_a_d_c___c_t_r_l_a___type_abcec1683e42b84c321ce094a90978f1e}{SWRST}}:1;          }
+\DoxyCodeLine{54     uint8\_t  \mbox{\hyperlink{union_a_d_c___c_t_r_l_a___type_afe8b7c5b3d5120edd0c6fe657a81df28}{ENABLE}}:1;         }
+\DoxyCodeLine{55     uint8\_t  \mbox{\hyperlink{union_a_d_c___c_t_r_l_a___type_a046265949d71366959dc20f2a9bfd470}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{56     uint8\_t  :5;               }
+\DoxyCodeLine{57   \} bit;                       }
+\DoxyCodeLine{58   uint8\_t \mbox{\hyperlink{union_a_d_c___c_t_r_l_a___type_a7777001c0e893064fb142061c64223bb}{reg}};                 }
+\DoxyCodeLine{59 \} \mbox{\hyperlink{union_a_d_c___c_t_r_l_a___type}{ADC\_CTRLA\_Type}};}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define ADC\_CTRLA\_OFFSET            0x00         }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define ADC\_CTRLA\_RESETVALUE        0x00ul       }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define ADC\_CTRLA\_SWRST\_Pos         0            }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define ADC\_CTRLA\_SWRST             (0x1ul << ADC\_CTRLA\_SWRST\_Pos)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define ADC\_CTRLA\_ENABLE\_Pos        1            }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define ADC\_CTRLA\_ENABLE            (0x1ul << ADC\_CTRLA\_ENABLE\_Pos)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define ADC\_CTRLA\_RUNSTDBY\_Pos      2            }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define ADC\_CTRLA\_RUNSTDBY          (0x1ul << ADC\_CTRLA\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define ADC\_CTRLA\_MASK              0x07ul       }}
+\DoxyCodeLine{73 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_REFCTRL : (ADC Offset: 0x01) (R/W  8) Reference Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{75 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{76   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{77     uint8\_t  \mbox{\hyperlink{union_a_d_c___r_e_f_c_t_r_l___type_ada3617cfeedb80bca1ba8e8381f00b79}{REFSEL}}:4;         }
+\DoxyCodeLine{78     uint8\_t  :3;               }
+\DoxyCodeLine{79     uint8\_t  \mbox{\hyperlink{union_a_d_c___r_e_f_c_t_r_l___type_ae1b9c4b5ecb465bb9ed10260c03610d4}{REFCOMP}}:1;        }
+\DoxyCodeLine{80   \} bit;                       }
+\DoxyCodeLine{81   uint8\_t \mbox{\hyperlink{union_a_d_c___r_e_f_c_t_r_l___type_a610b7851af71ca71e89dfbf6b4da218d}{reg}};                 }
+\DoxyCodeLine{82 \} \mbox{\hyperlink{union_a_d_c___r_e_f_c_t_r_l___type}{ADC\_REFCTRL\_Type}};}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_OFFSET          0x01         }}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFSEL\_Pos      0            }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFSEL\_Msk      (0xFul << ADC\_REFCTRL\_REFSEL\_Pos)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFSEL(value)   ((ADC\_REFCTRL\_REFSEL\_Msk \& ((value) << ADC\_REFCTRL\_REFSEL\_Pos)))}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define   ADC\_REFCTRL\_REFSEL\_INT1V\_Val    0x0ul  }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define   ADC\_REFCTRL\_REFSEL\_INTVCC0\_Val  0x1ul  }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define   ADC\_REFCTRL\_REFSEL\_INTVCC1\_Val  0x2ul  }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define   ADC\_REFCTRL\_REFSEL\_AREFA\_Val    0x3ul  }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define   ADC\_REFCTRL\_REFSEL\_AREFB\_Val    0x4ul  }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFSEL\_INT1V    (ADC\_REFCTRL\_REFSEL\_INT1V\_Val  << ADC\_REFCTRL\_REFSEL\_Pos)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFSEL\_INTVCC0  (ADC\_REFCTRL\_REFSEL\_INTVCC0\_Val << ADC\_REFCTRL\_REFSEL\_Pos)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFSEL\_INTVCC1  (ADC\_REFCTRL\_REFSEL\_INTVCC1\_Val << ADC\_REFCTRL\_REFSEL\_Pos)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFSEL\_AREFA    (ADC\_REFCTRL\_REFSEL\_AREFA\_Val  << ADC\_REFCTRL\_REFSEL\_Pos)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFSEL\_AREFB    (ADC\_REFCTRL\_REFSEL\_AREFB\_Val  << ADC\_REFCTRL\_REFSEL\_Pos)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFCOMP\_Pos     7            }}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_REFCOMP         (0x1ul << ADC\_REFCTRL\_REFCOMP\_Pos)}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define ADC\_REFCTRL\_MASK            0x8Ful       }}
+\DoxyCodeLine{105 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_AVGCTRL : (ADC Offset: 0x02) (R/W  8) Average Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{107 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{108   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{109     uint8\_t  \mbox{\hyperlink{union_a_d_c___a_v_g_c_t_r_l___type_a228de4b5d8344da5550aa6b6812e306b}{SAMPLENUM}}:4;      }
+\DoxyCodeLine{110     uint8\_t  \mbox{\hyperlink{union_a_d_c___a_v_g_c_t_r_l___type_a7c86e1563fa18b1799b0664a68eb9e7f}{ADJRES}}:3;         }
+\DoxyCodeLine{111     uint8\_t  :1;               }
+\DoxyCodeLine{112   \} bit;                       }
+\DoxyCodeLine{113   uint8\_t \mbox{\hyperlink{union_a_d_c___a_v_g_c_t_r_l___type_a2ff091162730feabaf651f2ae6533ef8}{reg}};                 }
+\DoxyCodeLine{114 \} \mbox{\hyperlink{union_a_d_c___a_v_g_c_t_r_l___type}{ADC\_AVGCTRL\_Type}};}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_OFFSET          0x02         }}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_Pos   0            }}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_Msk   (0xFul << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM(value) ((ADC\_AVGCTRL\_SAMPLENUM\_Msk \& ((value) << ADC\_AVGCTRL\_SAMPLENUM\_Pos)))}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_1\_Val     0x0ul  }}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_2\_Val     0x1ul  }}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_4\_Val     0x2ul  }}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_8\_Val     0x3ul  }}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_16\_Val    0x4ul  }}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_32\_Val    0x5ul  }}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_64\_Val    0x6ul  }}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_128\_Val   0x7ul  }}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_256\_Val   0x8ul  }}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_512\_Val   0x9ul  }}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define   ADC\_AVGCTRL\_SAMPLENUM\_1024\_Val  0xAul  }}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_1     (ADC\_AVGCTRL\_SAMPLENUM\_1\_Val   << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_2     (ADC\_AVGCTRL\_SAMPLENUM\_2\_Val   << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_4     (ADC\_AVGCTRL\_SAMPLENUM\_4\_Val   << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_8     (ADC\_AVGCTRL\_SAMPLENUM\_8\_Val   << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_16    (ADC\_AVGCTRL\_SAMPLENUM\_16\_Val  << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_32    (ADC\_AVGCTRL\_SAMPLENUM\_32\_Val  << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_64    (ADC\_AVGCTRL\_SAMPLENUM\_64\_Val  << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_128   (ADC\_AVGCTRL\_SAMPLENUM\_128\_Val << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_256   (ADC\_AVGCTRL\_SAMPLENUM\_256\_Val << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_512   (ADC\_AVGCTRL\_SAMPLENUM\_512\_Val << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_SAMPLENUM\_1024  (ADC\_AVGCTRL\_SAMPLENUM\_1024\_Val << ADC\_AVGCTRL\_SAMPLENUM\_Pos)}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_ADJRES\_Pos      4            }}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_ADJRES\_Msk      (0x7ul << ADC\_AVGCTRL\_ADJRES\_Pos)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_ADJRES(value)   ((ADC\_AVGCTRL\_ADJRES\_Msk \& ((value) << ADC\_AVGCTRL\_ADJRES\_Pos)))}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define ADC\_AVGCTRL\_MASK            0x7Ful       }}
+\DoxyCodeLine{150 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_SAMPCTRL : (ADC Offset: 0x03) (R/W  8) Sampling Time Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{152 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{153   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{154     uint8\_t  \mbox{\hyperlink{union_a_d_c___s_a_m_p_c_t_r_l___type_a42e5b889ce83ae4cfbcbb8655a2b2a5d}{SAMPLEN}}:6;        }
+\DoxyCodeLine{155     uint8\_t  :2;               }
+\DoxyCodeLine{156   \} bit;                       }
+\DoxyCodeLine{157   uint8\_t \mbox{\hyperlink{union_a_d_c___s_a_m_p_c_t_r_l___type_a9bd142df7df8cdc989f009a23d695dbc}{reg}};                 }
+\DoxyCodeLine{158 \} \mbox{\hyperlink{union_a_d_c___s_a_m_p_c_t_r_l___type}{ADC\_SAMPCTRL\_Type}};}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define ADC\_SAMPCTRL\_OFFSET         0x03         }}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define ADC\_SAMPCTRL\_RESETVALUE     0x00ul       }}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define ADC\_SAMPCTRL\_SAMPLEN\_Pos    0            }}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define ADC\_SAMPCTRL\_SAMPLEN\_Msk    (0x3Ful << ADC\_SAMPCTRL\_SAMPLEN\_Pos)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define ADC\_SAMPCTRL\_SAMPLEN(value) ((ADC\_SAMPCTRL\_SAMPLEN\_Msk \& ((value) << ADC\_SAMPCTRL\_SAMPLEN\_Pos)))}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define ADC\_SAMPCTRL\_MASK           0x3Ful       }}
+\DoxyCodeLine{169 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_CTRLB : (ADC Offset: 0x04) (R/W 16) Control B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{171 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{172   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{173     uint16\_t \mbox{\hyperlink{union_a_d_c___c_t_r_l_b___type_a9a7b59025926eaaaefd10048abf5bdd1}{DIFFMODE}}:1;       }
+\DoxyCodeLine{174     uint16\_t \mbox{\hyperlink{union_a_d_c___c_t_r_l_b___type_a8a7540f76cb3eeb2321d1409d0c3c03c}{LEFTADJ}}:1;        }
+\DoxyCodeLine{175     uint16\_t \mbox{\hyperlink{union_a_d_c___c_t_r_l_b___type_a44b8503d6efe5e11f487f946e984e2d0}{FREERUN}}:1;        }
+\DoxyCodeLine{176     uint16\_t \mbox{\hyperlink{union_a_d_c___c_t_r_l_b___type_a74e341c6437af3f7322190a824f6d405}{CORREN}}:1;         }
+\DoxyCodeLine{177     uint16\_t \mbox{\hyperlink{union_a_d_c___c_t_r_l_b___type_ad64b1db54266a0e14a5ec8fd6be0d6c2}{RESSEL}}:2;         }
+\DoxyCodeLine{178     uint16\_t :2;               }
+\DoxyCodeLine{179     uint16\_t \mbox{\hyperlink{union_a_d_c___c_t_r_l_b___type_a97c6ee330675db63f2ec489bb4d4d0d0}{PRESCALER}}:3;      }
+\DoxyCodeLine{180     uint16\_t :5;               }
+\DoxyCodeLine{181   \} bit;                       }
+\DoxyCodeLine{182   uint16\_t \mbox{\hyperlink{union_a_d_c___c_t_r_l_b___type_a7020fc772ae348a720bef9811b9b706f}{reg}};                }
+\DoxyCodeLine{183 \} \mbox{\hyperlink{union_a_d_c___c_t_r_l_b___type}{ADC\_CTRLB\_Type}};}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define ADC\_CTRLB\_OFFSET            0x04         }}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define ADC\_CTRLB\_RESETVALUE        0x0000ul     }}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define ADC\_CTRLB\_DIFFMODE\_Pos      0            }}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define ADC\_CTRLB\_DIFFMODE          (0x1ul << ADC\_CTRLB\_DIFFMODE\_Pos)}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define ADC\_CTRLB\_LEFTADJ\_Pos       1            }}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define ADC\_CTRLB\_LEFTADJ           (0x1ul << ADC\_CTRLB\_LEFTADJ\_Pos)}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define ADC\_CTRLB\_FREERUN\_Pos       2            }}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define ADC\_CTRLB\_FREERUN           (0x1ul << ADC\_CTRLB\_FREERUN\_Pos)}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define ADC\_CTRLB\_CORREN\_Pos        3            }}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define ADC\_CTRLB\_CORREN            (0x1ul << ADC\_CTRLB\_CORREN\_Pos)}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define ADC\_CTRLB\_RESSEL\_Pos        4            }}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define ADC\_CTRLB\_RESSEL\_Msk        (0x3ul << ADC\_CTRLB\_RESSEL\_Pos)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define ADC\_CTRLB\_RESSEL(value)     ((ADC\_CTRLB\_RESSEL\_Msk \& ((value) << ADC\_CTRLB\_RESSEL\_Pos)))}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_RESSEL\_12BIT\_Val      0x0ul  }}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_RESSEL\_16BIT\_Val      0x1ul  }}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_RESSEL\_10BIT\_Val      0x2ul  }}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_RESSEL\_8BIT\_Val       0x3ul  }}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define ADC\_CTRLB\_RESSEL\_12BIT      (ADC\_CTRLB\_RESSEL\_12BIT\_Val    << ADC\_CTRLB\_RESSEL\_Pos)}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define ADC\_CTRLB\_RESSEL\_16BIT      (ADC\_CTRLB\_RESSEL\_16BIT\_Val    << ADC\_CTRLB\_RESSEL\_Pos)}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define ADC\_CTRLB\_RESSEL\_10BIT      (ADC\_CTRLB\_RESSEL\_10BIT\_Val    << ADC\_CTRLB\_RESSEL\_Pos)}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define ADC\_CTRLB\_RESSEL\_8BIT       (ADC\_CTRLB\_RESSEL\_8BIT\_Val     << ADC\_CTRLB\_RESSEL\_Pos)}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_Pos     8            }}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_Msk     (0x7ul << ADC\_CTRLB\_PRESCALER\_Pos)}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER(value)  ((ADC\_CTRLB\_PRESCALER\_Msk \& ((value) << ADC\_CTRLB\_PRESCALER\_Pos)))}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_PRESCALER\_DIV4\_Val    0x0ul  }}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_PRESCALER\_DIV8\_Val    0x1ul  }}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_PRESCALER\_DIV16\_Val   0x2ul  }}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_PRESCALER\_DIV32\_Val   0x3ul  }}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_PRESCALER\_DIV64\_Val   0x4ul  }}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_PRESCALER\_DIV128\_Val  0x5ul  }}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_PRESCALER\_DIV256\_Val  0x6ul  }}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define   ADC\_CTRLB\_PRESCALER\_DIV512\_Val  0x7ul  }}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_DIV4    (ADC\_CTRLB\_PRESCALER\_DIV4\_Val  << ADC\_CTRLB\_PRESCALER\_Pos)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_DIV8    (ADC\_CTRLB\_PRESCALER\_DIV8\_Val  << ADC\_CTRLB\_PRESCALER\_Pos)}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_DIV16   (ADC\_CTRLB\_PRESCALER\_DIV16\_Val << ADC\_CTRLB\_PRESCALER\_Pos)}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_DIV32   (ADC\_CTRLB\_PRESCALER\_DIV32\_Val << ADC\_CTRLB\_PRESCALER\_Pos)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_DIV64   (ADC\_CTRLB\_PRESCALER\_DIV64\_Val << ADC\_CTRLB\_PRESCALER\_Pos)}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_DIV128  (ADC\_CTRLB\_PRESCALER\_DIV128\_Val << ADC\_CTRLB\_PRESCALER\_Pos)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_DIV256  (ADC\_CTRLB\_PRESCALER\_DIV256\_Val << ADC\_CTRLB\_PRESCALER\_Pos)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define ADC\_CTRLB\_PRESCALER\_DIV512  (ADC\_CTRLB\_PRESCALER\_DIV512\_Val << ADC\_CTRLB\_PRESCALER\_Pos)}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define ADC\_CTRLB\_MASK              0x073Ful     }}
+\DoxyCodeLine{229 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_WINCTRL : (ADC Offset: 0x08) (R/W  8) Window Monitor Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{231 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{232   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{233     uint8\_t  \mbox{\hyperlink{union_a_d_c___w_i_n_c_t_r_l___type_a4effe5e7994f89fdee53abc0489ffa4d}{WINMODE}}:3;        }
+\DoxyCodeLine{234     uint8\_t  :5;               }
+\DoxyCodeLine{235   \} bit;                       }
+\DoxyCodeLine{236   uint8\_t \mbox{\hyperlink{union_a_d_c___w_i_n_c_t_r_l___type_a828a4d22e09d53ea6d0cc9b6b2a17eec}{reg}};                 }
+\DoxyCodeLine{237 \} \mbox{\hyperlink{union_a_d_c___w_i_n_c_t_r_l___type}{ADC\_WINCTRL\_Type}};}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_OFFSET          0x08         }}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_WINMODE\_Pos     0            }}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_WINMODE\_Msk     (0x7ul << ADC\_WINCTRL\_WINMODE\_Pos)}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_WINMODE(value)  ((ADC\_WINCTRL\_WINMODE\_Msk \& ((value) << ADC\_WINCTRL\_WINMODE\_Pos)))}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define   ADC\_WINCTRL\_WINMODE\_DISABLE\_Val 0x0ul  }}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define   ADC\_WINCTRL\_WINMODE\_MODE1\_Val   0x1ul  }}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define   ADC\_WINCTRL\_WINMODE\_MODE2\_Val   0x2ul  }}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define   ADC\_WINCTRL\_WINMODE\_MODE3\_Val   0x3ul  }}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define   ADC\_WINCTRL\_WINMODE\_MODE4\_Val   0x4ul  }}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_WINMODE\_DISABLE (ADC\_WINCTRL\_WINMODE\_DISABLE\_Val << ADC\_WINCTRL\_WINMODE\_Pos)}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_WINMODE\_MODE1   (ADC\_WINCTRL\_WINMODE\_MODE1\_Val << ADC\_WINCTRL\_WINMODE\_Pos)}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_WINMODE\_MODE2   (ADC\_WINCTRL\_WINMODE\_MODE2\_Val << ADC\_WINCTRL\_WINMODE\_Pos)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_WINMODE\_MODE3   (ADC\_WINCTRL\_WINMODE\_MODE3\_Val << ADC\_WINCTRL\_WINMODE\_Pos)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_WINMODE\_MODE4   (ADC\_WINCTRL\_WINMODE\_MODE4\_Val << ADC\_WINCTRL\_WINMODE\_Pos)}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define ADC\_WINCTRL\_MASK            0x07ul       }}
+\DoxyCodeLine{258 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_SWTRIG : (ADC Offset: 0x0C) (R/W  8) Software Trigger -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{260 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{261   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{262     uint8\_t  \mbox{\hyperlink{union_a_d_c___s_w_t_r_i_g___type_afb17d75ef059bf95a70a70d89113f64d}{FLUSH}}:1;          }
+\DoxyCodeLine{263     uint8\_t  \mbox{\hyperlink{union_a_d_c___s_w_t_r_i_g___type_a3662916d2948b1728e70ff36988f0ac3}{START}}:1;          }
+\DoxyCodeLine{264     uint8\_t  :6;               }
+\DoxyCodeLine{265   \} bit;                       }
+\DoxyCodeLine{266   uint8\_t \mbox{\hyperlink{union_a_d_c___s_w_t_r_i_g___type_a8e558b88b59ecbb37cd3e24e3fd7a4ff}{reg}};                 }
+\DoxyCodeLine{267 \} \mbox{\hyperlink{union_a_d_c___s_w_t_r_i_g___type}{ADC\_SWTRIG\_Type}};}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define ADC\_SWTRIG\_OFFSET           0x0C         }}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define ADC\_SWTRIG\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define ADC\_SWTRIG\_FLUSH\_Pos        0            }}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define ADC\_SWTRIG\_FLUSH            (0x1ul << ADC\_SWTRIG\_FLUSH\_Pos)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define ADC\_SWTRIG\_START\_Pos        1            }}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define ADC\_SWTRIG\_START            (0x1ul << ADC\_SWTRIG\_START\_Pos)}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define ADC\_SWTRIG\_MASK             0x03ul       }}
+\DoxyCodeLine{279 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_INPUTCTRL : (ADC Offset: 0x10) (R/W 32) Inputs Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{281 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{282   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{283     uint32\_t \mbox{\hyperlink{union_a_d_c___i_n_p_u_t_c_t_r_l___type_a479210e96a868103865c8d0004ccdcc3}{MUXPOS}}:5;         }
+\DoxyCodeLine{284     uint32\_t :3;               }
+\DoxyCodeLine{285     uint32\_t \mbox{\hyperlink{union_a_d_c___i_n_p_u_t_c_t_r_l___type_a64fe1326a9ac641ab38778553526e2ce}{MUXNEG}}:5;         }
+\DoxyCodeLine{286     uint32\_t :3;               }
+\DoxyCodeLine{287     uint32\_t \mbox{\hyperlink{union_a_d_c___i_n_p_u_t_c_t_r_l___type_a4a219f96d0abd6b2ff01d6509010fc83}{INPUTSCAN}}:4;      }
+\DoxyCodeLine{288     uint32\_t \mbox{\hyperlink{union_a_d_c___i_n_p_u_t_c_t_r_l___type_a2a6c79c4beb589673008fc93ecbe23a8}{INPUTOFFSET}}:4;    }
+\DoxyCodeLine{289     uint32\_t \mbox{\hyperlink{union_a_d_c___i_n_p_u_t_c_t_r_l___type_a2d3bd933621526a675c150151a67649b}{GAIN}}:4;           }
+\DoxyCodeLine{290     uint32\_t :4;               }
+\DoxyCodeLine{291   \} bit;                       }
+\DoxyCodeLine{292   uint32\_t \mbox{\hyperlink{union_a_d_c___i_n_p_u_t_c_t_r_l___type_a17cb467222133feafc7e2cf2997c3bf4}{reg}};                }
+\DoxyCodeLine{293 \} \mbox{\hyperlink{union_a_d_c___i_n_p_u_t_c_t_r_l___type}{ADC\_INPUTCTRL\_Type}};}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_OFFSET        0x10         }}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_RESETVALUE    0x00000000ul }}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_Pos    0            }}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_Msk    (0x1Ful << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS(value) ((ADC\_INPUTCTRL\_MUXPOS\_Msk \& ((value) << ADC\_INPUTCTRL\_MUXPOS\_Pos)))}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN0\_Val   0x0ul  }}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN1\_Val   0x1ul  }}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN2\_Val   0x2ul  }}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN3\_Val   0x3ul  }}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN4\_Val   0x4ul  }}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN5\_Val   0x5ul  }}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN6\_Val   0x6ul  }}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN7\_Val   0x7ul  }}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN8\_Val   0x8ul  }}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN9\_Val   0x9ul  }}
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN10\_Val  0xAul  }}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN11\_Val  0xBul  }}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN12\_Val  0xCul  }}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN13\_Val  0xDul  }}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN14\_Val  0xEul  }}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN15\_Val  0xFul  }}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN16\_Val  0x10ul  }}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN17\_Val  0x11ul  }}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN18\_Val  0x12ul  }}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_PIN19\_Val  0x13ul  }}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_TEMP\_Val   0x18ul  }}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_BANDGAP\_Val 0x19ul  }}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_SCALEDCOREVCC\_Val 0x1Aul  }}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_SCALEDIOVCC\_Val 0x1Bul  }}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXPOS\_DAC\_Val    0x1Cul  }}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN0   (ADC\_INPUTCTRL\_MUXPOS\_PIN0\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN1   (ADC\_INPUTCTRL\_MUXPOS\_PIN1\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN2   (ADC\_INPUTCTRL\_MUXPOS\_PIN2\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN3   (ADC\_INPUTCTRL\_MUXPOS\_PIN3\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN4   (ADC\_INPUTCTRL\_MUXPOS\_PIN4\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN5   (ADC\_INPUTCTRL\_MUXPOS\_PIN5\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN6   (ADC\_INPUTCTRL\_MUXPOS\_PIN6\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN7   (ADC\_INPUTCTRL\_MUXPOS\_PIN7\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN8   (ADC\_INPUTCTRL\_MUXPOS\_PIN8\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN9   (ADC\_INPUTCTRL\_MUXPOS\_PIN9\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN10  (ADC\_INPUTCTRL\_MUXPOS\_PIN10\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN11  (ADC\_INPUTCTRL\_MUXPOS\_PIN11\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN12  (ADC\_INPUTCTRL\_MUXPOS\_PIN12\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN13  (ADC\_INPUTCTRL\_MUXPOS\_PIN13\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN14  (ADC\_INPUTCTRL\_MUXPOS\_PIN14\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN15  (ADC\_INPUTCTRL\_MUXPOS\_PIN15\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN16  (ADC\_INPUTCTRL\_MUXPOS\_PIN16\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN17  (ADC\_INPUTCTRL\_MUXPOS\_PIN17\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN18  (ADC\_INPUTCTRL\_MUXPOS\_PIN18\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_PIN19  (ADC\_INPUTCTRL\_MUXPOS\_PIN19\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_TEMP   (ADC\_INPUTCTRL\_MUXPOS\_TEMP\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_BANDGAP (ADC\_INPUTCTRL\_MUXPOS\_BANDGAP\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_SCALEDCOREVCC (ADC\_INPUTCTRL\_MUXPOS\_SCALEDCOREVCC\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_SCALEDIOVCC (ADC\_INPUTCTRL\_MUXPOS\_SCALEDIOVCC\_Val << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXPOS\_DAC    (ADC\_INPUTCTRL\_MUXPOS\_DAC\_Val  << ADC\_INPUTCTRL\_MUXPOS\_Pos)}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_Pos    8            }}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_Msk    (0x1Ful << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG(value) ((ADC\_INPUTCTRL\_MUXNEG\_Msk \& ((value) << ADC\_INPUTCTRL\_MUXNEG\_Pos)))}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_PIN0\_Val   0x0ul  }}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_PIN1\_Val   0x1ul  }}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_PIN2\_Val   0x2ul  }}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_PIN3\_Val   0x3ul  }}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_PIN4\_Val   0x4ul  }}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_PIN5\_Val   0x5ul  }}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_PIN6\_Val   0x6ul  }}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_PIN7\_Val   0x7ul  }}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_GND\_Val    0x18ul  }}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_MUXNEG\_IOGND\_Val  0x19ul  }}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_PIN0   (ADC\_INPUTCTRL\_MUXNEG\_PIN0\_Val << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_PIN1   (ADC\_INPUTCTRL\_MUXNEG\_PIN1\_Val << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_PIN2   (ADC\_INPUTCTRL\_MUXNEG\_PIN2\_Val << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_PIN3   (ADC\_INPUTCTRL\_MUXNEG\_PIN3\_Val << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_PIN4   (ADC\_INPUTCTRL\_MUXNEG\_PIN4\_Val << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_PIN5   (ADC\_INPUTCTRL\_MUXNEG\_PIN5\_Val << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_PIN6   (ADC\_INPUTCTRL\_MUXNEG\_PIN6\_Val << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_PIN7   (ADC\_INPUTCTRL\_MUXNEG\_PIN7\_Val << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_GND    (ADC\_INPUTCTRL\_MUXNEG\_GND\_Val  << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MUXNEG\_IOGND  (ADC\_INPUTCTRL\_MUXNEG\_IOGND\_Val << ADC\_INPUTCTRL\_MUXNEG\_Pos)}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_INPUTSCAN\_Pos 16           }}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_INPUTSCAN\_Msk (0xFul << ADC\_INPUTCTRL\_INPUTSCAN\_Pos)}}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_INPUTSCAN(value) ((ADC\_INPUTCTRL\_INPUTSCAN\_Msk \& ((value) << ADC\_INPUTCTRL\_INPUTSCAN\_Pos)))}}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_INPUTOFFSET\_Pos 20           }}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_INPUTOFFSET\_Msk (0xFul << ADC\_INPUTCTRL\_INPUTOFFSET\_Pos)}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_INPUTOFFSET(value) ((ADC\_INPUTCTRL\_INPUTOFFSET\_Msk \& ((value) << ADC\_INPUTCTRL\_INPUTOFFSET\_Pos)))}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_GAIN\_Pos      24           }}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_GAIN\_Msk      (0xFul << ADC\_INPUTCTRL\_GAIN\_Pos)}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_GAIN(value)   ((ADC\_INPUTCTRL\_GAIN\_Msk \& ((value) << ADC\_INPUTCTRL\_GAIN\_Pos)))}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_GAIN\_1X\_Val       0x0ul  }}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_GAIN\_2X\_Val       0x1ul  }}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_GAIN\_4X\_Val       0x2ul  }}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_GAIN\_8X\_Val       0x3ul  }}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_GAIN\_16X\_Val      0x4ul  }}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define   ADC\_INPUTCTRL\_GAIN\_DIV2\_Val     0xFul  }}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_GAIN\_1X       (ADC\_INPUTCTRL\_GAIN\_1X\_Val     << ADC\_INPUTCTRL\_GAIN\_Pos)}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_GAIN\_2X       (ADC\_INPUTCTRL\_GAIN\_2X\_Val     << ADC\_INPUTCTRL\_GAIN\_Pos)}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_GAIN\_4X       (ADC\_INPUTCTRL\_GAIN\_4X\_Val     << ADC\_INPUTCTRL\_GAIN\_Pos)}}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_GAIN\_8X       (ADC\_INPUTCTRL\_GAIN\_8X\_Val     << ADC\_INPUTCTRL\_GAIN\_Pos)}}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_GAIN\_16X      (ADC\_INPUTCTRL\_GAIN\_16X\_Val    << ADC\_INPUTCTRL\_GAIN\_Pos)}}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_GAIN\_DIV2     (ADC\_INPUTCTRL\_GAIN\_DIV2\_Val   << ADC\_INPUTCTRL\_GAIN\_Pos)}}
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#define ADC\_INPUTCTRL\_MASK          0x0FFF1F1Ful }}
+\DoxyCodeLine{398 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_EVCTRL : (ADC Offset: 0x14) (R/W  8) Event Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{400 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{401   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{402     uint8\_t  \mbox{\hyperlink{union_a_d_c___e_v_c_t_r_l___type_ae2c0cada9f20a0fa68e6eef04c8500e2}{STARTEI}}:1;        }
+\DoxyCodeLine{403     uint8\_t  \mbox{\hyperlink{union_a_d_c___e_v_c_t_r_l___type_a3968a322f4202ca9cdd96ea032a13cd9}{SYNCEI}}:1;         }
+\DoxyCodeLine{404     uint8\_t  :2;               }
+\DoxyCodeLine{405     uint8\_t  \mbox{\hyperlink{union_a_d_c___e_v_c_t_r_l___type_a60c1f728bfa1da65d54772c9f96db97c}{RESRDYEO}}:1;       }
+\DoxyCodeLine{406     uint8\_t  \mbox{\hyperlink{union_a_d_c___e_v_c_t_r_l___type_ac9940eaccf8de887688bb552b1ce6da9}{WINMONEO}}:1;       }
+\DoxyCodeLine{407     uint8\_t  :2;               }
+\DoxyCodeLine{408   \} bit;                       }
+\DoxyCodeLine{409   uint8\_t \mbox{\hyperlink{union_a_d_c___e_v_c_t_r_l___type_a6f1b45a79d4631f72e1abebd7cd91824}{reg}};                 }
+\DoxyCodeLine{410 \} \mbox{\hyperlink{union_a_d_c___e_v_c_t_r_l___type}{ADC\_EVCTRL\_Type}};}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_OFFSET           0x14         }}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_STARTEI\_Pos      0            }}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_STARTEI          (0x1ul << ADC\_EVCTRL\_STARTEI\_Pos)}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_SYNCEI\_Pos       1            }}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_SYNCEI           (0x1ul << ADC\_EVCTRL\_SYNCEI\_Pos)}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_RESRDYEO\_Pos     4            }}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_RESRDYEO         (0x1ul << ADC\_EVCTRL\_RESRDYEO\_Pos)}}
+\DoxyCodeLine{422 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_WINMONEO\_Pos     5            }}
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_WINMONEO         (0x1ul << ADC\_EVCTRL\_WINMONEO\_Pos)}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define ADC\_EVCTRL\_MASK             0x33ul       }}
+\DoxyCodeLine{426 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_INTENCLR : (ADC Offset: 0x16) (R/W  8) Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{428 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{429   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{430     uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_c_l_r___type_a9abf805c13a8225909b554221ec72820}{RESRDY}}:1;         }
+\DoxyCodeLine{431     uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_c_l_r___type_ab24494dd0de90967355e1fc26119cb8a}{OVERRUN}}:1;        }
+\DoxyCodeLine{432     uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_c_l_r___type_a102bd20f5d0db4994d14ee58de5dce77}{WINMON}}:1;         }
+\DoxyCodeLine{433     uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_c_l_r___type_abea77fb875e056da91a1da385ea21849}{SYNCRDY}}:1;        }
+\DoxyCodeLine{434     uint8\_t  :4;               }
+\DoxyCodeLine{435   \} bit;                       }
+\DoxyCodeLine{436   uint8\_t \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_c_l_r___type_a4d0bec6adb0cbd25103eabcd91a97c3d}{reg}};                 }
+\DoxyCodeLine{437 \} \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_c_l_r___type}{ADC\_INTENCLR\_Type}};}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_OFFSET         0x16         }}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_RESETVALUE     0x00ul       }}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_RESRDY\_Pos     0            }}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_RESRDY         (0x1ul << ADC\_INTENCLR\_RESRDY\_Pos)}}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_OVERRUN\_Pos    1            }}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_OVERRUN        (0x1ul << ADC\_INTENCLR\_OVERRUN\_Pos)}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_WINMON\_Pos     2            }}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_WINMON         (0x1ul << ADC\_INTENCLR\_WINMON\_Pos)}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_SYNCRDY\_Pos    3            }}
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_SYNCRDY        (0x1ul << ADC\_INTENCLR\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define ADC\_INTENCLR\_MASK           0x0Ful       }}
+\DoxyCodeLine{453 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_INTENSET : (ADC Offset: 0x17) (R/W  8) Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{455 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{456   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{457     uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_s_e_t___type_aa227076f0b2a4c1729d0d33414360cff}{RESRDY}}:1;         }
+\DoxyCodeLine{458     uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_s_e_t___type_af4a7f1673bb8c64fe95821a3948be7f1}{OVERRUN}}:1;        }
+\DoxyCodeLine{459     uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_s_e_t___type_a241338a3153ffef3eb281857ff0ce239}{WINMON}}:1;         }
+\DoxyCodeLine{460     uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_s_e_t___type_aa96ff752d403ef496d5899f1df460ef9}{SYNCRDY}}:1;        }
+\DoxyCodeLine{461     uint8\_t  :4;               }
+\DoxyCodeLine{462   \} bit;                       }
+\DoxyCodeLine{463   uint8\_t \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_s_e_t___type_a3bfc0121d10581d4d8bb43f8c46e0c01}{reg}};                 }
+\DoxyCodeLine{464 \} \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_s_e_t___type}{ADC\_INTENSET\_Type}};}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#define ADC\_INTENSET\_OFFSET         0x17         }}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define ADC\_INTENSET\_RESETVALUE     0x00ul       }}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#define ADC\_INTENSET\_RESRDY\_Pos     0            }}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define ADC\_INTENSET\_RESRDY         (0x1ul << ADC\_INTENSET\_RESRDY\_Pos)}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#define ADC\_INTENSET\_OVERRUN\_Pos    1            }}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define ADC\_INTENSET\_OVERRUN        (0x1ul << ADC\_INTENSET\_OVERRUN\_Pos)}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define ADC\_INTENSET\_WINMON\_Pos     2            }}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define ADC\_INTENSET\_WINMON         (0x1ul << ADC\_INTENSET\_WINMON\_Pos)}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define ADC\_INTENSET\_SYNCRDY\_Pos    3            }}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define ADC\_INTENSET\_SYNCRDY        (0x1ul << ADC\_INTENSET\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define ADC\_INTENSET\_MASK           0x0Ful       }}
+\DoxyCodeLine{480 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_INTFLAG : (ADC Offset: 0x18) (R/W  8) Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{482 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{483   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{484     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_f_l_a_g___type_a4a6911d7452a4606bac08a90f4e7ae9a}{RESRDY}}:1;     }
+\DoxyCodeLine{485     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_f_l_a_g___type_aab91f64470203c57f3f8f13dfd50dceb}{OVERRUN}}:1;    }
+\DoxyCodeLine{486     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_f_l_a_g___type_a8304d989141bfc12191122d3594c5756}{WINMON}}:1;     }
+\DoxyCodeLine{487     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_a_d_c___i_n_t_f_l_a_g___type_a51a3590b105b37715409dbab1f94ca50}{SYNCRDY}}:1;    }
+\DoxyCodeLine{488     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_a_d_c___i_n_t_f_l_a_g___type_ab090d419e0239066ff21b9dd7edfc19d}{uint8\_t}}  :4;           }
+\DoxyCodeLine{489   \} bit;                       }
+\DoxyCodeLine{490   uint8\_t \mbox{\hyperlink{union_a_d_c___i_n_t_f_l_a_g___type_a66d77e3487777c8a323038d890aae236}{reg}};                 }
+\DoxyCodeLine{491 \} \mbox{\hyperlink{union_a_d_c___i_n_t_f_l_a_g___type}{ADC\_INTFLAG\_Type}};}
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_OFFSET          0x18         }}
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_RESRDY\_Pos      0            }}
+\DoxyCodeLine{498 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_RESRDY          (0x1ul << ADC\_INTFLAG\_RESRDY\_Pos)}}
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_OVERRUN\_Pos     1            }}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_OVERRUN         (0x1ul << ADC\_INTFLAG\_OVERRUN\_Pos)}}
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_WINMON\_Pos      2            }}
+\DoxyCodeLine{502 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_WINMON          (0x1ul << ADC\_INTFLAG\_WINMON\_Pos)}}
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_SYNCRDY\_Pos     3            }}
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_SYNCRDY         (0x1ul << ADC\_INTFLAG\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#define ADC\_INTFLAG\_MASK            0x0Ful       }}
+\DoxyCodeLine{507 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_STATUS : (ADC Offset: 0x19) (R/   8) Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{509 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{510   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{511     uint8\_t  :7;               }
+\DoxyCodeLine{512     uint8\_t  \mbox{\hyperlink{union_a_d_c___s_t_a_t_u_s___type_a513cd5da141f8d5896d975a70e068205}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{513   \} bit;                       }
+\DoxyCodeLine{514   uint8\_t \mbox{\hyperlink{union_a_d_c___s_t_a_t_u_s___type_a47b92a99de1cc0551b7bbed052898bca}{reg}};                 }
+\DoxyCodeLine{515 \} \mbox{\hyperlink{union_a_d_c___s_t_a_t_u_s___type}{ADC\_STATUS\_Type}};}
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#define ADC\_STATUS\_OFFSET           0x19         }}
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#define ADC\_STATUS\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#define ADC\_STATUS\_SYNCBUSY\_Pos     7            }}
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#define ADC\_STATUS\_SYNCBUSY         (0x1ul << ADC\_STATUS\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#define ADC\_STATUS\_MASK             0x80ul       }}
+\DoxyCodeLine{525 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_RESULT : (ADC Offset: 0x1A) (R/  16) Result -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{527 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{528   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{529     uint16\_t \mbox{\hyperlink{union_a_d_c___r_e_s_u_l_t___type_a880cbca81d3d2383ec600904f51f821c}{RESULT}}:16;        }
+\DoxyCodeLine{530   \} bit;                       }
+\DoxyCodeLine{531   uint16\_t \mbox{\hyperlink{union_a_d_c___r_e_s_u_l_t___type_a6c30a9f746ab8eb2454d3ab6a0e933b4}{reg}};                }
+\DoxyCodeLine{532 \} \mbox{\hyperlink{union_a_d_c___r_e_s_u_l_t___type}{ADC\_RESULT\_Type}};}
+\DoxyCodeLine{533 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{534 }
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#define ADC\_RESULT\_OFFSET           0x1A         }}
+\DoxyCodeLine{536 \textcolor{preprocessor}{\#define ADC\_RESULT\_RESETVALUE       0x0000ul     }}
+\DoxyCodeLine{538 \textcolor{preprocessor}{\#define ADC\_RESULT\_RESULT\_Pos       0            }}
+\DoxyCodeLine{539 \textcolor{preprocessor}{\#define ADC\_RESULT\_RESULT\_Msk       (0xFFFFul << ADC\_RESULT\_RESULT\_Pos)}}
+\DoxyCodeLine{540 \textcolor{preprocessor}{\#define ADC\_RESULT\_RESULT(value)    ((ADC\_RESULT\_RESULT\_Msk \& ((value) << ADC\_RESULT\_RESULT\_Pos)))}}
+\DoxyCodeLine{541 \textcolor{preprocessor}{\#define ADC\_RESULT\_MASK             0xFFFFul     }}
+\DoxyCodeLine{543 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_WINLT : (ADC Offset: 0x1C) (R/W 16) Window Monitor Lower Threshold -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{544 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{545 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{546   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{547     uint16\_t \mbox{\hyperlink{union_a_d_c___w_i_n_l_t___type_a035756415c5bd280e4ffbb100760674a}{WINLT}}:16;         }
+\DoxyCodeLine{548   \} bit;                       }
+\DoxyCodeLine{549   uint16\_t \mbox{\hyperlink{union_a_d_c___w_i_n_l_t___type_ada30a4dd3086936092287fad6d90a1aa}{reg}};                }
+\DoxyCodeLine{550 \} \mbox{\hyperlink{union_a_d_c___w_i_n_l_t___type}{ADC\_WINLT\_Type}};}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553 \textcolor{preprocessor}{\#define ADC\_WINLT\_OFFSET            0x1C         }}
+\DoxyCodeLine{554 \textcolor{preprocessor}{\#define ADC\_WINLT\_RESETVALUE        0x0000ul     }}
+\DoxyCodeLine{556 \textcolor{preprocessor}{\#define ADC\_WINLT\_WINLT\_Pos         0            }}
+\DoxyCodeLine{557 \textcolor{preprocessor}{\#define ADC\_WINLT\_WINLT\_Msk         (0xFFFFul << ADC\_WINLT\_WINLT\_Pos)}}
+\DoxyCodeLine{558 \textcolor{preprocessor}{\#define ADC\_WINLT\_WINLT(value)      ((ADC\_WINLT\_WINLT\_Msk \& ((value) << ADC\_WINLT\_WINLT\_Pos)))}}
+\DoxyCodeLine{559 \textcolor{preprocessor}{\#define ADC\_WINLT\_MASK              0xFFFFul     }}
+\DoxyCodeLine{561 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_WINUT : (ADC Offset: 0x20) (R/W 16) Window Monitor Upper Threshold -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{562 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{563 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{564   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{565     uint16\_t \mbox{\hyperlink{union_a_d_c___w_i_n_u_t___type_a7e2bf53ee179d543e656fb875f7dfd32}{WINUT}}:16;         }
+\DoxyCodeLine{566   \} bit;                       }
+\DoxyCodeLine{567   uint16\_t \mbox{\hyperlink{union_a_d_c___w_i_n_u_t___type_a25300580878b2580f586e3dc1fc30396}{reg}};                }
+\DoxyCodeLine{568 \} \mbox{\hyperlink{union_a_d_c___w_i_n_u_t___type}{ADC\_WINUT\_Type}};}
+\DoxyCodeLine{569 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#define ADC\_WINUT\_OFFSET            0x20         }}
+\DoxyCodeLine{572 \textcolor{preprocessor}{\#define ADC\_WINUT\_RESETVALUE        0x0000ul     }}
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#define ADC\_WINUT\_WINUT\_Pos         0            }}
+\DoxyCodeLine{575 \textcolor{preprocessor}{\#define ADC\_WINUT\_WINUT\_Msk         (0xFFFFul << ADC\_WINUT\_WINUT\_Pos)}}
+\DoxyCodeLine{576 \textcolor{preprocessor}{\#define ADC\_WINUT\_WINUT(value)      ((ADC\_WINUT\_WINUT\_Msk \& ((value) << ADC\_WINUT\_WINUT\_Pos)))}}
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#define ADC\_WINUT\_MASK              0xFFFFul     }}
+\DoxyCodeLine{579 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_GAINCORR : (ADC Offset: 0x24) (R/W 16) Gain Correction -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{580 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{581 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{582   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{583     uint16\_t \mbox{\hyperlink{union_a_d_c___g_a_i_n_c_o_r_r___type_a074c34704f956be5b839eadb2cbbf82e}{GAINCORR}}:12;      }
+\DoxyCodeLine{584     uint16\_t :4;               }
+\DoxyCodeLine{585   \} bit;                       }
+\DoxyCodeLine{586   uint16\_t \mbox{\hyperlink{union_a_d_c___g_a_i_n_c_o_r_r___type_a737114ca8e900567cb604e3d126de899}{reg}};                }
+\DoxyCodeLine{587 \} \mbox{\hyperlink{union_a_d_c___g_a_i_n_c_o_r_r___type}{ADC\_GAINCORR\_Type}};}
+\DoxyCodeLine{588 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{589 }
+\DoxyCodeLine{590 \textcolor{preprocessor}{\#define ADC\_GAINCORR\_OFFSET         0x24         }}
+\DoxyCodeLine{591 \textcolor{preprocessor}{\#define ADC\_GAINCORR\_RESETVALUE     0x0000ul     }}
+\DoxyCodeLine{593 \textcolor{preprocessor}{\#define ADC\_GAINCORR\_GAINCORR\_Pos   0            }}
+\DoxyCodeLine{594 \textcolor{preprocessor}{\#define ADC\_GAINCORR\_GAINCORR\_Msk   (0xFFFul << ADC\_GAINCORR\_GAINCORR\_Pos)}}
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#define ADC\_GAINCORR\_GAINCORR(value) ((ADC\_GAINCORR\_GAINCORR\_Msk \& ((value) << ADC\_GAINCORR\_GAINCORR\_Pos)))}}
+\DoxyCodeLine{596 \textcolor{preprocessor}{\#define ADC\_GAINCORR\_MASK           0x0FFFul     }}
+\DoxyCodeLine{598 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_OFFSETCORR : (ADC Offset: 0x26) (R/W 16) Offset Correction -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{599 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{600 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{601   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{602     uint16\_t \mbox{\hyperlink{union_a_d_c___o_f_f_s_e_t_c_o_r_r___type_ae0c4140ae9e600491f10a16054b634a3}{OFFSETCORR}}:12;    }
+\DoxyCodeLine{603     uint16\_t :4;               }
+\DoxyCodeLine{604   \} bit;                       }
+\DoxyCodeLine{605   uint16\_t \mbox{\hyperlink{union_a_d_c___o_f_f_s_e_t_c_o_r_r___type_af77a8500e2ff763edeaba17ffb0f3828}{reg}};                }
+\DoxyCodeLine{606 \} \mbox{\hyperlink{union_a_d_c___o_f_f_s_e_t_c_o_r_r___type}{ADC\_OFFSETCORR\_Type}};}
+\DoxyCodeLine{607 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609 \textcolor{preprocessor}{\#define ADC\_OFFSETCORR\_OFFSET       0x26         }}
+\DoxyCodeLine{610 \textcolor{preprocessor}{\#define ADC\_OFFSETCORR\_RESETVALUE   0x0000ul     }}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#define ADC\_OFFSETCORR\_OFFSETCORR\_Pos 0            }}
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#define ADC\_OFFSETCORR\_OFFSETCORR\_Msk (0xFFFul << ADC\_OFFSETCORR\_OFFSETCORR\_Pos)}}
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#define ADC\_OFFSETCORR\_OFFSETCORR(value) ((ADC\_OFFSETCORR\_OFFSETCORR\_Msk \& ((value) << ADC\_OFFSETCORR\_OFFSETCORR\_Pos)))}}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#define ADC\_OFFSETCORR\_MASK         0x0FFFul     }}
+\DoxyCodeLine{617 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_CALIB : (ADC Offset: 0x28) (R/W 16) Calibration -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{619 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{620   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{621     uint16\_t \mbox{\hyperlink{union_a_d_c___c_a_l_i_b___type_a165959ab1f065fe89539984c96d60046}{LINEARITY\_CAL}}:8;  }
+\DoxyCodeLine{622     uint16\_t \mbox{\hyperlink{union_a_d_c___c_a_l_i_b___type_a90292699a2a4a28fc1d6e14274bd9789}{BIAS\_CAL}}:3;       }
+\DoxyCodeLine{623     uint16\_t :5;               }
+\DoxyCodeLine{624   \} bit;                       }
+\DoxyCodeLine{625   uint16\_t \mbox{\hyperlink{union_a_d_c___c_a_l_i_b___type_a1e4b1a3ae0925a07751971344ebae8e1}{reg}};                }
+\DoxyCodeLine{626 \} \mbox{\hyperlink{union_a_d_c___c_a_l_i_b___type}{ADC\_CALIB\_Type}};}
+\DoxyCodeLine{627 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{629 \textcolor{preprocessor}{\#define ADC\_CALIB\_OFFSET            0x28         }}
+\DoxyCodeLine{630 \textcolor{preprocessor}{\#define ADC\_CALIB\_RESETVALUE        0x0000ul     }}
+\DoxyCodeLine{632 \textcolor{preprocessor}{\#define ADC\_CALIB\_LINEARITY\_CAL\_Pos 0            }}
+\DoxyCodeLine{633 \textcolor{preprocessor}{\#define ADC\_CALIB\_LINEARITY\_CAL\_Msk (0xFFul << ADC\_CALIB\_LINEARITY\_CAL\_Pos)}}
+\DoxyCodeLine{634 \textcolor{preprocessor}{\#define ADC\_CALIB\_LINEARITY\_CAL(value) ((ADC\_CALIB\_LINEARITY\_CAL\_Msk \& ((value) << ADC\_CALIB\_LINEARITY\_CAL\_Pos)))}}
+\DoxyCodeLine{635 \textcolor{preprocessor}{\#define ADC\_CALIB\_BIAS\_CAL\_Pos      8            }}
+\DoxyCodeLine{636 \textcolor{preprocessor}{\#define ADC\_CALIB\_BIAS\_CAL\_Msk      (0x7ul << ADC\_CALIB\_BIAS\_CAL\_Pos)}}
+\DoxyCodeLine{637 \textcolor{preprocessor}{\#define ADC\_CALIB\_BIAS\_CAL(value)   ((ADC\_CALIB\_BIAS\_CAL\_Msk \& ((value) << ADC\_CALIB\_BIAS\_CAL\_Pos)))}}
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#define ADC\_CALIB\_MASK              0x07FFul     }}
+\DoxyCodeLine{640 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ ADC\_DBGCTRL : (ADC Offset: 0x2A) (R/W  8) Debug Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{641 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{642 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{643   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{644     uint8\_t  \mbox{\hyperlink{union_a_d_c___d_b_g_c_t_r_l___type_a026b428acb05c929f9549c93375f5909}{DBGRUN}}:1;         }
+\DoxyCodeLine{645     uint8\_t  :7;               }
+\DoxyCodeLine{646   \} bit;                       }
+\DoxyCodeLine{647   uint8\_t \mbox{\hyperlink{union_a_d_c___d_b_g_c_t_r_l___type_ab6eaeef2c5a93686734b8558b6432f37}{reg}};                 }
+\DoxyCodeLine{648 \} \mbox{\hyperlink{union_a_d_c___d_b_g_c_t_r_l___type}{ADC\_DBGCTRL\_Type}};}
+\DoxyCodeLine{649 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651 \textcolor{preprocessor}{\#define ADC\_DBGCTRL\_OFFSET          0x2A         }}
+\DoxyCodeLine{652 \textcolor{preprocessor}{\#define ADC\_DBGCTRL\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{654 \textcolor{preprocessor}{\#define ADC\_DBGCTRL\_DBGRUN\_Pos      0            }}
+\DoxyCodeLine{655 \textcolor{preprocessor}{\#define ADC\_DBGCTRL\_DBGRUN          (0x1ul << ADC\_DBGCTRL\_DBGRUN\_Pos)}}
+\DoxyCodeLine{656 \textcolor{preprocessor}{\#define ADC\_DBGCTRL\_MASK            0x01ul       }}
+\DoxyCodeLine{659 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{660 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{661   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___c_t_r_l_a___type}{ADC\_CTRLA\_Type}}            \mbox{\hyperlink{struct_adc_ab3df0d5e21bc31d52cd54efb82840a84}{CTRLA}};       }
+\DoxyCodeLine{662   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___r_e_f_c_t_r_l___type}{ADC\_REFCTRL\_Type}}          \mbox{\hyperlink{struct_adc_a2ad691325acf2f381dda3f3dd66096b5}{REFCTRL}};     }
+\DoxyCodeLine{663   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___a_v_g_c_t_r_l___type}{ADC\_AVGCTRL\_Type}}          \mbox{\hyperlink{struct_adc_a39cd0bd31779c0c1c5d3c4e058105a57}{AVGCTRL}};     }
+\DoxyCodeLine{664   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___s_a_m_p_c_t_r_l___type}{ADC\_SAMPCTRL\_Type}}         \mbox{\hyperlink{struct_adc_a18d68f2b4bae9ac3eefb839029c1bc84}{SAMPCTRL}};    }
+\DoxyCodeLine{665   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___c_t_r_l_b___type}{ADC\_CTRLB\_Type}}            \mbox{\hyperlink{struct_adc_a8c7b4543b3b320cbe078bd58fb7df93c}{CTRLB}};       }
+\DoxyCodeLine{666        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x2];}
+\DoxyCodeLine{667   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___w_i_n_c_t_r_l___type}{ADC\_WINCTRL\_Type}}          \mbox{\hyperlink{struct_adc_a0914379fa8c03384e109e01dee914a57}{WINCTRL}};     }
+\DoxyCodeLine{668        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x3];}
+\DoxyCodeLine{669   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___s_w_t_r_i_g___type}{ADC\_SWTRIG\_Type}}           \mbox{\hyperlink{struct_adc_ad3f43aead8dc3b79cb34f4afb5ccdecc}{SWTRIG}};      }
+\DoxyCodeLine{670        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved3[0x3];}
+\DoxyCodeLine{671   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___i_n_p_u_t_c_t_r_l___type}{ADC\_INPUTCTRL\_Type}}        \mbox{\hyperlink{struct_adc_a1ad090f498e2ce3d2b6e7b86931a0c7a}{INPUTCTRL}};   }
+\DoxyCodeLine{672   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___e_v_c_t_r_l___type}{ADC\_EVCTRL\_Type}}           \mbox{\hyperlink{struct_adc_a09f9dfbbadbc51a36cf4f8c0fcb41e35}{EVCTRL}};      }
+\DoxyCodeLine{673        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved4[0x1];}
+\DoxyCodeLine{674   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_c_l_r___type}{ADC\_INTENCLR\_Type}}         \mbox{\hyperlink{struct_adc_a81adb67cdacbd126e0a65f1b555f0221}{INTENCLR}};    }
+\DoxyCodeLine{675   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___i_n_t_e_n_s_e_t___type}{ADC\_INTENSET\_Type}}         \mbox{\hyperlink{struct_adc_a07ae3a5472859656c92b6aaeda6849de}{INTENSET}};    }
+\DoxyCodeLine{676   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___i_n_t_f_l_a_g___type}{ADC\_INTFLAG\_Type}}          \mbox{\hyperlink{struct_adc_a1b221db015a728adf157f6d130967476}{INTFLAG}};     }
+\DoxyCodeLine{677   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_a_d_c___s_t_a_t_u_s___type}{ADC\_STATUS\_Type}}           \mbox{\hyperlink{struct_adc_ac60094eae1e60edc4aa579c498c33018}{STATUS}};      }
+\DoxyCodeLine{678   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_a_d_c___r_e_s_u_l_t___type}{ADC\_RESULT\_Type}}           \mbox{\hyperlink{struct_adc_a04ab9cba3b770ef91a881a4b199b5da0}{RESULT}};      }
+\DoxyCodeLine{679   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___w_i_n_l_t___type}{ADC\_WINLT\_Type}}            \mbox{\hyperlink{struct_adc_a8a6d9b6cf625bd8af5f6ad59ad484b73}{WINLT}};       }
+\DoxyCodeLine{680        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved5[0x2];}
+\DoxyCodeLine{681   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___w_i_n_u_t___type}{ADC\_WINUT\_Type}}            \mbox{\hyperlink{struct_adc_a486eb898066a8e9203b368556372a92d}{WINUT}};       }
+\DoxyCodeLine{682        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved6[0x2];}
+\DoxyCodeLine{683   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___g_a_i_n_c_o_r_r___type}{ADC\_GAINCORR\_Type}}         \mbox{\hyperlink{struct_adc_a25c34c42fd09b099541c05b244f4acc5}{GAINCORR}};    }
+\DoxyCodeLine{684   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___o_f_f_s_e_t_c_o_r_r___type}{ADC\_OFFSETCORR\_Type}}       \mbox{\hyperlink{struct_adc_a797f96e8f37446dace23eeafbf3cf3b5}{OFFSETCORR}};  }
+\DoxyCodeLine{685   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___c_a_l_i_b___type}{ADC\_CALIB\_Type}}            \mbox{\hyperlink{struct_adc_a1b5d65ffe6930f10d52dce97958a8fd8}{CALIB}};       }
+\DoxyCodeLine{686   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_a_d_c___d_b_g_c_t_r_l___type}{ADC\_DBGCTRL\_Type}}          \mbox{\hyperlink{struct_adc_ae3f7609f4dc353ead03e7705d657a32b}{DBGCTRL}};     }
+\DoxyCodeLine{687 \} \mbox{\hyperlink{struct_adc}{Adc}};}
+\DoxyCodeLine{688 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{689 }
+\DoxyCodeLine{692 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_ADC\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

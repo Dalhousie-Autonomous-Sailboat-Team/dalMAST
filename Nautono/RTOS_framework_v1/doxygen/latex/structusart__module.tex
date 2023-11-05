@@ -1,0 +1,72 @@
+\hypertarget{structusart__module}{}\doxysection{usart\+\_\+module Struct Reference}
+\label{structusart__module}\index{usart\_module@{usart\_module}}
+
+
+SERCOM USART driver software device instance structure.  
+
+
+
+
+{\ttfamily \#include $<$usart.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{union_sercom}{Sercom}} $\ast$ \mbox{\hyperlink{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}{hw}}
+\item 
+volatile bool \mbox{\hyperlink{structusart__module_a9d57a26b063a478916a1890265f644f1}{locked}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}{usart\+\_\+character\+\_\+size}} \mbox{\hyperlink{structusart__module_a7938c4ee4b4c5c12f14846fd31510cef}{character\+\_\+size}}
+\item 
+bool \mbox{\hyperlink{structusart__module_a33b3dff21d04ab4a62fddbc423275ebd}{receiver\+\_\+enabled}}
+\item 
+bool \mbox{\hyperlink{structusart__module_a03fe537b713e7d0adf041fd1e92780ca}{transmitter\+\_\+enabled}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SERCOM USART driver software device instance structure. 
+
+SERCOM USART driver software instance structure, used to retain software state information of an associated hardware module instance.
+
+\begin{DoxyNote}{Note}
+The fields of this structure should not be altered by the user application; they are reserved for module-\/internal use only. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structusart__module_a7938c4ee4b4c5c12f14846fd31510cef}\label{structusart__module_a7938c4ee4b4c5c12f14846fd31510cef}} 
+\index{usart\_module@{usart\_module}!character\_size@{character\_size}}
+\index{character\_size@{character\_size}!usart\_module@{usart\_module}}
+\doxysubsubsection{\texorpdfstring{character\_size}{character\_size}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}{usart\+\_\+character\+\_\+size}} usart\+\_\+module\+::character\+\_\+size}
+
+Character size of the data being transferred \mbox{\Hypertarget{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}\label{structusart__module_aa9043e8fb95bf7d4542e83f36b7b89fa}} 
+\index{usart\_module@{usart\_module}!hw@{hw}}
+\index{hw@{hw}!usart\_module@{usart\_module}}
+\doxysubsubsection{\texorpdfstring{hw}{hw}}
+{\footnotesize\ttfamily \mbox{\hyperlink{union_sercom}{Sercom}}$\ast$ usart\+\_\+module\+::hw}
+
+Pointer to the hardware instance \mbox{\Hypertarget{structusart__module_a9d57a26b063a478916a1890265f644f1}\label{structusart__module_a9d57a26b063a478916a1890265f644f1}} 
+\index{usart\_module@{usart\_module}!locked@{locked}}
+\index{locked@{locked}!usart\_module@{usart\_module}}
+\doxysubsubsection{\texorpdfstring{locked}{locked}}
+{\footnotesize\ttfamily volatile bool usart\+\_\+module\+::locked}
+
+Module lock \mbox{\Hypertarget{structusart__module_a33b3dff21d04ab4a62fddbc423275ebd}\label{structusart__module_a33b3dff21d04ab4a62fddbc423275ebd}} 
+\index{usart\_module@{usart\_module}!receiver\_enabled@{receiver\_enabled}}
+\index{receiver\_enabled@{receiver\_enabled}!usart\_module@{usart\_module}}
+\doxysubsubsection{\texorpdfstring{receiver\_enabled}{receiver\_enabled}}
+{\footnotesize\ttfamily bool usart\+\_\+module\+::receiver\+\_\+enabled}
+
+Receiver enabled \mbox{\Hypertarget{structusart__module_a03fe537b713e7d0adf041fd1e92780ca}\label{structusart__module_a03fe537b713e7d0adf041fd1e92780ca}} 
+\index{usart\_module@{usart\_module}!transmitter\_enabled@{transmitter\_enabled}}
+\index{transmitter\_enabled@{transmitter\_enabled}!usart\_module@{usart\_module}}
+\doxysubsubsection{\texorpdfstring{transmitter\_enabled}{transmitter\_enabled}}
+{\footnotesize\ttfamily bool usart\+\_\+module\+::transmitter\+\_\+enabled}
+
+Transmitter enabled 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/sercom/usart/\mbox{\hyperlink{usart_8h}{usart.\+h}}\end{DoxyCompactItemize}

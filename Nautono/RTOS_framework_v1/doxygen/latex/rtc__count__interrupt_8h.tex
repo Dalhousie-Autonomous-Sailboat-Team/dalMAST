@@ -1,0 +1,29 @@
+\hypertarget{rtc__count__interrupt_8h}{}\doxysection{src/\+ASF/sam0/drivers/rtc/rtc\+\_\+count\+\_\+interrupt.h File Reference}
+\label{rtc__count__interrupt_8h}\index{src/ASF/sam0/drivers/rtc/rtc\_count\_interrupt.h@{src/ASF/sam0/drivers/rtc/rtc\_count\_interrupt.h}}
+
+
+SAM RTC Driver (Count Interrupt Mode)  
+
+
+{\ttfamily \#include \char`\"{}rtc\+\_\+count.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Callbacks}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga3679d842a95a0086fa5cbccf74aad7ee}{rtc\+\_\+count\+\_\+register\+\_\+callback}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, rtc\+\_\+count\+\_\+callback\+\_\+t callback, enum rtc\+\_\+count\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Registers callback for the specified callback type. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gac5a8ffb958261a9b9a955c0f8fb942ea}{rtc\+\_\+count\+\_\+unregister\+\_\+callback}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, enum rtc\+\_\+count\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Unregisters callback for the specified callback type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gaf7636683b59afd3c0d07b1191a5aff86}{rtc\+\_\+count\+\_\+enable\+\_\+callback}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, enum rtc\+\_\+count\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Enables callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga9bee70da6626ecddb461498be2c6a1b5}{rtc\+\_\+count\+\_\+disable\+\_\+callback}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, enum rtc\+\_\+count\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Disables callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM RTC Driver (Count Interrupt Mode) 
+
+Copyright (c) 2013-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

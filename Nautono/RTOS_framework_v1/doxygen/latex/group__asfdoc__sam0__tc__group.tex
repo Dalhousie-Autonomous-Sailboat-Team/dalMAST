@@ -1,0 +1,855 @@
+\hypertarget{group__asfdoc__sam0__tc__group}{}\doxysection{SAM Timer/\+Counter (TC) Driver}
+\label{group__asfdoc__sam0__tc__group}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtc__events}{tc\+\_\+events}}
+\begin{DoxyCompactList}\small\item\em TC event enable/disable structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__8bit__config}{tc\+\_\+8bit\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration struct for TC module in 8-\/bit size counter mode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__16bit__config}{tc\+\_\+16bit\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration struct for TC module in 16-\/bit size counter mode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__32bit__config}{tc\+\_\+32bit\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Configuration struct for TC module in 32-\/bit size counter mode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__pwm__channel}{tc\+\_\+pwm\+\_\+channel}}
+\begin{DoxyCompactList}\small\item\em Configuration struct for TC module in 32-\/bit size counter mode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__config}{tc\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em TC configuration structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}}
+\begin{DoxyCompactList}\small\item\em TC software device instance structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\+\_\+compare\+\_\+capture\+\_\+channel}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}{TC\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNEL\+\_\+0}}
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}{TC\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNEL\+\_\+1}}
+ \}
+\begin{DoxyCompactList}\small\item\em Index of the compare capture channels. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7f1302b7e3d675e471a554668b49d64}{tc\+\_\+wave\+\_\+generation}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a544e51b015f20263a9499ce28a0596e7}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+FREQ}} = TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+FREQ\+\_\+\+MODE
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a4c9b3fe1ad9a1d2c0f5d8544c0923b9f}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+FREQ}} = TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+FREQ\+\_\+\+MODE
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64aad9dc196250ce8ca5a98c7e49cf0c1a9}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+PWM}} = TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+PWM\+\_\+\+MODE
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a973273609713f828ce491f56fbf035d2}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+PWM}} = TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+PWM\+\_\+\+MODE
+ \}
+\begin{DoxyCompactList}\small\item\em TC wave generation mode enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}{tc\+\_\+counter\+\_\+size}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0abf2e8000eeeac2a4f259ba117d1ee934}{TC\+\_\+\+COUNTER\+\_\+\+SIZE\+\_\+8\+BIT}} = TC\+\_\+\+CTRLA\+\_\+\+MODE\+\_\+\+COUNT8
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a07c9fe9d2a5e78a9c1be46ce540adad1}{TC\+\_\+\+COUNTER\+\_\+\+SIZE\+\_\+16\+BIT}} = TC\+\_\+\+CTRLA\+\_\+\+MODE\+\_\+\+COUNT16
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a7d28e63b11a550605d003c894fe134c5}{TC\+\_\+\+COUNTER\+\_\+\+SIZE\+\_\+32\+BIT}} = TC\+\_\+\+CTRLA\+\_\+\+MODE\+\_\+\+COUNT32
+ \}
+\begin{DoxyCompactList}\small\item\em Specifies if the counter is 8-\/, 16-\/, or 32-\/bit. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga204bb4814c91e62e56d9297c05280aad}{tc\+\_\+reload\+\_\+action}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadaea50b7d7b79cfbd72298720e0f6d51ed}{TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+GCLK}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCSYNC\+\_\+\+GCLK
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aada97857fba0947beb9110ab79d2990e559}{TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+PRESC}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCSYNC\+\_\+\+PRESC
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadac78b7c50f80b33d5ef15a63348279f17}{TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+RESYNC}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCSYNC\+\_\+\+RESYNC
+ \}
+\begin{DoxyCompactList}\small\item\em TC Counter reload action enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98aed17b995157e67b9322a45f0ed5f4}{tc\+\_\+clock\+\_\+prescaler}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4abee76ee986e815120c67ff104dd77275}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV1}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(0)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a6326eb4305153ea58ea18ee6a74bc8f0}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV2}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(1)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a8c137a94b34809e544d50680c808da23}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV4}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(2)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a3dbb4f263ba1e940954ffe8a667bf7d1}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV8}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(3)
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aa0bec32bcf9a450d950f9ec9941a6c3a}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV16}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(4)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aea8fd1d9e795ec153e80cddc15ad501b}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV64}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(5)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a72552d0e6095d90da22981b7bd7a33ed}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV256}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(6)
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4af1540c54586b7cd0c5e46c60162951ec}{TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV1024}} = TC\+\_\+\+CTRLA\+\_\+\+PRESCALER(7)
+ \}
+\begin{DoxyCompactList}\small\item\em TC clock prescaler values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga28777c47943dfb2b5de0fd7ae14eac1f}{tc\+\_\+count\+\_\+direction}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1faf247abdaef160b832fd09bc7597e8ca3}{TC\+\_\+\+COUNT\+\_\+\+DIRECTION\+\_\+\+UP}}
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1fade3defd512c1bff05ce6302c2d96b014}{TC\+\_\+\+COUNT\+\_\+\+DIRECTION\+\_\+\+DOWN}}
+ \}
+\begin{DoxyCompactList}\small\item\em TC module count direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Waveform Inversion Mode}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaf681729d6b5f963705871f7d80754166}{tc\+\_\+waveform\+\_\+invert\+\_\+output}} \{ \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a292cfce35b768eecd69f2a4320aaa96b}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+OUTPUT\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166af3ebe1706d0f442c6388619bc3d9fa58}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+OUTPUT\+\_\+\+CHANNEL\+\_\+0}} = TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC0\+\_\+\+MODE
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a97327e36339fbad207e7150d6ba7b283}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+OUTPUT\+\_\+\+CHANNEL\+\_\+1}} = TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC1\+\_\+\+MODE
+ \}
+\begin{DoxyCompactList}\small\item\em Waveform inversion mode. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4dcbf6cdb74bc3b7609ce8d16549462f}{tc\+\_\+event\+\_\+action}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa190e10df25f3f6a6c781cc751eb3489e}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+OFF}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+OFF
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa9696961ae81b1aba22582d8a35bdf14d}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+RETRIGGER}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+RETRIGGER
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa07b969496782cb311ddb13cfafb36aff}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+INCREMENT\+\_\+\+COUNTER}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+COUNT
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fac06c64382b572d0464138ae51b7876df}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+START}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+START
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa4957024d607401030b128f9b775edb7d}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+PPW}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+PPW
+, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462face22a0756d93b16a9b70511fe226a893}{TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+PWP}} = TC\+\_\+\+EVCTRL\+\_\+\+EVACT\+\_\+\+PWP
+ \}
+\begin{DoxyCompactList}\small\item\em Action to perform when the TC module is triggered by an event. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga077a238b03327682013a0bceb4fc44b2}\label{group__asfdoc__sam0__tc__group_ga077a238b03327682013a0bceb4fc44b2}} 
+uint8\+\_\+t {\bfseries \+\_\+tc\+\_\+get\+\_\+inst\+\_\+index} (\mbox{\hyperlink{union_tc}{Tc}} $\ast$const hw)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga50cb4d965dd6d607839abb71b3f034c0}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC0\+\_\+\+MODE}}~TC\+\_\+\+CTRLC\+\_\+\+INVEN(1)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae194715d12d4faa15f1d1b8555bf5b53}{TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC1\+\_\+\+MODE}}~TC\+\_\+\+CTRLC\+\_\+\+INVEN(2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Driver Initialization and Configuration}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98c7f5c97436c2f6cff87a0261597337}{tc\+\_\+init}} (struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, \mbox{\hyperlink{union_tc}{Tc}} $\ast$const hw, const struct \mbox{\hyperlink{structtc__config}{tc\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes a hardware TC module instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enable/\+Disable/\+Reset}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gad147c1f0393a3ae0c830cec73986eddd}{tc\+\_\+reset}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst)
+\begin{DoxyCompactList}\small\item\em Resets the TC module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Get/\+Set Count Value}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7d7eb91616c2dff02886dd8cdc87f2d}{tc\+\_\+get\+\_\+count\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst)
+\begin{DoxyCompactList}\small\item\em Get TC module count value. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga9c81066b0b88893e127fa521f0efde2e}{tc\+\_\+set\+\_\+count\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, const uint32\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Sets TC module count value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Get Capture Set Compare}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaf780bb09a00298868aa3b8e7627f92ff}{tc\+\_\+get\+\_\+capture\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, const enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\+\_\+compare\+\_\+capture\+\_\+channel}} channel\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Gets the TC module capture value. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga687208b24fd33a1da0cbe683adc15fa6}{tc\+\_\+set\+\_\+compare\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, const enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\+\_\+compare\+\_\+capture\+\_\+channel}} channel\+\_\+index, const uint32\+\_\+t compare\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Sets a TC module compare value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Set Top Value}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac22d633ece43bcd18f54283778471340}{tc\+\_\+set\+\_\+top\+\_\+value}} (const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module\+\_\+inst, const uint32\+\_\+t top\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the timer TOP/period value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}{NUMBER\+\_\+\+OF\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNELS}}~TC3\+\_\+\+CC8\+\_\+\+NUM
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga94cdbe531468f0975311bc2ce36f5e1c}{TC\+\_\+\+INST\+\_\+\+MAX\+\_\+\+ID}}~7
+\end{DoxyCompactItemize}
+\doxysubsection*{Module Status Flags}
+TC status flags, returned by tc\+\_\+get\+\_\+status() and cleared by tc\+\_\+clear\+\_\+status(). \begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae74e90dac05478452203a41a88853286}{TC\+\_\+\+STATUS\+\_\+\+CHANNEL\+\_\+0\+\_\+\+MATCH}}~(1UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaab140d8ac7858f45029fddf0fd3f4cf3}{TC\+\_\+\+STATUS\+\_\+\+CHANNEL\+\_\+1\+\_\+\+MATCH}}~(1UL $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga73bfbe04c8834ec55242bcd0b678f94e}{TC\+\_\+\+STATUS\+\_\+\+SYNC\+\_\+\+READY}}~(1UL $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gac13395d51cc03b5c43eda7654649925f}{TC\+\_\+\+STATUS\+\_\+\+CAPTURE\+\_\+\+OVERFLOW}}~(1UL $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gada6e9a6bd144c0c2e360d1fdef944cdd}{TC\+\_\+\+STATUS\+\_\+\+COUNT\+\_\+\+OVERFLOW}}~(1UL $<$$<$ 4)
+\end{DoxyCompactItemize}
+\doxysubsection*{TC Wave Generation Mode}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga3be501afca9dd97d2adb1959f30816a7}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+FREQ\+\_\+\+MODE}}~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+NFRQ
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga65ebbd3eaea3bd9cf6f81392770caae6}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+FREQ\+\_\+\+MODE}}~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+MFRQ
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaa7277c5eaa031dbd06159cd533346210}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+PWM\+\_\+\+MODE}}~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+NPWM
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4636ecc5d5a67c47a8b6551568c31ee6}{TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+PWM\+\_\+\+MODE}}~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+MPWM
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of the timer modules within the device, for waveform generation and timing operations. The following driver API modes are covered by this manual\+:
+
+
+\begin{DoxyItemize}
+\item Polled APIs 
+\end{DoxyItemize}
+
+The following peripheral is used by this module\+:
+\begin{DoxyItemize}
+\item TC (Timer/\+Counter)
+\end{DoxyItemize}
+
+The following devices can use this module\+:
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D09/\+D10/\+D11
+\item Atmel $\vert$ SMART SAM L21/\+L22
+\item Atmel $\vert$ SMART SAM DA1
+\item Atmel $\vert$ SMART SAM C20/\+C21
+\item Atmel $\vert$ SMART SAM HA1
+\item Atmel $\vert$ SMART SAM R30
+\item Atmel $\vert$ SMART SAM R34
+\item Atmel $\vert$ SMART SAM R35
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_extra_info}{Extra Information}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_prerequisites}
+There are no prerequisites for this module.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview}
+The Timer/\+Counter (TC) module provides a set of timing and counting related functionality, such as the generation of periodic waveforms, the capturing of a periodic waveform\textquotesingle{}s frequency/duty cycle, and software timekeeping for periodic operations. TC modules can be configured to use an 8-\/, 16-\/, or 32-\/bit counter size.
+
+This TC module for the SAM is capable of the following functions\+:
+
+
+\begin{DoxyItemize}
+\item Generation of PWM signals
+\item Generation of timestamps for events
+\item General time counting
+\item Waveform period capture
+\item Waveform frequency capture
+\end{DoxyItemize}
+
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_block_diagram}{The diagram below}} shows the overview of the TC module design.
+
+\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_block_diagram}%
+\Hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_block_diagram}%
+\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_features}{}\doxysubsubsection{Driver Feature Macro Definition}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_features}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endhead
+FEATURE\+\_\+\+TC\+\_\+\+DOUBLE\+\_\+\+BUFFERED &SAM L21/\+L22/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+TC\+\_\+\+SYNCBUSY\+\_\+\+SCHEME\+\_\+\+VERSION\+\_\+2 &SAM L21/\+L22/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+TC\+\_\+\+STAMP\+\_\+\+PW\+\_\+\+CAPTURE &SAM L21/\+L22/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+TC\+\_\+\+READ\+\_\+\+SYNC &SAM L21/\+L22/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+TC\+\_\+\+IO\+\_\+\+CAPTURE &SAM L21/\+L22/\+C20/\+C21/\+R30/\+R34/\+R35  \\\cline{1-2}
+FEATURE\+\_\+\+TC\+\_\+\+GENERATE\+\_\+\+DMA\+\_\+\+TRIGGER &SAM L21/\+L22/\+R30/\+R34/\+R35  \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+The specific features are only available in the driver when the selected device supports those features.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_func_desc}{}\doxysubsubsection{Functional Description}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_func_desc}
+Independent of the configured counter size, each TC module can be set up in one of two different modes; capture and compare.
+
+In capture mode, the counter value is stored when a configurable event occurs. This mode can be used to generate timestamps used in event capture, or it can be used for the measurement of a periodic input signal\textquotesingle{}s frequency/duty cycle.
+
+In compare mode, the counter value is compared against one or more of the configured channel compare values. When the counter value coincides with a compare value an action can be taken automatically by the module, such as generating an output event or toggling a pin when used for frequency or Pulse Width Modulation (PWM) signal generation.
+
+\begin{DoxyNote}{Note}
+The connection of events between modules requires the use of the SAM Event System Driver (EVENTS) to route output event of one module to the input event of another. For more information on event routing, refer to the event driver documentation.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_tc_size}{}\doxysubsubsection{Timer/\+Counter Size}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_tc_size}
+Each timer module can be configured in one of three different counter sizes; 8-\/, 16-\/, and 32-\/bit. The size of the counter determines the maximum value it can count to before an overflow occurs and the count is reset back to zero. \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_count_size_vs_top}{The table below}} shows the maximum values for each of the possible counter sizes.
+
+\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_count_size_vs_top}%
+\Hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_count_size_vs_top}%
+ 
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{Timer Counter Sizes and Their Maximum Count Values}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Counter size }&\cellcolor{\tableheadbgcolor}\textbf{ Max. (hexadecimal) }&\cellcolor{\tableheadbgcolor}\textbf{ Max. (decimal)  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Counter size }&\cellcolor{\tableheadbgcolor}\textbf{ Max. (hexadecimal) }&\cellcolor{\tableheadbgcolor}\textbf{ Max. (decimal)  }\\\cline{1-3}
+\endhead
+8-\/bit &0x\+FF &255  \\\cline{1-3}
+16-\/bit &0x\+FFFF &65,535  \\\cline{1-3}
+32-\/bit &0x\+FFFFFFFF &4,294,967,295  \\\cline{1-3}
+\end{longtabu}
+
+
+When using the counter in 16-\/ or 32-\/bit count mode, Compare Capture register 0 (CC0) is used to store the period value when running in PWM generation match mode.
+
+When using 32-\/bit counter size, two 16-\/bit counters are chained together in a cascade formation. Except in SAM D09/\+D10/\+D11. Even numbered TC modules (e.\+g. TC0, TC2) can be configured as 32-\/bit counters. The odd numbered counters will act as slaves to the even numbered masters, and will not be reconfigurable until the master timer is disabled. The pairing of timer modules for 32-\/bit mode is shown in \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_ms_pairs}{the table below}}.
+
+\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_ms_pairs}%
+\Hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_ms_pairs}%
+ 
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{TC Master and Slave Module Pairings}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Master TC module }&\cellcolor{\tableheadbgcolor}\textbf{ Slave TC module  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Master TC module }&\cellcolor{\tableheadbgcolor}\textbf{ Slave TC module  }\\\cline{1-2}
+\endhead
+TC0 &TC1  \\\cline{1-2}
+TC2 &TC3  \\\cline{1-2}
+... &...  \\\cline{1-2}
+TCn-\/1 &TCn  \\\cline{1-2}
+\end{longtabu}
+
+
+In SAM D09/\+D10/\+D11, odd numbered TC modules (e.\+g. TC1) can be configured as 32-\/bit counters. The even numbered (e.\+g. TC2) counters will act as slaves to the odd numbered masters.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_clock}{}\doxysubsubsection{Clock Settings}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_clock}
+\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_clock_selection}{}\doxyparagraph{Clock Selection}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_clock_selection}
+Each TC peripheral is clocked asynchronously to the system clock by a GCLK (Generic Clock) channel. The GCLK channel connects to any of the GCLK generators. The GCLK generators are configured to use one of the available clock sources on the system such as internal oscillator, external crystals, etc. See the \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group}{Generic Clock driver}} for more information.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_clock_prescaler}{}\doxyparagraph{Prescaler}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_clock_prescaler}
+Each TC module in the SAM has its own individual clock prescaler, which can be used to divide the input clock frequency used in the counter. This prescaler only scales the clock used to provide clock pulses for the counter to count, and does not affect the digital register interface portion of the module, thus the timer registers will synchronize to the raw GCLK frequency input to the module.
+
+As a result of this, when selecting a GCLK frequency and timer prescaler value the user application should consider both the timer resolution required and the synchronization frequency, to avoid lengthy synchronization times of the module if a very slow GCLK frequency is fed into the TC module. It is preferable to use a higher module GCLK frequency as the input to the timer, and prescale this down as much as possible to obtain a suitable counter frequency in latency-\/sensitive applications.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_clock_reloading}{}\doxyparagraph{Reloading}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_clock_reloading}
+Timer modules also contain a configurable reload action, used when a re-\/trigger event occurs. Examples of a re-\/trigger event are the counter reaching the maximum value when counting up, or when an event from the event system tells the counter to re-\/trigger. The reload action determines if the prescaler should be reset, and when this should happen. The counter will always be reloaded with the value it is set to start counting from. The user can choose between three different reload actions, described in \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_reload_act}{the table below}}.
+
+\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_reload_act}%
+\Hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_reload_act}%
+ 
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{TC Module Reload Actions}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Reload action }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Reload action }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadaea50b7d7b79cfbd72298720e0f6d51ed}{TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+GCLK}}  &Reload TC counter value on next GCLK cycle. Leave prescaler as-\/is.  \\\cline{1-2}
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aada97857fba0947beb9110ab79d2990e559}{TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+PRESC}}  &Reloads TC counter value on next prescaler clock. Leave prescaler as-\/is.  \\\cline{1-2}
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadac78b7c50f80b33d5ef15a63348279f17}{TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+RESYNC}}  &Reload TC counter value on next GCLK cycle. Clear prescaler to zero.  \\\cline{1-2}
+\end{longtabu}
+
+
+The reload action to use will depend on the specific application being implemented. One example is when an external trigger for a reload occurs; if the TC uses the prescaler, the counter in the prescaler should not have a value between zero and the division factor. The TC counter and the counter in the prescaler should both start at zero. When the counter is set to re-\/trigger when it reaches the maximum value on the other hand, this is not the right option to use. In such a case it would be better if the prescaler is left unaltered when the re-\/trigger happens, letting the counter reset on the next GCLK cycle.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match}{}\doxysubsubsection{Compare Match Operations}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match}
+In compare match operation, Compare/\+Capture registers are used in comparison with the counter value. When the timer\textquotesingle{}s count value matches the value of a compare channel, a user defined action can be taken.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_timer}{}\doxyparagraph{Basic Timer}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_timer}
+A Basic Timer is a simple application where compare match operations are used to determine when a specific period has elapsed. In Basic Timer operations, one or more values in the module\textquotesingle{}s Compare/\+Capture registers are used to specify the time (as a number of prescaled GCLK cycles) when an action should be taken by the microcontroller. This can be an Interrupt Service Routine (ISR), event generator via the event system, or a software flag that is polled via the user application.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_wg}{}\doxyparagraph{Waveform Generation}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_wg}
+Waveform generation enables the TC module to generate square waves, or if combined with an external passive low-\/pass filter; analog waveforms.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_wg_pwm}{}\doxyparagraph{Waveform Generation -\/ PWM}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_wg_pwm}
+Pulse width modulation is a form of waveform generation and a signalling technique that can be useful in many situations. When PWM mode is used, a digital pulse train with a configurable frequency and duty cycle can be generated by the TC module and output to a GPIO pin of the device.
+
+Often PWM is used to communicate a control or information parameter to an external circuit or component. Differing impedances of the source generator and sink receiver circuits are less of an issue when using PWM compared to using an analog voltage value, as noise will not generally affect the signal\textquotesingle{}s integrity to a meaningful extent.
+
+\mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_pwm_normal_diag}{The figure below}} illustrates operations and different states of the counter and its output when running the counter in PWM normal mode. As can be seen, the TOP value is unchanged and is set to MAX. The compare match value is changed at several points to illustrate the resulting waveform output changes. The PWM output is set to normal (i.\+e. non-\/inverted) output mode.
+
+\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_pwm_normal_diag}%
+\Hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_pwm_normal_diag}%
+
+
+In \mbox{\hyperlink{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_pwm_match_diag}{the figure below}}, the counter is set to generate PWM in Match mode. The PWM output is inverted via the appropriate configuration option in the TC driver configuration structure. In this example, the counter value is changed once, but the compare match value is kept unchanged. As can be seen, it is possible to change the TOP value when running in PWM match mode.
+
+\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_pwm_match_diag}%
+\Hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_pwm_match_diag}%
+\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_wg_freq}{}\doxyparagraph{Waveform Generation -\/ Frequency}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_wg_freq}
+Frequency Generation mode is in many ways identical to PWM generation. However, in Frequency Generation a toggle only occurs on the output when a match on a capture channels occurs. When the match is made, the timer value is reset, resulting in a variable frequency square wave with a fixed 50\% duty cycle.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_capt}{}\doxyparagraph{Capture Operations}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_capt}
+In capture operations, any event from the event system or a pin change can trigger a capture of the counter value. This captured counter value can be used as a timestamp for the event, or it can be used in frequency and pulse width capture.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_capt_event_capture}{}\doxyparagraph{Capture Operations -\/ Event}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_capt_event_capture}
+Event capture is a simple use of the capture functionality, designed to create timestamps for specific events. When the TC module\textquotesingle{}s input capture pin is externally toggled, the current timer count value is copied into a buffered register which can then be read out by the user application.
+
+Note that when performing any capture operation, there is a risk that the counter reaches its top value (MAX) when counting up, or the bottom value (zero) when counting down, before the capture event occurs. This can distort the result, making event timestamps to appear shorter than reality; the user application should check for timer overflow when reading a capture result in order to detect this situation and perform an appropriate adjustment.
+
+Before checking for a new capture, \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gada6e9a6bd144c0c2e360d1fdef944cdd}{TC\+\_\+\+STATUS\+\_\+\+COUNT\+\_\+\+OVERFLOW}} should be checked. The response to an overflow error is left to the user application, however it may be necessary to clear both the capture overflow flag and the capture flag upon each capture reading.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_capt_pwc}{}\doxyparagraph{Capture Operations -\/ Pulse Width}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_compare_match_capt_pwc}
+Pulse Width Capture mode makes it possible to measure the pulse width and period of PWM signals. This mode uses two capture channels of the counter. This means that the counter module used for Pulse Width Capture can not be used for any other purpose. There are two modes for pulse width capture; Pulse Width Period (PWP) and Period Pulse Width (PPW). In PWP mode, capture channel 0 is used for storing the pulse width and capture channel 1 stores the observed period. While in PPW mode, the roles of the two capture channels are reversed.
+
+As in the above example it is necessary to poll on interrupt flags to see if a new capture has happened and check that a capture overflow error has not occurred.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_oneshot}{}\doxysubsubsection{One-\/shot Mode}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_oneshot}
+TC modules can be configured into a one-\/shot mode. When configured in this manner, starting the timer will cause it to count until the next overflow or underflow condition before automatically halting, waiting to be manually triggered by the user application software or an event signal from the event system.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_inversion}{}\doxyparagraph{Wave Generation Output Inversion}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_module_overview_inversion}
+The output of the wave generation can be inverted by hardware if desired, resulting in the logically inverted value being output to the configured device GPIO pin.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_special_considerations}{}\doxysubsection{Special Considerations}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_special_considerations}
+The number of capture compare registers in each TC module is dependent on the specific SAM device being used, and in some cases the counter size.
+
+The maximum amount of capture compare registers available in any SAM device is two when running in 32-\/bit mode and four in 8-\/ and 16-\/bit modes.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_extra_info}{}\doxysubsection{Extra Information}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_extra_info}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_tc_extra}{Extra Information for TC Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_tc_extra_asfdoc_sam0_tc_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_examples}{}\doxysubsection{Examples}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_tc_exqsg}{Examples for TC Driver}}.\hypertarget{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__sam0__tc__group_asfdoc_sam0_tc_api_overview}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}\label{group__asfdoc__sam0__tc__group_gac837f9db5df1793578c195a979c6a9d3}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS@{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}
+\index{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS@{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}{NUMBER\_OF\_COMPARE\_CAPTURE\_CHANNELS}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNELS~TC3\+\_\+\+CC8\+\_\+\+NUM}
+
+Define port features set according to different device family \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga94cdbe531468f0975311bc2ce36f5e1c}\label{group__asfdoc__sam0__tc__group_ga94cdbe531468f0975311bc2ce36f5e1c}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_INST\_MAX\_ID@{TC\_INST\_MAX\_ID}}
+\index{TC\_INST\_MAX\_ID@{TC\_INST\_MAX\_ID}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_INST\_MAX\_ID}{TC\_INST\_MAX\_ID}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+INST\+\_\+\+MAX\+\_\+\+ID~7}
+
+TC Instance MAX ID Number. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gac13395d51cc03b5c43eda7654649925f}\label{group__asfdoc__sam0__tc__group_gac13395d51cc03b5c43eda7654649925f}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_STATUS\_CAPTURE\_OVERFLOW@{TC\_STATUS\_CAPTURE\_OVERFLOW}}
+\index{TC\_STATUS\_CAPTURE\_OVERFLOW@{TC\_STATUS\_CAPTURE\_OVERFLOW}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_STATUS\_CAPTURE\_OVERFLOW}{TC\_STATUS\_CAPTURE\_OVERFLOW}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+STATUS\+\_\+\+CAPTURE\+\_\+\+OVERFLOW~(1UL $<$$<$ 3)}
+
+A new value was captured before the previous value was read, resulting in lost data. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gae74e90dac05478452203a41a88853286}\label{group__asfdoc__sam0__tc__group_gae74e90dac05478452203a41a88853286}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_STATUS\_CHANNEL\_0\_MATCH@{TC\_STATUS\_CHANNEL\_0\_MATCH}}
+\index{TC\_STATUS\_CHANNEL\_0\_MATCH@{TC\_STATUS\_CHANNEL\_0\_MATCH}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_STATUS\_CHANNEL\_0\_MATCH}{TC\_STATUS\_CHANNEL\_0\_MATCH}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+STATUS\+\_\+\+CHANNEL\+\_\+0\+\_\+\+MATCH~(1UL $<$$<$ 0)}
+
+Timer channel 0 has matched against its compare value, or has captured a new value. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gaab140d8ac7858f45029fddf0fd3f4cf3}\label{group__asfdoc__sam0__tc__group_gaab140d8ac7858f45029fddf0fd3f4cf3}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_STATUS\_CHANNEL\_1\_MATCH@{TC\_STATUS\_CHANNEL\_1\_MATCH}}
+\index{TC\_STATUS\_CHANNEL\_1\_MATCH@{TC\_STATUS\_CHANNEL\_1\_MATCH}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_STATUS\_CHANNEL\_1\_MATCH}{TC\_STATUS\_CHANNEL\_1\_MATCH}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+STATUS\+\_\+\+CHANNEL\+\_\+1\+\_\+\+MATCH~(1UL $<$$<$ 1)}
+
+Timer channel 1 has matched against its compare value, or has captured a new value. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gada6e9a6bd144c0c2e360d1fdef944cdd}\label{group__asfdoc__sam0__tc__group_gada6e9a6bd144c0c2e360d1fdef944cdd}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_STATUS\_COUNT\_OVERFLOW@{TC\_STATUS\_COUNT\_OVERFLOW}}
+\index{TC\_STATUS\_COUNT\_OVERFLOW@{TC\_STATUS\_COUNT\_OVERFLOW}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_STATUS\_COUNT\_OVERFLOW}{TC\_STATUS\_COUNT\_OVERFLOW}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+STATUS\+\_\+\+COUNT\+\_\+\+OVERFLOW~(1UL $<$$<$ 4)}
+
+The timer count value has overflowed from its maximum value to its minimum when counting upward, or from its minimum value to its maximum when counting downward. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga73bfbe04c8834ec55242bcd0b678f94e}\label{group__asfdoc__sam0__tc__group_ga73bfbe04c8834ec55242bcd0b678f94e}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_STATUS\_SYNC\_READY@{TC\_STATUS\_SYNC\_READY}}
+\index{TC\_STATUS\_SYNC\_READY@{TC\_STATUS\_SYNC\_READY}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_STATUS\_SYNC\_READY}{TC\_STATUS\_SYNC\_READY}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+STATUS\+\_\+\+SYNC\+\_\+\+READY~(1UL $<$$<$ 2)}
+
+Timer register synchronization has completed, and the synchronized count value may be read. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga65ebbd3eaea3bd9cf6f81392770caae6}\label{group__asfdoc__sam0__tc__group_ga65ebbd3eaea3bd9cf6f81392770caae6}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVE\_GENERATION\_MATCH\_FREQ\_MODE@{TC\_WAVE\_GENERATION\_MATCH\_FREQ\_MODE}}
+\index{TC\_WAVE\_GENERATION\_MATCH\_FREQ\_MODE@{TC\_WAVE\_GENERATION\_MATCH\_FREQ\_MODE}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_WAVE\_GENERATION\_MATCH\_FREQ\_MODE}{TC\_WAVE\_GENERATION\_MATCH\_FREQ\_MODE}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+FREQ\+\_\+\+MODE~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+MFRQ}
+
+TC wave generation mode\+: match frequency. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga4636ecc5d5a67c47a8b6551568c31ee6}\label{group__asfdoc__sam0__tc__group_ga4636ecc5d5a67c47a8b6551568c31ee6}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVE\_GENERATION\_MATCH\_PWM\_MODE@{TC\_WAVE\_GENERATION\_MATCH\_PWM\_MODE}}
+\index{TC\_WAVE\_GENERATION\_MATCH\_PWM\_MODE@{TC\_WAVE\_GENERATION\_MATCH\_PWM\_MODE}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_WAVE\_GENERATION\_MATCH\_PWM\_MODE}{TC\_WAVE\_GENERATION\_MATCH\_PWM\_MODE}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+PWM\+\_\+\+MODE~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+MPWM}
+
+TC wave generation mode\+: match PWM. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga3be501afca9dd97d2adb1959f30816a7}\label{group__asfdoc__sam0__tc__group_ga3be501afca9dd97d2adb1959f30816a7}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVE\_GENERATION\_NORMAL\_FREQ\_MODE@{TC\_WAVE\_GENERATION\_NORMAL\_FREQ\_MODE}}
+\index{TC\_WAVE\_GENERATION\_NORMAL\_FREQ\_MODE@{TC\_WAVE\_GENERATION\_NORMAL\_FREQ\_MODE}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_WAVE\_GENERATION\_NORMAL\_FREQ\_MODE}{TC\_WAVE\_GENERATION\_NORMAL\_FREQ\_MODE}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+FREQ\+\_\+\+MODE~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+NFRQ}
+
+TC wave generation mode\+: normal frequency. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gaa7277c5eaa031dbd06159cd533346210}\label{group__asfdoc__sam0__tc__group_gaa7277c5eaa031dbd06159cd533346210}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVE\_GENERATION\_NORMAL\_PWM\_MODE@{TC\_WAVE\_GENERATION\_NORMAL\_PWM\_MODE}}
+\index{TC\_WAVE\_GENERATION\_NORMAL\_PWM\_MODE@{TC\_WAVE\_GENERATION\_NORMAL\_PWM\_MODE}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_WAVE\_GENERATION\_NORMAL\_PWM\_MODE}{TC\_WAVE\_GENERATION\_NORMAL\_PWM\_MODE}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+PWM\+\_\+\+MODE~TC\+\_\+\+CTRLA\+\_\+\+WAVEGEN\+\_\+\+NPWM}
+
+TC wave generation mode\+: normal PWM. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga50cb4d965dd6d607839abb71b3f034c0}\label{group__asfdoc__sam0__tc__group_ga50cb4d965dd6d607839abb71b3f034c0}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVEFORM\_INVERT\_CC0\_MODE@{TC\_WAVEFORM\_INVERT\_CC0\_MODE}}
+\index{TC\_WAVEFORM\_INVERT\_CC0\_MODE@{TC\_WAVEFORM\_INVERT\_CC0\_MODE}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_WAVEFORM\_INVERT\_CC0\_MODE}{TC\_WAVEFORM\_INVERT\_CC0\_MODE}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC0\+\_\+\+MODE~TC\+\_\+\+CTRLC\+\_\+\+INVEN(1)}
+
+Waveform inversion CC0 mode. \mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gae194715d12d4faa15f1d1b8555bf5b53}\label{group__asfdoc__sam0__tc__group_gae194715d12d4faa15f1d1b8555bf5b53}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVEFORM\_INVERT\_CC1\_MODE@{TC\_WAVEFORM\_INVERT\_CC1\_MODE}}
+\index{TC\_WAVEFORM\_INVERT\_CC1\_MODE@{TC\_WAVEFORM\_INVERT\_CC1\_MODE}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{TC\_WAVEFORM\_INVERT\_CC1\_MODE}{TC\_WAVEFORM\_INVERT\_CC1\_MODE}}
+{\footnotesize\ttfamily \#define TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+CC1\+\_\+\+MODE~TC\+\_\+\+CTRLC\+\_\+\+INVEN(2)}
+
+Waveform inversion CC1 mode. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga98aed17b995157e67b9322a45f0ed5f4}\label{group__asfdoc__sam0__tc__group_ga98aed17b995157e67b9322a45f0ed5f4}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_clock\_prescaler@{tc\_clock\_prescaler}}
+\index{tc\_clock\_prescaler@{tc\_clock\_prescaler}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_clock\_prescaler}{tc\_clock\_prescaler}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga98aed17b995157e67b9322a45f0ed5f4}{tc\+\_\+clock\+\_\+prescaler}}}
+
+
+
+TC clock prescaler values. 
+
+This enum is used to choose the clock prescaler configuration. The prescaler divides the clock frequency of the TC module to make the counter count slower. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_CLOCK\_PRESCALER\_DIV1@{TC\_CLOCK\_PRESCALER\_DIV1}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_CLOCK\_PRESCALER\_DIV1@{TC\_CLOCK\_PRESCALER\_DIV1}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4abee76ee986e815120c67ff104dd77275}\label{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4abee76ee986e815120c67ff104dd77275}} 
+TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV1&Divide clock by 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_CLOCK\_PRESCALER\_DIV2@{TC\_CLOCK\_PRESCALER\_DIV2}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_CLOCK\_PRESCALER\_DIV2@{TC\_CLOCK\_PRESCALER\_DIV2}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a6326eb4305153ea58ea18ee6a74bc8f0}\label{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a6326eb4305153ea58ea18ee6a74bc8f0}} 
+TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV2&Divide clock by 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_CLOCK\_PRESCALER\_DIV4@{TC\_CLOCK\_PRESCALER\_DIV4}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_CLOCK\_PRESCALER\_DIV4@{TC\_CLOCK\_PRESCALER\_DIV4}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a8c137a94b34809e544d50680c808da23}\label{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a8c137a94b34809e544d50680c808da23}} 
+TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV4&Divide clock by 4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_CLOCK\_PRESCALER\_DIV8@{TC\_CLOCK\_PRESCALER\_DIV8}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_CLOCK\_PRESCALER\_DIV8@{TC\_CLOCK\_PRESCALER\_DIV8}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a3dbb4f263ba1e940954ffe8a667bf7d1}\label{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a3dbb4f263ba1e940954ffe8a667bf7d1}} 
+TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV8&Divide clock by 8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_CLOCK\_PRESCALER\_DIV16@{TC\_CLOCK\_PRESCALER\_DIV16}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_CLOCK\_PRESCALER\_DIV16@{TC\_CLOCK\_PRESCALER\_DIV16}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aa0bec32bcf9a450d950f9ec9941a6c3a}\label{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aa0bec32bcf9a450d950f9ec9941a6c3a}} 
+TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV16&Divide clock by 16 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_CLOCK\_PRESCALER\_DIV64@{TC\_CLOCK\_PRESCALER\_DIV64}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_CLOCK\_PRESCALER\_DIV64@{TC\_CLOCK\_PRESCALER\_DIV64}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aea8fd1d9e795ec153e80cddc15ad501b}\label{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4aea8fd1d9e795ec153e80cddc15ad501b}} 
+TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV64&Divide clock by 64 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_CLOCK\_PRESCALER\_DIV256@{TC\_CLOCK\_PRESCALER\_DIV256}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_CLOCK\_PRESCALER\_DIV256@{TC\_CLOCK\_PRESCALER\_DIV256}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a72552d0e6095d90da22981b7bd7a33ed}\label{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4a72552d0e6095d90da22981b7bd7a33ed}} 
+TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV256&Divide clock by 256 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_CLOCK\_PRESCALER\_DIV1024@{TC\_CLOCK\_PRESCALER\_DIV1024}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_CLOCK\_PRESCALER\_DIV1024@{TC\_CLOCK\_PRESCALER\_DIV1024}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4af1540c54586b7cd0c5e46c60162951ec}\label{group__asfdoc__sam0__tc__group_gga98aed17b995157e67b9322a45f0ed5f4af1540c54586b7cd0c5e46c60162951ec}} 
+TC\+\_\+\+CLOCK\+\_\+\+PRESCALER\+\_\+\+DIV1024&Divide clock by 1024 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}\label{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_compare\_capture\_channel@{tc\_compare\_capture\_channel}}
+\index{tc\_compare\_capture\_channel@{tc\_compare\_capture\_channel}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_compare\_capture\_channel}{tc\_compare\_capture\_channel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\+\_\+compare\+\_\+capture\+\_\+channel}}}
+
+
+
+Index of the compare capture channels. 
+
+This enum is used to specify which capture/compare channel to do operations on. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_COMPARE\_CAPTURE\_CHANNEL\_0@{TC\_COMPARE\_CAPTURE\_CHANNEL\_0}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_COMPARE\_CAPTURE\_CHANNEL\_0@{TC\_COMPARE\_CAPTURE\_CHANNEL\_0}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}\label{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a5f6651d829a75778a759ce5a519b76a4}} 
+TC\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNEL\+\_\+0&Index of compare capture channel 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_COMPARE\_CAPTURE\_CHANNEL\_1@{TC\_COMPARE\_CAPTURE\_CHANNEL\_1}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_COMPARE\_CAPTURE\_CHANNEL\_1@{TC\_COMPARE\_CAPTURE\_CHANNEL\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}\label{group__asfdoc__sam0__tc__group_gga01eca97dbfd588fd3ba0dcfd4792d857a8fcf38e3b831977347028475b5583141}} 
+TC\+\_\+\+COMPARE\+\_\+\+CAPTURE\+\_\+\+CHANNEL\+\_\+1&Index of compare capture channel 1 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga28777c47943dfb2b5de0fd7ae14eac1f}\label{group__asfdoc__sam0__tc__group_ga28777c47943dfb2b5de0fd7ae14eac1f}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_count\_direction@{tc\_count\_direction}}
+\index{tc\_count\_direction@{tc\_count\_direction}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_count\_direction}{tc\_count\_direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga28777c47943dfb2b5de0fd7ae14eac1f}{tc\+\_\+count\+\_\+direction}}}
+
+
+
+TC module count direction. 
+
+Timer/\+Counter count direction. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_COUNT\_DIRECTION\_UP@{TC\_COUNT\_DIRECTION\_UP}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_COUNT\_DIRECTION\_UP@{TC\_COUNT\_DIRECTION\_UP}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1faf247abdaef160b832fd09bc7597e8ca3}\label{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1faf247abdaef160b832fd09bc7597e8ca3}} 
+TC\+\_\+\+COUNT\+\_\+\+DIRECTION\+\_\+\+UP&Timer should count upward from zero to MAX \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_COUNT\_DIRECTION\_DOWN@{TC\_COUNT\_DIRECTION\_DOWN}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_COUNT\_DIRECTION\_DOWN@{TC\_COUNT\_DIRECTION\_DOWN}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1fade3defd512c1bff05ce6302c2d96b014}\label{group__asfdoc__sam0__tc__group_gga28777c47943dfb2b5de0fd7ae14eac1fade3defd512c1bff05ce6302c2d96b014}} 
+TC\+\_\+\+COUNT\+\_\+\+DIRECTION\+\_\+\+DOWN&Timer should count downward to zero from MAX \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}\label{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_counter\_size@{tc\_counter\_size}}
+\index{tc\_counter\_size@{tc\_counter\_size}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_counter\_size}{tc\_counter\_size}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga1b112627b81227c49c16b1a93e3321a0}{tc\+\_\+counter\+\_\+size}}}
+
+
+
+Specifies if the counter is 8-\/, 16-\/, or 32-\/bit. 
+
+This enum specifies the maximum value it is possible to count to. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_COUNTER\_SIZE\_8BIT@{TC\_COUNTER\_SIZE\_8BIT}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_COUNTER\_SIZE\_8BIT@{TC\_COUNTER\_SIZE\_8BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0abf2e8000eeeac2a4f259ba117d1ee934}\label{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0abf2e8000eeeac2a4f259ba117d1ee934}} 
+TC\+\_\+\+COUNTER\+\_\+\+SIZE\+\_\+8\+BIT&The counter\textquotesingle{}s maximum value is 0x\+FF, the period register is available to be used as top value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_COUNTER\_SIZE\_16BIT@{TC\_COUNTER\_SIZE\_16BIT}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_COUNTER\_SIZE\_16BIT@{TC\_COUNTER\_SIZE\_16BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a07c9fe9d2a5e78a9c1be46ce540adad1}\label{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a07c9fe9d2a5e78a9c1be46ce540adad1}} 
+TC\+\_\+\+COUNTER\+\_\+\+SIZE\+\_\+16\+BIT&The counter\textquotesingle{}s maximum value is 0x\+FFFF. There is no separate period register, to modify top one of the capture compare registers has to be used. This limits the amount of available channels. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_COUNTER\_SIZE\_32BIT@{TC\_COUNTER\_SIZE\_32BIT}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_COUNTER\_SIZE\_32BIT@{TC\_COUNTER\_SIZE\_32BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a7d28e63b11a550605d003c894fe134c5}\label{group__asfdoc__sam0__tc__group_gga1b112627b81227c49c16b1a93e3321a0a7d28e63b11a550605d003c894fe134c5}} 
+TC\+\_\+\+COUNTER\+\_\+\+SIZE\+\_\+32\+BIT&The counter\textquotesingle{}s maximum value is 0x\+FFFFFFFF. There is no separate period register, to modify top one of the capture compare registers has to be used. This limits the amount of available channels. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga4dcbf6cdb74bc3b7609ce8d16549462f}\label{group__asfdoc__sam0__tc__group_ga4dcbf6cdb74bc3b7609ce8d16549462f}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_event\_action@{tc\_event\_action}}
+\index{tc\_event\_action@{tc\_event\_action}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_event\_action}{tc\_event\_action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga4dcbf6cdb74bc3b7609ce8d16549462f}{tc\+\_\+event\+\_\+action}}}
+
+
+
+Action to perform when the TC module is triggered by an event. 
+
+Event action to perform when the module is triggered by an event. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_EVENT\_ACTION\_OFF@{TC\_EVENT\_ACTION\_OFF}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_EVENT\_ACTION\_OFF@{TC\_EVENT\_ACTION\_OFF}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa190e10df25f3f6a6c781cc751eb3489e}\label{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa190e10df25f3f6a6c781cc751eb3489e}} 
+TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+OFF&No event action \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_EVENT\_ACTION\_RETRIGGER@{TC\_EVENT\_ACTION\_RETRIGGER}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_EVENT\_ACTION\_RETRIGGER@{TC\_EVENT\_ACTION\_RETRIGGER}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa9696961ae81b1aba22582d8a35bdf14d}\label{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa9696961ae81b1aba22582d8a35bdf14d}} 
+TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+RETRIGGER&Re-\/trigger on event \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_EVENT\_ACTION\_INCREMENT\_COUNTER@{TC\_EVENT\_ACTION\_INCREMENT\_COUNTER}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_EVENT\_ACTION\_INCREMENT\_COUNTER@{TC\_EVENT\_ACTION\_INCREMENT\_COUNTER}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa07b969496782cb311ddb13cfafb36aff}\label{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa07b969496782cb311ddb13cfafb36aff}} 
+TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+INCREMENT\+\_\+\+COUNTER&Increment counter on event \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_EVENT\_ACTION\_START@{TC\_EVENT\_ACTION\_START}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_EVENT\_ACTION\_START@{TC\_EVENT\_ACTION\_START}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fac06c64382b572d0464138ae51b7876df}\label{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fac06c64382b572d0464138ae51b7876df}} 
+TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+START&Start counter on event \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_EVENT\_ACTION\_PPW@{TC\_EVENT\_ACTION\_PPW}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_EVENT\_ACTION\_PPW@{TC\_EVENT\_ACTION\_PPW}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa4957024d607401030b128f9b775edb7d}\label{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462fa4957024d607401030b128f9b775edb7d}} 
+TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+PPW&Store period in capture register 0, pulse width in capture register 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_EVENT\_ACTION\_PWP@{TC\_EVENT\_ACTION\_PWP}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_EVENT\_ACTION\_PWP@{TC\_EVENT\_ACTION\_PWP}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462face22a0756d93b16a9b70511fe226a893}\label{group__asfdoc__sam0__tc__group_gga4dcbf6cdb74bc3b7609ce8d16549462face22a0756d93b16a9b70511fe226a893}} 
+TC\+\_\+\+EVENT\+\_\+\+ACTION\+\_\+\+PWP&Store pulse width in capture register 0, period in capture register 1 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga204bb4814c91e62e56d9297c05280aad}\label{group__asfdoc__sam0__tc__group_ga204bb4814c91e62e56d9297c05280aad}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_reload\_action@{tc\_reload\_action}}
+\index{tc\_reload\_action@{tc\_reload\_action}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_reload\_action}{tc\_reload\_action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga204bb4814c91e62e56d9297c05280aad}{tc\+\_\+reload\+\_\+action}}}
+
+
+
+TC Counter reload action enum. 
+
+This enum specify how the counter and prescaler should reload. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_RELOAD\_ACTION\_GCLK@{TC\_RELOAD\_ACTION\_GCLK}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_RELOAD\_ACTION\_GCLK@{TC\_RELOAD\_ACTION\_GCLK}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadaea50b7d7b79cfbd72298720e0f6d51ed}\label{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadaea50b7d7b79cfbd72298720e0f6d51ed}} 
+TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+GCLK&The counter is reloaded/reset on the next GCLK and starts counting on the prescaler clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_RELOAD\_ACTION\_PRESC@{TC\_RELOAD\_ACTION\_PRESC}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_RELOAD\_ACTION\_PRESC@{TC\_RELOAD\_ACTION\_PRESC}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aada97857fba0947beb9110ab79d2990e559}\label{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aada97857fba0947beb9110ab79d2990e559}} 
+TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+PRESC&The counter is reloaded/reset on the next prescaler clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_RELOAD\_ACTION\_RESYNC@{TC\_RELOAD\_ACTION\_RESYNC}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_RELOAD\_ACTION\_RESYNC@{TC\_RELOAD\_ACTION\_RESYNC}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadac78b7c50f80b33d5ef15a63348279f17}\label{group__asfdoc__sam0__tc__group_gga204bb4814c91e62e56d9297c05280aadac78b7c50f80b33d5ef15a63348279f17}} 
+TC\+\_\+\+RELOAD\+\_\+\+ACTION\+\_\+\+RESYNC&The counter is reloaded/reset on the next GCLK, and the prescaler is restarted as well \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gae7f1302b7e3d675e471a554668b49d64}\label{group__asfdoc__sam0__tc__group_gae7f1302b7e3d675e471a554668b49d64}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_wave\_generation@{tc\_wave\_generation}}
+\index{tc\_wave\_generation@{tc\_wave\_generation}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_wave\_generation}{tc\_wave\_generation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gae7f1302b7e3d675e471a554668b49d64}{tc\+\_\+wave\+\_\+generation}}}
+
+
+
+TC wave generation mode enum. 
+
+This enum is used to select which mode to run the wave generation in. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_WAVE\_GENERATION\_NORMAL\_FREQ@{TC\_WAVE\_GENERATION\_NORMAL\_FREQ}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVE\_GENERATION\_NORMAL\_FREQ@{TC\_WAVE\_GENERATION\_NORMAL\_FREQ}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a544e51b015f20263a9499ce28a0596e7}\label{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a544e51b015f20263a9499ce28a0596e7}} 
+TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+FREQ&Top is maximum, except in 8-\/bit counter size where it is the PER register \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_WAVE\_GENERATION\_MATCH\_FREQ@{TC\_WAVE\_GENERATION\_MATCH\_FREQ}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVE\_GENERATION\_MATCH\_FREQ@{TC\_WAVE\_GENERATION\_MATCH\_FREQ}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a4c9b3fe1ad9a1d2c0f5d8544c0923b9f}\label{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a4c9b3fe1ad9a1d2c0f5d8544c0923b9f}} 
+TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+FREQ&Top is CC0, except in 8-\/bit counter size where it is the PER register \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_WAVE\_GENERATION\_NORMAL\_PWM@{TC\_WAVE\_GENERATION\_NORMAL\_PWM}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVE\_GENERATION\_NORMAL\_PWM@{TC\_WAVE\_GENERATION\_NORMAL\_PWM}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64aad9dc196250ce8ca5a98c7e49cf0c1a9}\label{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64aad9dc196250ce8ca5a98c7e49cf0c1a9}} 
+TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+NORMAL\+\_\+\+PWM&Top is maximum, except in 8-\/bit counter size where it is the PER register \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_WAVE\_GENERATION\_MATCH\_PWM@{TC\_WAVE\_GENERATION\_MATCH\_PWM}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVE\_GENERATION\_MATCH\_PWM@{TC\_WAVE\_GENERATION\_MATCH\_PWM}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a973273609713f828ce491f56fbf035d2}\label{group__asfdoc__sam0__tc__group_ggae7f1302b7e3d675e471a554668b49d64a973273609713f828ce491f56fbf035d2}} 
+TC\+\_\+\+WAVE\+\_\+\+GENERATION\+\_\+\+MATCH\+\_\+\+PWM&Top is CC0, except in 8-\/bit counter size where it is the PER register \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gaf681729d6b5f963705871f7d80754166}\label{group__asfdoc__sam0__tc__group_gaf681729d6b5f963705871f7d80754166}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_waveform\_invert\_output@{tc\_waveform\_invert\_output}}
+\index{tc\_waveform\_invert\_output@{tc\_waveform\_invert\_output}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_waveform\_invert\_output}{tc\_waveform\_invert\_output}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_gaf681729d6b5f963705871f7d80754166}{tc\+\_\+waveform\+\_\+invert\+\_\+output}}}
+
+
+
+Waveform inversion mode. 
+
+Output waveform inversion mode. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_WAVEFORM\_INVERT\_OUTPUT\_NONE@{TC\_WAVEFORM\_INVERT\_OUTPUT\_NONE}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVEFORM\_INVERT\_OUTPUT\_NONE@{TC\_WAVEFORM\_INVERT\_OUTPUT\_NONE}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a292cfce35b768eecd69f2a4320aaa96b}\label{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a292cfce35b768eecd69f2a4320aaa96b}} 
+TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+OUTPUT\+\_\+\+NONE&No inversion of the waveform output \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_0@{TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_0}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_0@{TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_0}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166af3ebe1706d0f442c6388619bc3d9fa58}\label{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166af3ebe1706d0f442c6388619bc3d9fa58}} 
+TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+OUTPUT\+\_\+\+CHANNEL\+\_\+0&Invert output from compare channel 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_1@{TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_1}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_1@{TC\_WAVEFORM\_INVERT\_OUTPUT\_CHANNEL\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a97327e36339fbad207e7150d6ba7b283}\label{group__asfdoc__sam0__tc__group_ggaf681729d6b5f963705871f7d80754166a97327e36339fbad207e7150d6ba7b283}} 
+TC\+\_\+\+WAVEFORM\+\_\+\+INVERT\+\_\+\+OUTPUT\+\_\+\+CHANNEL\+\_\+1&Invert output from compare channel 1 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gaf780bb09a00298868aa3b8e7627f92ff}\label{group__asfdoc__sam0__tc__group_gaf780bb09a00298868aa3b8e7627f92ff}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_get\_capture\_value@{tc\_get\_capture\_value}}
+\index{tc\_get\_capture\_value@{tc\_get\_capture\_value}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_get\_capture\_value()}{tc\_get\_capture\_value()}}
+{\footnotesize\ttfamily uint32\+\_\+t tc\+\_\+get\+\_\+capture\+\_\+value (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const}]{module\+\_\+inst,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\+\_\+compare\+\_\+capture\+\_\+channel}}}]{channel\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Gets the TC module capture value. 
+
+Retrieves the capture value in the indicated TC module capture channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the software module instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em channel\+\_\+index} & Index of the Compare Capture channel to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Capture value stored in the specified timer channel. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gae7d7eb91616c2dff02886dd8cdc87f2d}\label{group__asfdoc__sam0__tc__group_gae7d7eb91616c2dff02886dd8cdc87f2d}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_get\_count\_value@{tc\_get\_count\_value}}
+\index{tc\_get\_count\_value@{tc\_get\_count\_value}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_get\_count\_value()}{tc\_get\_count\_value()}}
+{\footnotesize\ttfamily uint32\+\_\+t tc\+\_\+get\+\_\+count\+\_\+value (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const}]{module\+\_\+inst }\end{DoxyParamCaption})}
+
+
+
+Get TC module count value. 
+
+Retrieves the current count value of a TC module. The specified TC module may be started or stopped.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the software module instance struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Count value of the specified TC module. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga98c7f5c97436c2f6cff87a0261597337}\label{group__asfdoc__sam0__tc__group_ga98c7f5c97436c2f6cff87a0261597337}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_init@{tc\_init}}
+\index{tc\_init@{tc\_init}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_init()}{tc\_init()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} tc\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const}]{module\+\_\+inst,  }\item[{\mbox{\hyperlink{union_tc}{Tc}} $\ast$const}]{hw,  }\item[{const struct \mbox{\hyperlink{structtc__config}{tc\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Initializes a hardware TC module instance. 
+
+Enables the clock and initializes the TC module, based on the given configuration values.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module\+\_\+inst} & Pointer to the software module instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em hw} & Pointer to the TC hardware module \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Pointer to the TC configuration options struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the initialization procedure.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The module was initialized successfully \\
+\hline
+{\em STATUS\+\_\+\+BUSY} & Hardware module was busy when the initialization procedure was attempted \\
+\hline
+{\em STATUS\+\_\+\+INVALID\+\_\+\+ARG} & An invalid configuration option or argument was supplied \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+DENIED} & Hardware module was already enabled, or the hardware module is configured in 32-\/bit slave mode \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gad147c1f0393a3ae0c830cec73986eddd}\label{group__asfdoc__sam0__tc__group_gad147c1f0393a3ae0c830cec73986eddd}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_reset@{tc\_reset}}
+\index{tc\_reset@{tc\_reset}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_reset()}{tc\_reset()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} tc\+\_\+reset (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const}]{module\+\_\+inst }\end{DoxyParamCaption})}
+
+
+
+Resets the TC module. 
+
+Resets the TC module, restoring all hardware module registers to their default values and disabling the module. The TC module will not be accessible while the reset is being performed.
+
+\begin{DoxyNote}{Note}
+When resetting a 32-\/bit counter only the master TC module\textquotesingle{}s instance structure should be passed to the function.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the software module instance struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the procedure. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The module was reset successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+UNSUPPORTED\+\_\+\+DEV} & A 32-\/bit slave TC module was passed to the function. Only use reset on master TC \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga687208b24fd33a1da0cbe683adc15fa6}\label{group__asfdoc__sam0__tc__group_ga687208b24fd33a1da0cbe683adc15fa6}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_set\_compare\_value@{tc\_set\_compare\_value}}
+\index{tc\_set\_compare\_value@{tc\_set\_compare\_value}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_set\_compare\_value()}{tc\_set\_compare\_value()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} tc\+\_\+set\+\_\+compare\+\_\+value (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const}]{module\+\_\+inst,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__tc__group_ga01eca97dbfd588fd3ba0dcfd4792d857}{tc\+\_\+compare\+\_\+capture\+\_\+channel}}}]{channel\+\_\+index,  }\item[{const uint32\+\_\+t}]{compare }\end{DoxyParamCaption})}
+
+
+
+Sets a TC module compare value. 
+
+Writes a compare value to the given TC module compare/capture channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the software module instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em channel\+\_\+index} & Index of the compare channel to write to \\
+\hline
+\mbox{\texttt{ in}}  & {\em compare} & New compare value to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the compare update procedure.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The compare value was updated successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & An invalid channel index was supplied \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_ga9c81066b0b88893e127fa521f0efde2e}\label{group__asfdoc__sam0__tc__group_ga9c81066b0b88893e127fa521f0efde2e}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_set\_count\_value@{tc\_set\_count\_value}}
+\index{tc\_set\_count\_value@{tc\_set\_count\_value}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_set\_count\_value()}{tc\_set\_count\_value()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} tc\+\_\+set\+\_\+count\+\_\+value (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const}]{module\+\_\+inst,  }\item[{const uint32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+Sets TC module count value. 
+
+Sets the current timer count value of a initialized TC module. The specified TC module may be started or stopped.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the software module instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em count} & New timer count value to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the count update procedure.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The timer count was updated successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & An invalid timer counter size was specified \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__tc__group_gac22d633ece43bcd18f54283778471340}\label{group__asfdoc__sam0__tc__group_gac22d633ece43bcd18f54283778471340}} 
+\index{SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}!tc\_set\_top\_value@{tc\_set\_top\_value}}
+\index{tc\_set\_top\_value@{tc\_set\_top\_value}!SAM Timer/Counter (TC) Driver@{SAM Timer/Counter (TC) Driver}}
+\doxysubsubsection{\texorpdfstring{tc\_set\_top\_value()}{tc\_set\_top\_value()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} tc\+\_\+set\+\_\+top\+\_\+value (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const}]{module\+\_\+inst,  }\item[{const uint32\+\_\+t}]{top\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+Set the timer TOP/period value. 
+
+For 8-\/bit counter size this function writes the top value to the period register.
+
+For 16-\/ and 32-\/bit counter size this function writes the top value to Capture Compare register 0. The value in this register can not be used for any other purpose.
+
+\begin{DoxyNote}{Note}
+This function is designed to be used in PWM or frequency match modes only, when the counter is set to 16-\/ or 32-\/bit counter size. In 8-\/bit counter size it will always be possible to change the top value even in normal mode.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module\+\_\+inst} & Pointer to the software module instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em top\+\_\+value} & New timer TOP value to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the TOP set procedure.
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & The timer TOP value was updated successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & The configured TC module counter size in the module instance is invalid \\
+\hline
+\end{DoxyRetVals}

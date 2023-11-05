@@ -1,0 +1,109 @@
+\hypertarget{asf_8h_source}{}\doxysection{asf.\+h}
+\label{asf_8h_source}\index{src/asf.h@{src/asf.h}}
+\mbox{\hyperlink{asf_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifndef ASF\_H}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define ASF\_H}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{/*}}
+\DoxyCodeLine{48 \textcolor{comment}{ * This file includes all API header files for the selected drivers from ASF.}}
+\DoxyCodeLine{49 \textcolor{comment}{ * Note: There might be duplicate includes required by more than one driver.}}
+\DoxyCodeLine{50 \textcolor{comment}{ *}}
+\DoxyCodeLine{51 \textcolor{comment}{ * The file is automatically generated and will be re-\/written when}}
+\DoxyCodeLine{52 \textcolor{comment}{ * running the ASF driver selector tool. Any changes will be discarded.}}
+\DoxyCodeLine{53 \textcolor{comment}{ */}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{// From module: ADC -\/ Analog-\/to-\/Digital Converter (Callback APIs)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <adc.h>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{adc__callback_8h}{adc\_callback.h}}>}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{// From module: Common SAM0 compiler driver}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{// From module: Debug Print (FreeRTOS)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{dbg__print_8h}{dbg\_print.h}}>}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{qs__dbg__print__basic_8h}{quick\_start\_basic/qs\_dbg\_print\_basic.h}}>}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{// From module: Delay routines}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{delay_8h}{delay.h}}>}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{// From module: FreeRTOS -\/ kernel 10.0.0}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#include <FreeRTOS.h>}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#include <StackMacros.h>}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#include <croutine.h>}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#include <deprecated\_definitions.h>}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#include <event\_groups.h>}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#include <list.h>}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#include <message\_buffer.h>}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#include <mpu\_wrappers.h>}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#include <portable.h>}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#include <projdefs.h>}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#include <queue.h>}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#include <semphr.h>}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#include <stack\_macros.h>}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#include <stream\_buffer.h>}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#include <task.h>}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#include <timers.h>}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{// From module: Generic board support}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{board_8h}{board.h}}>}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{comment}{// From module: Interrupt management -\/ SAM implementation}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{interrupt_8h}{interrupt.h}}>}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{comment}{// From module: PORT -\/ GPIO Pin Control}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#include <port.h>}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{comment}{// From module: Part identification macros}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{parts_8h}{parts.h}}>}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{// From module: RTC -\/ Real Time Counter in Count Mode (Callback APIs)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{rtc__count_8h}{rtc\_count.h}}>}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{rtc__count__interrupt_8h}{rtc\_count\_interrupt.h}}>}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{rtc__tamper_8h}{rtc\_tamper.h}}>}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{// From module: SERCOM Callback API}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#include <sercom.h>}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{sercom__interrupt_8h}{sercom\_interrupt.h}}>}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{// From module: SERCOM I2C -\/ Master Mode I2C (Callback APIs)}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{i2c__common_8h}{i2c\_common.h}}>}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{i2c__master_8h}{i2c\_master.h}}>}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{i2c__master__interrupt_8h}{i2c\_master\_interrupt.h}}>}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{comment}{// From module: SERCOM USART -\/ Serial Communications (Callback APIs)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{usart_8h}{usart.h}}>}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{usart__interrupt_8h}{usart\_interrupt.h}}>}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{comment}{// From module: SYSTEM -\/ Clock Management for SAMD20}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{clock_8h}{clock.h}}>}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#include <gclk.h>}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{comment}{// From module: SYSTEM -\/ Core System Driver}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{system_8h}{system.h}}>}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{comment}{// From module: SYSTEM -\/ I/O Pin Multiplexer}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pinmux_8h}{pinmux.h}}>}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{comment}{// From module: SYSTEM -\/ Interrupt Driver}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{system__interrupt_8h}{system\_interrupt.h}}>}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{comment}{// From module: SYSTEM -\/ Power Management for SAM D20/D21/R21/D09/D10/D11/DA/HA}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{power_8h}{power.h}}>}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{comment}{// From module: SYSTEM -\/ Reset Management for SAM D20/D21/R21/D09/D10/D11/DA/HA}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{reset_8h}{reset.h}}>}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{comment}{// From module: TC -\/ Timer Counter (Callback APIs)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#include <tc.h>}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{tc__interrupt_8h}{tc\_interrupt.h}}>}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{comment}{// From module: WDT -\/ Watchdog Timer (Callback APIs)}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#include <wdt.h>}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{wdt__callback_8h}{wdt\_callback.h}}>}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ASF\_H}}
+
+\end{DoxyCode}

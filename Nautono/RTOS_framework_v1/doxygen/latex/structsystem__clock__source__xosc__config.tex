@@ -1,0 +1,75 @@
+\hypertarget{structsystem__clock__source__xosc__config}{}\doxysection{system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config Struct Reference}
+\label{structsystem__clock__source__xosc__config}\index{system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}}
+
+
+Configuration structure for XOSC.  
+
+
+
+
+{\ttfamily \#include $<$clock\+\_\+feature.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\+\_\+clock\+\_\+external}} \mbox{\hyperlink{structsystem__clock__source__xosc__config_af5c23b6fb5e51451f66896a608d92ca1}{external\+\_\+clock}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga93797ad2901b27dd84fa8b7edc9bb5c5}{system\+\_\+xosc\+\_\+startup}} \mbox{\hyperlink{structsystem__clock__source__xosc__config_a2bab1540cb80df1db3dcad0c1c762e59}{startup\+\_\+time}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__xosc__config_a19d5578b41e1e6d06476aadccb568b89}{auto\+\_\+gain\+\_\+control}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structsystem__clock__source__xosc__config_a9ed2c1087eb1fde0c1a6359316345217}{frequency}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__xosc__config_af9e53e7b1c8ae7fdea7bde1ace44a37b}{run\+\_\+in\+\_\+standby}}
+\item 
+bool \mbox{\hyperlink{structsystem__clock__source__xosc__config_aa7c5ef8b70dd597ed5df61111f62083f}{on\+\_\+demand}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration structure for XOSC. 
+
+External oscillator clock configuration structure. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structsystem__clock__source__xosc__config_a19d5578b41e1e6d06476aadccb568b89}\label{structsystem__clock__source__xosc__config_a19d5578b41e1e6d06476aadccb568b89}} 
+\index{system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}!auto\_gain\_control@{auto\_gain\_control}}
+\index{auto\_gain\_control@{auto\_gain\_control}!system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}}
+\doxysubsubsection{\texorpdfstring{auto\_gain\_control}{auto\_gain\_control}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config\+::auto\+\_\+gain\+\_\+control}
+
+Enable automatic amplitude gain control. \mbox{\Hypertarget{structsystem__clock__source__xosc__config_af5c23b6fb5e51451f66896a608d92ca1}\label{structsystem__clock__source__xosc__config_af5c23b6fb5e51451f66896a608d92ca1}} 
+\index{system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}!external\_clock@{external\_clock}}
+\index{external\_clock@{external\_clock}!system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}}
+\doxysubsubsection{\texorpdfstring{external\_clock}{external\_clock}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_gab463f9d80799466f12321e6252493e70}{system\+\_\+clock\+\_\+external}} system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config\+::external\+\_\+clock}
+
+External clock type. \mbox{\Hypertarget{structsystem__clock__source__xosc__config_a9ed2c1087eb1fde0c1a6359316345217}\label{structsystem__clock__source__xosc__config_a9ed2c1087eb1fde0c1a6359316345217}} 
+\index{system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}!frequency@{frequency}}
+\index{frequency@{frequency}!system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}}
+\doxysubsubsection{\texorpdfstring{frequency}{frequency}}
+{\footnotesize\ttfamily uint32\+\_\+t system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config\+::frequency}
+
+External clock/crystal frequency. \mbox{\Hypertarget{structsystem__clock__source__xosc__config_aa7c5ef8b70dd597ed5df61111f62083f}\label{structsystem__clock__source__xosc__config_aa7c5ef8b70dd597ed5df61111f62083f}} 
+\index{system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}!on\_demand@{on\_demand}}
+\index{on\_demand@{on\_demand}!system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}}
+\doxysubsubsection{\texorpdfstring{on\_demand}{on\_demand}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config\+::on\+\_\+demand}
+
+Run On Demand. If this is set the XOSC won\textquotesingle{}t run until requested by a peripheral. \mbox{\Hypertarget{structsystem__clock__source__xosc__config_af9e53e7b1c8ae7fdea7bde1ace44a37b}\label{structsystem__clock__source__xosc__config_af9e53e7b1c8ae7fdea7bde1ace44a37b}} 
+\index{system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}!run\_in\_standby@{run\_in\_standby}}
+\index{run\_in\_standby@{run\_in\_standby}!system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}}
+\doxysubsubsection{\texorpdfstring{run\_in\_standby}{run\_in\_standby}}
+{\footnotesize\ttfamily bool system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config\+::run\+\_\+in\+\_\+standby}
+
+Keep the XOSC enabled in standby sleep mode. \mbox{\Hypertarget{structsystem__clock__source__xosc__config_a2bab1540cb80df1db3dcad0c1c762e59}\label{structsystem__clock__source__xosc__config_a2bab1540cb80df1db3dcad0c1c762e59}} 
+\index{system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}!startup\_time@{startup\_time}}
+\index{startup\_time@{startup\_time}!system\_clock\_source\_xosc\_config@{system\_clock\_source\_xosc\_config}}
+\doxysubsubsection{\texorpdfstring{startup\_time}{startup\_time}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga93797ad2901b27dd84fa8b7edc9bb5c5}{system\+\_\+xosc\+\_\+startup}} system\+\_\+clock\+\_\+source\+\_\+xosc\+\_\+config\+::startup\+\_\+time}
+
+Crystal oscillator start-\/up time. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/system/clock/clock\+\_\+samd20/\mbox{\hyperlink{clock__feature_8h}{clock\+\_\+feature.\+h}}\end{DoxyCompactItemize}

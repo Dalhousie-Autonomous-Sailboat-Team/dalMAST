@@ -1,0 +1,97 @@
+\hypertarget{usart_8h}{}\doxysection{src/\+ASF/sam0/drivers/sercom/usart/usart.h File Reference}
+\label{usart_8h}\index{src/ASF/sam0/drivers/sercom/usart/usart.h@{src/ASF/sam0/drivers/sercom/usart/usart.h}}
+
+
+SAM SERCOM USART Driver.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$sercom.\+h$>$}\newline
+{\ttfamily \#include $<$pinmux.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structusart__config}{usart\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em USART configuration struct. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}}
+\begin{DoxyCompactList}\small\item\em SERCOM USART driver software device instance structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gad67046f395137b2a7a1ef72f83907674}{usart\+\_\+init}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, \mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const hw, const struct \mbox{\hyperlink{structusart__config}{usart\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Lock/\+Unlock}\par
+\end{Indent}
+\begin{Indent}\textbf{ Writing and Reading}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaee8b142e8ad13e1e226334a9954e853c}{usart\+\_\+write\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, const uint16\+\_\+t tx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Transmit a character via the USART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaf7db90c51a6f17edff5f1de2a0e3d8a5}{usart\+\_\+read\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint16\+\_\+t $\ast$const rx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Receive a character via the USART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gacffd0845249348d37d14c65a41132e41}{usart\+\_\+write\+\_\+buffer\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, const uint8\+\_\+t $\ast$tx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Transmit a buffer of characters via the USART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4f788b3478e9c1fa8f0dd8d09939d3a6}{usart\+\_\+read\+\_\+buffer\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$rx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Receive a buffer of {\ttfamily length} characters via the USART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Enabling/\+Disabling Receiver and Transmitter}\par
+\end{Indent}
+\doxysubsection*{Driver Feature Definition}
+Define SERCOM USART features set according to different device family. \begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gae7bc85650aed61f97fe3d5df9b430456}{PINMUX\+\_\+\+DEFAULT}}~0
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaffde9ff712058ef836127e1f3368889e}{PINMUX\+\_\+\+UNUSED}}~0x\+FFFFFFFF
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gad3e37fdd22ce059c9158a818d608447a}{USART\+\_\+\+TIMEOUT}}~0x\+FFFF
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4352d9150bb8cbd54d26abe3055a5ee1}{usart\+\_\+dataorder}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1add3a3b7f39f32c42d22991ea981e2810}{USART\+\_\+\+DATAORDER\+\_\+\+MSB}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga4352d9150bb8cbd54d26abe3055a5ee1afb0c8f2d6f7da9f62dc67871d710b9af}{USART\+\_\+\+DATAORDER\+\_\+\+LSB}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+DORD
+ \}
+\begin{DoxyCompactList}\small\item\em USART Data Order enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga7ff4d85053b8ea0904b5a57587b39c8f}{usart\+\_\+transfer\+\_\+mode}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa4756b64694eb2e2ca4f4c77c6f53786d}{USART\+\_\+\+TRANSFER\+\_\+\+SYNCHRONOUSLY}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+CMODE)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga7ff4d85053b8ea0904b5a57587b39c8fa5662e0cc82a73f113bb13ebb1e4c65ef}{USART\+\_\+\+TRANSFER\+\_\+\+ASYNCHRONOUSLY}} = (0x0ul \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+CMODE\+\_\+\+Pos)
+ \}
+\begin{DoxyCompactList}\small\item\em USART Transfer mode enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga867cc5f0ea7d3bf651d68f0046cf6f41}{usart\+\_\+parity}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41a69c6cdd4d354d3b26c8d2f09f49d2ede}{USART\+\_\+\+PARITY\+\_\+\+ODD}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+PMODE
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41ae5d22c99a30184aff19d77c1a970fb23}{USART\+\_\+\+PARITY\+\_\+\+EVEN}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga867cc5f0ea7d3bf651d68f0046cf6f41aecf52ec650226bdc63e12a21d3b5585d}{USART\+\_\+\+PARITY\+\_\+\+NONE}} = 0x\+FF
+ \}
+\begin{DoxyCompactList}\small\item\em USART Parity enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga87bbdb9f7edb3f1866aeb498bf7c9077}{usart\+\_\+signal\+\_\+mux\+\_\+settings}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ab2330cf3ae7faacb7fd28678a77327f4}{USART\+\_\+\+RX\+\_\+0\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(0))
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a4ad0f5cd921dd8c0787ebeba372bcc70}{USART\+\_\+\+RX\+\_\+0\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(0) $\vert$ SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+TXPO)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077ac937b1e1063cc3d094c4534c022af703}{USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(1))
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a884ae3424a45469c20b4ecf9c65a8e48}{USART\+\_\+\+RX\+\_\+1\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(1) $\vert$ SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+TXPO)
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a730a5c0276235851c892b3a817a6d49f}{USART\+\_\+\+RX\+\_\+2\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(2))
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077aa64f03365c6e57705c9a154741523956}{USART\+\_\+\+RX\+\_\+2\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(2) $\vert$ SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+TXPO)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a01cd27a54558c7956d41d29c16cf4a40}{USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+0\+\_\+\+XCK\+\_\+1}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(3))
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga87bbdb9f7edb3f1866aeb498bf7c9077a026e9eb10b4f94b2a0e5640a9fe22544}{USART\+\_\+\+RX\+\_\+3\+\_\+\+TX\+\_\+2\+\_\+\+XCK\+\_\+3}} = (SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+RXPO(3) $\vert$ SERCOM\+\_\+\+USART\+\_\+\+CTRLA\+\_\+\+TXPO)
+ \}
+\begin{DoxyCompactList}\small\item\em USART signal MUX settings. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gab7d8ac715e2bd7ccddc65bf2c5ceb1f5}{usart\+\_\+stopbits}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a9011413422d1340bb5c343a1f3b57341}{USART\+\_\+\+STOPBITS\+\_\+1}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggab7d8ac715e2bd7ccddc65bf2c5ceb1f5a1e3cd9a88a519d93c0c300e873437a2c}{USART\+\_\+\+STOPBITS\+\_\+2}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+SBMODE
+ \}
+\begin{DoxyCompactList}\small\item\em USART Stop Bits enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga631ce7b4f60dccd392e6d6ef7d3cd4e2}{usart\+\_\+character\+\_\+size}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab1db6dc41b52d70a9185b963d9140c7f}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+5\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(5)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a4b631e89e72f2b939afbc4a996d358b9}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+6\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(6)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2ab5e1a6e76a61ee79563a551ad2431726}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+7\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(7)
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a8679bfe526e0d92b5d313f9f5880da4b}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+8\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(0)
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gga631ce7b4f60dccd392e6d6ef7d3cd4e2a6a7fe30ecca9dbde62c154d6619cab7f}{USART\+\_\+\+CHARACTER\+\_\+\+SIZE\+\_\+9\+BIT}} = SERCOM\+\_\+\+USART\+\_\+\+CTRLB\+\_\+\+CHSIZE(1)
+ \}
+\begin{DoxyCompactList}\small\item\em USART Character Size. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\+\_\+transceiver\+\_\+type}} \{ \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a627832963965f11ae53299b802582c48}{USART\+\_\+\+TRANSCEIVER\+\_\+\+RX}}
+, \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ggaab1b986bc581f76e99eec14ac37efe05a9d1050c223a28be7aefcbca46a0add81}{USART\+\_\+\+TRANSCEIVER\+\_\+\+TX}}
+ \}
+\begin{DoxyCompactList}\small\item\em USART Transceiver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM SERCOM USART Driver. 
+
+Copyright (c) 2012-\/2020 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

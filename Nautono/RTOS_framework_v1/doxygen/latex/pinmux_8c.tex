@@ -1,0 +1,25 @@
+\hypertarget{pinmux_8c}{}\doxysection{src/\+ASF/sam0/drivers/system/pinmux/pinmux.c File Reference}
+\label{pinmux_8c}\index{src/ASF/sam0/drivers/system/pinmux/pinmux.c@{src/ASF/sam0/drivers/system/pinmux/pinmux.c}}
+
+
+SAM Pin Multiplexer Driver.  
+
+
+{\ttfamily \#include $<$pinmux.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga4aff9a23bc1233d74847bcdee4494439}{system\+\_\+pinmux\+\_\+pin\+\_\+set\+\_\+config}} (const uint8\+\_\+t gpio\+\_\+pin, const struct \mbox{\hyperlink{structsystem__pinmux__config}{system\+\_\+pinmux\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a \mbox{\hyperlink{struct_port}{Port}} pin configuration to the hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_ga7f19e634e8c05c0a84cebaf36054d78e}{system\+\_\+pinmux\+\_\+group\+\_\+set\+\_\+config}} (\mbox{\hyperlink{struct_port_group}{Port\+Group}} $\ast$const port, const uint32\+\_\+t mask, const struct \mbox{\hyperlink{structsystem__pinmux__config}{system\+\_\+pinmux\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Writes a \mbox{\hyperlink{struct_port}{Port}} pin group configuration to the hardware module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gaf01f6297e4699bf54b3df70d29f72593}{system\+\_\+pinmux\+\_\+group\+\_\+set\+\_\+input\+\_\+sample\+\_\+mode}} (\mbox{\hyperlink{struct_port_group}{Port\+Group}} $\ast$const port, const uint32\+\_\+t mask, const enum \mbox{\hyperlink{group__asfdoc__sam0__system__pinmux__group_gac0c5f124b2d0deed3751156f20135994}{system\+\_\+pinmux\+\_\+pin\+\_\+sample}} mode)
+\begin{DoxyCompactList}\small\item\em Configures the input sampling mode for a group of pins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM Pin Multiplexer Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

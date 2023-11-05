@@ -1,0 +1,67 @@
+\hypertarget{structsystem__gclk__gen__config}{}\doxysection{system\+\_\+gclk\+\_\+gen\+\_\+config Struct Reference}
+\label{structsystem__gclk__gen__config}\index{system\_gclk\_gen\_config@{system\_gclk\_gen\_config}}
+
+
+Generic Clock Generator configuration structure.  
+
+
+
+
+{\ttfamily \#include $<$gclk.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structsystem__gclk__gen__config_ac1d1534220a67670932264315ed0666f}{source\+\_\+clock}}
+\item 
+bool \mbox{\hyperlink{structsystem__gclk__gen__config_a04e70fd6155a612b17f9908ac50265a4}{high\+\_\+when\+\_\+disabled}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structsystem__gclk__gen__config_ad8e19a07b12d87392e0d409d7d138739}{division\+\_\+factor}}
+\item 
+bool \mbox{\hyperlink{structsystem__gclk__gen__config_a4fd6592b1f5c80511e28cefadef7b538}{run\+\_\+in\+\_\+standby}}
+\item 
+bool \mbox{\hyperlink{structsystem__gclk__gen__config_a4a070571b88c647f8c7a6b1be0d226f0}{output\+\_\+enable}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generic Clock Generator configuration structure. 
+
+Configuration structure for a Generic Clock Generator channel. This structure should be initialized by the system\+\_\+gclk\+\_\+gen\+\_\+get\+\_\+config\+\_\+defaults() function before being modified by the user application. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structsystem__gclk__gen__config_ad8e19a07b12d87392e0d409d7d138739}\label{structsystem__gclk__gen__config_ad8e19a07b12d87392e0d409d7d138739}} 
+\index{system\_gclk\_gen\_config@{system\_gclk\_gen\_config}!division\_factor@{division\_factor}}
+\index{division\_factor@{division\_factor}!system\_gclk\_gen\_config@{system\_gclk\_gen\_config}}
+\doxysubsubsection{\texorpdfstring{division\_factor}{division\_factor}}
+{\footnotesize\ttfamily uint32\+\_\+t system\+\_\+gclk\+\_\+gen\+\_\+config\+::division\+\_\+factor}
+
+Integer division factor of the clock output compared to the input \mbox{\Hypertarget{structsystem__gclk__gen__config_a04e70fd6155a612b17f9908ac50265a4}\label{structsystem__gclk__gen__config_a04e70fd6155a612b17f9908ac50265a4}} 
+\index{system\_gclk\_gen\_config@{system\_gclk\_gen\_config}!high\_when\_disabled@{high\_when\_disabled}}
+\index{high\_when\_disabled@{high\_when\_disabled}!system\_gclk\_gen\_config@{system\_gclk\_gen\_config}}
+\doxysubsubsection{\texorpdfstring{high\_when\_disabled}{high\_when\_disabled}}
+{\footnotesize\ttfamily bool system\+\_\+gclk\+\_\+gen\+\_\+config\+::high\+\_\+when\+\_\+disabled}
+
+If {\ttfamily true}, the generator output level is high when disabled \mbox{\Hypertarget{structsystem__gclk__gen__config_a4a070571b88c647f8c7a6b1be0d226f0}\label{structsystem__gclk__gen__config_a4a070571b88c647f8c7a6b1be0d226f0}} 
+\index{system\_gclk\_gen\_config@{system\_gclk\_gen\_config}!output\_enable@{output\_enable}}
+\index{output\_enable@{output\_enable}!system\_gclk\_gen\_config@{system\_gclk\_gen\_config}}
+\doxysubsubsection{\texorpdfstring{output\_enable}{output\_enable}}
+{\footnotesize\ttfamily bool system\+\_\+gclk\+\_\+gen\+\_\+config\+::output\+\_\+enable}
+
+If {\ttfamily true}, enables GCLK generator clock output to a GPIO pin \mbox{\Hypertarget{structsystem__gclk__gen__config_a4fd6592b1f5c80511e28cefadef7b538}\label{structsystem__gclk__gen__config_a4fd6592b1f5c80511e28cefadef7b538}} 
+\index{system\_gclk\_gen\_config@{system\_gclk\_gen\_config}!run\_in\_standby@{run\_in\_standby}}
+\index{run\_in\_standby@{run\_in\_standby}!system\_gclk\_gen\_config@{system\_gclk\_gen\_config}}
+\doxysubsubsection{\texorpdfstring{run\_in\_standby}{run\_in\_standby}}
+{\footnotesize\ttfamily bool system\+\_\+gclk\+\_\+gen\+\_\+config\+::run\+\_\+in\+\_\+standby}
+
+If {\ttfamily true}, the clock is kept enabled during device standby mode \mbox{\Hypertarget{structsystem__gclk__gen__config_ac1d1534220a67670932264315ed0666f}\label{structsystem__gclk__gen__config_ac1d1534220a67670932264315ed0666f}} 
+\index{system\_gclk\_gen\_config@{system\_gclk\_gen\_config}!source\_clock@{source\_clock}}
+\index{source\_clock@{source\_clock}!system\_gclk\_gen\_config@{system\_gclk\_gen\_config}}
+\doxysubsubsection{\texorpdfstring{source\_clock}{source\_clock}}
+{\footnotesize\ttfamily uint8\+\_\+t system\+\_\+gclk\+\_\+gen\+\_\+config\+::source\+\_\+clock}
+
+Source clock input channel index, see the \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga86882dc960f2552722e9713da97fcc58}{system\+\_\+clock\+\_\+source}} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/system/clock/\mbox{\hyperlink{drivers_2system_2clock_2gclk_8h}{gclk.\+h}}\end{DoxyCompactItemize}

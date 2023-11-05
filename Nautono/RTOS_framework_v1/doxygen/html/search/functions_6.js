@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['port_5fgroup_5fset_5fconfig_0',['port_group_set_config',['../group__asfdoc__sam0__port__group.html#ga7b832928bee6911ac7c9f18df8a5cf4a',1,'port_group_set_config(PortGroup *const port, const uint32_t mask, const struct port_config *const config):&#160;port.c'],['../group__asfdoc__sam0__port__group.html#ga7b832928bee6911ac7c9f18df8a5cf4a',1,'port_group_set_config(PortGroup *const port, const uint32_t mask, const struct port_config *const config):&#160;port.c']]],
+  ['port_5fpin_5fset_5fconfig_1',['port_pin_set_config',['../group__asfdoc__sam0__port__group.html#gad21f235037f2d75ee3e7c08ba8b239c5',1,'port_pin_set_config(const uint8_t gpio_pin, const struct port_config *const config):&#160;port.c'],['../group__asfdoc__sam0__port__group.html#gad21f235037f2d75ee3e7c08ba8b239c5',1,'port_pin_set_config(const uint8_t gpio_pin, const struct port_config *const config):&#160;port.c']]],
+  ['portable_5fdelay_5fcycles_2',['portable_delay_cycles',['../cycle__counter_8c.html#a2d1f3b8b6ebc40099efc69c0f5c0b818',1,'portable_delay_cycles(unsigned long n):&#160;cycle_counter.c'],['../cycle__counter_8h.html#a740950299bad7cf428167849f201ebb4',1,'portable_delay_cycles(unsigned long n):&#160;cycle_counter.c']]]
+];

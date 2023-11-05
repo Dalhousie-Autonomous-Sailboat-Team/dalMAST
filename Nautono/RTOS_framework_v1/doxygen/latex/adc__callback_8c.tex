@@ -1,0 +1,46 @@
+\hypertarget{adc__callback_8c}{}\doxysection{src/\+ASF/sam0/drivers/adc/adc\+\_\+sam\+\_\+d\+\_\+r\+\_\+h/adc\+\_\+callback.c File Reference}
+\label{adc__callback_8c}\index{src/ASF/sam0/drivers/adc/adc\_sam\_d\_r\_h/adc\_callback.c@{src/ASF/sam0/drivers/adc/adc\_sam\_d\_r\_h/adc\_callback.c}}
+
+
+SAM Peripheral Analog-\/to-\/\+Digital Converter Driver.  
+
+
+{\ttfamily \#include \char`\"{}adc\+\_\+callback.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{adc__callback_8c_ada953331e0adc056867e918bc80ce8a5}{ADC\+\_\+\+Handler}} (void)
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gaab93edab589a1c691b29a78b56677f21}{adc\+\_\+register\+\_\+callback}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module, adc\+\_\+callback\+\_\+t callback\+\_\+func, enum adc\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Registers a callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga031decc62aad224eb1a7d7f00546b81e}{adc\+\_\+unregister\+\_\+callback}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module, enum adc\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Unregisters a callback. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga2d4ba18d202501347f1a3faf6f9af4ec}{adc\+\_\+read\+\_\+buffer\+\_\+job}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module\+\_\+inst, uint16\+\_\+t $\ast$buffer, uint16\+\_\+t samples)
+\begin{DoxyCompactList}\small\item\em Read multiple samples from ADC. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga716c29c07b7c100001fc277ab0180045}{adc\+\_\+get\+\_\+job\+\_\+status}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$module\+\_\+inst, enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\+\_\+job\+\_\+type}} type)
+\begin{DoxyCompactList}\small\item\em Gets the status of a job. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga21a885bc264d8dc9d35e2fb2ae5bb9ac}{adc\+\_\+abort\+\_\+job}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$module\+\_\+inst, enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9cdf4e56baa3aae29eee83b34a1ba4a1}{adc\+\_\+job\+\_\+type}} type)
+\begin{DoxyCompactList}\small\item\em Aborts an ongoing job. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{adc__callback_8c_a5ba0a3a3d9fcd54039f4dd3659f095dc}\label{adc__callback_8c_a5ba0a3a3d9fcd54039f4dd3659f095dc}} 
+struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$ {\bfseries \+\_\+adc\+\_\+instances} \mbox{[}\mbox{\hyperlink{samd20e14_8h_ac539e8e2e65134854344ceb66b3bab64}{ADC\+\_\+\+INST\+\_\+\+NUM}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM Peripheral Analog-\/to-\/\+Digital Converter Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{adc__callback_8c_ada953331e0adc056867e918bc80ce8a5}\label{adc__callback_8c_ada953331e0adc056867e918bc80ce8a5}} 
+\index{adc\_callback.c@{adc\_callback.c}!ADC\_Handler@{ADC\_Handler}}
+\index{ADC\_Handler@{ADC\_Handler}!adc\_callback.c@{adc\_callback.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_Handler()}{ADC\_Handler()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Interrupt handler for the ADC module. 

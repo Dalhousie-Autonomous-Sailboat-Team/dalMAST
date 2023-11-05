@@ -1,0 +1,194 @@
+The supported board list\+:
+\begin{DoxyItemize}
+\item SAMD21 Xplained Pro
+\item SAMR21 Xplained Pro
+\item SAML21 Xplained Pro
+\item SAML22 Xplained Pro
+\item SAMDA1 Xplained Pro
+\item SAMC21 Xplained Pro
+\item SAMHA1\+G16A Xplained Pro
+\end{DoxyItemize}
+
+In this use case, the I\textsuperscript{2}C will used and set up as follows\+:
+\begin{DoxyItemize}
+\item Master mode
+\item 100KHz operation speed
+\item Not operational in standby
+\item 10000 packet timeout value
+\item 65535 unknown bus state timeout value
+\end{DoxyItemize}\hypertarget{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_case_prereq}{}\doxysection{Prerequisites}\label{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_case_prereq}
+The device must be connected to an I\textsuperscript{2}C slave.\hypertarget{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_setup}{}\doxysection{Setup}\label{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_setup}
+\hypertarget{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_setup_code}{}\doxysubsection{Code}\label{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_setup_code}
+The following must be added to the user application\+:
+
+
+\begin{DoxyItemize}
+\item A sample buffer to send, number of entries to send and address of slave\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyItemize}
+
+Number of times to try to send packet if it fails\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyItemize}
+\item Globally accessible module structure\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Function for setting up the module\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Globally accessible DMA module structure\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Globally transfer done flag\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Globally accessible DMA transfer descriptor\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Function for transfer done callback\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Function for setting up the DMA resource\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Function for setting up the DMA transfer descriptor\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Add to user application {\ttfamily main()}\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyItemize}\hypertarget{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_setup_workflow}{}\doxysubsection{Workflow}\label{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_setup_workflow}
+
+\begin{DoxyEnumerate}
+\item Configure and enable module\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\begin{DoxyEnumerate}
+\item Create and initialize configuration structure. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Change settings in the configuration. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Initialize the module with the set configurations. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Enable the module. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}
+\item Configure DMA
+\begin{DoxyEnumerate}
+\item Create a DMA resource configuration structure, which can be filled out to adjust the configuration of a single DMA transfer. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Initialize the DMA resource configuration struct with the module\textquotesingle{}s default values. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ \begin{DoxyNote}{Note}
+This should always be performed before using the configuration struct to ensure that all values are initialized to known default settings.
+\end{DoxyNote}
+
+\item Set extra configurations for the DMA resource. It is using peripheral trigger. SERCOM TX trigger causes a transaction transfer in this example. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Allocate a DMA resource with the configurations. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Create a DMA transfer descriptor configuration structure, which can be filled out to adjust the configuration of a single DMA transfer. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Initialize the DMA transfer descriptor configuration struct with the module\textquotesingle{}s default values. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ \begin{DoxyNote}{Note}
+This should always be performed before using the configuration struct to ensure that all values are initialized to known default settings.
+\end{DoxyNote}
+
+\item Set the specific parameters for a DMA transfer with transfer size, source address, and destination address. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Create the DMA transfer descriptor. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_implemenation}{}\doxysection{Implementation}\label{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_implemenation}
+\hypertarget{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_implemenation_code}{}\doxysubsection{Code}\label{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_implemenation_code}
+Add to user application {\ttfamily main()}\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+\hypertarget{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_implemenation_workflow}{}\doxysubsection{Workflow}\label{asfdoc_sam0_sercom_i2c_master_dma_use_case_asfdoc_sam0_sercom_i2c_master_dma_use_implemenation_workflow}
+
+\begin{DoxyEnumerate}
+\item Start the DMA transfer job. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Set the auto address length and enable flag. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Waiting for transfer complete. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Enter an infinite loop once transfer complete. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ 
+\end{DoxyEnumerate}

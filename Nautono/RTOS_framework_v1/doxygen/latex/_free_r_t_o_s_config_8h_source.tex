@@ -1,0 +1,155 @@
+\hypertarget{_free_r_t_o_s_config_8h_source}{}\doxysection{Free\+RTOSConfig.\+h}
+\label{_free_r_t_o_s_config_8h_source}\index{src/config/FreeRTOSConfig.h@{src/config/FreeRTOSConfig.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * FreeRTOS Kernel V10.0.0}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining a copy of}}
+\DoxyCodeLine{6 \textcolor{comment}{ * this software and associated documentation files (the "{}Software"{}), to deal in}}
+\DoxyCodeLine{7 \textcolor{comment}{ * the Software without restriction, including without limitation the rights to}}
+\DoxyCodeLine{8 \textcolor{comment}{ , copy, modify, merge, publish, distribute, sublicense, and/or sell copies of}}
+\DoxyCodeLine{9 \textcolor{comment}{ * the Software, and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * The above copyright notice and this permission notice shall be included in all}}
+\DoxyCodeLine{13 \textcolor{comment}{ * copies or substantial portions of the Software. If you wish to use our Amazon}}
+\DoxyCodeLine{14 \textcolor{comment}{ * FreeRTOS name, please do so in a fair use way that does not cause confusion.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{17 \textcolor{comment}{ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS}}
+\DoxyCodeLine{18 \textcolor{comment}{ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR}}
+\DoxyCodeLine{19 \textcolor{comment}{ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER}}
+\DoxyCodeLine{20 \textcolor{comment}{ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN}}
+\DoxyCodeLine{21 \textcolor{comment}{ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * http://www.FreeRTOS.org}}
+\DoxyCodeLine{24 \textcolor{comment}{ * http://aws.amazon.com/freertos}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ * 1 tab == 4 spaces!}}
+\DoxyCodeLine{27 \textcolor{comment}{ */}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef FREERTOS\_CONFIG\_H}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define FREERTOS\_CONFIG\_H}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{33 \textcolor{comment}{ * Application specific definitions.}}
+\DoxyCodeLine{34 \textcolor{comment}{ *}}
+\DoxyCodeLine{35 \textcolor{comment}{ * These definitions should be adjusted for your particular hardware and}}
+\DoxyCodeLine{36 \textcolor{comment}{ * application requirements.}}
+\DoxyCodeLine{37 \textcolor{comment}{ *}}
+\DoxyCodeLine{38 \textcolor{comment}{ * THESE PARAMETERS ARE DESCRIBED WITHIN THE 'CONFIGURATION' SECTION OF THE}}
+\DoxyCodeLine{39 \textcolor{comment}{ * FreeRTOS API DOCUMENTATION AVAILABLE ON THE FreeRTOS.org WEB SITE.}}
+\DoxyCodeLine{40 \textcolor{comment}{ *}}
+\DoxyCodeLine{41 \textcolor{comment}{ * See http://www.freertos.org/a00110.html.}}
+\DoxyCodeLine{42 \textcolor{comment}{ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{comment}{/* For definition of BOARD\_MCK. */}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifndef \_\_IAR\_SYSTEMS\_ASM\_\_}}
+\DoxyCodeLine{46     \textcolor{comment}{/* Prevent chip.h being included when this file is included from the IAR}}
+\DoxyCodeLine{47 \textcolor{comment}{    port layer assembly file. */}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{board_8h}{board.h}}"{}}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define configUSE\_PREEMPTION                    1}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define configUSE\_QUEUE\_SETS                    1}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define configUSE\_IDLE\_HOOK                     0}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define configUSE\_TICK\_HOOK                     0}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define configCPU\_CLOCK\_HZ                      ( 8000000)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define configTICK\_RATE\_HZ                      ( 1000 )}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define configMAX\_PRIORITIES                    ( 5 )}}
+\DoxyCodeLine{59 \textcolor{comment}{//\#define configMINIMAL\_STACK\_SIZE              ( ( unsigned short ) 130 )}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define configMINIMAL\_STACK\_SIZE                ( ( unsigned short ) 260 )}}
+\DoxyCodeLine{61 \textcolor{comment}{//\#define configTOTAL\_HEAP\_SIZE                 ( ( size\_t ) ( 46 * 1024 ) )}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define configTOTAL\_HEAP\_SIZE                   ( ( size\_t ) ( 12 * 1024 ) )}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define configMAX\_TASK\_NAME\_LEN                 ( 10 )}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define configUSE\_TRACE\_FACILITY                1}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define configUSE\_16\_BIT\_TICKS                  0}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define configIDLE\_SHOULD\_YIELD                 1}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define configUSE\_MUTEXES                       1}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define configQUEUE\_REGISTRY\_SIZE               8}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define configCHECK\_FOR\_STACK\_OVERFLOW          0}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define configUSE\_RECURSIVE\_MUTEXES             1}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define configUSE\_MALLOC\_FAILED\_HOOK            0}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define configUSE\_APPLICATION\_TASK\_TAG          0}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define configUSE\_COUNTING\_SEMAPHORES           1}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define configUSE\_DAEMON\_TASK\_STARTUP\_HOOK      1}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{/* The full demo always has tasks to run so the tick will never be turned off.}}
+\DoxyCodeLine{77 \textcolor{comment}{The blinky demo will use the default tickless idle implementation to turn the}}
+\DoxyCodeLine{78 \textcolor{comment}{tick off. */}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define configUSE\_TICKLESS\_IDLE                 0}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{/* Run time stats gathering definitions. */}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define configGENERATE\_RUN\_TIME\_STATS   0}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{/* This demo makes use of one or more example stats formatting functions.  These}}
+\DoxyCodeLine{85 \textcolor{comment}{format the raw data provided by the uxTaskGetSystemState() function in to human}}
+\DoxyCodeLine{86 \textcolor{comment}{readable ASCII form.  See the notes in the implementation of vTaskList() within}}
+\DoxyCodeLine{87 \textcolor{comment}{FreeRTOS/Source/tasks.c for limitations. */}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define configUSE\_STATS\_FORMATTING\_FUNCTIONS    1}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{/* Co-\/routine definitions. */}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define configUSE\_CO\_ROUTINES           0}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define configMAX\_CO\_ROUTINE\_PRIORITIES ( 2 )}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{comment}{/* Software timer definitions. */}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define configUSE\_TIMERS                1}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define configTIMER\_TASK\_PRIORITY       ( configMAX\_PRIORITIES -\/ 1 )}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define configTIMER\_QUEUE\_LENGTH        5}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define configTIMER\_TASK\_STACK\_DEPTH    ( configMINIMAL\_STACK\_SIZE * 2 )}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{/* Set the following definitions to 1 to include the API function, or zero}}
+\DoxyCodeLine{101 \textcolor{comment}{to exclude the API function. */}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define INCLUDE\_vTaskPrioritySet        1}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define INCLUDE\_uxTaskPriorityGet       1}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define INCLUDE\_vTaskDelete             1}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define INCLUDE\_vTaskCleanUpResources   1}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define INCLUDE\_vTaskSuspend            1}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define INCLUDE\_vTaskDelayUntil         1}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define INCLUDE\_vTaskDelay              1}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define INCLUDE\_eTaskGetState           1}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define INCLUDE\_xTimerPendFunctionCall  1}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{comment}{/* Cortex-\/M specific definitions. */}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#ifdef \_\_NVIC\_PRIO\_BITS}}
+\DoxyCodeLine{114     \textcolor{comment}{/* \_\_BVIC\_PRIO\_BITS will be specified when CMSIS is being used. */}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{    \#define configPRIO\_BITS             \_\_NVIC\_PRIO\_BITS}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{    \#define configPRIO\_BITS             3        }\textcolor{comment}{/* 7 priority levels */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{comment}{/* The lowest interrupt priority that can be used in a call to a "{}set priority"{}}}
+\DoxyCodeLine{121 \textcolor{comment}{function. */}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define configLIBRARY\_LOWEST\_INTERRUPT\_PRIORITY         0x07}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{comment}{/* The highest interrupt priority that can be used by any interrupt service}}
+\DoxyCodeLine{125 \textcolor{comment}{routine that makes calls to interrupt safe FreeRTOS API functions.  DO NOT CALL}}
+\DoxyCodeLine{126 \textcolor{comment}{INTERRUPT SAFE FREERTOS API FUNCTIONS FROM ANY INTERRUPT THAT HAS A HIGHER}}
+\DoxyCodeLine{127 \textcolor{comment}{PRIORITY THAN THIS! (higher priorities are lower numeric values. */}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define configLIBRARY\_MAX\_SYSCALL\_INTERRUPT\_PRIORITY    4}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{comment}{/* Interrupt priorities used by the kernel port layer itself.  These are generic}}
+\DoxyCodeLine{131 \textcolor{comment}{to all Cortex-\/M ports, and do not rely on any particular library functions. */}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define configKERNEL\_INTERRUPT\_PRIORITY         ( configLIBRARY\_LOWEST\_INTERRUPT\_PRIORITY << (8 -\/ configPRIO\_BITS) )}}
+\DoxyCodeLine{133 \textcolor{comment}{/* !!!! configMAX\_SYSCALL\_INTERRUPT\_PRIORITY must not be set to zero !!!!}}
+\DoxyCodeLine{134 \textcolor{comment}{See http://www.FreeRTOS.org/RTOS-\/Cortex-\/M3-\/M4.html. */}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define configMAX\_SYSCALL\_INTERRUPT\_PRIORITY    ( configLIBRARY\_MAX\_SYSCALL\_INTERRUPT\_PRIORITY << (8 -\/ configPRIO\_BITS) )}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{comment}{/* Normal assert() semantics without relying on the provision of an assert.h}}
+\DoxyCodeLine{138 \textcolor{comment}{header file. */}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define configASSERT( x ) if( ( x ) == 0 ) \{ taskDISABLE\_INTERRUPTS(); for( ;; ); \}}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{comment}{/* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS}}
+\DoxyCodeLine{142 \textcolor{comment}{standard names.Based on the architecture  chosen, the below definitions may be needed*/}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define xPortPendSVHandler PendSV\_Handler}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define vPortSVCHandler SVC\_Handler}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define xPortSysTickHandler SysTick\_Handler }}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* FREERTOS\_CONFIG\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{149 }
+
+\end{DoxyCode}

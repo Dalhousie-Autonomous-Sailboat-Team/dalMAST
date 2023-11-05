@@ -1,0 +1,92 @@
+\hypertarget{io_8h_source}{}\doxysection{io.\+h}
+\label{io_8h_source}\index{src/ASF/sam0/utils/header\_files/io.h@{src/ASF/sam0/utils/header\_files/io.h}}
+\mbox{\hyperlink{io_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{35 \textcolor{comment}{/*}}
+\DoxyCodeLine{36 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{37 \textcolor{comment}{ */}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifndef \_SAM\_IO\_}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define \_SAM\_IO\_}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <stddef.h>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{/* SAM D20 family */}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#if (SAMD20)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#  include "{}\mbox{\hyperlink{samd20_8h}{samd20.h}}"{}}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#if (SAMD21)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#  include "{}samd21.h"{}}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#if (SAMR21)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#  include "{}samr21.h"{}}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#if (SAMD09)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#  include "{}samd09.h"{}}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#if (SAMD10)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#  include "{}samd10.h"{}}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#if (SAMD11)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#  include "{}samd11.h"{}}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#if (SAML21)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#  include "{}saml21.h"{}}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#if (SAMR30)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#  include "{}samr30.h"{}}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#if (SAMR34)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#  include "{}samr34.h"{}}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#if (WLR089)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#  include "{}wlr089.h"{}}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#if (SAMR35)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#  include "{}samr35.h"{}}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#if (SAML22)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#  include "{}saml22.h"{}}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#if (SAMDA1)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#  include "{}samda1.h"{}}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#if (SAMC20)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#  include "{}samc20.h"{}}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#if (SAMC21)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#  include "{}samc21.h"{}}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#if (SAMHA1)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#  include "{}samha1.h"{}}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#if (SAMHA0)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#  include "{}samha0.h"{}}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#if (SAMB11)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#  include "{}samb11.h"{}}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAM\_IO\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

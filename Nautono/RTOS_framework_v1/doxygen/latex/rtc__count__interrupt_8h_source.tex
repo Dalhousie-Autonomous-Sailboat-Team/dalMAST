@@ -1,0 +1,42 @@
+\hypertarget{rtc__count__interrupt_8h_source}{}\doxysection{rtc\+\_\+count\+\_\+interrupt.\+h}
+\label{rtc__count__interrupt_8h_source}\index{src/ASF/sam0/drivers/rtc/rtc\_count\_interrupt.h@{src/ASF/sam0/drivers/rtc/rtc\_count\_interrupt.h}}
+\mbox{\hyperlink{rtc__count__interrupt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef RTC\_COUNT\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define RTC\_COUNT\_INTERRUPT\_H\_INCLUDED}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{rtc__count_8h}{rtc\_count.h}}"{}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{43 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{55 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga3679d842a95a0086fa5cbccf74aad7ee}{rtc\_count\_register\_callback}}(}
+\DoxyCodeLine{56         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{57         rtc\_count\_callback\_t callback,}
+\DoxyCodeLine{58         \textcolor{keyword}{enum} rtc\_count\_callback callback\_type);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gac5a8ffb958261a9b9a955c0f8fb942ea}{rtc\_count\_unregister\_callback}}(}
+\DoxyCodeLine{61         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{62         \textcolor{keyword}{enum} rtc\_count\_callback callback\_type);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gaf7636683b59afd3c0d07b1191a5aff86}{rtc\_count\_enable\_callback}}(}
+\DoxyCodeLine{65         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{66         \textcolor{keyword}{enum} rtc\_count\_callback callback\_type);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga9bee70da6626ecddb461498be2c6a1b5}{rtc\_count\_disable\_callback}}(}
+\DoxyCodeLine{69         \textcolor{keyword}{struct} \mbox{\hyperlink{structrtc__module}{rtc\_module}} *\textcolor{keyword}{const} module,}
+\DoxyCodeLine{70         \textcolor{keyword}{enum} rtc\_count\_callback callback\_type);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{77 \}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* RTC\_COUNT\_INTERRUPT\_H\_INCLUDED */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

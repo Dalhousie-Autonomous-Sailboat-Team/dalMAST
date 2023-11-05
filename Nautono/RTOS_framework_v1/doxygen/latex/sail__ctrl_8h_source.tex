@@ -1,0 +1,133 @@
+\hypertarget{sail__ctrl_8h_source}{}\doxysection{sail\+\_\+ctrl.\+h}
+\label{sail__ctrl_8h_source}\index{src/sail\_ctrl.h@{src/sail\_ctrl.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef SAIL\_CTRL\_H\_}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define SAIL\_CTRL\_H\_}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{delay_8h}{delay.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}FreeRTOS.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}FreeRTOSConfig.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}task.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{asf_8h}{asf.h}}>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}sail\_radio.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define LOG\_DATA\_SLEEP\_PERIOD\_MS 5000}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define UPDATECOURSE\_ON\_TIME\_SEC 2}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define UPDATECOURSE\_LOOP\_LIM  UPDATECOURSE\_ON\_TIME\_SEC * configTICK\_RATE\_HZ}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define UPDATE\_COURSE\_SLEEP\_PERIOD\_MS 60000}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define CONTROLRUDDER\_ON\_TIME\_SEC 2}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define CONTROLRUDDER\_LOOP\_LIM CONTROLRUDDER\_ON\_TIME\_SEC * configTICK\_RATE\_HZ}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define CONTROL\_RUDDER\_SLEEP\_PERIOD\_MS 1000}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define READ\_COMPASS\_SLEEP\_PERIOD\_MS 500}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} Sensor\_Types \{}
+\DoxyCodeLine{29     SENSOR\_GPS,}
+\DoxyCodeLine{30     SENSOR\_WIND,}
+\DoxyCodeLine{31     SENSOR\_COMP,}
+\DoxyCodeLine{32     SENSOR\_COUNT}
+\DoxyCodeLine{33 \} Sensor\_Type;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/* CTRL\_InitSystem}}
+\DoxyCodeLine{37 \textcolor{comment}{ * Initialize the sail boat controller.}}
+\DoxyCodeLine{38 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{39 \textcolor{comment}{ *      STATUS\_OK -\/ sail boat controller initialization was successful  }}
+\DoxyCodeLine{40 \textcolor{comment}{ * Will generate process information in DEBUG mode}}
+\DoxyCodeLine{41 \textcolor{comment}{ */}}
+\DoxyCodeLine{42 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} CTRL\_InitSystem(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{/* CTRL\_InitSensors}}
+\DoxyCodeLine{46 \textcolor{comment}{ * Initialize each sensor}}
+\DoxyCodeLine{47 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{48 \textcolor{comment}{ *      STATUS\_OK -\/ Sensors initialization was successful}}
+\DoxyCodeLine{49 \textcolor{comment}{ * Will generate process information in DEBUG mode}}
+\DoxyCodeLine{50 \textcolor{comment}{ */}}
+\DoxyCodeLine{51 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} CTRL\_InitSensors(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{comment}{/* startup}}
+\DoxyCodeLine{55 \textcolor{comment}{ * Initialize WeatherStation}}
+\DoxyCodeLine{56 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{57 \textcolor{comment}{ *      STATUS\_OK -\/ WeatherStation initialization was successful}}
+\DoxyCodeLine{58 \textcolor{comment}{ * Will generate process information in DEBUG mode}}
+\DoxyCodeLine{59 \textcolor{comment}{ */} }
+\DoxyCodeLine{60 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} startup(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{/* init\_tasks}}
+\DoxyCodeLine{64 \textcolor{comment}{ * Initialize all tasks}}
+\DoxyCodeLine{65 \textcolor{comment}{ * Status:}}
+\DoxyCodeLine{66 \textcolor{comment}{ *      STATUS\_ERR\_INSUFFICIENT\_RTOS\_HEAP -\/ Contains error when system create task}}
+\DoxyCodeLine{67 \textcolor{comment}{ */} }
+\DoxyCodeLine{68 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} init\_tasks();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{extern} CTRL\_Mode mode;}
+\DoxyCodeLine{71 \textcolor{keyword}{extern} CTRL\_State state;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{/* UpdateCourse}}
+\DoxyCodeLine{75 \textcolor{comment}{ * Update Navigation Parameters}}
+\DoxyCodeLine{76 \textcolor{comment}{ */} }
+\DoxyCodeLine{77 \textcolor{keywordtype}{void} UpdateCourse(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{/* ControlRudder}}
+\DoxyCodeLine{81 \textcolor{comment}{ * Commented Function, set rubber degree}}
+\DoxyCodeLine{82 \textcolor{comment}{ */} }
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} ControlRudder(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{comment}{/* LogData}}
+\DoxyCodeLine{87 \textcolor{comment}{ * Record all sensors data}}
+\DoxyCodeLine{88 \textcolor{comment}{ */} }
+\DoxyCodeLine{89 \textcolor{keywordtype}{void} LogData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{/* ReadCompass}}
+\DoxyCodeLine{93 \textcolor{comment}{ * Get reading from compass}}
+\DoxyCodeLine{94 \textcolor{comment}{ */} }
+\DoxyCodeLine{95 \textcolor{keywordtype}{void} ReadCompass(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{comment}{/* check\_waypoint\_state}}
+\DoxyCodeLine{99 \textcolor{comment}{ * Check the difference between the location of the ship and the scheduled route}}
+\DoxyCodeLine{100 \textcolor{comment}{ */} }
+\DoxyCodeLine{101 \textcolor{keywordtype}{void} check\_waypoint\_state(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{/* assign\_gps\_readings}}
+\DoxyCodeLine{104 \textcolor{comment}{ * Assign GPS reading}}
+\DoxyCodeLine{105 \textcolor{comment}{ */} }
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} assign\_gps\_readings(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{comment}{/* process\_wind\_readings}}
+\DoxyCodeLine{109 \textcolor{comment}{ * Wind unit convert}}
+\DoxyCodeLine{110 \textcolor{comment}{ */} }
+\DoxyCodeLine{111 \textcolor{keywordtype}{void} process\_wind\_readings(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{comment}{/* process\_heading\_readings}}
+\DoxyCodeLine{115 \textcolor{comment}{ * Heading unit convert}}
+\DoxyCodeLine{116 \textcolor{comment}{ */} }
+\DoxyCodeLine{117 \textcolor{keywordtype}{void} process\_heading\_readings(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{comment}{/* CTRL\_Sleep}}
+\DoxyCodeLine{121 \textcolor{comment}{ * Set the sleep time of the control unit}}
+\DoxyCodeLine{122 \textcolor{comment}{ * Input:}}
+\DoxyCodeLine{123 \textcolor{comment}{ *   time\_sec -\/ sleep time length}}
+\DoxyCodeLine{124 \textcolor{comment}{ */} }
+\DoxyCodeLine{125 \textcolor{keyword}{static} \textcolor{keywordtype}{void} CTRL\_Sleep(\textcolor{keywordtype}{unsigned} time\_sec);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_CTRL\_H\_ */}\textcolor{preprocessor}{ }}
+
+\end{DoxyCode}

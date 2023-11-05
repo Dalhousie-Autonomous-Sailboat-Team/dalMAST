@@ -1,0 +1,52 @@
+\hypertarget{usart__interrupt_8h}{}\doxysection{src/\+ASF/sam0/drivers/sercom/usart/usart\+\_\+interrupt.h File Reference}
+\label{usart__interrupt_8h}\index{src/ASF/sam0/drivers/sercom/usart/usart\_interrupt.h@{src/ASF/sam0/drivers/sercom/usart/usart\_interrupt.h}}
+
+
+SAM SERCOM USART Asynchronous Driver.  
+
+
+{\ttfamily \#include \char`\"{}usart.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{usart__interrupt_8h_a1710a614931128030234ba790b07964d}\label{usart__interrupt_8h_a1710a614931128030234ba790b07964d}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries \+\_\+usart\+\_\+write\+\_\+buffer} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$tx\+\_\+data, uint16\+\_\+t length)
+\item 
+\mbox{\Hypertarget{usart__interrupt_8h_a9c1de58aa6a0f148fa7cca17cb8bcf33}\label{usart__interrupt_8h_a9c1de58aa6a0f148fa7cca17cb8bcf33}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries \+\_\+usart\+\_\+read\+\_\+buffer} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$rx\+\_\+data, uint16\+\_\+t length)
+\item 
+\mbox{\Hypertarget{usart__interrupt_8h_a4eb163dfa9d46b996b28a47a2caf129e}\label{usart__interrupt_8h_a4eb163dfa9d46b996b28a47a2caf129e}} 
+void {\bfseries \+\_\+usart\+\_\+interrupt\+\_\+handler} (uint8\+\_\+t instance)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Callback Management}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga39e38593fb41abe34cec95d53c7b1e37}{usart\+\_\+register\+\_\+callback}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, usart\+\_\+callback\+\_\+t callback\+\_\+func, enum usart\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Registers a callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga5be8cd239bf4acd63e341be97a5cd602}{usart\+\_\+unregister\+\_\+callback}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$module, enum usart\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Unregisters a callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Writing and Reading}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga3e68847c609aa708be3e1f282f760e8d}{usart\+\_\+write\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, const uint16\+\_\+t $\ast$tx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Asynchronous write a single char. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga095085e94cc009c31243df62395896fd}{usart\+\_\+read\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint16\+\_\+t $\ast$const rx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Asynchronous read a single char. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga2811c1f5cd7fdcf653eac02812f2265c}{usart\+\_\+write\+\_\+buffer\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$tx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Asynchronous buffer write. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga95b1e55af02e69454ecff04c3d712527}{usart\+\_\+read\+\_\+buffer\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$rx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Asynchronous buffer read. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga08e77aeb7ff01d060c5c936a63581a99}{usart\+\_\+abort\+\_\+job}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\+\_\+transceiver\+\_\+type}} transceiver\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Cancels ongoing read/write operation. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga80364bc53d6d6405a2a7f3b1aa507503}{usart\+\_\+get\+\_\+job\+\_\+status}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, enum \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaab1b986bc581f76e99eec14ac37efe05}{usart\+\_\+transceiver\+\_\+type}} transceiver\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Get status from the ongoing or last asynchronous transfer operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM SERCOM USART Asynchronous Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

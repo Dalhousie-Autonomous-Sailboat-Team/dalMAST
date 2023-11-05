@@ -1,0 +1,171 @@
+\hypertarget{sail__radio_8h_source}{}\doxysection{sail\+\_\+radio.\+h}
+\label{sail__radio_8h_source}\index{src/sail\_radio.h@{src/sail\_radio.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_radio.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Header file for the radio module for the autonomous sailboat.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * The messages follow the format below. }}
+\DoxyCodeLine{4 \textcolor{comment}{ * The first field is common to all messages. }}
+\DoxyCodeLine{5 \textcolor{comment}{ * The second field is a three-\/digit number denoting the message type.}}
+\DoxyCodeLine{6 \textcolor{comment}{ * The following optional fields provide message specific data}}
+\DoxyCodeLine{7 \textcolor{comment}{ * DALSAIL,[message type],[arg 0],[arg 1],[arg 2],[arg 3],[arg 4],[arg 5],[arg 6],[arg 7]}}
+\DoxyCodeLine{8 \textcolor{comment}{ * }}
+\DoxyCodeLine{9 \textcolor{comment}{ * Created on July 19, 2016.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Created by Thomas Gwynne-\/Timothy.}}
+\DoxyCodeLine{11 \textcolor{comment}{ */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef SAIL\_RADIO\_H\_}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define SAIL\_RADIO\_H\_}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}sail\_eeprom.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}sail\_wind.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}sail\_types.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{status__codes_8h}{status\_codes.h}}>}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define RADIO\_MSG\_MAX\_ARGS  8 }}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define RADIO\_SLEEP\_PERIOD\_MS 3000}}
+\DoxyCodeLine{25 \textcolor{comment}{//\#define RADIO\_LOOP\_LIM 100000}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/* RADIO\_MsgType}}
+\DoxyCodeLine{28 \textcolor{comment}{ * List of various DALSAIL message types.}}
+\DoxyCodeLine{29 \textcolor{comment}{ */}}
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} RADIO\_MsgTypes \{}
+\DoxyCodeLine{31     RADIO\_ACK,}
+\DoxyCodeLine{32     RADIO\_MODE,}
+\DoxyCodeLine{33     RADIO\_STATE,}
+\DoxyCodeLine{34     RADIO\_REMOTE,}
+\DoxyCodeLine{35     RADIO\_WAY\_POINT,}
+\DoxyCodeLine{36     RADIO\_CONFIG,}
+\DoxyCodeLine{37     RADIO\_GPS,}
+\DoxyCodeLine{38     RADIO\_WIND,}
+\DoxyCodeLine{39     RADIO\_COMP,}
+\DoxyCodeLine{40     RADIO\_NAV,}
+\DoxyCodeLine{41     RADIO\_RESET,}
+\DoxyCodeLine{42     RADIO\_NUM\_MSG\_TYPES}
+\DoxyCodeLine{43 \} RADIO\_MsgType;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{/* RADIO\_Status}}
+\DoxyCodeLine{46 \textcolor{comment}{ * List of various acknowledgment statuses.}}
+\DoxyCodeLine{47 \textcolor{comment}{ */}}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} RADIO\_Statuses \{}
+\DoxyCodeLine{49     RADIO\_STATUS\_SUCCESS,}
+\DoxyCodeLine{50     RADIO\_STATUS\_FAILURE,}
+\DoxyCodeLine{51     RADIO\_STATUS\_ERROR,}
+\DoxyCodeLine{52     RADIO\_STATUS\_UNCHANGED,}
+\DoxyCodeLine{53     RADIO\_NUM\_STATUSES}
+\DoxyCodeLine{54 \} RADIO\_Status;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___ack_data}{RADIO\_AckData}} \{}
+\DoxyCodeLine{57     RADIO\_Status        status;}
+\DoxyCodeLine{58 \} \mbox{\hyperlink{struct_r_a_d_i_o___ack_data}{RADIO\_AckData}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___mode_data}{RADIO\_ModeData}} \{}
+\DoxyCodeLine{61     CTRL\_Mode           mode;}
+\DoxyCodeLine{62 \} \mbox{\hyperlink{struct_r_a_d_i_o___mode_data}{RADIO\_ModeData}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___state_data}{RADIO\_StateData}} \{}
+\DoxyCodeLine{65     CTRL\_State          state;}
+\DoxyCodeLine{66 \} \mbox{\hyperlink{struct_r_a_d_i_o___state_data}{RADIO\_StateData}};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___remote_data}{RADIO\_RemoteData}} \{}
+\DoxyCodeLine{69     int8\_t              rudder\_angle;}
+\DoxyCodeLine{70     int8\_t              sail\_angle;}
+\DoxyCodeLine{71 \} \mbox{\hyperlink{struct_r_a_d_i_o___remote_data}{RADIO\_RemoteData}};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___way_point_data}{RADIO\_WayPointData}} \{}
+\DoxyCodeLine{74     uint16\_t            idx;}
+\DoxyCodeLine{75     \mbox{\hyperlink{struct_e_e_p_r_o_m___way_point}{EEPROM\_WayPoint}}      data;}
+\DoxyCodeLine{76     uint16\_t            next\_idx;}
+\DoxyCodeLine{77 \} \mbox{\hyperlink{struct_r_a_d_i_o___way_point_data}{RADIO\_WayPointData}};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___config_data}{RADIO\_ConfigData}} \{}
+\DoxyCodeLine{80     uint8\_t             period;}
+\DoxyCodeLine{81 \} \mbox{\hyperlink{struct_r_a_d_i_o___config_data}{RADIO\_ConfigData}};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___g_p_s_data}{RADIO\_GPSData}} \{}
+\DoxyCodeLine{84     \mbox{\hyperlink{struct_g_p_s___reading}{GPS\_Reading}}          data;}
+\DoxyCodeLine{85 \} \mbox{\hyperlink{struct_r_a_d_i_o___g_p_s_data}{RADIO\_GPSData}};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___wind_data}{RADIO\_WindData}} \{}
+\DoxyCodeLine{88     \mbox{\hyperlink{struct_w_i_n_d___reading}{WIND\_Reading}}        data;}
+\DoxyCodeLine{89 \} \mbox{\hyperlink{struct_r_a_d_i_o___wind_data}{RADIO\_WindData}};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___comp_data}{RADIO\_CompData}} \{}
+\DoxyCodeLine{92     \mbox{\hyperlink{struct_c_o_m_p___reading}{COMP\_Reading}}        data;}
+\DoxyCodeLine{93 \} \mbox{\hyperlink{struct_r_a_d_i_o___comp_data}{RADIO\_CompData}};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___nav_data}{RADIO\_NavData}} \{}
+\DoxyCodeLine{96     \mbox{\hyperlink{struct_e_e_p_r_o_m___way_point}{EEPROM\_WayPoint}}      wp;}
+\DoxyCodeLine{97     \textcolor{keywordtype}{double}              distance;}
+\DoxyCodeLine{98     \textcolor{keywordtype}{double}              bearing;}
+\DoxyCodeLine{99     \textcolor{keywordtype}{double}              course;}
+\DoxyCodeLine{100     int8\_t              rudder\_angle;}
+\DoxyCodeLine{101     int8\_t              sail\_angle;}
+\DoxyCodeLine{102 \} \mbox{\hyperlink{struct_r_a_d_i_o___nav_data}{RADIO\_NavData}};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___reset_data}{RADIO\_ResetData}} \{}
+\DoxyCodeLine{105     CTRL\_ResetCause     cause;}
+\DoxyCodeLine{106 \} \mbox{\hyperlink{struct_r_a_d_i_o___reset_data}{RADIO\_ResetData}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_r_a_d_i_o___generic_msg}{RADIO\_GenericMsg}} \{}
+\DoxyCodeLine{109     RADIO\_MsgType           type;}
+\DoxyCodeLine{110     \textcolor{keyword}{union }\mbox{\hyperlink{union_r_a_d_i_o___generic_msg_1_1_r_a_d_i_o___generic_data_union}{RADIO\_GenericDataUnion}} \{}
+\DoxyCodeLine{111         \mbox{\hyperlink{struct_r_a_d_i_o___ack_data}{RADIO\_AckData}}      ack;}
+\DoxyCodeLine{112         \mbox{\hyperlink{struct_r_a_d_i_o___mode_data}{RADIO\_ModeData}}        mode;}
+\DoxyCodeLine{113         \mbox{\hyperlink{struct_r_a_d_i_o___state_data}{RADIO\_StateData}}      state;}
+\DoxyCodeLine{114         \mbox{\hyperlink{struct_r_a_d_i_o___remote_data}{RADIO\_RemoteData}}    remote;}
+\DoxyCodeLine{115         \mbox{\hyperlink{struct_r_a_d_i_o___way_point_data}{RADIO\_WayPointData}}    wp;}
+\DoxyCodeLine{116         \mbox{\hyperlink{struct_r_a_d_i_o___config_data}{RADIO\_ConfigData}}    config;}
+\DoxyCodeLine{117         \mbox{\hyperlink{struct_r_a_d_i_o___g_p_s_data}{RADIO\_GPSData}}      gps;}
+\DoxyCodeLine{118         \mbox{\hyperlink{struct_r_a_d_i_o___wind_data}{RADIO\_WindData}}        wind;}
+\DoxyCodeLine{119         \mbox{\hyperlink{struct_r_a_d_i_o___comp_data}{RADIO\_CompData}}        comp;}
+\DoxyCodeLine{120         \mbox{\hyperlink{struct_r_a_d_i_o___nav_data}{RADIO\_NavData}}      nav;}
+\DoxyCodeLine{121         \mbox{\hyperlink{struct_r_a_d_i_o___reset_data}{RADIO\_ResetData}}      reset;}
+\DoxyCodeLine{122     \} fields;}
+\DoxyCodeLine{123 \} \mbox{\hyperlink{struct_r_a_d_i_o___generic_msg}{RADIO\_GenericMsg}};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} RADIO\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{126 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} RADIO\_Enable(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{127 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} RADIO\_Disable(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{128 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} RADIO\_RxMsg(\mbox{\hyperlink{struct_r_a_d_i_o___generic_msg}{RADIO\_GenericMsg}} *msg);}
+\DoxyCodeLine{129 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} RADIO\_TxMsg(\mbox{\hyperlink{struct_r_a_d_i_o___generic_msg}{RADIO\_GenericMsg}} *msg);}
+\DoxyCodeLine{130 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} RADIO\_TxMsg\_Unprotected(\mbox{\hyperlink{struct_r_a_d_i_o___generic_msg}{RADIO\_GenericMsg}} *msg);}
+\DoxyCodeLine{131 \textcolor{keyword}{enum} \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\_code}} RADIO\_Ack(RADIO\_Status status);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{static} RADIO\_Status ChangeMode(CTRL\_Mode new\_mode);}
+\DoxyCodeLine{134 \textcolor{keyword}{static} RADIO\_Status ChangeState(CTRL\_State new\_state);}
+\DoxyCodeLine{135 \textcolor{keyword}{static} RADIO\_Status ChangeLogPeriod(uint8\_t new\_period);}
+\DoxyCodeLine{136 \textcolor{keyword}{static} RADIO\_Status AddWayPoint(\mbox{\hyperlink{struct_r_a_d_i_o___way_point_data}{RADIO\_WayPointData}} *wp\_data);}
+\DoxyCodeLine{137 \textcolor{keyword}{static} RADIO\_Status AdjustMotors(int8\_t sail\_angle, int8\_t rudder\_angle);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{keywordtype}{void} Radio\_On(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{140 \textcolor{keywordtype}{void} RadioHandler(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{comment}{//extern RADIO\_GenericMsg tx\_msg, rx\_msg;}}
+\DoxyCodeLine{144 \textcolor{keyword}{extern} \mbox{\hyperlink{struct_r_a_d_i_o___generic_msg}{RADIO\_GenericMsg}} tx\_msg;}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{comment}{// EEPROM data}}
+\DoxyCodeLine{147 \textcolor{keyword}{extern} \mbox{\hyperlink{union_e_e_p_r_o_m___entry}{EEPROM\_Entry}} wp\_entry;}
+\DoxyCodeLine{148 \textcolor{keyword}{extern} uint16\_t wp\_count;}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{comment}{// Current way point}}
+\DoxyCodeLine{151 \textcolor{keyword}{extern} \mbox{\hyperlink{struct_e_e_p_r_o_m___way_point}{EEPROM\_WayPoint}} wp;}
+\DoxyCodeLine{152 \textcolor{comment}{// Counter to track \# of times distance < radius}}
+\DoxyCodeLine{153 \textcolor{keyword}{extern} uint16\_t wp\_complete\_count;}
+\DoxyCodeLine{154 \textcolor{comment}{// Distance between boat and way point}}
+\DoxyCodeLine{155 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} wp\_distance;}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} course, bearing, sail\_deg, rudder\_deg;}
+\DoxyCodeLine{158 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} avg\_heading\_deg;}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{keywordtype}{void} Radio\_Sleep\_Sec(\textcolor{keywordtype}{unsigned} time\_sec);}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_RADIO\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

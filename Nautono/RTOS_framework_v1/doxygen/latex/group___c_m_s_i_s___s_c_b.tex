@@ -1,0 +1,428 @@
+\hypertarget{group___c_m_s_i_s___s_c_b}{}\doxysection{System Control Block (SCB)}
+\label{group___c_m_s_i_s___s_c_b}\index{System Control Block (SCB)@{System Control Block (SCB)}}
+
+
+Type definitions for the System Control Block Registers.  
+
+
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___c_m_s_i_s___sys_tick}{System Tick Timer (\+Sys\+Tick)}}
+\begin{DoxyCompactList}\small\item\em Type definitions for the System Timer Registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_c_b___type}{SCB\+\_\+\+Type}}
+\begin{DoxyCompactList}\small\item\em Structure type to access the System Control Block (SCB). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga58686b88f94f789d4e6f429fe1ff58cf}{SCB\+\_\+\+CPUID\+\_\+\+IMPLEMENTER\+\_\+\+Pos}}~24U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga0932b31faafd47656a03ced75a31d99b}{SCB\+\_\+\+CPUID\+\_\+\+IMPLEMENTER\+\_\+\+Msk}}~(0x\+FFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga58686b88f94f789d4e6f429fe1ff58cf}{SCB\+\_\+\+CPUID\+\_\+\+IMPLEMENTER\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga104462bd0815391b4044a70bd15d3a71}{SCB\+\_\+\+CPUID\+\_\+\+VARIANT\+\_\+\+Pos}}~20U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gad358dfbd04300afc1824329d128b99e8}{SCB\+\_\+\+CPUID\+\_\+\+VARIANT\+\_\+\+Msk}}~(0x\+FUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga104462bd0815391b4044a70bd15d3a71}{SCB\+\_\+\+CPUID\+\_\+\+VARIANT\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaf8b3236b08fb8e840efb682645fb0e98}{SCB\+\_\+\+CPUID\+\_\+\+ARCHITECTURE\+\_\+\+Pos}}~16U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gafae4a1f27a927338ae9dc51a0e146213}{SCB\+\_\+\+CPUID\+\_\+\+ARCHITECTURE\+\_\+\+Msk}}~(0x\+FUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaf8b3236b08fb8e840efb682645fb0e98}{SCB\+\_\+\+CPUID\+\_\+\+ARCHITECTURE\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga705f68eaa9afb042ca2407dc4e4629ac}{SCB\+\_\+\+CPUID\+\_\+\+PARTNO\+\_\+\+Pos}}~4U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga98e581423ca016680c238c469aba546d}{SCB\+\_\+\+CPUID\+\_\+\+PARTNO\+\_\+\+Msk}}~(0x\+FFFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga705f68eaa9afb042ca2407dc4e4629ac}{SCB\+\_\+\+CPUID\+\_\+\+PARTNO\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3c3d9071e574de11fb27ba57034838b1}{SCB\+\_\+\+CPUID\+\_\+\+REVISION\+\_\+\+Pos}}~0U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga2ec0448b6483f77e7f5d08b4b81d85df}{SCB\+\_\+\+CPUID\+\_\+\+REVISION\+\_\+\+Msk}}~(0x\+FUL /$\ast$$<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3c3d9071e574de11fb27ba57034838b1}{SCB\+\_\+\+CPUID\+\_\+\+REVISION\+\_\+\+Pos}}$\ast$/)
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga750d4b52624a46d71356db4ea769573b}{SCB\+\_\+\+ICSR\+\_\+\+NMIPENDSET\+\_\+\+Pos}}~31U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga340e3f79e9c3607dee9f2c048b6b22e8}{SCB\+\_\+\+ICSR\+\_\+\+NMIPENDSET\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga750d4b52624a46d71356db4ea769573b}{SCB\+\_\+\+ICSR\+\_\+\+NMIPENDSET\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gab5ded23d2ab1d5ff7cc7ce746205e9fe}{SCB\+\_\+\+ICSR\+\_\+\+PENDSVSET\+\_\+\+Pos}}~28U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga1e40d93efb402763c8c00ddcc56724ff}{SCB\+\_\+\+ICSR\+\_\+\+PENDSVSET\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gab5ded23d2ab1d5ff7cc7ce746205e9fe}{SCB\+\_\+\+ICSR\+\_\+\+PENDSVSET\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gae218d9022288f89faf57187c4d542ecd}{SCB\+\_\+\+ICSR\+\_\+\+PENDSVCLR\+\_\+\+Pos}}~27U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga4a901ace381d3c1c74ac82b22fae2e1e}{SCB\+\_\+\+ICSR\+\_\+\+PENDSVCLR\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gae218d9022288f89faf57187c4d542ecd}{SCB\+\_\+\+ICSR\+\_\+\+PENDSVCLR\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga9dbb3358c6167c9c3f85661b90fb2794}{SCB\+\_\+\+ICSR\+\_\+\+PENDSTSET\+\_\+\+Pos}}~26U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga7325b61ea0ec323ef2d5c893b112e546}{SCB\+\_\+\+ICSR\+\_\+\+PENDSTSET\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga9dbb3358c6167c9c3f85661b90fb2794}{SCB\+\_\+\+ICSR\+\_\+\+PENDSTSET\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gadbe25e4b333ece1341beb1a740168fdc}{SCB\+\_\+\+ICSR\+\_\+\+PENDSTCLR\+\_\+\+Pos}}~25U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gab241827d2a793269d8cd99b9b28c2157}{SCB\+\_\+\+ICSR\+\_\+\+PENDSTCLR\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gadbe25e4b333ece1341beb1a740168fdc}{SCB\+\_\+\+ICSR\+\_\+\+PENDSTCLR\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga11cb5b1f9ce167b81f31787a77e575df}{SCB\+\_\+\+ICSR\+\_\+\+ISRPREEMPT\+\_\+\+Pos}}~23U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaa966600396290808d596fe96e92ca2b5}{SCB\+\_\+\+ICSR\+\_\+\+ISRPREEMPT\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga11cb5b1f9ce167b81f31787a77e575df}{SCB\+\_\+\+ICSR\+\_\+\+ISRPREEMPT\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga10749d92b9b744094b845c2eb46d4319}{SCB\+\_\+\+ICSR\+\_\+\+ISRPENDING\+\_\+\+Pos}}~22U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga056d74fd538e5d36d3be1f28d399c877}{SCB\+\_\+\+ICSR\+\_\+\+ISRPENDING\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga10749d92b9b744094b845c2eb46d4319}{SCB\+\_\+\+ICSR\+\_\+\+ISRPENDING\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gada60c92bf88d6fd21a8f49efa4a127b8}{SCB\+\_\+\+ICSR\+\_\+\+VECTPENDING\+\_\+\+Pos}}~12U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gacb6992e7c7ddc27a370f62878a21ef72}{SCB\+\_\+\+ICSR\+\_\+\+VECTPENDING\+\_\+\+Msk}}~(0x1\+FFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gada60c92bf88d6fd21a8f49efa4a127b8}{SCB\+\_\+\+ICSR\+\_\+\+VECTPENDING\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gae4f602c7c5c895d5fb687b71b0979fc3}{SCB\+\_\+\+ICSR\+\_\+\+VECTACTIVE\+\_\+\+Pos}}~0U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga5533791a4ecf1b9301c883047b3e8396}{SCB\+\_\+\+ICSR\+\_\+\+VECTACTIVE\+\_\+\+Msk}}~(0x1\+FFUL /$\ast$$<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gae4f602c7c5c895d5fb687b71b0979fc3}{SCB\+\_\+\+ICSR\+\_\+\+VECTACTIVE\+\_\+\+Pos}}$\ast$/)
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaa27c0ba600bf82c3da08c748845b640}{SCB\+\_\+\+AIRCR\+\_\+\+VECTKEY\+\_\+\+Pos}}~16U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga90c7cf0c490e7ae55f9503a7fda1dd22}{SCB\+\_\+\+AIRCR\+\_\+\+VECTKEY\+\_\+\+Msk}}~(0x\+FFFFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaa27c0ba600bf82c3da08c748845b640}{SCB\+\_\+\+AIRCR\+\_\+\+VECTKEY\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaec404750ff5ca07f499a3c06b62051ef}{SCB\+\_\+\+AIRCR\+\_\+\+VECTKEYSTAT\+\_\+\+Pos}}~16U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabacedaefeefc73d666bbe59ece904493}{SCB\+\_\+\+AIRCR\+\_\+\+VECTKEYSTAT\+\_\+\+Msk}}~(0x\+FFFFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaec404750ff5ca07f499a3c06b62051ef}{SCB\+\_\+\+AIRCR\+\_\+\+VECTKEYSTAT\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gad31dec98fbc0d33ace63cb1f1a927923}{SCB\+\_\+\+AIRCR\+\_\+\+ENDIANESS\+\_\+\+Pos}}~15U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga2f571f93d3d4a6eac9a3040756d3d951}{SCB\+\_\+\+AIRCR\+\_\+\+ENDIANESS\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gad31dec98fbc0d33ace63cb1f1a927923}{SCB\+\_\+\+AIRCR\+\_\+\+ENDIANESS\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaffb2737eca1eac0fc1c282a76a40953c}{SCB\+\_\+\+AIRCR\+\_\+\+SYSRESETREQ\+\_\+\+Pos}}~2U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaae1181119559a5bd36e62afa373fa720}{SCB\+\_\+\+AIRCR\+\_\+\+SYSRESETREQ\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaffb2737eca1eac0fc1c282a76a40953c}{SCB\+\_\+\+AIRCR\+\_\+\+SYSRESETREQ\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaa30a12e892bb696e61626d71359a9029}{SCB\+\_\+\+AIRCR\+\_\+\+VECTCLRACTIVE\+\_\+\+Pos}}~1U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga212c5ab1c1c82c807d30d2307aa8d218}{SCB\+\_\+\+AIRCR\+\_\+\+VECTCLRACTIVE\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaa30a12e892bb696e61626d71359a9029}{SCB\+\_\+\+AIRCR\+\_\+\+VECTCLRACTIVE\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3bddcec40aeaf3d3a998446100fa0e44}{SCB\+\_\+\+SCR\+\_\+\+SEVONPEND\+\_\+\+Pos}}~4U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gafb98656644a14342e467505f69a997c9}{SCB\+\_\+\+SCR\+\_\+\+SEVONPEND\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3bddcec40aeaf3d3a998446100fa0e44}{SCB\+\_\+\+SCR\+\_\+\+SEVONPEND\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gab304f6258ec03bd9a6e7a360515c3cfe}{SCB\+\_\+\+SCR\+\_\+\+SLEEPDEEP\+\_\+\+Pos}}~2U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga77c06a69c63f4b3f6ec1032e911e18e7}{SCB\+\_\+\+SCR\+\_\+\+SLEEPDEEP\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gab304f6258ec03bd9a6e7a360515c3cfe}{SCB\+\_\+\+SCR\+\_\+\+SLEEPDEEP\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3680a15114d7fdc1e25043b881308fe9}{SCB\+\_\+\+SCR\+\_\+\+SLEEPONEXIT\+\_\+\+Pos}}~1U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga50a243e317b9a70781b02758d45b05ee}{SCB\+\_\+\+SCR\+\_\+\+SLEEPONEXIT\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3680a15114d7fdc1e25043b881308fe9}{SCB\+\_\+\+SCR\+\_\+\+SLEEPONEXIT\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac2d20a250960a432cc74da59d20e2f86}{SCB\+\_\+\+CCR\+\_\+\+STKALIGN\+\_\+\+Pos}}~9U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga33cf22d3d46af158a03aad25ddea1bcb}{SCB\+\_\+\+CCR\+\_\+\+STKALIGN\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac2d20a250960a432cc74da59d20e2f86}{SCB\+\_\+\+CCR\+\_\+\+STKALIGN\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac4e4928b864ea10fc24dbbc57d976229}{SCB\+\_\+\+CCR\+\_\+\+UNALIGN\+\_\+\+TRP\+\_\+\+Pos}}~3U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga68c96ad594af70c007923979085c99e0}{SCB\+\_\+\+CCR\+\_\+\+UNALIGN\+\_\+\+TRP\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac4e4928b864ea10fc24dbbc57d976229}{SCB\+\_\+\+CCR\+\_\+\+UNALIGN\+\_\+\+TRP\+\_\+\+Pos}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga2f93ec9b243f94cdd3e94b8f0bf43641}{SCB\+\_\+\+SHCSR\+\_\+\+SVCALLPENDED\+\_\+\+Pos}}~15U
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga6095a7acfbad66f52822b1392be88652}{SCB\+\_\+\+SHCSR\+\_\+\+SVCALLPENDED\+\_\+\+Msk}}~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga2f93ec9b243f94cdd3e94b8f0bf43641}{SCB\+\_\+\+SHCSR\+\_\+\+SVCALLPENDED\+\_\+\+Pos}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Type definitions for the System Control Block Registers. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga2f571f93d3d4a6eac9a3040756d3d951}\label{group___c_m_s_i_s___s_c_b_ga2f571f93d3d4a6eac9a3040756d3d951}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_ENDIANESS\_Msk@{SCB\_AIRCR\_ENDIANESS\_Msk}}
+\index{SCB\_AIRCR\_ENDIANESS\_Msk@{SCB\_AIRCR\_ENDIANESS\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_ENDIANESS\_Msk}{SCB\_AIRCR\_ENDIANESS\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+ENDIANESS\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gad31dec98fbc0d33ace63cb1f1a927923}{SCB\+\_\+\+AIRCR\+\_\+\+ENDIANESS\+\_\+\+Pos}})}
+
+SCB AIRCR\+: ENDIANESS Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gad31dec98fbc0d33ace63cb1f1a927923}\label{group___c_m_s_i_s___s_c_b_gad31dec98fbc0d33ace63cb1f1a927923}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_ENDIANESS\_Pos@{SCB\_AIRCR\_ENDIANESS\_Pos}}
+\index{SCB\_AIRCR\_ENDIANESS\_Pos@{SCB\_AIRCR\_ENDIANESS\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_ENDIANESS\_Pos}{SCB\_AIRCR\_ENDIANESS\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+ENDIANESS\+\_\+\+Pos~15U}
+
+SCB AIRCR\+: ENDIANESS Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gaae1181119559a5bd36e62afa373fa720}\label{group___c_m_s_i_s___s_c_b_gaae1181119559a5bd36e62afa373fa720}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_SYSRESETREQ\_Msk@{SCB\_AIRCR\_SYSRESETREQ\_Msk}}
+\index{SCB\_AIRCR\_SYSRESETREQ\_Msk@{SCB\_AIRCR\_SYSRESETREQ\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_SYSRESETREQ\_Msk}{SCB\_AIRCR\_SYSRESETREQ\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+SYSRESETREQ\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaffb2737eca1eac0fc1c282a76a40953c}{SCB\+\_\+\+AIRCR\+\_\+\+SYSRESETREQ\+\_\+\+Pos}})}
+
+SCB AIRCR\+: SYSRESETREQ Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gaffb2737eca1eac0fc1c282a76a40953c}\label{group___c_m_s_i_s___s_c_b_gaffb2737eca1eac0fc1c282a76a40953c}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_SYSRESETREQ\_Pos@{SCB\_AIRCR\_SYSRESETREQ\_Pos}}
+\index{SCB\_AIRCR\_SYSRESETREQ\_Pos@{SCB\_AIRCR\_SYSRESETREQ\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_SYSRESETREQ\_Pos}{SCB\_AIRCR\_SYSRESETREQ\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+SYSRESETREQ\+\_\+\+Pos~2U}
+
+SCB AIRCR\+: SYSRESETREQ Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga212c5ab1c1c82c807d30d2307aa8d218}\label{group___c_m_s_i_s___s_c_b_ga212c5ab1c1c82c807d30d2307aa8d218}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_VECTCLRACTIVE\_Msk@{SCB\_AIRCR\_VECTCLRACTIVE\_Msk}}
+\index{SCB\_AIRCR\_VECTCLRACTIVE\_Msk@{SCB\_AIRCR\_VECTCLRACTIVE\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_VECTCLRACTIVE\_Msk}{SCB\_AIRCR\_VECTCLRACTIVE\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+VECTCLRACTIVE\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaa30a12e892bb696e61626d71359a9029}{SCB\+\_\+\+AIRCR\+\_\+\+VECTCLRACTIVE\+\_\+\+Pos}})}
+
+SCB AIRCR\+: VECTCLRACTIVE Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gaa30a12e892bb696e61626d71359a9029}\label{group___c_m_s_i_s___s_c_b_gaa30a12e892bb696e61626d71359a9029}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_VECTCLRACTIVE\_Pos@{SCB\_AIRCR\_VECTCLRACTIVE\_Pos}}
+\index{SCB\_AIRCR\_VECTCLRACTIVE\_Pos@{SCB\_AIRCR\_VECTCLRACTIVE\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_VECTCLRACTIVE\_Pos}{SCB\_AIRCR\_VECTCLRACTIVE\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+VECTCLRACTIVE\+\_\+\+Pos~1U}
+
+SCB AIRCR\+: VECTCLRACTIVE Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga90c7cf0c490e7ae55f9503a7fda1dd22}\label{group___c_m_s_i_s___s_c_b_ga90c7cf0c490e7ae55f9503a7fda1dd22}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_VECTKEY\_Msk@{SCB\_AIRCR\_VECTKEY\_Msk}}
+\index{SCB\_AIRCR\_VECTKEY\_Msk@{SCB\_AIRCR\_VECTKEY\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_VECTKEY\_Msk}{SCB\_AIRCR\_VECTKEY\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+VECTKEY\+\_\+\+Msk~(0x\+FFFFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaa27c0ba600bf82c3da08c748845b640}{SCB\+\_\+\+AIRCR\+\_\+\+VECTKEY\+\_\+\+Pos}})}
+
+SCB AIRCR\+: VECTKEY Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gaaa27c0ba600bf82c3da08c748845b640}\label{group___c_m_s_i_s___s_c_b_gaaa27c0ba600bf82c3da08c748845b640}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_VECTKEY\_Pos@{SCB\_AIRCR\_VECTKEY\_Pos}}
+\index{SCB\_AIRCR\_VECTKEY\_Pos@{SCB\_AIRCR\_VECTKEY\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_VECTKEY\_Pos}{SCB\_AIRCR\_VECTKEY\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+VECTKEY\+\_\+\+Pos~16U}
+
+SCB AIRCR\+: VECTKEY Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gabacedaefeefc73d666bbe59ece904493}\label{group___c_m_s_i_s___s_c_b_gabacedaefeefc73d666bbe59ece904493}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_VECTKEYSTAT\_Msk@{SCB\_AIRCR\_VECTKEYSTAT\_Msk}}
+\index{SCB\_AIRCR\_VECTKEYSTAT\_Msk@{SCB\_AIRCR\_VECTKEYSTAT\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_VECTKEYSTAT\_Msk}{SCB\_AIRCR\_VECTKEYSTAT\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+VECTKEYSTAT\+\_\+\+Msk~(0x\+FFFFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaec404750ff5ca07f499a3c06b62051ef}{SCB\+\_\+\+AIRCR\+\_\+\+VECTKEYSTAT\+\_\+\+Pos}})}
+
+SCB AIRCR\+: VECTKEYSTAT Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gaec404750ff5ca07f499a3c06b62051ef}\label{group___c_m_s_i_s___s_c_b_gaec404750ff5ca07f499a3c06b62051ef}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_AIRCR\_VECTKEYSTAT\_Pos@{SCB\_AIRCR\_VECTKEYSTAT\_Pos}}
+\index{SCB\_AIRCR\_VECTKEYSTAT\_Pos@{SCB\_AIRCR\_VECTKEYSTAT\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_AIRCR\_VECTKEYSTAT\_Pos}{SCB\_AIRCR\_VECTKEYSTAT\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+AIRCR\+\_\+\+VECTKEYSTAT\+\_\+\+Pos~16U}
+
+SCB AIRCR\+: VECTKEYSTAT Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga33cf22d3d46af158a03aad25ddea1bcb}\label{group___c_m_s_i_s___s_c_b_ga33cf22d3d46af158a03aad25ddea1bcb}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CCR\_STKALIGN\_Msk@{SCB\_CCR\_STKALIGN\_Msk}}
+\index{SCB\_CCR\_STKALIGN\_Msk@{SCB\_CCR\_STKALIGN\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CCR\_STKALIGN\_Msk}{SCB\_CCR\_STKALIGN\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CCR\+\_\+\+STKALIGN\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac2d20a250960a432cc74da59d20e2f86}{SCB\+\_\+\+CCR\+\_\+\+STKALIGN\+\_\+\+Pos}})}
+
+SCB CCR\+: STKALIGN Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gac2d20a250960a432cc74da59d20e2f86}\label{group___c_m_s_i_s___s_c_b_gac2d20a250960a432cc74da59d20e2f86}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CCR\_STKALIGN\_Pos@{SCB\_CCR\_STKALIGN\_Pos}}
+\index{SCB\_CCR\_STKALIGN\_Pos@{SCB\_CCR\_STKALIGN\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CCR\_STKALIGN\_Pos}{SCB\_CCR\_STKALIGN\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CCR\+\_\+\+STKALIGN\+\_\+\+Pos~9U}
+
+SCB CCR\+: STKALIGN Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga68c96ad594af70c007923979085c99e0}\label{group___c_m_s_i_s___s_c_b_ga68c96ad594af70c007923979085c99e0}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CCR\_UNALIGN\_TRP\_Msk@{SCB\_CCR\_UNALIGN\_TRP\_Msk}}
+\index{SCB\_CCR\_UNALIGN\_TRP\_Msk@{SCB\_CCR\_UNALIGN\_TRP\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CCR\_UNALIGN\_TRP\_Msk}{SCB\_CCR\_UNALIGN\_TRP\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CCR\+\_\+\+UNALIGN\+\_\+\+TRP\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac4e4928b864ea10fc24dbbc57d976229}{SCB\+\_\+\+CCR\+\_\+\+UNALIGN\+\_\+\+TRP\+\_\+\+Pos}})}
+
+SCB CCR\+: UNALIGN\+\_\+\+TRP Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gac4e4928b864ea10fc24dbbc57d976229}\label{group___c_m_s_i_s___s_c_b_gac4e4928b864ea10fc24dbbc57d976229}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CCR\_UNALIGN\_TRP\_Pos@{SCB\_CCR\_UNALIGN\_TRP\_Pos}}
+\index{SCB\_CCR\_UNALIGN\_TRP\_Pos@{SCB\_CCR\_UNALIGN\_TRP\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CCR\_UNALIGN\_TRP\_Pos}{SCB\_CCR\_UNALIGN\_TRP\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CCR\+\_\+\+UNALIGN\+\_\+\+TRP\+\_\+\+Pos~3U}
+
+SCB CCR\+: UNALIGN\+\_\+\+TRP Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gafae4a1f27a927338ae9dc51a0e146213}\label{group___c_m_s_i_s___s_c_b_gafae4a1f27a927338ae9dc51a0e146213}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_ARCHITECTURE\_Msk@{SCB\_CPUID\_ARCHITECTURE\_Msk}}
+\index{SCB\_CPUID\_ARCHITECTURE\_Msk@{SCB\_CPUID\_ARCHITECTURE\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_ARCHITECTURE\_Msk}{SCB\_CPUID\_ARCHITECTURE\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+ARCHITECTURE\+\_\+\+Msk~(0x\+FUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaf8b3236b08fb8e840efb682645fb0e98}{SCB\+\_\+\+CPUID\+\_\+\+ARCHITECTURE\+\_\+\+Pos}})}
+
+SCB CPUID\+: ARCHITECTURE Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gaf8b3236b08fb8e840efb682645fb0e98}\label{group___c_m_s_i_s___s_c_b_gaf8b3236b08fb8e840efb682645fb0e98}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_ARCHITECTURE\_Pos@{SCB\_CPUID\_ARCHITECTURE\_Pos}}
+\index{SCB\_CPUID\_ARCHITECTURE\_Pos@{SCB\_CPUID\_ARCHITECTURE\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_ARCHITECTURE\_Pos}{SCB\_CPUID\_ARCHITECTURE\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+ARCHITECTURE\+\_\+\+Pos~16U}
+
+SCB CPUID\+: ARCHITECTURE Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga0932b31faafd47656a03ced75a31d99b}\label{group___c_m_s_i_s___s_c_b_ga0932b31faafd47656a03ced75a31d99b}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_IMPLEMENTER\_Msk@{SCB\_CPUID\_IMPLEMENTER\_Msk}}
+\index{SCB\_CPUID\_IMPLEMENTER\_Msk@{SCB\_CPUID\_IMPLEMENTER\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_IMPLEMENTER\_Msk}{SCB\_CPUID\_IMPLEMENTER\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+IMPLEMENTER\+\_\+\+Msk~(0x\+FFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga58686b88f94f789d4e6f429fe1ff58cf}{SCB\+\_\+\+CPUID\+\_\+\+IMPLEMENTER\+\_\+\+Pos}})}
+
+SCB CPUID\+: IMPLEMENTER Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga58686b88f94f789d4e6f429fe1ff58cf}\label{group___c_m_s_i_s___s_c_b_ga58686b88f94f789d4e6f429fe1ff58cf}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_IMPLEMENTER\_Pos@{SCB\_CPUID\_IMPLEMENTER\_Pos}}
+\index{SCB\_CPUID\_IMPLEMENTER\_Pos@{SCB\_CPUID\_IMPLEMENTER\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_IMPLEMENTER\_Pos}{SCB\_CPUID\_IMPLEMENTER\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+IMPLEMENTER\+\_\+\+Pos~24U}
+
+SCB CPUID\+: IMPLEMENTER Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga98e581423ca016680c238c469aba546d}\label{group___c_m_s_i_s___s_c_b_ga98e581423ca016680c238c469aba546d}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_PARTNO\_Msk@{SCB\_CPUID\_PARTNO\_Msk}}
+\index{SCB\_CPUID\_PARTNO\_Msk@{SCB\_CPUID\_PARTNO\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_PARTNO\_Msk}{SCB\_CPUID\_PARTNO\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+PARTNO\+\_\+\+Msk~(0x\+FFFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga705f68eaa9afb042ca2407dc4e4629ac}{SCB\+\_\+\+CPUID\+\_\+\+PARTNO\+\_\+\+Pos}})}
+
+SCB CPUID\+: PARTNO Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga705f68eaa9afb042ca2407dc4e4629ac}\label{group___c_m_s_i_s___s_c_b_ga705f68eaa9afb042ca2407dc4e4629ac}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_PARTNO\_Pos@{SCB\_CPUID\_PARTNO\_Pos}}
+\index{SCB\_CPUID\_PARTNO\_Pos@{SCB\_CPUID\_PARTNO\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_PARTNO\_Pos}{SCB\_CPUID\_PARTNO\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+PARTNO\+\_\+\+Pos~4U}
+
+SCB CPUID\+: PARTNO Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga2ec0448b6483f77e7f5d08b4b81d85df}\label{group___c_m_s_i_s___s_c_b_ga2ec0448b6483f77e7f5d08b4b81d85df}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_REVISION\_Msk@{SCB\_CPUID\_REVISION\_Msk}}
+\index{SCB\_CPUID\_REVISION\_Msk@{SCB\_CPUID\_REVISION\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_REVISION\_Msk}{SCB\_CPUID\_REVISION\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+REVISION\+\_\+\+Msk~(0x\+FUL /$\ast$$<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3c3d9071e574de11fb27ba57034838b1}{SCB\+\_\+\+CPUID\+\_\+\+REVISION\+\_\+\+Pos}}$\ast$/)}
+
+SCB CPUID\+: REVISION Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga3c3d9071e574de11fb27ba57034838b1}\label{group___c_m_s_i_s___s_c_b_ga3c3d9071e574de11fb27ba57034838b1}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_REVISION\_Pos@{SCB\_CPUID\_REVISION\_Pos}}
+\index{SCB\_CPUID\_REVISION\_Pos@{SCB\_CPUID\_REVISION\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_REVISION\_Pos}{SCB\_CPUID\_REVISION\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+REVISION\+\_\+\+Pos~0U}
+
+SCB CPUID\+: REVISION Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gad358dfbd04300afc1824329d128b99e8}\label{group___c_m_s_i_s___s_c_b_gad358dfbd04300afc1824329d128b99e8}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_VARIANT\_Msk@{SCB\_CPUID\_VARIANT\_Msk}}
+\index{SCB\_CPUID\_VARIANT\_Msk@{SCB\_CPUID\_VARIANT\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_VARIANT\_Msk}{SCB\_CPUID\_VARIANT\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+VARIANT\+\_\+\+Msk~(0x\+FUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga104462bd0815391b4044a70bd15d3a71}{SCB\+\_\+\+CPUID\+\_\+\+VARIANT\+\_\+\+Pos}})}
+
+SCB CPUID\+: VARIANT Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga104462bd0815391b4044a70bd15d3a71}\label{group___c_m_s_i_s___s_c_b_ga104462bd0815391b4044a70bd15d3a71}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_CPUID\_VARIANT\_Pos@{SCB\_CPUID\_VARIANT\_Pos}}
+\index{SCB\_CPUID\_VARIANT\_Pos@{SCB\_CPUID\_VARIANT\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_CPUID\_VARIANT\_Pos}{SCB\_CPUID\_VARIANT\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+CPUID\+\_\+\+VARIANT\+\_\+\+Pos~20U}
+
+SCB CPUID\+: VARIANT Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga056d74fd538e5d36d3be1f28d399c877}\label{group___c_m_s_i_s___s_c_b_ga056d74fd538e5d36d3be1f28d399c877}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_ISRPENDING\_Msk@{SCB\_ICSR\_ISRPENDING\_Msk}}
+\index{SCB\_ICSR\_ISRPENDING\_Msk@{SCB\_ICSR\_ISRPENDING\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_ISRPENDING\_Msk}{SCB\_ICSR\_ISRPENDING\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+ISRPENDING\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga10749d92b9b744094b845c2eb46d4319}{SCB\+\_\+\+ICSR\+\_\+\+ISRPENDING\+\_\+\+Pos}})}
+
+SCB ICSR\+: ISRPENDING Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga10749d92b9b744094b845c2eb46d4319}\label{group___c_m_s_i_s___s_c_b_ga10749d92b9b744094b845c2eb46d4319}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_ISRPENDING\_Pos@{SCB\_ICSR\_ISRPENDING\_Pos}}
+\index{SCB\_ICSR\_ISRPENDING\_Pos@{SCB\_ICSR\_ISRPENDING\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_ISRPENDING\_Pos}{SCB\_ICSR\_ISRPENDING\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+ISRPENDING\+\_\+\+Pos~22U}
+
+SCB ICSR\+: ISRPENDING Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gaa966600396290808d596fe96e92ca2b5}\label{group___c_m_s_i_s___s_c_b_gaa966600396290808d596fe96e92ca2b5}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_ISRPREEMPT\_Msk@{SCB\_ICSR\_ISRPREEMPT\_Msk}}
+\index{SCB\_ICSR\_ISRPREEMPT\_Msk@{SCB\_ICSR\_ISRPREEMPT\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_ISRPREEMPT\_Msk}{SCB\_ICSR\_ISRPREEMPT\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+ISRPREEMPT\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga11cb5b1f9ce167b81f31787a77e575df}{SCB\+\_\+\+ICSR\+\_\+\+ISRPREEMPT\+\_\+\+Pos}})}
+
+SCB ICSR\+: ISRPREEMPT Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga11cb5b1f9ce167b81f31787a77e575df}\label{group___c_m_s_i_s___s_c_b_ga11cb5b1f9ce167b81f31787a77e575df}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_ISRPREEMPT\_Pos@{SCB\_ICSR\_ISRPREEMPT\_Pos}}
+\index{SCB\_ICSR\_ISRPREEMPT\_Pos@{SCB\_ICSR\_ISRPREEMPT\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_ISRPREEMPT\_Pos}{SCB\_ICSR\_ISRPREEMPT\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+ISRPREEMPT\+\_\+\+Pos~23U}
+
+SCB ICSR\+: ISRPREEMPT Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga340e3f79e9c3607dee9f2c048b6b22e8}\label{group___c_m_s_i_s___s_c_b_ga340e3f79e9c3607dee9f2c048b6b22e8}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_NMIPENDSET\_Msk@{SCB\_ICSR\_NMIPENDSET\_Msk}}
+\index{SCB\_ICSR\_NMIPENDSET\_Msk@{SCB\_ICSR\_NMIPENDSET\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_NMIPENDSET\_Msk}{SCB\_ICSR\_NMIPENDSET\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+NMIPENDSET\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga750d4b52624a46d71356db4ea769573b}{SCB\+\_\+\+ICSR\+\_\+\+NMIPENDSET\+\_\+\+Pos}})}
+
+SCB ICSR\+: NMIPENDSET Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga750d4b52624a46d71356db4ea769573b}\label{group___c_m_s_i_s___s_c_b_ga750d4b52624a46d71356db4ea769573b}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_NMIPENDSET\_Pos@{SCB\_ICSR\_NMIPENDSET\_Pos}}
+\index{SCB\_ICSR\_NMIPENDSET\_Pos@{SCB\_ICSR\_NMIPENDSET\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_NMIPENDSET\_Pos}{SCB\_ICSR\_NMIPENDSET\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+NMIPENDSET\+\_\+\+Pos~31U}
+
+SCB ICSR\+: NMIPENDSET Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gab241827d2a793269d8cd99b9b28c2157}\label{group___c_m_s_i_s___s_c_b_gab241827d2a793269d8cd99b9b28c2157}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_PENDSTCLR\_Msk@{SCB\_ICSR\_PENDSTCLR\_Msk}}
+\index{SCB\_ICSR\_PENDSTCLR\_Msk@{SCB\_ICSR\_PENDSTCLR\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_PENDSTCLR\_Msk}{SCB\_ICSR\_PENDSTCLR\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+PENDSTCLR\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gadbe25e4b333ece1341beb1a740168fdc}{SCB\+\_\+\+ICSR\+\_\+\+PENDSTCLR\+\_\+\+Pos}})}
+
+SCB ICSR\+: PENDSTCLR Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gadbe25e4b333ece1341beb1a740168fdc}\label{group___c_m_s_i_s___s_c_b_gadbe25e4b333ece1341beb1a740168fdc}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_PENDSTCLR\_Pos@{SCB\_ICSR\_PENDSTCLR\_Pos}}
+\index{SCB\_ICSR\_PENDSTCLR\_Pos@{SCB\_ICSR\_PENDSTCLR\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_PENDSTCLR\_Pos}{SCB\_ICSR\_PENDSTCLR\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+PENDSTCLR\+\_\+\+Pos~25U}
+
+SCB ICSR\+: PENDSTCLR Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga7325b61ea0ec323ef2d5c893b112e546}\label{group___c_m_s_i_s___s_c_b_ga7325b61ea0ec323ef2d5c893b112e546}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_PENDSTSET\_Msk@{SCB\_ICSR\_PENDSTSET\_Msk}}
+\index{SCB\_ICSR\_PENDSTSET\_Msk@{SCB\_ICSR\_PENDSTSET\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_PENDSTSET\_Msk}{SCB\_ICSR\_PENDSTSET\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+PENDSTSET\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga9dbb3358c6167c9c3f85661b90fb2794}{SCB\+\_\+\+ICSR\+\_\+\+PENDSTSET\+\_\+\+Pos}})}
+
+SCB ICSR\+: PENDSTSET Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga9dbb3358c6167c9c3f85661b90fb2794}\label{group___c_m_s_i_s___s_c_b_ga9dbb3358c6167c9c3f85661b90fb2794}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_PENDSTSET\_Pos@{SCB\_ICSR\_PENDSTSET\_Pos}}
+\index{SCB\_ICSR\_PENDSTSET\_Pos@{SCB\_ICSR\_PENDSTSET\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_PENDSTSET\_Pos}{SCB\_ICSR\_PENDSTSET\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+PENDSTSET\+\_\+\+Pos~26U}
+
+SCB ICSR\+: PENDSTSET Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga4a901ace381d3c1c74ac82b22fae2e1e}\label{group___c_m_s_i_s___s_c_b_ga4a901ace381d3c1c74ac82b22fae2e1e}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_PENDSVCLR\_Msk@{SCB\_ICSR\_PENDSVCLR\_Msk}}
+\index{SCB\_ICSR\_PENDSVCLR\_Msk@{SCB\_ICSR\_PENDSVCLR\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_PENDSVCLR\_Msk}{SCB\_ICSR\_PENDSVCLR\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+PENDSVCLR\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gae218d9022288f89faf57187c4d542ecd}{SCB\+\_\+\+ICSR\+\_\+\+PENDSVCLR\+\_\+\+Pos}})}
+
+SCB ICSR\+: PENDSVCLR Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gae218d9022288f89faf57187c4d542ecd}\label{group___c_m_s_i_s___s_c_b_gae218d9022288f89faf57187c4d542ecd}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_PENDSVCLR\_Pos@{SCB\_ICSR\_PENDSVCLR\_Pos}}
+\index{SCB\_ICSR\_PENDSVCLR\_Pos@{SCB\_ICSR\_PENDSVCLR\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_PENDSVCLR\_Pos}{SCB\_ICSR\_PENDSVCLR\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+PENDSVCLR\+\_\+\+Pos~27U}
+
+SCB ICSR\+: PENDSVCLR Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga1e40d93efb402763c8c00ddcc56724ff}\label{group___c_m_s_i_s___s_c_b_ga1e40d93efb402763c8c00ddcc56724ff}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_PENDSVSET\_Msk@{SCB\_ICSR\_PENDSVSET\_Msk}}
+\index{SCB\_ICSR\_PENDSVSET\_Msk@{SCB\_ICSR\_PENDSVSET\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_PENDSVSET\_Msk}{SCB\_ICSR\_PENDSVSET\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+PENDSVSET\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gab5ded23d2ab1d5ff7cc7ce746205e9fe}{SCB\+\_\+\+ICSR\+\_\+\+PENDSVSET\+\_\+\+Pos}})}
+
+SCB ICSR\+: PENDSVSET Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gab5ded23d2ab1d5ff7cc7ce746205e9fe}\label{group___c_m_s_i_s___s_c_b_gab5ded23d2ab1d5ff7cc7ce746205e9fe}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_PENDSVSET\_Pos@{SCB\_ICSR\_PENDSVSET\_Pos}}
+\index{SCB\_ICSR\_PENDSVSET\_Pos@{SCB\_ICSR\_PENDSVSET\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_PENDSVSET\_Pos}{SCB\_ICSR\_PENDSVSET\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+PENDSVSET\+\_\+\+Pos~28U}
+
+SCB ICSR\+: PENDSVSET Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga5533791a4ecf1b9301c883047b3e8396}\label{group___c_m_s_i_s___s_c_b_ga5533791a4ecf1b9301c883047b3e8396}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_VECTACTIVE\_Msk@{SCB\_ICSR\_VECTACTIVE\_Msk}}
+\index{SCB\_ICSR\_VECTACTIVE\_Msk@{SCB\_ICSR\_VECTACTIVE\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_VECTACTIVE\_Msk}{SCB\_ICSR\_VECTACTIVE\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+VECTACTIVE\+\_\+\+Msk~(0x1\+FFUL /$\ast$$<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gae4f602c7c5c895d5fb687b71b0979fc3}{SCB\+\_\+\+ICSR\+\_\+\+VECTACTIVE\+\_\+\+Pos}}$\ast$/)}
+
+SCB ICSR\+: VECTACTIVE Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gae4f602c7c5c895d5fb687b71b0979fc3}\label{group___c_m_s_i_s___s_c_b_gae4f602c7c5c895d5fb687b71b0979fc3}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_VECTACTIVE\_Pos@{SCB\_ICSR\_VECTACTIVE\_Pos}}
+\index{SCB\_ICSR\_VECTACTIVE\_Pos@{SCB\_ICSR\_VECTACTIVE\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_VECTACTIVE\_Pos}{SCB\_ICSR\_VECTACTIVE\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+VECTACTIVE\+\_\+\+Pos~0U}
+
+SCB ICSR\+: VECTACTIVE Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gacb6992e7c7ddc27a370f62878a21ef72}\label{group___c_m_s_i_s___s_c_b_gacb6992e7c7ddc27a370f62878a21ef72}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_VECTPENDING\_Msk@{SCB\_ICSR\_VECTPENDING\_Msk}}
+\index{SCB\_ICSR\_VECTPENDING\_Msk@{SCB\_ICSR\_VECTPENDING\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_VECTPENDING\_Msk}{SCB\_ICSR\_VECTPENDING\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+VECTPENDING\+\_\+\+Msk~(0x1\+FFUL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gada60c92bf88d6fd21a8f49efa4a127b8}{SCB\+\_\+\+ICSR\+\_\+\+VECTPENDING\+\_\+\+Pos}})}
+
+SCB ICSR\+: VECTPENDING Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gada60c92bf88d6fd21a8f49efa4a127b8}\label{group___c_m_s_i_s___s_c_b_gada60c92bf88d6fd21a8f49efa4a127b8}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_ICSR\_VECTPENDING\_Pos@{SCB\_ICSR\_VECTPENDING\_Pos}}
+\index{SCB\_ICSR\_VECTPENDING\_Pos@{SCB\_ICSR\_VECTPENDING\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_ICSR\_VECTPENDING\_Pos}{SCB\_ICSR\_VECTPENDING\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+ICSR\+\_\+\+VECTPENDING\+\_\+\+Pos~12U}
+
+SCB ICSR\+: VECTPENDING Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gafb98656644a14342e467505f69a997c9}\label{group___c_m_s_i_s___s_c_b_gafb98656644a14342e467505f69a997c9}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_SCR\_SEVONPEND\_Msk@{SCB\_SCR\_SEVONPEND\_Msk}}
+\index{SCB\_SCR\_SEVONPEND\_Msk@{SCB\_SCR\_SEVONPEND\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_SCR\_SEVONPEND\_Msk}{SCB\_SCR\_SEVONPEND\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+SCR\+\_\+\+SEVONPEND\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3bddcec40aeaf3d3a998446100fa0e44}{SCB\+\_\+\+SCR\+\_\+\+SEVONPEND\+\_\+\+Pos}})}
+
+SCB SCR\+: SEVONPEND Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga3bddcec40aeaf3d3a998446100fa0e44}\label{group___c_m_s_i_s___s_c_b_ga3bddcec40aeaf3d3a998446100fa0e44}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_SCR\_SEVONPEND\_Pos@{SCB\_SCR\_SEVONPEND\_Pos}}
+\index{SCB\_SCR\_SEVONPEND\_Pos@{SCB\_SCR\_SEVONPEND\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_SCR\_SEVONPEND\_Pos}{SCB\_SCR\_SEVONPEND\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+SCR\+\_\+\+SEVONPEND\+\_\+\+Pos~4U}
+
+SCB SCR\+: SEVONPEND Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga77c06a69c63f4b3f6ec1032e911e18e7}\label{group___c_m_s_i_s___s_c_b_ga77c06a69c63f4b3f6ec1032e911e18e7}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_SCR\_SLEEPDEEP\_Msk@{SCB\_SCR\_SLEEPDEEP\_Msk}}
+\index{SCB\_SCR\_SLEEPDEEP\_Msk@{SCB\_SCR\_SLEEPDEEP\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_SCR\_SLEEPDEEP\_Msk}{SCB\_SCR\_SLEEPDEEP\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+SCR\+\_\+\+SLEEPDEEP\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gab304f6258ec03bd9a6e7a360515c3cfe}{SCB\+\_\+\+SCR\+\_\+\+SLEEPDEEP\+\_\+\+Pos}})}
+
+SCB SCR\+: SLEEPDEEP Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_gab304f6258ec03bd9a6e7a360515c3cfe}\label{group___c_m_s_i_s___s_c_b_gab304f6258ec03bd9a6e7a360515c3cfe}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_SCR\_SLEEPDEEP\_Pos@{SCB\_SCR\_SLEEPDEEP\_Pos}}
+\index{SCB\_SCR\_SLEEPDEEP\_Pos@{SCB\_SCR\_SLEEPDEEP\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_SCR\_SLEEPDEEP\_Pos}{SCB\_SCR\_SLEEPDEEP\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+SCR\+\_\+\+SLEEPDEEP\+\_\+\+Pos~2U}
+
+SCB SCR\+: SLEEPDEEP Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga50a243e317b9a70781b02758d45b05ee}\label{group___c_m_s_i_s___s_c_b_ga50a243e317b9a70781b02758d45b05ee}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_SCR\_SLEEPONEXIT\_Msk@{SCB\_SCR\_SLEEPONEXIT\_Msk}}
+\index{SCB\_SCR\_SLEEPONEXIT\_Msk@{SCB\_SCR\_SLEEPONEXIT\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_SCR\_SLEEPONEXIT\_Msk}{SCB\_SCR\_SLEEPONEXIT\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+SCR\+\_\+\+SLEEPONEXIT\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga3680a15114d7fdc1e25043b881308fe9}{SCB\+\_\+\+SCR\+\_\+\+SLEEPONEXIT\+\_\+\+Pos}})}
+
+SCB SCR\+: SLEEPONEXIT Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga3680a15114d7fdc1e25043b881308fe9}\label{group___c_m_s_i_s___s_c_b_ga3680a15114d7fdc1e25043b881308fe9}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_SCR\_SLEEPONEXIT\_Pos@{SCB\_SCR\_SLEEPONEXIT\_Pos}}
+\index{SCB\_SCR\_SLEEPONEXIT\_Pos@{SCB\_SCR\_SLEEPONEXIT\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_SCR\_SLEEPONEXIT\_Pos}{SCB\_SCR\_SLEEPONEXIT\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+SCR\+\_\+\+SLEEPONEXIT\+\_\+\+Pos~1U}
+
+SCB SCR\+: SLEEPONEXIT Position \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga6095a7acfbad66f52822b1392be88652}\label{group___c_m_s_i_s___s_c_b_ga6095a7acfbad66f52822b1392be88652}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_SHCSR\_SVCALLPENDED\_Msk@{SCB\_SHCSR\_SVCALLPENDED\_Msk}}
+\index{SCB\_SHCSR\_SVCALLPENDED\_Msk@{SCB\_SHCSR\_SVCALLPENDED\_Msk}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_SHCSR\_SVCALLPENDED\_Msk}{SCB\_SHCSR\_SVCALLPENDED\_Msk}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+SHCSR\+\_\+\+SVCALLPENDED\+\_\+\+Msk~(1UL $<$$<$ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga2f93ec9b243f94cdd3e94b8f0bf43641}{SCB\+\_\+\+SHCSR\+\_\+\+SVCALLPENDED\+\_\+\+Pos}})}
+
+SCB SHCSR\+: SVCALLPENDED Mask \mbox{\Hypertarget{group___c_m_s_i_s___s_c_b_ga2f93ec9b243f94cdd3e94b8f0bf43641}\label{group___c_m_s_i_s___s_c_b_ga2f93ec9b243f94cdd3e94b8f0bf43641}} 
+\index{System Control Block (SCB)@{System Control Block (SCB)}!SCB\_SHCSR\_SVCALLPENDED\_Pos@{SCB\_SHCSR\_SVCALLPENDED\_Pos}}
+\index{SCB\_SHCSR\_SVCALLPENDED\_Pos@{SCB\_SHCSR\_SVCALLPENDED\_Pos}!System Control Block (SCB)@{System Control Block (SCB)}}
+\doxysubsubsection{\texorpdfstring{SCB\_SHCSR\_SVCALLPENDED\_Pos}{SCB\_SHCSR\_SVCALLPENDED\_Pos}}
+{\footnotesize\ttfamily \#define SCB\+\_\+\+SHCSR\+\_\+\+SVCALLPENDED\+\_\+\+Pos~15U}
+
+SCB SHCSR\+: SVCALLPENDED Position 

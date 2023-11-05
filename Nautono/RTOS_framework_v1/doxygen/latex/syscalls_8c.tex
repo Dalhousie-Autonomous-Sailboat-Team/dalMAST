@@ -1,0 +1,58 @@
+\hypertarget{syscalls_8c}{}\doxysection{src/\+ASF/sam0/utils/syscalls/gcc/syscalls.c File Reference}
+\label{syscalls_8c}\index{src/ASF/sam0/utils/syscalls/gcc/syscalls.c@{src/ASF/sam0/utils/syscalls/gcc/syscalls.c}}
+
+
+Syscalls for SAM0 (GCC).  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{syscalls_8c_aae54d7b9578ba1fc171ce6f30f4c68a3}\label{syscalls_8c_aae54d7b9578ba1fc171ce6f30f4c68a3}} 
+caddr\+\_\+t {\bfseries \+\_\+sbrk} (int incr)
+\item 
+\mbox{\Hypertarget{syscalls_8c_a75129c8c67d8a670f09a20e4de5465fb}\label{syscalls_8c_a75129c8c67d8a670f09a20e4de5465fb}} 
+int {\bfseries link} (char $\ast$old, char $\ast$new)
+\item 
+\mbox{\Hypertarget{syscalls_8c_a5aab5e2acfd600e3667dc915a2bbc7cb}\label{syscalls_8c_a5aab5e2acfd600e3667dc915a2bbc7cb}} 
+int {\bfseries \+\_\+close} (int file)
+\item 
+\mbox{\Hypertarget{syscalls_8c_a41eef54307912a82d20e71c3d47315aa}\label{syscalls_8c_a41eef54307912a82d20e71c3d47315aa}} 
+int {\bfseries \+\_\+fstat} (int file, struct stat $\ast$st)
+\item 
+\mbox{\Hypertarget{syscalls_8c_ad3134a3dc296622b8d1c5456e481505b}\label{syscalls_8c_ad3134a3dc296622b8d1c5456e481505b}} 
+int {\bfseries \+\_\+isatty} (int file)
+\item 
+\mbox{\Hypertarget{syscalls_8c_a7a61311bdf1cb025fc07dc2bdae22ce4}\label{syscalls_8c_a7a61311bdf1cb025fc07dc2bdae22ce4}} 
+int {\bfseries \+\_\+lseek} (int file, int ptr, int dir)
+\item 
+\mbox{\Hypertarget{syscalls_8c_abc96bd69b58b2deaddb484478d911c1b}\label{syscalls_8c_abc96bd69b58b2deaddb484478d911c1b}} 
+void {\bfseries \+\_\+exit} (int status)
+\item 
+\mbox{\Hypertarget{syscalls_8c_a3ada001944b574974184d2377be0bec3}\label{syscalls_8c_a3ada001944b574974184d2377be0bec3}} 
+void {\bfseries \+\_\+kill} (int pid, int sig)
+\item 
+\mbox{\Hypertarget{syscalls_8c_a945e539df8e0f66d3c73c533fe1968ee}\label{syscalls_8c_a945e539df8e0f66d3c73c533fe1968ee}} 
+int {\bfseries \+\_\+getpid} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{syscalls_8c_ad65a8842cc674e3ddf69355898c0ecbf}\label{syscalls_8c_ad65a8842cc674e3ddf69355898c0ecbf}} 
+int {\bfseries errno}
+\item 
+\mbox{\Hypertarget{syscalls_8c_abb406f6b7d63af84fda76dbcdbac66c5}\label{syscalls_8c_abb406f6b7d63af84fda76dbcdbac66c5}} 
+int {\bfseries \+\_\+end}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Syscalls for SAM0 (GCC). 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

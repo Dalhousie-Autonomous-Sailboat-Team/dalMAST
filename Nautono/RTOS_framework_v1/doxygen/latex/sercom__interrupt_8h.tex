@@ -1,0 +1,38 @@
+\hypertarget{sercom__interrupt_8h}{}\doxysection{src/\+ASF/sam0/drivers/sercom/sercom\+\_\+interrupt.h File Reference}
+\label{sercom__interrupt_8h}\index{src/ASF/sam0/drivers/sercom/sercom\_interrupt.h@{src/ASF/sam0/drivers/sercom/sercom\_interrupt.h}}
+
+
+SAM Serial Peripheral Interface Driver.  
+
+
+{\ttfamily \#include \char`\"{}sercom.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$system\+\_\+interrupt.\+h$>$}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sercom__interrupt_8h_a72daa529b515304ad6109add8109f9f2}\label{sercom__interrupt_8h_a72daa529b515304ad6109add8109f9f2}} 
+typedef void($\ast$ {\bfseries sercom\+\_\+handler\+\_\+t}) (uint8\+\_\+t instance)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sercom__interrupt_8h_a31969cd6c90114499ca6887b2a777e65}\label{sercom__interrupt_8h_a31969cd6c90114499ca6887b2a777e65}} 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__interrupt__group_ga43378e6222cc05290c1a0c6a9ba125cf}{system\+\_\+interrupt\+\_\+vector}} {\bfseries \+\_\+sercom\+\_\+get\+\_\+interrupt\+\_\+vector} (\mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const sercom\+\_\+instance)
+\item 
+\mbox{\Hypertarget{sercom__interrupt_8h_abcfb9d3b6db889472deccb21790eff22}\label{sercom__interrupt_8h_abcfb9d3b6db889472deccb21790eff22}} 
+void {\bfseries \+\_\+sercom\+\_\+set\+\_\+handler} (const uint8\+\_\+t instance, const sercom\+\_\+handler\+\_\+t interrupt\+\_\+handler)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sercom__interrupt_8h_a8c878f488f03160d9adfe10dea937e55}\label{sercom__interrupt_8h_a8c878f488f03160d9adfe10dea937e55}} 
+void $\ast$ {\bfseries \+\_\+sercom\+\_\+instances} \mbox{[}\mbox{\hyperlink{samd20e14_8h_a75f7d8cff25db3f1353efb6f7990fce5}{SERCOM\+\_\+\+INST\+\_\+\+NUM}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM Serial Peripheral Interface Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

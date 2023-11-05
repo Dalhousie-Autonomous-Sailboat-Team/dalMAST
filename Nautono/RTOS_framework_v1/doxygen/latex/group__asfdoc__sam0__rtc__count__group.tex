@@ -1,0 +1,840 @@
+\hypertarget{group__asfdoc__sam0__rtc__count__group}{}\doxysection{SAM RTC Count (RTC COUNT) Driver}
+\label{group__asfdoc__sam0__rtc__count__group}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrtc__count__events}{rtc\+\_\+count\+\_\+events}}
+\begin{DoxyCompactList}\small\item\em RTC Count event enable/disable structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}}
+\begin{DoxyCompactList}\small\item\em Device structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structrtc__count__config}{rtc\+\_\+count\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em RTC Count configuration structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Driver Feature Definition}
+Define port features set according to different device family. \begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga1c6c05a342b2711713cfac6fb3d6256c}{rtc\+\_\+count\+\_\+mode}} \{ \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gga1c6c05a342b2711713cfac6fb3d6256cac1469285bb822ce84f262cd4117e8edc}{RTC\+\_\+\+COUNT\+\_\+\+MODE\+\_\+16\+BIT}} = 0
+, \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gga1c6c05a342b2711713cfac6fb3d6256cad94f227d25afd2fa3c26ef9a5a33e4d8}{RTC\+\_\+\+COUNT\+\_\+\+MODE\+\_\+32\+BIT}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Available operation modes for the RTC. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}} \{ \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggadfcb8b12ca245948cbedc1ad81c3e589ac7340ee61643d3bdb0a7b4264335f080}{RTC\+\_\+\+COUNT\+\_\+\+COMPARE\+\_\+0}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Available compare channels. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gacce60ab36a74de9a173788f4aa896d15}{rtc\+\_\+count\+\_\+prescaler}} \{ \newline
+\mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15aa5a98b865348eb598140b2a4247916e9}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+1}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV1
+, \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a312d3c72451ac000e95d335183ad7ec3}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+2}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV2
+, \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac82d71266c2f83c3d51b51fedd1ae920}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+4}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV4
+, \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac0061a5a79673614095663596f9e79f4}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+8}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV8
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4e17e7e9d43d022235a7550dccffcddd}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+16}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV16
+, \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a3b83f1963700137784f61cd05ef49b7e}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+32}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV32
+, \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a8b59673e870fd1205aa08b667fcc58b6}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+64}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV64
+, \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a2d736f3fdd6be715588ee09d7a8d1deb}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+128}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV128
+, \newline
+\mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4d6f94d95f1e40f463a83148a57edcfa}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+256}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV256
+, \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ab58a33623afbb13b74dcbd7e50e7760b}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+512}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV512
+, \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a9766bc273a9d05a8345615c5707eb4a7}{RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+1024}} = RTC\+\_\+\+MODE0\+\_\+\+CTRL\+\_\+\+PRESCALER\+\_\+\+DIV1024
+ \}
+\begin{DoxyCompactList}\small\item\em RTC input clock prescaler settings. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga728e9addb0162893a3a2c9100ebd7920}{FEATURE\+\_\+\+RTC\+\_\+\+CONTINUOUSLY\+\_\+\+UPDATED}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Configuration and Initialization}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga161d6cf1f6f717e8c6c650dc587cdf7a}{rtc\+\_\+count\+\_\+reset}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Resets the RTC module. Resets the RTC to hardware defaults. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gad49e022ac982b14f592b4741fe076add}{rtc\+\_\+count\+\_\+enable}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Enables the RTC module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga40f97a58f45fe3fdeec606c155d4d8f3}{rtc\+\_\+count\+\_\+disable}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Disables the RTC module. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gaff43df79be7aeea0d559eafbe5fdbdc3}{rtc\+\_\+count\+\_\+init}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, \mbox{\hyperlink{union_rtc}{Rtc}} $\ast$const hw, const struct \mbox{\hyperlink{structrtc__count__config}{rtc\+\_\+count\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes the RTC module with given configurations. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadccb737db7dd01d7190a7f9e18b23a1b}{rtc\+\_\+count\+\_\+frequency\+\_\+correction}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const int8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Calibrate for too-\/slow or too-\/fast oscillator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Count and Compare Value Management}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga3770c2c6f82daca6ca28670cd87be46f}{rtc\+\_\+count\+\_\+set\+\_\+count}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const uint32\+\_\+t count\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the current count value to desired value. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga3ad10283f223feb3c958ccabe9d0662a}{rtc\+\_\+count\+\_\+get\+\_\+count}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module)
+\begin{DoxyCompactList}\small\item\em Get the current count value. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga56c76be0e0fdfb5b1f9a883f396756f4}{rtc\+\_\+count\+\_\+set\+\_\+compare}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const uint32\+\_\+t comp\+\_\+value, const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}} comp\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Set the compare value for the specified compare. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga40e535c1375a99492e114722af93b675}{rtc\+\_\+count\+\_\+get\+\_\+compare}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, uint32\+\_\+t $\ast$const comp\+\_\+value, const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}} comp\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Get the current compare value of specified compare. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gac0b0d3a10ee5368b5484f99e6b6fecb8}{rtc\+\_\+count\+\_\+set\+\_\+period}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, uint16\+\_\+t period\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the given value to the period. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga747385c5686f746a64f118705c22c894}{rtc\+\_\+count\+\_\+get\+\_\+period}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, uint16\+\_\+t $\ast$const period\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Retrieves the value of period. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Status Management}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga354d81abc8c33bc39a238418611b3239}{rtc\+\_\+count\+\_\+is\+\_\+compare\+\_\+match}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}} comp\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Check if RTC compare match has occurred. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga51cd67b23c2a4716d09b08bf2422a222}{rtc\+\_\+count\+\_\+clear\+\_\+compare\+\_\+match}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}} comp\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Clears RTC compare match flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Callbacks}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga3679d842a95a0086fa5cbccf74aad7ee}{rtc\+\_\+count\+\_\+register\+\_\+callback}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, rtc\+\_\+count\+\_\+callback\+\_\+t callback, enum rtc\+\_\+count\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Registers callback for the specified callback type. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gac5a8ffb958261a9b9a955c0f8fb942ea}{rtc\+\_\+count\+\_\+unregister\+\_\+callback}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, enum rtc\+\_\+count\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Unregisters callback for the specified callback type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gaf7636683b59afd3c0d07b1191a5aff86}{rtc\+\_\+count\+\_\+enable\+\_\+callback}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, enum rtc\+\_\+count\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Enables callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga9bee70da6626ecddb461498be2c6a1b5}{rtc\+\_\+count\+\_\+disable\+\_\+callback}} (struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const module, enum rtc\+\_\+count\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Disables callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver for Atmel\textregistered{} $\vert$ SMART ARM\textregistered{}-\/based microcontrollers provides an interface for the configuration and management of the device\textquotesingle{}s Real Time Clock functionality in Count operating mode, for the configuration and retrieval of the current RTC counter value. The following driver API modes are covered by this manual\+:
+
+
+\begin{DoxyItemize}
+\item Polled APIs 
+\end{DoxyItemize}
+
+The following peripheral is used by this module\+:
+\begin{DoxyItemize}
+\item RTC (Real Time Clock)
+\end{DoxyItemize}
+
+The following devices can use this module\+:
+\begin{DoxyItemize}
+\item Atmel $\vert$ SMART SAM D20/\+D21
+\item Atmel $\vert$ SMART SAM R21
+\item Atmel $\vert$ SMART SAM D09/\+D10/\+D11
+\item Atmel $\vert$ SMART SAM L21/\+L22
+\item Atmel $\vert$ SMART SAM DA1
+\item Atmel $\vert$ SMART SAM C20/\+C21
+\item Atmel $\vert$ SMART SAM HA1
+\item Atmel $\vert$ SMART SAM R30
+\item Atmel $\vert$ SMART SAM R34
+\item Atmel $\vert$ SMART SAM R35
+\end{DoxyItemize}
+
+The outline of this documentation is as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_prerequisites}{Prerequisites}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview}{Module Overview}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_special_considerations}{Special Considerations}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_extra_info}{Extra Information}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_examples}{Examples}}
+\item \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_api_overview}{API Overview}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_prerequisites}{}\doxysubsection{Prerequisites}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_prerequisites}
+There are no prerequisites for this module.\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview}{}\doxysubsection{Module Overview}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview}
+The RTC module in the SAM devices is a 32-\/bit counter, with a 10-\/bit programmable prescaler. Typically, the RTC clock is run continuously, including in the device\textquotesingle{}s low-\/power sleep modes, to track the current time and date information. The RTC can be used as a source to wake up the system at a scheduled time or periodically using the alarm functions.
+
+In this driver, the RTC is operated in Count mode. This allows for an easy integration of an asynchronous counter into a user application, which is capable of operating while the device is in sleep mode.
+
+Whilst operating in Count mode, the RTC features\+:
+\begin{DoxyItemize}
+\item 16-\/bit counter mode
+\begin{DoxyItemize}
+\item Selectable counter period
+\item Up to six configurable compare values
+\end{DoxyItemize}
+\item 32-\/bit counter mode
+\begin{DoxyItemize}
+\item Clear counter value on match
+\item Up to four configurable compare values
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_features}{}\doxysubsubsection{Driver Feature Macro Definition}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_features}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Driver Feature Macro }&\cellcolor{\tableheadbgcolor}\textbf{ Supported devices  }\\\cline{1-2}
+\endhead
+FEATURE\+\_\+\+RTC\+\_\+\+PERIODIC\+\_\+\+INT &SAM L21/\+L22/\+C20/\+C21/\+R30  \\\cline{1-2}
+FEATURE\+\_\+\+RTC\+\_\+\+PRESCALER\+\_\+\+OFF &SAM L21/\+L22/\+C20/\+C21/\+R30  \\\cline{1-2}
+FEATURE\+\_\+\+RTC\+\_\+\+CLOCK\+\_\+\+SELECTION &SAM L21/\+L22/\+C20/\+C21/\+R30  \\\cline{1-2}
+FEATURE\+\_\+\+RTC\+\_\+\+GENERAL\+\_\+\+PURPOSE\+\_\+\+REG &SAM L21/\+L22/\+R30  \\\cline{1-2}
+FEATURE\+\_\+\+RTC\+\_\+\+CONTINUOUSLY\+\_\+\+UPDATED &SAM D20, SAM D21, SAM R21, SAM D10, SAM D11, SAM DA1, SAM HA1  \\\cline{1-2}
+FEATURE\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+DETECTION &SAM L22  \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyNote}{Note}
+The specific features are only available in the driver when the selected device supports those features.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview_compares}{}\doxysubsection{Compare and Overflow}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview_compares}
+The RTC can be used with up to 4/6 compare values (depending on selected operation mode). These compare values will trigger on match with the current RTC counter value, and can be set up to trigger an interrupt, event, or both. The RTC can also be configured to clear the counter value on compare match in 32-\/bit mode, resetting the count value back to zero.
+
+If the RTC is operated without the Clear on Match option enabled, or in 16-\/bit mode, the RTC counter value will instead be cleared on overflow once the maximum count value has been reached\+:
+
+\[ COUNT_{MAX} = 2^{32}-1 \] for 32-\/bit counter mode, and \[ COUNT_{MAX} = 2^{16}-1 \] for 16-\/bit counter mode.
+
+When running in 16-\/bit mode, the overflow value is selectable with a period value. The counter overflow will then occur when the counter value reaches the specified period value.\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview_periodic}{}\doxysubsubsection{Periodic Events}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview_periodic}
+The RTC can generate events at periodic intervals, allowing for direct peripheral actions without CPU intervention. The periodic events can be generated on the upper eight bits of the RTC prescaler, and will be generated on the rising edge transition of the specified bit. The resulting periodic frequency can be calculated by the following formula\+:
+
+\[ f_{PERIODIC}=\frac{f_{ASY}}{2^{n+3}} \]
+
+Where $f_{ASY}$ refers to the {\itshape asynchronous} clock is set up in the RTC module configuration. The {\bfseries{n}} parameter is the event source generator index of the RTC module. If the asynchronous clock is operated at the recommended frequency of 1KHz, the formula results in the values shown in \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_rtc_hz}{the table below}}.
+
+\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_rtc_hz}%
+\Hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_rtc_hz}%
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{RTC Event Frequencies for Each Prescaler Bit Using a 1KHz Clock}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ n }&\cellcolor{\tableheadbgcolor}\textbf{ Periodic event  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ n }&\cellcolor{\tableheadbgcolor}\textbf{ Periodic event  }\\\cline{1-2}
+\endhead
+7 &1Hz  \\\cline{1-2}
+6 &2Hz  \\\cline{1-2}
+5 &4Hz  \\\cline{1-2}
+4 &8Hz  \\\cline{1-2}
+3 &16Hz  \\\cline{1-2}
+2 &32Hz  \\\cline{1-2}
+1 &64Hz  \\\cline{1-2}
+0 &128Hz  \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyNote}{Note}
+The connection of events between modules requires the use of the SAM Event System (EVENTS) Driver to route output event of one module to the the input event of another. For more information on event routing, refer to the event driver documentation.
+\end{DoxyNote}
+\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview_correction}{}\doxysubsubsection{Digital Frequency Correction}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview_correction}
+The RTC module contains Digital Frequency Correction logic to compensate for inaccurate source clock frequencies which would otherwise result in skewed time measurements. The correction scheme requires that at least two bits in the RTC module prescaler are reserved by the correction logic. As a result of this implementation, frequency correction is only available when the RTC is running from a 1Hz reference clock.
+
+The correction procedure is implemented by subtracting or adding a single cycle from the RTC prescaler every 1024 RTC GCLK cycles. The adjustment is applied the specified number of time (maximum 127) over 976 of these periods. The corresponding correction in PPM will be given by\+:
+
+\[ Correction(PPM) = \frac{VALUE}{999424}10^6 \]
+
+The RTC clock will tick faster if provided with a positive correction value, and slower when given a negative correction value.\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview_tamper_detect}{}\doxysubsubsection{RTC Tamper Detect}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_module_overview_tamper_detect}
+see \mbox{\hyperlink{rtc_tamper.h_asfdoc_sam0_rtc_tamper_detect}{RTC Tamper Detect}}\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_special_considerations}{}\doxysubsection{Special Considerations}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_special_considerations}
+\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_special_considerations_clock}{}\doxysubsubsection{Clock Setup}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_special_considerations_clock}
+\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_clock_samd_r}{}\doxyparagraph{SAM D20/\+D21/\+R21/\+D10/\+D11/\+DA1/\+HA1 Clock Setup}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_clock_samd_r}
+The RTC is typically clocked by a specialized GCLK generator that has a smaller prescaler than the others. By default the RTC clock is on, selected to use the internal 32KHz RC-\/oscillator with a prescaler of 32, giving a resulting clock frequency of 1KHz to the RTC. When the internal RTC prescaler is set to 1024, this yields an end-\/frequency of 1Hz.
+
+The implementer also has the option to set other end-\/frequencies. \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_rtc_out_freq}{The table below}} lists the available RTC frequencies for each possible GCLK and RTC input prescaler options.
+
+\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_rtc_out_freq}%
+\Hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_rtc_out_freq}%
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{RTC Output Frequencies from Allowable Input Clocks}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ End-\/frequency }&\cellcolor{\tableheadbgcolor}\textbf{ GCLK prescaler }&\cellcolor{\tableheadbgcolor}\textbf{ RTC prescaler  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ End-\/frequency }&\cellcolor{\tableheadbgcolor}\textbf{ GCLK prescaler }&\cellcolor{\tableheadbgcolor}\textbf{ RTC prescaler  }\\\cline{1-3}
+\endhead
+32KHz &1 &1  \\\cline{1-3}
+1KHz &32 &1  \\\cline{1-3}
+1Hz &32 &1024  \\\cline{1-3}
+\end{longtabu}
+
+
+The overall RTC module clocking scheme is shown in \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_rtc_clock_fig}{the figure below}}.
+
+\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_rtc_clock_fig}%
+\Hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_rtc_clock_fig}%
+\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_clock_saml}{}\doxyparagraph{SAM L21/\+C20/\+C21/\+R30 Clock Setup}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_clock_saml}
+The RTC clock can be selected from OSC32K, XOSC32K, or OSCULP32K, and a 32KHz or 1KHz oscillator clock frequency is required. This clock must be configured and enabled in the 32KHz oscillator controller before using the RTC.
+
+The table below lists the available RTC clock \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_rtc_clk}{asfdoc\+\_\+sam0\+\_\+rtc\+\_\+count\+\_\+rtc\+\_\+clk}}.
+
+\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_rtc_clk}%
+\Hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_rtc_clk}%
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{RTC Clocks Source}\label{_}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ RTC clock frequency }&\cellcolor{\tableheadbgcolor}\textbf{ Clock source }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ RTC clock frequency }&\cellcolor{\tableheadbgcolor}\textbf{ Clock source }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endhead
+1.\+024\+KHz &ULP1K &1.\+024\+KHz from 32KHz internal ULP oscillator  \\\cline{1-3}
+32.\+768\+KHz &ULP32K &32.\+768\+KHz from 32KHz internal ULP oscillator  \\\cline{1-3}
+1.\+024\+KHz &OSC1K &1.\+024\+KHz from 32KHz internal oscillator  \\\cline{1-3}
+32.\+768\+KHz &OSC32K &32.\+768\+KHz from 32KHz internal oscillator  \\\cline{1-3}
+1.\+024\+KHz &XOSC1K &1.\+024\+KHz from 32KHz internal oscillator  \\\cline{1-3}
+32.\+768\+KHz &XOSC32K &32.\+768\+KHz from 32KHz external crystal oscillator  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_extra_info}{}\doxysubsection{Extra Information}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_extra_info}
+For extra information, see \mbox{\hyperlink{asfdoc_sam0_rtc_count_extra}{Extra Information for RTC COUNT Driver}}. This includes\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_rtc_count_extra_asfdoc_sam0_rtc_count_extra_acronyms}{Acronyms}}
+\item \mbox{\hyperlink{asfdoc_sam0_rtc_count_extra_asfdoc_sam0_rtc_count_extra_dependencies}{Dependencies}}
+\item \mbox{\hyperlink{asfdoc_sam0_rtc_count_extra_asfdoc_sam0_rtc_count_extra_errata}{Errata}}
+\item \mbox{\hyperlink{asfdoc_sam0_rtc_count_extra_asfdoc_sam0_rtc_count_extra_history}{Module History}}
+\end{DoxyItemize}\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_examples}{}\doxysubsection{Examples}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_examples}
+For a list of examples related to this driver, see \mbox{\hyperlink{asfdoc_sam0_rtc_count_exqsg}{Examples for RTC (COUNT) Driver}}.\hypertarget{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_api_overview}{}\doxysubsection{API Overview}\label{group__asfdoc__sam0__rtc__count__group_asfdoc_sam0_rtc_count_api_overview}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga728e9addb0162893a3a2c9100ebd7920}\label{group__asfdoc__sam0__rtc__count__group_ga728e9addb0162893a3a2c9100ebd7920}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!FEATURE\_RTC\_CONTINUOUSLY\_UPDATED@{FEATURE\_RTC\_CONTINUOUSLY\_UPDATED}}
+\index{FEATURE\_RTC\_CONTINUOUSLY\_UPDATED@{FEATURE\_RTC\_CONTINUOUSLY\_UPDATED}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{FEATURE\_RTC\_CONTINUOUSLY\_UPDATED}{FEATURE\_RTC\_CONTINUOUSLY\_UPDATED}}
+{\footnotesize\ttfamily \#define FEATURE\+\_\+\+RTC\+\_\+\+CONTINUOUSLY\+\_\+\+UPDATED}
+
+RTC continuously updated. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}\label{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_compare@{rtc\_count\_compare}}
+\index{rtc\_count\_compare@{rtc\_count\_compare}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_compare}{rtc\_count\_compare}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}}}
+
+
+
+Available compare channels. 
+
+\begin{DoxyNote}{Note}
+Not all compare channels are available in all devices and modes. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_COMPARE\_0@{RTC\_COUNT\_COMPARE\_0}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_COMPARE\_0@{RTC\_COUNT\_COMPARE\_0}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggadfcb8b12ca245948cbedc1ad81c3e589ac7340ee61643d3bdb0a7b4264335f080}\label{group__asfdoc__sam0__rtc__count__group_ggadfcb8b12ca245948cbedc1ad81c3e589ac7340ee61643d3bdb0a7b4264335f080}} 
+RTC\+\_\+\+COUNT\+\_\+\+COMPARE\+\_\+0&Compare channel 0 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga1c6c05a342b2711713cfac6fb3d6256c}\label{group__asfdoc__sam0__rtc__count__group_ga1c6c05a342b2711713cfac6fb3d6256c}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_mode@{rtc\_count\_mode}}
+\index{rtc\_count\_mode@{rtc\_count\_mode}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_mode}{rtc\_count\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_ga1c6c05a342b2711713cfac6fb3d6256c}{rtc\+\_\+count\+\_\+mode}}}
+
+
+
+Available operation modes for the RTC. 
+
+RTC Count operating modes, to select the counting width and associated module operation. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_MODE\_16BIT@{RTC\_COUNT\_MODE\_16BIT}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_MODE\_16BIT@{RTC\_COUNT\_MODE\_16BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gga1c6c05a342b2711713cfac6fb3d6256cac1469285bb822ce84f262cd4117e8edc}\label{group__asfdoc__sam0__rtc__count__group_gga1c6c05a342b2711713cfac6fb3d6256cac1469285bb822ce84f262cd4117e8edc}} 
+RTC\+\_\+\+COUNT\+\_\+\+MODE\+\_\+16\+BIT&RTC Count module operates in 16-\/bit mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_MODE\_32BIT@{RTC\_COUNT\_MODE\_32BIT}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_MODE\_32BIT@{RTC\_COUNT\_MODE\_32BIT}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gga1c6c05a342b2711713cfac6fb3d6256cad94f227d25afd2fa3c26ef9a5a33e4d8}\label{group__asfdoc__sam0__rtc__count__group_gga1c6c05a342b2711713cfac6fb3d6256cad94f227d25afd2fa3c26ef9a5a33e4d8}} 
+RTC\+\_\+\+COUNT\+\_\+\+MODE\+\_\+32\+BIT&RTC Count module operates in 32-\/bit mode \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gacce60ab36a74de9a173788f4aa896d15}\label{group__asfdoc__sam0__rtc__count__group_gacce60ab36a74de9a173788f4aa896d15}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_prescaler@{rtc\_count\_prescaler}}
+\index{rtc\_count\_prescaler@{rtc\_count\_prescaler}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_prescaler}{rtc\_count\_prescaler}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gacce60ab36a74de9a173788f4aa896d15}{rtc\+\_\+count\+\_\+prescaler}}}
+
+
+
+RTC input clock prescaler settings. 
+
+The available input clock prescaler values for the RTC count module. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_1@{RTC\_COUNT\_PRESCALER\_DIV\_1}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_1@{RTC\_COUNT\_PRESCALER\_DIV\_1}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15aa5a98b865348eb598140b2a4247916e9}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15aa5a98b865348eb598140b2a4247916e9}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+1&RTC input clock frequency is prescaled by a factor of 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_2@{RTC\_COUNT\_PRESCALER\_DIV\_2}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_2@{RTC\_COUNT\_PRESCALER\_DIV\_2}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a312d3c72451ac000e95d335183ad7ec3}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a312d3c72451ac000e95d335183ad7ec3}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+2&RTC input clock frequency is prescaled by a factor of 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_4@{RTC\_COUNT\_PRESCALER\_DIV\_4}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_4@{RTC\_COUNT\_PRESCALER\_DIV\_4}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac82d71266c2f83c3d51b51fedd1ae920}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac82d71266c2f83c3d51b51fedd1ae920}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+4&RTC input clock frequency is prescaled by a factor of 4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_8@{RTC\_COUNT\_PRESCALER\_DIV\_8}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_8@{RTC\_COUNT\_PRESCALER\_DIV\_8}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac0061a5a79673614095663596f9e79f4}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ac0061a5a79673614095663596f9e79f4}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+8&RTC input clock frequency is prescaled by a factor of 8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_16@{RTC\_COUNT\_PRESCALER\_DIV\_16}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_16@{RTC\_COUNT\_PRESCALER\_DIV\_16}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4e17e7e9d43d022235a7550dccffcddd}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4e17e7e9d43d022235a7550dccffcddd}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+16&RTC input clock frequency is prescaled by a factor of 16 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_32@{RTC\_COUNT\_PRESCALER\_DIV\_32}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_32@{RTC\_COUNT\_PRESCALER\_DIV\_32}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a3b83f1963700137784f61cd05ef49b7e}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a3b83f1963700137784f61cd05ef49b7e}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+32&RTC input clock frequency is prescaled by a factor of 32 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_64@{RTC\_COUNT\_PRESCALER\_DIV\_64}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_64@{RTC\_COUNT\_PRESCALER\_DIV\_64}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a8b59673e870fd1205aa08b667fcc58b6}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a8b59673e870fd1205aa08b667fcc58b6}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+64&RTC input clock frequency is prescaled by a factor of 64 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_128@{RTC\_COUNT\_PRESCALER\_DIV\_128}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_128@{RTC\_COUNT\_PRESCALER\_DIV\_128}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a2d736f3fdd6be715588ee09d7a8d1deb}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a2d736f3fdd6be715588ee09d7a8d1deb}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+128&RTC input clock frequency is prescaled by a factor of 128 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_256@{RTC\_COUNT\_PRESCALER\_DIV\_256}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_256@{RTC\_COUNT\_PRESCALER\_DIV\_256}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4d6f94d95f1e40f463a83148a57edcfa}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a4d6f94d95f1e40f463a83148a57edcfa}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+256&RTC input clock frequency is prescaled by a factor of 256 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_512@{RTC\_COUNT\_PRESCALER\_DIV\_512}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_512@{RTC\_COUNT\_PRESCALER\_DIV\_512}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ab58a33623afbb13b74dcbd7e50e7760b}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15ab58a33623afbb13b74dcbd7e50e7760b}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+512&RTC input clock frequency is prescaled by a factor of 512 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTC\_COUNT\_PRESCALER\_DIV\_1024@{RTC\_COUNT\_PRESCALER\_DIV\_1024}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!RTC\_COUNT\_PRESCALER\_DIV\_1024@{RTC\_COUNT\_PRESCALER\_DIV\_1024}}}\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a9766bc273a9d05a8345615c5707eb4a7}\label{group__asfdoc__sam0__rtc__count__group_ggacce60ab36a74de9a173788f4aa896d15a9766bc273a9d05a8345615c5707eb4a7}} 
+RTC\+\_\+\+COUNT\+\_\+\+PRESCALER\+\_\+\+DIV\+\_\+1024&RTC input clock frequency is prescaled by a factor of 1024 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga51cd67b23c2a4716d09b08bf2422a222}\label{group__asfdoc__sam0__rtc__count__group_ga51cd67b23c2a4716d09b08bf2422a222}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_clear\_compare\_match@{rtc\_count\_clear\_compare\_match}}
+\index{rtc\_count\_clear\_compare\_match@{rtc\_count\_clear\_compare\_match}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_clear\_compare\_match()}{rtc\_count\_clear\_compare\_match()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+clear\+\_\+compare\+\_\+match (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}}}]{comp\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Clears RTC compare match flag. 
+
+Clears the compare flag. The compare flag is set when there is a compare match between the counter and the compare.
+
+\begin{DoxyNote}{Note}
+Compare 4 and 5 are only available in 16-\/bit mode.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em comp\+\_\+index} & Index of compare to check current flag\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status indicating if flag was successfully cleared. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If flag was successfully cleared \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If invalid argument(s) were provided \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FORMAT} & If the module was not initialized in a mode \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga40f97a58f45fe3fdeec606c155d4d8f3}\label{group__asfdoc__sam0__rtc__count__group_ga40f97a58f45fe3fdeec606c155d4d8f3}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_disable@{rtc\_count\_disable}}
+\index{rtc\_count\_disable@{rtc\_count\_disable}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_disable()}{rtc\_count\_disable()}}
+{\footnotesize\ttfamily void rtc\+\_\+count\+\_\+disable (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module }\end{DoxyParamCaption})}
+
+
+
+Disables the RTC module. 
+
+Disables the RTC module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & RTC hardware module \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga9bee70da6626ecddb461498be2c6a1b5}\label{group__asfdoc__sam0__rtc__count__group_ga9bee70da6626ecddb461498be2c6a1b5}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_disable\_callback@{rtc\_count\_disable\_callback}}
+\index{rtc\_count\_disable\_callback@{rtc\_count\_disable\_callback}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_disable\_callback()}{rtc\_count\_disable\_callback()}}
+{\footnotesize\ttfamily void rtc\+\_\+count\+\_\+disable\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{enum rtc\+\_\+count\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Disables callback. 
+
+Disables the callback specified by the callback\+\_\+type.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Callback type to disable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gad49e022ac982b14f592b4741fe076add}\label{group__asfdoc__sam0__rtc__count__group_gad49e022ac982b14f592b4741fe076add}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_enable@{rtc\_count\_enable}}
+\index{rtc\_count\_enable@{rtc\_count\_enable}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_enable()}{rtc\_count\_enable()}}
+{\footnotesize\ttfamily void rtc\+\_\+count\+\_\+enable (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module }\end{DoxyParamCaption})}
+
+
+
+Enables the RTC module. 
+
+Enables the RTC module once it has been configured, ready for use. Most module configuration parameters cannot be altered while the module is enabled.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & RTC hardware module \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gaf7636683b59afd3c0d07b1191a5aff86}\label{group__asfdoc__sam0__rtc__count__group_gaf7636683b59afd3c0d07b1191a5aff86}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_enable\_callback@{rtc\_count\_enable\_callback}}
+\index{rtc\_count\_enable\_callback@{rtc\_count\_enable\_callback}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_enable\_callback()}{rtc\_count\_enable\_callback()}}
+{\footnotesize\ttfamily void rtc\+\_\+count\+\_\+enable\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{enum rtc\+\_\+count\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Enables callback. 
+
+Enables the callback specified by the callback\+\_\+type.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Callback type to enable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gadccb737db7dd01d7190a7f9e18b23a1b}\label{group__asfdoc__sam0__rtc__count__group_gadccb737db7dd01d7190a7f9e18b23a1b}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_frequency\_correction@{rtc\_count\_frequency\_correction}}
+\index{rtc\_count\_frequency\_correction@{rtc\_count\_frequency\_correction}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_frequency\_correction()}{rtc\_count\_frequency\_correction()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+frequency\+\_\+correction (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{const int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Calibrate for too-\/slow or too-\/fast oscillator. 
+
+When used, the RTC will compensate for an inaccurate oscillator. The RTC module will add or subtract cycles from the RTC prescaler to adjust the frequency in approximately 1 PPM steps. The provided correction value should be between 0 and 127, allowing for a maximum 127 PPM correction.
+
+If no correction is needed, set value to zero.
+
+\begin{DoxyNote}{Note}
+Can only be used when the RTC is operated in 1Hz.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Ranging from -\/127 to 127 used for the correction\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the calibration procedure. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If calibration was executed correctly \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If invalid argument(s) were provided \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga40e535c1375a99492e114722af93b675}\label{group__asfdoc__sam0__rtc__count__group_ga40e535c1375a99492e114722af93b675}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_get\_compare@{rtc\_count\_get\_compare}}
+\index{rtc\_count\_get\_compare@{rtc\_count\_get\_compare}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_get\_compare()}{rtc\_count\_get\_compare()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+get\+\_\+compare (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{uint32\+\_\+t $\ast$const}]{comp\+\_\+value,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}}}]{comp\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Get the current compare value of specified compare. 
+
+Retrieves the current value of the specified compare.
+
+\begin{DoxyNote}{Note}
+Compare 4 and 5 are only available in 16-\/bit mode.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ out}}  & {\em comp\+\_\+value} & Pointer to 32-\/bit integer that will be populated with the current compare value \\
+\hline
+\mbox{\texttt{ in}}  & {\em comp\+\_\+index} & Index of compare to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the reading procedure. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If the value was read correctly \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If invalid argument(s) were provided \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FORMAT} & If the module was not initialized in a mode \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga3ad10283f223feb3c958ccabe9d0662a}\label{group__asfdoc__sam0__rtc__count__group_ga3ad10283f223feb3c958ccabe9d0662a}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_get\_count@{rtc\_count\_get\_count}}
+\index{rtc\_count\_get\_count@{rtc\_count\_get\_count}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_get\_count()}{rtc\_count\_get\_count()}}
+{\footnotesize\ttfamily uint32\+\_\+t rtc\+\_\+count\+\_\+get\+\_\+count (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module }\end{DoxyParamCaption})}
+
+
+
+Get the current count value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct\\
+\hline
+\end{DoxyParams}
+Returns the current count value.
+
+\begin{DoxyReturn}{Returns}
+The current counter value as a 32-\/bit unsigned integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga747385c5686f746a64f118705c22c894}\label{group__asfdoc__sam0__rtc__count__group_ga747385c5686f746a64f118705c22c894}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_get\_period@{rtc\_count\_get\_period}}
+\index{rtc\_count\_get\_period@{rtc\_count\_get\_period}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_get\_period()}{rtc\_count\_get\_period()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+get\+\_\+period (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{uint16\+\_\+t $\ast$const}]{period\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+Retrieves the value of period. 
+
+Retrieves the value of the period for the 16-\/bit mode counter.
+
+\begin{DoxyNote}{Note}
+Only available in 16-\/bit mode.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ out}}  & {\em period\+\_\+value} & Pointer to value for return argument\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of getting the period value. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If the period value was read correctly \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+UNSUPPORTED\+\_\+\+DEV} & If incorrect mode was set \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gaff43df79be7aeea0d559eafbe5fdbdc3}\label{group__asfdoc__sam0__rtc__count__group_gaff43df79be7aeea0d559eafbe5fdbdc3}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_init@{rtc\_count\_init}}
+\index{rtc\_count\_init@{rtc\_count\_init}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_init()}{rtc\_count\_init()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{\mbox{\hyperlink{union_rtc}{Rtc}} $\ast$const}]{hw,  }\item[{const struct \mbox{\hyperlink{structrtc__count__config}{rtc\+\_\+count\+\_\+config}} $\ast$const}]{config }\end{DoxyParamCaption})}
+
+
+
+Initializes the RTC module with given configurations. 
+
+Initializes the module, setting up all given configurations to provide the desired functionality of the RTC.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em hw} & Pointer to hardware instance \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & Pointer to the configuration structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the initialization procedure. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If the initialization was run stressfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If invalid argument(s) were given \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga354d81abc8c33bc39a238418611b3239}\label{group__asfdoc__sam0__rtc__count__group_ga354d81abc8c33bc39a238418611b3239}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_is\_compare\_match@{rtc\_count\_is\_compare\_match}}
+\index{rtc\_count\_is\_compare\_match@{rtc\_count\_is\_compare\_match}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_is\_compare\_match()}{rtc\_count\_is\_compare\_match()}}
+{\footnotesize\ttfamily bool rtc\+\_\+count\+\_\+is\+\_\+compare\+\_\+match (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}}}]{comp\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Check if RTC compare match has occurred. 
+
+Checks the compare flag to see if a match has occurred. The compare flag is set when there is a compare match between counter and the compare.
+
+\begin{DoxyNote}{Note}
+Compare 4 and 5 are only available in 16-\/bit mode.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em comp\+\_\+index} & Index of compare to check current flag \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga3679d842a95a0086fa5cbccf74aad7ee}\label{group__asfdoc__sam0__rtc__count__group_ga3679d842a95a0086fa5cbccf74aad7ee}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_register\_callback@{rtc\_count\_register\_callback}}
+\index{rtc\_count\_register\_callback@{rtc\_count\_register\_callback}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_register\_callback()}{rtc\_count\_register\_callback()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+register\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{rtc\+\_\+count\+\_\+callback\+\_\+t}]{callback,  }\item[{enum rtc\+\_\+count\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Registers callback for the specified callback type. 
+
+Associates the given callback function with the specified callback type. To enable the callback, the \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gaf7636683b59afd3c0d07b1191a5aff86}{rtc\+\_\+count\+\_\+enable\+\_\+callback}} function must be used.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback} & Pointer to the function desired for the specified callback \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Callback type to register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of registering callback. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & Registering was done successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If trying to register a callback not available \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga161d6cf1f6f717e8c6c650dc587cdf7a}\label{group__asfdoc__sam0__rtc__count__group_ga161d6cf1f6f717e8c6c650dc587cdf7a}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_reset@{rtc\_count\_reset}}
+\index{rtc\_count\_reset@{rtc\_count\_reset}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_reset()}{rtc\_count\_reset()}}
+{\footnotesize\ttfamily void rtc\+\_\+count\+\_\+reset (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module }\end{DoxyParamCaption})}
+
+
+
+Resets the RTC module. Resets the RTC to hardware defaults. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga56c76be0e0fdfb5b1f9a883f396756f4}\label{group__asfdoc__sam0__rtc__count__group_ga56c76be0e0fdfb5b1f9a883f396756f4}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_set\_compare@{rtc\_count\_set\_compare}}
+\index{rtc\_count\_set\_compare@{rtc\_count\_set\_compare}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_set\_compare()}{rtc\_count\_set\_compare()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+set\+\_\+compare (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{const uint32\+\_\+t}]{comp\+\_\+value,  }\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__rtc__count__group_gadfcb8b12ca245948cbedc1ad81c3e589}{rtc\+\_\+count\+\_\+compare}}}]{comp\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Set the compare value for the specified compare. 
+
+Sets the value specified by the implementer to the requested compare.
+
+\begin{DoxyNote}{Note}
+Compare 4 and 5 are only available in 16-\/bit mode.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em comp\+\_\+value} & The value to be written to the compare \\
+\hline
+\mbox{\texttt{ in}}  & {\em comp\+\_\+index} & Index of the compare to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status indicating if compare was successfully set. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If compare was successfully set \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If invalid argument(s) were provided \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FORMAT} & If the module was not initialized in a mode \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_ga3770c2c6f82daca6ca28670cd87be46f}\label{group__asfdoc__sam0__rtc__count__group_ga3770c2c6f82daca6ca28670cd87be46f}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_set\_count@{rtc\_count\_set\_count}}
+\index{rtc\_count\_set\_count@{rtc\_count\_set\_count}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_set\_count()}{rtc\_count\_set\_count()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+set\+\_\+count (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{const uint32\+\_\+t}]{count\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+Set the current count value to desired value. 
+
+Sets the value of the counter to the specified value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em count\+\_\+value} & The value to be set in count register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of setting the register. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If everything was executed correctly \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If invalid argument(s) were provided \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gac0b0d3a10ee5368b5484f99e6b6fecb8}\label{group__asfdoc__sam0__rtc__count__group_gac0b0d3a10ee5368b5484f99e6b6fecb8}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_set\_period@{rtc\_count\_set\_period}}
+\index{rtc\_count\_set\_period@{rtc\_count\_set\_period}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_set\_period()}{rtc\_count\_set\_period()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+set\+\_\+period (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{const uint16\+\_\+t}]{period\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+Set the given value to the period. 
+
+Sets the given value to the period.
+
+\begin{DoxyNote}{Note}
+Only available in 16-\/bit mode.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em period\+\_\+value} & The value to set to the period\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of setting the period value. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If the period was set correctly \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+UNSUPPORTED\+\_\+\+DEV} & If module is not operated in 16-\/bit mode \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__asfdoc__sam0__rtc__count__group_gac5a8ffb958261a9b9a955c0f8fb942ea}\label{group__asfdoc__sam0__rtc__count__group_gac5a8ffb958261a9b9a955c0f8fb942ea}} 
+\index{SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}!rtc\_count\_unregister\_callback@{rtc\_count\_unregister\_callback}}
+\index{rtc\_count\_unregister\_callback@{rtc\_count\_unregister\_callback}!SAM RTC Count (RTC COUNT) Driver@{SAM RTC Count (RTC COUNT) Driver}}
+\doxysubsubsection{\texorpdfstring{rtc\_count\_unregister\_callback()}{rtc\_count\_unregister\_callback()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} rtc\+\_\+count\+\_\+unregister\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structrtc__module}{rtc\+\_\+module}} $\ast$const}]{module,  }\item[{enum rtc\+\_\+count\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Unregisters callback for the specified callback type. 
+
+When called, the currently registered callback for the given callback type will be removed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em module} & Pointer to the software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Specifies the callback type to unregister\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of unregistering callback. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & Unregistering was done successfully \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG} & If trying to unregister a callback not available \\
+\hline
+\end{DoxyRetVals}

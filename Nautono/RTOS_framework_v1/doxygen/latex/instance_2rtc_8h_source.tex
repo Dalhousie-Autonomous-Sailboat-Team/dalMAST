@@ -1,0 +1,85 @@
+\hypertarget{instance_2rtc_8h_source}{}\doxysection{rtc.\+h}
+\label{instance_2rtc_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/rtc.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/rtc.h}}
+\mbox{\hyperlink{instance_2rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_RTC\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_RTC\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for RTC peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_RTC\_READREQ            (0x40001402U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_RTC\_STATUS             (0x4000140AU) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_RTC\_DBGCTRL            (0x4000140BU) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_RTC\_FREQCORR           (0x4000140CU) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_CTRL         (0x40001400U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_EVCTRL       (0x40001404U) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_INTENCLR     (0x40001406U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_INTENSET     (0x40001407U) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_INTFLAG      (0x40001408U) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_COUNT        (0x40001410U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_COMP0        (0x40001418U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_CTRL         (0x40001400U) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_EVCTRL       (0x40001404U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_INTENCLR     (0x40001406U) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_INTENSET     (0x40001407U) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_INTFLAG      (0x40001408U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_COUNT        (0x40001410U) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_PER          (0x40001414U) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_COMP0        (0x40001418U) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_COMP1        (0x4000141AU) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_CTRL         (0x40001400U) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_EVCTRL       (0x40001404U) }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_INTENCLR     (0x40001406U) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_INTENSET     (0x40001407U) }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_INTFLAG      (0x40001408U) }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_CLOCK        (0x40001410U) }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_ALARM\_ALARM0 (0x40001418U) }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_ALARM\_MASK0  (0x4000141CU) }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define REG\_RTC\_READREQ            (*(RwReg16*)0x40001402U) }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define REG\_RTC\_STATUS             (*(RwReg8 *)0x4000140AU) }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define REG\_RTC\_DBGCTRL            (*(RwReg8 *)0x4000140BU) }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define REG\_RTC\_FREQCORR           (*(RwReg8 *)0x4000140CU) }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_CTRL         (*(RwReg16*)0x40001400U) }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_EVCTRL       (*(RwReg16*)0x40001404U) }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_INTENCLR     (*(RwReg8 *)0x40001406U) }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_INTENSET     (*(RwReg8 *)0x40001407U) }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_INTFLAG      (*(RwReg8 *)0x40001408U) }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_COUNT        (*(RwReg  *)0x40001410U) }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define REG\_RTC\_MODE0\_COMP0        (*(RwReg  *)0x40001418U) }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_CTRL         (*(RwReg16*)0x40001400U) }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_EVCTRL       (*(RwReg16*)0x40001404U) }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_INTENCLR     (*(RwReg8 *)0x40001406U) }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_INTENSET     (*(RwReg8 *)0x40001407U) }}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_INTFLAG      (*(RwReg8 *)0x40001408U) }}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_COUNT        (*(RwReg16*)0x40001410U) }}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_PER          (*(RwReg16*)0x40001414U) }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_COMP0        (*(RwReg16*)0x40001418U) }}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define REG\_RTC\_MODE1\_COMP1        (*(RwReg16*)0x4000141AU) }}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_CTRL         (*(RwReg16*)0x40001400U) }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_EVCTRL       (*(RwReg16*)0x40001404U) }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_INTENCLR     (*(RwReg8 *)0x40001406U) }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_INTENSET     (*(RwReg8 *)0x40001407U) }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_INTFLAG      (*(RwReg8 *)0x40001408U) }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_CLOCK        (*(RwReg  *)0x40001410U) }}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_ALARM\_ALARM0 (*(RwReg  *)0x40001418U) }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define REG\_RTC\_MODE2\_ALARM\_MASK0  (*(RwReg  *)0x4000141CU) }}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{comment}{/* ========== Instance parameters for RTC peripheral ========== */}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define RTC\_ALARM\_NUM               1        }\textcolor{comment}{// Number of Alarms}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define RTC\_COMP16\_NUM              2        }\textcolor{comment}{// Number of 16-\/bit Comparators}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define RTC\_COMP32\_NUM              1        }\textcolor{comment}{// Number of 32-\/bit Comparators}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define RTC\_GCLK\_ID                 2        }\textcolor{comment}{// Index of Generic Clock}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define RTC\_NUM\_OF\_ALARMS           1        }\textcolor{comment}{// Number of Alarms (obsolete)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define RTC\_NUM\_OF\_COMP16           2        }\textcolor{comment}{// Number of 16-\/bit Comparators (obsolete)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define RTC\_NUM\_OF\_COMP32           1        }\textcolor{comment}{// Number of 32-\/bit Comparators (obsolete)}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_RTC\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\hypertarget{instance_2ac_8h_source}{}\doxysection{ac.\+h}
+\label{instance_2ac_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/ac.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/ac.h}}
+\mbox{\hyperlink{instance_2ac_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_AC\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_AC\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for AC peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_AC\_CTRLA               (0x42004400U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_AC\_CTRLB               (0x42004401U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_AC\_EVCTRL              (0x42004402U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_AC\_INTENCLR            (0x42004404U) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_AC\_INTENSET            (0x42004405U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_AC\_INTFLAG             (0x42004406U) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_AC\_STATUSA             (0x42004408U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_AC\_STATUSB             (0x42004409U) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_AC\_STATUSC             (0x4200440AU) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_AC\_WINCTRL             (0x4200440CU) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_AC\_COMPCTRL0           (0x42004410U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_AC\_COMPCTRL1           (0x42004414U) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_AC\_SCALER0             (0x42004420U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_AC\_SCALER1             (0x42004421U) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_AC\_CTRLA               (*(RwReg8 *)0x42004400U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_AC\_CTRLB               (*(WoReg8 *)0x42004401U) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_AC\_EVCTRL              (*(RwReg16*)0x42004402U) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_AC\_INTENCLR            (*(RwReg8 *)0x42004404U) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define REG\_AC\_INTENSET            (*(RwReg8 *)0x42004405U) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define REG\_AC\_INTFLAG             (*(RwReg8 *)0x42004406U) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define REG\_AC\_STATUSA             (*(RoReg8 *)0x42004408U) }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define REG\_AC\_STATUSB             (*(RoReg8 *)0x42004409U) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define REG\_AC\_STATUSC             (*(RoReg8 *)0x4200440AU) }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define REG\_AC\_WINCTRL             (*(RwReg8 *)0x4200440CU) }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define REG\_AC\_COMPCTRL0           (*(RwReg  *)0x42004410U) }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define REG\_AC\_COMPCTRL1           (*(RwReg  *)0x42004414U) }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define REG\_AC\_SCALER0             (*(RwReg8 *)0x42004420U) }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define REG\_AC\_SCALER1             (*(RwReg8 *)0x42004421U) }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/* ========== Instance parameters for AC peripheral ========== */}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define AC\_CMP\_NUM                  2        }\textcolor{comment}{// Number of comparators}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define AC\_GCLK\_ID\_ANA              25       }\textcolor{comment}{// Index of Generic Clock for analog}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define AC\_GCLK\_ID\_DIG              24       }\textcolor{comment}{// Index of Generic Clock for digital}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define AC\_NUM\_CMP                  2       }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define AC\_PAIRS                    1        }\textcolor{comment}{// Number of pairs of comparators}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_AC\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

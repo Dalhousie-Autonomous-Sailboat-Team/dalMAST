@@ -1,0 +1,90 @@
+\hypertarget{interrupt__sam__nvic_8h_source}{}\doxysection{interrupt\+\_\+sam\+\_\+nvic.\+h}
+\label{interrupt__sam__nvic_8h_source}\index{src/ASF/common/utils/interrupt/interrupt\_sam\_nvic.h@{src/ASF/common/utils/interrupt/interrupt\_sam\_nvic.h}}
+\mbox{\hyperlink{interrupt__sam__nvic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef UTILS\_INTERRUPT\_INTERRUPT\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define UTILS\_INTERRUPT\_INTERRUPT\_H}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{parts_8h}{parts.h}}>}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{44 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#  define ISR(func)   \(\backslash\)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{    void func (void)}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#  define irq\_initialize\_vectors()   \(\backslash\)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{    do \{                             \(\backslash\)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{    \} while(0)}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#  define irq\_register\_handler(int\_num, int\_prio)                      \(\backslash\)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{    NVIC\_ClearPendingIRQ(    (IRQn\_Type)int\_num);                      \(\backslash\)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{    NVIC\_SetPriority(    (IRQn\_Type)int\_num, int\_prio);                \(\backslash\)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{    NVIC\_EnableIRQ(      (IRQn\_Type)int\_num);                          \(\backslash\)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#  define cpu\_irq\_enable()                     \(\backslash\)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{    do \{                                       \(\backslash\)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{        g\_interrupt\_enabled = true;            \(\backslash\)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{        \_\_DMB();                               \(\backslash\)}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{        \_\_enable\_irq();                        \(\backslash\)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{    \} while (0)}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#  define cpu\_irq\_disable()                    \(\backslash\)}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{    do \{                                       \(\backslash\)}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{        \_\_disable\_irq();                       \(\backslash\)}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{        \_\_DMB();                               \(\backslash\)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{        g\_interrupt\_enabled = false;           \(\backslash\)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{    \} while (0)}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{typedef} uint32\_t \mbox{\hyperlink{group__interrupt__group_ga9aa1f52defc97531b6343233abeea613}{irqflags\_t}};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#if !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{133 \textcolor{keyword}{extern} \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} g\_interrupt\_enabled;}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define cpu\_irq\_is\_enabled()    (\_\_get\_PRIMASK() == 0)}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{keyword}{static} \textcolor{keyword}{volatile} uint32\_t cpu\_irq\_critical\_section\_counter;}
+\DoxyCodeLine{139 \textcolor{keyword}{static} \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool}     cpu\_irq\_prev\_interrupt\_state;}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{group__interrupt__group_ga9aa1f52defc97531b6343233abeea613}{irqflags\_t}} cpu\_irq\_save(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{142 \{}
+\DoxyCodeLine{143     \textcolor{keyword}{volatile} \mbox{\hyperlink{group__interrupt__group_ga9aa1f52defc97531b6343233abeea613}{irqflags\_t}} flags = \mbox{\hyperlink{group__interrupt__group_gae1545a2473614564550b9c4015c94978}{cpu\_irq\_is\_enabled}}();}
+\DoxyCodeLine{144     \mbox{\hyperlink{group__interrupt__group_ga7b77391ed86e2e027f9ee1dd99a06980}{cpu\_irq\_disable}}();}
+\DoxyCodeLine{145     \textcolor{keywordflow}{return} flags;}
+\DoxyCodeLine{146 \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} cpu\_irq\_is\_enabled\_flags(\mbox{\hyperlink{group__interrupt__group_ga9aa1f52defc97531b6343233abeea613}{irqflags\_t}} flags)}
+\DoxyCodeLine{149 \{}
+\DoxyCodeLine{150     \textcolor{keywordflow}{return} (flags);}
+\DoxyCodeLine{151 \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} cpu\_irq\_restore(\mbox{\hyperlink{group__interrupt__group_ga9aa1f52defc97531b6343233abeea613}{irqflags\_t}} flags)}
+\DoxyCodeLine{154 \{}
+\DoxyCodeLine{155     \textcolor{keywordflow}{if} (cpu\_irq\_is\_enabled\_flags(flags))}
+\DoxyCodeLine{156         \mbox{\hyperlink{group__interrupt__group_gae4922a4bd8ba4150211fbc7f2302403c}{cpu\_irq\_enable}}();}
+\DoxyCodeLine{157 \}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \textcolor{keywordtype}{void} cpu\_irq\_enter\_critical(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{160 \textcolor{keywordtype}{void} cpu\_irq\_leave\_critical(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define Enable\_global\_interrupt()            cpu\_irq\_enable()}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define Disable\_global\_interrupt()           cpu\_irq\_disable()}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define Is\_global\_interrupt\_enabled()        cpu\_irq\_is\_enabled()}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{172 }
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{176 \}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* UTILS\_INTERRUPT\_INTERRUPT\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

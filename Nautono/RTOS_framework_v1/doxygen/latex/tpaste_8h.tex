@@ -1,0 +1,68 @@
+\hypertarget{tpaste_8h}{}\doxysection{src/\+ASF/sam0/utils/preprocessor/tpaste.h File Reference}
+\label{tpaste_8h}\index{src/ASF/sam0/utils/preprocessor/tpaste.h@{src/ASF/sam0/utils/preprocessor/tpaste.h}}
+
+
+Preprocessor token pasting utils.  
+
+
+\doxysubsection*{Macros}
+\begin{Indent}\textbf{ Token Paste}\par
+{\em Paste N preprocessing tokens together, these tokens being allowed to be \#defined.
+
+May be used only within macros with the tokens passed as arguments if the tokens are \#defined.
+
+For example, writing TPASTE2(\+U, WIDTH) within a macro \#defined by UTYPE(\+WIDTH) and invoked as UTYPE(\+UL\+\_\+\+WIDTH) with UL\+\_\+\+WIDTH \#defined as 32 is equivalent to writing U32. }\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries TPASTE2}(a,  b)~a\#\#b
+\item 
+\#define {\bfseries TPASTE3}(a,  b,  c)~a\#\#b\#\#c
+\item 
+\#define {\bfseries TPASTE4}(a,  b,  c,  d)~a\#\#b\#\#c\#\#d
+\item 
+\#define {\bfseries TPASTE5}(a,  b,  c,  d,  e)~a\#\#b\#\#c\#\#d\#\#e
+\item 
+\#define {\bfseries TPASTE6}(a,  b,  c,  d,  e,  f)~a\#\#b\#\#c\#\#d\#\#e\#\#f
+\item 
+\#define {\bfseries TPASTE7}(a,  b,  c,  d,  e,  f,  g)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#g
+\item 
+\#define {\bfseries TPASTE8}(a,  b,  c,  d,  e,  f,  g,  h)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#g\#\#h
+\item 
+\#define {\bfseries TPASTE9}(a,  b,  c,  d,  e,  f,  g,  h,  i)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#g\#\#h\#\#i
+\item 
+\#define {\bfseries TPASTE10}(a,  b,  c,  d,  e,  f,  g,  h,  i,  j)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#g\#\#h\#\#i\#\#j
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Absolute Token Paste}\par
+{\em Paste N preprocessing tokens together, these tokens being allowed to be \#defined.
+
+No restriction of use if the tokens are \#defined.
+
+For example, writing ATPASTE2(\+U, UL\+\_\+\+WIDTH) anywhere with UL\+\_\+\+WIDTH \#defined as 32 is equivalent to writing U32. }\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries ATPASTE2}(a,  b)~TPASTE2( a, b)
+\item 
+\#define {\bfseries ATPASTE3}(a,  b,  c)~TPASTE3( a, b, c)
+\item 
+\#define {\bfseries ATPASTE4}(a,  b,  c,  d)~TPASTE4( a, b, c, d)
+\item 
+\#define {\bfseries ATPASTE5}(a,  b,  c,  d,  e)~TPASTE5( a, b, c, d, e)
+\item 
+\#define {\bfseries ATPASTE6}(a,  b,  c,  d,  e,  f)~TPASTE6( a, b, c, d, e, f)
+\item 
+\#define {\bfseries ATPASTE7}(a,  b,  c,  d,  e,  f,  g)~TPASTE7( a, b, c, d, e, f, g)
+\item 
+\#define {\bfseries ATPASTE8}(a,  b,  c,  d,  e,  f,  g,  h)~TPASTE8( a, b, c, d, e, f, g, h)
+\item 
+\#define {\bfseries ATPASTE9}(a,  b,  c,  d,  e,  f,  g,  h,  i)~TPASTE9( a, b, c, d, e, f, g, h, i)
+\item 
+\#define {\bfseries ATPASTE10}(a,  b,  c,  d,  e,  f,  g,  h,  i,  j)~TPASTE10(a, b, c, d, e, f, g, h, i, j)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Preprocessor token pasting utils. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

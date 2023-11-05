@@ -1,0 +1,30 @@
+\hypertarget{usart_8c}{}\doxysection{src/\+ASF/sam0/drivers/sercom/usart/usart.c File Reference}
+\label{usart_8c}\index{src/ASF/sam0/drivers/sercom/usart/usart.c@{src/ASF/sam0/drivers/sercom/usart/usart.c}}
+
+
+SAM SERCOM USART Driver.  
+
+
+{\ttfamily \#include \char`\"{}usart.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$pinmux.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gad67046f395137b2a7a1ef72f83907674}{usart\+\_\+init}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, \mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const hw, const struct \mbox{\hyperlink{structusart__config}{usart\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes the device. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaee8b142e8ad13e1e226334a9954e853c}{usart\+\_\+write\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, const uint16\+\_\+t tx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Transmit a character via the USART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gaf7db90c51a6f17edff5f1de2a0e3d8a5}{usart\+\_\+read\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint16\+\_\+t $\ast$const rx\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Receive a character via the USART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_gacffd0845249348d37d14c65a41132e41}{usart\+\_\+write\+\_\+buffer\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, const uint8\+\_\+t $\ast$tx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Transmit a buffer of characters via the USART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__usart__group_ga4f788b3478e9c1fa8f0dd8d09939d3a6}{usart\+\_\+read\+\_\+buffer\+\_\+wait}} (struct \mbox{\hyperlink{structusart__module}{usart\+\_\+module}} $\ast$const module, uint8\+\_\+t $\ast$rx\+\_\+data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Receive a buffer of {\ttfamily length} characters via the USART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM SERCOM USART Driver. 
+
+Copyright (c) 2012-\/2020 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

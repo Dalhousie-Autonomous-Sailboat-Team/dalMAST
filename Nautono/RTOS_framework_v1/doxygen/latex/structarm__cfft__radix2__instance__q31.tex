@@ -1,0 +1,81 @@
+\hypertarget{structarm__cfft__radix2__instance__q31}{}\doxysection{arm\+\_\+cfft\+\_\+radix2\+\_\+instance\+\_\+q31 Struct Reference}
+\label{structarm__cfft__radix2__instance__q31}\index{arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}}
+
+
+Instance structure for the Radix-\/2 Q31 CFFT/\+CIFFT function.  
+
+
+
+
+{\ttfamily \#include $<$arm\+\_\+math.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structarm__cfft__radix2__instance__q31_a960199f1373a192366878ef279eab00f}{fft\+Len}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structarm__cfft__radix2__instance__q31_a2607378ce64be16698bb8a3b1af8d3c8}{ifft\+Flag}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structarm__cfft__radix2__instance__q31_a6239b8d268285334e88c008c07d68616}{bit\+Reverse\+Flag}}
+\item 
+q31\+\_\+t $\ast$ \mbox{\hyperlink{structarm__cfft__radix2__instance__q31_a1d5bbe9a991e133f81652a77a7985d23}{p\+Twiddle}}
+\item 
+uint16\+\_\+t $\ast$ \mbox{\hyperlink{structarm__cfft__radix2__instance__q31_ada8e5264f4b22ff4c621817978994674}{p\+Bit\+Rev\+Table}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structarm__cfft__radix2__instance__q31_ae63ca9193322cd477970c1d2086407d1}{twid\+Coef\+Modifier}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structarm__cfft__radix2__instance__q31_a9d17a87263953fe3559a007512c9f3a4}{bit\+Rev\+Factor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Instance structure for the Radix-\/2 Q31 CFFT/\+CIFFT function. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structarm__cfft__radix2__instance__q31_a6239b8d268285334e88c008c07d68616}\label{structarm__cfft__radix2__instance__q31_a6239b8d268285334e88c008c07d68616}} 
+\index{arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}!bitReverseFlag@{bitReverseFlag}}
+\index{bitReverseFlag@{bitReverseFlag}!arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}}
+\doxysubsubsection{\texorpdfstring{bitReverseFlag}{bitReverseFlag}}
+{\footnotesize\ttfamily uint8\+\_\+t arm\+\_\+cfft\+\_\+radix2\+\_\+instance\+\_\+q31\+::bit\+Reverse\+Flag}
+
+flag that enables (bit\+Reverse\+Flag=1) or disables (bit\+Reverse\+Flag=0) bit reversal of output. \mbox{\Hypertarget{structarm__cfft__radix2__instance__q31_a9d17a87263953fe3559a007512c9f3a4}\label{structarm__cfft__radix2__instance__q31_a9d17a87263953fe3559a007512c9f3a4}} 
+\index{arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}!bitRevFactor@{bitRevFactor}}
+\index{bitRevFactor@{bitRevFactor}!arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}}
+\doxysubsubsection{\texorpdfstring{bitRevFactor}{bitRevFactor}}
+{\footnotesize\ttfamily uint16\+\_\+t arm\+\_\+cfft\+\_\+radix2\+\_\+instance\+\_\+q31\+::bit\+Rev\+Factor}
+
+bit reversal modifier that supports different size FFTs with the same bit reversal table. \mbox{\Hypertarget{structarm__cfft__radix2__instance__q31_a960199f1373a192366878ef279eab00f}\label{structarm__cfft__radix2__instance__q31_a960199f1373a192366878ef279eab00f}} 
+\index{arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}!fftLen@{fftLen}}
+\index{fftLen@{fftLen}!arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}}
+\doxysubsubsection{\texorpdfstring{fftLen}{fftLen}}
+{\footnotesize\ttfamily uint16\+\_\+t arm\+\_\+cfft\+\_\+radix2\+\_\+instance\+\_\+q31\+::fft\+Len}
+
+length of the FFT. \mbox{\Hypertarget{structarm__cfft__radix2__instance__q31_a2607378ce64be16698bb8a3b1af8d3c8}\label{structarm__cfft__radix2__instance__q31_a2607378ce64be16698bb8a3b1af8d3c8}} 
+\index{arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}!ifftFlag@{ifftFlag}}
+\index{ifftFlag@{ifftFlag}!arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}}
+\doxysubsubsection{\texorpdfstring{ifftFlag}{ifftFlag}}
+{\footnotesize\ttfamily uint8\+\_\+t arm\+\_\+cfft\+\_\+radix2\+\_\+instance\+\_\+q31\+::ifft\+Flag}
+
+flag that selects forward (ifft\+Flag=0) or inverse (ifft\+Flag=1) transform. \mbox{\Hypertarget{structarm__cfft__radix2__instance__q31_ada8e5264f4b22ff4c621817978994674}\label{structarm__cfft__radix2__instance__q31_ada8e5264f4b22ff4c621817978994674}} 
+\index{arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}!pBitRevTable@{pBitRevTable}}
+\index{pBitRevTable@{pBitRevTable}!arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}}
+\doxysubsubsection{\texorpdfstring{pBitRevTable}{pBitRevTable}}
+{\footnotesize\ttfamily uint16\+\_\+t$\ast$ arm\+\_\+cfft\+\_\+radix2\+\_\+instance\+\_\+q31\+::p\+Bit\+Rev\+Table}
+
+points to the bit reversal table. \mbox{\Hypertarget{structarm__cfft__radix2__instance__q31_a1d5bbe9a991e133f81652a77a7985d23}\label{structarm__cfft__radix2__instance__q31_a1d5bbe9a991e133f81652a77a7985d23}} 
+\index{arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}!pTwiddle@{pTwiddle}}
+\index{pTwiddle@{pTwiddle}!arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}}
+\doxysubsubsection{\texorpdfstring{pTwiddle}{pTwiddle}}
+{\footnotesize\ttfamily q31\+\_\+t$\ast$ arm\+\_\+cfft\+\_\+radix2\+\_\+instance\+\_\+q31\+::p\+Twiddle}
+
+points to the Twiddle factor table. \mbox{\Hypertarget{structarm__cfft__radix2__instance__q31_ae63ca9193322cd477970c1d2086407d1}\label{structarm__cfft__radix2__instance__q31_ae63ca9193322cd477970c1d2086407d1}} 
+\index{arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}!twidCoefModifier@{twidCoefModifier}}
+\index{twidCoefModifier@{twidCoefModifier}!arm\_cfft\_radix2\_instance\_q31@{arm\_cfft\_radix2\_instance\_q31}}
+\doxysubsubsection{\texorpdfstring{twidCoefModifier}{twidCoefModifier}}
+{\footnotesize\ttfamily uint16\+\_\+t arm\+\_\+cfft\+\_\+radix2\+\_\+instance\+\_\+q31\+::twid\+Coef\+Modifier}
+
+twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/thirdparty/\+CMSIS/\+Include/arm\+\_\+math.\+h\end{DoxyCompactItemize}

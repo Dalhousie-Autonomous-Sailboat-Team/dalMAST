@@ -1,0 +1,110 @@
+\hypertarget{sercom_8c}{}\doxysection{src/\+ASF/sam0/drivers/sercom/sercom.c File Reference}
+\label{sercom_8c}\index{src/ASF/sam0/drivers/sercom/sercom.c@{src/ASF/sam0/drivers/sercom/sercom.c}}
+
+
+SAM Serial Peripheral Interface Driver.  
+
+
+{\ttfamily \#include \char`\"{}sercom.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__sercom__conf}{\+\_\+sercom\+\_\+conf}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sercom_8c_ac179eef68bcc694aa0ef8dd1eb09950b}\label{sercom_8c_ac179eef68bcc694aa0ef8dd1eb09950b}} 
+\#define {\bfseries SHIFT}~32
+\item 
+\mbox{\Hypertarget{sercom_8c_a573042a67c3d9987b574c99820eb92f3}\label{sercom_8c_a573042a67c3d9987b574c99820eb92f3}} 
+\#define {\bfseries BAUD\+\_\+\+INT\+\_\+\+MAX}~8192
+\item 
+\mbox{\Hypertarget{sercom_8c_adc38f1980cdcb7fca690ebe75c50770c}\label{sercom_8c_adc38f1980cdcb7fca690ebe75c50770c}} 
+\#define {\bfseries BAUD\+\_\+\+FP\+\_\+\+MAX}~8
+\item 
+\#define \mbox{\hyperlink{sercom_8c_aabc8e1e262250a3c12ab82869fb9dbe8}{\+\_\+\+SERCOM\+\_\+\+PAD\+\_\+\+DEFAULTS\+\_\+\+CASE}}(n,  pad)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sercom_8c_afe45ab81cd4f98d88e53dfb636b22067}\label{sercom_8c_afe45ab81cd4f98d88e53dfb636b22067}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries \+\_\+sercom\+\_\+get\+\_\+sync\+\_\+baud\+\_\+val} (const uint32\+\_\+t baudrate, const uint32\+\_\+t external\+\_\+clock, uint16\+\_\+t $\ast$const baudvalue)
+\item 
+\mbox{\Hypertarget{sercom_8c_a7cdb50f562d8dd6f57b479d411d749f8}\label{sercom_8c_a7cdb50f562d8dd6f57b479d411d749f8}} 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries \+\_\+sercom\+\_\+get\+\_\+async\+\_\+baud\+\_\+val} (const uint32\+\_\+t baudrate, const uint32\+\_\+t peripheral\+\_\+clock, uint16\+\_\+t $\ast$const baudval, enum \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a05f9e8b65fff0120fce38ee4ddd40386}{sercom\+\_\+asynchronous\+\_\+operation\+\_\+mode}} mode, enum \mbox{\hyperlink{drivers_2sercom_2sercom_8h_a6936fb2a7711cb55dc717256bbcacb12}{sercom\+\_\+asynchronous\+\_\+sample\+\_\+num}} sample\+\_\+num)
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{sercom_8c_a11de7a16f2be1223a140bfe1cd7bddca}{sercom\+\_\+set\+\_\+gclk\+\_\+generator}} (const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} generator\+\_\+source, const bool force\+\_\+change)
+\begin{DoxyCompactList}\small\item\em Set GCLK channel to generator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sercom_8c_aed7ed6bae9edba2fec050eaaf6ab1b7c}\label{sercom_8c_aed7ed6bae9edba2fec050eaaf6ab1b7c}} 
+uint32\+\_\+t {\bfseries \+\_\+sercom\+\_\+get\+\_\+default\+\_\+pad} (\mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const sercom\+\_\+module, const uint8\+\_\+t pad)
+\item 
+\mbox{\Hypertarget{sercom_8c_af3213138e698446dc57b4844114ce93e}\label{sercom_8c_af3213138e698446dc57b4844114ce93e}} 
+uint8\+\_\+t {\bfseries \+\_\+sercom\+\_\+get\+\_\+sercom\+\_\+inst\+\_\+index} (\mbox{\hyperlink{union_sercom}{Sercom}} $\ast$const sercom\+\_\+instance)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM Serial Peripheral Interface Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{sercom_8c_aabc8e1e262250a3c12ab82869fb9dbe8}\label{sercom_8c_aabc8e1e262250a3c12ab82869fb9dbe8}} 
+\index{sercom.c@{sercom.c}!\_SERCOM\_PAD\_DEFAULTS\_CASE@{\_SERCOM\_PAD\_DEFAULTS\_CASE}}
+\index{\_SERCOM\_PAD\_DEFAULTS\_CASE@{\_SERCOM\_PAD\_DEFAULTS\_CASE}!sercom.c@{sercom.c}}
+\doxysubsubsection{\texorpdfstring{\_SERCOM\_PAD\_DEFAULTS\_CASE}{\_SERCOM\_PAD\_DEFAULTS\_CASE}}
+{\footnotesize\ttfamily \#define \+\_\+\+SERCOM\+\_\+\+PAD\+\_\+\+DEFAULTS\+\_\+\+CASE(\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{pad }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        \textcolor{keywordflow}{case} (uintptr\_t)SERCOM\#\#n: \(\backslash\)}
+\DoxyCodeLine{            switch (pad) \{ \(\backslash\)}
+\DoxyCodeLine{                \textcolor{keywordflow}{case} 0: \(\backslash\)}
+\DoxyCodeLine{                    \textcolor{keywordflow}{return} SERCOM\#\#n\#\#\_PAD0\_DEFAULT; \(\backslash\)}
+\DoxyCodeLine{                \textcolor{keywordflow}{case} 1: \(\backslash\)}
+\DoxyCodeLine{                    \textcolor{keywordflow}{return} SERCOM\#\#n\#\#\_PAD1\_DEFAULT; \(\backslash\)}
+\DoxyCodeLine{                \textcolor{keywordflow}{case} 2: \(\backslash\)}
+\DoxyCodeLine{                    \textcolor{keywordflow}{return} SERCOM\#\#n\#\#\_PAD2\_DEFAULT; \(\backslash\)}
+\DoxyCodeLine{                \textcolor{keywordflow}{case} 3: \(\backslash\)}
+\DoxyCodeLine{                    \textcolor{keywordflow}{return} SERCOM\#\#n\#\#\_PAD3\_DEFAULT; \(\backslash\)}
+\DoxyCodeLine{            \} \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{break};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sercom_8c_a11de7a16f2be1223a140bfe1cd7bddca}\label{sercom_8c_a11de7a16f2be1223a140bfe1cd7bddca}} 
+\index{sercom.c@{sercom.c}!sercom\_set\_gclk\_generator@{sercom\_set\_gclk\_generator}}
+\index{sercom\_set\_gclk\_generator@{sercom\_set\_gclk\_generator}!sercom.c@{sercom.c}}
+\doxysubsubsection{\texorpdfstring{sercom\_set\_gclk\_generator()}{sercom\_set\_gclk\_generator()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} sercom\+\_\+set\+\_\+gclk\+\_\+generator (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}}}]{generator\+\_\+source,  }\item[{const bool}]{force\+\_\+change }\end{DoxyParamCaption})}
+
+
+
+Set GCLK channel to generator. 
+
+This will set the appropriate GCLK channel to the requested GCLK generator. This will set the generator for all SERCOM instances, and the user will thus only be able to set the same generator that has previously been set, if any.
+
+After the generator has been set the first time, the generator can be changed using the {\ttfamily force\+\_\+change} flag.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em generator\+\_\+source} & The generator to use for SERCOM. \\
+\hline
+\mbox{\texttt{ in}}  & {\em force\+\_\+change} & Force change the generator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code indicating the GCLK generator change operation. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em STATUS\+\_\+\+OK} & If the generator update request was successful. \\
+\hline
+{\em STATUS\+\_\+\+ERR\+\_\+\+ALREADY\+\_\+\+INITIALIZED} & If a generator was already configured and the new configuration was not forced. \\
+\hline
+\end{DoxyRetVals}

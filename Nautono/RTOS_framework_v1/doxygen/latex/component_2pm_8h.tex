@@ -1,0 +1,708 @@
+\hypertarget{component_2pm_8h}{}\doxysection{src/\+ASF/sam0/utils/cmsis/samd20/include/component/pm.h File Reference}
+\label{component_2pm_8h}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/pm.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/pm.h}}
+
+
+Component description for PM.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_p_m___c_t_r_l___type}{PM\+\_\+\+CTRL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___s_l_e_e_p___type}{PM\+\_\+\+SLEEP\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___c_p_u_s_e_l___type}{PM\+\_\+\+CPUSEL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___a_p_b_a_s_e_l___type}{PM\+\_\+\+APBASEL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___a_p_b_b_s_e_l___type}{PM\+\_\+\+APBBSEL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___a_p_b_c_s_e_l___type}{PM\+\_\+\+APBCSEL\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___a_h_b_m_a_s_k___type}{PM\+\_\+\+AHBMASK\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___a_p_b_a_m_a_s_k___type}{PM\+\_\+\+APBAMASK\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___a_p_b_b_m_a_s_k___type}{PM\+\_\+\+APBBMASK\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___a_p_b_c_m_a_s_k___type}{PM\+\_\+\+APBCMASK\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___i_n_t_e_n_c_l_r___type}{PM\+\_\+\+INTENCLR\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___i_n_t_e_n_s_e_t___type}{PM\+\_\+\+INTENSET\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___i_n_t_f_l_a_g___type}{PM\+\_\+\+INTFLAG\+\_\+\+Type}}
+\item 
+union \mbox{\hyperlink{union_p_m___r_c_a_u_s_e___type}{PM\+\_\+\+RCAUSE\+\_\+\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_pm}{Pm}}
+\begin{DoxyCompactList}\small\item\em PM hardware registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ad742c3c299a198b33dde4f8fbee7d21c}\label{component_2pm_8h_ad742c3c299a198b33dde4f8fbee7d21c}} 
+\#define {\bfseries PM\+\_\+\+U2206}
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a575500b9d7813503f74cc639dac37705}\label{component_2pm_8h_a575500b9d7813503f74cc639dac37705}} 
+\#define {\bfseries REV\+\_\+\+PM}~0x202
+\item 
+\mbox{\Hypertarget{component_2pm_8h_abecd64dad184eeecf687588d9fa03a24}\label{component_2pm_8h_abecd64dad184eeecf687588d9fa03a24}} 
+\#define {\bfseries PM\+\_\+\+CTRL\+\_\+\+OFFSET}~0x00
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CTRL offset) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a549cafdd7557cf5d221d6ebb1a67f5c6}\label{component_2pm_8h_a549cafdd7557cf5d221d6ebb1a67f5c6}} 
+\#define {\bfseries PM\+\_\+\+CTRL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CTRL reset\+\_\+value) Control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a14c17f7ebe9d3b16c6e23dd1395e26ed}\label{component_2pm_8h_a14c17f7ebe9d3b16c6e23dd1395e26ed}} 
+\#define {\bfseries PM\+\_\+\+CTRL\+\_\+\+MASK}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CTRL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_aa85ab2023c40ebc25f0620612fafe86d}\label{component_2pm_8h_aa85ab2023c40ebc25f0620612fafe86d}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+OFFSET}~0x01
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+SLEEP offset) Sleep Mode \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a3ff3c820932d9494e44f36d714fa4f67}\label{component_2pm_8h_a3ff3c820932d9494e44f36d714fa4f67}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+SLEEP reset\+\_\+value) Sleep Mode \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_aa2d182f036730a59ef2da72b5b0e618a}\label{component_2pm_8h_aa2d182f036730a59ef2da72b5b0e618a}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+SLEEP) Idle Mode Configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a1e037abe2f7d3bb76b2197bb252dc03a}\label{component_2pm_8h_a1e037abe2f7d3bb76b2197bb252dc03a}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+Msk}~(0x3ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_aa2d182f036730a59ef2da72b5b0e618a}{PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a624dad2f7e3ebc6a04ec0fcdf3072de5}\label{component_2pm_8h_a624dad2f7e3ebc6a04ec0fcdf3072de5}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+IDLE}(value)~((PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2pm_8h_aa2d182f036730a59ef2da72b5b0e618a}{PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a7cc0377b2ef6038f5d801cc0d4e29123}\label{component_2pm_8h_a7cc0377b2ef6038f5d801cc0d4e29123}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+CPU\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+SLEEP) The CPU clock domain is stopped \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a11a1887faf287193d41aa8627e361f1f}\label{component_2pm_8h_a11a1887faf287193d41aa8627e361f1f}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+AHB\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+SLEEP) The CPU and AHB clock domains are stopped \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a7459e8643971963deab04fb2a7868257}\label{component_2pm_8h_a7459e8643971963deab04fb2a7868257}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+APB\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+SLEEP) The CPU, AHB and APB clock domains are stopped \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a59b7470b6354d3ef09b08dd492622dd2}\label{component_2pm_8h_a59b7470b6354d3ef09b08dd492622dd2}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+CPU}~(\mbox{\hyperlink{component_2pm_8h_a7cc0377b2ef6038f5d801cc0d4e29123}{PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+CPU\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{component_2pm_8h_aa2d182f036730a59ef2da72b5b0e618a}{PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_affe2b12b7d47ab717c6482b6fe2f993a}\label{component_2pm_8h_affe2b12b7d47ab717c6482b6fe2f993a}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+AHB}~(\mbox{\hyperlink{component_2pm_8h_a11a1887faf287193d41aa8627e361f1f}{PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+AHB\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{component_2pm_8h_aa2d182f036730a59ef2da72b5b0e618a}{PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a5fdcc8b36df20eaf23170477e0122803}\label{component_2pm_8h_a5fdcc8b36df20eaf23170477e0122803}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+APB}~(\mbox{\hyperlink{component_2pm_8h_a7459e8643971963deab04fb2a7868257}{PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+APB\+\_\+\+Val}}         $<$$<$ \mbox{\hyperlink{component_2pm_8h_aa2d182f036730a59ef2da72b5b0e618a}{PM\+\_\+\+SLEEP\+\_\+\+IDLE\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a36192860a85aa7ac4ee468e7d4d6ab5c}\label{component_2pm_8h_a36192860a85aa7ac4ee468e7d4d6ab5c}} 
+\#define {\bfseries PM\+\_\+\+SLEEP\+\_\+\+MASK}~0x03ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+SLEEP) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ae3690a5035eed2c8ce447a2dd0941222}\label{component_2pm_8h_ae3690a5035eed2c8ce447a2dd0941222}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+OFFSET}~0x08
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL offset) CPU Clock Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_af93de0c9c7d4aeeab39c969d8dc6ac79}\label{component_2pm_8h_af93de0c9c7d4aeeab39c969d8dc6ac79}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL reset\+\_\+value) CPU Clock Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}\label{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) CPU Prescaler Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a06419deee01df9d247037ecb975b2060}\label{component_2pm_8h_a06419deee01df9d247037ecb975b2060}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a169032443369081dbbb1d7944f6e23ab}\label{component_2pm_8h_a169032443369081dbbb1d7944f6e23ab}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV}(value)~((PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a1d79dfe939514654161cb9bfa85ba5b7}\label{component_2pm_8h_a1d79dfe939514654161cb9bfa85ba5b7}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV1\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) Divide by 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ac355a4c69da1a3a7c8f6620c72ce4786}\label{component_2pm_8h_ac355a4c69da1a3a7c8f6620c72ce4786}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV2\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) Divide by 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_add0d3f140d80559ad0c76d011e521d87}\label{component_2pm_8h_add0d3f140d80559ad0c76d011e521d87}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV4\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) Divide by 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ac6f31caf1947754f99d6c969a88565e0}\label{component_2pm_8h_ac6f31caf1947754f99d6c969a88565e0}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV8\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) Divide by 8 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a83eb5a5818cbb1e1db62be217ae6ee89}\label{component_2pm_8h_a83eb5a5818cbb1e1db62be217ae6ee89}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV16\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) Divide by 16 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a12dbe758dba92e2bec74eea6ad210df6}\label{component_2pm_8h_a12dbe758dba92e2bec74eea6ad210df6}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV32\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) Divide by 32 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a10cdb3447b7fbd67caffd85316805abd}\label{component_2pm_8h_a10cdb3447b7fbd67caffd85316805abd}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV64\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) Divide by 64 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a938d0dc17eb7f696a8a4b159bcd4721d}\label{component_2pm_8h_a938d0dc17eb7f696a8a4b159bcd4721d}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV128\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) Divide by 128 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a1c67bb03d1db064fb57a2e04e00bc5f9}\label{component_2pm_8h_a1c67bb03d1db064fb57a2e04e00bc5f9}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV1}~(\mbox{\hyperlink{component_2pm_8h_a1d79dfe939514654161cb9bfa85ba5b7}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV1\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a3189a4a860a99e1076faaa356be53c1d}\label{component_2pm_8h_a3189a4a860a99e1076faaa356be53c1d}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV2}~(\mbox{\hyperlink{component_2pm_8h_ac355a4c69da1a3a7c8f6620c72ce4786}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV2\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ad056689d66880962bda4d0b390d31fca}\label{component_2pm_8h_ad056689d66880962bda4d0b390d31fca}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV4}~(\mbox{\hyperlink{component_2pm_8h_add0d3f140d80559ad0c76d011e521d87}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV4\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a27e3df2ff882736b8c10ec869dd98dc4}\label{component_2pm_8h_a27e3df2ff882736b8c10ec869dd98dc4}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV8}~(\mbox{\hyperlink{component_2pm_8h_ac6f31caf1947754f99d6c969a88565e0}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV8\+\_\+\+Val}}     $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ac57d87a95544dcce186a8364bc305b2c}\label{component_2pm_8h_ac57d87a95544dcce186a8364bc305b2c}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV16}~(\mbox{\hyperlink{component_2pm_8h_a83eb5a5818cbb1e1db62be217ae6ee89}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV16\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a7e2779bd7ed9c712d7b1f9ee4e287345}\label{component_2pm_8h_a7e2779bd7ed9c712d7b1f9ee4e287345}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV32}~(\mbox{\hyperlink{component_2pm_8h_a12dbe758dba92e2bec74eea6ad210df6}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV32\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ac6fb257849e7dc6c42b2c050703a303e}\label{component_2pm_8h_ac6fb257849e7dc6c42b2c050703a303e}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV64}~(\mbox{\hyperlink{component_2pm_8h_a10cdb3447b7fbd67caffd85316805abd}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV64\+\_\+\+Val}}    $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a20c3e32a67ac7a415858d6b2b36e0062}\label{component_2pm_8h_a20c3e32a67ac7a415858d6b2b36e0062}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV128}~(\mbox{\hyperlink{component_2pm_8h_a938d0dc17eb7f696a8a4b159bcd4721d}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+DIV128\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_a06001ff79ade30f0557224810a94c5e1}{PM\+\_\+\+CPUSEL\+\_\+\+CPUDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ac19d6e70161078340535fd59cfe6228f}\label{component_2pm_8h_ac19d6e70161078340535fd59cfe6228f}} 
+\#define {\bfseries PM\+\_\+\+CPUSEL\+\_\+\+MASK}~0x07ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+CPUSEL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a53a0465e379f54f56b32bb2ab94eb70e}\label{component_2pm_8h_a53a0465e379f54f56b32bb2ab94eb70e}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+OFFSET}~0x09
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL offset) APBA Clock Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a632e21ffc1e2afad7855aed504faf24b}\label{component_2pm_8h_a632e21ffc1e2afad7855aed504faf24b}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL reset\+\_\+value) APBA Clock Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}\label{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) APBA Prescaler Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a559f3ad37b4bdcc8c4652370835af31f}\label{component_2pm_8h_a559f3ad37b4bdcc8c4652370835af31f}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_af122a339226217c6984f05b58039b153}\label{component_2pm_8h_af122a339226217c6984f05b58039b153}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV}(value)~((PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a8a305c10594a48164ea69840686ea687}\label{component_2pm_8h_a8a305c10594a48164ea69840686ea687}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV1\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) Divide by 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_aeb1943a5c678bf949d1a91019469b0fb}\label{component_2pm_8h_aeb1943a5c678bf949d1a91019469b0fb}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV2\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) Divide by 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a3ab1c2dd45cdeda0a30df9c3e060e558}\label{component_2pm_8h_a3ab1c2dd45cdeda0a30df9c3e060e558}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV4\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) Divide by 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a003b309e1ea26ef35d9d56d66139f05f}\label{component_2pm_8h_a003b309e1ea26ef35d9d56d66139f05f}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV8\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) Divide by 8 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a9a16dcd1b5997aa13f799849c76bd2e5}\label{component_2pm_8h_a9a16dcd1b5997aa13f799849c76bd2e5}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV16\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) Divide by 16 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a316fe0f95a4b7baf76df51f184dc470b}\label{component_2pm_8h_a316fe0f95a4b7baf76df51f184dc470b}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV32\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) Divide by 32 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_aee07af5f5d22318277a0b959140ee832}\label{component_2pm_8h_aee07af5f5d22318277a0b959140ee832}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV64\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) Divide by 64 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a9265c041300ed80e29edd9283ce4de4d}\label{component_2pm_8h_a9265c041300ed80e29edd9283ce4de4d}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV128\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) Divide by 128 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ac598b749bd49aa820ebd602e90c36398}\label{component_2pm_8h_ac598b749bd49aa820ebd602e90c36398}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV1}~(\mbox{\hyperlink{component_2pm_8h_a8a305c10594a48164ea69840686ea687}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV1\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a192cfdefac33689e4c46b28456824abd}\label{component_2pm_8h_a192cfdefac33689e4c46b28456824abd}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV2}~(\mbox{\hyperlink{component_2pm_8h_aeb1943a5c678bf949d1a91019469b0fb}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV2\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a7cfa405a0443d65cf430c7a2898d5a2b}\label{component_2pm_8h_a7cfa405a0443d65cf430c7a2898d5a2b}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV4}~(\mbox{\hyperlink{component_2pm_8h_a3ab1c2dd45cdeda0a30df9c3e060e558}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV4\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a44bb038376793ebb55d376f8f650e021}\label{component_2pm_8h_a44bb038376793ebb55d376f8f650e021}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV8}~(\mbox{\hyperlink{component_2pm_8h_a003b309e1ea26ef35d9d56d66139f05f}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV8\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_aff6c3bc9d5409d2ca232c654fa080c8d}\label{component_2pm_8h_aff6c3bc9d5409d2ca232c654fa080c8d}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV16}~(\mbox{\hyperlink{component_2pm_8h_a9a16dcd1b5997aa13f799849c76bd2e5}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV16\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ad69367edcddd00da59fa50800513a151}\label{component_2pm_8h_ad69367edcddd00da59fa50800513a151}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV32}~(\mbox{\hyperlink{component_2pm_8h_a316fe0f95a4b7baf76df51f184dc470b}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV32\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a3a3d82f3a3410b1c05b97c6e8e9b92c6}\label{component_2pm_8h_a3a3d82f3a3410b1c05b97c6e8e9b92c6}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV64}~(\mbox{\hyperlink{component_2pm_8h_aee07af5f5d22318277a0b959140ee832}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV64\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_aeff4acf83a3c662cc1613a977cb5a66d}\label{component_2pm_8h_aeff4acf83a3c662cc1613a977cb5a66d}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV128}~(\mbox{\hyperlink{component_2pm_8h_a9265c041300ed80e29edd9283ce4de4d}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+DIV128\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab10103778b1cfc844b25db57307010e6}{PM\+\_\+\+APBASEL\+\_\+\+APBADIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a7aa7f059173284b325b389e2d0aaeceb}\label{component_2pm_8h_a7aa7f059173284b325b389e2d0aaeceb}} 
+\#define {\bfseries PM\+\_\+\+APBASEL\+\_\+\+MASK}~0x07ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBASEL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_adf7dde68b235abe4b43b28d36e4e4e3b}\label{component_2pm_8h_adf7dde68b235abe4b43b28d36e4e4e3b}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+OFFSET}~0x0A
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL offset) APBB Clock Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a751789ef5f1ff6e9e27b3bafec2fcc1d}\label{component_2pm_8h_a751789ef5f1ff6e9e27b3bafec2fcc1d}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL reset\+\_\+value) APBB Clock Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}\label{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) APBB Prescaler Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ad86d78219d8c53bfaabd7cd2d76b77be}\label{component_2pm_8h_ad86d78219d8c53bfaabd7cd2d76b77be}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ae07bd162141ba68f6fffa15f2444a27f}\label{component_2pm_8h_ae07bd162141ba68f6fffa15f2444a27f}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV}(value)~((PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2pm_8h_abbcc76aa37209416de7d817aba658aa7}\label{component_2pm_8h_abbcc76aa37209416de7d817aba658aa7}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV1\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) Divide by 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a2c50db39cb50f6e832f931895278dccd}\label{component_2pm_8h_a2c50db39cb50f6e832f931895278dccd}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV2\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) Divide by 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ae5b3508dcee9ffb736f58d0d4457ef7a}\label{component_2pm_8h_ae5b3508dcee9ffb736f58d0d4457ef7a}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV4\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) Divide by 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_aa699336852d207d8af640baa1c917e71}\label{component_2pm_8h_aa699336852d207d8af640baa1c917e71}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV8\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) Divide by 8 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a492f869fae35e226de8cc85165f51785}\label{component_2pm_8h_a492f869fae35e226de8cc85165f51785}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV16\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) Divide by 16 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a68ab60cf10293d64c782ab374f7ab72a}\label{component_2pm_8h_a68ab60cf10293d64c782ab374f7ab72a}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV32\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) Divide by 32 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a2f3fd93521a232a039f3d891efed5b0f}\label{component_2pm_8h_a2f3fd93521a232a039f3d891efed5b0f}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV64\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) Divide by 64 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a7b5c5d49588ec48addaf4b6e23937865}\label{component_2pm_8h_a7b5c5d49588ec48addaf4b6e23937865}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV128\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) Divide by 128 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a44965893f5e660eb75bc381de68c39de}\label{component_2pm_8h_a44965893f5e660eb75bc381de68c39de}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV1}~(\mbox{\hyperlink{component_2pm_8h_abbcc76aa37209416de7d817aba658aa7}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV1\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a28b6b12ad5078f248adb2b5cff40d431}\label{component_2pm_8h_a28b6b12ad5078f248adb2b5cff40d431}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV2}~(\mbox{\hyperlink{component_2pm_8h_a2c50db39cb50f6e832f931895278dccd}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV2\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a69d8db68319e9bd63181b4a58ee60326}\label{component_2pm_8h_a69d8db68319e9bd63181b4a58ee60326}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV4}~(\mbox{\hyperlink{component_2pm_8h_ae5b3508dcee9ffb736f58d0d4457ef7a}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV4\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ae14085b9f0b30152f53eabf63fb085ca}\label{component_2pm_8h_ae14085b9f0b30152f53eabf63fb085ca}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV8}~(\mbox{\hyperlink{component_2pm_8h_aa699336852d207d8af640baa1c917e71}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV8\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_aa0cf006dd250a8b454a7c82eb2fa54e8}\label{component_2pm_8h_aa0cf006dd250a8b454a7c82eb2fa54e8}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV16}~(\mbox{\hyperlink{component_2pm_8h_a492f869fae35e226de8cc85165f51785}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV16\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a6628c6d45df700a7601b7e1b7cd7b757}\label{component_2pm_8h_a6628c6d45df700a7601b7e1b7cd7b757}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV32}~(\mbox{\hyperlink{component_2pm_8h_a68ab60cf10293d64c782ab374f7ab72a}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV32\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a1f0687be10f9f3192585e656f2f6433f}\label{component_2pm_8h_a1f0687be10f9f3192585e656f2f6433f}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV64}~(\mbox{\hyperlink{component_2pm_8h_a2f3fd93521a232a039f3d891efed5b0f}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV64\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_af3d41c6fa918141eb2873f289dc8ad6b}\label{component_2pm_8h_af3d41c6fa918141eb2873f289dc8ad6b}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV128}~(\mbox{\hyperlink{component_2pm_8h_a7b5c5d49588ec48addaf4b6e23937865}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+DIV128\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2pm_8h_a96e9f272a436f893bd20fbdf05644b79}{PM\+\_\+\+APBBSEL\+\_\+\+APBBDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a2f430fa8cd7cb5418110f32292f28315}\label{component_2pm_8h_a2f430fa8cd7cb5418110f32292f28315}} 
+\#define {\bfseries PM\+\_\+\+APBBSEL\+\_\+\+MASK}~0x07ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBSEL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a428763f4ad33829944c5364a712c21ae}\label{component_2pm_8h_a428763f4ad33829944c5364a712c21ae}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+OFFSET}~0x0B
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL offset) APBC Clock Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a54959672e4e7f0598a416620d0657f76}\label{component_2pm_8h_a54959672e4e7f0598a416620d0657f76}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL reset\+\_\+value) APBC Clock Select \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}\label{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) APBC Prescaler Selection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a2619287494a45aef81eafed63ea8463d}\label{component_2pm_8h_a2619287494a45aef81eafed63ea8463d}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Msk}~(0x7ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a5f10c12c31b1fe15eee55ac128eaeb7e}\label{component_2pm_8h_a5f10c12c31b1fe15eee55ac128eaeb7e}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV}(value)~((PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Msk \& ((value) $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})))
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a765ff4e686958dbc7632b65e5f41e194}\label{component_2pm_8h_a765ff4e686958dbc7632b65e5f41e194}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV1\+\_\+\+Val}~0x0ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) Divide by 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a5851df079a899ab86eeacb5ea31a5f0b}\label{component_2pm_8h_a5851df079a899ab86eeacb5ea31a5f0b}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV2\+\_\+\+Val}~0x1ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) Divide by 2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a7b652bc91ccaa93868364c00af432d6d}\label{component_2pm_8h_a7b652bc91ccaa93868364c00af432d6d}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV4\+\_\+\+Val}~0x2ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) Divide by 4 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ace5dfb40f2f3fdef3a50e0b02053b19f}\label{component_2pm_8h_ace5dfb40f2f3fdef3a50e0b02053b19f}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV8\+\_\+\+Val}~0x3ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) Divide by 8 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a6fe64d54976c1ae20f5e280b0b70db29}\label{component_2pm_8h_a6fe64d54976c1ae20f5e280b0b70db29}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV16\+\_\+\+Val}~0x4ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) Divide by 16 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a833c9559062ca281577ab653e32fc9a8}\label{component_2pm_8h_a833c9559062ca281577ab653e32fc9a8}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV32\+\_\+\+Val}~0x5ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) Divide by 32 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a4dc1ccebf7e7d88b71527d7b02c159e2}\label{component_2pm_8h_a4dc1ccebf7e7d88b71527d7b02c159e2}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV64\+\_\+\+Val}~0x6ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) Divide by 64 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a77ed7791d99c862183da8cb58b349aca}\label{component_2pm_8h_a77ed7791d99c862183da8cb58b349aca}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV128\+\_\+\+Val}~0x7ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) Divide by 128 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ad92a05127b3c70675bdaecd01e30c335}\label{component_2pm_8h_ad92a05127b3c70675bdaecd01e30c335}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV1}~(\mbox{\hyperlink{component_2pm_8h_a765ff4e686958dbc7632b65e5f41e194}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV1\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a1cc5c4bacd42d159467e5d18c246b244}\label{component_2pm_8h_a1cc5c4bacd42d159467e5d18c246b244}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV2}~(\mbox{\hyperlink{component_2pm_8h_a5851df079a899ab86eeacb5ea31a5f0b}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV2\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a3edf3ca1800b707a9d47ebbbdf7b3cc4}\label{component_2pm_8h_a3edf3ca1800b707a9d47ebbbdf7b3cc4}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV4}~(\mbox{\hyperlink{component_2pm_8h_a7b652bc91ccaa93868364c00af432d6d}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV4\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a1c923d46b1569a1d56f639f42f61237c}\label{component_2pm_8h_a1c923d46b1569a1d56f639f42f61237c}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV8}~(\mbox{\hyperlink{component_2pm_8h_ace5dfb40f2f3fdef3a50e0b02053b19f}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV8\+\_\+\+Val}}   $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_af9c8dfca842134a6ad6e72fb31e8d7f8}\label{component_2pm_8h_af9c8dfca842134a6ad6e72fb31e8d7f8}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV16}~(\mbox{\hyperlink{component_2pm_8h_a6fe64d54976c1ae20f5e280b0b70db29}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV16\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a1bbe6e70ee588f9d8b0bcf194eda31cd}\label{component_2pm_8h_a1bbe6e70ee588f9d8b0bcf194eda31cd}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV32}~(\mbox{\hyperlink{component_2pm_8h_a833c9559062ca281577ab653e32fc9a8}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV32\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a6106cad1c61024bcc240678d6904d47e}\label{component_2pm_8h_a6106cad1c61024bcc240678d6904d47e}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV64}~(\mbox{\hyperlink{component_2pm_8h_a4dc1ccebf7e7d88b71527d7b02c159e2}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV64\+\_\+\+Val}}  $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a7f8a3c56cb7668b3a382ae3dffe8a22b}\label{component_2pm_8h_a7f8a3c56cb7668b3a382ae3dffe8a22b}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV128}~(\mbox{\hyperlink{component_2pm_8h_a77ed7791d99c862183da8cb58b349aca}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+DIV128\+\_\+\+Val}} $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4a8379c87e542ce1f35e688187aac873}{PM\+\_\+\+APBCSEL\+\_\+\+APBCDIV\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ad545681bb5463273dd62047177fdaf35}\label{component_2pm_8h_ad545681bb5463273dd62047177fdaf35}} 
+\#define {\bfseries PM\+\_\+\+APBCSEL\+\_\+\+MASK}~0x07ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCSEL) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a20c0602bc0e19c36426b46bc762d4363}\label{component_2pm_8h_a20c0602bc0e19c36426b46bc762d4363}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+OFFSET}~0x14
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+AHBMASK offset) AHB Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a49cf816900ac3bc0748e67ae8c0c9dee}\label{component_2pm_8h_a49cf816900ac3bc0748e67ae8c0c9dee}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+RESETVALUE}~0x0000001\+Ful
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+AHBMASK reset\+\_\+value) AHB Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a298e7d33ef41e2dfa71d1872d592e4cd}\label{component_2pm_8h_a298e7d33ef41e2dfa71d1872d592e4cd}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+HPB0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+AHBMASK) HPB0 AHB Clock Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a26a78390a39b943e7afc891f3e7ab97c}\label{component_2pm_8h_a26a78390a39b943e7afc891f3e7ab97c}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+HPB0}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a298e7d33ef41e2dfa71d1872d592e4cd}{PM\+\_\+\+AHBMASK\+\_\+\+HPB0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ad5e577ea6298cd945a361b038d0a2b16}\label{component_2pm_8h_ad5e577ea6298cd945a361b038d0a2b16}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+HPB1\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+AHBMASK) HPB1 AHB Clock Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a212f9f75539abab8b616c024e10a6e90}\label{component_2pm_8h_a212f9f75539abab8b616c024e10a6e90}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+HPB1}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ad5e577ea6298cd945a361b038d0a2b16}{PM\+\_\+\+AHBMASK\+\_\+\+HPB1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a17220fc0c6592e1387bbb0d8ac9da885}\label{component_2pm_8h_a17220fc0c6592e1387bbb0d8ac9da885}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+HPB2\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+AHBMASK) HPB2 AHB Clock Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_afbf4c771e94d4a2747abe5fb9d58defe}\label{component_2pm_8h_afbf4c771e94d4a2747abe5fb9d58defe}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+HPB2}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a17220fc0c6592e1387bbb0d8ac9da885}{PM\+\_\+\+AHBMASK\+\_\+\+HPB2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a784bb8a20020efd9c9cdc53035259027}\label{component_2pm_8h_a784bb8a20020efd9c9cdc53035259027}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+DSU\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+AHBMASK) DSU AHB Clock Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ac4dbd5b74f9b3c8eb37fe0c196d9e531}\label{component_2pm_8h_ac4dbd5b74f9b3c8eb37fe0c196d9e531}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+DSU}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a784bb8a20020efd9c9cdc53035259027}{PM\+\_\+\+AHBMASK\+\_\+\+DSU\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a580b823819e6e1e7557c405b63f22788}\label{component_2pm_8h_a580b823819e6e1e7557c405b63f22788}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+NVMCTRL\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+AHBMASK) NVMCTRL AHB Clock Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a5f9aada26e0cfed535a02d7340874487}\label{component_2pm_8h_a5f9aada26e0cfed535a02d7340874487}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+NVMCTRL}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a580b823819e6e1e7557c405b63f22788}{PM\+\_\+\+AHBMASK\+\_\+\+NVMCTRL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a6ca38ecf4a5287866545a648ed37e517}\label{component_2pm_8h_a6ca38ecf4a5287866545a648ed37e517}} 
+\#define {\bfseries PM\+\_\+\+AHBMASK\+\_\+\+MASK}~0x0000001\+Ful
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+AHBMASK) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a94a0a514a3b4f3d18a23742e5ea52b95}\label{component_2pm_8h_a94a0a514a3b4f3d18a23742e5ea52b95}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+OFFSET}~0x18
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK offset) APBA Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a82cc957cc8e3872b5159d48030d2deae}\label{component_2pm_8h_a82cc957cc8e3872b5159d48030d2deae}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+RESETVALUE}~0x0000007\+Ful
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK reset\+\_\+value) APBA Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a07a1f4fa96aaf5a1cecbb70c7d43d908}\label{component_2pm_8h_a07a1f4fa96aaf5a1cecbb70c7d43d908}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+PAC0\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK) PAC0 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_aa965e397bffbe06a2379615dc0b642cf}\label{component_2pm_8h_aa965e397bffbe06a2379615dc0b642cf}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+PAC0}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a07a1f4fa96aaf5a1cecbb70c7d43d908}{PM\+\_\+\+APBAMASK\+\_\+\+PAC0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a553fd9fcb0d68702321f36345d85e222}\label{component_2pm_8h_a553fd9fcb0d68702321f36345d85e222}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+PM\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK) PM APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ad9efaec8fbf691e17a70eba7867a9119}\label{component_2pm_8h_ad9efaec8fbf691e17a70eba7867a9119}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+PM}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a553fd9fcb0d68702321f36345d85e222}{PM\+\_\+\+APBAMASK\+\_\+\+PM\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_aa3437d5513a02e6845c23b9f646a26b6}\label{component_2pm_8h_aa3437d5513a02e6845c23b9f646a26b6}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+SYSCTRL\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK) SYSCTRL APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a1991032645cbc3fa3d77ee1f3f18c0bb}\label{component_2pm_8h_a1991032645cbc3fa3d77ee1f3f18c0bb}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+SYSCTRL}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_aa3437d5513a02e6845c23b9f646a26b6}{PM\+\_\+\+APBAMASK\+\_\+\+SYSCTRL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a4f969e6c0858d795946b75efbe6e85ad}\label{component_2pm_8h_a4f969e6c0858d795946b75efbe6e85ad}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+GCLK\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK) GCLK APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a1be238da26174607bfa77e5e7cc85c8e}\label{component_2pm_8h_a1be238da26174607bfa77e5e7cc85c8e}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+GCLK}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4f969e6c0858d795946b75efbe6e85ad}{PM\+\_\+\+APBAMASK\+\_\+\+GCLK\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a818a38211f6491677cac491906b3de46}\label{component_2pm_8h_a818a38211f6491677cac491906b3de46}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+WDT\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK) WDT APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a005f65e6f426870c5a0b3d4fb7fd87dc}\label{component_2pm_8h_a005f65e6f426870c5a0b3d4fb7fd87dc}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+WDT}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a818a38211f6491677cac491906b3de46}{PM\+\_\+\+APBAMASK\+\_\+\+WDT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_aaf67c76342f83e6c3219363afdd2976e}\label{component_2pm_8h_aaf67c76342f83e6c3219363afdd2976e}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+RTC\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK) RTC APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a1792268bc6fcc0f2bc9e734a4688f591}\label{component_2pm_8h_a1792268bc6fcc0f2bc9e734a4688f591}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+RTC}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_aaf67c76342f83e6c3219363afdd2976e}{PM\+\_\+\+APBAMASK\+\_\+\+RTC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_acaa8331969c6e4817e67654b69ac48a7}\label{component_2pm_8h_acaa8331969c6e4817e67654b69ac48a7}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+EIC\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK) EIC APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a446d74b13c585add1e4e4df1a21db494}\label{component_2pm_8h_a446d74b13c585add1e4e4df1a21db494}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+EIC}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_acaa8331969c6e4817e67654b69ac48a7}{PM\+\_\+\+APBAMASK\+\_\+\+EIC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_af96f81afae53771db187bed2f7d050eb}\label{component_2pm_8h_af96f81afae53771db187bed2f7d050eb}} 
+\#define {\bfseries PM\+\_\+\+APBAMASK\+\_\+\+MASK}~0x0000007\+Ful
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBAMASK) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a8bc419d467295a20e66912b3bed5ffb3}\label{component_2pm_8h_a8bc419d467295a20e66912b3bed5ffb3}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+OFFSET}~0x1C
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBMASK offset) APBB Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a907a31009679084d15277e9207f830fe}\label{component_2pm_8h_a907a31009679084d15277e9207f830fe}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+RESETVALUE}~0x0000001\+Ful
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBMASK reset\+\_\+value) APBB Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a6be40aecf3f215cda5582bf370c57957}\label{component_2pm_8h_a6be40aecf3f215cda5582bf370c57957}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+PAC1\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBMASK) PAC1 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a28e25c1f55bde9a96b2de5562d04328d}\label{component_2pm_8h_a28e25c1f55bde9a96b2de5562d04328d}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+PAC1}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a6be40aecf3f215cda5582bf370c57957}{PM\+\_\+\+APBBMASK\+\_\+\+PAC1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a2e04e1241cbf44a024498798d4116273}\label{component_2pm_8h_a2e04e1241cbf44a024498798d4116273}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+DSU\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBMASK) DSU APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a9f104b5736f8f59e2dbce736333cca6e}\label{component_2pm_8h_a9f104b5736f8f59e2dbce736333cca6e}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+DSU}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a2e04e1241cbf44a024498798d4116273}{PM\+\_\+\+APBBMASK\+\_\+\+DSU\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_aec009e67d67461d158071c23dc16f8e7}\label{component_2pm_8h_aec009e67d67461d158071c23dc16f8e7}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+NVMCTRL\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBMASK) NVMCTRL APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a407da8747aef9e79f3609ba6ba4e1428}\label{component_2pm_8h_a407da8747aef9e79f3609ba6ba4e1428}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+NVMCTRL}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_aec009e67d67461d158071c23dc16f8e7}{PM\+\_\+\+APBBMASK\+\_\+\+NVMCTRL\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ab46bbad2e722f6b5cfd858afd267f409}\label{component_2pm_8h_ab46bbad2e722f6b5cfd858afd267f409}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+PORT\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBMASK) PORT APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a0d7e0f887bbcc8ce8798148e0e1b6c1f}\label{component_2pm_8h_a0d7e0f887bbcc8ce8798148e0e1b6c1f}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+PORT}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab46bbad2e722f6b5cfd858afd267f409}{PM\+\_\+\+APBBMASK\+\_\+\+PORT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ab0290a0b91d23c9c3108b1a721ecef45}\label{component_2pm_8h_ab0290a0b91d23c9c3108b1a721ecef45}} 
+\#define {\bfseries PM\+\_\+\+APBBMASK\+\_\+\+MASK}~0x0000000\+Ful
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBBMASK) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_af3fe940d686f2bf61e04fc17f001fe8e}\label{component_2pm_8h_af3fe940d686f2bf61e04fc17f001fe8e}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+OFFSET}~0x20
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK offset) APBC Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ae162e84836c8699cf3308f894f9d44c7}\label{component_2pm_8h_ae162e84836c8699cf3308f894f9d44c7}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+RESETVALUE}~0x00010000ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK reset\+\_\+value) APBC Mask \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a4454b03d2866981fd10575fa0e0c6591}\label{component_2pm_8h_a4454b03d2866981fd10575fa0e0c6591}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+PAC2\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) PAC2 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a08b03d53fcc375970c00a1b34323f6d8}\label{component_2pm_8h_a08b03d53fcc375970c00a1b34323f6d8}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+PAC2}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4454b03d2866981fd10575fa0e0c6591}{PM\+\_\+\+APBCMASK\+\_\+\+PAC2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a388a30acb0bfb91367b2b129c311d2ce}\label{component_2pm_8h_a388a30acb0bfb91367b2b129c311d2ce}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+EVSYS\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) EVSYS APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a20629d139cb27baf81b116cab31fa4f4}\label{component_2pm_8h_a20629d139cb27baf81b116cab31fa4f4}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+EVSYS}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a388a30acb0bfb91367b2b129c311d2ce}{PM\+\_\+\+APBCMASK\+\_\+\+EVSYS\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_acf01ff0bb8d83c46b1a9e320c7dafcfc}\label{component_2pm_8h_acf01ff0bb8d83c46b1a9e320c7dafcfc}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM0\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) SERCOM0 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a52b1de678a76efd90483d08005aca6e3}\label{component_2pm_8h_a52b1de678a76efd90483d08005aca6e3}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM0}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_acf01ff0bb8d83c46b1a9e320c7dafcfc}{PM\+\_\+\+APBCMASK\+\_\+\+SERCOM0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a9234f4a8ac9479a746e19a58337d3839}\label{component_2pm_8h_a9234f4a8ac9479a746e19a58337d3839}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM1\+\_\+\+Pos}~3
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) SERCOM1 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_af674a3f646bbf20ecb219305cd18940f}\label{component_2pm_8h_af674a3f646bbf20ecb219305cd18940f}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM1}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a9234f4a8ac9479a746e19a58337d3839}{PM\+\_\+\+APBCMASK\+\_\+\+SERCOM1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ac08c4dae369adde60b3784685995e796}\label{component_2pm_8h_ac08c4dae369adde60b3784685995e796}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM2\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) SERCOM2 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ad18db1c295d06722376df5cbb4b600cf}\label{component_2pm_8h_ad18db1c295d06722376df5cbb4b600cf}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM2}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ac08c4dae369adde60b3784685995e796}{PM\+\_\+\+APBCMASK\+\_\+\+SERCOM2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ac96ec6b5888b3d60c109994307b4450a}\label{component_2pm_8h_ac96ec6b5888b3d60c109994307b4450a}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM3\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) SERCOM3 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a2bf65be68fb589feba7904e81b19a721}\label{component_2pm_8h_a2bf65be68fb589feba7904e81b19a721}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM3}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ac96ec6b5888b3d60c109994307b4450a}{PM\+\_\+\+APBCMASK\+\_\+\+SERCOM3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a45ed05799a33a5f26c3b1cda9b8b8426}\label{component_2pm_8h_a45ed05799a33a5f26c3b1cda9b8b8426}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM4\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) SERCOM4 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a15a25af928ffa94647895e273459fcf5}\label{component_2pm_8h_a15a25af928ffa94647895e273459fcf5}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM4}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a45ed05799a33a5f26c3b1cda9b8b8426}{PM\+\_\+\+APBCMASK\+\_\+\+SERCOM4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ad2bddb67278a43fe7140447e6aa00722}\label{component_2pm_8h_ad2bddb67278a43fe7140447e6aa00722}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM5\+\_\+\+Pos}~7
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) SERCOM5 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_aaca811fdba4b1dfaa4d1c6115eb92110}\label{component_2pm_8h_aaca811fdba4b1dfaa4d1c6115eb92110}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+SERCOM5}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ad2bddb67278a43fe7140447e6aa00722}{PM\+\_\+\+APBCMASK\+\_\+\+SERCOM5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a553ea5bb9003184640b57500e7836f3b}\label{component_2pm_8h_a553ea5bb9003184640b57500e7836f3b}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC0\+\_\+\+Pos}~8
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) TC0 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a096448dda86134ef07131f58679e27a4}\label{component_2pm_8h_a096448dda86134ef07131f58679e27a4}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC0}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a553ea5bb9003184640b57500e7836f3b}{PM\+\_\+\+APBCMASK\+\_\+\+TC0\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a85749a659a64a0cd36cad21459cca2c1}\label{component_2pm_8h_a85749a659a64a0cd36cad21459cca2c1}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC1\+\_\+\+Pos}~9
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) TC1 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ab7cf890893d99e34745890c285e1bd7e}\label{component_2pm_8h_ab7cf890893d99e34745890c285e1bd7e}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC1}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a85749a659a64a0cd36cad21459cca2c1}{PM\+\_\+\+APBCMASK\+\_\+\+TC1\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ac15715bb5706c94fbb3573dca9265104}\label{component_2pm_8h_ac15715bb5706c94fbb3573dca9265104}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC2\+\_\+\+Pos}~10
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) TC2 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_afe09669f2ea7dee4cf94ce67bc245baf}\label{component_2pm_8h_afe09669f2ea7dee4cf94ce67bc245baf}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC2}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ac15715bb5706c94fbb3573dca9265104}{PM\+\_\+\+APBCMASK\+\_\+\+TC2\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a090ad1f9cb1c7cee311d1c02054b0d82}\label{component_2pm_8h_a090ad1f9cb1c7cee311d1c02054b0d82}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC3\+\_\+\+Pos}~11
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) TC3 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a6f978b468556a04cc24ddb56ec619784}\label{component_2pm_8h_a6f978b468556a04cc24ddb56ec619784}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC3}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a090ad1f9cb1c7cee311d1c02054b0d82}{PM\+\_\+\+APBCMASK\+\_\+\+TC3\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_aca2b64857db290b39cf6ce7cb6637b72}\label{component_2pm_8h_aca2b64857db290b39cf6ce7cb6637b72}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC4\+\_\+\+Pos}~12
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) TC4 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a4040453532b6791121651c4bfab099cd}\label{component_2pm_8h_a4040453532b6791121651c4bfab099cd}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC4}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_aca2b64857db290b39cf6ce7cb6637b72}{PM\+\_\+\+APBCMASK\+\_\+\+TC4\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_af3dec60591427af14cafa0bda8db17f6}\label{component_2pm_8h_af3dec60591427af14cafa0bda8db17f6}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC5\+\_\+\+Pos}~13
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) TC5 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_af0843ef872a543735acd89109b5ccd44}\label{component_2pm_8h_af0843ef872a543735acd89109b5ccd44}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC5}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_af3dec60591427af14cafa0bda8db17f6}{PM\+\_\+\+APBCMASK\+\_\+\+TC5\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ac027faf083cc78dd4ebe67459a5f4214}\label{component_2pm_8h_ac027faf083cc78dd4ebe67459a5f4214}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC6\+\_\+\+Pos}~14
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) TC6 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_afe8e0feb72f20f5a09e0a0c5c9ba74da}\label{component_2pm_8h_afe8e0feb72f20f5a09e0a0c5c9ba74da}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC6}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ac027faf083cc78dd4ebe67459a5f4214}{PM\+\_\+\+APBCMASK\+\_\+\+TC6\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_af34876a97cacd9ecf9cb00f42ed05b4a}\label{component_2pm_8h_af34876a97cacd9ecf9cb00f42ed05b4a}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC7\+\_\+\+Pos}~15
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) TC7 APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a23813dadeb232bdeb23eb37b590c9550}\label{component_2pm_8h_a23813dadeb232bdeb23eb37b590c9550}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+TC7}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_af34876a97cacd9ecf9cb00f42ed05b4a}{PM\+\_\+\+APBCMASK\+\_\+\+TC7\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a8a6beb015784df10ef9ab5357e07e3b5}\label{component_2pm_8h_a8a6beb015784df10ef9ab5357e07e3b5}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+ADC\+\_\+\+Pos}~16
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) ADC APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ad2eca5e118cbd6a28e4128c3bc71f059}\label{component_2pm_8h_ad2eca5e118cbd6a28e4128c3bc71f059}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+ADC}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a8a6beb015784df10ef9ab5357e07e3b5}{PM\+\_\+\+APBCMASK\+\_\+\+ADC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a6c31231636dfffc0fddb7be68e3ebbc3}\label{component_2pm_8h_a6c31231636dfffc0fddb7be68e3ebbc3}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+AC\+\_\+\+Pos}~17
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) AC APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_afc1d7c7553a7dad7147fe63c7b1cf3ff}\label{component_2pm_8h_afc1d7c7553a7dad7147fe63c7b1cf3ff}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+AC}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a6c31231636dfffc0fddb7be68e3ebbc3}{PM\+\_\+\+APBCMASK\+\_\+\+AC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a6b7c892132847d9d6d85da943a09b7f0}\label{component_2pm_8h_a6b7c892132847d9d6d85da943a09b7f0}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+DAC\+\_\+\+Pos}~18
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) DAC APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a290e75eaccf0a50429eb43fdcee8171e}\label{component_2pm_8h_a290e75eaccf0a50429eb43fdcee8171e}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+DAC}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a6b7c892132847d9d6d85da943a09b7f0}{PM\+\_\+\+APBCMASK\+\_\+\+DAC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a58c6842e80b591c43361601051a75d9b}\label{component_2pm_8h_a58c6842e80b591c43361601051a75d9b}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+PTC\+\_\+\+Pos}~19
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) PTC APB Clock Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a3e93d2af2629c9c06f24848b2d6c2a74}\label{component_2pm_8h_a3e93d2af2629c9c06f24848b2d6c2a74}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+PTC}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a58c6842e80b591c43361601051a75d9b}{PM\+\_\+\+APBCMASK\+\_\+\+PTC\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a0d5cdb44162fa86e4e0f5cce6b84ac63}\label{component_2pm_8h_a0d5cdb44162fa86e4e0f5cce6b84ac63}} 
+\#define {\bfseries PM\+\_\+\+APBCMASK\+\_\+\+MASK}~0x000\+FFFFFul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+APBCMASK) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a96e613f029988a0e97e71761daab56d8}\label{component_2pm_8h_a96e613f029988a0e97e71761daab56d8}} 
+\#define {\bfseries PM\+\_\+\+INTENCLR\+\_\+\+OFFSET}~0x34
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTENCLR offset) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a6af1e46f631f08562f2affcba415c69c}\label{component_2pm_8h_a6af1e46f631f08562f2affcba415c69c}} 
+\#define {\bfseries PM\+\_\+\+INTENCLR\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTENCLR reset\+\_\+value) Interrupt Enable Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a4b738eba9a654ddff5a18ec8b92cf56f}\label{component_2pm_8h_a4b738eba9a654ddff5a18ec8b92cf56f}} 
+\#define {\bfseries PM\+\_\+\+INTENCLR\+\_\+\+CKRDY\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTENCLR) Clock Ready Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a6925a216f9bedf9d02e899eec20790ac}\label{component_2pm_8h_a6925a216f9bedf9d02e899eec20790ac}} 
+\#define {\bfseries PM\+\_\+\+INTENCLR\+\_\+\+CKRDY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a4b738eba9a654ddff5a18ec8b92cf56f}{PM\+\_\+\+INTENCLR\+\_\+\+CKRDY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a69858d0d83319582e961338ebf0e6def}\label{component_2pm_8h_a69858d0d83319582e961338ebf0e6def}} 
+\#define {\bfseries PM\+\_\+\+INTENCLR\+\_\+\+MASK}~0x01ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTENCLR) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_acbb9e160784aa556b444d77c22d69b5e}\label{component_2pm_8h_acbb9e160784aa556b444d77c22d69b5e}} 
+\#define {\bfseries PM\+\_\+\+INTENSET\+\_\+\+OFFSET}~0x35
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTENSET offset) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a1ff5cf286622565d1fdcfcae1e552bfd}\label{component_2pm_8h_a1ff5cf286622565d1fdcfcae1e552bfd}} 
+\#define {\bfseries PM\+\_\+\+INTENSET\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTENSET reset\+\_\+value) Interrupt Enable Set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a35e8b950869829eb8c88866bb6f5c8ac}\label{component_2pm_8h_a35e8b950869829eb8c88866bb6f5c8ac}} 
+\#define {\bfseries PM\+\_\+\+INTENSET\+\_\+\+CKRDY\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTENSET) Clock Ready Interrupt Enable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a080bbe9fc280b86fb0b311276d5637e1}\label{component_2pm_8h_a080bbe9fc280b86fb0b311276d5637e1}} 
+\#define {\bfseries PM\+\_\+\+INTENSET\+\_\+\+CKRDY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a35e8b950869829eb8c88866bb6f5c8ac}{PM\+\_\+\+INTENSET\+\_\+\+CKRDY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a913aa0f4020e344151814557d64767d7}\label{component_2pm_8h_a913aa0f4020e344151814557d64767d7}} 
+\#define {\bfseries PM\+\_\+\+INTENSET\+\_\+\+MASK}~0x01ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTENSET) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a9f885fcf58926ce0a55a0cb84523b6cc}\label{component_2pm_8h_a9f885fcf58926ce0a55a0cb84523b6cc}} 
+\#define {\bfseries PM\+\_\+\+INTFLAG\+\_\+\+OFFSET}~0x36
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTFLAG offset) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a75ec112ff873ab4855f99087a5023b13}\label{component_2pm_8h_a75ec112ff873ab4855f99087a5023b13}} 
+\#define {\bfseries PM\+\_\+\+INTFLAG\+\_\+\+RESETVALUE}~0x00ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTFLAG reset\+\_\+value) Interrupt Flag Status and Clear \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ac66fe79fd4706ffa1e5e815affd51b94}\label{component_2pm_8h_ac66fe79fd4706ffa1e5e815affd51b94}} 
+\#define {\bfseries PM\+\_\+\+INTFLAG\+\_\+\+CKRDY\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTFLAG) Clock Ready \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a004040c22d0103c1838a67b1fda6b61a}\label{component_2pm_8h_a004040c22d0103c1838a67b1fda6b61a}} 
+\#define {\bfseries PM\+\_\+\+INTFLAG\+\_\+\+CKRDY}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ac66fe79fd4706ffa1e5e815affd51b94}{PM\+\_\+\+INTFLAG\+\_\+\+CKRDY\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ac5ddba598ffebe3739bbba90116b3ba3}\label{component_2pm_8h_ac5ddba598ffebe3739bbba90116b3ba3}} 
+\#define {\bfseries PM\+\_\+\+INTFLAG\+\_\+\+MASK}~0x01ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+INTFLAG) MASK Register \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a9132031a863459601c4ce961fb0645e4}\label{component_2pm_8h_a9132031a863459601c4ce961fb0645e4}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+OFFSET}~0x38
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+RCAUSE offset) Reset Cause \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ad70fa3e7a56391a898ba3b0b790d175f}\label{component_2pm_8h_ad70fa3e7a56391a898ba3b0b790d175f}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+RESETVALUE}~0x01ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+RCAUSE reset\+\_\+value) Reset Cause \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a34467ab2075605b8494c6540c5b5761a}\label{component_2pm_8h_a34467ab2075605b8494c6540c5b5761a}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+POR\+\_\+\+Pos}~0
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+RCAUSE) Power On Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a302ec011a5cc9a2bdfc793fe09ed5d17}\label{component_2pm_8h_a302ec011a5cc9a2bdfc793fe09ed5d17}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+POR}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a34467ab2075605b8494c6540c5b5761a}{PM\+\_\+\+RCAUSE\+\_\+\+POR\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a22055fee692ccb23fee86eaa41bfc03a}\label{component_2pm_8h_a22055fee692ccb23fee86eaa41bfc03a}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+BOD12\+\_\+\+Pos}~1
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+RCAUSE) Brown Out 12 Detector Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a80b791ec6e4eea8457acefdb2388bcd6}\label{component_2pm_8h_a80b791ec6e4eea8457acefdb2388bcd6}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+BOD12}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a22055fee692ccb23fee86eaa41bfc03a}{PM\+\_\+\+RCAUSE\+\_\+\+BOD12\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a5e12f288c71a8c4f9a9308c6822f96a8}\label{component_2pm_8h_a5e12f288c71a8c4f9a9308c6822f96a8}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+BOD33\+\_\+\+Pos}~2
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+RCAUSE) Brown Out 33 Detector Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a17b0eac2078f496f1cf9bf4de3045319}\label{component_2pm_8h_a17b0eac2078f496f1cf9bf4de3045319}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+BOD33}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a5e12f288c71a8c4f9a9308c6822f96a8}{PM\+\_\+\+RCAUSE\+\_\+\+BOD33\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a0c5c00a77162c22201c0957e72e274f4}\label{component_2pm_8h_a0c5c00a77162c22201c0957e72e274f4}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+EXT\+\_\+\+Pos}~4
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+RCAUSE) External Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_ab900ebc7012e2d2fe40ad6ff2aeeb079}\label{component_2pm_8h_ab900ebc7012e2d2fe40ad6ff2aeeb079}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+EXT}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a0c5c00a77162c22201c0957e72e274f4}{PM\+\_\+\+RCAUSE\+\_\+\+EXT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_ab0963293947ca8a4531e5a51d53438b2}\label{component_2pm_8h_ab0963293947ca8a4531e5a51d53438b2}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+WDT\+\_\+\+Pos}~5
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+RCAUSE) Watchdog Reset \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a2e6ddb881722d01467601fe471f3d39d}\label{component_2pm_8h_a2e6ddb881722d01467601fe471f3d39d}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+WDT}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_ab0963293947ca8a4531e5a51d53438b2}{PM\+\_\+\+RCAUSE\+\_\+\+WDT\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a98bccf88ebbe8c585894d0d59c9d2eb8}\label{component_2pm_8h_a98bccf88ebbe8c585894d0d59c9d2eb8}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+SYST\+\_\+\+Pos}~6
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+RCAUSE) System Reset Request \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{component_2pm_8h_a29b98dbafb252924fad96c9e668bf003}\label{component_2pm_8h_a29b98dbafb252924fad96c9e668bf003}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+SYST}~(0x1ul $<$$<$ \mbox{\hyperlink{component_2pm_8h_a98bccf88ebbe8c585894d0d59c9d2eb8}{PM\+\_\+\+RCAUSE\+\_\+\+SYST\+\_\+\+Pos}})
+\item 
+\mbox{\Hypertarget{component_2pm_8h_a05323087160d74c5942d3df083536095}\label{component_2pm_8h_a05323087160d74c5942d3df083536095}} 
+\#define {\bfseries PM\+\_\+\+RCAUSE\+\_\+\+MASK}~0x77ul
+\begin{DoxyCompactList}\small\item\em (PM\+\_\+\+RCAUSE) MASK Register \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component description for PM. 
+
+Copyright (c) 2015-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

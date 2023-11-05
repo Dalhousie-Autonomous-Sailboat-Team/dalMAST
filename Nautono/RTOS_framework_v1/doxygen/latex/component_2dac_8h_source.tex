@@ -1,0 +1,227 @@
+\hypertarget{component_2dac_8h_source}{}\doxysection{dac.\+h}
+\label{component_2dac_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/dac.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/dac.h}}
+\mbox{\hyperlink{component_2dac_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_DAC\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_DAC\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define DAC\_U2214}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_DAC                     0x101}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DAC\_CTRLA : (DAC Offset: 0x0) (R/W  8) Control A -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint8\_t  \mbox{\hyperlink{union_d_a_c___c_t_r_l_a___type_a22b2e72ef2e0397f663a058adbfbd835}{SWRST}}:1;          }
+\DoxyCodeLine{54     uint8\_t  \mbox{\hyperlink{union_d_a_c___c_t_r_l_a___type_ad05d4e8a7a5715904fba69a1ba984a99}{ENABLE}}:1;         }
+\DoxyCodeLine{55     uint8\_t  \mbox{\hyperlink{union_d_a_c___c_t_r_l_a___type_ab8245d52bd5762864ca80a7434a1b93c}{RUNSTDBY}}:1;       }
+\DoxyCodeLine{56     uint8\_t  :5;               }
+\DoxyCodeLine{57   \} bit;                       }
+\DoxyCodeLine{58   uint8\_t \mbox{\hyperlink{union_d_a_c___c_t_r_l_a___type_a0f1f01ca12501f780f1536e526bc59a7}{reg}};                 }
+\DoxyCodeLine{59 \} \mbox{\hyperlink{union_d_a_c___c_t_r_l_a___type}{DAC\_CTRLA\_Type}};}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define DAC\_CTRLA\_OFFSET            0x0          }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define DAC\_CTRLA\_RESETVALUE        0x00ul       }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define DAC\_CTRLA\_SWRST\_Pos         0            }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define DAC\_CTRLA\_SWRST             (0x1ul << DAC\_CTRLA\_SWRST\_Pos)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define DAC\_CTRLA\_ENABLE\_Pos        1            }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define DAC\_CTRLA\_ENABLE            (0x1ul << DAC\_CTRLA\_ENABLE\_Pos)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define DAC\_CTRLA\_RUNSTDBY\_Pos      2            }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define DAC\_CTRLA\_RUNSTDBY          (0x1ul << DAC\_CTRLA\_RUNSTDBY\_Pos)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define DAC\_CTRLA\_MASK              0x07ul       }}
+\DoxyCodeLine{73 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DAC\_CTRLB : (DAC Offset: 0x1) (R/W  8) Control B -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{75 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{76   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{77     uint8\_t  \mbox{\hyperlink{union_d_a_c___c_t_r_l_b___type_ae94ff40cd7de267fc8924ab5bbfadfb4}{EOEN}}:1;           }
+\DoxyCodeLine{78     uint8\_t  \mbox{\hyperlink{union_d_a_c___c_t_r_l_b___type_a5e263b2324249d3c692d9a61eacc606a}{IOEN}}:1;           }
+\DoxyCodeLine{79     uint8\_t  \mbox{\hyperlink{union_d_a_c___c_t_r_l_b___type_a2622b67f17ed1bf209d6a31a07fc968e}{LEFTADJ}}:1;        }
+\DoxyCodeLine{80     uint8\_t  \mbox{\hyperlink{union_d_a_c___c_t_r_l_b___type_a7d47365713640b68fe66b6d58bf02b06}{VPD}}:1;            }
+\DoxyCodeLine{81     uint8\_t  :2;               }
+\DoxyCodeLine{82     uint8\_t  \mbox{\hyperlink{union_d_a_c___c_t_r_l_b___type_a41a1648ba57151884dab41420448386e}{REFSEL}}:2;         }
+\DoxyCodeLine{83   \} bit;                       }
+\DoxyCodeLine{84   uint8\_t \mbox{\hyperlink{union_d_a_c___c_t_r_l_b___type_a6df27cf4278f30a13f448420f792eebd}{reg}};                 }
+\DoxyCodeLine{85 \} \mbox{\hyperlink{union_d_a_c___c_t_r_l_b___type}{DAC\_CTRLB\_Type}};}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define DAC\_CTRLB\_OFFSET            0x1          }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define DAC\_CTRLB\_RESETVALUE        0x00ul       }}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define DAC\_CTRLB\_EOEN\_Pos          0            }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define DAC\_CTRLB\_EOEN              (0x1ul << DAC\_CTRLB\_EOEN\_Pos)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define DAC\_CTRLB\_IOEN\_Pos          1            }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define DAC\_CTRLB\_IOEN              (0x1ul << DAC\_CTRLB\_IOEN\_Pos)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define DAC\_CTRLB\_LEFTADJ\_Pos       2            }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define DAC\_CTRLB\_LEFTADJ           (0x1ul << DAC\_CTRLB\_LEFTADJ\_Pos)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define DAC\_CTRLB\_VPD\_Pos           3            }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define DAC\_CTRLB\_VPD               (0x1ul << DAC\_CTRLB\_VPD\_Pos)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define DAC\_CTRLB\_REFSEL\_Pos        6            }}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define DAC\_CTRLB\_REFSEL\_Msk        (0x3ul << DAC\_CTRLB\_REFSEL\_Pos)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define DAC\_CTRLB\_REFSEL(value)     ((DAC\_CTRLB\_REFSEL\_Msk \& ((value) << DAC\_CTRLB\_REFSEL\_Pos)))}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define   DAC\_CTRLB\_REFSEL\_INT1V\_Val      0x0ul  }}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define   DAC\_CTRLB\_REFSEL\_AVCC\_Val       0x1ul  }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define   DAC\_CTRLB\_REFSEL\_VREFP\_Val      0x2ul  }}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define DAC\_CTRLB\_REFSEL\_INT1V      (DAC\_CTRLB\_REFSEL\_INT1V\_Val    << DAC\_CTRLB\_REFSEL\_Pos)}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define DAC\_CTRLB\_REFSEL\_AVCC       (DAC\_CTRLB\_REFSEL\_AVCC\_Val     << DAC\_CTRLB\_REFSEL\_Pos)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define DAC\_CTRLB\_REFSEL\_VREFP      (DAC\_CTRLB\_REFSEL\_VREFP\_Val    << DAC\_CTRLB\_REFSEL\_Pos)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define DAC\_CTRLB\_MASK              0xCFul       }}
+\DoxyCodeLine{110 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DAC\_EVCTRL : (DAC Offset: 0x2) (R/W  8) Event Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{112 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{113   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{114     uint8\_t  \mbox{\hyperlink{union_d_a_c___e_v_c_t_r_l___type_ae3e5ab1ba691562fad0d0598c5837a7f}{STARTEI}}:1;        }
+\DoxyCodeLine{115     uint8\_t  \mbox{\hyperlink{union_d_a_c___e_v_c_t_r_l___type_a89211a83a66f08f696fc0f69ab14d30e}{EMPTYEO}}:1;        }
+\DoxyCodeLine{116     uint8\_t  :6;               }
+\DoxyCodeLine{117   \} bit;                       }
+\DoxyCodeLine{118   uint8\_t \mbox{\hyperlink{union_d_a_c___e_v_c_t_r_l___type_a6727440faefea4c89abdee1618726900}{reg}};                 }
+\DoxyCodeLine{119 \} \mbox{\hyperlink{union_d_a_c___e_v_c_t_r_l___type}{DAC\_EVCTRL\_Type}};}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define DAC\_EVCTRL\_OFFSET           0x2          }}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define DAC\_EVCTRL\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define DAC\_EVCTRL\_STARTEI\_Pos      0            }}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define DAC\_EVCTRL\_STARTEI          (0x1ul << DAC\_EVCTRL\_STARTEI\_Pos)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define DAC\_EVCTRL\_EMPTYEO\_Pos      1            }}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define DAC\_EVCTRL\_EMPTYEO          (0x1ul << DAC\_EVCTRL\_EMPTYEO\_Pos)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define DAC\_EVCTRL\_MASK             0x03ul       }}
+\DoxyCodeLine{131 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DAC\_INTENCLR : (DAC Offset: 0x4) (R/W  8) Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{133 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{134   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{135     uint8\_t  \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_c_l_r___type_af96da0c477868c26b66597bfcaeb69a1}{UNDERRUN}}:1;       }
+\DoxyCodeLine{136     uint8\_t  \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_c_l_r___type_a7a765df1f712cf0db56c0451767483cb}{EMPTY}}:1;          }
+\DoxyCodeLine{137     uint8\_t  \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_c_l_r___type_ac57758f2149fa569d83973d43678aec5}{SYNCRDY}}:1;        }
+\DoxyCodeLine{138     uint8\_t  :5;               }
+\DoxyCodeLine{139   \} bit;                       }
+\DoxyCodeLine{140   uint8\_t \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_c_l_r___type_a5edf827f18a5857bd9ffc064f47a4dd1}{reg}};                 }
+\DoxyCodeLine{141 \} \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_c_l_r___type}{DAC\_INTENCLR\_Type}};}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define DAC\_INTENCLR\_OFFSET         0x4          }}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define DAC\_INTENCLR\_RESETVALUE     0x00ul       }}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define DAC\_INTENCLR\_UNDERRUN\_Pos   0            }}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define DAC\_INTENCLR\_UNDERRUN       (0x1ul << DAC\_INTENCLR\_UNDERRUN\_Pos)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define DAC\_INTENCLR\_EMPTY\_Pos      1            }}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define DAC\_INTENCLR\_EMPTY          (0x1ul << DAC\_INTENCLR\_EMPTY\_Pos)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define DAC\_INTENCLR\_SYNCRDY\_Pos    2            }}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define DAC\_INTENCLR\_SYNCRDY        (0x1ul << DAC\_INTENCLR\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define DAC\_INTENCLR\_MASK           0x07ul       }}
+\DoxyCodeLine{155 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DAC\_INTENSET : (DAC Offset: 0x5) (R/W  8) Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{157 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{158   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{159     uint8\_t  \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_s_e_t___type_a468aeaf616ad2919bf78a29cc00f01a6}{UNDERRUN}}:1;       }
+\DoxyCodeLine{160     uint8\_t  \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_s_e_t___type_ace2282b99d87ab3f4434f9379aa47a45}{EMPTY}}:1;          }
+\DoxyCodeLine{161     uint8\_t  \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_s_e_t___type_ab4e6e3d2ff7da42e8886de6449f2f44a}{SYNCRDY}}:1;        }
+\DoxyCodeLine{162     uint8\_t  :5;               }
+\DoxyCodeLine{163   \} bit;                       }
+\DoxyCodeLine{164   uint8\_t \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_s_e_t___type_a9fd921a600e0f4a7907432fc56a964a5}{reg}};                 }
+\DoxyCodeLine{165 \} \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_s_e_t___type}{DAC\_INTENSET\_Type}};}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define DAC\_INTENSET\_OFFSET         0x5          }}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define DAC\_INTENSET\_RESETVALUE     0x00ul       }}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define DAC\_INTENSET\_UNDERRUN\_Pos   0            }}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define DAC\_INTENSET\_UNDERRUN       (0x1ul << DAC\_INTENSET\_UNDERRUN\_Pos)}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define DAC\_INTENSET\_EMPTY\_Pos      1            }}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define DAC\_INTENSET\_EMPTY          (0x1ul << DAC\_INTENSET\_EMPTY\_Pos)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define DAC\_INTENSET\_SYNCRDY\_Pos    2            }}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define DAC\_INTENSET\_SYNCRDY        (0x1ul << DAC\_INTENSET\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define DAC\_INTENSET\_MASK           0x07ul       }}
+\DoxyCodeLine{179 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DAC\_INTFLAG : (DAC Offset: 0x6) (R/W  8) Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{181 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{182   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{183     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_d_a_c___i_n_t_f_l_a_g___type_a60e13d64d227231f79dff13a8ab8f7b6}{UNDERRUN}}:1;   }
+\DoxyCodeLine{184     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_d_a_c___i_n_t_f_l_a_g___type_a0ed0c3497b566c94354b9dab7af60031}{EMPTY}}:1;      }
+\DoxyCodeLine{185     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint8\_t  \mbox{\hyperlink{union_d_a_c___i_n_t_f_l_a_g___type_a30aff21ee3f909bcda12afdcb8de700b}{SYNCRDY}}:1;    }
+\DoxyCodeLine{186     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_d_a_c___i_n_t_f_l_a_g___type_ac9170ca949dc5a1ecca1ff847325d1f4}{uint8\_t}}  :5;           }
+\DoxyCodeLine{187   \} bit;                       }
+\DoxyCodeLine{188   uint8\_t \mbox{\hyperlink{union_d_a_c___i_n_t_f_l_a_g___type_acf0eb6614c1b35e4d6be3db9687d376d}{reg}};                 }
+\DoxyCodeLine{189 \} \mbox{\hyperlink{union_d_a_c___i_n_t_f_l_a_g___type}{DAC\_INTFLAG\_Type}};}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define DAC\_INTFLAG\_OFFSET          0x6          }}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define DAC\_INTFLAG\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define DAC\_INTFLAG\_UNDERRUN\_Pos    0            }}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define DAC\_INTFLAG\_UNDERRUN        (0x1ul << DAC\_INTFLAG\_UNDERRUN\_Pos)}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define DAC\_INTFLAG\_EMPTY\_Pos       1            }}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define DAC\_INTFLAG\_EMPTY           (0x1ul << DAC\_INTFLAG\_EMPTY\_Pos)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define DAC\_INTFLAG\_SYNCRDY\_Pos     2            }}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define DAC\_INTFLAG\_SYNCRDY         (0x1ul << DAC\_INTFLAG\_SYNCRDY\_Pos)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define DAC\_INTFLAG\_MASK            0x07ul       }}
+\DoxyCodeLine{203 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DAC\_STATUS : (DAC Offset: 0x7) (R/   8) Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{205 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{206   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{207     uint8\_t  :7;               }
+\DoxyCodeLine{208     uint8\_t  \mbox{\hyperlink{union_d_a_c___s_t_a_t_u_s___type_a5025882bd8efce3a6bb79e3d3207c1f2}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{209   \} bit;                       }
+\DoxyCodeLine{210   uint8\_t \mbox{\hyperlink{union_d_a_c___s_t_a_t_u_s___type_a3789a2c1436192872cddbb20daa4a93a}{reg}};                 }
+\DoxyCodeLine{211 \} \mbox{\hyperlink{union_d_a_c___s_t_a_t_u_s___type}{DAC\_STATUS\_Type}};}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define DAC\_STATUS\_OFFSET           0x7          }}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define DAC\_STATUS\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define DAC\_STATUS\_SYNCBUSY\_Pos     7            }}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define DAC\_STATUS\_SYNCBUSY         (0x1ul << DAC\_STATUS\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define DAC\_STATUS\_MASK             0x80ul       }}
+\DoxyCodeLine{221 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DAC\_DATA : (DAC Offset: 0x8) (R/W 16) Data -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{223 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{224   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{225     uint16\_t \mbox{\hyperlink{union_d_a_c___d_a_t_a___type_a93328b2ca1a5a44a8324a7be3bd1c054}{DATA}}:16;          }
+\DoxyCodeLine{226   \} bit;                       }
+\DoxyCodeLine{227   uint16\_t \mbox{\hyperlink{union_d_a_c___d_a_t_a___type_a614ba06bb004daa2f3cb44126943c8d4}{reg}};                }
+\DoxyCodeLine{228 \} \mbox{\hyperlink{union_d_a_c___d_a_t_a___type}{DAC\_DATA\_Type}};}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define DAC\_DATA\_OFFSET             0x8          }}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define DAC\_DATA\_RESETVALUE         0x0000ul     }}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define DAC\_DATA\_DATA\_Pos           0            }}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define DAC\_DATA\_DATA\_Msk           (0xFFFFul << DAC\_DATA\_DATA\_Pos)}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#define DAC\_DATA\_DATA(value)        ((DAC\_DATA\_DATA\_Msk \& ((value) << DAC\_DATA\_DATA\_Pos)))}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#define DAC\_DATA\_MASK               0xFFFFul     }}
+\DoxyCodeLine{239 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ DAC\_DATABUF : (DAC Offset: 0xC) (R/W 16) Data Buffer -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{241 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{242   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{243     uint16\_t \mbox{\hyperlink{union_d_a_c___d_a_t_a_b_u_f___type_ab9a6cd5eb29792c27334c7a4f365313a}{DATABUF}}:16;       }
+\DoxyCodeLine{244   \} bit;                       }
+\DoxyCodeLine{245   uint16\_t \mbox{\hyperlink{union_d_a_c___d_a_t_a_b_u_f___type_afc4e0e261c760d07cd9343171083e0d4}{reg}};                }
+\DoxyCodeLine{246 \} \mbox{\hyperlink{union_d_a_c___d_a_t_a_b_u_f___type}{DAC\_DATABUF\_Type}};}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define DAC\_DATABUF\_OFFSET          0xC          }}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define DAC\_DATABUF\_RESETVALUE      0x0000ul     }}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define DAC\_DATABUF\_DATABUF\_Pos     0            }}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define DAC\_DATABUF\_DATABUF\_Msk     (0xFFFFul << DAC\_DATABUF\_DATABUF\_Pos)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define DAC\_DATABUF\_DATABUF(value)  ((DAC\_DATABUF\_DATABUF\_Msk \& ((value) << DAC\_DATABUF\_DATABUF\_Pos)))}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define DAC\_DATABUF\_MASK            0xFFFFul     }}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{259 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{260   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_a_c___c_t_r_l_a___type}{DAC\_CTRLA\_Type}}            \mbox{\hyperlink{struct_dac_ae64d3013c578889b3bc5bc9f0cfda66e}{CTRLA}};       }
+\DoxyCodeLine{261   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_a_c___c_t_r_l_b___type}{DAC\_CTRLB\_Type}}            \mbox{\hyperlink{struct_dac_a36fa8a7f785454c1af6d1bd41caa8e7a}{CTRLB}};       }
+\DoxyCodeLine{262   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_a_c___e_v_c_t_r_l___type}{DAC\_EVCTRL\_Type}}           \mbox{\hyperlink{struct_dac_ae32cabe063f42303d39b109034781a8c}{EVCTRL}};      }
+\DoxyCodeLine{263        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved1[0x1];}
+\DoxyCodeLine{264   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_c_l_r___type}{DAC\_INTENCLR\_Type}}         \mbox{\hyperlink{struct_dac_a02bfbb17949d48af6df846837a977723}{INTENCLR}};    }
+\DoxyCodeLine{265   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_a_c___i_n_t_e_n_s_e_t___type}{DAC\_INTENSET\_Type}}         \mbox{\hyperlink{struct_dac_a6a92c98c095897a17be5869798d408f5}{INTENSET}};    }
+\DoxyCodeLine{266   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_a_c___i_n_t_f_l_a_g___type}{DAC\_INTFLAG\_Type}}          \mbox{\hyperlink{struct_dac_aeafbfa143f0c3c637251a76946396ea9}{INTFLAG}};     }
+\DoxyCodeLine{267   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_d_a_c___s_t_a_t_u_s___type}{DAC\_STATUS\_Type}}           \mbox{\hyperlink{struct_dac_a0d0a06cbd41a340403915871fe2c2188}{STATUS}};      }
+\DoxyCodeLine{268   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_a_c___d_a_t_a___type}{DAC\_DATA\_Type}}             \mbox{\hyperlink{struct_dac_a02c167755bdf360a9fa2701618d8cc94}{DATA}};        }
+\DoxyCodeLine{269        \mbox{\hyperlink{samd20e14_8h_a0d957f1433aaf5d70e4dc2b68288442d}{RoReg8}}                    Reserved2[0x2];}
+\DoxyCodeLine{270   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_d_a_c___d_a_t_a_b_u_f___type}{DAC\_DATABUF\_Type}}          \mbox{\hyperlink{struct_dac_a45238c4ba6e94e7affecd82bf4148be8}{DATABUF}};     }
+\DoxyCodeLine{271 \} \mbox{\hyperlink{struct_dac}{Dac}};}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_DAC\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

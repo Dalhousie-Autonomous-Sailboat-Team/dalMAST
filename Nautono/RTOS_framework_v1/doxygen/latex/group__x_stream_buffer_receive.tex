@@ -1,0 +1,55 @@
+\hypertarget{group__x_stream_buffer_receive}{}\doxysection{x\+Stream\+Buffer\+Receive}
+\label{group__x_stream_buffer_receive}\index{xStreamBufferReceive@{xStreamBufferReceive}}
+\mbox{\hyperlink{stream__buffer_8h_source}{stream\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+size\_t xStreamBufferReceive( StreamBufferHandle\_t xStreamBuffer,                              void *pvRxData,                              size\_t xBufferLengthBytes,                              TickType\_t xTicksToWait );
+\end{DoxyPre}
+
+
+Receives bytes from a stream buffer.
+
+{\itshape {\bfseries{NOTE}}}\+: Uniquely among Free\+RTOS objects, the stream buffer implementation (so also the message buffer implementation, as message buffers are built on top of stream buffers) assumes there is only one task or interrupt that will write to the buffer (the writer), and only one task or interrupt that will read from the buffer (the reader). It is safe for the writer and reader to be different tasks or interrupts, but, unlike other Free\+RTOS objects, it is not safe to have multiple different writers or multiple different readers. If there are to be multiple different writers then the application writer must place each call to a writing API function (such as x\+Stream\+Buffer\+Send()) inside a critical section and set the send block time to 0. Likewise, if there are to be multiple different readers then the application writer must place each call to a reading API function (such as x\+Stream\+Buffer\+Read()) inside a critical section and set the receive block time to 0.
+
+Use x\+Stream\+Buffer\+Receive() to read from a stream buffer from a task. Use x\+Stream\+Buffer\+Receive\+From\+ISR() to read from a stream buffer from an interrupt service routine (ISR).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Stream\+Buffer} & The handle of the stream buffer from which bytes are to be received.\\
+\hline
+{\em pv\+Rx\+Data} & A pointer to the buffer into which the received bytes will be copied.\\
+\hline
+{\em x\+Buffer\+Length\+Bytes} & The length of the buffer pointed to by the pv\+Rx\+Data parameter. This sets the maximum number of bytes to receive in one call. x\+Stream\+Buffer\+Receive will return as many bytes as possible up to a maximum set by x\+Buffer\+Length\+Bytes.\\
+\hline
+{\em x\+Ticks\+To\+Wait} & The maximum amount of time the task should remain in the Blocked state to wait for data to become available if the stream buffer is empty. x\+Stream\+Buffer\+Receive() will return immediately if x\+Ticks\+To\+Wait is zero. The block time is specified in tick periods, so the absolute time it represents is dependent on the tick frequency. The macro pd\+MS\+\_\+\+TO\+\_\+\+TICKS() can be used to convert a time specified in milliseconds into a time specified in ticks. Setting x\+Ticks\+To\+Wait to port\+MAX\+\_\+\+DELAY will cause the task to wait indefinitely (without timing out), provided INCLUDE\+\_\+v\+Task\+Suspend is set to 1 in \mbox{\hyperlink{_free_r_t_o_s_config_8h_source}{Free\+RTOSConfig.\+h}}. A task does not use any CPU time when it is in the Blocked state.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes actually read from the stream buffer, which will be less than x\+Buffer\+Length\+Bytes if the call to x\+Stream\+Buffer\+Receive() timed out before x\+Buffer\+Length\+Bytes were available.
+\end{DoxyReturn}
+Example use\+: 
+\begin{DoxyPre}
+void vAFunction( StreamBuffer\_t xStreamBuffer )
+\{
+uint8\_t ucRxData[ 20 ];
+size\_t xReceivedBytes;
+const TickType\_t xBlockTime = pdMS\_TO\_TICKS( 20 );
+
+    // Receive up to another sizeof( ucRxData ) bytes from the stream buffer.
+    // Wait in the Blocked state (so not using any CPU processing time) for a
+    // maximum of 100ms for the full sizeof( ucRxData ) number of bytes to be
+    // available.
+    xReceivedBytes = xStreamBufferReceive( xStreamBuffer,
+                                           ( void * ) ucRxData,
+                                           sizeof( ucRxData ),
+                                           xBlockTime );
+
+    if( xReceivedBytes > 0 )
+    \{
+        // A ucRxData contains another xRecievedBytes bytes of data, which can
+        // be processed here....
+    \}
+\}
+\end{DoxyPre}
+ 

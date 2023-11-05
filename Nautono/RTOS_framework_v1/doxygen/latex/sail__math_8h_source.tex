@@ -1,0 +1,57 @@
+\hypertarget{sail__math_8h_source}{}\doxysection{sail\+\_\+math.\+h}
+\label{sail__math_8h_source}\index{src/sail\_math.h@{src/sail\_math.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef SAIL\_MATH\_H\_}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define SAIL\_MATH\_H\_}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{/* MATH\_Clamp}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Clamp the input between the high and low thresholds}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Input:}}
+\DoxyCodeLine{9 \textcolor{comment}{ *   val -\/ Input value}}
+\DoxyCodeLine{10 \textcolor{comment}{ *   low -\/ Minimum}}
+\DoxyCodeLine{11 \textcolor{comment}{ *   high -\/ Maximum}}
+\DoxyCodeLine{12 \textcolor{comment}{ * Return:}}
+\DoxyCodeLine{13 \textcolor{comment}{ *   val -\/ Processed value}}
+\DoxyCodeLine{14 \textcolor{comment}{ */} }
+\DoxyCodeLine{15 \textcolor{keywordtype}{double} MATH\_Clamp(\textcolor{keywordtype}{double} val, \textcolor{keywordtype}{double} low, \textcolor{keywordtype}{double} high);}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{/* MATH\_Map}}
+\DoxyCodeLine{19 \textcolor{comment}{ * Map a value from one range to another (linear interpolation)}}
+\DoxyCodeLine{20 \textcolor{comment}{ * Input:}}
+\DoxyCodeLine{21 \textcolor{comment}{ *   val -\/ Input Value}}
+\DoxyCodeLine{22 \textcolor{comment}{ *   in\_low -\/ Input value minimum}}
+\DoxyCodeLine{23 \textcolor{comment}{ *   in\_high -\/ Input value maximum}}
+\DoxyCodeLine{24 \textcolor{comment}{ *   out\_low -\/ Expected output value minimum}}
+\DoxyCodeLine{25 \textcolor{comment}{ *   out\_high -\/ Expected output value maximum}}
+\DoxyCodeLine{26 \textcolor{comment}{ * Return:}}
+\DoxyCodeLine{27 \textcolor{comment}{     output -\/ Processed value}}
+\DoxyCodeLine{28 \textcolor{comment}{ */} }
+\DoxyCodeLine{29 \textcolor{keywordtype}{double} MATH\_Map(\textcolor{keywordtype}{double} val, \textcolor{keywordtype}{double} in\_low, \textcolor{keywordtype}{double} in\_high, \textcolor{keywordtype}{double} out\_low, \textcolor{keywordtype}{double} out\_high);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/* MATH\_ForceAngleTo180}}
+\DoxyCodeLine{33 \textcolor{comment}{ * Force the angle into range [-\/180, 180)}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Input:}}
+\DoxyCodeLine{35 \textcolor{comment}{ *   angle -\/ Input angle value}}
+\DoxyCodeLine{36 \textcolor{comment}{ * Output:}}
+\DoxyCodeLine{37 \textcolor{comment}{ *   angle -\/ Processed angle value}}
+\DoxyCodeLine{38 \textcolor{comment}{ */} }
+\DoxyCodeLine{39 \textcolor{keywordtype}{float} MATH\_ForceAngleTo180(\textcolor{keywordtype}{double} angle);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{/* MATH\_ForceAngleTo360}}
+\DoxyCodeLine{43 \textcolor{comment}{ * Force the angle into range [0, 360)}}
+\DoxyCodeLine{44 \textcolor{comment}{ * Input:}}
+\DoxyCodeLine{45 \textcolor{comment}{ *   angle -\/ Input angle value}}
+\DoxyCodeLine{46 \textcolor{comment}{ * Output:}}
+\DoxyCodeLine{47 \textcolor{comment}{ *   angle -\/ Processed angle value}}
+\DoxyCodeLine{48 \textcolor{comment}{ */} }
+\DoxyCodeLine{49 \textcolor{keywordtype}{float} MATH\_ForceAngleTo360(\textcolor{keywordtype}{double} angle);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SAIL\_MATH\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

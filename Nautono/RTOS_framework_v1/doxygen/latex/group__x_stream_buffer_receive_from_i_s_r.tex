@@ -1,0 +1,63 @@
+\hypertarget{group__x_stream_buffer_receive_from_i_s_r}{}\doxysection{x\+Stream\+Buffer\+Receive\+From\+ISR}
+\label{group__x_stream_buffer_receive_from_i_s_r}\index{xStreamBufferReceiveFromISR@{xStreamBufferReceiveFromISR}}
+\mbox{\hyperlink{stream__buffer_8h_source}{stream\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+size\_t xStreamBufferReceiveFromISR( StreamBufferHandle\_t xStreamBuffer,                                     void *pvRxData,                                     size\_t xBufferLengthBytes,                                     BaseType\_t *pxHigherPriorityTaskWoken );
+\end{DoxyPre}
+
+
+An interrupt safe version of the API function that receives bytes from a stream buffer.
+
+Use x\+Stream\+Buffer\+Receive() to read bytes from a stream buffer from a task. Use x\+Stream\+Buffer\+Receive\+From\+ISR() to read bytes from a stream buffer from an interrupt service routine (ISR).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Stream\+Buffer} & The handle of the stream buffer from which a stream is being received.\\
+\hline
+{\em pv\+Rx\+Data} & A pointer to the buffer into which the received bytes are copied.\\
+\hline
+{\em x\+Buffer\+Length\+Bytes} & The length of the buffer pointed to by the pv\+Rx\+Data parameter. This sets the maximum number of bytes to receive in one call. x\+Stream\+Buffer\+Receive will return as many bytes as possible up to a maximum set by x\+Buffer\+Length\+Bytes.\\
+\hline
+{\em px\+Higher\+Priority\+Task\+Woken} & It is possible that a stream buffer will have a task blocked on it waiting for space to become available. Calling x\+Stream\+Buffer\+Receive\+From\+ISR() can make space available, and so cause a task that is waiting for space to leave the Blocked state. If calling x\+Stream\+Buffer\+Receive\+From\+ISR() causes a task to leave the Blocked state, and the unblocked task has a priority higher than the currently executing task (the task that was interrupted), then, internally, x\+Stream\+Buffer\+Receive\+From\+ISR() will set $\ast$px\+Higher\+Priority\+Task\+Woken to pd\+TRUE. If x\+Stream\+Buffer\+Receive\+From\+ISR() sets this value to pd\+TRUE, then normally a context switch should be performed before the interrupt is exited. That will ensure the interrupt returns directly to the highest priority Ready state task. $\ast$px\+Higher\+Priority\+Task\+Woken should be set to pd\+FALSE before it is passed into the function. See the code example below for an example.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read from the stream buffer, if any.
+\end{DoxyReturn}
+Example use\+: 
+\begin{DoxyPre}
+// A stream buffer that has already been created.
+StreamBuffer\_t xStreamBuffer;
+
+void vAnInterruptServiceRoutine( void )
+\{
+uint8\_t ucRxData[ 20 ];
+size\_t xReceivedBytes;
+BaseType\_t xHigherPriorityTaskWoken = pdFALSE;  // Initialised to pdFALSE.
+
+    // Receive the next stream from the stream buffer.
+    xReceivedBytes = xStreamBufferReceiveFromISR( xStreamBuffer,
+                                                  ( void * ) ucRxData,
+                                                  sizeof( ucRxData ),
+                                                  \&xHigherPriorityTaskWoken );
+
+    if( xReceivedBytes > 0 )
+    \{
+        // ucRxData contains xReceivedBytes read from the stream buffer.
+        // Process the stream here....
+    \}
+
+    // If xHigherPriorityTaskWoken was set to pdTRUE inside
+    // xStreamBufferReceiveFromISR() then a task that has a priority above the
+    // priority of the currently executing task was unblocked and a context
+    // switch should be performed to ensure the ISR returns to the unblocked
+    // task.  In most FreeRTOS ports this is done by simply passing
+    // xHigherPriorityTaskWoken into taskYIELD\_FROM\_ISR(), which will test the
+    // variables value, and perform the context switch if necessary.  Check the
+    // documentation for the port in use for port specific instructions.
+    taskYIELD\_FROM\_ISR( xHigherPriorityTaskWoken );
+\}
+\end{DoxyPre}
+ 

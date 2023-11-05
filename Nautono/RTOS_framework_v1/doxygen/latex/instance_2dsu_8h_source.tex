@@ -1,0 +1,77 @@
+\hypertarget{instance_2dsu_8h_source}{}\doxysection{dsu.\+h}
+\label{instance_2dsu_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/dsu.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/dsu.h}}
+\mbox{\hyperlink{instance_2dsu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_DSU\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_DSU\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for DSU peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_DSU\_CTRL               (0x41002000U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_DSU\_STATUSA            (0x41002001U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_DSU\_STATUSB            (0x41002002U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_DSU\_ADDR               (0x41002004U) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_DSU\_LENGTH             (0x41002008U) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_DSU\_DATA               (0x4100200CU) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_DSU\_DCC0               (0x41002010U) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_DSU\_DCC1               (0x41002014U) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_DSU\_DID                (0x41002018U) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_DSU\_DCFG0              (0x410020F0U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_DSU\_DCFG1              (0x410020F4U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_DSU\_ENTRY0             (0x41003000U) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_DSU\_ENTRY1             (0x41003004U) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_DSU\_END                (0x41003008U) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_DSU\_MEMTYPE            (0x41003FCCU) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_DSU\_PID4               (0x41003FD0U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_DSU\_PID5               (0x41003FD4U) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_DSU\_PID6               (0x41003FD8U) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_DSU\_PID7               (0x41003FDCU) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define REG\_DSU\_PID0               (0x41003FE0U) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define REG\_DSU\_PID1               (0x41003FE4U) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define REG\_DSU\_PID2               (0x41003FE8U) }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define REG\_DSU\_PID3               (0x41003FECU) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define REG\_DSU\_CID0               (0x41003FF0U) }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define REG\_DSU\_CID1               (0x41003FF4U) }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define REG\_DSU\_CID2               (0x41003FF8U) }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define REG\_DSU\_CID3               (0x41003FFCU) }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define REG\_DSU\_CTRL               (*(WoReg8 *)0x41002000U) }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define REG\_DSU\_STATUSA            (*(RwReg8 *)0x41002001U) }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define REG\_DSU\_STATUSB            (*(RoReg8 *)0x41002002U) }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define REG\_DSU\_ADDR               (*(RwReg  *)0x41002004U) }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define REG\_DSU\_LENGTH             (*(RwReg  *)0x41002008U) }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define REG\_DSU\_DATA               (*(RwReg  *)0x4100200CU) }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define REG\_DSU\_DCC0               (*(RwReg  *)0x41002010U) }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define REG\_DSU\_DCC1               (*(RwReg  *)0x41002014U) }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define REG\_DSU\_DID                (*(RoReg  *)0x41002018U) }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define REG\_DSU\_DCFG0              (*(RwReg  *)0x410020F0U) }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define REG\_DSU\_DCFG1              (*(RwReg  *)0x410020F4U) }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define REG\_DSU\_ENTRY0             (*(RoReg  *)0x41003000U) }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define REG\_DSU\_ENTRY1             (*(RoReg  *)0x41003004U) }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define REG\_DSU\_END                (*(RoReg  *)0x41003008U) }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define REG\_DSU\_MEMTYPE            (*(RoReg  *)0x41003FCCU) }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define REG\_DSU\_PID4               (*(RoReg  *)0x41003FD0U) }}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define REG\_DSU\_PID5               (*(RoReg  *)0x41003FD4U) }}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define REG\_DSU\_PID6               (*(RoReg  *)0x41003FD8U) }}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define REG\_DSU\_PID7               (*(RoReg  *)0x41003FDCU) }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define REG\_DSU\_PID0               (*(RoReg  *)0x41003FE0U) }}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define REG\_DSU\_PID1               (*(RoReg  *)0x41003FE4U) }}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define REG\_DSU\_PID2               (*(RoReg  *)0x41003FE8U) }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define REG\_DSU\_PID3               (*(RoReg  *)0x41003FECU) }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define REG\_DSU\_CID0               (*(RoReg  *)0x41003FF0U) }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define REG\_DSU\_CID1               (*(RoReg  *)0x41003FF4U) }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define REG\_DSU\_CID2               (*(RoReg  *)0x41003FF8U) }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define REG\_DSU\_CID3               (*(RoReg  *)0x41003FFCU) }}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{comment}{/* ========== Instance parameters for DSU peripheral ========== */}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define DSU\_CLK\_HSB\_ID              3}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_DSU\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

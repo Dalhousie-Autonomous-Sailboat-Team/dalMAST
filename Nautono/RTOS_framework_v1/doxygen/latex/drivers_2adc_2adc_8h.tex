@@ -1,0 +1,52 @@
+\hypertarget{drivers_2adc_2adc_8h}{}\doxysection{src/\+ASF/sam0/drivers/adc/adc.h File Reference}
+\label{drivers_2adc_2adc_8h}\index{src/ASF/sam0/drivers/adc/adc.h@{src/ASF/sam0/drivers/adc/adc.h}}
+
+
+SAM Peripheral Analog-\/to-\/\+Digital Converter Driver.  
+
+
+{\ttfamily \#include $<$compiler.\+h$>$}\newline
+{\ttfamily \#include $<$system.\+h$>$}\newline
+{\ttfamily \#include $<$adc\+\_\+feature.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{Indent}\textbf{ Module Status Flags}\par
+{\em ADC status flags, returned by adc\+\_\+get\+\_\+status() and cleared by adc\+\_\+clear\+\_\+status(). }\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gac25e444bb2e1cb312bedf72d2d6ed8e5}{ADC\+\_\+\+STATUS\+\_\+\+RESULT\+\_\+\+READY}}~(1UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__adc__group_gab1e9bae12e573bd6389051adca1a6db9}{ADC\+\_\+\+STATUS\+\_\+\+WINDOW}}~(1UL $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga9e05a7398afafa9344c780a0a0e7be9a}{ADC\+\_\+\+STATUS\+\_\+\+OVERRUN}}~(1UL $<$$<$ 2)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t {\bfseries \+\_\+adc\+\_\+get\+\_\+inst\+\_\+index} (\mbox{\hyperlink{struct_adc}{Adc}} $\ast$const hw)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Driver Initialization and Configuration}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga09de1dc91d7b101349d0577a306b762e}{adc\+\_\+init}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module\+\_\+inst, \mbox{\hyperlink{struct_adc}{Adc}} $\ast$hw, struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Initializes the ADC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga5a5650a331819833c7a27309c131c55d}{adc\+\_\+get\+\_\+config\+\_\+defaults}} (struct \mbox{\hyperlink{structadc__config}{adc\+\_\+config}} $\ast$const config)
+\begin{DoxyCompactList}\small\item\em Initializes an ADC configuration structure to defaults. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Status Management}\par
+\end{Indent}
+\begin{Indent}\textbf{ Enable, Disable, and Reset ADC Module, Start Conversion and Read Result}\par
+\end{Indent}
+\begin{Indent}\textbf{ Runtime Changes of ADC Module}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga84ff86341c2e0d1a267b8dc54cb807ad}{adc\+\_\+set\+\_\+window\+\_\+mode}} (struct \mbox{\hyperlink{structadc__module}{adc\+\_\+module}} $\ast$const module\+\_\+inst, const enum \mbox{\hyperlink{group__asfdoc__sam0__adc__group_ga720c2e38565e27d2fd31941fede1f743}{adc\+\_\+window\+\_\+mode}} window\+\_\+mode, const int16\+\_\+t window\+\_\+lower\+\_\+value, const int16\+\_\+t window\+\_\+upper\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Sets the ADC window mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM Peripheral Analog-\/to-\/\+Digital Converter Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

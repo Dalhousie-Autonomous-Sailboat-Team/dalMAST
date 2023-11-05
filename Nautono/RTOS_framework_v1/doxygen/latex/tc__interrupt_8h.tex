@@ -1,0 +1,83 @@
+\hypertarget{tc__interrupt_8h}{}\doxysection{src/\+ASF/sam0/drivers/tc/tc\+\_\+interrupt.h File Reference}
+\label{tc__interrupt_8h}\index{src/ASF/sam0/drivers/tc/tc\_interrupt.h@{src/ASF/sam0/drivers/tc/tc\_interrupt.h}}
+
+
+SAM TC -\/ Timer Counter Callback Driver.  
+
+
+{\ttfamily \#include \char`\"{}tc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$system\+\_\+interrupt.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{tc__interrupt_8h_a86b64462d6d0064f3a9986c89e19a560}\label{tc__interrupt_8h_a86b64462d6d0064f3a9986c89e19a560}} 
+\#define {\bfseries \+\_\+\+TC\+\_\+\+INTERRUPT\+\_\+\+VECT\+\_\+\+NUM}(n,  \mbox{\hyperlink{group__group__sam0__utils_ga417dba7f63dde98dbebd6336d8af9d91}{unused}})~    SYSTEM\+\_\+\+INTERRUPT\+\_\+\+MODULE\+\_\+\+TC\#\#n,
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Callback Management}\par
+{\em \{@ }\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{tc__interrupt_8h_aa187c2a0cd50f55bb5f2c05397b9b225}{tc\+\_\+register\+\_\+callback}} (struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module, tc\+\_\+callback\+\_\+t callback\+\_\+func, const enum tc\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Registers a callback. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{tc__interrupt_8h_ad23042511cec11c51d607b24e1df4830}{tc\+\_\+unregister\+\_\+callback}} (struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const module, const enum tc\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Unregisters a callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{tc__interrupt_8h_aa21f2450f5d5e3e68f2c3acff715e2db}\label{tc__interrupt_8h_aa21f2450f5d5e3e68f2c3acff715e2db}} 
+void $\ast$ {\bfseries \+\_\+tc\+\_\+instances} \mbox{[}\mbox{\hyperlink{samd20e14_8h_a7895260bd2341a4b228dd6402c507c75}{TC\+\_\+\+INST\+\_\+\+NUM}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SAM TC -\/ Timer Counter Callback Driver. 
+
+Copyright (c) 2013-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tc__interrupt_8h_aa187c2a0cd50f55bb5f2c05397b9b225}\label{tc__interrupt_8h_aa187c2a0cd50f55bb5f2c05397b9b225}} 
+\index{tc\_interrupt.h@{tc\_interrupt.h}!tc\_register\_callback@{tc\_register\_callback}}
+\index{tc\_register\_callback@{tc\_register\_callback}!tc\_interrupt.h@{tc\_interrupt.h}}
+\doxysubsubsection{\texorpdfstring{tc\_register\_callback()}{tc\_register\_callback()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} tc\+\_\+register\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const}]{module,  }\item[{tc\+\_\+callback\+\_\+t}]{callback\+\_\+func,  }\item[{const enum tc\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Registers a callback. 
+
+Registers a callback function which is implemented by the user.
+
+\begin{DoxyNote}{Note}
+The callback must be enabled by tc\+\_\+enable\+\_\+callback, in order for the interrupt handler to call it when the conditions for the callback type is met.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to TC software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+func} & Pointer to callback function \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Callback type given by an enum \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tc__interrupt_8h_ad23042511cec11c51d607b24e1df4830}\label{tc__interrupt_8h_ad23042511cec11c51d607b24e1df4830}} 
+\index{tc\_interrupt.h@{tc\_interrupt.h}!tc\_unregister\_callback@{tc\_unregister\_callback}}
+\index{tc\_unregister\_callback@{tc\_unregister\_callback}!tc\_interrupt.h@{tc\_interrupt.h}}
+\doxysubsubsection{\texorpdfstring{tc\_unregister\_callback()}{tc\_unregister\_callback()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} tc\+\_\+unregister\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtc__module}{tc\+\_\+module}} $\ast$const}]{module,  }\item[{const enum tc\+\_\+callback}]{callback\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Unregisters a callback. 
+
+Unregisters a callback function implemented by the user. The callback should be disabled before it is unregistered.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em module} & Pointer to TC software instance struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+\_\+type} & Callback type given by an enum \\
+\hline
+\end{DoxyParams}

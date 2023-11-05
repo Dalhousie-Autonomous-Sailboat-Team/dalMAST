@@ -1,0 +1,69 @@
+\hypertarget{sail__tasksinit_8h_source}{}\doxysection{sail\+\_\+tasksinit.\+h}
+\label{sail__tasksinit_8h_source}\index{src/sail\_tasksinit.h@{src/sail\_tasksinit.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* sail\_tasksinit.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Header file for the task initialization module of the sailboat}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created on April 11, 2019}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Created by Serge Toutsenko}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef SAIL\_TASKSINIT\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define SAIL\_TASKSINIT\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}FreeRTOS.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}event\_groups.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}semphr.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}sail\_nmea.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}Sail\_WEATHERSTATION.h"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{// The event group used for setting sailboat modes}}
+\DoxyCodeLine{19 \textcolor{keyword}{extern} EventGroupHandle\_t mode\_event\_group;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// The mutex for writing to the uart buffer}}
+\DoxyCodeLine{22 \textcolor{keyword}{extern} SemaphoreHandle\_t write\_buffer\_mutex[UART\_NUM\_CHANNELS];}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// The variable use to test if all of the tasks are have run}}
+\DoxyCodeLine{25 \textcolor{comment}{// so the watchdog timer does not need to reset the microcontroller}}
+\DoxyCodeLine{26 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} watchdog\_counter;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{// The value that watchdog\_counter must equal for the watchdog to be reset}}
+\DoxyCodeLine{29 \textcolor{comment}{// This changes depending on the tasks that are running in a specific mode}}
+\DoxyCodeLine{30 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} watchdog\_reset\_value;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// The event bits for the mode event group}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define CTRL\_MODE\_AUTO\_BIT     (0x01UL)}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define CTRL\_MODE\_REMOTE\_BIT   (0x02UL)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define CTRL\_MODE\_LOAD\_BIT     (0x04UL)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define CTRL\_ALL\_BITS          (0x07UL)}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define GPS\_PRIORITY                      tskIDLE\_PRIORITY + 3}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define WEATHER\_SENSOR\_PRIORITY           tskIDLE\_PRIORITY + 4}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define UPDATE\_COURSE\_PRIORITY            tskIDLE\_PRIORITY + 3}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define CONTROL\_RUDDER\_PRIORITY           tskIDLE\_PRIORITY + 3}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define RADIO\_HANDLER\_PRIORITY            tskIDLE\_PRIORITY + 1}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define LOG\_DATA\_PRIORITY                 tskIDLE\_PRIORITY + 2}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define READ\_COMPASS\_PRIORITY             tskIDLE\_PRIORITY + 3}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define WATCHDOG\_PRIORITY                 tskIDLE\_PRIORITY}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define GPS\_STACK\_SIZE                    configMINIMAL\_STACK\_SIZE + 100}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define WEATHER\_SENSOR\_STACK\_SIZE         configMINIMAL\_STACK\_SIZE}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define UPDATE\_COURSE\_STACK\_SIZE          configMINIMAL\_STACK\_SIZE}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define CONTROL\_RUDDER\_STACK\_SIZE         configMINIMAL\_STACK\_SIZE}}
+\DoxyCodeLine{51 \textcolor{comment}{// The radio stack size was increased because the small stack size caused the radio task stack to overflow}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define RADIO\_HANDLER\_STACK\_SIZE          configMINIMAL\_STACK\_SIZE + 100}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define LOG\_DATA\_STACK\_SIZE               configMINIMAL\_STACK\_SIZE }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define READ\_COMPASS\_STACK\_SIZE           configMINIMAL\_STACK\_SIZE }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define WATCHDOG\_STACK\_SIZE               configMINIMAL\_STACK\_SIZE}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{// TODO: update this file}}
+\DoxyCodeLine{58 \textcolor{keyword}{enum} all\_tasks \{ eReadWeatherSensor, eUpdateCourse, eControlRudder, eRadioHandler, eLogData, eReadCompass\};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{extern} \textcolor{keyword}{enum} all\_tasks running\_task;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

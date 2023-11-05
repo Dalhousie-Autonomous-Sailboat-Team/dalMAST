@@ -1,0 +1,100 @@
+\hypertarget{sercom0_8h_source}{}\doxysection{sercom0.\+h}
+\label{sercom0_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/instance/sercom0.h@{src/ASF/sam0/utils/cmsis/samd20/include/instance/sercom0.h}}
+\mbox{\hyperlink{sercom0_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_SERCOM0\_INSTANCE\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_SERCOM0\_INSTANCE\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========== Register definition for SERCOM0 peripheral ========== */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#if (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_CTRLA     (0x42000800U) }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_CTRLB     (0x42000804U) }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_DBGCTRL   (0x42000808U) }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_BAUD      (0x4200080AU) }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_INTENCLR  (0x4200080CU) }}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_INTENSET  (0x4200080DU) }}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_INTFLAG   (0x4200080EU) }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_STATUS    (0x42000810U) }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_ADDR      (0x42000814U) }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_DATA      (0x42000818U) }}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_CTRLA     (0x42000800U) }}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_CTRLB     (0x42000804U) }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_INTENCLR  (0x4200080CU) }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_INTENSET  (0x4200080DU) }}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_INTFLAG   (0x4200080EU) }}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_STATUS    (0x42000810U) }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_ADDR      (0x42000814U) }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_DATA      (0x42000818U) }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_CTRLA      (0x42000800U) }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_CTRLB      (0x42000804U) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_DBGCTRL    (0x42000808U) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_BAUD       (0x4200080AU) }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_INTENCLR   (0x4200080CU) }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_INTENSET   (0x4200080DU) }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_INTFLAG    (0x4200080EU) }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_STATUS     (0x42000810U) }}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_ADDR       (0x42000814U) }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_DATA       (0x42000818U) }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_CTRLA    (0x42000800U) }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_CTRLB    (0x42000804U) }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_DBGCTRL  (0x42000808U) }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_BAUD     (0x4200080AU) }}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_INTENCLR (0x4200080CU) }}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_INTENSET (0x4200080DU) }}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_INTFLAG  (0x4200080EU) }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_STATUS   (0x42000810U) }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_DATA     (0x42000818U) }}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_CTRLA     (*(RwReg  *)0x42000800U) }}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_CTRLB     (*(RwReg  *)0x42000804U) }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_DBGCTRL   (*(RwReg8 *)0x42000808U) }}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_BAUD      (*(RwReg16*)0x4200080AU) }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_INTENCLR  (*(RwReg8 *)0x4200080CU) }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_INTENSET  (*(RwReg8 *)0x4200080DU) }}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_INTFLAG   (*(RwReg8 *)0x4200080EU) }}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_STATUS    (*(RwReg16*)0x42000810U) }}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_ADDR      (*(RwReg8 *)0x42000814U) }}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CM\_DATA      (*(RwReg8 *)0x42000818U) }}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_CTRLA     (*(RwReg  *)0x42000800U) }}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_CTRLB     (*(RwReg  *)0x42000804U) }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_INTENCLR  (*(RwReg8 *)0x4200080CU) }}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_INTENSET  (*(RwReg8 *)0x4200080DU) }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_INTFLAG   (*(RwReg8 *)0x4200080EU) }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_STATUS    (*(RwReg16*)0x42000810U) }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_ADDR      (*(RwReg  *)0x42000814U) }}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define REG\_SERCOM0\_I2CS\_DATA      (*(RwReg8 *)0x42000818U) }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_CTRLA      (*(RwReg  *)0x42000800U) }}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_CTRLB      (*(RwReg  *)0x42000804U) }}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_DBGCTRL    (*(RwReg8 *)0x42000808U) }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_BAUD       (*(RwReg8 *)0x4200080AU) }}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_INTENCLR   (*(RwReg8 *)0x4200080CU) }}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_INTENSET   (*(RwReg8 *)0x4200080DU) }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_INTFLAG    (*(RwReg8 *)0x4200080EU) }}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_STATUS     (*(RwReg16*)0x42000810U) }}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_ADDR       (*(RwReg  *)0x42000814U) }}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define REG\_SERCOM0\_SPI\_DATA       (*(RwReg16*)0x42000818U) }}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_CTRLA    (*(RwReg  *)0x42000800U) }}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_CTRLB    (*(RwReg  *)0x42000804U) }}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_DBGCTRL  (*(RwReg8 *)0x42000808U) }}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_BAUD     (*(RwReg16*)0x4200080AU) }}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_INTENCLR (*(RwReg8 *)0x4200080CU) }}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_INTENSET (*(RwReg8 *)0x4200080DU) }}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_INTFLAG  (*(RwReg8 *)0x4200080EU) }}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_STATUS   (*(RwReg16*)0x42000810U) }}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define REG\_SERCOM0\_USART\_DATA     (*(RwReg16*)0x42000818U) }}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* (defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{comment}{/* ========== Instance parameters for SERCOM0 peripheral ========== */}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define SERCOM0\_GCLK\_ID\_CORE        13}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define SERCOM0\_GCLK\_ID\_SLOW        12}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define SERCOM0\_INT\_MSB             3}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define SERCOM0\_PMSB                3}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_SERCOM0\_INSTANCE\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

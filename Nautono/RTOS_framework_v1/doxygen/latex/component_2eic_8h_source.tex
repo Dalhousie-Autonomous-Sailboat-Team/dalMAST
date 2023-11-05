@@ -1,0 +1,623 @@
+\hypertarget{component_2eic_8h_source}{}\doxysection{eic.\+h}
+\label{component_2eic_8h_source}\index{src/ASF/sam0/utils/cmsis/samd20/include/component/eic.h@{src/ASF/sam0/utils/cmsis/samd20/include/component/eic.h}}
+\mbox{\hyperlink{component_2eic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Support and FAQ: visit <a href="{}https://www.microchip.com/support/"{}>Microchip Support</a>}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_SAMD20\_EIC\_COMPONENT\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_SAMD20\_EIC\_COMPONENT\_}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{42 \textcolor{comment}{/* ========================================================================== */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define EIC\_U2217}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define REV\_EIC                     0x101}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_CTRL : (EIC Offset: 0x00) (R/W  8) Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{53     uint8\_t  \mbox{\hyperlink{union_e_i_c___c_t_r_l___type_a4a63ff9dc90d80936c88730f67f87e4c}{SWRST}}:1;          }
+\DoxyCodeLine{54     uint8\_t  \mbox{\hyperlink{union_e_i_c___c_t_r_l___type_a193c9481f014cb12185631215f613282}{ENABLE}}:1;         }
+\DoxyCodeLine{55     uint8\_t  :6;               }
+\DoxyCodeLine{56   \} bit;                       }
+\DoxyCodeLine{57   uint8\_t \mbox{\hyperlink{union_e_i_c___c_t_r_l___type_a08970fbd87249e272bf82e5c41b72027}{reg}};                 }
+\DoxyCodeLine{58 \} \mbox{\hyperlink{union_e_i_c___c_t_r_l___type}{EIC\_CTRL\_Type}};}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define EIC\_CTRL\_OFFSET             0x00         }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define EIC\_CTRL\_RESETVALUE         0x00ul       }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define EIC\_CTRL\_SWRST\_Pos          0            }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define EIC\_CTRL\_SWRST              (0x1ul << EIC\_CTRL\_SWRST\_Pos)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define EIC\_CTRL\_ENABLE\_Pos         1            }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define EIC\_CTRL\_ENABLE             (0x1ul << EIC\_CTRL\_ENABLE\_Pos)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define EIC\_CTRL\_MASK               0x03ul       }}
+\DoxyCodeLine{70 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_STATUS : (EIC Offset: 0x01) (R/   8) Status -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{72 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{73   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{74     uint8\_t  :7;               }
+\DoxyCodeLine{75     uint8\_t  \mbox{\hyperlink{union_e_i_c___s_t_a_t_u_s___type_ae8d9b17abafbdb777e9206dadb32a067}{SYNCBUSY}}:1;       }
+\DoxyCodeLine{76   \} bit;                       }
+\DoxyCodeLine{77   uint8\_t \mbox{\hyperlink{union_e_i_c___s_t_a_t_u_s___type_ad7353b8ffe0508471beae8e8ab73bf2c}{reg}};                 }
+\DoxyCodeLine{78 \} \mbox{\hyperlink{union_e_i_c___s_t_a_t_u_s___type}{EIC\_STATUS\_Type}};}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define EIC\_STATUS\_OFFSET           0x01         }}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define EIC\_STATUS\_RESETVALUE       0x00ul       }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define EIC\_STATUS\_SYNCBUSY\_Pos     7            }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define EIC\_STATUS\_SYNCBUSY         (0x1ul << EIC\_STATUS\_SYNCBUSY\_Pos)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define EIC\_STATUS\_MASK             0x80ul       }}
+\DoxyCodeLine{88 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_NMICTRL : (EIC Offset: 0x02) (R/W  8) Non-\/Maskable Interrupt Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{90 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{91   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{92     uint8\_t  \mbox{\hyperlink{union_e_i_c___n_m_i_c_t_r_l___type_acf1ff36d19d1bf77eb5da09816f60a45}{NMISENSE}}:3;       }
+\DoxyCodeLine{93     uint8\_t  \mbox{\hyperlink{union_e_i_c___n_m_i_c_t_r_l___type_ae8c7e49526fb6d130c2e551a8c6fc898}{NMIFILTEN}}:1;      }
+\DoxyCodeLine{94     uint8\_t  :4;               }
+\DoxyCodeLine{95   \} bit;                       }
+\DoxyCodeLine{96   uint8\_t \mbox{\hyperlink{union_e_i_c___n_m_i_c_t_r_l___type_a0b91203d47755f15a84533ed9868116f}{reg}};                 }
+\DoxyCodeLine{97 \} \mbox{\hyperlink{union_e_i_c___n_m_i_c_t_r_l___type}{EIC\_NMICTRL\_Type}};}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_OFFSET          0x02         }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMISENSE\_Pos    0            }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMISENSE\_Msk    (0x7ul << EIC\_NMICTRL\_NMISENSE\_Pos)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMISENSE(value) ((EIC\_NMICTRL\_NMISENSE\_Msk \& ((value) << EIC\_NMICTRL\_NMISENSE\_Pos)))}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define   EIC\_NMICTRL\_NMISENSE\_NONE\_Val   0x0ul  }}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define   EIC\_NMICTRL\_NMISENSE\_RISE\_Val   0x1ul  }}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define   EIC\_NMICTRL\_NMISENSE\_FALL\_Val   0x2ul  }}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define   EIC\_NMICTRL\_NMISENSE\_BOTH\_Val   0x3ul  }}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define   EIC\_NMICTRL\_NMISENSE\_HIGH\_Val   0x4ul  }}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define   EIC\_NMICTRL\_NMISENSE\_LOW\_Val    0x5ul  }}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMISENSE\_NONE   (EIC\_NMICTRL\_NMISENSE\_NONE\_Val << EIC\_NMICTRL\_NMISENSE\_Pos)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMISENSE\_RISE   (EIC\_NMICTRL\_NMISENSE\_RISE\_Val << EIC\_NMICTRL\_NMISENSE\_Pos)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMISENSE\_FALL   (EIC\_NMICTRL\_NMISENSE\_FALL\_Val << EIC\_NMICTRL\_NMISENSE\_Pos)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMISENSE\_BOTH   (EIC\_NMICTRL\_NMISENSE\_BOTH\_Val << EIC\_NMICTRL\_NMISENSE\_Pos)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMISENSE\_HIGH   (EIC\_NMICTRL\_NMISENSE\_HIGH\_Val << EIC\_NMICTRL\_NMISENSE\_Pos)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMISENSE\_LOW    (EIC\_NMICTRL\_NMISENSE\_LOW\_Val  << EIC\_NMICTRL\_NMISENSE\_Pos)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMIFILTEN\_Pos   3            }}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_NMIFILTEN       (0x1ul << EIC\_NMICTRL\_NMIFILTEN\_Pos)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define EIC\_NMICTRL\_MASK            0x0Ful       }}
+\DoxyCodeLine{122 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_NMIFLAG : (EIC Offset: 0x03) (R/W  8) Non-\/Maskable Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{124 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{125   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{126     uint8\_t  \mbox{\hyperlink{union_e_i_c___n_m_i_f_l_a_g___type_a250f9168a19c25e8fa4f015721f14726}{NMI}}:1;            }
+\DoxyCodeLine{127     uint8\_t  :7;               }
+\DoxyCodeLine{128   \} bit;                       }
+\DoxyCodeLine{129   uint8\_t \mbox{\hyperlink{union_e_i_c___n_m_i_f_l_a_g___type_a9bc9d2c7c25765b13e1c3607b1a3fc70}{reg}};                 }
+\DoxyCodeLine{130 \} \mbox{\hyperlink{union_e_i_c___n_m_i_f_l_a_g___type}{EIC\_NMIFLAG\_Type}};}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define EIC\_NMIFLAG\_OFFSET          0x03         }}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define EIC\_NMIFLAG\_RESETVALUE      0x00ul       }}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define EIC\_NMIFLAG\_NMI\_Pos         0            }}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define EIC\_NMIFLAG\_NMI             (0x1ul << EIC\_NMIFLAG\_NMI\_Pos)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define EIC\_NMIFLAG\_MASK            0x01ul       }}
+\DoxyCodeLine{140 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_EVCTRL : (EIC Offset: 0x04) (R/W 32) Event Control -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{142 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{143   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{144     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a85b28ff22c7ea442ee134e54189b1127}{EXTINTEO0}}:1;      }
+\DoxyCodeLine{145     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a8e6805a5083075e8f6950ef40b1724a4}{EXTINTEO1}}:1;      }
+\DoxyCodeLine{146     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_ae1f7323b96c1d0e4c4d838187af70cf7}{EXTINTEO2}}:1;      }
+\DoxyCodeLine{147     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a13265e4512e489f7dbc580ec947cf3e1}{EXTINTEO3}}:1;      }
+\DoxyCodeLine{148     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_ac58e41106b795c08ba67b8bab2e18274}{EXTINTEO4}}:1;      }
+\DoxyCodeLine{149     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a895ccd444726095f6b5f5be4d81e0a36}{EXTINTEO5}}:1;      }
+\DoxyCodeLine{150     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a458e026ee5deff7fdb88f8345e119482}{EXTINTEO6}}:1;      }
+\DoxyCodeLine{151     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a8c1a566ec287fb35a8d622a31abef56e}{EXTINTEO7}}:1;      }
+\DoxyCodeLine{152     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a5f65372e7512c3ebdc71f543bace657f}{EXTINTEO8}}:1;      }
+\DoxyCodeLine{153     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a7dbb4c4d88ff426162f1e37ef937583e}{EXTINTEO9}}:1;      }
+\DoxyCodeLine{154     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a21219dd54aece2288175ae2a141bcefc}{EXTINTEO10}}:1;     }
+\DoxyCodeLine{155     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_ae98532e3bb0e24a8b039858b704ba999}{EXTINTEO11}}:1;     }
+\DoxyCodeLine{156     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a7ea9a4bde2021a7dda1e0e6450e791c7}{EXTINTEO12}}:1;     }
+\DoxyCodeLine{157     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a63a0b8d3ab43a4bacc3714a20cf85159}{EXTINTEO13}}:1;     }
+\DoxyCodeLine{158     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a42bbd02c9e32970585c5dac75a850a6f}{EXTINTEO14}}:1;     }
+\DoxyCodeLine{159     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_a5b5ae6b73ecac2ba8a74e852eb458e91}{EXTINTEO15}}:1;     }
+\DoxyCodeLine{160     uint32\_t :16;              }
+\DoxyCodeLine{161   \} bit;                       }
+\DoxyCodeLine{162   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{163     uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_ab15db25f954b71827332745025d44638}{EXTINTEO}}:16;      }
+\DoxyCodeLine{164     uint32\_t :16;              }
+\DoxyCodeLine{165   \} vec;                       }
+\DoxyCodeLine{166   uint32\_t \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type_acfc4e3cf2609368b640cc3463f4d2270}{reg}};                }
+\DoxyCodeLine{167 \} \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type}{EIC\_EVCTRL\_Type}};}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_OFFSET           0x04         }}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_RESETVALUE       0x00000000ul }}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO0\_Pos    0            }}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO0        (1 << EIC\_EVCTRL\_EXTINTEO0\_Pos)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO1\_Pos    1            }}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO1        (1 << EIC\_EVCTRL\_EXTINTEO1\_Pos)}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO2\_Pos    2            }}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO2        (1 << EIC\_EVCTRL\_EXTINTEO2\_Pos)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO3\_Pos    3            }}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO3        (1 << EIC\_EVCTRL\_EXTINTEO3\_Pos)}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO4\_Pos    4            }}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO4        (1 << EIC\_EVCTRL\_EXTINTEO4\_Pos)}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO5\_Pos    5            }}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO5        (1 << EIC\_EVCTRL\_EXTINTEO5\_Pos)}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO6\_Pos    6            }}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO6        (1 << EIC\_EVCTRL\_EXTINTEO6\_Pos)}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO7\_Pos    7            }}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO7        (1 << EIC\_EVCTRL\_EXTINTEO7\_Pos)}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO8\_Pos    8            }}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO8        (1 << EIC\_EVCTRL\_EXTINTEO8\_Pos)}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO9\_Pos    9            }}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO9        (1 << EIC\_EVCTRL\_EXTINTEO9\_Pos)}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO10\_Pos   10           }}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO10       (1 << EIC\_EVCTRL\_EXTINTEO10\_Pos)}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO11\_Pos   11           }}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO11       (1 << EIC\_EVCTRL\_EXTINTEO11\_Pos)}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO12\_Pos   12           }}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO12       (1 << EIC\_EVCTRL\_EXTINTEO12\_Pos)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO13\_Pos   13           }}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO13       (1 << EIC\_EVCTRL\_EXTINTEO13\_Pos)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO14\_Pos   14           }}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO14       (1 << EIC\_EVCTRL\_EXTINTEO14\_Pos)}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO15\_Pos   15           }}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO15       (1 << EIC\_EVCTRL\_EXTINTEO15\_Pos)}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO\_Pos     0            }}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO\_Msk     (0xFFFFul << EIC\_EVCTRL\_EXTINTEO\_Pos)}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_EXTINTEO(value)  ((EIC\_EVCTRL\_EXTINTEO\_Msk \& ((value) << EIC\_EVCTRL\_EXTINTEO\_Pos)))}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define EIC\_EVCTRL\_MASK             0x0000FFFFul }}
+\DoxyCodeLine{210 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_INTENCLR : (EIC Offset: 0x08) (R/W 32) Interrupt Enable Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{212 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{213   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{214     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a7fa062c6af50e386a3229adf87dd19f8}{EXTINT0}}:1;        }
+\DoxyCodeLine{215     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_ac8e6f7d89f77a325ac7370b0945cf1d8}{EXTINT1}}:1;        }
+\DoxyCodeLine{216     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a225dd3befc700baabe515f523d05083c}{EXTINT2}}:1;        }
+\DoxyCodeLine{217     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_acddff79737f26695695b385bafa8786b}{EXTINT3}}:1;        }
+\DoxyCodeLine{218     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a1995f80846094c4f2508ba77078b5c2d}{EXTINT4}}:1;        }
+\DoxyCodeLine{219     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a1b5fc9628c7d3773a09c44948d268205}{EXTINT5}}:1;        }
+\DoxyCodeLine{220     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_abfd290201c774b51711fc7fd57ecb515}{EXTINT6}}:1;        }
+\DoxyCodeLine{221     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a9df3627f95ec928c15d00a8550459094}{EXTINT7}}:1;        }
+\DoxyCodeLine{222     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a76a331881eb18f4aa0d6c13b863b06c9}{EXTINT8}}:1;        }
+\DoxyCodeLine{223     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_acea8ec262d99a60a46b97ab040dc78a0}{EXTINT9}}:1;        }
+\DoxyCodeLine{224     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_aa9a0b902cb5833d8e316deee99306e0e}{EXTINT10}}:1;       }
+\DoxyCodeLine{225     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a7f1188871f602f99073e850f4a8977e4}{EXTINT11}}:1;       }
+\DoxyCodeLine{226     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a61a6ec01efa47906f17d806ce5c1d587}{EXTINT12}}:1;       }
+\DoxyCodeLine{227     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a512b4d5d0a562cc8a7762cb0bb764a26}{EXTINT13}}:1;       }
+\DoxyCodeLine{228     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a3769dd2978fbaa8477e5888e1d75b526}{EXTINT14}}:1;       }
+\DoxyCodeLine{229     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_ab7d8d829cd7c48c480f8347e1baf4155}{EXTINT15}}:1;       }
+\DoxyCodeLine{230     uint32\_t :16;              }
+\DoxyCodeLine{231   \} bit;                       }
+\DoxyCodeLine{232   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{233     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_af6f08742ecc24c00428372ddf44f7271}{EXTINT}}:16;        }
+\DoxyCodeLine{234     uint32\_t :16;              }
+\DoxyCodeLine{235   \} vec;                       }
+\DoxyCodeLine{236   uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type_a0e58903a7b1be711212a0cef600e271b}{reg}};                }
+\DoxyCodeLine{237 \} \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type}{EIC\_INTENCLR\_Type}};}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_OFFSET         0x08         }}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_RESETVALUE     0x00000000ul }}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT0\_Pos    0            }}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT0        (1 << EIC\_INTENCLR\_EXTINT0\_Pos)}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT1\_Pos    1            }}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT1        (1 << EIC\_INTENCLR\_EXTINT1\_Pos)}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT2\_Pos    2            }}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT2        (1 << EIC\_INTENCLR\_EXTINT2\_Pos)}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT3\_Pos    3            }}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT3        (1 << EIC\_INTENCLR\_EXTINT3\_Pos)}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT4\_Pos    4            }}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT4        (1 << EIC\_INTENCLR\_EXTINT4\_Pos)}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT5\_Pos    5            }}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT5        (1 << EIC\_INTENCLR\_EXTINT5\_Pos)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT6\_Pos    6            }}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT6        (1 << EIC\_INTENCLR\_EXTINT6\_Pos)}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT7\_Pos    7            }}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT7        (1 << EIC\_INTENCLR\_EXTINT7\_Pos)}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT8\_Pos    8            }}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT8        (1 << EIC\_INTENCLR\_EXTINT8\_Pos)}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT9\_Pos    9            }}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT9        (1 << EIC\_INTENCLR\_EXTINT9\_Pos)}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT10\_Pos   10           }}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT10       (1 << EIC\_INTENCLR\_EXTINT10\_Pos)}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT11\_Pos   11           }}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT11       (1 << EIC\_INTENCLR\_EXTINT11\_Pos)}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT12\_Pos   12           }}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT12       (1 << EIC\_INTENCLR\_EXTINT12\_Pos)}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT13\_Pos   13           }}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT13       (1 << EIC\_INTENCLR\_EXTINT13\_Pos)}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT14\_Pos   14           }}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT14       (1 << EIC\_INTENCLR\_EXTINT14\_Pos)}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT15\_Pos   15           }}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT15       (1 << EIC\_INTENCLR\_EXTINT15\_Pos)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT\_Pos     0            }}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT\_Msk     (0xFFFFul << EIC\_INTENCLR\_EXTINT\_Pos)}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_EXTINT(value)  ((EIC\_INTENCLR\_EXTINT\_Msk \& ((value) << EIC\_INTENCLR\_EXTINT\_Pos)))}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define EIC\_INTENCLR\_MASK           0x0000FFFFul }}
+\DoxyCodeLine{280 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_INTENSET : (EIC Offset: 0x0C) (R/W 32) Interrupt Enable Set -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{282 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{283   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{284     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_a5403e73fafe12c017296cbc8e002c10c}{EXTINT0}}:1;        }
+\DoxyCodeLine{285     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_ae662cf243919cac936118b0c20e406a6}{EXTINT1}}:1;        }
+\DoxyCodeLine{286     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_ac2a7fcb1781522a514631756b29abf78}{EXTINT2}}:1;        }
+\DoxyCodeLine{287     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_a36281b797b1c9ddb8ca2b640a83848d5}{EXTINT3}}:1;        }
+\DoxyCodeLine{288     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_ad1635ad557c49164c9a3221e1daee067}{EXTINT4}}:1;        }
+\DoxyCodeLine{289     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_a2379371c19d9d6bdeaeea42bb259e5a4}{EXTINT5}}:1;        }
+\DoxyCodeLine{290     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_aff9e3366d01dba8c2fa961bf9e8e2280}{EXTINT6}}:1;        }
+\DoxyCodeLine{291     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_ae26b3053b87e23c768176f916c01cbd5}{EXTINT7}}:1;        }
+\DoxyCodeLine{292     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_af159ba05802ea00839c3583b4570b29f}{EXTINT8}}:1;        }
+\DoxyCodeLine{293     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_aae24986c1440f4c0586ba908f7a94c6d}{EXTINT9}}:1;        }
+\DoxyCodeLine{294     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_ac0b0f6825b38619574fe99e666d17928}{EXTINT10}}:1;       }
+\DoxyCodeLine{295     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_aba9d993e8880fae253f899f9e93eeb77}{EXTINT11}}:1;       }
+\DoxyCodeLine{296     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_a68a7367539da120f3806e7288e7c1e68}{EXTINT12}}:1;       }
+\DoxyCodeLine{297     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_abe620ed3e4c2017be1f7d79d077cf6a4}{EXTINT13}}:1;       }
+\DoxyCodeLine{298     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_a654a69136ae8b11cb8ff96339c2708bb}{EXTINT14}}:1;       }
+\DoxyCodeLine{299     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_a1bb8d12f9fd6c6c5107ee84ae985b3c8}{EXTINT15}}:1;       }
+\DoxyCodeLine{300     uint32\_t :16;              }
+\DoxyCodeLine{301   \} bit;                       }
+\DoxyCodeLine{302   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{303     uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_a9b687b84a8227b91fb74474cf65b23e0}{EXTINT}}:16;        }
+\DoxyCodeLine{304     uint32\_t :16;              }
+\DoxyCodeLine{305   \} vec;                       }
+\DoxyCodeLine{306   uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type_ae37fc1b9ed6acee3eba5484176ecebbf}{reg}};                }
+\DoxyCodeLine{307 \} \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type}{EIC\_INTENSET\_Type}};}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define EIC\_INTENSET\_OFFSET         0x0C         }}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#define EIC\_INTENSET\_RESETVALUE     0x00000000ul }}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT0\_Pos    0            }}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT0        (1 << EIC\_INTENSET\_EXTINT0\_Pos)}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT1\_Pos    1            }}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT1        (1 << EIC\_INTENSET\_EXTINT1\_Pos)}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT2\_Pos    2            }}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT2        (1 << EIC\_INTENSET\_EXTINT2\_Pos)}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT3\_Pos    3            }}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT3        (1 << EIC\_INTENSET\_EXTINT3\_Pos)}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT4\_Pos    4            }}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT4        (1 << EIC\_INTENSET\_EXTINT4\_Pos)}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT5\_Pos    5            }}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT5        (1 << EIC\_INTENSET\_EXTINT5\_Pos)}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT6\_Pos    6            }}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT6        (1 << EIC\_INTENSET\_EXTINT6\_Pos)}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT7\_Pos    7            }}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT7        (1 << EIC\_INTENSET\_EXTINT7\_Pos)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT8\_Pos    8            }}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT8        (1 << EIC\_INTENSET\_EXTINT8\_Pos)}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT9\_Pos    9            }}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT9        (1 << EIC\_INTENSET\_EXTINT9\_Pos)}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT10\_Pos   10           }}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT10       (1 << EIC\_INTENSET\_EXTINT10\_Pos)}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT11\_Pos   11           }}
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT11       (1 << EIC\_INTENSET\_EXTINT11\_Pos)}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT12\_Pos   12           }}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT12       (1 << EIC\_INTENSET\_EXTINT12\_Pos)}}
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT13\_Pos   13           }}
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT13       (1 << EIC\_INTENSET\_EXTINT13\_Pos)}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT14\_Pos   14           }}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT14       (1 << EIC\_INTENSET\_EXTINT14\_Pos)}}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT15\_Pos   15           }}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT15       (1 << EIC\_INTENSET\_EXTINT15\_Pos)}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT\_Pos     0            }}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT\_Msk     (0xFFFFul << EIC\_INTENSET\_EXTINT\_Pos)}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define EIC\_INTENSET\_EXTINT(value)  ((EIC\_INTENSET\_EXTINT\_Msk \& ((value) << EIC\_INTENSET\_EXTINT\_Pos)))}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define EIC\_INTENSET\_MASK           0x0000FFFFul }}
+\DoxyCodeLine{350 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_INTFLAG : (EIC Offset: 0x10) (R/W 32) Interrupt Flag Status and Clear -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{352 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{comment}{// \_\_I to avoid read-\/modify-\/write on write-\/to-\/clear register}}
+\DoxyCodeLine{353   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{354     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a90692d8871eb8ab7e279d5536ca19b3b}{EXTINT0}}:1;    }
+\DoxyCodeLine{355     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a52b01dc43a5cb4de97b0712ffb56ac73}{EXTINT1}}:1;    }
+\DoxyCodeLine{356     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_ad02e4f468c5cd4fb2339965118563af6}{EXTINT2}}:1;    }
+\DoxyCodeLine{357     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a281560dab9ce68a24f4fb6f7ea0a0a31}{EXTINT3}}:1;    }
+\DoxyCodeLine{358     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_ac1ddec9c2216441b89e262fce036f04e}{EXTINT4}}:1;    }
+\DoxyCodeLine{359     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a4d293c7a504a57d2c17ba59d75e97ba0}{EXTINT5}}:1;    }
+\DoxyCodeLine{360     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a3a206319f39566365402c4fb30b3c854}{EXTINT6}}:1;    }
+\DoxyCodeLine{361     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_ae8ca88ba3eb245c1f0c4605838db3b09}{EXTINT7}}:1;    }
+\DoxyCodeLine{362     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_ab46c674c62dda507380e14678792a066}{EXTINT8}}:1;    }
+\DoxyCodeLine{363     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_ae7a4aa998ff62bfd07b3a98bd099df81}{EXTINT9}}:1;    }
+\DoxyCodeLine{364     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a3bfa53cfc36c976b5a7037f1580999c0}{EXTINT10}}:1;   }
+\DoxyCodeLine{365     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a0d2d59f340f2054d1e848fb8b369d9dc}{EXTINT11}}:1;   }
+\DoxyCodeLine{366     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a46d22dd1a6458b95ced4d667fa044e76}{EXTINT12}}:1;   }
+\DoxyCodeLine{367     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a01894d3438af0b730adfd67cfd7ef77e}{EXTINT13}}:1;   }
+\DoxyCodeLine{368     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a3b7c32a98f5908b463562a5aa99bc6fa}{EXTINT14}}:1;   }
+\DoxyCodeLine{369     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_ac0cececff7599026e2adf8ee932e18b7}{EXTINT15}}:1;   }
+\DoxyCodeLine{370     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a11afcf0c2051e6c52baaeb573b9d116a}{uint32\_t}} :16;          }
+\DoxyCodeLine{371   \} bit;                       }
+\DoxyCodeLine{372   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{373     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a99a8ead36567d2fb8b18b546314e9382}{EXTINT}}:16;    }
+\DoxyCodeLine{374     \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}} uint32\_t :16;          }
+\DoxyCodeLine{375   \} vec;                       }
+\DoxyCodeLine{376   uint32\_t \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type_a85a80a7da36142adafb6e34e29029960}{reg}};                }
+\DoxyCodeLine{377 \} \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type}{EIC\_INTFLAG\_Type}};}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_OFFSET          0x10         }}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_RESETVALUE      0x00000000ul }}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT0\_Pos     0            }}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT0         (1 << EIC\_INTFLAG\_EXTINT0\_Pos)}}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT1\_Pos     1            }}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT1         (1 << EIC\_INTFLAG\_EXTINT1\_Pos)}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT2\_Pos     2            }}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT2         (1 << EIC\_INTFLAG\_EXTINT2\_Pos)}}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT3\_Pos     3            }}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT3         (1 << EIC\_INTFLAG\_EXTINT3\_Pos)}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT4\_Pos     4            }}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT4         (1 << EIC\_INTFLAG\_EXTINT4\_Pos)}}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT5\_Pos     5            }}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT5         (1 << EIC\_INTFLAG\_EXTINT5\_Pos)}}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT6\_Pos     6            }}
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT6         (1 << EIC\_INTFLAG\_EXTINT6\_Pos)}}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT7\_Pos     7            }}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT7         (1 << EIC\_INTFLAG\_EXTINT7\_Pos)}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT8\_Pos     8            }}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT8         (1 << EIC\_INTFLAG\_EXTINT8\_Pos)}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT9\_Pos     9            }}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT9         (1 << EIC\_INTFLAG\_EXTINT9\_Pos)}}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT10\_Pos    10           }}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT10        (1 << EIC\_INTFLAG\_EXTINT10\_Pos)}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT11\_Pos    11           }}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT11        (1 << EIC\_INTFLAG\_EXTINT11\_Pos)}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT12\_Pos    12           }}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT12        (1 << EIC\_INTFLAG\_EXTINT12\_Pos)}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT13\_Pos    13           }}
+\DoxyCodeLine{410 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT13        (1 << EIC\_INTFLAG\_EXTINT13\_Pos)}}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT14\_Pos    14           }}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT14        (1 << EIC\_INTFLAG\_EXTINT14\_Pos)}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT15\_Pos    15           }}
+\DoxyCodeLine{414 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT15        (1 << EIC\_INTFLAG\_EXTINT15\_Pos)}}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT\_Pos      0            }}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT\_Msk      (0xFFFFul << EIC\_INTFLAG\_EXTINT\_Pos)}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_EXTINT(value)   ((EIC\_INTFLAG\_EXTINT\_Msk \& ((value) << EIC\_INTFLAG\_EXTINT\_Pos)))}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#define EIC\_INTFLAG\_MASK            0x0000FFFFul }}
+\DoxyCodeLine{420 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_WAKEUP : (EIC Offset: 0x14) (R/W 32) Wake-\/Up Enable -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{422 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{423   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{424     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a237b5f61b82a16effb15fd40c85ac243}{WAKEUPEN0}}:1;      }
+\DoxyCodeLine{425     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_af24e59170f7f37fcb43d4f02fd430689}{WAKEUPEN1}}:1;      }
+\DoxyCodeLine{426     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a7b4a10d019e9707df1960f6b2bbea0d2}{WAKEUPEN2}}:1;      }
+\DoxyCodeLine{427     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_ae65b3d1a282cdda006e61d2d07ac6e1f}{WAKEUPEN3}}:1;      }
+\DoxyCodeLine{428     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a5e184966214d44b2abb7e0e3c22c8a7f}{WAKEUPEN4}}:1;      }
+\DoxyCodeLine{429     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_ab49a19a301b7212f7bd4c21ebbf479ef}{WAKEUPEN5}}:1;      }
+\DoxyCodeLine{430     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a29bcd2e6d2d98a9fe315f92d7de0d4ed}{WAKEUPEN6}}:1;      }
+\DoxyCodeLine{431     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a41f53149c20d043ad0b7c7352df31ddd}{WAKEUPEN7}}:1;      }
+\DoxyCodeLine{432     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_ad0a0f5658fc6f7a2d1c85c4f2e98e8d7}{WAKEUPEN8}}:1;      }
+\DoxyCodeLine{433     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a81c6578f17768159be34af3cbc79b66d}{WAKEUPEN9}}:1;      }
+\DoxyCodeLine{434     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a309842b98f83d00d05b33ace3e6f1cb3}{WAKEUPEN10}}:1;     }
+\DoxyCodeLine{435     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a19087419931921cb8e9045c6a26a1948}{WAKEUPEN11}}:1;     }
+\DoxyCodeLine{436     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_afa6a6403e64905dfabf45234d551acd8}{WAKEUPEN12}}:1;     }
+\DoxyCodeLine{437     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a10cbb06a9a9692f0e455baf4fade293f}{WAKEUPEN13}}:1;     }
+\DoxyCodeLine{438     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a18608a1f23eedfac5516875875b2bba8}{WAKEUPEN14}}:1;     }
+\DoxyCodeLine{439     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_a20628713541a7ba934502d2abdf66810}{WAKEUPEN15}}:1;     }
+\DoxyCodeLine{440     uint32\_t :16;              }
+\DoxyCodeLine{441   \} bit;                       }
+\DoxyCodeLine{442   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{443     uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_ab762903667b02329ed56d4df0c11a743}{WAKEUPEN}}:16;      }
+\DoxyCodeLine{444     uint32\_t :16;              }
+\DoxyCodeLine{445   \} vec;                       }
+\DoxyCodeLine{446   uint32\_t \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type_af3a1e53e2fd17095d26659e6ee6374d5}{reg}};                }
+\DoxyCodeLine{447 \} \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type}{EIC\_WAKEUP\_Type}};}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_OFFSET           0x14         }}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_RESETVALUE       0x00000000ul }}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN0\_Pos    0            }}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN0        (1 << EIC\_WAKEUP\_WAKEUPEN0\_Pos)}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN1\_Pos    1            }}
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN1        (1 << EIC\_WAKEUP\_WAKEUPEN1\_Pos)}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN2\_Pos    2            }}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN2        (1 << EIC\_WAKEUP\_WAKEUPEN2\_Pos)}}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN3\_Pos    3            }}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN3        (1 << EIC\_WAKEUP\_WAKEUPEN3\_Pos)}}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN4\_Pos    4            }}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN4        (1 << EIC\_WAKEUP\_WAKEUPEN4\_Pos)}}
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN5\_Pos    5            }}
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN5        (1 << EIC\_WAKEUP\_WAKEUPEN5\_Pos)}}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN6\_Pos    6            }}
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN6        (1 << EIC\_WAKEUP\_WAKEUPEN6\_Pos)}}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN7\_Pos    7            }}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN7        (1 << EIC\_WAKEUP\_WAKEUPEN7\_Pos)}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN8\_Pos    8            }}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN8        (1 << EIC\_WAKEUP\_WAKEUPEN8\_Pos)}}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN9\_Pos    9            }}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN9        (1 << EIC\_WAKEUP\_WAKEUPEN9\_Pos)}}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN10\_Pos   10           }}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN10       (1 << EIC\_WAKEUP\_WAKEUPEN10\_Pos)}}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN11\_Pos   11           }}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN11       (1 << EIC\_WAKEUP\_WAKEUPEN11\_Pos)}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN12\_Pos   12           }}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN12       (1 << EIC\_WAKEUP\_WAKEUPEN12\_Pos)}}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN13\_Pos   13           }}
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN13       (1 << EIC\_WAKEUP\_WAKEUPEN13\_Pos)}}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN14\_Pos   14           }}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN14       (1 << EIC\_WAKEUP\_WAKEUPEN14\_Pos)}}
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN15\_Pos   15           }}
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN15       (1 << EIC\_WAKEUP\_WAKEUPEN15\_Pos)}}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN\_Pos     0            }}
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN\_Msk     (0xFFFFul << EIC\_WAKEUP\_WAKEUPEN\_Pos)}}
+\DoxyCodeLine{487 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_WAKEUPEN(value)  ((EIC\_WAKEUP\_WAKEUPEN\_Msk \& ((value) << EIC\_WAKEUP\_WAKEUPEN\_Pos)))}}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#define EIC\_WAKEUP\_MASK             0x0000FFFFul }}
+\DoxyCodeLine{490 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/ EIC\_CONFIG : (EIC Offset: 0x18) (R/W 32) Configuration n -\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{492 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{493   \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{494     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_acbc67865205a6f51d836bd1c960df40c}{SENSE0}}:3;         }
+\DoxyCodeLine{495     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a2b015cff268d4e52be4e188543c5d770}{FILTEN0}}:1;        }
+\DoxyCodeLine{496     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a3cfd504b9379af7e18843f39479ece0d}{SENSE1}}:3;         }
+\DoxyCodeLine{497     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_afa6acfc8ed18f9ef3672752e5046af16}{FILTEN1}}:1;        }
+\DoxyCodeLine{498     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a334f31fc227f0b432ce2fd92d083713f}{SENSE2}}:3;         }
+\DoxyCodeLine{499     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_ad5d18c5a022deec20e80760fb13482ca}{FILTEN2}}:1;        }
+\DoxyCodeLine{500     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a5fdad03cc428ee8f4d24dc1a632640f3}{SENSE3}}:3;         }
+\DoxyCodeLine{501     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a1347bd86400d8ef70b06dfdb0a6436c8}{FILTEN3}}:1;        }
+\DoxyCodeLine{502     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a6522e13a247849d29dd7e37e1ef2e373}{SENSE4}}:3;         }
+\DoxyCodeLine{503     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a159a1e94e7994980bd2b663bfc8e4030}{FILTEN4}}:1;        }
+\DoxyCodeLine{504     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_aba87301de4a9a7fb10adeb5c09c22289}{SENSE5}}:3;         }
+\DoxyCodeLine{505     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a6d3559efac112cf59cc5695483753485}{FILTEN5}}:1;        }
+\DoxyCodeLine{506     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a812c1a8803b48e6e3172a28713af0b25}{SENSE6}}:3;         }
+\DoxyCodeLine{507     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_acd78ffeb414c4774665845290f19aef1}{FILTEN6}}:1;        }
+\DoxyCodeLine{508     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_af02690b8633eb21f70ea3c5359cbb920}{SENSE7}}:3;         }
+\DoxyCodeLine{509     uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_a7612b772fb96ced4f69c842b1d0591ce}{FILTEN7}}:1;        }
+\DoxyCodeLine{510   \} bit;                       }
+\DoxyCodeLine{511   uint32\_t \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type_ae85f78df9f8cf8a42952b7111254c5a7}{reg}};                }
+\DoxyCodeLine{512 \} \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type}{EIC\_CONFIG\_Type}};}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#define EIC\_CONFIG\_OFFSET           0x18         }}
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#define EIC\_CONFIG\_RESETVALUE       0x00000000ul }}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE0\_Pos       0            }}
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE0\_Msk       (0x7ul << EIC\_CONFIG\_SENSE0\_Pos)}}
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE0(value)    ((EIC\_CONFIG\_SENSE0\_Msk \& ((value) << EIC\_CONFIG\_SENSE0\_Pos)))}}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE0\_NONE\_Val      0x0ul  }}
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE0\_RISE\_Val      0x1ul  }}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE0\_FALL\_Val      0x2ul  }}
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE0\_BOTH\_Val      0x3ul  }}
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE0\_HIGH\_Val      0x4ul  }}
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE0\_LOW\_Val       0x5ul  }}
+\DoxyCodeLine{527 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE0\_NONE      (EIC\_CONFIG\_SENSE0\_NONE\_Val    << EIC\_CONFIG\_SENSE0\_Pos)}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE0\_RISE      (EIC\_CONFIG\_SENSE0\_RISE\_Val    << EIC\_CONFIG\_SENSE0\_Pos)}}
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE0\_FALL      (EIC\_CONFIG\_SENSE0\_FALL\_Val    << EIC\_CONFIG\_SENSE0\_Pos)}}
+\DoxyCodeLine{530 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE0\_BOTH      (EIC\_CONFIG\_SENSE0\_BOTH\_Val    << EIC\_CONFIG\_SENSE0\_Pos)}}
+\DoxyCodeLine{531 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE0\_HIGH      (EIC\_CONFIG\_SENSE0\_HIGH\_Val    << EIC\_CONFIG\_SENSE0\_Pos)}}
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE0\_LOW       (EIC\_CONFIG\_SENSE0\_LOW\_Val     << EIC\_CONFIG\_SENSE0\_Pos)}}
+\DoxyCodeLine{533 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN0\_Pos      3            }}
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN0          (0x1ul << EIC\_CONFIG\_FILTEN0\_Pos)}}
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE1\_Pos       4            }}
+\DoxyCodeLine{536 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE1\_Msk       (0x7ul << EIC\_CONFIG\_SENSE1\_Pos)}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE1(value)    ((EIC\_CONFIG\_SENSE1\_Msk \& ((value) << EIC\_CONFIG\_SENSE1\_Pos)))}}
+\DoxyCodeLine{538 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE1\_NONE\_Val      0x0ul  }}
+\DoxyCodeLine{539 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE1\_RISE\_Val      0x1ul  }}
+\DoxyCodeLine{540 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE1\_FALL\_Val      0x2ul  }}
+\DoxyCodeLine{541 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE1\_BOTH\_Val      0x3ul  }}
+\DoxyCodeLine{542 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE1\_HIGH\_Val      0x4ul  }}
+\DoxyCodeLine{543 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE1\_LOW\_Val       0x5ul  }}
+\DoxyCodeLine{544 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE1\_NONE      (EIC\_CONFIG\_SENSE1\_NONE\_Val    << EIC\_CONFIG\_SENSE1\_Pos)}}
+\DoxyCodeLine{545 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE1\_RISE      (EIC\_CONFIG\_SENSE1\_RISE\_Val    << EIC\_CONFIG\_SENSE1\_Pos)}}
+\DoxyCodeLine{546 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE1\_FALL      (EIC\_CONFIG\_SENSE1\_FALL\_Val    << EIC\_CONFIG\_SENSE1\_Pos)}}
+\DoxyCodeLine{547 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE1\_BOTH      (EIC\_CONFIG\_SENSE1\_BOTH\_Val    << EIC\_CONFIG\_SENSE1\_Pos)}}
+\DoxyCodeLine{548 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE1\_HIGH      (EIC\_CONFIG\_SENSE1\_HIGH\_Val    << EIC\_CONFIG\_SENSE1\_Pos)}}
+\DoxyCodeLine{549 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE1\_LOW       (EIC\_CONFIG\_SENSE1\_LOW\_Val     << EIC\_CONFIG\_SENSE1\_Pos)}}
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN1\_Pos      7            }}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN1          (0x1ul << EIC\_CONFIG\_FILTEN1\_Pos)}}
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE2\_Pos       8            }}
+\DoxyCodeLine{553 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE2\_Msk       (0x7ul << EIC\_CONFIG\_SENSE2\_Pos)}}
+\DoxyCodeLine{554 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE2(value)    ((EIC\_CONFIG\_SENSE2\_Msk \& ((value) << EIC\_CONFIG\_SENSE2\_Pos)))}}
+\DoxyCodeLine{555 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE2\_NONE\_Val      0x0ul  }}
+\DoxyCodeLine{556 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE2\_RISE\_Val      0x1ul  }}
+\DoxyCodeLine{557 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE2\_FALL\_Val      0x2ul  }}
+\DoxyCodeLine{558 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE2\_BOTH\_Val      0x3ul  }}
+\DoxyCodeLine{559 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE2\_HIGH\_Val      0x4ul  }}
+\DoxyCodeLine{560 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE2\_LOW\_Val       0x5ul  }}
+\DoxyCodeLine{561 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE2\_NONE      (EIC\_CONFIG\_SENSE2\_NONE\_Val    << EIC\_CONFIG\_SENSE2\_Pos)}}
+\DoxyCodeLine{562 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE2\_RISE      (EIC\_CONFIG\_SENSE2\_RISE\_Val    << EIC\_CONFIG\_SENSE2\_Pos)}}
+\DoxyCodeLine{563 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE2\_FALL      (EIC\_CONFIG\_SENSE2\_FALL\_Val    << EIC\_CONFIG\_SENSE2\_Pos)}}
+\DoxyCodeLine{564 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE2\_BOTH      (EIC\_CONFIG\_SENSE2\_BOTH\_Val    << EIC\_CONFIG\_SENSE2\_Pos)}}
+\DoxyCodeLine{565 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE2\_HIGH      (EIC\_CONFIG\_SENSE2\_HIGH\_Val    << EIC\_CONFIG\_SENSE2\_Pos)}}
+\DoxyCodeLine{566 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE2\_LOW       (EIC\_CONFIG\_SENSE2\_LOW\_Val     << EIC\_CONFIG\_SENSE2\_Pos)}}
+\DoxyCodeLine{567 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN2\_Pos      11           }}
+\DoxyCodeLine{568 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN2          (0x1ul << EIC\_CONFIG\_FILTEN2\_Pos)}}
+\DoxyCodeLine{569 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE3\_Pos       12           }}
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE3\_Msk       (0x7ul << EIC\_CONFIG\_SENSE3\_Pos)}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE3(value)    ((EIC\_CONFIG\_SENSE3\_Msk \& ((value) << EIC\_CONFIG\_SENSE3\_Pos)))}}
+\DoxyCodeLine{572 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE3\_NONE\_Val      0x0ul  }}
+\DoxyCodeLine{573 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE3\_RISE\_Val      0x1ul  }}
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE3\_FALL\_Val      0x2ul  }}
+\DoxyCodeLine{575 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE3\_BOTH\_Val      0x3ul  }}
+\DoxyCodeLine{576 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE3\_HIGH\_Val      0x4ul  }}
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE3\_LOW\_Val       0x5ul  }}
+\DoxyCodeLine{578 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE3\_NONE      (EIC\_CONFIG\_SENSE3\_NONE\_Val    << EIC\_CONFIG\_SENSE3\_Pos)}}
+\DoxyCodeLine{579 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE3\_RISE      (EIC\_CONFIG\_SENSE3\_RISE\_Val    << EIC\_CONFIG\_SENSE3\_Pos)}}
+\DoxyCodeLine{580 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE3\_FALL      (EIC\_CONFIG\_SENSE3\_FALL\_Val    << EIC\_CONFIG\_SENSE3\_Pos)}}
+\DoxyCodeLine{581 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE3\_BOTH      (EIC\_CONFIG\_SENSE3\_BOTH\_Val    << EIC\_CONFIG\_SENSE3\_Pos)}}
+\DoxyCodeLine{582 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE3\_HIGH      (EIC\_CONFIG\_SENSE3\_HIGH\_Val    << EIC\_CONFIG\_SENSE3\_Pos)}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE3\_LOW       (EIC\_CONFIG\_SENSE3\_LOW\_Val     << EIC\_CONFIG\_SENSE3\_Pos)}}
+\DoxyCodeLine{584 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN3\_Pos      15           }}
+\DoxyCodeLine{585 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN3          (0x1ul << EIC\_CONFIG\_FILTEN3\_Pos)}}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE4\_Pos       16           }}
+\DoxyCodeLine{587 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE4\_Msk       (0x7ul << EIC\_CONFIG\_SENSE4\_Pos)}}
+\DoxyCodeLine{588 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE4(value)    ((EIC\_CONFIG\_SENSE4\_Msk \& ((value) << EIC\_CONFIG\_SENSE4\_Pos)))}}
+\DoxyCodeLine{589 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE4\_NONE\_Val      0x0ul  }}
+\DoxyCodeLine{590 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE4\_RISE\_Val      0x1ul  }}
+\DoxyCodeLine{591 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE4\_FALL\_Val      0x2ul  }}
+\DoxyCodeLine{592 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE4\_BOTH\_Val      0x3ul  }}
+\DoxyCodeLine{593 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE4\_HIGH\_Val      0x4ul  }}
+\DoxyCodeLine{594 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE4\_LOW\_Val       0x5ul  }}
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE4\_NONE      (EIC\_CONFIG\_SENSE4\_NONE\_Val    << EIC\_CONFIG\_SENSE4\_Pos)}}
+\DoxyCodeLine{596 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE4\_RISE      (EIC\_CONFIG\_SENSE4\_RISE\_Val    << EIC\_CONFIG\_SENSE4\_Pos)}}
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE4\_FALL      (EIC\_CONFIG\_SENSE4\_FALL\_Val    << EIC\_CONFIG\_SENSE4\_Pos)}}
+\DoxyCodeLine{598 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE4\_BOTH      (EIC\_CONFIG\_SENSE4\_BOTH\_Val    << EIC\_CONFIG\_SENSE4\_Pos)}}
+\DoxyCodeLine{599 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE4\_HIGH      (EIC\_CONFIG\_SENSE4\_HIGH\_Val    << EIC\_CONFIG\_SENSE4\_Pos)}}
+\DoxyCodeLine{600 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE4\_LOW       (EIC\_CONFIG\_SENSE4\_LOW\_Val     << EIC\_CONFIG\_SENSE4\_Pos)}}
+\DoxyCodeLine{601 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN4\_Pos      19           }}
+\DoxyCodeLine{602 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN4          (0x1ul << EIC\_CONFIG\_FILTEN4\_Pos)}}
+\DoxyCodeLine{603 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE5\_Pos       20           }}
+\DoxyCodeLine{604 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE5\_Msk       (0x7ul << EIC\_CONFIG\_SENSE5\_Pos)}}
+\DoxyCodeLine{605 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE5(value)    ((EIC\_CONFIG\_SENSE5\_Msk \& ((value) << EIC\_CONFIG\_SENSE5\_Pos)))}}
+\DoxyCodeLine{606 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE5\_NONE\_Val      0x0ul  }}
+\DoxyCodeLine{607 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE5\_RISE\_Val      0x1ul  }}
+\DoxyCodeLine{608 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE5\_FALL\_Val      0x2ul  }}
+\DoxyCodeLine{609 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE5\_BOTH\_Val      0x3ul  }}
+\DoxyCodeLine{610 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE5\_HIGH\_Val      0x4ul  }}
+\DoxyCodeLine{611 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE5\_LOW\_Val       0x5ul  }}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE5\_NONE      (EIC\_CONFIG\_SENSE5\_NONE\_Val    << EIC\_CONFIG\_SENSE5\_Pos)}}
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE5\_RISE      (EIC\_CONFIG\_SENSE5\_RISE\_Val    << EIC\_CONFIG\_SENSE5\_Pos)}}
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE5\_FALL      (EIC\_CONFIG\_SENSE5\_FALL\_Val    << EIC\_CONFIG\_SENSE5\_Pos)}}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE5\_BOTH      (EIC\_CONFIG\_SENSE5\_BOTH\_Val    << EIC\_CONFIG\_SENSE5\_Pos)}}
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE5\_HIGH      (EIC\_CONFIG\_SENSE5\_HIGH\_Val    << EIC\_CONFIG\_SENSE5\_Pos)}}
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE5\_LOW       (EIC\_CONFIG\_SENSE5\_LOW\_Val     << EIC\_CONFIG\_SENSE5\_Pos)}}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN5\_Pos      23           }}
+\DoxyCodeLine{619 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN5          (0x1ul << EIC\_CONFIG\_FILTEN5\_Pos)}}
+\DoxyCodeLine{620 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE6\_Pos       24           }}
+\DoxyCodeLine{621 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE6\_Msk       (0x7ul << EIC\_CONFIG\_SENSE6\_Pos)}}
+\DoxyCodeLine{622 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE6(value)    ((EIC\_CONFIG\_SENSE6\_Msk \& ((value) << EIC\_CONFIG\_SENSE6\_Pos)))}}
+\DoxyCodeLine{623 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE6\_NONE\_Val      0x0ul  }}
+\DoxyCodeLine{624 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE6\_RISE\_Val      0x1ul  }}
+\DoxyCodeLine{625 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE6\_FALL\_Val      0x2ul  }}
+\DoxyCodeLine{626 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE6\_BOTH\_Val      0x3ul  }}
+\DoxyCodeLine{627 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE6\_HIGH\_Val      0x4ul  }}
+\DoxyCodeLine{628 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE6\_LOW\_Val       0x5ul  }}
+\DoxyCodeLine{629 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE6\_NONE      (EIC\_CONFIG\_SENSE6\_NONE\_Val    << EIC\_CONFIG\_SENSE6\_Pos)}}
+\DoxyCodeLine{630 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE6\_RISE      (EIC\_CONFIG\_SENSE6\_RISE\_Val    << EIC\_CONFIG\_SENSE6\_Pos)}}
+\DoxyCodeLine{631 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE6\_FALL      (EIC\_CONFIG\_SENSE6\_FALL\_Val    << EIC\_CONFIG\_SENSE6\_Pos)}}
+\DoxyCodeLine{632 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE6\_BOTH      (EIC\_CONFIG\_SENSE6\_BOTH\_Val    << EIC\_CONFIG\_SENSE6\_Pos)}}
+\DoxyCodeLine{633 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE6\_HIGH      (EIC\_CONFIG\_SENSE6\_HIGH\_Val    << EIC\_CONFIG\_SENSE6\_Pos)}}
+\DoxyCodeLine{634 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE6\_LOW       (EIC\_CONFIG\_SENSE6\_LOW\_Val     << EIC\_CONFIG\_SENSE6\_Pos)}}
+\DoxyCodeLine{635 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN6\_Pos      27           }}
+\DoxyCodeLine{636 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN6          (0x1ul << EIC\_CONFIG\_FILTEN6\_Pos)}}
+\DoxyCodeLine{637 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE7\_Pos       28           }}
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE7\_Msk       (0x7ul << EIC\_CONFIG\_SENSE7\_Pos)}}
+\DoxyCodeLine{639 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE7(value)    ((EIC\_CONFIG\_SENSE7\_Msk \& ((value) << EIC\_CONFIG\_SENSE7\_Pos)))}}
+\DoxyCodeLine{640 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE7\_NONE\_Val      0x0ul  }}
+\DoxyCodeLine{641 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE7\_RISE\_Val      0x1ul  }}
+\DoxyCodeLine{642 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE7\_FALL\_Val      0x2ul  }}
+\DoxyCodeLine{643 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE7\_BOTH\_Val      0x3ul  }}
+\DoxyCodeLine{644 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE7\_HIGH\_Val      0x4ul  }}
+\DoxyCodeLine{645 \textcolor{preprocessor}{\#define   EIC\_CONFIG\_SENSE7\_LOW\_Val       0x5ul  }}
+\DoxyCodeLine{646 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE7\_NONE      (EIC\_CONFIG\_SENSE7\_NONE\_Val    << EIC\_CONFIG\_SENSE7\_Pos)}}
+\DoxyCodeLine{647 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE7\_RISE      (EIC\_CONFIG\_SENSE7\_RISE\_Val    << EIC\_CONFIG\_SENSE7\_Pos)}}
+\DoxyCodeLine{648 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE7\_FALL      (EIC\_CONFIG\_SENSE7\_FALL\_Val    << EIC\_CONFIG\_SENSE7\_Pos)}}
+\DoxyCodeLine{649 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE7\_BOTH      (EIC\_CONFIG\_SENSE7\_BOTH\_Val    << EIC\_CONFIG\_SENSE7\_Pos)}}
+\DoxyCodeLine{650 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE7\_HIGH      (EIC\_CONFIG\_SENSE7\_HIGH\_Val    << EIC\_CONFIG\_SENSE7\_Pos)}}
+\DoxyCodeLine{651 \textcolor{preprocessor}{\#define EIC\_CONFIG\_SENSE7\_LOW       (EIC\_CONFIG\_SENSE7\_LOW\_Val     << EIC\_CONFIG\_SENSE7\_Pos)}}
+\DoxyCodeLine{652 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN7\_Pos      31           }}
+\DoxyCodeLine{653 \textcolor{preprocessor}{\#define EIC\_CONFIG\_FILTEN7          (0x1ul << EIC\_CONFIG\_FILTEN7\_Pos)}}
+\DoxyCodeLine{654 \textcolor{preprocessor}{\#define EIC\_CONFIG\_MASK             0xFFFFFFFFul }}
+\DoxyCodeLine{657 \textcolor{preprocessor}{\#if !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_))}}
+\DoxyCodeLine{658 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{659   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_i_c___c_t_r_l___type}{EIC\_CTRL\_Type}}             \mbox{\hyperlink{struct_eic_a0b9c343c8da76a5a222bae5599991712}{CTRL}};        }
+\DoxyCodeLine{660   \mbox{\hyperlink{core__cm0plus_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}  \mbox{\hyperlink{union_e_i_c___s_t_a_t_u_s___type}{EIC\_STATUS\_Type}}           \mbox{\hyperlink{struct_eic_a364de2d031e375e554f3be434ce5c031}{STATUS}};      }
+\DoxyCodeLine{661   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_i_c___n_m_i_c_t_r_l___type}{EIC\_NMICTRL\_Type}}          \mbox{\hyperlink{struct_eic_abe387c3f6c50f72e37e91adf3d9eac06}{NMICTRL}};     }
+\DoxyCodeLine{662   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_i_c___n_m_i_f_l_a_g___type}{EIC\_NMIFLAG\_Type}}          \mbox{\hyperlink{struct_eic_a5e489fa962a835e2d06a4dceb6e2b7b8}{NMIFLAG}};     }
+\DoxyCodeLine{663   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_i_c___e_v_c_t_r_l___type}{EIC\_EVCTRL\_Type}}           \mbox{\hyperlink{struct_eic_a228fdf5b1f970d352ab14e03de8f4d35}{EVCTRL}};      }
+\DoxyCodeLine{664   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_c_l_r___type}{EIC\_INTENCLR\_Type}}         \mbox{\hyperlink{struct_eic_ac499ecb4ba54624fb0f534bfff917bcc}{INTENCLR}};    }
+\DoxyCodeLine{665   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_i_c___i_n_t_e_n_s_e_t___type}{EIC\_INTENSET\_Type}}         \mbox{\hyperlink{struct_eic_ac9db1d0fed533fb55777efe3f1d98c69}{INTENSET}};    }
+\DoxyCodeLine{666   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_i_c___i_n_t_f_l_a_g___type}{EIC\_INTFLAG\_Type}}          \mbox{\hyperlink{struct_eic_a487a1c3a7123a446a051251d64aba60f}{INTFLAG}};     }
+\DoxyCodeLine{667   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_i_c___w_a_k_e_u_p___type}{EIC\_WAKEUP\_Type}}           \mbox{\hyperlink{struct_eic_a4baf0e93b3be6341ce2c9b57693b7cb3}{WAKEUP}};      }
+\DoxyCodeLine{668   \mbox{\hyperlink{core__cm0plus_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}} \mbox{\hyperlink{union_e_i_c___c_o_n_f_i_g___type}{EIC\_CONFIG\_Type}}           CONFIG[2];   }
+\DoxyCodeLine{669 \} \mbox{\hyperlink{struct_eic}{Eic}};}
+\DoxyCodeLine{670 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !(defined(\_\_ASSEMBLY\_\_) || defined(\_\_IAR\_SYSTEMS\_ASM\_\_)) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{674 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SAMD20\_EIC\_COMPONENT\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,82 @@
+This is a list of the available Quick Start guides (QSGs) and example applications for \mbox{\hyperlink{group__asfdoc__sam0__wdt__group}{SAM Watchdog (WDT) Driver}}. QSGs are simple examples with step-\/by-\/step instructions to configure and use this driver in a selection of use cases. Note that a QSG can be compiled as a standalone application or be added to the user application.
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case}{Use Case}}  
+\end{DoxyItemize}\hypertarget{asfdoc_sam0_wdt_basic_use_case}{}\doxysection{Quick Start Guide for WDT -\/ Basic}\label{asfdoc_sam0_wdt_basic_use_case}
+In this use case, the Watchdog module is configured for\+: \begin{DoxyItemize}
+\item System reset after 2048 clocks of the Watchdog generic clock \item Always on mode disabled \item Basic mode, with no window or early warning periods\end{DoxyItemize}
+This use case sets up the Watchdog to force a system reset after every 2048 clocks of the Watchdog\textquotesingle{}s Generic Clock channel, unless the user periodically resets the Watchdog counter via a button before the timer expires. If the Watchdog resets the device, a LED on the board is turned off.\hypertarget{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_setup}{}\doxysubsection{Setup}\label{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_setup}
+\hypertarget{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_setup_prereq}{}\doxysubsubsection{Prerequisites}\label{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_setup_prereq}
+There are no special setup requirements for this use-\/case.\hypertarget{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_setup_code}{}\doxysubsubsection{Code}\label{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_setup_code}
+Copy-\/paste the following setup code to your user application\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+Add to user application initialization (typically the start of {\ttfamily main()})\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+\hypertarget{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_setup_flow}{}\doxysubsubsection{Workflow}\label{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_setup_flow}
+
+\begin{DoxyEnumerate}
+\item Create a Watchdog module configuration struct, which can be filled out to adjust the configuration of the Watchdog. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Initialize the Watchdog configuration struct with the module\textquotesingle{}s default values. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ \begin{DoxyNote}{Note}
+This should always be performed before using the configuration struct to ensure that all values are initialized to known default settings.
+\end{DoxyNote}
+
+\item Adjust the configuration struct to set the timeout period and lock mode of the Watchdog. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Setups the WDT hardware module with the requested settings. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\end{DoxyEnumerate}\hypertarget{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case}{}\doxysubsection{Use Case}\label{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case}
+\hypertarget{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_code}{}\doxysubsubsection{Code}\label{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_code}
+Copy-\/paste the following code to your user application\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+\hypertarget{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_main}{}\doxysubsubsection{Workflow}\label{asfdoc_sam0_wdt_basic_use_case_asfdoc_sam0_wdt_basic_use_case_main}
+
+\begin{DoxyEnumerate}
+\item Retrieve the cause of the system reset to determine if the Watchdog module was the cause of the last reset. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Turn on or off the board LED based on whether the Watchdog reset the device. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Enter an infinite loop to hold the main program logic. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item Test to see if the board button is currently being pressed. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+\item If the button is pressed, turn on the board LED and reset the Watchdog timer. 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ 
+\end{DoxyEnumerate}

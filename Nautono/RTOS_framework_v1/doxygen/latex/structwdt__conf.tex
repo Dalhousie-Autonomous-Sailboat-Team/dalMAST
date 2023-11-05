@@ -1,0 +1,75 @@
+\hypertarget{structwdt__conf}{}\doxysection{wdt\+\_\+conf Struct Reference}
+\label{structwdt__conf}\index{wdt\_conf@{wdt\_conf}}
+
+
+Watchdog Timer configuration structure.  
+
+
+
+
+{\ttfamily \#include $<$wdt.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structwdt__conf_a8941368a3f7c8f3d1666180078abfcb5}{always\+\_\+on}}
+\item 
+bool \mbox{\hyperlink{structwdt__conf_a5cc0ffa68ffe829451e183eb93e8f91c}{enable}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} \mbox{\hyperlink{structwdt__conf_a022118a463c6d9244b519b8a1cca5d41}{clock\+\_\+source}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\+\_\+period}} \mbox{\hyperlink{structwdt__conf_a1a3485dca5a0163b0289bd864f15026e}{timeout\+\_\+period}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\+\_\+period}} \mbox{\hyperlink{structwdt__conf_adb533add1cf2774b690974cacf7c91eb}{window\+\_\+period}}
+\item 
+enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\+\_\+period}} \mbox{\hyperlink{structwdt__conf_ab93cb110a2d5cc1bdd28bc1f7389e3b3}{early\+\_\+warning\+\_\+period}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Watchdog Timer configuration structure. 
+
+Configuration structure for a Watchdog Timer instance. This structure should be initialized by the wdt\+\_\+get\+\_\+config\+\_\+defaults() function before being modified by the user application. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structwdt__conf_a8941368a3f7c8f3d1666180078abfcb5}\label{structwdt__conf_a8941368a3f7c8f3d1666180078abfcb5}} 
+\index{wdt\_conf@{wdt\_conf}!always\_on@{always\_on}}
+\index{always\_on@{always\_on}!wdt\_conf@{wdt\_conf}}
+\doxysubsubsection{\texorpdfstring{always\_on}{always\_on}}
+{\footnotesize\ttfamily bool wdt\+\_\+conf\+::always\+\_\+on}
+
+If {\ttfamily true}, the Watchdog will be locked to the current configuration settings when the Watchdog is enabled \mbox{\Hypertarget{structwdt__conf_a022118a463c6d9244b519b8a1cca5d41}\label{structwdt__conf_a022118a463c6d9244b519b8a1cca5d41}} 
+\index{wdt\_conf@{wdt\_conf}!clock\_source@{clock\_source}}
+\index{clock\_source@{clock\_source}!wdt\_conf@{wdt\_conf}}
+\doxysubsubsection{\texorpdfstring{clock\_source}{clock\_source}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__system__clock__group_ga1ab9bb87560ad127ed982591b7d67311}{gclk\+\_\+generator}} wdt\+\_\+conf\+::clock\+\_\+source}
+
+GCLK generator used to clock the peripheral except SAM L21/\+L22/\+C21/\+C20/\+R30 \mbox{\Hypertarget{structwdt__conf_ab93cb110a2d5cc1bdd28bc1f7389e3b3}\label{structwdt__conf_ab93cb110a2d5cc1bdd28bc1f7389e3b3}} 
+\index{wdt\_conf@{wdt\_conf}!early\_warning\_period@{early\_warning\_period}}
+\index{early\_warning\_period@{early\_warning\_period}!wdt\_conf@{wdt\_conf}}
+\doxysubsubsection{\texorpdfstring{early\_warning\_period}{early\_warning\_period}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\+\_\+period}} wdt\+\_\+conf\+::early\+\_\+warning\+\_\+period}
+
+Number of Watchdog timer clock ticks until the early warning flag is set \mbox{\Hypertarget{structwdt__conf_a5cc0ffa68ffe829451e183eb93e8f91c}\label{structwdt__conf_a5cc0ffa68ffe829451e183eb93e8f91c}} 
+\index{wdt\_conf@{wdt\_conf}!enable@{enable}}
+\index{enable@{enable}!wdt\_conf@{wdt\_conf}}
+\doxysubsubsection{\texorpdfstring{enable}{enable}}
+{\footnotesize\ttfamily bool wdt\+\_\+conf\+::enable}
+
+Enable/\+Disable the Watchdog Timer \mbox{\Hypertarget{structwdt__conf_a1a3485dca5a0163b0289bd864f15026e}\label{structwdt__conf_a1a3485dca5a0163b0289bd864f15026e}} 
+\index{wdt\_conf@{wdt\_conf}!timeout\_period@{timeout\_period}}
+\index{timeout\_period@{timeout\_period}!wdt\_conf@{wdt\_conf}}
+\doxysubsubsection{\texorpdfstring{timeout\_period}{timeout\_period}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\+\_\+period}} wdt\+\_\+conf\+::timeout\+\_\+period}
+
+Number of Watchdog timer clock ticks until the Watchdog expires \mbox{\Hypertarget{structwdt__conf_adb533add1cf2774b690974cacf7c91eb}\label{structwdt__conf_adb533add1cf2774b690974cacf7c91eb}} 
+\index{wdt\_conf@{wdt\_conf}!window\_period@{window\_period}}
+\index{window\_period@{window\_period}!wdt\_conf@{wdt\_conf}}
+\doxysubsubsection{\texorpdfstring{window\_period}{window\_period}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__asfdoc__sam0__wdt__group_gac5c6859562f5bd23984bc0fe998635ac}{wdt\+\_\+period}} wdt\+\_\+conf\+::window\+\_\+period}
+
+Number of Watchdog timer clock ticks until the reset window opens 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ASF/sam0/drivers/wdt/\mbox{\hyperlink{drivers_2wdt_2wdt_8h}{wdt.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,45 @@
+\hypertarget{i2c__master__interrupt_8h}{}\doxysection{src/\+ASF/sam0/drivers/sercom/i2c/i2c\+\_\+master\+\_\+interrupt.h File Reference}
+\label{i2c__master__interrupt_8h}\index{src/ASF/sam0/drivers/sercom/i2c/i2c\_master\_interrupt.h@{src/ASF/sam0/drivers/sercom/i2c/i2c\_master\_interrupt.h}}
+
+
+SAM SERCOM I2C Master Interrupt Driver.  
+
+
+{\ttfamily \#include \char`\"{}i2c\+\_\+master.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Callbacks}\par
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries \+\_\+i2c\+\_\+master\+\_\+interrupt\+\_\+handler} (uint8\+\_\+t instance)
+\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaf3216a045490437ec87ba14ffeee5e7b}{i2c\+\_\+master\+\_\+register\+\_\+callback}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, i2c\+\_\+master\+\_\+callback\+\_\+t callback, enum i2c\+\_\+master\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Registers callback for the specified callback type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga7432de8165fe68a4fdb1919a33b58250}{i2c\+\_\+master\+\_\+unregister\+\_\+callback}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, enum i2c\+\_\+master\+\_\+callback callback\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Unregisters callback for the specified callback type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Read and Write, Interrupt-\/driven}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries i2c\+\_\+master\+\_\+read\+\_\+bytes} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga909337c580a4cd52dd209baaf2d399af}{i2c\+\_\+master\+\_\+read\+\_\+packet\+\_\+job}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Initiates a read packet operation. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaa56093f3196b0f0ff368fa2ee21827f9}{i2c\+\_\+master\+\_\+read\+\_\+packet\+\_\+job\+\_\+no\+\_\+stop}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Initiates a read packet operation without sending a STOP condition when done. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaaff359c3a99851202a0190014d823c29}{i2c\+\_\+master\+\_\+read\+\_\+packet\+\_\+job\+\_\+no\+\_\+nack}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Initiates a read packet operation without sending a NACK signal and a STOP condition when done. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} {\bfseries i2c\+\_\+master\+\_\+write\+\_\+bytes} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_ga5527434ebf5f0442a9f9ed9146005cba}{i2c\+\_\+master\+\_\+write\+\_\+packet\+\_\+job}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Initiates a write packet operation. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__group__sam0__utils__status__codes_ga751c892e5a46b8e7d282085a5a5bf151}{status\+\_\+code}} \mbox{\hyperlink{group__asfdoc__sam0__sercom__i2c__group_gaf1ee33c8f9b65ede18200b33500dae7d}{i2c\+\_\+master\+\_\+write\+\_\+packet\+\_\+job\+\_\+no\+\_\+stop}} (struct \mbox{\hyperlink{structi2c__master__module}{i2c\+\_\+master\+\_\+module}} $\ast$const module, struct \mbox{\hyperlink{structi2c__master__packet}{i2c\+\_\+master\+\_\+packet}} $\ast$const packet)
+\begin{DoxyCompactList}\small\item\em Initiates a write packet operation without sending a STOP condition when done. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+SAM SERCOM I2C Master Interrupt Driver. 
+
+Copyright (c) 2012-\/2018 Microchip Technology Inc. and its subsidiaries.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 

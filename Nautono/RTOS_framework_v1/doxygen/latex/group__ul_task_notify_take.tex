@@ -1,0 +1,36 @@
+\hypertarget{group__ul_task_notify_take}{}\doxysection{ul\+Task\+Notify\+Take}
+\label{group__ul_task_notify_take}\index{ulTaskNotifyTake@{ulTaskNotifyTake}}
+task. h 
+\begin{DoxyPre}uint32\_t ulTaskNotifyTake( BaseType\_t xClearCountOnExit, TickType\_t xTicksToWait );\end{DoxyPre}
+
+
+config\+USE\+\_\+\+TASK\+\_\+\+NOTIFICATIONS must be undefined or defined as 1 for this function to be available.
+
+When config\+USE\+\_\+\+TASK\+\_\+\+NOTIFICATIONS is set to one each task has its own private \char`\"{}notification value\char`\"{}, which is a 32-\/bit unsigned integer (uint32\+\_\+t).
+
+Events can be sent to a task using an intermediary object. Examples of such objects are queues, semaphores, mutexes and event groups. Task notifications are a method of sending an event directly to a task without the need for such an intermediary object.
+
+A notification sent to a task can optionally perform an action, such as update, overwrite or increment the task\textquotesingle{}s notification value. In that way task notifications can be used to send data to a task, or be used as light weight and fast binary or counting semaphores.
+
+ul\+Task\+Notify\+Take() is intended for use when a task notification is used as a faster and lighter weight binary or counting semaphore alternative. Actual Free\+RTOS semaphores are taken using the x\+Semaphore\+Take() API function, the equivalent action that instead uses a task notification is ul\+Task\+Notify\+Take().
+
+When a task is using its notification value as a binary or counting semaphore other tasks should send notifications to it using the x\+Task\+Notify\+Give() macro, or x\+Task\+Notify() function with the e\+Action parameter set to e\+Increment.
+
+ul\+Task\+Notify\+Take() can either clear the task\textquotesingle{}s notification value to zero on exit, in which case the notification value acts like a binary semaphore, or decrement the task\textquotesingle{}s notification value on exit, in which case the notification value acts like a counting semaphore.
+
+A task can use ul\+Task\+Notify\+Take() to \mbox{[}optionally\mbox{]} block to wait for a the task\textquotesingle{}s notification value to be non-\/zero. The task does not consume any CPU time while it is in the Blocked state.
+
+Where as x\+Task\+Notify\+Wait() will return when a notification is pending, ul\+Task\+Notify\+Take() will return when the task\textquotesingle{}s notification value is not zero.
+
+See \href{http://www.FreeRTOS.org/RTOS-task-notifications.html}{\texttt{ http\+://www.\+Free\+RTOS.\+org/\+RTOS-\/task-\/notifications.\+html}} for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Clear\+Count\+On\+Exit} & if x\+Clear\+Count\+On\+Exit is pd\+FALSE then the task\textquotesingle{}s notification value is decremented when the function exits. In this way the notification value acts like a counting semaphore. If x\+Clear\+Count\+On\+Exit is not pd\+FALSE then the task\textquotesingle{}s notification value is cleared to zero when the function exits. In this way the notification value acts like a binary semaphore.\\
+\hline
+{\em x\+Ticks\+To\+Wait} & The maximum amount of time that the task should wait in the Blocked state for the task\textquotesingle{}s notification value to be greater than zero, should the count not already be greater than zero when ul\+Task\+Notify\+Take() was called. The task will not consume any processing time while it is in the Blocked state. This is specified in kernel ticks, the macro pd\+MS\+\_\+\+TO\+\_\+\+TICSK( value\+\_\+in\+\_\+ms ) can be used to convert a time specified in milliseconds to a time specified in ticks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The task\textquotesingle{}s notification count before it is either cleared to zero or decremented (see the x\+Clear\+Count\+On\+Exit parameter). 
+\end{DoxyReturn}
