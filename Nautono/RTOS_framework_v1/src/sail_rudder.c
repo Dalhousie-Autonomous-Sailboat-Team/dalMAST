@@ -29,6 +29,8 @@ typedef enum MOTOR_Directions {
 	MOTOR_CCW
 } MOTOR_Direction;
 
+bool rudder_initialzed = false; 
+
 
 // Function to initialize the power and direction pins
 static void InitPins(void);
@@ -66,6 +68,8 @@ enum status_code RUDDER_Init(void)
 	// Initialize the ADC
 	ADC_Init(ADC_RUDDER);
 	
+	rudder_initialzed = true;
+	
 	return STATUS_OK; 
 }
 
@@ -94,7 +98,12 @@ static void RudderPotPos(double * data) {
 	ADC_GetReading(ADC_RUDDER, data);
 }
 
-void RudderSetPos(double pos) {
+void RudderSetPos(double pos) 
+{
+	
+	if(rudder_initialzed == false) {
+		RUDDER_Init();
+	}
 	
 	double curr_pos = 0;
 	RudderPotPos(&curr_pos);
@@ -108,13 +117,18 @@ void RudderSetPos(double pos) {
 	
 	SetDirection(dir);
 	
-	while(curr_pos <= pos-2 || curr_pos >= pos+2) 
+	DEBUG_Write("Setting Rudder to POS: %d\r\n", (uint)pos);
+	
+	while(curr_pos <= pos*0.95 || curr_pos >= pos*1.05) 
 	{
 		TurnOn();
 		RudderPotPos(&curr_pos);
+		
 	}
 	
 	TurnOff();
+	
+	DEBUG_Write("Final Rudder POS: %d\r\n", (int)curr_pos);
 }
 
 #define TEST_RUDDER_DELAY_MS 1000

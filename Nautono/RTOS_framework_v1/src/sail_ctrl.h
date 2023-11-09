@@ -117,6 +117,9 @@ void process_wind_readings(void);
 void process_heading_readings(void);
 
 
+void assing_wind_readings(void); 
+
+
 /* CTRL_Sleep
  * Set the sleep time of the control unit
  * Input:

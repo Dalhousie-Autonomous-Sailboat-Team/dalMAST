@@ -242,26 +242,30 @@ void LogData(void)
 		RADIO_TxMsg(&tx_msg_log);
 	
 		// Log the compass data
-		tx_msg_log.type = RADIO_COMP;
-		tx_msg_log.fields.comp.data = comp;
-		RADIO_TxMsg(&tx_msg_log);
+		//tx_msg_log.type = RADIO_COMP;
+		//tx_msg_log.fields.comp.data = comp;
+		//RADIO_TxMsg(&tx_msg_log);
 
 		// Log the navigation data
-		tx_msg.type = RADIO_NAV;
-		tx_msg.fields.nav.wp = wp;
-		tx_msg.fields.nav.distance = wp_distance;
-		tx_msg.fields.nav.bearing = bearing;
-		tx_msg.fields.nav.course = course;
-		tx_msg.fields.nav.sail_angle = sail_deg;
-		tx_msg.fields.nav.rudder_angle = rudder_deg;
-		RADIO_TxMsg(&tx_msg);
+		//tx_msg.type = RADIO_NAV;
+		//tx_msg.fields.nav.wp = wp;
+		//tx_msg.fields.nav.distance = wp_distance;
+		//tx_msg.fields.nav.bearing = bearing;
+		//tx_msg.fields.nav.course = course;
+		//tx_msg.fields.nav.sail_angle = sail_deg;
+		//tx_msg.fields.nav.rudder_angle = rudder_deg;
+		//RADIO_TxMsg(&tx_msg);
 
 		//put thread to sleep until a specific tick count is reached
 		vTaskDelay(log_data_delay);
 	}
 }
 
-
+void assing_wind_readings(void) 
+{
+	wind.speed = WIND_data.msg_array[eWIMWV].fields.wimwv.wind_speed_ms;
+	wind.angle = WIND_data.msg_array[eWIMWV].fields.wimwv.wind_dir_rel;
+}
 
 void process_wind_readings(void)
 {

@@ -66,8 +66,8 @@ typedef struct RADIO_StateData {
 } RADIO_StateData;
 
 typedef struct RADIO_RemoteData {
-	int8_t				rudder_angle;
-	int8_t				sail_angle;
+	uint8_t				rudder_angle;
+	uint8_t				sail_angle;
 } RADIO_RemoteData;
 
 typedef struct RADIO_WayPointData {
@@ -134,7 +134,7 @@ static RADIO_Status ChangeMode(CTRL_Mode new_mode);
 static RADIO_Status ChangeState(CTRL_State new_state);
 static RADIO_Status ChangeLogPeriod(uint8_t new_period);
 static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data);
-static RADIO_Status AdjustMotors(int8_t sail_angle, int8_t rudder_angle);
+static RADIO_Status AdjustMotors(uint8_t sail_angle, uint8_t rudder_angle);
 
 void Radio_On(void);
 void RadioHandler(void);

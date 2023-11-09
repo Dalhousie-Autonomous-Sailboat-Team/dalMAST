@@ -22,6 +22,7 @@
 #include "sail_nmea.h"
 #include "sail_uart.h"
 #include "sail_debug.h"
+#include "sail_ctrl.h"
 
 // Not sure if this stuff is needed anymore... - KT
 #define WS_ON_OFF_PIN		PIN_PA04
@@ -138,7 +139,10 @@ void ReadWIND(void){
 		if(code == STATUS_VALID_DATA) {
 			WIND_data.msg_array[msg.type] = msg;
 			DEBUG_Write("Received Wind data\r\n");
+			
+			assing_wind_readings();
 		}
+		
 		
 		
         vTaskDelay(read_wind_delay);
@@ -354,107 +358,4 @@ static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t*
     }
     return STATUS_OK;    
 }
-
-// CODES BELOW ARE LEFTOOVER FROM PREVIOUS VERSION
-// TODO: REVIEW CODE BELOW TO SEE IF ANY IS RELEVANT/SHOULD BE KEPT
-// Most of the commented code throughout this file is from previous version, likely not needed 
-// and can safely be removed
-// enum status_code WIND_GetReading(WIND_Reading *reading)
-// {
-// 	// Check if the module has been initialized
-// 	if (!init_flag || !enable_flag) {
-// 		return STATUS_ERR_NOT_INITIALIZED;
-// 	}
-// 	
-// 	// Check if the pointer is NULL
-// 	if (reading == NULL) {
-// 		return STATUS_ERR_BAD_ADDRESS;
-// 	}
-// 	
-// 	// Get the most recent reading from the wind vane
-// 	uint8_t found_reading = 0;
-// 	uint8_t found_mwv = 0;
-// 	
-// 	// This will repeat, switch breaks will break the switch, not the loop...
-// 	/*
-// 	do {
-// 		switch (NMEA_RxString(NMEA_WEATHERSTATION, wind_buffer, WS_BUFFER_LENGTH)) {
-// 			// Data was found
-// 			case STATUS_VALID_DATA:
-// 				found_reading = 1;
-// 				// Copy the string if the message type is correct
-// 				if (strncmp((char *)wind_buffer, (char *)MWV_HEADER, MWV_HEADER_LENGTH) == 0) {
-// 					strcpy((char *)mwv_buffer, (char *)wind_buffer);
-// 					found_mwv = 1;
-// 				}
-// 				// Check if there's something even more recent
-// 				break;
-// 			// Data was not found
-// 			case STATUS_NO_CHANGE:
-// 				// If data was not found before, return
-// 				if (!found_reading) {
-// 					// DEBUG_Write("No data\r\n");
-// 					return STATUS_NO_CHANGE;
-// 				}
-// 				// Otherwise, break from the loop and process the data
-// 				found_reading = 0;
-// 				break;
-// 			// An error occurred
-// 			default:
-// 				found_reading = 1;
-// 				break;
-// 		}
-// 	} while (found_reading);
-// 	*/ // I AM COMMENTED OUT!!!
-// 	
-// 	// Return if the message type is incorrect
-// 	if (!found_mwv) {
-// 		return STATUS_NO_CHANGE;
-// 	}
-// 	
-// 	// Return an error if the data could not be parsed
-// 	if (WIND_ParseMWV() != STATUS_OK) {
-// 		return STATUS_ERR_BAD_DATA;
-// 	}
-// 
-// 	//calculates values
-// 	reading->angle = (double)mwv_data.angle + (double)mwv_data.angle_dec/10.0;
-// 	reading->speed = (double)mwv_data.wind_speed + (double)mwv_data.wind_speed_dec/10.0;
-// 	// TODO Read from the wind vane to see what scaling factor should be applied
-// 	reading->speed *= 0.514444;
-// 
-// 	return STATUS_OK;
-// }
-// 
-// 
-// enum status_code WIND_ParseMWV(void)
-// {
-// 	int scanCnt = sscanf((char *)mwv_buffer, MWV_FMT, &mwv_data.angle,
-// 													  &mwv_data.angle_dec,
-// 											 (char *) &mwv_data.ref,
-// 													  &mwv_data.wind_speed,
-// 													  &mwv_data.wind_speed_dec,
-// 											 (char *) &mwv_data.wind_speed_unit,
-// 											 (char *) &mwv_data.status);
-// 
-// 	return (scanCnt == MWV_FMT_LENGTH ? STATUS_OK : STATUS_ERR_BAD_DATA);
-// }
-// 
-// 
- //static void WEATHERSTATION_InitPin(void) {
-	 //struct port_config config_port_pin;
-	 //port_get_config_defaults(&config_port_pin);
-	 //config_port_pin.direction = PORT_PIN_DIR_OUTPUT_WTH_READBACK;
-	 //port_pin_set_config(WS_ON_OFF_PIN, &config_port_pin);
- //}
- //
- //
- //static void WS_TurnOn(void) {
-	 //port_pin_set_output_level(WS_ON_OFF_PIN, WS_ON_STATE);
- //}
- //
- //
- //static void WS_TurnOff(void) {
-	 //port_pin_set_output_level(WS_ON_OFF_PIN, !WS_ON_STATE);
- //}
  

@@ -82,16 +82,16 @@ void ReadGPS(void) {
 			//store weather station data into appropriate structs
 			assign_gps_readings();
 			//check if waypoint was reached and affect as necessary
-			DEBUG_Write("checking waypoint...\r\n");
-			check_waypoint_state();
-
-			//Necessary??????????????
-			DEBUG_Write("processing wind...\r\n");
-			//calculate wind parameters
-			process_wind_readings();
-			DEBUG_Write("processing heading...\r\n");
-			//calculate heading parameters
-			process_heading_readings();			
+			//DEBUG_Write("checking waypoint...\r\n");
+			//check_waypoint_state();
+//
+			////Necessary??????????????
+			//DEBUG_Write("processing wind...\r\n");
+			////calculate wind parameters
+			//process_wind_readings();
+			//DEBUG_Write("processing heading...\r\n");
+			////calculate heading parameters
+			//process_heading_readings();			
 		}
 		vTaskDelay(read_gps_delay);
 	}
