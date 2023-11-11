@@ -110,7 +110,7 @@ void ReadWIND(void){
 	
 	WIND_On();
 	
-	DEBUG_Write("************ Performing Wind Vane Testing ****************\r\n");
+	DEBUG_Write("************ Performing Wind Vane Reading ****************\r\n");
     
     while(1) {
         

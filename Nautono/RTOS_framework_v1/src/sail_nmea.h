@@ -34,6 +34,7 @@ typedef enum eNMEA_TRX {
 	eIIMWV, // New WindVane speed and data
 	eYXXDR,
 	eHCHDT,
+	
 	//the rest of the types are listed below, but not currently used
 	/*
 	eGPVTG,

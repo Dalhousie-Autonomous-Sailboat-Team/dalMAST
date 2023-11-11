@@ -259,6 +259,6 @@ typedef struct {
 } sensors_orientation_t;
 
 extern enum status_code bno055_init(void);
-void Test_IMU(void);
+void ReadIMU(void);
 
 #endif

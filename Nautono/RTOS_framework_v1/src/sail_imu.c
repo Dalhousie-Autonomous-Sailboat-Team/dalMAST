@@ -176,8 +176,8 @@ static bool isFullyCalibrated() {
 	case OPERATION_MODE_MAGGYRO:
 		return (mag == 3 && gyro == 3);
 	default:
-		return (system == 3 && gyro == 3 && accel == 3 && mag == 3);
-		//return (system == 3 && gyro == 3 && mag == 3);
+		//return (system == 3 && gyro == 3 && accel == 3 && mag == 3);
+		return (system == 3 && gyro == 3 && mag == 3);
 	}
 }
 
@@ -411,6 +411,7 @@ enum status_code bno055_init(void)
 	
 	uint8_t slave_addr;
 	setMode(OPERATION_MODE_NDOF);
+	//setMode(OPERATION_MODE_MAGGYRO);
 	// Read from IMU and get it's slave address:
 	if (read8(BNO055_CHIP_ID_ADDR, &slave_addr) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
@@ -429,6 +430,7 @@ enum status_code bno055_init(void)
 	
 	/* Set mode of BNO055 */
 	_mode = OPERATION_MODE_NDOF;
+	//_mode = OPERATION_MODE_MAGGYRO;
 	write8(BNO055_OPR_MODE_ADDR, _mode);
 	
 	/* Reset */
@@ -462,7 +464,7 @@ enum status_code bno055_init(void)
 
 #define TEST_IMU_DELAY_MS 1000
 
-void Test_IMU(void){
+void ReadIMU(void){
 	
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_IMU_DELAY_MS);
 
@@ -484,6 +486,9 @@ void Test_IMU(void){
 	
 	//getSensorOffsets(&offsets);
 	//setSensorOffsets(&offsets);
+	
+	uint8_t system, gyro, accel, mag;
+	//getCalibration(&Calib);
 
 	while(1){
 		taskENTER_CRITICAL();
@@ -491,7 +496,7 @@ void Test_IMU(void){
 		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 		
-		DEBUG_Write("<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");\
+		DEBUG_Write("<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");
 		
 		getHeading(&reading);
 		
@@ -502,6 +507,9 @@ void Test_IMU(void){
 		DEBUG_Write("The magnetic heading is: %d\r\n", heading);
 		DEBUG_Write("The roll is: %d\r\n", roll);
 		DEBUG_Write("The pitch is: %d\r\n", pitch);
+		
+		getCalibration(&system, &gyro, &accel, &mag);
+		DEBUG_Write("sys: %d\tgyro: %d\taccel: %d\tmag: %d\r\n", system, gyro, accel, mag);
 		
 		//read8(BNO055_TEMP_ADDR, &temp);
 		//DEBUG_Write("Temp: %d\r\n", temp);

@@ -646,36 +646,37 @@ void RadioHandler(void) {
 			
 			switch (RADIO_RxMsg(&rx_msg)) {
 				case STATUS_OK:
-				DEBUG_Write("Received a message!\r\n");
-				HandleMessage(&rx_msg);
-				break;
+					DEBUG_Write("Received a message!\r\n");
+					HandleMessage(&rx_msg);
+					break;
 				
 				case STATUS_ERR_BAD_DATA:
-				DEBUG_Write("Received a corrupt message!\r\n");
-				RADIO_Ack(RADIO_STATUS_ERROR);
-				break;
+					DEBUG_Write("Received a corrupt message!\r\n");
+					RADIO_Ack(RADIO_STATUS_ERROR);
+					break;
 				
 				default:
-				break;
+					break;
 			}
-			//vTaskDelay(radio_handler_delay);
 			//RADIO_Ack(RADIO_STATUS_SUCCESS);
+			//vTaskDelay(radio_handler_delay);
+			
 			loop_cnt++;
 				
-			//if(loop_cnt > loop_max) {
-				////DEBUG_Write("loop_cnt: %d\r\n", (int)loop_cnt);
-				//taskENTER_CRITICAL();
-				//watchdog_counter |= 0x08;
-				//taskEXIT_CRITICAL();
-				//
-				//DEBUG_Write("Radio going to sleep...\r\n");
-				//loop_cnt = 0;
-								//
-				////put thread to sleep until a specific tick count is reached
-				//vTaskDelay(radio_handler_delay);
-				//
-				//DEBUG_Write("Radio waking up...\r\n");
-			//}
+			if(loop_cnt > loop_max) {
+				//DEBUG_Write("loop_cnt: %d\r\n", (int)loop_cnt);
+				taskENTER_CRITICAL();
+				watchdog_counter |= 0x08;
+				taskEXIT_CRITICAL();
+				
+				DEBUG_Write("Radio going to sleep...\r\n");
+				loop_cnt = 0;
+								
+				//put thread to sleep until a specific tick count is reached
+				vTaskDelay(radio_handler_delay);
+				
+				DEBUG_Write("Radio waking up...\r\n");
+			}
 				
 		}
 		#else

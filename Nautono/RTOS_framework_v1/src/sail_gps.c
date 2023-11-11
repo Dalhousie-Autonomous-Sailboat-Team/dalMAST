@@ -193,19 +193,15 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 	// Get each argument after the type
 	uint8_t arg_count = 0;
 	
-	//TODO 
-	// after doing the first token from msg buffer, pass token to get_NMEA_type as string
-	// This means fix the get_NMEA type method used above ^^^, and have the check after setting the first
-	// token. 
-	
-	DEBUG_Write("WS: %s\r\n", msg_buffer);
+	//DEBUG_Write("WS: %s\r\n", msg_buffer);
 	msg_ptr = strtok(msg_buffer, ",");
 	// Check that msg is valid NMEA type within type list
-	if(!get_NMEA_type(&raw_data.type, msg_ptr)){
+	if(!get_NMEA_type(&raw_data.type, msg_ptr))
+	{
 		//DEBUG_Write("Msg not in list of types...\r\n");
 		return STATUS_DATA_NOT_NEEDED;
 	}
-	
+	DEBUG_Write("Message type: %s\r\n", NMEA_TYPE_TABLE[raw_data.type]);
 	//TODO
 	//Verify that numbers are lat lon, a.k.a. do a checksum 
 	//ALso check length (should be nominal)
@@ -223,17 +219,10 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 		//raw_data.args[arg_count++] = isalpha(*msg_ptr) ? *msg_ptr : atof(msg_ptr);
 		//memcpy(raw_data.args[arg_count++], msg_ptr, sizeof(msg_ptr));
 		raw_data.args[arg_count++] = msg_ptr;
-		DEBUG_Write("msg ptr %s and count %d\r\n", msg_ptr, arg_count);
-		DEBUG_Write("In the raw data: >%s<\r\n", raw_data.args[arg_count-1]);
+		//DEBUG_Write("msg ptr %s and count %d\r\n", msg_ptr, arg_count);
+		//DEBUG_Write("In the raw data: >%s<\r\n", raw_data.args[arg_count-1]);
 		if (arg_count == GPS_MSG_MAX_ARGS) break;
 	}
-
-	/*
-	// Compare the argument count to its expected value
-	if (arg_count != WEATHERSENSOR_arg_counts[raw_data.type]) {
-		return STATUS_ERR_BAD_DATA;
-	}
-	*/
 
 	// Parse the message
 	if (GPS_ExtractMsg(msg, &raw_data) != STATUS_OK) {
@@ -263,30 +252,26 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* d
 			DEBUG_Write("Was 0\r\n");
 		}
 		
-		//TODO
 		//wrap this so it only shows during debug config
-		#ifdef DEBUG_GPS
-		
-		DEBUG_Write("LAT DATA: >%s<\r\n", data->args[1]);
-		DEBUG_Write("LON DATA: >%s<\r\n", data->args[3]);
-		
-		DEBUG_Write("LAT DATA: >%d<\r\n", (int)msg->fields.gpgga.lat.lat);
-		DEBUG_Write("LON DATA: >%f<\r\n", msg->fields.gpgga.lon.lon);
+		#ifndef DEBUG_GPS
+			
+		DEBUG_Write("LAT DATA: >%d<\r\n", (uint)msg->fields.gpgga.lat.lat);
+		DEBUG_Write("LON DATA: >%d<\r\n", (uint)msg->fields.gpgga.lon.lon);
 		
 		#endif
 
 		break;
 
-		/* case eGPVTG:
-			msg->fields.gpvtg.course_over_ground = data->args[0];
-			break; */
+	/* case eGPVTG:
+		msg->fields.gpvtg.course_over_ground = data->args[0];
+		break; */
 
 	case eWIMWV:
 		msg->fields.wimwv.wind_dir_rel = atof(data->args[0]);
 		msg->fields.wimwv.wind_speed_ms = atof(data->args[2]);
 		break;
 
-		// This the YXXDR-B type NMEA message
+	// This the YXXDR-B type NMEA message
 	case eYXXDR:
 		if (data->args[0] == 'A') {
 			msg->fields.yxxdr.pitch_deg = atof(data->args[1]);
@@ -298,59 +283,7 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* d
 	case eHCHDT:
 		msg->fields.hchdt.bearing = atof(data->args[0]);
 		break;
-		/*
-		case eWIMWD:
-			msg->fields.wimwd.wind_dir_true = data->args[0];
-			msg->fields.wimwd.wind_dir_mag = data->args[2];
-			msg->fields.wimwd.wind_speed_knot = data->args[4];
-			msg->fields.wimwd.wind_speed_ms = data->args[6];
-			vals[2] = 1;
-		break;
-
-		case eYXXDR:
-		//the yxxdr type we are interested in
-			if(data->args[0] == 'A') {
-				msg->fields.yxxdr.pitch_deg = data->args[1];
-				msg->fields.yxxdr.roll_deg = data->args[5];
-				vals[3] = 1;
-			//	DEBUG_Write("Assigning data!\n");
-			}
-
-		break;
-
-		//the remaining message cases are listed below
-
-		case eGPDTM:
-		break;
-		case eGPGLL:
-		break;
-		case eGPGSA:
-		break;
-		case eGPGSV:
-		break;
-		case eGPRMC:
-		break;
-		case eGPVTG:
-		break;
-		case eGPZDA:
-		break;
-		case eHCHDG:
-		break;
-		case eHCTHS:
-		break;
-		case eTIROT:
-		break;
-		case eWIMDA:
-		break;
-		case eWIMWV:
-		break;
-		case eWIMWR:
-		break;
-		case eWIMWT:
-		break;
-		*/
-
-
+		
 	default:
 		return STATUS_ERR_BAD_DATA;
 		break;

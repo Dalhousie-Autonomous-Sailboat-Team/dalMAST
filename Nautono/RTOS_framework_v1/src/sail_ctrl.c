@@ -225,9 +225,9 @@ void LogData(void)
 	    running_task = eLogData;
 		
 		// Log the GPS coordinates
-		tx_msg_log.type = RADIO_GPS;
-		tx_msg_log.fields.gps.data = gps;
-		RADIO_TxMsg(&tx_msg_log);
+		//tx_msg_log.type = RADIO_GPS;
+		//tx_msg_log.fields.gps.data = gps;
+		//RADIO_TxMsg(&tx_msg_log);
 	
 		// Log the wind speed and direction
 		tx_msg_log.type = RADIO_WIND;
@@ -242,9 +242,9 @@ void LogData(void)
 		RADIO_TxMsg(&tx_msg_log);
 	
 		// Log the compass data
-		//tx_msg_log.type = RADIO_COMP;
-		//tx_msg_log.fields.comp.data = comp;
-		//RADIO_TxMsg(&tx_msg_log);
+		tx_msg_log.type = RADIO_COMP;
+		tx_msg_log.fields.comp.data = comp;
+		RADIO_TxMsg(&tx_msg_log);
 
 		// Log the navigation data
 		//tx_msg.type = RADIO_NAV;
@@ -263,8 +263,8 @@ void LogData(void)
 
 void assing_wind_readings(void) 
 {
-	wind.speed = WIND_data.msg_array[eWIMWV].fields.wimwv.wind_speed_ms;
-	wind.angle = WIND_data.msg_array[eWIMWV].fields.wimwv.wind_dir_rel;
+	wind.speed = WIND_data.msg_array[eIIMWV].fields.wimwv.wind_speed_ms;
+	wind.angle = WIND_data.msg_array[eIIMWV].fields.wimwv.wind_dir_rel;
 }
 
 void process_wind_readings(void)
@@ -310,6 +310,10 @@ static void DisableWeatherStation(void)
 	// Disable the wind vane
 	WIND_Disable();
 }
+
+//void assign_heading_readings(void) {
+	//comp.data.heading.heading = ;
+//}
 
 void process_heading_readings(void)
 {
