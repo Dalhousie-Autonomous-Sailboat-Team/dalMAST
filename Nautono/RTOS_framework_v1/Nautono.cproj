@@ -802,6 +802,12 @@
     <Compile Include="src\sail_anglesensor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\sail_beacon.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_beacon.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sail_buffer.c">
       <SubType>compile</SubType>
     </Compile>

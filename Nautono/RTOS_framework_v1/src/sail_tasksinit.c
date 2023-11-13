@@ -28,6 +28,7 @@
 #include "sail_radio.h"
 #include "sail_rudder.h"
 #include "sail_wind.h"
+#include "sail_beacon.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -92,8 +93,10 @@ enum status_code init_tasks(void) {
 
 
 	// Task to blink an LED on the pcb, to ensure that the CPU is working.
-	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
+	//xTaskCreate(beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+	xTaskCreate(beaconOk, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
 	

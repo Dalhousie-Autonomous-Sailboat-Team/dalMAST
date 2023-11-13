@@ -6,3 +6,5 @@
  */ 
 
 void Test_Beacon(void);
+void beaconStringResponse(void);
+void beaconOk(void);
