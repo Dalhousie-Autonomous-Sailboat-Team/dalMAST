@@ -34,6 +34,7 @@ static const uint8_t RADIO_arg_counts[RADIO_NUM_MSG_TYPES] = {
 	2,
 	4,
 	8,
+	1,
 	1
 };
 
@@ -183,8 +184,44 @@ enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg)
 }
 
 
+enum status_code RADIO_Beacon_Command_Retreive(RADIO_GenericMsg *msg)
+{
+	if (msg == NULL) {
+		return STATUS_ERR_BAD_ADDRESS;
+	}
+	
+	memset(msg_buffer, NULL, NMEA_BUFFER_LENGTH*sizeof(char));
+	
+	// Check the NMEA receiver for new data
+	switch (NMEA_RxString(NMEA_RADIO, (uint8_t *)msg_buffer, RADIO_BUFFER_LENGTH)) {
+		// Data was found, continue and process
+		case STATUS_VALID_DATA:
+		break;
+		// Data was not found
+		case STATUS_NO_CHANGE:
+		return STATUS_NO_CHANGE;
+		// An error occurred
+		default:
+		return STATUS_ERR_DENIED;
+	}
+	
+	// Extract the raw data from the message
+	RADIO_MsgRawData raw_data;
+	char *msg_ptr;
 
+	DEBUG_Write("Rx_radio: %s\r\n", msg_buffer);
+	
+	// Check the header
+	if ((msg_ptr = strtok(msg_buffer, ",")) == NULL)
+	return STATUS_ERR_BAD_DATA;
+	if (strcmp(msg_ptr, "DALSAIL") != 0)
+	return STATUS_ERR_BAD_DATA;
 
+	// Get the command
+	
+	
+	return STATUS_OK;
+}
 
 enum status_code RADIO_TxMsg(RADIO_GenericMsg *msg)
 {
@@ -268,6 +305,47 @@ enum status_code RADIO_TxMsg_Unprotected(RADIO_GenericMsg *msg)
 	return STATUS_OK;
 }
 
+
+enum status_code RADIO_TxMsg_Protected(RADIO_GenericMsg *msg)
+{
+	// Return if a null pointer is provided
+	if (msg == NULL) {
+		return STATUS_ERR_BAD_ADDRESS;
+	}
+	
+	for(int i = 0; i < NMEA_BUFFER_LENGTH; i++) {
+		msg_buffer[i] = NULL;
+	}
+	
+	// Generate the raw data from the message
+	RADIO_MsgRawData raw_data;
+	if (RADIO_ExtractData(&raw_data, msg) != STATUS_OK) {
+		return STATUS_ERR_BAD_DATA;
+	}
+	
+	// Write the message header to the buffer
+	sprintf(msg_buffer, "DALSAIL, At+%03\r\n"PRIu16, raw_data.type);
+	
+	// Write each argument to the buffer
+	char arg_buffer[20];
+	int i;
+	for (i = 0; i < RADIO_arg_counts[raw_data.type]; i++) {
+		// Write the argument to the buffer
+		sprintf(arg_buffer, ",%"PRIi32, raw_data.args[i]);
+		// Concatenate the argument string to the message string
+		strcat(msg_buffer, arg_buffer);
+	}
+	
+	DEBUG_Write("Tx_Radio: %s\r\n", msg_buffer);
+
+	
+	// Transmit the string
+	if (NMEA_TxString(NMEA_RADIO, (uint8_t*)msg_buffer) != STATUS_OK) {
+		return STATUS_ERR_IO;
+	}
+	
+	return STATUS_OK;
+}
 
 enum status_code RADIO_Ack(RADIO_Status status)
 {
@@ -354,6 +432,11 @@ static enum status_code RADIO_ExtractMsg(RADIO_GenericMsg *msg, RADIO_MsgRawData
 			msg->type = RADIO_RESET;
 			msg->fields.reset.cause = data->args[0];
 			break;
+		case RADIO_BEACON:
+			data->type = RADIO_BEACON;
+			//This is a string that contains the command.
+			data->args[0];
+		break;
 		default:
 			return STATUS_ERR_BAD_DATA;
 	}
@@ -435,7 +518,7 @@ static enum status_code RADIO_ExtractData(RADIO_MsgRawData *data, RADIO_GenericM
 		case RADIO_RESET:
 			data->type = RADIO_RESET;
 			data->args[0] = msg->fields.reset.cause;
-			break;		
+			break;
 		default:
 			return STATUS_ERR_BAD_DATA;
 	}

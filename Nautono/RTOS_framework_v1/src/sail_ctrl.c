@@ -255,13 +255,16 @@ void LogData(void)
 		tx_msg.fields.nav.sail_angle = sail_deg;
 		tx_msg.fields.nav.rudder_angle = rudder_deg;
 		RADIO_TxMsg(&tx_msg);
+				
 
 		//put thread to sleep until a specific tick count is reached
 		vTaskDelay(log_data_delay);
 	}
 }
 
-
+void beaconCommands(void){
+	
+}
 
 void process_wind_readings(void)
 {

@@ -39,6 +39,7 @@ typedef enum RADIO_MsgTypes {
 	RADIO_COMP,
 	RADIO_NAV,
 	RADIO_RESET,
+	RADIO_BEACON,
 	RADIO_NUM_MSG_TYPES
 } RADIO_MsgType;
 
@@ -105,6 +106,10 @@ typedef struct RADIO_ResetData {
 	CTRL_ResetCause		cause;
 } RADIO_ResetData;
 
+typedef struct RADIO_BeaconData {
+	int32_t command[8];
+} RADIO_BeaconData;
+
 typedef struct RADIO_GenericMsg {
 	RADIO_MsgType			type;
 	union RADIO_GenericDataUnion {
@@ -119,6 +124,7 @@ typedef struct RADIO_GenericMsg {
 		RADIO_CompData		comp;
 		RADIO_NavData		nav;
 		RADIO_ResetData		reset;
+		RADIO_BeaconData    command;
 	} fields;
 } RADIO_GenericMsg;
 
@@ -128,6 +134,7 @@ enum status_code RADIO_Disable(void);
 enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg);
 enum status_code RADIO_TxMsg(RADIO_GenericMsg *msg);
 enum status_code RADIO_TxMsg_Unprotected(RADIO_GenericMsg *msg);
+enum status_code RADIO_TxMsg_Protected(RADIO_GenericMsg *msg);
 enum status_code RADIO_Ack(RADIO_Status status);
 
 static RADIO_Status ChangeMode(CTRL_Mode new_mode);
