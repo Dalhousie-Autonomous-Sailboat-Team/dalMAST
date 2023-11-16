@@ -184,12 +184,11 @@ enum status_code startup(void)
 	//wp_complete_count = 0;
 	
 	//DEBUG_Write_Unprotected("way point: lat - %d lon - %d rad - %d\r\n", (int)(wp.pos.lat * 1000000.0), (int)(wp.pos.lon * 1000000.0), (int)(wp.rad));
-	/*
-	// Start the motor controller
-	MOTOR_Init();
-	*/
 	
+	// Start rudder motor.
 	RUDDER_Init();
+	
+	// Start up the actuator for sail flap.
 	AC_init();
 	
 	
@@ -242,9 +241,9 @@ void LogData(void)
 		RADIO_TxMsg(&tx_msg_log);
 	
 		// Log the compass data
-		tx_msg_log.type = RADIO_COMP;
-		tx_msg_log.fields.comp.data = comp;
-		RADIO_TxMsg(&tx_msg_log);
+		//tx_msg_log.type = RADIO_COMP;
+		//tx_msg_log.fields.comp.data = comp;
+		//RADIO_TxMsg(&tx_msg_log);
 
 		// Log the navigation data
 		//tx_msg.type = RADIO_NAV;
