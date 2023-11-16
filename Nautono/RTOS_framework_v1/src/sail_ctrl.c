@@ -262,6 +262,33 @@ void LogData(void)
 }
 
 
+void beaconTxLogData(void){
+	//take all args from the data and concatenate into a string
+	uint16_t maxDataSizeCounter = 0;
+	char cmd4[32] = "at+sbdwt=";
+	char data[200] = {'\0'};
+	char delimit[2] = "\r";
+	
+	
+	// Sensor readings
+	static COMP_Reading comp;
+
+	float bearing, sail_deg;
+	float avg_heading_deg;
+	
+	//latitude, longitude, 
+	sprintf(data
+	, "%5.3lf,%5.3lf,%5.3f,%5.3f,"
+	, gps.lat, gps.lon, wind.speed, wind.angle);
+	
+	
+	//send the stream 211 command followed by data followed by delimiter
+	UART_TxString(UART_WIND, cmd4);
+	UART_TxString(UART_WIND, data);
+	UART_TxString(UART_WIND, delimit);
+	
+}
+
 
 void process_wind_readings(void)
 {
