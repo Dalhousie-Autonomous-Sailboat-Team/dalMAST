@@ -19,6 +19,7 @@
 // Header files of different devices containing RTOS tasks.
 #include "sail_actuator.h"
 #include "sail_anglesensor.h"
+#include "sail_beacon.h"
 #include "sail_eeprom.h"
 #include "sail_gps.h"
 #include "sail_imu.h"
@@ -78,6 +79,9 @@ enum status_code init_tasks(void) {
 	// Task for getting the heading from the compass
 	xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
 	
+	// Task to update the sail angle position
+	xTaskCreate( ReadSailAngle, NULL, READ_AS_STACK_SIZE, NULL, READ_AS_PRIORITY, NULL );
+	
 	// DO NOT NEED, UPDATED ReadCompass to work with new IMU: 
 	//xTaskCreate(ReadIMU, NULL, READ_COMPASS_STACK_SIZE ,NULL, READ_COMPASS_PRIORITY, NULL);
 	
@@ -91,6 +95,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate(Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate(Test_INA, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate(TEST_BEACON, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 
 
 	// Task to blink an LED on the pcb, to ensure that the CPU is working.

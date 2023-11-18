@@ -97,8 +97,8 @@ typedef struct RADIO_NavData {
 	double				distance;
 	double				bearing;
 	double				course;
-	int8_t				rudder_angle;
-	int8_t				sail_angle;
+	uint16_t			rudder_angle;
+	uint16_t			sail_angle;
 } RADIO_NavData;
 
 typedef struct RADIO_ResetData {
@@ -154,7 +154,8 @@ extern uint16_t wp_complete_count;
 // Distance between boat and way point
 extern double wp_distance;
 
-extern float course, bearing, sail_deg, rudder_deg;
+extern float course, bearing, sail_deg;
+extern uint16_t rudder_deg;
 extern float avg_heading_deg;
 
 

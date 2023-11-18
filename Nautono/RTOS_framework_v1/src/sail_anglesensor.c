@@ -248,7 +248,7 @@ static void initPins(void)
 	port_pin_set_config(_directionPin, &config_port_pin);	
 }
 
-static void AS_init(uint8_t directionPin)
+void AS_init(uint8_t directionPin)
 {
 	_directionPin = directionPin;	
 	if (_directionPin != AS5600_SW_DIRECTION_PIN) 

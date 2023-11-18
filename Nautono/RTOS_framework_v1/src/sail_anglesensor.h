@@ -8,4 +8,6 @@
 #include <inttypes.h>
 
 void Test_AS(void);
+extern void AS_init(uint8_t directionPin);
+extern enum status_code readAngle(uint16_t *data);
 extern enum status_code rawAngle(uint16_t *data);

@@ -429,8 +429,8 @@ static enum status_code RADIO_ExtractData(RADIO_MsgRawData *data, RADIO_GenericM
 			data->args[3] = (int32_t)msg->fields.nav.distance;
 			data->args[4] = (int32_t)(msg->fields.nav.bearing*10.0);
 			data->args[5] = (int32_t)(msg->fields.nav.course*10.0);
-			data->args[6] = msg->fields.nav.rudder_angle;
-			data->args[7] = msg->fields.nav.sail_angle;
+			data->args[6] = (uint16_t)msg->fields.nav.rudder_angle;
+			data->args[7] = (uint16_t)msg->fields.nav.sail_angle;
 			break;
 		case RADIO_RESET:
 			data->type = RADIO_RESET;
@@ -590,11 +590,10 @@ static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data)
 
 static RADIO_Status AdjustMotors(uint16_t sail_angle, uint16_t rudder_angle)
 {
-	//MOTOR_SetSail((double)sail_angle);
-	//MOTOR_SetRudder((double)rudder_angle);
+	
 	RudderSetPos((double)rudder_angle);
-	LAC_set_pos((double)sail_angle);
-	//DEBUG_Write("Finished setting rudder angle to %d\r\n", rudder_angle);
+	// LAC_set_pos((double)sail_angle);
+	
 	return RADIO_STATUS_SUCCESS;	
 }
 
@@ -643,15 +642,14 @@ void RadioHandler(void) {
 			
 			//DEBUG_Write("<<<<<<<<<<<<<<<<<<<< RADIO HANDLER >>>>>>>>>>>>>>>>>>>>>\r\n");
 			
-			
-			//DEBUG_Write("TEST\r\n");
-			
 			switch (RADIO_RxMsg(&rx_msg)) {
 				case STATUS_OK:
+				
 					taskENTER_CRITICAL();
 					DEBUG_Write("Received a message!\r\n");
 					HandleMessage(&rx_msg);
 					taskEXIT_CRITICAL();
+					
 					break;
 				
 				case STATUS_ERR_BAD_DATA:

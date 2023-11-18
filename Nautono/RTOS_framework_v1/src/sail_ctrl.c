@@ -6,14 +6,14 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "sail_radio.h"
-#include "sail_wind.h"
-#include "sail_eeprom.h"
-#include "sail_rudder.h"
-#include "sail_gps.h"
-#include "sail_rudder.h"
 #include "sail_actuator.h"
+#include "sail_anglesensor.h"
+#include "sail_eeprom.h"
+#include "sail_gps.h"
+#include "sail_radio.h"
+#include "sail_rudder.h"
 #include "sail_imu.h"
+#include "sail_wind.h"
 
 #include "sail_nav.h"
 #include "sail_debug.h"
@@ -85,7 +85,8 @@ uint16_t wp_complete_count;
 // Distance between boat and way point
 double wp_distance;
 
-float course, bearing, sail_deg, rudder_deg; 
+float course, bearing, sail_deg = 0;
+uint16_t rudder_deg = 0; 
 float avg_heading_deg = 0.0;
 
 
@@ -230,13 +231,12 @@ void LogData(void)
 		tx_msg_log.type = RADIO_GPS;
 		tx_msg_log.fields.gps.data = gps;
 		RADIO_TxMsg(&tx_msg_log);
-		//vTaskDelay(1000);
 		
 		// Log the wind speed and direction
-		//tx_msg_log.type = RADIO_WIND;
-		//tx_msg_log.fields.wind.data = wind;
-		//RADIO_TxMsg(&tx_msg_log);
-		//vTaskDelay(1000);
+		tx_msg_log.type = RADIO_WIND;
+		tx_msg_log.fields.wind.data = wind;
+		RADIO_TxMsg(&tx_msg_log);
+
 		//not needed because wind is reported in relation to the vessel's center line
 		/*
 		// Correct wind angle with average heading
@@ -245,19 +245,19 @@ void LogData(void)
 		*/
 	
 		// Log the compass data
-		//tx_msg_log.type = RADIO_COMP;
-		//tx_msg_log.fields.comp.data = comp;
-		//RADIO_TxMsg(&tx_msg_log);
-//vTaskDelay(500);
+		tx_msg_log.type = RADIO_COMP;
+		tx_msg_log.fields.comp.data = comp;
+		RADIO_TxMsg(&tx_msg_log);
+
 		// Log the navigation data
-		//tx_msg.type = RADIO_NAV;
+		tx_msg.type = RADIO_NAV;
 		//tx_msg.fields.nav.wp = wp;
 		//tx_msg.fields.nav.distance = wp_distance;
 		//tx_msg.fields.nav.bearing = bearing;
 		//tx_msg.fields.nav.course = course;
-		//tx_msg.fields.nav.sail_angle = sail_deg;
-		//tx_msg.fields.nav.rudder_angle = rudder_deg;
-		//RADIO_TxMsg(&tx_msg);
+		tx_msg.fields.nav.sail_angle = sail_deg;
+		tx_msg.fields.nav.rudder_angle = rudder_deg;
+		RADIO_TxMsg(&tx_msg);
 
 		//put thread to sleep until a specific tick count is reached
 		vTaskDelay(log_data_delay);
@@ -424,6 +424,33 @@ void UpdateCourse(void)
 		vTaskDelay(update_course_delay);
 
 	}
+	
+}
+
+void ReadSailAngle(void)
+{
+	AS_init(PIN_PA08); // Angle sensor init.
+	
+	TickType_t read_as_delay = pdMS_TO_TICKS(READ_AS_SLEEP_PERIOD_MS);
+	
+	uint16_t angle = 0;
+	
+	while(1) 
+	{						 
+		taskENTER_CRITICAL();
+		watchdog_counter |= 0x20;
+		taskEXIT_CRITICAL();
+		
+		DEBUG_Write("\n<<<<<<<<<<<<<<<<<<<<<<<Do read Angle Sensor>>>>>>>>>>>>>>>>>>>>>>>>>>>\r\n");
+		running_task = eReadAS;
+		
+		readAngle(&angle);
+		
+		sail_deg = angle; // Update global variable with current angle.
+		
+		vTaskDelay(read_as_delay);
+	}
+	
 	
 }
 
