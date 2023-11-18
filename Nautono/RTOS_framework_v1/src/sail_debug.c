@@ -83,6 +83,7 @@ enum status_code DEBUG_Write_Unprotected(const char *format, ...) {
 	
 	// Send the string
 	// This prints to a serial terminal when the SAMD20 is powered by a laptop
+	//UART_TxString_Unprotected(UART_XEOS, debug_buffer);
 	UART_TxString_Unprotected(UART_XEOS, debug_buffer);
 	//UART_TxString(UART_GPS, debug_buffer);
 	// This will print the debug statements over the Xbee radios

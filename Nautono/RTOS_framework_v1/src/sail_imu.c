@@ -177,11 +177,12 @@ static bool isFullyCalibrated() {
 		return (mag == 3 && gyro == 3);
 	default:
 		//return (system == 3 && gyro == 3 && accel == 3 && mag == 3);
-		return (system == 3 && gyro == 3 && mag == 3);
+		//return (system == 3 && gyro == 3 && mag == 3);
+		return (gyro == 3);
 	}
 }
 
-static enum status_code IMU_calibrate(void)
+enum status_code IMU_calibrate(void)
 {
 	if(!init_flag) {
 		return STATUS_ERR_NOT_INITIALIZED;
@@ -205,7 +206,7 @@ static enum status_code IMU_calibrate(void)
 	return STATUS_OK;
 }
 
-static void setMode(adafruit_bno055_opmode_t mode) {
+void setMode(adafruit_bno055_opmode_t mode) {
 	_mode = mode;
 	write8(BNO055_OPR_MODE_ADDR, _mode);
 	delay_ms(30);

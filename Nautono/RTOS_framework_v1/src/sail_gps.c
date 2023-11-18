@@ -47,6 +47,8 @@ void ReadGPS(void) {
 
 	TickType_t read_gps_delay = pdMS_TO_TICKS(GPS_SLEEP_PERIOD_MS);
 
+	GPS_On();
+
 	while (1) {
 
 		event_bits = xEventGroupWaitBits(mode_event_group,                        /* Test the mode event group */
@@ -59,9 +61,7 @@ void ReadGPS(void) {
 		watchdog_counter |= 0x01;
 		taskEXIT_CRITICAL();
 		
-		DEBUG_Write("********** Performing GPS Reading **********\r\n");
-		
-		GPS_On();
+		DEBUG_Write("\r\n********** Performing GPS Reading **********\r\n");
 
 		running_task = eReadGPS; //Replace this with gps, see tasksinit.c/.h
 
@@ -72,6 +72,7 @@ void ReadGPS(void) {
 			//DEBUG_Write("\nStatus OK\n");
 			//DEBUG_Write("loop count %d\r\n", loop_cnt);
 			//store msg into msg array at index corresponding to msg type
+			DEBUG_Write("message type: %d\r\n", msg.type);
 			GPS_data.msg_array[msg.type] = msg;
 			//add type to msg type sum to keep track of the saved messages
 			GPS_data.msg_type_sum += msg.type;
@@ -142,7 +143,7 @@ enum status_code GPS_Enable(void)
 
 	// Return if the receiver cannot be started
 	if (NMEA_Enable(NMEA_GPS) != STATUS_OK) {
-		//DEBUG_Write("NMEA receiver could not be started!\r\n");
+		DEBUG_Write("GPS could not be started!\r\n");
 		return STATUS_ERR_DENIED;
 	}
 
@@ -179,6 +180,8 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 	
 	// Check the NMEA receiver for new data
 	if (rc != STATUS_VALID_DATA){
+		//DEBUG_Write("RAW INVALID GPS MESSAGE: %s\r\n", msg_buffer);
+		//DEBUG_Write("RC code: %d\r\n", rc);
 		return rc;
 	}
 
@@ -187,8 +190,8 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 	char* msg_ptr;
 	
 	//Show raw data and error code
-	//DEBUG_Write("WS: %s\r\n", msg_buffer);
-	//DEBUG_Write("Error code: %d\r\n", rc);
+	//DEBUG_Write("RAW GPS MESSAGE: %s\r\n", msg_buffer);
+	//DEBUG_Write("RC code: %d\r\n", rc);
 	
 	// Get each argument after the type
 	uint8_t arg_count = 0;
@@ -201,7 +204,7 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 		//DEBUG_Write("Msg not in list of types...\r\n");
 		return STATUS_DATA_NOT_NEEDED;
 	}
-	DEBUG_Write("Message type: %s\r\n", NMEA_TYPE_TABLE[raw_data.type]);
+	//DEBUG_Write("Message type: %s\r\n", NMEA_TYPE_TABLE[raw_data.type]);
 	//TODO
 	//Verify that numbers are lat lon, a.k.a. do a checksum 
 	//ALso check length (should be nominal)
@@ -213,7 +216,7 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 		//if *msg_ptr is alphabetic, store directly, else convert string to float value
 		msg_ptr = strtok(NULL, ",");
 		if(msg_ptr == NULL){
-			DEBUG_Write("NULL/n/r");
+			//DEBUG_Write("NULL/n/r");
 			break;
 		}
 		//raw_data.args[arg_count++] = isalpha(*msg_ptr) ? *msg_ptr : atof(msg_ptr);
@@ -228,8 +231,8 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 	if (GPS_ExtractMsg(msg, &raw_data) != STATUS_OK) {
 		return STATUS_ERR_BAD_DATA;
 	}
-	
-	return rc;
+	return STATUS_OK;
+	//return rc;
 }
 
 //extern int was_here;
@@ -247,18 +250,21 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* d
 		msg->fields.gpgga.lon.we = ((char)data->args[4] == 'W') ? west : east;
 		msg->fields.gpgga.alt = atof(data->args[8]);
 		
-		if(atof(data->args[1]) == 0.00)
-		{
-			DEBUG_Write("Was 0\r\n");
-		}
+		//if(atof(data->args[1]) == 0.00)
+		//{
+			//DEBUG_Write("Was 0\r\n");
+		//}
 		
 		//wrap this so it only shows during debug config
-		#ifndef DEBUG_GPS
+		//#ifndef DEBUG_GPS
+		
+		DEBUG_Write("LAT DATA: >%s<\r\n", data->args[1]);
+		DEBUG_Write("LON DATA: >%s<\r\n", data->args[3]);
 			
 		DEBUG_Write("LAT DATA: >%d<\r\n", (uint)msg->fields.gpgga.lat.lat);
 		DEBUG_Write("LON DATA: >%d<\r\n", (uint)msg->fields.gpgga.lon.lon);
 		
-		#endif
+		//#endif
 
 		break;
 

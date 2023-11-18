@@ -65,10 +65,11 @@ void AC_init(void) {
 
 void LAC_set_pos(double pos) 
 {
-	double curr_pos = 0;
+	double curr_pos = 0, prev_pos = 0;
+	int count = 0;
 	ActuatorPotPos(&curr_pos);
 	
-	while(curr_pos <= pos*0.98 || curr_pos >= pos*1.02) {
+	while((curr_pos <= pos*0.98 || curr_pos >= pos*1.02) ) {
 		
 		if(curr_pos > pos) {
 			LAC_backward();

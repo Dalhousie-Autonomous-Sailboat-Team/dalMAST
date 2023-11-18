@@ -99,6 +99,7 @@ enum status_code NMEA_Enable(NMEA_ChannelID id) {
 	// Start the UART receiver
 	if (UART_Enable(uart_channels[id]) != STATUS_OK) {
 		// Indicate a hardware error
+		DEBUG_Write("UART FAILED for ID >>%d<<\r\n", id);
 		return STATUS_ERR_DENIED;
 	}
 	

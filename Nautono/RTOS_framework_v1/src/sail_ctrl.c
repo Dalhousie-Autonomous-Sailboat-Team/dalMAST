@@ -13,6 +13,7 @@
 #include "sail_gps.h"
 #include "sail_rudder.h"
 #include "sail_actuator.h"
+#include "sail_imu.h"
 
 #include "sail_nav.h"
 #include "sail_debug.h"
@@ -159,7 +160,9 @@ enum status_code CTRL_InitSensors(void)
     }else{
         DEBUG_Write_Unprotected("Wind Init Ok ...\r\n");
     }
-    
+	
+	// bno055_init();
+	
     // When status is okay, shouldn't this return a different status? - KT
 
 	return STATUS_OK;
@@ -224,27 +227,28 @@ void LogData(void)
 	    running_task = eLogData;
 		
 		// Log the GPS coordinates
-		//tx_msg_log.type = RADIO_GPS;
-		//tx_msg_log.fields.gps.data = gps;
-		//RADIO_TxMsg(&tx_msg_log);
-	
-		// Log the wind speed and direction
-		tx_msg_log.type = RADIO_WIND;
-		tx_msg_log.fields.wind.data = wind;
+		tx_msg_log.type = RADIO_GPS;
+		tx_msg_log.fields.gps.data = gps;
+		RADIO_TxMsg(&tx_msg_log);
+		//vTaskDelay(1000);
 		
+		// Log the wind speed and direction
+		//tx_msg_log.type = RADIO_WIND;
+		//tx_msg_log.fields.wind.data = wind;
+		//RADIO_TxMsg(&tx_msg_log);
+		//vTaskDelay(1000);
 		//not needed because wind is reported in relation to the vessel's center line
 		/*
 		// Correct wind angle with average heading
 		tx_msg.fields.wind.data.angle += avg_heading_deg;
+		//RADIO_TxMsg(&tx_msg_log);
 		*/
-		
-		RADIO_TxMsg(&tx_msg_log);
 	
 		// Log the compass data
 		//tx_msg_log.type = RADIO_COMP;
 		//tx_msg_log.fields.comp.data = comp;
 		//RADIO_TxMsg(&tx_msg_log);
-
+//vTaskDelay(500);
 		// Log the navigation data
 		//tx_msg.type = RADIO_NAV;
 		//tx_msg.fields.nav.wp = wp;
@@ -430,6 +434,13 @@ void ReadCompass(void)
 	EventBits_t event_bits;
 	
 	TickType_t read_compass_delay = pdMS_TO_TICKS(READ_COMPASS_SLEEP_PERIOD_MS);
+	
+	if(bno055_init() != STATUS_OK){
+		DEBUG_Write("\n\r<<<<< Failed IMU initialization >>>>>n\r");
+	}
+	
+	setMode(OPERATION_MODE_NDOF);
+	IMU_calibrate();
 
 	while(1) {
 				
@@ -449,23 +460,17 @@ void ReadCompass(void)
 		
 
 		// Get the compass reading
-		
-/* Updated this code for new compass:
-		
-		if(COMP_GetReading(COMP_HEADING, &comp) !=  STATUS_OK){
+		if(getHeading(&comp) !=  STATUS_OK){
 			DEBUG_Write("\nERROR\r\n");
 		}
+		
+		DEBUG_Write("\t\tHeading: %d\r\n", (int)comp.data.heading.heading);
 
 		// Update the averaged heading
 		avg_heading_deg = 0.9 * avg_heading_deg + 0.1 * comp.data.heading.heading;
 		
-*/
-		
 		vTaskDelay(read_compass_delay);
-
 	}
-
-
 }
 
 

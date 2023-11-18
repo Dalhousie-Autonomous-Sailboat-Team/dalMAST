@@ -138,7 +138,7 @@ void ReadWIND(void){
 		
 		if(code == STATUS_VALID_DATA) {
 			WIND_data.msg_array[msg.type] = msg;
-			DEBUG_Write("Received Wind data\r\n");
+			//DEBUG_Write("Received Wind data\r\n");
 			
 			assing_wind_readings();
 		}

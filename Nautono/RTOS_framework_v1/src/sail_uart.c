@@ -17,9 +17,9 @@
 #include "sail_debug.h"
 
 //#define UART_RX_BUFFER_LENGTH		1024
-#define UART_RX_BUFFER_LENGTH		256
+#define UART_RX_BUFFER_LENGTH		512
 //#define UART_TX_BUFFER_LENGTH		1024
-#define UART_TX_BUFFER_LENGTH		256
+#define UART_TX_BUFFER_LENGTH		512
 
 // Buffers to hold receive and transmit data
 static volatile uint8_t rx_buffers[UART_NUM_CHANNELS][UART_RX_BUFFER_LENGTH];

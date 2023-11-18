@@ -57,7 +57,7 @@ enum status_code init_tasks(void) {
 	watchdog_counter = 0;
 	
 	// Task for reading incoming data from the GPS
-	//xTaskCreate( ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
+	xTaskCreate( ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
 
 	// Task for reading incoming data from the weather station
 	//OLD WS: xTaskCreate( ReadWeatherSensor, NULL, WEATHER_SENSOR_STACK_SIZE, NULL, WEATHER_SENSOR_PRIORITY, NULL );
@@ -76,8 +76,11 @@ enum status_code init_tasks(void) {
 	xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
 	
 	// Task for getting the heading from the compass
-	// OLD COMPASS: xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
+	xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
+	
+	// DO NOT NEED, UPDATED ReadCompass to work with new IMU: 
 	//xTaskCreate(ReadIMU, NULL, READ_COMPASS_STACK_SIZE ,NULL, READ_COMPASS_PRIORITY, NULL);
+	
 	// Task for reseting the watchdog so that the microcontroller is not restarted
 	//xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	

@@ -9,6 +9,7 @@
 #define _SAIL_IMU_H
 
 #include <inttypes.h>
+#include "sail_types.h"
 
 /** BNO055 ID **/
 #define BNO055_ID (0xA0)
@@ -258,7 +259,10 @@ typedef struct {
 	
 } sensors_orientation_t;
 
+extern enum status_code IMU_calibrate(void);
+extern void setMode(adafruit_bno055_opmode_t mode);
 extern enum status_code bno055_init(void);
+extern enum status_code getHeading(COMP_Reading *reading);
 void ReadIMU(void);
 
 #endif
