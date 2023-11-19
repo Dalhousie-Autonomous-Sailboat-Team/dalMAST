@@ -11,6 +11,30 @@
 #include <stdlib.h>
 
 #include "sail_types.h"
+#include "sail_nmea.h"
+
+#define WIND_MSG_MAX_ARGS 9
+#define NUM_MSGS 4
+#define WIND_SLEEP_PERIOD_MS 1000
+
+#define WIND_BUFFER_LENGTH 30
+
+typedef struct WIND_MsgRawData {
+	uint8_t type;
+	char* args[WIND_MSG_MAX_ARGS];
+}WIND_MsgRawData_t;
+
+typedef struct WIND_AllMsgs {
+	NMEA_GenericMsg msg_array[NUM_MSGS];
+	uint8_t msg_type_sum;
+}WIND_AllMsgs;
+
+extern WIND_AllMsgs WIND_data;
+
+void enable_wind_msg(eNMEA_TRX_t msg_type);
+
+void ReadWIND(void);
+void WIND_On(void);
 
 // WIND_Init
 // Initialize wv module by clearing flags and buffer.
@@ -20,7 +44,7 @@
 //   STATUS_ERR_DENIED - a driver error has occurred
 //   STATUS_ERR_ALREADY_INITIALIZED - the module should only be initialized once
 //
-enum status_code WEATHERSTATION_Init(void);
+enum status_code WIND_Init(void);
 
 
 // WIND_Enable
@@ -30,7 +54,7 @@ enum status_code WEATHERSTATION_Init(void);
 //   STATUS_ERR_NOT_INITIALIZED - the channel hasn't been initialized yet
 //   STATUS_ERR_DENIED - a driver error has occurred
 //
-enum status_code WS_Enable(void);
+enum status_code WIND_Enable(void);
 
 
 // WIND_Disable
@@ -40,8 +64,7 @@ enum status_code WS_Enable(void);
 //   STATUS_ERR_NOT_INITIALIZED - the channel hasn't been initialized yet
 //   STATUS_ERR_DENIED - a driver error has occurred
 //
-enum status_code WS_Disable(void);
-
+enum status_code WIND_Disable(void);
 
 // WIND_GetReading
 // Gets the most recent angle from the wind vane. Parses NMEA string to get
@@ -55,5 +78,9 @@ enum status_code WS_Disable(void);
 //   STATUS_ERR_BAD_ADDRESS - an invalid address was provided
 //
 enum status_code WIND_GetReading(WIND_Reading *reading);
+
+enum status_code WIND_RxMsg(NMEA_GenericMsg* msg);
+
+static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t* data);
 
 #endif /* SAIL_WIND_H_ */

@@ -117,4 +117,6 @@ enum status_code EEPROM_EndMissionConfig(void);
 
 enum status_code EEPROM_GetWayPointCount(uint16_t *wp_count);
 
+void Test_EEPROM(void);
+
 #endif /* SAIL_EEPROM_H_ */

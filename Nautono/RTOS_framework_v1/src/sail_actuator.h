@@ -5,10 +5,8 @@
 #ifndef _SAIL_ACTUATOR_H
 #define _SAIL_ACTUATOR_H
 
-#include <asf.h>
-
-extern uint8_t GetExtensionIndex(uint16_t angle);
-extern uint16_t GetActuatorExtension(uint8_t index);
+extern void AC_init(void);
+extern void LAC_set_pos(double pos); 
 void Test_Actuator(void);
 
 #endif

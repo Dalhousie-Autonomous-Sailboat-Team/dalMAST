@@ -13,7 +13,12 @@
 
 typedef enum I2C_DeviceIDs {
 	I2C_EEPROM,
-	I2C_COMPASS,
+	I2C_IMU,
+	I2C_INA1,
+	I2C_INA2,
+	I2C_INA3,
+	I2C_BME,
+	I2C_AS,
 	I2C_NUM_DEVICES
 } I2C_DeviceID;
 
@@ -70,4 +75,5 @@ enum status_code I2C_ReadBuffer(I2C_DeviceID id, uint8_t *data, uint16_t data_le
 enum status_code I2C_WriteBuffer(I2C_DeviceID id, uint8_t *data, uint16_t data_len, I2C_WriteFormat fmt);
 
 #endif /* SAIL_I2C_H_ */
+
 

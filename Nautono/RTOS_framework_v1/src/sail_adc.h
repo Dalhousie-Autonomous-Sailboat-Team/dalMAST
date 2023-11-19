@@ -19,7 +19,7 @@ typedef enum ADC_ChannelIDs {
  *   - STATUS_OK - the ADC module was initialized successfully
  *   - STATUS_ERR_DENIED - the ADC module could not be initialized
  */
-enum status_code ADC_Init(void);
+enum status_code ADC_Init(ADC_ChannelID id);
 
 
 /* ADC_GetReading

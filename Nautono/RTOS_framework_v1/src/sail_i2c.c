@@ -4,7 +4,7 @@
  * Created on June 29, 2016.
  * Created by Thomas Gwynne-Timothy.
  */
-
+#include "config.h"
 #include "sail_i2c.h"
 #include "sail_debug.h"
 
@@ -25,8 +25,13 @@ uint8_t init_flag = 0;
 
 // Addresses of slave devices
 static uint8_t slave_addrs[I2C_NUM_DEVICES] = {
-	0x50,
-	0x19
+	0x50,	// EEPROM address
+	0x28,	// IMU address
+	0x40,	// INA 1
+	0x41,	// INA 2
+	0x42,	// INA 3
+	0x77,	// BME
+	0x36	// sail angle sensor (or 0x38)
 };
 
 
@@ -135,15 +140,27 @@ static void configure_i2c(void) {
 	config_i2c_master.buffer_timeout = 65535;
 	
 	// Select SERCOM port
-	config_i2c_master.pinmux_pad0 = SERCOM2_PAD0_DEFAULT;
-	config_i2c_master.pinmux_pad1 = SERCOM2_PAD1_DEFAULT;
+	#ifdef PCB
+	
+	config_i2c_master.pinmux_pad0 = PINMUX_PA16C_SERCOM1_PAD0;
+	config_i2c_master.pinmux_pad1 = PINMUX_PA17C_SERCOM1_PAD1;
+
+	// Apply configuration
+	// TODO Put a timeout here
+	while (i2c_master_init(&i2c_master, SERCOM1, &config_i2c_master) != STATUS_OK);
+	
+	#else
+	
+	config_i2c_master.pinmux_pad0 = PINMUX_PA12C_SERCOM2_PAD0;
+	config_i2c_master.pinmux_pad1 = PINMUX_PA13C_SERCOM2_PAD1;
 
 	// Apply configuration
 	// TODO Put a timeout here
 	while (i2c_master_init(&i2c_master, SERCOM2, &config_i2c_master) != STATUS_OK);
+	
+	#endif
 
 	// Enable the module
 	i2c_master_enable(&i2c_master);
 }
-
 

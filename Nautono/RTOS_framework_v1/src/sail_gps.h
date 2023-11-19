@@ -18,7 +18,7 @@
 
 #define MSG_TYPE_TOTAL 6 //sum of all expected msg type ids, eg. 0 + 1 + 2 + 3 = 6.. MAX value = 153 (all types enabled)
 #define GPS_LOOP_LIM 5000 //max number of loops allowed before weather station task is put to sleep
-#define GPS_SLEEP_PERIOD_MS 1000	 //length of time in sec that puts weather sensor to sleep
+#define GPS_SLEEP_PERIOD_MS 1000	 //length of time in sec that puts weather sensor to sleep, default: 1000
 #define GPS_BUFFER_LENGTH 30
 
 typedef struct GPS_MsgRawData {
