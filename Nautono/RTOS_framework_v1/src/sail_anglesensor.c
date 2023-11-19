@@ -248,7 +248,7 @@ static void initPins(void)
 	port_pin_set_config(_directionPin, &config_port_pin);	
 }
 
-static void AS_init(uint8_t directionPin)
+void AS_init(uint8_t directionPin)
 {
 	_directionPin = directionPin;	
 	if (_directionPin != AS5600_SW_DIRECTION_PIN) 
@@ -301,7 +301,7 @@ enum status_code getAngularSpeed(uint8_t mode, float *data)
 	uint32_t deltaT  = now - _lastMeasurement;
 	int      deltaA  = angle - _lastAngle;
 
-	//  assumption is that there is no more than 180° rotation
+	//  assumption is that there is no more than 180? rotation
 	//  between two consecutive measurements.
 	//  => at least two measurements per rotation (preferred 4).
 	if (deltaA >  2048) deltaA -= 4096;
@@ -339,6 +339,8 @@ void Test_AS(void){
 	// Need direction pin: 
 	AS_init(PIN_PA08);
 	
+	enum status_code rc;
+	
 	while(1){
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x20;
@@ -347,7 +349,11 @@ void Test_AS(void){
 
 		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");
 		readAngle(&raw_angle);
+		//rawAngle(&raw_angle);
 		DEBUG_Write("raw angle: %d\r\n", raw_angle);
+		
+		rc = detectMagnet();
+		DEBUG_Write("rc: %d\r\n");
 		
 		vTaskDelay(testDelay);
 	}

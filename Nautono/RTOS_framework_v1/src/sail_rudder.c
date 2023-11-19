@@ -31,6 +31,7 @@ typedef enum MOTOR_Directions {
 
 bool rudder_initialzed = false; 
 
+extern uint16_t rudder_deg;
 
 // Function to initialize the power and direction pins
 static void InitPins(void);
@@ -128,6 +129,9 @@ void RudderSetPos(double pos)
 	}
 	
 	TurnOff();
+	
+	RudderPotPos(&curr_pos);
+	rudder_deg = (uint16_t)curr_pos;
 	
 	DEBUG_Write("Final Rudder POS: %d\r\n", (int)curr_pos);
 }
