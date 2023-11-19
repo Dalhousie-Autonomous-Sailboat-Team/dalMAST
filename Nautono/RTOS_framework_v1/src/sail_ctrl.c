@@ -435,7 +435,7 @@ void ReadSailAngle(void)
 	
 	TickType_t read_as_delay = pdMS_TO_TICKS(READ_AS_SLEEP_PERIOD_MS);
 	
-	uint16_t angle = 0;
+	uint16_t angle = 0, rudder = 0;
 	
 	while(1)
 	{
@@ -473,6 +473,7 @@ void ReadCompass(void)
 	
 	AS_init(PIN_PA08); // Angle sensor init.
 	uint16_t angle = 0;
+	double rudder = 0;
 
 	while(1) {
 				
@@ -506,6 +507,13 @@ void ReadCompass(void)
 		
 		sail_deg = angle; // Update global variable with current angle.
 		DEBUG_Write("\t\tAngle: %d\r\n", angle);
+		
+		
+		DEBUG_Write("\n<<<<<<<<<<<Do  Rudder Read>>>>>>>>>\r\n");
+		RudderPotPos(&rudder);
+		
+		rudder_deg = (uint16_t)rudder;  // Update global variable with current pos.
+		DEBUG_Write("\t\Rudder POS: %d\r\n", rudder);
 		
 		vTaskDelay(read_compass_delay);
 	}

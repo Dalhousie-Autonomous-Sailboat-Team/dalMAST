@@ -591,8 +591,8 @@ static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data)
 static RADIO_Status AdjustMotors(uint16_t sail_angle, uint16_t rudder_angle)
 {
 	DEBUG_Write("Setting rudder: %d\tsail: %d\r\n", rudder_angle, sail_angle);
-	//RudderSetPos((double)rudder_angle);
-	 LAC_set_pos((double)sail_angle);
+	RudderSetPos((double)rudder_angle);
+	LAC_set_pos((double)sail_angle);
 	
 	return RADIO_STATUS_SUCCESS;	
 }

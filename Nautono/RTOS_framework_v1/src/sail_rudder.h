@@ -16,6 +16,7 @@
  */
 enum status_code RUDDER_Init(void);
 
+void RudderPotPos(double * data);
 extern void RudderSetPos(double pos) ;
 
 void Test_Rudder(void);
