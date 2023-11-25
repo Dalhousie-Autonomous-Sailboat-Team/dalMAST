@@ -262,23 +262,61 @@ void LogData(void)
 }
 
 
-void beaconTxLogData(void){
+static void beaconTxLogData(void){
+	char cmd5[32] = "AT+SBDIX\r\n";
+	char rxString[256];
+	
+	UART_TxString(UART_WIND,"AT\r\n");
+	vTaskDelay(6000 / portTICK_RATE_MS);
+	UART_RxString(UART_WIND,rxString, 128);
+	DEBUG_Write(rxString);
+	
+	UART_TxString(UART_WIND,"AT+CIER=1,1,1\r\n");
+	vTaskDelay(6000 / portTICK_RATE_MS);
+	UART_RxString(UART_WIND,rxString, 128);
+	DEBUG_Write(rxString);
+	
 	uint16_t maxDataSizeCounter = 0;
 	char cmd4[32] = "at+sbdwt=";
 	char data[200] = {'\0'};
-	char delimit[2] = "\r";
-	
+	char delimit[3] = "\r\n";
+#ifdef SENSORREADINGS
 	// Sensor readings output to the data string
 	sprintf(data, "%5.3lf,%5.3lf,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f"
 	, gps.lat, gps.lon, wind.speed, wind.angle, comp.data.heading.roll, 
 	comp.data.heading.pitch, bearing, sail_deg, avg_heading_deg);
-	
-	
+#else
+	// Sensor readings output to the data string
+	sprintf(data, "1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0, these are random numbers");
+
+#endif
 	//send the stream 211 command followed by data followed by delimiter
-	UART_TxString(UART_WIND, cmd4);
+	
+	
+	UART_TxString(UART_WIND, cmd4);   
 	UART_TxString(UART_WIND, data);
 	UART_TxString(UART_WIND, delimit);
+	vTaskDelay(6000/portTICK_RATE_MS);
+	UART_RxString(UART_WIND,rxString, 128);
+	DEBUG_Write(rxString);
+	vTaskDelay(6000 / portTICK_PERIOD_MS);
+
+	UART_TxString(UART_WIND, cmd5);
+	vTaskDelay(6000 / portTICK_PERIOD_MS);
 	
+}
+
+void beaconTaskTest(void){
+	TickType_t testDelay = pdMS_TO_TICKS(60000 / portTICK_RATE_MS);
+	
+	UART_Init(UART_WIND);
+	
+	while(1){
+		
+		running_task = eUpdateCourse;
+		beaconTxLogData();
+		vTaskDelay(testDelay);
+	}
 }
 
 
