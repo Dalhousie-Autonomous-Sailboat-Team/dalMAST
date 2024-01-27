@@ -124,4 +124,6 @@ void process_heading_readings(void);
  */ 
 static void CTRL_Sleep(unsigned time_sec);
 
+void beaconTaskTest(void);
+
 #endif /* SAIL_CTRL_H_ */ 

@@ -54,7 +54,7 @@ enum status_code DEBUG_Write(const char *format, ...) {
 	
 	// Send the string
 	// This prints to a serial terminal when the SAMD20 is powered by a laptop
-	UART_TxString(UART_XEOS, debug_buffer); 
+	UART_TxString(UART_VCOM, debug_buffer); 
 	//UART_TxString(UART_GPS, debug_buffer);
 	// This will print the debug statements over the Xbee radios
 	//UART_TxString(UART_RADIO, debug_buffer);

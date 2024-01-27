@@ -8,6 +8,10 @@ src\sail_actutor.c
 
 src\sail_adc.c
 
+src\sail_anglesensor.c
+
+src\sail_beacon.c
+
 src\sail_buffer.c
 
 src\sail_comp.c

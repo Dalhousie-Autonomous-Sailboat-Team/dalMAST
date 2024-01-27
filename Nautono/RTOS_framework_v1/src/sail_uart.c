@@ -40,7 +40,8 @@ static struct usart_module uart_modules[UART_NUM_CHANNELS];
 
 static uint32_t baud_rates[] = {
 	9600,
-	4800,
+	//4800, wind baudrate
+	19200,
 	9600,
 	57600
 };

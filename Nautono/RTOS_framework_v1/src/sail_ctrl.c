@@ -11,6 +11,15 @@
 #include "sail_radio.h"
 #include "sail_wind.h"
 #include "sail_eeprom.h"
+#include "sail_rudder.h"
+#include "sail_gps.h"
+#include "sail_rudder.h"
+#include "sail_actuator.h"
+
+#include "sail_nav.h"
+#include "sail_debug.h"
+
+#include "sail_math.h"
 #include "sail_types.h"
 #include "sail_nav.h"
 #include "sail_motor.h"
@@ -151,19 +160,14 @@ enum status_code CTRL_InitSensors(void)
 {
 	
 	//todo: add initialization for AIS module
-	//DEBUG_Write("Test 456");
-	if (COMP_Init() != STATUS_OK) {
-		DEBUG_Write_Unprotected("Compass not initialized...\r\n");
-	}
-	//DEBUG_Write("Test 123");
-	if (WEATHERSTATION_Init() != STATUS_OK) {
-		DEBUG_Write_Unprotected("WS not initialized...\r\n");
-	}
-	else{
-		DEBUG_Write_Unprotected("WS initialized.\r\n");
-		//DEBUG_Write("WS initialized.\r\n");
-	}
-	
+    if(WIND_Init() != STATUS_OK){
+        DEBUG_Write_Unprotected("Wind Vane not initialized... \r\n");
+    }else{
+        DEBUG_Write_Unprotected("Wind Init Ok ...\r\n");
+    }
+    
+    // When status is okay, shouldn't this return a different status? - KT
+
 	return STATUS_OK;
 }
 
@@ -188,7 +192,11 @@ enum status_code startup(void)
 	/*
 	// Start the motor controller
 	MOTOR_Init();
-*/
+	*/
+	
+	RUDDER_Init();
+	AC_init();
+	
 	
 	return STATUS_OK;
 }
@@ -258,6 +266,69 @@ void LogData(void)
 	}
 }
 
+
+static void beaconTxLogData(void){
+	char cmd5[32] = "AT+SBDIX\r\n";
+	char rxString[256];
+	
+	UART_TxString(UART_XEOS,"AT\r\n");
+	vTaskDelay(6000 / portTICK_RATE_MS);
+	UART_RxString(UART_XEOS,rxString, 128);
+	DEBUG_Write(rxString);
+	
+	UART_TxString(UART_XEOS,"AT+CIER=1,1,1\r\n");
+	vTaskDelay(6000 / portTICK_RATE_MS);
+	UART_RxString(UART_XEOS,rxString, 128);
+	DEBUG_Write(rxString);
+	
+	uint16_t maxDataSizeCounter = 0;
+	char cmd4[32] = "at+sbdwt=";
+	char data[200] = {'\0'};
+	char delimit[3] = "\r\n";
+#ifdef PCB
+	sprintf(data, "%5.3lf,%5.3lf", gps.lat, gps.lon);
+//#ifdef SENSORREADINGS
+	// Sensor readings output to the data string
+	//sprintf(data, "%5.3lf,%5.3lf,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f"
+//	, gps.lat, gps.lon, wind.speed, wind.angle, comp.data.heading.roll, 
+	//comp.data.heading.pitch, bearing, sail_deg, avg_heading_deg);
+#else
+	// Sensor readings output to the data string
+	sprintf(data, "1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0, these are random numbers");
+
+#endif
+	//send the stream 211 command followed by data followed by delimiter
+	
+	
+	UART_TxString(UART_XEOS, cmd4);   
+	UART_TxString(UART_XEOS, data);
+	UART_TxString(UART_XEOS, delimit);
+	vTaskDelay(6000/portTICK_RATE_MS);
+	UART_RxString(UART_WIND,rxString, 128);
+	DEBUG_Write(rxString);
+	vTaskDelay(6000 / portTICK_PERIOD_MS);
+
+	UART_TxString(UART_XEOS, cmd5);
+	vTaskDelay(6000 / portTICK_PERIOD_MS);
+	
+}
+
+void beaconTaskTest(void){
+	TickType_t testDelay = pdMS_TO_TICKS(60000 / portTICK_RATE_MS);
+	
+	UART_Init(UART_VCOM);
+	
+
+	while(1){
+		
+#ifdef LOL		
+		running_task = eUpdateCourse;
+		beaconTxLogData();
+#endif
+		DEBUG_Write("Idk what to write\r\n");
+		vTaskDelay(testDelay);
+	}
+}
 
 
 void process_wind_readings(void)
@@ -439,12 +510,17 @@ void ReadCompass(void)
 		
 
 		// Get the compass reading
+		
+/* Updated this code for new compass:
+		
 		if(COMP_GetReading(COMP_HEADING, &comp) !=  STATUS_OK){
 			DEBUG_Write("\nERROR\r\n");
 		}
 
 		// Update the averaged heading
 		avg_heading_deg = 0.9 * avg_heading_deg + 0.1 * comp.data.heading.heading;
+		
+*/
 		
 		vTaskDelay(read_compass_delay);
 
