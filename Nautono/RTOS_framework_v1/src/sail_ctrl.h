@@ -132,4 +132,6 @@ void assing_wind_readings(void);
  */ 
 static void CTRL_Sleep(unsigned time_sec);
 
+void beaconTaskTest(void);
+
 #endif /* SAIL_CTRL_H_ */ 
