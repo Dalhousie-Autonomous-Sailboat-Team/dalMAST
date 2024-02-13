@@ -12,6 +12,7 @@
 #include <asf.h>
 
 #define PWM_MAX_DUTY 250
+#define PWM_MAX_ANGLE 180 // Defining the maximum angle for full scale
 
 typedef enum PWM_ChannelIDs {
 	PWM_SAIL,
@@ -42,5 +43,8 @@ enum status_code PWM_SetDuty(PWM_ChannelID id, uint8_t duty);
  *		STATUS_OK - Successfully disable duty
  */ 
 enum status_code PWM_Disable(PWM_ChannelID id);
+
+// Function declaration for setting PWM based on angle
+enum status_code PWM_SetAngle(PWM_ChannelID id, uint8_t angle);
 
 #endif // SAIL_PWM_H
