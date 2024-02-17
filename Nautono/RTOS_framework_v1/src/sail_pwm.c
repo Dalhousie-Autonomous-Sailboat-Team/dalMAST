@@ -18,12 +18,6 @@
 
 static struct tc_module pwm_timer;
 
-// Function to convert angle to duty cycle
-static uint8_t AngleToDutyCycle(uint8_t angle) {
-    if (angle > PWM_MAX_ANGLE) angle = PWM_MAX_ANGLE; // Limiting the angle to the maximum 
-    return (uint8_t)((float)angle / PWM_MAX_ANGLE * PWM_MAX_DUTY); // Converting the angle to duty cycle
-}
-
 enum status_code PWM_Init(void)
 {
 	// Get the default configuration
@@ -55,12 +49,6 @@ enum status_code PWM_SetDuty(PWM_ChannelID id, uint8_t duty)
 {
 	tc_set_compare_value(&pwm_timer, id, duty);	
 	return STATUS_OK;
-}
-
-// Function to set PWM based on angle
-enum status_code PWM_SetAngle(PWM_ChannelID id, uint8_t angle) {
-    uint8_t duty = AngleToDutyCycle(angle); // Converting the angle to duty cycle
-    return PWM_SetDuty(id, duty); // Set the duty cycle
 }
 
 
