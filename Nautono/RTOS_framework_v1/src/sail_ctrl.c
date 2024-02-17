@@ -84,7 +84,8 @@ uint16_t wp_complete_count;
 // Distance between boat and way point
 double wp_distance;
 
-float course, bearing, sail_deg, rudder_deg; 
+uint16_t rudder_deg;
+float course, bearing, sail_deg; 
 float avg_heading_deg = 0.0;
 
 
@@ -309,7 +310,7 @@ static void beaconTxLogData(void){
 }
 
 void beaconTaskTest(void){
-	TickType_t testDelay = pdMS_TO_TICKS(60000 / portTICK_RATE_MS);
+	TickType_t testDelay = pdMS_TO_TICKS(6000 / portTICK_RATE_MS);
 	
 	UART_Init(UART_VCOM);
 	
@@ -317,8 +318,8 @@ void beaconTaskTest(void){
 	while(1){
 		
 #ifdef LOL		
-		running_task = eUpdateCourse;
-		beaconTxLogData();
+	//	running_task = eUpdateCourse;
+		//beaconTxLogData();
 #endif
 		DEBUG_Write("Idk what to write\r\n");
 		vTaskDelay(testDelay);

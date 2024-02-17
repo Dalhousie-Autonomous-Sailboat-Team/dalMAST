@@ -70,7 +70,7 @@ static uint32_t pinmux_pads[][UART_NUM_CHANNELS] = {
 	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA18D_SERCOM3_PAD2, PINMUX_PA19D_SERCOM3_PAD3},
 	{PINMUX_PB08D_SERCOM4_PAD0, PINMUX_PB09D_SERCOM4_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
 	{PINMUX_PA12C_SERCOM2_PAD0, PINMUX_PA13C_SERCOM2_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
-	{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},// same as vcom for PCB, temp
+	{PINMUX_PA16C_SERCOM1_PAD0, PINMUX_PA17C_SERCOM1_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},// same as vcom for PCB, temp, what should this be
 	{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED} // VCOM for PCB
 };
 
@@ -78,7 +78,7 @@ static Sercom *const sercom_ptrs[] = {
 	SERCOM3,
 	SERCOM4,
 	SERCOM2,
-	SERCOM5, // temp same as vcom for PCB	
+	SERCOM5,
 	SERCOM5  // vcom for PCB
 };
 
@@ -146,6 +146,9 @@ static void RADIO_TxCallback(struct usart_module *const usart_module);
 static void XEOS_RxCallback(struct usart_module *const usart_module);
 static void XEOS_TxCallback(struct usart_module *const usart_module);
 
+static void VCOM_RxCallback(struct usart_module * const usart_module);
+static void VCOM_TxCallback(struct usart_module * const usart_module);
+
 // Generic callback
 static void UART_RxCallback(UART_ChannelID id);
 static void UART_TxCallback(UART_ChannelID id);
@@ -155,7 +158,8 @@ static usart_callback_t RxCallbacks[] = {
 	GPS_RxCallback,
 	WIND_RxCallback,
 	RADIO_RxCallback,
-	XEOS_RxCallback
+	XEOS_RxCallback,
+	VCOM_RxCallback
 };
 
 // Callback pointer array
@@ -163,7 +167,8 @@ static usart_callback_t TxCallbacks[] = {
 	GPS_TxCallback,
 	WIND_TxCallback,
 	RADIO_TxCallback,
-	XEOS_TxCallback
+	XEOS_TxCallback,
+	VCOM_TxCallback
 };
 
 
@@ -367,6 +372,10 @@ void XEOS_RxCallback(struct usart_module *const usart_module) {
 	UART_RxCallback(UART_XEOS);
 }
 
+void VCOM_RxCallback(struct usart_module *const usart_module){
+	UART_RxCallback(UART_VCOM);
+}
+
 // **** Transmit callbacks ******************************************************************
 
 void GPS_TxCallback(struct usart_module *const usart_module) {
@@ -383,6 +392,10 @@ void RADIO_TxCallback(struct usart_module *const usart_module) {
 
 void XEOS_TxCallback(struct usart_module *const usart_module) {
 	UART_TxCallback(UART_XEOS);
+}
+
+void VCOM_TxCallback(struct usart_module *const usart_module){
+	UART_TxCallback(UART_VCOM);
 }
 
 // **** Generic callbacks ******************************************************************
