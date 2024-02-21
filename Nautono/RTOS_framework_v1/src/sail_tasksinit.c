@@ -9,15 +9,22 @@
 #include "sail_tasksinit.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "sail_wind.h"
 #include "sail_debug.h"
 #include "usart_interrupt.h"
-#include "sail_nmea.h"
-#include "Sail_WEATHERSTATION.h"
-#include "sail_gps.h"
+
 #include "sail_types.h"
-#include "sail_nav.h"
 #include "sail_ctrl.h"
+#include "sail_led.h"
+
+// Header files of different devices containing RTOS tasks.
+#include "sail_actuator.h"
+#include "sail_anglesensor.h"
+#include "sail_eeprom.h"
+#include "sail_gps.h"
+#include "sail_imu.h"
+#include "sail_ina.h"
+#include "sail_nav.h"
+#include "sail_nmea.h"
 #include "sail_radio.h"
 #include "sail_rudder.h"
 #include "sail_wind.h"
@@ -35,6 +42,7 @@ SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
 unsigned char watchdog_counter;
 unsigned char watchdog_reset_value = 0x3F;
 
+
 enum status_code init_tasks(void) {
 	
 	// Initialize the mode event group
@@ -50,7 +58,7 @@ enum status_code init_tasks(void) {
 	watchdog_counter = 0;
 	
 	// Task for reading incoming data from the GPS
-	//xTaskCreate( ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
+	xTaskCreate( ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
 
 	// Task for reading incoming data from the weather station
 	//xTaskCreate( ReadWeatherSensor, NULL, WEATHER_SENSOR_STACK_SIZE, NULL, WEATHER_SENSOR_PRIORITY, NULL );
@@ -93,11 +101,9 @@ enum status_code init_tasks(void) {
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
 	
-	
 	// The program should not reach this point
 	// If it does, more freeRTOS heap memory must be allocated
 	return STATUS_ERR_INSUFFICIENT_RTOS_HEAP;
-	
 }
 
 void WatchDogTask(void){
@@ -116,9 +122,6 @@ void WatchDogTask(void){
 			DEBUG_Write("#################Kicked the watchdog######################\r\n");
 		}
 		taskEXIT_CRITICAL(); 
-		
-		
-		
 	}
 }
 
@@ -150,5 +153,3 @@ void vApplicationDaemonTaskStartupHook(void) {
 	// Start the watchdog timer
 	//StartWatchDog();
 }
-
-
