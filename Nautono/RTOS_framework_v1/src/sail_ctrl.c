@@ -6,8 +6,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "sail_math.h"
-#include "sail_debug.h"
 #include "sail_radio.h"
 #include "sail_wind.h"
 #include "sail_eeprom.h"
@@ -21,12 +19,8 @@
 
 #include "sail_math.h"
 #include "sail_types.h"
-#include "sail_nav.h"
-#include "sail_motor.h"
-#include "sail_comp.h"
+
 #include "sail_tasksinit.h"
-//#include "Sail_WEATHERSTATION.h"///////////////////////////////////////////////////
-#include "sail_gps.h"
 #include "delay.h"
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
@@ -176,9 +170,10 @@ enum status_code CTRL_InitSensors(void)
 enum status_code startup(void)
 {
 	// Enable wind vane
-	if (WS_Enable() != STATUS_OK) {
+	if (WIND_Enable() != STATUS_OK) {
 		DEBUG_Write_Unprotected("WS not enabled...\r\n");
-		} else {
+        // Return bad status? - KT
+	} else {
 		DEBUG_Write_Unprotected("WS enabled...\r\n");
 	}
 	
@@ -361,7 +356,7 @@ static void EnableWeatherStation(void)
 	}
 
 	// Enable the wind vane
-	WS_Enable();
+	WIND_Enable();
 }
 
 static void DisableWeatherStation(void)
@@ -372,7 +367,7 @@ static void DisableWeatherStation(void)
 	}
 
 	// Disable the wind vane
-	WS_Disable();
+	WIND_Disable();
 }
 
 void process_heading_readings(void)
@@ -534,7 +529,6 @@ void ReadCompass(void)
 static void CTRL_Sleep(unsigned time_sec) {
 	vTaskDelay(time_sec * configTICK_RATE_HZ);;
 }
-
 
 
 
