@@ -129,6 +129,7 @@ enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg);
 enum status_code RADIO_TxMsg(RADIO_GenericMsg *msg);
 enum status_code RADIO_TxMsg_Unprotected(RADIO_GenericMsg *msg);
 enum status_code RADIO_Ack(RADIO_Status status);
+enum status_code RADIO_DebugWrite(const char *format, ...)
 
 static RADIO_Status ChangeMode(CTRL_Mode new_mode);
 static RADIO_Status ChangeState(CTRL_State new_state);

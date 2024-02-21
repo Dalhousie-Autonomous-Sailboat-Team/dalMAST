@@ -709,3 +709,22 @@ void Radio_Sleep_Sec(unsigned time_sec) {
 }
 
 
+enum status_code RADIO_DebugWrite(const char *format, ...){
+	#ifdef debug
+	uint8_t radio_debug_buffer[DEBUG_BUFFER_LENGTH];
+	
+	//CHECK IF RADIO HAS BEEN INITIALIZED
+	
+	
+	va_list args;
+	
+	va_start(args, format);
+	vsnprintf((char *) radio_debug_buffer, DEBUG_BUFFER_LENGTH, format, args);
+	
+	
+	
+	
+	
+	
+	#endif
+};
