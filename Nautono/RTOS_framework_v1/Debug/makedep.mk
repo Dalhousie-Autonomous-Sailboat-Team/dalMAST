@@ -4,7 +4,7 @@
 
 src\ASF\common2\services\delay\sam0\cycle_counter.c
 
-src\sail_actutor.c
+src\sail_actuator.c
 
 src\sail_adc.c
 
@@ -14,19 +14,25 @@ src\sail_beacon.c
 
 src\sail_buffer.c
 
-src\sail_comp.c
-
 src\sail_ctrl.c
 
 src\sail_debug.c
 
 src\sail_eeprom.c
 
+src\sail_gps.c
+
 src\sail_i2c.c
+
+src\sail_imu.c
+
+src\sail_ina.c
+
+src\sail_led.c
 
 src\sail_math.c
 
-src\sail_motor.c
+src\sail_rudder.c
 
 src\sail_nav.c
 
@@ -39,8 +45,6 @@ src\sail_radio.c
 src\sail_tasksinit.c
 
 src\sail_uart.c
-
-src\Sail_WEATHERSTATION.c
 
 src\sail_wind.c
 
