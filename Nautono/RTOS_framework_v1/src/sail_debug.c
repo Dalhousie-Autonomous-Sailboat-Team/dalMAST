@@ -11,6 +11,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+#define DEBUG
+
 #ifdef DEBUG
 //static uint8_t debug_buffer[DEBUG_BUFFER_LENGTH];
 static bool init_flag = false;
@@ -28,6 +30,10 @@ enum status_code DEBUG_Init(void) {
 	if (UART_Init(UART_XEOS) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
 	}
+	
+	//if (UART_Init(UART_RADIO) != STATUS_OK) {
+		//return STATUS_ERR_DENIED;
+	//}
 	
 	// Set the initialization flag
 	init_flag = true;
@@ -82,6 +88,7 @@ enum status_code DEBUG_Write_Unprotected(const char *format, ...) {
 	// Send the string
 	// This prints to a serial terminal when the SAMD20 is powered by a laptop
 	UART_TxString_Unprotected(UART_XEOS, debug_buffer);
+	//UART_TxString_Unprotected(UART_XEOS, debug_buffer);
 	//UART_TxString(UART_GPS, debug_buffer);
 	// This will print the debug statements over the Xbee radios
 	//UART_TxString(UART_RADIO, debug_buffer);
@@ -90,7 +97,6 @@ enum status_code DEBUG_Write_Unprotected(const char *format, ...) {
 	
 	return STATUS_OK;
 }
-
 
 
 

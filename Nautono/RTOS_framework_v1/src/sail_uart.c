@@ -3,8 +3,6 @@
  * Created on June 13, 2016.
  * Created by Thomas Gwynne-Timothy.
  */
-
-
 #include "sail_uart.h"
 
 #include "FreeRTOS.h"
@@ -18,9 +16,10 @@
 #include "sail_buffer.h"
 #include "sail_debug.h"
 
-#define UART_RX_BUFFER_LENGTH		1024
-//#define UART_RX_BUFFER_LENGTH		256
-#define UART_TX_BUFFER_LENGTH		1024
+//#define UART_RX_BUFFER_LENGTH		1024
+#define UART_RX_BUFFER_LENGTH		512
+//#define UART_TX_BUFFER_LENGTH		1024
+#define UART_TX_BUFFER_LENGTH		512
 
 // Buffers to hold receive and transmit data
 static volatile uint8_t rx_buffers[UART_NUM_CHANNELS][UART_RX_BUFFER_LENGTH];
@@ -43,6 +42,7 @@ static uint32_t baud_rates[] = {
 	//4800, wind baudrate
 	19200,
 	9600,
+	57600,
 	57600
 };
 
@@ -52,11 +52,38 @@ UART_ChannelIDs:
 	UART_WEATHERSTATION,
 	UART_RADIO,
 	UART_XEOS,
+	UART_VCOM,
 	UART_NUM_CHANNELS
 */
 
 
+#ifdef PCB
+static enum usart_signal_mux_settings mux_settings[] = {
+	USART_RX_3_TX_2_XCK_3,
+	USART_RX_1_TX_0_XCK_1,
+	USART_RX_1_TX_0_XCK_1,
+	USART_RX_1_TX_0_XCK_1, // Temp same as vcom for PCB
+	USART_RX_1_TX_0_XCK_1  // vcom for pcb
+};
 
+static uint32_t pinmux_pads[][UART_NUM_CHANNELS] = {
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA18D_SERCOM3_PAD2, PINMUX_PA19D_SERCOM3_PAD3},
+	{PINMUX_PB08D_SERCOM4_PAD0, PINMUX_PB09D_SERCOM4_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
+	{PINMUX_PA12C_SERCOM2_PAD0, PINMUX_PA13C_SERCOM2_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
+	{PINMUX_PA16C_SERCOM1_PAD0, PINMUX_PA17C_SERCOM1_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},// same as vcom for PCB, temp, what should this be
+	{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED} // VCOM for PCB
+};
+
+static Sercom *const sercom_ptrs[] = {
+	SERCOM3,
+	SERCOM4,
+	SERCOM2,
+	SERCOM5,
+	SERCOM5  // vcom for PCB
+};
+
+#else
+// Dev Board
 static enum usart_signal_mux_settings mux_settings[] = {
 	USART_RX_1_TX_0_XCK_1,
 	USART_RX_1_TX_0_XCK_1,
@@ -77,6 +104,7 @@ static Sercom *const sercom_ptrs[] = {
 	SERCOM5,
 	SERCOM3
 };
+#endif
 
 // Receiver states
 typedef enum UART_RxStates {
@@ -118,6 +146,9 @@ static void RADIO_TxCallback(struct usart_module *const usart_module);
 static void XEOS_RxCallback(struct usart_module *const usart_module);
 static void XEOS_TxCallback(struct usart_module *const usart_module);
 
+static void VCOM_RxCallback(struct usart_module * const usart_module);
+static void VCOM_TxCallback(struct usart_module * const usart_module);
+
 // Generic callback
 static void UART_RxCallback(UART_ChannelID id);
 static void UART_TxCallback(UART_ChannelID id);
@@ -127,7 +158,8 @@ static usart_callback_t RxCallbacks[] = {
 	GPS_RxCallback,
 	WIND_RxCallback,
 	RADIO_RxCallback,
-	XEOS_RxCallback
+	XEOS_RxCallback,
+	VCOM_RxCallback
 };
 
 // Callback pointer array
@@ -135,7 +167,8 @@ static usart_callback_t TxCallbacks[] = {
 	GPS_TxCallback,
 	WIND_TxCallback,
 	RADIO_TxCallback,
-	XEOS_TxCallback
+	XEOS_TxCallback,
+	VCOM_TxCallback
 };
 
 
@@ -291,7 +324,7 @@ enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data) {
 	}
 	
 	// Otherwise, return and let the callback send the new data
-
+	//UART_TxCallback(id);
 	return STATUS_OK;
 }
 
@@ -328,7 +361,7 @@ void GPS_RxCallback(struct usart_module *const usart_module) {
 }
 
 void WIND_RxCallback(struct usart_module *const usart_module) {
-	UART_RxCallback(UART_WEATHERSTATION);
+	UART_RxCallback(UART_WIND);
 }
 
 void RADIO_RxCallback(struct usart_module *const usart_module) {
@@ -339,6 +372,10 @@ void XEOS_RxCallback(struct usart_module *const usart_module) {
 	UART_RxCallback(UART_XEOS);
 }
 
+void VCOM_RxCallback(struct usart_module *const usart_module){
+	UART_RxCallback(UART_VCOM);
+}
+
 // **** Transmit callbacks ******************************************************************
 
 void GPS_TxCallback(struct usart_module *const usart_module) {
@@ -346,7 +383,7 @@ void GPS_TxCallback(struct usart_module *const usart_module) {
 }
 
 void WIND_TxCallback(struct usart_module *const usart_module) {
-	UART_TxCallback(UART_WEATHERSTATION);
+	UART_TxCallback(UART_WIND);
 }
 
 void RADIO_TxCallback(struct usart_module *const usart_module) {
@@ -355,6 +392,10 @@ void RADIO_TxCallback(struct usart_module *const usart_module) {
 
 void XEOS_TxCallback(struct usart_module *const usart_module) {
 	UART_TxCallback(UART_XEOS);
+}
+
+void VCOM_TxCallback(struct usart_module *const usart_module){
+	UART_TxCallback(UART_VCOM);
 }
 
 // **** Generic callbacks ******************************************************************

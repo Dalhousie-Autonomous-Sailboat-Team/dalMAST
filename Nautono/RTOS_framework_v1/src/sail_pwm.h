@@ -1,3 +1,5 @@
+// Unused code, left for learning purposes.
+
 /* sail_pwm.h
  * Header file for the PWM driver module for the autonomous sailboat project.
  * Created on Thomas Gwynne-Timothy.

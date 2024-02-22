@@ -113,6 +113,24 @@ typedef struct COMP_Reading {
 	} data;
 } COMP_Reading;
 
+// TODO: add stucts for IMU to handle calibration, absolute compass heading, tilt
+
+typedef struct IMU_Calib {
+	uint8_t system;
+	uint8_t gyro;
+	uint8_t accel;
+	uint8_t mag;
+} IMU_Calib;
+
+typedef struct IMU_HeadingData {
+	float heading;
+	float roll;
+	float pitch;
+} IMU_HeadingData;
+
+typedef struct IMU_Tilt {
+
+} IMU_Tilt;
 
 /**** EEPROM ************************************************************
  * Data structures and enumerations for reading and writing to the EEPROM.
