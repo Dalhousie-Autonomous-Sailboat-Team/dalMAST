@@ -27,14 +27,15 @@ static const uint8_t RADIO_arg_counts[RADIO_NUM_MSG_TYPES] = {
 	1,
 	1,
 	1,
-	2,
+	1,//changed this from 2 to 1 since remote has only rudder angle
 	5,
 	1,
 	2,
 	2,
 	4,
 	8,
-	1
+	1,
+	1//this is one is for sail that has only sail angle
 };
 
 typedef struct RADIO_MsgRawData {
@@ -182,10 +183,6 @@ enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg)
 	return STATUS_OK;
 }
 
-
-
-
-
 enum status_code RADIO_TxMsg(RADIO_GenericMsg *msg)
 {
 	// Return if a null pointer is provided
@@ -305,11 +302,17 @@ static enum status_code RADIO_ExtractMsg(RADIO_GenericMsg *msg, RADIO_MsgRawData
 			msg->type = RADIO_STATE;
 			msg->fields.state.state = data->args[0];		
 			break;
-		case RADIO_REMOTE:
+			/*
+		case RADIO_REMOTE://change this
 			msg->type = RADIO_REMOTE;
 			msg->fields.remote.rudder_angle = data->args[0];
 			msg->fields.remote.sail_angle = data->args[1];
 			break;
+			*/
+		case RADIO_REMOTE://changed this to handle only rudder angle
+			msg->type = RADIO_REMOTE;
+			msg->fields.remote.rudder_angle = data->args[0];
+			break;	
 		case RADIO_WAY_POINT:
 			msg->type = RADIO_WAY_POINT;
 			msg->fields.wp.idx = data->args[0];
@@ -354,6 +357,10 @@ static enum status_code RADIO_ExtractMsg(RADIO_GenericMsg *msg, RADIO_MsgRawData
 			msg->type = RADIO_RESET;
 			msg->fields.reset.cause = data->args[0];
 			break;
+		case RADIO_SAIL://handles the sail angle
+			data->type = RADIO_SAIL;
+			data->args[0] = msg->fields.sail_new.sail_angle;
+			break;
 		default:
 			return STATUS_ERR_BAD_DATA;
 	}
@@ -382,10 +389,19 @@ static enum status_code RADIO_ExtractData(RADIO_MsgRawData *data, RADIO_GenericM
 			data->type = RADIO_STATE;
 			data->args[0] = msg->fields.state.state;
 			break;
-		case RADIO_REMOTE:
+		/*
+			This use to be here now the remote data is spitted into two separate messages
+			Note: To minimize the amount of changes: the rudder data is still in RADIO_RUDDER and sail data is now in RADIO_SAIL
+		    case RADIO_REMOTE:
 			data->type = RADIO_REMOTE;
 			data->args[0] = msg->fields.remote.rudder_angle;
 			data->args[1] = msg->fields.remote.sail_angle;
+			break;
+		*/
+		case RADIO_REMOTE://handles only rudder angle
+			DEBUG_Write("Entering remote case new\r\n");
+			data->type = RADIO_REMOTE;
+			data->args[0] = msg->fields.remote.rudder_angle;
 			break;
 		case RADIO_WAY_POINT:
 			data->type = RADIO_WAY_POINT;
@@ -435,17 +451,18 @@ static enum status_code RADIO_ExtractData(RADIO_MsgRawData *data, RADIO_GenericM
 		case RADIO_RESET:
 			data->type = RADIO_RESET;
 			data->args[0] = msg->fields.reset.cause;
-			break;		
+			break;	
+		case RADIO_SAIL://handles the sail angle
+			DEBUG_Write("Entering sail case new\r\n");
+			data->type = RADIO_SAIL;
+			data->args[0] = msg->fields.sail_new.sail_angle;
+			break;	
 		default:
 			return STATUS_ERR_BAD_DATA;
 	}
 
 	return STATUS_OK;
 }
-
-
-
-
 
 static RADIO_Status ChangeMode(CTRL_Mode new_mode)
 {
@@ -483,7 +500,7 @@ static RADIO_Status ChangeMode(CTRL_Mode new_mode)
 			xEventGroupClearBits(mode_event_group, CTRL_ALL_BITS);
 			xEventGroupSetBits(mode_event_group, CTRL_MODE_LOAD_BIT);
 		break;
-		case CTRL_MODE_REMOTE:
+		case CTRL_MODE_REMOTE://check if i need one for sail as well
 			DEBUG_Write("Entering REMOTE mode\r\n");
 			// Clear the bits except for 1 8 16 and 32
 			watchdog_counter &= 0x39;
@@ -612,9 +629,10 @@ static void HandleMessage(RADIO_GenericMsg *msg)
 		// Acknowledge the state change
 		RADIO_Ack(ChangeState(msg->fields.state.state));
 		break;
-		case RADIO_REMOTE:
+		case RADIO_REMOTE://change this
 		RADIO_Ack(RADIO_STATUS_SUCCESS);
-		AdjustMotors(msg->fields.remote.sail_angle, msg->fields.remote.rudder_angle);
+		//AdjustMotors(msg->fields.remote.sail_angle, msg->fields.remote.rudder_angle);
+		RADIO_Ack(RudderSetPos((double)msg->fields.remote.rudder_angle));
 		break;
 		case RADIO_WAY_POINT:
 		RADIO_Ack(AddWayPoint(&msg->fields.wp));

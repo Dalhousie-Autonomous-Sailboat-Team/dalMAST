@@ -99,7 +99,7 @@ static void RudderPotPos(double * data) {
 	ADC_GetReading(ADC_RUDDER, data);
 }
 
-void RudderSetPos(double pos) 
+RADIO_Status RudderSetPos(double pos) 
 {
 	
 	if(rudder_initialzed == false) {
@@ -134,6 +134,9 @@ void RudderSetPos(double pos)
 	rudder_deg = (uint16_t)curr_pos;
 	
 	DEBUG_Write("Final Rudder POS: %d\r\n", (int)curr_pos);
+	
+	//new addition
+	return RADIO_STATUS_SUCCESS;
 }
 
 #define TEST_RUDDER_DELAY_MS 1000

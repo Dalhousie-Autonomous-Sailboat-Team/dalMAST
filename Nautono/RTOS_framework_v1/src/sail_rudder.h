@@ -7,6 +7,8 @@
 #ifndef SAIL_RUDDER_H_
 #define SAIL_RUDDER_H_
 
+#include <sail_radio.h>
+
 #include <asf.h>
 
 /* RUDDER_Init
@@ -16,7 +18,7 @@
  */
 enum status_code RUDDER_Init(void);
 
-extern void RudderSetPos(double pos) ;
+extern RADIO_Status RudderSetPos(double pos) ;
 
 void Test_Rudder(void);
 
