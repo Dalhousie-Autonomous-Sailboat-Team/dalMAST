@@ -62,7 +62,7 @@ enum status_code init_tasks(void) {
 
 	// Task for reading incoming data from the weather station
 	//OLD WS: xTaskCreate( ReadWeatherSensor, NULL, WEATHER_SENSOR_STACK_SIZE, NULL, WEATHER_SENSOR_PRIORITY, NULL );
-	xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
+	//xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
 	
 	// Task for updating the course of the sailboat
 	//xTaskCreate( UpdateCourse, NULL, UPDATE_COURSE_STACK_SIZE, NULL, UPDATE_COURSE_PRIORITY, NULL );
@@ -74,13 +74,13 @@ enum status_code init_tasks(void) {
 	xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
 	
 	// Task for transmitting logs using the radio
-	xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
+	//xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
 	
 	// Task for getting the heading from the compass
-	xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
+	//xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
 	
 	// Task to update the sail angle position
-	xTaskCreate( ReadSailAngle, NULL, READ_AS_STACK_SIZE, NULL, READ_AS_PRIORITY, NULL );
+	//xTaskCreate( ReadSailAngle, NULL, READ_AS_STACK_SIZE, NULL, READ_AS_PRIORITY, NULL );
 	
 	// DO NOT NEED, UPDATED ReadCompass to work with new IMU: 
 	//xTaskCreate(ReadIMU, NULL, READ_COMPASS_STACK_SIZE ,NULL, READ_COMPASS_PRIORITY, NULL);
