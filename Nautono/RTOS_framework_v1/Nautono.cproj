@@ -296,14 +296,14 @@
         <board id="board.samd20_xplained_pro" value="Add" config="" content-id="Atmel.ASF" />
       </framework-data>
     </AsfFrameworkConfig>
-    <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
-    <avrtoolserialnumber>ATML1873071800008936</avrtoolserialnumber>
+    <avrtool>com.atmel.avrdbg.tool.samice</avrtool>
+    <avrtoolserialnumber>801010797</avrtoolserialnumber>
     <avrdeviceexpectedsignature>0x10001400</avrdeviceexpectedsignature>
     <avrtoolinterface>SWD</avrtoolinterface>
     <com_atmel_avrdbg_tool_edbg>
       <ToolOptions>
         <InterfaceProperties>
-          <SwdClock>2000000</SwdClock>
+          <SwdClock>0</SwdClock>
         </InterfaceProperties>
         <InterfaceName>SWD</InterfaceName>
       </ToolOptions>
@@ -311,7 +311,7 @@
       <ToolNumber>ATML1873071800008936</ToolNumber>
       <ToolName>EDBG</ToolName>
     </com_atmel_avrdbg_tool_edbg>
-    <avrtoolinterfaceclock>2000000</avrtoolinterfaceclock>
+    <avrtoolinterfaceclock>4000000</avrtoolinterfaceclock>
     <custom>
       <ToolOptions>
         <InterfaceProperties>
@@ -325,6 +325,17 @@
       </ToolNumber>
       <ToolName>Custom Programming Tool</ToolName>
     </custom>
+    <com_atmel_avrdbg_tool_samice>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>4000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.samice</ToolType>
+      <ToolNumber>801010797</ToolNumber>
+      <ToolName>J-Link</ToolName>
+    </com_atmel_avrdbg_tool_samice>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
