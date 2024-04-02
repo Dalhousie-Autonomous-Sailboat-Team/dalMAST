@@ -296,14 +296,14 @@
         <board id="board.samd20_xplained_pro" value="Add" config="" content-id="Atmel.ASF" />
       </framework-data>
     </AsfFrameworkConfig>
-    <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
-    <avrtoolserialnumber>ATML1873071800008936</avrtoolserialnumber>
+    <avrtool>com.atmel.avrdbg.tool.samice</avrtool>
+    <avrtoolserialnumber>801010797</avrtoolserialnumber>
     <avrdeviceexpectedsignature>0x10001400</avrdeviceexpectedsignature>
     <avrtoolinterface>SWD</avrtoolinterface>
     <com_atmel_avrdbg_tool_edbg>
       <ToolOptions>
         <InterfaceProperties>
-          <SwdClock>2000000</SwdClock>
+          <SwdClock>0</SwdClock>
         </InterfaceProperties>
         <InterfaceName>SWD</InterfaceName>
       </ToolOptions>
@@ -311,7 +311,7 @@
       <ToolNumber>ATML1873071800008936</ToolNumber>
       <ToolName>EDBG</ToolName>
     </com_atmel_avrdbg_tool_edbg>
-    <avrtoolinterfaceclock>2000000</avrtoolinterfaceclock>
+    <avrtoolinterfaceclock>4000000</avrtoolinterfaceclock>
     <custom>
       <ToolOptions>
         <InterfaceProperties>
@@ -325,6 +325,17 @@
       </ToolNumber>
       <ToolName>Custom Programming Tool</ToolName>
     </custom>
+    <com_atmel_avrdbg_tool_samice>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>4000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.samice</ToolType>
+      <ToolNumber>801010797</ToolNumber>
+      <ToolName>J-Link</ToolName>
+    </com_atmel_avrdbg_tool_samice>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -574,7 +585,6 @@
       <Value>../src/ASF/sam0/drivers/sercom/i2c/i2c_samd20</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
-  <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>
   <armgcc.compiler.optimization.OtherFlags>-fdata-sections</armgcc.compiler.optimization.OtherFlags>
   <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
   <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
@@ -594,6 +604,7 @@
     </ListValues>
   </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.memorysettings.ExternalRAM />
   <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--entry=Reset_Handler -Wl,--cref -mthumb -T../src/ASF/sam0/utils/linker_scripts/samd20/gcc/samd20j18_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
   <armgcc.assembler.general.IncludePaths>
     <ListValues>
@@ -777,10 +788,19 @@
     <Compile Include="src\ASF\common2\services\delay\sam0\cycle_counter.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\sail_actuator.h">
+    <Compile Include="src\ASF\sam0\drivers\rtc\rtc_calendar.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\sail_actutor.c">
+    <Compile Include="src\ASF\sam0\drivers\rtc\rtc_calendar_interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_actuator.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_actuator.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_adc.c">
@@ -807,12 +827,6 @@
     <Compile Include="src\sail_buffer.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\sail_comp.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\sail_comp.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\sail_ctrl.c">
       <SubType>compile</SubType>
     </Compile>
@@ -831,10 +845,34 @@
     <Compile Include="src\sail_eeprom.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\sail_gps.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_gps.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sail_i2c.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_i2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_imu.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_imu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_ina.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_ina.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_led.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_led.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_math.c">
@@ -843,10 +881,10 @@
     <Compile Include="src\sail_math.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\sail_motor.c">
+    <Compile Include="src\sail_rudder.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\sail_motor.h">
+    <Compile Include="src\sail_rudder.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_nav.c">
@@ -886,12 +924,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_uart.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Sail_WEATHERSTATION.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\Sail_WEATHERSTATION.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_wind.c">

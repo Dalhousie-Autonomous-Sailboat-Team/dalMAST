@@ -530,5 +530,3 @@ void ReadCompass(void)
 static void CTRL_Sleep(unsigned time_sec) {
 	vTaskDelay(time_sec * configTICK_RATE_HZ);;
 }
-
-

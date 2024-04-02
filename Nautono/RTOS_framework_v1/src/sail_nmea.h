@@ -20,7 +20,7 @@
 
 typedef enum NMEA_ChannelIDs {
 	NMEA_GPS,
-	//NMEA_WEATHERSTATION,
+	NMEA_WIND,
 	NMEA_RADIO,
 	NMEA_NUM_CHANNELS
 } NMEA_ChannelID;
@@ -29,10 +29,12 @@ typedef enum NMEA_ChannelIDs {
 
 /* List the various NMEA message types */
 typedef enum eNMEA_TRX {
-	eGPGGA,
-	eWIMWV,
+	eGPGGA, 
+	eWIMWV, // Old WS wind angle and speed data
+	eIIMWV, // New WindVane speed and data
 	eYXXDR,
 	eHCHDT,
+	
 	//the rest of the types are listed below, but not currently used
 	/*
 	eGPVTG,
@@ -63,6 +65,7 @@ typedef struct NMEA_TYPES_INFO {
 static NMEA_TYPE_MAP NMEA_TYPE_TABLE[NUM_NMEA_TYPES] = {
 	{ eGPGGA, "GPGGA"}, 
 	{ eWIMWV, "WIMWV"}, 
+	{ eIIMWV, "IIMWV"},
 	{ eYXXDR, "YXXDR"}, 
 	{ eHCHDT, "HCHDT"}
 	

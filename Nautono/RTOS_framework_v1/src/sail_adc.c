@@ -14,18 +14,18 @@
 #include "sail_debug.h"
 
 // ADC instance
-static struct adc_module adc;
+static struct adc_module adc[ADC_NUM_CHANNELS];
 
 // ADC pin mappings
 static const enum adc_positive_input input_pins[ADC_NUM_CHANNELS] = {
-	ADC_POSITIVE_INPUT_PIN0,
-	ADC_POSITIVE_INPUT_PIN1
+	ADC_POSITIVE_INPUT_PIN19, // Sail pot pin
+	ADC_POSITIVE_INPUT_PIN16  // Rudder pot pin
 };
 
 // Flag to indicate the module has been initialized
 static bool init_flag = false;
 
-enum status_code ADC_Init(void) {
+enum status_code ADC_Init(ADC_ChannelID id) {
 	struct adc_config config_adc;
 
 	adc_get_config_defaults(&config_adc);
@@ -33,13 +33,13 @@ enum status_code ADC_Init(void) {
 	config_adc.gain_factor                = ADC_GAIN_FACTOR_DIV2;
 	config_adc.reference                  = ADC_REFERENCE_INTVCC1;
 	config_adc.resolution                 = ADC_RESOLUTION_12BIT;
-	config_adc.positive_input             = ADC_POSITIVE_INPUT_PIN0;
+	config_adc.positive_input             = input_pins[id];
 
-    if (adc_init(&adc, ADC, &config_adc) != STATUS_OK) {
+    if (adc_init(&adc[id], ADC, &config_adc) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
 	}
 
-    adc_enable(&adc);
+    adc_enable(&adc[id]);
 
 	init_flag = true;
 	
@@ -64,19 +64,24 @@ enum status_code ADC_GetReading(ADC_ChannelID id, double *reading)
 	}
 
 	// Set the input pin
-	adc_set_positive_input(&adc, input_pins[id]);
+	adc_set_positive_input(&adc[id], input_pins[id]);
 	
 	// Start the ADC reading/conversion
-    adc_start_conversion(&adc);
+    adc_start_conversion(&adc[id]);
     uint16_t result;
 	
 	// Let the conversion complete
     do {
 	    // Wait for conversion to be done and read out result
-    } while (adc_read(&adc, &result) == STATUS_BUSY);
+    } while (adc_read(&adc[id], &result) == STATUS_BUSY);
 	
 	// Return the output
-	*reading = MATH_Map((double)result, 0.0, 4095.0, 0.0, 3.3);
+	if(id == ADC_RUDDER) {
+		*reading = MATH_Map(result, 0.0, 4095.0, 0.0, 300.0);
+	}
+	else if(id == ADC_SAIL) {
+		*reading = MATH_Map(result, 0.0, 4095.0, 0.0, 146.0);
+	}
 	
 	return STATUS_OK;
 }

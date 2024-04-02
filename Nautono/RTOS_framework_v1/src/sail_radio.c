@@ -8,7 +8,8 @@
 
 #include "sail_nmea.h"
 #include "sail_debug.h"
-#include "sail_motor.h"
+#include "sail_rudder.h"
+#include "sail_actuator.h"
 #include "delay.h"
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
@@ -125,9 +126,7 @@ enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg)
 		return STATUS_ERR_BAD_ADDRESS;
 	}
 	
-	for(int i = 0; i < NMEA_BUFFER_LENGTH; i++) {
-		msg_buffer[i] = NULL;
-	}
+	memset(msg_buffer, NULL, NMEA_BUFFER_LENGTH*sizeof(char));
 	
 	// Check the NMEA receiver for new data
 	switch (NMEA_RxString(NMEA_RADIO, (uint8_t *)msg_buffer, RADIO_BUFFER_LENGTH)) {
@@ -430,8 +429,8 @@ static enum status_code RADIO_ExtractData(RADIO_MsgRawData *data, RADIO_GenericM
 			data->args[3] = (int32_t)msg->fields.nav.distance;
 			data->args[4] = (int32_t)(msg->fields.nav.bearing*10.0);
 			data->args[5] = (int32_t)(msg->fields.nav.course*10.0);
-			data->args[6] = msg->fields.nav.rudder_angle;
-			data->args[7] = msg->fields.nav.sail_angle;
+			data->args[6] = (uint16_t)msg->fields.nav.rudder_angle;
+			data->args[7] = (uint16_t)msg->fields.nav.sail_angle;
 			break;
 		case RADIO_RESET:
 			data->type = RADIO_RESET;
@@ -589,17 +588,14 @@ static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data)
 }
 
 
-static RADIO_Status AdjustMotors(int8_t sail_angle, int8_t rudder_angle)
+static RADIO_Status AdjustMotors(uint16_t sail_angle, uint16_t rudder_angle)
 {
-	MOTOR_SetSail((double)sail_angle);
-	MOTOR_SetRudder((double)rudder_angle);
-	DEBUG_Write("Setting rudder angle to %d\r\n", rudder_angle);
+	DEBUG_Write("Setting rudder: %d\tsail: %d\r\n", rudder_angle, sail_angle);
+	RudderSetPos((double)rudder_angle);
+	LAC_set_pos((double)sail_angle);
+	
 	return RADIO_STATUS_SUCCESS;	
 }
-
-
-
-
 
 static void HandleMessage(RADIO_GenericMsg *msg)
 {
@@ -617,6 +613,7 @@ static void HandleMessage(RADIO_GenericMsg *msg)
 		RADIO_Ack(ChangeState(msg->fields.state.state));
 		break;
 		case RADIO_REMOTE:
+		RADIO_Ack(RADIO_STATUS_SUCCESS);
 		AdjustMotors(msg->fields.remote.sail_angle, msg->fields.remote.rudder_angle);
 		break;
 		case RADIO_WAY_POINT:
@@ -628,7 +625,7 @@ static void HandleMessage(RADIO_GenericMsg *msg)
 	}
 	return;
 }
-
+#define TEST_XBEE
 
 void RadioHandler(void) {
 		unsigned int loop_cnt = 0;
@@ -637,44 +634,72 @@ void RadioHandler(void) {
 		
 		TickType_t radio_handler_delay = pdMS_TO_TICKS(RADIO_SLEEP_PERIOD_MS);
 		
+		//#ifndef TEST
+
 		while (1) {
 			running_task = eRadioHandler;
 			RADIO_GenericMsg rx_msg;
-			RADIO_Enable();
 			
-			//DEBUG_Write("TEST\r\n");
+			//DEBUG_Write("<<<<<<<<<<<<<<<<<<<< RADIO HANDLER >>>>>>>>>>>>>>>>>>>>>\r\n");
 			
 			switch (RADIO_RxMsg(&rx_msg)) {
 				case STATUS_OK:
-				DEBUG_Write("Received a message!\r\n");
-				HandleMessage(&rx_msg);
-				break;
+				
+					taskENTER_CRITICAL();
+					DEBUG_Write("Received a message!\r\n");
+					HandleMessage(&rx_msg);
+					taskEXIT_CRITICAL();
+					
+					break;
+				
 				case STATUS_ERR_BAD_DATA:
-				DEBUG_Write("Received a corrupt message!\r\n");
-				RADIO_Ack(RADIO_STATUS_ERROR);
-				break;
+					DEBUG_Write("Received a corrupt message!\r\n");
+					RADIO_Ack(RADIO_STATUS_ERROR);
+					break;
+				
 				default:
-				break;
+					break;
 			}
+			//RADIO_Ack(RADIO_STATUS_SUCCESS);
+			//vTaskDelay(radio_handler_delay);
 			
-			loop_cnt++;
+			//loop_cnt++;
+				//
+			//if(loop_cnt > loop_max) {
+				////DEBUG_Write("loop_cnt: %d\r\n", (int)loop_cnt);
+				//taskENTER_CRITICAL();
+				//watchdog_counter |= 0x08;
+				//taskEXIT_CRITICAL();
+				//
+				//DEBUG_Write("Radio going to sleep...\r\n");
+				//loop_cnt = 0;
+								//
+				////put thread to sleep until a specific tick count is reached
+				//vTaskDelay(radio_handler_delay);
+				//
+				//DEBUG_Write("Radio waking up...\r\n");
+			//}
 				
-			if(loop_cnt > loop_max) {
-				//DEBUG_Write("loop_cnt: %d\r\n", (int)loop_cnt);
-				taskENTER_CRITICAL();
-				watchdog_counter |= 0x08;
-				taskEXIT_CRITICAL();
-				
-				DEBUG_Write("Radio going to sleep...\r\n");
-				loop_cnt = 0;
-								
-				//put thread to sleep until a specific tick count is reached
-				vTaskDelay(radio_handler_delay);
-				
-				DEBUG_Write("Radio waking up...\r\n");
-			}
-				
-		}		
+		}
+		//#else
+		//UART_Init(UART_WIND);
+		//while(1) {
+			//running_task = eRadioHandler;
+			//taskENTER_CRITICAL();
+			//watchdog_counter |= 0x08;
+			//taskEXIT_CRITICAL();
+			//RADIO_GenericMsg rx_msg;
+			//
+			//
+			//memset(msg_buffer, 0, RADIO_BUFFER_LENGTH*sizeof(char));
+			//
+			////NMEA_RxString(NMEA_RADIO, (uint8_t *)msg_buffer, RADIO_BUFFER_LENGTH);
+			//UART_RxString(UART_RADIO, msg_buffer, RADIO_BUFFER_LENGTH);
+			//DEBUG_Write("message: %s\r\n", msg_buffer);
+			//HandleMessage(msg_buffer);
+			//vTaskDelay(radio_handler_delay);
+		//}
+		//#endif
 }
 
 void Radio_Sleep_Sec(unsigned time_sec) {
@@ -682,6 +707,5 @@ void Radio_Sleep_Sec(unsigned time_sec) {
 	//put thread to sleep for number of ticks specified
 	vTaskDelay(time_sec * configTICK_RATE_HZ);
 }
-
 
 
