@@ -183,7 +183,25 @@ enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg)
 }
 
 
-
+enum status_code RADIO_DEBUG_TxMsg(const char * format, ... ){
+	if (!init_flag)
+		return STATUS_ERR_NOT_INITIALIZED;
+	
+	va_list args;
+	//Load the buffer with string data
+	va_start(args,format);
+	
+	vsnprintf((char*)msg_buffer, NMEA_BUFFER_LENGTH, format, args);
+	va_end(args);
+	
+	
+	// Transmit the string
+	if (NMEA_TxString(NMEA_RADIO, (uint8_t*)msg_buffer) != STATUS_OK) {
+		return STATUS_ERR_IO;
+	}
+	
+	return STATUS_OK;
+}
 
 
 enum status_code RADIO_TxMsg(RADIO_GenericMsg *msg)
