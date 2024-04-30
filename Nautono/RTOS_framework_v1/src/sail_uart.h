@@ -19,6 +19,24 @@ typedef enum UART_ChannelIDs {
 	UART_NUM_CHANNELS
 } UART_ChannelID;
 
+typedef enum UART_ChannelIDs {
+	UART_M1D0,   //MUX 1 MPPT 1
+	UART_M1D1,   //MUX 1 BMS 1
+	UART_M1D2,   //MUX 1 BMS 2
+	UART_M1D3,   //MUX 1 MPPT 2
+	
+	UART_M2D0,   //MUX 2 EXTRA HEADER 1 (POSSIBLY RADIO)
+	UART_M2D1,   //GPS
+	UART_M2D2,   //PIXIE
+ 	UART_M2D3,   //MUX 2 EXTRA HEADER 2
+	 
+ 	UART_WIND,	 //Windvane 
+	UART_VCOM,	 //VCOM
+	UART_XEOS,	 //Beacon (Stream 211)
+	
+	UART_NUM_CHANNELS //Total number of UART channels
+} UART_ChannelID;
+
 
 //UART_Init
 // Initialize a specific UART port.

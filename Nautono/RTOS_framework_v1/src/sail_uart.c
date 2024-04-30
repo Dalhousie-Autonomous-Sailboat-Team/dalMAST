@@ -37,49 +37,104 @@ static struct usart_module uart_modules[UART_NUM_CHANNELS];
 // Define constant arrays for the settings of each UART port
 
 
-static uint32_t baud_rates[] = {
-	9600,
-	//4800, wind baudrate
-	19200,
-	9600,
-	57600,
-	57600
+static uint32_t baud_rates[] = {	
+	x,	//mppt 1 baud
+	x,	//mppt 2 baud
+	x,	//bms 1 baud
+	x,	//bms 2 baud
+	
+	9600,	//gps baud
+	x,	//pixie baud
+	9600,	//radio baud
+	57600,	//extra communication baud (arbitrary)
+	
+	19200,	//windvane baud
+	57600,	//vcom baud
+	57600	//beacon baud
 };
 
 /*
-UART_ChannelIDs:
-	UART_GPS,
-	UART_WEATHERSTATION,
-	UART_RADIO,
-	UART_XEOS,
-	UART_VCOM,
-	UART_NUM_CHANNELS
+	UART_M1B1,   //MUX 1 BMS 1
+	UART_M1B2,   //MUX 1 BMS 2
+	UART_M1M1,   //MUX 1 MPPT1
+	UART_M1M2,   //MUX 1 MPPT2
+
+	UART_M2G,    //MUX 2 GPS
+	UART_M2P,    //MUX 2 PIXIE SENSOR
+	UART_M2X1,   //MUX 2 EXTRA HEADER 1
+	UART_M2X2,   //MUX 2 EXTRA HEADER 2
+
+	UART_WIND,	 //Windvane
+	UART_VCOM,	 //USB-C
+	UART_BEACON, //Beacon (Stream 211)
+
+	UART_NUM_CHANNELS //Total number of UART channels
 */
 
 
 #ifdef PCB
+
+/*
+	FYI:
+	
+	-Pin Mux Settings can only be set based on the table found at the link below
+	-https://asf.microchip.com/docs/latest/saml21/html/asfdoc_sam0_sercom_usart_mux_settings.html
+	-This table outlines the only way the TX and RX pins can be used on pads for SERCOM.
+	-!!!Check this table before applying pin changes on schematic!!!
+
+*/
+
 static enum usart_signal_mux_settings mux_settings[] = {
+	USART_RX_3_TX_2_XCK_3,	//AFTER CORRECTING
+	USART_RX_2_TX_3_XXXXX,	//BEFORE CORRECTING (INVALID COMBINATION, TX & RX NEED SWITCHING)
+	USART_,					// TX AND RX NEED TO BE FLIPPED
+	USART_,
+	
 	USART_RX_3_TX_2_XCK_3,
-	USART_RX_1_TX_0_XCK_1,
-	USART_RX_1_TX_0_XCK_1,
-	USART_RX_1_TX_0_XCK_1, // Temp same as vcom for PCB
-	USART_RX_1_TX_0_XCK_1  // vcom for pcb
+	USART_RX_3_TX_2_XCK_3,
+	USART_RX_3_TX_2_XCK_3,
+	USART_RX_3_TX_2_XCK_3,	//MUX 2		SERCOM3 pads used
+	
+	USART_RX_1_TX_0_XCK_1,	//Windvane	SERCOM0 pads used
+	USART_RX_1_TX_0_XCK_1,	//VCOM		SERCOM5 pads used
+	USART_RX_1_TX_0_XCK_1	//Beacon	SERCOM2 pads used
 };
 
+
+
 static uint32_t pinmux_pads[][UART_NUM_CHANNELS] = {
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PB10D_SERCOM4_PAD2, PINMUX_PB11D_SERCOM4_PAD3},
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PB10D_SERCOM4_PAD2, PINMUX_PB11D_SERCOM4_PAD3},
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PB10D_SERCOM4_PAD2, PINMUX_PB11D_SERCOM4_PAD3},
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PB10D_SERCOM4_PAD2, PINMUX_PB11D_SERCOM4_PAD3},	//MUX 1		PINMUX DECLARATION (CORRECTED)
+		
 	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA18D_SERCOM3_PAD2, PINMUX_PA19D_SERCOM3_PAD3},
-	{PINMUX_PB08D_SERCOM4_PAD0, PINMUX_PB09D_SERCOM4_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
-	{PINMUX_PA12C_SERCOM2_PAD0, PINMUX_PA13C_SERCOM2_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
-	{PINMUX_PA16C_SERCOM1_PAD0, PINMUX_PA17C_SERCOM1_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},// same as vcom for PCB, temp, what should this be
-	{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED} // VCOM for PCB
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA18D_SERCOM3_PAD2, PINMUX_PA19D_SERCOM3_PAD3},
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA18D_SERCOM3_PAD2, PINMUX_PA19D_SERCOM3_PAD3},
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA18D_SERCOM3_PAD2, PINMUX_PA19D_SERCOM3_PAD3},	//MUX 2		PINMUX DECLARATION
+	
+	{PINMUX_PA04D_SERCOM0_PAD0, PINMUX_PA05D_SERCOM0_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},	//Windvane	PINMUX DECLARATION
+	{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},	//VCOM		PINMUX DECLARATION
+	{PINMUX_PA12C_SERCOM2_PAD0, PINMUX_PA13C_SERCOM2_PAD1, PINMUX_UNUSED, PINMUX_UNUSED}	//Beacon	PINMUX DECLARATION
 };
 
 static Sercom *const sercom_ptrs[] = {
-	SERCOM3,
+	//MUX 1 items
 	SERCOM4,
-	SERCOM2,
+	SERCOM4,
+	SERCOM4,
+	SERCOM4,
+
+	//MUX 2 items	
+	SERCOM3,
+	SERCOM3,
+	SERCOM3,
+	SERCOM3,
+	
+	//Individual UART comms
+	SERCOM0,
 	SERCOM5,
-	SERCOM5  // vcom for PCB
+	SERCOM2
 };
 
 #else
@@ -99,10 +154,11 @@ static uint32_t pinmux_pads[][UART_NUM_CHANNELS] = {
 };
 
 static Sercom *const sercom_ptrs[] = {
-	SERCOM0,
+	SERCOM3,
 	SERCOM4,
+	SERCOM2,
 	SERCOM5,
-	SERCOM3
+	SERCOM5  // vcom for PCB
 };
 #endif
 
@@ -137,17 +193,28 @@ static UART_TxState tx_states[UART_NUM_CHANNELS] = {
 };
 
 // Device specific callbacks
+static void BMS1_RxCallback(struct usart_module *const usart_module);
+static void BMS1_TxCallback(struct usart_module *const usart_module);
+static void BMS2_RxCallback(struct usart_module *const usart_module);
+static void BMS2_TxCallback(struct usart_module *const usart_module);
+static void MPPT1_RxCallback(struct usart_module *const usart_module);
+static void MPPT1_TxCallback(struct usart_module *const usart_module);
+static void MPPT2_RxCallback(struct usart_module *const usart_module);
+static void MPPT2_TxCallback(struct usart_module *const usart_module);
 static void GPS_RxCallback(struct usart_module *const usart_module);
 static void GPS_TxCallback(struct usart_module *const usart_module);
-static void WIND_RxCallback(struct usart_module *const usart_module);
-static void WIND_TxCallback(struct usart_module *const usart_module);
-static void RADIO_RxCallback(struct usart_module *const usart_module);
-static void RADIO_TxCallback(struct usart_module *const usart_module);
-static void XEOS_RxCallback(struct usart_module *const usart_module);
-static void XEOS_TxCallback(struct usart_module *const usart_module);
-
+static void PIXIE_RxCallback(struct usart_module *const usart_module);
+static void PIXIE_TxCallback(struct usart_module *const usart_module);
+static void XTRA1_RxCallback(struct usart_module * const usart_module);
+static void XTRA1_TxCallback(struct usart_module * const usart_module);
+static void XTRA2_RxCallback(struct usart_module * const usart_module);
+static void XTRA2_TxCallback(struct usart_module * const usart_module);
+static void WIND_RxCallback(struct usart_module * const usart_module);
+static void WIND_TxCallback(struct usart_module * const usart_module);
 static void VCOM_RxCallback(struct usart_module * const usart_module);
 static void VCOM_TxCallback(struct usart_module * const usart_module);
+static void BEACON_RxCallback(struct usart_module * const usart_module);
+static void BEACON_TxCallback(struct usart_module * const usart_module);
 
 // Generic callback
 static void UART_RxCallback(UART_ChannelID id);
@@ -155,20 +222,36 @@ static void UART_TxCallback(UART_ChannelID id);
 
 // Callback pointer array
 static usart_callback_t RxCallbacks[] = {
+	MPPT1_RxCallback,
+	BMS1_RxCallback,
+	BMS2_RxCallback,
+	MPPT2_RxCallback,
+	
+	XTRA1_RxCallback,
 	GPS_RxCallback,
+	PIXIE_RxCallback,
+	XTRA2_RxCallback,
+	
 	WIND_RxCallback,
-	RADIO_RxCallback,
-	XEOS_RxCallback,
-	VCOM_RxCallback
+	VCOM_RxCallback,
+	BEACON_RxCallback
 };
 
 // Callback pointer array
 static usart_callback_t TxCallbacks[] = {
+	MPPT1_TxCallback,
+	BMS1_TxCallback,
+	BMS2_TxCallback,
+	MPPT2_TxCallback,
+	
+	XTRA1_TxCallback,
 	GPS_TxCallback,
+	PIXIE_TxCallback,
+	XTRA2_TxCallback,
+	
 	WIND_TxCallback,
-	RADIO_TxCallback,
-	XEOS_TxCallback,
-	VCOM_TxCallback
+	VCOM_TxCallback,
+	BEACON_TxCallback
 };
 
 
@@ -199,6 +282,55 @@ enum status_code UART_Init(UART_ChannelID id) {
 	uart_config.pinmux_pad1 = pinmux_pads[id][1];
 	uart_config.pinmux_pad2 = pinmux_pads[id][2];
 	uart_config.pinmux_pad3 = pinmux_pads[id][3];
+	
+	//Enable external UART MUX channel for connected devices:
+	//PB14 = A logical input selector pin for MUX 1
+	//PB14 = B logical input selector pin for MUX 1
+	//PA06 = A logical input selector pin for MUX 2
+	//PA07 = B logical input selector pin for MUX 2
+	
+	switch(UART_ChannelID){
+		case UART_M1D0:
+			PORT_PB14 &= 0;
+			PORT_PB15 &= 0;
+			break;
+
+		case UART_M1D1:
+			PORT_PB14 &= 0;
+			PORT_PB15 |= 1;
+			break;
+			
+		case UART_M1D2:
+			PORT_PB14 |= 1;
+			port_pin
+			PORT_PB15 &= 0;
+			break;
+			
+		case UART_M1D3:
+			PORT_PB14 |= 1;
+			PORT_PB15 |= 1;
+			break;
+			
+		case UART_M1D0:
+			PORT_PA06 &= 0;
+			PORT_PA07 &= 0;
+			break;
+			
+		case UART_M1D1:
+			PORT_PA06 &= 0;
+			PORT_PA07 |= 1;
+			break;
+			
+		case UART_M1D2:
+			PORT_PA06 |= 1;
+			PORT_PA07 &= 0;
+			break;
+			
+		case UART_M1D3:
+			PORT_PA06 |= 1;
+			PORT_PA07 |= 1;
+			break;
+	}	
 	
 	// Apply the settings to the UART module
 	while (usart_init(&uart_modules[id], sercom_ptrs[id], &uart_config) != STATUS_OK);
@@ -356,46 +488,94 @@ enum status_code UART_RxString(UART_ChannelID id, uint8_t *data, uint16_t length
 
 // **** Receive callbacks ******************************************************************
 
-void GPS_RxCallback(struct usart_module *const usart_module) {
-	UART_RxCallback(UART_GPS);
+void BMS1_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_M1B1);
 }
 
-void WIND_RxCallback(struct usart_module *const usart_module) {
+void BMS2_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_M1B2);
+}
+
+void MPPT1_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_M1M1);
+}
+
+void MPPT2_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_M1M2);
+}
+
+void GPS_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_M2G);
+}
+
+void PIXIE_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_M2P);
+}
+
+void XTRA1_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_M2X1);
+}
+
+void XTRA2_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_M2X2);
+}
+
+void WIND_RxCallback(struct usart_module * const usart_module){
 	UART_RxCallback(UART_WIND);
 }
 
-void RADIO_RxCallback(struct usart_module *const usart_module) {
-	UART_RxCallback(UART_RADIO);
-}
-
-void XEOS_RxCallback(struct usart_module *const usart_module) {
-	UART_RxCallback(UART_XEOS);
-}
-
-void VCOM_RxCallback(struct usart_module *const usart_module){
+void VCOM_RxCallback(struct usart_module * const usart_module){
 	UART_RxCallback(UART_VCOM);
+}
+
+void BEACON_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_XEOS);
 }
 
 // **** Transmit callbacks ******************************************************************
 
-void GPS_TxCallback(struct usart_module *const usart_module) {
-	UART_TxCallback(UART_GPS);
+void BMS1_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_M1B1);
 }
 
-void WIND_TxCallback(struct usart_module *const usart_module) {
+void BMS2_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_M1B2);
+}
+
+void MPPT1_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_M1M1);
+}
+
+void MPPT2_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_M1M2);
+}
+
+void GPS_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_M2G);
+}
+
+void PIXIE_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_M2P);
+}
+
+void XTRA1_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_M2X1);
+}
+
+void XTRA2_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_M2X2);
+}
+
+void WIND_TxCallback(struct usart_module * const usart_module){
 	UART_TxCallback(UART_WIND);
 }
 
-void RADIO_TxCallback(struct usart_module *const usart_module) {
-	UART_TxCallback(UART_RADIO);
-}
-
-void XEOS_TxCallback(struct usart_module *const usart_module) {
-	UART_TxCallback(UART_XEOS);
-}
-
-void VCOM_TxCallback(struct usart_module *const usart_module){
+void VCOM_TxCallback(struct usart_module * const usart_module){
 	UART_TxCallback(UART_VCOM);
+}
+
+void BEACON_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_XEOS);
 }
 
 // **** Generic callbacks ******************************************************************
