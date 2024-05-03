@@ -10,31 +10,26 @@
 #include <stdint.h>
 #include <status_codes.h>
 
-typedef enum UART_ChannelIDs {
-	UART_GPS,
-	UART_WIND,
-	UART_RADIO,
-	UART_XEOS,
-	UART_VCOM,
-	UART_NUM_CHANNELS
-} UART_ChannelID;
 
 typedef enum UART_ChannelIDs {
-	UART_M1D0,   //MUX 1 MPPT 1
-	UART_M1D1,   //MUX 1 BMS 1
-	UART_M1D2,   //MUX 1 BMS 2
-	UART_M1D3,   //MUX 1 MPPT 2
+	UART_MUX1,			//MUX 1
+	UART_MUX2,			//MUX 2
+ 	UART_WIND,			//Windvane 
+	UART_VCOM,			//VCOM
+	UART_XEOS,			//Beacon (Stream 211)
+	UART_NUM_CHANNELS,	//Total number of UART channels
 	
-	UART_M2D0,   //MUX 2 EXTRA HEADER 1 (POSSIBLY RADIO)
-	UART_M2D1,   //GPS
-	UART_M2D2,   //PIXIE
- 	UART_M2D3,   //MUX 2 EXTRA HEADER 2
-	 
- 	UART_WIND,	 //Windvane 
-	UART_VCOM,	 //VCOM
-	UART_XEOS,	 //Beacon (Stream 211)
+	UART_MPPT1,			//MUX 1 MPPT 1
+	UART_BMS1,			//MUX 1 BMS 1
+	UART_BMS2,			//MUX 1 BMS 2
+	UART_MPPT2,			//MUX 1 MPPT 2
+	UART_MUX1_CHANNELS,
 	
-	UART_NUM_CHANNELS //Total number of UART channels
+	UART_RADIO,			//MUX 2 EXTRA HEADER 1 (POSSIBLY RADIO)
+	UART_GPS,			//GPS
+	UART_PIXIE,			//PIXIE
+	UART_XTRA,			//MUX 2 EXTRA HEADER 2
+	UART_MUX2_CHANNELS
 } UART_ChannelID;
 
 
@@ -72,6 +67,11 @@ enum status_code UART_TxString(UART_ChannelID id, uint8_t *data);
 // circular buffer, so the function can be used before the freeRTOS scheduler is started
 //
 enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data);
+
+//UART_MUX_ChannelID
+//Uses the enumerated table to associate a channel ID with components on the MUX's
+//
+enum UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id);
 
 
 // UART_RxString
