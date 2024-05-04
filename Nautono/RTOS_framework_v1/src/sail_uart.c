@@ -21,6 +21,12 @@
 //#define UART_TX_BUFFER_LENGTH		1024
 #define UART_TX_BUFFER_LENGTH		512
 
+//define UART MUX's logic toggle pins
+#define MUX1_LOGIC_A PIN_PB14
+#define MUX1_LOGIC_B PIN_PB15
+#define MUX2_LOGIC_A PIN_PA06
+#define MUX2_LOGIC_B PIN_PA07
+
 // Buffers to hold receive and transmit data
 static volatile uint8_t rx_buffers[UART_NUM_CHANNELS][UART_RX_BUFFER_LENGTH];
 static volatile uint8_t tx_buffers[UART_NUM_CHANNELS][UART_TX_BUFFER_LENGTH];
@@ -233,6 +239,64 @@ enum status_code UART_Init(UART_ChannelID id) {
 	uart_config.pinmux_pad1 = pinmux_pads[MUXED_ID][1];
 	uart_config.pinmux_pad2 = pinmux_pads[MUXED_ID][2];
 	uart_config.pinmux_pad3 = pinmux_pads[MUXED_ID][3];
+	
+	//Enable external UART MUX channel for connected devices:
+	//PB14 = A logical input selector pin for MUX 1
+	//PB14 = B logical input selector pin for MUX 1
+	//PA06 = A logical input selector pin for MUX 2
+	//PA07 = B logical input selector pin for MUX 2
+	
+	
+	port_get_config_defaults(&config_port_pin);
+	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
+	port_pin_set_config(MUX1_LOGIC_A, &config_port_pin);
+	port_pin_set_config(MUX1_LOGIC_B, &config_port_pin);
+	port_pin_set_config(MUX2_LOGIC_A, &config_port_pin);
+	port_pin_set_config(MUX2_LOGIC_B, &config_port_pin);
+	
+	switch(UART_ChannelID){
+		
+		case UART_M1D0:
+		port_pin_set_output_level(MUX1_LOGIC_A, false);
+		port_pin_set_output_level(MUX1_LOGIC_B, false);
+		break;
+
+		case UART_M1D1:
+		port_pin_set_output_level(MUX1_LOGIC_A, true);
+		port_pin_set_output_level(MUX1_LOGIC_B, false);
+		break;
+		
+		case UART_M1D2:
+		port_pin_set_output_level(MUX1_LOGIC_A, false);
+		port_pin_set_output_level(MUX1_LOGIC_B, true);
+		break;
+		
+		case UART_M1D3:
+		port_pin_set_output_level(MUX1_LOGIC_A, true);
+		port_pin_set_output_level(MUX1_LOGIC_B, true);
+		break;
+		
+		case UART_M2D0:
+		port_pin_set_output_level(MUX2_LOGIC_A, false);
+		port_pin_set_output_level(MUX2_LOGIC_B, false);
+		break;
+
+		case UART_M2D1:
+		port_pin_set_output_level(MUX2_LOGIC_A, true);
+		port_pin_set_output_level(MUX2_LOGIC_B, false);
+		break;
+		
+		case UART_M2D2:
+		port_pin_set_output_level(MUX2_LOGIC_A, false);
+		port_pin_set_output_level(MUX2_LOGIC_B, true);
+		break;
+		
+		case UART_M2D3:
+		port_pin_set_output_level(MUX2_LOGIC_A, true);
+		port_pin_set_output_level(MUX2_LOGIC_B, true);
+		break;
+		
+	}
 	
 	// Apply the settings to the UART module
 	while (usart_init(&uart_modules[MUXED_ID], sercom_ptrs[MUXED_ID], &uart_config) != STATUS_OK);
