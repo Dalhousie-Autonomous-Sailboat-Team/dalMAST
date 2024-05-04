@@ -197,7 +197,9 @@ enum status_code startup(void)
 	return STATUS_OK;
 }
 
-
+enum status_code WTD_Kick(void){
+	
+}
 
 
 /**** TIMER CALLBACKS ************************************************************/
