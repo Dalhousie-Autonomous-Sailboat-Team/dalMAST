@@ -42,6 +42,7 @@ static void DisableWeatherStation(void);
 void process_heading_readings(void);
 
 
+
 /* Message handling functions:
  * HandleMessage()
  * - checks the message type and calls the appropriate function
@@ -64,6 +65,7 @@ static bool sensor_statuses[SENSOR_COUNT] = {
 	false,
 	false
 };
+
 
 // Sensor readings
 static GPS_Reading gps;
@@ -146,6 +148,15 @@ enum status_code CTRL_InitSystem(void)
 	// Set default mode and state
 	mode = CTRL_MODE_AUTO;
 	state = CTRL_STATE_TEST;
+	
+	//Configure external watchdog timer pin to output.
+	struct port_config config_port_pin;
+	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
+	port_pin_set_config(EXT_WDT_PIN, &config_port_pin);
+	
+	//Configure internal watchdog timer
+	while(wdt_get_config_defaults() != false);
+	
 		
 	return STATUS_OK;
 }
@@ -197,8 +208,51 @@ enum status_code startup(void)
 	return STATUS_OK;
 }
 
-enum status_code WTD_Kick(void){
+
+//External watchdog timer kick function
+void ExtWDT_Kick(void){
+
+	//Turn on and off very quickly (pulse)
+	//This should be sufficient time as WDT only needs 50 ns pulse to reset timer.
+	port_pin_set_output_level(EXT_WDT_PIN, true);
+	port_pin_set_output_level(EXT_WDT_PIN, false);
+}
+
+//Internal watchdog timer kick
+void IntWDT_Kick(void){
 	
+	//Create config struct and set to defaults
+	struct wdt_conf config_wdt;
+	wdt_get_config_defaults(&config_wdt);
+	
+	//Set watchdog config, always_on_mode is off, about 
+	config_wdt.always_on = false;
+	
+	
+	
+	
+	/*line below has to be checked and 
+	GCLK has to be setup if not already
+	so that it is approcimately 1.6 seconds as well
+	*/
+	
+	
+	
+	config_wdt.timeout_period = WDT_PERIOD_2048CLK;
+	
+	//Enable watchdog timer
+	wdt_set_config(&config_wdt);
+}
+
+//External and Internal Watchdog timers kick task from individual tasks
+void Test_WDT(void){
+	
+	TickType_t wdt_delay = pdMS_TO_TICKS(WDT_SLEEP_PERIOD);
+	
+	while(1){
+		ExtWDT_Kick();
+		vTaskDelay(wdt_delay);
+	}
 }
 
 

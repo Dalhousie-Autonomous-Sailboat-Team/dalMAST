@@ -26,6 +26,10 @@
 #define READ_AS_SLEEP_PERIOD_MS 500
 #define READ_COMPASS_SLEEP_PERIOD_MS 1000
 
+#define WDT_SLEEP_PERIOD 1600
+//External Watchdog pulse pin
+#define EXT_WDT_PIN		PIN_PA28
+
 typedef enum Sensor_Types {
 	SENSOR_GPS,
 	SENSOR_WIND,
@@ -33,6 +37,14 @@ typedef enum Sensor_Types {
 	SENSOR_COUNT
 } Sensor_Type;
 
+typedef enum Tasks{
+	TASK_GPS,
+	TASK_WIND,
+	TASK_COURSE,
+	TASK_COMPASS,
+	TASK_BEACON,
+	NUM_TASKS
+}Task_ID;
 
 /* CTRL_InitSystem
  * Initialize the sail boat controller.
