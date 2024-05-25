@@ -71,7 +71,7 @@ enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data);
 //UART_MUX_ChannelID
 //Uses the enumerated table to associate a channel ID with components on the MUX's
 //
-enum UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id);
+UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id);
 
 
 // UART_RxString

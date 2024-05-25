@@ -42,33 +42,24 @@ static struct usart_module uart_modules[UART_NUM_CHANNELS];
 
 // Define constant arrays for the settings of each UART port
 
-static uint32_t MUX1_baud_rates[] = {
-	
-};
-
-static uint32_t MUX2_baud_rates[] = {
-	
-};
-
 static uint32_t baud_rates[] = {	
-	9600,	//MUX1 default
-	9600,	//MUX2 default
+	9600,	//MUX1 baud (default)
+	9600,	//MUX2 baud (default)
 	19200,	//windvane baud
-	57600,	//vcom baud
+	57600,	//vcom   baud
 	57600,	//beacon baud
 	-1,		//spaceholder
 	
-	x,		//mppt 1 baud
-	x,		//mppt 2 baud
-	x,		//bms 1 baud
-	x,		//bms 2 baud
-	-1,		//spaceholder
+	9600,	//mppt 1 baud
+	9600,	//bms  1 baud (default)
+	9600,	//bms  2 baud
+	9600,	//mppt 2 baud
 	
-	9600,	//radio baud
-	9600,	//gps baud
-	x,		//pixie baud
-	57600,	//extra communication baud (arbitrary)
-	-1		//spaceholder
+	9600,	//radio  baud
+	9600,	//gps    baud
+	9600,	//pixie  baud (default)
+	57600	//extra  baud (defult)
+	
 };
 
 
@@ -168,12 +159,16 @@ static UART_TxState tx_states[UART_NUM_CHANNELS] = {
 // Device specific callbacks
 static void MUX1_RxCallback(struct usart_module * const usart_module);
 static void MUX1_TxCallback(struct usart_module * const usart_module);
+
 static void MUX2_RxCallback(struct usart_module * const usart_module);
 static void MUX2_TxCallback(struct usart_module * const usart_module);
+
 static void WIND_RxCallback(struct usart_module * const usart_module);
 static void WIND_TxCallback(struct usart_module * const usart_module);
+
 static void VCOM_RxCallback(struct usart_module * const usart_module);
 static void VCOM_TxCallback(struct usart_module * const usart_module);
+
 static void XEOS_RxCallback(struct usart_module * const usart_module);
 static void XEOS_TxCallback(struct usart_module * const usart_module);
 
@@ -199,19 +194,24 @@ static usart_callback_t TxCallbacks[] = {
 	XEOS_TxCallback
 };
 
-enum UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id){
+// Used to adjust UART ID to accommodate for new external multiplexers
+UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id){
 	
-	if(id > UART_NUM_CHANNELS && id < UART_MUX1_CHANNELS){
-		return UART_MUX1;
-	}else if(id > UART_MUX1_CHANNELS && id < UART_MUX2_CHANNELS){
-		return UART_MUX2;
-	}else{
+	//Multiplexes UART channels according to placements on external multiplexer circuit
+	if(id < UART_NUM_CHANNELS){
 		return id;
+	}else if(id <= UART_MPPT2){
+		return UART_MUX1;
+	}else{
+		return UART_MUX1;
 	}
 }
 
 enum status_code UART_Init(UART_ChannelID id) {
-	enum UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
+	struct port_config config_port_pin;
+	port_get_config_defaults(&config_port_pin);
 	
 	// Return if the ID is invalid
 	if (MUXED_ID >= UART_NUM_CHANNELS) {
@@ -240,12 +240,7 @@ enum status_code UART_Init(UART_ChannelID id) {
 	uart_config.pinmux_pad2 = pinmux_pads[MUXED_ID][2];
 	uart_config.pinmux_pad3 = pinmux_pads[MUXED_ID][3];
 	
-	//Enable external UART MUX channel for connected devices:
-	//PB14 = A logical input selector pin for MUX 1
-	//PB14 = B logical input selector pin for MUX 1
-	//PA06 = A logical input selector pin for MUX 2
-	//PA07 = B logical input selector pin for MUX 2
-	
+	// Select UART MUX channel to initialize:
 	
 	port_get_config_defaults(&config_port_pin);
 	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
@@ -254,44 +249,44 @@ enum status_code UART_Init(UART_ChannelID id) {
 	port_pin_set_config(MUX2_LOGIC_A, &config_port_pin);
 	port_pin_set_config(MUX2_LOGIC_B, &config_port_pin);
 	
-	switch(UART_ChannelID){
+	switch(id){
 		
-		case UART_M1D0:
+		case UART_MPPT1:
 		port_pin_set_output_level(MUX1_LOGIC_A, false);
 		port_pin_set_output_level(MUX1_LOGIC_B, false);
 		break;
 
-		case UART_M1D1:
+		case UART_BMS1:
 		port_pin_set_output_level(MUX1_LOGIC_A, true);
 		port_pin_set_output_level(MUX1_LOGIC_B, false);
 		break;
 		
-		case UART_M1D2:
+		case UART_BMS2:
 		port_pin_set_output_level(MUX1_LOGIC_A, false);
 		port_pin_set_output_level(MUX1_LOGIC_B, true);
 		break;
 		
-		case UART_M1D3:
+		case UART_MPPT2:
 		port_pin_set_output_level(MUX1_LOGIC_A, true);
 		port_pin_set_output_level(MUX1_LOGIC_B, true);
 		break;
 		
-		case UART_M2D0:
+		case UART_RADIO:
 		port_pin_set_output_level(MUX2_LOGIC_A, false);
 		port_pin_set_output_level(MUX2_LOGIC_B, false);
 		break;
 
-		case UART_M2D1:
+		case UART_GPS:
 		port_pin_set_output_level(MUX2_LOGIC_A, true);
 		port_pin_set_output_level(MUX2_LOGIC_B, false);
 		break;
 		
-		case UART_M2D2:
+		case UART_PIXIE:
 		port_pin_set_output_level(MUX2_LOGIC_A, false);
 		port_pin_set_output_level(MUX2_LOGIC_B, true);
 		break;
 		
-		case UART_M2D3:
+		case UART_XTRA:
 		port_pin_set_output_level(MUX2_LOGIC_A, true);
 		port_pin_set_output_level(MUX2_LOGIC_B, true);
 		break;
@@ -317,7 +312,7 @@ enum status_code UART_Init(UART_ChannelID id) {
 }
 
 enum status_code UART_Enable(UART_ChannelID id) {
-	enum UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
 	
 	// Return if the ID is invalid
 	if (MUXED_ID >= UART_NUM_CHANNELS) {
@@ -344,7 +339,7 @@ enum status_code UART_Enable(UART_ChannelID id) {
 }
 
 enum status_code UART_Disable(UART_ChannelID id) {
-	enum UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
 	
 	// Return if the ID is invalid
 	if (MUXED_ID >= UART_NUM_CHANNELS) {
@@ -371,7 +366,7 @@ enum status_code UART_Disable(UART_ChannelID id) {
 }
 
 enum status_code UART_TxString(UART_ChannelID id, uint8_t *data) {
-	enum UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
 	
 	// Return if the ID is invalid
 	if (MUXED_ID >= UART_NUM_CHANNELS) {
@@ -403,7 +398,7 @@ enum status_code UART_TxString(UART_ChannelID id, uint8_t *data) {
 }
 
 enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data) {
-	enum UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
 	
 	// Return if the ID is invalid
 	if (MUXED_ID >= UART_NUM_CHANNELS) {
@@ -433,7 +428,7 @@ enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data) {
 }
 
 enum status_code UART_RxString(UART_ChannelID id, uint8_t *data, uint16_t length) {
-	enum UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
 	
 	// Return if the ID is invalid
 	if (MUXED_ID >= UART_NUM_CHANNELS) {
@@ -506,7 +501,7 @@ void XEOS_TxCallback(struct usart_module * const usart_module){
 // **** Generic callbacks ******************************************************************
 
 void UART_RxCallback(UART_ChannelID id) {
-	enum UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
 	
 	// Write the byte to the buffer
 	BUFF_WriteByte(&rx_buff_modules[MUXED_ID], (uint8_t)(0xff & rx_words[MUXED_ID]));
@@ -518,7 +513,7 @@ void UART_RxCallback(UART_ChannelID id) {
 }
 
 void UART_TxCallback(UART_ChannelID id) {
-	enum UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
 	
 	// Get the length of the buffer
 	uint16_t length;
