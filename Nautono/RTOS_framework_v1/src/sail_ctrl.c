@@ -93,6 +93,8 @@ float avg_heading_deg = 0.0;
 
 enum status_code CTRL_InitSystem(void)
 {
+	
+	/*
 	//Create config struct and set to defaults
 	struct wdt_conf config_wdt;
 	wdt_get_config_defaults(&config_wdt);
@@ -102,6 +104,7 @@ enum status_code CTRL_InitSystem(void)
 	config_wdt.clock_source = GCLK_GENERATOR_4;
 	config_wdt.timeout_period = WDT_PERIOD_2048CLK;
 	wdt_set_config(&config_wdt);
+	*/
 	
 	// Initialize SAMD20
 	system_init();
@@ -231,7 +234,9 @@ void Test_WDT(void){
 	TickType_t wdt_delay = pdMS_TO_TICKS(WDT_SLEEP_PERIOD);
 	
 	while(1){
+		taskENTER_CRITICAL();
 		ExtWDT_Kick();
+		taskEXIT_CRITICAL();
 		vTaskDelay(wdt_delay);
 	}
 }
