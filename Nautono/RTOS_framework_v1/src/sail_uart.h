@@ -32,6 +32,12 @@ typedef enum UART_ChannelIDs {
 } UART_ChannelID;
 
 
+
+// Used to keep track of which channel settings are set up on the multiplexers
+UART_ChannelID MUX1_CURRENT_CHANNEL;
+UART_ChannelID MUX2_CURRENT_CHANNEL;
+
+
 //UART_Init
 // Initialize a specific UART port.
 // Inputs:

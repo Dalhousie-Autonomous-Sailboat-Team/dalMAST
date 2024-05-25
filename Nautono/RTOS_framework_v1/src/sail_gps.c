@@ -116,6 +116,8 @@ enum status_code GPS_Init(void)
 		return STATUS_ERR_ALREADY_INITIALIZED;
 	}
 
+	DEBUG_Write_Unprotected("Initializing GPS.\n");
+
 	// Initialize NMEA channel
 	switch (NMEA_Init(NMEA_GPS)) {
 	case STATUS_OK: // Initialization complete, continue
@@ -126,6 +128,8 @@ enum status_code GPS_Init(void)
 		DEBUG_Write_Unprotected("NMEA module could not be initialized!\n");
 		return STATUS_ERR_DENIED;
 	}
+	
+	DEBUG_Write_Unprotected("Initialized GPS!\n");
 
 	// Set the initialization flag
 	init_flag = true;

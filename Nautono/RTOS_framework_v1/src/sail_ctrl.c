@@ -98,11 +98,11 @@ enum status_code CTRL_InitSystem(void)
 	DEBUG_Init();
 	
 	// Initialize the radio
-	if (RADIO_Init() != STATUS_OK) {
+	/*if (RADIO_Init() != STATUS_OK) {
 		DEBUG_Write_Unprotected("Radio not initialized!\r\n");
 		} else {
 		DEBUG_Write_Unprotected("Radio initialized!\r\n");
-	}
+	}*/
 	
 	// Enable the radio receiver
 	if (RADIO_Enable() != STATUS_OK) {

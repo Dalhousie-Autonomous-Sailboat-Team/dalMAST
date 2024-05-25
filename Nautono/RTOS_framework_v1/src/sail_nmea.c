@@ -17,12 +17,12 @@
 #define NMEA_CMD_FMT "$%s*%02x\r\n"
 
 // Mapping between NMEA channels and UART channels
-static UART_ChannelID uart_channels[] = {
+/*static UART_ChannelID uart_channels[] = {
 	UART_GPS,
 	UART_WIND,
 	UART_RADIO,
     UART_XEOS
-};
+};*/ //OBSOLETE
 
 // Buffers to hold raw data from the UART
 static uint8_t rx_buffers[NMEA_NUM_CHANNELS][NMEA_BUFFER_LENGTH];
@@ -34,6 +34,27 @@ static bool init_flags[NMEA_NUM_CHANNELS];
 static bool start_flags[NMEA_NUM_CHANNELS];
 // Buffers for commands
 static uint8_t cmd_buffers[NMEA_NUM_CHANNELS][NMEA_BUFFER_LENGTH];
+
+/* Multiplexes NMEA channel ID's*/
+UART_ChannelID NMEA_MUX_ChannelID(NMEA_ChannelID id){
+	
+	switch(id)
+	{
+	case NMEA_GPS:
+		return UART_GPS;
+		break;
+		
+	case NMEA_RADIO:
+		return UART_RADIO;
+		break;
+		
+	case NMEA_WIND:
+		return UART_WIND;
+		break;
+	default:
+		return UART_NUM_CHANNELS;
+	}
+}
 
 /*identifies the prefix from the NMEA message and assigns it to the message type*/
 bool get_NMEA_type(eNMEA_TRX_t* type, char* msg_ptr) {
@@ -49,6 +70,7 @@ bool get_NMEA_type(eNMEA_TRX_t* type, char* msg_ptr) {
 }
 
 enum status_code NMEA_Init(NMEA_ChannelID id) {
+	
 	// Check that the id is valid
 	if (id >= NMEA_NUM_CHANNELS) {
 		// Error, invalid ID
@@ -61,11 +83,16 @@ enum status_code NMEA_Init(NMEA_ChannelID id) {
 		return STATUS_ERR_ALREADY_INITIALIZED;
 	}
 	
+	DEBUG_Write_Unprotected("Initializing UART through NMEA Init.\n");
+	
 	// Initialize the appropriate UART and check for an error
-	if (UART_Init(uart_channels[id]) != STATUS_OK) {
+	if (UART_Init(NMEA_MUX_ChannelID(id)) != STATUS_OK) {
 		// Indicate a hardware error
+		DEBUG_Write_Unprotected("Could not initialize UART through NMEA Init.\n");
 		return STATUS_ERR_DENIED;
 	}
+	
+	DEBUG_Write_Unprotected("Initialized UART through NMEA Init.\n");
 	
 	// Set the initialization flag
 	init_flags[id] = true;
@@ -75,7 +102,6 @@ enum status_code NMEA_Init(NMEA_ChannelID id) {
 	
 	return STATUS_OK;	
 }
-
 
 enum status_code NMEA_Enable(NMEA_ChannelID id) {
 	// Check that the id is valid
@@ -97,7 +123,7 @@ enum status_code NMEA_Enable(NMEA_ChannelID id) {
 	}
 	
 	// Start the UART receiver
-	if (UART_Enable(uart_channels[id]) != STATUS_OK) {
+	if (UART_Enable(NMEA_MUX_ChannelID(id)) != STATUS_OK) {
 		// Indicate a hardware error
 		DEBUG_Write("UART FAILED for ID >>%d<<\r\n", id);
 		return STATUS_ERR_DENIED;
@@ -108,7 +134,6 @@ enum status_code NMEA_Enable(NMEA_ChannelID id) {
 	
 	return STATUS_OK;
 }
-
 
 enum status_code NMEA_Disable(NMEA_ChannelID id) {
 	// Check that the id is valid
@@ -130,7 +155,7 @@ enum status_code NMEA_Disable(NMEA_ChannelID id) {
 	}
 	
 	// Stop the UART receiver
-	if (UART_Disable(uart_channels[id]) != STATUS_OK) {
+	if (UART_Disable(NMEA_MUX_ChannelID(id)) != STATUS_OK) {
 		// Indicate a hardware error
 		return STATUS_ERR_DENIED;
 	}
@@ -140,7 +165,6 @@ enum status_code NMEA_Disable(NMEA_ChannelID id) {
 	
 	return STATUS_OK;
 }
-
 
 enum status_code NMEA_TxString(NMEA_ChannelID id, uint8_t *str) {
 	size_t str_length;
@@ -186,7 +210,7 @@ enum status_code NMEA_TxString(NMEA_ChannelID id, uint8_t *str) {
 	
 	
 	// transmits
-	UART_TxString(uart_channels[id], &cmd_buffers[id][0]);
+	UART_TxString(NMEA_MUX_ChannelID(id), &cmd_buffers[id][0]);
 		
 	return STATUS_OK;
 }
@@ -235,11 +259,10 @@ enum status_code NMEA_TxString_Unprotected(NMEA_ChannelID id, uint8_t *str) {
 	
 	
 	// transmits
-	UART_TxString_Unprotected(uart_channels[id], &cmd_buffers[id][0]);
+	UART_TxString_Unprotected(NMEA_MUX_ChannelID(id), &cmd_buffers[id][0]);
 		
 	return STATUS_OK;
 }
-
 
 enum status_code NMEA_RxString(NMEA_ChannelID id, uint8_t *str, uint16_t length) {
 	uint8_t check, sum;
@@ -264,7 +287,7 @@ enum status_code NMEA_RxString(NMEA_ChannelID id, uint8_t *str, uint16_t length)
 	}
 	
 	// Try to get a string from the UART
-	switch (UART_RxString(uart_channels[id], &rx_buffers[id][0], NMEA_BUFFER_LENGTH)) {
+	switch (UART_RxString(NMEA_MUX_ChannelID(id), &rx_buffers[id][0], NMEA_BUFFER_LENGTH)) {
 		// Continue if some valid data was found
 		case STATUS_VALID_DATA:
 			break;

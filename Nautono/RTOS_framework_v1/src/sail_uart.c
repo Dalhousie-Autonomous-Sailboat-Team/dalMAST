@@ -194,7 +194,7 @@ static usart_callback_t TxCallbacks[] = {
 	XEOS_TxCallback
 };
 
-// Used to adjust UART ID to accommodate for new external multiplexers
+
 UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id){
 	
 	//Multiplexes UART channels according to placements on external multiplexer circuit
@@ -202,13 +202,17 @@ UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id){
 		return id;
 	}else if(id <= UART_MPPT2){
 		return UART_MUX1;
+	}else if(id < UART_XTRA){
+		return UART_MUX2;
 	}else{
-		return UART_MUX1;
+		return UART_NUM_CHANNELS;
 	}
 }
 
 enum status_code UART_Init(UART_ChannelID id) {
 	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
+	UART_Disable(MUXED_ID);
 	
 	struct port_config config_port_pin;
 	port_get_config_defaults(&config_port_pin);
@@ -291,6 +295,7 @@ enum status_code UART_Init(UART_ChannelID id) {
 		port_pin_set_output_level(MUX2_LOGIC_B, true);
 		break;
 		
+		
 	}
 	
 	// Apply the settings to the UART module
@@ -307,6 +312,13 @@ enum status_code UART_Init(UART_ChannelID id) {
 	// Set the state
 	rx_states[MUXED_ID] = UART_RX_DISABLED;
 	tx_states[MUXED_ID] = UART_TX_IDLE;
+	
+	//Keep track of MUX1 and MUX2 channel
+	if (id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+		MUX1_CURRENT_CHANNEL = id;
+	else if (id > UART_MPPT2){
+		MUX2_CURRENT_CHANNEL = id;
+	}
 	
 	return STATUS_OK;	
 }
@@ -378,6 +390,18 @@ enum status_code UART_TxString(UART_ChannelID id, uint8_t *data) {
 		return STATUS_ERR_BAD_ADDRESS;
 	}
 	
+	// Ensure multiplexers are running at correct settings.
+	if( id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		if( MUX1_CURRENT_CHANNEL != id)
+			UART_Init(id);		
+	}
+	else if( id > UART_MPPT2)
+	{
+		if( MUX2_CURRENT_CHANNEL != id)
+			UART_Init(id);
+	}
+	
 	// Get the length of the provided string (must be null-terminated)
 	uint16_t length = strlen((char *)data);
 	
@@ -410,6 +434,18 @@ enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data) {
 		return STATUS_ERR_BAD_ADDRESS;
 	}
 	
+	// Ensure multiplexers are running at correct settings.
+	if( id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		if( MUX1_CURRENT_CHANNEL != id)
+		UART_Init(id);
+	}
+	else if( id > UART_MPPT2)
+	{
+		if( MUX2_CURRENT_CHANNEL != id)
+		UART_Init(id);
+	}
+	
 	// Get the length of the provided string (must be null-terminated)
 	uint16_t length = strlen((char *)data);
 	
@@ -439,6 +475,19 @@ enum status_code UART_RxString(UART_ChannelID id, uint8_t *data, uint16_t length
 	if (data == NULL) {
 		return STATUS_ERR_BAD_ADDRESS;
 	}
+	
+	// Ensure multiplexers are running at correct settings.
+	if( id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		if( MUX1_CURRENT_CHANNEL != id)
+		UART_Init(id);
+	}
+	else if( id > UART_MPPT2)
+	{
+		if( MUX2_CURRENT_CHANNEL != id)
+		UART_Init(id);
+	}
+	
 	
 	// Try to get a string from the buffer
 	switch (BUFF_ReadString(&rx_buff_modules[MUXED_ID], data, length)) {
