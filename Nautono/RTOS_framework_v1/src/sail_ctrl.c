@@ -93,6 +93,16 @@ float avg_heading_deg = 0.0;
 
 enum status_code CTRL_InitSystem(void)
 {
+	//Create config struct and set to defaults
+	struct wdt_conf config_wdt;
+	wdt_get_config_defaults(&config_wdt);
+	
+	//Turn off always on mode, set clock period
+	config_wdt.always_on = false;
+	config_wdt.clock_source = GCLK_GENERATOR_4;
+	config_wdt.timeout_period = WDT_PERIOD_2048CLK;
+	wdt_set_config(&config_wdt);
+	
 	// Initialize SAMD20
 	system_init();
 	
@@ -154,9 +164,6 @@ enum status_code CTRL_InitSystem(void)
 	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
 	port_pin_set_config(EXT_WDT_PIN, &config_port_pin);
 	
-	//Configure internal watchdog timer
-	while(wdt_get_config_defaults() != false);
-	
 		
 	return STATUS_OK;
 }
@@ -216,32 +223,6 @@ void ExtWDT_Kick(void){
 	//This should be sufficient time as WDT only needs 50 ns pulse to reset timer.
 	port_pin_set_output_level(EXT_WDT_PIN, true);
 	port_pin_set_output_level(EXT_WDT_PIN, false);
-}
-
-//Internal watchdog timer kick
-void IntWDT_Kick(void){
-	
-	//Create config struct and set to defaults
-	struct wdt_conf config_wdt;
-	wdt_get_config_defaults(&config_wdt);
-	
-	//Set watchdog config, always_on_mode is off, about 
-	config_wdt.always_on = false;
-	
-	
-	
-	
-	/*line below has to be checked and 
-	GCLK has to be setup if not already
-	so that it is approcimately 1.6 seconds as well
-	*/
-	
-	
-	
-	config_wdt.timeout_period = WDT_PERIOD_2048CLK;
-	
-	//Enable watchdog timer
-	wdt_set_config(&config_wdt);
 }
 
 //External and Internal Watchdog timers kick task from individual tasks
