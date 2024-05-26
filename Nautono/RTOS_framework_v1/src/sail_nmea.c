@@ -70,7 +70,7 @@ bool get_NMEA_type(eNMEA_TRX_t* type, char* msg_ptr) {
 }
 
 enum status_code NMEA_Init(NMEA_ChannelID id) {
-	
+		
 	// Check that the id is valid
 	if (id >= NMEA_NUM_CHANNELS) {
 		// Error, invalid ID
@@ -83,16 +83,16 @@ enum status_code NMEA_Init(NMEA_ChannelID id) {
 		return STATUS_ERR_ALREADY_INITIALIZED;
 	}
 	
-	DEBUG_Write_Unprotected("Initializing UART through NMEA Init.\n");
+	DEBUG_Write_Unprotected("Initializing UART through NMEA Init.\r\n");
 	
 	// Initialize the appropriate UART and check for an error
 	if (UART_Init(NMEA_MUX_ChannelID(id)) != STATUS_OK) {
 		// Indicate a hardware error
-		DEBUG_Write_Unprotected("Could not initialize UART through NMEA Init.\n");
+		DEBUG_Write_Unprotected("Could not initialize UART through NMEA Init.\r\n");
 		return STATUS_ERR_DENIED;
 	}
 	
-	DEBUG_Write_Unprotected("Initialized UART through NMEA Init.\n");
+	DEBUG_Write_Unprotected("Initialized UART through NMEA Init.\r\n");
 	
 	// Set the initialization flag
 	init_flags[id] = true;

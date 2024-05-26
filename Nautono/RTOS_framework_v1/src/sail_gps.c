@@ -47,7 +47,7 @@ void ReadGPS(void) {
 
 	TickType_t read_gps_delay = pdMS_TO_TICKS(GPS_SLEEP_PERIOD_MS);
 
-	GPS_On();
+	//GPS_On();
 
 	while (1) {
 
@@ -60,6 +60,8 @@ void ReadGPS(void) {
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x01;
 		taskEXIT_CRITICAL();
+		
+		GPS_On();
 		
 		DEBUG_Write("\r\n********** Performing GPS Reading **********\r\n");
 
@@ -94,6 +96,7 @@ void ReadGPS(void) {
 			////calculate heading parameters
 			//process_heading_readings();			
 		}
+		
 		vTaskDelay(read_gps_delay);
 	}
 }
@@ -184,7 +187,7 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 	
 	// Check the NMEA receiver for new data
 	if (rc != STATUS_VALID_DATA){
-		//DEBUG_Write("RAW INVALID GPS MESSAGE: %s\r\n", msg_buffer);
+		DEBUG_Write("RAW INVALID GPS MESSAGE: >%s<\r\n", msg_buffer);
 		//DEBUG_Write("RC code: %d\r\n", rc);
 		return rc;
 	}

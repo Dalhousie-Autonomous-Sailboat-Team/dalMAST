@@ -210,9 +210,30 @@ UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id){
 }
 
 enum status_code UART_Init(UART_ChannelID id) {
+	enum status_code usart_status;
 	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
 	
-	UART_Disable(MUXED_ID);
+	//Keep track of MUX1 and MUX2 channel
+	if (id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		
+		if(MUX1_CURRENT_CHANNEL != id){
+			
+			MUX1_CURRENT_CHANNEL = id;
+			usart_reset(&uart_modules[MUXED_ID]);
+			
+		}
+	}
+	else if (id > UART_MPPT2 && id <= UART_XTRA)
+	{
+		
+		if(MUX2_CURRENT_CHANNEL != id){
+			
+			MUX2_CURRENT_CHANNEL = id;
+			usart_reset(&uart_modules[MUXED_ID]);
+			
+		}
+	}
 	
 	struct port_config config_port_pin;
 	port_get_config_defaults(&config_port_pin);
@@ -299,7 +320,12 @@ enum status_code UART_Init(UART_ChannelID id) {
 	}
 	
 	// Apply the settings to the UART module
-	while (usart_init(&uart_modules[MUXED_ID], sercom_ptrs[MUXED_ID], &uart_config) != STATUS_OK);
+	usart_status = usart_init(&uart_modules[MUXED_ID], sercom_ptrs[MUXED_ID], &uart_config);
+	while (usart_status != STATUS_OK)
+	{
+		//DEBUG_Write_Unprotected("Usart init status: %d", usart_status);
+		usart_status = usart_init(&uart_modules[MUXED_ID], sercom_ptrs[MUXED_ID], &uart_config);
+	}
 	usart_enable(&uart_modules[MUXED_ID]);
 	
 	// Register and enable callbacks
@@ -312,13 +338,6 @@ enum status_code UART_Init(UART_ChannelID id) {
 	// Set the state
 	rx_states[MUXED_ID] = UART_RX_DISABLED;
 	tx_states[MUXED_ID] = UART_TX_IDLE;
-	
-	//Keep track of MUX1 and MUX2 channel
-	if (id > UART_NUM_CHANNELS && id <= UART_MPPT2)
-		MUX1_CURRENT_CHANNEL = id;
-	else if (id > UART_MPPT2){
-		MUX2_CURRENT_CHANNEL = id;
-	}
 	
 	return STATUS_OK;	
 }
@@ -335,6 +354,30 @@ enum status_code UART_Enable(UART_ChannelID id) {
 	if (rx_states[MUXED_ID] == UART_RX_OFF) {
 		return STATUS_ERR_NOT_INITIALIZED;
 	}	
+	
+	//Ensure that the MUX uarts are set to the correct settings before using
+	if (id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		
+		if(MUX1_CURRENT_CHANNEL != id){
+			
+			MUX1_CURRENT_CHANNEL = id;
+			usart_reset(&uart_modules[MUXED_ID]);
+			UART_Init(id);
+			
+		}
+	}
+	else if (id > UART_MPPT2 && id <= UART_XTRA)
+	{
+		
+		if(MUX2_CURRENT_CHANNEL != id){
+			
+			MUX2_CURRENT_CHANNEL = id;
+			usart_reset(&uart_modules[MUXED_ID]);
+			UART_Init(id);
+			
+		}
+	}
 	
 	// Return if the receiver has already been enabled
 	if (rx_states[MUXED_ID] == UART_RX_ENABLED) {
