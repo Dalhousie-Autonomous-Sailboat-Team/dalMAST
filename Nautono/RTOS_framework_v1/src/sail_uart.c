@@ -195,6 +195,23 @@ static usart_callback_t TxCallbacks[] = {
 };
 
 
+
+MUX_Init(void){
+	
+	// Get config struct for GPIO pin
+	struct port_config config_port_pin;
+	port_get_config_defaults(&config_port_pin);
+	
+	// Select UART MUX channel to initialize:
+	port_get_config_defaults(&config_port_pin);
+	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
+	port_pin_set_config(MUX1_LOGIC_A, &config_port_pin);
+	port_pin_set_config(MUX1_LOGIC_B, &config_port_pin);
+	port_pin_set_config(MUX2_LOGIC_A, &config_port_pin);
+	port_pin_set_config(MUX2_LOGIC_B, &config_port_pin);
+	
+}
+
 UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id){
 	
 	//Multiplexes UART channels according to placements on external multiplexer circuit
@@ -235,9 +252,6 @@ enum status_code UART_Init(UART_ChannelID id) {
 		}
 	}
 	
-	struct port_config config_port_pin;
-	port_get_config_defaults(&config_port_pin);
-	
 	// Return if the ID is invalid
 	if (MUXED_ID >= UART_NUM_CHANNELS) {
 		return STATUS_ERR_INVALID_ARG;
@@ -265,14 +279,6 @@ enum status_code UART_Init(UART_ChannelID id) {
 	uart_config.pinmux_pad2 = pinmux_pads[MUXED_ID][2];
 	uart_config.pinmux_pad3 = pinmux_pads[MUXED_ID][3];
 	
-	// Select UART MUX channel to initialize:
-	
-	port_get_config_defaults(&config_port_pin);
-	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
-	port_pin_set_config(MUX1_LOGIC_A, &config_port_pin);
-	port_pin_set_config(MUX1_LOGIC_B, &config_port_pin);
-	port_pin_set_config(MUX2_LOGIC_A, &config_port_pin);
-	port_pin_set_config(MUX2_LOGIC_B, &config_port_pin);
 	
 	switch(id){
 		

@@ -38,6 +38,11 @@ UART_ChannelID MUX1_CURRENT_CHANNEL;
 UART_ChannelID MUX2_CURRENT_CHANNEL;
 
 
+//MUX_Init
+// Sets the UART multiplexer logic pins up for output.
+//
+void MUX_Init(void);
+
 //UART_Init
 // Initialize a specific UART port.
 // Inputs:
