@@ -143,13 +143,17 @@ enum status_code GPS_Init(void)
 
 enum status_code GPS_Enable(void)
 {
+	enum status_code NMEA_Enable_status;
+	
 	// Return if the module hasn't been initialized
 	if (!init_flag) {
 		return STATUS_ERR_NOT_INITIALIZED;
 	}
 
 	// Return if the receiver cannot be started
-	if (NMEA_Enable(NMEA_GPS) != STATUS_OK) {
+	
+	NMEA_Enable_status = NMEA_Enable(NMEA_GPS);
+	if ((NMEA_Enable_status != STATUS_OK) && (NMEA_Enable_status != STATUS_NO_CHANGE))  {
 		DEBUG_Write("GPS could not be started!\r\n");
 		return STATUS_ERR_DENIED;
 	}

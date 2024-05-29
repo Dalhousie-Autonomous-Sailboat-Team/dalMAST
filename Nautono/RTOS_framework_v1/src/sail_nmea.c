@@ -290,6 +290,7 @@ enum status_code NMEA_RxString(NMEA_ChannelID id, uint8_t *str, uint16_t length)
 	switch (UART_RxString(NMEA_MUX_ChannelID(id), &rx_buffers[id][0], NMEA_BUFFER_LENGTH)) {
 		// Continue if some valid data was found
 		case STATUS_VALID_DATA:
+			DEBUG_Write("Valid data\n");
 			break;
 		// Return if there's no new data to return
 		case STATUS_NO_CHANGE:
