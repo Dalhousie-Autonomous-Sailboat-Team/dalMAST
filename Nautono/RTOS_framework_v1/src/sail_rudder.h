@@ -18,7 +18,11 @@
  */
 enum status_code RUDDER_Init(void);
 
-extern RADIO_Status RudderSetPos(double pos) ;
+/*
+//extern RADIO_Status RudderSetPos(double pos) ;
+*/
+
+extern void RudderSetPos(double pos);
 
 void Test_Rudder(void);
 

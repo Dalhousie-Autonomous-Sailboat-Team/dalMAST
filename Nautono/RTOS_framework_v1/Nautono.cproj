@@ -311,7 +311,7 @@
       <ToolNumber>ATML1873081800009565</ToolNumber>
       <ToolName>EDBG</ToolName>
     </com_atmel_avrdbg_tool_edbg>
-    <avrtoolinterfaceclock>4000000</avrtoolinterfaceclock>
+    <avrtoolinterfaceclock>247029</avrtoolinterfaceclock>
     <custom>
       <ToolOptions xmlns="">
         <InterfaceProperties>
@@ -326,7 +326,7 @@
     <com_atmel_avrdbg_tool_samice>
       <ToolOptions>
         <InterfaceProperties>
-          <SwdClock>4000000</SwdClock>
+          <SwdClock>247029</SwdClock>
         </InterfaceProperties>
         <InterfaceName>SWD</InterfaceName>
       </ToolOptions>

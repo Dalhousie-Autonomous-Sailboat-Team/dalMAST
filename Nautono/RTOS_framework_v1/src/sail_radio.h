@@ -17,6 +17,7 @@
 #include "sail_wind.h"
 #include "sail_types.h"
 
+
 #include <stdint.h>
 #include <status_codes.h>
 
@@ -28,18 +29,18 @@
  * List of various DALSAIL message types.
  */
 typedef enum RADIO_MsgTypes {
-	RADIO_ACK,
-	RADIO_MODE,
-	RADIO_STATE,
-	RADIO_REMOTE,//this contains only the rudder data
-	RADIO_WAY_POINT,
-	RADIO_CONFIG,
-	RADIO_GPS,
-	RADIO_WIND,
-	RADIO_COMP,
-	RADIO_NAV,
-	RADIO_RESET,
-	RADIO_SAIL,//new addition contains only the sail data
+	RADIO_ACK		= 0,
+	RADIO_MODE		= 1,
+	RADIO_STATE		= 2,
+	RADIO_REMOTE	= 3,//this contains only the rudder data
+	RADIO_WAY_POINT = 4,
+	RADIO_CONFIG	= 5,
+	RADIO_GPS		= 6,
+	RADIO_WIND		= 7,
+	RADIO_COMP		= 8,
+	RADIO_NAV		= 9,
+	RADIO_RESET		= 10,
+	RADIO_SAIL		= 11,//new addition contains only the sail data
 	RADIO_NUM_MSG_TYPES
 } RADIO_MsgType;
 
@@ -148,6 +149,10 @@ static RADIO_Status ChangeState(CTRL_State new_state);
 static RADIO_Status ChangeLogPeriod(uint8_t new_period);
 static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data);
 static RADIO_Status AdjustMotors(uint16_t sail_angle, uint16_t rudder_angle);
+
+//added on april 24, 24
+static RADIO_Status RemoteAdjustMotors(uint16_t rudder_angle);
+static RADIO_Status LACAdjustMotors(uint16_t sail_angle);
 
 void Radio_On(void);
 void RadioHandler(void);
