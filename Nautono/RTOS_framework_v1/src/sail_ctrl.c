@@ -6,14 +6,13 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "sail_actuator.h"
-#include "sail_anglesensor.h"
-#include "sail_eeprom.h"
-#include "sail_gps.h"
 #include "sail_radio.h"
-#include "sail_rudder.h"
-#include "sail_imu.h"
 #include "sail_wind.h"
+#include "sail_eeprom.h"
+#include "sail_rudder.h"
+#include "sail_gps.h"
+#include "sail_rudder.h"
+#include "sail_actuator.h"
 
 #include "sail_nav.h"
 #include "sail_debug.h"
@@ -85,8 +84,8 @@ uint16_t wp_complete_count;
 // Distance between boat and way point
 double wp_distance;
 
-float course, bearing, sail_deg = 0;
-uint16_t rudder_deg = 0; 
+uint16_t rudder_deg;
+float course, bearing, sail_deg; 
 float avg_heading_deg = 0.0;
 
 
@@ -161,9 +160,7 @@ enum status_code CTRL_InitSensors(void)
     }else{
         DEBUG_Write_Unprotected("Wind Init Ok ...\r\n");
     }
-	
-	// bno055_init();
-	
+    
     // When status is okay, shouldn't this return a different status? - KT
 
 	return STATUS_OK;
@@ -188,11 +185,12 @@ enum status_code startup(void)
 	//wp_complete_count = 0;
 	
 	//DEBUG_Write_Unprotected("way point: lat - %d lon - %d rad - %d\r\n", (int)(wp.pos.lat * 1000000.0), (int)(wp.pos.lon * 1000000.0), (int)(wp.rad));
+	/*
+	// Start the motor controller
+	MOTOR_Init();
+	*/
 	
-	// Start rudder motor.
 	RUDDER_Init();
-	
-	// Start up the actuator for sail flap.
 	AC_init();
 	
 	
@@ -231,18 +229,18 @@ void LogData(void)
 		tx_msg_log.type = RADIO_GPS;
 		tx_msg_log.fields.gps.data = gps;
 		RADIO_TxMsg(&tx_msg_log);
-		
+	
 		// Log the wind speed and direction
 		tx_msg_log.type = RADIO_WIND;
 		tx_msg_log.fields.wind.data = wind;
-		RADIO_TxMsg(&tx_msg_log);
-
+		
 		//not needed because wind is reported in relation to the vessel's center line
 		/*
 		// Correct wind angle with average heading
 		tx_msg.fields.wind.data.angle += avg_heading_deg;
-		//RADIO_TxMsg(&tx_msg_log);
 		*/
+		
+		RADIO_TxMsg(&tx_msg_log);
 	
 		// Log the compass data
 		tx_msg_log.type = RADIO_COMP;
@@ -251,10 +249,10 @@ void LogData(void)
 
 		// Log the navigation data
 		tx_msg.type = RADIO_NAV;
-		//tx_msg.fields.nav.wp = wp;
-		//tx_msg.fields.nav.distance = wp_distance;
-		//tx_msg.fields.nav.bearing = bearing;
-		//tx_msg.fields.nav.course = course;
+		tx_msg.fields.nav.wp = wp;
+		tx_msg.fields.nav.distance = wp_distance;
+		tx_msg.fields.nav.bearing = bearing;
+		tx_msg.fields.nav.course = course;
 		tx_msg.fields.nav.sail_angle = sail_deg;
 		tx_msg.fields.nav.rudder_angle = rudder_deg;
 		RADIO_TxMsg(&tx_msg);
@@ -264,11 +262,70 @@ void LogData(void)
 	}
 }
 
-void assing_wind_readings(void) 
-{
-	wind.speed = WIND_data.msg_array[eIIMWV].fields.wimwv.wind_speed_ms;
-	wind.angle = WIND_data.msg_array[eIIMWV].fields.wimwv.wind_dir_rel;
+
+static void beaconTxLogData(void){
+	char cmd5[32] = "AT+SBDIX\r\n";
+	char rxString[256];
+	
+	UART_TxString(UART_XEOS,"AT\r\n");
+	vTaskDelay(6000 / portTICK_RATE_MS);
+	UART_RxString(UART_XEOS,rxString, 128);
+	DEBUG_Write(rxString);
+	
+	UART_TxString(UART_XEOS,"AT+CIER=1,1,1\r\n");
+	vTaskDelay(6000 / portTICK_RATE_MS);
+	UART_RxString(UART_XEOS,rxString, 128);
+	DEBUG_Write(rxString);
+	
+	uint16_t maxDataSizeCounter = 0;
+	char cmd4[32] = "at+sbdwt=";
+	char data[200] = {'\0'};
+	char delimit[3] = "\r\n";
+#ifdef PCB
+	sprintf(data, "%5.3lf,%5.3lf", gps.lat, gps.lon);
+//#ifdef SENSORREADINGS
+	// Sensor readings output to the data string
+	//sprintf(data, "%5.3lf,%5.3lf,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f"
+//	, gps.lat, gps.lon, wind.speed, wind.angle, comp.data.heading.roll, 
+	//comp.data.heading.pitch, bearing, sail_deg, avg_heading_deg);
+#else
+	// Sensor readings output to the data string
+	sprintf(data, "1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0, these are random numbers");
+
+#endif
+	//send the stream 211 command followed by data followed by delimiter
+	
+	
+	UART_TxString(UART_XEOS, cmd4);   
+	UART_TxString(UART_XEOS, data);
+	UART_TxString(UART_XEOS, delimit);
+	vTaskDelay(6000/portTICK_RATE_MS);
+	UART_RxString(UART_WIND,rxString, 128);
+	DEBUG_Write(rxString);
+	vTaskDelay(6000 / portTICK_PERIOD_MS);
+
+	UART_TxString(UART_XEOS, cmd5);
+	vTaskDelay(6000 / portTICK_PERIOD_MS);
+	
 }
+
+void beaconTaskTest(void){
+	TickType_t testDelay = pdMS_TO_TICKS(6000 / portTICK_RATE_MS);
+	
+	UART_Init(UART_VCOM);
+	
+
+	while(1){
+		
+#ifdef LOL		
+	//	running_task = eUpdateCourse;
+		//beaconTxLogData();
+#endif
+		DEBUG_Write("Idk what to write\r\n");
+		vTaskDelay(testDelay);
+	}
+}
+
 
 void process_wind_readings(void)
 {
@@ -313,10 +370,6 @@ static void DisableWeatherStation(void)
 	// Disable the wind vane
 	WIND_Disable();
 }
-
-//void assign_heading_readings(void) {
-	//comp.data.heading.heading = ;
-//}
 
 void process_heading_readings(void)
 {
@@ -427,33 +480,6 @@ void UpdateCourse(void)
 	
 }
 
-void ReadSailAngle(void)
-{
-	AS_init(PIN_PA08); // Angle sensor init.
-	
-	TickType_t read_as_delay = pdMS_TO_TICKS(READ_AS_SLEEP_PERIOD_MS);
-	
-	uint16_t angle = 0;
-	
-	while(1) 
-	{						 
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
-		
-		DEBUG_Write("\n<<<<<<<<<<<<<<<<<<<<<<<Do read Angle Sensor>>>>>>>>>>>>>>>>>>>>>>>>>>>\r\n");
-		running_task = eReadAS;
-		
-		readAngle(&angle);
-		
-		sail_deg = angle; // Update global variable with current angle.
-		
-		vTaskDelay(read_as_delay);
-	}
-	
-	
-}
-
 void ReadCompass(void)
 {
 	
@@ -461,13 +487,6 @@ void ReadCompass(void)
 	EventBits_t event_bits;
 	
 	TickType_t read_compass_delay = pdMS_TO_TICKS(READ_COMPASS_SLEEP_PERIOD_MS);
-	
-	if(bno055_init() != STATUS_OK){
-		DEBUG_Write("\n\r<<<<< Failed IMU initialization >>>>>n\r");
-	}
-	
-	setMode(OPERATION_MODE_NDOF);
-	IMU_calibrate();
 
 	while(1) {
 				
@@ -487,17 +506,23 @@ void ReadCompass(void)
 		
 
 		// Get the compass reading
-		if(getHeading(&comp) !=  STATUS_OK){
+		
+/* Updated this code for new compass:
+		
+		if(COMP_GetReading(COMP_HEADING, &comp) !=  STATUS_OK){
 			DEBUG_Write("\nERROR\r\n");
 		}
-		
-		DEBUG_Write("\t\tHeading: %d\r\n", (int)comp.data.heading.heading);
 
 		// Update the averaged heading
 		avg_heading_deg = 0.9 * avg_heading_deg + 0.1 * comp.data.heading.heading;
 		
+*/
+		
 		vTaskDelay(read_compass_delay);
+
 	}
+
+
 }
 
 
@@ -505,6 +530,3 @@ void ReadCompass(void)
 static void CTRL_Sleep(unsigned time_sec) {
 	vTaskDelay(time_sec * configTICK_RATE_HZ);;
 }
-
-
-

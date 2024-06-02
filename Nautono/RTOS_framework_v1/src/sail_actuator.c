@@ -106,7 +106,7 @@ void Test_Actuator(void){
 		
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Actuator >>>>>>>>>>\n\r");
 		
-		LAC_set_pos(100);
+		//LAC_set_pos(100);
 		ActuatorPotPos(&curr_pos);
 		DEBUG_Write("current pos: %d\r\n", (int)curr_pos);
 	

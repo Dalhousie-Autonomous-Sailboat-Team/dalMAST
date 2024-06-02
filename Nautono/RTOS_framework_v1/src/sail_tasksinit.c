@@ -19,7 +19,6 @@
 // Header files of different devices containing RTOS tasks.
 #include "sail_actuator.h"
 #include "sail_anglesensor.h"
-#include "sail_beacon.h"
 #include "sail_eeprom.h"
 #include "sail_gps.h"
 #include "sail_imu.h"
@@ -29,6 +28,7 @@
 #include "sail_radio.h"
 #include "sail_rudder.h"
 #include "sail_wind.h"
+#include "sail_beacon.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -58,11 +58,10 @@ enum status_code init_tasks(void) {
 	watchdog_counter = 0;
 	
 	// Task for reading incoming data from the GPS
-	//xTaskCreate( ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
+	xTaskCreate( ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
 
 	// Task for reading incoming data from the weather station
-	//OLD WS: xTaskCreate( ReadWeatherSensor, NULL, WEATHER_SENSOR_STACK_SIZE, NULL, WEATHER_SENSOR_PRIORITY, NULL );
-	//xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
+	//xTaskCreate( ReadWeatherSensor, NULL, WEATHER_SENSOR_STACK_SIZE, NULL, WEATHER_SENSOR_PRIORITY, NULL );
 	
 	// Task for updating the course of the sailboat
 	//xTaskCreate( UpdateCourse, NULL, UPDATE_COURSE_STACK_SIZE, NULL, UPDATE_COURSE_PRIORITY, NULL );
@@ -71,7 +70,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( ControlRudder, NULL, CONTROL_RUDDER_STACK_SIZE, NULL, CONTROL_RUDDER_PRIORITY, NULL );
 	
 	// Task for handling incoming messages to the radio
-	xTaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
+	//TaskCreate( RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
 	
 	// Task for transmitting logs using the radio
 	//xTaskCreate( LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
@@ -79,27 +78,25 @@ enum status_code init_tasks(void) {
 	// Task for getting the heading from the compass
 	//xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
 	
-	// Task to update the sail angle position
-	//xTaskCreate( ReadSailAngle, NULL, READ_AS_STACK_SIZE, NULL, READ_AS_PRIORITY, NULL );
-	
-	// DO NOT NEED, UPDATED ReadCompass to work with new IMU: 
-	//xTaskCreate(ReadIMU, NULL, READ_COMPASS_STACK_SIZE ,NULL, READ_COMPASS_PRIORITY, NULL);
-	
 	// Task for reseting the watchdog so that the microcontroller is not restarted
 	//xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	
 	/* Device Testing tasks: */
 	
 	//xTaskCreate(Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate(Test_IMU, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate(Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
 	//xTaskCreate(Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate(Test_INA, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	//xTaskCreate(TEST_BEACON, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 
 
 	// Task to blink an LED on the pcb, to ensure that the CPU is working.
-	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	
+	//xTaskCreate(beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+	//xTaskCreate(beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();

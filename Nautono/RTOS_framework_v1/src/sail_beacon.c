@@ -1,80 +1,98 @@
-
 /*
  * sail_beacon.c
  *
- * Created: 11/18/2023 6:15:12 PM
+ * Created: 9/27/2023 2:59:28 PM
  *  Author: manav
  */ 
-
-#include <stdbool.h>
-#include <string.h>
-
-#include "sail_uart.h"
 #include "sail_debug.h"
+#include "sail_tasksinit.h"
+#include "sail_uart.h"
 
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
-#include "task.h"
-#include "sail_ctrl.h"
-#include "sail_tasksinit.h"
+#include <string.h>
+#include <delay.h>
 
-static bool beacon_init = false;
 
-#define MAX_LEN 120
+#define TEST_BEACON_DELAY_MS 1000
 
-#define cmd1 "AT+CIER=1,1,1\r"
-#define msg_cmd "AT+SBDWT="
-#define cmd2 "AT+SPDIX\r"
-
-void Beacon_init(void)
+void Test_Beacon(void)
 {
-	if(UART_Init(UART_XEOS) == STATUS_OK) {
-		beacon_init = true;
-	}
-	
-	UART_TxString(UART_XEOS, cmd1);
-}
 
-enum status_code BeaconTX(char *str)
-{
-	enum status_code rc;
-	if(!beacon_init) {
-		Beacon_init();
-	}
+	char str[256];
 	
-	if(str == NULL) {
-		return STATUS_ERR_BAD_DATA;
-	}
-	
-	if(strlen(str) > 120) {
-		return STATUS_ERR_BAD_FORMAT;
-	}
-	
-	rc = UART_TxString(UART_XEOS, msg_cmd);
-	rc = UART_TxString(UART_XEOS, str);
-	rc = UART_TxString(UART_XEOS, "\r");
-	
-	delay_ms(5000);
-	
-	rc = UART_TxString(UART_XEOS, cmd2);
-	
-	return rc;
-}
+	TickType_t testDelay = pdMS_TO_TICKS(TEST_BEACON_DELAY_MS);
 
-void TEST_BEACON(void)
-{
-	Beacon_init();
-	
-	delay_ms(5000);
-	
-	while(1)
-	{
+	while(1){
+		taskENTER_CRITICAL();
+		watchdog_counter |= 0x20;
+		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
-		DEBUG_Write("<<<<<<<<<<<< Testing Beacon >>>>>>>>>>>>>>\r\n");
+		DEBUG_Write("\n\r<<<<<<<<<<< Testing Beacon >>>>>>>>>>\n\r");
 		
-		BeaconTX("Testing beacon from PCB");
+		//UART_TxString(UART_SATELLITE, "AT");
 		
-		vTaskDelay(10*60000);
+	//	UART_RxString(UART_SATELLITE, str, 128);
+		
+		DEBUG_Write("received string: %s\r\n", str);
+		
+		vTaskDelay(testDelay);
+	}
+}
+
+void beaconOk(void){
+	char rxString[256];
+	rxString[0] = '\0';
+	TickType_t testDelay = pdMS_TO_TICKS(TEST_BEACON_DELAY_MS);
+	
+	UART_Init(UART_WIND);
+	
+	while(1){
+		
+		running_task = eUpdateCourse;
+		DEBUG_Write("Sending >at<\n");
+		UART_TxString(UART_WIND,"AT");
+		UART_RxString(UART_WIND,rxString, 128);
+		DEBUG_Write("String received: >%s<\n", rxString);
+		vTaskDelay(testDelay);
+	}
+}
+
+void beaconStringResponse(void){
+	char rxString[256];
+	rxString[0] = '\0';
+	TickType_t testDelay = pdMS_TO_TICKS(TEST_BEACON_DELAY_MS);
+	
+	
+	UART_Init(UART_WIND);
+	
+	while(1){
+		running_task = eUpdateCourse;
+		DEBUG_Write("----------Sending string----------\r\n");
+		
+		//Send Test string
+		UART_TxString(UART_WIND,"AT+SBDWT=we made it");
+		//Receive string
+		UART_RxString(UART_WIND,rxString, sizeof(rxString)>>1);
+		//If received string is not expected message
+		if(strcmp(rxString, "OK")){
+			DEBUG_Write("Received message: %s\r\n", rxString);
+			DEBUG_Write("Expected message: 'OK'\r\n");
+			DEBUG_Write("Attempting to resend string.\r\n");
+			//DEBUG_Write("Attempting to resend string.\r\n");
+			//Attempt to resend string
+			UART_TxString(UART_WIND,"AT+SBDWT=we made it");
+			DEBUG_Write("Finished sending\r\n");
+		}else{
+			//Initiating SBD session to receive string sent earlier back from modem
+			DEBUG_Write("Attempting to open SBD session.\r\n");
+			UART_TxString(UART_WIND,"AT+SBDIX");
+			UART_RxString(UART_WIND,rxString, sizeof(rxString)>>1);
+			DEBUG_Write("String received: %s\r\n", rxString);
+		}
+		
+		vTaskDelay(testDelay);
 	}
 	
 }
+

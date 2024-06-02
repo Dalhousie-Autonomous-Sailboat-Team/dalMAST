@@ -347,7 +347,7 @@ static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t*
 		msg->fields.wimwv.wind_speed_ms = atof(data->args[2])*KNOTS_TO_MS;
 		
 		DEBUG_Write("\n\rRelative wind direction %s\r\n", data->args[0]);
-		DEBUG_Write("\n\rWind Speed [knots] %s\r\n", data->args[2]);
+		DEBUG_Write("\n\rWind Speed [m/s] %s\r\n", data->args[2]);
 		
 		break;
     // A bunch more NMEA message types exist here...

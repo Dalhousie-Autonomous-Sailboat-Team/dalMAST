@@ -1,9 +1,10 @@
-
 /*
  * sail_beacon.h
  *
- * Created: 11/18/2023 6:15:31 PM
+ * Created: 9/27/2023 2:59:46 PM
  *  Author: manav
  */ 
 
-void TEST_BEACON(void);
+void Test_Beacon(void);
+void beaconStringResponse(void);
+void beaconOk(void);

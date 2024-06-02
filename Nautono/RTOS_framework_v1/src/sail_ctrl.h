@@ -24,7 +24,7 @@
 #define CONTROL_RUDDER_SLEEP_PERIOD_MS 1000
 
 #define READ_AS_SLEEP_PERIOD_MS 500
-#define READ_COMPASS_SLEEP_PERIOD_MS 500
+#define READ_COMPASS_SLEEP_PERIOD_MS 1000
 
 typedef enum Sensor_Types {
 	SENSOR_GPS,
@@ -131,5 +131,7 @@ void assing_wind_readings(void);
  *	 time_sec - sleep time length
  */ 
 static void CTRL_Sleep(unsigned time_sec);
+
+void beaconTaskTest(void);
 
 #endif /* SAIL_CTRL_H_ */ 
