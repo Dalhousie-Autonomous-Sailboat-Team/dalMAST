@@ -134,6 +134,7 @@ void RudderSetPos(double pos)
 	rudder_deg = (uint16_t)curr_pos;
 	
 	DEBUG_Write("Final Rudder POS: %d\r\n", (int)curr_pos);
+
 }
 
 #define TEST_RUDDER_DELAY_MS 1000

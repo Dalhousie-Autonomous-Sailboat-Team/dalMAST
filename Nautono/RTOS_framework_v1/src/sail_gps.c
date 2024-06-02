@@ -250,22 +250,8 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* d
 		msg->fields.gpgga.lon.we = ((char)data->args[4] == 'W') ? west : east;
 		msg->fields.gpgga.alt = atof(data->args[8]);
 		
-		//if(atof(data->args[1]) == 0.00)
-		//{
-			//DEBUG_Write("Was 0\r\n");
-		//}
-		
-		//wrap this so it only shows during debug config
-		//#ifndef DEBUG_GPS
-		
 		DEBUG_Write("LAT DATA: >%s<\r\n", data->args[1]);
 		DEBUG_Write("LON DATA: >%s<\r\n", data->args[3]);
-			
-		DEBUG_Write("LAT DATA: >%d<\r\n", (uint)msg->fields.gpgga.lat.lat);
-		DEBUG_Write("LON DATA: >%d<\r\n", (uint)msg->fields.gpgga.lon.lon);
-		
-		//#endif
-
 		break;
 
 	/* case eGPVTG:

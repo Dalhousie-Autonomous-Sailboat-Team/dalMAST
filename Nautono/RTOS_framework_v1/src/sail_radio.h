@@ -17,6 +17,7 @@
 #include "sail_wind.h"
 #include "sail_types.h"
 
+
 #include <stdint.h>
 #include <status_codes.h>
 
@@ -28,17 +29,18 @@
  * List of various DALSAIL message types.
  */
 typedef enum RADIO_MsgTypes {
-	RADIO_ACK,
-	RADIO_MODE,
-	RADIO_STATE,
-	RADIO_REMOTE,
-	RADIO_WAY_POINT,
-	RADIO_CONFIG,
-	RADIO_GPS,
-	RADIO_WIND,
-	RADIO_COMP,
-	RADIO_NAV,
-	RADIO_RESET,
+	RADIO_ACK		= 0,
+	RADIO_MODE		= 1,
+	RADIO_STATE		= 2,
+	RADIO_REMOTE	= 3,//this contains only the rudder data
+	RADIO_WAY_POINT = 4,
+	RADIO_CONFIG	= 5,
+	RADIO_GPS		= 6,
+	RADIO_WIND		= 7,
+	RADIO_COMP		= 8,
+	RADIO_NAV		= 9,
+	RADIO_RESET		= 10,
+	RADIO_SAIL		= 11,//new addition contains only the sail data
 	RADIO_NUM_MSG_TYPES
 } RADIO_MsgType;
 
@@ -65,10 +67,21 @@ typedef struct RADIO_StateData {
 	CTRL_State			state;
 } RADIO_StateData;
 
+//change this to be two separate things
+/*
 typedef struct RADIO_RemoteData {
 	uint16_t				rudder_angle;
 	uint16_t				sail_angle;
 } RADIO_RemoteData;
+*/
+
+typedef struct RADIO_RemoteData{
+	uint16_t rudder_angle;
+}RADIO_RemoteData;
+
+typedef struct RADIO_SailData{
+	uint16_t sail_angle;
+}RADIO_SailData;
 
 typedef struct RADIO_WayPointData {
 	uint16_t			idx;
@@ -111,7 +124,7 @@ typedef struct RADIO_GenericMsg {
 		RADIO_AckData		ack;
 		RADIO_ModeData		mode;
 		RADIO_StateData		state;
-		RADIO_RemoteData	remote;
+		RADIO_RemoteData	remote;//change this
 		RADIO_WayPointData	wp;
 		RADIO_ConfigData	config;
 		RADIO_GPSData		gps;
@@ -119,6 +132,7 @@ typedef struct RADIO_GenericMsg {
 		RADIO_CompData		comp;
 		RADIO_NavData		nav;
 		RADIO_ResetData		reset;
+		RADIO_SailData      sail_new;
 	} fields;
 } RADIO_GenericMsg;
 
@@ -135,6 +149,10 @@ static RADIO_Status ChangeState(CTRL_State new_state);
 static RADIO_Status ChangeLogPeriod(uint8_t new_period);
 static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data);
 static RADIO_Status AdjustMotors(uint16_t sail_angle, uint16_t rudder_angle);
+
+//added on april 24, 24
+static RADIO_Status RemoteAdjustMotors(uint16_t rudder_angle);
+static RADIO_Status LACAdjustMotors(uint16_t sail_angle);
 
 void Radio_On(void);
 void RadioHandler(void);
@@ -157,9 +175,6 @@ extern double wp_distance;
 extern float course, bearing, sail_deg;
 extern uint16_t rudder_deg;
 extern float avg_heading_deg;
-
-
-
 
 void Radio_Sleep_Sec(unsigned time_sec);
 
