@@ -709,3 +709,74 @@ void Radio_Sleep_Sec(unsigned time_sec) {
 }
 
 
+void MUX1_SYNC_TEST(void){
+	unsigned int loop_cnt = 0;
+	//uint16_t loop_cnt = 0;
+	unsigned int loop_max = 100000; //500000;
+	
+	TickType_t radio_handler_delay = pdMS_TO_TICKS(RADIO_SLEEP_PERIOD_MS);
+	
+	//#ifndef TEST
+	
+	DEBUG_Write("Reading GPS...\r\n");
+	uint16_t loop_cnt = 0;
+	//set msg type sum to 0 since no messages processed yet
+	GPS_data.msg_type_sum = 0;
+
+	// Event bits for holding the state of the event group
+	EventBits_t event_bits;
+
+	TickType_t read_gps_delay = pdMS_TO_TICKS(GPS_SLEEP_PERIOD_MS);
+
+	while (1) {
+		running_task = eRadioHandler;
+		RADIO_GenericMsg rx_msg;
+		
+		//DEBUG_Write("<<<<<<<<<<<<<<<<<<<< RADIO HANDLER >>>>>>>>>>>>>>>>>>>>>\r\n");
+		
+		switch (RADIO_RxMsg(&rx_msg)) {
+			case STATUS_OK:
+			
+			taskENTER_CRITICAL();
+			DEBUG_Write("Received a message!\r\n");
+			HandleMessage(&rx_msg);
+			taskEXIT_CRITICAL();
+			
+			break;
+			
+			case STATUS_ERR_BAD_DATA:
+			DEBUG_Write("Received a corrupt message!\r\n");
+			RADIO_Ack(RADIO_STATUS_ERROR);
+			break;
+			
+			default:
+			break;
+		}
+		
+		GPS_On();
+		
+		NMEA_GenericMsg msg;
+		
+		event_bits = xEventGroupWaitBits(mode_event_group,                        /* Test the mode event group */
+		CTRL_MODE_AUTO_BIT | CTRL_MODE_REMOTE_BIT, /* Wait until the sailboat is in AUTO or REMOTE mode */
+		pdFALSE,                                 /* Bits should not be cleared before returning. */
+		pdFALSE,                                 /* Don't wait for both bits, either bit will do. */
+		portMAX_DELAY);                          /* Wait time does not expire */
+		
+		if (GPS_RxMsg(&msg) == STATUS_OK) {
+			loop_cnt++;
+			//DEBUG_Write("\nStatus OK\n");
+			//DEBUG_Write("loop count %d\r\n", loop_cnt);
+			//store msg into msg array at index corresponding to msg type
+			DEBUG_Write("message type: %d\r\n", msg.type);
+			GPS_data.msg_array[msg.type] = msg;
+			//add type to msg type sum to keep track of the saved messages
+			GPS_data.msg_type_sum += msg.type;
+
+			DEBUG_Write("\nAll fields obtained... Going to sleep...\r\n");
+			GPS_data.msg_type_sum = 0;
+
+			//store weather station data into appropriate structs
+			assign_gps_readings();
+		}
+}
