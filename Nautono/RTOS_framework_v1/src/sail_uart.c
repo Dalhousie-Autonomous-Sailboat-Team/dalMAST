@@ -200,7 +200,6 @@ MUX_Init(void){
 	
 	// Get config struct for GPIO pin
 	struct port_config config_port_pin;
-	port_get_config_defaults(&config_port_pin);
 	
 	// Select UART MUX channel to initialize:
 	port_get_config_defaults(&config_port_pin);
