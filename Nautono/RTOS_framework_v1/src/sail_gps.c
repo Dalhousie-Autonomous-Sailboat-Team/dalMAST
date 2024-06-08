@@ -47,7 +47,7 @@ void ReadGPS(void) {
 
 	TickType_t read_gps_delay = pdMS_TO_TICKS(GPS_SLEEP_PERIOD_MS);
 
-	GPS_On();
+	//GPS_On();
 
 	while (1) {
 
@@ -60,6 +60,8 @@ void ReadGPS(void) {
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x01;
 		taskEXIT_CRITICAL();
+		
+		GPS_On();
 		
 		DEBUG_Write("\r\n********** Performing GPS Reading **********\r\n");
 
@@ -94,6 +96,7 @@ void ReadGPS(void) {
 			////calculate heading parameters
 			//process_heading_readings();			
 		}
+		
 		vTaskDelay(read_gps_delay);
 	}
 }
@@ -116,6 +119,8 @@ enum status_code GPS_Init(void)
 		return STATUS_ERR_ALREADY_INITIALIZED;
 	}
 
+	DEBUG_Write_Unprotected("Initializing GPS.\n");
+
 	// Initialize NMEA channel
 	switch (NMEA_Init(NMEA_GPS)) {
 	case STATUS_OK: // Initialization complete, continue
@@ -126,6 +131,8 @@ enum status_code GPS_Init(void)
 		DEBUG_Write_Unprotected("NMEA module could not be initialized!\n");
 		return STATUS_ERR_DENIED;
 	}
+	
+	DEBUG_Write_Unprotected("Initialized GPS!\n");
 
 	// Set the initialization flag
 	init_flag = true;
@@ -136,13 +143,17 @@ enum status_code GPS_Init(void)
 
 enum status_code GPS_Enable(void)
 {
+	enum status_code NMEA_Enable_status;
+	
 	// Return if the module hasn't been initialized
 	if (!init_flag) {
 		return STATUS_ERR_NOT_INITIALIZED;
 	}
 
 	// Return if the receiver cannot be started
-	if (NMEA_Enable(NMEA_GPS) != STATUS_OK) {
+	
+	NMEA_Enable_status = NMEA_Enable(NMEA_GPS);
+	if ((NMEA_Enable_status != STATUS_OK) && (NMEA_Enable_status != STATUS_NO_CHANGE))  {
 		DEBUG_Write("GPS could not be started!\r\n");
 		return STATUS_ERR_DENIED;
 	}
@@ -180,7 +191,7 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 	
 	// Check the NMEA receiver for new data
 	if (rc != STATUS_VALID_DATA){
-		//DEBUG_Write("RAW INVALID GPS MESSAGE: %s\r\n", msg_buffer);
+		DEBUG_Write("RAW INVALID GPS MESSAGE: >%s<\r\n", msg_buffer);
 		//DEBUG_Write("RC code: %d\r\n", rc);
 		return rc;
 	}
