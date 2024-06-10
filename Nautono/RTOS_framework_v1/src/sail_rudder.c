@@ -15,14 +15,16 @@
 #include "FreeRTOSConfig.h"
 #include "FreeRTOS.h"
 
-#define MOTOR_POWER_PIN			PIN_PA03
-#define MOTOR_ON_STATE			true
+//#define MOTOR_POWER_PIN			PIN_PA03
+#define MOTOR_CCW_POSITIVE_PIN	PIN_PB08
+#define MOTOR_CW_POSITIVE_PIN	PIN_PB09
+//#define MOTOR_ON_STATE			true
 
-#define MOTOR_SAIL_DIR_PIN		PIN_PB06
-#define MOTOR_SAIL_CW_STATE		true
+//#define MOTOR_SAIL_DIR_PIN		PIN_PB06
+//#define MOTOR_SAIL_CW_STATE		true
 
-#define MOTOR_RUDDER_DIR_PIN	PIN_PB04
-#define MOTOR_RUDDER_CW_STATE	true
+//#define MOTOR_RUDDER_DIR_PIN	PIN_PB04
+//#define MOTOR_RUDDER_CW_STATE	true
 
 typedef enum MOTOR_Directions {
 	MOTOR_CW,
@@ -53,10 +55,10 @@ static void InitPins(void)
 	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
 	
 	// Set the power pin
-	port_pin_set_config(MOTOR_POWER_PIN, &config_port_pin);
+	port_pin_set_config(MOTOR_CCW_POSITIVE_PIN, &config_port_pin);
 
 	// Set the rudder direction pin
-	port_pin_set_config(MOTOR_RUDDER_DIR_PIN, &config_port_pin);
+	port_pin_set_config(MOTOR_CW_POSITIVE_PIN, &config_port_pin);
 }
 
 enum status_code RUDDER_Init(void)
@@ -78,21 +80,36 @@ enum status_code RUDDER_Init(void)
 static void TurnOn(void)
 {
 	// Set digital output high.
-	port_pin_set_output_level(MOTOR_POWER_PIN, MOTOR_ON_STATE);
+	//port_pin_set_output_level(MOTOR_POWER_PIN, MOTOR_ON_STATE);
+}
+
+//	Function to turn clockwise
+static void TurnCW(void){
+	port_pin_set_output_level(MOTOR_CW_POSITIVE_PIN, true);
+	port_pin_set_output_level(MOTOR_CCW_POSITIVE_PIN, false);
+	DEBUG_Write("Turning CW.\r\n");
+}
+
+//	Function to turn clockwise
+static void TurnCCW(void){
+	port_pin_set_output_level(MOTOR_CW_POSITIVE_PIN, false);
+	port_pin_set_output_level(MOTOR_CCW_POSITIVE_PIN, true);
+	DEBUG_Write("Turning CCW.\r\n");
 }
 
 // Function to turn off the specified motor
 static void TurnOff(void)
 {
 	// Set the digital output low.
-	port_pin_set_output_level(MOTOR_POWER_PIN, !MOTOR_ON_STATE);
+	port_pin_set_output_level(MOTOR_CW_POSITIVE_PIN, false);
+	port_pin_set_output_level(MOTOR_CCW_POSITIVE_PIN, false);
 }
 
 
 // Function to turn set the direction of the specified motor
 static void SetDirection(MOTOR_Direction dir)
 {
-	port_pin_set_output_level(MOTOR_RUDDER_DIR_PIN, (dir == MOTOR_CW ? !MOTOR_RUDDER_CW_STATE : MOTOR_RUDDER_CW_STATE));
+	//port_pin_set_output_level(MOTOR_RUDDER_DIR_PIN, (dir == MOTOR_CW ? !MOTOR_RUDDER_CW_STATE : MOTOR_RUDDER_CW_STATE));
 }
 
 void RudderPotPos(double * data) {
@@ -117,13 +134,21 @@ void RudderSetPos(double pos)
 		dir = MOTOR_CCW;
 	}
 	
-	SetDirection(dir);
+	//SetDirection(dir);
 	
 	DEBUG_Write("Setting Rudder to POS: %d\r\n", (uint)pos);
 	
 	while((curr_pos <= pos*0.95 || curr_pos >= pos*1.05)) 
 	{
-		TurnOn();
+		//TurnOn();
+		if(dir == MOTOR_CCW)
+		{
+			TurnCCW();
+		}
+		else
+		{
+			TurnCW();
+		}
 		RudderPotPos(&curr_pos);
 		//DEBUG_Write("RUDDER POS: %d\r\n", (uint)curr_pos);
 	}
@@ -156,6 +181,10 @@ void Test_Rudder(void){
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing POT >>>>>>>>>>\n\r");
 		
 		RudderPotPos(&pos);
+		
+		RudderSetPos(105);
+		RudderSetPos(30);
+		
 		
 		int_pos = pos;
 		DEBUG_Write("POT reading: %d\r\n", int_pos);

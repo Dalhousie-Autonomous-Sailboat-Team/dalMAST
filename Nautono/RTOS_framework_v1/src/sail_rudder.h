@@ -26,4 +26,7 @@ extern void RudderSetPos(double pos);
 
 void Test_Rudder(void);
 
+static void TurnCCW(void);
+static void TurnCW(void);
+
 #endif
