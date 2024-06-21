@@ -566,7 +566,7 @@ void Test_EEPROM(void)
 	
 	
 	uint8_t mode_buffer[2] = {0X3D, 0X01};
-	I2C_WriteBuffer(I2C_IMU, mode_buffer, 2, I2C_WRITE_NORMAL);
+	I2C_WriteBuffer(I2C_IMU1, mode_buffer, 2, I2C_WRITE_NORMAL);
 
 	while(test){
 		taskENTER_CRITICAL();
@@ -689,8 +689,8 @@ void Test_EEPROM(void)
 		/*
 		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");
 		
-		I2C_WriteBuffer(I2C_IMU, &reg_addr, 1, I2C_WRITE_NORMAL);
-		I2C_ReadBuffer(I2C_IMU, &bno_id, 1, I2C_READ_NORMAL);
+		I2C_WriteBuffer(I2C_IMU1, &reg_addr, 1, I2C_WRITE_NORMAL);
+		I2C_ReadBuffer(I2C_IMU1, &bno_id, 1, I2C_READ_NORMAL);
 		DEBUG_Write("Bno temp: %d\r\n", bno_id);
 		
 		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");

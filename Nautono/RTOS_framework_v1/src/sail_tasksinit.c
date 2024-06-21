@@ -29,6 +29,7 @@
 #include "sail_rudder.h"
 #include "sail_wind.h"
 #include "sail_beacon.h"
+#include "sail_temp.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -93,11 +94,12 @@ enum status_code init_tasks(void) {
 
 
 	// Task to blink an LED on the pcb, to ensure that the CPU is working.
-	//xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//xTaskCreate(beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	//xTaskCreate(beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	
+	//xTaskCreate(TestTemperatureSensor, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
 	
@@ -105,6 +107,7 @@ enum status_code init_tasks(void) {
 	// If it does, more freeRTOS heap memory must be allocated
 	return STATUS_ERR_INSUFFICIENT_RTOS_HEAP;
 }
+
 
 void WatchDogTask(void){
 	

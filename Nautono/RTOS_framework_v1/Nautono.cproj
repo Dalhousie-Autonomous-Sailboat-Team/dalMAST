@@ -917,6 +917,12 @@
     <Compile Include="src\sail_tasksinit.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\sail_temp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_temp.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sail_types.h">
       <SubType>compile</SubType>
     </Compile>

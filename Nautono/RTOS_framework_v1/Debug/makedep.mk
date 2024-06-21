@@ -44,6 +44,8 @@ src\sail_radio.c
 
 src\sail_tasksinit.c
 
+src\sail_temp.c
+
 src\sail_uart.c
 
 src\sail_wind.c

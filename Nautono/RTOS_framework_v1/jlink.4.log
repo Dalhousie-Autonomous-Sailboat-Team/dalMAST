@@ -1,9 +1,9 @@
-T25D0 1562:028.160   SEGGER J-Link V7.96b Log File
-T25D0 1562:028.416   DLL Compiled: Mar 20 2024 16:53:15
-T25D0 1562:028.544   Logging started @ 2024-03-30 16:29
-T25D0 1562:028.672   Process: C:\Program Files (x86)\Atmel\Studio\7.0\atbackend\atbackend.exe
-T25D0 1562:028.672 - 67.310ms
-T25D0 1562:038.656 JLINK_Close()
-T25D0 1562:053.632 - 14.960ms
-T25D0 1562:053.760   
-T25D0 1562:054.016   Closed
+T6790 515:041.792   SEGGER J-Link V7.96c Log File
+T6790 515:042.048   DLL Compiled: Apr  2 2024 12:30:42
+T6790 515:042.144   Logging started @ 2024-05-25 16:48
+T6790 515:042.240   Process: C:\Program Files (x86)\Atmel\Studio\7.0\atbackend\atbackend.exe
+T6790 515:042.304 - 90.430ms
+T6790 515:049.536 JLINK_Close()
+T6790 515:058.528 - 8.980ms
+T6790 515:058.624   
+T6790 515:058.688   Closed

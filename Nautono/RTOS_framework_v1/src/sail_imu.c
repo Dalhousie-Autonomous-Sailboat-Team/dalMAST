@@ -48,13 +48,13 @@ static enum status_code read8(uint8_t addr, uint8_t *data)
 	uint8_t buffer = addr;
 	
 	// Write the command to the compass
-	if (I2C_WriteBuffer(I2C_IMU, &buffer, 1, I2C_WRITE_NORMAL) != STATUS_OK) {
+	if (I2C_WriteBuffer(I2C_IMU1, &buffer, 1, I2C_WRITE_NORMAL) != STATUS_OK) {
 		DEBUG_Write("Write in read Error\r\n");
 		return STATUS_ERR_DENIED;
 	}
 	
 	// Read the data back from the compass
-	if (I2C_ReadBuffer(I2C_IMU, data, 1, I2C_READ_NORMAL) != STATUS_OK) {
+	if (I2C_ReadBuffer(I2C_IMU1, data, 1, I2C_READ_NORMAL) != STATUS_OK) {
 		DEBUG_Write("Read Error\r\n");
 		return STATUS_ERR_DENIED;
 	}
@@ -73,7 +73,7 @@ static enum status_code readLen(uint8_t addr, uint8_t *data,  uint8_t len)
 	uint8_t buffer = addr;
 	
 	// Write the command to the compass
-	if (I2C_WriteBuffer(I2C_IMU, &buffer, 1, I2C_WRITE_NORMAL) != STATUS_OK) {
+	if (I2C_WriteBuffer(I2C_IMU1, &buffer, 1, I2C_WRITE_NORMAL) != STATUS_OK) {
 		DEBUG_Write("write in readlen Error\r\n");
 		return STATUS_ERR_DENIED;
 	}
@@ -88,7 +88,7 @@ static enum status_code readLen(uint8_t addr, uint8_t *data,  uint8_t len)
 			sz = len;
 		}
 		
-		switch(I2C_ReadBuffer(I2C_IMU, &data[i], sz, I2C_READ_NORMAL))  {
+		switch(I2C_ReadBuffer(I2C_IMU1, &data[i], sz, I2C_READ_NORMAL))  {
 			case STATUS_OK:
 			read_complete = true;
 			i+=len;
@@ -121,7 +121,7 @@ static enum status_code write8(uint8_t addr, uint8_t data)
 	buffer[1] = data;	
 	
 	// Write to the compass
-	if (I2C_WriteBuffer(I2C_IMU, buffer, 2, I2C_WRITE_NORMAL) != STATUS_OK) {
+	if (I2C_WriteBuffer(I2C_IMU1, buffer, 2, I2C_WRITE_NORMAL) != STATUS_OK) {
 		DEBUG_Write("Write Error\r\n");
 		return STATUS_ERR_DENIED;
 	}

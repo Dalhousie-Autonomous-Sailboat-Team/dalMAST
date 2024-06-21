@@ -9,6 +9,8 @@
 #include "sail_tasksinit.h"
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
+#include "sail_debug.h"
+#include "sail_uart.h"
 
 static uint8_t _directionPin = PIN_PA25;
 
@@ -29,12 +31,15 @@ static void LED_init(void)
 // LED blink Task:
 void Debug_LED(void)
 {
+	//UART_Init(UART_VCOM);
+	
 	TickType_t testDelay = pdMS_TO_TICKS(DEBUG_LED_DELAY);
 
 	LED_init();
 	
 	while(1)
 	{
+		//DEBUG_Write("LED is blinking\r\n");
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x20;
 		taskEXIT_CRITICAL();
