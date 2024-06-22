@@ -25,6 +25,7 @@
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
 #include "task.h"
+#include "sail_beacon.h"
 
 // Time since last reset
 static uint64_t t_ms;
@@ -195,6 +196,7 @@ enum status_code startup(void)
 	
 	RUDDER_Init();
 	AC_init();
+	disableBeacon();
 	
 	
 	return STATUS_OK;

@@ -48,14 +48,14 @@ float ReadVoltage(I2C_DeviceID ina, int channel) {
 		break;
 	}
 
-	ReadWord(ina, reg, &val_raw);
+	ReadWord(ina, reggie, &val_raw);
 	
 	val_raw = (val_raw << 8) | (val_raw >> 8);
 	
 	DEBUG_Write("val_raw: %d\r\n", val_raw);
 
 
-	voltage_V = val_raw / 1000.0;
+	voltage_V = (float)( val_raw / 1000.0);
 
 	return voltage_V;
 }
@@ -77,7 +77,7 @@ static int32_t getShuntVoltage(I2C_DeviceID ina, int channel){
 		break;
 	}
 
-	ReadWord(ina, reg, &val_raw);
+	ReadWord(ina, reggie, &val_raw);
 
 	// 1 Least Significant Bit = 40uV
 	res = (int32_t)(val_raw >> 3) * 40;
@@ -95,7 +95,7 @@ float ReadCurrent(I2C_DeviceID ina, int channel) {
 	return current_A;
 }
 
-#define TEST_INA_DELAY_MS 1000
+#define TEST_INA_DELAY_MS 10000
 
 void Test_INA(void){
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_INA_DELAY_MS);
@@ -105,13 +105,14 @@ void Test_INA(void){
 		watchdog_counter |= 0x20;
 		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
+					
+		DEBUG_Write("The INA is 1 and channel is 1 and voltage is %d \r\n", (int)ReadVoltage(I2C_INA1, 1));
+		DEBUG_Write("The INA is 1 and channel is 2 and voltage is %d \r\n", (int)ReadVoltage(I2C_INA1, 2));
+		DEBUG_Write("The INA is 1 and channel is 3 and voltage is %d \r\n\r\n", (int)ReadVoltage(I2C_INA1, 3));
 		
-		for(int i = 0; i < 3; i++)
-		{
-			DEBUG_Write("The INA is %d and channel is %d and voltage is %d\r\n", I2C_INA1, i, (int)ReadVoltage(I2C_INA1, i));
-			DEBUG_Write("The INA is %d and channel is %d and voltage is %d\r\n", I2C_INA2, i, (int)ReadVoltage(I2C_INA2, i));
-			DEBUG_Write("The INA is %d and channel is %d and voltage is %d\r\n", I2C_INA3, i, (int)ReadVoltage(I2C_INA3, i));
-		}
+		DEBUG_Write("The INA is 2 and channel is 1 and voltage is %d \r\n", (int)ReadVoltage(I2C_INA2, 1));
+		DEBUG_Write("The INA is 2 and channel is 2 and voltage is %d \r\n", (int)ReadVoltage(I2C_INA2, 2));
+		DEBUG_Write("The INA is 2 and channel is 3 and voltage is %d \r\n\r\n", (int)ReadVoltage(I2C_INA2, 3));
 		
 		vTaskDelay(testDelay);
 	}

@@ -29,6 +29,17 @@ void enableBeacon(void){
 	
 }
 
+void disableBeacon(void){
+	// Get config struct for GPIO pin
+	struct port_config config_port_pin;
+	
+	// Select UART MUX channel to initialize:
+	port_get_config_defaults(&config_port_pin);
+	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
+	port_pin_set_config(BEACON_ENABLE, &config_port_pin);
+	
+	port_pin_set_output_level(BEACON_ENABLE, false);
+}
 
 void Test_Beacon(void)
 {

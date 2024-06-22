@@ -87,14 +87,14 @@ static void TurnOn(void)
 static void TurnCW(void){
 	port_pin_set_output_level(MOTOR_CW_POSITIVE_PIN, true);
 	port_pin_set_output_level(MOTOR_CCW_POSITIVE_PIN, false);
-	DEBUG_Write("Turning CW.\r\n");
+	//DEBUG_Write("Turning CW.\r\n");
 }
 
 //	Function to turn clockwise
 static void TurnCCW(void){
 	port_pin_set_output_level(MOTOR_CW_POSITIVE_PIN, false);
 	port_pin_set_output_level(MOTOR_CCW_POSITIVE_PIN, true);
-	DEBUG_Write("Turning CCW.\r\n");
+	//DEBUG_Write("Turning CCW.\r\n");
 }
 
 // Function to turn off the specified motor
