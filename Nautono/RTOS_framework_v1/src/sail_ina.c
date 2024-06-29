@@ -79,6 +79,8 @@ static int32_t getShuntVoltage(I2C_DeviceID ina, int channel){
 
 	ReadWord(ina, reggie, &val_raw);
 
+	DEBUG_Write("val_raw: %d\r\n", val_raw);
+
 	// 1 Least Significant Bit = 40uV
 	res = (int32_t)(val_raw >> 3) * 40;
 
@@ -113,6 +115,12 @@ void Test_INA(void){
 		DEBUG_Write("The INA is 2 and channel is 1 and voltage is %d \r\n", (int)ReadVoltage(I2C_INA2, 1));
 		DEBUG_Write("The INA is 2 and channel is 2 and voltage is %d \r\n", (int)ReadVoltage(I2C_INA2, 2));
 		DEBUG_Write("The INA is 2 and channel is 3 and voltage is %d \r\n\r\n", (int)ReadVoltage(I2C_INA2, 3));
+		
+		DEBUG_Write("Measuring shunt voltage across RUDDER MOTOR resistor:\r\n");
+		getShuntVoltage(I2C_INA1, 2);
+		DEBUG_Write("Measuring the current in RUDDER MOTOR:\r\n");
+		ReadCurrent(I2C_INA1, 2);
+		DEBUG_Write("\r\n\r\n");
 		
 		vTaskDelay(testDelay);
 	}
