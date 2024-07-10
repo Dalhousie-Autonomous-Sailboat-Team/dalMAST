@@ -797,6 +797,12 @@
     <Compile Include="src\config.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\GPS_2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\GPS_2.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sail_actuator.c">
       <SubType>compile</SubType>
     </Compile>

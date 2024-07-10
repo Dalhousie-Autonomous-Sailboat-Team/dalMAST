@@ -19,7 +19,8 @@ typedef enum I2C_DeviceIDs {
 	I2C_INA3,
 	I2C_BME,
 	I2C_AS,
-	I2C_NUM_DEVICES
+	I2C_GPS,  // for the redundant GPS; added by Shishir Ghosh
+	I2C_NUM_DEVICES,
 } I2C_DeviceID;
 
 typedef enum I2C_ReadFormats {

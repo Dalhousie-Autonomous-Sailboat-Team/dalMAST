@@ -58,7 +58,7 @@ static enum status_code read8(uint8_t addr, uint8_t *data)
 		DEBUG_Write("Read Error\r\n");
 		return STATUS_ERR_DENIED;
 	}
-	
+		
 	return STATUS_OK;
 }
 
@@ -413,10 +413,12 @@ enum status_code bno055_init(void)
 	uint8_t slave_addr;
 	setMode(OPERATION_MODE_NDOF);
 	//setMode(OPERATION_MODE_MAGGYRO);
+	
 	// Read from IMU and get it's slave address:
 	if (read8(BNO055_CHIP_ID_ADDR, &slave_addr) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
 	}
+	
 	
 	// Return if an incorrect slave address is provided
 	if (slave_addr != BNO055_ID) {

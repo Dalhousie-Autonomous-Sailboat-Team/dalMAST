@@ -31,7 +31,8 @@ static uint8_t slave_addrs[I2C_NUM_DEVICES] = {
 	0x41,	// INA 2
 	0x42,	// INA 3
 	0x77,	// BME
-	0x36	// sail angle sensor (or 0x38)
+	0x36,	// sail angle sensor (or 0x38)
+	0x10	// GPS 2 
 };
 
 
@@ -125,6 +126,7 @@ enum status_code I2C_WriteBuffer(I2C_DeviceID id, uint8_t *data, uint16_t data_l
 		default:
 			// Return if an invalid write format was provided
 			return STATUS_ERR_INVALID_ARG;
+			
 	}
 	
 	return (code == STATUS_OK ? STATUS_OK : STATUS_BUSY);
