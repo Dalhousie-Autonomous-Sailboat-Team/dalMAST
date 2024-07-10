@@ -34,8 +34,6 @@ enum status_code GPS2_init(void) {
 		return STATUS_ERR_ALREADY_INITIALIZED;
 	}
 	
-	
-	
 	switch (I2C_Init()) {
 		case STATUS_OK:
 		case STATUS_ERR_ALREADY_INITIALIZED:
@@ -46,22 +44,7 @@ enum status_code GPS2_init(void) {
 		
 	delay_ms(500);
 	
-	
 	// a basic scanner, see if it ACKs
-	
-	
-	
-//
-	//gpsI2C->begin();
-	//if (baud_or_i2caddr > 0x7F) {
-		//_i2caddr = GPS_DEFAULT_I2C_ADDR;
-		//} else {
-		//_i2caddr = baud_or_i2caddr;
-	//}
-	//// A basic scanner, see if it ACK's
-	//gpsI2C->beginTransmission(_i2caddr);
-	//return (gpsI2C->endTransmission() == 0);
-	//
 	
 	init_flag = true;
 	//delay(10);
@@ -70,35 +53,18 @@ enum status_code GPS2_init(void) {
 
 
 
-size_t write(uint8_t c) {
+enum status_code write(uint8_t c) {
 		
-	//#if (defined(__AVR__) || ((defined(ARDUINO_UNOR4_WIFI) || defined(ESP8266)) && 
-	//!defined(NO_SW_SERIAL)))
-	//if (gpsSwSerial) {
-		//return gpsSwSerial->write(c);
-	//}
-	//#endif
-	//
-	//gpsI2C->beginTransmission(_i2caddr);
-	//
-	//if (gpsI2C->write(c) != 1) {
-		//return 0;
-	//}
-	//if (gpsI2C->endTransmission(true) == 0) {
-		//return 1;
-	//}
-
-	return 0;
+	uint8_t buffer = c; 
+	
+	if (I2C_WriteBuffer(I2C_GPS, &buffer, 1, I2C_WRITE_NORMAL)!= STATUS_OK) {
+		DEBUG_Write("Write Error\r\n");
+		//error in writing to GPS 2
+		return STATUS_ERR_DENIED; 
+	}
+	//data written successfully
+	return STATUS_OK;
 }
-
-//size_t write(uint8_t c){
-	//
-	//return 0;
-//}
-
-
-
-
 
 
 size_t available(void){

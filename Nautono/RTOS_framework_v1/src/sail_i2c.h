@@ -68,7 +68,7 @@ enum status_code I2C_ReadBuffer(I2C_DeviceID id, uint8_t *data, uint16_t data_le
 //   data_len - number of bytes to send
 //   fmt - format of the write
 // Status:
-//   STATUS_OK - data was read successfully
+//   STATUS_OK - data was written successfully
 //   STATUS_ERR_NOT_INITIALIZED - I2C module was not initialized
 //   STATUS_ERR_INVALID_ARG - an invalid ID was provided
 //   STATUS_ERR_BAD_ACCRESS - a null pointer was provided

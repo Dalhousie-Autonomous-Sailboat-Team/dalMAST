@@ -20,7 +20,7 @@
 //#include "sail_types.h"
 
 extern enum status_code GPS2_init(void); // initialize for I2C
-extern size_t write(uint8_t c);
+extern enum status_code write(uint8_t c);
 extern size_t available(void);
 
 #endif /* GPS_2_H_ */
