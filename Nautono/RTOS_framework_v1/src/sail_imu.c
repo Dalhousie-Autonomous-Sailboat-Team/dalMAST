@@ -60,7 +60,9 @@ static enum status_code read8(uint8_t addr, uint8_t *data)
 	}
 		
 	return STATUS_OK;
-}
+}   
+
+
 
 static enum status_code readLen(uint8_t addr, uint8_t *data,  uint8_t len)
 {

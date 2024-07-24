@@ -68,7 +68,22 @@ enum status_code write(uint8_t c) {
 
 
 size_t available(void){
-	
-	
+		
 	return 0;
 }
+
+
+size_t read(size_t *data){
+	
+	//size_t *data; // create buffer to read into
+	
+	if (I2C_ReadBuffer(I2C_GPS, data, 1, I2C_READ_NORMAL)!= STATUS_OK) {
+		DEBUG_Write("Write Error\r\n");
+		//error in writing to GPS 2
+		return STATUS_ERR_DENIED;
+	}
+	//data written successfully
+	return STATUS_OK;
+}
+
+

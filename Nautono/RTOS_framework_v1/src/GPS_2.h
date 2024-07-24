@@ -19,8 +19,9 @@
 //#include <inttypes.h>
 //#include "sail_types.h"
 
-extern enum status_code GPS2_init(void); // initialize for I2C
-extern enum status_code write(uint8_t c);
-extern size_t available(void);
+extern enum status_code GPS2_init(void); // initialize I2C bus
+extern enum status_code write(uint8_t c); // write to slave
+extern size_t available(void); // check is data available from slave
+extern size_t read(size_t *data); //read from slave
 
 #endif /* GPS_2_H_ */
