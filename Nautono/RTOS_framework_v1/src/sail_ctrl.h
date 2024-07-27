@@ -146,4 +146,8 @@ static void CTRL_Sleep(unsigned time_sec);
 
 void beaconTaskTest(void);
 
+void ExtWDT_Kick(void);
+
+void Test_WDT(void);
+
 #endif /* SAIL_CTRL_H_ */ 

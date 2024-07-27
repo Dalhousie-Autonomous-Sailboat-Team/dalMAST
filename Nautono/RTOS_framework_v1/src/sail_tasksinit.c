@@ -81,6 +81,9 @@ enum status_code init_tasks(void) {
 	// Task for reseting the watchdog so that the microcontroller is not restarted
 	//xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	
+	//External watchdog task
+	//xTaskCreate(Test_WDT, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);
+	
 	/* Device Testing tasks: */
 	
 	//xTaskCreate(Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
@@ -90,12 +93,9 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
 	//xTaskCreate(Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate(Test_INA, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	
-	//External watchdog task
-	//xTaskCreate(Test_WDT, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
 	// Task to blink an LED on the pcb, to ensure that the CPU is working.
-	//xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//xTaskCreate(beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	//xTaskCreate(beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
@@ -107,6 +107,8 @@ enum status_code init_tasks(void) {
 	// If it does, more freeRTOS heap memory must be allocated
 	return STATUS_ERR_INSUFFICIENT_RTOS_HEAP;
 }
+
+/**** INTERNAL WDT KICK TASK **************************************************************/
 
 void WatchDogTask(void){
 	
@@ -121,7 +123,7 @@ void WatchDogTask(void){
 		if (watchdog_counter == watchdog_reset_value) {
 			watchdog_counter = 0x00;
 			KickWatchDog();
-			DEBUG_Write("#################Kicked the watchdog######################\r\n");
+			DEBUG_Write("#################Kicked the internal watchdog######################\r\n");
 		}
 		taskEXIT_CRITICAL(); 
 	}

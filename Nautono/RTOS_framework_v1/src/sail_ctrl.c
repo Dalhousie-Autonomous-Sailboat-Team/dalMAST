@@ -219,6 +219,7 @@ enum status_code startup(void)
 }
 
 
+/**** EXTERNAL WDT KICK TASK **************************************************************/
 //External watchdog timer kick function
 void ExtWDT_Kick(void){
 
@@ -226,6 +227,7 @@ void ExtWDT_Kick(void){
 	//This should be sufficient time as WDT only needs 50 ns pulse to reset timer.
 	port_pin_set_output_level(EXT_WDT_PIN, true);
 	port_pin_set_output_level(EXT_WDT_PIN, false);
+
 }
 
 //External and Internal Watchdog timers kick task from individual tasks
@@ -236,11 +238,11 @@ void Test_WDT(void){
 	while(1){
 		taskENTER_CRITICAL();
 		ExtWDT_Kick();
+		DEBUG_Write("#################Kicked the external watchdog######################\r\n");
 		taskEXIT_CRITICAL();
 		vTaskDelay(wdt_delay);
 	}
 }
-
 
 /**** TIMER CALLBACKS ************************************************************/
 void LogData(void)
