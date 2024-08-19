@@ -29,6 +29,7 @@
 #include "sail_rudder.h"
 #include "sail_wind.h"
 #include "sail_beacon.h"
+#include "GPS_2.h"
 
 void WatchDogTask(void);
 static void StartWatchDog(void);
@@ -97,6 +98,7 @@ enum status_code init_tasks(void) {
 	
 	//xTaskCreate(beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	//xTaskCreate(beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+	xTaskCreate(DEBUG_GPS2, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();
@@ -149,7 +151,6 @@ static void KickWatchDog(void)
 void vApplicationDaemonTaskStartupHook(void) {
 	xEventGroupSetBits(mode_event_group, CTRL_MODE_AUTO_BIT);
 	watchdog_reset_value = 0x3F;
-	
 	// Start the watchdog timer
 	//StartWatchDog();
 }

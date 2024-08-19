@@ -81,7 +81,9 @@ void ReadGPS(void) {
 			GPS_data.msg_type_sum = 0;
 
 			//store weather station data into appropriate structs
+			
 			assign_gps_readings();
+			
 			//check if waypoint was reached and affect as necessary
 			//DEBUG_Write("checking waypoint...\r\n");
 			//check_waypoint_state();

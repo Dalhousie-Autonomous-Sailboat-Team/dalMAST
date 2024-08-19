@@ -21,7 +21,7 @@
 
 extern enum status_code GPS2_init(void); // initialize I2C bus
 extern enum status_code write(uint8_t c); // write to slave
-extern size_t available(void); // check is data available from slave
-extern size_t read(size_t *data); //read from slave
+extern enum status_code read(size_t *data); //read from slave
+void DEBUG_GPS2(void); //freeRTOS task 
 
 #endif /* GPS_2_H_ */

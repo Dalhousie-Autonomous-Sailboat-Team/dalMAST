@@ -22,6 +22,7 @@ typedef enum NMEA_ChannelIDs {
 	NMEA_GPS,
 	NMEA_WIND,
 	NMEA_RADIO,
+	NMEA_GPS2, //for GPS 2 , added by Shishir Ghosh
 	NMEA_NUM_CHANNELS
 } NMEA_ChannelID;
 
@@ -29,7 +30,7 @@ typedef enum NMEA_ChannelIDs {
 
 /* List the various NMEA message types */
 typedef enum eNMEA_TRX {
-	eGPGGA, 
+	eGPGGA, // GPS data with NMEA sentence
 	eWIMWV, // Old WS wind angle and speed data
 	eIIMWV, // New WindVane speed and data
 	eYXXDR,
@@ -156,7 +157,7 @@ typedef struct NMEA_GenericMsg {
 		eNMEA_WIMDA		wimda;
 		eNMEA_WIMWV		wiwmv;
 		eNMEA_WIMWR		wimwr;
-		eNMEA_WIMWT		wimwt;
+		eNMEA_WIMWT		wimwt;	
 		*/
 	} fields;
 } NMEA_GenericMsg;

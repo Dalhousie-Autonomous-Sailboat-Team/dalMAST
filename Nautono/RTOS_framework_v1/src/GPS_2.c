@@ -27,6 +27,8 @@
 
 static bool init_flag = false;
 
+#define DEBUG_GPS_DELAY 1000 
+
 enum status_code GPS2_init(void) {
 	
 	if(init_flag)
@@ -67,15 +69,9 @@ enum status_code write(uint8_t c) {
 }
 
 
-size_t available(void){
-		
-	return 0;
-}
-
-
-size_t read(size_t *data){
+enum status_code read(size_t *data){
 	
-	//size_t *data; // create buffer to read into
+	
 	
 	if (I2C_ReadBuffer(I2C_GPS, data, 1, I2C_READ_NORMAL)!= STATUS_OK) {
 		DEBUG_Write("Write Error\r\n");
@@ -84,6 +80,42 @@ size_t read(size_t *data){
 	}
 	//data written successfully
 	return STATUS_OK;
+}
+
+void DEBUG_GPS2(void)
+{
+	TickType_t testDelay = pdMS_TO_TICKS(DEBUG_GPS_DELAY);
+
+	//LED_init();
+	
+	while(1)
+	{
+		taskENTER_CRITICAL();
+		watchdog_counter |= 0x20;
+		taskEXIT_CRITICAL();
+		running_task = eUpdateCourse;
+		//
+		//#ifdef PCB //Only blink when using PCB.
+		//port_pin_set_output_level(_directionPin, true);
+		//
+		//delay_ms(1000);
+		//
+		//port_pin_set_output_level(_directionPin, false);
+		//#endif
+		size_t stuff = 0;
+		
+		read(&stuff);
+		
+		DEBUG_Write("currently reading: %d", stuff);
+		
+		
+		
+		
+		
+		
+		vTaskDelay(testDelay);
+	}
+	
 }
 
 

@@ -11,6 +11,7 @@
 #include <status_codes.h>
 #include <stdint.h>
 
+
 typedef enum I2C_DeviceIDs {
 	I2C_EEPROM,
 	I2C_IMU,
