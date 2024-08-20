@@ -25,9 +25,12 @@
 #include "sail_tasksinit.h"
 
 
-static bool init_flag = false;
+#define GPS_BUFFER_LENGTH 128
 
-#define DEBUG_GPS_DELAY 1000 
+static bool init_flag = false;
+static char msg_buffer[GPS_BUFFER_LENGTH]; // create a buffer to hold 128 characters of a NMEA sentence
+
+#define DEBUG_GPS_DELAY 3000
 
 enum status_code GPS2_init(void) {
 	
@@ -71,14 +74,16 @@ enum status_code write(uint8_t c) {
 
 enum status_code read(size_t *data){
 	
+	//apparently, there is no need to address the slave first...
 	
-	
-	if (I2C_ReadBuffer(I2C_GPS, data, 1, I2C_READ_NORMAL)!= STATUS_OK) {
-		DEBUG_Write("Write Error\r\n");
+
+	//read from the slave
+	if (I2C_ReadBuffer(I2C_GPS, (uint8_t*)msg_buffer, GPS_BUFFER_LENGTH, I2C_READ_NORMAL)!= STATUS_OK) {
+		DEBUG_Write("Read Error\r\n");
 		//error in writing to GPS 2
 		return STATUS_ERR_DENIED;
 	}
-	//data written successfully
+	//data read successfully
 	return STATUS_OK;
 }
 
@@ -90,11 +95,12 @@ void DEBUG_GPS2(void)
 	
 	while(1)
 	{
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
-		running_task = eUpdateCourse;
+		//taskENTER_CRITICAL();
+		//watchdog_counter |= 0x20;
+		//taskEXIT_CRITICAL();
+		//running_task = eUpdateCourse;
 		//
+		
 		//#ifdef PCB //Only blink when using PCB.
 		//port_pin_set_output_level(_directionPin, true);
 		//
@@ -103,14 +109,17 @@ void DEBUG_GPS2(void)
 		//port_pin_set_output_level(_directionPin, false);
 		//#endif
 		size_t stuff = 0;
+		DEBUG_Write("\r\n********** Performing GPS 2 Reading **********\r\n");
 		
 		read(&stuff);
 		
-		DEBUG_Write("currently reading: %d", stuff);
+		//delay_ms(100);
 		
 		
-		
-		
+		for (int i = 0; i <= GPS_BUFFER_LENGTH; i++){
+		DEBUG_Write("%c", msg_buffer[i]);
+		msg_buffer[i]=0; //clear the buffer?
+		}
 		
 		
 		vTaskDelay(testDelay);

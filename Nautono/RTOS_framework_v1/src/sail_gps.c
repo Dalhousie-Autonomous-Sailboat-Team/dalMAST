@@ -178,6 +178,7 @@ enum status_code GPS_RxMsg(NMEA_GenericMsg* msg)
 	}
 	
 	enum status_code rc; 
+	
 	rc = NMEA_RxString(NMEA_GPS, (uint8_t*)msg_buffer, NMEA_BUFFER_LENGTH); 
 	
 	// Check the NMEA receiver for new data
