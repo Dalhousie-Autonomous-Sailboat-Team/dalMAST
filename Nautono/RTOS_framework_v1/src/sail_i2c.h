@@ -19,6 +19,7 @@ typedef enum I2C_DeviceIDs {
 	I2C_INA3,
 	I2C_BME,
 	I2C_AS,
+	I2C_IMU2, //added this 
 	I2C_NUM_DEVICES
 } I2C_DeviceID;
 

@@ -26,6 +26,8 @@ src\sail_i2c.c
 
 src\sail_imu.c
 
+src\sail_imu2.c
+
 src\sail_ina.c
 
 src\sail_led.c
