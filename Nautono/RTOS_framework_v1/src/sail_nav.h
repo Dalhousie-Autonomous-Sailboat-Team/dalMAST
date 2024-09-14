@@ -26,11 +26,14 @@
  *   heading: the average heading
  *
  * Inputs/Outputs:
- *   course:     pointer to the target course, which will be updated when the function returns
- *   sail_angle: pointer to the required sail angle for the given course
- *
+ *   course:         pointer to the target course, which will be updated when the function returns
+ *   sail_angle:     pointer to the required sail angle for the given course
+ *   tackingBox:     an array of 4 points defining the limits in which we can tack
+ *   sailingMode:    pointer to an integer defining what arm we are tacking/jibing on, or if we are sailing directly
+ *   changingTack:   pointer to an int that takes 0 or 1, 1 if changing the direction of the tack, and 0 otherwise
  */
-enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading wind, float heading, float *course, float *sail_angle);
+enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading wind, float heading, float *course, GPS_Reading tackingBox[4], int *sailingMode, int *changingTack);
+
 
 
 /* NAV_CalculateRudderPosition
@@ -72,5 +75,7 @@ enum status_code NAV_GetDistance(GPS_Reading wp, GPS_Reading gps, double *distan
  *   bearing: the calculated bearing from GPS location to waypoint
  */
 enum status_code NAV_GetBearing(GPS_Reading wp, GPS_Reading gps, double *bearing);
+
+
 
 #endif /* SAIL_NAV_H_ */

@@ -863,12 +863,6 @@
     <Compile Include="src\sail_imu.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\sail_imu2.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\sail_imu2.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\sail_ina.c">
       <SubType>compile</SubType>
     </Compile>
