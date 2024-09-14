@@ -30,7 +30,7 @@
 static bool init_flag = false;
 static char msg_buffer[GPS_BUFFER_LENGTH]; // create a buffer to hold 128 characters of a NMEA sentence
 
-#define DEBUG_GPS_DELAY 3000
+#define DEBUG_GPS_DELAY 1000
 
 enum status_code GPS2_init(void) {
 	
@@ -76,9 +76,9 @@ enum status_code read(size_t *data){
 	
 	//apparently, there is no need to address the slave first...
 	
-
+	//write(0X00);
 	//read from the slave
-	if (I2C_ReadBuffer(I2C_GPS, (uint8_t*)msg_buffer, GPS_BUFFER_LENGTH, I2C_READ_NORMAL)!= STATUS_OK) {
+	if (I2C_ReadBuffer(I2C_GPS, (uint8_t*)msg_buffer,128, I2C_READ_NORMAL)!= STATUS_OK) {
 		DEBUG_Write("Read Error\r\n");
 		//error in writing to GPS 2
 		return STATUS_ERR_DENIED;
@@ -118,7 +118,7 @@ void DEBUG_GPS2(void)
 		
 		for (int i = 0; i <= GPS_BUFFER_LENGTH; i++){
 		DEBUG_Write("%c", msg_buffer[i]);
-		msg_buffer[i]=0; //clear the buffer?
+		//msg_buffer[i]=0; //clear the buffer?
 		}
 		
 		
