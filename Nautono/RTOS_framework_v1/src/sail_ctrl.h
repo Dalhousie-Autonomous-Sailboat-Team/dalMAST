@@ -26,10 +26,6 @@
 #define READ_AS_SLEEP_PERIOD_MS 500
 #define READ_COMPASS_SLEEP_PERIOD_MS 1000
 
-#define WDT_SLEEP_PERIOD 1600
-//External Watchdog pulse pin
-#define EXT_WDT_PIN		PIN_PA28
-
 typedef enum Sensor_Types {
 	SENSOR_GPS,
 	SENSOR_WIND,
@@ -145,9 +141,5 @@ void assing_wind_readings(void);
 static void CTRL_Sleep(unsigned time_sec);
 
 void beaconTaskTest(void);
-
-void ExtWDT_Kick(void);
-
-void Test_WDT(void);
 
 #endif /* SAIL_CTRL_H_ */ 

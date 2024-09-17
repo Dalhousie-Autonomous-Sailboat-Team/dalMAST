@@ -26,6 +26,8 @@
 #include "FreeRTOSConfig.h"
 #include "task.h"
 
+#include "sail_wdt.h"
+
 // Time since last reset
 static uint64_t t_ms;
 // Time step (resolution of RTC)
@@ -112,6 +114,10 @@ enum status_code CTRL_InitSystem(void)
 	// Initialize debug UART
 	DEBUG_Init();
 	
+	// Initialize watchdog timers
+	extWDT_Init();
+	//intWDT_Init();
+	
 	// Initialize the radio
 	if (RADIO_Init() != STATUS_OK) {
 		DEBUG_Write_Unprotected("Radio not initialized!\r\n");
@@ -162,12 +168,6 @@ enum status_code CTRL_InitSystem(void)
 	mode = CTRL_MODE_AUTO;
 	state = CTRL_STATE_TEST;
 	
-	//Configure external watchdog timer pin to output.
-	struct port_config config_port_pin;
-	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
-	port_pin_set_config(EXT_WDT_PIN, &config_port_pin);
-	
-		
 	return STATUS_OK;
 }
 
@@ -216,32 +216,6 @@ enum status_code startup(void)
 	
 	
 	return STATUS_OK;
-}
-
-
-/**** EXTERNAL WDT KICK TASK **************************************************************/
-//External watchdog timer kick function
-void ExtWDT_Kick(void){
-
-	//Turn on and off very quickly (pulse)
-	//This should be sufficient time as WDT only needs 50 ns pulse to reset timer.
-	port_pin_set_output_level(EXT_WDT_PIN, true);
-	port_pin_set_output_level(EXT_WDT_PIN, false);
-
-}
-
-//External and Internal Watchdog timers kick task from individual tasks
-void Test_WDT(void){
-	
-	TickType_t wdt_delay = pdMS_TO_TICKS(WDT_SLEEP_PERIOD);
-	
-	while(1){
-		taskENTER_CRITICAL();
-		ExtWDT_Kick();
-		DEBUG_Write("#################Kicked the external watchdog######################\r\n");
-		taskEXIT_CRITICAL();
-		vTaskDelay(wdt_delay);
-	}
 }
 
 /**** TIMER CALLBACKS ************************************************************/
