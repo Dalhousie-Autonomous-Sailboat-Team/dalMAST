@@ -70,10 +70,10 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
 	
 	//Internal watchdog task
-	//xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
+	xTaskCreate( intWDT_Task, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	
 	//External watchdog task
-	xTaskCreate(extWDT_Task, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);
+	xTaskCreate( extWDT_Task, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);
 	
 	/* Device Testing tasks: */
 	
@@ -97,4 +97,11 @@ enum status_code init_tasks(void) {
 	// The program should not reach this point
 	// If it does, more freeRTOS heap memory must be allocated
 	return STATUS_ERR_INSUFFICIENT_RTOS_HEAP;
+}
+
+void vApplicationDaemonTaskStartupHook(void) {
+	xEventGroupSetBits(mode_event_group, CTRL_MODE_AUTO_BIT);
+	
+	// Start the watchdog timer
+	//StartWatchDog();
 }

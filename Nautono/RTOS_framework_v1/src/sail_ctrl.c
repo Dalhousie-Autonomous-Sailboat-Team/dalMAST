@@ -100,11 +100,6 @@ enum status_code CTRL_InitSystem(void)
 	
 	// Initialize debug UART
 	DEBUG_Init();
-	DEBUG_Write_Unprotected("DEBUG initialized.\r\n");
-	
-	// Initialize watchdog timers
-	extWDT_Init();
-	//intWDT_Init();
 	
 	// Initialize the radio
 	if (RADIO_Init() != STATUS_OK) {
@@ -146,6 +141,9 @@ enum status_code CTRL_InitSystem(void)
 	}
 	RADIO_TxMsg_Unprotected(&tx_msg);
 
+	// Initialize watchdog timers
+	extWDT_Init();
+	intWDT_Init();
 	
 	// Initialize the EEPROM
 	if (EEPROM_Init() != STATUS_OK) {
