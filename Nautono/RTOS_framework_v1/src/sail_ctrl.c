@@ -143,7 +143,7 @@ enum status_code CTRL_InitSystem(void)
 
 	// Initialize watchdog timers
 	extWDT_Init();
-	intWDT_Init();
+	//intWDT_Init();
 	
 	// Initialize the EEPROM
 	if (EEPROM_Init() != STATUS_OK) {

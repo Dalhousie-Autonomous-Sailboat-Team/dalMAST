@@ -25,9 +25,6 @@ void intWDT_Init(void)
 	• No early warning period to indicate the Watchdog will soon expire
 	*/
 	
-	// Lock the hardware module to avoid corruption
-	int_wdt_config.always_on = true;
-	
 	// Save configuration values
 	wdt_set_config(&int_wdt_config);
 	

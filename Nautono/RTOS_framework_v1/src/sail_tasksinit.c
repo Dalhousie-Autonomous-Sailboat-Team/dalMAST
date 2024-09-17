@@ -70,7 +70,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
 	
 	//Internal watchdog task
-	xTaskCreate( intWDT_Task, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
+	//xTaskCreate( intWDT_Task, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	
 	//External watchdog task
 	xTaskCreate( extWDT_Task, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);
@@ -86,7 +86,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate(Test_INA, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 
 	// Task to blink an LED on the pcb, to ensure that the CPU is working.
-	//xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//xTaskCreate(beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	//xTaskCreate(beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
@@ -101,7 +101,4 @@ enum status_code init_tasks(void) {
 
 void vApplicationDaemonTaskStartupHook(void) {
 	xEventGroupSetBits(mode_event_group, CTRL_MODE_AUTO_BIT);
-	
-	// Start the watchdog timer
-	//StartWatchDog();
 }
