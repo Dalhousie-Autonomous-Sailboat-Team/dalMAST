@@ -30,8 +30,8 @@ void extWDT_Task(void);
 
 
 // Reset internal watchdog timer
-static void intWDT_Kick(void);
+void intWDT_Kick(void);
 
 
 // Reset external watchdog timer
-static void extWDT_Kick(void);
+void extWDT_Kick(void);

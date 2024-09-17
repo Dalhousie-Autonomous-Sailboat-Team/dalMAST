@@ -77,7 +77,7 @@ void extWDT_Task(void)
 
 
 // Reset internal watchdog timer
-static void intWDT_Kick(void)
+void intWDT_Kick(void)
 {
 	// Use driver code to reset internal WDT
 	wdt_reset_count();
@@ -85,7 +85,7 @@ static void intWDT_Kick(void)
 
 
 // Reset external watchdog timer
-static void extWDT_Kick(void)
+void extWDT_Kick(void)
 {
 	//Turn on and off very quickly (pulse)
 	//This should be sufficient time as WDT only needs 50 ns pulse to reset timer.

@@ -95,24 +95,12 @@ float avg_heading_deg = 0.0;
 
 enum status_code CTRL_InitSystem(void)
 {
-	
-	/*
-	//Create config struct and set to defaults
-	struct wdt_conf config_wdt;
-	wdt_get_config_defaults(&config_wdt);
-	
-	//Turn off always on mode, set clock period
-	config_wdt.always_on = false;
-	config_wdt.clock_source = GCLK_GENERATOR_4;
-	config_wdt.timeout_period = WDT_PERIOD_2048CLK;
-	wdt_set_config(&config_wdt);
-	*/
-	
 	// Initialize SAMD20
 	system_init();
 	
 	// Initialize debug UART
 	DEBUG_Init();
+	DEBUG_Write_Unprotected("DEBUG initialized.\r\n");
 	
 	// Initialize watchdog timers
 	extWDT_Init();
