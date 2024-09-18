@@ -6,15 +6,29 @@
  */ 
 #include "sail_debug.h"
 #include "sail_tasksinit.h"
-#include "sail_uart.h"
 
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
 #include <string.h>
 #include <delay.h>
-
+#include <asf.h>
 
 #define TEST_BEACON_DELAY_MS 1000
+#define BEACON_ENABLE PIN_PA10
+
+void enableBeacon(void){
+	// Get config struct for GPIO pin
+	struct port_config config_port_pin;
+	
+	// Select UART MUX channel to initialize:
+	port_get_config_defaults(&config_port_pin);
+	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
+	port_pin_set_config(BEACON_ENABLE, &config_port_pin);
+	
+	port_pin_set_output_level(BEACON_ENABLE, true);
+	
+}
+
 
 void Test_Beacon(void)
 {
@@ -45,6 +59,7 @@ void beaconOk(void){
 	rxString[0] = '\0';
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_BEACON_DELAY_MS);
 	
+	
 	UART_Init(UART_WIND);
 	
 	while(1){
@@ -63,7 +78,7 @@ void beaconStringResponse(void){
 	rxString[0] = '\0';
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_BEACON_DELAY_MS);
 	
-	
+	enableBeacon();
 	UART_Init(UART_WIND);
 	
 	while(1){

@@ -97,6 +97,9 @@ enum status_code CTRL_InitSystem(void)
 	// Initialize debug UART
 	DEBUG_Init();
 	
+	// Initialize UART MUX Logic Control Pins
+	MUX_Init();
+	
 	// Initialize the radio
 	if (RADIO_Init() != STATUS_OK) {
 		DEBUG_Write_Unprotected("Radio not initialized!\r\n");

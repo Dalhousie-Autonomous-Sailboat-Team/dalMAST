@@ -36,3 +36,5 @@
 *.VC.opendb
 *.VC.db
  
+#User Specific Files
+*.atsuo

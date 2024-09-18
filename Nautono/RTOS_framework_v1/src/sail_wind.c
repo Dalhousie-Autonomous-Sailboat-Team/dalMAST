@@ -207,7 +207,8 @@ enum status_code WIND_Enable(void)
 	// Return if the receiver cannot be started
     enum status_code s = {0};
     s = NMEA_Enable(NMEA_WIND);
-    if (s != STATUS_OK || s != STATUS_NO_CHANGE) {
+	
+    if (s != STATUS_OK && s != STATUS_NO_CHANGE) {
         DEBUG_Write_Unprotected("NMEA receiver could not be started!\r\n");
         return STATUS_ERR_DENIED;
     }

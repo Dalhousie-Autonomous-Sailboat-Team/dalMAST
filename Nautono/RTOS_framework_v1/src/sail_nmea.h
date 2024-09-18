@@ -319,4 +319,13 @@ enum status_code NMEA_TxString_Unprotected(NMEA_ChannelID id, uint8_t *str);
  */
 enum status_code NMEA_RxString(NMEA_ChannelID id, uint8_t *str, uint16_t length);
 
+
+/*
+* Used to obtain UART channels from NMEA channels
+* NMEA channels are not mapped directly to UART channel ENUM
+* Need to be mapped
+*/
+
+UART_ChannelID NMEA_MUX_ChannelID(NMEA_ChannelID id);
+
 #endif /* SAIL_NMEA_H_ */
