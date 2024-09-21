@@ -51,7 +51,7 @@ void intWDT_Task(void)
 	while(1){
 		taskENTER_CRITICAL();
 		intWDT_Kick();
-		DEBUG_Write("#################Kicked the internal watchdog######################\r\n");
+		DEBUG_Write("################# Kicked the internal watchdog ######################\r\n");
 		taskEXIT_CRITICAL();
 		vTaskDelay(int_wdt_delay);
 	}
@@ -66,7 +66,7 @@ void extWDT_Task(void)
 	while(1){
 		taskENTER_CRITICAL();
 		extWDT_Kick();
-		DEBUG_Write("#################Kicked the external watchdog######################\r\n");
+		DEBUG_Write("################# Kicked the external watchdog ######################\r\n");
 		taskEXIT_CRITICAL();
 		vTaskDelay(ext_wdt_delay);
 	}
