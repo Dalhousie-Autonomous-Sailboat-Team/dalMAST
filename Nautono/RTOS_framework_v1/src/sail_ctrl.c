@@ -88,6 +88,11 @@ uint16_t rudder_deg;
 float course, bearing, sail_deg; 
 float avg_heading_deg = 0.0;
 
+//globals added on 9/21/2024
+GPS_Reading tackingBox[4];
+int *sailingMode;
+int *changingTack;
+
 
 enum status_code CTRL_InitSystem(void)
 {
@@ -469,13 +474,14 @@ void UpdateCourse(void)
 		running_task = eUpdateCourse;
 		
 		//update course
-		NAV_UpdateCourse(wp.pos, gps, avg_wind, avg_heading_deg, &course, &sail_deg);
+		//need to change this to have all the arguments:
+		NAV_UpdateCourse(wp.pos, gps, avg_wind, avg_heading_deg, &course, &sail_deg, tackingBox, &sailingMode, &changingTack);
 		/*
 		DEBUG_Write("course: %6d  sail: %d\r\n", (int)(course*1000.0), (int)(sail_deg*1000.0));
 		MOTOR_SetSail(sail_deg);
 		*/
 		vTaskDelay(update_course_delay);
-
+		
 	}
 	
 }

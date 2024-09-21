@@ -51,6 +51,8 @@
 #define TACKING_BOX_WIDTH	 0.1      // 11.1km
 #define BOUNDING_BOX_BACK_SPACE  0.025    // 3km
 
+
+
 // Functions to compute the distance and bearing between two GPS positions
 static float GetBearing(GPS_Reading from, GPS_Reading to);
 static double GetDistance(GPS_Reading from, GPS_Reading to);
@@ -59,7 +61,8 @@ static int CoordinateInBox(GPS_Reading gps, GPS_Reading box[4]);
 double triangleArea(GPS_Reading trianglePoints[3]);
 enum status_code createTackingBox(GPS_Reading tacking_boundary[4], float *bearing, GPS_Reading wp, GPS_Reading gps);
 
-enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading wind, float heading, float *course, GPS_Reading tackingBox[4], int *sailingMode, int *changingTack)
+enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading wind, float heading, float *course, float * sail_angle, GPS_Reading tackingBox[4], int *sailingMode, int *changingTack)
+//enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading wind, float heading, float *course, float * sail_angle)
 {
 	// Return if any of the pointers are NULL
 	if (course == NULL || sail_angle == NULL) {
@@ -67,7 +70,8 @@ enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading 
 	}
 
 	// Compute the bearing from the current position to the way point location
-	float bearing = GetBearing(gps, wp, tackingBox);
+	//float bearing = GetBearing(gps, wp, tackingBox);
+	float bearing = GetBearing(gps, wp);
 
 	// Get the wind angle relative to magnetic north
 	float wind_wrt_north = MATH_ForceAngleTo180(wind.angle + heading);
@@ -91,9 +95,9 @@ enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading 
 		// Use the relative course to select a sail setting
 		// *sail_angle = course_wrt_wind;
 
-		return createTackingBox(tackingBox, bearing, wp, gps); // if we start to tack, create the bounding box
+		return createTackingBox(tackingBox, &bearing, wp, gps); // if we start to tack, create the bounding box
 
-	// Check if need to go from direct sailing to jibin
+	// Check if need to go from direct sailing to jibe zone
 	} else if (fabs(bearing_wrt_wind) > RUNNING_ANGLE_DEG && *sailingMode == 0) {
 		// Set the course to the closest arm of the jibe zone
 		if (bearing_wrt_wind >= 0.0) {
@@ -109,7 +113,7 @@ enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading 
 		// Use the relative course to select a sail setting
 		// *sail_angle = course_wrt_wind;
 
-		return createTackingBox(tackingBox, bearing, wp, gps);
+		return createTackingBox(tackingBox, &bearing, wp, gps);
 
 	// if currently tacking
 	} else if(fabs(bearing_wrt_wind) < DEAD_ANGLE_DEG && *sailingMode != 0){
@@ -123,7 +127,7 @@ enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading 
 			*changingTack = 1;
 		}
 
-        // if currently jibin
+        // if currently jibing
 	} else if(fabs(bearing_wrt_wind) < RUNNING_ANGLE_DEG && *sailingMode != 0){
 
 		// check if outside of tacking box
@@ -155,9 +159,6 @@ enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading 
 
 		// *sail_angle = *sail_angle-overshoot_amount;
 	}
-
-
-
 	return STATUS_OK;
 }
 
@@ -194,7 +195,7 @@ enum status_code NAV_GetBearing(GPS_Reading wp, GPS_Reading gps, double *bearing
 	return STATUS_OK;
 }
 
-/**** NAVIGATION UTILITIES ********************************************************/
+/********************************************************** NAVIGATION UTILITIES ********************************************************/
 
 static float GetBearing(GPS_Reading from, GPS_Reading to)
 {
@@ -248,7 +249,6 @@ static int CoordinateInBox(GPS_Reading gps, GPS_Reading box[4]){
 	double rectArea = sqrt((box[0].lat - box[1].lat) * (box[0].lat - box[1].lat) + (box[0].lon - box[1].lon) * (box[0].lon - box[1].lon)) * sqrt((box[0].lat - box[2].lat) * (box[0].lat - box[2].lat) + (box[0].lon - box[2].lon) * (box[0].lon - box[2].lon));
 
 	return sumOfTriangleAreas <= rectArea + 0.0000000001; // I added an extra little bit to account for weirdness in the rounding.
-
 }
 
 double triangleArea(GPS_Reading trianglePoints[3]){
@@ -264,7 +264,7 @@ enum status_code createTackingBox(GPS_Reading tacking_boundary[4], float *bearin
 	tacking_boundary[1].lat = TACKING_BOX_WIDTH * sin((*bearing + 90.0) * M_PI / 180.0) + wp.lat;
 
 	tacking_boundary[2].lon = TACKING_BOX_WIDTH * cos((*bearing - 90.0) * M_PI / 180.0) + gps.lon - cos(*bearing * M_PI / 180.0) * BOUNDING_BOX_BACK_SPACE;
-	tacking_boundary[2].lat = TACKING_BOX_WIDTH * sin((*bearing - 90.0) * M_PI / 180.0) + gps.lat - sin(*bearing * M_PI / 180.0) * BOUNDING_BOX_BACK_SPACE
+	tacking_boundary[2].lat = TACKING_BOX_WIDTH * sin((*bearing - 90.0) * M_PI / 180.0) + gps.lat - sin(*bearing * M_PI / 180.0) * BOUNDING_BOX_BACK_SPACE;
 
 	tacking_boundary[3].lon = TACKING_BOX_WIDTH * cos((*bearing - 90.0) * M_PI / 180.0) + wp.lon;
 	tacking_boundary[3].lat = TACKING_BOX_WIDTH * sin((*bearing - 90.0) * M_PI / 180.0) + wp.lat;

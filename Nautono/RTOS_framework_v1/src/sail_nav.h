@@ -32,7 +32,9 @@
  *   sailingMode:    pointer to an integer defining what arm we are tacking/jibing on, or if we are sailing directly
  *   changingTack:   pointer to an int that takes 0 or 1, 1 if changing the direction of the tack, and 0 otherwise
  */
-enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading wind, float heading, float *course, GPS_Reading tackingBox[4], int *sailingMode, int *changingTack);
+
+enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading wind, float heading, float *course, float * sail_angle, GPS_Reading tackingBox[4], int *sailingMode, int *changingTack);
+//enum status_code NAV_UpdateCourse(GPS_Reading wp, GPS_Reading gps, WIND_Reading wind, float heading, float *course, float * sail_angle, GPS_Reading tackingBox[4], int *sailingMode, int *changingTack);
 
 
 
