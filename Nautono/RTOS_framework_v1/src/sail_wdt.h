@@ -9,7 +9,7 @@
 #include <status_codes.h>
 #include "sail_debug.h"
 
-#define INT_WDT_SLEEP_PERIOD	1000	// milliseconds
+#define INT_WDT_SLEEP_PERIOD	120000	// milliseconds
 #define EXT_WDT_SLEEP_PERIOD	1000	// milliseconds
 #define EXT_WDT_PIN		PIN_PA28
 
