@@ -73,7 +73,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( intWDT_Task, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
 	
 	//External watchdog task
-	xTaskCreate( extWDT_Task, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);
+	//xTaskCreate( extWDT_Task, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);
 	
 	/* Device Testing tasks: */
 	

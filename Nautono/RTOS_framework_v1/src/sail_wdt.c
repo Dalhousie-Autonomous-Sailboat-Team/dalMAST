@@ -20,7 +20,7 @@ void intWDT_Init(void)
 	• Not locked, to allow for further (re-)configuration
 	• Enable WDT
 	• Watchdog timer sourced from Generic Clock Channel 4
-	• A timeout period of 16384 clocks of the Watchdog module clock
+	• A timeout period of 16384 clocks of the Watchdog module clock (a little over 2 minutes)
 	• No window period, so that the Watchdog count can be reset at any time
 	• No early warning period to indicate the Watchdog will soon expire
 	*/
