@@ -33,15 +33,6 @@ typedef enum Sensor_Types {
 	SENSOR_COUNT
 } Sensor_Type;
 
-typedef enum Tasks{
-	TASK_GPS,
-	TASK_WIND,
-	TASK_COURSE,
-	TASK_COMPASS,
-	TASK_BEACON,
-	NUM_TASKS
-}Task_ID;
-
 /* CTRL_InitSystem
  * Initialize the sail boat controller.
  * Status:
