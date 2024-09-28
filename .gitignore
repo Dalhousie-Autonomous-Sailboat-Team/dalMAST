@@ -36,3 +36,8 @@
 *.VC.opendb
 *.VC.db
  
+# Jtag files
+*.log
+
+# Microchip Studio files
+*.atsuo
