@@ -29,18 +29,12 @@
 #include "sail_rudder.h"
 #include "sail_wind.h"
 #include "sail_beacon.h"
-
-void WatchDogTask(void);
-static void StartWatchDog(void);
-static void KickWatchDog(void);
+#include "sail_wdt.h"
 
 enum all_tasks running_task;
 
 EventGroupHandle_t mode_event_group = NULL;
 SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
-
-unsigned char watchdog_counter;
-unsigned char watchdog_reset_value = 0x3F;
 
 
 enum status_code init_tasks(void) {
@@ -54,11 +48,8 @@ enum status_code init_tasks(void) {
 		write_buffer_mutex[i] = xSemaphoreCreateMutex();
 	}
 	
-	// Initialize the watchdog counter
-	watchdog_counter = 0;
-	
 	// Task for reading incoming data from the GPS
-	xTaskCreate( ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
+	//xTaskCreate( ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
 
 	// Task for reading incoming data from the weather station
 	//xTaskCreate( ReadWeatherSensor, NULL, WEATHER_SENSOR_STACK_SIZE, NULL, WEATHER_SENSOR_PRIORITY, NULL );
@@ -78,8 +69,11 @@ enum status_code init_tasks(void) {
 	// Task for getting the heading from the compass
 	//xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
 	
-	// Task for reseting the watchdog so that the microcontroller is not restarted
-	//xTaskCreate( WatchDogTask, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
+	//Internal watchdog task
+	xTaskCreate( intWDT_Task, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
+	
+	//External watchdog task
+	//xTaskCreate( extWDT_Task, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);
 	
 	/* Device Testing tasks: */
 	
@@ -91,9 +85,8 @@ enum status_code init_tasks(void) {
 	//xTaskCreate(Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate(Test_INA, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 
-
 	// Task to blink an LED on the pcb, to ensure that the CPU is working.
-	//xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//xTaskCreate(beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	//xTaskCreate(beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
@@ -106,50 +99,6 @@ enum status_code init_tasks(void) {
 	return STATUS_ERR_INSUFFICIENT_RTOS_HEAP;
 }
 
-void WatchDogTask(void){
-	
-	const TickType_t xDelay = pdMS_TO_TICKS(30000);
-	
-	while(1){
-		
-		//KickWatchDog();
-		//vTaskDelay(xDelay);
-		
-		taskENTER_CRITICAL();
-		if (watchdog_counter == watchdog_reset_value) {
-			watchdog_counter = 0x00;
-			KickWatchDog();
-			DEBUG_Write("#################Kicked the watchdog######################\r\n");
-		}
-		taskEXIT_CRITICAL(); 
-	}
-}
-
-static void StartWatchDog(void)
-{
-	struct wdt_conf config_wdt;
-
-	wdt_get_config_defaults(&config_wdt);
-
-	config_wdt.always_on            = false;
-	config_wdt.clock_source         = GCLK_GENERATOR_4;
-	config_wdt.timeout_period       = WDT_PERIOD_16384CLK;
-	config_wdt.early_warning_period = WDT_PERIOD_8192CLK;
-
-	wdt_set_config(&config_wdt);
-}
-
-
-static void KickWatchDog(void)
-{
-	wdt_reset_count();
-}
-
-// Runs freeRTOS initialization code immediately after the scheduler is started
 void vApplicationDaemonTaskStartupHook(void) {
 	xEventGroupSetBits(mode_event_group, CTRL_MODE_AUTO_BIT);
-	watchdog_reset_value = 0x3F;
-	
-	// Start the watchdog timer
-	//StartWatchDog();
 }

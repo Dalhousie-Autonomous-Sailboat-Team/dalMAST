@@ -26,6 +26,8 @@
 #include "FreeRTOSConfig.h"
 #include "task.h"
 
+#include "sail_wdt.h"
+
 // Time since last reset
 static uint64_t t_ms;
 // Time step (resolution of RTC)
@@ -40,6 +42,7 @@ void process_wind_readings(void);
 static void EnableWeatherStation(void);
 static void DisableWeatherStation(void);
 void process_heading_readings(void);
+
 
 
 /* Message handling functions:
@@ -64,6 +67,7 @@ static bool sensor_statuses[SENSOR_COUNT] = {
 	false,
 	false
 };
+
 
 // Sensor readings
 static GPS_Reading gps;
@@ -137,6 +141,9 @@ enum status_code CTRL_InitSystem(void)
 	}
 	RADIO_TxMsg_Unprotected(&tx_msg);
 
+	// Initialize watchdog timers
+	extWDT_Init();
+	intWDT_Init();
 	
 	// Initialize the EEPROM
 	if (EEPROM_Init() != STATUS_OK) {
@@ -146,7 +153,7 @@ enum status_code CTRL_InitSystem(void)
 	// Set default mode and state
 	mode = CTRL_MODE_AUTO;
 	state = CTRL_STATE_TEST;
-		
+	
 	return STATUS_OK;
 }
 
@@ -196,9 +203,6 @@ enum status_code startup(void)
 	
 	return STATUS_OK;
 }
-
-
-
 
 /**** TIMER CALLBACKS ************************************************************/
 void LogData(void)

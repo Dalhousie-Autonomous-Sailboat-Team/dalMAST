@@ -297,7 +297,7 @@
       </framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.samice</avrtool>
-    <avrtoolserialnumber>801010797</avrtoolserialnumber>
+    <avrtoolserialnumber>801054914</avrtoolserialnumber>
     <avrdeviceexpectedsignature>0x10001400</avrdeviceexpectedsignature>
     <avrtoolinterface>SWD</avrtoolinterface>
     <com_atmel_avrdbg_tool_edbg>
@@ -311,7 +311,7 @@
       <ToolNumber>ATML1873071800008936</ToolNumber>
       <ToolName>EDBG</ToolName>
     </com_atmel_avrdbg_tool_edbg>
-    <avrtoolinterfaceclock>4000000</avrtoolinterfaceclock>
+    <avrtoolinterfaceclock>8000000</avrtoolinterfaceclock>
     <custom>
       <ToolOptions>
         <InterfaceProperties>
@@ -328,12 +328,12 @@
     <com_atmel_avrdbg_tool_samice>
       <ToolOptions>
         <InterfaceProperties>
-          <SwdClock>4000000</SwdClock>
+          <SwdClock>8000000</SwdClock>
         </InterfaceProperties>
         <InterfaceName>SWD</InterfaceName>
       </ToolOptions>
       <ToolType>com.atmel.avrdbg.tool.samice</ToolType>
-      <ToolNumber>801010797</ToolNumber>
+      <ToolNumber>801054914</ToolNumber>
       <ToolName>J-Link</ToolName>
     </com_atmel_avrdbg_tool_samice>
   </PropertyGroup>
@@ -924,6 +924,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_wdt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_wdt.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sail_wind.c">

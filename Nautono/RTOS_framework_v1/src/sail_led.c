@@ -35,9 +35,6 @@ void Debug_LED(void)
 	
 	while(1)
 	{
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 		
 #ifdef PCB //Only blink when using PCB.
