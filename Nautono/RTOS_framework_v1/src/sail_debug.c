@@ -100,3 +100,53 @@ enum status_code DEBUG_Write_Unprotected(const char *format, ...) {
 
 
 
+void float_to_string(float value, char * string_buffer)
+{
+	uint8_t digits = 0;
+	char c_digits[2];
+	
+	// Isolate decimal digits
+	float decimal = value - (int)value;
+	
+	while( digits < 2 )
+	{
+		digits *= 10;
+		digits -= (int)digits;
+		switch((int)digits)
+		{
+			case 0:
+			c_digits[digits] = '0';
+			break;
+			case 1:
+			c_digits[digits] = '1';
+			break;
+			case 2:
+			c_digits[digits] = '2';
+			break;
+			case 3:
+			c_digits[digits] = '3';
+			break;
+			case 4:
+			c_digits[digits] = '4';
+			break;
+			case 5:
+			c_digits[digits] = '5';
+			break;
+			case 6:
+			c_digits[digits] = '6';
+			break;
+			case 7:
+			c_digits[digits] = '7';
+			break;
+			case 8:
+			c_digits[digits] = '8';
+			break;
+			case 9:
+			c_digits[digits] = '9';
+			break;
+		}
+		digits ++;
+	}
+	
+	sprintf(string_buffer, "%d.%c%c", (int)value, c_digits[0], c_digits[1]);
+}

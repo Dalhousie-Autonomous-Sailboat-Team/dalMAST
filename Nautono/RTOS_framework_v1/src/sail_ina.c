@@ -99,11 +99,9 @@ float ReadCurrent(I2C_DeviceID ina, int channel) {
 
 void Test_INA(void){
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_INA_DELAY_MS);
+	char * debug_msg[64];
 
 	while(1){
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 		
 		for(int i = 0; i < 3; i++)
@@ -111,6 +109,9 @@ void Test_INA(void){
 			DEBUG_Write("The INA is %d and channel is %d and voltage is %d\r\n", I2C_INA1, i, (int)ReadVoltage(I2C_INA1, i));
 			DEBUG_Write("The INA is %d and channel is %d and voltage is %d\r\n", I2C_INA2, i, (int)ReadVoltage(I2C_INA2, i));
 			DEBUG_Write("The INA is %d and channel is %d and voltage is %d\r\n", I2C_INA3, i, (int)ReadVoltage(I2C_INA3, i));
+			float_to_string(ReadVoltage(I2C_INA1,i), debug_msg);
+			sprintf(debug_msg,"\r\n");
+			DEBUG_Write(debug_msg);
 		}
 		
 		vTaskDelay(testDelay);

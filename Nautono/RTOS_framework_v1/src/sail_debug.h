@@ -60,4 +60,6 @@ enum status_code DEBUG_Write(const char *format, ...) __attribute__ ((format (gn
 enum status_code DEBUG_Write_Unprotected(const char *format, ...) __attribute__ ((format (gnu_printf, 1, 2)));
 
 
+void float_to_string(float value, char * string_buffer);
+
 #endif /* SAIL_NMEA_H_ */
