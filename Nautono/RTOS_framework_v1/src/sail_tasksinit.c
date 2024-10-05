@@ -70,7 +70,10 @@ enum status_code init_tasks(void) {
 	//xTaskCreate( ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
 	
 	//Internal watchdog task
-	xTaskCreate( intWDT_Task, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
+	//xTaskCreate( intWDT_Task, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL );
+	
+	//Linear Actuator Task
+	xTaskCreate(Test_Actuator_Task, NULL, LINEAR_ACTUATOR_STACK_SIZE, NULL, LINEAR_ACTUATOR_PRIORITY, NULL );
 	
 	//External watchdog task
 	//xTaskCreate( extWDT_Task, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);

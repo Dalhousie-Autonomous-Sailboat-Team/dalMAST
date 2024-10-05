@@ -14,9 +14,9 @@
 #include "FreeRTOSConfig.h"
 
 // Actuator retraction pin
-#define LIN_PWM1 PIN_PB16 
+#define LIN_PWM1 PIN_PB16 //Change from PB16-PB17 based on schematic
 // Actuator extension pin
-#define LIN_PWM2 PIN_PB17
+#define LIN_PWM2 PIN_PB17 //Change from PB17-PB16 based on schematic
 
 #define LAC_OFF_STATE false
 #define LAC_ON_STATE true
@@ -85,26 +85,28 @@ void LAC_set_pos(double pos)
 
 #define TEST_ACTUATOR_DELAY_MS 1000
 
-void Test_Actuator(void){
+void Test_Actuator_Task(void){
 
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_ACTUATOR_DELAY_MS);
 	
+	//Initialize actuator
 	AC_init();
 	
 	double curr_pos = 0;
 
 	while(1){
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
+		//taskENTER_CRITICAL();
+		//watchdog_counter |= 0x20;
+		//taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 		
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Actuator >>>>>>>>>>\n\r");
-		
-		//LAC_set_pos(100);
 		ActuatorPotPos(&curr_pos);
+		LAC_set_pos(500);
+		
 		DEBUG_Write("current pos: %d\r\n", (int)curr_pos);
 	
 		vTaskDelay(testDelay);
+		
 	}
 }
