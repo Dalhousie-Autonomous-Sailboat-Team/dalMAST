@@ -48,11 +48,11 @@ float ReadVoltage(I2C_DeviceID ina, int channel) {
 		break;
 	}
 
-	ReadWord(ina, reg, &val_raw);
+	ReadWord(ina, reggie, &val_raw);
 	
 	val_raw = (val_raw << 8) | (val_raw >> 8);
 	
-	DEBUG_Write("val_raw: %d\r\n", val_raw);
+	//DEBUG_Write("val_raw: %d\r\n", val_raw);
 
 
 	voltage_V = val_raw / 1000.0;
@@ -77,7 +77,7 @@ static int32_t getShuntVoltage(I2C_DeviceID ina, int channel){
 		break;
 	}
 
-	ReadWord(ina, reg, &val_raw);
+	ReadWord(ina, reggie, &val_raw);
 
 	// 1 Least Significant Bit = 40uV
 	res = (int32_t)(val_raw >> 3) * 40;
@@ -86,12 +86,12 @@ static int32_t getShuntVoltage(I2C_DeviceID ina, int channel){
 }
 
 float ReadCurrent(I2C_DeviceID ina, int channel) {
-	int32_t shunt_uV = 0;
+	float shunt_uV = 0;
 	float current_A  = 0;
-	int32_t shuntRes = 10;
+	uint32_t shuntRes = 100;
 
-	shunt_uV  = getShuntVoltage(ina, channel);
-	current_A = shunt_uV / 1000.0 / shuntRes; // in the void INA3221::begin(TwoWire *theWire) of the original function they are set to 10
+	shunt_uV  = (float)getShuntVoltage(ina, channel);
+	current_A = (float)((shunt_uV / 1000.0) / shuntRes); // in the void INA3221::begin(TwoWire *theWire) of the original function they are set to 10
 	return current_A;
 }
 
@@ -101,18 +101,24 @@ void Test_INA(void){
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_INA_DELAY_MS);
 
 	while(1){
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
-		running_task = eUpdateCourse;
+		//DEBUG_Write("############### Reading Voltages from INA's ###############\r\n");
+		//DEBUG_Write("INA 1 channel 1 (3.3V bus) voltage:			>%d<\r\n", (int)(ReadVoltage(I2C_INA1, 1)*1000));
+		//DEBUG_Write("INA 1 channel 2 (12 V bus) voltage:			>%d<\r\n", (int)(ReadVoltage(I2C_INA1, 2)*1000));
+		//DEBUG_Write("INA 1 channel 3 (disconnected) voltage:			>%d<\r\n", (int)(ReadVoltage(I2C_INA1, 3)*1000));
 		
-		for(int i = 0; i < 3; i++)
-		{
-			DEBUG_Write("The INA is %d and channel is %d and voltage is %d\r\n", I2C_INA1, i, (int)ReadVoltage(I2C_INA1, i));
-			DEBUG_Write("The INA is %d and channel is %d and voltage is %d\r\n", I2C_INA2, i, (int)ReadVoltage(I2C_INA2, i));
-			DEBUG_Write("The INA is %d and channel is %d and voltage is %d\r\n", I2C_INA3, i, (int)ReadVoltage(I2C_INA3, i));
-		}
+		//DEBUG_Write("INA 2 channel 1 (rudder motor) voltage:			>%d<\r\n", (int)(ReadVoltage(I2C_INA2, 1)*1000));
+		//DEBUG_Write("INA 2 channel 2 (linear actuator) voltage:		>%d<\r\n", (int)(ReadVoltage(I2C_INA2, 2)*1000));
+		//DEBUG_Write("INA 2 channel 3 (beacon) voltage:			>%d<\r\n", (int)(ReadVoltage(I2C_INA2, 3)*1000));
 		
+		DEBUG_Write("############### Reading Currents from INA's ###############\r\n");
+		DEBUG_Write("INA 1 channel 1 (3.3V bus) current:			>%d<\r\n", (int)(ReadCurrent(I2C_INA1, 1)*1000));
+		DEBUG_Write("INA 1 channel 2 (12 V bus) current:			>%d<\r\n", (int)(ReadCurrent(I2C_INA1, 2)*1000));
+		DEBUG_Write("INA 1 channel 3 (disconnected) current:			>%d<\r\n", (int)(ReadCurrent(I2C_INA1, 3)*1000));
+		
+		DEBUG_Write("INA 2 channel 1 (rudder motor) voltage:			>%d<\r\n", (int)(ReadCurrent(I2C_INA2, 1)*1000));
+		DEBUG_Write("INA 2 channel 2 (linear actuator) voltage:		>%d<\r\n", (int)(ReadCurrent(I2C_INA2, 2)*1000));
+		DEBUG_Write("INA 2 channel 3 (beacon) voltage:			>%d<\r\n", (int)(ReadCurrent(I2C_INA2, 3)*1000));
+
 		vTaskDelay(testDelay);
 	}
 }
