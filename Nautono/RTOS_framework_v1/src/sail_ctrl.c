@@ -496,7 +496,9 @@ void ReadCompass(void)
 
 	while(1) {
 				
-		event_bits = xEventGroupWaitBits(mode_event_group,                        /* Test the mode event group */
+		event_bits = xEventGroupWaitBits(mode_event_group,                        /* 
+		
+		 the mode event group */
 										 CTRL_MODE_AUTO_BIT | CTRL_MODE_REMOTE_BIT, /* Wait until the sailboat is in AUTO or REMOTE mode */
 										 pdFALSE,                                 /* Bits should not be cleared before returning. */
 									     pdFALSE,                                 /* Don't wait for both bits, either bit will do. */

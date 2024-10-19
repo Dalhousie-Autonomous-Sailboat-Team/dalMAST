@@ -563,8 +563,6 @@ void Test_EEPROM(void)
 	
 	uint16_t raw_angle;
 	
-	
-	
 	uint8_t mode_buffer[2] = {0X3D, 0X01};
 	I2C_WriteBuffer(I2C_IMU, mode_buffer, 2, I2C_WRITE_NORMAL);
 
@@ -670,20 +668,22 @@ void Test_EEPROM(void)
 		
 		uint8_t buffer[2] = {0x02, 0x10};
 			
-		//I2C_WriteBuffer(I2C_EEPROM, buffer, 2, I2C_WRITE_NORMAL);
+		//I2C_WriteBuffer(I2C_EEPROM, buffer, 2, I2C_WRITE_NORMAL); //not needed
 		
-		//WriteByteToAddr(32, 0x20);
+		//to write to the EEPROM, we just need to use the function below 
+		//WriteByteToAddr(32, 0x40); //addr, data
 		
 		uint8_t addr = 0x02;
 		uint8_t data = 0;
 		
-		//delay_ms(10);
+		delay_ms(10);
 		
+		//to read, we need the below function only. Everything is handled in the function i.e. write first and then read
 		ReadByteFromAddr(32, &data);
 		
-		//I2C_WriteBuffer(I2C_EEPROM, &addr, 1, I2C_WRITE_NORMAL);
+		//I2C_WriteBuffer(I2C_EEPROM, &addr, 1, I2C_WRITE_NORMAL); //not needed
 		
-		//I2C_ReadBuffer(I2C_EEPROM, &data, 1, I2C_READ_NORMAL);
+		//I2C_ReadBuffer(I2C_EEPROM, &data, 1, I2C_READ_NORMAL); //not needed
 		
 		DEBUG_Write("Data: %d\r\n", data);
 		/*
@@ -691,7 +691,7 @@ void Test_EEPROM(void)
 		
 		I2C_WriteBuffer(I2C_IMU, &reg_addr, 1, I2C_WRITE_NORMAL);
 		I2C_ReadBuffer(I2C_IMU, &bno_id, 1, I2C_READ_NORMAL);
-		DEBUG_Write("Bno temp: %d\r\n", bno_id);
+		DEBUG_Write("BNO temp: %d\r\n", bno_id);
 		
 		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");
 		
