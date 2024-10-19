@@ -30,6 +30,7 @@
 #include "sail_wind.h"
 #include "sail_beacon.h"
 #include "sail_wdt.h"
+#include "sail_bme680.h"
 
 enum all_tasks running_task;
 
@@ -87,6 +88,7 @@ enum status_code init_tasks(void) {
 
 	// Task to blink an LED on the pcb, to ensure that the CPU is working.
 	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate(debug_BME680, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	
 	//xTaskCreate(beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	//xTaskCreate(beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);

@@ -821,6 +821,12 @@
     <Compile Include="src\sail_beacon.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\sail_bme680.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sail_bme680.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sail_buffer.c">
       <SubType>compile</SubType>
     </Compile>

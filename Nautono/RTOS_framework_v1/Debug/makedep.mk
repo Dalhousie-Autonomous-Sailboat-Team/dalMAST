@@ -12,6 +12,8 @@ src\sail_anglesensor.c
 
 src\sail_beacon.c
 
+src\sail_bme680.c
+
 src\sail_buffer.c
 
 src\sail_ctrl.c
