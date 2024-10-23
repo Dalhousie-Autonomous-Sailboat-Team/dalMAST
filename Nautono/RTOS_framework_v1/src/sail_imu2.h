@@ -13,10 +13,10 @@
 #define IMU2_TEST_PERIOD 1000		// milliseconds
 
 // SENtral EM7180 defines
+#define BYTES_PER_FLOAT		4
 #define IMU2_DATA_LENGTH	4		// 4 quaternion values
-#define SENTRAL_ADDRESS		0x28	// I2C address for SENTRAL IMU hub
 #define RAW_DATA_LENGTH		16		// 16 8-bit registers (4 floats) worth of raw data
-
+#define EM7180_QX			0x00
 
 /* ##################### Public Function Prototypes ##################### */
 

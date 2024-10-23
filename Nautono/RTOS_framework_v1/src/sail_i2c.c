@@ -31,7 +31,8 @@ static uint8_t slave_addrs[I2C_NUM_DEVICES] = {
 	0x41,	// INA 2
 	0x42,	// INA 3
 	0x77,	// BME
-	0x36	// sail angle sensor (or 0x38)
+	0x36,	// sail angle sensor (or 0x38)
+	0x28	// SENtral IMU address
 };
 
 
