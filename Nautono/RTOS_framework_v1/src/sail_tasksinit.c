@@ -22,6 +22,7 @@
 #include "sail_eeprom.h"
 #include "sail_gps.h"
 #include "sail_imu.h"
+#include "sail_imu2.h"
 #include "sail_ina.h"
 #include "sail_nav.h"
 #include "sail_nmea.h"
@@ -83,7 +84,9 @@ enum status_code init_tasks(void) {
 	//xTaskCreate(Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	//xTaskCreate( ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
 	//xTaskCreate(Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	xTaskCreate(Test_INA, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	//xTaskCreate(Test_INA, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	
+	xTaskCreate(Test_SENTRAL, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 
 	// Task to blink an LED on the pcb, to ensure that the CPU is working.
 	xTaskCreate(Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);

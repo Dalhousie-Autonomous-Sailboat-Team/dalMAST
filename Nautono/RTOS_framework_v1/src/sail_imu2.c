@@ -7,23 +7,21 @@
 
 #include "sail_imu2.h"
 #include "sail_i2c.h"
+#include "sail_debug.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 /* ##################### Static Function Prototypes ##################### */
 
-// Read data from SENTRAL
-static void SENTRAL_read(float * data);
-
 // Initialize SENTRAL
 static enum status_code SENTRAL_init(void);
 
-// Print SENTRAL values
-static void SENTRAL_print(float * data);
+// Read data from SENTRAL
+static enum status_code SENTRAL_read_quaternions(float * quaternions);
 
-// Get quaternions (floats) from raw data
-static void SENTRAL_get_quaternions(uint8_t * data, float * quaternions);
+// Print SENTRAL values
+static void SENTRAL_print_quaternions(float * quaternions);
 
 /* ##################### Private Function Declarations ##################### */
 
@@ -34,35 +32,40 @@ static enum status_code SENTRAL_init(void)
 }
 
 // Reads data from SENtral IMU to data buffer
-static void SENTRAL_read(float* quaternions)
+static enum status_code SENTRAL_read_quaternions(float* quaternions)
 {
 	uint8_t subaddress = EM7180_QX;
 	uint8_t raw_data[RAW_DATA_LENGTH];
+	enum status_code retval;
 	
-	I2C_WriteBuffer(I2C_SENTRAL, &subaddress, 1, I2C_WRITE_NORMAL);
+	// Begin I2C transmission to SENTRAL IMU
+	retval = I2C_WriteBuffer(I2C_SENTRAL, &subaddress, 1, I2C_WRITE_NORMAL);
 	
-	I2C_ReadBuffer(I2C_SENTRAL, raw_data, 16, I2C_READ_NORMAL);
+	if (STATUS_OK != retval)
+	{
+		return retval;
+	}
 	
-	SENTRAL_get_quaternions(raw_data, quaternions);
+	// Read raw quaternion data into buffer
+	retval = I2C_ReadBuffer(I2C_SENTRAL, raw_data, 16, I2C_READ_NORMAL);
+
+	if (STATUS_OK != retval)
+	{
+		return retval;
+	}
+	
+	memcpy(quaternions, raw_data, RAW_DATA_LENGTH);
+	
+	return STATUS_OK;
 }
 
-static void SENTRAL_get_quaternions(uint8_t * data, float * quaternions)
+static void SENTRAL_print_quaternions(float* quaternions)
 {
-	memcpy(quaternions, data, RAW_DATA_LENGTH);
-}
-
-static void SENTRAL_print(float* quaternions)
-{
-	// Print raw quaternions
-	//sprintf();
-	
-	// Calculate 
-}
-
-static void SENTRAL_calc(float * quaterions, float * calculated_values)
-{
-	// store roll, pitch, and yaw in to calculated values array
-	// Calculate using the quaternions array
+	// Print quaternions
+	DEBUG_Write("Quaternion X (*1000): %d\r\n", quaternions[0]);
+	DEBUG_Write("Quaternion Y (*1000): %d\r\n", quaternions[1]);
+	DEBUG_Write("Quaternion Z (*1000): %d\r\n", quaternions[2]);
+	DEBUG_Write("Quaternion W (*1000): %d\r\n", quaternions[3]);
 }
 
 /* ##################### Public Function Declarations ##################### */
@@ -77,8 +80,8 @@ void Test_SENTRAL(void)
 
 	while (1)
 	{
-		SENTRAL_read(quaternions);
-		SENTRAL_print(quaternions);
+		SENTRAL_read_quaternions(quaternions);
+		SENTRAL_print_quaternions(quaternions);
 		vTaskDelay(task_delay);
 	}
 }

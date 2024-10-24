@@ -30,6 +30,8 @@
 
 #define GPS_BUFFER_LENGTH		NMEA_BUFFER_LENGTH
 
+static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* data);
+
 static bool init_flag = false;
 static char msg_buffer[GPS_BUFFER_LENGTH];
 

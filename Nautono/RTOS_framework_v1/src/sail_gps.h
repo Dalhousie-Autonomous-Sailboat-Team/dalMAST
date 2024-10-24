@@ -46,9 +46,6 @@ enum status_code GPS_Init(void);
 enum status_code GPS_Enable(void);
 enum status_code GPS_Disable(void);
 enum status_code GPS_RxMsg(NMEA_GenericMsg* msg);
-
-static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* data);
-
 enum status_code GPS_cmd(const char* format, ...);
 
 #endif /* SAIL_GPS_H */
