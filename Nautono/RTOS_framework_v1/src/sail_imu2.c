@@ -28,7 +28,34 @@ static void SENTRAL_print_quaternions(float * quaternions);
 // Initializes SENtral IMU
 static enum status_code SENTRAL_init(void)
 {
+	// Check that EEPROM data was uploaded
+	enum status_code status = SENTRAL_EEPROM_validate();
 	
+	// Place SENTRAL in pass-through mode
+	
+	
+}
+
+static enum status_code SENTRA_EEPROM_validate(void)
+{
+	uint8_t write_buff[];
+	uint8_t read_buff[];
+	uint8_t count = 0, EEPROM_STATUS = 0;
+	
+	// Read data from EEPROM and make sure it was loaded
+	while(!(EEPROM_STATUS & 0x01))
+	{
+		I2C->writeByte(EM7180_ADDRESS, EM7180_ResetRequest, 0x01);
+		_delay(500);
+		count++;
+		EEPROM_STATUS = I2C->readByte(EM7180_ADDRESS, EM7180_SentralStatus);
+		if(count > 5)
+		{
+			return ERR_BAD_DATA;
+		}
+	}
+	 
+	return STATUS_OK;	
 }
 
 // Reads data from SENtral IMU to data buffer
