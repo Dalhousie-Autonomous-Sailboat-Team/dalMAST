@@ -43,7 +43,9 @@ extern unsigned char watchdog_reset_value;
 #define LOG_DATA_PRIORITY                 tskIDLE_PRIORITY + 2
 #define READ_COMPASS_PRIORITY             tskIDLE_PRIORITY + 3
 #define READ_AS_PRIORITY				  tskIDLE_PRIORITY + 3
+#define LINEAR_ACTUATOR_PRIORITY          tskIDLE_PRIORITY
 #define WATCHDOG_PRIORITY                 tskIDLE_PRIORITY
+
 
 #define GPS_STACK_SIZE					  configMINIMAL_STACK_SIZE + 100
 #define WEATHER_SENSOR_STACK_SIZE         configMINIMAL_STACK_SIZE
@@ -54,8 +56,9 @@ extern unsigned char watchdog_reset_value;
 #define RADIO_HANDLER_STACK_SIZE          configMINIMAL_STACK_SIZE + 100
 #define LOG_DATA_STACK_SIZE               configMINIMAL_STACK_SIZE 
 #define READ_COMPASS_STACK_SIZE           configMINIMAL_STACK_SIZE 
-#define READ_AS_STACK_SIZE           configMINIMAL_STACK_SIZE 
+#define READ_AS_STACK_SIZE                configMINIMAL_STACK_SIZE 
 #define WATCHDOG_STACK_SIZE               configMINIMAL_STACK_SIZE
+#define LINEAR_ACTUATOR_STACK_SIZE        configMINIMAL_STACK_SIZE 
 
 // TODO: update this file
 enum all_tasks {

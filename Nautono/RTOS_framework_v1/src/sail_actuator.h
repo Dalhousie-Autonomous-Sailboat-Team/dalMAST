@@ -7,6 +7,6 @@
 
 extern void AC_init(void);
 extern void LAC_set_pos(double pos); 
-void Test_Actuator(void);
+void Test_Actuator_Task(void);
 
 #endif
