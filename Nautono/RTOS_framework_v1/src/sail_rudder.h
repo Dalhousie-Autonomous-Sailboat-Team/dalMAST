@@ -26,6 +26,8 @@ extern void RudderSetPos(double pos);
 
 void Test_Rudder(void);
 
+uint16_t InitAnalog(void);
+
 static void TurnCCW(void);
 static void TurnCW(void);
 

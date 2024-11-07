@@ -15,6 +15,8 @@
 #include "FreeRTOSConfig.h"
 #include "FreeRTOS.h"
 
+#include "sail_i2c.h"
+
 //#define MOTOR_POWER_PIN			PIN_PA03
 #define MOTOR_CCW_POSITIVE_PIN	PIN_PB08
 #define MOTOR_CW_POSITIVE_PIN	PIN_PB09
@@ -114,6 +116,27 @@ static void SetDirection(MOTOR_Direction dir)
 
 void RudderPotPos(double * data) {
 	ADC_GetReading(ADC_RUDDER, data);
+	DEBUG_Write("Hello");
+}
+
+uint16_t InitAnalog(void){
+	uint8_t regaddress = 0x0C;
+	uint8_t datain[2];
+	uint16_t raw_angle;
+	
+	//I2C_WriteBuffer(I2C_AS, &regaddress, 1, I2C_WRITE_NORMAL);
+	//I2C_ReadBuffer(I2C_AS, &datain, 1, I2C_READ_NORMAL);
+	
+	enum status_code write_status = I2C_WriteBuffer(I2C_AS, &regaddress, 1, I2C_WRITE_NORMAL);
+    enum status_code read_status = I2C_ReadBuffer(I2C_AS, &datain, 2, I2C_READ_NORMAL);
+	
+	raw_angle = ((uint16_t)(datain[0]) << 8) | datain[1];
+	
+	return raw_angle;
+
+//	datain &= 0b11001111;
+	//I2C_WriteBuffer(I2C_AS, &regaddress, 1, I2C_WRITE_NORMAL);
+	//I2C_WriteBuffer(I2C_AS, &datain, 1, I2C_WRITE_NORMAL);
 }
 
 void RudderSetPos(double pos) 
@@ -137,6 +160,8 @@ void RudderSetPos(double pos)
 	//SetDirection(dir);
 	
 	DEBUG_Write("Setting Rudder to POS: %d\r\n", (uint)pos);
+	
+	InitAnalog();
 	
 	while((curr_pos <= pos*0.95 || curr_pos >= pos*1.05)) 
 	{
@@ -173,6 +198,8 @@ void Test_Rudder(void){
 	double pos = 0;
 	int int_pos = 0;
 
+	InitAnalog();
+
 	while(1){
 		taskENTER_CRITICAL();
 		watchdog_counter |= 0x20;
@@ -180,11 +207,11 @@ void Test_Rudder(void){
 		running_task = eUpdateCourse;
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing POT >>>>>>>>>>\n\r");
 		
-		RudderPotPos(&pos);
+		//RudderPotPos(&pos);
 		
-		RudderSetPos(105);
-		RudderSetPos(30);
-		
+		//RudderSetPos(105);
+		//RudderSetPos(30);
+		//InitAnalog();
 		
 		int_pos = pos;
 		DEBUG_Write("POT reading: %d\r\n", int_pos);
