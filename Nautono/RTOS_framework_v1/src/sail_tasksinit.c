@@ -100,7 +100,7 @@ enum status_code init_tasks(void) {
 	//xTaskCreate(beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	
 	//read incoming data from GPS 2
-	xTaskCreate(DEBUG_GPS2, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+	//xTaskCreate(DEBUG_GPS2, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();

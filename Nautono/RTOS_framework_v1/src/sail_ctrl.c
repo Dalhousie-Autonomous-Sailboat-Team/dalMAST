@@ -193,7 +193,6 @@ enum status_code startup(void)
 	RUDDER_Init();
 	AC_init();
 	
-	
 	return STATUS_OK;
 }
 

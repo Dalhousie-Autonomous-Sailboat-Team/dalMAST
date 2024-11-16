@@ -19,9 +19,9 @@
 //#include <inttypes.h>
 //#include "sail_types.h"
 
-extern enum status_code GPS2_init(void); // initialize I2C bus
-extern enum status_code write(uint8_t c); // write to slave
-extern enum status_code read(size_t *data); //read from slave
-void DEBUG_GPS2(void); //freeRTOS task 
+extern enum status_code GPS2_init(void); // check if I2C bus is active
+extern enum status_code write(uint8_t c); // write to slave 
+extern enum status_code read(void); //read from slave
+void DEBUG_GPS2(void); //freeRTOS task that will be running on top layer
 
 #endif /* GPS_2_H_ */
