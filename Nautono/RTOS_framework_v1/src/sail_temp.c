@@ -9,6 +9,9 @@
 #include "sail_debug.h"
 #include "sail_uart.h"
 #include "FreeRTOS.h"
+#include "FreeRTOSConfig.h"
+#include "sail_tasksinit.h"
+
 
 /*****************************************************************/
 /* CONSTANTS                                                     */
@@ -32,6 +35,9 @@ static const uint8_t HUM_DIG_ADDR1_LENGTH    = 1;
 static const uint8_t HUM_DIG_ADDR2_LENGTH    = 7;
 static const uint8_t DIG_LENGTH              = 32;
 static const uint8_t SENSOR_DATA_LENGTH      = 8;
+
+
+
 
 static enum status_code I2C_readLen(I2C_DeviceID device_id, uint8_t addr, uint8_t *data,  uint8_t len)
 {
@@ -77,13 +83,12 @@ static enum status_code I2C_readLen(I2C_DeviceID device_id, uint8_t addr, uint8_
 			return STATUS_ERR_DENIED;
 		}
 	}
-	
 	return STATUS_OK;
 }
 
 
 static float CalculatePressure(int32_t raw, int32_t t_fine, enum PresUnit unit){
-	  // Code based on calibration algorthim provided by Bosch.
+	  // Code based on calibration algorithm provided by Bosch.
 	  int64_t var1, var2, pressure;
 	  float final;
 
@@ -126,7 +131,7 @@ static float CalculatePressure(int32_t raw, int32_t t_fine, enum PresUnit unit){
 		  case PresUnit_bar: /* bar */
 		  final /= 100000.0;               /* final pa * 1 bar/100kPa */
 		  break;
-		  case PresUnit_torr: /* torr */
+		  case PresUnit_torr: /* Torr */
 		  final /= 133.32236534674;            /* final pa * 1 torr/133.32236534674Pa */
 		  break;
 		  case PresUnit_psi: /* psi */
@@ -138,8 +143,11 @@ static float CalculatePressure(int32_t raw, int32_t t_fine, enum PresUnit unit){
 	  return final;
 }
 
+
+
+
 static float CalculateTemperature(int32_t raw, int32_t* t_fine, enum TempUnit unit){
-	   // Code based on calibration algorthim provided by Bosch.
+	   // Code based on calibration algorithms provided by Bosch.
 	   int32_t var1, var2, final;
 	   uint16_t dig_T1 = (m_dig[1] << 8) | m_dig[0];
 	   int16_t   dig_T2 = (m_dig[3] << 8) | m_dig[2];
@@ -151,8 +159,11 @@ static float CalculateTemperature(int32_t raw, int32_t* t_fine, enum TempUnit un
 	   return unit == TempUnit_Celsius ? final/100.0 : final/100.0*9.0/5.0 + 32.0;
 }
 
+
+
+
 static float CalculateHumidity(int32_t raw, int32_t t_fine){
-	   // Code based on calibration algorthim provided by Bosch.
+	   // Code based on calibration algorithms provided by Bosch.
 	   int32_t var1;
 	   uint8_t   dig_H1 =   m_dig[24];
 	   int16_t dig_H2 = (m_dig[26] << 8) | m_dig[25];
@@ -171,6 +182,9 @@ static float CalculateHumidity(int32_t raw, int32_t t_fine){
 	   var1 = (var1 > 419430400 ? 419430400 : var1);
 	   return ((uint32_t)(var1 >> 12))/1024.0;
 }
+
+
+
 
 static int BME280_ReadTrim(){
 	uint8_t ord = 0;
@@ -215,24 +229,29 @@ int BME280_read(float* pressure, float* temp, float* humidity, enum TempUnit tem
 	return BME_SUCCESS;
 }
 
+
+#define TEST_DELAY_BME 1000
+
 void TestTemperatureSensor(){
-	TickType_t testDelay = pdMS_TO_TICKS(6000 / portTICK_RATE_MS);
+	TickType_t testDelay = pdMS_TO_TICKS(TEST_DELAY_BME);
+	
 	UART_Init(UART_VCOM);
 	
-	char buffer[80] = {0};
-//#ifdef DEFAULT_TEMPERATURE
 	enum TempUnit tempUnit = TempUnit_Celsius;
-//#endif
-
-//#ifdef DEFAULT_PRESSURE
 	enum PresUnit presUnit = PresUnit_hPa;
-//#endif
-float temp = 0.0, pres = 0.0, humidity = 0.0;
+	float temp = 0.0, pres = 0.0, humidity = 0.0;
 
-	while(1){
+	while(1)
+	{
+		taskENTER_CRITICAL(); //enter critical section so that only temperature sensor task uses watchdog counter at at time
+		watchdog_counter |= 0x20;
+		taskEXIT_CRITICAL(); //exit critical section to free watchdog counter for other tasks.
+		running_task = eUpdateCourse;
+		
+		DEBUG_Write("<<<<<<<<<<< Testing BME >>>>>>>>>>\n\r");
 		BME280_read(&pres, &temp, &humidity, tempUnit, presUnit);
-		sprintf(buffer, "Temp: %.2f Humidity: %.2f Press %.2f\r\n", temp, humidity, pres);
-		DEBUG_Write("%s", buffer);
+		DEBUG_Write("Temp: %d Humidity: %d Press %d\r\n", (int)temp, (int)humidity, (int)pres);
+		
+		vTaskDelay(testDelay);
 	}
-	
 }

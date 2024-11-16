@@ -54,7 +54,7 @@ extern unsigned char watchdog_reset_value;
 #define RADIO_HANDLER_STACK_SIZE          configMINIMAL_STACK_SIZE + 100
 #define LOG_DATA_STACK_SIZE               configMINIMAL_STACK_SIZE 
 #define READ_COMPASS_STACK_SIZE           configMINIMAL_STACK_SIZE 
-#define READ_AS_STACK_SIZE           configMINIMAL_STACK_SIZE 
+#define READ_AS_STACK_SIZE				  configMINIMAL_STACK_SIZE 
 #define WATCHDOG_STACK_SIZE               configMINIMAL_STACK_SIZE
 
 // TODO: update this file
