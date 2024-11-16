@@ -16,6 +16,15 @@
 #include "task.h"
 #include "sail_tasksinit.h"
 
+// Private function definitions
+static RADIO_Status ChangeMode(CTRL_Mode new_mode);
+static RADIO_Status ChangeState(CTRL_State new_state);
+static RADIO_Status ChangeLogPeriod(uint8_t new_period);
+static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data);
+static RADIO_Status AdjustMotors(uint16_t sail_angle, uint16_t rudder_angle);
+
+static RADIO_Status RemoteAdjustMotors(uint16_t rudder_angle);
+static RADIO_Status LACAdjustMotors(uint16_t sail_angle);
 
 //config for custom formating
 #define HEADER_FMT				"DALSAIL,%03"PRIu16

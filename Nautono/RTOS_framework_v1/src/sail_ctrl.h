@@ -65,7 +65,7 @@ enum status_code startup(void);
  * Status:
  *		STATUS_ERR_INSUFFICIENT_RTOS_HEAP - Contains error when system create task
  */ 
-enum status_code init_tasks();
+enum status_code init_tasks(void);
 
 extern CTRL_Mode mode;
 extern CTRL_State state;
@@ -123,13 +123,6 @@ void process_heading_readings(void);
 
 void assing_wind_readings(void); 
 
-
-/* CTRL_Sleep
- * Set the sleep time of the control unit
- * Input:
- *	 time_sec - sleep time length
- */ 
-static void CTRL_Sleep(unsigned time_sec);
 
 void beaconTaskTest(void);
 

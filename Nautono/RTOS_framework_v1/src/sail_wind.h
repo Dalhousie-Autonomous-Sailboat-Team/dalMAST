@@ -81,6 +81,4 @@ enum status_code WIND_GetReading(WIND_Reading *reading);
 
 enum status_code WIND_RxMsg(NMEA_GenericMsg* msg);
 
-static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t* data);
-
 #endif /* SAIL_WIND_H_ */

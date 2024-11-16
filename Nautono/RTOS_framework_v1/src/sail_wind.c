@@ -42,6 +42,9 @@
 
 #define KNOTS_TO_MS 0.51444444
 
+static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t* data);
+
+
 // Buffer to hold wind vane strings from NMEA module
 // static uint8_t wind_buffer[WS_BUFFER_LENGTH];
 // static uint8_t mwv_buffer[WS_BUFFER_LENGTH];

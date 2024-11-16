@@ -35,8 +35,14 @@ static uint16_t dt_ms = 200;
 // RTC timer
 struct rtc_module rtc_timer;
 
-// Task functions
+// Private function declarations
 
+/* CTRL_Sleep
+ * Set the sleep time of the control unit
+ * Input:
+ *	 time_sec - sleep time length
+ */ 
+static void CTRL_Sleep(unsigned time_sec);
 
 void process_wind_readings(void);
 static void EnableWeatherStation(void);

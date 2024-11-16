@@ -69,7 +69,7 @@
 
 // From module: FreeRTOS - kernel 10.0.0
 #include <FreeRTOS.h>
-#include <StackMacros.h>
+#include <stack_macros.h>
 #include <croutine.h>
 #include <deprecated_definitions.h>
 #include <event_groups.h>
