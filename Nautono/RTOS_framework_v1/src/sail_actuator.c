@@ -65,9 +65,12 @@ void AC_init(void) {
 
 void LAC_set_pos(double pos) 
 {
+	
 	double curr_pos = 0, prev_pos = 0;
 	int count = 0;
 	ActuatorPotPos(&curr_pos);
+
+	//DEBUG_Write("Setting Sail to POS: %d\r\n", (uint)pos);
 	
 	while((curr_pos <= pos*0.98 || curr_pos >= pos*1.02) ) {
 		
@@ -81,6 +84,7 @@ void LAC_set_pos(double pos)
 		ActuatorPotPos(&curr_pos);
 	}
 	TurnOff();
+	//DEBUG_Write("Final Sail POS: %d\r\n", (int)curr_pos);
 }
 
 #define TEST_ACTUATOR_DELAY_MS 1000
@@ -101,7 +105,7 @@ void Test_Actuator(void){
 		
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Actuator >>>>>>>>>>\n\r");
 		
-		//LAC_set_pos(100);
+		LAC_set_pos(100);
 		ActuatorPotPos(&curr_pos);
 		DEBUG_Write("current pos: %d\r\n", (int)curr_pos);
 	

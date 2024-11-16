@@ -42,7 +42,7 @@ static void TurnOff(void);
 // Function to turn set the specified motor clockwise
 static void SetDirection(MOTOR_Direction dir);
 // Function to get the pot position for rudder.
-void RudderPotPos(double * data);
+static void RudderPotPos(double * data);
 
 // Function to initialize the power and direction pins for the specified motor
 static void InitPins(void)
