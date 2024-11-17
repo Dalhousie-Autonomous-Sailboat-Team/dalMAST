@@ -19,7 +19,6 @@
 // Private function definitions
 static RADIO_Status ChangeMode(CTRL_Mode new_mode);
 static RADIO_Status ChangeState(CTRL_State new_state);
-static RADIO_Status ChangeLogPeriod(uint8_t new_period);
 static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data);
 static RADIO_Status AdjustMotors(uint16_t sail_angle, uint16_t rudder_angle);
 
@@ -136,7 +135,7 @@ enum status_code RADIO_RxMsg(RADIO_GenericMsg *msg)
 		return STATUS_ERR_BAD_ADDRESS;
 	}
 	
-	memset(msg_buffer, NULL, NMEA_BUFFER_LENGTH*sizeof(char));
+	memset(msg_buffer, 0, NMEA_BUFFER_LENGTH*sizeof(char));
 	
 	// Check the NMEA receiver for new data
 	switch (NMEA_RxString(NMEA_RADIO, (uint8_t *)msg_buffer, RADIO_BUFFER_LENGTH)) {

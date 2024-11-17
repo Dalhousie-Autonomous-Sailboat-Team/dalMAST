@@ -70,13 +70,10 @@ static struct WIND_MWVData {
 	uint8_t  status;			//A active, data valid
 } mwv_data;
 
-static enum status_code WIND_ParseMWV(void);
 static void WEATHERSTATION_InitPin(void);
-static void WS_TurnOn(void);
-static void WS_TurnOff(void);
-///// Needed? - KT ^^^ ///////
+static static void init_pins(void);
 
-static void init_pins()
+static void init_pins(void)
 {
 	ON_OFF_PIN = WS_ON_OFF_PIN;
 	
@@ -96,7 +93,7 @@ static void WIND_PWR_OFF() {
 	port_pin_set_output_level(ON_OFF_PIN, false);
 }
 
-TaskFunction_t ReadWIND(void){
+void ReadWIND(void){
     DEBUG_Write("Reading GPS...\r\n");
     uint16_t loop_cnt = 0;
     // Set msg type sum to 0 since no messages processed yet

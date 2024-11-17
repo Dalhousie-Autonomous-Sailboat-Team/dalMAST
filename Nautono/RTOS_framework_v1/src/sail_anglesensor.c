@@ -145,33 +145,10 @@ static int _lastAngle;
  * 
  */
 
-static enum status_code WriteByte(uint8_t reg, uint8_t val);
-static enum status_code WriteWord(uint8_t reg, uint16_t val);
 static enum status_code ReadByte(uint8_t reg, uint8_t * data);
 static enum status_code ReadWord(uint8_t reg, uint16_t * data);
-
-static enum status_code WriteByte(uint8_t reg, uint8_t val)
-{
-   uint8_t buffer[2];
-   buffer[1] = reg;
-   buffer[2] = val;
-
-   if(I2C_WriteBuffer(I2C_AS, buffer, 2, I2C_WRITE_NORMAL) != STATUS_OK) {
-        return STATUS_ERR_DENIED;
-   }
-}
-
-static enum status_code WriteWord(uint8_t reg, uint16_t val)
-{
-    uint8_t buffer[3];
-    buffer[0] = reg;
-    buffer[1] = val & 0xFF;
-    buffer[2] = (val >> 8) & 0xFF;
-
-    if(I2C_WriteBuffer(I2C_AS, buffer, 3, I2C_WRITE_NORMAL) != STATUS_OK) {
-        return STATUS_ERR_DENIED;
-   }
-}
+static enum status_code detectMagnet(void);
+static enum status_code getAngularSpeed(uint8_t mode, float *data);
 
 static enum status_code ReadByte(uint8_t reg, uint8_t * data)
 {
@@ -231,10 +208,10 @@ static enum status_code readStatus(uint8_t * data)
 	return STATUS_OK;
 }
 
-static enum status_code detectMagnet()
+static enum status_code detectMagnet(void)
 {
 	uint8_t data = 0;
-	readStatus(data);
+	readStatus(&data);
 	return (data & AS5600_MAGNET_DETECT) > 1;
 }
 
@@ -273,7 +250,7 @@ enum status_code rawAngle(uint16_t *data)
 	return STATUS_OK;	
 }
 
-enum status_code readAngle(uint16_t *data)
+enum status_code readAngle(int *data)
 {
 	rawAngle(data);
 	uint8_t msb = *data & 0xff;
@@ -290,12 +267,12 @@ static void getTicks(uint16_t * data) {
 	*data = xTaskGetTickCount();
 }
 
-enum status_code getAngularSpeed(uint8_t mode, float *data)
+static enum status_code getAngularSpeed(uint8_t mode, float *data)
 {
-	uint32_t now = 0;
+	uint16_t now = 0;
 	getTicks(&now);
 	
-	int	angle = 0;
+	int angle = 0;
 	readAngle(&angle);
 	
 	uint32_t deltaT  = now - _lastMeasurement;
@@ -315,14 +292,16 @@ enum status_code getAngularSpeed(uint8_t mode, float *data)
 	//  return radians, RPM or degrees.
 	if (mode == AS5600_MODE_RADIANS)
 	{
-		*data * AS5600_RAW_TO_RADIANS;
+		*data *= AS5600_RAW_TO_RADIANS;
 	}
 	if (mode == AS5600_MODE_RPM)
 	{
-		*data * AS5600_RAW_TO_RPM;
+		*data *= AS5600_RAW_TO_RPM;
 	}
-	//  default return degrees
-	*data * AS5600_RAW_TO_DEGREES;
+	else
+	{
+		*data *= AS5600_RAW_TO_DEGREES;
+	}
 	
 	return STATUS_OK;
 }
@@ -334,7 +313,6 @@ void Test_AS(void){
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_AS_DELAY_MS);
 	
 	uint16_t raw_angle = 0;
-	uint16_t ticks = 0;
 	
 	// Need direction pin: 
 	AS_init(PIN_PA08);
@@ -350,7 +328,7 @@ void Test_AS(void){
 		DEBUG_Write("raw angle: %d\r\n", raw_angle);
 		
 		rc = detectMagnet();
-		DEBUG_Write("rc: %d\r\n");
+		DEBUG_Write("rc: %d\r\n", rc);
 		
 		vTaskDelay(testDelay);
 	}

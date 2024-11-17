@@ -36,7 +36,12 @@ static char msg_buffer[GPS_BUFFER_LENGTH];
 //stores all the msg types of the gps sensor
 GPS_AllMsgs GPS_data;
 
-TaskFunction_t ReadGPS(void) {
+// Private function declarations
+static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* data);
+
+// Function definitions
+
+void ReadGPS(void) {
 	DEBUG_Write("Reading GPS...\r\n");
 	uint16_t loop_cnt = 0;
 	//set msg type sum to 0 since no messages processed yet

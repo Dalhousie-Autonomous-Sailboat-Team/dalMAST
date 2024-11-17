@@ -6,6 +6,7 @@
  *  Author: manav
  */ 
 #include <asf.h>
+#include "sail_led.h"
 #include "sail_tasksinit.h"
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"

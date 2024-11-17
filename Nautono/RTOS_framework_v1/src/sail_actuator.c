@@ -66,8 +66,7 @@ void AC_init(void) {
 void LAC_set_pos(double pos) 
 {
 	
-	double curr_pos = 0, prev_pos = 0;
-	int count = 0;
+	double curr_pos = 0;
 	ActuatorPotPos(&curr_pos);
 
 	//DEBUG_Write("Setting Sail to POS: %d\r\n", (uint)pos);

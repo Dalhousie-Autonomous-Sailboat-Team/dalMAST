@@ -33,7 +33,7 @@ extern WIND_AllMsgs WIND_data;
 
 void enable_wind_msg(eNMEA_TRX_t msg_type);
 
-TaskFunction_t ReadWIND(void);
+void ReadWIND(void);
 void WIND_On(void);
 
 // WIND_Init
