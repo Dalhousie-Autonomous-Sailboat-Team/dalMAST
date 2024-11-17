@@ -71,7 +71,7 @@ static struct WIND_MWVData {
 } mwv_data;
 
 static void WEATHERSTATION_InitPin(void);
-static static void init_pins(void);
+static void init_pins(void);
 
 static void init_pins(void)
 {

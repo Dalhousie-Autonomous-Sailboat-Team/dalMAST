@@ -36,3 +36,12 @@
 *.VC.opendb
 *.VC.db
  
+# Microchip Studio Temp Files
+*.atsuo
+
+# Build Directories
+[Dd]ebug/
+[Rr]elease/
+
+# J-link log files
+*.log

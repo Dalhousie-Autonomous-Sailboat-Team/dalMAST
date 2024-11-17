@@ -106,8 +106,7 @@ void RudderSetPos(double pos)
 		RUDDER_Init();
 	}
 	
-	double curr_pos = 0, prev_pose = 0;
-	int count = 0;
+	double curr_pos = 0;
 	RudderPotPos(&curr_pos);
 	
 	MOTOR_Direction dir = MOTOR_CW;

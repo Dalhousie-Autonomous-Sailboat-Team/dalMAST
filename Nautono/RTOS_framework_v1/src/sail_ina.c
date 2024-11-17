@@ -15,12 +15,12 @@ static uint8_t reg[NUM_REGISTERS] = {
 	0x5
 };
 
-static enum status_code ReadWord(I2C_DeviceID ina, uint8_t register, uint16_t *data){
+static enum status_code ReadWord(I2C_DeviceID ina, uint8_t register_address, uint16_t *data){
 	if(data == NULL) {
 		return STATUS_ERR_BAD_DATA;
 	}
 
-	if(I2C_WriteBuffer(ina, &register, 1, I2C_WRITE_NORMAL) != STATUS_OK) {
+	if(I2C_WriteBuffer(ina, &register_address, 1, I2C_WRITE_NORMAL) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
 	}
 

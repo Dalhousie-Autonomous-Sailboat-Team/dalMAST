@@ -80,7 +80,7 @@ void beaconStringResponse(void){
 		//Receive string
 		UART_RxString(UART_WIND,rxString, sizeof(rxString)>>1);
 		//If received string is not expected message
-		if(strcmp(rxString, ok_response)){
+		if(strcmp((char*)rxString, (char*)ok_response)){
 			DEBUG_Write("Received message: %s\r\n", rxString);
 			DEBUG_Write("Expected message: 'OK'\r\n");
 			DEBUG_Write("Attempting to resend string.\r\n");
