@@ -121,9 +121,9 @@ void process_wind_readings(void);
 void process_heading_readings(void);
 
 
-void assing_wind_readings(void); 
+void assign_wind_readings(void); 
 
 
-void beaconTaskTest(void);
+TaskFunction_t beaconTaskTest(void);
 
 #endif /* SAIL_CTRL_H_ */ 

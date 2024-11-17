@@ -44,10 +44,8 @@ struct rtc_module rtc_timer;
  */ 
 static void CTRL_Sleep(unsigned time_sec);
 
-void process_wind_readings(void);
 static void EnableWeatherStation(void);
 static void DisableWeatherStation(void);
-void process_heading_readings(void);
 
 
 
@@ -226,10 +224,6 @@ void LogData(void)
 									     pdFALSE,                                 /* Don't wait for both bits, either bit will do. */
 									 	 portMAX_DELAY);                          /* Wait time does not expire */
 										  
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x10;
-		taskEXIT_CRITICAL();
-										  
 		DEBUG_Write("----------------------Do log data-------------------\r\n");
 		
 		RADIO_GenericMsg tx_msg_log;
@@ -288,9 +282,9 @@ static void beaconTxLogData(void){
 	DEBUG_Write(rxString);
 	
 	uint16_t maxDataSizeCounter = 0;
-	char cmd4[32] = "at+sbdwt=";
-	char data[200] = {'\0'};
-	char delimit[3] = "\r\n";
+	uint8_t cmd4[32] = "at+sbdwt=";
+	uint8_t data[200] = {'\0'};
+	uint8_t delimit[3] = "\r\n";
 #ifdef PCB
 	sprintf(data, "%5.3lf,%5.3lf", gps.lat, gps.lon);
 //#ifdef SENSORREADINGS
@@ -319,7 +313,7 @@ static void beaconTxLogData(void){
 	
 }
 
-void beaconTaskTest(void){
+TaskFunction_t beaconTaskTest(void){
 	TickType_t testDelay = pdMS_TO_TICKS(6000 / portTICK_RATE_MS);
 	
 	UART_Init(UART_VCOM);
@@ -415,11 +409,7 @@ void ControlRudder(void)
 										 pdFALSE,             /* Bits should not be cleared before returning. */
 									     pdFALSE,             /* Don't wait for both bits, either bit will do. */
 										 portMAX_DELAY);      /* Wait time does not expire */
-										 
-	    taskENTER_CRITICAL();
-		watchdog_counter |= 0x04;
-		taskEXIT_CRITICAL();
-										 
+									 
 	    DEBUG_Write("***************************Do rudder***********************\r\n");
 		
 		running_task = eControlRudder;
@@ -469,11 +459,7 @@ void UpdateCourse(void)
 										 pdFALSE,             /* Bits should not be cleared before returning. */
 										 pdFALSE,             /* Don't wait for both bits, either bit will do. */
 										 portMAX_DELAY);      /* Wait time does not expire */
-										 
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x02;
-		taskEXIT_CRITICAL();
-										 
+									 
 	    DEBUG_Write("\n<<<<<<<<<<<<<<<<<<<<<<<Do update course>>>>>>>>>>>>>>>>>>>>>>>>>>>\r\n");
 		
 		running_task = eUpdateCourse;
@@ -505,11 +491,7 @@ void ReadCompass(void)
 										 pdFALSE,                                 /* Bits should not be cleared before returning. */
 									     pdFALSE,                                 /* Don't wait for both bits, either bit will do. */
 									 	 portMAX_DELAY);                          /* Wait time does not expire */
-										 
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
-										 
+		 
 	    DEBUG_Write("\n<<<<<<<<<<<<<<<<<<<<<<<Do read compass>>>>>>>>>>>>>>>>>>>>>>>>>>>\r\n");
 		
 		running_task = eReadCompass;

@@ -38,7 +38,7 @@ extern GPS_AllMsgs GPS_data;
 void enable_gps_msg(eNMEA_TRX_t msg_type);
 void write_to_gps(const char* format, ...);
 
-void ReadGPS(void);
+TaskFunction_t ReadGPS(void);
 void GPS_On(void);
 void GPS_Sleep_Sec(unsigned time_sec);
 

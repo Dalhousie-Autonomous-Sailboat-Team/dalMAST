@@ -342,9 +342,6 @@ void Test_AS(void){
 	enum status_code rc;
 	
 	while(1){
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 
 		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");

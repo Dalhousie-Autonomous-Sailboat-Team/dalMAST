@@ -96,7 +96,7 @@ static void WIND_PWR_OFF() {
 	port_pin_set_output_level(ON_OFF_PIN, false);
 }
 
-void ReadWIND(void){
+TaskFunction_t ReadWIND(void){
     DEBUG_Write("Reading GPS...\r\n");
     uint16_t loop_cnt = 0;
     // Set msg type sum to 0 since no messages processed yet
@@ -122,12 +122,8 @@ void ReadWIND(void){
         pdFALSE,                                    // Bits should not be cleared before returning
         pdFALSE,                                    // Don't Wait for both bits, either bit will do
         portMAX_DELAY);                             // Wait time does not expire
-        
-        taskENTER_CRITICAL();
-        watchdog_counter |= 0x01;
-        taskEXIT_CRITICAL();
-      
-        
+
+
         // TODO: Add code to make the wind run and try to collect data. See gps.c for reference implementation
         // - Kamden Thebeau (08-02-2023
         
@@ -143,10 +139,8 @@ void ReadWIND(void){
 			WIND_data.msg_array[msg.type] = msg;
 			//DEBUG_Write("Received Wind data\r\n");
 			
-			assing_wind_readings();
+			assign_wind_readings();
 		}
-		
-		
 		
         vTaskDelay(read_wind_delay);
     }

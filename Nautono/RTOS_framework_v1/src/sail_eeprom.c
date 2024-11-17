@@ -4,7 +4,7 @@
 * Created by Thomas Gwynne-Timothy/Julia.
 */
 
-#include "sail_EEPROM.h"
+#include "sail_eeprom.h"
 
 #include <asf.h>
 #include <math.h>
@@ -38,6 +38,8 @@ static enum status_code ReadWordFromAddr(uint16_t addr, uint16_t *data);
 static enum status_code WriteWordToAddr(uint16_t addr, uint16_t data);
 
 static uint16_t Idx2Addr(uint16_t idx);
+static void test_kml_loader(void);
+
 
 static enum EEPROM_States {
 	EEPROM_UNINITIALIZED,
@@ -48,7 +50,7 @@ static enum EEPROM_States {
 
 static uint16_t config_idx;
 
-void test_kml_loader(void) {
+static void test_kml_loader(void) {
 	uint16_t count = 0, wp_idx = 2;
 	EEPROM_WayPoint wp = {0};
 	int i = 0;
@@ -569,9 +571,6 @@ void Test_EEPROM(void)
 	I2C_WriteBuffer(I2C_IMU, mode_buffer, 2, I2C_WRITE_NORMAL);
 
 	while(test){
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 		/*
 		DEBUG_Write("Initializing EEPROM ... ");

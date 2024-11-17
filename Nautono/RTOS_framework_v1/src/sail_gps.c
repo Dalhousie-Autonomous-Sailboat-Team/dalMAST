@@ -36,7 +36,7 @@ static char msg_buffer[GPS_BUFFER_LENGTH];
 //stores all the msg types of the gps sensor
 GPS_AllMsgs GPS_data;
 
-void ReadGPS(void) {
+TaskFunction_t ReadGPS(void) {
 	DEBUG_Write("Reading GPS...\r\n");
 	uint16_t loop_cnt = 0;
 	//set msg type sum to 0 since no messages processed yet
@@ -56,11 +56,7 @@ void ReadGPS(void) {
 			pdFALSE,                                 /* Bits should not be cleared before returning. */
 			pdFALSE,                                 /* Don't wait for both bits, either bit will do. */
 			portMAX_DELAY);                          /* Wait time does not expire */
-			
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x01;
-		taskEXIT_CRITICAL();
-		
+
 		DEBUG_Write("\r\n********** Performing GPS Reading **********\r\n");
 
 		running_task = eReadGPS; //Replace this with gps, see tasksinit.c/.h

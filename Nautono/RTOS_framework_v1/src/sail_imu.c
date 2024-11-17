@@ -492,9 +492,6 @@ void ReadIMU(void){
 	//getCalibration(&Calib);
 
 	while(1){
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 		
 		DEBUG_Write("<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");

@@ -7,6 +7,7 @@
 #include "sail_debug.h"
 #include "sail_tasksinit.h"
 #include "sail_uart.h"
+#include "sail_beacon.h"
 
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
@@ -41,7 +42,8 @@ void Test_Beacon(void)
 }
 
 void beaconOk(void){
-	char rxString[256];
+	uint8_t rxString[256];
+	uint8_t at_cmd[] = "AT";
 	rxString[0] = '\0';
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_BEACON_DELAY_MS);
 	
@@ -51,7 +53,7 @@ void beaconOk(void){
 		
 		running_task = eUpdateCourse;
 		DEBUG_Write("Sending >at<\n");
-		UART_TxString(UART_WIND,"AT");
+		UART_TxString(UART_WIND, at_cmd);
 		UART_RxString(UART_WIND,rxString, 128);
 		DEBUG_Write("String received: >%s<\n", rxString);
 		vTaskDelay(testDelay);
@@ -59,7 +61,10 @@ void beaconOk(void){
 }
 
 void beaconStringResponse(void){
-	char rxString[256];
+	uint8_t rxString[256];
+	uint8_t sent_at_cmd[]		= "AT+SBDWT=we made it";
+	uint8_t ok_response[]		= "OK";
+	uint8_t sbd_session_cmd[]	= "AT+SBDIX";
 	rxString[0] = '\0';
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_BEACON_DELAY_MS);
 	
@@ -71,22 +76,22 @@ void beaconStringResponse(void){
 		DEBUG_Write("----------Sending string----------\r\n");
 		
 		//Send Test string
-		UART_TxString(UART_WIND,"AT+SBDWT=we made it");
+		UART_TxString(UART_WIND, sent_at_cmd);
 		//Receive string
 		UART_RxString(UART_WIND,rxString, sizeof(rxString)>>1);
 		//If received string is not expected message
-		if(strcmp(rxString, "OK")){
+		if(strcmp(rxString, ok_response)){
 			DEBUG_Write("Received message: %s\r\n", rxString);
 			DEBUG_Write("Expected message: 'OK'\r\n");
 			DEBUG_Write("Attempting to resend string.\r\n");
 			//DEBUG_Write("Attempting to resend string.\r\n");
 			//Attempt to resend string
-			UART_TxString(UART_WIND,"AT+SBDWT=we made it");
+			UART_TxString(UART_WIND, sent_at_cmd);
 			DEBUG_Write("Finished sending\r\n");
 		}else{
 			//Initiating SBD session to receive string sent earlier back from modem
 			DEBUG_Write("Attempting to open SBD session.\r\n");
-			UART_TxString(UART_WIND,"AT+SBDIX");
+			UART_TxString(UART_WIND, sbd_session_cmd);
 			UART_RxString(UART_WIND,rxString, sizeof(rxString)>>1);
 			DEBUG_Write("String received: %s\r\n", rxString);
 		}
