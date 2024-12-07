@@ -32,8 +32,6 @@ static union {
 // Static functions to utilize I2C driver
 static enum status_code ReadBufferFromAddr(uint16_t addr, uint8_t *data, uint16_t data_length);
 static enum status_code WriteBufferToAddr(uint16_t addr, uint8_t *data, uint16_t data_length);
-static enum status_code ReadByteFromAddr(uint16_t addr, uint8_t *data);
-static enum status_code WriteByteToAddr(uint16_t addr, uint8_t data);
 static enum status_code ReadWordFromAddr(uint16_t addr, uint16_t *data);
 static enum status_code WriteWordToAddr(uint16_t addr, uint16_t data);
 
@@ -388,76 +386,6 @@ static enum status_code ReadBufferFromAddr(uint16_t addr, uint8_t *data, uint16_
 
 	return STATUS_OK;
 }
-
-
-static enum status_code WriteByteToAddr(uint16_t addr, uint8_t data)
-{
-	// Swap endianness of address
-	i2c_buffer.fields.addr = (addr >> 8) | (addr << 8);
-	
-	// Load the data into the write module
-	i2c_buffer.fields.data[0] = data;
-	
-	// Repeat until the data is sent successfully or an error occurs
-	bool write_complete = false;
-	while (!write_complete) {
-		// Send the data
-		switch (I2C_WriteBuffer(I2C_EEPROM, i2c_buffer.bytes, 3, I2C_WRITE_NORMAL)) {
-			// Exit the loop if the write was completed successfully
-			case STATUS_OK:
-			write_complete = true;
-			break;
-			// Continue the loop if the write could not be completed because the device was busy
-			case STATUS_BUSY:
-			write_complete = false;
-			break;
-			// Return if an error occurred while writing to the I2C line
-			default:
-			return STATUS_ERR_DENIED;
-		}
-	}
-
-	return STATUS_OK;
-}
-
-
-static enum status_code ReadByteFromAddr(uint16_t addr, uint8_t *data)
-{
-	// Return if a null pointer is provided
-	if (data == NULL) {
-		return STATUS_ERR_BAD_ADDRESS;
-	}
-	
-	// Swap endianness of address
-	i2c_buffer.fields.addr = (addr >> 8) | (addr << 8);
-
-	// Repeat until the address is sent successfully or an error occurs
-	bool write_complete = false;
-	while (!write_complete) {
-		// Send the address
-		switch (I2C_WriteBuffer(I2C_EEPROM, i2c_buffer.bytes, 2, I2C_WRITE_NO_STOP)) {
-			// Exit the loop if the write was completed successfully
-			case STATUS_OK:
-			write_complete = true;
-			break;
-			// Continue the loop if the write could not be completed because the device was busy
-			case STATUS_BUSY:
-			write_complete = false;
-			break;
-			// Return if an error occurred while writing to the I2C line
-			default:
-			return STATUS_ERR_DENIED;
-		}
-	}
-
-	// Request a read from the device
-	if (I2C_ReadBuffer(I2C_EEPROM, data, 1, I2C_READ_NORMAL) != STATUS_OK) {
-		return STATUS_ERR_DENIED;
-	}
-
-	return STATUS_OK;
-}
-
 
 static enum status_code WriteWordToAddr(uint16_t addr, uint16_t data)
 {

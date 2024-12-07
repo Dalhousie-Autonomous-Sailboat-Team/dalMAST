@@ -43,6 +43,8 @@
 #define KNOTS_TO_MS 0.51444444
 
 static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t* data);
+static void WIND_PWR_ON(void);
+static void WIND_PWR_OFF(void);
 
 
 // Buffer to hold wind vane strings from NMEA module
@@ -70,7 +72,7 @@ static struct WIND_MWVData {
 	uint8_t  status;			//A active, data valid
 } mwv_data;
 
-static void WEATHERSTATION_InitPin(void);
+// Private Function Declarations
 static void init_pins(void);
 
 static void init_pins(void)
@@ -102,9 +104,7 @@ void ReadWIND(void){
 	
 	NMEA_GenericMsg msg;
 	
-	//init_pins();
-	
-	WIND_On();
+	WIND_Init();
 	
 	DEBUG_Write("************ Performing Wind Vane Reading ****************\r\n");
     
@@ -163,16 +163,13 @@ enum status_code WIND_Init(void)
 	}
 	
 	// Initialize the on-off control pin
-	// WEATHERSTATION_InitPin();
+	init_pins();
 	
 	// Turn off wind vane until enabled
-	// WS_TurnOff();
+	WIND_PWR_OFF();
 	
 	// Initialization successful, set flag
 	init_flag = true;
-	
-	// Clear enable flag
-	// enable_flag = 0;
 
 	return STATUS_OK;
 }
@@ -185,11 +182,6 @@ enum status_code WIND_Enable(void)
 		return STATUS_ERR_NOT_INITIALIZED;
 	}
 	
-	// Check if the module has already been enabled
-	//if (enable_flag) {
-	//	return STATUS_NO_CHANGE;
-	//}
-	
 	// Return if the receiver cannot be started
     enum status_code s = {0};
     s = NMEA_Enable(NMEA_WIND);
@@ -199,9 +191,7 @@ enum status_code WIND_Enable(void)
     }
 	
 	// Turn on the device
-	// WS_TurnOn();
-	
-	// enable_flag = 1;
+	WIND_PWR_ON();
 	
 	return STATUS_OK;
 }
@@ -214,20 +204,13 @@ enum status_code WIND_Disable(void)
 		return STATUS_ERR_NOT_INITIALIZED;
 	}
 	
-	// Check if the module has already been disabled
-	//if (!enable_flag) {
-	//	return STATUS_NO_CHANGE;
-	//}
-	
 	// Turn off the device
-	//WS_TurnOff();
+	WIND_PWR_OFF();
 	
 	// Try to stop the NMEA channel
 	if (NMEA_Disable(NMEA_WIND) != STATUS_OK) {
     	return STATUS_ERR_DENIED;	// Return error code
 	}
-	
-	// enable_flag = 0;
 	
 	return STATUS_OK;
 }
@@ -303,9 +286,9 @@ static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t*
 	{
 	case eGPGGA:
 		msg->fields.gpgga.lat.lat = atof(data->args[1]);
-		msg->fields.gpgga.lat.ns = ((char)(data->args[2]) == 'N') ? north : south;
+		msg->fields.gpgga.lat.ns = (data->args[2][0] == 'N') ? north : south;
 		msg->fields.gpgga.lon.lon = atof(data->args[3]);
-		msg->fields.gpgga.lon.we = ((char)(data->args[4]) == 'W') ? west : east;
+		msg->fields.gpgga.lon.we = (data->args[4][0] == 'W') ? west : east;
 		msg->fields.gpgga.alt = atof(data->args[8]);
 		
 		if (0.0 == atof(data->args[1])){

@@ -33,17 +33,6 @@ struct rtc_module rtc_timer;
 
 // Private function declarations
 
-/* CTRL_Sleep
- * Set the sleep time of the control unit
- * Input:
- *	 time_sec - sleep time length
- */ 
-static void CTRL_Sleep(unsigned time_sec);
-
-static void EnableWeatherStation(void);
-static void DisableWeatherStation(void);
-
-
 
 /* Message handling functions:
  * HandleMessage()
@@ -342,28 +331,6 @@ void process_wind_readings(void)
 	
 	DEBUG_Write("cur_wind.speed = %4d cm/s | cur_wind.angle = %4d deg\r\n", (int)(wind.speed * 100), (int)wind.angle);
 	DEBUG_Write("avg_wind.speed = %4d cm/s | avg_wind.angle = %4d deg\r\n", (int)(avg_wind.speed * 100), (int)avg_wind.angle);
-}
-
-static void EnableWeatherStation(void)
-{
-	// Return if the controller is in LOAD mode
-	if (mode == CTRL_MODE_LOAD) {
-		return;
-	}
-
-	// Enable the wind vane
-	WIND_Enable();
-}
-
-static void DisableWeatherStation(void)
-{
-	// Return if the controller is in LOAD mode
-	if (mode == CTRL_MODE_LOAD) {
-		return;
-	}
-
-	// Disable the wind vane
-	WIND_Disable();
 }
 
 void process_heading_readings(void)

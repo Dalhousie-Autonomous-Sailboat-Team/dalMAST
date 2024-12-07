@@ -40,11 +40,6 @@ const float   AS5600_RAW_TO_RADIANS     = M_PI * 2.0 / 4096;
 //  4.06901041666666e-6
 const float   AS5600_RAW_TO_RPM         = 60.0 / 4096;
 
-//  getAngularSpeed
-const uint8_t AS5600_MODE_DEGREES       = 0;
-const uint8_t AS5600_MODE_RADIANS       = 1;
-const uint8_t AS5600_MODE_RPM           = 2;
-
 //  CONFIGURE CONSTANTS
 //  check datasheet for details
 
@@ -137,8 +132,6 @@ const uint8_t AS5600_MAGNET_DETECT = 0x20;
 static uint16_t _offset;
 static uint8_t _directionPin;
 static uint8_t _direction;
-static uint32_t _lastMeasurement;
-static int _lastAngle;
 
 /*
  *  Functions for AS5600 
@@ -148,7 +141,6 @@ static int _lastAngle;
 static enum status_code ReadByte(uint8_t reg, uint8_t * data);
 static enum status_code ReadWord(uint8_t reg, uint16_t * data);
 static enum status_code detectMagnet(void);
-static enum status_code getAngularSpeed(uint8_t system_mode, float *data);
 
 static enum status_code ReadByte(uint8_t reg, uint8_t * data)
 {
@@ -259,49 +251,6 @@ enum status_code readAngle(uint16_t *data)
 	
 	//rawAngle(&raw_angle);
 	*data = (*data)*AS5600_RAW_TO_DEGREES;
-	
-	return STATUS_OK;
-}
-
-static void getTicks(uint16_t * data) {
-	*data = xTaskGetTickCount();
-}
-
-static enum status_code getAngularSpeed(uint8_t system_mode, float *data)
-{
-	uint16_t now = 0;
-	getTicks(&now);
-	
-	uint16_t angle = 0;
-	readAngle(&angle);
-	
-	uint32_t deltaT  = now - _lastMeasurement;
-	int      deltaA  = angle - _lastAngle;
-
-	//  assumption is that there is no more than 180? rotation
-	//  between two consecutive measurements.
-	//  => at least two measurements per rotation (preferred 4).
-	if (deltaA >  2048) deltaA -= 4096;
-	if (deltaA < -2048) deltaA += 4096;
-	*data   = (deltaA * 1e6) / deltaT;
-
-	//  remember last time & angle
-	_lastMeasurement = now;
-	_lastAngle       = angle;
-
-	//  return radians, RPM or degrees.
-	if (mode == AS5600_MODE_RADIANS)
-	{
-		*data *= AS5600_RAW_TO_RADIANS;
-	}
-	if (mode == AS5600_MODE_RPM)
-	{
-		*data *= AS5600_RAW_TO_RPM;
-	}
-	else
-	{
-		*data *= AS5600_RAW_TO_DEGREES;
-	}
 	
 	return STATUS_OK;
 }

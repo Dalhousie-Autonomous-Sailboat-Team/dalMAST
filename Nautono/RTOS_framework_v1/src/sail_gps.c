@@ -243,9 +243,9 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* d
 	{
 	case eGPGGA:
 		msg->fields.gpgga.lat.lat = atof(data->args[1]);
-		msg->fields.gpgga.lat.ns = ((char)(data->args[2]) == 'N') ? north : south;
+		msg->fields.gpgga.lat.ns = (data->args[2][0] == 'N') ? north : south;
 		msg->fields.gpgga.lon.lon = atof(data->args[3]);
-		msg->fields.gpgga.lon.we = ((char)(data->args[4]) == 'W') ? west : east;
+		msg->fields.gpgga.lon.we = (data->args[4][0] == 'W') ? west : east;
 		msg->fields.gpgga.alt = atof(data->args[8]);
 		
 		//if(atof(data->args[1]) == 0.00)

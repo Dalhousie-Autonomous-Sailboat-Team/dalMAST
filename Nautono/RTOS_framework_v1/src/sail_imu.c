@@ -32,7 +32,6 @@ static bool calibrate_flag = false;
 
 /* static function for IMU */
 static enum status_code read8(uint8_t addr, uint8_t *data);
-static enum status_code readLen(uint8_t addr, uint8_t *data, uint8_t len);
 static enum status_code write8(uint8_t addr, uint8_t data);
 static void setSensorOffsets(const uint8_t *calibData);
 static void getSensorOffsets(adafruit_bno055_offsets_t * offsets_type);
@@ -58,54 +57,6 @@ static enum status_code read8(uint8_t addr, uint8_t *data)
 	if (I2C_ReadBuffer(I2C_IMU, data, 1, I2C_READ_NORMAL) != STATUS_OK) {
 		DEBUG_Write("Read Error\r\n");
 		return STATUS_ERR_DENIED;
-	}
-	
-	return STATUS_OK;
-}
-
-static enum status_code readLen(uint8_t addr, uint8_t *data,  uint8_t len)
-{
-	// Return if the pointer is NULL
-	if (data == NULL) {
-		return STATUS_ERR_BAD_ADDRESS;
-	}
-	
-	/* Prepare buffer with the EEPROM address to read from */
-	uint8_t buffer = addr;
-	
-	// Write the command to the compass
-	if (I2C_WriteBuffer(I2C_IMU, &buffer, 1, I2C_WRITE_NORMAL) != STATUS_OK) {
-		DEBUG_Write("write in readlen Error\r\n");
-		return STATUS_ERR_DENIED;
-	}
-	
-	// Read the data back from the compass
-	bool read_complete = false;
-	uint8_t i=0, sz = 0;
-	while(len && !read_complete) {
-		if(len>2) {
-			sz = 2;
-			} else {
-			sz = len;
-		}
-		
-		switch(I2C_ReadBuffer(I2C_IMU, &data[i], sz, I2C_READ_NORMAL))  {
-			case STATUS_OK:
-			read_complete = true;
-			i+=len;
-			len -= sz;
-			break;
-			// Continue the loop if the write could not be completed because the device was busy
-			case STATUS_BUSY:
-			read_complete = false;
-			i+=len;
-			len -= sz;
-			//i++;len--;
-			break;
-			// Return if an error occurred while writing to the I2C line
-			default:
-			return STATUS_ERR_DENIED;
-		}
 	}
 	
 	return STATUS_OK;
@@ -352,9 +303,7 @@ static void getVector(adafruit_vector_type_t vector_type, float *data) {
 	int16_t x, y, z;
 	x = y = z = 0;
 
-	/* Read vector data (6 bytes) */
-	//readLen((adafruit_bno055_reg_t)vector_type, buffer, 6);
-  
+	/* Read vector data (6 bytes) */  
 	read8(BNO055_EULER_H_LSB_ADDR, &buffer[0]);
 	read8(BNO055_EULER_H_MSB_ADDR, &buffer[1]);
 	read8(BNO055_EULER_R_LSB_ADDR, &buffer[2]);
@@ -510,8 +459,8 @@ void ReadIMU(void){
 		getCalibration(&system, &gyro, &accel, &mag);
 		DEBUG_Write("sys: %d\tgyro: %d\taccel: %d\tmag: %d\r\n", system, gyro, accel, mag);
 		
-		//read8(BNO055_TEMP_ADDR, &temp);
-		//DEBUG_Write("Temp: %d\r\n", temp);
+		read8(reg_addr, &temp);
+		DEBUG_Write("Temp: %d\r\n", temp);
 		
 		vTaskDelay(testDelay);
 	}
