@@ -11,16 +11,16 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define DEBUG
+#define DEBUGGING
 
-#ifdef DEBUG
+#ifdef DEBUGGING
 //static uint8_t debug_buffer[DEBUG_BUFFER_LENGTH];
 static bool init_flag = false;
 #endif
 
 
 enum status_code DEBUG_Init(void) {
-#ifdef DEBUG
+#ifdef DEBUGGING
 	// Check if the module has already been initialized
 	if (init_flag) {
 		// Error, already initialized
@@ -44,7 +44,7 @@ enum status_code DEBUG_Init(void) {
 //static uint8_t debug_buffer[DEBUG_BUFFER_LENGTH];
 
 enum status_code DEBUG_Write(const char *format, ...) {
-#ifdef DEBUG
+#ifdef DEBUGGING
 	uint8_t debug_buffer[DEBUG_BUFFER_LENGTH];
 	// Check if the module has not been initialized
 	if (!init_flag) {
@@ -71,7 +71,7 @@ enum status_code DEBUG_Write(const char *format, ...) {
 }
 
 enum status_code DEBUG_Write_Unprotected(const char *format, ...) {
-	#ifdef DEBUG
+	#ifdef DEBUGGING
 	uint8_t debug_buffer[DEBUG_BUFFER_LENGTH];
 	// Check if the module has not been initialized
 	if (!init_flag) {
