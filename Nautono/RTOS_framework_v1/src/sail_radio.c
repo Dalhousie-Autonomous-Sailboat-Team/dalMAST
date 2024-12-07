@@ -483,28 +483,16 @@ static RADIO_Status ChangeMode(CTRL_Mode new_mode)
 	switch (new_mode) {
 		case CTRL_MODE_AUTO:
 			DEBUG_Write("Entering AUTO mode\r\n");
-			// Clear the bits except for 0x3F in the counter
-			watchdog_counter &= 0x3F;
-			// Set the reset value to be 0x3F
-			watchdog_reset_value = 0x3F;
 			xEventGroupClearBits(mode_event_group, CTRL_ALL_BITS);
 			xEventGroupSetBits(mode_event_group, CTRL_MODE_AUTO_BIT);
 		break;
 		case CTRL_MODE_LOAD:
 			DEBUG_Write("Entering LOAD mode\r\n");
-			// Clear the bits except for 0x08 in the counter
-			watchdog_counter &= 0x08;
-			// Set the reset value to be 0x08
-			watchdog_reset_value = 0x08;
 			xEventGroupClearBits(mode_event_group, CTRL_ALL_BITS);
 			xEventGroupSetBits(mode_event_group, CTRL_MODE_LOAD_BIT);
 		break;
 		case CTRL_MODE_REMOTE:
 			DEBUG_Write("Entering REMOTE mode\r\n");
-			// Clear the bits except for 1 8 16 and 32
-			watchdog_counter &= 0x39;
-			// Set the reset value to be 0x39
-			watchdog_reset_value = 0x39;
 			xEventGroupClearBits(mode_event_group, CTRL_ALL_BITS);
 			xEventGroupSetBits(mode_event_group, CTRL_MODE_REMOTE_BIT);
 		break;

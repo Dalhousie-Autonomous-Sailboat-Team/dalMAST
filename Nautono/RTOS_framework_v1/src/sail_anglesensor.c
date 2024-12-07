@@ -148,7 +148,7 @@ static int _lastAngle;
 static enum status_code ReadByte(uint8_t reg, uint8_t * data);
 static enum status_code ReadWord(uint8_t reg, uint16_t * data);
 static enum status_code detectMagnet(void);
-static enum status_code getAngularSpeed(uint8_t mode, float *data);
+static enum status_code getAngularSpeed(uint8_t system_mode, float *data);
 
 static enum status_code ReadByte(uint8_t reg, uint8_t * data)
 {
@@ -267,7 +267,7 @@ static void getTicks(uint16_t * data) {
 	*data = xTaskGetTickCount();
 }
 
-static enum status_code getAngularSpeed(uint8_t mode, float *data)
+static enum status_code getAngularSpeed(uint8_t system_mode, float *data)
 {
 	uint16_t now = 0;
 	getTicks(&now);

@@ -24,6 +24,33 @@ static UART_ChannelID uart_channels[] = {
     UART_XEOS
 };
 
+static NMEA_TYPE_MAP NMEA_TYPE_TABLE[NUM_NMEA_TYPES] = {
+	{ eGPGGA, "GPGGA"}, 
+	{ eWIMWV, "WIMWV"}, 
+	{ eIIMWV, "IIMWV"},
+	{ eYXXDR, "YXXDR"}, 
+	{ eHCHDT, "HCHDT"}
+	
+	//remaining fields
+	/*
+	{ eGPDTM, "GPDTM"}, 
+	{ eGPGLL, "GPGLL"}, 
+	{ eGPGSA, "GPGSA"},
+	{ eGPGSV, "GPGSV"}, 
+	{ eGPRMC, "GPRMC"},
+	{ eGPVTG, "GPVTG"}, 
+	{ eGPZDA, "GPZDA"},
+	{ eHCHDG, "HCHDG"}, 
+	{ eHCTHS, "HCTHS"}, 
+	{ eTIROT, "TIROT"},
+	{ eWIMDA, "WIMDA"}, 
+	{ eWIMWV, "WIMWV"}, 
+	{ eWIMWR, "WIMWR"},
+	{ eWIMWT, "WIMWT"}, 
+	{ eYXXDR, "YXXDR"},
+		*/
+};
+
 // Buffers to hold raw data from the UART
 static uint8_t rx_buffers[NMEA_NUM_CHANNELS][NMEA_BUFFER_LENGTH];
 // Buffers to hold data being processed

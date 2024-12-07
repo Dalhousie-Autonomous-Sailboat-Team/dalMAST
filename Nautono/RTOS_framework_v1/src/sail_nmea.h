@@ -62,33 +62,6 @@ typedef struct NMEA_TYPES_INFO {
 	char NMEA_Prefix[PREFIX_LIM];
 } NMEA_TYPE_MAP;
 
-static NMEA_TYPE_MAP NMEA_TYPE_TABLE[NUM_NMEA_TYPES] = {
-	{ eGPGGA, "GPGGA"}, 
-	{ eWIMWV, "WIMWV"}, 
-	{ eIIMWV, "IIMWV"},
-	{ eYXXDR, "YXXDR"}, 
-	{ eHCHDT, "HCHDT"}
-	
-	//remaining fields
-	/*
-	{ eGPDTM, "GPDTM"}, 
-	{ eGPGLL, "GPGLL"}, 
-	{ eGPGSA, "GPGSA"},
-	{ eGPGSV, "GPGSV"}, 
-	{ eGPRMC, "GPRMC"},
-	{ eGPVTG, "GPVTG"}, 
-	{ eGPZDA, "GPZDA"},
-	{ eHCHDG, "HCHDG"}, 
-	{ eHCTHS, "HCTHS"}, 
-	{ eTIROT, "TIROT"},
-	{ eWIMDA, "WIMDA"}, 
-	{ eWIMWV, "WIMWV"}, 
-	{ eWIMWR, "WIMWR"},
-	{ eWIMWT, "WIMWT"}, 
-	{ eYXXDR, "YXXDR"},
-		*/
-};
-
 enum west_east {west, east};
 enum north_south {north, south};	
 	

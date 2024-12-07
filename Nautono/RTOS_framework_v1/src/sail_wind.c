@@ -136,7 +136,7 @@ void ReadWIND(void){
 			WIND_data.msg_array[msg.type] = msg;
 			//DEBUG_Write("Received Wind data\r\n");
 			
-			assign_wind_readings();
+			//assign_wind_readings();
 		}
 		
         vTaskDelay(read_wind_delay);

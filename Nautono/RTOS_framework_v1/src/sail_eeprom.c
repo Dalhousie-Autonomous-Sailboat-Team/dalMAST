@@ -558,8 +558,6 @@ void Test_EEPROM(void)
 	
 	bool test = true;
 	
-	unsigned int i, j;
-	
 	uint8_t bno_id = 0;
 	uint8_t reg_addr = 0x34;
 	
@@ -594,13 +592,13 @@ void Test_EEPROM(void)
 		// Create entries
 		uint8_t checksum;
 		srand(1234);
-		for (i = 0; i < MISSION_ENTRY_COUNT; i++) {
+		for (uint16_t i = 0; i < MISSION_ENTRY_COUNT; i++) {
 			test_mission.entries[i].wp.pos.lat = 40.0 + 10.0 * rand() / (double)RAND_MAX;
 			test_mission.entries[i].wp.pos.lon = -60.0 + 10.0 * rand() / (double)RAND_MAX;
 			test_mission.entries[i].wp.rad = 1000.0 + 1000.0 * rand() / (double)RAND_MAX;
 			test_mission.entries[i].next_wp_idx = (uint16_t)((i + 1) % MISSION_ENTRY_COUNT);
 			checksum = test_mission.entries[i].data[0];
-			for (j = 1; j < 26; j++) {
+			for (uint16_t j = 1; j < 26; j++) {
 				checksum ^= test_mission.entries[i].data[j];
 			}
 			test_mission.entries[i].checksum = checksum;
@@ -616,7 +614,7 @@ void Test_EEPROM(void)
 		
 		enum status_code code = STATUS_OK;
 		
-		for (i = 0; i < MISSION_ENTRY_COUNT; i++) {
+		for (uint16_t i = 0; i < MISSION_ENTRY_COUNT; i++) {
 			DEBUG_Write_Unprotected("Entry %2d ... ", i + 1);
 			//if (EEPROM_LoadWayPoint(&test_mission.entries[i]) != STATUS_OK) {
 				
@@ -634,7 +632,7 @@ void Test_EEPROM(void)
 		
 		// Loop through way points and compare to mission
 		EEPROM_WayPoint wp;
-		for (i = 0; i < MISSION_ENTRY_COUNT; i++) {
+		for (uint16_t i = 0; i < MISSION_ENTRY_COUNT; i++) {
 			DEBUG_Write("Getting current way point %2d ... ", i + 1);
 			// Get the waypoint
 			if (EEPROM_GetCurrentWayPoint(&wp) != STATUS_OK) {

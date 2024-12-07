@@ -28,10 +28,6 @@
 
 #include "sail_wdt.h"
 
-// Time since last reset
-static uint64_t t_ms;
-// Time step (resolution of RTC)
-static uint16_t dt_ms = 200;
 // RTC timer
 struct rtc_module rtc_timer;
 
@@ -64,14 +60,6 @@ static void DisableWeatherStation(void);
  * AdjustMotors()
  * - apply remotely controlled adjustments to the motors
  */ 
-
-// Sensor status
-static bool sensor_statuses[SENSOR_COUNT] = {
-	false,
-	false,
-	false
-};
-
 
 // Sensor readings
 static GPS_Reading gps;
@@ -164,17 +152,17 @@ enum status_code CTRL_InitSystem(void)
 
 enum status_code CTRL_InitSensors(void)
 {
+	enum status_code status = 0;
 	
 	//todo: add initialization for AIS module
-    if(WIND_Init() != STATUS_OK){
+	status = WIND_Init();
+    if(STATUS_OK != status){
         DEBUG_Write_Unprotected("Wind Vane not initialized... \r\n");
-    }else{
+		return status;
+	}else{
         DEBUG_Write_Unprotected("Wind Init Ok ...\r\n");
+		return STATUS_OK;
     }
-    
-    // When status is okay, shouldn't this return a different status? - KT
-
-	return STATUS_OK;
 }
 
 
@@ -211,18 +199,16 @@ enum status_code startup(void)
 /**** TIMER CALLBACKS ************************************************************/
 void LogData(void)
 {
-	// Event bits for holding the state of the event group
-	EventBits_t event_bits;
-	
+
 	TickType_t log_data_delay = pdMS_TO_TICKS(LOG_DATA_SLEEP_PERIOD_MS);
 	
 	while(1) {
 		
-		event_bits = xEventGroupWaitBits(mode_event_group,                        /* Test the mode event group */
-										 CTRL_MODE_AUTO_BIT | CTRL_MODE_REMOTE_BIT, /* Wait until the sailboat is in AUTO or REMOTE mode */
-										 pdFALSE,                                 /* Bits should not be cleared before returning. */
-									     pdFALSE,                                 /* Don't wait for both bits, either bit will do. */
-									 	 portMAX_DELAY);                          /* Wait time does not expire */
+		xEventGroupWaitBits(			mode_event_group,								/* Test the mode event group */
+										CTRL_MODE_AUTO_BIT | CTRL_MODE_REMOTE_BIT,		/* Wait until the sailboat is in AUTO or REMOTE mode */
+										pdFALSE,										/* Bits should not be cleared before returning. */
+									    pdFALSE,										/* Don't wait for both bits, either bit will do. */
+									 	portMAX_DELAY);									/* Wait time does not expire */
 										  
 		DEBUG_Write("----------------------Do log data-------------------\r\n");
 		
@@ -268,30 +254,31 @@ void LogData(void)
 
 
 static void beaconTxLogData(void){
-	char cmd5[32] = "AT+SBDIX\r\n";
-	char rxString[256];
+	uint8_t cmd5[] = "AT+SBDIX\r\n";
+	uint8_t at_cmd[] = "AT\r\n";
+	uint8_t cier_cmd[] = "AT+CIER=1,1,1\r\n";
+	uint8_t rxString[64];
 	
-	UART_TxString(UART_XEOS,"AT\r\n");
+	UART_TxString(UART_XEOS, at_cmd);
 	vTaskDelay(6000 / portTICK_RATE_MS);
-	UART_RxString(UART_XEOS,rxString, 128);
-	DEBUG_Write(rxString);
+	UART_RxString(UART_XEOS,rxString, sizeof(rxString));
+	DEBUG_Write((char *)rxString);
 	
-	UART_TxString(UART_XEOS,"AT+CIER=1,1,1\r\n");
+	UART_TxString(UART_XEOS, cier_cmd);
 	vTaskDelay(6000 / portTICK_RATE_MS);
-	UART_RxString(UART_XEOS,rxString, 128);
-	DEBUG_Write(rxString);
+	UART_RxString(UART_XEOS,rxString, sizeof(rxString));
+	DEBUG_Write((char *)rxString);
 	
-	uint16_t maxDataSizeCounter = 0;
-	uint8_t cmd4[32] = "at+sbdwt=";
+	uint8_t sbdwt_cmd[] = "at+sbdwt=";
 	uint8_t data[200] = {'\0'};
 	uint8_t delimit[3] = "\r\n";
 #ifdef PCB
 	sprintf(data, "%5.3lf,%5.3lf", gps.lat, gps.lon);
 //#ifdef SENSORREADINGS
 	// Sensor readings output to the data string
-	//sprintf(data, "%5.3lf,%5.3lf,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f"
-//	, gps.lat, gps.lon, wind.speed, wind.angle, comp.data.heading.roll, 
-	//comp.data.heading.pitch, bearing, sail_deg, avg_heading_deg);
+	sprintf(data, "%5.3lf,%5.3lf,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f"
+	, gps.lat, gps.lon, wind.speed, wind.angle, comp.data.heading.roll, 
+	comp.data.heading.pitch, bearing, sail_deg, avg_heading_deg);
 #else
 	// Sensor readings output to the data string
 	sprintf(data, "1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0, these are random numbers");
@@ -300,15 +287,19 @@ static void beaconTxLogData(void){
 	//send the stream 211 command followed by data followed by delimiter
 	
 	
-	UART_TxString(UART_XEOS, cmd4);   
+	UART_TxString(UART_XEOS, sbdwt_cmd);   
 	UART_TxString(UART_XEOS, data);
 	UART_TxString(UART_XEOS, delimit);
+	
 	vTaskDelay(6000/portTICK_RATE_MS);
-	UART_RxString(UART_WIND,rxString, 128);
-	DEBUG_Write(rxString);
+	
+	UART_RxString(UART_WIND,rxString, sizeof(rxString));
+	DEBUG_Write((char *)rxString);
+	
 	vTaskDelay(6000 / portTICK_PERIOD_MS);
 
 	UART_TxString(UART_XEOS, cmd5);
+	
 	vTaskDelay(6000 / portTICK_PERIOD_MS);
 	
 }
@@ -395,16 +386,12 @@ void assign_gps_readings(void) {
 
 void ControlRudder(void)
 {
-	
-	// Event bits for holding the state of the event group
-	EventBits_t event_bits;
-	
 	TickType_t control_rudder_delay = pdMS_TO_TICKS(CONTROL_RUDDER_SLEEP_PERIOD_MS);
 	
 	while(1) {
 		
 		
-		event_bits = xEventGroupWaitBits(mode_event_group,    /* Test the mode event group */
+		xEventGroupWaitBits(			 mode_event_group,    /* Test the mode event group */
 										 CTRL_MODE_AUTO_BIT,  /* Wait until the sailboat is in AUTO mode */
 										 pdFALSE,             /* Bits should not be cleared before returning. */
 									     pdFALSE,             /* Don't wait for both bits, either bit will do. */
@@ -447,14 +434,11 @@ void check_waypoint_state(void) {
 
 void UpdateCourse(void)
 {
-	// Event bits for holding the state of the event group
-	EventBits_t event_bits;
-	
 	TickType_t update_course_delay = pdMS_TO_TICKS(UPDATE_COURSE_SLEEP_PERIOD_MS);
 
 	while(1) {
 				
-		event_bits = xEventGroupWaitBits(mode_event_group,    /* Test the mode event group */
+		xEventGroupWaitBits(			 mode_event_group,    /* Test the mode event group */
 										 CTRL_MODE_AUTO_BIT,  /* Wait until the sailboat is in AUTO mode */
 										 pdFALSE,             /* Bits should not be cleared before returning. */
 										 pdFALSE,             /* Don't wait for both bits, either bit will do. */
@@ -478,15 +462,11 @@ void UpdateCourse(void)
 
 void ReadCompass(void)
 {
-	
-	// Event bits for holding the state of the event group
-	EventBits_t event_bits;
-	
 	TickType_t read_compass_delay = pdMS_TO_TICKS(READ_COMPASS_SLEEP_PERIOD_MS);
 
 	while(1) {
 				
-		event_bits = xEventGroupWaitBits(mode_event_group,                        /* Test the mode event group */
+		xEventGroupWaitBits(			 mode_event_group,                        /* Test the mode event group */
 										 CTRL_MODE_AUTO_BIT | CTRL_MODE_REMOTE_BIT, /* Wait until the sailboat is in AUTO or REMOTE mode */
 										 pdFALSE,                                 /* Bits should not be cleared before returning. */
 									     pdFALSE,                                 /* Don't wait for both bits, either bit will do. */
