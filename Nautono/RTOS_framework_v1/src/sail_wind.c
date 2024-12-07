@@ -62,7 +62,7 @@ WIND_AllMsgs WIND_data;
 
 ///// Needed? - KT ///////
 // Structure to hold parsed wind vane data
-static struct WIND_MWVData {
+typedef struct WIND_MWVData {
 	uint16_t angle;				//angle 0-360 deg
 	uint32_t angle_dec;			//decimal of angle
 	uint8_t	 ref;				//R relative, T true
@@ -70,7 +70,7 @@ static struct WIND_MWVData {
 	uint32_t wind_speed_dec;	//decimal of wind speed
 	uint8_t  wind_speed_unit;	//wind speed units k/m/n
 	uint8_t  status;			//A active, data valid
-} mwv_data;
+} mwv_data_t;
 
 // Private Function Declarations
 static void init_pins(void);

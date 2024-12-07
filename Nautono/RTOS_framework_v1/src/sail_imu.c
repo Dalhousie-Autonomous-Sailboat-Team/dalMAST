@@ -153,33 +153,15 @@ enum status_code IMU_calibrate(void)
 	calibrate_flag = true;
 	adafruit_bno055_offsets_t offsets;
 	getSensorOffsets(&offsets);
-	setSensorOffsets(&offsets);
+	setSensorOffsets((uint8_t *)&offsets);
 
 	return STATUS_OK;
 }
 
-void setMode(adafruit_bno055_opmode_t mode) {
+void setMode(adafruit_bno055_opmode_t imu_mode) {
 	_mode = mode;
 	write8(BNO055_OPR_MODE_ADDR, _mode);
 	delay_ms(30);
-}
-
-static void setExtCrystalUse(bool usextal) {
-	adafruit_bno055_opmode_t modeback = _mode;
-
-	/* Switch to config mode (just in case since this is the default) */
-	setMode(OPERATION_MODE_CONFIG);
-	delay_ms(25);
-	write8(BNO055_PAGE_ID_ADDR, 0);
-	if (usextal) {
-		write8(BNO055_SYS_TRIGGER_ADDR, 0x80);
-		} else {
-		write8(BNO055_SYS_TRIGGER_ADDR, 0x00);
-	}
-	delay_ms(10);
-	/* Set the requested operating mode (see section 3.3) */
-	setMode(modeback);
-	delay_ms(20);
 }
 
 static void getSensorOffsets(adafruit_bno055_offsets_t * offsets_type) {
@@ -435,11 +417,10 @@ void ReadIMU(void){
 	
 	adafruit_bno055_offsets_t offsets;
 	
-	//getSensorOffsets(&offsets);
-	//setSensorOffsets(&offsets);
+	getSensorOffsets(&offsets);
+	setSensorOffsets((uint8_t *)&offsets);
 	
 	uint8_t system, gyro, accel, mag;
-	//getCalibration(&Calib);
 
 	while(1){
 		running_task = eUpdateCourse;

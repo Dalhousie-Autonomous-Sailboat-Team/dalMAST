@@ -20,13 +20,8 @@ extern EventGroupHandle_t mode_event_group;
 // The mutex for writing to the uart buffer
 extern SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
 
-// The variable use to test if all of the tasks are have run
-// so the watchdog timer does not need to reset the microcontroller
-extern unsigned char watchdog_counter;
-
-// The value that watchdog_counter must equal for the watchdog to be reset
-// This changes depending on the tasks that are running in a specific mode
-extern unsigned char watchdog_reset_value;
+// Prototype for RTOS function
+void vApplicationDaemonTaskStartupHook(void);
 
 // The event bits for the mode event group
 #define CTRL_MODE_AUTO_BIT     (0x01UL)

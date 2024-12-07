@@ -25,9 +25,6 @@ void Test_Beacon(void)
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_BEACON_DELAY_MS);
 
 	while(1){
-		taskENTER_CRITICAL();
-		watchdog_counter |= 0x20;
-		taskEXIT_CRITICAL();
 		running_task = eUpdateCourse;
 		DEBUG_Write("\n\r<<<<<<<<<<< Testing Beacon >>>>>>>>>>\n\r");
 		

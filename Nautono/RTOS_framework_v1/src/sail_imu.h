@@ -260,7 +260,7 @@ typedef struct {
 } sensors_orientation_t;
 
 extern enum status_code IMU_calibrate(void);
-extern void setMode(adafruit_bno055_opmode_t mode);
+extern void setMode(adafruit_bno055_opmode_t imu_mode);
 extern enum status_code bno055_init(void);
 extern enum status_code getHeading(COMP_Reading *reading);
 void ReadIMU(void);

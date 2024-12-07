@@ -20,7 +20,6 @@
 static RADIO_Status ChangeMode(CTRL_Mode new_mode);
 static RADIO_Status ChangeState(CTRL_State new_state);
 static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data);
-static RADIO_Status AdjustMotors(uint16_t sail_angle, uint16_t rudder_angle);
 
 static RADIO_Status RemoteAdjustMotors(uint16_t rudder_angle);
 static RADIO_Status LACAdjustMotors(uint16_t sail_angle);
@@ -591,17 +590,6 @@ static RADIO_Status AddWayPoint(RADIO_WayPointData *wp_data)
 	return RADIO_STATUS_SUCCESS;
 }
 
-
-static RADIO_Status AdjustMotors(uint16_t sail_angle, uint16_t rudder_angle)
-{
-	
-	RudderSetPos((double)rudder_angle);
-	// LAC_set_pos((double)sail_angle);
-	//LAC_set_pos((double)sail_angle);
-
-	return RADIO_STATUS_SUCCESS;
-}
-
 //May 25, 2024: Added this function, it handles the rudder message separately
 static RADIO_Status RemoteAdjustMotors(uint16_t rudder_angle){
 	
@@ -635,8 +623,7 @@ static void HandleMessage(RADIO_GenericMsg *msg)
 		break;
 		case RADIO_REMOTE:
 		RADIO_Ack(RADIO_STATUS_SUCCESS);
-		RemoteAdjustMotors(msg->fields.remote.rudder_angle); //added this change
-		//AdjustMotors(msg->fields.sail_new.sail_angle, msg->fields.remote.rudder_angle); this used to be here
+		RemoteAdjustMotors(msg->fields.remote.rudder_angle);
 		break;
 		break;
 		case RADIO_WAY_POINT:
@@ -682,6 +669,8 @@ void RadioHandler(void) {
 			default:
 				break;
 		}
+		
+		vTaskDelay(radio_handler_delay);
 	}
 }
 

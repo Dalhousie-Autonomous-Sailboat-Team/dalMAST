@@ -277,7 +277,7 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* d
 
 	// This the YXXDR-B type NMEA message
 	case eYXXDR:
-		if (data->args[0] == 'A') {
+		if (data->args[0][0] == 'A') {
 			msg->fields.yxxdr.pitch_deg = atof(data->args[1]);
 			msg->fields.yxxdr.roll_deg = atof(data->args[5]);
 		}
