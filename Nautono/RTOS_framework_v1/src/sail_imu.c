@@ -36,6 +36,7 @@ static enum status_code readLen(uint8_t addr, uint8_t *data, uint8_t len);
 static enum status_code write8(uint8_t addr, uint8_t data);
 static void setSensorOffsets(const uint8_t *calibData);
 static void getSensorOffsets(adafruit_bno055_offsets_t * offsets_type);
+static bool isFullyCalibrated(void);
 
 static enum status_code read8(uint8_t addr, uint8_t *data)
 {
@@ -192,7 +193,7 @@ enum status_code IMU_calibrate(void)
 		return STATUS_NO_CHANGE;
 	}
 
-	while(!isFullyCalibrated())
+	while(false == isFullyCalibrated())
 	{
 		DEBUG_Write("\n\r<<<<<<<<<<< Calibrating IMU >>>>>>>>>>\n\r");
 		delay_ms(BNO055_SAMPLERATE_DELAY_MS);

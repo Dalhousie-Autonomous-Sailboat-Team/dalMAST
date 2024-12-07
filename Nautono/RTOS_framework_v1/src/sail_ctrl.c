@@ -273,15 +273,15 @@ static void beaconTxLogData(void){
 	uint8_t data[200] = {'\0'};
 	uint8_t delimit[3] = "\r\n";
 #ifdef PCB
-	sprintf(data, "%5.3lf,%5.3lf", gps.lat, gps.lon);
+	sprintf((char *)data, "%5.3lf,%5.3lf", gps.lat, gps.lon);
 //#ifdef SENSORREADINGS
 	// Sensor readings output to the data string
-	sprintf(data, "%5.3lf,%5.3lf,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f"
+	sprintf((char *)data, "%5.3lf,%5.3lf,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f,%5.3f"
 	, gps.lat, gps.lon, wind.speed, wind.angle, comp.data.heading.roll, 
 	comp.data.heading.pitch, bearing, sail_deg, avg_heading_deg);
 #else
 	// Sensor readings output to the data string
-	sprintf(data, "1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0, these are random numbers");
+	sprintf((char *)data, "1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0, these are random numbers");
 
 #endif
 	//send the stream 211 command followed by data followed by delimiter
@@ -495,10 +495,4 @@ void ReadCompass(void)
 	}
 
 
-}
-
-
-
-static void CTRL_Sleep(unsigned time_sec) {
-	vTaskDelay(time_sec * configTICK_RATE_HZ);;
 }

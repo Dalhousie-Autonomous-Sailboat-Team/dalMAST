@@ -95,12 +95,8 @@ static void WIND_PWR_OFF() {
 
 void ReadWIND(void){
     DEBUG_Write("Reading GPS...\r\n");
-    uint16_t loop_cnt = 0;
     // Set msg type sum to 0 since no messages processed yet
     WIND_data.msg_type_sum = 0;
-    
-    // Event bits for holding the state of the event group
-    EventBits_t event_bits;
     
     TickType_t read_wind_delay = pdMS_TO_TICKS(WIND_SLEEP_PERIOD_MS);
 	
@@ -114,16 +110,12 @@ void ReadWIND(void){
     
     while(1) {
         
-        event_bits = xEventGroupWaitBits(mode_event_group,
+        xEventGroupWaitBits(mode_event_group,
         CTRL_MODE_AUTO_BIT | CTRL_MODE_REMOTE_BIT,  // Wait until sailboat is in AUTO or REMOTE mode
         pdFALSE,                                    // Bits should not be cleared before returning
         pdFALSE,                                    // Don't Wait for both bits, either bit will do
         portMAX_DELAY);                             // Wait time does not expire
 
-
-        // TODO: Add code to make the wind run and try to collect data. See gps.c for reference implementation
-        // - Kamden Thebeau (08-02-2023
-        
         running_task = eReadWIND;
 		
 		if(!init_flag) {
@@ -311,12 +303,12 @@ static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t*
 	{
 	case eGPGGA:
 		msg->fields.gpgga.lat.lat = atof(data->args[1]);
-		msg->fields.gpgga.lat.ns = ((char)data->args[2] == 'N') ? north : south;
+		msg->fields.gpgga.lat.ns = ((char)(data->args[2]) == 'N') ? north : south;
 		msg->fields.gpgga.lon.lon = atof(data->args[3]);
-		msg->fields.gpgga.lon.we = ((char)data->args[4] == 'W') ? west : east;
+		msg->fields.gpgga.lon.we = ((char)(data->args[4]) == 'W') ? west : east;
 		msg->fields.gpgga.alt = atof(data->args[8]);
 		
-		if (0==atof(data->args[1])){
+		if (0.0 == atof(data->args[1])){
 			DEBUG_Write("Was 0\r\n");
 		}
 		//TODO

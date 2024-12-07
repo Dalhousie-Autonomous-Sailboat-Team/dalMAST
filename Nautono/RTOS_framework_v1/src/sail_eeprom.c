@@ -558,29 +558,12 @@ void Test_EEPROM(void)
 	
 	bool test = true;
 	
-	uint8_t bno_id = 0;
-	uint8_t reg_addr = 0x34;
-	
-	uint16_t raw_angle;
-	
-	
-	
 	uint8_t mode_buffer[2] = {0X3D, 0X01};
 	I2C_WriteBuffer(I2C_IMU, mode_buffer, 2, I2C_WRITE_NORMAL);
 
 	while(test){
 		running_task = eUpdateCourse;
-		/*
-		DEBUG_Write("Initializing EEPROM ... ");
-
-		// Stop if EEPROM initialization fails
-		if (EEPROM_Init() != STATUS_OK) {
-			DEBUG_Write("Failed!\r\n");
-			return 0;
-		}
 		
-		DEBUG_Write("Complete.\r\n");
-		*/
 		#ifdef TEST
 		DEBUG_Write("Creating a mission ... \r\n");
 		
@@ -660,42 +643,6 @@ void Test_EEPROM(void)
 		}
 		
 		DEBUG_Write("Test complete!\r\n");
-		#endif
-		
-		#ifndef TEST2
-		DEBUG_Write("<<<<<<<<<<<<<<<<< Testing EEPROM >>>>>>>>>>>>>>>> \r\n");
-		
-		uint8_t buffer[2] = {0x02, 0x10};
-			
-		//I2C_WriteBuffer(I2C_EEPROM, buffer, 2, I2C_WRITE_NORMAL);
-		
-		//WriteByteToAddr(32, 0x20);
-		
-		uint8_t addr = 0x02;
-		uint8_t data = 0;
-		
-		//delay_ms(10);
-		
-		ReadByteFromAddr(32, &data);
-		
-		//I2C_WriteBuffer(I2C_EEPROM, &addr, 1, I2C_WRITE_NORMAL);
-		
-		//I2C_ReadBuffer(I2C_EEPROM, &data, 1, I2C_READ_NORMAL);
-		
-		DEBUG_Write("Data: %d\r\n", data);
-		/*
-		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing IMU >>>>>>>>>>\n\r");
-		
-		I2C_WriteBuffer(I2C_IMU, &reg_addr, 1, I2C_WRITE_NORMAL);
-		I2C_ReadBuffer(I2C_IMU, &bno_id, 1, I2C_READ_NORMAL);
-		DEBUG_Write("Bno temp: %d\r\n", bno_id);
-		
-		DEBUG_Write_Unprotected("\n\r<<<<<<<<<<< Testing AS >>>>>>>>>>\n\r");
-		
-		rawAngle(&raw_angle);
-		
-		DEBUG_Write_Unprotected("Raw Angle: %d\r\n", raw_angle);
-		*/
 		#endif
 		
 		vTaskDelay(testDelay);

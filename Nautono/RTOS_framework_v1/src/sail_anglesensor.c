@@ -250,7 +250,7 @@ enum status_code rawAngle(uint16_t *data)
 	return STATUS_OK;	
 }
 
-enum status_code readAngle(int *data)
+enum status_code readAngle(uint16_t *data)
 {
 	rawAngle(data);
 	uint8_t msb = *data & 0xff;
@@ -272,7 +272,7 @@ static enum status_code getAngularSpeed(uint8_t system_mode, float *data)
 	uint16_t now = 0;
 	getTicks(&now);
 	
-	int angle = 0;
+	uint16_t angle = 0;
 	readAngle(&angle);
 	
 	uint32_t deltaT  = now - _lastMeasurement;

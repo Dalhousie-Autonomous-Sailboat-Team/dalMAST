@@ -47,16 +47,13 @@ void ReadGPS(void) {
 	//set msg type sum to 0 since no messages processed yet
 	GPS_data.msg_type_sum = 0;
 
-	// Event bits for holding the state of the event group
-	EventBits_t event_bits;
-
 	TickType_t read_gps_delay = pdMS_TO_TICKS(GPS_SLEEP_PERIOD_MS);
 
 	GPS_On();
 
 	while (1) {
 
-		event_bits = xEventGroupWaitBits(mode_event_group,                        /* Test the mode event group */
+		xEventGroupWaitBits(mode_event_group,                        /* Test the mode event group */
 			CTRL_MODE_AUTO_BIT | CTRL_MODE_REMOTE_BIT, /* Wait until the sailboat is in AUTO or REMOTE mode */
 			pdFALSE,                                 /* Bits should not be cleared before returning. */
 			pdFALSE,                                 /* Don't wait for both bits, either bit will do. */
@@ -246,9 +243,9 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* d
 	{
 	case eGPGGA:
 		msg->fields.gpgga.lat.lat = atof(data->args[1]);
-		msg->fields.gpgga.lat.ns = ((char)data->args[2] == 'N') ? north : south;
+		msg->fields.gpgga.lat.ns = ((char)(data->args[2]) == 'N') ? north : south;
 		msg->fields.gpgga.lon.lon = atof(data->args[3]);
-		msg->fields.gpgga.lon.we = ((char)data->args[4] == 'W') ? west : east;
+		msg->fields.gpgga.lon.we = ((char)(data->args[4]) == 'W') ? west : east;
 		msg->fields.gpgga.alt = atof(data->args[8]);
 		
 		//if(atof(data->args[1]) == 0.00)
@@ -262,8 +259,8 @@ static enum status_code GPS_ExtractMsg(NMEA_GenericMsg* msg, GPS_MsgRawData_t* d
 		DEBUG_Write("LAT DATA: >%s<\r\n", data->args[1]);
 		DEBUG_Write("LON DATA: >%s<\r\n", data->args[3]);
 			
-		DEBUG_Write("LAT DATA: >%d<\r\n", (uint)msg->fields.gpgga.lat.lat);
-		DEBUG_Write("LON DATA: >%d<\r\n", (uint)msg->fields.gpgga.lon.lon);
+		DEBUG_Write("LAT DATA: >%d<\r\n", (uint)(msg->fields.gpgga.lat.lat));
+		DEBUG_Write("LON DATA: >%d<\r\n", (uint)(msg->fields.gpgga.lon.lon));
 		
 		//#endif
 
