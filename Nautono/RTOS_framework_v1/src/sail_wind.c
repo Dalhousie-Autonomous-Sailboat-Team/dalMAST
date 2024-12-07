@@ -291,7 +291,7 @@ static enum status_code WIND_ExtractMsg(NMEA_GenericMsg* msg, WIND_MsgRawData_t*
 		msg->fields.gpgga.lon.we = (data->args[4][0] == 'W') ? west : east;
 		msg->fields.gpgga.alt = atof(data->args[8]);
 		
-		if (0.0 == atof(data->args[1])){
+		if (0 == (int)(1000 * atof(data->args[1]))){
 			DEBUG_Write("Was 0\r\n");
 		}
 		//TODO

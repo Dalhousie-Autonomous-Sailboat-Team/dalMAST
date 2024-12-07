@@ -215,49 +215,66 @@ static void prvInitialiseNewStreamBuffer( StreamBuffer_t * const pxStreamBuffer,
 
 	StreamBufferHandle_t xStreamBufferGenericCreate( size_t xBufferSizeBytes, size_t xTriggerLevelBytes, BaseType_t xIsMessageBuffer )
 	{
-	uint8_t *pucAllocatedMemory;
+		void * pvAllocatedMemory;
 
-		/* In case the stream buffer is going to be used as a message buffer
-		(that is, it will hold discrete messages with a little meta data that
-		says how big the next message is) check the buffer will be large enough
-		to hold at least one message. */
-		configASSERT( xBufferSizeBytes > sbBYTES_TO_STORE_MESSAGE_LENGTH );
-		configASSERT( xTriggerLevelBytes <= xBufferSizeBytes );
+        /* In case the stream buffer is going to be used as a message buffer
+         * (that is, it will hold discrete messages with a little meta data that
+         * says how big the next message is) check the buffer will be large enough
+         * to hold at least one message. */
+        if( xIsMessageBuffer == pdTRUE )
+        {
+            /* Is a message buffer but not statically allocated. */
+            configASSERT( xBufferSizeBytes > sbBYTES_TO_STORE_MESSAGE_LENGTH );
+        }
+        else
+        {
+            /* Not a message buffer and not statically allocated. */
+            configASSERT( xBufferSizeBytes > 0 );
+        }
 
-		/* A trigger level of 0 would cause a waiting task to unblock even when
-		the buffer was empty. */
-		if( xTriggerLevelBytes == ( size_t ) 0 )
-		{
-			xTriggerLevelBytes = ( size_t ) 1; /*lint !e9044 Parameter modified to ensure it doesn't have a dangerous value. */
-		}
+        configASSERT( xTriggerLevelBytes <= xBufferSizeBytes );
 
-		/* A stream buffer requires a StreamBuffer_t structure and a buffer.
-		Both are allocated in a single call to pvPortMalloc().  The
-		StreamBuffer_t structure is placed at the start of the allocated memory
-		and the buffer follows immediately after.  The requested size is
-		incremented so the free space is returned as the user would expect -
-		this is a quirk of the implementation that means otherwise the free
-		space would be reported as one byte smaller than would be logically
-		expected. */
-		xBufferSizeBytes++;
-		pucAllocatedMemory = ( uint8_t * ) pvPortMalloc( xBufferSizeBytes + sizeof( StreamBuffer_t ) ); /*lint !e9079 malloc() only returns void*. */
+        /* A trigger level of 0 would cause a waiting task to unblock even when
+         * the buffer was empty. */
+        if( xTriggerLevelBytes == ( size_t ) 0 )
+        {
+            xTriggerLevelBytes = ( size_t ) 1;
+        }
 
-		if( pucAllocatedMemory != NULL )
-		{
-			prvInitialiseNewStreamBuffer( ( StreamBuffer_t * ) pucAllocatedMemory, /* Structure at the start of the allocated memory. */ /*lint !e9087 Safe cast as allocated memory is aligned. */ /*lint !e826 Area is not too small and alignment is guaranteed provided malloc() behaves as expected and returns aligned buffer. */
-										   pucAllocatedMemory + sizeof( StreamBuffer_t ),  /* Storage area follows. */ /*lint !e9016 Indexing past structure valid for uint8_t pointer, also storage area has no alignment requirement. */
-										   xBufferSizeBytes,
-										   xTriggerLevelBytes,
-										   xIsMessageBuffer );
+        /* A stream buffer requires a StreamBuffer_t structure and a buffer.
+         * Both are allocated in a single call to pvPortMalloc().  The
+         * StreamBuffer_t structure is placed at the start of the allocated memory
+         * and the buffer follows immediately after.  The requested size is
+         * incremented so the free space is returned as the user would expect -
+         * this is a quirk of the implementation that means otherwise the free
+         * space would be reported as one byte smaller than would be logically
+         * expected. */
+        if( xBufferSizeBytes < ( xBufferSizeBytes + 1 + sizeof( StreamBuffer_t ) ) )
+        {
+            xBufferSizeBytes++;
+            pvAllocatedMemory = pvPortMalloc( xBufferSizeBytes + sizeof( StreamBuffer_t ) );
+        }
+        else
+        {
+            pvAllocatedMemory = NULL;
+        }
 
-			traceSTREAM_BUFFER_CREATE( ( ( StreamBuffer_t * ) pucAllocatedMemory ), xIsMessageBuffer );
-		}
-		else
-		{
-			traceSTREAM_BUFFER_CREATE_FAILED( xIsMessageBuffer );
-		}
+        if( pvAllocatedMemory != NULL )
+        {
+            prvInitialiseNewStreamBuffer( ( StreamBuffer_t * ) pvAllocatedMemory,        /* Structure at the start of the allocated memory. */ /*lint !e9087 Safe cast as allocated memory is aligned. */ /*lint !e826 Area is not too small and alignment is guaranteed provided malloc() behaves as expected and returns aligned buffer. */
+                                          ( ( uint8_t * ) pvAllocatedMemory ) + sizeof( StreamBuffer_t ), /* Storage area follows. */ /*lint !e9016 Indexing past structure valid for uint8_t pointer, also storage area has no alignment requirement. */
+                                          xBufferSizeBytes,
+                                          xTriggerLevelBytes,
+                                          xIsMessageBuffer);
 
-		return ( StreamBufferHandle_t * ) pucAllocatedMemory; /*lint !e9087 !e826 Safe cast as allocated memory is aligned. */
+            traceSTREAM_BUFFER_CREATE( ( ( StreamBuffer_t * ) pvAllocatedMemory ), xIsMessageBuffer );
+        }
+        else
+        {
+            traceSTREAM_BUFFER_CREATE_FAILED( xIsMessageBuffer );
+        }
+
+        return ( StreamBufferHandle_t ) pvAllocatedMemory; /*lint !e9087 !e826 Safe cast as allocated memory is aligned. */
 	}
 
 #endif /* configSUPPORT_DYNAMIC_ALLOCATION */

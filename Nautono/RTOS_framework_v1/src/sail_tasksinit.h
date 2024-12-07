@@ -20,9 +20,6 @@ extern EventGroupHandle_t mode_event_group;
 // The mutex for writing to the uart buffer
 extern SemaphoreHandle_t write_buffer_mutex[UART_NUM_CHANNELS];
 
-// Prototype for RTOS function
-void vApplicationDaemonTaskStartupHook(void);
-
 // The event bits for the mode event group
 #define CTRL_MODE_AUTO_BIT     (0x01UL)
 #define CTRL_MODE_REMOTE_BIT   (0x02UL)
