@@ -60,8 +60,8 @@ float ReadVoltage(I2C_DeviceID ina, int channel) {
 	return voltage_V;
 }
 
-static int32_t getShuntVoltage(I2C_DeviceID ina, int channel){
-	int32_t res;
+static float getShuntVoltage(I2C_DeviceID ina, int channel){
+	float res;
 	uint8_t reggie;
 	uint16_t val_raw = 0;
 
@@ -80,7 +80,7 @@ static int32_t getShuntVoltage(I2C_DeviceID ina, int channel){
 	ReadWord(ina, reggie, &val_raw);
 
 	// 1 Least Significant Bit = 40uV
-	res = (int32_t)(val_raw >> 3) * 40;
+	res = (val_raw >> 3) * 40.0;
 
 	return res;
 }
@@ -90,8 +90,8 @@ float ReadCurrent(I2C_DeviceID ina, int channel) {
 	float current_A  = 0;
 	uint32_t shuntRes = 100;
 
-	shunt_uV  = (float)getShuntVoltage(ina, channel);
-	current_A = (float)((shunt_uV / 1000.0) / shuntRes); // in the void INA3221::begin(TwoWire *theWire) of the original function they are set to 10
+	shunt_uV  = getShuntVoltage(ina, channel);
+	current_A = ((shunt_uV / 1000) / shuntRes); // in the void INA3221::begin(TwoWire *theWire) of the original function they are set to 10
 	return current_A;
 }
 

@@ -294,18 +294,12 @@ static void beaconTxLogData(void){
 }
 
 TaskFunction_t beaconTaskTest(void){
-	TickType_t testDelay = pdMS_TO_TICKS(6000 / portTICK_RATE_MS);
+	TickType_t testDelay = pdMS_TO_TICKS(360000 / portTICK_RATE_MS);
 	
-	UART_Init(UART_VCOM);
+	UART_Init(UART_XEOS);
 	
-
 	while(1){
-		
-#ifdef LOL		
-	//	running_task = eUpdateCourse;
-		//beaconTxLogData();
-#endif
-		DEBUG_Write("Idk what to write\r\n");
+		beaconTxLogData();
 		vTaskDelay(testDelay);
 	}
 }
