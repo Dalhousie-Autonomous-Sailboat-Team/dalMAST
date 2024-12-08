@@ -95,12 +95,13 @@ float ReadCurrent(I2C_DeviceID ina, int channel) {
 	return current_A;
 }
 
-#define TEST_INA_DELAY_MS 1000
+#define TEST_INA_DELAY_MS 10000
 #define VOLTAGE_MEASUREMENT
 #define CURRENT_MEASUREMENT
 
 void Test_INA(void){
 	TickType_t testDelay = pdMS_TO_TICKS(TEST_INA_DELAY_MS);
+	TickType_t read_delay = pdMS_TO_TICKS(1000);
 
 	while(1){
 #ifdef VOLTAGE_MEASUREMENT
@@ -113,6 +114,9 @@ void Test_INA(void){
 		DEBUG_Write("INA 2 channel 2 (linear actuator) voltage:		>%d<\r\n", (int)(ReadVoltage(I2C_INA2, 2)*1000));
 		DEBUG_Write("INA 2 channel 3 (beacon) voltage:			>%d<\r\n", (int)(ReadVoltage(I2C_INA2, 3)*1000));
 #endif /* VOLTAGE_MEASUREMENT */
+
+		vTaskDelay(read_delay);
+
 #ifdef CURRENT_MEASUREMENT
 		DEBUG_Write("############### Reading Currents from INA's ###############\r\n");
 		DEBUG_Write("INA 1 channel 1 (3.3V bus) current:			>%d<\r\n", (int)(ReadCurrent(I2C_INA1, 1)*1000));
