@@ -21,6 +21,12 @@
 //#define UART_TX_BUFFER_LENGTH		1024
 #define UART_TX_BUFFER_LENGTH		512
 
+//define UART MUX's logic toggle pins
+#define MUX1_LOGIC_A PIN_PB14
+#define MUX1_LOGIC_B PIN_PB15
+#define MUX2_LOGIC_A PIN_PA06
+#define MUX2_LOGIC_B PIN_PA07
+
 // Buffers to hold receive and transmit data
 static volatile uint8_t rx_buffers[UART_NUM_CHANNELS][UART_RX_BUFFER_LENGTH];
 static volatile uint8_t tx_buffers[UART_NUM_CHANNELS][UART_TX_BUFFER_LENGTH];
@@ -36,50 +42,63 @@ static struct usart_module uart_modules[UART_NUM_CHANNELS];
 
 // Define constant arrays for the settings of each UART port
 
-
-static uint32_t baud_rates[] = {
-	9600,
-	//4800, wind baudrate
-	19200,
-	9600,
-	57600,
-	57600
+static uint32_t baud_rates[] = {	
+	9600,	//MUX1 baud (default)
+	9600,	//MUX2 baud (default)
+	19200,	//windvane baud
+	57600,	//vcom   baud
+	57600,	//beacon baud
+	-1,		//spaceholder
+	
+	9600,	//mppt 1 baud
+	9600,	//bms  1 baud (default)
+	9600,	//bms  2 baud
+	9600,	//mppt 2 baud
+	
+	9600,	//radio  baud
+	9600,	//gps    baud
+	9600,	//pixie  baud (default)
+	57600	//extra  baud (defult)
+	
 };
-
-/*
-UART_ChannelIDs:
-	UART_GPS,
-	UART_WEATHERSTATION,
-	UART_RADIO,
-	UART_XEOS,
-	UART_VCOM,
-	UART_NUM_CHANNELS
-*/
 
 
 #ifdef PCB
+
+/*
+	FYI:
+	
+	-Pin Mux Settings can only be set based on the table found at the link below
+	-https://asf.microchip.com/docs/latest/saml21/html/asfdoc_sam0_sercom_usart_mux_settings.html
+	-This table outlines the only way the TX and RX pins can be used on pads for SERCOM.
+	-!!!Check this table before applying pin changes on schematic!!!
+
+*/
+
 static enum usart_signal_mux_settings mux_settings[] = {
-	USART_RX_3_TX_2_XCK_3,
-	USART_RX_1_TX_0_XCK_1,
-	USART_RX_1_TX_0_XCK_1,
-	USART_RX_1_TX_0_XCK_1, // Temp same as vcom for PCB
-	USART_RX_1_TX_0_XCK_1  // vcom for pcb
+	USART_RX_3_TX_2_XCK_3,	//MUX 1		SERCOM4 pads used
+	USART_RX_3_TX_2_XCK_3,	//MUX 2		SERCOM3 pads used
+	USART_RX_1_TX_0_XCK_1,	//Windvane	SERCOM0 pads used
+	USART_RX_1_TX_0_XCK_1,	//VCOM		SERCOM5 pads used
+	USART_RX_1_TX_0_XCK_1	//Beacon	SERCOM2 pads used
 };
 
+
+
 static uint32_t pinmux_pads[][UART_NUM_CHANNELS] = {
-	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA18D_SERCOM3_PAD2, PINMUX_PA19D_SERCOM3_PAD3},
-	{PINMUX_PB08D_SERCOM4_PAD0, PINMUX_PB09D_SERCOM4_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
-	{PINMUX_PA12C_SERCOM2_PAD0, PINMUX_PA13C_SERCOM2_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},
-	{PINMUX_PA16C_SERCOM1_PAD0, PINMUX_PA17C_SERCOM1_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},// same as vcom for PCB, temp, what should this be
-	{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED} // VCOM for PCB
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PB10D_SERCOM4_PAD2, PINMUX_PB11D_SERCOM4_PAD3},	//MUX 1		PINMUX DECLARATION
+	{PINMUX_UNUSED, PINMUX_UNUSED, PINMUX_PA18D_SERCOM3_PAD2, PINMUX_PA19D_SERCOM3_PAD3},	//MUX 2		PINMUX DECLARATION
+	{PINMUX_PA04D_SERCOM0_PAD0, PINMUX_PA05D_SERCOM0_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},	//Windvane	PINMUX DECLARATION
+	{PINMUX_PB02D_SERCOM5_PAD0, PINMUX_PB03D_SERCOM5_PAD1, PINMUX_UNUSED, PINMUX_UNUSED},	//VCOM		PINMUX DECLARATION
+	{PINMUX_PA12C_SERCOM2_PAD0, PINMUX_PA13C_SERCOM2_PAD1, PINMUX_UNUSED, PINMUX_UNUSED}	//Beacon	PINMUX DECLARATION
 };
 
 static Sercom *const sercom_ptrs[] = {
-	SERCOM3,
 	SERCOM4,
-	SERCOM2,
+	SERCOM3,
+	SERCOM0,
 	SERCOM5,
-	SERCOM5  // vcom for PCB
+	SERCOM2
 };
 
 #else
@@ -99,10 +118,11 @@ static uint32_t pinmux_pads[][UART_NUM_CHANNELS] = {
 };
 
 static Sercom *const sercom_ptrs[] = {
-	SERCOM0,
+	SERCOM3,
 	SERCOM4,
+	SERCOM2,
 	SERCOM5,
-	SERCOM3
+	SERCOM5
 };
 #endif
 
@@ -137,54 +157,112 @@ static UART_TxState tx_states[UART_NUM_CHANNELS] = {
 };
 
 // Device specific callbacks
-static void GPS_RxCallback(struct usart_module *const usart_module);
-static void GPS_TxCallback(struct usart_module *const usart_module);
-static void WIND_RxCallback(struct usart_module *const usart_module);
-static void WIND_TxCallback(struct usart_module *const usart_module);
-static void RADIO_RxCallback(struct usart_module *const usart_module);
-static void RADIO_TxCallback(struct usart_module *const usart_module);
-static void XEOS_RxCallback(struct usart_module *const usart_module);
-static void XEOS_TxCallback(struct usart_module *const usart_module);
+static void MUX1_RxCallback(struct usart_module * const usart_module);
+static void MUX1_TxCallback(struct usart_module * const usart_module);
+
+static void MUX2_RxCallback(struct usart_module * const usart_module);
+static void MUX2_TxCallback(struct usart_module * const usart_module);
+
+static void WIND_RxCallback(struct usart_module * const usart_module);
+static void WIND_TxCallback(struct usart_module * const usart_module);
 
 static void VCOM_RxCallback(struct usart_module * const usart_module);
 static void VCOM_TxCallback(struct usart_module * const usart_module);
 
-// Generic callback
+static void XEOS_RxCallback(struct usart_module * const usart_module);
+static void XEOS_TxCallback(struct usart_module * const usart_module);
+
+// Generic callbacks
 static void UART_RxCallback(UART_ChannelID id);
 static void UART_TxCallback(UART_ChannelID id);
 
 // Callback pointer array
 static usart_callback_t RxCallbacks[] = {
-	GPS_RxCallback,
+	MUX1_RxCallback,
+	MUX2_RxCallback,
 	WIND_RxCallback,
-	RADIO_RxCallback,
-	XEOS_RxCallback,
-	VCOM_RxCallback
+	VCOM_RxCallback,
+	XEOS_RxCallback
 };
 
 // Callback pointer array
 static usart_callback_t TxCallbacks[] = {
-	GPS_TxCallback,
+	MUX1_TxCallback,	
+	MUX2_TxCallback,	
 	WIND_TxCallback,
-	RADIO_TxCallback,
-	XEOS_TxCallback,
-	VCOM_TxCallback
+	VCOM_TxCallback,
+	XEOS_TxCallback
 };
 
 
+
+void MUX_Init(void){
+	
+	// Get config struct for GPIO pin
+	struct port_config config_port_pin;
+	
+	// Select UART MUX channel to initialize:
+	port_get_config_defaults(&config_port_pin);
+	config_port_pin.direction = PORT_PIN_DIR_OUTPUT;
+	port_pin_set_config(MUX1_LOGIC_A, &config_port_pin);
+	port_pin_set_config(MUX1_LOGIC_B, &config_port_pin);
+	port_pin_set_config(MUX2_LOGIC_A, &config_port_pin);
+	port_pin_set_config(MUX2_LOGIC_B, &config_port_pin);
+	
+}
+
+UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id){
+	
+	//Multiplexes UART channels according to placements on external multiplexer circuit
+	if(id < UART_NUM_CHANNELS){
+		return id;
+	}else if(id <= UART_MPPT2){
+		return UART_MUX1;
+	}else if(id < UART_XTRA){
+		return UART_MUX2;
+	}else{
+		return UART_NUM_CHANNELS;
+	}
+}
+
 enum status_code UART_Init(UART_ChannelID id) {
+	enum status_code usart_status;
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
+	//Keep track of MUX1 and MUX2 channel
+	if (id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		
+		if(MUX1_CURRENT_CHANNEL != id){
+			
+			MUX1_CURRENT_CHANNEL = id;
+			usart_reset(&uart_modules[MUXED_ID]);
+			
+		}
+	}
+	else if (id > UART_MPPT2 && id <= UART_XTRA)
+	{
+		
+		if(MUX2_CURRENT_CHANNEL != id){
+			
+			MUX2_CURRENT_CHANNEL = id;
+			usart_reset(&uart_modules[MUXED_ID]);
+			
+		}
+	}
+	
 	// Return if the ID is invalid
-	if (id >= UART_NUM_CHANNELS) {
+	if (MUXED_ID >= UART_NUM_CHANNELS) {
 		return STATUS_ERR_INVALID_ARG;
 	}
 	
 	// Return if the receive buffer module cannot be initialized
-	if (BUFF_Init(&rx_buff_modules[id], &rx_buffers[id][0], UART_RX_BUFFER_LENGTH) != STATUS_OK) {
+	if (BUFF_Init(&rx_buff_modules[MUXED_ID], &rx_buffers[MUXED_ID][0], UART_RX_BUFFER_LENGTH) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
 	}	
 	
 	// Return if the transmit buffer module cannot be initialized
-	if (BUFF_Init(&tx_buff_modules[id], &tx_buffers[id][0], UART_TX_BUFFER_LENGTH) != STATUS_OK) {
+	if (BUFF_Init(&tx_buff_modules[MUXED_ID], &tx_buffers[MUXED_ID][0], UART_TX_BUFFER_LENGTH) != STATUS_OK) {
 		return STATUS_ERR_DENIED;
 	}	
 	
@@ -194,85 +272,166 @@ enum status_code UART_Init(UART_ChannelID id) {
 	
 	// Select settings for specified UART
 	uart_config.baudrate = baud_rates[id];
-	uart_config.mux_setting = mux_settings[id];
-	uart_config.pinmux_pad0 = pinmux_pads[id][0];
-	uart_config.pinmux_pad1 = pinmux_pads[id][1];
-	uart_config.pinmux_pad2 = pinmux_pads[id][2];
-	uart_config.pinmux_pad3 = pinmux_pads[id][3];
+	uart_config.mux_setting = mux_settings[MUXED_ID];
+	uart_config.pinmux_pad0 = pinmux_pads[MUXED_ID][0];
+	uart_config.pinmux_pad1 = pinmux_pads[MUXED_ID][1];
+	uart_config.pinmux_pad2 = pinmux_pads[MUXED_ID][2];
+	uart_config.pinmux_pad3 = pinmux_pads[MUXED_ID][3];
+	
+	
+	switch(id){
+		
+		case UART_MPPT1:
+		port_pin_set_output_level(MUX1_LOGIC_A, false);
+		port_pin_set_output_level(MUX1_LOGIC_B, false);
+		break;
+
+		case UART_BMS1:
+		port_pin_set_output_level(MUX1_LOGIC_A, true);
+		port_pin_set_output_level(MUX1_LOGIC_B, false);
+		break;
+		
+		case UART_BMS2:
+		port_pin_set_output_level(MUX1_LOGIC_A, false);
+		port_pin_set_output_level(MUX1_LOGIC_B, true);
+		break;
+		
+		case UART_MPPT2:
+		port_pin_set_output_level(MUX1_LOGIC_A, true);
+		port_pin_set_output_level(MUX1_LOGIC_B, true);
+		break;
+		
+		case UART_RADIO:
+		port_pin_set_output_level(MUX2_LOGIC_A, false);
+		port_pin_set_output_level(MUX2_LOGIC_B, false);
+		break;
+
+		case UART_GPS:
+		port_pin_set_output_level(MUX2_LOGIC_A, true);
+		port_pin_set_output_level(MUX2_LOGIC_B, false);
+		break;
+		
+		case UART_PIXIE:
+		port_pin_set_output_level(MUX2_LOGIC_A, false);
+		port_pin_set_output_level(MUX2_LOGIC_B, true);
+		break;
+		
+		case UART_XTRA:
+		port_pin_set_output_level(MUX2_LOGIC_A, true);
+		port_pin_set_output_level(MUX2_LOGIC_B, true);
+		break;
+		
+		default:
+		return ERR_BAD_DATA;
+		
+	}
 	
 	// Apply the settings to the UART module
-	while (usart_init(&uart_modules[id], sercom_ptrs[id], &uart_config) != STATUS_OK);
-	usart_enable(&uart_modules[id]);
+	usart_status = usart_init(&uart_modules[MUXED_ID], sercom_ptrs[MUXED_ID], &uart_config);
+	while (usart_status != STATUS_OK)
+	{
+		//DEBUG_Write_Unprotected("Usart init status: %d", usart_status);
+		usart_status = usart_init(&uart_modules[MUXED_ID], sercom_ptrs[MUXED_ID], &uart_config);
+	}
+	usart_enable(&uart_modules[MUXED_ID]);
 	
 	// Register and enable callbacks
-	usart_register_callback(&uart_modules[id], RxCallbacks[id], USART_CALLBACK_BUFFER_RECEIVED);
-	usart_enable_callback(&uart_modules[id], USART_CALLBACK_BUFFER_RECEIVED);
+	usart_register_callback(&uart_modules[MUXED_ID], RxCallbacks[MUXED_ID], USART_CALLBACK_BUFFER_RECEIVED);
+	usart_enable_callback(&uart_modules[MUXED_ID], USART_CALLBACK_BUFFER_RECEIVED);
 	
-	usart_register_callback(&uart_modules[id], TxCallbacks[id], USART_CALLBACK_BUFFER_TRANSMITTED);
-	usart_enable_callback(&uart_modules[id], USART_CALLBACK_BUFFER_TRANSMITTED);
+	usart_register_callback(&uart_modules[MUXED_ID], TxCallbacks[MUXED_ID], USART_CALLBACK_BUFFER_TRANSMITTED);
+	usart_enable_callback(&uart_modules[MUXED_ID], USART_CALLBACK_BUFFER_TRANSMITTED);
 		
 	// Set the state
-	rx_states[id] = UART_RX_DISABLED;
-	tx_states[id] = UART_TX_IDLE;
+	rx_states[MUXED_ID] = UART_RX_DISABLED;
+	tx_states[MUXED_ID] = UART_TX_IDLE;
 	
 	return STATUS_OK;	
 }
 
-
 enum status_code UART_Enable(UART_ChannelID id) {
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
 	// Return if the ID is invalid
-	if (id >= UART_NUM_CHANNELS) {
+	if (MUXED_ID >= UART_NUM_CHANNELS) {
 		return STATUS_ERR_INVALID_ARG;
 	}
 	
 	// Return if the receiver has not been initialized
-	if (rx_states[id] == UART_RX_OFF) {
+	if (rx_states[MUXED_ID] == UART_RX_OFF) {
 		return STATUS_ERR_NOT_INITIALIZED;
 	}	
 	
+	//Ensure that the MUX uarts are set to the correct settings before using
+	if (id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		
+		if(MUX1_CURRENT_CHANNEL != id){
+			
+			MUX1_CURRENT_CHANNEL = id;
+			usart_reset(&uart_modules[MUXED_ID]);
+			UART_Init(id);
+			
+		}
+	}
+	else if (id > UART_MPPT2 && id <= UART_XTRA)
+	{
+		
+		if(MUX2_CURRENT_CHANNEL != id){
+			
+			MUX2_CURRENT_CHANNEL = id;
+			usart_reset(&uart_modules[MUXED_ID]);
+			UART_Init(id);
+			
+		}
+	}
+	
 	// Return if the receiver has already been enabled
-	if (rx_states[id] == UART_RX_ENABLED) {
+	if (rx_states[MUXED_ID] == UART_RX_ENABLED) {
 		return STATUS_NO_CHANGE;
 	}
 	
 	// Set the state
-	rx_states[id] = UART_RX_ENABLED;
+	rx_states[MUXED_ID] = UART_RX_ENABLED;
 	
 	// Start interrupt-driven receive
-	usart_read_job(&uart_modules[id], &rx_words[id]);
+	usart_read_job(&uart_modules[MUXED_ID], &rx_words[MUXED_ID]);
 	
 	return STATUS_OK;	
 }
 
-
 enum status_code UART_Disable(UART_ChannelID id) {
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
 	// Return if the ID is invalid
-	if (id >= UART_NUM_CHANNELS) {
+	if (MUXED_ID >= UART_NUM_CHANNELS) {
 		return STATUS_ERR_INVALID_ARG;
 	}
 	
 	// Return if the receiver has not been initialized
-	if (rx_states[id] == UART_RX_OFF) {
+	if (rx_states[MUXED_ID] == UART_RX_OFF) {
 		return STATUS_ERR_NOT_INITIALIZED;
 	}
 	
 	// Return if the receiver has already been disabled
-	if (rx_states[id] == UART_RX_DISABLED) {
+	if (rx_states[MUXED_ID] == UART_RX_DISABLED) {
 		return STATUS_NO_CHANGE;
 	}
 
 	// Set the state
-	rx_states[id] = UART_RX_DISABLED;
+	rx_states[MUXED_ID] = UART_RX_DISABLED;
 	
 	// Abort the job
-	usart_abort_job(&uart_modules[id], USART_TRANSCEIVER_RX);
+	usart_abort_job(&uart_modules[MUXED_ID], USART_TRANSCEIVER_RX);
 	
 	return STATUS_OK;
 }
 
 enum status_code UART_TxString(UART_ChannelID id, uint8_t *data) {
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
 	// Return if the ID is invalid
-	if (id >= UART_NUM_CHANNELS) {
+	if (MUXED_ID >= UART_NUM_CHANNELS) {
 		return STATUS_ERR_INVALID_ARG;
 	}
 	
@@ -281,18 +440,30 @@ enum status_code UART_TxString(UART_ChannelID id, uint8_t *data) {
 		return STATUS_ERR_BAD_ADDRESS;
 	}
 	
+	// Ensure multiplexers are running at correct settings.
+	if( id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		if( MUX1_CURRENT_CHANNEL != id)
+			UART_Init(id);		
+	}
+	else if( id > UART_MPPT2)
+	{
+		if( MUX2_CURRENT_CHANNEL != id)
+			UART_Init(id);
+	}
+	
 	// Get the length of the provided string (must be null-terminated)
 	uint16_t length = strlen((char *)data);
 	
 	// Write the data into the buffer 
-	xSemaphoreTake(write_buffer_mutex[id], portMAX_DELAY);
-	BUFF_WriteBuffer(&tx_buff_modules[id], data, length);
-	xSemaphoreGive(write_buffer_mutex[id]);
+	xSemaphoreTake(write_buffer_mutex[MUXED_ID], portMAX_DELAY);
+	BUFF_WriteBuffer(&tx_buff_modules[MUXED_ID], data, length);
+	xSemaphoreGive(write_buffer_mutex[MUXED_ID]);
 	
 	// If the transmitter is idle, manually trigger a new transmission
-	if (tx_states[id] == UART_TX_IDLE) {
-		tx_states[id] = UART_TX_BUSY;
-		UART_TxCallback(id);
+	if (tx_states[MUXED_ID] == UART_TX_IDLE) {
+		tx_states[MUXED_ID] = UART_TX_BUSY;
+		UART_TxCallback(MUXED_ID);
 	}
 	
 	// Otherwise, return and let the callback send the new data
@@ -301,8 +472,10 @@ enum status_code UART_TxString(UART_ChannelID id, uint8_t *data) {
 }
 
 enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data) {
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
 	// Return if the ID is invalid
-	if (id >= UART_NUM_CHANNELS) {
+	if (MUXED_ID >= UART_NUM_CHANNELS) {
 		return STATUS_ERR_INVALID_ARG;
 	}
 	
@@ -311,16 +484,28 @@ enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data) {
 		return STATUS_ERR_BAD_ADDRESS;
 	}
 	
+	// Ensure multiplexers are running at correct settings.
+	if( id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		if( MUX1_CURRENT_CHANNEL != id)
+		UART_Init(id);
+	}
+	else if( id > UART_MPPT2)
+	{
+		if( MUX2_CURRENT_CHANNEL != id)
+		UART_Init(id);
+	}
+	
 	// Get the length of the provided string (must be null-terminated)
 	uint16_t length = strlen((char *)data);
 	
 	// Write the data into the buffer
-	BUFF_WriteBufferUnprotected(&tx_buff_modules[id], data, length);
+	BUFF_WriteBufferUnprotected(&tx_buff_modules[MUXED_ID], data, length);
 	
 	// If the transmitter is idle, manually trigger a new transmission
-	if (tx_states[id] == UART_TX_IDLE) {
-		tx_states[id] = UART_TX_BUSY;
-		UART_TxCallback(id);
+	if (tx_states[MUXED_ID] == UART_TX_IDLE) {
+		tx_states[MUXED_ID] = UART_TX_BUSY;
+		UART_TxCallback(MUXED_ID);
 	}
 	
 	// Otherwise, return and let the callback send the new data
@@ -328,10 +513,11 @@ enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data) {
 	return STATUS_OK;
 }
 
-
 enum status_code UART_RxString(UART_ChannelID id, uint8_t *data, uint16_t length) {
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
 	// Return if the ID is invalid
-	if (id >= UART_NUM_CHANNELS) {
+	if (MUXED_ID >= UART_NUM_CHANNELS) {
 		return STATUS_ERR_INVALID_ARG;
 	}
 	
@@ -340,8 +526,21 @@ enum status_code UART_RxString(UART_ChannelID id, uint8_t *data, uint16_t length
 		return STATUS_ERR_BAD_ADDRESS;
 	}
 	
+	// Ensure multiplexers are running at correct settings.
+	if( id > UART_NUM_CHANNELS && id <= UART_MPPT2)
+	{
+		if( MUX1_CURRENT_CHANNEL != id)
+		UART_Init(id);
+	}
+	else if( id > UART_MPPT2)
+	{
+		if( MUX2_CURRENT_CHANNEL != id)
+		UART_Init(id);
+	}
+	
+	
 	// Try to get a string from the buffer
-	switch (BUFF_ReadString(&rx_buff_modules[id], data, length)) {
+	switch (BUFF_ReadString(&rx_buff_modules[MUXED_ID], data, length)) {
 		case STATUS_VALID_DATA:
 			return STATUS_VALID_DATA;
 		case STATUS_NO_CHANGE:
@@ -356,79 +555,80 @@ enum status_code UART_RxString(UART_ChannelID id, uint8_t *data, uint16_t length
 
 // **** Receive callbacks ******************************************************************
 
-void GPS_RxCallback(struct usart_module *const usart_module) {
-	UART_RxCallback(UART_GPS);
+void MUX1_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_MUX1);
 }
 
-void WIND_RxCallback(struct usart_module *const usart_module) {
+void MUX2_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_MUX2);
+}
+
+void WIND_RxCallback(struct usart_module * const usart_module){
 	UART_RxCallback(UART_WIND);
 }
 
-void RADIO_RxCallback(struct usart_module *const usart_module) {
-	UART_RxCallback(UART_RADIO);
-}
-
-void XEOS_RxCallback(struct usart_module *const usart_module) {
-	UART_RxCallback(UART_XEOS);
-}
-
-void VCOM_RxCallback(struct usart_module *const usart_module){
+void VCOM_RxCallback(struct usart_module * const usart_module){
 	UART_RxCallback(UART_VCOM);
+}
+
+void XEOS_RxCallback(struct usart_module * const usart_module){
+	UART_RxCallback(UART_XEOS);
 }
 
 // **** Transmit callbacks ******************************************************************
 
-void GPS_TxCallback(struct usart_module *const usart_module) {
-	UART_TxCallback(UART_GPS);
+void MUX1_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_MUX1);
 }
 
-void WIND_TxCallback(struct usart_module *const usart_module) {
+void MUX2_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_MUX2);
+}
+
+void WIND_TxCallback(struct usart_module * const usart_module){
 	UART_TxCallback(UART_WIND);
 }
 
-void RADIO_TxCallback(struct usart_module *const usart_module) {
-	UART_TxCallback(UART_RADIO);
-}
-
-void XEOS_TxCallback(struct usart_module *const usart_module) {
-	UART_TxCallback(UART_XEOS);
-}
-
-void VCOM_TxCallback(struct usart_module *const usart_module){
+void VCOM_TxCallback(struct usart_module * const usart_module){
 	UART_TxCallback(UART_VCOM);
+}
+
+void XEOS_TxCallback(struct usart_module * const usart_module){
+	UART_TxCallback(UART_XEOS);
 }
 
 // **** Generic callbacks ******************************************************************
 
 void UART_RxCallback(UART_ChannelID id) {
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
 	// Write the byte to the buffer
-	BUFF_WriteByte(&rx_buff_modules[id], (uint8_t)(0xff & rx_words[id]));
+	BUFF_WriteByte(&rx_buff_modules[MUXED_ID], (uint8_t)(0xff & rx_words[MUXED_ID]));
 	
 	// If the receiver is enabled, keep receiving
-	if (rx_states[id] == UART_RX_ENABLED) {
-		usart_read_job(&uart_modules[id], &rx_words[id]);
+	if (rx_states[MUXED_ID] == UART_RX_ENABLED) {
+		usart_read_job(&uart_modules[MUXED_ID], &rx_words[MUXED_ID]);
 	}
 }
 
 void UART_TxCallback(UART_ChannelID id) {
+	UART_ChannelID MUXED_ID = UART_MUX_ChannelID(id);
+	
 	// Get the length of the buffer
 	uint16_t length;
-	BUFF_GetLength(&tx_buff_modules[id], &length);
+	BUFF_GetLength(&tx_buff_modules[MUXED_ID], &length);
 	
 	// Return if there is no data in the buffer
 	if (length == 0) {
-		tx_states[id] = UART_TX_IDLE;
+		tx_states[MUXED_ID] = UART_TX_IDLE;
 		return;
 	}
 	
 	// Get a window of data from the buffer
 	uint8_t temp;
-	BUFF_ReadByte(&tx_buff_modules[id], &temp);
-	tx_words[id] = temp;
+	BUFF_ReadByte(&tx_buff_modules[MUXED_ID], &temp);
+	tx_words[MUXED_ID] = temp;
 	
 	// Start a transmit job to send the window of data
-	usart_write_job(&uart_modules[id], &tx_words[id]);
+	usart_write_job(&uart_modules[MUXED_ID], &tx_words[MUXED_ID]);
 }
-
-
-

@@ -49,42 +49,42 @@ enum status_code init_tasks(void) {
 	}
 	
 	// Task for reading incoming data from the GPS
-	//xTaskCreate((TaskFunction_t)ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
+	xTaskCreate((TaskFunction_t)ReadGPS, NULL, GPS_STACK_SIZE, NULL, GPS_PRIORITY, NULL );	
 
 	// Task for reading incoming data from the wind vane
-	//xTaskCreate((TaskFunction_t)ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
+	xTaskCreate((TaskFunction_t)ReadWIND, NULL, WIND_STACK_SIZE, NULL, WIND_PRIORITY, NULL );
 	
 	// Task for updating the course of the sailboat
-	//xTaskCreate((TaskFunction_t)UpdateCourse, NULL, UPDATE_COURSE_STACK_SIZE, NULL, UPDATE_COURSE_PRIORITY, NULL );
+	xTaskCreate((TaskFunction_t)UpdateCourse, NULL, UPDATE_COURSE_STACK_SIZE, NULL, UPDATE_COURSE_PRIORITY, NULL );
 	
 	// Task for changing the position of the rudder
-	//xTaskCreate((TaskFunction_t)ControlRudder, NULL, CONTROL_RUDDER_STACK_SIZE, NULL, CONTROL_RUDDER_PRIORITY, NULL );
+	xTaskCreate((TaskFunction_t)ControlRudder, NULL, CONTROL_RUDDER_STACK_SIZE, NULL, CONTROL_RUDDER_PRIORITY, NULL );
 	
 	// Task for handling incoming messages to the radio
-	//xTaskCreate((TaskFunction_t)RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
+	xTaskCreate((TaskFunction_t)RadioHandler, NULL, RADIO_HANDLER_STACK_SIZE, NULL, RADIO_HANDLER_PRIORITY, NULL );
 	
 	// Task for transmitting logs using the radio
-	//xTaskCreate((TaskFunction_t)LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
+	xTaskCreate((TaskFunction_t)LogData, NULL, LOG_DATA_STACK_SIZE, NULL, LOG_DATA_PRIORITY, NULL );
 	
 	// Task for getting the heading from the compass
-	//xTaskCreate((TaskFunction_t)ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
+	xTaskCreate((TaskFunction_t)ReadCompass, NULL, READ_COMPASS_STACK_SIZE, NULL, READ_COMPASS_PRIORITY, NULL );
 	
 	//Internal watchdog task
 	xTaskCreate((TaskFunction_t)intWDT_Task, NULL, WATCHDOG_STACK_SIZE, NULL, WATCHDOG_PRIORITY, NULL);
 	
 	//External watchdog task
-	//xTaskCreate((TaskFunction_t)extWDT_Task, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);
+	xTaskCreate((TaskFunction_t)extWDT_Task, NULL, configMINIMAL_STACK_SIZE, WATCHDOG_PRIORITY, 1, NULL);
 	
 	/* Device Testing tasks: */
-	//xTaskCreate((TaskFunction_t)Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	//xTaskCreate((TaskFunction_t)ReadIMU, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	//xTaskCreate((TaskFunction_t)Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	//xTaskCreate((TaskFunction_t)Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	//xTaskCreate((TaskFunction_t)Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate((TaskFunction_t)Test_Actuator, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate((TaskFunction_t)ReadIMU, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate((TaskFunction_t)Test_AS, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate((TaskFunction_t)Test_EEPROM, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate((TaskFunction_t)Test_Rudder, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
 	xTaskCreate((TaskFunction_t)Test_INA, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	//xTaskCreate((TaskFunction_t)Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
-	//xTaskCreate((TaskFunction_t)beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
-	//xTaskCreate((TaskFunction_t)beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+	xTaskCreate((TaskFunction_t)Debug_LED, NULL, configMINIMAL_STACK_SIZE ,NULL, 1, NULL);
+	xTaskCreate((TaskFunction_t)beaconStringResponse, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+	xTaskCreate((TaskFunction_t)beaconTaskTest, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	
 	//pass control to FreeRTOS kernel
 	vTaskStartScheduler();

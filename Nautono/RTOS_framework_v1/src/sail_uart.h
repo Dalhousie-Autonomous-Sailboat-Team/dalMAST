@@ -10,15 +10,38 @@
 #include <stdint.h>
 #include <status_codes.h>
 
+
 typedef enum UART_ChannelIDs {
-	UART_GPS,
-	UART_WIND,
-	UART_RADIO,
-	UART_XEOS,
-	UART_VCOM,
-	UART_NUM_CHANNELS
+	UART_MUX1,			//MUX 1
+	UART_MUX2,			//MUX 2
+ 	UART_WIND,			//Windvane 
+	UART_VCOM,			//VCOM
+	UART_XEOS,			//Beacon (Stream 211)
+	UART_NUM_CHANNELS,	//Total number of UART channels
+	
+	UART_MPPT1,			//MUX 1 MPPT 1
+	UART_BMS1,			//MUX 1 BMS 1
+	UART_BMS2,			//MUX 1 BMS 2
+	UART_MPPT2,			//MUX 1 MPPT 2
+	
+	UART_RADIO,			//MUX 2 EXTRA HEADER 1 (POSSIBLY RADIO)
+	UART_GPS,			//GPS
+	UART_PIXIE,			//PIXIE
+	UART_XTRA			//MUX 2 EXTRA HEADER 2
+	
 } UART_ChannelID;
 
+
+
+// Used to keep track of which channel settings are set up on the multiplexers
+UART_ChannelID MUX1_CURRENT_CHANNEL;
+UART_ChannelID MUX2_CURRENT_CHANNEL;
+
+
+//MUX_Init
+// Sets the UART multiplexer logic pins up for output.
+//
+void MUX_Init(void);
 
 //UART_Init
 // Initialize a specific UART port.
@@ -55,6 +78,11 @@ enum status_code UART_TxString(UART_ChannelID id, uint8_t *data);
 //
 enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data);
 
+//UART_MUX_ChannelID
+//Uses the enumerated table to associate a channel ID with components on the MUX's
+//
+UART_ChannelID UART_MUX_ChannelID(UART_ChannelID id);
+
 
 // UART_RxString
 // Parses the FIFO buffer for a string (delimited with \r, \n, or \0)
@@ -64,4 +92,3 @@ enum status_code UART_TxString_Unprotected(UART_ChannelID id, uint8_t *data);
 enum status_code UART_RxString(UART_ChannelID id, uint8_t *data, uint16_t length);
 
 #endif // SAIL_UART_H
-
